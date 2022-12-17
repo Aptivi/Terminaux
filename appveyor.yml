@@ -1,10 +1,10 @@
-version: 'v4.x-{build}'
+version: 'v0.1.x-{build}'
 image: Visual Studio 2022
 dotnet_csproj:
   patch: true
   file: TermRead\TermRead.csproj
   version: ''
-  package_version: '4.0.0-build{build}'
+  package_version: '0.1.0-build{build}'
   assembly_version: ''
 environment:
   WEBHOOK_URL:
@@ -17,16 +17,12 @@ after_build:
 - cmd: >-
     7z a devbuild.zip "%APPVEYOR_BUILD_FOLDER%\TermRead\bin\Debug\"
 
-    7z a devbuild-console.zip "%APPVEYOR_BUILD_FOLDER%\TermRead.Demo\bin\Debug\"
-
-    7z a devbuild-tests.zip "%APPVEYOR_BUILD_FOLDER%\TermRead.Tests\bin\Debug\"
+    7z a devbuild-console.zip "%APPVEYOR_BUILD_FOLDER%\TermRead.Console\bin\Debug\"
 artifacts:
 - path: devbuild.zip
   name: Development build of TermRead
 - path: devbuild-console.zip
   name: Development build of TermRead - Console test app
-- path: devbuild-tests.zip
-  name: Development build of TermRead - Unit tests
 - path: TermRead/bin/debug/*.nupkg
 deploy:
 - provider: NuGet
