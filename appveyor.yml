@@ -1,0 +1,46 @@
+version: 'v4.x-{build}'
+image: Visual Studio 2022
+dotnet_csproj:
+  patch: true
+  file: TermReader\TermReader.csproj
+  version: ''
+  package_version: '4.0.0-build{build}'
+  assembly_version: ''
+environment:
+  WEBHOOK_URL:
+    secure: p3nnkhnWtqFFH8UJ1eaKFfRjFPlOVhNtmLjd94R7+KSbgj9uzPvIyEJjJTk6G9e4wy94jdHku81r6zqWBCRF7Ddeex1jMhVvzUNgV5yDPURp05PY++UBxApBZ8NTiFz8KHxXsH4FR7OLfqML+gr8TS/nfHk2peNSEN75jO/OAs4=
+before_build:
+- cmd: nuget restore "%APPVEYOR_BUILD_FOLDER%\TermReader.sln"
+build:
+  verbosity: minimal
+after_build:
+- cmd: >-
+    7z a devbuild.zip "%APPVEYOR_BUILD_FOLDER%\TermReader\bin\Debug\"
+
+    7z a devbuild-console.zip "%APPVEYOR_BUILD_FOLDER%\TermReader.Demo\bin\Debug\"
+
+    7z a devbuild-tests.zip "%APPVEYOR_BUILD_FOLDER%\TermReader.Tests\bin\Debug\"
+artifacts:
+- path: devbuild.zip
+  name: Development build of TermReader
+- path: devbuild-console.zip
+  name: Development build of TermReader - Console test app
+- path: devbuild-tests.zip
+  name: Development build of TermReader - Unit tests
+- path: TermReader/bin/debug/*.nupkg
+deploy:
+- provider: NuGet
+  server: https://www.nuget.org/api/v2/package
+  api_key:
+    secure: zV2DJaWY2ZIvXYrXofxz/Hy39XzVryc7Z13umuhiYBf6QJziJpeMFQfKkAnh+7T5
+  symbol_server: https://www.nuget.org/api/v2/package
+on_success:
+- ps: >-
+    Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
+
+    ./send.ps1 success $env:WEBHOOK_URL
+on_failure:
+- ps: >-
+    Invoke-RestMethod https://raw.githubusercontent.com/DiscordHooks/appveyor-discord-webhook/master/send.ps1 -o send.ps1
+
+    ./send.ps1 failure $env:WEBHOOK_URL

@@ -1,0 +1,29 @@
+name: API Documentation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: "Make API Reference"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Fetching the source
+      - uses: "nunit/docfx-action@v1.7.0"
+        name: Generating documentation
+        with:
+          args: DocGen/docfx.json
+      - name: Saving changes to gh-pages
+        if: ${{ github.ref == 'refs/heads/main'}}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          commit_message: "Updated documentation to reflect latest changes"
+          personal_token: ${{ secrets.DOCGEN_TOKEN }}
+          publish_dir: ./docs/
+          publish_branch: gh-pages

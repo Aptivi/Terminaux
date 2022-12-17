@@ -1,0 +1,33 @@
+name: NuGet Gallery Push
+
+on:
+  release:
+    types: [published]
+    
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+    - name: NuGet Installation
+      uses: nuget/setup-nuget@v1
+      with: 
+        nuget-version: "latest"
+    - name: MSBuild Installation
+      uses: microsoft/setup-msbuild@v1.0.2
+    - name: Dependency Restoration
+      run: nuget restore "TermReader.sln"
+    - name: Solution Compilation
+      run: msbuild "TermReader.sln" /p:Configuration=Release
+    - name: NuGet Preparation
+      run: nuget setApiKey ${{ secrets.NUGET_APIKEY }}
+    - name: Package Publication
+      run: |
+        $path = "TermReader\bin\Release"
+        $FileName = Get-ChildItem -Path $path -Name -Filter "TermReader.*"
+        nuget push "$path\$FileName" -source "nuget.org"
+        
