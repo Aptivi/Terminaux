@@ -27,7 +27,7 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace TermRead.Wrappers
+namespace TermRead.Tools
 {
     /// <summary>
     /// Wrapper for the <see cref="Console"/> class to ensure safety against dumb consoles. Taken from Kernel Simulator 0.1.0.
