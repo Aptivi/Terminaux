@@ -113,11 +113,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Wrappers.ConsoleWrapper.yml",
+      "source_relative_path": "api/TermRead.Tools.ConsoleWrapper.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Wrappers.ConsoleWrapper.html",
-          "hash": "IMGssHq8JSQD8XqXNH8zHeMtIQ5ivTJ9qs0XM26mmf8="
+          "relative_path": "api/TermRead.Tools.ConsoleWrapper.html",
+          "hash": "bxkddQM2/4W4w4JQybyEoUr0LAEDMrzwrHqvonX8yds="
         }
       },
       "is_incremental": false,
@@ -125,11 +125,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Wrappers.yml",
+      "source_relative_path": "api/TermRead.Tools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Wrappers.html",
-          "hash": "0v1yEMk0v2n0N5faKK2h5pTNN5WmfFzL8CGey6F3Iog="
+          "relative_path": "api/TermRead.Tools.html",
+          "hash": "kc6e8+ZI3pwIN4Q4c2A4dTNUHuUi7E1c+FDz/QJ6jSs="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "kIs+endFvAIFsd3pLtPqBaPrlFV12N6Hc+yATp4iYqI="
+          "hash": "/DW3axUGGLOKDOBwJlOBfNNWjiRomqgkX2PtrCjjEHE="
         }
       },
       "is_incremental": false,

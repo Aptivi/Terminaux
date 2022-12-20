@@ -314,383 +314,383 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderState.PasswordMode
   nameWithType: TermReaderState.PasswordMode
-- uid: TermRead.Wrappers
-  name: TermRead.Wrappers
-  href: api/TermRead.Wrappers.html
-  commentId: N:TermRead.Wrappers
-  fullName: TermRead.Wrappers
-  nameWithType: TermRead.Wrappers
-- uid: TermRead.Wrappers.ConsoleWrapper
+- uid: TermRead.Tools
+  name: TermRead.Tools
+  href: api/TermRead.Tools.html
+  commentId: N:TermRead.Tools
+  fullName: TermRead.Tools
+  nameWithType: TermRead.Tools
+- uid: TermRead.Tools.ConsoleWrapper
   name: ConsoleWrapper
-  href: api/TermRead.Wrappers.ConsoleWrapper.html
-  commentId: T:TermRead.Wrappers.ConsoleWrapper
-  fullName: TermRead.Wrappers.ConsoleWrapper
+  href: api/TermRead.Tools.ConsoleWrapper.html
+  commentId: T:TermRead.Tools.ConsoleWrapper
+  fullName: TermRead.Tools.ConsoleWrapper
   nameWithType: ConsoleWrapper
-- uid: TermRead.Wrappers.ConsoleWrapper.BackgroundColor
+- uid: TermRead.Tools.ConsoleWrapper.BackgroundColor
   name: BackgroundColor
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_BackgroundColor
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.BackgroundColor
-  fullName: TermRead.Wrappers.ConsoleWrapper.BackgroundColor
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_BackgroundColor
+  commentId: P:TermRead.Tools.ConsoleWrapper.BackgroundColor
+  fullName: TermRead.Tools.ConsoleWrapper.BackgroundColor
   nameWithType: ConsoleWrapper.BackgroundColor
-- uid: TermRead.Wrappers.ConsoleWrapper.BackgroundColor*
+- uid: TermRead.Tools.ConsoleWrapper.BackgroundColor*
   name: BackgroundColor
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_BackgroundColor_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.BackgroundColor
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_BackgroundColor_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.BackgroundColor
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.BackgroundColor
+  fullName: TermRead.Tools.ConsoleWrapper.BackgroundColor
   nameWithType: ConsoleWrapper.BackgroundColor
-- uid: TermRead.Wrappers.ConsoleWrapper.Beep
+- uid: TermRead.Tools.ConsoleWrapper.Beep
   name: Beep()
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_Beep
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.Beep
-  fullName: TermRead.Wrappers.ConsoleWrapper.Beep()
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_Beep
+  commentId: M:TermRead.Tools.ConsoleWrapper.Beep
+  fullName: TermRead.Tools.ConsoleWrapper.Beep()
   nameWithType: ConsoleWrapper.Beep()
-- uid: TermRead.Wrappers.ConsoleWrapper.Beep*
+- uid: TermRead.Tools.ConsoleWrapper.Beep*
   name: Beep
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_Beep_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.Beep
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_Beep_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.Beep
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.Beep
+  fullName: TermRead.Tools.ConsoleWrapper.Beep
   nameWithType: ConsoleWrapper.Beep
-- uid: TermRead.Wrappers.ConsoleWrapper.BufferHeight
+- uid: TermRead.Tools.ConsoleWrapper.BufferHeight
   name: BufferHeight
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_BufferHeight
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.BufferHeight
-  fullName: TermRead.Wrappers.ConsoleWrapper.BufferHeight
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_BufferHeight
+  commentId: P:TermRead.Tools.ConsoleWrapper.BufferHeight
+  fullName: TermRead.Tools.ConsoleWrapper.BufferHeight
   nameWithType: ConsoleWrapper.BufferHeight
-- uid: TermRead.Wrappers.ConsoleWrapper.BufferHeight*
+- uid: TermRead.Tools.ConsoleWrapper.BufferHeight*
   name: BufferHeight
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_BufferHeight_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.BufferHeight
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_BufferHeight_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.BufferHeight
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.BufferHeight
+  fullName: TermRead.Tools.ConsoleWrapper.BufferHeight
   nameWithType: ConsoleWrapper.BufferHeight
-- uid: TermRead.Wrappers.ConsoleWrapper.BufferWidth
+- uid: TermRead.Tools.ConsoleWrapper.BufferWidth
   name: BufferWidth
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_BufferWidth
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.BufferWidth
-  fullName: TermRead.Wrappers.ConsoleWrapper.BufferWidth
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_BufferWidth
+  commentId: P:TermRead.Tools.ConsoleWrapper.BufferWidth
+  fullName: TermRead.Tools.ConsoleWrapper.BufferWidth
   nameWithType: ConsoleWrapper.BufferWidth
-- uid: TermRead.Wrappers.ConsoleWrapper.BufferWidth*
+- uid: TermRead.Tools.ConsoleWrapper.BufferWidth*
   name: BufferWidth
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_BufferWidth_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.BufferWidth
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_BufferWidth_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.BufferWidth
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.BufferWidth
+  fullName: TermRead.Tools.ConsoleWrapper.BufferWidth
   nameWithType: ConsoleWrapper.BufferWidth
-- uid: TermRead.Wrappers.ConsoleWrapper.Clear
+- uid: TermRead.Tools.ConsoleWrapper.Clear
   name: Clear()
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_Clear
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.Clear
-  fullName: TermRead.Wrappers.ConsoleWrapper.Clear()
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_Clear
+  commentId: M:TermRead.Tools.ConsoleWrapper.Clear
+  fullName: TermRead.Tools.ConsoleWrapper.Clear()
   nameWithType: ConsoleWrapper.Clear()
-- uid: TermRead.Wrappers.ConsoleWrapper.Clear*
+- uid: TermRead.Tools.ConsoleWrapper.Clear*
   name: Clear
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_Clear_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.Clear
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_Clear_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.Clear
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.Clear
+  fullName: TermRead.Tools.ConsoleWrapper.Clear
   nameWithType: ConsoleWrapper.Clear
-- uid: TermRead.Wrappers.ConsoleWrapper.CursorLeft
+- uid: TermRead.Tools.ConsoleWrapper.CursorLeft
   name: CursorLeft
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_CursorLeft
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.CursorLeft
-  fullName: TermRead.Wrappers.ConsoleWrapper.CursorLeft
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_CursorLeft
+  commentId: P:TermRead.Tools.ConsoleWrapper.CursorLeft
+  fullName: TermRead.Tools.ConsoleWrapper.CursorLeft
   nameWithType: ConsoleWrapper.CursorLeft
-- uid: TermRead.Wrappers.ConsoleWrapper.CursorLeft*
+- uid: TermRead.Tools.ConsoleWrapper.CursorLeft*
   name: CursorLeft
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_CursorLeft_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.CursorLeft
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_CursorLeft_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.CursorLeft
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.CursorLeft
+  fullName: TermRead.Tools.ConsoleWrapper.CursorLeft
   nameWithType: ConsoleWrapper.CursorLeft
-- uid: TermRead.Wrappers.ConsoleWrapper.CursorTop
+- uid: TermRead.Tools.ConsoleWrapper.CursorTop
   name: CursorTop
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_CursorTop
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.CursorTop
-  fullName: TermRead.Wrappers.ConsoleWrapper.CursorTop
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_CursorTop
+  commentId: P:TermRead.Tools.ConsoleWrapper.CursorTop
+  fullName: TermRead.Tools.ConsoleWrapper.CursorTop
   nameWithType: ConsoleWrapper.CursorTop
-- uid: TermRead.Wrappers.ConsoleWrapper.CursorTop*
+- uid: TermRead.Tools.ConsoleWrapper.CursorTop*
   name: CursorTop
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_CursorTop_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.CursorTop
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_CursorTop_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.CursorTop
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.CursorTop
+  fullName: TermRead.Tools.ConsoleWrapper.CursorTop
   nameWithType: ConsoleWrapper.CursorTop
-- uid: TermRead.Wrappers.ConsoleWrapper.CursorVisible
+- uid: TermRead.Tools.ConsoleWrapper.CursorVisible
   name: CursorVisible
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_CursorVisible
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.CursorVisible
-  fullName: TermRead.Wrappers.ConsoleWrapper.CursorVisible
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_CursorVisible
+  commentId: P:TermRead.Tools.ConsoleWrapper.CursorVisible
+  fullName: TermRead.Tools.ConsoleWrapper.CursorVisible
   nameWithType: ConsoleWrapper.CursorVisible
-- uid: TermRead.Wrappers.ConsoleWrapper.CursorVisible*
+- uid: TermRead.Tools.ConsoleWrapper.CursorVisible*
   name: CursorVisible
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_CursorVisible_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.CursorVisible
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_CursorVisible_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.CursorVisible
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.CursorVisible
+  fullName: TermRead.Tools.ConsoleWrapper.CursorVisible
   nameWithType: ConsoleWrapper.CursorVisible
-- uid: TermRead.Wrappers.ConsoleWrapper.ForegroundColor
+- uid: TermRead.Tools.ConsoleWrapper.ForegroundColor
   name: ForegroundColor
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_ForegroundColor
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.ForegroundColor
-  fullName: TermRead.Wrappers.ConsoleWrapper.ForegroundColor
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_ForegroundColor
+  commentId: P:TermRead.Tools.ConsoleWrapper.ForegroundColor
+  fullName: TermRead.Tools.ConsoleWrapper.ForegroundColor
   nameWithType: ConsoleWrapper.ForegroundColor
-- uid: TermRead.Wrappers.ConsoleWrapper.ForegroundColor*
+- uid: TermRead.Tools.ConsoleWrapper.ForegroundColor*
   name: ForegroundColor
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_ForegroundColor_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.ForegroundColor
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_ForegroundColor_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.ForegroundColor
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.ForegroundColor
+  fullName: TermRead.Tools.ConsoleWrapper.ForegroundColor
   nameWithType: ConsoleWrapper.ForegroundColor
-- uid: TermRead.Wrappers.ConsoleWrapper.InputEncoding
+- uid: TermRead.Tools.ConsoleWrapper.InputEncoding
   name: InputEncoding
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_InputEncoding
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.InputEncoding
-  fullName: TermRead.Wrappers.ConsoleWrapper.InputEncoding
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_InputEncoding
+  commentId: P:TermRead.Tools.ConsoleWrapper.InputEncoding
+  fullName: TermRead.Tools.ConsoleWrapper.InputEncoding
   nameWithType: ConsoleWrapper.InputEncoding
-- uid: TermRead.Wrappers.ConsoleWrapper.InputEncoding*
+- uid: TermRead.Tools.ConsoleWrapper.InputEncoding*
   name: InputEncoding
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_InputEncoding_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.InputEncoding
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_InputEncoding_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.InputEncoding
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.InputEncoding
+  fullName: TermRead.Tools.ConsoleWrapper.InputEncoding
   nameWithType: ConsoleWrapper.InputEncoding
-- uid: TermRead.Wrappers.ConsoleWrapper.IsDumb
+- uid: TermRead.Tools.ConsoleWrapper.IsDumb
   name: IsDumb
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_IsDumb
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.IsDumb
-  fullName: TermRead.Wrappers.ConsoleWrapper.IsDumb
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_IsDumb
+  commentId: P:TermRead.Tools.ConsoleWrapper.IsDumb
+  fullName: TermRead.Tools.ConsoleWrapper.IsDumb
   nameWithType: ConsoleWrapper.IsDumb
-- uid: TermRead.Wrappers.ConsoleWrapper.IsDumb*
+- uid: TermRead.Tools.ConsoleWrapper.IsDumb*
   name: IsDumb
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_IsDumb_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.IsDumb
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_IsDumb_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.IsDumb
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.IsDumb
+  fullName: TermRead.Tools.ConsoleWrapper.IsDumb
   nameWithType: ConsoleWrapper.IsDumb
-- uid: TermRead.Wrappers.ConsoleWrapper.KeyAvailable
+- uid: TermRead.Tools.ConsoleWrapper.KeyAvailable
   name: KeyAvailable
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_KeyAvailable
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.KeyAvailable
-  fullName: TermRead.Wrappers.ConsoleWrapper.KeyAvailable
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_KeyAvailable
+  commentId: P:TermRead.Tools.ConsoleWrapper.KeyAvailable
+  fullName: TermRead.Tools.ConsoleWrapper.KeyAvailable
   nameWithType: ConsoleWrapper.KeyAvailable
-- uid: TermRead.Wrappers.ConsoleWrapper.KeyAvailable*
+- uid: TermRead.Tools.ConsoleWrapper.KeyAvailable*
   name: KeyAvailable
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_KeyAvailable_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.KeyAvailable
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_KeyAvailable_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.KeyAvailable
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.KeyAvailable
+  fullName: TermRead.Tools.ConsoleWrapper.KeyAvailable
   nameWithType: ConsoleWrapper.KeyAvailable
-- uid: TermRead.Wrappers.ConsoleWrapper.OpenStandardError
+- uid: TermRead.Tools.ConsoleWrapper.OpenStandardError
   name: OpenStandardError()
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_OpenStandardError
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.OpenStandardError
-  fullName: TermRead.Wrappers.ConsoleWrapper.OpenStandardError()
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_OpenStandardError
+  commentId: M:TermRead.Tools.ConsoleWrapper.OpenStandardError
+  fullName: TermRead.Tools.ConsoleWrapper.OpenStandardError()
   nameWithType: ConsoleWrapper.OpenStandardError()
-- uid: TermRead.Wrappers.ConsoleWrapper.OpenStandardError*
+- uid: TermRead.Tools.ConsoleWrapper.OpenStandardError*
   name: OpenStandardError
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_OpenStandardError_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.OpenStandardError
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_OpenStandardError_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.OpenStandardError
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.OpenStandardError
+  fullName: TermRead.Tools.ConsoleWrapper.OpenStandardError
   nameWithType: ConsoleWrapper.OpenStandardError
-- uid: TermRead.Wrappers.ConsoleWrapper.OpenStandardInput
+- uid: TermRead.Tools.ConsoleWrapper.OpenStandardInput
   name: OpenStandardInput()
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_OpenStandardInput
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.OpenStandardInput
-  fullName: TermRead.Wrappers.ConsoleWrapper.OpenStandardInput()
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_OpenStandardInput
+  commentId: M:TermRead.Tools.ConsoleWrapper.OpenStandardInput
+  fullName: TermRead.Tools.ConsoleWrapper.OpenStandardInput()
   nameWithType: ConsoleWrapper.OpenStandardInput()
-- uid: TermRead.Wrappers.ConsoleWrapper.OpenStandardInput*
+- uid: TermRead.Tools.ConsoleWrapper.OpenStandardInput*
   name: OpenStandardInput
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_OpenStandardInput_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.OpenStandardInput
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_OpenStandardInput_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.OpenStandardInput
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.OpenStandardInput
+  fullName: TermRead.Tools.ConsoleWrapper.OpenStandardInput
   nameWithType: ConsoleWrapper.OpenStandardInput
-- uid: TermRead.Wrappers.ConsoleWrapper.OpenStandardOutput
+- uid: TermRead.Tools.ConsoleWrapper.OpenStandardOutput
   name: OpenStandardOutput()
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_OpenStandardOutput
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.OpenStandardOutput
-  fullName: TermRead.Wrappers.ConsoleWrapper.OpenStandardOutput()
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_OpenStandardOutput
+  commentId: M:TermRead.Tools.ConsoleWrapper.OpenStandardOutput
+  fullName: TermRead.Tools.ConsoleWrapper.OpenStandardOutput()
   nameWithType: ConsoleWrapper.OpenStandardOutput()
-- uid: TermRead.Wrappers.ConsoleWrapper.OpenStandardOutput*
+- uid: TermRead.Tools.ConsoleWrapper.OpenStandardOutput*
   name: OpenStandardOutput
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_OpenStandardOutput_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.OpenStandardOutput
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_OpenStandardOutput_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.OpenStandardOutput
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.OpenStandardOutput
+  fullName: TermRead.Tools.ConsoleWrapper.OpenStandardOutput
   nameWithType: ConsoleWrapper.OpenStandardOutput
-- uid: TermRead.Wrappers.ConsoleWrapper.Out
+- uid: TermRead.Tools.ConsoleWrapper.Out
   name: Out
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_Out
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.Out
-  fullName: TermRead.Wrappers.ConsoleWrapper.Out
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_Out
+  commentId: P:TermRead.Tools.ConsoleWrapper.Out
+  fullName: TermRead.Tools.ConsoleWrapper.Out
   nameWithType: ConsoleWrapper.Out
-- uid: TermRead.Wrappers.ConsoleWrapper.Out*
+- uid: TermRead.Tools.ConsoleWrapper.Out*
   name: Out
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_Out_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.Out
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_Out_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.Out
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.Out
+  fullName: TermRead.Tools.ConsoleWrapper.Out
   nameWithType: ConsoleWrapper.Out
-- uid: TermRead.Wrappers.ConsoleWrapper.OutputEncoding
+- uid: TermRead.Tools.ConsoleWrapper.OutputEncoding
   name: OutputEncoding
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_OutputEncoding
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.OutputEncoding
-  fullName: TermRead.Wrappers.ConsoleWrapper.OutputEncoding
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_OutputEncoding
+  commentId: P:TermRead.Tools.ConsoleWrapper.OutputEncoding
+  fullName: TermRead.Tools.ConsoleWrapper.OutputEncoding
   nameWithType: ConsoleWrapper.OutputEncoding
-- uid: TermRead.Wrappers.ConsoleWrapper.OutputEncoding*
+- uid: TermRead.Tools.ConsoleWrapper.OutputEncoding*
   name: OutputEncoding
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_OutputEncoding_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.OutputEncoding
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_OutputEncoding_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.OutputEncoding
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.OutputEncoding
+  fullName: TermRead.Tools.ConsoleWrapper.OutputEncoding
   nameWithType: ConsoleWrapper.OutputEncoding
-- uid: TermRead.Wrappers.ConsoleWrapper.ReadKey(System.Boolean)
+- uid: TermRead.Tools.ConsoleWrapper.ReadKey(System.Boolean)
   name: ReadKey(Boolean)
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_ReadKey_System_Boolean_
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.ReadKey(System.Boolean)
-  fullName: TermRead.Wrappers.ConsoleWrapper.ReadKey(System.Boolean)
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_ReadKey_System_Boolean_
+  commentId: M:TermRead.Tools.ConsoleWrapper.ReadKey(System.Boolean)
+  fullName: TermRead.Tools.ConsoleWrapper.ReadKey(System.Boolean)
   nameWithType: ConsoleWrapper.ReadKey(Boolean)
-- uid: TermRead.Wrappers.ConsoleWrapper.ReadKey*
+- uid: TermRead.Tools.ConsoleWrapper.ReadKey*
   name: ReadKey
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_ReadKey_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.ReadKey
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_ReadKey_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.ReadKey
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.ReadKey
+  fullName: TermRead.Tools.ConsoleWrapper.ReadKey
   nameWithType: ConsoleWrapper.ReadKey
-- uid: TermRead.Wrappers.ConsoleWrapper.ResetColor
+- uid: TermRead.Tools.ConsoleWrapper.ResetColor
   name: ResetColor()
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_ResetColor
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.ResetColor
-  fullName: TermRead.Wrappers.ConsoleWrapper.ResetColor()
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_ResetColor
+  commentId: M:TermRead.Tools.ConsoleWrapper.ResetColor
+  fullName: TermRead.Tools.ConsoleWrapper.ResetColor()
   nameWithType: ConsoleWrapper.ResetColor()
-- uid: TermRead.Wrappers.ConsoleWrapper.ResetColor*
+- uid: TermRead.Tools.ConsoleWrapper.ResetColor*
   name: ResetColor
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_ResetColor_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.ResetColor
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_ResetColor_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.ResetColor
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.ResetColor
+  fullName: TermRead.Tools.ConsoleWrapper.ResetColor
   nameWithType: ConsoleWrapper.ResetColor
-- uid: TermRead.Wrappers.ConsoleWrapper.SetCursorPosition(System.Int32,System.Int32)
+- uid: TermRead.Tools.ConsoleWrapper.SetCursorPosition(System.Int32,System.Int32)
   name: SetCursorPosition(Int32, Int32)
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_SetCursorPosition_System_Int32_System_Int32_
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.SetCursorPosition(System.Int32,System.Int32)
-  fullName: TermRead.Wrappers.ConsoleWrapper.SetCursorPosition(System.Int32, System.Int32)
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_SetCursorPosition_System_Int32_System_Int32_
+  commentId: M:TermRead.Tools.ConsoleWrapper.SetCursorPosition(System.Int32,System.Int32)
+  fullName: TermRead.Tools.ConsoleWrapper.SetCursorPosition(System.Int32, System.Int32)
   nameWithType: ConsoleWrapper.SetCursorPosition(Int32, Int32)
-- uid: TermRead.Wrappers.ConsoleWrapper.SetCursorPosition*
+- uid: TermRead.Tools.ConsoleWrapper.SetCursorPosition*
   name: SetCursorPosition
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_SetCursorPosition_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.SetCursorPosition
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_SetCursorPosition_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.SetCursorPosition
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.SetCursorPosition
+  fullName: TermRead.Tools.ConsoleWrapper.SetCursorPosition
   nameWithType: ConsoleWrapper.SetCursorPosition
-- uid: TermRead.Wrappers.ConsoleWrapper.SetOut(TextWriter)
+- uid: TermRead.Tools.ConsoleWrapper.SetOut(TextWriter)
   name: SetOut(TextWriter)
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_SetOut_TextWriter_
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.SetOut(TextWriter)
-  fullName: TermRead.Wrappers.ConsoleWrapper.SetOut(TextWriter)
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_SetOut_TextWriter_
+  commentId: M:TermRead.Tools.ConsoleWrapper.SetOut(TextWriter)
+  fullName: TermRead.Tools.ConsoleWrapper.SetOut(TextWriter)
   nameWithType: ConsoleWrapper.SetOut(TextWriter)
-- uid: TermRead.Wrappers.ConsoleWrapper.SetOut*
+- uid: TermRead.Tools.ConsoleWrapper.SetOut*
   name: SetOut
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_SetOut_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.SetOut
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_SetOut_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.SetOut
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.SetOut
+  fullName: TermRead.Tools.ConsoleWrapper.SetOut
   nameWithType: ConsoleWrapper.SetOut
-- uid: TermRead.Wrappers.ConsoleWrapper.WindowHeight
+- uid: TermRead.Tools.ConsoleWrapper.WindowHeight
   name: WindowHeight
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_WindowHeight
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.WindowHeight
-  fullName: TermRead.Wrappers.ConsoleWrapper.WindowHeight
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_WindowHeight
+  commentId: P:TermRead.Tools.ConsoleWrapper.WindowHeight
+  fullName: TermRead.Tools.ConsoleWrapper.WindowHeight
   nameWithType: ConsoleWrapper.WindowHeight
-- uid: TermRead.Wrappers.ConsoleWrapper.WindowHeight*
+- uid: TermRead.Tools.ConsoleWrapper.WindowHeight*
   name: WindowHeight
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_WindowHeight_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.WindowHeight
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_WindowHeight_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.WindowHeight
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.WindowHeight
+  fullName: TermRead.Tools.ConsoleWrapper.WindowHeight
   nameWithType: ConsoleWrapper.WindowHeight
-- uid: TermRead.Wrappers.ConsoleWrapper.WindowTop
+- uid: TermRead.Tools.ConsoleWrapper.WindowTop
   name: WindowTop
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_WindowTop
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.WindowTop
-  fullName: TermRead.Wrappers.ConsoleWrapper.WindowTop
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_WindowTop
+  commentId: P:TermRead.Tools.ConsoleWrapper.WindowTop
+  fullName: TermRead.Tools.ConsoleWrapper.WindowTop
   nameWithType: ConsoleWrapper.WindowTop
-- uid: TermRead.Wrappers.ConsoleWrapper.WindowTop*
+- uid: TermRead.Tools.ConsoleWrapper.WindowTop*
   name: WindowTop
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_WindowTop_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.WindowTop
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_WindowTop_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.WindowTop
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.WindowTop
+  fullName: TermRead.Tools.ConsoleWrapper.WindowTop
   nameWithType: ConsoleWrapper.WindowTop
-- uid: TermRead.Wrappers.ConsoleWrapper.WindowWidth
+- uid: TermRead.Tools.ConsoleWrapper.WindowWidth
   name: WindowWidth
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_WindowWidth
-  commentId: P:TermRead.Wrappers.ConsoleWrapper.WindowWidth
-  fullName: TermRead.Wrappers.ConsoleWrapper.WindowWidth
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_WindowWidth
+  commentId: P:TermRead.Tools.ConsoleWrapper.WindowWidth
+  fullName: TermRead.Tools.ConsoleWrapper.WindowWidth
   nameWithType: ConsoleWrapper.WindowWidth
-- uid: TermRead.Wrappers.ConsoleWrapper.WindowWidth*
+- uid: TermRead.Tools.ConsoleWrapper.WindowWidth*
   name: WindowWidth
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_WindowWidth_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.WindowWidth
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_WindowWidth_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.WindowWidth
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.WindowWidth
+  fullName: TermRead.Tools.ConsoleWrapper.WindowWidth
   nameWithType: ConsoleWrapper.WindowWidth
-- uid: TermRead.Wrappers.ConsoleWrapper.Write(System.Char)
+- uid: TermRead.Tools.ConsoleWrapper.Write(System.Char)
   name: Write(Char)
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_Write_System_Char_
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.Write(System.Char)
-  fullName: TermRead.Wrappers.ConsoleWrapper.Write(System.Char)
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_Write_System_Char_
+  commentId: M:TermRead.Tools.ConsoleWrapper.Write(System.Char)
+  fullName: TermRead.Tools.ConsoleWrapper.Write(System.Char)
   nameWithType: ConsoleWrapper.Write(Char)
-- uid: TermRead.Wrappers.ConsoleWrapper.Write(System.String)
+- uid: TermRead.Tools.ConsoleWrapper.Write(System.String)
   name: Write(String)
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_Write_System_String_
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.Write(System.String)
-  fullName: TermRead.Wrappers.ConsoleWrapper.Write(System.String)
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_Write_System_String_
+  commentId: M:TermRead.Tools.ConsoleWrapper.Write(System.String)
+  fullName: TermRead.Tools.ConsoleWrapper.Write(System.String)
   nameWithType: ConsoleWrapper.Write(String)
-- uid: TermRead.Wrappers.ConsoleWrapper.Write(System.String,System.Object[])
+- uid: TermRead.Tools.ConsoleWrapper.Write(System.String,System.Object[])
   name: Write(String, Object[])
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_Write_System_String_System_Object___
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.Write(System.String,System.Object[])
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_Write_System_String_System_Object___
+  commentId: M:TermRead.Tools.ConsoleWrapper.Write(System.String,System.Object[])
   name.vb: Write(String, Object())
-  fullName: TermRead.Wrappers.ConsoleWrapper.Write(System.String, System.Object[])
-  fullName.vb: TermRead.Wrappers.ConsoleWrapper.Write(System.String, System.Object())
+  fullName: TermRead.Tools.ConsoleWrapper.Write(System.String, System.Object[])
+  fullName.vb: TermRead.Tools.ConsoleWrapper.Write(System.String, System.Object())
   nameWithType: ConsoleWrapper.Write(String, Object[])
   nameWithType.vb: ConsoleWrapper.Write(String, Object())
-- uid: TermRead.Wrappers.ConsoleWrapper.Write*
+- uid: TermRead.Tools.ConsoleWrapper.Write*
   name: Write
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_Write_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.Write
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_Write_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.Write
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.Write
+  fullName: TermRead.Tools.ConsoleWrapper.Write
   nameWithType: ConsoleWrapper.Write
-- uid: TermRead.Wrappers.ConsoleWrapper.WriteLine
+- uid: TermRead.Tools.ConsoleWrapper.WriteLine
   name: WriteLine()
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_WriteLine
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.WriteLine
-  fullName: TermRead.Wrappers.ConsoleWrapper.WriteLine()
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_WriteLine
+  commentId: M:TermRead.Tools.ConsoleWrapper.WriteLine
+  fullName: TermRead.Tools.ConsoleWrapper.WriteLine()
   nameWithType: ConsoleWrapper.WriteLine()
-- uid: TermRead.Wrappers.ConsoleWrapper.WriteLine(System.String)
+- uid: TermRead.Tools.ConsoleWrapper.WriteLine(System.String)
   name: WriteLine(String)
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_WriteLine_System_String_
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.WriteLine(System.String)
-  fullName: TermRead.Wrappers.ConsoleWrapper.WriteLine(System.String)
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_WriteLine_System_String_
+  commentId: M:TermRead.Tools.ConsoleWrapper.WriteLine(System.String)
+  fullName: TermRead.Tools.ConsoleWrapper.WriteLine(System.String)
   nameWithType: ConsoleWrapper.WriteLine(String)
-- uid: TermRead.Wrappers.ConsoleWrapper.WriteLine(System.String,System.Object[])
+- uid: TermRead.Tools.ConsoleWrapper.WriteLine(System.String,System.Object[])
   name: WriteLine(String, Object[])
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_WriteLine_System_String_System_Object___
-  commentId: M:TermRead.Wrappers.ConsoleWrapper.WriteLine(System.String,System.Object[])
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_WriteLine_System_String_System_Object___
+  commentId: M:TermRead.Tools.ConsoleWrapper.WriteLine(System.String,System.Object[])
   name.vb: WriteLine(String, Object())
-  fullName: TermRead.Wrappers.ConsoleWrapper.WriteLine(System.String, System.Object[])
-  fullName.vb: TermRead.Wrappers.ConsoleWrapper.WriteLine(System.String, System.Object())
+  fullName: TermRead.Tools.ConsoleWrapper.WriteLine(System.String, System.Object[])
+  fullName.vb: TermRead.Tools.ConsoleWrapper.WriteLine(System.String, System.Object())
   nameWithType: ConsoleWrapper.WriteLine(String, Object[])
   nameWithType.vb: ConsoleWrapper.WriteLine(String, Object())
-- uid: TermRead.Wrappers.ConsoleWrapper.WriteLine*
+- uid: TermRead.Tools.ConsoleWrapper.WriteLine*
   name: WriteLine
-  href: api/TermRead.Wrappers.ConsoleWrapper.html#TermRead_Wrappers_ConsoleWrapper_WriteLine_
-  commentId: Overload:TermRead.Wrappers.ConsoleWrapper.WriteLine
+  href: api/TermRead.Tools.ConsoleWrapper.html#TermRead_Tools_ConsoleWrapper_WriteLine_
+  commentId: Overload:TermRead.Tools.ConsoleWrapper.WriteLine
   isSpec: "True"
-  fullName: TermRead.Wrappers.ConsoleWrapper.WriteLine
+  fullName: TermRead.Tools.ConsoleWrapper.WriteLine
   nameWithType: ConsoleWrapper.WriteLine
