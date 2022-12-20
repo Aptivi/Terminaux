@@ -1,0 +1,27 @@
+{
+  "profiles": {
+    "TermRead - Prompt": {
+      "commandName": "Project"
+    },
+    "TermRead - PromptWithDefault": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptWithDefault"
+    },
+    "TermRead - PromptWithPlaceholder": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptWithPlaceholder"
+    },
+    "TermRead - PromptPassword": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPassword"
+    },
+    "TermRead - PromptPasswordWithPlaceholder": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPasswordWithPlaceholder"
+    },
+    "TermRead - PromptLooped": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLooped"
+    }
+  }
+}

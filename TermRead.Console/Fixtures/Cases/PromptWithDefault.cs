@@ -26,16 +26,16 @@
 using System;
 using TermRead.Reader;
 
-namespace TermRead.ConsoleDemo
+namespace TermRead.ConsoleDemo.Fixtures.Cases
 {
-    internal class SimpleDemo
+    internal class PromptWithDefault : IFixture
     {
-        static void Main(string[] args)
+        public string FixtureID => "PromptWithDefault";
+
+        public void RunFixture()
         {
-            Console.WriteLine("Simple demo! Switching this console app to fixture system in just a few development revisions.");
-            string input = TermReader.Read();
-            Console.WriteLine("You said\n" + input);
-            Console.WriteLine("Password is: " + TermReader.ReadPassword());
+            string input = TermReader.Read("", "Hello World!");
+            Console.WriteLine("You said: " + input);
         }
     }
 }
