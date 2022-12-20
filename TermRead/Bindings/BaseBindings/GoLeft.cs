@@ -46,15 +46,7 @@ namespace TermRead.Bindings.BaseBindings
                 return;
 
             // Just set the position one character closer to the input start position!
-            state.currentTextPos--;
-            state.currentCursorPosLeft--;
-            if (state.CurrentCursorPosLeft < 0)
-            {
-                // Reached to the beginning! Wrap up!
-                state.currentCursorPosLeft = ConsoleWrapper.WindowWidth - 1;
-                if (state.currentCursorPosTop > 0)
-                    state.currentCursorPosTop--;
-            }
+            PositioningTools.GoBack(ref state);
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }

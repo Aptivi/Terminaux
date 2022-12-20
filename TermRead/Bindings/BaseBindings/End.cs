@@ -47,18 +47,7 @@ namespace TermRead.Bindings.BaseBindings
 
             // Just set the positions to the maximum!
             int times = state.CurrentText.Length - state.currentTextPos;
-            for (int i = 0; i < times; i++)
-            {
-                state.currentTextPos++;
-                state.currentCursorPosLeft++;
-                if (state.CurrentCursorPosLeft >= ConsoleWrapper.WindowWidth)
-                {
-                    // Reached to the end! Wrap down!
-                    state.currentCursorPosLeft = 0;
-                    if (state.currentCursorPosTop < ConsoleWrapper.BufferHeight)
-                        state.currentCursorPosTop++;
-                }
-            }
+            PositioningTools.GoForward(times, ref state);
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }

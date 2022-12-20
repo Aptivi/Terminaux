@@ -46,19 +46,7 @@ namespace TermRead.Bindings.BaseBindings
                 return;
 
             // Just set the positions to zero!
-            int times = state.currentTextPos;
-            for (int i = 0; i < times; i++)
-            {
-                state.currentTextPos--;
-                state.currentCursorPosLeft--;
-                if (state.CurrentCursorPosLeft < 0)
-                {
-                    // Reached to the beginning! Wrap up!
-                    state.currentCursorPosLeft = ConsoleWrapper.WindowWidth - 1;
-                    if (state.currentCursorPosTop > 0)
-                        state.currentCursorPosTop--;
-                }
-            }
+            PositioningTools.GoBack(state.currentTextPos, ref state);
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }

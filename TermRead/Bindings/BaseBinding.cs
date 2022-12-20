@@ -68,29 +68,12 @@ namespace TermRead.Bindings
             if (char.IsControl(state.pressedKey.KeyChar))
                 return;
             state.CurrentText.Insert(state.CurrentTextPos, state.pressedKey.KeyChar);
-            state.currentTextPos++;
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? TermReaderSettings.PasswordMaskChar.ToString().Repeat(state.currentText.ToString().Length) : state.currentText.ToString();
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             ConsoleWrapper.Write(renderedText);
-            state.currentCursorPosLeft++;
-            if (state.CurrentCursorPosLeft >= ConsoleWrapper.WindowWidth - 1)
-            {
-                // Reached to the end! Wrap down!
-                state.currentCursorPosLeft = 0;
-                if (state.currentCursorPosTop < ConsoleWrapper.BufferHeight)
-                    // Increase the top position
-                    state.currentCursorPosTop++;
-                else
-                {
-                    // We can't increase the top position since we're at the end of buffer, so we need to set the
-                    // input prompt top position to be minus one. If we can't do that again because it went before the
-                    // first column in the buffer, there's nothing we can do about this.
-                    if (state.InputPromptTop > 0)
-                        state.inputPromptTop--;
-                }
-            }
+            PositioningTools.GoForward(1, true, ref state);
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }

@@ -47,19 +47,12 @@ namespace TermRead.Bindings.BaseBindings
 
             // Remove one character from the current text position
             state.CurrentText.Remove(state.CurrentTextPos - 1, 1);
-            state.currentTextPos--;
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? TermReaderSettings.PasswordMaskChar.ToString().Repeat(state.currentText.ToString().Length) : state.currentText.ToString();
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             ConsoleWrapper.Write(renderedText + " ");
-            state.currentCursorPosLeft--;
-            if (state.CurrentCursorPosLeft < 0)
-            {
-                state.currentCursorPosLeft = ConsoleWrapper.WindowWidth - 1;
-                if (state.CurrentCursorPosTop > 0)
-                    state.currentCursorPosTop--;
-            }
+            PositioningTools.GoBack(ref state);
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
