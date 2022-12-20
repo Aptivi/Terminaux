@@ -22,6 +22,14 @@
     "TermRead - PromptLooped": {
       "commandName": "Project",
       "commandLineArgs": "PromptLooped"
+    },
+    "TermRead - PromptPasswordHidden": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPasswordHidden"
+    },
+    "TermRead - PromptPasswordWithPlaceholderHidden": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPasswordWithPlaceholderHidden"
     }
   }
 }

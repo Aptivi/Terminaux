@@ -24,40 +24,19 @@
  */
 
 using System;
-using System.Linq;
-using TermRead.ConsoleDemo.Fixtures.Cases;
+using TermRead.Reader;
 
-namespace TermRead.ConsoleDemo.Fixtures
+namespace TermRead.ConsoleDemo.Fixtures.Cases
 {
-    internal static class FixtureManager
+    internal class PromptPasswordHidden : IFixture
     {
-        internal static IFixture[] fixtures =
-        {
-            new Prompt(),
-            new PromptWithDefault(),
-            new PromptWithPlaceholder(),
-            new PromptPassword(),
-            new PromptPasswordHidden(),
-            new PromptPasswordWithPlaceholder(),
-            new PromptPasswordWithPlaceholderHidden(),
-            new PromptLooped(),
-        };
+        public string FixtureID => "PromptPasswordHidden";
 
-        internal static IFixture GetFixtureFromName(string name)
+        public void RunFixture()
         {
-            if (DoesFixtureExist(name))
-            {
-                var detectedFixtures = fixtures.Where((fixture) => fixture.FixtureID == name).ToArray();
-                return detectedFixtures[0];
-            }
-            else
-                throw new Exception("Fixture doesn't exist.");
-        }
-
-        internal static bool DoesFixtureExist(string name)
-        {
-            var detectedFixtures = fixtures.Where((fixture) => fixture.FixtureID == name);
-            return detectedFixtures.Any();
+            TermReaderSettings.PasswordMaskChar = '\0';
+            string input = TermReader.ReadPassword();
+            Console.WriteLine("Password is: " + input);
         }
     }
 }

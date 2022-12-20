@@ -43,6 +43,11 @@ namespace TermRead.Tools
             for (int i = 0; i < steps; i++)
             {
                 state.currentTextPos++;
+
+                // If the character is unrenderable, continue the loop
+                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
+                    continue;
+
                 state.currentCursorPosLeft++;
                 if (state.CurrentCursorPosLeft >= ConsoleWrapper.WindowWidth)
                 {
@@ -73,6 +78,11 @@ namespace TermRead.Tools
             for (int i = 0; i < steps; i++)
             {
                 state.currentTextPos--;
+
+                // If the character is unrenderable, continue the loop
+                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
+                    continue;
+
                 state.currentCursorPosLeft--;
                 if (state.CurrentCursorPosLeft < 0)
                 {
