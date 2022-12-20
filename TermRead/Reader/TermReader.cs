@@ -50,11 +50,25 @@ namespace TermRead.Reader
             Read(inputPrompt, "");
 
         /// <summary>
+        /// Reads the input with password character masking
+        /// </summary>
+        public static string ReadPassword() =>
+            Read("", "", true);
+
+        /// <summary>
+        /// Reads the input with password character masking
+        /// </summary>
+        /// <param name="inputPrompt">The input to be read</param>
+        public static string ReadPassword(string inputPrompt) =>
+            Read(inputPrompt, "", true);
+
+        /// <summary>
         /// Reads the input
         /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="defaultValue">Default value to use if no input is provided</param>
-        public static string Read(string inputPrompt, string defaultValue)
+        /// <param name="password">Whether the password mode is enabled</param>
+        public static string Read(string inputPrompt, string defaultValue, bool password = false)
         {
             lock (readLock)
             {
@@ -68,6 +82,7 @@ namespace TermRead.Reader
                 readState.inputPromptLeft = ConsoleWrapper.CursorLeft;
                 readState.inputPromptTop = ConsoleWrapper.CursorTop;
                 readState.inputPromptText = inputPrompt;
+                readState.passwordMode = password;
 
                 // Get input
                 while (struckKey.Key != ConsoleKey.Enter)

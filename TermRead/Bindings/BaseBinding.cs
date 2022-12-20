@@ -23,6 +23,7 @@
  * 
  */
 
+using Extensification.StringExts;
 using System;
 using TermRead.Reader;
 using TermRead.Wrappers;
@@ -70,8 +71,9 @@ namespace TermRead.Bindings
             state.currentTextPos++;
 
             // Re-write the text and set the current cursor position as appropriate
+            string renderedText = state.PasswordMode ? TermReaderSettings.PasswordMaskChar.ToString().Repeat(state.currentText.ToString().Length) : state.currentText.ToString();
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-            ConsoleWrapper.Write(state.CurrentText.ToString());
+            ConsoleWrapper.Write(renderedText);
             state.currentCursorPosLeft++;
             if (state.CurrentCursorPosLeft >= ConsoleWrapper.WindowWidth - 1)
             {

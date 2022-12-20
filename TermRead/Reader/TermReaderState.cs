@@ -40,6 +40,7 @@ namespace TermRead.Reader
         internal int currentTextPos;
         internal string inputPromptText;
         internal StringBuilder currentText = new();
+        internal bool passwordMode;
         internal ConsoleKeyInfo pressedKey;
 
         /// <summary>
@@ -70,6 +71,10 @@ namespace TermRead.Reader
         /// Current text
         /// </summary>
         public StringBuilder CurrentText { get => currentText; }
+        /// <summary>
+        /// Password Mode
+        /// </summary>
+        public bool PasswordMode { get => passwordMode; }
 
         internal TermReaderState() { }
     }

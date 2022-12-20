@@ -23,19 +23,22 @@
  * 
  */
 
-using System;
-using TermRead.Reader;
-
-namespace TermRead.ConsoleDemo
+namespace TermRead.Reader
 {
-    internal class SimpleDemo
+    /// <summary>
+    /// Settings for the reader
+    /// </summary>
+    public static class TermReaderSettings
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Simple demo! Switching this console app to fixture system in just a few development revisions.");
-            string input = TermReader.Read();
-            Console.WriteLine("You said\n" + input);
-            Console.WriteLine("Password is: " + TermReader.ReadPassword());
+        private static char passwordMaskChar = '*';
+
+        /// <summary>
+        /// Password mask character
+        /// </summary>
+        public static char PasswordMaskChar 
+        { 
+            get => passwordMaskChar;
+            set => passwordMaskChar = value; 
         }
     }
 }
