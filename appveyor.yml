@@ -4,7 +4,7 @@ dotnet_csproj:
   patch: true
   file: TermRead\TermRead.csproj
   version: ''
-  package_version: '0.1.0-build{build}'
+  package_version: '0.1.1-build{build}'
   assembly_version: ''
 environment:
   WEBHOOK_URL:
