@@ -153,12 +153,12 @@ references:
   commentId: M:TermRead.Reader.TermReader.Read(System.String)
   fullName: TermRead.Reader.TermReader.Read(System.String)
   nameWithType: TermReader.Read(String)
-- uid: TermRead.Reader.TermReader.Read(System.String,System.String)
-  name: Read(String, String)
-  href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_Read_System_String_System_String_
-  commentId: M:TermRead.Reader.TermReader.Read(System.String,System.String)
-  fullName: TermRead.Reader.TermReader.Read(System.String, System.String)
-  nameWithType: TermReader.Read(String, String)
+- uid: TermRead.Reader.TermReader.Read(System.String,System.String,System.Boolean)
+  name: Read(String, String, Boolean)
+  href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_Read_System_String_System_String_System_Boolean_
+  commentId: M:TermRead.Reader.TermReader.Read(System.String,System.String,System.Boolean)
+  fullName: TermRead.Reader.TermReader.Read(System.String, System.String, System.Boolean)
+  nameWithType: TermReader.Read(String, String, Boolean)
 - uid: TermRead.Reader.TermReader.Read*
   name: Read
   href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_Read_
@@ -166,6 +166,44 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReader.Read
   nameWithType: TermReader.Read
+- uid: TermRead.Reader.TermReader.ReadPassword
+  name: ReadPassword()
+  href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_ReadPassword
+  commentId: M:TermRead.Reader.TermReader.ReadPassword
+  fullName: TermRead.Reader.TermReader.ReadPassword()
+  nameWithType: TermReader.ReadPassword()
+- uid: TermRead.Reader.TermReader.ReadPassword(System.String)
+  name: ReadPassword(String)
+  href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_ReadPassword_System_String_
+  commentId: M:TermRead.Reader.TermReader.ReadPassword(System.String)
+  fullName: TermRead.Reader.TermReader.ReadPassword(System.String)
+  nameWithType: TermReader.ReadPassword(String)
+- uid: TermRead.Reader.TermReader.ReadPassword*
+  name: ReadPassword
+  href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_ReadPassword_
+  commentId: Overload:TermRead.Reader.TermReader.ReadPassword
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReader.ReadPassword
+  nameWithType: TermReader.ReadPassword
+- uid: TermRead.Reader.TermReaderSettings
+  name: TermReaderSettings
+  href: api/TermRead.Reader.TermReaderSettings.html
+  commentId: T:TermRead.Reader.TermReaderSettings
+  fullName: TermRead.Reader.TermReaderSettings
+  nameWithType: TermReaderSettings
+- uid: TermRead.Reader.TermReaderSettings.PasswordMaskChar
+  name: PasswordMaskChar
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_PasswordMaskChar
+  commentId: P:TermRead.Reader.TermReaderSettings.PasswordMaskChar
+  fullName: TermRead.Reader.TermReaderSettings.PasswordMaskChar
+  nameWithType: TermReaderSettings.PasswordMaskChar
+- uid: TermRead.Reader.TermReaderSettings.PasswordMaskChar*
+  name: PasswordMaskChar
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_PasswordMaskChar_
+  commentId: Overload:TermRead.Reader.TermReaderSettings.PasswordMaskChar
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderSettings.PasswordMaskChar
+  nameWithType: TermReaderSettings.PasswordMaskChar
 - uid: TermRead.Reader.TermReaderState
   name: TermReaderState
   href: api/TermRead.Reader.TermReaderState.html
@@ -263,6 +301,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderState.InputPromptTop
   nameWithType: TermReaderState.InputPromptTop
+- uid: TermRead.Reader.TermReaderState.PasswordMode
+  name: PasswordMode
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_PasswordMode
+  commentId: P:TermRead.Reader.TermReaderState.PasswordMode
+  fullName: TermRead.Reader.TermReaderState.PasswordMode
+  nameWithType: TermReaderState.PasswordMode
+- uid: TermRead.Reader.TermReaderState.PasswordMode*
+  name: PasswordMode
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_PasswordMode_
+  commentId: Overload:TermRead.Reader.TermReaderState.PasswordMode
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderState.PasswordMode
+  nameWithType: TermReaderState.PasswordMode
 - uid: TermRead.Wrappers
   name: TermRead.Wrappers
   href: api/TermRead.Wrappers.html

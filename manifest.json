@@ -69,7 +69,19 @@
       "output": {
         ".html": {
           "relative_path": "api/TermRead.Reader.TermReader.html",
-          "hash": "io3TdPAVbUUADlbKaDcEkt6pHcYDbji59WKmukiflmk="
+          "hash": "UkS//wy7BNRH2hdhAU9H4Ek54JE+cxAnZInNA0zyAKw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Reader.TermReaderSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Reader.TermReaderSettings.html",
+          "hash": "e8lkrEVQ3GO4MfkcnSf68jfLzsUWUWODGqoOMlmYnHQ="
         }
       },
       "is_incremental": false,
@@ -81,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TermRead.Reader.TermReaderState.html",
-          "hash": "M18JxGyE6L8uXW9nh6BFTn2p5xrKf3/449D8TbtjhTg="
+          "hash": "0SnCmCfh2LNl6meO8A+HijEZO+sc+e3M/C+WIfalbi0="
         }
       },
       "is_incremental": false,
@@ -93,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TermRead.Reader.html",
-          "hash": "SFdUgRNW4M6EOU3jitPTD/p/1yaQB5BVaRbfSHlstBM="
+          "hash": "rwio9aT87OraxjHFrWglUwRAvyyFlmdzBFgfBWWzc04="
         }
       },
       "is_incremental": false,
@@ -129,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "sU3V0I3m9/bs2R721QzLTupMt+YstbO6CO93yph7Rhw="
+          "hash": "kIs+endFvAIFsd3pLtPqBaPrlFV12N6Hc+yATp4iYqI="
         }
       },
       "is_incremental": false,
@@ -180,7 +192,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 9,
+          "total_file_count": 10,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
