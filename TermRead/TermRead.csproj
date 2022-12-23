@@ -4,7 +4,7 @@
     <AssemblyTitle>TermRead</AssemblyTitle>
     <AssemblyDescription>Our own Readline solution for .NET</AssemblyDescription>
     <Description>Our own Readline solution for .NET</Description>
-    <Version>0.1.1</Version>
+    <Version>0.2.0</Version>
     <Authors>Aptivi</Authors>
     <TargetFrameworks>netstandard2.1;net48</TargetFrameworks>
     <DebugType>portable</DebugType>
@@ -22,8 +22,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>OfficialAppIcon-TermRead-512.png</PackageIcon>
-    <AssemblyVersion>0.1.1</AssemblyVersion>
-    <PackageVersion>0.1.1</PackageVersion>
+    <AssemblyVersion>0.2.0</AssemblyVersion>
+    <PackageVersion>0.2.0</PackageVersion>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 

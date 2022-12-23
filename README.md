@@ -12,6 +12,9 @@ _Note: Some keys conflict with terminal emulator keybindings._
 | `Ctrl`+`E` / `END`                 | End of line                                          |
 | `Ctrl`+`B` / `←`                   | Backward one character                               |
 | `Ctrl`+`F` / `→`                   | Forward one character                                |
+| `BACKSPACE`                        | Remove one character from the left                   |
+| `UP ARROW`                         | Get the older input                                  |
+| `DOWN ARROW`                       | Get the newer input                                  |
 
 ## Installation
 

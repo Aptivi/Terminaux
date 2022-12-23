@@ -99,10 +99,17 @@ namespace TermRead.Reader
                     BindingsReader.Execute(readState);
                 }
 
-                // Return the input
-                return readState.CurrentText.Length == 0 ?
-                       defaultValue :
-                       readState.CurrentText.ToString();
+                // Return the input after adding it to history
+                string input = readState.CurrentText.Length == 0 ?
+                               defaultValue :
+                               readState.CurrentText.ToString();
+                if (!password)
+                {
+                    // We don't want passwords in the history
+                    TermReaderState.history.Add(input);
+                    TermReaderState.currentHistoryPos = TermReaderState.history.Count;
+                }
+                return input;
             }
         }
     }

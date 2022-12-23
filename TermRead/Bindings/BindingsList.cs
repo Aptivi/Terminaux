@@ -38,7 +38,9 @@ namespace TermRead.Bindings
             new Home(),
             new End(),
             new Rubout(),
-            new Return()
+            new Return(),
+            new PreviousHistory(),
+            new NextHistory()
         };
 
         internal static List<BaseBinding> customBindings = new();

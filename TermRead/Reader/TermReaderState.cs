@@ -24,6 +24,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace TermRead.Reader
@@ -33,6 +34,7 @@ namespace TermRead.Reader
     /// </summary>
     public class TermReaderState
     {
+        // Instance
         internal int inputPromptLeft;
         internal int inputPromptTop;
         internal int currentCursorPosLeft;
@@ -42,6 +44,10 @@ namespace TermRead.Reader
         internal StringBuilder currentText = new();
         internal bool passwordMode;
         internal ConsoleKeyInfo pressedKey;
+
+        // Shared
+        internal static List<string> history = new();
+        internal static int currentHistoryPos;
 
         /// <summary>
         /// Left position of the input prompt
@@ -75,6 +81,18 @@ namespace TermRead.Reader
         /// Password Mode
         /// </summary>
         public bool PasswordMode { get => passwordMode; }
+        /// <summary>
+        /// Currently pressed key
+        /// </summary>
+        public ConsoleKeyInfo PressedKey { get => pressedKey; }
+        /// <summary>
+        /// History entries
+        /// </summary>
+        public List<string> History { get => history; }
+        /// <summary>
+        /// Current history number
+        /// </summary>
+        public int CurrentHistoryPos { get => currentHistoryPos; }
 
         internal TermReaderState() { }
     }
