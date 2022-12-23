@@ -236,6 +236,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderState.CurrentCursorPosTop
   nameWithType: TermReaderState.CurrentCursorPosTop
+- uid: TermRead.Reader.TermReaderState.CurrentHistoryPos
+  name: CurrentHistoryPos
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_CurrentHistoryPos
+  commentId: P:TermRead.Reader.TermReaderState.CurrentHistoryPos
+  fullName: TermRead.Reader.TermReaderState.CurrentHistoryPos
+  nameWithType: TermReaderState.CurrentHistoryPos
+- uid: TermRead.Reader.TermReaderState.CurrentHistoryPos*
+  name: CurrentHistoryPos
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_CurrentHistoryPos_
+  commentId: Overload:TermRead.Reader.TermReaderState.CurrentHistoryPos
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderState.CurrentHistoryPos
+  nameWithType: TermReaderState.CurrentHistoryPos
 - uid: TermRead.Reader.TermReaderState.CurrentText
   name: CurrentText
   href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_CurrentText
@@ -262,6 +275,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderState.CurrentTextPos
   nameWithType: TermReaderState.CurrentTextPos
+- uid: TermRead.Reader.TermReaderState.History
+  name: History
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_History
+  commentId: P:TermRead.Reader.TermReaderState.History
+  fullName: TermRead.Reader.TermReaderState.History
+  nameWithType: TermReaderState.History
+- uid: TermRead.Reader.TermReaderState.History*
+  name: History
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_History_
+  commentId: Overload:TermRead.Reader.TermReaderState.History
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderState.History
+  nameWithType: TermReaderState.History
 - uid: TermRead.Reader.TermReaderState.InputPromptLeft
   name: InputPromptLeft
   href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_InputPromptLeft
@@ -314,6 +340,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderState.PasswordMode
   nameWithType: TermReaderState.PasswordMode
+- uid: TermRead.Reader.TermReaderState.PressedKey
+  name: PressedKey
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_PressedKey
+  commentId: P:TermRead.Reader.TermReaderState.PressedKey
+  fullName: TermRead.Reader.TermReaderState.PressedKey
+  nameWithType: TermReaderState.PressedKey
+- uid: TermRead.Reader.TermReaderState.PressedKey*
+  name: PressedKey
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_PressedKey_
+  commentId: Overload:TermRead.Reader.TermReaderState.PressedKey
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderState.PressedKey
+  nameWithType: TermReaderState.PressedKey
 - uid: TermRead.Tools
   name: TermRead.Tools
   href: api/TermRead.Tools.html
