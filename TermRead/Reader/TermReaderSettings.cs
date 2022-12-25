@@ -31,6 +31,7 @@ namespace TermRead.Reader
     public static class TermReaderSettings
     {
         private static char passwordMaskChar = '*';
+        private static bool historyEnabled = true;
 
         /// <summary>
         /// Password mask character
@@ -39,6 +40,15 @@ namespace TermRead.Reader
         { 
             get => passwordMaskChar;
             set => passwordMaskChar = value; 
+        }
+
+        /// <summary>
+        /// Input history enabled
+        /// </summary>
+        public static bool HistoryEnabled
+        {
+            get => historyEnabled;
+            set => historyEnabled = value;
         }
     }
 }

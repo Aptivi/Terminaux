@@ -49,6 +49,10 @@ namespace TermRead.Bindings.BaseBindings
             if (state.PasswordMode)
                 return;
 
+            // If we're in the disabled history mode, bail.
+            if (!TermReaderSettings.HistoryEnabled)
+                return;
+
             // Wipe everything
             int length = state.CurrentText.Length;
             state.CurrentText.Clear();

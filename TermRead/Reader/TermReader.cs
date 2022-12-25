@@ -103,7 +103,7 @@ namespace TermRead.Reader
                 string input = readState.CurrentText.Length == 0 ?
                                defaultValue :
                                readState.CurrentText.ToString();
-                if (!password)
+                if (!password && TermReaderSettings.HistoryEnabled)
                 {
                     // We don't want passwords in the history
                     TermReaderState.history.Add(input);
