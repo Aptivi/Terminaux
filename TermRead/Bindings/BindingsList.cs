@@ -40,7 +40,8 @@ namespace TermRead.Bindings
             new Rubout(),
             new Return(),
             new PreviousHistory(),
-            new NextHistory()
+            new NextHistory(),
+            new Delete()
         };
 
         internal static List<BaseBinding> customBindings = new();

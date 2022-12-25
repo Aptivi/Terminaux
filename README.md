@@ -15,6 +15,7 @@ _Note: Some keys conflict with terminal emulator keybindings._
 | `BACKSPACE`                        | Remove one character from the left                   |
 | `UP ARROW`                         | Get the older input                                  |
 | `DOWN ARROW`                       | Get the newer input                                  |
+| `DELETE`                           | Remove one character in current position             |
 
 ## Installation
 
