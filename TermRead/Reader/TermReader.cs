@@ -89,6 +89,7 @@ namespace TermRead.Reader
                 {
                     // Get a key
                     struckKey = ConsoleWrapper.ReadKey(true);
+                    ConsoleWrapper.CursorVisible = false;
 
                     // Install necessary values
                     readState.currentCursorPosLeft = ConsoleWrapper.CursorLeft;
@@ -97,6 +98,7 @@ namespace TermRead.Reader
 
                     // Handle it
                     BindingsReader.Execute(readState);
+                    ConsoleWrapper.CursorVisible = true;
                 }
 
                 // Return the input after adding it to history
