@@ -24,43 +24,24 @@
  */
 
 using System;
-using System.Linq;
-using TermRead.ConsoleDemo.Fixtures.Cases;
+using TermRead.Reader;
 
-namespace TermRead.ConsoleDemo.Fixtures
+namespace TermRead.ConsoleDemo.Fixtures.Cases
 {
-    internal static class FixtureManager
+    internal class PromptLoopedManualWrite : IFixture
     {
-        internal static IFixture[] fixtures =
-        {
-            new Prompt(),
-            new PromptWithDefault(),
-            new PromptWithPlaceholder(),
-            new PromptPassword(),
-            new PromptPasswordHidden(),
-            new PromptPasswordWithPlaceholder(),
-            new PromptPasswordWithPlaceholderHidden(),
-            new PromptLooped(),
-            new PromptLoopedMargin(),
-            new PromptLoopedManualWrite(),
-            new PromptLoopedCompletion(),
-        };
+        public string FixtureID => "PromptLoopedManualWrite";
 
-        internal static IFixture GetFixtureFromName(string name)
+        public void RunFixture()
         {
-            if (DoesFixtureExist(name))
+            Console.WriteLine("Write \"exit\" to get out of here.");
+            string input = "";
+            while (input != "exit")
             {
-                var detectedFixtures = fixtures.Where((fixture) => fixture.FixtureID == name).ToArray();
-                return detectedFixtures[0];
+                Console.Write(">> ");
+                input = TermReader.Read();
+                Console.WriteLine("You said: " + input);
             }
-            else
-                throw new Exception("Fixture doesn't exist.");
-        }
-
-        internal static bool DoesFixtureExist(string name)
-        {
-            var detectedFixtures = fixtures.Where((fixture) => fixture.FixtureID == name);
-            return detectedFixtures.Any();
         }
     }
 }

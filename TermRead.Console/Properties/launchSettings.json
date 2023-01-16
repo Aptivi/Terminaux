@@ -38,6 +38,10 @@
     "TermRead - PromptLoopedCompletion": {
       "commandName": "Project",
       "commandLineArgs": "PromptLoopedCompletion"
+    },
+    "TermRead - PromptLoopedManualWrite": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedManualWrite"
     }
   }
 }
