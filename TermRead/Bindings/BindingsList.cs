@@ -45,7 +45,12 @@ namespace TermRead.Bindings
             new BackwardOneWord(),
             new ForwardOneWord(),
             new NextSuggestion(),
-            new PreviousSuggestion()
+            new PreviousSuggestion(),
+            new CutToStart(),
+            new CutToEnd(),
+            new CutBackwardOneWord(),
+            new CutForwardOneWord(),
+            new Yank()
         };
 
         internal static List<BaseBinding> customBindings = new();

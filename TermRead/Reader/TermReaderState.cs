@@ -44,12 +44,14 @@ namespace TermRead.Reader
         internal StringBuilder currentText = new();
         internal bool passwordMode;
         internal ConsoleKeyInfo pressedKey;
+        internal StringBuilder killBuffer = new();
 
         // Shared
         internal static List<string> history = new();
         internal static int currentHistoryPos;
         internal static int currentSuggestionsPos = -1;
 
+        // To instance variables
         /// <summary>
         /// Left position of the input prompt
         /// </summary>
@@ -86,6 +88,12 @@ namespace TermRead.Reader
         /// Currently pressed key
         /// </summary>
         public ConsoleKeyInfo PressedKey { get => pressedKey; }
+        /// <summary>
+        /// Text to be pasted
+        /// </summary>
+        public StringBuilder KillBuffer { get => killBuffer; }
+
+        // To static variables
         /// <summary>
         /// History entries
         /// </summary>

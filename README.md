@@ -20,6 +20,11 @@ _Note: Some keys conflict with terminal emulator keybindings._
 | `Alt`+`F`                          | One word forwards                                    |
 | `TAB`                              | Next auto-completion entry                           |
 | `SHIFT`+`TAB`                      | Previous auto-completion entry                       |
+| `CTRL`+`U`                         | Cut to the start of the line                         |
+| `CTRL`+`K`                         | Cut to the end of the line                           |
+| `CTRL`+`W`                         | Cut to the end of the previous word                  |
+| `ALT`+`D`                          | Cut to the end of the next word                      |
+| `CTRL`+`Y`                         | Yank the cut content                                 |
 
 ## Installation
 
