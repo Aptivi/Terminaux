@@ -52,6 +52,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Bindings.BaseBinding.DoAction
   nameWithType: BaseBinding.DoAction
+- uid: TermRead.Bindings.BaseBinding.IsExit
+  name: IsExit
+  href: api/TermRead.Bindings.BaseBinding.html#TermRead_Bindings_BaseBinding_IsExit
+  commentId: P:TermRead.Bindings.BaseBinding.IsExit
+  fullName: TermRead.Bindings.BaseBinding.IsExit
+  nameWithType: BaseBinding.IsExit
+- uid: TermRead.Bindings.BaseBinding.IsExit*
+  name: IsExit
+  href: api/TermRead.Bindings.BaseBinding.html#TermRead_Bindings_BaseBinding_IsExit_
+  commentId: Overload:TermRead.Bindings.BaseBinding.IsExit
+  isSpec: "True"
+  fullName: TermRead.Bindings.BaseBinding.IsExit
+  nameWithType: BaseBinding.IsExit
 - uid: TermRead.Bindings.CustomBindings
   name: CustomBindings
   href: api/TermRead.Bindings.CustomBindings.html
