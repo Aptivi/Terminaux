@@ -405,6 +405,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderState.InputPromptTop
   nameWithType: TermReaderState.InputPromptTop
+- uid: TermRead.Reader.TermReaderState.KillBuffer
+  name: KillBuffer
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_KillBuffer
+  commentId: P:TermRead.Reader.TermReaderState.KillBuffer
+  fullName: TermRead.Reader.TermReaderState.KillBuffer
+  nameWithType: TermReaderState.KillBuffer
+- uid: TermRead.Reader.TermReaderState.KillBuffer*
+  name: KillBuffer
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_KillBuffer_
+  commentId: Overload:TermRead.Reader.TermReaderState.KillBuffer
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderState.KillBuffer
+  nameWithType: TermReaderState.KillBuffer
 - uid: TermRead.Reader.TermReaderState.PasswordMode
   name: PasswordMode
   href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_PasswordMode
