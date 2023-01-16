@@ -34,8 +34,12 @@ namespace TermRead.Bindings.BaseBindings
         /// <inheritdoc/>
         public override ConsoleKeyInfo[] BoundKeys { get; } =
         {
-            new ConsoleKeyInfo('\r', ConsoleKey.Enter, false, false, false)
+            new ConsoleKeyInfo('\r', ConsoleKey.Enter, false, false, false),
+            new ConsoleKeyInfo('\u000A', ConsoleKey.J, false, false, true),
         };
+
+        /// <inheritdoc/>
+        public override bool IsExit => true;
 
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state) => 

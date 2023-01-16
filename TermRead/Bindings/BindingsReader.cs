@@ -23,6 +23,7 @@
  * 
  */
 
+using System;
 using System.Linq;
 using TermRead.Reader;
 
@@ -42,6 +43,18 @@ namespace TermRead.Bindings
             // If there are no bindings, select the "print character" action
             if (!chosenBindings.Any())
                 BindingsList.fallbackBinding.DoAction(state);
+        }
+
+        internal static bool IsTerminate(ConsoleKeyInfo cki)
+        {
+            // Get the chosen bindings
+            var chosenBindings = BindingsList.AllBindings.Where((bindingInfo) => bindingInfo.BindMatched(cki));
+
+            // Return exit value in one of the bindings
+            foreach (var chosenBinding in chosenBindings)
+                return chosenBinding.IsExit;
+
+            return false;
         }
     }
 }

@@ -41,6 +41,11 @@ namespace TermRead.Bindings
         public virtual ConsoleKeyInfo[] BoundKeys { get; }
 
         /// <summary>
+        /// Does this binding cause the input to exit?
+        /// </summary>
+        public virtual bool IsExit { get; }
+
+        /// <summary>
         /// Whether the binding matched
         /// </summary>
         /// <param name="input">Input key</param>

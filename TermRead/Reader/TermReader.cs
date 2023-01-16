@@ -88,7 +88,7 @@ namespace TermRead.Reader
                 readState.passwordMode = password;
 
                 // Get input
-                while (struckKey.Key != ConsoleKey.Enter)
+                while (!BindingsReader.IsTerminate(struckKey))
                 {
                     // Get a key
                     struckKey = ConsoleWrapperTools.ActionReadKey(true);
