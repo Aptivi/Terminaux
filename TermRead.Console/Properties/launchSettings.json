@@ -34,6 +34,10 @@
     "TermRead - PromptLoopedMargin": {
       "commandName": "Project",
       "commandLineArgs": "PromptLoopedMargin"
+    },
+    "TermRead - PromptLoopedCompletion": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCompletion"
     }
   }
 }

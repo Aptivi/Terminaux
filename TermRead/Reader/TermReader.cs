@@ -114,6 +114,10 @@ namespace TermRead.Reader
                     TermReaderState.history.Add(input);
                     TermReaderState.currentHistoryPos = TermReaderState.history.Count;
                 }
+
+                // Reset the auto complete position and suggestions
+                TermReaderState.currentSuggestionsPos = 0;
+                TermReaderSettings.Suggestions = ((_, _, _) => Array.Empty<string>());
                 return input;
             }
         }

@@ -48,6 +48,7 @@ namespace TermRead.Reader
         // Shared
         internal static List<string> history = new();
         internal static int currentHistoryPos;
+        internal static int currentSuggestionsPos = -1;
 
         /// <summary>
         /// Left position of the input prompt
@@ -93,6 +94,10 @@ namespace TermRead.Reader
         /// Current history number
         /// </summary>
         public int CurrentHistoryPos { get => currentHistoryPos; }
+        /// <summary>
+        /// Current suggestion number
+        /// </summary>
+        public int CurrentSuggestionsPos { get => currentSuggestionsPos; }
 
         internal TermReaderState() { }
     }

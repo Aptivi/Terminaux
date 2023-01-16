@@ -23,6 +23,8 @@
  * 
  */
 
+using System;
+
 namespace TermRead.Reader
 {
     /// <summary>
@@ -34,6 +36,8 @@ namespace TermRead.Reader
         private static bool historyEnabled = true;
         private static int leftMargin = 0;
         private static int rightMargin = 0;
+        internal static Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
+        internal static char[] suggestionsDelims = new char[] { ' ' };
 
         /// <summary>
         /// Password mask character
@@ -69,6 +73,22 @@ namespace TermRead.Reader
         {
             get => rightMargin;
             set => rightMargin = value;
+        }
+
+        /// <summary>
+        /// Suggestion entries
+        /// </summary>
+        public static Func<string, int, char[], string[]> Suggestions
+        {
+            set => suggestions = value ?? ((_, _, _) => Array.Empty<string>());
+        }
+
+        /// <summary>
+        /// Suggestion delimiters
+        /// </summary>
+        public static char[] SuggestionsDelimiters
+        {
+            set => suggestionsDelims = value ?? new char[] { ' ' };
         }
     }
 }

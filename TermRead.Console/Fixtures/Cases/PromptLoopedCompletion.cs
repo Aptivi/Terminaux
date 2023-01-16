@@ -23,35 +23,40 @@
  * 
  */
 
-using System.Collections.Generic;
-using System.Linq;
-using TermRead.Bindings.BaseBindings;
+using System;
+using TermRead.Reader;
 
-namespace TermRead.Bindings
+namespace TermRead.ConsoleDemo.Fixtures.Cases
 {
-    internal static class BindingsList
+    internal class PromptLoopedCompletion : IFixture
     {
-        internal static List<BaseBinding> baseBindings = new()
+        public string FixtureID => "PromptLoopedCompletion";
+
+        public void RunFixture()
         {
-            new GoRight(),
-            new GoLeft(),
-            new Home(),
-            new End(),
-            new Rubout(),
-            new Return(),
-            new PreviousHistory(),
-            new NextHistory(),
-            new Delete(),
-            new BackwardOneWord(),
-            new ForwardOneWord(),
-            new NextSuggestion(),
-            new PreviousSuggestion()
-        };
+            Console.WriteLine("Write \"exit\" to get out of here.");
+            string input = "";
+            while (input != "exit")
+            {
+                TermReaderSettings.Suggestions = GetSuggestions;
+                input = TermReader.Read(">> ");
+                Console.WriteLine("You said: " + input);
+            }
+        }
 
-        internal static List<BaseBinding> customBindings = new();
-
-        internal static List<BaseBinding> AllBindings { get => baseBindings.Concat(customBindings).ToList(); }
-
-        internal static BaseBinding fallbackBinding = new InsertSelf();
+        public string[] GetSuggestions(string text, int index, char[] delims)
+        {
+            string[] parts = text.Split(delims);
+            if (parts.Length == 0)
+                return Array.Empty<string>();
+            else
+            {
+                if (parts[0] == "dotnet")
+                    return new string[] { "build", "restore", "run" };
+                else if (parts[0] == "git")
+                    return new string[] { "fetch", "pull", "push" };
+            }
+            return Array.Empty<string>();
+        }
     }
 }
