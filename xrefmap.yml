@@ -243,6 +243,32 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderSettings.RightMargin
   nameWithType: TermReaderSettings.RightMargin
+- uid: TermRead.Reader.TermReaderSettings.Suggestions
+  name: Suggestions
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_Suggestions
+  commentId: P:TermRead.Reader.TermReaderSettings.Suggestions
+  fullName: TermRead.Reader.TermReaderSettings.Suggestions
+  nameWithType: TermReaderSettings.Suggestions
+- uid: TermRead.Reader.TermReaderSettings.Suggestions*
+  name: Suggestions
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_Suggestions_
+  commentId: Overload:TermRead.Reader.TermReaderSettings.Suggestions
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderSettings.Suggestions
+  nameWithType: TermReaderSettings.Suggestions
+- uid: TermRead.Reader.TermReaderSettings.SuggestionsDelimiters
+  name: SuggestionsDelimiters
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_SuggestionsDelimiters
+  commentId: P:TermRead.Reader.TermReaderSettings.SuggestionsDelimiters
+  fullName: TermRead.Reader.TermReaderSettings.SuggestionsDelimiters
+  nameWithType: TermReaderSettings.SuggestionsDelimiters
+- uid: TermRead.Reader.TermReaderSettings.SuggestionsDelimiters*
+  name: SuggestionsDelimiters
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_SuggestionsDelimiters_
+  commentId: Overload:TermRead.Reader.TermReaderSettings.SuggestionsDelimiters
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderSettings.SuggestionsDelimiters
+  nameWithType: TermReaderSettings.SuggestionsDelimiters
 - uid: TermRead.Reader.TermReaderState
   name: TermReaderState
   href: api/TermRead.Reader.TermReaderState.html
@@ -288,6 +314,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderState.CurrentHistoryPos
   nameWithType: TermReaderState.CurrentHistoryPos
+- uid: TermRead.Reader.TermReaderState.CurrentSuggestionsPos
+  name: CurrentSuggestionsPos
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_CurrentSuggestionsPos
+  commentId: P:TermRead.Reader.TermReaderState.CurrentSuggestionsPos
+  fullName: TermRead.Reader.TermReaderState.CurrentSuggestionsPos
+  nameWithType: TermReaderState.CurrentSuggestionsPos
+- uid: TermRead.Reader.TermReaderState.CurrentSuggestionsPos*
+  name: CurrentSuggestionsPos
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_CurrentSuggestionsPos_
+  commentId: Overload:TermRead.Reader.TermReaderState.CurrentSuggestionsPos
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderState.CurrentSuggestionsPos
+  nameWithType: TermReaderState.CurrentSuggestionsPos
 - uid: TermRead.Reader.TermReaderState.CurrentText
   name: CurrentText
   href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_CurrentText
