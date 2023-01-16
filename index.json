@@ -32,7 +32,7 @@
   "api/TermRead.Reader.TermReaderSettings.html": {
     "href": "api/TermRead.Reader.TermReaderSettings.html",
     "title": "Class TermReaderSettings | TermRead API - Aptivi Internals",
-    "keywords": "Class TermReaderSettings Settings for the reader Inheritance System.Object TermReaderSettings Namespace : TermRead.Reader Assembly : TermRead.dll Syntax public static class TermReaderSettings : object Properties HistoryEnabled Input history enabled Declaration public static bool HistoryEnabled { get; set; } Property Value Type Description System.Boolean PasswordMaskChar Password mask character Declaration public static char PasswordMaskChar { get; set; } Property Value Type Description System.Char"
+    "keywords": "Class TermReaderSettings Settings for the reader Inheritance System.Object TermReaderSettings Namespace : TermRead.Reader Assembly : TermRead.dll Syntax public static class TermReaderSettings : object Properties HistoryEnabled Input history enabled Declaration public static bool HistoryEnabled { get; set; } Property Value Type Description System.Boolean LeftMargin Left margin Declaration public static int LeftMargin { get; set; } Property Value Type Description System.Int32 PasswordMaskChar Password mask character Declaration public static char PasswordMaskChar { get; set; } Property Value Type Description System.Char RightMargin Right margin Declaration public static int RightMargin { get; set; } Property Value Type Description System.Int32"
   },
   "api/TermRead.Reader.TermReaderState.html": {
     "href": "api/TermRead.Reader.TermReaderState.html",

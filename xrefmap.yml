@@ -204,6 +204,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderSettings.HistoryEnabled
   nameWithType: TermReaderSettings.HistoryEnabled
+- uid: TermRead.Reader.TermReaderSettings.LeftMargin
+  name: LeftMargin
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_LeftMargin
+  commentId: P:TermRead.Reader.TermReaderSettings.LeftMargin
+  fullName: TermRead.Reader.TermReaderSettings.LeftMargin
+  nameWithType: TermReaderSettings.LeftMargin
+- uid: TermRead.Reader.TermReaderSettings.LeftMargin*
+  name: LeftMargin
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_LeftMargin_
+  commentId: Overload:TermRead.Reader.TermReaderSettings.LeftMargin
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderSettings.LeftMargin
+  nameWithType: TermReaderSettings.LeftMargin
 - uid: TermRead.Reader.TermReaderSettings.PasswordMaskChar
   name: PasswordMaskChar
   href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_PasswordMaskChar
@@ -217,6 +230,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderSettings.PasswordMaskChar
   nameWithType: TermReaderSettings.PasswordMaskChar
+- uid: TermRead.Reader.TermReaderSettings.RightMargin
+  name: RightMargin
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_RightMargin
+  commentId: P:TermRead.Reader.TermReaderSettings.RightMargin
+  fullName: TermRead.Reader.TermReaderSettings.RightMargin
+  nameWithType: TermReaderSettings.RightMargin
+- uid: TermRead.Reader.TermReaderSettings.RightMargin*
+  name: RightMargin
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_RightMargin_
+  commentId: Overload:TermRead.Reader.TermReaderSettings.RightMargin
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderSettings.RightMargin
+  nameWithType: TermReaderSettings.RightMargin
 - uid: TermRead.Reader.TermReaderState
   name: TermReaderState
   href: api/TermRead.Reader.TermReaderState.html
