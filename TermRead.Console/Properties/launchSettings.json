@@ -30,6 +30,10 @@
     "TermRead - PromptPasswordWithPlaceholderHidden": {
       "commandName": "Project",
       "commandLineArgs": "PromptPasswordWithPlaceholderHidden"
+    },
+    "TermRead - PromptLoopedMargin": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedMargin"
     }
   }
 }

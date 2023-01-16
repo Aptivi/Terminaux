@@ -24,6 +24,7 @@
  */
 
 using System;
+using TermRead.Reader;
 
 namespace TermRead.Tools
 {
@@ -318,22 +319,43 @@ namespace TermRead.Tools
         private static ConsoleKeyInfo ReadKey(bool intercept = false) => 
             Console.ReadKey(intercept);
 
-        private static void Write(char value) => 
+        private static void Write(char value)
+        {
             Console.Write(value);
+            if (CursorLeft >= WindowWidth - TermReaderSettings.RightMargin)
+                if (CursorTop != BufferHeight)
+                    SetCursorPosition(TermReaderSettings.LeftMargin, CursorTop + 1);
+                else
+                    WriteLine();
+        }
 
-        private static void Write(string text) => 
-            Console.Write(text);
+        private static void Write(string text)
+        {
+            foreach (char textc in text)
+                Write(textc);
+        }
 
-        private static void Write(string text, params object[] args) => 
-            Console.Write(text, args);
+        private static void Write(string text, params object[] args)
+        {
+            foreach (char textc in string.Format(text, args))
+                Write(textc);
+        }
 
         private static void WriteLine() => 
             Console.WriteLine();
 
-        private static void WriteLine(string text) => 
-            Console.WriteLine(text);
+        private static void WriteLine(string text)
+        {
+            foreach (char textc in text)
+                Write(textc);
+            WriteLine();
+        }
 
-        private static void WriteLine(string text, params object[] args) => 
-            Console.WriteLine(text, args);
+        private static void WriteLine(string text, params object[] args)
+        {
+            foreach (char textc in string.Format(text, args))
+                Write(textc);
+            WriteLine();
+        }
     }
 }

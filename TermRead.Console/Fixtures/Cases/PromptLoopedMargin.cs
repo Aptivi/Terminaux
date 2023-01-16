@@ -23,52 +23,26 @@
  * 
  */
 
-namespace TermRead.Reader
+using System;
+using TermRead.Reader;
+
+namespace TermRead.ConsoleDemo.Fixtures.Cases
 {
-    /// <summary>
-    /// Settings for the reader
-    /// </summary>
-    public static class TermReaderSettings
+    internal class PromptLoopedMargin : IFixture
     {
-        private static char passwordMaskChar = '*';
-        private static bool historyEnabled = true;
-        private static int leftMargin = 0;
-        private static int rightMargin = 0;
+        public string FixtureID => "PromptLoopedMargin";
 
-        /// <summary>
-        /// Password mask character
-        /// </summary>
-        public static char PasswordMaskChar 
-        { 
-            get => passwordMaskChar;
-            set => passwordMaskChar = value; 
-        }
-
-        /// <summary>
-        /// Input history enabled
-        /// </summary>
-        public static bool HistoryEnabled
+        public void RunFixture()
         {
-            get => historyEnabled;
-            set => historyEnabled = value;
-        }
-
-        /// <summary>
-        /// Left margin
-        /// </summary>
-        public static int LeftMargin
-        {
-            get => leftMargin;
-            set => leftMargin = value;
-        }
-
-        /// <summary>
-        /// Right margin
-        /// </summary>
-        public static int RightMargin
-        {
-            get => rightMargin;
-            set => rightMargin = value;
+            Console.WriteLine("Write \"exit\" to get out of here.");
+            TermReaderSettings.LeftMargin = 4;
+            TermReaderSettings.RightMargin = 4;
+            string input = "";
+            while (input != "exit")
+            {
+                input = TermReader.Read(">> ");
+                Console.WriteLine("You said: " + input);
+            }
         }
     }
 }

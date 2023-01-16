@@ -49,10 +49,10 @@ namespace TermRead.Tools
                     continue;
 
                 state.currentCursorPosLeft++;
-                if (state.CurrentCursorPosLeft >= ConsoleWrapperTools.ActionWindowWidth())
+                if (state.CurrentCursorPosLeft >= ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin)
                 {
                     // Reached to the end! Wrap down!
-                    state.currentCursorPosLeft = 0;
+                    state.currentCursorPosLeft = TermReaderSettings.LeftMargin;
                     if (state.currentCursorPosTop < ConsoleWrapperTools.ActionBufferHeight())
                         state.currentCursorPosTop++;
                     else if (isAppend)
@@ -84,10 +84,10 @@ namespace TermRead.Tools
                     continue;
 
                 state.currentCursorPosLeft--;
-                if (state.CurrentCursorPosLeft < 0)
+                if (state.CurrentCursorPosLeft < TermReaderSettings.LeftMargin)
                 {
                     // Reached to the beginning! Wrap up!
-                    state.currentCursorPosLeft = ConsoleWrapperTools.ActionWindowWidth() - 1;
+                    state.currentCursorPosLeft = ConsoleWrapperTools.ActionWindowWidth() - 1 - TermReaderSettings.RightMargin;
                     if (state.currentCursorPosTop > 0)
                         state.currentCursorPosTop--;
                 }

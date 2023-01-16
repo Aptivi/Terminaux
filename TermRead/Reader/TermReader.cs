@@ -75,6 +75,9 @@ namespace TermRead.Reader
                 var struckKey = new ConsoleKeyInfo();
                 var readState = new TermReaderState();
 
+                // Honor the margins
+                ConsoleWrapperTools.ActionSetCursorPosition(TermReaderSettings.LeftMargin, ConsoleWrapperTools.ActionCursorTop());
+
                 // Print the input
                 ConsoleWrapperTools.ActionWriteString(inputPrompt);
 
