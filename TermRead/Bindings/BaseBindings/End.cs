@@ -48,7 +48,7 @@ namespace TermRead.Bindings.BaseBindings
             // Just set the positions to the maximum!
             int times = state.CurrentText.Length - state.currentTextPos;
             PositioningTools.GoForward(times, ref state);
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

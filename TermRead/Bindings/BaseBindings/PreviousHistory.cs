@@ -56,18 +56,18 @@ namespace TermRead.Bindings.BaseBindings
             // Wipe everything
             int length = state.CurrentText.Length;
             state.CurrentText.Clear();
-            ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-            ConsoleWrapper.Write(" ".Repeat(length));
+            ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+            ConsoleWrapperTools.ActionWriteString(" ".Repeat(length));
             PositioningTools.SeekTo(0, ref state);
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
 
             // Now, write the history entry
             TermReaderState.currentHistoryPos--;
             string history = state.History[TermReaderState.currentHistoryPos];
-            ConsoleWrapper.Write(history);
+            ConsoleWrapperTools.ActionWriteString(history);
             state.CurrentText.Append(history);
             PositioningTools.GoForward(history.Length, true, ref state);
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

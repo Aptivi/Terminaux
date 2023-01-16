@@ -59,7 +59,7 @@ namespace TermRead.Bindings.BaseBindings
                 }
             }
             PositioningTools.GoBack(steps, ref state);
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

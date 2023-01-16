@@ -76,11 +76,11 @@ namespace TermRead.Reader
                 var readState = new TermReaderState();
 
                 // Print the input
-                ConsoleWrapper.Write(inputPrompt);
+                ConsoleWrapperTools.ActionWriteString(inputPrompt);
 
                 // Save current state of input
-                readState.inputPromptLeft = ConsoleWrapper.CursorLeft;
-                readState.inputPromptTop = ConsoleWrapper.CursorTop;
+                readState.inputPromptLeft = ConsoleWrapperTools.ActionCursorLeft();
+                readState.inputPromptTop = ConsoleWrapperTools.ActionCursorTop();
                 readState.inputPromptText = inputPrompt;
                 readState.passwordMode = password;
 
@@ -88,17 +88,17 @@ namespace TermRead.Reader
                 while (struckKey.Key != ConsoleKey.Enter)
                 {
                     // Get a key
-                    struckKey = ConsoleWrapper.ReadKey(true);
-                    ConsoleWrapper.CursorVisible = false;
+                    struckKey = ConsoleWrapperTools.ActionReadKey(true);
+                    ConsoleWrapperTools.ActionCursorVisible(false);
 
                     // Install necessary values
-                    readState.currentCursorPosLeft = ConsoleWrapper.CursorLeft;
-                    readState.currentCursorPosTop = ConsoleWrapper.CursorTop;
+                    readState.currentCursorPosLeft = ConsoleWrapperTools.ActionCursorLeft();
+                    readState.currentCursorPosTop = ConsoleWrapperTools.ActionCursorTop();
                     readState.pressedKey = struckKey;
 
                     // Handle it
                     BindingsReader.Execute(readState);
-                    ConsoleWrapper.CursorVisible = true;
+                    ConsoleWrapperTools.ActionCursorVisible(true);
                 }
 
                 // Return the input after adding it to history

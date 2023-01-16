@@ -47,7 +47,7 @@ namespace TermRead.Bindings.BaseBindings
 
             // Just set the position one character further than the input start position!
             PositioningTools.GoForward(ref state);
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

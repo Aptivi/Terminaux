@@ -50,9 +50,9 @@ namespace TermRead.Bindings.BaseBindings
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? TermReaderSettings.PasswordMaskChar.ToString().Repeat(state.currentText.ToString().Length) : state.currentText.ToString();
-            ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-            ConsoleWrapper.Write(renderedText + " ");
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+            ConsoleWrapperTools.ActionWriteString(renderedText + " ");
+            ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

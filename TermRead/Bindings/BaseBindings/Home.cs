@@ -47,7 +47,7 @@ namespace TermRead.Bindings.BaseBindings
 
             // Just set the positions to zero!
             PositioningTools.GoBack(state.currentTextPos, ref state);
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

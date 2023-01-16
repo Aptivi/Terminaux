@@ -39,6 +39,6 @@ namespace TermRead.Bindings.BaseBindings
 
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state) => 
-            ConsoleWrapper.WriteLine();
+            ConsoleWrapperTools.ActionWriteLine();
     }
 }
