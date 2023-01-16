@@ -25,6 +25,11 @@ _Note: Some keys conflict with terminal emulator keybindings._
 | `CTRL`+`W`                         | Cut to the end of the previous word                  |
 | `ALT`+`D`                          | Cut to the end of the next word                      |
 | `CTRL`+`Y`                         | Yank the cut content                                 |
+| `CTRL`+`Y`                         | Yank the cut content                                 |
+| `Alt`+`L`                          | Make word lowercase                                  |
+| `Alt`+`U`                          | Make word uppercase                                  |
+| `Alt`+`C`                          | Make char uppercase and move to the end of word      |
+| `Alt`+`V`                          | Make char lowercase and move to the end of word      |
 
 ## Installation
 

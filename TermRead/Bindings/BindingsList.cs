@@ -50,7 +50,11 @@ namespace TermRead.Bindings
             new CutToEnd(),
             new CutBackwardOneWord(),
             new CutForwardOneWord(),
-            new Yank()
+            new Yank(),
+            new UppercaseOneWord(),
+            new LowercaseOneWord(),
+            new UpAndForwardOneWord(),
+            new LoAndForwardOneWord()
         };
 
         internal static List<BaseBinding> customBindings = new();
