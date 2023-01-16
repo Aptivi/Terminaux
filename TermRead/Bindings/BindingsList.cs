@@ -41,7 +41,9 @@ namespace TermRead.Bindings
             new Return(),
             new PreviousHistory(),
             new NextHistory(),
-            new Delete()
+            new Delete(),
+            new BackwardOneWord(),
+            new ForwardOneWord()
         };
 
         internal static List<BaseBinding> customBindings = new();

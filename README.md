@@ -16,6 +16,8 @@ _Note: Some keys conflict with terminal emulator keybindings._
 | `UP ARROW`                         | Get the older input                                  |
 | `DOWN ARROW`                       | Get the newer input                                  |
 | `DELETE`                           | Remove one character in current position             |
+| `Alt` + `B`                        | One word backwards                                   |
+| `Alt` + `F`                        | One word forwards                                    |
 
 ## Installation
 
