@@ -113,11 +113,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Tools.ConsoleWrapper.yml",
+      "source_relative_path": "api/TermRead.Tools.ConsoleWrapperTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Tools.ConsoleWrapper.html",
-          "hash": "bxkddQM2/4W4w4JQybyEoUr0LAEDMrzwrHqvonX8yds="
+          "relative_path": "api/TermRead.Tools.ConsoleWrapperTools.html",
+          "hash": "7wbT8LV/jgwvH7vifzaZbcovO0k6ckouv8iSEWCr8/0="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/TermRead.Tools.html",
-          "hash": "kc6e8+ZI3pwIN4Q4c2A4dTNUHuUi7E1c+FDz/QJ6jSs="
+          "hash": "GUvsLG28Qb5l8iGf73tAf+pWFy35VVbx0FOSiDqxQDo="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "/DW3axUGGLOKDOBwJlOBfNNWjiRomqgkX2PtrCjjEHE="
+          "hash": "AfPoG1dsTDRTEPDLeNXiyOIwMN5Yr4R3xeu3hIilrYk="
         }
       },
       "is_incremental": false,
