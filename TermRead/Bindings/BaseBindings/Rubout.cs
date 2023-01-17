@@ -35,7 +35,8 @@ namespace TermRead.Bindings.BaseBindings
         /// <inheritdoc/>
         public override ConsoleKeyInfo[] BoundKeys { get; } = 
         { 
-            new ConsoleKeyInfo('\b', ConsoleKey.Backspace, false, false, false)
+            new ConsoleKeyInfo('\b', ConsoleKey.Backspace, false, false, false),
+            new ConsoleKeyInfo('\u007f', ConsoleKey.Backspace, false, false, false)
         };
 
         /// <inheritdoc/>
