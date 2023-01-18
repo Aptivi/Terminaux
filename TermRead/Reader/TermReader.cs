@@ -85,6 +85,7 @@ namespace TermRead.Reader
                 readState.passwordMode = password;
 
                 // Get input
+                (int, int) cachedPos = (ConsoleWrapperTools.ActionCursorLeft(), ConsoleWrapperTools.ActionCursorTop());
                 while (!BindingsReader.IsTerminate(struckKey))
                 {
                     // Get a key
@@ -92,12 +93,15 @@ namespace TermRead.Reader
                     ConsoleWrapperTools.ActionCursorVisible(false);
 
                     // Install necessary values
-                    readState.currentCursorPosLeft = ConsoleWrapperTools.ActionCursorLeft();
-                    readState.currentCursorPosTop = ConsoleWrapperTools.ActionCursorTop();
+                    readState.currentCursorPosLeft = cachedPos.Item1;
+                    readState.currentCursorPosTop = cachedPos.Item2;
                     readState.pressedKey = struckKey;
 
                     // Handle it
                     BindingsReader.Execute(readState);
+
+                    // Cursor is visible, but fix cursor on Linux
+                    cachedPos = (readState.currentCursorPosLeft, readState.currentCursorPosTop);
                     ConsoleWrapperTools.ActionCursorVisible(true);
                 }
 
