@@ -25,7 +25,6 @@
 
 using System;
 using TermRead.Reader;
-using TermRead.Tools;
 
 namespace TermRead.Bindings.BaseBindings
 {
@@ -42,7 +41,6 @@ namespace TermRead.Bindings.BaseBindings
         public override bool IsExit => true;
 
         /// <inheritdoc/>
-        public override void DoAction(TermReaderState state) => 
-            ConsoleWrapperTools.ActionWriteLine();
+        public override void DoAction(TermReaderState state) { }
     }
 }

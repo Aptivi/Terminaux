@@ -105,6 +105,11 @@ namespace TermRead.Reader
                     ConsoleWrapperTools.ActionCursorVisible(true);
                 }
 
+                // Seek to the end of the text and write a new line
+                PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
+                ConsoleWrapperTools.ActionSetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
+                ConsoleWrapperTools.ActionWriteLine();
+
                 // Return the input after adding it to history
                 string input = readState.CurrentText.Length == 0 ?
                                defaultValue :
