@@ -55,14 +55,18 @@ namespace TermRead.Tools
                     state.currentCursorPosLeft = TermReaderSettings.LeftMargin;
                     if (state.currentCursorPosTop < ConsoleWrapperTools.ActionBufferHeight())
                         state.currentCursorPosTop++;
-                    else if (isAppend)
-                    {
-                        // We can't increase the top position since we're at the end of buffer, so we need to set the
-                        // input prompt top position to be minus one. If we can't do that again because it went before the
-                        // first column in the buffer, there's nothing we can do about this.
-                        if (state.InputPromptTop > 0)
-                            state.inputPromptTop--;
-                    }
+                }
+
+                // Check to see if we're at the end of the buffer in append mode
+                if (state.currentCursorPosTop >= ConsoleWrapperTools.ActionBufferHeight() && isAppend)
+                {
+                    // We can't increase the top position since we're at the end of buffer, so we need to set the
+                    // input prompt top position to be minus one. If we can't do that again because it went before the
+                    // first column in the buffer, there's nothing we can do about this.
+                    if (state.InputPromptTop > 0)
+                        state.inputPromptTop -= state.currentCursorPosTop - ConsoleWrapperTools.ActionBufferHeight() + 1;
+                    ConsoleWrapperTools.ActionWriteLine();
+                    state.currentCursorPosTop--;
                 }
             }
         }
