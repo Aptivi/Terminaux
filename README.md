@@ -1,92 +1,67 @@
+
+<div align = center>
+
+<br>
+<br>
+    
+<img
+  src = 'https://cdn.jsdelivr.net/gh/Aptivi/TermRead@main/TermRead/OfficialAppIcon-TermRead-512.png'
+  width = 256
+  align = center
+/>
+
+<br>
+
 # TermRead
+    
+*A next-generation console reader that allows you to flexibly write your input to the console without any limitations.*
 
-TermRead is a next-generation console reader that allows you to flexibly write your input to the console without any limitations.
+<br>
+<br>
 
-## Shortcut Guide
+[![Badge Main]][Main]   
+[![Badge Main Linux]][Main Linux]
 
-_Note: Some keys conflict with terminal emulator keybindings._
+[![Badge Latest]][Latest]   
+[![Badge NuGet]][NuGet]
 
-| Keybinding                         | Action                                               |
-|:-----------------------------------|:-----------------------------------------------------|
-| `Ctrl`+`A` / `HOME`                | Beginning of line                                    |
-| `Ctrl`+`E` / `END`                 | End of line                                          |
-| `Ctrl`+`B` / `←`                   | Backward one character                               |
-| `Ctrl`+`F` / `→`                   | Forward one character                                |
-| `BACKSPACE`                        | Remove one character from the left                   |
-| `UP ARROW`                         | Get the older input                                  |
-| `DOWN ARROW`                       | Get the newer input                                  |
-| `DELETE`                           | Remove one character in current position             |
-| `Alt`+`B`                          | One word backwards                                   |
-| `Alt`+`F`                          | One word forwards                                    |
-| `TAB`                              | Next auto-completion entry                           |
-| `SHIFT`+`TAB`                      | Previous auto-completion entry                       |
-| `CTRL`+`U`                         | Cut to the start of the line                         |
-| `CTRL`+`K`                         | Cut to the end of the line                           |
-| `CTRL`+`W`                         | Cut to the end of the previous word                  |
-| `ALT`+`D`                          | Cut to the end of the next word                      |
-| `CTRL`+`Y`                         | Yank the cut content                                 |
-| `CTRL`+`Y`                         | Yank the cut content                                 |
-| `Alt`+`L`                          | Make word lowercase                                  |
-| `Alt`+`U`                          | Make word uppercase                                  |
-| `Alt`+`C`                          | Make char uppercase and move to the end of word      |
-| `Alt`+`V`                          | Make char lowercase and move to the end of word      |
+![Badge Size]   
+[![Badge Downloads]][Releases]
 
-## Installation
+[![Button Manual]][Manual]   
+[![Button Libraries]][Libraries]
 
-Available on [NuGet](https://www.nuget.org/packages/TermRead/)
+</div>
+    
+<br>
 
-Visual Studio:
+</div>
 
-```powershell
-PM> Install-Package TermRead
-```
 
-.NET:
+<!----------------------------------------------------------------------------->
 
-```bash
-dotnet add package TermRead
-```
+[Releases]: https://github.com/Aptivi/TermRead/releases
+[Latest]: https://github.com/Aptivi/TermRead/releases/latest
+[NuGet]: https://www.nuget.org/packages/TermRead/
 
-## Usage
+[Main]: https://github.com/Aptivi/TermRead/actions/workflows/build-win.yml
+[Main Linux]: https://github.com/Aptivi/TermRead/actions/workflows/build-linux.yml
 
-This section shows you how to use this library to read the lines and manage history. Just add this to the top of the source file you want to use TermRead on:
+[Libraries]: https://aptivi.gitbook.io/termread-manual/project-dependencies
+[Manual]: https://aptivi.gitbook.io/termread-manual/
 
-```csharp
-using TermRead;
-```
+<!----------------------------------[ Badges ]--------------------------------->
 
-### Input
+[Badge Downloads]: https://img.shields.io/github/downloads/Aptivi/TermRead/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
+[Badge Latest]: https://img.shields.io/github/v/release/Aptivi/TermRead?color=212121&include_prereleases&label=github&style=for-the-badge&logoColor=white&logo=AzureArtifacts&labelColor=303030
+[Badge NuGet]: https://img.shields.io/nuget/vpre/TermRead?color=012f52&style=for-the-badge&logoColor=white&logo=NuGet&labelColor=004880
+[Badge Size]: https://img.shields.io/github/repo-size/Aptivi/TermRead?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
 
-_Note: The `(prompt>)` is optional_
+[Badge Main]: https://github.com/Aptivi/TermRead/actions/workflows/build-win.yml/badge.svg
+[Badge Main Linux]: https://github.com/Aptivi/TermRead/actions/workflows/build-linux.yml/badge.svg
 
-#### Read input
 
-```csharp
-string input = TermReader.Read("(prompt)> ");
-```
+<!---------------------------------[ Buttons ]--------------------------------->
 
-## License
-
-```
-MIT License
-
-Copyright (c) 2022-2023 Aptivi
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
+[Button Libraries]: https://img.shields.io/badge/Libraries-EA8220?style=for-the-badge&logoColor=white&logo=AzureArtifacts
+[Button Manual]: https://img.shields.io/badge/Docs-blueviolet?style=for-the-badge&logoColor=white&logo=GitBook
