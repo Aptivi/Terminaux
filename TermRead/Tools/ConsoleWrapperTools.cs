@@ -43,6 +43,8 @@ namespace TermRead.Tools
         internal static Action<bool> actionCursorVisible = (val) => CursorVisible = val;
         internal static Func<bool> actionKeyAvailable = () => KeyAvailable;
         internal static Action<int, int> actionSetCursorPosition = SetCursorPosition;
+        internal static Action<int> actionSetCursorLeft = SetCursorLeft;
+        internal static Action<int> actionSetCursorTop = SetCursorTop;
         internal static Action actionBeep = Beep;
         internal static Func<bool, ConsoleKeyInfo> actionReadKey = ReadKey;
         internal static Action<char> actionWrite = Write;
@@ -125,6 +127,24 @@ namespace TermRead.Tools
         {
             get => actionSetCursorPosition;
             set => actionSetCursorPosition = value ?? (SetCursorPosition);
+        }
+        /// <summary>
+        /// Sets the cursor left position<br></br><br></br>
+        /// - First integer is the X position from 0
+        /// </summary>
+        public static Action<int> ActionSetCursorLeft
+        {
+            get => actionSetCursorLeft;
+            set => actionSetCursorLeft = value ?? (SetCursorLeft);
+        }
+        /// <summary>
+        /// Sets the cursor top position<br></br><br></br>
+        /// - First integer is the Y position from 0
+        /// </summary>
+        public static Action<int> ActionSetCursorTop
+        {
+            get => actionSetCursorTop;
+            set => actionSetCursorTop = value ?? (SetCursorTop);
         }
         /// <summary>
         /// Beeps the console
@@ -311,6 +331,18 @@ namespace TermRead.Tools
         {
             if (!IsDumb)
                 Console.SetCursorPosition(left, top);
+        }
+
+        private static void SetCursorLeft(int left)
+        {
+            if (!IsDumb)
+                Console.CursorLeft = left;
+        }
+
+        private static void SetCursorTop(int top)
+        {
+            if (!IsDumb)
+                Console.CursorTop = top;
         }
 
         private static void Beep() => 
