@@ -166,12 +166,12 @@ references:
   commentId: M:TermRead.Reader.TermReader.Read(System.String)
   fullName: TermRead.Reader.TermReader.Read(System.String)
   nameWithType: TermReader.Read(String)
-- uid: TermRead.Reader.TermReader.Read(System.String,System.String,System.Boolean)
-  name: Read(String, String, Boolean)
-  href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_Read_System_String_System_String_System_Boolean_
-  commentId: M:TermRead.Reader.TermReader.Read(System.String,System.String,System.Boolean)
-  fullName: TermRead.Reader.TermReader.Read(System.String, System.String, System.Boolean)
-  nameWithType: TermReader.Read(String, String, Boolean)
+- uid: TermRead.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean)
+  name: Read(String, String, Boolean, Boolean)
+  href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_Read_System_String_System_String_System_Boolean_System_Boolean_
+  commentId: M:TermRead.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean)
+  fullName: TermRead.Reader.TermReader.Read(System.String, System.String, System.Boolean, System.Boolean)
+  nameWithType: TermReader.Read(String, String, Boolean, Boolean)
 - uid: TermRead.Reader.TermReader.Read*
   name: Read
   href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_Read_
@@ -431,6 +431,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderState.KillBuffer
   nameWithType: TermReaderState.KillBuffer
+- uid: TermRead.Reader.TermReaderState.OneLineWrap
+  name: OneLineWrap
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_OneLineWrap
+  commentId: P:TermRead.Reader.TermReaderState.OneLineWrap
+  fullName: TermRead.Reader.TermReaderState.OneLineWrap
+  nameWithType: TermReaderState.OneLineWrap
+- uid: TermRead.Reader.TermReaderState.OneLineWrap*
+  name: OneLineWrap
+  href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_OneLineWrap_
+  commentId: Overload:TermRead.Reader.TermReaderState.OneLineWrap
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderState.OneLineWrap
+  nameWithType: TermReaderState.OneLineWrap
 - uid: TermRead.Reader.TermReaderState.PasswordMode
   name: PasswordMode
   href: api/TermRead.Reader.TermReaderState.html#TermRead_Reader_TermReaderState_PasswordMode
