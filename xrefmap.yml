@@ -586,6 +586,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Tools.ConsoleWrapperTools.ActionReadKey
   nameWithType: ConsoleWrapperTools.ActionReadKey
+- uid: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorLeft
+  name: ActionSetCursorLeft
+  href: api/TermRead.Tools.ConsoleWrapperTools.html#TermRead_Tools_ConsoleWrapperTools_ActionSetCursorLeft
+  commentId: P:TermRead.Tools.ConsoleWrapperTools.ActionSetCursorLeft
+  fullName: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorLeft
+  nameWithType: ConsoleWrapperTools.ActionSetCursorLeft
+- uid: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorLeft*
+  name: ActionSetCursorLeft
+  href: api/TermRead.Tools.ConsoleWrapperTools.html#TermRead_Tools_ConsoleWrapperTools_ActionSetCursorLeft_
+  commentId: Overload:TermRead.Tools.ConsoleWrapperTools.ActionSetCursorLeft
+  isSpec: "True"
+  fullName: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorLeft
+  nameWithType: ConsoleWrapperTools.ActionSetCursorLeft
 - uid: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorPosition
   name: ActionSetCursorPosition
   href: api/TermRead.Tools.ConsoleWrapperTools.html#TermRead_Tools_ConsoleWrapperTools_ActionSetCursorPosition
@@ -599,6 +612,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorPosition
   nameWithType: ConsoleWrapperTools.ActionSetCursorPosition
+- uid: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorTop
+  name: ActionSetCursorTop
+  href: api/TermRead.Tools.ConsoleWrapperTools.html#TermRead_Tools_ConsoleWrapperTools_ActionSetCursorTop
+  commentId: P:TermRead.Tools.ConsoleWrapperTools.ActionSetCursorTop
+  fullName: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorTop
+  nameWithType: ConsoleWrapperTools.ActionSetCursorTop
+- uid: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorTop*
+  name: ActionSetCursorTop
+  href: api/TermRead.Tools.ConsoleWrapperTools.html#TermRead_Tools_ConsoleWrapperTools_ActionSetCursorTop_
+  commentId: Overload:TermRead.Tools.ConsoleWrapperTools.ActionSetCursorTop
+  isSpec: "True"
+  fullName: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorTop
+  nameWithType: ConsoleWrapperTools.ActionSetCursorTop
 - uid: TermRead.Tools.ConsoleWrapperTools.ActionWindowHeight
   name: ActionWindowHeight
   href: api/TermRead.Tools.ConsoleWrapperTools.html#TermRead_Tools_ConsoleWrapperTools_ActionWindowHeight
