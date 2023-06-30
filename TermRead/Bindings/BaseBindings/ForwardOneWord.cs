@@ -58,7 +58,17 @@ namespace TermRead.Bindings.BaseBindings
                         break;
                 }
             }
-            PositioningTools.GoForward(steps, ref state);
+
+            // Deterministically change position
+            if (state.OneLineWrap)
+            {
+                string renderedText = state.CurrentText.ToString();
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
+                string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                PositioningTools.GoForwardOneLineWrapAware(steps, ref state, incompleteSentences);
+            }
+            else
+                PositioningTools.GoForward(steps, ref state);
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }

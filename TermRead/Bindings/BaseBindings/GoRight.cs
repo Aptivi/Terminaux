@@ -46,7 +46,15 @@ namespace TermRead.Bindings.BaseBindings
                 return;
 
             // Just set the position one character further than the input start position!
-            PositioningTools.GoForward(ref state);
+            if (state.OneLineWrap)
+            {
+                string renderedText = state.CurrentText.ToString();
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
+                string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                PositioningTools.GoForwardOneLineWrapAware(ref state, incompleteSentences);
+            }
+            else
+                PositioningTools.GoForward(ref state);
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }

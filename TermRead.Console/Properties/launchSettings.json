@@ -42,6 +42,14 @@
     "TermRead - PromptLoopedManualWrite": {
       "commandName": "Project",
       "commandLineArgs": "PromptLoopedManualWrite"
+    },
+    "TermRead - PromptWithOneLineWrap": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptWithOneLineWrap"
+    },
+    "TermRead - PromptLoopedCompletionOneLineWrap": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCompletionOneLineWrap"
     }
   }
 }

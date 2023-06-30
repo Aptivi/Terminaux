@@ -61,9 +61,23 @@ namespace TermRead.Bindings.BaseBindings
                 }
             }
             string renderedText = state.PasswordMode ? TermReaderSettings.PasswordMaskChar.ToString().Repeat(state.currentText.ToString().Length) : state.currentText.ToString();
-            ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-            ConsoleWrapperTools.ActionWriteString(renderedText);
-            PositioningTools.GoForward(steps, ref state);
+
+            // In the case of one line wrap, get the list of sentences
+            if (state.OneLineWrap)
+            {
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
+                string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
+                ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength));
+                PositioningTools.GoForwardOneLineWrapAware(steps, ref state, incompleteSentences);
+            }
+            else
+            {
+                ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrapperTools.ActionWriteString(renderedText);
+                PositioningTools.GoForward(steps, ref state);
+            }
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }

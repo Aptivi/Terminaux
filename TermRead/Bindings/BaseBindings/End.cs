@@ -47,7 +47,15 @@ namespace TermRead.Bindings.BaseBindings
 
             // Just set the positions to the maximum!
             int times = state.CurrentText.Length - state.currentTextPos;
-            PositioningTools.GoForward(times, ref state);
+            if (state.OneLineWrap)
+            {
+                string renderedText = state.CurrentText.ToString();
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
+                string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                PositioningTools.GoForwardOneLineWrapAware(times, ref state, incompleteSentences);
+            }
+            else
+                PositioningTools.GoForward(times, ref state);
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }

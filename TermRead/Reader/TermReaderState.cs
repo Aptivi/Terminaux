@@ -45,6 +45,7 @@ namespace TermRead.Reader
         internal bool passwordMode;
         internal ConsoleKeyInfo pressedKey;
         internal StringBuilder killBuffer = new();
+        internal bool oneLineWrap;
 
         // Shared
         internal static List<string> history = new();
@@ -106,6 +107,10 @@ namespace TermRead.Reader
         /// Current suggestion number
         /// </summary>
         public int CurrentSuggestionsPos { get => currentSuggestionsPos; }
+        /// <summary>
+        /// Whether one line wrapping is enabled
+        /// </summary>
+        public bool OneLineWrap { get => oneLineWrap; }
 
         internal TermReaderState() { }
     }

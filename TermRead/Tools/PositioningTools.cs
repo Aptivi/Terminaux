@@ -23,6 +23,8 @@
  * 
  */
 
+using System;
+using TermRead.Bindings;
 using TermRead.Reader;
 
 namespace TermRead.Tools
@@ -98,10 +100,82 @@ namespace TermRead.Tools
             }
         }
 
-        internal static void SeekTo(int steps, ref TermReaderState state)
+        internal static void SeekTo(int steps, ref TermReaderState state) =>
+            SeekTo(state.currentTextPos, steps, ref state);
+
+        internal static void SeekTo(int fromPos, int steps, ref TermReaderState state)
         {
-            GoBack(state.currentTextPos, ref state);
+            GoBack(fromPos, ref state);
             GoForward(steps, ref state);
+        }
+
+        internal static void GoForwardOneLineWrapAware(ref TermReaderState state, string[] incompleteSentences) =>
+            GoForwardOneLineWrapAware(1, ref state, incompleteSentences);
+
+        internal static void GoForwardOneLineWrapAware(int steps, ref TermReaderState state, string[] incompleteSentences)
+        {
+            if (steps > state.currentText.Length - state.currentTextPos)
+                steps = state.currentText.Length - state.currentTextPos;
+
+            for (int i = 0; i < steps; i++)
+            {
+                state.currentTextPos++;
+
+                // If the character is unrenderable, continue the loop
+                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
+                    continue;
+
+                state.currentCursorPosLeft++;
+                if (state.CurrentCursorPosLeft >= ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin)
+                {
+                    // Reached to the end! Go back to the prompt position.
+                    state.currentCursorPosLeft = state.InputPromptLeft + 1;
+
+                    // Refresh the entire prompt
+                    string renderedText = BaseBinding.GetOneLineWrappedSentenceToRender(incompleteSentences, state);
+                    ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                    ConsoleWrapperTools.ActionWriteString(renderedText + Convert.ToChar(0x1B) + "[0K");
+                }
+            }
+        }
+
+        internal static void GoBackOneLineWrapAware(ref TermReaderState state, string[] incompleteSentences) =>
+            GoBackOneLineWrapAware(1, ref state, incompleteSentences);
+
+        internal static void GoBackOneLineWrapAware(int steps, ref TermReaderState state, string[] incompleteSentences)
+        {
+            if (steps > state.currentTextPos)
+                steps = state.currentTextPos;
+
+            for (int i = 0; i < steps; i++)
+            {
+                state.currentTextPos--;
+
+                // If the character is unrenderable, continue the loop
+                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
+                    continue;
+
+                state.currentCursorPosLeft--;
+                if (state.CurrentCursorPosLeft < TermReaderSettings.LeftMargin + state.inputPromptLeft + 1)
+                {
+                    // Reached to the beginning! Go back to the furthest position, plus the extra character being printed.
+                    state.currentCursorPosLeft = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - 1;
+
+                    // Refresh the entire prompt
+                    string renderedText = BaseBinding.GetOneLineWrappedSentenceToRender(incompleteSentences, state);
+                    ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                    ConsoleWrapperTools.ActionWriteString(renderedText + Convert.ToChar(0x1B) + "[0K");
+                }
+            }
+        }
+
+        internal static void SeekToOneLineWrapAware(int steps, ref TermReaderState state, string[] incompleteSentences) =>
+            SeekToOneLineWrapAware(state.currentTextPos, steps, ref state, incompleteSentences);
+
+        internal static void SeekToOneLineWrapAware(int fromPos, int steps, ref TermReaderState state, string[] incompleteSentences)
+        {
+            GoBackOneLineWrapAware(fromPos, ref state, incompleteSentences);
+            GoForwardOneLineWrapAware(steps, ref state, incompleteSentences);
         }
     }
 }

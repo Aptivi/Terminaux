@@ -36,6 +36,7 @@ namespace TermRead.ConsoleDemo.Fixtures
             new Prompt(),
             new PromptWithDefault(),
             new PromptWithPlaceholder(),
+            new PromptWithOneLineWrap(),
             new PromptPassword(),
             new PromptPasswordHidden(),
             new PromptPasswordWithPlaceholder(),
@@ -44,6 +45,7 @@ namespace TermRead.ConsoleDemo.Fixtures
             new PromptLoopedMargin(),
             new PromptLoopedManualWrite(),
             new PromptLoopedCompletion(),
+            new PromptLoopedCompletionOneLineWrap(),
         };
 
         internal static IFixture GetFixtureFromName(string name)

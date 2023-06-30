@@ -68,7 +68,8 @@ namespace TermRead.Reader
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="defaultValue">Default value to use if no input is provided</param>
         /// <param name="password">Whether the password mode is enabled</param>
-        public static string Read(string inputPrompt, string defaultValue, bool password = false)
+        /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
+        public static string Read(string inputPrompt, string defaultValue, bool password = false, bool oneLineWrap = false)
         {
             lock (readLock)
             {
@@ -83,6 +84,7 @@ namespace TermRead.Reader
                 readState.inputPromptTop = ConsoleWrapperTools.ActionCursorTop();
                 readState.inputPromptText = inputPrompt;
                 readState.passwordMode = password;
+                readState.oneLineWrap = oneLineWrap;
 
                 // Get input
                 (int, int) cachedPos = (ConsoleWrapperTools.ActionCursorLeft(), ConsoleWrapperTools.ActionCursorTop());
@@ -106,8 +108,11 @@ namespace TermRead.Reader
                 }
 
                 // Seek to the end of the text and write a new line
-                PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
-                ConsoleWrapperTools.ActionSetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
+                if (!readState.OneLineWrap)
+                {
+                    PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
+                    ConsoleWrapperTools.ActionSetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
+                }
                 ConsoleWrapperTools.ActionWriteLine();
 
                 // Return the input after adding it to history

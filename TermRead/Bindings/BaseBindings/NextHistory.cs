@@ -56,17 +56,45 @@ namespace TermRead.Bindings.BaseBindings
             // Wipe everything
             int length = state.CurrentText.Length;
             state.CurrentText.Clear();
-            ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-            ConsoleWrapperTools.ActionWriteString(" ".Repeat(length));
-            PositioningTools.SeekTo(0, ref state);
+            if (state.OneLineWrap)
+            {
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
+                string renderedBlanks = new(' ', longestSentenceLength);
+                ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrapperTools.ActionWriteString(renderedBlanks);
+                PositioningTools.SeekToOneLineWrapAware(0, ref state, new string[] { "" });
+                state.currentTextPos = 0;
+                state.currentCursorPosLeft = state.InputPromptLeft;
+                state.currentCursorPosTop = state.InputPromptTop;
+            }
+            else
+            {
+                ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrapperTools.ActionWriteString(" ".Repeat(length));
+                PositioningTools.SeekTo(0, ref state);
+            }
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
 
             // Now, write the history entry
             TermReaderState.currentHistoryPos++;
             string history = state.CurrentHistoryPos == state.History.Count ? "" : state.History[TermReaderState.currentHistoryPos];
-            ConsoleWrapperTools.ActionWriteString(history);
-            state.CurrentText.Append(history);
-            PositioningTools.GoForward(history.Length, true, ref state);
+
+            // In the case of one line wrap, get the list of sentences
+            if (state.OneLineWrap)
+            {
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
+                string[] incompleteSentences = GetWrappedSentences(history, longestSentenceLength, 0);
+                string renderedHistory = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, history.Length) : history;
+                ConsoleWrapperTools.ActionWriteString(renderedHistory + new string(' ', longestSentenceLength));
+                state.CurrentText.Append(history);
+                PositioningTools.GoForwardOneLineWrapAware(history.Length, ref state, incompleteSentences);
+            }
+            else
+            {
+                ConsoleWrapperTools.ActionWriteString(history);
+                state.CurrentText.Append(history);
+                PositioningTools.GoForward(history.Length, true, ref state);
+            }
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
