@@ -156,7 +156,7 @@ namespace TermRead.Tools
                     continue;
 
                 state.currentCursorPosLeft--;
-                if (state.CurrentCursorPosLeft < TermReaderSettings.LeftMargin + state.inputPromptLeft + 1)
+                if (state.CurrentCursorPosLeft < state.inputPromptLeft + 1)
                 {
                     // Reached to the beginning! Go back to the furthest position, plus the extra character being printed.
                     state.currentCursorPosLeft = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - 1;
