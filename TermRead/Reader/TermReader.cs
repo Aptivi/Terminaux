@@ -77,7 +77,7 @@ namespace TermRead.Reader
                 var readState = new TermReaderState();
 
                 // Print the input
-                ConsoleWrapperTools.ActionSetCursorLeft(TermReaderSettings.LeftMargin);
+                ConsoleWrapperTools.ActionSetCursorLeft(ConsoleWrapperTools.ActionCursorLeft() + TermReaderSettings.LeftMargin);
                 ConsoleWrapperTools.ActionWriteString(inputPrompt);
 
                 // Save current state of input
