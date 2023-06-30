@@ -121,9 +121,16 @@ namespace TermRead.Reader
                                readState.CurrentText.ToString();
                 if (!password && TermReaderSettings.HistoryEnabled)
                 {
-                    // We don't want passwords in the history
-                    TermReaderState.history.Add(input);
-                    TermReaderState.currentHistoryPos = TermReaderState.history.Count;
+                    // We don't want passwords in the history. Also, check to see if the history entry can be added or not based
+                    // on the following conditions:
+                    //
+                    // - If the input is not empty
+                    // - If the input doesn't exist in the history
+                    if (!string.IsNullOrWhiteSpace(input) && !TermReaderState.history.Contains(input))
+                    {
+                        TermReaderState.history.Add(input);
+                        TermReaderState.currentHistoryPos = TermReaderState.history.Count;
+                    }
                 }
 
                 // Reset the auto complete position and suggestions
