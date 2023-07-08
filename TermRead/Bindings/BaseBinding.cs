@@ -23,16 +23,11 @@
  * 
  */
 
-using Extensification.StringExts;
 using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using System.Text;
 using TermRead.Reader;
 using TermRead.Tools;
-using VT.NET;
-using System.Linq;
-using static System.Net.Mime.MediaTypeNames;
 using VT.NET.Tools;
 
 namespace TermRead.Bindings
@@ -82,7 +77,7 @@ namespace TermRead.Bindings
             state.CurrentText.Insert(state.CurrentTextPos, state.pressedKey.KeyChar);
 
             // Re-write the text and set the current cursor position as appropriate
-            string renderedText = state.PasswordMode ? TermReaderSettings.PasswordMaskChar.ToString().Repeat(state.currentText.ToString().Length) : state.currentText.ToString();
+            string renderedText = state.PasswordMode ? new string(TermReaderSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
 
             // In the case of one line wrap, get the list of sentences
             if (state.OneLineWrap)

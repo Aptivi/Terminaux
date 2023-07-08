@@ -23,7 +23,6 @@
  * 
  */
 
-using Extensification.StringExts;
 using System;
 using TermRead.Reader;
 using TermRead.Tools;
@@ -70,7 +69,7 @@ namespace TermRead.Bindings.BaseBindings
             else
             {
                 ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrapperTools.ActionWriteString(" ".Repeat(length));
+                ConsoleWrapperTools.ActionWriteString(new string(' ', length));
                 PositioningTools.SeekTo(0, ref state);
             }
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);

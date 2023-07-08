@@ -23,7 +23,6 @@
  * 
  */
 
-using Extensification.StringExts;
 using System;
 using TermRead.Reader;
 using TermRead.Tools;
@@ -51,7 +50,7 @@ namespace TermRead.Bindings.BaseBindings
             state.CurrentText.Remove(0, times);
 
             // Re-write the text and set the current cursor position as appropriate
-            string renderedText = state.PasswordMode ? TermReaderSettings.PasswordMaskChar.ToString().Repeat(state.currentText.ToString().Length) : state.currentText.ToString();
+            string renderedText = state.PasswordMode ? new string(TermReaderSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
 
             // In the case of one line wrap, get the list of sentences
             if (state.OneLineWrap)
@@ -66,7 +65,7 @@ namespace TermRead.Bindings.BaseBindings
             else
             {
                 ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrapperTools.ActionWriteString(renderedText + " ".Repeat(times));
+                ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', times));
                 PositioningTools.GoBack(times, ref state);
             }
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);

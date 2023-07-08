@@ -23,7 +23,6 @@
  * 
  */
 
-using Extensification.StringExts;
 using System;
 using System.Linq;
 using TermRead.Reader;
@@ -58,7 +57,7 @@ namespace TermRead.Bindings.BaseBindings
                 state.CurrentText.Remove(state.CurrentTextPos, state.CurrentText.Length - state.CurrentTextPos);
 
                 // Re-write the text and set the current cursor position as appropriate
-                string renderedText = state.PasswordMode ? TermReaderSettings.PasswordMaskChar.ToString().Repeat(state.currentText.ToString().Length) : state.currentText.ToString();
+                string renderedText = state.PasswordMode ? new string(TermReaderSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
 
                 // In the case of one line wrap, get the list of sentences
                 if (state.OneLineWrap)
@@ -72,13 +71,13 @@ namespace TermRead.Bindings.BaseBindings
                 else
                 {
                     ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleWrapperTools.ActionWriteString(renderedText + " ".Repeat(state.CurrentText.Length - state.CurrentTextPos));
+                    ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', state.CurrentText.Length - state.CurrentTextPos));
                 }
                 ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
 
                 // Write the suggestion
                 state.CurrentText.Append(suggestion);
-                renderedText = state.PasswordMode ? TermReaderSettings.PasswordMaskChar.ToString().Repeat(state.currentText.ToString().Length) : state.currentText.ToString();
+                renderedText = state.PasswordMode ? new string(TermReaderSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
                 if (state.OneLineWrap)
                 {
                     int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
@@ -88,7 +87,7 @@ namespace TermRead.Bindings.BaseBindings
                     ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength));
                 }
                 else
-                    ConsoleWrapperTools.ActionWriteString(suggestion + " ".Repeat(maxTimes));
+                    ConsoleWrapperTools.ActionWriteString(suggestion + new string(' ', maxTimes));
                 ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
             }
         }
