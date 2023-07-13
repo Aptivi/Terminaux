@@ -34,6 +34,7 @@ namespace TermRead.ConsoleDemo.Fixtures
         internal static IFixture[] fixtures =
         {
             new Prompt(),
+            new PromptInterruptible(),
             new PromptWithDefault(),
             new PromptWithPlaceholder(),
             new PromptWithOneLineWrap(),

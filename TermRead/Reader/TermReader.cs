@@ -69,7 +69,8 @@ namespace TermRead.Reader
         /// <param name="defaultValue">Default value to use if no input is provided</param>
         /// <param name="password">Whether the password mode is enabled</param>
         /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
-        public static string Read(string inputPrompt, string defaultValue, bool password = false, bool oneLineWrap = false)
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string Read(string inputPrompt, string defaultValue, bool password = false, bool oneLineWrap = false, bool interruptible = false)
         {
             lock (readLock)
             {
@@ -92,8 +93,10 @@ namespace TermRead.Reader
                 while (!BindingsReader.IsTerminate(struckKey))
                 {
                     // Get a key
-                    struckKey = ConsoleWrapperTools.ActionReadKey(true);
+                    TermReaderTools.isWaitingForInput = true;
+                    struckKey = TermReaderTools.GetInput(interruptible);
                     ConsoleWrapperTools.ActionCursorVisible(false);
+                    TermReaderTools.isWaitingForInput = false;
 
                     // Install necessary values
                     readState.currentCursorPosLeft = cachedPos.Item1;

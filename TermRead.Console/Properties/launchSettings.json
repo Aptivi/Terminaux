@@ -50,6 +50,10 @@
     "TermRead - PromptLoopedCompletionOneLineWrap": {
       "commandName": "Project",
       "commandLineArgs": "PromptLoopedCompletionOneLineWrap"
+    },
+    "TermRead - PromptInterruptible": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptInterruptible"
     }
   }
 }
