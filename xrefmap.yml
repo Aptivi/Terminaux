@@ -166,12 +166,12 @@ references:
   commentId: M:TermRead.Reader.TermReader.Read(System.String)
   fullName: TermRead.Reader.TermReader.Read(System.String)
   nameWithType: TermReader.Read(String)
-- uid: TermRead.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean)
-  name: Read(String, String, Boolean, Boolean)
-  href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_Read_System_String_System_String_System_Boolean_System_Boolean_
-  commentId: M:TermRead.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean)
-  fullName: TermRead.Reader.TermReader.Read(System.String, System.String, System.Boolean, System.Boolean)
-  nameWithType: TermReader.Read(String, String, Boolean, Boolean)
+- uid: TermRead.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)
+  name: Read(String, String, Boolean, Boolean, Boolean)
+  href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_Read_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:TermRead.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)
+  fullName: TermRead.Reader.TermReader.Read(System.String, System.String, System.Boolean, System.Boolean, System.Boolean)
+  nameWithType: TermReader.Read(String, String, Boolean, Boolean, Boolean)
 - uid: TermRead.Reader.TermReader.Read*
   name: Read
   href: api/TermRead.Reader.TermReader.html#TermRead_Reader_TermReader_Read_
@@ -470,6 +470,25 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderState.PressedKey
   nameWithType: TermReaderState.PressedKey
+- uid: TermRead.Reader.TermReaderTools
+  name: TermReaderTools
+  href: api/TermRead.Reader.TermReaderTools.html
+  commentId: T:TermRead.Reader.TermReaderTools
+  fullName: TermRead.Reader.TermReaderTools
+  nameWithType: TermReaderTools
+- uid: TermRead.Reader.TermReaderTools.Interrupt
+  name: Interrupt()
+  href: api/TermRead.Reader.TermReaderTools.html#TermRead_Reader_TermReaderTools_Interrupt
+  commentId: M:TermRead.Reader.TermReaderTools.Interrupt
+  fullName: TermRead.Reader.TermReaderTools.Interrupt()
+  nameWithType: TermReaderTools.Interrupt()
+- uid: TermRead.Reader.TermReaderTools.Interrupt*
+  name: Interrupt
+  href: api/TermRead.Reader.TermReaderTools.html#TermRead_Reader_TermReaderTools_Interrupt_
+  commentId: Overload:TermRead.Reader.TermReaderTools.Interrupt
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderTools.Interrupt
+  nameWithType: TermReaderTools.Interrupt
 - uid: TermRead.Tools
   name: TermRead.Tools
   href: api/TermRead.Tools.html
