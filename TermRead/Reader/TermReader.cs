@@ -129,16 +129,16 @@ namespace TermRead.Reader
                     // on the following conditions:
                     //
                     // - If the input is not empty
-                    // - If the input doesn't exist in the history
-                    if (!string.IsNullOrWhiteSpace(input) && !TermReaderState.history.Contains(input))
-                    {
+                    // - If the last input is not the same as the currently supplied input
+                    // - Can also be added if the history is zero
+                    if (!string.IsNullOrWhiteSpace(input) &&
+                        ((TermReaderState.history.Count > 0 && TermReaderState.history[TermReaderState.history.Count - 1] != input) || TermReaderState.history.Count == 0))
                         TermReaderState.history.Add(input);
-                        TermReaderState.currentHistoryPos = TermReaderState.history.Count;
-                    }
                 }
 
                 // Reset the auto complete position and suggestions
                 TermReaderState.currentSuggestionsPos = 0;
+                TermReaderState.currentHistoryPos = TermReaderState.history.Count;
                 TermReaderSettings.Suggestions = ((_, _, _) => Array.Empty<string>());
                 return input;
             }
