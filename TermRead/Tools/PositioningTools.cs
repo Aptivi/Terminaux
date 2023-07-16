@@ -177,5 +177,32 @@ namespace TermRead.Tools
             GoBackOneLineWrapAware(fromPos, ref state, incompleteSentences);
             GoForwardOneLineWrapAware(steps, ref state, incompleteSentences);
         }
+
+        internal static void HandleTopChangeForInput(ref TermReaderState state)
+        {
+            int promptLeft = state.InputPromptLeft;
+            int promptTop = state.InputPromptTop;
+            int promptTopOld = state.InputPromptTop;
+
+            int counted = promptLeft;
+            int heightOffset = 1;
+            for (int i = promptLeft; i < state.CurrentText.Length + promptLeft; i++)
+            {
+                if (counted >= ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin)
+                {
+                    // Reached to the end! Wrap down!
+                    if (promptTop >= ConsoleWrapperTools.ActionBufferHeight() - heightOffset)
+                    {
+                        heightOffset++;
+                        promptTop--;
+                        counted = 0;
+                        continue;
+                    }
+                }
+                counted++;
+            }
+            state.inputPromptTop = promptTop;
+            state.currentCursorPosTop -= promptTopOld - promptTop;
+        }
     }
 }

@@ -92,6 +92,7 @@ namespace TermRead.Bindings.BaseBindings
             {
                 ConsoleWrapperTools.ActionWriteString(history);
                 state.CurrentText.Append(history);
+                PositioningTools.HandleTopChangeForInput(ref state);
                 PositioningTools.GoForward(history.Length, true, ref state);
             }
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
