@@ -46,7 +46,7 @@ namespace TermRead.Bindings.BaseBindings
             if (suggestions.Length > 0)
             {
                 TermReaderState.currentSuggestionsPos++;
-                if (TermReaderState.currentSuggestionsPos == suggestions.Length)
+                if (TermReaderState.currentSuggestionsPos >= suggestions.Length)
                     TermReaderState.currentSuggestionsPos = 0;
 
                 // Get a suggestion

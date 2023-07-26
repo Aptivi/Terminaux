@@ -24,6 +24,7 @@
  */
 
 using System;
+using System.Linq;
 using TermRead.Reader;
 
 namespace TermRead.ConsoleDemo.Fixtures.Cases
@@ -46,15 +47,22 @@ namespace TermRead.ConsoleDemo.Fixtures.Cases
 
         public string[] GetSuggestions(string text, int index, char[] delims)
         {
+            text = text.Substring(0, index);
             string[] parts = text.Split(delims);
             if (parts.Length == 0)
                 return Array.Empty<string>();
             else
             {
                 if (parts[0] == "dotnet")
-                    return new string[] { "build", "restore", "run" };
+                    return new string[] { "build", "restore", "run" }
+                        .Where((str) => str.StartsWith(parts[1]))
+                        .Select((str) => str.Substring(parts[1].Length))
+                        .ToArray();
                 else if (parts[0] == "git")
-                    return new string[] { "fetch", "pull", "push" };
+                    return new string[] { "fetch", "pull", "push" }
+                        .Where((str) => str.StartsWith(parts[1]))
+                        .Select((str) => str.Substring(parts[1].Length))
+                        .ToArray();
             }
             return Array.Empty<string>();
         }
