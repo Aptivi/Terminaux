@@ -54,6 +54,10 @@
     "TermRead - PromptInterruptible": {
       "commandName": "Project",
       "commandLineArgs": "PromptInterruptible"
+    },
+    "TermRead - PromptLoopedCtrlCAsInput": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCtrlCAsInput"
     }
   }
 }

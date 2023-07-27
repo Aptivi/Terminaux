@@ -39,6 +39,7 @@ namespace TermRead.Bindings
             new End(),
             new Rubout(),
             new Return(),
+            new ReturnNothing(),
             new PreviousHistory(),
             new NextHistory(),
             new Delete(),

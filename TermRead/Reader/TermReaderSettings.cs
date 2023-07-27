@@ -24,6 +24,7 @@
  */
 
 using System;
+using TermRead.Tools;
 
 namespace TermRead.Reader
 {
@@ -34,6 +35,7 @@ namespace TermRead.Reader
     {
         private static char passwordMaskChar = '*';
         private static bool historyEnabled = true;
+        private static bool treatCtrlCAsInput;
         private static int leftMargin = 0;
         private static int rightMargin = 0;
         internal static Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
@@ -89,6 +91,15 @@ namespace TermRead.Reader
         public static char[] SuggestionsDelimiters
         {
             set => suggestionsDelims = value ?? new char[] { ' ' };
+        }
+
+        /// <summary>
+        /// Treat Ctrl + C as input
+        /// </summary>
+        public static bool TreatCtrlCAsInput
+        {
+            get => treatCtrlCAsInput;
+            set => treatCtrlCAsInput = value;
         }
     }
 }

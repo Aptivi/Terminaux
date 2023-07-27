@@ -47,6 +47,7 @@ namespace TermRead.ConsoleDemo.Fixtures
             new PromptLoopedManualWrite(),
             new PromptLoopedCompletion(),
             new PromptLoopedCompletionOneLineWrap(),
+            new PromptLoopedCtrlCAsInput(),
         };
 
         internal static IFixture GetFixtureFromName(string name)

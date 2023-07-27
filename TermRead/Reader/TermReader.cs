@@ -87,6 +87,7 @@ namespace TermRead.Reader
                 readState.inputPromptText = inputPrompt;
                 readState.passwordMode = password;
                 readState.oneLineWrap = oneLineWrap;
+                ConsoleWrapperTools.ActionTreatCtrlCAsInput(TermReaderSettings.TreatCtrlCAsInput);
 
                 // Get input
                 (int, int) cachedPos = (ConsoleWrapperTools.ActionCursorLeft(), ConsoleWrapperTools.ActionCursorTop());

@@ -41,6 +41,7 @@ namespace TermRead.Tools
         internal static Func<int> actionWindowHeight = () => WindowHeight;
         internal static Func<int> actionBufferHeight = () => BufferHeight;
         internal static Action<bool> actionCursorVisible = (val) => CursorVisible = val;
+        internal static Action<bool> actionTreatCtrlCAsInput = (val) => TreatCtrlCAsInput = val;
         internal static Func<bool> actionKeyAvailable = () => KeyAvailable;
         internal static Action<int, int> actionSetCursorPosition = SetCursorPosition;
         internal static Action<int> actionSetCursorLeft = SetCursorLeft;
@@ -109,6 +110,14 @@ namespace TermRead.Tools
         {
             get => actionCursorVisible;
             set => actionCursorVisible = value ?? ((val) => CursorVisible = val);
+        }
+        /// <summary>
+        /// The cursor visibility mode
+        /// </summary>
+        public static Action<bool> ActionTreatCtrlCAsInput
+        {
+            get => actionTreatCtrlCAsInput;
+            set => actionTreatCtrlCAsInput = value ?? ((val) => TreatCtrlCAsInput = val);
         }
         /// <summary>
         /// Whether a key is pressed
@@ -317,6 +326,15 @@ namespace TermRead.Tools
             }
         }
 
+        private static bool TreatCtrlCAsInput
+        {
+            set
+            {
+                if (!IsDumb)
+                    Console.TreatControlCAsInput = value;
+            }
+        }
+
         private static bool KeyAvailable
         {
             get
@@ -348,7 +366,7 @@ namespace TermRead.Tools
         private static void Beep() => 
             Console.Beep();
 
-        private static ConsoleKeyInfo ReadKey(bool intercept = false) => 
+        private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
             Console.ReadKey(intercept);
 
         private static void Write(char value)
