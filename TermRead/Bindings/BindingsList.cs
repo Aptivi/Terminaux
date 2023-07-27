@@ -55,7 +55,11 @@ namespace TermRead.Bindings
             new UppercaseOneWord(),
             new LowercaseOneWord(),
             new UpAndForwardOneWord(),
-            new LoAndForwardOneWord()
+            new LoAndForwardOneWord(),
+
+#if DEBUG
+            new DebugPos()
+#endif
         };
 
         internal static List<BaseBinding> customBindings = new();
