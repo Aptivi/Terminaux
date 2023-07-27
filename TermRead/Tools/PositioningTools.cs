@@ -132,9 +132,10 @@ namespace TermRead.Tools
                     state.currentCursorPosLeft = state.InputPromptLeft + 1;
 
                     // Refresh the entire prompt
+                    int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                     string renderedText = BaseBinding.GetOneLineWrappedSentenceToRender(incompleteSentences, state);
                     ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleWrapperTools.ActionWriteString(renderedText + Convert.ToChar(0x1B) + "[0K");
+                    ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length));
                 }
             }
         }
@@ -156,15 +157,16 @@ namespace TermRead.Tools
                     continue;
 
                 state.currentCursorPosLeft--;
-                if (state.CurrentCursorPosLeft < state.inputPromptLeft + 1)
+                if (state.CurrentCursorPosLeft < state.inputPromptLeft + 1 && state.CurrentText.Length != 0)
                 {
                     // Reached to the beginning! Go back to the furthest position, plus the extra character being printed.
                     state.currentCursorPosLeft = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - 1;
 
                     // Refresh the entire prompt
+                    int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                     string renderedText = BaseBinding.GetOneLineWrappedSentenceToRender(incompleteSentences, state);
                     ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleWrapperTools.ActionWriteString(renderedText + Convert.ToChar(0x1B) + "[0K");
+                    ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length));
                 }
             }
         }

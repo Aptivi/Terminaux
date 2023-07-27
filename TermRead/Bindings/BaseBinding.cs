@@ -86,7 +86,7 @@ namespace TermRead.Bindings
                 string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength));
+                ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length));
                 PositioningTools.GoForwardOneLineWrapAware(1, ref state, incompleteSentences);
             }
             else

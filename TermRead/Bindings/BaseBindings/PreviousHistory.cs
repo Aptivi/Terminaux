@@ -84,7 +84,7 @@ namespace TermRead.Bindings.BaseBindings
                 int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                 string[] incompleteSentences = GetWrappedSentences(history, longestSentenceLength, 0);
                 string renderedHistory = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, history.Length) : history;
-                ConsoleWrapperTools.ActionWriteString(renderedHistory + new string(' ', longestSentenceLength));
+                ConsoleWrapperTools.ActionWriteString(renderedHistory + new string(' ', longestSentenceLength - renderedHistory.Length));
                 state.CurrentText.Append(history);
                 PositioningTools.GoForwardOneLineWrapAware(history.Length, ref state, incompleteSentences);
             }

@@ -66,7 +66,7 @@ namespace TermRead.Bindings.BaseBindings
                     string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                     renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                     ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength));
+                    ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length));
                 }
                 else
                 {
@@ -84,7 +84,7 @@ namespace TermRead.Bindings.BaseBindings
                     string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                     renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                     ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength));
+                    ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length));
                 }
                 else
                     ConsoleWrapperTools.ActionWriteString(suggestion + new string(' ', maxTimes));
