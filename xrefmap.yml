@@ -282,6 +282,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Reader.TermReaderSettings.SuggestionsDelimiters
   nameWithType: TermReaderSettings.SuggestionsDelimiters
+- uid: TermRead.Reader.TermReaderSettings.TreatCtrlCAsInput
+  name: TreatCtrlCAsInput
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_TreatCtrlCAsInput
+  commentId: P:TermRead.Reader.TermReaderSettings.TreatCtrlCAsInput
+  fullName: TermRead.Reader.TermReaderSettings.TreatCtrlCAsInput
+  nameWithType: TermReaderSettings.TreatCtrlCAsInput
+- uid: TermRead.Reader.TermReaderSettings.TreatCtrlCAsInput*
+  name: TreatCtrlCAsInput
+  href: api/TermRead.Reader.TermReaderSettings.html#TermRead_Reader_TermReaderSettings_TreatCtrlCAsInput_
+  commentId: Overload:TermRead.Reader.TermReaderSettings.TreatCtrlCAsInput
+  isSpec: "True"
+  fullName: TermRead.Reader.TermReaderSettings.TreatCtrlCAsInput
+  nameWithType: TermReaderSettings.TreatCtrlCAsInput
 - uid: TermRead.Reader.TermReaderState
   name: TermReaderState
   href: api/TermRead.Reader.TermReaderState.html
@@ -644,6 +657,19 @@ references:
   isSpec: "True"
   fullName: TermRead.Tools.ConsoleWrapperTools.ActionSetCursorTop
   nameWithType: ConsoleWrapperTools.ActionSetCursorTop
+- uid: TermRead.Tools.ConsoleWrapperTools.ActionTreatCtrlCAsInput
+  name: ActionTreatCtrlCAsInput
+  href: api/TermRead.Tools.ConsoleWrapperTools.html#TermRead_Tools_ConsoleWrapperTools_ActionTreatCtrlCAsInput
+  commentId: P:TermRead.Tools.ConsoleWrapperTools.ActionTreatCtrlCAsInput
+  fullName: TermRead.Tools.ConsoleWrapperTools.ActionTreatCtrlCAsInput
+  nameWithType: ConsoleWrapperTools.ActionTreatCtrlCAsInput
+- uid: TermRead.Tools.ConsoleWrapperTools.ActionTreatCtrlCAsInput*
+  name: ActionTreatCtrlCAsInput
+  href: api/TermRead.Tools.ConsoleWrapperTools.html#TermRead_Tools_ConsoleWrapperTools_ActionTreatCtrlCAsInput_
+  commentId: Overload:TermRead.Tools.ConsoleWrapperTools.ActionTreatCtrlCAsInput
+  isSpec: "True"
+  fullName: TermRead.Tools.ConsoleWrapperTools.ActionTreatCtrlCAsInput
+  nameWithType: ConsoleWrapperTools.ActionTreatCtrlCAsInput
 - uid: TermRead.Tools.ConsoleWrapperTools.ActionWindowHeight
   name: ActionWindowHeight
   href: api/TermRead.Tools.ConsoleWrapperTools.html#TermRead_Tools_ConsoleWrapperTools_ActionWindowHeight
