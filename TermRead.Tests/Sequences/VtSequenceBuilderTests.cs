@@ -27,7 +27,7 @@ using TermRead.Sequences.Builder;
 using TermRead.Sequences.Builder.Types;
 using TermRead.Sequences.Tools;
 
-namespace TermRead.Tests
+namespace TermRead.Tests.Sequences
 {
     public class VtSequenceBuilderTests
     {
@@ -562,7 +562,7 @@ namespace TermRead.Tests
         /// [CSI ? Pi ; Pa ; Pv S] Generates an escape sequence that can be used for the console
         /// </summary>
         [Test]
-        [TestCase(1,2,"4;5")]
+        [TestCase(1, 2, "4;5")]
         public static void TestGenerateCsiSetGraphicsAttribute(int itemType, int attributeManager, string geometry)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[?{itemType};{attributeManager};{geometry}S";
@@ -588,7 +588,7 @@ namespace TermRead.Tests
         /// [CSI Ps ; Ps ; Ps ; Ps ; Ps T] Generates an escape sequence that can be used for the console
         /// </summary>
         [Test]
-        [TestCase(1,2,3,4,5)]
+        [TestCase(1, 2, 3, 4, 5)]
         public static void TestGenerateCsiInitiateHighlightMouseTracking(int func, int startX, int startY, int firstRow, int lastRow)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{func};{startX};{startY};{firstRow};{lastRow}T";
@@ -757,7 +757,7 @@ namespace TermRead.Tests
         /// [CSI Ps ; Ps f] Generates an escape sequence that can be used for the console
         /// </summary>
         [Test]
-        [TestCase(2,2)]
+        [TestCase(2, 2)]
         public static void TestGenerateCsiLeftTopPosition(int column, int row)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{row};{column}f";
@@ -874,7 +874,7 @@ namespace TermRead.Tests
         /// [CSI > Pp ; Pv m] Generates an escape sequence that can be used for the console
         /// </summary>
         [Test]
-        [TestCase(4,1)]
+        [TestCase(4, 1)]
         public static void TestGenerateCsiSetKeyModifierOptions(int resource, int modify)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[>{resource};{modify}m";
@@ -977,7 +977,7 @@ namespace TermRead.Tests
         /// [CSI Pl ; Pc " p] Generates an escape sequence that can be used for the console
         /// </summary>
         [Test]
-        [TestCase(61,0)]
+        [TestCase(61, 0)]
         public static void TestGenerateCsiSetConformanceLevel(int level, int conformance)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{level};{conformance}\"p";
@@ -1195,7 +1195,7 @@ namespace TermRead.Tests
         /// [CSI Ps ; Ps ; Ps ; t] Generates an escape sequence that can be used for the console
         /// </summary>
         [Test]
-        [TestCase(1,6,7)]
+        [TestCase(1, 6, 7)]
         public static void TestGenerateCsiWindowManipulation(int windowAction, int windowAction2, int windowAction3)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{windowAction};{windowAction2};{windowAction3}t";
@@ -1376,7 +1376,7 @@ namespace TermRead.Tests
         /// [CSI Ps ; Pu ' z] Generates an escape sequence that can be used for the console
         /// </summary>
         [Test]
-        [TestCase(0,0)]
+        [TestCase(0, 0)]
         public static void TestGenerateCsiLocatorReporting(int locatorMode, int measurement)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{locatorMode};{measurement}'z";
@@ -1569,7 +1569,7 @@ namespace TermRead.Tests
         /// [DCS Ps ; Ps | Pt ST] Generates an escape sequence that can be used for the console
         /// </summary>
         [Test]
-        [TestCase(0,0,"17/18;19/20")]
+        [TestCase(0, 0, "17/18;19/20")]
         public static void TestGenerateDcsUserDefinedKeys(int clearUdkDefinitions, int dontLockKeys, string keybindings)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}P{clearUdkDefinitions};{dontLockKeys}|{keybindings}\x9c";
@@ -1595,7 +1595,7 @@ namespace TermRead.Tests
         /// [DCS Ps $ t Pt ST] Generates an escape sequence that can be used for the console
         /// </summary>
         [Test]
-        [TestCase(0,"1")]
+        [TestCase(0, "1")]
         public static void TestGenerateDcsRestorePresentationStatus(int controlConvert, string status)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}P{controlConvert}$t{status}\x9c";

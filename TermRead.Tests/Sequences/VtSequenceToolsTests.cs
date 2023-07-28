@@ -27,7 +27,7 @@ using System;
 using System.Text.RegularExpressions;
 using TermRead.Sequences.Tools;
 
-namespace TermRead.Tests
+namespace TermRead.Tests.Sequences
 {
     public class VtSequenceToolsTests
     {
