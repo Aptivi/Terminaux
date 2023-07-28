@@ -17,6 +17,114 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Colors.Accessibility.Deficiency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Colors.Accessibility.Deficiency.html",
+          "hash": "Om4atmSCxNEQgbVk5lQ0r0uOs/hxg+WCta5Gn9jG6QM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Colors.Accessibility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Colors.Accessibility.html",
+          "hash": "hXyfpqw41Mcvitn/2jzvyrrsyv1KTHDOU77EiBQl/hw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Colors.Color.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Colors.Color.html",
+          "hash": "16WR9p1ryq2XEfOqHAyBW3lrLHLJv/3ET07kKBh/uxA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Colors.Color255.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Colors.Color255.html",
+          "hash": "z0N11GDbA6U7/WlZAw59EukTVVshJ/SIpwjdsODJGnU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Colors.ColorTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Colors.ColorTools.html",
+          "hash": "MD19Mnbe+N8ryJVbUpsWtIxLKpsNJ0+o+z2RQqsXmZI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Colors.ColorType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Colors.ColorType.html",
+          "hash": "Z+OEMOFDhoKVw6pA4FFaVRoRui+q4la1jQ0LfrZpKF0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Colors.ConsoleColors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Colors.ConsoleColors.html",
+          "hash": "/CZyvyuHYi+TIb7TnIuO+S41EtSyDd9lm6HLIIGDO0w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Colors.ConsoleColorsInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Colors.ConsoleColorsInfo.html",
+          "hash": "T5mCtyoi9M3KmPIriGJEkeqJ49syY3mJJYhH7gOD3b0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Colors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Colors.html",
+          "hash": "fvqzBt9/GYQF+hi3rk7McGqnc1mhEm7dgVlovdAQ3aU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/TermRead.Reader.Bindings.BaseBinding.yml",
       "output": {
         ".html": {
@@ -125,6 +233,198 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.Types.ApcSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.Types.ApcSequences.html",
+          "hash": "sJ6B5ud9ewmqjmhvzHNZrTYkEXGrQcX8lIWv5vnv0wM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.Types.C1Sequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.Types.C1Sequences.html",
+          "hash": "SexJodX7OIfOuZg14Bjblp/HWkOwLOHmMHVNy3cvDTk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.Types.CsiSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.Types.CsiSequences.html",
+          "hash": "PHa0mqYYq4o7t96A+lm4aSb9TmJVNkACI0zjWQ7ojo0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.Types.DcsSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.Types.DcsSequences.html",
+          "hash": "H3c7ITxfgRSHVo2tRzFeTtgnMxLDm3+AdOt0fERLnXY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.Types.EscSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.Types.EscSequences.html",
+          "hash": "d4We+xa/nLu7ZRVrnIMlHiK0CuIP9D4/fS6zAV80ei4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.Types.OscSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.Types.OscSequences.html",
+          "hash": "/+Cv6KWQlca182J12UiyYvm4v3ZN93QEpoc2+ssqNWM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.Types.PmSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.Types.PmSequences.html",
+          "hash": "gsX5ZDAFHkoAQzl0DvwWoMRG2SnalwZEggfnthGdX9U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.Types.html",
+          "hash": "MzpF+JSGLbwAaWtixjZ6Z4Pl0xNbf9VLqDhFm3YOx8o="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.VtSequenceBasicChars.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.VtSequenceBasicChars.html",
+          "hash": "gucR90hqDtn3ce1FQl7Q/Pdh+52oj4Tcf+gd7yYpiFE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.VtSequenceBuilderTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.VtSequenceBuilderTools.html",
+          "hash": "9nOa6Xle0ZbaUnsIh4O6XDSLJIVqK+4EQf3sPakbNw4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.VtSequenceSpecificTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.VtSequenceSpecificTypes.html",
+          "hash": "+tA248kAxKrgjVT1HA9PfKXsHvb5byomQfbbaAuMngc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Builder.html",
+          "hash": "uWbj4IKWmmnmMXlf8yWfPDIujdGtQK+ecX2Sno5c0Tw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Tools.VtSequenceRegexes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Tools.VtSequenceRegexes.html",
+          "hash": "bMZ+/uTKYDWjbzeUL1UM1d8heC4N6LyV/R6cHO1ZklY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Tools.VtSequenceTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Tools.VtSequenceTools.html",
+          "hash": "pue7gQV9IQzjZUACbJKnbjeHJRVG/cGQ3zLDweXIROA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Tools.VtSequenceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Tools.VtSequenceType.html",
+          "hash": "NWRKq8s2XfUU1pbPimFA4tjFmQtNeA49HPZor6Ks4FU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/TermRead.Sequences.Tools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/TermRead.Sequences.Tools.html",
+          "hash": "nbPVmyeFfTpet21uG7+jS37e0QpyGNO0Th/DIHMRaNk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/TermRead.Tools.ConsoleWrapperTools.yml",
       "output": {
         ".html": {
@@ -153,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "oGJVLHnF3H59Xgs9Ct8TS7RxNzKC6TR8jy3r1Q5DKC8="
+          "hash": "eFMOUPS/i7Z4RxJukZ0ZdbUROKOiOH7nJ+FrvzM6wqc="
         }
       },
       "is_incremental": false,
@@ -177,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "1RW9m2FLm6ALE5bfiSZPK7bHOkYLU1dup1JY4198/go="
+          "hash": "GNan1gvLArb598Y/19F6JUHkgMhsap5XiQc05pACUT0="
         }
       },
       "is_incremental": false,
@@ -204,7 +504,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 11,
+          "total_file_count": 36,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
