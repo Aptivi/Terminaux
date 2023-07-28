@@ -24,7 +24,6 @@
  */
 
 using System;
-using TermRead.Tools;
 
 namespace TermRead.Reader
 {

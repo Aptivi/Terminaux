@@ -24,7 +24,6 @@
  */
 
 using System;
-using TermRead.Reader;
 
 namespace TermRead.Reader.Bindings
 {

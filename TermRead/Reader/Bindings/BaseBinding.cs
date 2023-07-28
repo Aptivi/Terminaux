@@ -26,9 +26,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TermRead.Reader;
+using TermRead.Sequences.Tools;
 using TermRead.Tools;
-using VT.NET.Tools;
 
 namespace TermRead.Reader.Bindings
 {

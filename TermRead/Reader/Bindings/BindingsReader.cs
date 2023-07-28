@@ -25,7 +25,6 @@
 
 using System;
 using System.Linq;
-using TermRead.Reader;
 
 namespace TermRead.Reader.Bindings
 {

@@ -23,7 +23,6 @@
  * 
  */
 
-using System;
 using TermRead.Reader;
 using TermRead.Reader.Bindings;
 

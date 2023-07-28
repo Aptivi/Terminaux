@@ -25,8 +25,6 @@
 
 using System;
 using System.Threading;
-using TermRead.Reader;
-using TermRead.Reader.Bindings;
 using TermRead.Tools;
 
 namespace TermRead.Reader.Bindings.BaseBindings

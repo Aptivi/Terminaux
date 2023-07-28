@@ -23,8 +23,6 @@
  * 
  */
 
-using TermRead.Reader.Bindings;
-
 namespace TermRead.Reader.Bindings.BaseBindings
 {
     internal class InsertSelf : BaseBinding, IBinding { }
