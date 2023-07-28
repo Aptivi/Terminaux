@@ -1,6 +1,6 @@
 {
   "sitemap": {
-    "baseUrl": "https://aptivi.github.io/TermRead/"
+    "baseUrl": "https://aptivi.github.io/Terminaux/"
   },
   "homepages": [],
   "source_base_path": "/github/workspace/DocGen",
@@ -17,11 +17,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Colors.Accessibility.Deficiency.yml",
+      "source_relative_path": "api/Terminaux.Colors.Accessibility.Deficiency.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Colors.Accessibility.Deficiency.html",
-          "hash": "Om4atmSCxNEQgbVk5lQ0r0uOs/hxg+WCta5Gn9jG6QM="
+          "relative_path": "api/Terminaux.Colors.Accessibility.Deficiency.html",
+          "hash": "ELvEOqwgwNgT/o+WkXt2KlL84d4PEZU2I/WIeWOwTcc="
         }
       },
       "is_incremental": false,
@@ -29,11 +29,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Colors.Accessibility.yml",
+      "source_relative_path": "api/Terminaux.Colors.Accessibility.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Colors.Accessibility.html",
-          "hash": "hXyfpqw41Mcvitn/2jzvyrrsyv1KTHDOU77EiBQl/hw="
+          "relative_path": "api/Terminaux.Colors.Accessibility.html",
+          "hash": "dSY1nCoNMVsug9ofql64U2J32Mxc3FTiXnTh6FJeMqk="
         }
       },
       "is_incremental": false,
@@ -41,11 +41,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Colors.Color.yml",
+      "source_relative_path": "api/Terminaux.Colors.Color.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Colors.Color.html",
-          "hash": "16WR9p1ryq2XEfOqHAyBW3lrLHLJv/3ET07kKBh/uxA="
+          "relative_path": "api/Terminaux.Colors.Color.html",
+          "hash": "NjCjUWmTXAUDB6LcUaVYQh6sO1MNNG79PK0L/WaXgBU="
         }
       },
       "is_incremental": false,
@@ -53,11 +53,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Colors.Color255.yml",
+      "source_relative_path": "api/Terminaux.Colors.Color255.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Colors.Color255.html",
-          "hash": "z0N11GDbA6U7/WlZAw59EukTVVshJ/SIpwjdsODJGnU="
+          "relative_path": "api/Terminaux.Colors.Color255.html",
+          "hash": "UO48X/3/V4oG31cASdFXOxOHRGdThkPw+IwN2LIxSho="
         }
       },
       "is_incremental": false,
@@ -65,11 +65,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Colors.ColorTools.yml",
+      "source_relative_path": "api/Terminaux.Colors.ColorTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Colors.ColorTools.html",
-          "hash": "MD19Mnbe+N8ryJVbUpsWtIxLKpsNJ0+o+z2RQqsXmZI="
+          "relative_path": "api/Terminaux.Colors.ColorTools.html",
+          "hash": "aancD9hP+NRsBXRkFD7pbemJDAlb319BtPNcMO37O0Y="
         }
       },
       "is_incremental": false,
@@ -77,11 +77,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Colors.ColorType.yml",
+      "source_relative_path": "api/Terminaux.Colors.ColorType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Colors.ColorType.html",
-          "hash": "Z+OEMOFDhoKVw6pA4FFaVRoRui+q4la1jQ0LfrZpKF0="
+          "relative_path": "api/Terminaux.Colors.ColorType.html",
+          "hash": "ed6c+EPnYpdFQbZpdnO6DJMVRiCPp9TLP3hsrmsQjDM="
         }
       },
       "is_incremental": false,
@@ -89,11 +89,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Colors.ConsoleColors.yml",
+      "source_relative_path": "api/Terminaux.Colors.ConsoleColors.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Colors.ConsoleColors.html",
-          "hash": "/CZyvyuHYi+TIb7TnIuO+S41EtSyDd9lm6HLIIGDO0w="
+          "relative_path": "api/Terminaux.Colors.ConsoleColors.html",
+          "hash": "RsC1cyi1Oj7rJvALVwxp0KfWb6SunFYwp9UN4oiSwEA="
         }
       },
       "is_incremental": false,
@@ -101,11 +101,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Colors.ConsoleColorsInfo.yml",
+      "source_relative_path": "api/Terminaux.Colors.ConsoleColorsInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Colors.ConsoleColorsInfo.html",
-          "hash": "T5mCtyoi9M3KmPIriGJEkeqJ49syY3mJJYhH7gOD3b0="
+          "relative_path": "api/Terminaux.Colors.ConsoleColorsInfo.html",
+          "hash": "y2XDUa54li3vG8kalkPlKbq0DNgCa1BebflsvmV9Dtg="
         }
       },
       "is_incremental": false,
@@ -113,11 +113,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Colors.yml",
+      "source_relative_path": "api/Terminaux.Colors.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Colors.html",
-          "hash": "fvqzBt9/GYQF+hi3rk7McGqnc1mhEm7dgVlovdAQ3aU="
+          "relative_path": "api/Terminaux.Colors.html",
+          "hash": "z6RlLFzp9edPPBoJT21csyVwc/Qf+bCJSBrYNa0Cvwo="
         }
       },
       "is_incremental": false,
@@ -125,11 +125,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Reader.Bindings.BaseBinding.yml",
+      "source_relative_path": "api/Terminaux.Reader.Bindings.BaseBinding.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Reader.Bindings.BaseBinding.html",
-          "hash": "vuPr0w7skVpCEVEgAeTw+9OseOoxjYmBuf+nmSGTgsM="
+          "relative_path": "api/Terminaux.Reader.Bindings.BaseBinding.html",
+          "hash": "MFkdf07lvjqQRy1OrD2S2BX4sYf2nWxlyOr8HX+mqxw="
         }
       },
       "is_incremental": false,
@@ -137,11 +137,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Reader.Bindings.CustomBindings.yml",
+      "source_relative_path": "api/Terminaux.Reader.Bindings.CustomBindings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Reader.Bindings.CustomBindings.html",
-          "hash": "UknEdu32wa5/ur13DDUDIRkuadI0RaypT1lW5dS5YRI="
+          "relative_path": "api/Terminaux.Reader.Bindings.CustomBindings.html",
+          "hash": "aXoA4xSAtctxMpezbJZ/6pxwuCWL591XwF3jot3VAqM="
         }
       },
       "is_incremental": false,
@@ -149,11 +149,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Reader.Bindings.IBinding.yml",
+      "source_relative_path": "api/Terminaux.Reader.Bindings.IBinding.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Reader.Bindings.IBinding.html",
-          "hash": "XkB4fPDOnr7bBhOGRMgJKjrhqSlleVeSgYgvrpDvxn0="
+          "relative_path": "api/Terminaux.Reader.Bindings.IBinding.html",
+          "hash": "XWxhk4xKFEAp4EdFHNIX+1DqQlI2EIdP77TCFyJq+DI="
         }
       },
       "is_incremental": false,
@@ -161,11 +161,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Reader.Bindings.yml",
+      "source_relative_path": "api/Terminaux.Reader.Bindings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Reader.Bindings.html",
-          "hash": "92cVQFWBUFYRFQuycfOstnUThVfGeS/1LPxjxigdtjA="
+          "relative_path": "api/Terminaux.Reader.Bindings.html",
+          "hash": "T2R5ELkkzWyl8a5gEG1QKSsepuOITAchVfJ/2dg7G/A="
         }
       },
       "is_incremental": false,
@@ -173,11 +173,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Reader.TermReader.yml",
+      "source_relative_path": "api/Terminaux.Reader.Terminauxer.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Reader.TermReader.html",
-          "hash": "FkZtMjQbUoajvvoNaXf4YvHmzKvAitAdCSdxAujx9C4="
+          "relative_path": "api/Terminaux.Reader.Terminauxer.html",
+          "hash": "qwYRkD78YA6o62uQjIhGjlGUWoQiaMoPY+qbyRGhTBQ="
         }
       },
       "is_incremental": false,
@@ -185,11 +185,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Reader.TermReaderSettings.yml",
+      "source_relative_path": "api/Terminaux.Reader.TerminauxerSettings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Reader.TermReaderSettings.html",
-          "hash": "bQFR1NcL8t95OJF0pHNZi0hMvwfRx38Iv/M/yy8tFGo="
+          "relative_path": "api/Terminaux.Reader.TerminauxerSettings.html",
+          "hash": "oK6bKJB9ILs6w2Mh5AAhMvZoPSptke+kyQIY095a9vk="
         }
       },
       "is_incremental": false,
@@ -197,11 +197,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Reader.TermReaderState.yml",
+      "source_relative_path": "api/Terminaux.Reader.TerminauxerState.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Reader.TermReaderState.html",
-          "hash": "687YY7ES/zoTIq9KyK+Sh/0ZAUIM6qxND4paL0xUW3M="
+          "relative_path": "api/Terminaux.Reader.TerminauxerState.html",
+          "hash": "PtfysVIaU0G+dhptmRBUX+BZ3UIMl0AICI6E5L/BYc0="
         }
       },
       "is_incremental": false,
@@ -209,11 +209,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Reader.TermReaderTools.yml",
+      "source_relative_path": "api/Terminaux.Reader.TerminauxerTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Reader.TermReaderTools.html",
-          "hash": "PoXgHTtg720xicPnzlU8cZpT8IsLOq1Aw7fd1vn3HbY="
+          "relative_path": "api/Terminaux.Reader.TerminauxerTools.html",
+          "hash": "P5tuSqWMWkqpnRwanKnz+S5UV5TuwfMix7+NrJEAHBs="
         }
       },
       "is_incremental": false,
@@ -221,11 +221,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Reader.yml",
+      "source_relative_path": "api/Terminaux.Reader.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Reader.html",
-          "hash": "3IXcAyMGGNz+PtgIn7UgvGEvZ0AkujuSR6JIyg6CIMs="
+          "relative_path": "api/Terminaux.Reader.html",
+          "hash": "hY4dg8UknSPLV21PfJ83KiIXJmhaz0V5PImWeP9AQrM="
         }
       },
       "is_incremental": false,
@@ -233,11 +233,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.Types.ApcSequences.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.ApcSequences.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.Types.ApcSequences.html",
-          "hash": "sJ6B5ud9ewmqjmhvzHNZrTYkEXGrQcX8lIWv5vnv0wM="
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.ApcSequences.html",
+          "hash": "62Rk3M1coTgRquolQmT9Z0wpI1IFCzFvFzL7JH8uDYQ="
         }
       },
       "is_incremental": false,
@@ -245,11 +245,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.Types.C1Sequences.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.C1Sequences.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.Types.C1Sequences.html",
-          "hash": "SexJodX7OIfOuZg14Bjblp/HWkOwLOHmMHVNy3cvDTk="
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.C1Sequences.html",
+          "hash": "NxHsYxWW5gE0T3g3TsoJ5Aph+XBOyA1Nio+Bn4T4YMw="
         }
       },
       "is_incremental": false,
@@ -257,11 +257,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.Types.CsiSequences.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.CsiSequences.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.Types.CsiSequences.html",
-          "hash": "PHa0mqYYq4o7t96A+lm4aSb9TmJVNkACI0zjWQ7ojo0="
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.CsiSequences.html",
+          "hash": "HR10VjXcQORftF+wqUWINjV/xYEB0xeXub6ghZswwi0="
         }
       },
       "is_incremental": false,
@@ -269,11 +269,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.Types.DcsSequences.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.DcsSequences.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.Types.DcsSequences.html",
-          "hash": "H3c7ITxfgRSHVo2tRzFeTtgnMxLDm3+AdOt0fERLnXY="
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.DcsSequences.html",
+          "hash": "6P8V3zV5LxFn6NxmBzAX8JODyQiwe2LyHYbhdQCp6cY="
         }
       },
       "is_incremental": false,
@@ -281,11 +281,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.Types.EscSequences.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.EscSequences.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.Types.EscSequences.html",
-          "hash": "d4We+xa/nLu7ZRVrnIMlHiK0CuIP9D4/fS6zAV80ei4="
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.EscSequences.html",
+          "hash": "JGSd34oN2Z6kHNzLyh1nhtI7maevtLUHeyK2hXwRB+k="
         }
       },
       "is_incremental": false,
@@ -293,11 +293,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.Types.OscSequences.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.OscSequences.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.Types.OscSequences.html",
-          "hash": "/+Cv6KWQlca182J12UiyYvm4v3ZN93QEpoc2+ssqNWM="
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.OscSequences.html",
+          "hash": "vzSPdu4cYfb961bAkiOF3G7CqdOobfqJ/PY9HNC+qxU="
         }
       },
       "is_incremental": false,
@@ -305,11 +305,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.Types.PmSequences.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.PmSequences.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.Types.PmSequences.html",
-          "hash": "gsX5ZDAFHkoAQzl0DvwWoMRG2SnalwZEggfnthGdX9U="
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.PmSequences.html",
+          "hash": "GnGuMO9h1xXTUPp2mB9RLMk9yUriyjZu5exXa6UDPMI="
         }
       },
       "is_incremental": false,
@@ -317,11 +317,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.Types.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.Types.html",
-          "hash": "MzpF+JSGLbwAaWtixjZ6Z4Pl0xNbf9VLqDhFm3YOx8o="
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.html",
+          "hash": "78q+Ev8/xJfvYKEzpqW0sW26iNdAfY7SsVxH7VMZUDs="
         }
       },
       "is_incremental": false,
@@ -329,11 +329,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.VtSequenceBasicChars.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.VtSequenceBasicChars.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.VtSequenceBasicChars.html",
-          "hash": "gucR90hqDtn3ce1FQl7Q/Pdh+52oj4Tcf+gd7yYpiFE="
+          "relative_path": "api/Terminaux.Sequences.Builder.VtSequenceBasicChars.html",
+          "hash": "ZdIHildDeemSTbPFQ7f2SAabeLIQFBNkX3cEp79lZ1s="
         }
       },
       "is_incremental": false,
@@ -341,11 +341,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.VtSequenceBuilderTools.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.VtSequenceBuilderTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.VtSequenceBuilderTools.html",
-          "hash": "9nOa6Xle0ZbaUnsIh4O6XDSLJIVqK+4EQf3sPakbNw4="
+          "relative_path": "api/Terminaux.Sequences.Builder.VtSequenceBuilderTools.html",
+          "hash": "1gjlTWXxvjITlGVX6STuDILViq1R1YCi8pOlxTXgbJs="
         }
       },
       "is_incremental": false,
@@ -353,11 +353,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.VtSequenceSpecificTypes.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.VtSequenceSpecificTypes.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.VtSequenceSpecificTypes.html",
-          "hash": "+tA248kAxKrgjVT1HA9PfKXsHvb5byomQfbbaAuMngc="
+          "relative_path": "api/Terminaux.Sequences.Builder.VtSequenceSpecificTypes.html",
+          "hash": "alkpecHxi6DVQm4miMYkGRzOrdVZ0YF/xPVitrx7DYU="
         }
       },
       "is_incremental": false,
@@ -365,11 +365,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Builder.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Builder.html",
-          "hash": "uWbj4IKWmmnmMXlf8yWfPDIujdGtQK+ecX2Sno5c0Tw="
+          "relative_path": "api/Terminaux.Sequences.Builder.html",
+          "hash": "yjLfsUNHReZbp70vMn2AKYTRZ4nWfbKIVACORCTF1kk="
         }
       },
       "is_incremental": false,
@@ -377,11 +377,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Tools.VtSequenceRegexes.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Tools.VtSequenceRegexes.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Tools.VtSequenceRegexes.html",
-          "hash": "bMZ+/uTKYDWjbzeUL1UM1d8heC4N6LyV/R6cHO1ZklY="
+          "relative_path": "api/Terminaux.Sequences.Tools.VtSequenceRegexes.html",
+          "hash": "h42/4bv4RG7AR0RHkecpyWJCPSK5VN+xkCGdJTK7yOw="
         }
       },
       "is_incremental": false,
@@ -389,11 +389,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Tools.VtSequenceTools.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Tools.VtSequenceTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Tools.VtSequenceTools.html",
-          "hash": "pue7gQV9IQzjZUACbJKnbjeHJRVG/cGQ3zLDweXIROA="
+          "relative_path": "api/Terminaux.Sequences.Tools.VtSequenceTools.html",
+          "hash": "1kBs/tq8VeVwoI6fNhVJBmqR65B+Vzyvrnw8FhAIE4A="
         }
       },
       "is_incremental": false,
@@ -401,11 +401,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Tools.VtSequenceType.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Tools.VtSequenceType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Tools.VtSequenceType.html",
-          "hash": "NWRKq8s2XfUU1pbPimFA4tjFmQtNeA49HPZor6Ks4FU="
+          "relative_path": "api/Terminaux.Sequences.Tools.VtSequenceType.html",
+          "hash": "eolYywUxKaMp9xUkLXSPtvNPuB5hwmtYv4VmNmggrjs="
         }
       },
       "is_incremental": false,
@@ -413,11 +413,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Sequences.Tools.yml",
+      "source_relative_path": "api/Terminaux.Sequences.Tools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Sequences.Tools.html",
-          "hash": "nbPVmyeFfTpet21uG7+jS37e0QpyGNO0Th/DIHMRaNk="
+          "relative_path": "api/Terminaux.Sequences.Tools.html",
+          "hash": "OGFTac2Onf28Z7dutCz5836Rq2781KyyC9OYDuSkp0k="
         }
       },
       "is_incremental": false,
@@ -425,11 +425,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Tools.ConsoleWrapperTools.yml",
+      "source_relative_path": "api/Terminaux.Tools.ConsoleWrapperTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Tools.ConsoleWrapperTools.html",
-          "hash": "MXd9a3Zpvmx/RK+PYrx75Z9ljzC0pZ5GxlWjRRgf/9g="
+          "relative_path": "api/Terminaux.Tools.ConsoleWrapperTools.html",
+          "hash": "rSX07hVu+qwSvelCBadTlrhCabxsEJD0+gjXtJNMsKA="
         }
       },
       "is_incremental": false,
@@ -437,11 +437,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Tools.yml",
+      "source_relative_path": "api/Terminaux.Tools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Tools.html",
-          "hash": "GUvsLG28Qb5l8iGf73tAf+pWFy35VVbx0FOSiDqxQDo="
+          "relative_path": "api/Terminaux.Tools.html",
+          "hash": "XTjLZDDkdcKcPIsPP2uZLLgiA//J2alggUxmm+QzLW0="
         }
       },
       "is_incremental": false,
@@ -453,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "eFMOUPS/i7Z4RxJukZ0ZdbUROKOiOH7nJ+FrvzM6wqc="
+          "hash": "t9bZ7qb+XuBwIy1iDHndMk/Esj08avSR3f0DVROjX0s="
         }
       },
       "is_incremental": false,
@@ -465,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "6KkjFi5rhJ+x0bnqHmXtz1QNYqe/9vgOSLjdOTLv4uo="
+          "hash": "w7us7qWDZx/2aEoijSoiDHD4rSN64/jDrl6VYn3TQHU="
         }
       },
       "is_incremental": false,
@@ -477,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "GNan1gvLArb598Y/19F6JUHkgMhsap5XiQc05pACUT0="
+          "hash": "rPXnwnBADwkv3Syek0/h8Y+gA/WInoqCTiIEwLFCW80="
         }
       },
       "is_incremental": false,
