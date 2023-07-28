@@ -20,14 +20,14 @@ jobs:
     - name: MSBuild Installation
       uses: microsoft/setup-msbuild@v1.3
     - name: Dependency Restoration
-      run: nuget restore "TermRead.sln"
+      run: nuget restore "Terminaux.sln"
     - name: Solution Compilation
-      run: msbuild "TermRead.sln" /p:Configuration=Release
+      run: msbuild "Terminaux.sln" /p:Configuration=Release
     - name: NuGet Preparation
       run: nuget setApiKey ${{ secrets.NUGET_APIKEY }}
     - name: Package Publication
       run: |
-        $path = "TermRead\bin\Release"
-        $FileName = Get-ChildItem -Path $path -Name -Filter "TermRead.*"
+        $path = "Terminaux\bin\Release"
+        $FileName = Get-ChildItem -Path $path -Name -Filter "Terminaux.*"
         nuget push "$path\$FileName" -source "nuget.org"
         
