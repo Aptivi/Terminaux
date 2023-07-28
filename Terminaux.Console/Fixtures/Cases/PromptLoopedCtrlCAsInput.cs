@@ -34,12 +34,12 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            TerminauxerSettings.TreatCtrlCAsInput = true;
+            TermReaderSettings.TreatCtrlCAsInput = true;
             Console.WriteLine("Write \"exit\" to get out of here.");
             string input = "";
             while (input != "exit")
             {
-                input = Terminauxer.Read(">> ");
+                input = TermReader.Read(">> ");
                 Console.WriteLine("You said: " + input);
             }
         }

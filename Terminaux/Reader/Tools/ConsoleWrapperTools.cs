@@ -372,9 +372,9 @@ namespace Terminaux.Tools
         private static void Write(char value)
         {
             Console.Write(value);
-            if (CursorLeft >= WindowWidth - TerminauxerSettings.RightMargin)
+            if (CursorLeft >= WindowWidth - TermReaderSettings.RightMargin)
                 if (CursorTop != BufferHeight)
-                    SetCursorPosition(TerminauxerSettings.LeftMargin, CursorTop + 1);
+                    SetCursorPosition(TermReaderSettings.LeftMargin, CursorTop + 1);
                 else
                     WriteLine();
         }

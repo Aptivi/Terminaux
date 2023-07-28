@@ -30,13 +30,13 @@ namespace Terminaux.Tools
 {
     internal static class PositioningTools
     {
-        internal static void GoForward(ref TerminauxerState state) =>
+        internal static void GoForward(ref TermReaderState state) =>
             GoForward(1, false, ref state);
 
-        internal static void GoForward(int steps, ref TerminauxerState state) =>
+        internal static void GoForward(int steps, ref TermReaderState state) =>
             GoForward(steps, false, ref state);
 
-        internal static void GoForward(int steps, bool isAppend, ref TerminauxerState state)
+        internal static void GoForward(int steps, bool isAppend, ref TermReaderState state)
         {
             if (steps > state.currentText.Length - state.currentTextPos)
                 steps = state.currentText.Length - state.currentTextPos;
@@ -46,14 +46,14 @@ namespace Terminaux.Tools
                 state.currentTextPos++;
 
                 // If the character is unrenderable, continue the loop
-                if (state.PasswordMode && char.IsControl(TerminauxerSettings.PasswordMaskChar))
+                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
                     continue;
 
                 state.currentCursorPosLeft++;
-                if (state.CurrentCursorPosLeft >= ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin)
+                if (state.CurrentCursorPosLeft >= ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin)
                 {
                     // Reached to the end! Wrap down!
-                    state.currentCursorPosLeft = TerminauxerSettings.LeftMargin;
+                    state.currentCursorPosLeft = TermReaderSettings.LeftMargin;
                     if (state.currentCursorPosTop < ConsoleWrapperTools.ActionBufferHeight())
                         state.currentCursorPosTop++;
                 }
@@ -72,10 +72,10 @@ namespace Terminaux.Tools
             }
         }
 
-        internal static void GoBack(ref TerminauxerState state) =>
+        internal static void GoBack(ref TermReaderState state) =>
             GoBack(1, ref state);
 
-        internal static void GoBack(int steps, ref TerminauxerState state)
+        internal static void GoBack(int steps, ref TermReaderState state)
         {
             if (steps > state.currentTextPos)
                 steps = state.currentTextPos;
@@ -85,33 +85,33 @@ namespace Terminaux.Tools
                 state.currentTextPos--;
 
                 // If the character is unrenderable, continue the loop
-                if (state.PasswordMode && char.IsControl(TerminauxerSettings.PasswordMaskChar))
+                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
                     continue;
 
                 state.currentCursorPosLeft--;
-                if (state.CurrentCursorPosLeft < TerminauxerSettings.LeftMargin)
+                if (state.CurrentCursorPosLeft < TermReaderSettings.LeftMargin)
                 {
                     // Reached to the beginning! Wrap up!
-                    state.currentCursorPosLeft = ConsoleWrapperTools.ActionWindowWidth() - 1 - TerminauxerSettings.RightMargin;
+                    state.currentCursorPosLeft = ConsoleWrapperTools.ActionWindowWidth() - 1 - TermReaderSettings.RightMargin;
                     if (state.currentCursorPosTop > 0)
                         state.currentCursorPosTop--;
                 }
             }
         }
 
-        internal static void SeekTo(int steps, ref TerminauxerState state) =>
+        internal static void SeekTo(int steps, ref TermReaderState state) =>
             SeekTo(state.currentTextPos, steps, ref state);
 
-        internal static void SeekTo(int fromPos, int steps, ref TerminauxerState state)
+        internal static void SeekTo(int fromPos, int steps, ref TermReaderState state)
         {
             GoBack(fromPos, ref state);
             GoForward(steps, ref state);
         }
 
-        internal static void GoForwardOneLineWrapAware(ref TerminauxerState state, string[] incompleteSentences) =>
+        internal static void GoForwardOneLineWrapAware(ref TermReaderState state, string[] incompleteSentences) =>
             GoForwardOneLineWrapAware(1, ref state, incompleteSentences);
 
-        internal static void GoForwardOneLineWrapAware(int steps, ref TerminauxerState state, string[] incompleteSentences)
+        internal static void GoForwardOneLineWrapAware(int steps, ref TermReaderState state, string[] incompleteSentences)
         {
             if (steps > state.currentText.Length - state.currentTextPos)
                 steps = state.currentText.Length - state.currentTextPos;
@@ -121,17 +121,17 @@ namespace Terminaux.Tools
                 state.currentTextPos++;
 
                 // If the character is unrenderable, continue the loop
-                if (state.PasswordMode && char.IsControl(TerminauxerSettings.PasswordMaskChar))
+                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
                     continue;
 
                 state.currentCursorPosLeft++;
-                if (state.CurrentCursorPosLeft >= ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin)
+                if (state.CurrentCursorPosLeft >= ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin)
                 {
                     // Reached to the end! Go back to the prompt position.
                     state.currentCursorPosLeft = state.InputPromptLeft + 1;
 
                     // Refresh the entire prompt
-                    int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin - state.inputPromptLeft - 1;
+                    int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                     string renderedText = BaseBinding.GetOneLineWrappedSentenceToRender(incompleteSentences, state);
                     ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                     ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length));
@@ -139,10 +139,10 @@ namespace Terminaux.Tools
             }
         }
 
-        internal static void GoBackOneLineWrapAware(ref TerminauxerState state, string[] incompleteSentences) =>
+        internal static void GoBackOneLineWrapAware(ref TermReaderState state, string[] incompleteSentences) =>
             GoBackOneLineWrapAware(1, ref state, incompleteSentences);
 
-        internal static void GoBackOneLineWrapAware(int steps, ref TerminauxerState state, string[] incompleteSentences)
+        internal static void GoBackOneLineWrapAware(int steps, ref TermReaderState state, string[] incompleteSentences)
         {
             if (steps > state.currentTextPos)
                 steps = state.currentTextPos;
@@ -152,17 +152,17 @@ namespace Terminaux.Tools
                 state.currentTextPos--;
 
                 // If the character is unrenderable, continue the loop
-                if (state.PasswordMode && char.IsControl(TerminauxerSettings.PasswordMaskChar))
+                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
                     continue;
 
                 state.currentCursorPosLeft--;
                 if (state.CurrentCursorPosLeft < state.inputPromptLeft + 1 && state.CurrentText.Length != 0)
                 {
                     // Reached to the beginning! Go back to the furthest position, plus the extra character being printed.
-                    state.currentCursorPosLeft = ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin - 1;
+                    state.currentCursorPosLeft = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - 1;
 
                     // Refresh the entire prompt
-                    int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin - state.inputPromptLeft - 1;
+                    int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                     string renderedText = BaseBinding.GetOneLineWrappedSentenceToRender(incompleteSentences, state);
                     ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                     ConsoleWrapperTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length));
@@ -170,16 +170,16 @@ namespace Terminaux.Tools
             }
         }
 
-        internal static void SeekToOneLineWrapAware(int steps, ref TerminauxerState state, string[] incompleteSentences) =>
+        internal static void SeekToOneLineWrapAware(int steps, ref TermReaderState state, string[] incompleteSentences) =>
             SeekToOneLineWrapAware(state.currentTextPos, steps, ref state, incompleteSentences);
 
-        internal static void SeekToOneLineWrapAware(int fromPos, int steps, ref TerminauxerState state, string[] incompleteSentences)
+        internal static void SeekToOneLineWrapAware(int fromPos, int steps, ref TermReaderState state, string[] incompleteSentences)
         {
             GoBackOneLineWrapAware(fromPos, ref state, incompleteSentences);
             GoForwardOneLineWrapAware(steps, ref state, incompleteSentences);
         }
 
-        internal static void HandleTopChangeForInput(ref TerminauxerState state)
+        internal static void HandleTopChangeForInput(ref TermReaderState state)
         {
             int promptLeft = state.InputPromptLeft;
             int promptTop = state.InputPromptTop;
@@ -189,7 +189,7 @@ namespace Terminaux.Tools
             int heightOffset = 1;
             for (int i = promptLeft; i < state.CurrentText.Length + promptLeft; i++)
             {
-                if (counted >= ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin)
+                if (counted >= ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin)
                 {
                     // Reached to the end! Wrap down!
                     if (promptTop >= ConsoleWrapperTools.ActionBufferHeight() - heightOffset)

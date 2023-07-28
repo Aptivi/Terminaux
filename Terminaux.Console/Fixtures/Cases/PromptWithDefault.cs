@@ -34,7 +34,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            string input = Terminauxer.Read("", "Hello World!");
+            string input = TermReader.Read("", "Hello World!");
             Console.WriteLine("You said: " + input);
         }
     }

@@ -40,6 +40,6 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override bool IsExit => true;
 
         /// <inheritdoc/>
-        public override void DoAction(TerminauxerState state) { }
+        public override void DoAction(TermReaderState state) { }
     }
 }

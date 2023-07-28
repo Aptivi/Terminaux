@@ -38,9 +38,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string input = "";
             while (input != "exit")
             {
-                TerminauxerSettings.Suggestions = GetSuggestions;
-                TerminauxerSettings.HistoryEnabled = true;
-                input = Terminauxer.Read(">> ", "", false, true);
+                TermReaderSettings.Suggestions = GetSuggestions;
+                TermReaderSettings.HistoryEnabled = true;
+                input = TermReader.Read(">> ", "", false, true);
                 Console.WriteLine("You said: " + input);
             }
         }

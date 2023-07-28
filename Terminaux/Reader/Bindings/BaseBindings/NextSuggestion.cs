@@ -38,15 +38,15 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         };
 
         /// <inheritdoc/>
-        public override void DoAction(TerminauxerState state)
+        public override void DoAction(TermReaderState state)
         {
             // Get suggestions
-            string[] suggestions = TerminauxerSettings.suggestions(state.CurrentText.ToString(), state.CurrentTextPos, TerminauxerSettings.suggestionsDelims);
+            string[] suggestions = TermReaderSettings.suggestions(state.CurrentText.ToString(), state.CurrentTextPos, TermReaderSettings.suggestionsDelims);
             if (suggestions.Length > 0)
             {
-                TerminauxerState.currentSuggestionsPos++;
-                if (TerminauxerState.currentSuggestionsPos >= suggestions.Length)
-                    TerminauxerState.currentSuggestionsPos = 0;
+                TermReaderState.currentSuggestionsPos++;
+                if (TermReaderState.currentSuggestionsPos >= suggestions.Length)
+                    TermReaderState.currentSuggestionsPos = 0;
 
                 // Get a suggestion
                 string suggestion = suggestions[state.CurrentSuggestionsPos];
@@ -56,12 +56,12 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 state.CurrentText.Remove(state.CurrentTextPos, state.CurrentText.Length - state.CurrentTextPos);
 
                 // Re-write the text and set the current cursor position as appropriate
-                string renderedText = state.PasswordMode ? new string(TerminauxerSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
+                string renderedText = state.PasswordMode ? new string(TermReaderSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
 
                 // In the case of one line wrap, get the list of sentences
                 if (state.OneLineWrap)
                 {
-                    int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin - state.inputPromptLeft - 1;
+                    int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                     string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                     renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                     ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
@@ -76,10 +76,10 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
                 // Write the suggestion
                 state.CurrentText.Append(suggestion);
-                renderedText = state.PasswordMode ? new string(TerminauxerSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
+                renderedText = state.PasswordMode ? new string(TermReaderSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
                 if (state.OneLineWrap)
                 {
-                    int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin - state.inputPromptLeft - 1;
+                    int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                     string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                     renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                     ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);

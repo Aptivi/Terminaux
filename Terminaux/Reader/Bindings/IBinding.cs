@@ -47,6 +47,6 @@ namespace Terminaux.Reader.Bindings
         /// Do the action
         /// </summary>
         /// <param name="state">State of the reader</param>
-        public void DoAction(TerminauxerState state);
+        public void DoAction(TermReaderState state);
     }
 }

@@ -32,7 +32,7 @@ namespace Terminaux.Reader
     /// <summary>
     /// Terminal reader tools
     /// </summary>
-    public static class TerminauxerTools
+    public static class TermReaderTools
     {
         internal static bool interrupting = false;
         internal static bool isWaitingForInput = false;

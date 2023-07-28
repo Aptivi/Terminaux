@@ -34,7 +34,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            string input = Terminauxer.ReadPassword("Enter password: ");
+            string input = TermReader.ReadPassword("Enter password: ");
             Console.WriteLine("Password is: " + input);
         }
     }

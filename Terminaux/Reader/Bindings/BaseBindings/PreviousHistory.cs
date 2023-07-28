@@ -37,7 +37,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         };
 
         /// <inheritdoc/>
-        public override void DoAction(TerminauxerState state)
+        public override void DoAction(TermReaderState state)
         {
             // If we're at the start of the history, bail.
             if (state.CurrentHistoryPos == 0)
@@ -48,7 +48,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 return;
 
             // If we're in the disabled history mode, bail.
-            if (!TerminauxerSettings.HistoryEnabled)
+            if (!TermReaderSettings.HistoryEnabled)
                 return;
 
             // Wipe everything
@@ -56,7 +56,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             state.CurrentText.Clear();
             if (state.OneLineWrap)
             {
-                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin - state.inputPromptLeft - 1;
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                 string renderedBlanks = new(' ', longestSentenceLength);
                 ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleWrapperTools.ActionWriteString(renderedBlanks);
@@ -74,13 +74,13 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
 
             // Now, write the history entry
-            TerminauxerState.currentHistoryPos--;
-            string history = state.History[TerminauxerState.currentHistoryPos];
+            TermReaderState.currentHistoryPos--;
+            string history = state.History[TermReaderState.currentHistoryPos];
 
             // In the case of one line wrap, get the list of sentences
             if (state.OneLineWrap)
             {
-                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin - state.inputPromptLeft - 1;
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                 string[] incompleteSentences = GetWrappedSentences(history, longestSentenceLength, 0);
                 string renderedHistory = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, history.Length) : history;
                 ConsoleWrapperTools.ActionWriteString(renderedHistory + new string(' ', longestSentenceLength - renderedHistory.Length));

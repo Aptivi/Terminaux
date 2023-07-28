@@ -34,8 +34,8 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            TerminauxerSettings.PasswordMaskChar = '\0';
-            string input = Terminauxer.ReadPassword();
+            TermReaderSettings.PasswordMaskChar = '\0';
+            string input = TermReader.ReadPassword();
             Console.WriteLine("Password is: " + input);
         }
     }

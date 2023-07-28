@@ -39,7 +39,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             while (input != "exit")
             {
                 Console.Write(">> ");
-                input = Terminauxer.Read();
+                input = TermReader.Read();
                 Console.WriteLine("You said: " + input);
             }
         }

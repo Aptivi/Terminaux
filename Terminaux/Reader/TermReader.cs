@@ -32,7 +32,7 @@ namespace Terminaux.Reader
     /// <summary>
     /// Terminal input reader module
     /// </summary>
-    public static class Terminauxer
+    public static class TermReader
     {
         private static readonly object readLock = new();
 
@@ -75,10 +75,10 @@ namespace Terminaux.Reader
             lock (readLock)
             {
                 var struckKey = new ConsoleKeyInfo();
-                var readState = new TerminauxerState();
+                var readState = new TermReaderState();
 
                 // Print the input
-                ConsoleWrapperTools.ActionSetCursorLeft(ConsoleWrapperTools.ActionCursorLeft() + TerminauxerSettings.LeftMargin);
+                ConsoleWrapperTools.ActionSetCursorLeft(ConsoleWrapperTools.ActionCursorLeft() + TermReaderSettings.LeftMargin);
                 ConsoleWrapperTools.ActionWriteString(inputPrompt);
 
                 // Save current state of input
@@ -87,17 +87,17 @@ namespace Terminaux.Reader
                 readState.inputPromptText = inputPrompt;
                 readState.passwordMode = password;
                 readState.oneLineWrap = oneLineWrap;
-                ConsoleWrapperTools.ActionTreatCtrlCAsInput(TerminauxerSettings.TreatCtrlCAsInput);
+                ConsoleWrapperTools.ActionTreatCtrlCAsInput(TermReaderSettings.TreatCtrlCAsInput);
 
                 // Get input
                 (int, int) cachedPos = (ConsoleWrapperTools.ActionCursorLeft(), ConsoleWrapperTools.ActionCursorTop());
                 while (!BindingsReader.IsTerminate(struckKey))
                 {
                     // Get a key
-                    TerminauxerTools.isWaitingForInput = true;
-                    struckKey = TerminauxerTools.GetInput(interruptible);
+                    TermReaderTools.isWaitingForInput = true;
+                    struckKey = TermReaderTools.GetInput(interruptible);
                     ConsoleWrapperTools.ActionCursorVisible(false);
-                    TerminauxerTools.isWaitingForInput = false;
+                    TermReaderTools.isWaitingForInput = false;
 
                     // Install necessary values
                     readState.currentCursorPosLeft = cachedPos.Item1;
@@ -124,7 +124,7 @@ namespace Terminaux.Reader
                 string input = readState.CurrentText.Length == 0 ?
                                defaultValue :
                                readState.CurrentText.ToString();
-                if (!password && TerminauxerSettings.HistoryEnabled)
+                if (!password && TermReaderSettings.HistoryEnabled)
                 {
                     // We don't want passwords in the history. Also, check to see if the history entry can be added or not based
                     // on the following conditions:
@@ -133,14 +133,14 @@ namespace Terminaux.Reader
                     // - If the last input is not the same as the currently supplied input
                     // - Can also be added if the history is zero
                     if (!string.IsNullOrWhiteSpace(input) &&
-                        ((TerminauxerState.history.Count > 0 && TerminauxerState.history[TerminauxerState.history.Count - 1] != input) || TerminauxerState.history.Count == 0))
-                        TerminauxerState.history.Add(input);
+                        ((TermReaderState.history.Count > 0 && TermReaderState.history[TermReaderState.history.Count - 1] != input) || TermReaderState.history.Count == 0))
+                        TermReaderState.history.Add(input);
                 }
 
                 // Reset the auto complete position and suggestions
-                TerminauxerState.currentSuggestionsPos = 0;
-                TerminauxerState.currentHistoryPos = TerminauxerState.history.Count;
-                TerminauxerSettings.Suggestions = ((_, _, _) => Array.Empty<string>());
+                TermReaderState.currentSuggestionsPos = 0;
+                TermReaderState.currentHistoryPos = TermReaderState.history.Count;
+                TermReaderSettings.Suggestions = ((_, _, _) => Array.Empty<string>());
                 return input;
             }
         }

@@ -37,7 +37,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         };
 
         /// <inheritdoc/>
-        public override void DoAction(TerminauxerState state)
+        public override void DoAction(TermReaderState state)
         {
             // If we're at the start of the text, bail.
             if (state.CurrentTextPos == 0)
@@ -62,7 +62,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             if (state.OneLineWrap)
             {
                 string renderedText = state.CurrentText.ToString();
-                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin - state.inputPromptLeft - 1;
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                 string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 PositioningTools.GoBackOneLineWrapAware(steps, ref state, incompleteSentences);
             }

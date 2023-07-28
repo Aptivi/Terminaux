@@ -32,7 +32,7 @@ namespace Terminaux.Reader
     /// <summary>
     /// State of the reader
     /// </summary>
-    public class TerminauxerState
+    public class TermReaderState
     {
         // Instance
         internal int inputPromptLeft;
@@ -112,6 +112,6 @@ namespace Terminaux.Reader
         /// </summary>
         public bool OneLineWrap { get => oneLineWrap; }
 
-        internal TerminauxerState() { }
+        internal TermReaderState() { }
     }
 }

@@ -37,7 +37,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         };
 
         /// <inheritdoc/>
-        public override void DoAction(TerminauxerState state)
+        public override void DoAction(TermReaderState state)
         {
             // If we're at the end of the text, bail.
             if (state.CurrentTextPos == state.CurrentText.Length)
@@ -47,10 +47,10 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             state.CurrentText.Remove(state.CurrentTextPos, 1);
 
             // Re-write the text and set the current cursor position as appropriate
-            string renderedText = state.PasswordMode ? new string(TerminauxerSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
+            string renderedText = state.PasswordMode ? new string(TermReaderSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
             if (state.OneLineWrap)
             {
-                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin - state.inputPromptLeft - 1;
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                 string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);

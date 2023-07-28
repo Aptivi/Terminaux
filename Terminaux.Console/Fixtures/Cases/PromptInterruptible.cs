@@ -39,10 +39,10 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             var interruptTask = new Task(() =>
             {
                 Thread.Sleep(5000);
-                TerminauxerTools.Interrupt();
+                TermReaderTools.Interrupt();
             });
             interruptTask.Start();
-            string input = Terminauxer.Read("You have five seconds to say anything: ", "", false, false, true);
+            string input = TermReader.Read("You have five seconds to say anything: ", "", false, false, true);
             Console.WriteLine("You said: " + input);
         }
     }

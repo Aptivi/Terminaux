@@ -30,7 +30,7 @@ namespace Terminaux.Reader.Bindings
 {
     internal static class BindingsReader
     {
-        internal static void Execute(TerminauxerState state)
+        internal static void Execute(TermReaderState state)
         {
             // Get the chosen bindings
             var chosenBindings = BindingsList.AllBindings.Where((bindingInfo) => bindingInfo.BindMatched(state.pressedKey));

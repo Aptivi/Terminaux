@@ -35,12 +35,12 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public void RunFixture()
         {
             Console.WriteLine("Write \"exit\" to get out of here.");
-            TerminauxerSettings.LeftMargin = 4;
-            TerminauxerSettings.RightMargin = 4;
+            TermReaderSettings.LeftMargin = 4;
+            TermReaderSettings.RightMargin = 4;
             string input = "";
             while (input != "exit")
             {
-                input = Terminauxer.Read(">> ");
+                input = TermReader.Read(">> ");
                 Console.WriteLine("You said: " + input);
             }
         }

@@ -30,7 +30,7 @@ namespace Terminaux.Reader
     /// <summary>
     /// Settings for the reader
     /// </summary>
-    public static class TerminauxerSettings
+    public static class TermReaderSettings
     {
         private static char passwordMaskChar = '*';
         private static bool historyEnabled = true;

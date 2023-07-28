@@ -68,7 +68,7 @@ namespace Terminaux.Reader.Bindings
         /// Do the action
         /// </summary>
         /// <param name="state">State of the reader</param>
-        public virtual void DoAction(TerminauxerState state)
+        public virtual void DoAction(TermReaderState state)
         {
             // Insert the character, but in the condition that it's not a control character
             if (char.IsControl(state.pressedKey.KeyChar))
@@ -76,12 +76,12 @@ namespace Terminaux.Reader.Bindings
             state.CurrentText.Insert(state.CurrentTextPos, state.pressedKey.KeyChar);
 
             // Re-write the text and set the current cursor position as appropriate
-            string renderedText = state.PasswordMode ? new string(TerminauxerSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
+            string renderedText = state.PasswordMode ? new string(TermReaderSettings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
 
             // In the case of one line wrap, get the list of sentences
             if (state.OneLineWrap)
             {
-                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TerminauxerSettings.RightMargin - state.inputPromptLeft - 1;
+                int longestSentenceLength = ConsoleWrapperTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
                 string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapperTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
@@ -97,7 +97,7 @@ namespace Terminaux.Reader.Bindings
             ConsoleWrapperTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
 
-        internal static string GetOneLineWrappedSentenceToRender(string[] incompleteSentences, TerminauxerState state) =>
+        internal static string GetOneLineWrappedSentenceToRender(string[] incompleteSentences, TermReaderState state) =>
             GetOneLineWrappedSentenceToRender(incompleteSentences, state.CurrentTextPos);
 
         internal static string GetOneLineWrappedSentenceToRender(string[] incompleteSentences, int targetIndex)
