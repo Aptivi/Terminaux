@@ -2193,12 +2193,12 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.Bindings.BaseBinding.BoundKeys
   nameWithType: BaseBinding.BoundKeys
-- uid: Terminaux.Reader.Bindings.BaseBinding.DoAction(Terminaux.Reader.TerminauxerState)
-  name: DoAction(TerminauxerState)
-  href: api/Terminaux.Reader.Bindings.BaseBinding.html#Terminaux_Reader_Bindings_BaseBinding_DoAction_Terminaux_Reader_TerminauxerState_
-  commentId: M:Terminaux.Reader.Bindings.BaseBinding.DoAction(Terminaux.Reader.TerminauxerState)
-  fullName: Terminaux.Reader.Bindings.BaseBinding.DoAction(Terminaux.Reader.TerminauxerState)
-  nameWithType: BaseBinding.DoAction(TerminauxerState)
+- uid: Terminaux.Reader.Bindings.BaseBinding.DoAction(Terminaux.Reader.TermReaderState)
+  name: DoAction(TermReaderState)
+  href: api/Terminaux.Reader.Bindings.BaseBinding.html#Terminaux_Reader_Bindings_BaseBinding_DoAction_Terminaux_Reader_TermReaderState_
+  commentId: M:Terminaux.Reader.Bindings.BaseBinding.DoAction(Terminaux.Reader.TermReaderState)
+  fullName: Terminaux.Reader.Bindings.BaseBinding.DoAction(Terminaux.Reader.TermReaderState)
+  nameWithType: BaseBinding.DoAction(TermReaderState)
 - uid: Terminaux.Reader.Bindings.BaseBinding.DoAction*
   name: DoAction
   href: api/Terminaux.Reader.Bindings.BaseBinding.html#Terminaux_Reader_Bindings_BaseBinding_DoAction_
@@ -2283,12 +2283,12 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.Bindings.IBinding.BoundKeys
   nameWithType: IBinding.BoundKeys
-- uid: Terminaux.Reader.Bindings.IBinding.DoAction(Terminaux.Reader.TerminauxerState)
-  name: DoAction(TerminauxerState)
-  href: api/Terminaux.Reader.Bindings.IBinding.html#Terminaux_Reader_Bindings_IBinding_DoAction_Terminaux_Reader_TerminauxerState_
-  commentId: M:Terminaux.Reader.Bindings.IBinding.DoAction(Terminaux.Reader.TerminauxerState)
-  fullName: Terminaux.Reader.Bindings.IBinding.DoAction(Terminaux.Reader.TerminauxerState)
-  nameWithType: IBinding.DoAction(TerminauxerState)
+- uid: Terminaux.Reader.Bindings.IBinding.DoAction(Terminaux.Reader.TermReaderState)
+  name: DoAction(TermReaderState)
+  href: api/Terminaux.Reader.Bindings.IBinding.html#Terminaux_Reader_Bindings_IBinding_DoAction_Terminaux_Reader_TermReaderState_
+  commentId: M:Terminaux.Reader.Bindings.IBinding.DoAction(Terminaux.Reader.TermReaderState)
+  fullName: Terminaux.Reader.Bindings.IBinding.DoAction(Terminaux.Reader.TermReaderState)
+  nameWithType: IBinding.DoAction(TermReaderState)
 - uid: Terminaux.Reader.Bindings.IBinding.DoAction*
   name: DoAction
   href: api/Terminaux.Reader.Bindings.IBinding.html#Terminaux_Reader_Bindings_IBinding_DoAction_
@@ -2296,360 +2296,360 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.Bindings.IBinding.DoAction
   nameWithType: IBinding.DoAction
-- uid: Terminaux.Reader.Terminauxer
-  name: Terminauxer
-  href: api/Terminaux.Reader.Terminauxer.html
-  commentId: T:Terminaux.Reader.Terminauxer
-  fullName: Terminaux.Reader.Terminauxer
-  nameWithType: Terminauxer
-- uid: Terminaux.Reader.Terminauxer.Read
+- uid: Terminaux.Reader.TermReader
+  name: TermReader
+  href: api/Terminaux.Reader.TermReader.html
+  commentId: T:Terminaux.Reader.TermReader
+  fullName: Terminaux.Reader.TermReader
+  nameWithType: TermReader
+- uid: Terminaux.Reader.TermReader.Read
   name: Read()
-  href: api/Terminaux.Reader.Terminauxer.html#Terminaux_Reader_Terminauxer_Read
-  commentId: M:Terminaux.Reader.Terminauxer.Read
-  fullName: Terminaux.Reader.Terminauxer.Read()
-  nameWithType: Terminauxer.Read()
-- uid: Terminaux.Reader.Terminauxer.Read(System.String)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read
+  commentId: M:Terminaux.Reader.TermReader.Read
+  fullName: Terminaux.Reader.TermReader.Read()
+  nameWithType: TermReader.Read()
+- uid: Terminaux.Reader.TermReader.Read(System.String)
   name: Read(String)
-  href: api/Terminaux.Reader.Terminauxer.html#Terminaux_Reader_Terminauxer_Read_System_String_
-  commentId: M:Terminaux.Reader.Terminauxer.Read(System.String)
-  fullName: Terminaux.Reader.Terminauxer.Read(System.String)
-  nameWithType: Terminauxer.Read(String)
-- uid: Terminaux.Reader.Terminauxer.Read(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_String_
+  commentId: M:Terminaux.Reader.TermReader.Read(System.String)
+  fullName: Terminaux.Reader.TermReader.Read(System.String)
+  nameWithType: TermReader.Read(String)
+- uid: Terminaux.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)
   name: Read(String, String, Boolean, Boolean, Boolean)
-  href: api/Terminaux.Reader.Terminauxer.html#Terminaux_Reader_Terminauxer_Read_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_
-  commentId: M:Terminaux.Reader.Terminauxer.Read(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)
-  fullName: Terminaux.Reader.Terminauxer.Read(System.String, System.String, System.Boolean, System.Boolean, System.Boolean)
-  nameWithType: Terminauxer.Read(String, String, Boolean, Boolean, Boolean)
-- uid: Terminaux.Reader.Terminauxer.Read*
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)
+  fullName: Terminaux.Reader.TermReader.Read(System.String, System.String, System.Boolean, System.Boolean, System.Boolean)
+  nameWithType: TermReader.Read(String, String, Boolean, Boolean, Boolean)
+- uid: Terminaux.Reader.TermReader.Read*
   name: Read
-  href: api/Terminaux.Reader.Terminauxer.html#Terminaux_Reader_Terminauxer_Read_
-  commentId: Overload:Terminaux.Reader.Terminauxer.Read
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_
+  commentId: Overload:Terminaux.Reader.TermReader.Read
   isSpec: "True"
-  fullName: Terminaux.Reader.Terminauxer.Read
-  nameWithType: Terminauxer.Read
-- uid: Terminaux.Reader.Terminauxer.ReadPassword
+  fullName: Terminaux.Reader.TermReader.Read
+  nameWithType: TermReader.Read
+- uid: Terminaux.Reader.TermReader.ReadPassword
   name: ReadPassword()
-  href: api/Terminaux.Reader.Terminauxer.html#Terminaux_Reader_Terminauxer_ReadPassword
-  commentId: M:Terminaux.Reader.Terminauxer.ReadPassword
-  fullName: Terminaux.Reader.Terminauxer.ReadPassword()
-  nameWithType: Terminauxer.ReadPassword()
-- uid: Terminaux.Reader.Terminauxer.ReadPassword(System.String)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword
+  commentId: M:Terminaux.Reader.TermReader.ReadPassword
+  fullName: Terminaux.Reader.TermReader.ReadPassword()
+  nameWithType: TermReader.ReadPassword()
+- uid: Terminaux.Reader.TermReader.ReadPassword(System.String)
   name: ReadPassword(String)
-  href: api/Terminaux.Reader.Terminauxer.html#Terminaux_Reader_Terminauxer_ReadPassword_System_String_
-  commentId: M:Terminaux.Reader.Terminauxer.ReadPassword(System.String)
-  fullName: Terminaux.Reader.Terminauxer.ReadPassword(System.String)
-  nameWithType: Terminauxer.ReadPassword(String)
-- uid: Terminaux.Reader.Terminauxer.ReadPassword*
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_System_String_
+  commentId: M:Terminaux.Reader.TermReader.ReadPassword(System.String)
+  fullName: Terminaux.Reader.TermReader.ReadPassword(System.String)
+  nameWithType: TermReader.ReadPassword(String)
+- uid: Terminaux.Reader.TermReader.ReadPassword*
   name: ReadPassword
-  href: api/Terminaux.Reader.Terminauxer.html#Terminaux_Reader_Terminauxer_ReadPassword_
-  commentId: Overload:Terminaux.Reader.Terminauxer.ReadPassword
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_
+  commentId: Overload:Terminaux.Reader.TermReader.ReadPassword
   isSpec: "True"
-  fullName: Terminaux.Reader.Terminauxer.ReadPassword
-  nameWithType: Terminauxer.ReadPassword
-- uid: Terminaux.Reader.TerminauxerSettings
-  name: TerminauxerSettings
-  href: api/Terminaux.Reader.TerminauxerSettings.html
-  commentId: T:Terminaux.Reader.TerminauxerSettings
-  fullName: Terminaux.Reader.TerminauxerSettings
-  nameWithType: TerminauxerSettings
-- uid: Terminaux.Reader.TerminauxerSettings.HistoryEnabled
+  fullName: Terminaux.Reader.TermReader.ReadPassword
+  nameWithType: TermReader.ReadPassword
+- uid: Terminaux.Reader.TermReaderSettings
+  name: TermReaderSettings
+  href: api/Terminaux.Reader.TermReaderSettings.html
+  commentId: T:Terminaux.Reader.TermReaderSettings
+  fullName: Terminaux.Reader.TermReaderSettings
+  nameWithType: TermReaderSettings
+- uid: Terminaux.Reader.TermReaderSettings.HistoryEnabled
   name: HistoryEnabled
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_HistoryEnabled
-  commentId: P:Terminaux.Reader.TerminauxerSettings.HistoryEnabled
-  fullName: Terminaux.Reader.TerminauxerSettings.HistoryEnabled
-  nameWithType: TerminauxerSettings.HistoryEnabled
-- uid: Terminaux.Reader.TerminauxerSettings.HistoryEnabled*
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_HistoryEnabled
+  commentId: P:Terminaux.Reader.TermReaderSettings.HistoryEnabled
+  fullName: Terminaux.Reader.TermReaderSettings.HistoryEnabled
+  nameWithType: TermReaderSettings.HistoryEnabled
+- uid: Terminaux.Reader.TermReaderSettings.HistoryEnabled*
   name: HistoryEnabled
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_HistoryEnabled_
-  commentId: Overload:Terminaux.Reader.TerminauxerSettings.HistoryEnabled
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_HistoryEnabled_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.HistoryEnabled
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerSettings.HistoryEnabled
-  nameWithType: TerminauxerSettings.HistoryEnabled
-- uid: Terminaux.Reader.TerminauxerSettings.LeftMargin
+  fullName: Terminaux.Reader.TermReaderSettings.HistoryEnabled
+  nameWithType: TermReaderSettings.HistoryEnabled
+- uid: Terminaux.Reader.TermReaderSettings.LeftMargin
   name: LeftMargin
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_LeftMargin
-  commentId: P:Terminaux.Reader.TerminauxerSettings.LeftMargin
-  fullName: Terminaux.Reader.TerminauxerSettings.LeftMargin
-  nameWithType: TerminauxerSettings.LeftMargin
-- uid: Terminaux.Reader.TerminauxerSettings.LeftMargin*
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_LeftMargin
+  commentId: P:Terminaux.Reader.TermReaderSettings.LeftMargin
+  fullName: Terminaux.Reader.TermReaderSettings.LeftMargin
+  nameWithType: TermReaderSettings.LeftMargin
+- uid: Terminaux.Reader.TermReaderSettings.LeftMargin*
   name: LeftMargin
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_LeftMargin_
-  commentId: Overload:Terminaux.Reader.TerminauxerSettings.LeftMargin
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_LeftMargin_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.LeftMargin
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerSettings.LeftMargin
-  nameWithType: TerminauxerSettings.LeftMargin
-- uid: Terminaux.Reader.TerminauxerSettings.PasswordMaskChar
+  fullName: Terminaux.Reader.TermReaderSettings.LeftMargin
+  nameWithType: TermReaderSettings.LeftMargin
+- uid: Terminaux.Reader.TermReaderSettings.PasswordMaskChar
   name: PasswordMaskChar
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_PasswordMaskChar
-  commentId: P:Terminaux.Reader.TerminauxerSettings.PasswordMaskChar
-  fullName: Terminaux.Reader.TerminauxerSettings.PasswordMaskChar
-  nameWithType: TerminauxerSettings.PasswordMaskChar
-- uid: Terminaux.Reader.TerminauxerSettings.PasswordMaskChar*
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_PasswordMaskChar
+  commentId: P:Terminaux.Reader.TermReaderSettings.PasswordMaskChar
+  fullName: Terminaux.Reader.TermReaderSettings.PasswordMaskChar
+  nameWithType: TermReaderSettings.PasswordMaskChar
+- uid: Terminaux.Reader.TermReaderSettings.PasswordMaskChar*
   name: PasswordMaskChar
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_PasswordMaskChar_
-  commentId: Overload:Terminaux.Reader.TerminauxerSettings.PasswordMaskChar
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_PasswordMaskChar_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.PasswordMaskChar
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerSettings.PasswordMaskChar
-  nameWithType: TerminauxerSettings.PasswordMaskChar
-- uid: Terminaux.Reader.TerminauxerSettings.RightMargin
+  fullName: Terminaux.Reader.TermReaderSettings.PasswordMaskChar
+  nameWithType: TermReaderSettings.PasswordMaskChar
+- uid: Terminaux.Reader.TermReaderSettings.RightMargin
   name: RightMargin
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_RightMargin
-  commentId: P:Terminaux.Reader.TerminauxerSettings.RightMargin
-  fullName: Terminaux.Reader.TerminauxerSettings.RightMargin
-  nameWithType: TerminauxerSettings.RightMargin
-- uid: Terminaux.Reader.TerminauxerSettings.RightMargin*
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_RightMargin
+  commentId: P:Terminaux.Reader.TermReaderSettings.RightMargin
+  fullName: Terminaux.Reader.TermReaderSettings.RightMargin
+  nameWithType: TermReaderSettings.RightMargin
+- uid: Terminaux.Reader.TermReaderSettings.RightMargin*
   name: RightMargin
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_RightMargin_
-  commentId: Overload:Terminaux.Reader.TerminauxerSettings.RightMargin
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_RightMargin_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.RightMargin
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerSettings.RightMargin
-  nameWithType: TerminauxerSettings.RightMargin
-- uid: Terminaux.Reader.TerminauxerSettings.Suggestions
+  fullName: Terminaux.Reader.TermReaderSettings.RightMargin
+  nameWithType: TermReaderSettings.RightMargin
+- uid: Terminaux.Reader.TermReaderSettings.Suggestions
   name: Suggestions
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_Suggestions
-  commentId: P:Terminaux.Reader.TerminauxerSettings.Suggestions
-  fullName: Terminaux.Reader.TerminauxerSettings.Suggestions
-  nameWithType: TerminauxerSettings.Suggestions
-- uid: Terminaux.Reader.TerminauxerSettings.Suggestions*
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_Suggestions
+  commentId: P:Terminaux.Reader.TermReaderSettings.Suggestions
+  fullName: Terminaux.Reader.TermReaderSettings.Suggestions
+  nameWithType: TermReaderSettings.Suggestions
+- uid: Terminaux.Reader.TermReaderSettings.Suggestions*
   name: Suggestions
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_Suggestions_
-  commentId: Overload:Terminaux.Reader.TerminauxerSettings.Suggestions
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_Suggestions_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.Suggestions
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerSettings.Suggestions
-  nameWithType: TerminauxerSettings.Suggestions
-- uid: Terminaux.Reader.TerminauxerSettings.SuggestionsDelimiters
+  fullName: Terminaux.Reader.TermReaderSettings.Suggestions
+  nameWithType: TermReaderSettings.Suggestions
+- uid: Terminaux.Reader.TermReaderSettings.SuggestionsDelimiters
   name: SuggestionsDelimiters
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_SuggestionsDelimiters
-  commentId: P:Terminaux.Reader.TerminauxerSettings.SuggestionsDelimiters
-  fullName: Terminaux.Reader.TerminauxerSettings.SuggestionsDelimiters
-  nameWithType: TerminauxerSettings.SuggestionsDelimiters
-- uid: Terminaux.Reader.TerminauxerSettings.SuggestionsDelimiters*
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_SuggestionsDelimiters
+  commentId: P:Terminaux.Reader.TermReaderSettings.SuggestionsDelimiters
+  fullName: Terminaux.Reader.TermReaderSettings.SuggestionsDelimiters
+  nameWithType: TermReaderSettings.SuggestionsDelimiters
+- uid: Terminaux.Reader.TermReaderSettings.SuggestionsDelimiters*
   name: SuggestionsDelimiters
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_SuggestionsDelimiters_
-  commentId: Overload:Terminaux.Reader.TerminauxerSettings.SuggestionsDelimiters
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_SuggestionsDelimiters_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.SuggestionsDelimiters
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerSettings.SuggestionsDelimiters
-  nameWithType: TerminauxerSettings.SuggestionsDelimiters
-- uid: Terminaux.Reader.TerminauxerSettings.TreatCtrlCAsInput
+  fullName: Terminaux.Reader.TermReaderSettings.SuggestionsDelimiters
+  nameWithType: TermReaderSettings.SuggestionsDelimiters
+- uid: Terminaux.Reader.TermReaderSettings.TreatCtrlCAsInput
   name: TreatCtrlCAsInput
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_TreatCtrlCAsInput
-  commentId: P:Terminaux.Reader.TerminauxerSettings.TreatCtrlCAsInput
-  fullName: Terminaux.Reader.TerminauxerSettings.TreatCtrlCAsInput
-  nameWithType: TerminauxerSettings.TreatCtrlCAsInput
-- uid: Terminaux.Reader.TerminauxerSettings.TreatCtrlCAsInput*
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_TreatCtrlCAsInput
+  commentId: P:Terminaux.Reader.TermReaderSettings.TreatCtrlCAsInput
+  fullName: Terminaux.Reader.TermReaderSettings.TreatCtrlCAsInput
+  nameWithType: TermReaderSettings.TreatCtrlCAsInput
+- uid: Terminaux.Reader.TermReaderSettings.TreatCtrlCAsInput*
   name: TreatCtrlCAsInput
-  href: api/Terminaux.Reader.TerminauxerSettings.html#Terminaux_Reader_TerminauxerSettings_TreatCtrlCAsInput_
-  commentId: Overload:Terminaux.Reader.TerminauxerSettings.TreatCtrlCAsInput
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_TreatCtrlCAsInput_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.TreatCtrlCAsInput
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerSettings.TreatCtrlCAsInput
-  nameWithType: TerminauxerSettings.TreatCtrlCAsInput
-- uid: Terminaux.Reader.TerminauxerState
-  name: TerminauxerState
-  href: api/Terminaux.Reader.TerminauxerState.html
-  commentId: T:Terminaux.Reader.TerminauxerState
-  fullName: Terminaux.Reader.TerminauxerState
-  nameWithType: TerminauxerState
-- uid: Terminaux.Reader.TerminauxerState.CurrentCursorPosLeft
+  fullName: Terminaux.Reader.TermReaderSettings.TreatCtrlCAsInput
+  nameWithType: TermReaderSettings.TreatCtrlCAsInput
+- uid: Terminaux.Reader.TermReaderState
+  name: TermReaderState
+  href: api/Terminaux.Reader.TermReaderState.html
+  commentId: T:Terminaux.Reader.TermReaderState
+  fullName: Terminaux.Reader.TermReaderState
+  nameWithType: TermReaderState
+- uid: Terminaux.Reader.TermReaderState.CurrentCursorPosLeft
   name: CurrentCursorPosLeft
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentCursorPosLeft
-  commentId: P:Terminaux.Reader.TerminauxerState.CurrentCursorPosLeft
-  fullName: Terminaux.Reader.TerminauxerState.CurrentCursorPosLeft
-  nameWithType: TerminauxerState.CurrentCursorPosLeft
-- uid: Terminaux.Reader.TerminauxerState.CurrentCursorPosLeft*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentCursorPosLeft
+  commentId: P:Terminaux.Reader.TermReaderState.CurrentCursorPosLeft
+  fullName: Terminaux.Reader.TermReaderState.CurrentCursorPosLeft
+  nameWithType: TermReaderState.CurrentCursorPosLeft
+- uid: Terminaux.Reader.TermReaderState.CurrentCursorPosLeft*
   name: CurrentCursorPosLeft
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentCursorPosLeft_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.CurrentCursorPosLeft
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentCursorPosLeft_
+  commentId: Overload:Terminaux.Reader.TermReaderState.CurrentCursorPosLeft
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.CurrentCursorPosLeft
-  nameWithType: TerminauxerState.CurrentCursorPosLeft
-- uid: Terminaux.Reader.TerminauxerState.CurrentCursorPosTop
+  fullName: Terminaux.Reader.TermReaderState.CurrentCursorPosLeft
+  nameWithType: TermReaderState.CurrentCursorPosLeft
+- uid: Terminaux.Reader.TermReaderState.CurrentCursorPosTop
   name: CurrentCursorPosTop
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentCursorPosTop
-  commentId: P:Terminaux.Reader.TerminauxerState.CurrentCursorPosTop
-  fullName: Terminaux.Reader.TerminauxerState.CurrentCursorPosTop
-  nameWithType: TerminauxerState.CurrentCursorPosTop
-- uid: Terminaux.Reader.TerminauxerState.CurrentCursorPosTop*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentCursorPosTop
+  commentId: P:Terminaux.Reader.TermReaderState.CurrentCursorPosTop
+  fullName: Terminaux.Reader.TermReaderState.CurrentCursorPosTop
+  nameWithType: TermReaderState.CurrentCursorPosTop
+- uid: Terminaux.Reader.TermReaderState.CurrentCursorPosTop*
   name: CurrentCursorPosTop
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentCursorPosTop_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.CurrentCursorPosTop
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentCursorPosTop_
+  commentId: Overload:Terminaux.Reader.TermReaderState.CurrentCursorPosTop
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.CurrentCursorPosTop
-  nameWithType: TerminauxerState.CurrentCursorPosTop
-- uid: Terminaux.Reader.TerminauxerState.CurrentHistoryPos
+  fullName: Terminaux.Reader.TermReaderState.CurrentCursorPosTop
+  nameWithType: TermReaderState.CurrentCursorPosTop
+- uid: Terminaux.Reader.TermReaderState.CurrentHistoryPos
   name: CurrentHistoryPos
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentHistoryPos
-  commentId: P:Terminaux.Reader.TerminauxerState.CurrentHistoryPos
-  fullName: Terminaux.Reader.TerminauxerState.CurrentHistoryPos
-  nameWithType: TerminauxerState.CurrentHistoryPos
-- uid: Terminaux.Reader.TerminauxerState.CurrentHistoryPos*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentHistoryPos
+  commentId: P:Terminaux.Reader.TermReaderState.CurrentHistoryPos
+  fullName: Terminaux.Reader.TermReaderState.CurrentHistoryPos
+  nameWithType: TermReaderState.CurrentHistoryPos
+- uid: Terminaux.Reader.TermReaderState.CurrentHistoryPos*
   name: CurrentHistoryPos
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentHistoryPos_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.CurrentHistoryPos
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentHistoryPos_
+  commentId: Overload:Terminaux.Reader.TermReaderState.CurrentHistoryPos
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.CurrentHistoryPos
-  nameWithType: TerminauxerState.CurrentHistoryPos
-- uid: Terminaux.Reader.TerminauxerState.CurrentSuggestionsPos
+  fullName: Terminaux.Reader.TermReaderState.CurrentHistoryPos
+  nameWithType: TermReaderState.CurrentHistoryPos
+- uid: Terminaux.Reader.TermReaderState.CurrentSuggestionsPos
   name: CurrentSuggestionsPos
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentSuggestionsPos
-  commentId: P:Terminaux.Reader.TerminauxerState.CurrentSuggestionsPos
-  fullName: Terminaux.Reader.TerminauxerState.CurrentSuggestionsPos
-  nameWithType: TerminauxerState.CurrentSuggestionsPos
-- uid: Terminaux.Reader.TerminauxerState.CurrentSuggestionsPos*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentSuggestionsPos
+  commentId: P:Terminaux.Reader.TermReaderState.CurrentSuggestionsPos
+  fullName: Terminaux.Reader.TermReaderState.CurrentSuggestionsPos
+  nameWithType: TermReaderState.CurrentSuggestionsPos
+- uid: Terminaux.Reader.TermReaderState.CurrentSuggestionsPos*
   name: CurrentSuggestionsPos
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentSuggestionsPos_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.CurrentSuggestionsPos
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentSuggestionsPos_
+  commentId: Overload:Terminaux.Reader.TermReaderState.CurrentSuggestionsPos
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.CurrentSuggestionsPos
-  nameWithType: TerminauxerState.CurrentSuggestionsPos
-- uid: Terminaux.Reader.TerminauxerState.CurrentText
+  fullName: Terminaux.Reader.TermReaderState.CurrentSuggestionsPos
+  nameWithType: TermReaderState.CurrentSuggestionsPos
+- uid: Terminaux.Reader.TermReaderState.CurrentText
   name: CurrentText
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentText
-  commentId: P:Terminaux.Reader.TerminauxerState.CurrentText
-  fullName: Terminaux.Reader.TerminauxerState.CurrentText
-  nameWithType: TerminauxerState.CurrentText
-- uid: Terminaux.Reader.TerminauxerState.CurrentText*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentText
+  commentId: P:Terminaux.Reader.TermReaderState.CurrentText
+  fullName: Terminaux.Reader.TermReaderState.CurrentText
+  nameWithType: TermReaderState.CurrentText
+- uid: Terminaux.Reader.TermReaderState.CurrentText*
   name: CurrentText
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentText_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.CurrentText
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentText_
+  commentId: Overload:Terminaux.Reader.TermReaderState.CurrentText
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.CurrentText
-  nameWithType: TerminauxerState.CurrentText
-- uid: Terminaux.Reader.TerminauxerState.CurrentTextPos
+  fullName: Terminaux.Reader.TermReaderState.CurrentText
+  nameWithType: TermReaderState.CurrentText
+- uid: Terminaux.Reader.TermReaderState.CurrentTextPos
   name: CurrentTextPos
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentTextPos
-  commentId: P:Terminaux.Reader.TerminauxerState.CurrentTextPos
-  fullName: Terminaux.Reader.TerminauxerState.CurrentTextPos
-  nameWithType: TerminauxerState.CurrentTextPos
-- uid: Terminaux.Reader.TerminauxerState.CurrentTextPos*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentTextPos
+  commentId: P:Terminaux.Reader.TermReaderState.CurrentTextPos
+  fullName: Terminaux.Reader.TermReaderState.CurrentTextPos
+  nameWithType: TermReaderState.CurrentTextPos
+- uid: Terminaux.Reader.TermReaderState.CurrentTextPos*
   name: CurrentTextPos
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_CurrentTextPos_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.CurrentTextPos
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentTextPos_
+  commentId: Overload:Terminaux.Reader.TermReaderState.CurrentTextPos
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.CurrentTextPos
-  nameWithType: TerminauxerState.CurrentTextPos
-- uid: Terminaux.Reader.TerminauxerState.History
+  fullName: Terminaux.Reader.TermReaderState.CurrentTextPos
+  nameWithType: TermReaderState.CurrentTextPos
+- uid: Terminaux.Reader.TermReaderState.History
   name: History
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_History
-  commentId: P:Terminaux.Reader.TerminauxerState.History
-  fullName: Terminaux.Reader.TerminauxerState.History
-  nameWithType: TerminauxerState.History
-- uid: Terminaux.Reader.TerminauxerState.History*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_History
+  commentId: P:Terminaux.Reader.TermReaderState.History
+  fullName: Terminaux.Reader.TermReaderState.History
+  nameWithType: TermReaderState.History
+- uid: Terminaux.Reader.TermReaderState.History*
   name: History
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_History_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.History
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_History_
+  commentId: Overload:Terminaux.Reader.TermReaderState.History
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.History
-  nameWithType: TerminauxerState.History
-- uid: Terminaux.Reader.TerminauxerState.InputPromptLeft
+  fullName: Terminaux.Reader.TermReaderState.History
+  nameWithType: TermReaderState.History
+- uid: Terminaux.Reader.TermReaderState.InputPromptLeft
   name: InputPromptLeft
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_InputPromptLeft
-  commentId: P:Terminaux.Reader.TerminauxerState.InputPromptLeft
-  fullName: Terminaux.Reader.TerminauxerState.InputPromptLeft
-  nameWithType: TerminauxerState.InputPromptLeft
-- uid: Terminaux.Reader.TerminauxerState.InputPromptLeft*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLeft
+  commentId: P:Terminaux.Reader.TermReaderState.InputPromptLeft
+  fullName: Terminaux.Reader.TermReaderState.InputPromptLeft
+  nameWithType: TermReaderState.InputPromptLeft
+- uid: Terminaux.Reader.TermReaderState.InputPromptLeft*
   name: InputPromptLeft
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_InputPromptLeft_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.InputPromptLeft
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLeft_
+  commentId: Overload:Terminaux.Reader.TermReaderState.InputPromptLeft
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.InputPromptLeft
-  nameWithType: TerminauxerState.InputPromptLeft
-- uid: Terminaux.Reader.TerminauxerState.InputPromptText
+  fullName: Terminaux.Reader.TermReaderState.InputPromptLeft
+  nameWithType: TermReaderState.InputPromptLeft
+- uid: Terminaux.Reader.TermReaderState.InputPromptText
   name: InputPromptText
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_InputPromptText
-  commentId: P:Terminaux.Reader.TerminauxerState.InputPromptText
-  fullName: Terminaux.Reader.TerminauxerState.InputPromptText
-  nameWithType: TerminauxerState.InputPromptText
-- uid: Terminaux.Reader.TerminauxerState.InputPromptText*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptText
+  commentId: P:Terminaux.Reader.TermReaderState.InputPromptText
+  fullName: Terminaux.Reader.TermReaderState.InputPromptText
+  nameWithType: TermReaderState.InputPromptText
+- uid: Terminaux.Reader.TermReaderState.InputPromptText*
   name: InputPromptText
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_InputPromptText_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.InputPromptText
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptText_
+  commentId: Overload:Terminaux.Reader.TermReaderState.InputPromptText
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.InputPromptText
-  nameWithType: TerminauxerState.InputPromptText
-- uid: Terminaux.Reader.TerminauxerState.InputPromptTop
+  fullName: Terminaux.Reader.TermReaderState.InputPromptText
+  nameWithType: TermReaderState.InputPromptText
+- uid: Terminaux.Reader.TermReaderState.InputPromptTop
   name: InputPromptTop
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_InputPromptTop
-  commentId: P:Terminaux.Reader.TerminauxerState.InputPromptTop
-  fullName: Terminaux.Reader.TerminauxerState.InputPromptTop
-  nameWithType: TerminauxerState.InputPromptTop
-- uid: Terminaux.Reader.TerminauxerState.InputPromptTop*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptTop
+  commentId: P:Terminaux.Reader.TermReaderState.InputPromptTop
+  fullName: Terminaux.Reader.TermReaderState.InputPromptTop
+  nameWithType: TermReaderState.InputPromptTop
+- uid: Terminaux.Reader.TermReaderState.InputPromptTop*
   name: InputPromptTop
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_InputPromptTop_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.InputPromptTop
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptTop_
+  commentId: Overload:Terminaux.Reader.TermReaderState.InputPromptTop
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.InputPromptTop
-  nameWithType: TerminauxerState.InputPromptTop
-- uid: Terminaux.Reader.TerminauxerState.KillBuffer
+  fullName: Terminaux.Reader.TermReaderState.InputPromptTop
+  nameWithType: TermReaderState.InputPromptTop
+- uid: Terminaux.Reader.TermReaderState.KillBuffer
   name: KillBuffer
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_KillBuffer
-  commentId: P:Terminaux.Reader.TerminauxerState.KillBuffer
-  fullName: Terminaux.Reader.TerminauxerState.KillBuffer
-  nameWithType: TerminauxerState.KillBuffer
-- uid: Terminaux.Reader.TerminauxerState.KillBuffer*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_KillBuffer
+  commentId: P:Terminaux.Reader.TermReaderState.KillBuffer
+  fullName: Terminaux.Reader.TermReaderState.KillBuffer
+  nameWithType: TermReaderState.KillBuffer
+- uid: Terminaux.Reader.TermReaderState.KillBuffer*
   name: KillBuffer
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_KillBuffer_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.KillBuffer
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_KillBuffer_
+  commentId: Overload:Terminaux.Reader.TermReaderState.KillBuffer
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.KillBuffer
-  nameWithType: TerminauxerState.KillBuffer
-- uid: Terminaux.Reader.TerminauxerState.OneLineWrap
+  fullName: Terminaux.Reader.TermReaderState.KillBuffer
+  nameWithType: TermReaderState.KillBuffer
+- uid: Terminaux.Reader.TermReaderState.OneLineWrap
   name: OneLineWrap
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_OneLineWrap
-  commentId: P:Terminaux.Reader.TerminauxerState.OneLineWrap
-  fullName: Terminaux.Reader.TerminauxerState.OneLineWrap
-  nameWithType: TerminauxerState.OneLineWrap
-- uid: Terminaux.Reader.TerminauxerState.OneLineWrap*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_OneLineWrap
+  commentId: P:Terminaux.Reader.TermReaderState.OneLineWrap
+  fullName: Terminaux.Reader.TermReaderState.OneLineWrap
+  nameWithType: TermReaderState.OneLineWrap
+- uid: Terminaux.Reader.TermReaderState.OneLineWrap*
   name: OneLineWrap
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_OneLineWrap_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.OneLineWrap
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_OneLineWrap_
+  commentId: Overload:Terminaux.Reader.TermReaderState.OneLineWrap
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.OneLineWrap
-  nameWithType: TerminauxerState.OneLineWrap
-- uid: Terminaux.Reader.TerminauxerState.PasswordMode
+  fullName: Terminaux.Reader.TermReaderState.OneLineWrap
+  nameWithType: TermReaderState.OneLineWrap
+- uid: Terminaux.Reader.TermReaderState.PasswordMode
   name: PasswordMode
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_PasswordMode
-  commentId: P:Terminaux.Reader.TerminauxerState.PasswordMode
-  fullName: Terminaux.Reader.TerminauxerState.PasswordMode
-  nameWithType: TerminauxerState.PasswordMode
-- uid: Terminaux.Reader.TerminauxerState.PasswordMode*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_PasswordMode
+  commentId: P:Terminaux.Reader.TermReaderState.PasswordMode
+  fullName: Terminaux.Reader.TermReaderState.PasswordMode
+  nameWithType: TermReaderState.PasswordMode
+- uid: Terminaux.Reader.TermReaderState.PasswordMode*
   name: PasswordMode
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_PasswordMode_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.PasswordMode
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_PasswordMode_
+  commentId: Overload:Terminaux.Reader.TermReaderState.PasswordMode
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.PasswordMode
-  nameWithType: TerminauxerState.PasswordMode
-- uid: Terminaux.Reader.TerminauxerState.PressedKey
+  fullName: Terminaux.Reader.TermReaderState.PasswordMode
+  nameWithType: TermReaderState.PasswordMode
+- uid: Terminaux.Reader.TermReaderState.PressedKey
   name: PressedKey
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_PressedKey
-  commentId: P:Terminaux.Reader.TerminauxerState.PressedKey
-  fullName: Terminaux.Reader.TerminauxerState.PressedKey
-  nameWithType: TerminauxerState.PressedKey
-- uid: Terminaux.Reader.TerminauxerState.PressedKey*
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_PressedKey
+  commentId: P:Terminaux.Reader.TermReaderState.PressedKey
+  fullName: Terminaux.Reader.TermReaderState.PressedKey
+  nameWithType: TermReaderState.PressedKey
+- uid: Terminaux.Reader.TermReaderState.PressedKey*
   name: PressedKey
-  href: api/Terminaux.Reader.TerminauxerState.html#Terminaux_Reader_TerminauxerState_PressedKey_
-  commentId: Overload:Terminaux.Reader.TerminauxerState.PressedKey
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_PressedKey_
+  commentId: Overload:Terminaux.Reader.TermReaderState.PressedKey
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerState.PressedKey
-  nameWithType: TerminauxerState.PressedKey
-- uid: Terminaux.Reader.TerminauxerTools
-  name: TerminauxerTools
-  href: api/Terminaux.Reader.TerminauxerTools.html
-  commentId: T:Terminaux.Reader.TerminauxerTools
-  fullName: Terminaux.Reader.TerminauxerTools
-  nameWithType: TerminauxerTools
-- uid: Terminaux.Reader.TerminauxerTools.Interrupt
+  fullName: Terminaux.Reader.TermReaderState.PressedKey
+  nameWithType: TermReaderState.PressedKey
+- uid: Terminaux.Reader.TermReaderTools
+  name: TermReaderTools
+  href: api/Terminaux.Reader.TermReaderTools.html
+  commentId: T:Terminaux.Reader.TermReaderTools
+  fullName: Terminaux.Reader.TermReaderTools
+  nameWithType: TermReaderTools
+- uid: Terminaux.Reader.TermReaderTools.Interrupt
   name: Interrupt()
-  href: api/Terminaux.Reader.TerminauxerTools.html#Terminaux_Reader_TerminauxerTools_Interrupt
-  commentId: M:Terminaux.Reader.TerminauxerTools.Interrupt
-  fullName: Terminaux.Reader.TerminauxerTools.Interrupt()
-  nameWithType: TerminauxerTools.Interrupt()
-- uid: Terminaux.Reader.TerminauxerTools.Interrupt*
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_Interrupt
+  commentId: M:Terminaux.Reader.TermReaderTools.Interrupt
+  fullName: Terminaux.Reader.TermReaderTools.Interrupt()
+  nameWithType: TermReaderTools.Interrupt()
+- uid: Terminaux.Reader.TermReaderTools.Interrupt*
   name: Interrupt
-  href: api/Terminaux.Reader.TerminauxerTools.html#Terminaux_Reader_TerminauxerTools_Interrupt_
-  commentId: Overload:Terminaux.Reader.TerminauxerTools.Interrupt
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_Interrupt_
+  commentId: Overload:Terminaux.Reader.TermReaderTools.Interrupt
   isSpec: "True"
-  fullName: Terminaux.Reader.TerminauxerTools.Interrupt
-  nameWithType: TerminauxerTools.Interrupt
+  fullName: Terminaux.Reader.TermReaderTools.Interrupt
+  nameWithType: TermReaderTools.Interrupt
 - uid: Terminaux.Sequences.Builder
   name: Terminaux.Sequences.Builder
   href: api/Terminaux.Sequences.Builder.html
