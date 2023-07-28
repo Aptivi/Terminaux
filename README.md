@@ -5,16 +5,16 @@
 <br>
     
 <img
-  src = 'https://cdn.jsdelivr.net/gh/Aptivi/TermRead@main/TermRead/OfficialAppIcon-TermRead-512.png'
+  src = 'https://cdn.jsdelivr.net/gh/Aptivi/Terminaux@main/Terminaux/OfficialAppIcon-Terminaux-512.png'
   width = 256
   align = center
 />
 
 <br>
 
-# TermRead
+# Terminaux
     
-*A next-generation console reader that allows you to flexibly write your input to the console without any limitations.*
+*A library that allows you to manipulate with the console*
 
 <br>
 <br>
@@ -40,25 +40,25 @@
 
 <!----------------------------------------------------------------------------->
 
-[Releases]: https://github.com/Aptivi/TermRead/releases
-[Latest]: https://github.com/Aptivi/TermRead/releases/latest
-[NuGet]: https://www.nuget.org/packages/TermRead/
+[Releases]: https://github.com/Aptivi/Terminaux/releases
+[Latest]: https://github.com/Aptivi/Terminaux/releases/latest
+[NuGet]: https://www.nuget.org/packages/Terminaux/
 
-[Main]: https://github.com/Aptivi/TermRead/actions/workflows/build-win.yml
-[Main Linux]: https://github.com/Aptivi/TermRead/actions/workflows/build-linux.yml
+[Main]: https://github.com/Aptivi/Terminaux/actions/workflows/build-win.yml
+[Main Linux]: https://github.com/Aptivi/Terminaux/actions/workflows/build-linux.yml
 
-[Libraries]: https://aptivi.gitbook.io/termread-manual/project-dependencies
-[Manual]: https://aptivi.gitbook.io/termread-manual/
+[Libraries]: https://aptivi.gitbook.io/terminaux-manual/project-dependencies
+[Manual]: https://aptivi.gitbook.io/terminaux-manual/
 
 <!----------------------------------[ Badges ]--------------------------------->
 
-[Badge Downloads]: https://img.shields.io/github/downloads/Aptivi/TermRead/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
-[Badge Latest]: https://img.shields.io/github/v/release/Aptivi/TermRead?color=212121&include_prereleases&label=github&style=for-the-badge&logoColor=white&logo=AzureArtifacts&labelColor=303030
-[Badge NuGet]: https://img.shields.io/nuget/vpre/TermRead?color=012f52&style=for-the-badge&logoColor=white&logo=NuGet&labelColor=004880
-[Badge Size]: https://img.shields.io/github/repo-size/Aptivi/TermRead?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
+[Badge Downloads]: https://img.shields.io/github/downloads/Aptivi/Terminaux/total?color=217346&label=Downloads&style=for-the-badge&logoColor=white&logo=DocuSign&labelColor=2d9d5f
+[Badge Latest]: https://img.shields.io/github/v/release/Aptivi/Terminaux?color=212121&include_prereleases&label=github&style=for-the-badge&logoColor=white&logo=AzureArtifacts&labelColor=303030
+[Badge NuGet]: https://img.shields.io/nuget/vpre/Terminaux?color=012f52&style=for-the-badge&logoColor=white&logo=NuGet&labelColor=004880
+[Badge Size]: https://img.shields.io/github/repo-size/Aptivi/Terminaux?color=bb4a28&label=size&logoColor=white&style=for-the-badge&logo=GoogleAnalytics&labelColor=E85C33
 
-[Badge Main]: https://github.com/Aptivi/TermRead/actions/workflows/build-win.yml/badge.svg
-[Badge Main Linux]: https://github.com/Aptivi/TermRead/actions/workflows/build-linux.yml/badge.svg
+[Badge Main]: https://github.com/Aptivi/Terminaux/actions/workflows/build-win.yml/badge.svg
+[Badge Main Linux]: https://github.com/Aptivi/Terminaux/actions/workflows/build-linux.yml/badge.svg
 
 
 <!---------------------------------[ Buttons ]--------------------------------->

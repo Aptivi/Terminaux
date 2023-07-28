@@ -3,7 +3,7 @@
         {
             "src": [
                 {
-                    "files": [ "TermRead/**.csproj" ],
+                    "files": [ "Terminaux/**.csproj" ],
                     "src": ".."
                 }
             ],
@@ -30,7 +30,7 @@
         ],
         "dest": "../docs",
         "globalMetadata": {
-            "_appTitle": "TermRead API - Aptivi Internals",
+            "_appTitle": "Terminaux API - Aptivi Internals",
             "_enableSearch": true
         },
         "globalMetadataFiles": [],
@@ -43,7 +43,7 @@
         "cleanupCacheHistory": false,
         "disableGitFeatures": false,
         "sitemap": {
-            "baseUrl": "https://aptivi.github.io/TermRead/"
+            "baseUrl": "https://aptivi.github.io/Terminaux/"
         }
     }
 }

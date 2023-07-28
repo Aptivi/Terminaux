@@ -1,0 +1,63 @@
+{
+  "profiles": {
+    "Terminaux - Prompt": {
+      "commandName": "Project"
+    },
+    "Terminaux - PromptWithDefault": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptWithDefault"
+    },
+    "Terminaux - PromptWithPlaceholder": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptWithPlaceholder"
+    },
+    "Terminaux - PromptPassword": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPassword"
+    },
+    "Terminaux - PromptPasswordWithPlaceholder": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPasswordWithPlaceholder"
+    },
+    "Terminaux - PromptLooped": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLooped"
+    },
+    "Terminaux - PromptPasswordHidden": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPasswordHidden"
+    },
+    "Terminaux - PromptPasswordWithPlaceholderHidden": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPasswordWithPlaceholderHidden"
+    },
+    "Terminaux - PromptLoopedMargin": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedMargin"
+    },
+    "Terminaux - PromptLoopedCompletion": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCompletion"
+    },
+    "Terminaux - PromptLoopedManualWrite": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedManualWrite"
+    },
+    "Terminaux - PromptWithOneLineWrap": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptWithOneLineWrap"
+    },
+    "Terminaux - PromptLoopedCompletionOneLineWrap": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCompletionOneLineWrap"
+    },
+    "Terminaux - PromptInterruptible": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptInterruptible"
+    },
+    "Terminaux - PromptLoopedCtrlCAsInput": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCtrlCAsInput"
+    }
+  }
+}
