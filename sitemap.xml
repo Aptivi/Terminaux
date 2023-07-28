@@ -1,74 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aptivi.github.io/TermRead/api/TermRead.Bindings.BaseBinding.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <loc>https://aptivi.github.io/TermRead/api/TermRead.Reader.Bindings.BaseBinding.html</loc>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://aptivi.github.io/TermRead/api/TermRead.Bindings.CustomBindings.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <loc>https://aptivi.github.io/TermRead/api/TermRead.Reader.Bindings.CustomBindings.html</loc>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://aptivi.github.io/TermRead/api/TermRead.Bindings.IBinding.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <loc>https://aptivi.github.io/TermRead/api/TermRead.Reader.Bindings.IBinding.html</loc>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://aptivi.github.io/TermRead/api/TermRead.Bindings.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <loc>https://aptivi.github.io/TermRead/api/TermRead.Reader.Bindings.html</loc>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/TermRead/api/TermRead.Reader.TermReader.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/TermRead/api/TermRead.Reader.TermReaderSettings.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/TermRead/api/TermRead.Reader.TermReaderState.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/TermRead/api/TermRead.Reader.TermReaderTools.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/TermRead/api/TermRead.Reader.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/TermRead/api/TermRead.Tools.ConsoleWrapperTools.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/TermRead/api/TermRead.Tools.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/TermRead/index.html</loc>
-    <lastmod>2023-07-28T05:03:58+00:00</lastmod>
+    <lastmod>2023-07-28T05:54:25+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

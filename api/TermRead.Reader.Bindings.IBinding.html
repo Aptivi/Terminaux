@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class CustomBindings
+    <title>Interface IBinding
    | TermRead API - Aptivi Internals </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class CustomBindings
+    <meta name="title" content="Interface IBinding
    | TermRead API - Aptivi Internals ">
     <meta name="generator" content="docfx 2.58.9.0">
     
@@ -78,66 +78,60 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="TermRead.Bindings.CustomBindings">
+            <article class="content wrap" id="_content" data-uid="TermRead.Reader.Bindings.IBinding">
   
   
-  <h1 id="TermRead_Bindings_CustomBindings" data-uid="TermRead.Bindings.CustomBindings" class="text-break">Class CustomBindings
+  <h1 id="TermRead_Reader_Bindings_IBinding" data-uid="TermRead.Reader.Bindings.IBinding" class="text-break">Interface IBinding
   </h1>
-  <div class="markdown level0 summary"><p>Custom binding handler</p>
+  <div class="markdown level0 summary"><p>Key binding interface</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">CustomBindings</span></div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="TermRead.Bindings.html">TermRead.Bindings</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="TermRead.Reader.Bindings.html">TermRead.Reader.Bindings</a></h6>
   <h6><strong>Assembly</strong>: TermRead.dll</h6>
-  <h5 id="TermRead_Bindings_CustomBindings_syntax">Syntax</h5>
+  <h5 id="TermRead_Reader_Bindings_IBinding_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class CustomBindings : object</code></pre>
+    <pre><code class="lang-csharp hljs">public interface IBinding</code></pre>
   </div>
-  <h3 id="methods">Methods
+  <h3 id="properties">Properties
   </h3>
   
   
-  <a id="TermRead_Bindings_CustomBindings_Bind_" data-uid="TermRead.Bindings.CustomBindings.Bind*"></a>
-  <h4 id="TermRead_Bindings_CustomBindings_Bind_TermRead_Bindings_BaseBinding_" data-uid="TermRead.Bindings.CustomBindings.Bind(TermRead.Bindings.BaseBinding)">Bind(BaseBinding)</h4>
-  <div class="markdown level1 summary"><p>Binds the key to the custom bindings list to be executed on press</p>
+  <a id="TermRead_Reader_Bindings_IBinding_BoundKeys_" data-uid="TermRead.Reader.Bindings.IBinding.BoundKeys*"></a>
+  <h4 id="TermRead_Reader_Bindings_IBinding_BoundKeys" data-uid="TermRead.Reader.Bindings.IBinding.BoundKeys">BoundKeys</h4>
+  <div class="markdown level1 summary"><p>Keys to bind to</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Bind(BaseBinding binding)</code></pre>
+    <pre><code class="lang-csharp hljs">ConsoleKeyInfo[] BoundKeys { get; }</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="TermRead.Bindings.BaseBinding.html">BaseBinding</a></td>
-        <td><span class="parametername">binding</span></td>
-        <td><p>Base containing information about key binding</p>
-</td>
+        <td><span class="xref">ConsoleKeyInfo</span>[]</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="methods">Methods
+  </h3>
   
   
-  <a id="TermRead_Bindings_CustomBindings_Unbind_" data-uid="TermRead.Bindings.CustomBindings.Unbind*"></a>
-  <h4 id="TermRead_Bindings_CustomBindings_Unbind_ConsoleKeyInfo_" data-uid="TermRead.Bindings.CustomBindings.Unbind(ConsoleKeyInfo)">Unbind(ConsoleKeyInfo)</h4>
-  <div class="markdown level1 summary"><p>Unbinds the key from the custom bindings list</p>
+  <a id="TermRead_Reader_Bindings_IBinding_BindMatched_" data-uid="TermRead.Reader.Bindings.IBinding.BindMatched*"></a>
+  <h4 id="TermRead_Reader_Bindings_IBinding_BindMatched_ConsoleKeyInfo_" data-uid="TermRead.Reader.Bindings.IBinding.BindMatched(ConsoleKeyInfo)">BindMatched(ConsoleKeyInfo)</h4>
+  <div class="markdown level1 summary"><p>Whether the bind matched</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void Unbind(ConsoleKeyInfo cki)</code></pre>
+    <pre><code class="lang-csharp hljs">bool BindMatched(ConsoleKeyInfo input)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -151,8 +145,52 @@
     <tbody>
       <tr>
         <td><span class="xref">ConsoleKeyInfo</span></td>
-        <td><span class="parametername">cki</span></td>
-        <td><p>Key information to remove the binding</p>
+        <td><span class="parametername">input</span></td>
+        <td><p>Key</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="TermRead_Reader_Bindings_IBinding_DoAction_" data-uid="TermRead.Reader.Bindings.IBinding.DoAction*"></a>
+  <h4 id="TermRead_Reader_Bindings_IBinding_DoAction_TermRead_Reader_TermReaderState_" data-uid="TermRead.Reader.Bindings.IBinding.DoAction(TermRead.Reader.TermReaderState)">DoAction(TermReaderState)</h4>
+  <div class="markdown level1 summary"><p>Do the action</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DoAction(TermReaderState state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="TermRead.Reader.TermReaderState.html">TermReaderState</a></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>State of the reader</p>
 </td>
       </tr>
     </tbody>

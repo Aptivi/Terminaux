@@ -1,23 +1,23 @@
 {
-  "api/TermRead.Bindings.BaseBinding.html": {
-    "href": "api/TermRead.Bindings.BaseBinding.html",
+  "api/TermRead.Reader.Bindings.BaseBinding.html": {
+    "href": "api/TermRead.Reader.Bindings.BaseBinding.html",
     "title": "Class BaseBinding | TermRead API - Aptivi Internals",
-    "keywords": "Class BaseBinding Base key binding Inheritance System.Object BaseBinding Implements IBinding Namespace : TermRead.Bindings Assembly : TermRead.dll Syntax public abstract class BaseBinding : object, IBinding Properties BoundKeys Key to bind to Declaration public virtual ConsoleKeyInfo[] BoundKeys { get; } Property Value Type Description ConsoleKeyInfo [] IsExit Does this binding cause the input to exit? Declaration public virtual bool IsExit { get; } Property Value Type Description System.Boolean Methods BindMatched(ConsoleKeyInfo) Whether the binding matched Declaration public virtual bool BindMatched(ConsoleKeyInfo input) Parameters Type Name Description ConsoleKeyInfo input Input key Returns Type Description System.Boolean DoAction(TermReaderState) Do the action Declaration public virtual void DoAction(TermReaderState state) Parameters Type Name Description TermReaderState state State of the reader Implements IBinding"
+    "keywords": "Class BaseBinding Base key binding Inheritance System.Object BaseBinding Implements IBinding Namespace : TermRead.Reader.Bindings Assembly : TermRead.dll Syntax public abstract class BaseBinding : object, IBinding Properties BoundKeys Key to bind to Declaration public virtual ConsoleKeyInfo[] BoundKeys { get; } Property Value Type Description ConsoleKeyInfo [] IsExit Does this binding cause the input to exit? Declaration public virtual bool IsExit { get; } Property Value Type Description System.Boolean Methods BindMatched(ConsoleKeyInfo) Whether the binding matched Declaration public virtual bool BindMatched(ConsoleKeyInfo input) Parameters Type Name Description ConsoleKeyInfo input Input key Returns Type Description System.Boolean DoAction(TermReaderState) Do the action Declaration public virtual void DoAction(TermReaderState state) Parameters Type Name Description TermReaderState state State of the reader Implements IBinding"
   },
-  "api/TermRead.Bindings.CustomBindings.html": {
-    "href": "api/TermRead.Bindings.CustomBindings.html",
+  "api/TermRead.Reader.Bindings.CustomBindings.html": {
+    "href": "api/TermRead.Reader.Bindings.CustomBindings.html",
     "title": "Class CustomBindings | TermRead API - Aptivi Internals",
-    "keywords": "Class CustomBindings Custom binding handler Inheritance System.Object CustomBindings Namespace : TermRead.Bindings Assembly : TermRead.dll Syntax public static class CustomBindings : object Methods Bind(BaseBinding) Binds the key to the custom bindings list to be executed on press Declaration public static void Bind(BaseBinding binding) Parameters Type Name Description BaseBinding binding Base containing information about key binding Unbind(ConsoleKeyInfo) Unbinds the key from the custom bindings list Declaration public static void Unbind(ConsoleKeyInfo cki) Parameters Type Name Description ConsoleKeyInfo cki Key information to remove the binding"
+    "keywords": "Class CustomBindings Custom binding handler Inheritance System.Object CustomBindings Namespace : TermRead.Reader.Bindings Assembly : TermRead.dll Syntax public static class CustomBindings : object Methods Bind(BaseBinding) Binds the key to the custom bindings list to be executed on press Declaration public static void Bind(BaseBinding binding) Parameters Type Name Description BaseBinding binding Base containing information about key binding Unbind(ConsoleKeyInfo) Unbinds the key from the custom bindings list Declaration public static void Unbind(ConsoleKeyInfo cki) Parameters Type Name Description ConsoleKeyInfo cki Key information to remove the binding"
   },
-  "api/TermRead.Bindings.html": {
-    "href": "api/TermRead.Bindings.html",
-    "title": "Namespace TermRead.Bindings | TermRead API - Aptivi Internals",
-    "keywords": "Namespace TermRead.Bindings Classes BaseBinding Base key binding CustomBindings Custom binding handler Interfaces IBinding Key binding interface"
+  "api/TermRead.Reader.Bindings.html": {
+    "href": "api/TermRead.Reader.Bindings.html",
+    "title": "Namespace TermRead.Reader.Bindings | TermRead API - Aptivi Internals",
+    "keywords": "Namespace TermRead.Reader.Bindings Classes BaseBinding Base key binding CustomBindings Custom binding handler Interfaces IBinding Key binding interface"
   },
-  "api/TermRead.Bindings.IBinding.html": {
-    "href": "api/TermRead.Bindings.IBinding.html",
+  "api/TermRead.Reader.Bindings.IBinding.html": {
+    "href": "api/TermRead.Reader.Bindings.IBinding.html",
     "title": "Interface IBinding | TermRead API - Aptivi Internals",
-    "keywords": "Interface IBinding Key binding interface Namespace : TermRead.Bindings Assembly : TermRead.dll Syntax public interface IBinding Properties BoundKeys Keys to bind to Declaration ConsoleKeyInfo[] BoundKeys { get; } Property Value Type Description ConsoleKeyInfo [] Methods BindMatched(ConsoleKeyInfo) Whether the bind matched Declaration bool BindMatched(ConsoleKeyInfo input) Parameters Type Name Description ConsoleKeyInfo input Key Returns Type Description System.Boolean DoAction(TermReaderState) Do the action Declaration void DoAction(TermReaderState state) Parameters Type Name Description TermReaderState state State of the reader"
+    "keywords": "Interface IBinding Key binding interface Namespace : TermRead.Reader.Bindings Assembly : TermRead.dll Syntax public interface IBinding Properties BoundKeys Keys to bind to Declaration ConsoleKeyInfo[] BoundKeys { get; } Property Value Type Description ConsoleKeyInfo [] Methods BindMatched(ConsoleKeyInfo) Whether the bind matched Declaration bool BindMatched(ConsoleKeyInfo input) Parameters Type Name Description ConsoleKeyInfo input Key Returns Type Description System.Boolean DoAction(TermReaderState) Do the action Declaration void DoAction(TermReaderState state) Parameters Type Name Description TermReaderState state State of the reader"
   },
   "api/TermRead.Reader.html": {
     "href": "api/TermRead.Reader.html",

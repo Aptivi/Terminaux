@@ -17,11 +17,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Bindings.BaseBinding.yml",
+      "source_relative_path": "api/TermRead.Reader.Bindings.BaseBinding.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Bindings.BaseBinding.html",
-          "hash": "C9MdZeFHkz4hO5jfsE0UMceGuZ4cRMr649aKUSMQYio="
+          "relative_path": "api/TermRead.Reader.Bindings.BaseBinding.html",
+          "hash": "vuPr0w7skVpCEVEgAeTw+9OseOoxjYmBuf+nmSGTgsM="
         }
       },
       "is_incremental": false,
@@ -29,11 +29,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Bindings.CustomBindings.yml",
+      "source_relative_path": "api/TermRead.Reader.Bindings.CustomBindings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Bindings.CustomBindings.html",
-          "hash": "khzwxsUmr5hdmxMDF6AKai5tUaj6qAkzpbLzsgpCYb0="
+          "relative_path": "api/TermRead.Reader.Bindings.CustomBindings.html",
+          "hash": "UknEdu32wa5/ur13DDUDIRkuadI0RaypT1lW5dS5YRI="
         }
       },
       "is_incremental": false,
@@ -41,11 +41,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Bindings.IBinding.yml",
+      "source_relative_path": "api/TermRead.Reader.Bindings.IBinding.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Bindings.IBinding.html",
-          "hash": "57b5jMVmFpp6gL81DPPl4gSici9MoN3jVgFZKjIfNxE="
+          "relative_path": "api/TermRead.Reader.Bindings.IBinding.html",
+          "hash": "XkB4fPDOnr7bBhOGRMgJKjrhqSlleVeSgYgvrpDvxn0="
         }
       },
       "is_incremental": false,
@@ -53,11 +53,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/TermRead.Bindings.yml",
+      "source_relative_path": "api/TermRead.Reader.Bindings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/TermRead.Bindings.html",
-          "hash": "T92Q8jeYaZqLX8kPscKbW1HO1593Sxl/c9WgFIz6AgA="
+          "relative_path": "api/TermRead.Reader.Bindings.html",
+          "hash": "92cVQFWBUFYRFQuycfOstnUThVfGeS/1LPxjxigdtjA="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "cGa8MBSfanG1hKAjzQNxkqeH/qXnJ4tNFfs6hPrqX2w="
+          "hash": "oGJVLHnF3H59Xgs9Ct8TS7RxNzKC6TR8jy3r1Q5DKC8="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "HfMlA8v6Y5CKhAkJNZGq9DCqcnI0EzY10uVzaB96j4Q="
+          "hash": "1RW9m2FLm6ALE5bfiSZPK7bHOkYLU1dup1JY4198/go="
         }
       },
       "is_incremental": false,
