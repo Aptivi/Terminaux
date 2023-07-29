@@ -58,6 +58,90 @@
     "Terminaux - PromptLoopedCtrlCAsInput": {
       "commandName": "Project",
       "commandLineArgs": "PromptLoopedCtrlCAsInput"
+    },
+    "Terminaux - Print": {
+      "commandName": "Project",
+      "commandLineArgs": "Print"
+    },
+    "Terminaux - PrintF": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintF"
+    },
+    "Terminaux - PrintFiglet": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintFiglet"
+    },
+    "Terminaux - PrintFigletF": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintFigletF"
+    },
+    "Terminaux - PrintSep": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintSep"
+    },
+    "Terminaux - PrintSepF": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintSepF"
+    },
+    "Terminaux - PrintSepColor": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintSepColor"
+    },
+    "Terminaux - PrintSepColorF": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintSepColorF"
+    },
+    "Terminaux - PrintWithNewLines": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintWithNewLines"
+    },
+    "Terminaux - PrintWithNulls": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintWithNulls"
+    },
+    "Terminaux - TestDictWriterChar": {
+      "commandName": "Project",
+      "commandLineArgs": "TestDictWriterChar"
+    },
+    "Terminaux - TestDictWriterInt": {
+      "commandName": "Project",
+      "commandLineArgs": "TestDictWriterInt"
+    },
+    "Terminaux - TestDictWriterStr": {
+      "commandName": "Project",
+      "commandLineArgs": "TestDictWriterStr"
+    },
+    "Terminaux - TestListWriterChar": {
+      "commandName": "Project",
+      "commandLineArgs": "TestListWriterChar"
+    },
+    "Terminaux - TestListWriterInt": {
+      "commandName": "Project",
+      "commandLineArgs": "TestListWriterInt"
+    },
+    "Terminaux - TestListWriterStr": {
+      "commandName": "Project",
+      "commandLineArgs": "TestListWriterStr"
+    },
+    "Terminaux - TestTable": {
+      "commandName": "Project",
+      "commandLineArgs": "TestTable"
+    },
+    "Terminaux - TestInputSelection": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputSelection"
+    },
+    "Terminaux - TestInputChoice": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputChoice"
+    },
+    "Terminaux - ColorTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorTest"
+    },
+    "Terminaux - ColorTrueTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorTrueTest"
     }
   }
 }

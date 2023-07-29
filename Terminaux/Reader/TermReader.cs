@@ -1,27 +1,20 @@
-﻿/*
- * MIT License
- *
- * Copyright (c) 2022-2023 Aptivi
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- * 
- */
+﻿
+// Terminaux  Copyright (C) 2023  Aptivi
+// 
+// This file is part of Terminaux
+// 
+// Terminaux is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Terminaux is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
 using Terminaux.Reader.Bindings;
@@ -78,25 +71,25 @@ namespace Terminaux.Reader
                 var readState = new TermReaderState();
 
                 // Print the input
-                ConsoleWrapperTools.ActionSetCursorLeft(ConsoleWrapperTools.ActionCursorLeft() + TermReaderSettings.LeftMargin);
-                ConsoleWrapperTools.ActionWriteString(inputPrompt);
+                ConsoleTools.ActionSetCursorLeft(ConsoleTools.ActionCursorLeft() + TermReaderSettings.LeftMargin);
+                ConsoleTools.ActionWriteString(inputPrompt);
 
                 // Save current state of input
-                readState.inputPromptLeft = ConsoleWrapperTools.ActionCursorLeft();
-                readState.inputPromptTop = ConsoleWrapperTools.ActionCursorTop();
+                readState.inputPromptLeft = ConsoleTools.ActionCursorLeft();
+                readState.inputPromptTop = ConsoleTools.ActionCursorTop();
                 readState.inputPromptText = inputPrompt;
                 readState.passwordMode = password;
                 readState.oneLineWrap = oneLineWrap;
-                ConsoleWrapperTools.ActionTreatCtrlCAsInput(TermReaderSettings.TreatCtrlCAsInput);
+                ConsoleTools.ActionTreatCtrlCAsInput(TermReaderSettings.TreatCtrlCAsInput);
 
                 // Get input
-                (int, int) cachedPos = (ConsoleWrapperTools.ActionCursorLeft(), ConsoleWrapperTools.ActionCursorTop());
+                (int, int) cachedPos = (ConsoleTools.ActionCursorLeft(), ConsoleTools.ActionCursorTop());
                 while (!BindingsReader.IsTerminate(struckKey))
                 {
                     // Get a key
                     TermReaderTools.isWaitingForInput = true;
                     struckKey = TermReaderTools.GetInput(interruptible);
-                    ConsoleWrapperTools.ActionCursorVisible(false);
+                    ConsoleTools.ActionCursorVisible(false);
                     TermReaderTools.isWaitingForInput = false;
 
                     // Install necessary values
@@ -109,16 +102,16 @@ namespace Terminaux.Reader
 
                     // Cursor is visible, but fix cursor on Linux
                     cachedPos = (readState.currentCursorPosLeft, readState.currentCursorPosTop);
-                    ConsoleWrapperTools.ActionCursorVisible(true);
+                    ConsoleTools.ActionCursorVisible(true);
                 }
 
                 // Seek to the end of the text and write a new line
                 if (!readState.OneLineWrap)
                 {
                     PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
-                    ConsoleWrapperTools.ActionSetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
+                    ConsoleTools.ActionSetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
                 }
-                ConsoleWrapperTools.ActionWriteLine();
+                ConsoleTools.ActionWriteLine();
 
                 // Return the input after adding it to history
                 string input = readState.CurrentText.Length == 0 ?

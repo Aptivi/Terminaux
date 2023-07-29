@@ -19,7 +19,7 @@
     <Company>Aptivi</Company>
     <Copyright>Copyright (c) 2022-2023 Aptivi.</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>OfficialAppIcon-Terminaux-512.png</PackageIcon>
     <AssemblyVersion>1.0.0</AssemblyVersion>
@@ -42,7 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Figgle" Version="0.5.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Uname.NET" Version="2022.0.1.1" />
   </ItemGroup>
 
   <ItemGroup>
