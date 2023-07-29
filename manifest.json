@@ -17,6 +17,66 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.ConsoleChecker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.ConsoleChecker.html",
+          "hash": "lSHwhReM4gWTbYE5FPVbsnVQKfOf2Ww/Jt5Mb5JtZUc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.ConsoleExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.ConsoleExtensions.html",
+          "hash": "U9IEQlZI+2Kctg//vi8gukAwZwUDxhMuwBHLWRQmbyw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.ConsolePlatform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.ConsolePlatform.html",
+          "hash": "DyAEZGmsgkpgBxS12WdaqapPNyJIRhyiv5Qj4qBVfoM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.ConsoleResizeListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.ConsoleResizeListener.html",
+          "hash": "ZyqM5MG9R0VUMO/KcXzRy1wzjcVrCr20Iy/2ngj69xk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.html",
+          "hash": "zsy3CBULuRGwri0lmsib1m2dJF1kytE+yhRtGaZNgEY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Accessibility.Deficiency.yml",
       "output": {
         ".html": {
@@ -69,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.ColorTools.html",
-          "hash": "aancD9hP+NRsBXRkFD7pbemJDAlb319BtPNcMO37O0Y="
+          "hash": "VQdl1hjt2DS2vF2munex6qSuvEvwVHg033KlU/YKw4c="
         }
       },
       "is_incremental": false,
@@ -166,6 +226,114 @@
         ".html": {
           "relative_path": "api/Terminaux.Reader.Bindings.html",
           "hash": "T2R5ELkkzWyl8a5gEG1QKSsepuOITAchVfJ/2dg7G/A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Input.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Input.html",
+          "hash": "cjxe+Rof61G8Vws7UiLNuvzah+DkLhklSsLVl+vHkbY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.InputChoiceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.InputChoiceInfo.html",
+          "hash": "rXAjAtPOKsLZ2CaDgPQQdxLoAHXZ2WONH24XsXkxrfE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.InputChoiceTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.InputChoiceTools.html",
+          "hash": "G3JfE75LMCeBNwrB6DIRoYoiscmuRVi9v1uTVT/IZtw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Styles.ChoiceOutputType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Styles.ChoiceOutputType.html",
+          "hash": "uuqOEku0y4VDqz+0c6QrcTjTPBMqHxeSYmwEMAAK50c="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Styles.ChoiceStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Styles.ChoiceStyle.html",
+          "hash": "hag1Ila4LYpum7uPSC1jaoFGtKwkcVVjwYbUSOR/+2s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Styles.InputStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Styles.InputStyle.html",
+          "hash": "/NoLoKzpsuM+9QD1Kug4uYGu2ZDgIkv+DFrer/pK/Ns="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Styles.SelectionStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Styles.SelectionStyle.html",
+          "hash": "6Iq8rfpKL95ZsKWIgrKS8ib5wgOltE7X8MLKflEpIl4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Styles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Styles.html",
+          "hash": "biP2oXKwilDpFv7Yc4p92COjjFFJnlYAR0bFPVnkD+M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.html",
+          "hash": "6aetzapDYWaJM5wXvr333iUnshnZlH03Jwer6K79EoQ="
         }
       },
       "is_incremental": false,
@@ -425,11 +593,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Tools.ConsoleWrapperTools.yml",
+      "source_relative_path": "api/Terminaux.Tools.ConsoleTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Tools.ConsoleWrapperTools.html",
-          "hash": "rSX07hVu+qwSvelCBadTlrhCabxsEJD0+gjXtJNMsKA="
+          "relative_path": "api/Terminaux.Tools.ConsoleTools.html",
+          "hash": "QAzLRYSUhvx0lSk9zJNc2j8uZhiACeOj7lYdUz1RD/A="
         }
       },
       "is_incremental": false,
@@ -441,7 +609,367 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Tools.html",
-          "hash": "XTjLZDDkdcKcPIsPP2uZLLgiA//J2alggUxmm+QzLW0="
+          "hash": "1hbN2TPZhoBDNEvES1I/I0OlpAtakvCPgQP+VagEp0w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.ListWriterColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html",
+          "hash": "XjXrZxgDPRQdhM/9VC8lMmkAqal3PYs+AD/h2g0QgLU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html",
+          "hash": "TlbWfNJ+/SpWefbgvMUro8WsB69bddgH0SGchJaF2UU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html",
+          "hash": "g1zJJw+W2aXQzTVxwGOpQ05N3OpKQpdfjDqWSCycM50="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html",
+          "hash": "tDFnHdcplKe58GURepNqwtWE+UD3rLmi6/4IqyHYhrk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html",
+          "hash": "qQT6HS9IP8B9hLvCk2KPhjezp5kCLxr8E6cwRbnNyv8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.html",
+          "hash": "rBxy4IoU9YYTgXC0QYr5L+bMtAEa2Kf8cmprTseKxUc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.html",
+          "hash": "5+bXhHtRe/4979Q1DCOsNbiJQLtyyqLqMWPjBYikoZw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BorderColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.BorderColor.html",
+          "hash": "x+bDEyz5ogKdNeC90RVyTMMY7rLVpXdhCYpmIISnTBQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BoxColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.BoxColor.html",
+          "hash": "lLfcoGv/ThNehl6jTJuha22UveNcR6DuKFg6md7TVQY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BoxFrameColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.BoxFrameColor.html",
+          "hash": "jZvDF+kEOCaFC88iE+Ll0owAWuQN79+5SMP/f/obf3U="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html",
+          "hash": "hs6lDagH0S7GTUWAcZd/OHok7v66pCx2qlfUeD6uZvA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.CenteredTextColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.CenteredTextColor.html",
+          "hash": "mLJ0eUV9gxHlXhIpYiajM0ybWteuSIaPxz6djh0oBGA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.FigletColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.FigletColor.html",
+          "hash": "v5RTrbYS3Al7gVpB7WS7mmZurHUEDYq4Ru26NaviKOk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.FigletWhereColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.FigletWhereColor.html",
+          "hash": "rnvJMMNpbMX9Uf494wj1W7VP288Lv4tu4Tl2q+5BIFs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.InfoBoxColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.InfoBoxColor.html",
+          "hash": "t3QJ+QEuPSk2TxqyTz0Ot0q85pO/cN7vxRRQi2Pwr9M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.PowerLineColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.PowerLineColor.html",
+          "hash": "sw5GeMYxwz8eFyGN5dQ9nOwTFTzHgnoIYW1F37hyFBk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.ProgressBarColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.ProgressBarColor.html",
+          "hash": "ybraFLw4UMAtTBw9Mh17Iq6eWccMWl1bI2JaZNv2Q8M="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.ProgressBarVerticalColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.ProgressBarVerticalColor.html",
+          "hash": "xeiwPf7/KzGe1A7/AEZDggMq0/2SZ6gxDrUU3hd1naM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html",
+          "hash": "amuq9pkTq88yZRKoUn1WhKCPv68ur/ZUGB0zhHWFkAw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.TableColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.TableColor.html",
+          "hash": "erF4JidZ9Y4F2GKAkRcWbcg0+bArkwWlWH0OiTQ9AiQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.BorderTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.BorderTools.html",
+          "hash": "TPCpgrowOkT6pbPQtc6eAZaFMvJmNahyRkWPVj7B7x0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.CellOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.CellOptions.html",
+          "hash": "Q6rUFGLYUpJqEmQ0ZqdlSDp1cmpXtw8FaqLtlZBUaE0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.FigletTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html",
+          "hash": "UR9s02ekcNkbU8N12UKDITkA1b1e2morAyw03Saxdf8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineSegment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineSegment.html",
+          "hash": "fYFJWqBff8PwBrFj/Xu39UqOoA4jdOAR5qJ/bxEsE9s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineTools.html",
+          "hash": "9sDETwO9XnNHhJOpgyDKlfoh40utPKBlnIADuxzgjxs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.ProgressTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.ProgressTools.html",
+          "hash": "SLe72qcpG1fYxddeYPkTyrTp2v5Jko89AZwYg93m8lk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.html",
+          "hash": "NIFAtYzRt/A/tuJYpxSNreDGtfPimLEjaR2wZ8NAngI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.html",
+          "hash": "dRS50BLIxV+L4D4y1bt07NFacqeRGHIggNcyYb9D9wI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.MiscWriters.LineHandleWriter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.MiscWriters.LineHandleWriter.html",
+          "hash": "SB51L7bZIOKQGMvEMx65q8cbyPRJ5+Nd0SopDTxT6vQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.MiscWriters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.MiscWriters.html",
+          "hash": "Nj/Yl5W0ccZVp/Zdw0vR13SrRopVyw6bd1j8uHLzfSk="
         }
       },
       "is_incremental": false,
@@ -453,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "f/GtxpuXsd7NrkRspXy7emz4V7c3nAw2Z0QfE90IB8I="
+          "hash": "xO3k4aqiwB24nRiyfQBZsD17DMO122ml0QR0Tz3cJW4="
         }
       },
       "is_incremental": false,
@@ -477,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "rPXnwnBADwkv3Syek0/h8Y+gA/WInoqCTiIEwLFCW80="
+          "hash": "da9j3slvOsm71TxuoatTWaFG2RTAKc6Xl6rS27fW8vE="
         }
       },
       "is_incremental": false,
@@ -504,7 +1032,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 36,
+          "total_file_count": 80,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
