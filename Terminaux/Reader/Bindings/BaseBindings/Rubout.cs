@@ -27,7 +27,8 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override ConsoleKeyInfo[] BoundKeys { get; } =
         {
             new ConsoleKeyInfo('\b', ConsoleKey.Backspace, false, false, false),
-            new ConsoleKeyInfo('\u007f', ConsoleKey.Backspace, false, false, false)
+            new ConsoleKeyInfo('\u007f', ConsoleKey.Backspace, false, false, false),
+            new ConsoleKeyInfo('\0', ConsoleKey.Backspace, false, false, false)
         };
 
         /// <inheritdoc/>
