@@ -71,6 +71,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             // Color
             new ColorTest(),
             new ColorTrueTest(),
+            new ColorWheelTest(),
         };
 
         internal static IFixture GetFixtureFromName(string name)

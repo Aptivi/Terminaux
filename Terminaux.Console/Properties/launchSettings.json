@@ -146,6 +146,10 @@
     "Terminaux - KeyInfo": {
       "commandName": "Project",
       "commandLineArgs": "KeyInfo"
+    },
+    "Terminaux - ColorWheelTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorWheelTest"
     }
   }
 }
