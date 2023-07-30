@@ -142,6 +142,10 @@
     "Terminaux - ColorTrueTest": {
       "commandName": "Project",
       "commandLineArgs": "ColorTrueTest"
+    },
+    "Terminaux - KeyInfo": {
+      "commandName": "Project",
+      "commandLineArgs": "KeyInfo"
     }
   }
 }
