@@ -173,6 +173,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Wheel.ColorWheel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Wheel.ColorWheel.html",
+          "hash": "Mf9n9g4t/mms4z1b4jdUxjmKzWV2oAePj4aq4d/EObI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Wheel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Wheel.html",
+          "hash": "Ogaa1EDP2rwbByWJ9e8eyYDnAjiYZFcDuOaghG5FtKs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.yml",
       "output": {
         ".html": {
@@ -981,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "xO3k4aqiwB24nRiyfQBZsD17DMO122ml0QR0Tz3cJW4="
+          "hash": "nd2Ntdbc3GnxCKlXL+HfvUGB+BIiZYOnbrlufXZyf+0="
         }
       },
       "is_incremental": false,
@@ -1032,7 +1056,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 80,
+          "total_file_count": 82,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

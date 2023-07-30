@@ -2566,6 +2566,37 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ConsoleColorsInfo.R
   nameWithType: ConsoleColorsInfo.R
+- uid: Terminaux.Colors.Wheel
+  name: Terminaux.Colors.Wheel
+  href: api/Terminaux.Colors.Wheel.html
+  commentId: N:Terminaux.Colors.Wheel
+  fullName: Terminaux.Colors.Wheel
+  nameWithType: Terminaux.Colors.Wheel
+- uid: Terminaux.Colors.Wheel.ColorWheel
+  name: ColorWheel
+  href: api/Terminaux.Colors.Wheel.ColorWheel.html
+  commentId: T:Terminaux.Colors.Wheel.ColorWheel
+  fullName: Terminaux.Colors.Wheel.ColorWheel
+  nameWithType: ColorWheel
+- uid: Terminaux.Colors.Wheel.ColorWheel.InputForColor
+  name: InputForColor()
+  href: api/Terminaux.Colors.Wheel.ColorWheel.html#Terminaux_Colors_Wheel_ColorWheel_InputForColor
+  commentId: M:Terminaux.Colors.Wheel.ColorWheel.InputForColor
+  fullName: Terminaux.Colors.Wheel.ColorWheel.InputForColor()
+  nameWithType: ColorWheel.InputForColor()
+- uid: Terminaux.Colors.Wheel.ColorWheel.InputForColor(Terminaux.Colors.Color)
+  name: InputForColor(Color)
+  href: api/Terminaux.Colors.Wheel.ColorWheel.html#Terminaux_Colors_Wheel_ColorWheel_InputForColor_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Wheel.ColorWheel.InputForColor(Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.Wheel.ColorWheel.InputForColor(Terminaux.Colors.Color)
+  nameWithType: ColorWheel.InputForColor(Color)
+- uid: Terminaux.Colors.Wheel.ColorWheel.InputForColor*
+  name: InputForColor
+  href: api/Terminaux.Colors.Wheel.ColorWheel.html#Terminaux_Colors_Wheel_ColorWheel_InputForColor_
+  commentId: Overload:Terminaux.Colors.Wheel.ColorWheel.InputForColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Wheel.ColorWheel.InputForColor
+  nameWithType: ColorWheel.InputForColor
 - uid: Terminaux.Reader
   name: Terminaux.Reader
   href: api/Terminaux.Reader.html

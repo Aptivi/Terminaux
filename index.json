@@ -69,6 +69,16 @@
     "title": "Namespace Terminaux.Colors | Terminaux API - Aptivi Internals",
     "keywords": "Namespace Terminaux.Colors Classes Color Color information class Color255 255 colors tools ColorTools Color tools and management ConsoleColorsInfo Information for the console colors that fit within the 256 colors Enums ColorType Color type enumeration ConsoleColors All 255 console colors"
   },
+  "api/Terminaux.Colors.Wheel.ColorWheel.html": {
+    "href": "api/Terminaux.Colors.Wheel.ColorWheel.html",
+    "title": "Class ColorWheel | Terminaux API - Aptivi Internals",
+    "keywords": "Class ColorWheel Color wheel class Inheritance System.Object ColorWheel Namespace : Terminaux.Colors.Wheel Assembly : Terminaux.dll Syntax public static class ColorWheel : object Methods InputForColor() Inputs the user for color selection Declaration public static Color InputForColor() Returns Type Description Color The color from the user input InputForColor(Color) Inputs the user for color selection Declaration public static Color InputForColor(Color initialColor) Parameters Type Name Description Color initialColor Initial color Returns Type Description Color The color from the user input"
+  },
+  "api/Terminaux.Colors.Wheel.html": {
+    "href": "api/Terminaux.Colors.Wheel.html",
+    "title": "Namespace Terminaux.Colors.Wheel | Terminaux API - Aptivi Internals",
+    "keywords": "Namespace Terminaux.Colors.Wheel Classes ColorWheel Color wheel class"
+  },
   "api/Terminaux.Reader.Bindings.BaseBinding.html": {
     "href": "api/Terminaux.Reader.Bindings.BaseBinding.html",
     "title": "Class BaseBinding | Terminaux API - Aptivi Internals",
