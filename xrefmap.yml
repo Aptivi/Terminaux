@@ -2852,12 +2852,30 @@ references:
   commentId: M:Terminaux.Reader.Inputs.Input.ReadLine(System.String,System.String)
   fullName: Terminaux.Reader.Inputs.Input.ReadLine(System.String, System.String)
   nameWithType: Input.ReadLine(String, String)
-- uid: Terminaux.Reader.Inputs.Input.ReadLine(System.String,System.String,System.Boolean)
-  name: ReadLine(String, String, Boolean)
-  href: api/Terminaux.Reader.Inputs.Input.html#Terminaux_Reader_Inputs_Input_ReadLine_System_String_System_String_System_Boolean_
-  commentId: M:Terminaux.Reader.Inputs.Input.ReadLine(System.String,System.String,System.Boolean)
-  fullName: Terminaux.Reader.Inputs.Input.ReadLine(System.String, System.String, System.Boolean)
-  nameWithType: Input.ReadLine(String, String, Boolean)
+- uid: Terminaux.Reader.Inputs.Input.ReadLine(System.String,System.String,Terminaux.Reader.TermReaderSettings)
+  name: ReadLine(String, String, TermReaderSettings)
+  href: api/Terminaux.Reader.Inputs.Input.html#Terminaux_Reader_Inputs_Input_ReadLine_System_String_System_String_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.Inputs.Input.ReadLine(System.String,System.String,Terminaux.Reader.TermReaderSettings)
+  fullName: Terminaux.Reader.Inputs.Input.ReadLine(System.String, System.String, Terminaux.Reader.TermReaderSettings)
+  nameWithType: Input.ReadLine(String, String, TermReaderSettings)
+- uid: Terminaux.Reader.Inputs.Input.ReadLine(System.String,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)
+  name: ReadLine(String, String, TermReaderSettings, Boolean)
+  href: api/Terminaux.Reader.Inputs.Input.html#Terminaux_Reader_Inputs_Input_ReadLine_System_String_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Input.ReadLine(System.String,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)
+  fullName: Terminaux.Reader.Inputs.Input.ReadLine(System.String, System.String, Terminaux.Reader.TermReaderSettings, System.Boolean)
+  nameWithType: Input.ReadLine(String, String, TermReaderSettings, Boolean)
+- uid: Terminaux.Reader.Inputs.Input.ReadLine(System.String,Terminaux.Reader.TermReaderSettings)
+  name: ReadLine(String, TermReaderSettings)
+  href: api/Terminaux.Reader.Inputs.Input.html#Terminaux_Reader_Inputs_Input_ReadLine_System_String_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.Inputs.Input.ReadLine(System.String,Terminaux.Reader.TermReaderSettings)
+  fullName: Terminaux.Reader.Inputs.Input.ReadLine(System.String, Terminaux.Reader.TermReaderSettings)
+  nameWithType: Input.ReadLine(String, TermReaderSettings)
+- uid: Terminaux.Reader.Inputs.Input.ReadLine(Terminaux.Reader.TermReaderSettings)
+  name: ReadLine(TermReaderSettings)
+  href: api/Terminaux.Reader.Inputs.Input.html#Terminaux_Reader_Inputs_Input_ReadLine_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.Inputs.Input.ReadLine(Terminaux.Reader.TermReaderSettings)
+  fullName: Terminaux.Reader.Inputs.Input.ReadLine(Terminaux.Reader.TermReaderSettings)
+  nameWithType: Input.ReadLine(TermReaderSettings)
 - uid: Terminaux.Reader.Inputs.Input.ReadLine*
   name: ReadLine
   href: api/Terminaux.Reader.Inputs.Input.html#Terminaux_Reader_Inputs_Input_ReadLine_
@@ -2902,6 +2920,24 @@ references:
   commentId: M:Terminaux.Reader.Inputs.Input.ReadLineWrapped(System.String,System.String)
   fullName: Terminaux.Reader.Inputs.Input.ReadLineWrapped(System.String, System.String)
   nameWithType: Input.ReadLineWrapped(String, String)
+- uid: Terminaux.Reader.Inputs.Input.ReadLineWrapped(System.String,System.String,Terminaux.Reader.TermReaderSettings)
+  name: ReadLineWrapped(String, String, TermReaderSettings)
+  href: api/Terminaux.Reader.Inputs.Input.html#Terminaux_Reader_Inputs_Input_ReadLineWrapped_System_String_System_String_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.Inputs.Input.ReadLineWrapped(System.String,System.String,Terminaux.Reader.TermReaderSettings)
+  fullName: Terminaux.Reader.Inputs.Input.ReadLineWrapped(System.String, System.String, Terminaux.Reader.TermReaderSettings)
+  nameWithType: Input.ReadLineWrapped(String, String, TermReaderSettings)
+- uid: Terminaux.Reader.Inputs.Input.ReadLineWrapped(System.String,Terminaux.Reader.TermReaderSettings)
+  name: ReadLineWrapped(String, TermReaderSettings)
+  href: api/Terminaux.Reader.Inputs.Input.html#Terminaux_Reader_Inputs_Input_ReadLineWrapped_System_String_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.Inputs.Input.ReadLineWrapped(System.String,Terminaux.Reader.TermReaderSettings)
+  fullName: Terminaux.Reader.Inputs.Input.ReadLineWrapped(System.String, Terminaux.Reader.TermReaderSettings)
+  nameWithType: Input.ReadLineWrapped(String, TermReaderSettings)
+- uid: Terminaux.Reader.Inputs.Input.ReadLineWrapped(Terminaux.Reader.TermReaderSettings)
+  name: ReadLineWrapped(TermReaderSettings)
+  href: api/Terminaux.Reader.Inputs.Input.html#Terminaux_Reader_Inputs_Input_ReadLineWrapped_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.Inputs.Input.ReadLineWrapped(Terminaux.Reader.TermReaderSettings)
+  fullName: Terminaux.Reader.Inputs.Input.ReadLineWrapped(Terminaux.Reader.TermReaderSettings)
+  nameWithType: Input.ReadLineWrapped(TermReaderSettings)
 - uid: Terminaux.Reader.Inputs.Input.ReadLineWrapped*
   name: ReadLineWrapped
   href: api/Terminaux.Reader.Inputs.Input.html#Terminaux_Reader_Inputs_Input_ReadLineWrapped_
@@ -3283,6 +3319,24 @@ references:
   commentId: M:Terminaux.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)
   fullName: Terminaux.Reader.TermReader.Read(System.String, System.String, System.Boolean, System.Boolean, System.Boolean)
   nameWithType: TermReader.Read(String, String, Boolean, Boolean, Boolean)
+- uid: Terminaux.Reader.TermReader.Read(System.String,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)
+  name: Read(String, String, TermReaderSettings, Boolean, Boolean, Boolean)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_String_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.Read(System.String,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Boolean)
+  fullName: Terminaux.Reader.TermReader.Read(System.String, System.String, Terminaux.Reader.TermReaderSettings, System.Boolean, System.Boolean, System.Boolean)
+  nameWithType: TermReader.Read(String, String, TermReaderSettings, Boolean, Boolean, Boolean)
+- uid: Terminaux.Reader.TermReader.Read(System.String,Terminaux.Reader.TermReaderSettings)
+  name: Read(String, TermReaderSettings)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_String_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.TermReader.Read(System.String,Terminaux.Reader.TermReaderSettings)
+  fullName: Terminaux.Reader.TermReader.Read(System.String, Terminaux.Reader.TermReaderSettings)
+  nameWithType: TermReader.Read(String, TermReaderSettings)
+- uid: Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings)
+  name: Read(TermReaderSettings)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings)
+  fullName: Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings)
+  nameWithType: TermReader.Read(TermReaderSettings)
 - uid: Terminaux.Reader.TermReader.Read*
   name: Read
   href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_
@@ -3302,6 +3356,18 @@ references:
   commentId: M:Terminaux.Reader.TermReader.ReadPassword(System.String)
   fullName: Terminaux.Reader.TermReader.ReadPassword(System.String)
   nameWithType: TermReader.ReadPassword(String)
+- uid: Terminaux.Reader.TermReader.ReadPassword(System.String,Terminaux.Reader.TermReaderSettings)
+  name: ReadPassword(String, TermReaderSettings)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_System_String_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.TermReader.ReadPassword(System.String,Terminaux.Reader.TermReaderSettings)
+  fullName: Terminaux.Reader.TermReader.ReadPassword(System.String, Terminaux.Reader.TermReaderSettings)
+  nameWithType: TermReader.ReadPassword(String, TermReaderSettings)
+- uid: Terminaux.Reader.TermReader.ReadPassword(Terminaux.Reader.TermReaderSettings)
+  name: ReadPassword(TermReaderSettings)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.TermReader.ReadPassword(Terminaux.Reader.TermReaderSettings)
+  fullName: Terminaux.Reader.TermReader.ReadPassword(Terminaux.Reader.TermReaderSettings)
+  nameWithType: TermReader.ReadPassword(TermReaderSettings)
 - uid: Terminaux.Reader.TermReader.ReadPassword*
   name: ReadPassword
   href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_
@@ -3315,6 +3381,19 @@ references:
   commentId: T:Terminaux.Reader.TermReaderSettings
   fullName: Terminaux.Reader.TermReaderSettings
   nameWithType: TermReaderSettings
+- uid: Terminaux.Reader.TermReaderSettings.#ctor
+  name: TermReaderSettings()
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings__ctor
+  commentId: M:Terminaux.Reader.TermReaderSettings.#ctor
+  fullName: Terminaux.Reader.TermReaderSettings.TermReaderSettings()
+  nameWithType: TermReaderSettings.TermReaderSettings()
+- uid: Terminaux.Reader.TermReaderSettings.#ctor*
+  name: TermReaderSettings
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings__ctor_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.#ctor
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderSettings.TermReaderSettings
+  nameWithType: TermReaderSettings.TermReaderSettings
 - uid: Terminaux.Reader.TermReaderSettings.HistoryEnabled
   name: HistoryEnabled
   href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_HistoryEnabled
@@ -3594,6 +3673,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderState.PressedKey
   nameWithType: TermReaderState.PressedKey
+- uid: Terminaux.Reader.TermReaderState.Settings
+  name: Settings
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_Settings
+  commentId: P:Terminaux.Reader.TermReaderState.Settings
+  fullName: Terminaux.Reader.TermReaderState.Settings
+  nameWithType: TermReaderState.Settings
+- uid: Terminaux.Reader.TermReaderState.Settings*
+  name: Settings
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_Settings_
+  commentId: Overload:Terminaux.Reader.TermReaderState.Settings
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.Settings
+  nameWithType: TermReaderState.Settings
 - uid: Terminaux.Reader.TermReaderTools
   name: TermReaderTools
   href: api/Terminaux.Reader.TermReaderTools.html

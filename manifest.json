@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Reader.Inputs.Input.html",
-          "hash": "cjxe+Rof61G8Vws7UiLNuvzah+DkLhklSsLVl+vHkbY="
+          "hash": "pM5BLx0Xw8X87RNqfAeLRBNqzrW0ekfsO9vImDqjT6o="
         }
       },
       "is_incremental": false,
@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Reader.TermReader.html",
-          "hash": "iZHbrriiV2DgUbtoTGb2HeyvvnNNk6N0+LhUXHbd/Eo="
+          "hash": "r3bROWL+w05zbHi/2dpGXr+KGmiU9G1s1nGZ5aQKZ7A="
         }
       },
       "is_incremental": false,
@@ -381,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Reader.TermReaderSettings.html",
-          "hash": "BOCSvtyhdoKDKFECVrqS/ZWBvceR/NcA2cVvEHoQSWQ="
+          "hash": "OC6mt4zBrod0Je1GR3flYOeYcJyUUF9tXGHHGLrTplU="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Reader.TermReaderState.html",
-          "hash": "Ykup2NuOOszCH3KAT/8XHDli+KWbEJsV2DQ9EckIEbU="
+          "hash": "v9JadJJtmoLKJnjHXLLCuMsQQGt/O2cdL0CHIZcctJQ="
         }
       },
       "is_incremental": false,
@@ -621,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Tools.ConsoleTools.html",
-          "hash": "QAzLRYSUhvx0lSk9zJNc2j8uZhiACeOj7lYdUz1RD/A="
+          "hash": "Nzeb4oXk4lyLbZzVGJjwxF3ql7EjtuhpF+3l8RqTXPI="
         }
       },
       "is_incremental": false,
