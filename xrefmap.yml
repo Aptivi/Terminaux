@@ -801,6 +801,32 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.SRGBToLinearRGB
   nameWithType: ColorTools.SRGBToLinearRGB
+- uid: Terminaux.Colors.ColorTools.TranslateToStandardColorMap(Terminaux.Colors.ConsoleColors)
+  name: TranslateToStandardColorMap(ConsoleColors)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TranslateToStandardColorMap_Terminaux_Colors_ConsoleColors_
+  commentId: M:Terminaux.Colors.ColorTools.TranslateToStandardColorMap(Terminaux.Colors.ConsoleColors)
+  fullName: Terminaux.Colors.ColorTools.TranslateToStandardColorMap(Terminaux.Colors.ConsoleColors)
+  nameWithType: ColorTools.TranslateToStandardColorMap(ConsoleColors)
+- uid: Terminaux.Colors.ColorTools.TranslateToStandardColorMap*
+  name: TranslateToStandardColorMap
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TranslateToStandardColorMap_
+  commentId: Overload:Terminaux.Colors.ColorTools.TranslateToStandardColorMap
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.TranslateToStandardColorMap
+  nameWithType: ColorTools.TranslateToStandardColorMap
+- uid: Terminaux.Colors.ColorTools.TranslateToX11ColorMap(ConsoleColor)
+  name: TranslateToX11ColorMap(ConsoleColor)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TranslateToX11ColorMap_ConsoleColor_
+  commentId: M:Terminaux.Colors.ColorTools.TranslateToX11ColorMap(ConsoleColor)
+  fullName: Terminaux.Colors.ColorTools.TranslateToX11ColorMap(ConsoleColor)
+  nameWithType: ColorTools.TranslateToX11ColorMap(ConsoleColor)
+- uid: Terminaux.Colors.ColorTools.TranslateToX11ColorMap*
+  name: TranslateToX11ColorMap
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TranslateToX11ColorMap_
+  commentId: Overload:Terminaux.Colors.ColorTools.TranslateToX11ColorMap
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.TranslateToX11ColorMap
+  nameWithType: ColorTools.TranslateToX11ColorMap
 - uid: Terminaux.Colors.ColorTools.TryParseColor(System.Int32)
   name: TryParseColor(Int32)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TryParseColor_System_Int32_
