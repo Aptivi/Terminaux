@@ -47,7 +47,7 @@ namespace Terminaux.Sequences.Builder
             var regexGettingType = new Regex("(?<=[a-z0-9])[A-Z].*");
             string typeName = $"{regexGettingType.Replace(specificType.ToString(), "")}Sequences";
             string generatorName = $"Generate{specificType}";
-            var sequencesType = Type.GetType($"Terminaux.Builder.Types.{typeName}");
+            var sequencesType = Type.GetType($"Terminaux.Sequences.Builder.Types.{typeName}");
             var sequenceRegexGenerator = sequencesType.GetMethod(generatorName);
 
             // Now, get the sequence
@@ -64,14 +64,14 @@ namespace Terminaux.Sequences.Builder
         public static (VtSequenceType, VtSequenceSpecificTypes) DetermineTypeFromSequence(string sequence)
         {
             // First, get all the VT sequence types except "None" and "All"
-            var seqTypeEnumNames = Type.GetType($"Terminaux.Tools.{nameof(VtSequenceType)}").GetEnumNames().Where((enumeration) => enumeration != "None" && enumeration != "All").ToArray();
+            var seqTypeEnumNames = Type.GetType($"Terminaux.Sequences.Tools.{nameof(VtSequenceType)}").GetEnumNames().Where((enumeration) => enumeration != "None" && enumeration != "All").ToArray();
 
             // Then, iterate through all the sequence types until we find an appropriate one that matches the sequence
             foreach (string seqType in seqTypeEnumNames)
             {
                 // Get the class that contains regexes of all the sequences
                 string typeName = $"{seqType}Sequences";
-                var sequencesType = Type.GetType($"Terminaux.Builder.Types.{typeName}");
+                var sequencesType = Type.GetType($"Terminaux.Sequences.Builder.Types.{typeName}");
                 var sequenceRegexes = sequencesType.GetProperties();
                 foreach (var property in sequenceRegexes)
                 {
