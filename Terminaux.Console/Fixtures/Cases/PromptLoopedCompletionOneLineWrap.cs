@@ -31,9 +31,12 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string input = "";
             while (input != "exit")
             {
-                TermReaderSettings.Suggestions = GetSuggestions;
-                TermReaderSettings.HistoryEnabled = true;
-                input = TermReader.Read(">> ", "", false, true);
+                var settings = new TermReaderSettings()
+                {
+                    Suggestions = GetSuggestions,
+                    HistoryEnabled = true,
+                };
+                input = TermReader.Read(">> ", "", settings, false, true);
                 Console.WriteLine("You said: " + input);
             }
         }

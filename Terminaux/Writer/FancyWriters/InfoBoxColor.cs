@@ -205,9 +205,11 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                TermReaderSettings.RightMargin = borderX;
-                string input = Input.ReadLineWrapped();
-                TermReaderSettings.RightMargin = 0;
+                var settings = new TermReaderSettings()
+                {
+                    RightMargin = borderX
+                };
+                string input = Input.ReadLineWrapped(settings);
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -681,9 +683,11 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                TermReaderSettings.RightMargin = borderX;
-                string input = Input.ReadLineWrapped();
-                TermReaderSettings.RightMargin = 0;
+                var settings = new TermReaderSettings()
+                {
+                    RightMargin = borderX
+                };
+                string input = Input.ReadLineWrapped(settings);
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -781,9 +785,11 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                TermReaderSettings.RightMargin = borderX;
-                string input = Input.ReadLineWrapped();
-                TermReaderSettings.RightMargin = 0;
+                var settings = new TermReaderSettings()
+                {
+                    RightMargin = borderX
+                };
+                string input = Input.ReadLineWrapped(settings);
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))

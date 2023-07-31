@@ -55,7 +55,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             if (state.OneLineWrap)
             {
                 string renderedText = state.CurrentText.ToString();
-                int longestSentenceLength = ConsoleTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
+                int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
                 string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 PositioningTools.GoForwardOneLineWrapAware(steps, ref state, incompleteSentences);
             }

@@ -18,8 +18,6 @@
 
 using System;
 using System.Threading;
-using Terminaux.Base;
-using Terminaux.Tools;
 
 namespace Terminaux.Reader.Inputs
 {
@@ -29,7 +27,6 @@ namespace Terminaux.Reader.Inputs
     public static class Input
     {
         internal static string currentMask = "*";
-        private static bool isWrapperInitialized;
 
         /// <summary>
         /// Current mask character
@@ -46,6 +43,13 @@ namespace Terminaux.Reader.Inputs
         /// <summary>
         /// Reads the line from the console
         /// </summary>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string ReadLine(TermReaderSettings settings) =>
+            ReadLine("", "", settings);
+
+        /// <summary>
+        /// Reads the line from the console
+        /// </summary>
         /// <param name="InputText">Input text to write</param>
         public static string ReadLine(string InputText) =>
             ReadLine(InputText, "");
@@ -54,15 +58,39 @@ namespace Terminaux.Reader.Inputs
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string ReadLine(string InputText, TermReaderSettings settings) =>
+            ReadLine(InputText, "", settings);
+
+        /// <summary>
+        /// Reads the line from the console
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         public static string ReadLine(string InputText, string DefaultValue) =>
-            ReadLine(InputText, DefaultValue, false);
+            ReadLine(InputText, DefaultValue, new TermReaderSettings(), false);
+
+        /// <summary>
+        /// Reads the line from the console
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
+        /// <param name="DefaultValue">Default value</param>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings) =>
+            ReadLine(InputText, DefaultValue, settings, false);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         public static string ReadLineWrapped() =>
             ReadLineWrapped("", "");
+
+        /// <summary>
+        /// Reads the line from the console (wrapped to one line)
+        /// </summary>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string ReadLineWrapped(TermReaderSettings settings) =>
+            ReadLineWrapped("", "", settings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
@@ -75,9 +103,26 @@ namespace Terminaux.Reader.Inputs
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         /// <param name="InputText">Input text to write</param>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string ReadLineWrapped(string InputText, TermReaderSettings settings) =>
+            ReadLineWrapped(InputText, "", settings);
+
+        /// <summary>
+        /// Reads the line from the console (wrapped to one line)
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         public static string ReadLineWrapped(string InputText, string DefaultValue) =>
-            ReadLine(InputText, DefaultValue, true);
+            ReadLine(InputText, DefaultValue, new TermReaderSettings(), true);
+
+        /// <summary>
+        /// Reads the line from the console (wrapped to one line)
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
+        /// <param name="DefaultValue">Default value</param>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings) =>
+            ReadLine(InputText, DefaultValue, settings, true);
 
         /// <summary>
         /// Reads the line from the console.
@@ -85,8 +130,9 @@ namespace Terminaux.Reader.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
-        public static string ReadLine(string InputText, string DefaultValue, bool OneLineWrap = false) =>
-            TermReader.Read(InputText, DefaultValue, false, OneLineWrap);
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings, bool OneLineWrap = false) =>
+            TermReader.Read(InputText, DefaultValue, settings, false, OneLineWrap);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
@@ -105,8 +151,7 @@ namespace Terminaux.Reader.Inputs
         /// <param name="MaskChar">Specifies the password mask character</param>
         public static string ReadLineNoInput(char MaskChar)
         {
-            TermReaderSettings.PasswordMaskChar = MaskChar;
-            string pass = TermReader.ReadPassword();
+            string pass = TermReader.ReadPassword(new TermReaderSettings() { PasswordMaskChar = MaskChar });
             return pass;
         }
 
@@ -130,32 +175,6 @@ namespace Terminaux.Reader.Inputs
         {
             SpinWait.SpinUntil(() => Console.KeyAvailable);
             return Console.ReadKey(true);
-        }
-
-        internal static void InitializeInputWrappers()
-        {
-            if (isWrapperInitialized)
-                return;
-
-            // Initialize console wrappers for TermRead
-            ConsoleTools.ActionBeep = Console.Beep;
-            ConsoleTools.ActionBufferHeight = () => Console.BufferHeight;
-            ConsoleTools.ActionCursorLeft = () => Console.CursorLeft;
-            ConsoleTools.ActionCursorTop = () => Console.CursorTop;
-            ConsoleTools.ActionCursorVisible = (value) => Console.CursorVisible = value;
-            ConsoleTools.ActionIsDumb = () => ConsoleChecker.IsDumb;
-            ConsoleTools.ActionKeyAvailable = () => Console.KeyAvailable;
-            ConsoleTools.ActionReadKey = Console.ReadKey;
-            ConsoleTools.ActionSetCursorPosition = Console.SetCursorPosition;
-            ConsoleTools.ActionWindowHeight = () => Console.WindowHeight;
-            ConsoleTools.ActionWindowWidth = () => Console.WindowWidth;
-            ConsoleTools.ActionWriteChar = Console.Write;
-            ConsoleTools.ActionWriteLine = Console.WriteLine;
-            ConsoleTools.ActionWriteLineParameterized = Console.WriteLine;
-            ConsoleTools.ActionWriteLineString = Console.WriteLine;
-            ConsoleTools.ActionWriteParameterized = Console.Write;
-            ConsoleTools.ActionWriteString = Console.Write;
-            isWrapperInitialized = true;
         }
 
     }

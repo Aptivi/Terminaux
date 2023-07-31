@@ -23,20 +23,20 @@ namespace Terminaux.Reader
     /// <summary>
     /// Settings for the reader
     /// </summary>
-    public static class TermReaderSettings
+    public class TermReaderSettings
     {
-        private static char passwordMaskChar = '*';
-        private static bool historyEnabled = true;
-        private static bool treatCtrlCAsInput;
-        private static int leftMargin = 0;
-        private static int rightMargin = 0;
-        internal static Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
-        internal static char[] suggestionsDelims = new char[] { ' ' };
+        private char passwordMaskChar = '*';
+        private bool historyEnabled = true;
+        private bool treatCtrlCAsInput;
+        private int leftMargin = 0;
+        private int rightMargin = 0;
+        internal Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
+        internal char[] suggestionsDelims = new char[] { ' ' };
 
         /// <summary>
         /// Password mask character
         /// </summary>
-        public static char PasswordMaskChar 
+        public char PasswordMaskChar 
         { 
             get => passwordMaskChar;
             set => passwordMaskChar = value; 
@@ -45,7 +45,7 @@ namespace Terminaux.Reader
         /// <summary>
         /// Input history enabled
         /// </summary>
-        public static bool HistoryEnabled
+        public bool HistoryEnabled
         {
             get => historyEnabled;
             set => historyEnabled = value;
@@ -54,7 +54,7 @@ namespace Terminaux.Reader
         /// <summary>
         /// Left margin
         /// </summary>
-        public static int LeftMargin
+        public int LeftMargin
         {
             get => leftMargin;
             set => leftMargin = value;
@@ -63,7 +63,7 @@ namespace Terminaux.Reader
         /// <summary>
         /// Right margin
         /// </summary>
-        public static int RightMargin
+        public int RightMargin
         {
             get => rightMargin;
             set => rightMargin = value;
@@ -72,7 +72,7 @@ namespace Terminaux.Reader
         /// <summary>
         /// Suggestion entries
         /// </summary>
-        public static Func<string, int, char[], string[]> Suggestions
+        public Func<string, int, char[], string[]> Suggestions
         {
             set => suggestions = value ?? ((_, _, _) => Array.Empty<string>());
         }
@@ -80,7 +80,7 @@ namespace Terminaux.Reader
         /// <summary>
         /// Suggestion delimiters
         /// </summary>
-        public static char[] SuggestionsDelimiters
+        public char[] SuggestionsDelimiters
         {
             set => suggestionsDelims = value ?? new char[] { ' ' };
         }
@@ -88,10 +88,15 @@ namespace Terminaux.Reader
         /// <summary>
         /// Treat Ctrl + C as input
         /// </summary>
-        public static bool TreatCtrlCAsInput
+        public bool TreatCtrlCAsInput
         {
             get => treatCtrlCAsInput;
             set => treatCtrlCAsInput = value;
         }
+
+        /// <summary>
+        /// Initializes empty settings instance
+        /// </summary>
+        public TermReaderSettings() { }
     }
 }

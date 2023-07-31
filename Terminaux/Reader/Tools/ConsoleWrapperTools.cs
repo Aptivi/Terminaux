@@ -41,12 +41,12 @@ namespace Terminaux.Tools
         internal static Action<int> actionSetCursorTop = SetCursorTop;
         internal static Action actionBeep = Beep;
         internal static Func<bool, ConsoleKeyInfo> actionReadKey = ReadKey;
-        internal static Action<char> actionWrite = Write;
-        internal static Action<string> actionWrite1 = Write;
-        internal static Action<string, object[]> actionWrite2 = Write;
+        internal static Action<char, TermReaderSettings> actionWrite = Write;
+        internal static Action<string, TermReaderSettings> actionWrite1 = Write;
+        internal static Action<string, TermReaderSettings, object[]> actionWrite2 = Write;
         internal static Action actionWriteLine = WriteLine;
-        internal static Action<string> actionWriteLine1 = WriteLine;
-        internal static Action<string, object[]> actionWriteLine2 = WriteLine;
+        internal static Action<string, TermReaderSettings> actionWriteLine1 = WriteLine;
+        internal static Action<string, TermReaderSettings, object[]> actionWriteLine2 = WriteLine;
 
         /// <summary>
         /// Is the console a dumb console?
@@ -169,7 +169,7 @@ namespace Terminaux.Tools
         /// Writes a character to console<br></br><br></br>
         /// - A character
         /// </summary>
-        public static Action<char> ActionWriteChar
+        public static Action<char, TermReaderSettings> ActionWriteChar
         {
             get => actionWrite;
             set => actionWrite = value ?? (Write);
@@ -178,7 +178,7 @@ namespace Terminaux.Tools
         /// Writes text to console<br></br><br></br>
         /// - The text to write
         /// </summary>
-        public static Action<string> ActionWriteString
+        public static Action<string, TermReaderSettings> ActionWriteString
         {
             get => actionWrite1;
             set => actionWrite1 = value ?? (Write);
@@ -188,7 +188,7 @@ namespace Terminaux.Tools
         /// - The text to write<br></br>
         /// - The arguments to evaluate
         /// </summary>
-        public static Action<string, object[]> ActionWriteParameterized
+        public static Action<string, TermReaderSettings, object[]> ActionWriteParameterized
         {
             get => actionWrite2;
             set => actionWrite2 = value ?? (Write);
@@ -205,7 +205,7 @@ namespace Terminaux.Tools
         /// Writes text to console with line terminator
         /// - The text to write
         /// </summary>
-        public static Action<string> ActionWriteLineString
+        public static Action<string, TermReaderSettings> ActionWriteLineString
         {
             get => actionWriteLine1;
             set => actionWriteLine1 = value ?? (WriteLine);
@@ -215,7 +215,7 @@ namespace Terminaux.Tools
         /// - The text to write<br></br>
         /// - The arguments to evaluate
         /// </summary>
-        public static Action<string, object[]> ActionWriteLineParameterized
+        public static Action<string, TermReaderSettings, object[]> ActionWriteLineParameterized
         {
             get => actionWriteLine2;
             set => actionWriteLine2 = value ?? (WriteLine);
@@ -362,42 +362,42 @@ namespace Terminaux.Tools
         private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
             Console.ReadKey(intercept);
 
-        private static void Write(char value)
+        private static void Write(char value, TermReaderSettings settings)
         {
             Console.Write(value);
-            if (CursorLeft >= WindowWidth - TermReaderSettings.RightMargin)
+            if (CursorLeft >= WindowWidth - settings.RightMargin)
                 if (CursorTop != BufferHeight)
-                    SetCursorPosition(TermReaderSettings.LeftMargin, CursorTop + 1);
+                    SetCursorPosition(settings.LeftMargin, CursorTop + 1);
                 else
                     WriteLine();
         }
 
-        private static void Write(string text)
+        private static void Write(string text, TermReaderSettings settings)
         {
             foreach (char textc in text)
-                Write(textc);
+                Write(textc, settings);
         }
 
-        private static void Write(string text, params object[] args)
+        private static void Write(string text, TermReaderSettings settings, params object[] args)
         {
             foreach (char textc in string.Format(text, args))
-                Write(textc);
+                Write(textc, settings);
         }
 
         private static void WriteLine() => 
             Console.WriteLine();
 
-        private static void WriteLine(string text)
+        private static void WriteLine(string text, TermReaderSettings settings)
         {
             foreach (char textc in text)
-                Write(textc);
+                Write(textc, settings);
             WriteLine();
         }
 
-        private static void WriteLine(string text, params object[] args)
+        private static void WriteLine(string text, TermReaderSettings settings, params object[] args)
         {
             foreach (char textc in string.Format(text, args))
-                Write(textc);
+                Write(textc, settings);
             WriteLine();
         }
     }

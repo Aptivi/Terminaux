@@ -39,14 +39,14 @@ namespace Terminaux.Tools
                 state.currentTextPos++;
 
                 // If the character is unrenderable, continue the loop
-                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
+                if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
                     continue;
 
                 state.currentCursorPosLeft++;
-                if (state.CurrentCursorPosLeft >= ConsoleTools.ActionWindowWidth() - TermReaderSettings.RightMargin)
+                if (state.CurrentCursorPosLeft >= ConsoleTools.ActionWindowWidth() - state.settings.RightMargin)
                 {
                     // Reached to the end! Wrap down!
-                    state.currentCursorPosLeft = TermReaderSettings.LeftMargin;
+                    state.currentCursorPosLeft = state.settings.LeftMargin;
                     if (state.currentCursorPosTop < ConsoleTools.ActionBufferHeight())
                         state.currentCursorPosTop++;
                 }
@@ -78,14 +78,14 @@ namespace Terminaux.Tools
                 state.currentTextPos--;
 
                 // If the character is unrenderable, continue the loop
-                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
+                if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
                     continue;
 
                 state.currentCursorPosLeft--;
-                if (state.CurrentCursorPosLeft < TermReaderSettings.LeftMargin)
+                if (state.CurrentCursorPosLeft < state.settings.LeftMargin)
                 {
                     // Reached to the beginning! Wrap up!
-                    state.currentCursorPosLeft = ConsoleTools.ActionWindowWidth() - 1 - TermReaderSettings.RightMargin;
+                    state.currentCursorPosLeft = ConsoleTools.ActionWindowWidth() - 1 - state.settings.RightMargin;
                     if (state.currentCursorPosTop > 0)
                         state.currentCursorPosTop--;
                 }
@@ -114,20 +114,20 @@ namespace Terminaux.Tools
                 state.currentTextPos++;
 
                 // If the character is unrenderable, continue the loop
-                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
+                if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
                     continue;
 
                 state.currentCursorPosLeft++;
-                if (state.CurrentCursorPosLeft >= ConsoleTools.ActionWindowWidth() - TermReaderSettings.RightMargin)
+                if (state.CurrentCursorPosLeft >= ConsoleTools.ActionWindowWidth() - state.settings.RightMargin)
                 {
                     // Reached to the end! Go back to the prompt position.
                     state.currentCursorPosLeft = state.InputPromptLeft + 1;
 
                     // Refresh the entire prompt
-                    int longestSentenceLength = ConsoleTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
+                    int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
                     string renderedText = BaseBinding.GetOneLineWrappedSentenceToRender(incompleteSentences, state);
                     ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length));
+                    ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
                 }
             }
         }
@@ -145,20 +145,20 @@ namespace Terminaux.Tools
                 state.currentTextPos--;
 
                 // If the character is unrenderable, continue the loop
-                if (state.PasswordMode && char.IsControl(TermReaderSettings.PasswordMaskChar))
+                if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
                     continue;
 
                 state.currentCursorPosLeft--;
                 if (state.CurrentCursorPosLeft < state.inputPromptLeft + 1 && state.CurrentText.Length != 0)
                 {
                     // Reached to the beginning! Go back to the furthest position, plus the extra character being printed.
-                    state.currentCursorPosLeft = ConsoleTools.ActionWindowWidth() - TermReaderSettings.RightMargin - 1;
+                    state.currentCursorPosLeft = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - 1;
 
                     // Refresh the entire prompt
-                    int longestSentenceLength = ConsoleTools.ActionWindowWidth() - TermReaderSettings.RightMargin - state.inputPromptLeft - 1;
+                    int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
                     string renderedText = BaseBinding.GetOneLineWrappedSentenceToRender(incompleteSentences, state);
                     ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length));
+                    ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
                 }
             }
         }
@@ -182,7 +182,7 @@ namespace Terminaux.Tools
             int heightOffset = 1;
             for (int i = promptLeft; i < state.CurrentText.Length + promptLeft; i++)
             {
-                if (counted >= ConsoleTools.ActionWindowWidth() - TermReaderSettings.RightMargin)
+                if (counted >= ConsoleTools.ActionWindowWidth() - state.settings.RightMargin)
                 {
                     // Reached to the end! Wrap down!
                     if (promptTop >= ConsoleTools.ActionBufferHeight() - heightOffset)

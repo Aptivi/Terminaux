@@ -27,12 +27,15 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            TermReaderSettings.TreatCtrlCAsInput = true;
+            var settings = new TermReaderSettings()
+            {
+                TreatCtrlCAsInput = true,
+            };
             Console.WriteLine("Write \"exit\" to get out of here.");
             string input = "";
             while (input != "exit")
             {
-                input = TermReader.Read(">> ");
+                input = TermReader.Read(">> ", settings);
                 Console.WriteLine("You said: " + input);
             }
         }

@@ -39,6 +39,7 @@ namespace Terminaux.Reader
         internal ConsoleKeyInfo pressedKey;
         internal StringBuilder killBuffer = new();
         internal bool oneLineWrap;
+        internal TermReaderSettings settings;
 
         // Shared
         internal static List<string> history = new();
@@ -86,6 +87,10 @@ namespace Terminaux.Reader
         /// Text to be pasted
         /// </summary>
         public StringBuilder KillBuffer { get => killBuffer; }
+        /// <summary>
+        /// Reader settings (general or overridden)
+        /// </summary>
+        public TermReaderSettings Settings { get => settings; }
 
         // To static variables
         /// <summary>

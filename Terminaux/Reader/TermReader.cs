@@ -38,9 +38,24 @@ namespace Terminaux.Reader
         /// <summary>
         /// Reads the input
         /// </summary>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string Read(TermReaderSettings settings) => 
+            Read("", "", settings);
+
+        /// <summary>
+        /// Reads the input
+        /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
         public static string Read(string inputPrompt) => 
             Read(inputPrompt, "");
+
+        /// <summary>
+        /// Reads the input
+        /// </summary>
+        /// <param name="inputPrompt">The input to be read</param>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string Read(string inputPrompt, TermReaderSettings settings) => 
+            Read(inputPrompt, "", settings);
 
         /// <summary>
         /// Reads the input with password character masking
@@ -51,9 +66,24 @@ namespace Terminaux.Reader
         /// <summary>
         /// Reads the input with password character masking
         /// </summary>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string ReadPassword(TermReaderSettings settings) =>
+            Read("", "", settings, true);
+
+        /// <summary>
+        /// Reads the input with password character masking
+        /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
         public static string ReadPassword(string inputPrompt) =>
             Read(inputPrompt, "", true);
+
+        /// <summary>
+        /// Reads the input with password character masking
+        /// </summary>
+        /// <param name="inputPrompt">The input to be read</param>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        public static string ReadPassword(string inputPrompt, TermReaderSettings settings) =>
+            Read(inputPrompt, "", settings, true);
 
         /// <summary>
         /// Reads the input
@@ -63,16 +93,31 @@ namespace Terminaux.Reader
         /// <param name="password">Whether the password mode is enabled</param>
         /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(string inputPrompt, string defaultValue, bool password = false, bool oneLineWrap = false, bool interruptible = false)
+        public static string Read(string inputPrompt, string defaultValue, bool password = false, bool oneLineWrap = false, bool interruptible = false) =>
+            Read(inputPrompt, defaultValue, new TermReaderSettings(), password, oneLineWrap, interruptible);
+
+        /// <summary>
+        /// Reads the input
+        /// </summary>
+        /// <param name="settings">Settigns containing reader-related settings</param>
+        /// <param name="inputPrompt">The input to be read</param>
+        /// <param name="defaultValue">Default value to use if no input is provided</param>
+        /// <param name="password">Whether the password mode is enabled</param>
+        /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string Read(string inputPrompt, string defaultValue, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = false)
         {
             lock (readLock)
             {
                 var struckKey = new ConsoleKeyInfo();
-                var readState = new TermReaderState();
+                var readState = new TermReaderState
+                {
+                    settings = settings
+                };
 
                 // Print the input
-                ConsoleTools.ActionSetCursorLeft(ConsoleTools.ActionCursorLeft() + TermReaderSettings.LeftMargin);
-                ConsoleTools.ActionWriteString(inputPrompt);
+                ConsoleTools.ActionSetCursorLeft(ConsoleTools.ActionCursorLeft() + settings.LeftMargin);
+                ConsoleTools.ActionWriteString(inputPrompt, settings);
 
                 // Save current state of input
                 readState.inputPromptLeft = ConsoleTools.ActionCursorLeft();
@@ -80,7 +125,7 @@ namespace Terminaux.Reader
                 readState.inputPromptText = inputPrompt;
                 readState.passwordMode = password;
                 readState.oneLineWrap = oneLineWrap;
-                ConsoleTools.ActionTreatCtrlCAsInput(TermReaderSettings.TreatCtrlCAsInput);
+                ConsoleTools.ActionTreatCtrlCAsInput(settings.TreatCtrlCAsInput);
 
                 // Get input
                 (int, int) cachedPos = (ConsoleTools.ActionCursorLeft(), ConsoleTools.ActionCursorTop());
@@ -117,7 +162,7 @@ namespace Terminaux.Reader
                 string input = readState.CurrentText.Length == 0 ?
                                defaultValue :
                                readState.CurrentText.ToString();
-                if (!password && TermReaderSettings.HistoryEnabled)
+                if (!password && settings.HistoryEnabled)
                 {
                     // We don't want passwords in the history. Also, check to see if the history entry can be added or not based
                     // on the following conditions:
@@ -133,7 +178,7 @@ namespace Terminaux.Reader
                 // Reset the auto complete position and suggestions
                 TermReaderState.currentSuggestionsPos = 0;
                 TermReaderState.currentHistoryPos = TermReaderState.history.Count;
-                TermReaderSettings.Suggestions = ((_, _, _) => Array.Empty<string>());
+                settings.Suggestions = ((_, _, _) => Array.Empty<string>());
                 return input;
             }
         }
