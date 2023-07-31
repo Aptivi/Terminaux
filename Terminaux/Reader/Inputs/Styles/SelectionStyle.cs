@@ -221,8 +221,6 @@ namespace Terminaux.Reader.Inputs.Styles
 
                 // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
                 // we're not switching pages yet. Switching pages requires clearing the console as per the current implementation.
-                for (int y = listStartPosition; y < listEndPosition; y++)
-                    TextWriterWhereColor.WriteWhere(" ", Console.WindowWidth - 1, y);
                 ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), Console.WindowWidth - 2, listStartPosition - 1, listStartPosition, 4, false);
 
                 // Write description area

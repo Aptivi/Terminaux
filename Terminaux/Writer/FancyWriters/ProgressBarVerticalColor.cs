@@ -89,6 +89,8 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Draw the progress bar
+                for (int i = ProgressFilled; i < MaximumHeight; i++)
+                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere("*", Left + 1, Top + MaximumHeight - i, true);
             }
@@ -231,6 +233,8 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Draw the progress bar
+                for (int i = ProgressFilled; i < MaximumHeight; i++)
+                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
                 ColorTools.SetConsoleColor(new Color(ProgressColor), true, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
@@ -342,6 +346,8 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Draw the progress bar
+                for (int i = ProgressFilled; i < MaximumHeight; i++)
+                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
