@@ -685,6 +685,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.ConvertFromRGBToHex
   nameWithType: ColorTools.ConvertFromRGBToHex
+- uid: Terminaux.Colors.ColorTools.CorrectStandardColor(ConsoleColor)
+  name: CorrectStandardColor(ConsoleColor)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CorrectStandardColor_ConsoleColor_
+  commentId: M:Terminaux.Colors.ColorTools.CorrectStandardColor(ConsoleColor)
+  fullName: Terminaux.Colors.ColorTools.CorrectStandardColor(ConsoleColor)
+  nameWithType: ColorTools.CorrectStandardColor(ConsoleColor)
+- uid: Terminaux.Colors.ColorTools.CorrectStandardColor*
+  name: CorrectStandardColor
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CorrectStandardColor_
+  commentId: Overload:Terminaux.Colors.ColorTools.CorrectStandardColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.CorrectStandardColor
+  nameWithType: ColorTools.CorrectStandardColor
 - uid: Terminaux.Colors.ColorTools.EnableColorTransformation
   name: EnableColorTransformation
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_EnableColorTransformation
