@@ -439,5 +439,34 @@ namespace Terminaux.Colors
                 _                           => ConsoleColor.Black,
             };
         }
+
+        /// <summary>
+        /// Corrects the color map for <see cref="ConsoleColor"/> according to the X11 specification
+        /// </summary>
+        /// <param name="color">.NET's <see cref="ConsoleColor"/> to correct this color</param>
+        /// <returns>Corrected <see cref="ConsoleColor"/></returns>
+        public static ConsoleColor CorrectStandardColor(ConsoleColor color)
+        {
+            return color switch
+            {
+                ConsoleColor.Black          => ConsoleColor.Black,
+                ConsoleColor.DarkBlue       => ConsoleColor.DarkRed,
+                ConsoleColor.DarkGreen      => ConsoleColor.DarkGreen,
+                ConsoleColor.DarkCyan       => ConsoleColor.DarkYellow,
+                ConsoleColor.DarkRed        => ConsoleColor.DarkBlue,
+                ConsoleColor.DarkMagenta    => ConsoleColor.DarkMagenta,
+                ConsoleColor.DarkYellow     => ConsoleColor.DarkCyan,
+                ConsoleColor.Gray           => ConsoleColor.Gray,
+                ConsoleColor.DarkGray       => ConsoleColor.DarkGray,
+                ConsoleColor.Blue           => ConsoleColor.Red,
+                ConsoleColor.Green          => ConsoleColor.Green,
+                ConsoleColor.Cyan           => ConsoleColor.Yellow,
+                ConsoleColor.Red            => ConsoleColor.Blue,
+                ConsoleColor.Magenta        => ConsoleColor.Magenta,
+                ConsoleColor.Yellow         => ConsoleColor.Cyan,
+                ConsoleColor.White          => ConsoleColor.White,
+                _                           => ConsoleColor.Black,
+            };
+        }
     }
 }

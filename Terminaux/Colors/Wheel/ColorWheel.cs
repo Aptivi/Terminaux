@@ -150,8 +150,7 @@ namespace Terminaux.Colors.Wheel
             }
             else
             {
-                string correctedName = ColorTools.TranslateToX11ColorMap(wheelColor16).ToString();
-                string renderedName = $"{correctedName} [{(int)wheelColor16}]";
+                string renderedName = $"{wheelColor16} [{(int)wheelColor16}]";
                 TextWriterWhereColor.WriteWhere(adjusterTop, greenAdjusterPos, adjusterTopTop, Color.Empty, wheelColor);
                 TextWriterWhereColor.WriteWhere(renderedName, Console.WindowWidth / 2 - (renderedName.Length == 1 ? 2 : renderedName.Length / 2), adjusterInfoTop, wheelColor);
                 TextWriterWhereColor.WriteWhere(adjusterBottom, greenAdjusterPos, adjusterBottomTop, Color.Empty, wheelColor);

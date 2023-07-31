@@ -120,7 +120,7 @@ namespace Terminaux.Colors
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColor"/></param>
         /// <exception cref="ColorSeqException"></exception>
         public Color(ConsoleColor ColorDef)
-            : this(ColorTools.TranslateToX11ColorMap(ColorDef)) { }
+            : this(Convert.ToInt32(ColorTools.CorrectStandardColor(ColorDef))) { }
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -193,6 +193,7 @@ namespace Terminaux.Colors
             {
                 // Form the sequences using the information from the color details
                 var parsedEnum = (ConsoleColors)Enum.Parse(typeof(ConsoleColors), ColorSpecifier);
+                var parsedEnum16 = specifierNum <= 15 ? (ConsoleColor)Enum.Parse(typeof(ConsoleColor), ColorSpecifier) : default;
                 var ColorsInfo = new ConsoleColorsInfo(parsedEnum);
 
                 // Check to see if we need to transform color. Else, be sane.
@@ -230,7 +231,7 @@ namespace Terminaux.Colors
                 G = g;
                 B = b;
                 ColorEnum255 = Type == ColorType._255Color ? parsedEnum : (ConsoleColors)(-1);
-                ColorEnum16 = Type == ColorType._16Color ? ColorTools.TranslateToStandardColorMap(parsedEnum) : (ConsoleColor)(-1);
+                ColorEnum16 = Type == ColorType._16Color ? parsedEnum16 : (ConsoleColor)(-1);
             }
             else if (ColorSpecifier.StartsWith("#"))
             {
