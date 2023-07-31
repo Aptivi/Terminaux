@@ -150,8 +150,10 @@ namespace Terminaux.Colors.Wheel
             }
             else
             {
+                string correctedName = ColorTools.TranslateToX11ColorMap(wheelColor16).ToString();
+                string renderedName = $"{correctedName} [{(int)wheelColor16}]";
                 TextWriterWhereColor.WriteWhere(adjusterTop, greenAdjusterPos, adjusterTopTop, Color.Empty, wheelColor);
-                TextWriterWhereColor.WriteWhere($"{wheelColor16}  [{(int)wheelColor16}]", Console.WindowWidth / 2 - ($"{wheelColor16} [{(int)wheelColor16}]".Length == 1 ? 2 : $"{wheelColor16} [{(int)wheelColor16}]".Length / 2), adjusterInfoTop, wheelColor);
+                TextWriterWhereColor.WriteWhere(renderedName, Console.WindowWidth / 2 - (renderedName.Length == 1 ? 2 : renderedName.Length / 2), adjusterInfoTop, wheelColor);
                 TextWriterWhereColor.WriteWhere(adjusterBottom, greenAdjusterPos, adjusterBottomTop, Color.Empty, wheelColor);
             }
             TextWriterColor.Write("\n");
@@ -172,7 +174,7 @@ namespace Terminaux.Colors.Wheel
                     wheelColor = new Color(wheelColor255);
                     break;
                 case ColorType._16Color:
-                    wheelColor = new Color((ConsoleColors)wheelColor16);
+                    wheelColor = new Color(wheelColor16);
                     break;
             }
         }
