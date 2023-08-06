@@ -518,6 +518,52 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.Equality
   nameWithType: Color.Equality
+- uid: Terminaux.Colors.Color.op_Implicit(ConsoleColor)~Terminaux.Colors.Color
+  name: Implicit(ConsoleColor to Color)
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_op_Implicit_ConsoleColor__Terminaux_Colors_Color
+  commentId: M:Terminaux.Colors.Color.op_Implicit(ConsoleColor)~Terminaux.Colors.Color
+  name.vb: Widening(ConsoleColor to Color)
+  fullName: Terminaux.Colors.Color.Implicit(ConsoleColor to Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Colors.Color.Widening(ConsoleColor to Terminaux.Colors.Color)
+  nameWithType: Color.Implicit(ConsoleColor to Color)
+  nameWithType.vb: Color.Widening(ConsoleColor to Color)
+- uid: Terminaux.Colors.Color.op_Implicit(System.Int32)~Terminaux.Colors.Color
+  name: Implicit(Int32 to Color)
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_op_Implicit_System_Int32__Terminaux_Colors_Color
+  commentId: M:Terminaux.Colors.Color.op_Implicit(System.Int32)~Terminaux.Colors.Color
+  name.vb: Widening(Int32 to Color)
+  fullName: Terminaux.Colors.Color.Implicit(System.Int32 to Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Colors.Color.Widening(System.Int32 to Terminaux.Colors.Color)
+  nameWithType: Color.Implicit(Int32 to Color)
+  nameWithType.vb: Color.Widening(Int32 to Color)
+- uid: Terminaux.Colors.Color.op_Implicit(System.String)~Terminaux.Colors.Color
+  name: Implicit(String to Color)
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_op_Implicit_System_String__Terminaux_Colors_Color
+  commentId: M:Terminaux.Colors.Color.op_Implicit(System.String)~Terminaux.Colors.Color
+  name.vb: Widening(String to Color)
+  fullName: Terminaux.Colors.Color.Implicit(System.String to Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Colors.Color.Widening(System.String to Terminaux.Colors.Color)
+  nameWithType: Color.Implicit(String to Color)
+  nameWithType.vb: Color.Widening(String to Color)
+- uid: Terminaux.Colors.Color.op_Implicit(Terminaux.Colors.ConsoleColors)~Terminaux.Colors.Color
+  name: Implicit(ConsoleColors to Color)
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_op_Implicit_Terminaux_Colors_ConsoleColors__Terminaux_Colors_Color
+  commentId: M:Terminaux.Colors.Color.op_Implicit(Terminaux.Colors.ConsoleColors)~Terminaux.Colors.Color
+  name.vb: Widening(ConsoleColors to Color)
+  fullName: Terminaux.Colors.Color.Implicit(Terminaux.Colors.ConsoleColors to Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Colors.Color.Widening(Terminaux.Colors.ConsoleColors to Terminaux.Colors.Color)
+  nameWithType: Color.Implicit(ConsoleColors to Color)
+  nameWithType.vb: Color.Widening(ConsoleColors to Color)
+- uid: Terminaux.Colors.Color.op_Implicit*
+  name: Implicit
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_op_Implicit_
+  commentId: Overload:Terminaux.Colors.Color.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: Terminaux.Colors.Color.Implicit
+  fullName.vb: Terminaux.Colors.Color.Widening
+  nameWithType: Color.Implicit
+  nameWithType.vb: Color.Widening
 - uid: Terminaux.Colors.Color.op_Inequality(Terminaux.Colors.Color,Terminaux.Colors.Color)
   name: Inequality(Color, Color)
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_op_Inequality_Terminaux_Colors_Color_Terminaux_Colors_Color_
