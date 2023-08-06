@@ -276,6 +276,38 @@ namespace Terminaux.Colors
             Hex = $"#{R:X2}{G:X2}{B:X2}";
         }
 
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
+        /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
+        /// <exception cref="ColorSeqException"></exception>
+        public static implicit operator Color(ConsoleColors ColorDef) =>
+            new(Convert.ToInt32(ColorDef));
+
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
+        /// <param name="ColorDef">The color taken from <see cref="ConsoleColor"/></param>
+        /// <exception cref="ColorSeqException"></exception>
+        public static implicit operator Color(ConsoleColor ColorDef) =>
+            new(Convert.ToInt32(ColorTools.CorrectStandardColor(ColorDef)));
+
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
+        /// <param name="ColorNum">The color number</param>
+        /// <exception cref="ColorSeqException"></exception>
+        public static implicit operator Color(int ColorNum) =>
+            new($"{ColorNum}");
+
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
+        /// <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, or a hexadecimal representation of a number (#AABBCC for example)</param>
+        /// <exception cref="ColorSeqException"></exception>
+        public static implicit operator Color(string ColorSpecifier) =>
+            new(ColorSpecifier);
+
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
             base.Equals(obj);

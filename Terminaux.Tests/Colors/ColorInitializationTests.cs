@@ -63,6 +63,37 @@ namespace Terminaux.Colors.Tests
         }
 
         /// <summary>
+        /// Tests initializing color instance from 255 colors using an implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFrom255ColorsImplicit()
+        {
+            // Create instance
+            Color ColorInstance = 18;
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("18");
+            ColorInstance.Type.ShouldBe(ColorType._255Color);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;5;18m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;5;18m");
+            ColorInstance.R.ShouldBe(0);
+            ColorInstance.G.ShouldBe(0);
+            ColorInstance.B.ShouldBe(135);
+            ColorInstance.IsBright.ShouldBeTrue();
+            ColorInstance.IsDark.ShouldBeFalse();
+            ColorInstance.Hex.ShouldBe("#000087");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.DarkBlue_000087);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
         /// Tests initializing color instance from 255 colors (Protanopia)
         /// </summary>
         [Test]
@@ -539,6 +570,37 @@ namespace Terminaux.Colors.Tests
         }
 
         /// <summary>
+        /// Tests initializing color instance from true color using the implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "94;0;63";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("94;0;63");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;2;94;0;63m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;2;94;0;63m");
+            ColorInstance.R.ShouldBe(94);
+            ColorInstance.G.ShouldBe(0);
+            ColorInstance.B.ShouldBe(63);
+            ColorInstance.IsBright.ShouldBeTrue();
+            ColorInstance.IsDark.ShouldBeFalse();
+            ColorInstance.Hex.ShouldBe("#5E003F");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
         /// Tests initializing color instance from true color numbers
         /// </summary>
         [Test]
@@ -601,6 +663,37 @@ namespace Terminaux.Colors.Tests
         }
 
         /// <summary>
+        /// Tests initializing color instance from true color using the implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromHexImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "#0F0F0F";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("15;15;15");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;2;15;15;15m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;2;15;15;15m");
+            ColorInstance.R.ShouldBe(15);
+            ColorInstance.G.ShouldBe(15);
+            ColorInstance.B.ShouldBe(15);
+            ColorInstance.IsBright.ShouldBeFalse();
+            ColorInstance.IsDark.ShouldBeTrue();
+            ColorInstance.Hex.ShouldBe("#0F0F0F");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
         /// Tests initializing color instance from color name taken from <see cref="ConsoleColors"/>
         /// </summary>
         [Test]
@@ -609,6 +702,37 @@ namespace Terminaux.Colors.Tests
         {
             // Create instance
             var ColorInstance = new Color("Magenta");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("13");
+            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;5;13m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;5;13m");
+            ColorInstance.R.ShouldBe(255);
+            ColorInstance.G.ShouldBe(0);
+            ColorInstance.B.ShouldBe(255);
+            ColorInstance.IsBright.ShouldBeTrue();
+            ColorInstance.IsDark.ShouldBeFalse();
+            ColorInstance.Hex.ShouldBe("#FF00FF");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Magenta);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from color name taken from <see cref="ConsoleColors"/> using an implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromNameImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "Magenta";
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
@@ -663,6 +787,37 @@ namespace Terminaux.Colors.Tests
         }
 
         /// <summary>
+        /// Tests initializing color instance from enum using an implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromEnumImplicit()
+        {
+            // Create instance
+            var ColorInstance = new Color(ConsoleColors.Magenta);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("13");
+            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;5;13m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;5;13m");
+            ColorInstance.R.ShouldBe(255);
+            ColorInstance.G.ShouldBe(0);
+            ColorInstance.B.ShouldBe(255);
+            ColorInstance.IsBright.ShouldBeTrue();
+            ColorInstance.IsDark.ShouldBeFalse();
+            ColorInstance.Hex.ShouldBe("#FF00FF");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Magenta);
+        }
+
+        /// <summary>
         /// Tests initializing color instance from enum (16 colors)
         /// </summary>
         [Test]
@@ -671,6 +826,37 @@ namespace Terminaux.Colors.Tests
         {
             // Create instance
             var ColorInstance = new Color(ConsoleColor.Magenta);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("13");
+            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;5;13m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;5;13m");
+            ColorInstance.R.ShouldBe(255);
+            ColorInstance.G.ShouldBe(0);
+            ColorInstance.B.ShouldBe(255);
+            ColorInstance.IsBright.ShouldBeTrue();
+            ColorInstance.IsDark.ShouldBeFalse();
+            ColorInstance.Hex.ShouldBe("#FF00FF");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Magenta);
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from enum (16 colors) using an implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromEnum16Implicit()
+        {
+            // Create instance
+            Color ColorInstance = ConsoleColor.Magenta;
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
