@@ -69,7 +69,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             foreach (var Value in (IEnumerable)List[ListEntry])
                                 Values.Add(Value);
                             TextWriterColor.Write("- {0}: ", false, ListKeyColor, ListEntry);
-                            TextWriterColor.Write("{0}", true, ListValueColor, string.Join(", ", Values));
+                            TextWriterColor.Write("{0}", true, ListValueColor, vars: new object[] { string.Join(", ", Values) });
                         }
                         else
                         {
@@ -141,13 +141,13 @@ namespace Terminaux.Writer.ConsoleWriters
                         {
                             foreach (var Value in (IEnumerable)ListEntry)
                                 Values.Add(Value);
-                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, EntryNumber);
-                            TextWriterColor.Write("{0}", true, ListValueColor, string.Join(", ", Values));
+                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, vars: new object[] { EntryNumber });
+                            TextWriterColor.Write("{0}", true, ListValueColor, vars: new object[] { string.Join(", ", Values) });
                         }
                         else
                         {
-                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, EntryNumber);
-                            TextWriterColor.Write("{0}", true, ListValueColor, ListEntry);
+                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, vars: new object[] { EntryNumber });
+                            TextWriterColor.Write("{0}", true, ListValueColor, vars: new object[] { ListEntry });
                         }
                         EntryNumber += 1;
                         if (Wrap)
