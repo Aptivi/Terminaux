@@ -413,6 +413,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Tools.ConsoleTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Tools.ConsoleTools.html",
+          "hash": "xUM5naUQ9mGv728X864cgQP2v2zpM838hiZFdliKg/0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Tools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Tools.html",
+          "hash": "+fpATWGtsT5aG6Mk0QFtcJQgV8YQZn74HILJ8+Nf4jM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Reader.yml",
       "output": {
         ".html": {
@@ -610,30 +634,6 @@
         ".html": {
           "relative_path": "api/Terminaux.Sequences.Tools.html",
           "hash": "OGFTac2Onf28Z7dutCz5836Rq2781KyyC9OYDuSkp0k="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Tools.ConsoleTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Tools.ConsoleTools.html",
-          "hash": "Nzeb4oXk4lyLbZzVGJjwxF3ql7EjtuhpF+3l8RqTXPI="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Tools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Tools.html",
-          "hash": "1hbN2TPZhoBDNEvES1I/I0OlpAtakvCPgQP+VagEp0w="
         }
       },
       "is_incremental": false,
@@ -1005,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "nd2Ntdbc3GnxCKlXL+HfvUGB+BIiZYOnbrlufXZyf+0="
+          "hash": "ibhR+vGUkosOf54FpOGiue/yz9dBdrAWThpqr7FTXCo="
         }
       },
       "is_incremental": false,
