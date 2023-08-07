@@ -2,15 +2,15 @@
 
   <PropertyGroup>
     <AssemblyTitle>Terminaux</AssemblyTitle>
-    <AssemblyDescription>Our own Readline solution for .NET</AssemblyDescription>
-    <Description>Our own Readline solution for .NET</Description>
+    <AssemblyDescription>Console Manipulation Library</AssemblyDescription>
+    <Description>A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.</Description>
     <Version>1.0.1</Version>
     <Authors>Aptivi</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <DebugType>portable</DebugType>
     <AssemblyName>Terminaux</AssemblyName>
     <PackageId>Terminaux</PackageId>
-    <PackageTags>readline;gnu;console;shell;cui</PackageTags>
+    <PackageTags>console;shell;readline;gnu;cui;tui;cli;manipulation;console;vt;sequences;color;vt100;truecolor;library;csharp;reader;input;writer;styles;formatter</PackageTags>
     <PackageProjectUrl>https://github.com/Aptivi/Terminaux</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Aptivi/Terminaux</RepositoryUrl>
@@ -60,10 +60,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Colors\Wheel\" />
   </ItemGroup>
 
 </Project>
