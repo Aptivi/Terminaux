@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public string FixtureID => "PrintFigletF";
         public void RunFixture()
         {
-            FigletColor.WriteFiglet("Hi, {0}!", FiggleFonts.Small, new Color(ConsoleColors.Green), "world");
+            FigletColor.WriteFiglet("Hi, {0}!", FiggleFonts.Small, new Color(ConsoleColors.Green), Vars: new object[] { "world" });
         }
     }
 }

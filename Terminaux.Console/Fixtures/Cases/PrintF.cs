@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public string FixtureID => "PrintF";
         public void RunFixture()
         {
-            TextWriterColor.Write("Hi, {0}!", true, new Color(ConsoleColors.Green), "world");
+            TextWriterColor.Write("Hi, {0}!", true, new Color(ConsoleColors.Green), vars: new object[] { "world" });
         }
     }
 }

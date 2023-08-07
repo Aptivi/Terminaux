@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public void RunFixture()
         {
             TextWriterColor.Write("Hello world!\nHow's your day going?\nShould be directly after this:", false, new Color(ConsoleColors.Green));
-            TextWriterColor.Write(" [{0}, {1}] ", true, new Color(ConsoleColors.Gray), Console.CursorLeft, Console.CursorTop);
+            TextWriterColor.Write(" [{0}, {1}] ", true, new Color(ConsoleColors.Gray), vars: new object[] { Console.CursorLeft, Console.CursorTop });
         }
     }
 }

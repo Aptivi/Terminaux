@@ -26,7 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public string FixtureID => "PrintSepF";
         public void RunFixture()
         {
-            SeparatorWriterColor.WriteSeparator("Hi, {0}!", true, "Terminaux");
+            SeparatorWriterColor.WriteSeparator("Hi, {0}!", true, Vars: new object[] { "Terminaux" });
         }
     }
 }

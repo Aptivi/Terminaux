@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public string FixtureID => "PrintSepColorF";
         public void RunFixture()
         {
-            SeparatorWriterColor.WriteSeparator("Hi, {0}!", true, new Color(ConsoleColors.Green), "world");
+            SeparatorWriterColor.WriteSeparator("Hi, {0}!", true, new Color(ConsoleColors.Green), Vars: new object[] { "world" });
         }
     }
 }
