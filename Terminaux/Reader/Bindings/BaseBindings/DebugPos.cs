@@ -18,7 +18,7 @@
 
 using System;
 using System.Threading;
-using Terminaux.Tools;
+using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {

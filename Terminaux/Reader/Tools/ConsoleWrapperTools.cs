@@ -19,7 +19,7 @@
 using System;
 using Terminaux.Reader;
 
-namespace Terminaux.Tools
+namespace Terminaux.Reader.Tools
 {
     /// <summary>
     /// Wrapper for the <see cref="Console"/> class to ensure safety against dumb consoles. Taken from Kernel Simulator 0.1.0.
@@ -52,7 +52,7 @@ namespace Terminaux.Tools
         /// Is the console a dumb console?
         /// </summary>
         public static Func<bool> ActionIsDumb
-        { 
+        {
             get => actionIsDumb;
             set => actionIsDumb = value ?? (() => IsDumb);
         }
@@ -67,7 +67,7 @@ namespace Terminaux.Tools
         /// <summary>
         /// The cursor top position
         /// </summary>
-        public static Func<int> ActionCursorTop 
+        public static Func<int> ActionCursorTop
         {
             get => actionCursorTop;
             set => actionCursorTop = value ?? (() => CursorTop);
@@ -75,7 +75,7 @@ namespace Terminaux.Tools
         /// <summary>
         /// The console window width (columns)
         /// </summary>
-        public static Func<int> ActionWindowWidth 
+        public static Func<int> ActionWindowWidth
         {
             get => actionWindowWidth;
             set => actionWindowWidth = value ?? (() => WindowWidth);
@@ -83,7 +83,7 @@ namespace Terminaux.Tools
         /// <summary>
         /// The console window height (rows)
         /// </summary>
-        public static Func<int> ActionWindowHeight 
+        public static Func<int> ActionWindowHeight
         {
             get => actionWindowHeight;
             set => actionWindowHeight = value ?? (() => WindowHeight);
@@ -91,7 +91,7 @@ namespace Terminaux.Tools
         /// <summary>
         /// The console buffer height (rows)
         /// </summary>
-        public static Func<int> ActionBufferHeight 
+        public static Func<int> ActionBufferHeight
         {
             get => actionBufferHeight;
             set => actionBufferHeight = value ?? (() => WindowHeight);
@@ -128,7 +128,7 @@ namespace Terminaux.Tools
         public static Action<int, int> ActionSetCursorPosition
         {
             get => actionSetCursorPosition;
-            set => actionSetCursorPosition = value ?? (SetCursorPosition);
+            set => actionSetCursorPosition = value ?? SetCursorPosition;
         }
         /// <summary>
         /// Sets the cursor left position<br></br><br></br>
@@ -137,7 +137,7 @@ namespace Terminaux.Tools
         public static Action<int> ActionSetCursorLeft
         {
             get => actionSetCursorLeft;
-            set => actionSetCursorLeft = value ?? (SetCursorLeft);
+            set => actionSetCursorLeft = value ?? SetCursorLeft;
         }
         /// <summary>
         /// Sets the cursor top position<br></br><br></br>
@@ -146,7 +146,7 @@ namespace Terminaux.Tools
         public static Action<int> ActionSetCursorTop
         {
             get => actionSetCursorTop;
-            set => actionSetCursorTop = value ?? (SetCursorTop);
+            set => actionSetCursorTop = value ?? SetCursorTop;
         }
         /// <summary>
         /// Beeps the console
@@ -154,7 +154,7 @@ namespace Terminaux.Tools
         public static Action ActionBeep
         {
             get => actionBeep;
-            set => actionBeep = value ?? (Beep);
+            set => actionBeep = value ?? Beep;
         }
         /// <summary>
         /// Reads a key<br></br><br></br>
@@ -163,7 +163,7 @@ namespace Terminaux.Tools
         public static Func<bool, ConsoleKeyInfo> ActionReadKey
         {
             get => actionReadKey;
-            set => actionReadKey = value ?? (ReadKey);
+            set => actionReadKey = value ?? ReadKey;
         }
         /// <summary>
         /// Writes a character to console<br></br><br></br>
@@ -172,7 +172,7 @@ namespace Terminaux.Tools
         public static Action<char, TermReaderSettings> ActionWriteChar
         {
             get => actionWrite;
-            set => actionWrite = value ?? (Write);
+            set => actionWrite = value ?? Write;
         }
         /// <summary>
         /// Writes text to console<br></br><br></br>
@@ -181,7 +181,7 @@ namespace Terminaux.Tools
         public static Action<string, TermReaderSettings> ActionWriteString
         {
             get => actionWrite1;
-            set => actionWrite1 = value ?? (Write);
+            set => actionWrite1 = value ?? Write;
         }
         /// <summary>
         /// Writes text to console<br></br><br></br>
@@ -191,7 +191,7 @@ namespace Terminaux.Tools
         public static Action<string, TermReaderSettings, object[]> ActionWriteParameterized
         {
             get => actionWrite2;
-            set => actionWrite2 = value ?? (Write);
+            set => actionWrite2 = value ?? Write;
         }
         /// <summary>
         /// Writes new line to console
@@ -199,7 +199,7 @@ namespace Terminaux.Tools
         public static Action ActionWriteLine
         {
             get => actionWriteLine;
-            set => actionWriteLine = value ?? (WriteLine);
+            set => actionWriteLine = value ?? WriteLine;
         }
         /// <summary>
         /// Writes text to console with line terminator
@@ -208,7 +208,7 @@ namespace Terminaux.Tools
         public static Action<string, TermReaderSettings> ActionWriteLineString
         {
             get => actionWriteLine1;
-            set => actionWriteLine1 = value ?? (WriteLine);
+            set => actionWriteLine1 = value ?? WriteLine;
         }
         /// <summary>
         /// Writes text to console with line terminator
@@ -218,7 +218,7 @@ namespace Terminaux.Tools
         public static Action<string, TermReaderSettings, object[]> ActionWriteLineParameterized
         {
             get => actionWriteLine2;
-            set => actionWriteLine2 = value ?? (WriteLine);
+            set => actionWriteLine2 = value ?? WriteLine;
         }
 
         // Wrapper starts here
@@ -356,7 +356,7 @@ namespace Terminaux.Tools
                 Console.CursorTop = top;
         }
 
-        private static void Beep() => 
+        private static void Beep() =>
             Console.Beep();
 
         private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
@@ -384,7 +384,7 @@ namespace Terminaux.Tools
                 Write(textc, settings);
         }
 
-        private static void WriteLine() => 
+        private static void WriteLine() =>
             Console.WriteLine();
 
         private static void WriteLine(string text, TermReaderSettings settings)

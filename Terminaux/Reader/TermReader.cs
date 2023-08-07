@@ -18,7 +18,7 @@
 
 using System;
 using Terminaux.Reader.Bindings;
-using Terminaux.Tools;
+using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader
 {

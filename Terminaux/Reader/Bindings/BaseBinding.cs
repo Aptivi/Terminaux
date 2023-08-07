@@ -19,8 +19,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Terminaux.Reader.Tools;
 using Terminaux.Sequences.Tools;
-using Terminaux.Tools;
 
 namespace Terminaux.Reader.Bindings
 {

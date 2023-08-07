@@ -19,7 +19,7 @@
 using Terminaux.Reader;
 using Terminaux.Reader.Bindings;
 
-namespace Terminaux.Tools
+namespace Terminaux.Reader.Tools
 {
     internal static class PositioningTools
     {
