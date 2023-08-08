@@ -169,6 +169,8 @@ namespace Terminaux.Reader.Inputs.Styles
             int listEndPosition = Console.WindowHeight - Console.CursorTop;
             int answersPerPage = listEndPosition - 4;
             int pages = AllAnswers.Count / answersPerPage;
+            if (AllAnswers.Count % answersPerPage == 0)
+                pages--;
             int lastPage = 1;
             bool refreshRequired = false;
 
