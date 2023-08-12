@@ -42,6 +42,8 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new PromptLoopedManualWrite(),
             new PromptLoopedCompletion(),
             new PromptLoopedCompletionOneLineWrap(),
+            new PromptLoopedCompletionMultiLinePrompt(),
+            new PromptLoopedCompletionMultiLinePromptWithOneLine(),
             new PromptLoopedCtrlCAsInput(),
 
             // Writer

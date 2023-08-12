@@ -41,7 +41,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // prompt.
             int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
             string[] wrapped = ConsoleExtensions.GetWrappedSentences(state.InputPromptText, longestSentenceLength);
-            ConsoleTools.ActionSetCursorPosition(state.settings.LeftMargin, ConsoleTools.ActionCursorTop() - wrapped.Length + 1);
+            ConsoleTools.ActionSetCursorPosition(state.settings.LeftMargin, state.InputPromptTop - wrapped.Length + 1);
             ConsoleTools.ActionWriteString(state.InputPromptText, state.Settings);
 
             // Now, render the current text
