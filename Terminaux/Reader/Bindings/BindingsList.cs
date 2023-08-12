@@ -49,6 +49,7 @@ namespace Terminaux.Reader.Bindings
             new LowercaseOneWord(),
             new UpAndForwardOneWord(),
             new LoAndForwardOneWord(),
+            new ShowSuggestions(),
 
 #if DEBUG
             new DebugPos()

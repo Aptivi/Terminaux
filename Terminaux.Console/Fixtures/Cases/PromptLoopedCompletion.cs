@@ -50,7 +50,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             else
             {
                 if (parts[0] == "dotnet")
-                    return new string[] { "build", "restore", "run" }
+                    return new string[] { "build", "restore", "run", "nuget", "new", "pack", "publish" }
                         .Where((str) => str.StartsWith(parts[1]))
                         .Select((str) => str.Substring(parts[1].Length))
                         .ToArray();
