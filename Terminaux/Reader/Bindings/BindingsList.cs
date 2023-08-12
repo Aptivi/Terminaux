@@ -50,6 +50,7 @@ namespace Terminaux.Reader.Bindings
             new UpAndForwardOneWord(),
             new LoAndForwardOneWord(),
             new ShowSuggestions(),
+            new Refresh(),
 
 #if DEBUG
             new DebugPos()
