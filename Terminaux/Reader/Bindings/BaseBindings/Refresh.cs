@@ -39,17 +39,19 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // Determine if the input prompt text is either overflowing or intentionally placing
             // the newlines using the "incomplete sentences" feature, then refresh the input
             // prompt.
-            int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-            string[] wrapped = ConsoleExtensions.GetWrappedSentences(state.InputPromptText, longestSentenceLength);
+            int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin;
+            string[] wrapped = ConsoleExtensions.GetWrappedSentences(state.InputPromptText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
             ConsoleTools.ActionSetCursorPosition(state.settings.LeftMargin, state.InputPromptTop - wrapped.Length + 1);
             ConsoleTools.ActionWriteString(state.InputPromptText, state.Settings);
 
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
+            string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
             if (state.OneLineWrap)
             {
                 // We're in the one-line wrap mode!
+                longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
+                incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);

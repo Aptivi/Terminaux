@@ -85,7 +85,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 ConsoleTools.ActionWriteString(history, state.settings);
                 state.CurrentText.Append(history);
                 PositioningTools.HandleTopChangeForInput(ref state);
-                PositioningTools.GoForward(history.Length, true, ref state);
+                PositioningTools.GoForward(history.Length, ref state);
             }
             ConsoleTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }

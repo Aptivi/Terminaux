@@ -23,12 +23,9 @@ namespace Terminaux.Reader.Tools
     internal static class PositioningTools
     {
         internal static void GoForward(ref TermReaderState state) =>
-            GoForward(1, false, ref state);
+            GoForward(1, ref state);
 
-        internal static void GoForward(int steps, ref TermReaderState state) =>
-            GoForward(steps, false, ref state);
-
-        internal static void GoForward(int steps, bool isAppend, ref TermReaderState state)
+        internal static void GoForward(int steps, ref TermReaderState state)
         {
             if (steps > state.currentText.Length - state.currentTextPos)
                 steps = state.currentText.Length - state.currentTextPos;
@@ -48,18 +45,6 @@ namespace Terminaux.Reader.Tools
                     state.currentCursorPosLeft = state.settings.LeftMargin;
                     if (state.currentCursorPosTop < ConsoleTools.ActionBufferHeight())
                         state.currentCursorPosTop++;
-                }
-
-                // Check to see if we're at the end of the buffer in append mode
-                if (state.currentCursorPosTop >= ConsoleTools.ActionBufferHeight() && isAppend)
-                {
-                    // We can't increase the top position since we're at the end of buffer, so we need to set the
-                    // input prompt top position to be minus one. If we can't do that again because it went before the
-                    // first column in the buffer, there's nothing we can do about this.
-                    if (state.InputPromptTop > 0)
-                        state.inputPromptTop -= state.currentCursorPosTop - ConsoleTools.ActionBufferHeight() + 1;
-                    ConsoleTools.ActionWriteLine();
-                    state.currentCursorPosTop--;
                 }
             }
         }

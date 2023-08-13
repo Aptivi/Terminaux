@@ -66,16 +66,19 @@ namespace Terminaux.Reader.Bindings
             // Insert the character, but in the condition that it's not a control character
             if (char.IsControl(state.pressedKey.KeyChar))
                 return;
+            int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin;
+            string[] incompleteSentencesPrimary = GetWrappedSentences(state.CurrentText.ToString(), longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
             state.CurrentText.Insert(state.CurrentTextPos, state.pressedKey.KeyChar);
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
+            string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
 
             // In the case of one line wrap, get the list of sentences
             if (state.OneLineWrap)
             {
-                int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
+                incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
@@ -85,7 +88,13 @@ namespace Terminaux.Reader.Bindings
             {
                 ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleTools.ActionWriteString(renderedText, state.settings);
-                PositioningTools.GoForward(1, true, ref state);
+                PositioningTools.HandleTopChangeForInput(ref state);
+                PositioningTools.GoForward(1, ref state);
+                if (state.inputPromptTop + incompleteSentences.Length > ConsoleTools.ActionBufferHeight())
+                {
+                    state.inputPromptTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
+                    state.currentCursorPosTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
+                }
             }
             ConsoleTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
