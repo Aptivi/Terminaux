@@ -150,6 +150,14 @@
     "Terminaux - ColorWheelTest": {
       "commandName": "Project",
       "commandLineArgs": "ColorWheelTest"
+    },
+    "Terminaux - PromptLoopedCompletionMultiLinePrompt": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCompletionMultiLinePrompt"
+    },
+    "Terminaux - PromptLoopedCompletionMultiLinePromptWithOneLine": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCompletionMultiLinePromptWithOneLine"
     }
   }
 }
