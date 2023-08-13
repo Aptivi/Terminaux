@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Reader.Tools;
 using Terminaux.Sequences.Tools;
 
@@ -67,18 +68,18 @@ namespace Terminaux.Reader.Bindings
             if (char.IsControl(state.pressedKey.KeyChar))
                 return;
             int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin;
-            string[] incompleteSentencesPrimary = GetWrappedSentences(state.CurrentText.ToString(), longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
+            string[] incompleteSentencesPrimary = ConsoleExtensions.GetWrappedSentences(state.CurrentText.ToString(), longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
             state.CurrentText.Insert(state.CurrentTextPos, state.pressedKey.KeyChar);
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
+            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
 
             // In the case of one line wrap, get the list of sentences
             if (state.OneLineWrap)
             {
                 longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
@@ -120,79 +121,6 @@ namespace Terminaux.Reader.Bindings
 
             // Return it!
             return finalRenderedString;
-        }
-
-        /// <summary>
-        /// Gets the wrapped sentences for text wrapping for console
-        /// </summary>
-        /// <param name="text">Text to be wrapped</param>
-        /// <param name="maximumLength">Maximum length of text before wrapping</param>
-        /// <param name="indentLength">Indentation length</param>
-        internal static string[] GetWrappedSentences(string text, int maximumLength, int indentLength)
-        {
-            if (string.IsNullOrEmpty(text))
-                return new string[] { "" };
-
-            // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
-            // sizes.
-            var IncompleteSentences = new List<string>();
-            var IncompleteSentenceBuilder = new StringBuilder();
-
-            // Make the text look like it came from Linux
-            text = text.Replace(Convert.ToString(Convert.ToChar(13)), "");
-
-            // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
-            // the first time and will be reverted back to zero after the incomplete sentence is formed.
-            var sequencesCollections = VtSequenceTools.MatchVTSequences(text);
-            foreach (var sequences in sequencesCollections)
-            {
-                int vtSeqIdx = 0;
-                int vtSeqCompensate = 0;
-                for (int i = 0; i < text.Length; i++)
-                {
-                    // Check the character to see if we're at the VT sequence
-                    char ParagraphChar = text[i];
-                    bool isNewLine = text[i] == '\n';
-                    string seq = "";
-                    if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
-                    {
-                        // We're at an index which is the same as the captured VT sequence. Get the sequence
-                        seq = sequences[vtSeqIdx].Value;
-
-                        // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                        if (vtSeqIdx + 1 < sequences.Count)
-                            vtSeqIdx++;
-
-                        // Raise the paragraph index by the length of the sequence
-                        i += seq.Length - 1;
-                        vtSeqCompensate += seq.Length;
-                    }
-
-                    // Append the character into the incomplete sentence builder.
-                    if (!isNewLine)
-                        IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
-
-                    // Also, compensate the \0 characters
-                    if (text[i] == '\0')
-                        vtSeqCompensate++;
-
-                    // Check to see if we're at the maximum character number or at the new line
-                    if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate |
-                        i == text.Length - 1 |
-                        isNewLine)
-                    {
-                        // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                        IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
-
-                        // Clean everything up
-                        IncompleteSentenceBuilder.Clear();
-                        indentLength = 0;
-                        vtSeqCompensate = 0;
-                    }
-                }
-            }
-
-            return IncompleteSentences.ToArray();
         }
     }
 }

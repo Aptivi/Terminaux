@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using Terminaux.Base;
 using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
@@ -74,7 +75,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             if (state.OneLineWrap)
             {
                 int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                string[] incompleteSentences = GetWrappedSentences(history, longestSentenceLength, 0);
+                string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(history, longestSentenceLength, 0);
                 string renderedHistory = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, history.Length) : history;
                 ConsoleTools.ActionWriteString(renderedHistory + new string(' ', longestSentenceLength - renderedHistory.Length), state.settings);
                 state.CurrentText.Append(history);

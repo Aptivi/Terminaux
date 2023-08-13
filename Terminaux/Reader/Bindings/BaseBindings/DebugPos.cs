@@ -18,6 +18,7 @@
 
 using System;
 using System.Threading;
+using Terminaux.Base;
 using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
@@ -48,7 +49,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // In the case of one line wrap, get the list of sentences and debug the positions
             int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-            string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
+            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
             renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
             ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             if (state.OneLineWrap)

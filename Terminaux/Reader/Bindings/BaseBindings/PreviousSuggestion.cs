@@ -18,6 +18,7 @@
 
 using System;
 using System.Linq;
+using Terminaux.Base;
 using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
@@ -57,7 +58,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 if (state.OneLineWrap)
                 {
                     int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                    string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                    string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                     renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                     ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                     ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
@@ -75,7 +76,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 if (state.OneLineWrap)
                 {
                     int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                    string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                    string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                     renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                     ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                     ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
