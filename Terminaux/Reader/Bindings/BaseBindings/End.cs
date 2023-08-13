@@ -40,12 +40,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // Just set the positions to the maximum!
             int times = state.CurrentText.Length - state.currentTextPos;
             if (state.OneLineWrap)
-            {
-                string renderedText = state.CurrentText.ToString();
-                int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
-                PositioningTools.GoForwardOneLineWrapAware(times, ref state, incompleteSentences);
-            }
+                PositioningTools.GoForwardOneLineWrapAware(times, ref state);
             else
                 PositioningTools.GoForward(times, ref state);
             ConsoleTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);

@@ -52,7 +52,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
             ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             if (state.OneLineWrap)
-                PositioningTools.SeekToOneLineWrapAware(renderedText.Length, ref state, incompleteSentences);
+                PositioningTools.SeekToOneLineWrapAware(renderedText.Length, ref state);
             else
                 PositioningTools.SeekTo(renderedText.Length, ref state);
             Console.BackgroundColor = ConsoleColor.Blue;
@@ -62,7 +62,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Verify seek to 0
             if (state.OneLineWrap)
-                PositioningTools.SeekToOneLineWrapAware(0, ref state, incompleteSentences);
+                PositioningTools.SeekToOneLineWrapAware(0, ref state);
             else
                 PositioningTools.SeekTo(0, ref state);
             Console.BackgroundColor = ConsoleColor.DarkBlue;
@@ -72,7 +72,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Verify going forward 5 times
             if (state.OneLineWrap)
-                PositioningTools.GoForwardOneLineWrapAware(5, ref state, incompleteSentences);
+                PositioningTools.GoForwardOneLineWrapAware(5, ref state);
             else
                 PositioningTools.GoForward(5, ref state);
             Console.BackgroundColor = ConsoleColor.Magenta;
@@ -82,7 +82,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Verify going backward 3 times
             if (state.OneLineWrap)
-                PositioningTools.GoBackOneLineWrapAware(3, ref state, incompleteSentences);
+                PositioningTools.GoBackOneLineWrapAware(3, ref state);
             else
                 PositioningTools.GoBack(3, ref state);
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
@@ -96,7 +96,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             if (state.OneLineWrap)
             {
                 ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
-                PositioningTools.SeekToOneLineWrapAware(renderedText.Length, ref state, incompleteSentences);
+                PositioningTools.SeekToOneLineWrapAware(renderedText.Length, ref state);
             }
             else
             {

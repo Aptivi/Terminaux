@@ -53,12 +53,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Deterministically change position
             if (state.OneLineWrap)
-            {
-                string renderedText = state.CurrentText.ToString();
-                int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
-                PositioningTools.GoForwardOneLineWrapAware(steps, ref state, incompleteSentences);
-            }
+                PositioningTools.GoForwardOneLineWrapAware(steps, ref state);
             else
                 PositioningTools.GoForward(steps, ref state);
             ConsoleTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);

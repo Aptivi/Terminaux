@@ -79,7 +79,7 @@ namespace Terminaux.Reader.Bindings
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
-                PositioningTools.GoForwardOneLineWrapAware(1, ref state, incompleteSentences);
+                PositioningTools.GoForwardOneLineWrapAware(1, ref state);
             }
             else
             {

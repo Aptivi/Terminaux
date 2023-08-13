@@ -16,8 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Terminaux.Reader;
-using Terminaux.Reader.Bindings;
+using Terminaux.Reader.Bindings.BaseBindings;
 
 namespace Terminaux.Reader.Tools
 {
@@ -101,10 +100,10 @@ namespace Terminaux.Reader.Tools
             GoForward(steps, ref state);
         }
 
-        internal static void GoForwardOneLineWrapAware(ref TermReaderState state, string[] incompleteSentences) =>
-            GoForwardOneLineWrapAware(1, ref state, incompleteSentences);
+        internal static void GoForwardOneLineWrapAware(ref TermReaderState state) =>
+            GoForwardOneLineWrapAware(1, ref state);
 
-        internal static void GoForwardOneLineWrapAware(int steps, ref TermReaderState state, string[] incompleteSentences)
+        internal static void GoForwardOneLineWrapAware(int steps, ref TermReaderState state)
         {
             if (steps > state.currentText.Length - state.currentTextPos)
                 steps = state.currentText.Length - state.currentTextPos;
@@ -122,20 +121,15 @@ namespace Terminaux.Reader.Tools
                 {
                     // Reached to the end! Go back to the prompt position.
                     state.currentCursorPosLeft = state.InputPromptLeft + 1;
-
-                    // Refresh the entire prompt
-                    int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                    string renderedText = BaseBinding.GetOneLineWrappedSentenceToRender(incompleteSentences, state);
-                    ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
+                    new Refresh().DoAction(state);
                 }
             }
         }
 
-        internal static void GoBackOneLineWrapAware(ref TermReaderState state, string[] incompleteSentences) =>
-            GoBackOneLineWrapAware(1, ref state, incompleteSentences);
+        internal static void GoBackOneLineWrapAware(ref TermReaderState state) =>
+            GoBackOneLineWrapAware(1, ref state);
 
-        internal static void GoBackOneLineWrapAware(int steps, ref TermReaderState state, string[] incompleteSentences)
+        internal static void GoBackOneLineWrapAware(int steps, ref TermReaderState state)
         {
             if (steps > state.currentTextPos)
                 steps = state.currentTextPos;
@@ -153,23 +147,18 @@ namespace Terminaux.Reader.Tools
                 {
                     // Reached to the beginning! Go back to the furthest position, plus the extra character being printed.
                     state.currentCursorPosLeft = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - 1;
-
-                    // Refresh the entire prompt
-                    int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                    string renderedText = BaseBinding.GetOneLineWrappedSentenceToRender(incompleteSentences, state);
-                    ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
+                    new Refresh().DoAction(state);
                 }
             }
         }
 
-        internal static void SeekToOneLineWrapAware(int steps, ref TermReaderState state, string[] incompleteSentences) =>
-            SeekToOneLineWrapAware(state.currentTextPos, steps, ref state, incompleteSentences);
+        internal static void SeekToOneLineWrapAware(int steps, ref TermReaderState state) =>
+            SeekToOneLineWrapAware(state.currentTextPos, steps, ref state);
 
-        internal static void SeekToOneLineWrapAware(int fromPos, int steps, ref TermReaderState state, string[] incompleteSentences)
+        internal static void SeekToOneLineWrapAware(int fromPos, int steps, ref TermReaderState state)
         {
-            GoBackOneLineWrapAware(fromPos, ref state, incompleteSentences);
-            GoForwardOneLineWrapAware(steps, ref state, incompleteSentences);
+            GoBackOneLineWrapAware(fromPos, ref state);
+            GoForwardOneLineWrapAware(steps, ref state);
         }
 
         internal static void HandleTopChangeForInput(ref TermReaderState state)

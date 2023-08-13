@@ -53,7 +53,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 string renderedBlanks = new(' ', longestSentenceLength);
                 ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleTools.ActionWriteString(renderedBlanks, state.settings);
-                PositioningTools.SeekToOneLineWrapAware(0, ref state, new string[] { "" });
+                PositioningTools.SeekToOneLineWrapAware(0, ref state);
                 state.currentTextPos = 0;
                 state.currentCursorPosLeft = state.InputPromptLeft;
                 state.currentCursorPosTop = state.InputPromptTop;
@@ -78,7 +78,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 string renderedHistory = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, history.Length) : history;
                 ConsoleTools.ActionWriteString(renderedHistory + new string(' ', longestSentenceLength - renderedHistory.Length), state.settings);
                 state.CurrentText.Append(history);
-                PositioningTools.GoForwardOneLineWrapAware(history.Length, ref state, incompleteSentences);
+                PositioningTools.GoForwardOneLineWrapAware(history.Length, ref state);
             }
             else
             {

@@ -39,12 +39,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Just set the position one character closer to the input start position!
             if (state.OneLineWrap)
-            {
-                string renderedText = state.CurrentText.ToString();
-                int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
-                PositioningTools.GoBackOneLineWrapAware(ref state, incompleteSentences);
-            }
+                PositioningTools.GoBackOneLineWrapAware(ref state);
             else
                 PositioningTools.GoBack(ref state);
             ConsoleTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
