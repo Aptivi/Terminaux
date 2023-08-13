@@ -128,7 +128,7 @@ namespace Terminaux.Reader.Tools
                     continue;
 
                 state.currentCursorPosLeft--;
-                if (state.CurrentCursorPosLeft < state.inputPromptLeft + 1 && state.CurrentText.Length != 0)
+                if (state.CurrentCursorPosLeft == state.inputPromptLeft && state.CurrentTextPos != 0)
                 {
                     // Reached to the beginning! Go back to the furthest position, plus the extra character being printed.
                     state.currentCursorPosLeft = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - 1;
