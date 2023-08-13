@@ -82,23 +82,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                     }
 
                     // Re-draw
-                    // TODO: This needs to be condensed
-                    ConsoleTools.ActionWriteString(state.InputPromptText, state.Settings);
-                    string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-                    if (state.OneLineWrap)
-                    {
-                        int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                        string[] incompleteSentences = GetWrappedSentences(renderedText, longestSentenceLength, 0);
-                        renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
-                        ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                        ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
-                    }
-                    else
-                    {
-                        ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                        ConsoleTools.ActionWriteString(renderedText + new string(' ', state.CurrentText.Length - state.CurrentTextPos), state.settings);
-                    }
-                    ConsoleTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+                    state.inputPromptTop = ConsoleTools.ActionCursorTop();
+                    state.currentCursorPosTop = ConsoleTools.ActionCursorTop();
+                    new Refresh().DoAction(state);
                 }
             }
             else if (suggestions.Length == 1)
