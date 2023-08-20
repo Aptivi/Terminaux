@@ -22,9 +22,11 @@ jobs:
       with:
         dotnet-version: '6.0.x'
     - name: Solution Compilation
-      run: dotnet build --configuration Debug "Terminaux.sln"
+      run: dotnet build --configuration Debug
+    - name: Testing
+      run: dotnet test --configuration Debug
     - uses: actions/upload-artifact@v3
-      if: success()
+      if: success() || failure()
       with:
         name: tr-build
         path: "Terminaux/bin/Debug/"
