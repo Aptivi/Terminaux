@@ -100,6 +100,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Render text inside it
                 bool appendMinusOne = false;
+                Console.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -115,6 +116,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Wait until the user presses any key to close the box
                 Input.DetectKeypress();
+                Console.CursorVisible = true;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -191,6 +193,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Render text inside it
                 bool appendMinusOne = false;
+                Console.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -210,6 +213,7 @@ namespace Terminaux.Writer.FancyWriters
                     RightMargin = borderX
                 };
                 string input = Input.ReadLineWrapped(settings);
+                Console.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -385,6 +389,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Render text inside it
                 bool appendMinusOne = false;
+                Console.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -400,6 +405,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Wait until the user presses any key to close the box
                 Input.DetectKeypress();
+                Console.CursorVisible = true;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -484,6 +490,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Render text inside it
                 bool appendMinusOne = false;
+                Console.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -499,6 +506,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Wait until the user presses any key to close the box
                 Input.DetectKeypress();
+                Console.CursorVisible = true;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -674,6 +682,7 @@ namespace Terminaux.Writer.FancyWriters
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
+                Console.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -688,6 +697,7 @@ namespace Terminaux.Writer.FancyWriters
                     RightMargin = borderX
                 };
                 string input = Input.ReadLineWrapped(settings);
+                Console.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -776,6 +786,7 @@ namespace Terminaux.Writer.FancyWriters
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
+                Console.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -790,6 +801,7 @@ namespace Terminaux.Writer.FancyWriters
                     RightMargin = borderX
                 };
                 string input = Input.ReadLineWrapped(settings);
+                Console.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
