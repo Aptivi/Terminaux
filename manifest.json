@@ -176,6 +176,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Figlet.FigletTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Figlet.FigletTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Figlet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Figlet.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Reader.Bindings.BaseBinding.yml",
       "output": {
         ".html": {
@@ -750,16 +770,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.CellOptions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.FigletTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html"
         }
       },
       "version": ""

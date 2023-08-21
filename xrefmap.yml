@@ -2790,6 +2790,126 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Wheel.ColorWheel.InputForColor
   nameWithType: ColorWheel.InputForColor
+- uid: Terminaux.Figlet
+  name: Terminaux.Figlet
+  href: api/Terminaux.Figlet.html
+  commentId: N:Terminaux.Figlet
+  fullName: Terminaux.Figlet
+  nameWithType: Terminaux.Figlet
+- uid: Terminaux.Figlet.FigletTools
+  name: FigletTools
+  href: api/Terminaux.Figlet.FigletTools.html
+  commentId: T:Terminaux.Figlet.FigletTools
+  fullName: Terminaux.Figlet.FigletTools
+  nameWithType: FigletTools
+- uid: Terminaux.Figlet.FigletTools.FigletFonts
+  name: FigletFonts
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_FigletFonts
+  commentId: F:Terminaux.Figlet.FigletTools.FigletFonts
+  fullName: Terminaux.Figlet.FigletTools.FigletFonts
+  nameWithType: FigletTools.FigletFonts
+- uid: Terminaux.Figlet.FigletTools.GetFigletFont(System.String)
+  name: GetFigletFont(string)
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_GetFigletFont_System_String_
+  commentId: M:Terminaux.Figlet.FigletTools.GetFigletFont(System.String)
+  name.vb: GetFigletFont(String)
+  fullName: Terminaux.Figlet.FigletTools.GetFigletFont(string)
+  fullName.vb: Terminaux.Figlet.FigletTools.GetFigletFont(String)
+  nameWithType: FigletTools.GetFigletFont(string)
+  nameWithType.vb: FigletTools.GetFigletFont(String)
+- uid: Terminaux.Figlet.FigletTools.GetFigletFont*
+  name: GetFigletFont
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_GetFigletFont_
+  commentId: Overload:Terminaux.Figlet.FigletTools.GetFigletFont
+  isSpec: "True"
+  fullName: Terminaux.Figlet.FigletTools.GetFigletFont
+  nameWithType: FigletTools.GetFigletFont
+- uid: Terminaux.Figlet.FigletTools.GetFigletFontName(Figgle.FiggleFont)
+  name: GetFigletFontName(FiggleFont)
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_GetFigletFontName_Figgle_FiggleFont_
+  commentId: M:Terminaux.Figlet.FigletTools.GetFigletFontName(Figgle.FiggleFont)
+  fullName: Terminaux.Figlet.FigletTools.GetFigletFontName(Figgle.FiggleFont)
+  nameWithType: FigletTools.GetFigletFontName(FiggleFont)
+- uid: Terminaux.Figlet.FigletTools.GetFigletFontName*
+  name: GetFigletFontName
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_GetFigletFontName_
+  commentId: Overload:Terminaux.Figlet.FigletTools.GetFigletFontName
+  isSpec: "True"
+  fullName: Terminaux.Figlet.FigletTools.GetFigletFontName
+  nameWithType: FigletTools.GetFigletFontName
+- uid: Terminaux.Figlet.FigletTools.GetFigletHeight(System.String,Figgle.FiggleFont)
+  name: GetFigletHeight(string, FiggleFont)
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_GetFigletHeight_System_String_Figgle_FiggleFont_
+  commentId: M:Terminaux.Figlet.FigletTools.GetFigletHeight(System.String,Figgle.FiggleFont)
+  name.vb: GetFigletHeight(String, FiggleFont)
+  fullName: Terminaux.Figlet.FigletTools.GetFigletHeight(string, Figgle.FiggleFont)
+  fullName.vb: Terminaux.Figlet.FigletTools.GetFigletHeight(String, Figgle.FiggleFont)
+  nameWithType: FigletTools.GetFigletHeight(string, FiggleFont)
+  nameWithType.vb: FigletTools.GetFigletHeight(String, FiggleFont)
+- uid: Terminaux.Figlet.FigletTools.GetFigletHeight*
+  name: GetFigletHeight
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_GetFigletHeight_
+  commentId: Overload:Terminaux.Figlet.FigletTools.GetFigletHeight
+  isSpec: "True"
+  fullName: Terminaux.Figlet.FigletTools.GetFigletHeight
+  nameWithType: FigletTools.GetFigletHeight
+- uid: Terminaux.Figlet.FigletTools.GetFigletLines(System.String,Figgle.FiggleFont)
+  name: GetFigletLines(string, FiggleFont)
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_GetFigletLines_System_String_Figgle_FiggleFont_
+  commentId: M:Terminaux.Figlet.FigletTools.GetFigletLines(System.String,Figgle.FiggleFont)
+  name.vb: GetFigletLines(String, FiggleFont)
+  fullName: Terminaux.Figlet.FigletTools.GetFigletLines(string, Figgle.FiggleFont)
+  fullName.vb: Terminaux.Figlet.FigletTools.GetFigletLines(String, Figgle.FiggleFont)
+  nameWithType: FigletTools.GetFigletLines(string, FiggleFont)
+  nameWithType.vb: FigletTools.GetFigletLines(String, FiggleFont)
+- uid: Terminaux.Figlet.FigletTools.GetFigletLines*
+  name: GetFigletLines
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_GetFigletLines_
+  commentId: Overload:Terminaux.Figlet.FigletTools.GetFigletLines
+  isSpec: "True"
+  fullName: Terminaux.Figlet.FigletTools.GetFigletLines
+  nameWithType: FigletTools.GetFigletLines
+- uid: Terminaux.Figlet.FigletTools.GetFigletWidth(System.String,Figgle.FiggleFont)
+  name: GetFigletWidth(string, FiggleFont)
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_GetFigletWidth_System_String_Figgle_FiggleFont_
+  commentId: M:Terminaux.Figlet.FigletTools.GetFigletWidth(System.String,Figgle.FiggleFont)
+  name.vb: GetFigletWidth(String, FiggleFont)
+  fullName: Terminaux.Figlet.FigletTools.GetFigletWidth(string, Figgle.FiggleFont)
+  fullName.vb: Terminaux.Figlet.FigletTools.GetFigletWidth(String, Figgle.FiggleFont)
+  nameWithType: FigletTools.GetFigletWidth(string, FiggleFont)
+  nameWithType.vb: FigletTools.GetFigletWidth(String, FiggleFont)
+- uid: Terminaux.Figlet.FigletTools.GetFigletWidth*
+  name: GetFigletWidth
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_GetFigletWidth_
+  commentId: Overload:Terminaux.Figlet.FigletTools.GetFigletWidth
+  isSpec: "True"
+  fullName: Terminaux.Figlet.FigletTools.GetFigletWidth
+  nameWithType: FigletTools.GetFigletWidth
+- uid: Terminaux.Figlet.FigletTools.RenderFiglet(System.String,Figgle.FiggleFont,System.Object[])
+  name: RenderFiglet(string, FiggleFont, params object[])
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_RenderFiglet_System_String_Figgle_FiggleFont_System_Object___
+  commentId: M:Terminaux.Figlet.FigletTools.RenderFiglet(System.String,Figgle.FiggleFont,System.Object[])
+  name.vb: RenderFiglet(String, FiggleFont, ParamArray Object())
+  fullName: Terminaux.Figlet.FigletTools.RenderFiglet(string, Figgle.FiggleFont, params object[])
+  fullName.vb: Terminaux.Figlet.FigletTools.RenderFiglet(String, Figgle.FiggleFont, ParamArray Object())
+  nameWithType: FigletTools.RenderFiglet(string, FiggleFont, params object[])
+  nameWithType.vb: FigletTools.RenderFiglet(String, FiggleFont, ParamArray Object())
+- uid: Terminaux.Figlet.FigletTools.RenderFiglet(System.String,System.String,System.Object[])
+  name: RenderFiglet(string, string, params object[])
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_RenderFiglet_System_String_System_String_System_Object___
+  commentId: M:Terminaux.Figlet.FigletTools.RenderFiglet(System.String,System.String,System.Object[])
+  name.vb: RenderFiglet(String, String, ParamArray Object())
+  fullName: Terminaux.Figlet.FigletTools.RenderFiglet(string, string, params object[])
+  fullName.vb: Terminaux.Figlet.FigletTools.RenderFiglet(String, String, ParamArray Object())
+  nameWithType: FigletTools.RenderFiglet(string, string, params object[])
+  nameWithType.vb: FigletTools.RenderFiglet(String, String, ParamArray Object())
+- uid: Terminaux.Figlet.FigletTools.RenderFiglet*
+  name: RenderFiglet
+  href: api/Terminaux.Figlet.FigletTools.html#Terminaux_Figlet_FigletTools_RenderFiglet_
+  commentId: Overload:Terminaux.Figlet.FigletTools.RenderFiglet
+  isSpec: "True"
+  fullName: Terminaux.Figlet.FigletTools.RenderFiglet
+  nameWithType: FigletTools.RenderFiglet
 - uid: Terminaux.Reader
   name: Terminaux.Reader
   href: api/Terminaux.Reader.html
@@ -12534,120 +12654,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.Tools.CellOptions.RowNumber
   nameWithType: CellOptions.RowNumber
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools
-  name: FigletTools
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html
-  commentId: T:Terminaux.Writer.FancyWriters.Tools.FigletTools
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools
-  nameWithType: FigletTools
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.FigletFonts
-  name: FigletFonts
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_FigletFonts
-  commentId: F:Terminaux.Writer.FancyWriters.Tools.FigletTools.FigletFonts
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.FigletFonts
-  nameWithType: FigletTools.FigletFonts
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFont(System.String)
-  name: GetFigletFont(string)
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_GetFigletFont_System_String_
-  commentId: M:Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFont(System.String)
-  name.vb: GetFigletFont(String)
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFont(string)
-  fullName.vb: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFont(String)
-  nameWithType: FigletTools.GetFigletFont(string)
-  nameWithType.vb: FigletTools.GetFigletFont(String)
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFont*
-  name: GetFigletFont
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_GetFigletFont_
-  commentId: Overload:Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFont
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFont
-  nameWithType: FigletTools.GetFigletFont
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFontName(Figgle.FiggleFont)
-  name: GetFigletFontName(FiggleFont)
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_GetFigletFontName_Figgle_FiggleFont_
-  commentId: M:Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFontName(Figgle.FiggleFont)
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFontName(Figgle.FiggleFont)
-  nameWithType: FigletTools.GetFigletFontName(FiggleFont)
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFontName*
-  name: GetFigletFontName
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_GetFigletFontName_
-  commentId: Overload:Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFontName
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletFontName
-  nameWithType: FigletTools.GetFigletFontName
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletHeight(System.String,Figgle.FiggleFont)
-  name: GetFigletHeight(string, FiggleFont)
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_GetFigletHeight_System_String_Figgle_FiggleFont_
-  commentId: M:Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletHeight(System.String,Figgle.FiggleFont)
-  name.vb: GetFigletHeight(String, FiggleFont)
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletHeight(string, Figgle.FiggleFont)
-  fullName.vb: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletHeight(String, Figgle.FiggleFont)
-  nameWithType: FigletTools.GetFigletHeight(string, FiggleFont)
-  nameWithType.vb: FigletTools.GetFigletHeight(String, FiggleFont)
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletHeight*
-  name: GetFigletHeight
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_GetFigletHeight_
-  commentId: Overload:Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletHeight
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletHeight
-  nameWithType: FigletTools.GetFigletHeight
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletLines(System.String,Figgle.FiggleFont)
-  name: GetFigletLines(string, FiggleFont)
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_GetFigletLines_System_String_Figgle_FiggleFont_
-  commentId: M:Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletLines(System.String,Figgle.FiggleFont)
-  name.vb: GetFigletLines(String, FiggleFont)
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletLines(string, Figgle.FiggleFont)
-  fullName.vb: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletLines(String, Figgle.FiggleFont)
-  nameWithType: FigletTools.GetFigletLines(string, FiggleFont)
-  nameWithType.vb: FigletTools.GetFigletLines(String, FiggleFont)
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletLines*
-  name: GetFigletLines
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_GetFigletLines_
-  commentId: Overload:Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletLines
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletLines
-  nameWithType: FigletTools.GetFigletLines
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletWidth(System.String,Figgle.FiggleFont)
-  name: GetFigletWidth(string, FiggleFont)
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_GetFigletWidth_System_String_Figgle_FiggleFont_
-  commentId: M:Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletWidth(System.String,Figgle.FiggleFont)
-  name.vb: GetFigletWidth(String, FiggleFont)
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletWidth(string, Figgle.FiggleFont)
-  fullName.vb: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletWidth(String, Figgle.FiggleFont)
-  nameWithType: FigletTools.GetFigletWidth(string, FiggleFont)
-  nameWithType.vb: FigletTools.GetFigletWidth(String, FiggleFont)
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletWidth*
-  name: GetFigletWidth
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_GetFigletWidth_
-  commentId: Overload:Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletWidth
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.GetFigletWidth
-  nameWithType: FigletTools.GetFigletWidth
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet(System.String,Figgle.FiggleFont,System.Object[])
-  name: RenderFiglet(string, FiggleFont, params object[])
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_RenderFiglet_System_String_Figgle_FiggleFont_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet(System.String,Figgle.FiggleFont,System.Object[])
-  name.vb: RenderFiglet(String, FiggleFont, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet(string, Figgle.FiggleFont, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet(String, Figgle.FiggleFont, ParamArray Object())
-  nameWithType: FigletTools.RenderFiglet(string, FiggleFont, params object[])
-  nameWithType.vb: FigletTools.RenderFiglet(String, FiggleFont, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet(System.String,System.String,System.Object[])
-  name: RenderFiglet(string, string, params object[])
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_RenderFiglet_System_String_System_String_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet(System.String,System.String,System.Object[])
-  name.vb: RenderFiglet(String, String, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet(string, string, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet(String, String, ParamArray Object())
-  nameWithType: FigletTools.RenderFiglet(string, string, params object[])
-  nameWithType.vb: FigletTools.RenderFiglet(String, String, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet*
-  name: RenderFiglet
-  href: api/Terminaux.Writer.FancyWriters.Tools.FigletTools.html#Terminaux_Writer_FancyWriters_Tools_FigletTools_RenderFiglet_
-  commentId: Overload:Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.Tools.FigletTools.RenderFiglet
-  nameWithType: FigletTools.RenderFiglet
 - uid: Terminaux.Writer.FancyWriters.Tools.PowerLineSegment
   name: PowerLineSegment
   href: api/Terminaux.Writer.FancyWriters.Tools.PowerLineSegment.html
