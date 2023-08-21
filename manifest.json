@@ -176,6 +176,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Figlet.FigletSelector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Figlet.FigletSelector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Figlet.FigletTools.yml",
       "output": {
         ".html": {

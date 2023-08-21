@@ -79,6 +79,11 @@
     "title": "Namespace Terminaux.Colors | Terminaux API - Aptivi Internals",
     "keywords": "Namespace Terminaux.Colors Classes Color Color information class Color255 255 colors tools ColorTools Color tools and management ConsoleColorsInfo Information for the console colors that fit within the 256 colors Enums ColorType Color type enumeration ConsoleColors All 255 console colors"
   },
+  "api/Terminaux.Figlet.FigletSelector.html": {
+    "href": "api/Terminaux.Figlet.FigletSelector.html",
+    "title": "Class FigletSelector | Terminaux API - Aptivi Internals",
+    "keywords": "Class FigletSelector Figlet selector Inheritance object FigletSelector Namespace: Terminaux.Figlet Assembly: Terminaux.dll Syntax public static class FigletSelector Methods | Improve this Doc View Source PromptForFiglet() Prompts the user for a figlet font Declaration public static string PromptForFiglet() Returns Type Description string Selected figlet font"
+  },
   "api/Terminaux.Figlet.FigletTools.html": {
     "href": "api/Terminaux.Figlet.FigletTools.html",
     "title": "Class FigletTools | Terminaux API - Aptivi Internals",
@@ -87,7 +92,7 @@
   "api/Terminaux.Figlet.html": {
     "href": "api/Terminaux.Figlet.html",
     "title": "Namespace Terminaux.Figlet | Terminaux API - Aptivi Internals",
-    "keywords": "Namespace Terminaux.Figlet Classes FigletTools Figlet tools"
+    "keywords": "Namespace Terminaux.Figlet Classes FigletSelector Figlet selector FigletTools Figlet tools"
   },
   "api/Terminaux.Reader.Bindings.BaseBinding.html": {
     "href": "api/Terminaux.Reader.Bindings.BaseBinding.html",

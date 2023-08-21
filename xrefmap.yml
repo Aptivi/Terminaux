@@ -2796,6 +2796,25 @@ references:
   commentId: N:Terminaux.Figlet
   fullName: Terminaux.Figlet
   nameWithType: Terminaux.Figlet
+- uid: Terminaux.Figlet.FigletSelector
+  name: FigletSelector
+  href: api/Terminaux.Figlet.FigletSelector.html
+  commentId: T:Terminaux.Figlet.FigletSelector
+  fullName: Terminaux.Figlet.FigletSelector
+  nameWithType: FigletSelector
+- uid: Terminaux.Figlet.FigletSelector.PromptForFiglet
+  name: PromptForFiglet()
+  href: api/Terminaux.Figlet.FigletSelector.html#Terminaux_Figlet_FigletSelector_PromptForFiglet
+  commentId: M:Terminaux.Figlet.FigletSelector.PromptForFiglet
+  fullName: Terminaux.Figlet.FigletSelector.PromptForFiglet()
+  nameWithType: FigletSelector.PromptForFiglet()
+- uid: Terminaux.Figlet.FigletSelector.PromptForFiglet*
+  name: PromptForFiglet
+  href: api/Terminaux.Figlet.FigletSelector.html#Terminaux_Figlet_FigletSelector_PromptForFiglet_
+  commentId: Overload:Terminaux.Figlet.FigletSelector.PromptForFiglet
+  isSpec: "True"
+  fullName: Terminaux.Figlet.FigletSelector.PromptForFiglet
+  nameWithType: FigletSelector.PromptForFiglet
 - uid: Terminaux.Figlet.FigletTools
   name: FigletTools
   href: api/Terminaux.Figlet.FigletTools.html
