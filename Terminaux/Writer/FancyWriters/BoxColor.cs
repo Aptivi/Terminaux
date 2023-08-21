@@ -59,7 +59,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         public static void WriteBox(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
-            WriteBox(Left, Top, InteriorWidth, InteriorHeight, new Color(ConsoleColors.Black));
+            WriteBox(Left, Top, InteriorWidth, InteriorHeight, ConsoleColors.Black);
 
         /// <summary>
         /// Writes the box plainly
@@ -74,8 +74,9 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
+                ColorTools.SetConsoleColor(BoxColor, true);
                 for (int y = 1; y <= InteriorHeight; y++)
-                    TextWriterWhereColor.WriteWhere(new string(' ', InteriorWidth), Left, Top + y, true, Color.Empty, new Color(BoxColor));
+                    TextWriterWhereColor.WriteWherePlain(new string(' ', InteriorWidth), Left, Top + y, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -97,8 +98,9 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
+                ColorTools.SetConsoleColor(BoxColor, true);
                 for (int y = 1; y <= InteriorHeight; y++)
-                    TextWriterWhereColor.WriteWhere(new string(' ', InteriorWidth), Left, Top + y, true, Color.Empty, BoxColor);
+                    TextWriterWhereColor.WriteWherePlain(new string(' ', InteriorWidth), Left, Top + y, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
