@@ -158,6 +158,10 @@
     "Terminaux - PromptLoopedCompletionMultiLinePromptWithOneLine": {
       "commandName": "Project",
       "commandLineArgs": "PromptLoopedCompletionMultiLinePromptWithOneLine"
+    },
+    "Terminaux - TestInputFiglet": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputFiglet"
     }
   }
 }

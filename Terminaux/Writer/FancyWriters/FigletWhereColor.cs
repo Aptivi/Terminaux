@@ -22,7 +22,7 @@ using System.Threading;
 using Figgle;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Figlet;
 
 namespace Terminaux.Writer.FancyWriters
 {

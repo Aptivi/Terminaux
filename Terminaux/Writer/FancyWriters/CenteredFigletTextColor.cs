@@ -20,7 +20,7 @@ using Figgle;
 using System;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Figlet;
 
 namespace Terminaux.Writer.FancyWriters
 {
