@@ -23,7 +23,7 @@ using System.Reflection;
 using Figgle;
 using Terminaux.Base;
 
-namespace Terminaux.Writer.FancyWriters.Tools
+namespace Terminaux.Figlet
 {
     /// <summary>
     /// Figlet tools
