@@ -4150,6 +4150,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.Tools.ConsoleTools.ActionCursorVisible
   nameWithType: ConsoleTools.ActionCursorVisible
+- uid: Terminaux.Reader.Tools.ConsoleTools.ActionGetCursorVisible
+  name: ActionGetCursorVisible
+  href: api/Terminaux.Reader.Tools.ConsoleTools.html#Terminaux_Reader_Tools_ConsoleTools_ActionGetCursorVisible
+  commentId: P:Terminaux.Reader.Tools.ConsoleTools.ActionGetCursorVisible
+  fullName: Terminaux.Reader.Tools.ConsoleTools.ActionGetCursorVisible
+  nameWithType: ConsoleTools.ActionGetCursorVisible
+- uid: Terminaux.Reader.Tools.ConsoleTools.ActionGetCursorVisible*
+  name: ActionGetCursorVisible
+  href: api/Terminaux.Reader.Tools.ConsoleTools.html#Terminaux_Reader_Tools_ConsoleTools_ActionGetCursorVisible_
+  commentId: Overload:Terminaux.Reader.Tools.ConsoleTools.ActionGetCursorVisible
+  isSpec: "True"
+  fullName: Terminaux.Reader.Tools.ConsoleTools.ActionGetCursorVisible
+  nameWithType: ConsoleTools.ActionGetCursorVisible
 - uid: Terminaux.Reader.Tools.ConsoleTools.ActionIsDumb
   name: ActionIsDumb
   href: api/Terminaux.Reader.Tools.ConsoleTools.html#Terminaux_Reader_Tools_ConsoleTools_ActionIsDumb
