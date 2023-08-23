@@ -77,15 +77,9 @@ namespace Terminaux.Writer.FancyWriters
                 RepeatTimes = Console.WindowWidth - (Text + " ").Length - 1;
 
             // Write the closing minus sign.
-            int OldTop = Console.CursorTop;
             TextWriterColor.Write(new string('-', RepeatTimes), true, new Color(ConsoleColors.Gray));
-
-            // We're still suffering from this bug...
-            if (canPosition)
-            {
-                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
-                    Console.CursorTop -= 1;
-            }
+            if (Console.CursorTop != Console.BufferHeight - 1)
+                Console.CursorTop--;
         }
 
         /// <summary>
@@ -151,15 +145,9 @@ namespace Terminaux.Writer.FancyWriters
                 RepeatTimes = Console.WindowWidth - (Text + " ").Length + 1;
 
             // Write the closing minus sign.
-            int OldTop = Console.CursorTop;
             TextWriterColor.Write(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
-
-            // We're still suffering from this bug...
-            if (canPosition)
-            {
-                if (!(Console.CursorTop == Console.WindowHeight - 1) | OldTop == Console.WindowHeight - 3)
-                    Console.CursorTop -= 1;
-            }
+            if (Console.CursorTop != Console.BufferHeight - 1)
+                Console.CursorTop--;
         }
 
     }
