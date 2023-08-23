@@ -34,6 +34,7 @@ namespace Terminaux.Reader.Tools
         internal static Func<int> actionWindowHeight = () => WindowHeight;
         internal static Func<int> actionBufferHeight = () => BufferHeight;
         internal static Action<bool> actionCursorVisible = (val) => CursorVisible = val;
+        internal static Func<bool> actionGetCursorVisible = () => CursorVisible;
         internal static Action<bool> actionTreatCtrlCAsInput = (val) => TreatCtrlCAsInput = val;
         internal static Func<bool> actionKeyAvailable = () => KeyAvailable;
         internal static Action<int, int> actionSetCursorPosition = SetCursorPosition;
@@ -47,6 +48,9 @@ namespace Terminaux.Reader.Tools
         internal static Action actionWriteLine = WriteLine;
         internal static Action<string, TermReaderSettings> actionWriteLine1 = WriteLine;
         internal static Action<string, TermReaderSettings, object[]> actionWriteLine2 = WriteLine;
+
+        // Some default variables
+        private static bool cursorVisible = true;
 
         /// <summary>
         /// Is the console a dumb console?
@@ -103,6 +107,14 @@ namespace Terminaux.Reader.Tools
         {
             get => actionCursorVisible;
             set => actionCursorVisible = value ?? ((val) => CursorVisible = val);
+        }
+        /// <summary>
+        /// The cursor visibility mode
+        /// </summary>
+        public static Func<bool> ActionGetCursorVisible
+        {
+            get => actionGetCursorVisible;
+            set => actionGetCursorVisible = value ?? (() => CursorVisible);
         }
         /// <summary>
         /// The cursor visibility mode
@@ -312,10 +324,16 @@ namespace Terminaux.Reader.Tools
 
         private static bool CursorVisible
         {
+            get => cursorVisible;
             set
             {
                 if (!IsDumb)
+                {
+                    // We can't call Get accessor of the primary CursorVisible since this is Windows only, so we have this decoy variable
+                    // to make it work on Linux, Android, and macOS.
+                    cursorVisible = value;
                     Console.CursorVisible = value;
+                }
             }
         }
 
