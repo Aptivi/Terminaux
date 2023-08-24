@@ -1,15 +1,15 @@
 @echo off
 
-REM    Nitrocid KS  Copyright (C) 2018-2021  Aptivi
+REM    Terminaux  Copyright (C) 2018-2021  Aptivi
 REM
-REM    This file is part of Nitrocid KS
+REM    This file is part of Terminaux
 REM
-REM    Nitrocid KS is free software: you can redistribute it and/or modify
+REM    Terminaux is free software: you can redistribute it and/or modify
 REM    it under the terms of the GNU General Public License as published by
 REM    the Free Software Foundation, either version 3 of the License, or
 REM    (at your option) any later version.
 REM
-REM    Nitrocid KS is distributed in the hope that it will be useful,
+REM    Terminaux is distributed in the hope that it will be useful,
 REM    but WITHOUT ANY WARRANTY; without even the implied warranty of
 REM    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 REM    GNU General Public License for more details.
