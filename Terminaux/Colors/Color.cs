@@ -44,6 +44,22 @@ namespace Terminaux.Colors
         /// </summary>
         public string VTSequenceBackground { get; private set; }
         /// <summary>
+        /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
+        /// </summary>
+        public string PlainSequenceTrueColor { get; private set; }
+        /// <summary>
+        /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary
+        /// </summary>
+        public string PlainSequenceEnclosedTrueColor { get; private set; }
+        /// <summary>
+        /// Parsable VT sequence (Foreground, true color)
+        /// </summary>
+        public string VTSequenceForegroundTrueColor { get; private set; }
+        /// <summary>
+        /// Parsable VT sequence (Background, true color)
+        /// </summary>
+        public string VTSequenceBackgroundTrueColor { get; private set; }
+        /// <summary>
         /// The red color value
         /// </summary>
         public int R { get; private set; }
@@ -171,10 +187,10 @@ namespace Terminaux.Colors
                     }
 
                     // Form the sequences
-                    PlainSequence = $"{r};{g};{b}";
-                    PlainSequenceEnclosed = $"\"{r};{g};{b}\"";
-                    VTSequenceForeground = Color255.GetEsc() + $"[38;2;{PlainSequence}m";
-                    VTSequenceBackground = Color255.GetEsc() + $"[48;2;{PlainSequence}m";
+                    PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
+                    PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
+                    VTSequenceForeground = VTSequenceForegroundTrueColor = Color255.GetEsc() + $"[38;2;{PlainSequence}m";
+                    VTSequenceBackground = VTSequenceBackgroundTrueColor = Color255.GetEsc() + $"[48;2;{PlainSequence}m";
 
                     // Populate color properties
                     Type = ColorType.TrueColor;
@@ -220,8 +236,12 @@ namespace Terminaux.Colors
                 }
                 PlainSequence = ColorTools.EnableColorTransformation ? $"{r};{g};{b}" : $"{ColorsInfo.ColorID}";
                 PlainSequenceEnclosed = ColorTools.EnableColorTransformation ? $"\"{r};{g};{b}\"" : $"{ColorsInfo.ColorID}";
+                PlainSequenceTrueColor = $"{r};{g};{b}";
+                PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
                 VTSequenceForeground = ColorTools.EnableColorTransformation ? Color255.GetEsc() + $"[38;2;{PlainSequence}m" : Color255.GetEsc() + $"[38;5;{PlainSequence}m";
                 VTSequenceBackground = ColorTools.EnableColorTransformation ? Color255.GetEsc() + $"[48;2;{PlainSequence}m" : Color255.GetEsc() + $"[48;5;{PlainSequence}m";
+                VTSequenceForegroundTrueColor = Color255.GetEsc() + $"[38;2;{PlainSequenceTrueColor}m";
+                VTSequenceBackgroundTrueColor = Color255.GetEsc() + $"[48;2;{PlainSequenceTrueColor}m";
 
                 // Populate color properties
                 Type = ColorTools.EnableColorTransformation ? ColorType.TrueColor : ColorsInfo.ColorID >= 16 ? ColorType._255Color : ColorType._16Color;
@@ -257,10 +277,10 @@ namespace Terminaux.Colors
                 }
 
                 // We got the RGB values! Form the sequences
-                PlainSequence = $"{R};{G};{B}";
-                PlainSequenceEnclosed = $"\"{R};{G};{B}\"";
-                VTSequenceForeground = Color255.GetEsc() + $"[38;2;{PlainSequence}m";
-                VTSequenceBackground = Color255.GetEsc() + $"[48;2;{PlainSequence}m";
+                PlainSequence = PlainSequenceTrueColor = $"{R};{G};{B}";
+                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{R};{G};{B}\"";
+                VTSequenceForeground = VTSequenceForegroundTrueColor = Color255.GetEsc() + $"[38;2;{PlainSequence}m";
+                VTSequenceBackground = VTSequenceBackgroundTrueColor = Color255.GetEsc() + $"[48;2;{PlainSequence}m";
 
                 // Populate color properties
                 Type = ColorType.TrueColor;
@@ -338,6 +358,10 @@ namespace Terminaux.Colors
                 other.PlainSequenceEnclosed == other2.PlainSequenceEnclosed &&
                 other.VTSequenceForeground == other2.VTSequenceForeground &&
                 other.VTSequenceBackground == other2.VTSequenceBackground &&
+                other.PlainSequenceTrueColor == other2.PlainSequenceTrueColor &&
+                other.PlainSequenceEnclosedTrueColor == other2.PlainSequenceEnclosedTrueColor &&
+                other.VTSequenceForegroundTrueColor == other2.VTSequenceForegroundTrueColor &&
+                other.VTSequenceBackgroundTrueColor == other2.VTSequenceBackgroundTrueColor &&
                 other.R == other2.R &&
                 other.G == other2.G &&
                 other.B == other2.B &&
@@ -361,11 +385,15 @@ namespace Terminaux.Colors
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            int hashCode = 746924978;
+            int hashCode = 238546354;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequence);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceEnclosed);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForeground);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceBackground);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceTrueColor);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceEnclosedTrueColor);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForegroundTrueColor);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceBackgroundTrueColor);
             hashCode = hashCode * -1521134295 + R.GetHashCode();
             hashCode = hashCode * -1521134295 + G.GetHashCode();
             hashCode = hashCode * -1521134295 + B.GetHashCode();

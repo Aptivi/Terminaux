@@ -30,7 +30,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         {
             var color = ColorWheel.InputForColor();
             Console.Clear();
-            TextWriterColor.Write("Color wheel returned: {0}", color.PlainSequence);
+            TextWriterColor.Write("Color wheel returned: {0} [{1}]", color.PlainSequence, color.PlainSequenceTrueColor);
         }
     }
 }
