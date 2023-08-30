@@ -567,6 +567,32 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.PlainSequenceEnclosed
   nameWithType: Color.PlainSequenceEnclosed
+- uid: Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor
+  name: PlainSequenceEnclosedTrueColor
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequenceEnclosedTrueColor
+  commentId: P:Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor
+  fullName: Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor
+  nameWithType: Color.PlainSequenceEnclosedTrueColor
+- uid: Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor*
+  name: PlainSequenceEnclosedTrueColor
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequenceEnclosedTrueColor_
+  commentId: Overload:Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor
+  nameWithType: Color.PlainSequenceEnclosedTrueColor
+- uid: Terminaux.Colors.Color.PlainSequenceTrueColor
+  name: PlainSequenceTrueColor
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequenceTrueColor
+  commentId: P:Terminaux.Colors.Color.PlainSequenceTrueColor
+  fullName: Terminaux.Colors.Color.PlainSequenceTrueColor
+  nameWithType: Color.PlainSequenceTrueColor
+- uid: Terminaux.Colors.Color.PlainSequenceTrueColor*
+  name: PlainSequenceTrueColor
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequenceTrueColor_
+  commentId: Overload:Terminaux.Colors.Color.PlainSequenceTrueColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.PlainSequenceTrueColor
+  nameWithType: Color.PlainSequenceTrueColor
 - uid: Terminaux.Colors.Color.R
   name: R
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_R
@@ -606,6 +632,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.VTSequenceBackground
   nameWithType: Color.VTSequenceBackground
+- uid: Terminaux.Colors.Color.VTSequenceBackgroundTrueColor
+  name: VTSequenceBackgroundTrueColor
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_VTSequenceBackgroundTrueColor
+  commentId: P:Terminaux.Colors.Color.VTSequenceBackgroundTrueColor
+  fullName: Terminaux.Colors.Color.VTSequenceBackgroundTrueColor
+  nameWithType: Color.VTSequenceBackgroundTrueColor
+- uid: Terminaux.Colors.Color.VTSequenceBackgroundTrueColor*
+  name: VTSequenceBackgroundTrueColor
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_VTSequenceBackgroundTrueColor_
+  commentId: Overload:Terminaux.Colors.Color.VTSequenceBackgroundTrueColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.VTSequenceBackgroundTrueColor
+  nameWithType: Color.VTSequenceBackgroundTrueColor
 - uid: Terminaux.Colors.Color.VTSequenceForeground
   name: VTSequenceForeground
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_VTSequenceForeground
@@ -619,6 +658,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.VTSequenceForeground
   nameWithType: Color.VTSequenceForeground
+- uid: Terminaux.Colors.Color.VTSequenceForegroundTrueColor
+  name: VTSequenceForegroundTrueColor
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_VTSequenceForegroundTrueColor
+  commentId: P:Terminaux.Colors.Color.VTSequenceForegroundTrueColor
+  fullName: Terminaux.Colors.Color.VTSequenceForegroundTrueColor
+  nameWithType: Color.VTSequenceForegroundTrueColor
+- uid: Terminaux.Colors.Color.VTSequenceForegroundTrueColor*
+  name: VTSequenceForegroundTrueColor
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_VTSequenceForegroundTrueColor_
+  commentId: Overload:Terminaux.Colors.Color.VTSequenceForegroundTrueColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.VTSequenceForegroundTrueColor
+  nameWithType: Color.VTSequenceForegroundTrueColor
 - uid: Terminaux.Colors.Color.op_Equality(Terminaux.Colors.Color,Terminaux.Colors.Color)
   name: operator ==(Color, Color)
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_op_Equality_Terminaux_Colors_Color_Terminaux_Colors_Color_
