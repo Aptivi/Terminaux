@@ -164,6 +164,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleExtensions.PercentRepeatTargeted
   nameWithType: ConsoleExtensions.PercentRepeatTargeted
+- uid: Terminaux.Base.ConsoleExtensions.ResetAll
+  name: ResetAll()
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetAll
+  commentId: M:Terminaux.Base.ConsoleExtensions.ResetAll
+  fullName: Terminaux.Base.ConsoleExtensions.ResetAll()
+  nameWithType: ConsoleExtensions.ResetAll()
+- uid: Terminaux.Base.ConsoleExtensions.ResetAll*
+  name: ResetAll
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetAll_
+  commentId: Overload:Terminaux.Base.ConsoleExtensions.ResetAll
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleExtensions.ResetAll
+  nameWithType: ConsoleExtensions.ResetAll
 - uid: Terminaux.Base.ConsoleExtensions.SetTitle(System.String)
   name: SetTitle(string)
   href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_SetTitle_System_String_
