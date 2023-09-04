@@ -362,12 +362,8 @@ namespace Terminaux.Base
                 return target;
         }
 
-        internal static string BufferChar(string text, ref int i, ref int vtSeqIdx)
+        internal static string BufferChar(string text, MatchCollection[] sequencesCollections, ref int i, ref int vtSeqIdx)
         {
-            // Grab each VT sequence from the message
-            char ch = text[i];
-            var sequencesCollections = VtSequenceTools.MatchVTSequences(text);
-
             // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
             // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
             // do in Windows.
@@ -381,6 +377,7 @@ namespace Terminaux.Base
             //
             // To overcome this limitation, we need to print the whole sequence to the console found by the virtual terminal
             // control sequence matcher to match how it works on Windows.
+            char ch = text[i];
             string seq = "";
             foreach (var sequences in sequencesCollections)
             {
@@ -430,6 +427,7 @@ namespace Terminaux.Base
                 for (int i = 0; i < text.Length; i++)
                 {
                     // Check the character to see if we're at the VT sequence
+                    bool explicitNewLine = text[text.Length - 1] == '\n';
                     char ParagraphChar = text[i];
                     bool isNewLine = text[i] == '\n';
                     string seq = "";
@@ -462,6 +460,8 @@ namespace Terminaux.Base
                     {
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                         IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+                        if (explicitNewLine)
+                            IncompleteSentences.Add("");
 
                         // Clean everything up
                         IncompleteSentenceBuilder.Clear();

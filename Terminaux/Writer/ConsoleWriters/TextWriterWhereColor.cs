@@ -75,7 +75,10 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     int OldLeft = Console.CursorLeft;
                     int OldTop = Console.CursorTop;
+                    int width = Console.WindowWidth - RightMargin;
                     var Paragraphs = msg.SplitNewLines();
+                    if (RightMargin > 0)
+                        Paragraphs = ConsoleExtensions.GetWrappedSentences(msg, width);
                     var buffered = new StringBuilder();
                     Console.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
@@ -88,18 +91,23 @@ namespace Terminaux.Writer.ConsoleWriters
                         int vtSeqIdx = 0;
 
                         // Now, parse every character
+                        int pos = OldLeft;
                         for (int i = 0; i < MessageParagraph.Length; i++)
                         {
-                            if (Console.CursorLeft == Console.WindowWidth - RightMargin ||
-                                MessageParagraph[i] == '\n')
+                            if (MessageParagraph[i] == '\n' || RightMargin > 0 && pos > width)
                             {
                                 buffered.Append($"{VtSequenceBasicChars.EscapeChar}[1B");
                                 buffered.Append($"{VtSequenceBasicChars.EscapeChar}[{Left + 1}G");
+                                pos = OldLeft;
                             }
 
                             // Write a character individually
                             if (MessageParagraph[i] != '\n')
-                                buffered.Append(ConsoleExtensions.BufferChar(MessageParagraph, ref i, ref vtSeqIdx));
+                            {
+                                string bufferedChar = ConsoleExtensions.BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx);
+                                buffered.Append(bufferedChar);
+                                pos += bufferedChar.Length;
+                            }
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
@@ -107,6 +115,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         {
                             buffered.Append($"{VtSequenceBasicChars.EscapeChar}[1B");
                             buffered.Append($"{VtSequenceBasicChars.EscapeChar}[{Left + 1}G");
+                            pos = OldLeft;
                         }
                     }
 

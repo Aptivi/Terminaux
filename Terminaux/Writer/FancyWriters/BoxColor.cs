@@ -18,8 +18,10 @@
 
 using System;
 using System.Diagnostics;
+using System.Text;
 using System.Threading;
 using Terminaux.Colors;
+using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Writer.FancyWriters
@@ -41,8 +43,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                for (int y = 1; y <= InteriorHeight; y++)
-                    TextWriterWhereColor.WriteWhere(new string(' ', InteriorWidth), Left, Top + y, true);
+                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -74,9 +75,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                ColorTools.SetConsoleColor(BoxColor, true);
-                for (int y = 1; y <= InteriorHeight; y++)
-                    TextWriterWhereColor.WriteWherePlain(new string(' ', InteriorWidth), Left, Top + y, true);
+                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, new Color(ConsoleColors.Gray), new Color(BoxColor));
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -98,15 +97,23 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                ColorTools.SetConsoleColor(BoxColor, true);
-                for (int y = 1; y <= InteriorHeight; y++)
-                    TextWriterWhereColor.WriteWherePlain(new string(' ', InteriorWidth), Left, Top + y, true);
+                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, new Color(ConsoleColors.Gray), BoxColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
             }
+        }
+
+        internal static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight)
+        {
+            // Fill the box with spaces inside it
+            StringBuilder box = new();
+            box.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + 2)}");
+            for (int y = 1; y <= InteriorHeight; y++)
+                box.Append(new string(' ', InteriorWidth) + VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + y + 2));
+            return box.ToString();
         }
     }
 }
