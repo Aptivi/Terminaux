@@ -162,6 +162,10 @@
     "Terminaux - TestInputFiglet": {
       "commandName": "Project",
       "commandLineArgs": "TestInputFiglet"
+    },
+    "Terminaux - ColorWithResetTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorWithResetTest"
     }
   }
 }

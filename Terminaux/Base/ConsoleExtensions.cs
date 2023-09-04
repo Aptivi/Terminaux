@@ -165,6 +165,15 @@ namespace Terminaux.Base
             return FormattedString;
         }
 
+        /// <summary>
+        /// Resets the entire console
+        /// </summary>
+        public static void ResetAll()
+        {
+            Console.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.EscFullReset));
+            Console.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSoftTerminalReset));
+        }
+
         #region Windows-specific
         private const string winKernel = "kernel32.dll";
 
