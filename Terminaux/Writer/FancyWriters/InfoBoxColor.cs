@@ -26,6 +26,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Reader.Inputs;
 using System.Diagnostics;
 using Terminaux.Reader;
+using Terminaux.Reader.Tools;
 using Terminaux.Colors;
 
 namespace Terminaux.Writer.FancyWriters
@@ -78,7 +79,7 @@ namespace Terminaux.Writer.FancyWriters
                                             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, bool waitForInput, params object[] vars)
         {
-            bool initialCursorVisible = Console.CursorVisible;
+            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -176,7 +177,7 @@ namespace Terminaux.Writer.FancyWriters
                                                     char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                                     char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
-            bool initialCursorVisible = Console.CursorVisible;
+            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -568,7 +569,7 @@ namespace Terminaux.Writer.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, Color BackgroundColor, params object[] vars)
         {
-            bool initialCursorVisible = Console.CursorVisible;
+            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -679,7 +680,7 @@ namespace Terminaux.Writer.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
         {
-            bool initialCursorVisible = Console.CursorVisible;
+            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -877,7 +878,7 @@ namespace Terminaux.Writer.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, Color BackgroundColor, params object[] vars)
         {
-            bool initialCursorVisible = Console.CursorVisible;
+            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -985,7 +986,7 @@ namespace Terminaux.Writer.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
         {
-            bool initialCursorVisible = Console.CursorVisible;
+            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
