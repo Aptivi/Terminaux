@@ -26,6 +26,8 @@
     <AssemblyVersion>1.4.0</AssemblyVersion>
     <PackageVersion>1.4.0</PackageVersion>
     <LangVersion>latest</LangVersion>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
