@@ -96,6 +96,12 @@ namespace Terminaux.Reader.Bindings
                     state.inputPromptTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
                     state.currentCursorPosTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
                 }
+                if (state.currentCursorPosTop >= ConsoleWrappers.ActionBufferHeight())
+                {
+                    state.inputPromptTop -= 1;
+                    state.currentCursorPosTop -= 1;
+                    ConsoleWrappers.ActionWriteLine();
+                }
             }
             ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
