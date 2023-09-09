@@ -69,7 +69,6 @@ namespace Terminaux.Writer.ConsoleWriters
                             char TextChar = sentence[i];
 
                             // Write a character individually
-                            buffered.Append(ConsoleExtensions.BufferChar(sentence, sequences, ref i, ref vtSeqIdx));
                             if (LinesMade == Console.WindowHeight - 1)
                             {
                                 Console.Write(buffered.ToString());
@@ -78,6 +77,7 @@ namespace Terminaux.Writer.ConsoleWriters
                                     exiting = true;
                                 LinesMade = 0;
                             }
+                            buffered.Append(ConsoleExtensions.BufferChar(sentence, sequences, ref i, ref vtSeqIdx));
                         }
                         if (!exiting)
                         {
