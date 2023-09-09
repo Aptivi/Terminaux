@@ -66,6 +66,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TerminauxContinuableException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TerminauxContinuableException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TerminauxException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TerminauxException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.yml",
       "output": {
         ".html": {
@@ -280,6 +300,56 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Reader.Inputs.InputChoiceTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Interactive.BaseInteractiveTui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Interactive.BaseInteractiveTui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Interactive.IInteractiveTui.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Interactive.IInteractiveTui.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Interactive.InteractiveTuiBinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Interactive.InteractiveTuiBinding.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Interactive.InteractiveTuiTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Interactive.InteractiveTuiTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Inputs.Interactive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Inputs.Interactive.html"
         }
       },
       "version": ""
