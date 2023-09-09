@@ -56,6 +56,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.ConsoleWrappers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.ConsoleWrappers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.yml",
       "output": {
         ".html": {
@@ -380,26 +390,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Reader.TermReaderTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Reader.Tools.ConsoleTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Reader.Tools.ConsoleTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Reader.Tools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Reader.Tools.html"
         }
       },
       "version": ""
