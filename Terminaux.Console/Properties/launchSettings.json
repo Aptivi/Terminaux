@@ -166,6 +166,18 @@
     "Terminaux - ColorWithResetTest": {
       "commandName": "Project",
       "commandLineArgs": "ColorWithResetTest"
+    },
+    "Terminaux - TestInputSelectionLarge": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputSelectionLarge"
+    },
+    "Terminaux - TestInputSelectionMultiple": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputSelectionMultiple"
+    },
+    "Terminaux - TestInputSelectionLargeMultiple": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputSelectionLargeMultiple"
     }
   }
 }

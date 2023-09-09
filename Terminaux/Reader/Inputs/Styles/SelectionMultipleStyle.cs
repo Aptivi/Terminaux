@@ -30,21 +30,18 @@ using Terminaux.Writer.FancyWriters;
 namespace Terminaux.Reader.Inputs.Styles
 {
     /// <summary>
-    /// Selection style for input module
+    /// Multiple selection style for input module
     /// </summary>
-    public static class SelectionStyle
+    public static class SelectionMultipleStyle
     {
-
-        private static int savedPos = 1;
-
         /// <summary>
         /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string AnswersStr, bool kiosk = false) => 
-            PromptSelection(Question, AnswersStr, Array.Empty<string>(), "", Array.Empty<string>(), kiosk);
+        public static int[] PromptMultipleSelection(string Question, string AnswersStr, bool kiosk = false) =>
+            PromptMultipleSelection(Question, AnswersStr, Array.Empty<string>(), "", Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -53,8 +50,8 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, bool kiosk = false) =>
-            PromptSelection(Question, AnswersStr, AnswersTitles, "", Array.Empty<string>(), kiosk);
+        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, bool kiosk = false) =>
+            PromptMultipleSelection(Question, AnswersStr, AnswersTitles, "", Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -64,8 +61,8 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, bool kiosk = false) =>
-            PromptSelection(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, Array.Empty<string>(), kiosk);
+        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, bool kiosk = false) =>
+            PromptMultipleSelection(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -76,8 +73,8 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, bool kiosk = false) =>
-            PromptSelection(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles), kiosk);
+        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, bool kiosk = false) =>
+            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles), kiosk);
 
         /// <summary>
         /// Prompts user for selection
@@ -85,8 +82,8 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string[] Answers, bool kiosk = false) => 
-            PromptSelection(Question, Answers, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), kiosk);
+        public static int[] PromptMultipleSelection(string Question, string[] Answers, bool kiosk = false) =>
+            PromptMultipleSelection(Question, Answers, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -95,8 +92,8 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, bool kiosk = false) =>
-            PromptSelection(Question, Answers, AnswersTitles, Array.Empty<string>(), Array.Empty<string>(), kiosk);
+        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, bool kiosk = false) =>
+            PromptMultipleSelection(Question, Answers, AnswersTitles, Array.Empty<string>(), Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -106,8 +103,8 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, bool kiosk = false) =>
-            PromptSelection(Question, Answers, AnswersTitles, AlternateAnswers, Array.Empty<string>(), kiosk);
+        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, bool kiosk = false) =>
+            PromptMultipleSelection(Question, Answers, AnswersTitles, AlternateAnswers, Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -118,8 +115,8 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, bool kiosk = false) =>
-            PromptSelection(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles), kiosk);
+        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, bool kiosk = false) =>
+            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -127,8 +124,8 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false) =>
-            PromptSelection(Question, Answers, new List<InputChoiceInfo>(), kiosk);
+        public static int[] PromptMultipleSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false) =>
+            PromptMultipleSelection(Question, Answers, new List<InputChoiceInfo>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -137,7 +134,7 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="Answers">Set of answers.</param>
         /// <param name="AltAnswers">Set of alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, bool kiosk = false)
+        public static int[] PromptMultipleSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, bool kiosk = false)
         {
             // Variables
             Color questionColor = new(ConsoleColors.Yellow);
@@ -147,8 +144,9 @@ namespace Terminaux.Reader.Inputs.Styles
             Color selectedOptionColor = new(ConsoleColors.Cyan);
             Color separatorColor = new(ConsoleColors.Gray);
             Color textColor = new(ConsoleColors.Gray);
-            int HighlightedAnswer = savedPos;
+            int HighlightedAnswer = 1;
             List<InputChoiceInfo> AllAnswers = new(Answers);
+            List<int> SelectedAnswers = new();
             AllAnswers.AddRange(AltAnswers);
 
             // Before we proceed, we need to check the highlighted answer number
@@ -207,16 +205,17 @@ namespace Terminaux.Reader.Inputs.Styles
                         // Populate the answer
                         var AnswerInstance = AllAnswers[AnswerIndex];
                         string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
+                        string answerIndicator = $"[{(SelectedAnswers.Contains(AnswerIndex + 1) ? "*" : " ")}]";
 
                         // Get the option
-                        string AnswerOption = $" {AnswerInstance}) {AnswerTitle}";
+                        string AnswerOption = $" {AnswerInstance}) {answerIndicator} {AnswerTitle}";
                         int AnswerTitleLeft = AllAnswers.Max(x => $" {x.ChoiceName}) ".Length);
                         int answerTitleMaxLeft = Console.WindowWidth;
                         if (AnswerTitleLeft < answerTitleMaxLeft)
                         {
                             string renderedChoice = $" {AnswerInstance.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
-                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}" + $"{Color255.GetEsc()}[0K";
+                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{answerIndicator} {AnswerTitle}" + $"{Color255.GetEsc()}[0K";
                         }
                         var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ?
                                           selectedOptionColor :
@@ -251,8 +250,8 @@ namespace Terminaux.Reader.Inputs.Styles
                 // Write keybindings and page and answer number
                 string bindingsRender =
                     kiosk ?
-                    $"[ENTER: select]==[TAB: info]" :
-                    $"[ENTER: select]==[ESC: exit]==[TAB: info]";
+                    $"[SPACE: (un)check]==[ENTER: submit]==[TAB: info]" :
+                    $"[SPACE: (un)check]==[ENTER: submit]==[ESC: exit]==[TAB: info]";
                 string numberRender = $"[{currentPage + 1}/{pages + 1}]==[{HighlightedAnswer}/{AllAnswers.Count}]";
                 int bindingsLeft = 2;
                 int numbersLeft = Console.WindowWidth - numberRender.Length - bindingsLeft;
@@ -288,16 +287,20 @@ namespace Terminaux.Reader.Inputs.Styles
                         HighlightedAnswer = endIndex > AllAnswers.Count - 1 ? AllAnswers.Count : endIndex + 2;
                         HighlightedAnswer = endIndex == AllAnswers.Count - 1 ? endIndex + 1 : HighlightedAnswer;
                         break;
+                    case ConsoleKey.Spacebar:
+                        if (SelectedAnswers.Contains(HighlightedAnswer))
+                            SelectedAnswers.Remove(HighlightedAnswer);
+                        else
+                            SelectedAnswers.Add(HighlightedAnswer);
+                        break;
                     case ConsoleKey.Enter:
                         TextWriterColor.Write();
-                        savedPos = HighlightedAnswer;
-                        return HighlightedAnswer;
+                        return SelectedAnswers.ToArray();
                     case ConsoleKey.Escape:
                         if (kiosk)
                             break;
                         TextWriterColor.Write();
-                        savedPos = HighlightedAnswer;
-                        return -1;
+                        return Array.Empty<int>();
                     case ConsoleKey.Tab:
                         if (string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription))
                             break;
@@ -320,6 +323,5 @@ namespace Terminaux.Reader.Inputs.Styles
                 lastPage = currentPage;
             }
         }
-
     }
 }

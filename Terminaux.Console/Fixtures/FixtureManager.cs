@@ -67,6 +67,9 @@ namespace Terminaux.ConsoleDemo.Fixtures
 
             // Input
             new TestInputSelection(),
+            new TestInputSelectionLarge(),
+            new TestInputSelectionMultiple(),
+            new TestInputSelectionLargeMultiple(),
             new TestInputChoice(),
             new TestInputFiglet(),
             new KeyInfo(),
