@@ -3614,6 +3614,109 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.Inputs.Styles.InputStyle.PromptInput
   nameWithType: InputStyle.PromptInput
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle
+  name: SelectionMultipleStyle
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html
+  commentId: T:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle
+  nameWithType: SelectionMultipleStyle
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.Collections.Generic.List{Terminaux.Reader.Inputs.InputChoiceInfo},System.Boolean)
+  name: PromptMultipleSelection(string, List<InputChoiceInfo>, bool)
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_Collections_Generic_List_Terminaux_Reader_Inputs_InputChoiceInfo__System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.Collections.Generic.List{Terminaux.Reader.Inputs.InputChoiceInfo},System.Boolean)
+  name.vb: PromptMultipleSelection(String, List(Of InputChoiceInfo), Boolean)
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(string, System.Collections.Generic.List<Terminaux.Reader.Inputs.InputChoiceInfo>, bool)
+  fullName.vb: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(String, System.Collections.Generic.List(Of Terminaux.Reader.Inputs.InputChoiceInfo), Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, List<InputChoiceInfo>, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, List(Of InputChoiceInfo), Boolean)
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.Collections.Generic.List{Terminaux.Reader.Inputs.InputChoiceInfo},System.Collections.Generic.List{Terminaux.Reader.Inputs.InputChoiceInfo},System.Boolean)
+  name: PromptMultipleSelection(string, List<InputChoiceInfo>, List<InputChoiceInfo>, bool)
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_Collections_Generic_List_Terminaux_Reader_Inputs_InputChoiceInfo__System_Collections_Generic_List_Terminaux_Reader_Inputs_InputChoiceInfo__System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.Collections.Generic.List{Terminaux.Reader.Inputs.InputChoiceInfo},System.Collections.Generic.List{Terminaux.Reader.Inputs.InputChoiceInfo},System.Boolean)
+  name.vb: PromptMultipleSelection(String, List(Of InputChoiceInfo), List(Of InputChoiceInfo), Boolean)
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(string, System.Collections.Generic.List<Terminaux.Reader.Inputs.InputChoiceInfo>, System.Collections.Generic.List<Terminaux.Reader.Inputs.InputChoiceInfo>, bool)
+  fullName.vb: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(String, System.Collections.Generic.List(Of Terminaux.Reader.Inputs.InputChoiceInfo), System.Collections.Generic.List(Of Terminaux.Reader.Inputs.InputChoiceInfo), Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, List<InputChoiceInfo>, List<InputChoiceInfo>, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, List(Of InputChoiceInfo), List(Of InputChoiceInfo), Boolean)
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.Boolean)
+  name: PromptMultipleSelection(string, string, bool)
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.Boolean)
+  name.vb: PromptMultipleSelection(String, String, Boolean)
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(string, string, bool)
+  fullName.vb: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(String, String, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String, Boolean)
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.Boolean)
+  name: PromptMultipleSelection(string, string, string[], bool)
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.Boolean)
+  name.vb: PromptMultipleSelection(String, String, String(), Boolean)
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], bool)
+  fullName.vb: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), Boolean)
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,System.Boolean)
+  name: PromptMultipleSelection(string, string, string[], string, bool)
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,System.Boolean)
+  name.vb: PromptMultipleSelection(String, String, String(), String, Boolean)
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], string, bool)
+  fullName.vb: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), String, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], string, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), String, Boolean)
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,System.String[],System.Boolean)
+  name: PromptMultipleSelection(string, string, string[], string, string[], bool)
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_System_String___System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,System.String[],System.Boolean)
+  name.vb: PromptMultipleSelection(String, String, String(), String, String(), Boolean)
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], string, string[], bool)
+  fullName.vb: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), String, String(), Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], string, string[], bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), String, String(), Boolean)
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.Boolean)
+  name: PromptMultipleSelection(string, string[], bool)
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.Boolean)
+  name.vb: PromptMultipleSelection(String, String(), Boolean)
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(string, string[], bool)
+  fullName.vb: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(String, String(), Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string[], bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String(), Boolean)
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.Boolean)
+  name: PromptMultipleSelection(string, string[], string[], bool)
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.Boolean)
+  name.vb: PromptMultipleSelection(String, String(), String(), Boolean)
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], bool)
+  fullName.vb: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), Boolean)
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],System.Boolean)
+  name: PromptMultipleSelection(string, string[], string[], string[], bool)
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],System.Boolean)
+  name.vb: PromptMultipleSelection(String, String(), String(), String(), Boolean)
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], string[], bool)
+  fullName.vb: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), String(), Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], string[], bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), String(), Boolean)
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],System.String[],System.Boolean)
+  name: PromptMultipleSelection(string, string[], string[], string[], string[], bool)
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___System_String___System_Boolean_
+  commentId: M:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],System.String[],System.Boolean)
+  name.vb: PromptMultipleSelection(String, String(), String(), String(), String(), Boolean)
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], string[], string[], bool)
+  fullName.vb: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), String(), String(), Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], string[], string[], bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), String(), String(), Boolean)
+- uid: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection*
+  name: PromptMultipleSelection
+  href: api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html#Terminaux_Reader_Inputs_Styles_SelectionMultipleStyle_PromptMultipleSelection_
+  commentId: Overload:Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection
+  isSpec: "True"
+  fullName: Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.PromptMultipleSelection
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection
 - uid: Terminaux.Reader.Inputs.Styles.SelectionStyle
   name: SelectionStyle
   href: api/Terminaux.Reader.Inputs.Styles.SelectionStyle.html
