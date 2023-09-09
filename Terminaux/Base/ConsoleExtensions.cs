@@ -51,7 +51,14 @@ namespace Terminaux.Base
         /// <summary>
         /// Clears the line to the right
         /// </summary>
-        public static void ClearLineToRight() => Console.Write(Convert.ToString(VtSequenceBasicChars.EscapeChar) + "[0K");
+        public static string GetClearLineToRightSequence() =>
+            VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiEraseInLine, 0);
+
+        /// <summary>
+        /// Clears the line to the right
+        /// </summary>
+        public static void ClearLineToRight() =>
+            Console.Write(GetClearLineToRightSequence());
 
         /// <summary>
         /// Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
