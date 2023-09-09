@@ -41,20 +41,20 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // In the case of one line wrap, get the list of sentences
             if (state.OneLineWrap)
             {
-                int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
+                int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
                 string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
-                ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
+                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
                 PositioningTools.GoBackOneLineWrapAware(toYank.Length, ref state);
             }
             else
             {
-                ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleTools.ActionWriteString(renderedText, state.settings);
+                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrappers.ActionWriteString(renderedText, state.settings);
                 PositioningTools.GoBack(toYank.Length, ref state);
             }
-            ConsoleTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

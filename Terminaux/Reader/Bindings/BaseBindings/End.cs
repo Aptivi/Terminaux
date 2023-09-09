@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using Terminaux.Base;
 using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
@@ -43,7 +44,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 PositioningTools.GoForwardOneLineWrapAware(times, ref state);
             else
                 PositioningTools.GoForward(times, ref state);
-            ConsoleTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

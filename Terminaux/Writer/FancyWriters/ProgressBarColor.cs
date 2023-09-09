@@ -81,7 +81,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    BoxFrameColor.WriteBoxFramePlain(Left, Top, Console.WindowWidth - FinalWidthOffset, 1,
+                    BoxFrameColor.WriteBoxFramePlain(Left, Top, ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset, 1,
                         ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
                         ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
                         ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
@@ -92,7 +92,7 @@ namespace Terminaux.Writer.FancyWriters
                 int times = Targeted ?
                     ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                     ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
-                TextWriterWhereColor.WriteWhere(new string(' ', Console.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
+                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
                 TextWriterWhereColor.WriteWhere(new string('*', times), Left + 1, Top + 1, true);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -277,7 +277,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    BoxFrameColor.WriteBoxFrame(Left, Top, Console.WindowWidth - FinalWidthOffset, 1,
+                    BoxFrameColor.WriteBoxFrame(Left, Top, ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset, 1,
                         ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
                         ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
                         ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
@@ -289,7 +289,7 @@ namespace Terminaux.Writer.FancyWriters
                 int times = Targeted ?
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
-                TextWriterWhereColor.WriteWhere(new string(' ', Console.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
+                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
                 ColorTools.SetConsoleColor(new Color(ProgressColor), true, true);
                 TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
@@ -440,7 +440,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    BoxFrameColor.WriteBoxFrame(Left, Top, Console.WindowWidth - FinalWidthOffset, 1,
+                    BoxFrameColor.WriteBoxFrame(Left, Top, ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset, 1,
                         ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
                         ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
                         ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
@@ -452,7 +452,7 @@ namespace Terminaux.Writer.FancyWriters
                 int times = Targeted ?
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
-                TextWriterWhereColor.WriteWhere(new string(' ', Console.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
+                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
                 ColorTools.SetConsoleColor(ProgressColor, true, true);
                 TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);

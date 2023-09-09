@@ -156,15 +156,15 @@ namespace Terminaux.Reader.Inputs.Styles
             // First alt answer index
             int altAnswersFirstIdx = Answers.Count;
             ConsoleKeyInfo Answer;
-            Console.CursorVisible = false;
-            Console.Clear();
+            ConsoleWrappers.ActionCursorVisible(false);
+            ConsoleWrappers.ActionClear();
 
             // Ask a question
             TextWriterColor.Write(Question, true, questionColor);
 
             // Make pages based on console window height
-            int listStartPosition = Console.CursorTop;
-            int listEndPosition = Console.WindowHeight - Console.CursorTop;
+            int listStartPosition = ConsoleWrappers.ActionCursorTop();
+            int listEndPosition = ConsoleWrappers.ActionWindowHeight() - ConsoleWrappers.ActionCursorTop();
             int answersPerPage = listEndPosition - 4;
             int pages = AllAnswers.Count / answersPerPage;
             if (AllAnswers.Count % answersPerPage == 0)
@@ -183,7 +183,7 @@ namespace Terminaux.Reader.Inputs.Styles
                 // If the refresh is required, refresh the entire screen.
                 if (refreshRequired)
                 {
-                    Console.Clear();
+                    ConsoleWrappers.ActionClear();
                     TextWriterColor.Write(Question, true, questionColor);
                 }
 
@@ -191,7 +191,7 @@ namespace Terminaux.Reader.Inputs.Styles
                 int renderedAnswers = 0;
                 for (int AnswerIndex = startIndex; AnswerIndex <= endIndex; AnswerIndex++)
                 {
-                    Console.SetCursorPosition(0, listStartPosition + renderedAnswers);
+                    ConsoleWrappers.ActionSetCursorPosition(0, listStartPosition + renderedAnswers);
                     bool AltAnswer = AnswerIndex >= altAnswersFirstIdx;
 
                     // Check to see if we're out of bounds
@@ -210,7 +210,7 @@ namespace Terminaux.Reader.Inputs.Styles
                         // Get the option
                         string AnswerOption = $" {AnswerInstance}) {answerIndicator} {AnswerTitle}";
                         int AnswerTitleLeft = AllAnswers.Max(x => $" {x.ChoiceName}) ".Length);
-                        int answerTitleMaxLeft = Console.WindowWidth;
+                        int answerTitleMaxLeft = ConsoleWrappers.ActionWindowWidth();
                         if (AnswerTitleLeft < answerTitleMaxLeft)
                         {
                             string renderedChoice = $" {AnswerInstance.ChoiceName}) ";
@@ -235,16 +235,16 @@ namespace Terminaux.Reader.Inputs.Styles
 
                 // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
                 // we're not switching pages yet.
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), Console.WindowWidth - 2, listStartPosition - 1, listStartPosition, 4, false);
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrappers.ActionWindowWidth() - 2, listStartPosition - 1, listStartPosition, 4, false);
 
                 // Write description area
-                int descSepArea = Console.WindowHeight - 3;
-                int descArea = Console.WindowHeight - 2;
+                int descSepArea = ConsoleWrappers.ActionWindowHeight() - 3;
+                int descArea = ConsoleWrappers.ActionWindowHeight() - 2;
                 var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
-                string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate((Console.WindowWidth * 2) - 3) : "";
-                TextWriterWhereColor.WriteWhere(new string('=', Console.WindowWidth), 0, descSepArea, separatorColor);
-                TextWriterWhereColor.WriteWhere(new string(' ', Console.WindowWidth), 0, descArea);
-                TextWriterWhereColor.WriteWhere(new string(' ', Console.WindowWidth), 0, descArea + 1);
+                string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate((ConsoleWrappers.ActionWindowWidth() * 2) - 3) : "";
+                TextWriterWhereColor.WriteWhere(new string('=', ConsoleWrappers.ActionWindowWidth()), 0, descSepArea, separatorColor);
+                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrappers.ActionWindowWidth()), 0, descArea);
+                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrappers.ActionWindowWidth()), 0, descArea + 1);
                 TextWriterWhereColor.WriteWhere(descFinal, 0, descArea, textColor);
 
                 // Write keybindings and page and answer number
@@ -254,7 +254,7 @@ namespace Terminaux.Reader.Inputs.Styles
                     $"[SPACE: (un)check]==[ENTER: submit]==[ESC: exit]==[TAB: info]";
                 string numberRender = $"[{currentPage + 1}/{pages + 1}]==[{HighlightedAnswer}/{AllAnswers.Count}]";
                 int bindingsLeft = 2;
-                int numbersLeft = Console.WindowWidth - numberRender.Length - bindingsLeft;
+                int numbersLeft = ConsoleWrappers.ActionWindowWidth() - numberRender.Length - bindingsLeft;
                 TextWriterWhereColor.WriteWhere(bindingsRender, bindingsLeft, descSepArea, separatorColor);
                 TextWriterWhereColor.WriteWhere(numberRender, numbersLeft, descSepArea, separatorColor);
 

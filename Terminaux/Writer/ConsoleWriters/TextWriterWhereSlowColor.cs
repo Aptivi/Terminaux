@@ -79,14 +79,14 @@ namespace Terminaux.Writer.ConsoleWriters
                         msg = ConsoleExtensions.FormatString(msg, vars);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    int OldLeft = Console.CursorLeft;
-                    int OldTop = Console.CursorTop;
-                    int width = Console.WindowWidth - RightMargin;
+                    int OldLeft = ConsoleWrappers.ActionCursorLeft();
+                    int OldTop = ConsoleWrappers.ActionCursorTop();
+                    int width = ConsoleWrappers.ActionWindowWidth() - RightMargin;
                     var Paragraphs = msg.SplitNewLines();
                     if (RightMargin > 0)
                         Paragraphs = ConsoleExtensions.GetWrappedSentences(msg, width);
                     var buffered = new StringBuilder();
-                    Console.SetCursorPosition(Left, Top);
+                    ConsoleWrappers.ActionSetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
                     {
                         // Get the paragraph
@@ -133,7 +133,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         }
                     }
                     if (Return)
-                        Console.SetCursorPosition(OldLeft, OldTop);
+                        ConsoleWrappers.ActionSetCursorPosition(OldLeft, OldTop);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {

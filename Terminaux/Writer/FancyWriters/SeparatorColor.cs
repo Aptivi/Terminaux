@@ -67,19 +67,19 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Render the text accordingly
-                Text = canPosition ? Text.Truncate(Console.WindowWidth - 6) : Text;
+                Text = canPosition ? Text.Truncate(ConsoleWrappers.ActionWindowWidth() - 6) : Text;
                 TextWriterColor.Write(Text, false, new Color(ConsoleColors.Gray));
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes = 0;
             if (canPosition)
-                RepeatTimes = Console.WindowWidth - (Text + " ").Length - 1;
+                RepeatTimes = ConsoleWrappers.ActionWindowWidth() - (Text + " ").Length - 1;
 
             // Write the closing minus sign.
             TextWriterColor.Write(new string('-', RepeatTimes), true, new Color(ConsoleColors.Gray));
-            if (Console.CursorTop != Console.BufferHeight - 1)
-                Console.CursorTop--;
+            if (ConsoleWrappers.ActionCursorTop() != ConsoleWrappers.ActionBufferHeight() - 1)
+                ConsoleWrappers.ActionSetCursorTop(ConsoleWrappers.ActionCursorTop() - 1);
         }
 
         /// <summary>
@@ -135,19 +135,19 @@ namespace Terminaux.Writer.FancyWriters
                     Text += " ";
 
                 // Render the text accordingly
-                Text = canPosition ? Text.Truncate(Console.WindowWidth - 6) : Text;
+                Text = canPosition ? Text.Truncate(ConsoleWrappers.ActionWindowWidth() - 6) : Text;
                 TextWriterColor.Write(Text, false, ForegroundColor, BackgroundColor);
             }
 
             // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
             int RepeatTimes = 0;
             if (canPosition)
-                RepeatTimes = Console.WindowWidth - (Text + " ").Length + 1;
+                RepeatTimes = ConsoleWrappers.ActionWindowWidth() - (Text + " ").Length + 1;
 
             // Write the closing minus sign.
             TextWriterColor.Write(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
-            if (Console.CursorTop != Console.BufferHeight - 1)
-                Console.CursorTop--;
+            if (ConsoleWrappers.ActionCursorTop() != ConsoleWrappers.ActionBufferHeight() - 1)
+                ConsoleWrappers.ActionSetCursorTop(ConsoleWrappers.ActionCursorTop() - 1);
         }
 
     }

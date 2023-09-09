@@ -41,7 +41,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             Text = ConsoleExtensions.FormatString(Text, Vars);
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int consoleX = Console.WindowWidth / 2 - figWidth;
+            int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
             FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, new Color(ConsoleColors.Gray), Vars);
         }
 
@@ -92,7 +92,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             Text = ConsoleExtensions.FormatString(Text, Vars);
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int consoleX = Console.WindowWidth / 2 - figWidth;
+            int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
             FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
         }
 
@@ -107,8 +107,8 @@ namespace Terminaux.Writer.FancyWriters
             Text = ConsoleExtensions.FormatString(Text, Vars);
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
-            int consoleX = Console.WindowWidth / 2 - figWidth;
-            int consoleY = Console.WindowHeight / 2 - figHeight;
+            int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
+            int consoleY = ConsoleWrappers.ActionWindowHeight() / 2 - figHeight;
             FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, new Color(ConsoleColors.Gray), Vars);
         }
 
@@ -156,8 +156,8 @@ namespace Terminaux.Writer.FancyWriters
             Text = ConsoleExtensions.FormatString(Text, Vars);
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
-            int consoleX = Console.WindowWidth / 2 - figWidth;
-            int consoleY = Console.WindowHeight / 2 - figHeight;
+            int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
+            int consoleY = ConsoleWrappers.ActionWindowHeight() / 2 - figHeight;
             FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
         }
 

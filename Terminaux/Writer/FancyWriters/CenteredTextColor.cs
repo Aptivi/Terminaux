@@ -38,14 +38,14 @@ namespace Terminaux.Writer.FancyWriters
         public static void WriteCentered(int top, string Text, params object[] Vars)
         {
             Text = ConsoleExtensions.FormatString(Text, Vars);
-            string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, Console.WindowWidth);
-            Console.CursorTop = top;
+            string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
+            ConsoleWrappers.ActionSetCursorTop(top);
             for (int i = 0; i < sentences.Length; i++)
             {
                 string sentence = sentences[i];
-                int consoleInfoX = Console.WindowWidth / 2 - sentence.Length / 2;
+                int consoleInfoX = ConsoleWrappers.ActionWindowWidth() / 2 - sentence.Length / 2;
                 consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, Console.CursorTop, Vars);
+                TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrappers.ActionCursorTop(), Vars);
             }
         }
 
@@ -91,14 +91,14 @@ namespace Terminaux.Writer.FancyWriters
         public static void WriteCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             Text = ConsoleExtensions.FormatString(Text, Vars);
-            string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, Console.WindowWidth);
-            Console.CursorTop = top;
+            string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
+            ConsoleWrappers.ActionSetCursorTop(top);
             for (int i = 0; i < sentences.Length; i++)
             {
                 string sentence = sentences[i];
-                int consoleInfoX = Console.WindowWidth / 2 - sentence.Length / 2;
+                int consoleInfoX = ConsoleWrappers.ActionWindowWidth() / 2 - sentence.Length / 2;
                 consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, Console.CursorTop, ForegroundColor, BackgroundColor, Vars);
+                TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrappers.ActionCursorTop(), ForegroundColor, BackgroundColor, Vars);
             }
         }
 

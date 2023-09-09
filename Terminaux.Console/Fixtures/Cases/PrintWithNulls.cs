@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.Writer.ConsoleWriters;
@@ -29,7 +30,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public void RunFixture()
         {
             TextWriterColor.Write("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, new Color(ConsoleColors.Green));
-            TextWriterColor.Write(" [{0}, {1}] ", true, new Color(ConsoleColors.Gray), vars: new object[] { Console.CursorLeft, Console.CursorTop });
+            TextWriterColor.Write(" [{0}, {1}] ", true, new Color(ConsoleColors.Gray), vars: new object[] { ConsoleWrappers.ActionCursorLeft(), ConsoleWrappers.ActionCursorTop() });
         }
     }
 }

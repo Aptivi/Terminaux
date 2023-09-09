@@ -83,7 +83,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     }
 
                     // Return to the processed position
-                    Console.SetCursorPosition(FilteredLeft, FilteredTop);
+                    ConsoleWrappers.ActionSetCursorPosition(FilteredLeft, FilteredTop);
                 }
                 catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
                 {

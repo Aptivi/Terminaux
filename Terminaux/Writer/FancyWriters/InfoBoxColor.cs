@@ -26,7 +26,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Reader.Inputs;
 using System.Diagnostics;
 using Terminaux.Reader;
-using Terminaux.Reader.Tools;
 using Terminaux.Colors;
 
 namespace Terminaux.Writer.FancyWriters
@@ -79,7 +78,7 @@ namespace Terminaux.Writer.FancyWriters
                                             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, bool waitForInput, params object[] vars)
         {
-            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
+            bool initialCursorVisible = ConsoleWrappers.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -88,7 +87,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = new();
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, Console.WindowWidth - 4);
+                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrappers.ActionWindowWidth() - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -104,18 +103,18 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Fill the info box with text inside it
                 int maxWidth = splitFinalLines.Max((str) => str.Length);
-                if (maxWidth >= Console.WindowWidth)
-                    maxWidth = Console.WindowWidth - 4;
+                if (maxWidth >= ConsoleWrappers.ActionWindowWidth())
+                    maxWidth = ConsoleWrappers.ActionWindowWidth() - 4;
                 int maxHeight = splitFinalLines.Count;
-                if (maxHeight >= Console.WindowHeight)
-                    maxHeight = Console.WindowHeight - 4;
-                int maxRenderWidth = Console.WindowWidth - 6;
-                int borderX = Console.WindowWidth / 2 - maxWidth / 2 - 1;
-                int borderY = Console.WindowHeight / 2 - maxHeight / 2 - 1;
+                if (maxHeight >= ConsoleWrappers.ActionWindowHeight())
+                    maxHeight = ConsoleWrappers.ActionWindowHeight() - 4;
+                int maxRenderWidth = ConsoleWrappers.ActionWindowWidth() - 6;
+                int borderX = ConsoleWrappers.ActionWindowWidth() / 2 - maxWidth / 2 - 1;
+                int borderY = ConsoleWrappers.ActionWindowHeight() / 2 - maxHeight / 2 - 1;
                 BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
 
                 // Render text inside it
-                Console.CursorVisible = false;
+                ConsoleWrappers.ActionCursorVisible(false);
                 bool appendMinusOne = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
@@ -144,7 +143,7 @@ namespace Terminaux.Writer.FancyWriters
             }
             finally
             {
-                Console.CursorVisible = initialCursorVisible;
+                ConsoleWrappers.ActionCursorVisible(initialCursorVisible);
             }
         }
 
@@ -177,7 +176,7 @@ namespace Terminaux.Writer.FancyWriters
                                                     char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                                     char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
-            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
+            bool initialCursorVisible = ConsoleWrappers.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -186,7 +185,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = new();
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, Console.WindowWidth - 4);
+                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrappers.ActionWindowWidth() - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -205,19 +204,19 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Fill the info box with text inside it
                 int maxWidth = splitFinalLines.Max((str) => str.Length);
-                if (maxWidth >= Console.WindowWidth)
-                    maxWidth = Console.WindowWidth - 4;
+                if (maxWidth >= ConsoleWrappers.ActionWindowWidth())
+                    maxWidth = ConsoleWrappers.ActionWindowWidth() - 4;
                 int maxHeight = splitFinalLines.Count;
-                if (maxHeight >= Console.WindowHeight)
-                    maxHeight = Console.WindowHeight - 4;
-                int maxRenderWidth = Console.WindowWidth - 6;
-                int borderX = Console.WindowWidth / 2 - maxWidth / 2 - 1;
-                int borderY = Console.WindowHeight / 2 - maxHeight / 2 - 1;
+                if (maxHeight >= ConsoleWrappers.ActionWindowHeight())
+                    maxHeight = ConsoleWrappers.ActionWindowHeight() - 4;
+                int maxRenderWidth = ConsoleWrappers.ActionWindowWidth() - 6;
+                int borderX = ConsoleWrappers.ActionWindowWidth() / 2 - maxWidth / 2 - 1;
+                int borderY = ConsoleWrappers.ActionWindowHeight() / 2 - maxHeight / 2 - 1;
                 BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
 
                 // Render text inside it
                 bool appendMinusOne = false;
-                Console.CursorVisible = false;
+                ConsoleWrappers.ActionCursorVisible(false);
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -246,7 +245,7 @@ namespace Terminaux.Writer.FancyWriters
             }
             finally
             {
-                Console.CursorVisible = initialCursorVisible;
+                ConsoleWrappers.ActionCursorVisible(initialCursorVisible);
             }
             return "";
         }
@@ -569,7 +568,7 @@ namespace Terminaux.Writer.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, Color BackgroundColor, params object[] vars)
         {
-            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
+            bool initialCursorVisible = ConsoleWrappers.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -578,7 +577,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = new();
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, Console.WindowWidth - 4);
+                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrappers.ActionWindowWidth() - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -594,19 +593,19 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Fill the info box with text inside it
                 int maxWidth = splitFinalLines.Max((str) => str.Length);
-                if (maxWidth >= Console.WindowWidth)
-                    maxWidth = Console.WindowWidth - 4;
+                if (maxWidth >= ConsoleWrappers.ActionWindowWidth())
+                    maxWidth = ConsoleWrappers.ActionWindowWidth() - 4;
                 int maxHeight = splitFinalLines.Count;
-                if (maxHeight >= Console.WindowHeight)
-                    maxHeight = Console.WindowHeight - 4;
-                int maxRenderWidth = Console.WindowWidth - 6;
-                int borderX = Console.WindowWidth / 2 - maxWidth / 2 - 1;
-                int borderY = Console.WindowHeight / 2 - maxHeight / 2 - 1;
+                if (maxHeight >= ConsoleWrappers.ActionWindowHeight())
+                    maxHeight = ConsoleWrappers.ActionWindowHeight() - 4;
+                int maxRenderWidth = ConsoleWrappers.ActionWindowWidth() - 6;
+                int borderX = ConsoleWrappers.ActionWindowWidth() / 2 - maxWidth / 2 - 1;
+                int borderY = ConsoleWrappers.ActionWindowHeight() / 2 - maxHeight / 2 - 1;
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
                 bool appendMinusOne = false;
-                Console.CursorVisible = false;
+                ConsoleWrappers.ActionCursorVisible(false);
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -634,7 +633,7 @@ namespace Terminaux.Writer.FancyWriters
             }
             finally
             {
-                Console.CursorVisible = initialCursorVisible;
+                ConsoleWrappers.ActionCursorVisible(initialCursorVisible);
             }
         }
 
@@ -680,7 +679,7 @@ namespace Terminaux.Writer.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
         {
-            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
+            bool initialCursorVisible = ConsoleWrappers.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -689,7 +688,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = new();
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, Console.WindowWidth - 4);
+                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrappers.ActionWindowWidth() - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -705,19 +704,19 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Fill the info box with text inside it
                 int maxWidth = splitFinalLines.Max((str) => str.Length);
-                if (maxWidth >= Console.WindowWidth)
-                    maxWidth = Console.WindowWidth - 4;
+                if (maxWidth >= ConsoleWrappers.ActionWindowWidth())
+                    maxWidth = ConsoleWrappers.ActionWindowWidth() - 4;
                 int maxHeight = splitFinalLines.Count;
-                if (maxHeight >= Console.WindowHeight)
-                    maxHeight = Console.WindowHeight - 4;
-                int maxRenderWidth = Console.WindowWidth - 6;
-                int borderX = Console.WindowWidth / 2 - maxWidth / 2 - 1;
-                int borderY = Console.WindowHeight / 2 - maxHeight / 2 - 1;
+                if (maxHeight >= ConsoleWrappers.ActionWindowHeight())
+                    maxHeight = ConsoleWrappers.ActionWindowHeight() - 4;
+                int maxRenderWidth = ConsoleWrappers.ActionWindowWidth() - 6;
+                int borderX = ConsoleWrappers.ActionWindowWidth() / 2 - maxWidth / 2 - 1;
+                int borderY = ConsoleWrappers.ActionWindowHeight() / 2 - maxHeight / 2 - 1;
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
                 bool appendMinusOne = false;
-                Console.CursorVisible = false;
+                ConsoleWrappers.ActionCursorVisible(false);
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -745,7 +744,7 @@ namespace Terminaux.Writer.FancyWriters
             }
             finally
             {
-                Console.CursorVisible = initialCursorVisible;
+                ConsoleWrappers.ActionCursorVisible(initialCursorVisible);
             }
         }
 
@@ -878,7 +877,7 @@ namespace Terminaux.Writer.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, Color BackgroundColor, params object[] vars)
         {
-            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
+            bool initialCursorVisible = ConsoleWrappers.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -887,7 +886,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = new();
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, Console.WindowWidth - 4);
+                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrappers.ActionWindowWidth() - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -906,18 +905,18 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Fill the info box with text inside it
                 int maxWidth = splitFinalLines.Max((str) => str.Length);
-                if (maxWidth >= Console.WindowWidth)
-                    maxWidth = Console.WindowWidth - 4;
+                if (maxWidth >= ConsoleWrappers.ActionWindowWidth())
+                    maxWidth = ConsoleWrappers.ActionWindowWidth() - 4;
                 int maxHeight = splitFinalLines.Count;
-                if (maxHeight >= Console.WindowHeight)
-                    maxHeight = Console.WindowHeight - 4;
-                int maxRenderWidth = Console.WindowWidth - 6;
-                int borderX = Console.WindowWidth / 2 - maxWidth / 2;
-                int borderY = Console.WindowHeight / 2 - maxHeight / 2;
+                if (maxHeight >= ConsoleWrappers.ActionWindowHeight())
+                    maxHeight = ConsoleWrappers.ActionWindowHeight() - 4;
+                int maxRenderWidth = ConsoleWrappers.ActionWindowWidth() - 6;
+                int borderX = ConsoleWrappers.ActionWindowWidth() / 2 - maxWidth / 2;
+                int borderY = ConsoleWrappers.ActionWindowHeight() / 2 - maxHeight / 2;
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
-                Console.CursorVisible = false;
+                ConsoleWrappers.ActionCursorVisible(false);
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -941,7 +940,7 @@ namespace Terminaux.Writer.FancyWriters
             }
             finally
             {
-                Console.CursorVisible = initialCursorVisible;
+                ConsoleWrappers.ActionCursorVisible(initialCursorVisible);
             }
             return "";
         }
@@ -986,7 +985,7 @@ namespace Terminaux.Writer.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
         {
-            bool initialCursorVisible = ConsoleTools.ActionGetCursorVisible();
+            bool initialCursorVisible = ConsoleWrappers.ActionGetCursorVisible();
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -995,7 +994,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = new();
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, Console.WindowWidth - 4);
+                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrappers.ActionWindowWidth() - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -1014,18 +1013,18 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Fill the info box with text inside it
                 int maxWidth = splitFinalLines.Max((str) => str.Length);
-                if (maxWidth >= Console.WindowWidth)
-                    maxWidth = Console.WindowWidth - 4;
+                if (maxWidth >= ConsoleWrappers.ActionWindowWidth())
+                    maxWidth = ConsoleWrappers.ActionWindowWidth() - 4;
                 int maxHeight = splitFinalLines.Count;
-                if (maxHeight >= Console.WindowHeight)
-                    maxHeight = Console.WindowHeight - 4;
-                int maxRenderWidth = Console.WindowWidth - 6;
-                int borderX = Console.WindowWidth / 2 - maxWidth / 2;
-                int borderY = Console.WindowHeight / 2 - maxHeight / 2;
+                if (maxHeight >= ConsoleWrappers.ActionWindowHeight())
+                    maxHeight = ConsoleWrappers.ActionWindowHeight() - 4;
+                int maxRenderWidth = ConsoleWrappers.ActionWindowWidth() - 6;
+                int borderX = ConsoleWrappers.ActionWindowWidth() / 2 - maxWidth / 2;
+                int borderY = ConsoleWrappers.ActionWindowHeight() / 2 - maxHeight / 2;
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
-                Console.CursorVisible = false;
+                ConsoleWrappers.ActionCursorVisible(false);
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -1049,7 +1048,7 @@ namespace Terminaux.Writer.FancyWriters
             }
             finally
             {
-                Console.CursorVisible = initialCursorVisible;
+                ConsoleWrappers.ActionCursorVisible(initialCursorVisible);
             }
             return "";
         }

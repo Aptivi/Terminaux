@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using Terminaux.Base;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.Tools;
 
@@ -116,25 +117,25 @@ namespace Terminaux.Reader
                 };
 
                 // Print the input
-                ConsoleTools.ActionSetCursorLeft(ConsoleTools.ActionCursorLeft() + settings.LeftMargin);
-                ConsoleTools.ActionWriteString(inputPrompt, settings);
+                ConsoleWrappers.ActionSetCursorLeft(ConsoleWrappers.ActionCursorLeft() + settings.LeftMargin);
+                ConsoleWrappers.ActionWriteString(inputPrompt, settings);
 
                 // Save current state of input
-                readState.inputPromptLeft = ConsoleTools.ActionCursorLeft();
-                readState.inputPromptTop = ConsoleTools.ActionCursorTop();
+                readState.inputPromptLeft = ConsoleWrappers.ActionCursorLeft();
+                readState.inputPromptTop = ConsoleWrappers.ActionCursorTop();
                 readState.inputPromptText = inputPrompt;
                 readState.passwordMode = password;
                 readState.oneLineWrap = oneLineWrap;
-                ConsoleTools.ActionTreatCtrlCAsInput(settings.TreatCtrlCAsInput);
+                ConsoleWrappers.ActionTreatCtrlCAsInput(settings.TreatCtrlCAsInput);
 
                 // Get input
-                (int, int) cachedPos = (ConsoleTools.ActionCursorLeft(), ConsoleTools.ActionCursorTop());
+                (int, int) cachedPos = (ConsoleWrappers.ActionCursorLeft(), ConsoleWrappers.ActionCursorTop());
                 while (!BindingsReader.IsTerminate(struckKey))
                 {
                     // Get a key
                     TermReaderTools.isWaitingForInput = true;
                     struckKey = TermReaderTools.GetInput(interruptible);
-                    ConsoleTools.ActionCursorVisible(false);
+                    ConsoleWrappers.ActionCursorVisible(false);
                     TermReaderTools.isWaitingForInput = false;
 
                     // Install necessary values
@@ -147,16 +148,16 @@ namespace Terminaux.Reader
 
                     // Cursor is visible, but fix cursor on Linux
                     cachedPos = (readState.currentCursorPosLeft, readState.currentCursorPosTop);
-                    ConsoleTools.ActionCursorVisible(true);
+                    ConsoleWrappers.ActionCursorVisible(true);
                 }
 
                 // Seek to the end of the text and write a new line
                 if (!readState.OneLineWrap)
                 {
                     PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
-                    ConsoleTools.ActionSetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
+                    ConsoleWrappers.ActionSetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
                 }
-                ConsoleTools.ActionWriteLine();
+                ConsoleWrappers.ActionWriteLine();
 
                 // Return the input after adding it to history
                 string input = readState.CurrentText.Length == 0 ?

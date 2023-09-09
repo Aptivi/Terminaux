@@ -20,6 +20,7 @@ using Terminaux.Colors.Accessibility;
 using System;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Base;
 
 namespace Terminaux.Colors
 {
@@ -138,7 +139,7 @@ namespace Terminaux.Colors
             try
             {
                 SetConsoleColor(ColorSequence, true, Force);
-                Console.Clear();
+                ConsoleWrappers.ActionClear();
             }
             catch (Exception ex)
             {

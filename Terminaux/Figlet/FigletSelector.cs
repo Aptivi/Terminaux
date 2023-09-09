@@ -16,9 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Figgle;
 using System;
 using System.Linq;
+using Terminaux.Base;
 using Terminaux.Reader.Inputs;
 using Terminaux.Writer.FancyWriters;
 
@@ -46,8 +46,8 @@ namespace Terminaux.Figlet
             int selectedFont = 0;
             while (!bail)
             {
-                Console.CursorVisible = false;
-                Console.Clear();
+                ConsoleWrappers.ActionCursorVisible(false);
+                ConsoleWrappers.ActionClear();
 
                 // Write the text using the selected figlet font
                 fontName = fonts[selectedFont];
@@ -55,8 +55,8 @@ namespace Terminaux.Figlet
                 CenteredFigletTextColor.WriteCenteredFiglet(figletFont, text);
 
                 // Write the selected font name and the keybindings
-                CenteredTextColor.WriteCentered(Console.WindowHeight - 4, fontName);
-                CenteredTextColor.WriteCentered(Console.WindowHeight - 2, "[ENTER] Select | [<-|->] Select");
+                CenteredTextColor.WriteCentered(ConsoleWrappers.ActionWindowHeight() - 4, fontName);
+                CenteredTextColor.WriteCentered(ConsoleWrappers.ActionWindowHeight() - 2, "[ENTER] Select | [<-|->] Select");
 
                 // Wait for input
                 var key = Input.DetectKeypress().Key;
@@ -78,7 +78,7 @@ namespace Terminaux.Figlet
                 }
             }
 
-            Console.Clear();
+            ConsoleWrappers.ActionClear();
             return fontName;
         }
     }

@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Terminaux.Base;
 using Terminaux.Reader.Bindings.BaseBindings;
 
 namespace Terminaux.Reader.Tools
@@ -39,11 +40,11 @@ namespace Terminaux.Reader.Tools
                     continue;
 
                 state.currentCursorPosLeft++;
-                if (state.CurrentCursorPosLeft >= ConsoleTools.ActionWindowWidth() - state.settings.RightMargin)
+                if (state.CurrentCursorPosLeft >= ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin)
                 {
                     // Reached to the end! Wrap down!
                     state.currentCursorPosLeft = state.settings.LeftMargin;
-                    if (state.currentCursorPosTop < ConsoleTools.ActionBufferHeight())
+                    if (state.currentCursorPosTop < ConsoleWrappers.ActionBufferHeight())
                         state.currentCursorPosTop++;
                 }
             }
@@ -69,7 +70,7 @@ namespace Terminaux.Reader.Tools
                 if (state.CurrentCursorPosLeft < state.settings.LeftMargin)
                 {
                     // Reached to the beginning! Wrap up!
-                    state.currentCursorPosLeft = ConsoleTools.ActionWindowWidth() - 1 - state.settings.RightMargin;
+                    state.currentCursorPosLeft = ConsoleWrappers.ActionWindowWidth() - 1 - state.settings.RightMargin;
                     if (state.currentCursorPosTop > 0)
                         state.currentCursorPosTop--;
                 }
@@ -102,7 +103,7 @@ namespace Terminaux.Reader.Tools
                     continue;
 
                 state.currentCursorPosLeft++;
-                if (state.CurrentCursorPosLeft >= ConsoleTools.ActionWindowWidth() - state.settings.RightMargin)
+                if (state.CurrentCursorPosLeft >= ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin)
                 {
                     // Reached to the end! Go back to the prompt position.
                     state.currentCursorPosLeft = state.InputPromptLeft + 1;
@@ -131,7 +132,7 @@ namespace Terminaux.Reader.Tools
                 if (state.CurrentCursorPosLeft == state.inputPromptLeft && state.CurrentTextPos != 0)
                 {
                     // Reached to the beginning! Go back to the furthest position, plus the extra character being printed.
-                    state.currentCursorPosLeft = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - 1;
+                    state.currentCursorPosLeft = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - 1;
                     new Refresh().DoAction(state);
                 }
             }
@@ -156,10 +157,10 @@ namespace Terminaux.Reader.Tools
             int heightOffset = 1;
             for (int i = promptLeft; i < state.CurrentText.Length + promptLeft; i++)
             {
-                if (counted >= ConsoleTools.ActionWindowWidth() - state.settings.RightMargin)
+                if (counted >= ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin)
                 {
                     // Reached to the end! Wrap down!
-                    if (promptTop >= ConsoleTools.ActionBufferHeight() - heightOffset)
+                    if (promptTop >= ConsoleWrappers.ActionBufferHeight() - heightOffset)
                     {
                         heightOffset++;
                         promptTop--;

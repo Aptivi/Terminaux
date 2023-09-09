@@ -18,7 +18,7 @@
 
 using System;
 using System.Threading;
-using Terminaux.Reader.Tools;
+using Terminaux.Base;
 
 namespace Terminaux.Reader
 {
@@ -43,19 +43,19 @@ namespace Terminaux.Reader
         {
             if (interruptible)
             {
-                SpinWait.SpinUntil(() => ConsoleTools.ActionKeyAvailable() || interrupting);
+                SpinWait.SpinUntil(() => ConsoleWrappers.ActionKeyAvailable() || interrupting);
                 if (interrupting)
                 {
                     interrupting = false;
-                    if (ConsoleTools.ActionKeyAvailable())
-                        ConsoleTools.ActionReadKey(true);
+                    if (ConsoleWrappers.ActionKeyAvailable())
+                        ConsoleWrappers.ActionReadKey(true);
                     return new ConsoleKeyInfo('\r', ConsoleKey.Enter, false, false, false);
                 }
                 else
-                    return ConsoleTools.ActionReadKey(true);
+                    return ConsoleWrappers.ActionReadKey(true);
             }
             else
-                return ConsoleTools.ActionReadKey(true);
+                return ConsoleWrappers.ActionReadKey(true);
         }
     }
 }

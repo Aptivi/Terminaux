@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
+using Terminaux.Base;
 using Terminaux.Colors.Wheel;
 using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.Writer.ConsoleWriters;
@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public void RunFixture()
         {
             var color = ColorWheel.InputForColor();
-            Console.Clear();
+            ConsoleWrappers.ActionClear();
             TextWriterColor.Write("Color wheel returned: {0} [{1}]", color.PlainSequence, color.PlainSequenceTrueColor);
         }
     }

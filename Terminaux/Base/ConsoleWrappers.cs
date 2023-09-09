@@ -19,12 +19,12 @@
 using System;
 using Terminaux.Reader;
 
-namespace Terminaux.Reader.Tools
+namespace Terminaux.Base
 {
     /// <summary>
-    /// Wrapper for the <see cref="Console"/> class to ensure safety against dumb consoles. Taken from Kernel Simulator 0.1.0.
+    /// Wrapper for the <see cref="Console"/> class to ensure safety against dumb consoles and Windows-only features.
     /// </summary>
-    public static class ConsoleTools
+    public static class ConsoleWrappers
     {
         // Actions to modify the wrapper
         internal static Func<bool> actionIsDumb = () => IsDumb;
@@ -41,6 +41,7 @@ namespace Terminaux.Reader.Tools
         internal static Action<int> actionSetCursorLeft = SetCursorLeft;
         internal static Action<int> actionSetCursorTop = SetCursorTop;
         internal static Action actionBeep = Beep;
+        internal static Action actionClear = Clear;
         internal static Func<bool, ConsoleKeyInfo> actionReadKey = ReadKey;
         internal static Action<char, TermReaderSettings> actionWrite = Write;
         internal static Action<string, TermReaderSettings> actionWrite1 = Write;
@@ -167,6 +168,14 @@ namespace Terminaux.Reader.Tools
         {
             get => actionBeep;
             set => actionBeep = value ?? Beep;
+        }
+        /// <summary>
+        /// Clears the console
+        /// </summary>
+        public static Action ActionClear
+        {
+            get => actionClear;
+            set => actionClear = value ?? Clear;
         }
         /// <summary>
         /// Reads a key<br></br><br></br>
@@ -376,6 +385,9 @@ namespace Terminaux.Reader.Tools
 
         private static void Beep() =>
             Console.Beep();
+
+        private static void Clear() =>
+            Console.Clear();
 
         private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
             Console.ReadKey(intercept);

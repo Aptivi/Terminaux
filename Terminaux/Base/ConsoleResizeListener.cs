@@ -58,11 +58,11 @@ namespace Terminaux.Base
                     // We need to call the WindowHeight and WindowWidth properties on the Terminal console driver, because
                     // this polling works for all the terminals. Other drivers that don't use the terminal may not even
                     // implement these two properties.
-                    if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                    if (CurrentWindowHeight != ConsoleWrappers.ActionWindowHeight() | CurrentWindowWidth != ConsoleWrappers.ActionWindowWidth())
                     {
                         ResizeDetected = true;
-                        CurrentWindowWidth = Console.WindowWidth;
-                        CurrentWindowHeight = Console.WindowHeight;
+                        CurrentWindowWidth = ConsoleWrappers.ActionWindowWidth();
+                        CurrentWindowHeight = ConsoleWrappers.ActionWindowHeight();
                     }
                 }
             }
@@ -75,8 +75,8 @@ namespace Terminaux.Base
 
         internal static void StartResizeListener()
         {
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
+            CurrentWindowWidth = ConsoleWrappers.ActionWindowWidth();
+            CurrentWindowHeight = ConsoleWrappers.ActionWindowHeight();
             if (!ResizeListenerThread.IsAlive)
                 ResizeListenerThread.Start();
         }

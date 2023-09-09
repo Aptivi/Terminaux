@@ -49,7 +49,7 @@ namespace Terminaux.Base
                     if (!_dumbSet)
                     {
                         _dumbSet = true;
-                        int _ = Console.CursorLeft;
+                        int _ = ConsoleWrappers.ActionCursorLeft();
 
                         // If it doesn't get here without throwing exceptions, assume console is dumb. Now, check to see if terminal type is dumb
                         if (TerminalType != "dumb" && TerminalType != "unknown")
@@ -189,9 +189,9 @@ namespace Terminaux.Base
             }
 
             // Check for the minimum console window requirements (80x24)
-            while (Console.WindowWidth < MinimumWidth | Console.WindowHeight < MinimumHeight)
+            while (ConsoleWrappers.ActionWindowWidth() < MinimumWidth | ConsoleWrappers.ActionWindowHeight() < MinimumHeight)
             {
-                Console.WriteLine("Your console is too small to run properly: {0}x{1} | buff: {2}x{3}", Console.WindowWidth, Console.WindowHeight, Console.BufferWidth, Console.BufferHeight);
+                Console.WriteLine("Your console is too small to run properly: {0}x{1} | buff: {2}x{3}", ConsoleWrappers.ActionWindowWidth(), ConsoleWrappers.ActionWindowHeight(), Console.BufferWidth, ConsoleWrappers.ActionBufferHeight());
                 Console.WriteLine("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
                 Input.DetectKeypress();
             }

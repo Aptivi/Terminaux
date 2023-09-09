@@ -19,7 +19,6 @@
 using System;
 using System.Linq;
 using Terminaux.Base;
-using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
@@ -57,33 +56,33 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 // In the case of one line wrap, get the list of sentences
                 if (state.OneLineWrap)
                 {
-                    int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
+                    int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
                     string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                     renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
-                    ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
+                    ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                    ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
                 }
                 else
                 {
-                    ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleTools.ActionWriteString(renderedText + new string(' ', state.CurrentText.Length - state.CurrentTextPos), state.settings);
+                    ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                    ConsoleWrappers.ActionWriteString(renderedText + new string(' ', state.CurrentText.Length - state.CurrentTextPos), state.settings);
                 }
-                ConsoleTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+                ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
 
                 // Write the suggestion
                 state.CurrentText.Append(suggestion);
                 renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
                 if (state.OneLineWrap)
                 {
-                    int longestSentenceLength = ConsoleTools.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
+                    int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
                     string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                     renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
-                    ConsoleTools.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleTools.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
+                    ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                    ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
                 }
                 else
-                    ConsoleTools.ActionWriteString(suggestion + new string(' ', maxTimes), state.settings);
-                ConsoleTools.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+                    ConsoleWrappers.ActionWriteString(suggestion + new string(' ', maxTimes), state.settings);
+                ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
             }
         }
     }

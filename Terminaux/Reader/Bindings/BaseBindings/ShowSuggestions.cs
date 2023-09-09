@@ -19,7 +19,7 @@
 using System;
 using System.Linq;
 using System.Text;
-using Terminaux.Reader.Tools;
+using Terminaux.Base;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
@@ -41,7 +41,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             if (suggestions.Length > 1)
             {
                 // Write a new line
-                ConsoleTools.ActionWriteLine();
+                ConsoleWrappers.ActionWriteLine();
 
                 // Check to see if we can display 15 characters
                 int max = suggestions.Max((suggestion) => suggestion.Length);
@@ -50,7 +50,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 {
                     // Write each suggestion on their own line
                     foreach (string suggestion in suggestions)
-                        ConsoleTools.ActionWriteLineString(suggestion, state.Settings);
+                        ConsoleWrappers.ActionWriteLineString(suggestion, state.Settings);
                 }
                 else
                 {
@@ -69,7 +69,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                         // Check to see if we've reached the limit
                         if (line.Length >= maxLineLength)
                         {
-                            ConsoleTools.ActionWriteLineString(line.ToString(), state.Settings);
+                            ConsoleWrappers.ActionWriteLineString(line.ToString(), state.Settings);
                             line.Clear();
                         }
                     }
@@ -77,13 +77,13 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                     // Flush for the last time
                     if (line.Length > 0)
                     {
-                        ConsoleTools.ActionWriteLineString(line.ToString(), state.Settings);
+                        ConsoleWrappers.ActionWriteLineString(line.ToString(), state.Settings);
                         line.Clear();
                     }
 
                     // Re-draw
-                    state.inputPromptTop = ConsoleTools.ActionCursorTop();
-                    state.currentCursorPosTop = ConsoleTools.ActionCursorTop();
+                    state.inputPromptTop = ConsoleWrappers.ActionCursorTop();
+                    state.currentCursorPosTop = ConsoleWrappers.ActionCursorTop();
                     new Refresh().DoAction(state);
                 }
             }

@@ -71,15 +71,15 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
         {
-            int ColumnCapacity = (int)Math.Round(Console.WindowWidth / (double)Headers.Length);
+            int ColumnCapacity = (int)Math.Round(ConsoleWrappers.ActionWindowWidth() / (double)Headers.Length);
             var ColumnPositions = new List<int>();
             int RepeatTimes;
 
             // Populate the positions
             TextWriterColor.Write();
-            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= Console.WindowWidth : ColumnPosition >= Console.WindowWidth; ColumnPosition += ColumnCapacity)
+            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleWrappers.ActionWindowWidth() : ColumnPosition >= ConsoleWrappers.ActionWindowWidth(); ColumnPosition += ColumnCapacity)
             {
-                if (!(ColumnPosition >= Console.WindowWidth))
+                if (!(ColumnPosition >= ConsoleWrappers.ActionWindowWidth()))
                 {
                     ColumnPositions.Add(ColumnPosition);
                     if (ColumnPositions.Count == 1)
@@ -97,12 +97,12 @@ namespace Terminaux.Writer.FancyWriters
                 string Header = Headers[HeaderIndex];
                 int ColumnPosition = ColumnPositions[HeaderIndex];
                 Header ??= "";
-                TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, false, HeaderForegroundColor, BackgroundColor);
+                TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleWrappers.ActionCursorTop(), false, HeaderForegroundColor, BackgroundColor);
             }
             TextWriterColor.Write();
 
             // Write the closing minus sign.
-            RepeatTimes = Console.WindowWidth - Console.CursorLeft - Margin * 2;
+            RepeatTimes = ConsoleWrappers.ActionWindowWidth() - ConsoleWrappers.ActionCursorLeft() - Margin * 2;
             if (Margin > 0)
                 TextWriterColor.Write(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
             TextWriterColor.Write(new string('═', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
@@ -136,9 +136,9 @@ namespace Terminaux.Writer.FancyWriters
                     // Now, write the cell value
                     string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
                     if (ColoredCell)
-                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, Console.CursorTop, false, CellColor, CellBackgroundColor);
+                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleWrappers.ActionCursorTop(), false, CellColor, CellBackgroundColor);
                     else
-                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, Console.CursorTop, false, ValueForegroundColor, BackgroundColor);
+                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleWrappers.ActionCursorTop(), false, ValueForegroundColor, BackgroundColor);
                 }
                 TextWriterColor.Write();
 
@@ -146,7 +146,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (SeparateRows)
                 {
                     // Write the closing minus sign.
-                    RepeatTimes = Console.WindowWidth - Console.CursorLeft - Margin * 2;
+                    RepeatTimes = ConsoleWrappers.ActionWindowWidth() - ConsoleWrappers.ActionCursorLeft() - Margin * 2;
                     if (Margin > 0)
                         TextWriterColor.Write(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
                     TextWriterColor.Write(new string('=', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);

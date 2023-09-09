@@ -76,14 +76,14 @@ namespace Terminaux.Writer.FancyWriters
                     Progress = 0;
 
                 // Fill the progress
-                int MaximumHeight = Console.WindowHeight - FinalHeightOffset;
+                int MaximumHeight = ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset;
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
                 // Draw the border
                 if (DrawBorder)
                 {
                     TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar.ToString() + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
-                    for (int i = 0; i < Console.WindowHeight - FinalHeightOffset; i++)
+                    for (int i = 0; i < ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset; i++)
                         TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true);
                     TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true);
                 }
@@ -220,14 +220,14 @@ namespace Terminaux.Writer.FancyWriters
                     Progress = 0;
 
                 // Fill the progress
-                int MaximumHeight = Console.WindowHeight - FinalHeightOffset;
+                int MaximumHeight = ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset;
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
                 // Draw the border
                 if (DrawBorder)
                 {
                     TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar.ToString() + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
-                    for (int i = 0; i < Console.WindowHeight - FinalHeightOffset; i++)
+                    for (int i = 0; i < ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset; i++)
                         TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true, FrameColor);
                     TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true, FrameColor);
                 }
@@ -333,14 +333,14 @@ namespace Terminaux.Writer.FancyWriters
                     Progress = 0;
 
                 // Fill the progress
-                int MaximumHeight = Console.WindowHeight - FinalHeightOffset;
+                int MaximumHeight = ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset;
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
                 // Draw the border
                 if (DrawBorder)
                 {
                     TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar.ToString() + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
-                    for (int i = 0; i < Console.WindowHeight - FinalHeightOffset; i++)
+                    for (int i = 0; i < ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset; i++)
                         TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true, FrameColor);
                     TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true, FrameColor);
                 }

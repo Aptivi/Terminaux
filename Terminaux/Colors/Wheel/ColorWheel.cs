@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using Terminaux.Base;
 using Terminaux.Colors.Accessibility;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
@@ -57,7 +58,7 @@ namespace Terminaux.Colors.Wheel
             while (cki.Key != ConsoleKey.Escape && cki.Key != ConsoleKey.Enter)
             {
                 RenderWheel();
-                cki = Console.ReadKey(true);
+                cki = ConsoleWrappers.ActionReadKey(true);
                 HandleUserInput(cki);
                 UpdateColor();
             }
@@ -68,8 +69,8 @@ namespace Terminaux.Colors.Wheel
 
         internal static void RenderWheel()
         {
-            Console.CursorVisible = false;
-            Console.Clear();
+            ConsoleWrappers.ActionCursorVisible(false);
+            ConsoleWrappers.ActionClear();
 
             // Get the box sizes to fit the console. Four boxes are needed to represent all the modes:
             //   - Normal color
@@ -78,8 +79,8 @@ namespace Terminaux.Colors.Wheel
             //   - Tritanopia color
             int topLeftCornerPosLeft = 0;
             int topLeftCornerPosTop = 0;
-            int boxWidth = Console.WindowWidth / 4 - 2;
-            int boxHeight = Console.WindowHeight / 3 - 2;
+            int boxWidth = ConsoleWrappers.ActionWindowWidth() / 4 - 2;
+            int boxHeight = ConsoleWrappers.ActionWindowHeight() / 3 - 2;
             int boxNum;
 
             // Render all the colors based on the current wheel color
@@ -121,12 +122,12 @@ namespace Terminaux.Colors.Wheel
             string adjusterTop = "  ^  ";
             string adjusterBottom = "  v  ";
             int adjusterLength = 5;
-            int greenAdjusterPos = Console.WindowWidth / 2 - (adjusterLength + 2) / 2 + 1;
+            int greenAdjusterPos = ConsoleWrappers.ActionWindowWidth() / 2 - (adjusterLength + 2) / 2 + 1;
             int blueAdjusterPos = greenAdjusterPos + 7;
             int redAdjusterPos = greenAdjusterPos - 7;
-            int adjusterTopTop = Console.WindowHeight - 8;
-            int adjusterInfoTop = Console.WindowHeight - 6;
-            int adjusterBottomTop = Console.WindowHeight - 4;
+            int adjusterTopTop = ConsoleWrappers.ActionWindowHeight() - 8;
+            int adjusterInfoTop = ConsoleWrappers.ActionWindowHeight() - 6;
+            int adjusterBottomTop = ConsoleWrappers.ActionWindowHeight() - 4;
             if (wheelColorMode == ColorType.TrueColor)
             {
                 Color redColor = new(255, 0, 0);
@@ -145,21 +146,21 @@ namespace Terminaux.Colors.Wheel
             else if (wheelColorMode == ColorType._255Color)
             {
                 TextWriterWhereColor.WriteWhere(adjusterTop, greenAdjusterPos, adjusterTopTop, Color.Empty, wheelColor);
-                TextWriterWhereColor.WriteWhere($"{wheelColor255} [{(int)wheelColor255}]", Console.WindowWidth / 2 - ($"{wheelColor255} [{(int)wheelColor255}]".Length == 1 ? 2 : $"{wheelColor255} [{(int)wheelColor255}]".Length / 2), adjusterInfoTop, wheelColor);
+                TextWriterWhereColor.WriteWhere($"{wheelColor255} [{(int)wheelColor255}]", ConsoleWrappers.ActionWindowWidth() / 2 - ($"{wheelColor255} [{(int)wheelColor255}]".Length == 1 ? 2 : $"{wheelColor255} [{(int)wheelColor255}]".Length / 2), adjusterInfoTop, wheelColor);
                 TextWriterWhereColor.WriteWhere(adjusterBottom, greenAdjusterPos, adjusterBottomTop, Color.Empty, wheelColor);
             }
             else
             {
                 string renderedName = $"{wheelColor16} [{(int)wheelColor16}]";
                 TextWriterWhereColor.WriteWhere(adjusterTop, greenAdjusterPos, adjusterTopTop, Color.Empty, wheelColor);
-                TextWriterWhereColor.WriteWhere(renderedName, Console.WindowWidth / 2 - (renderedName.Length == 1 ? 2 : renderedName.Length / 2), adjusterInfoTop, wheelColor);
+                TextWriterWhereColor.WriteWhere(renderedName, ConsoleWrappers.ActionWindowWidth() / 2 - (renderedName.Length == 1 ? 2 : renderedName.Length / 2), adjusterInfoTop, wheelColor);
                 TextWriterWhereColor.WriteWhere(adjusterBottom, greenAdjusterPos, adjusterBottomTop, Color.Empty, wheelColor);
             }
             TextWriterColor.Write("\n");
 
             // Write the bound keys list
             string keysStr = "[ESC] Exit | [ENTER] Accept | [H] Help";
-            TextWriterWhereColor.WriteWhere(keysStr, Console.WindowWidth / 2 - keysStr.Length / 2, Console.CursorTop, new Color(ConsoleColors.White));
+            TextWriterWhereColor.WriteWhere(keysStr, ConsoleWrappers.ActionWindowWidth() / 2 - keysStr.Length / 2, ConsoleWrappers.ActionCursorTop(), new Color(ConsoleColors.White));
         }
 
         internal static void UpdateColor()
