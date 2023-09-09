@@ -16,10 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.Writer.FancyWriters;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
     internal class PrintSep : IFixture
     {

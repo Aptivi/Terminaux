@@ -20,7 +20,7 @@ using Shouldly;
 using System.Diagnostics;
 using Terminaux.Colors;
 
-namespace Terminaux.Base.Tests
+namespace Terminaux.Tests.Base
 {
 
     [TestFixture]

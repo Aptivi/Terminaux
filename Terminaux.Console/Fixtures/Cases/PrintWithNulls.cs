@@ -16,13 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
     internal class PrintWithNulls : IFixture
     {

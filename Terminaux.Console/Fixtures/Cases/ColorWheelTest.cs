@@ -18,10 +18,9 @@
 
 using Terminaux.Base;
 using Terminaux.Colors.Wheel;
-using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
     internal class ColorWheelTest : IFixture
     {

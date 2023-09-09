@@ -18,11 +18,10 @@
 
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.Reader.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
     internal class ColorWithResetTest : IFixture
     {

@@ -18,10 +18,9 @@
 
 using Figgle;
 using Terminaux.Colors;
-using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.Writer.FancyWriters;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
     internal class PrintFigletF : IFixture
     {

@@ -16,18 +16,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Figgle;
-using Terminaux.Colors;
-using Terminaux.Writer.FancyWriters;
+using Terminaux.ConsoleDemo.Fixtures.Cases.CaseData;
+using Terminaux.Reader.Inputs.Interactive;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
-    internal class PrintFiglet : IFixture
+    internal class CliDoublePaneTest : IFixture
     {
-        public string FixtureID => "PrintFiglet";
-        public void RunFixture()
-        {
-            FigletColor.WriteFiglet("Hello world!", FiggleFonts.Small, new Color(ConsoleColors.Green));
-        }
+        public string FixtureID =>
+            "CliDoublePaneTest";
+        public void RunFixture() =>
+            InteractiveTuiTools.OpenInteractiveTui(new CliDoublePaneTestData());
     }
 }

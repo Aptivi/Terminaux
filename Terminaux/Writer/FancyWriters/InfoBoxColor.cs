@@ -309,8 +309,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Terminaux's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) =>
@@ -324,8 +324,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Terminaux's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -369,8 +369,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Terminaux's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
@@ -384,8 +384,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Terminaux's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -778,8 +778,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Terminaux's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) =>
@@ -807,8 +807,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
-        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="InfoBoxColor">InfoBox color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Terminaux's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInput(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>

@@ -18,8 +18,9 @@
 
 using Shouldly;
 using System;
+using Terminaux.Colors;
 
-namespace Terminaux.Colors.Tests
+namespace Terminaux.Tests.Colors
 {
     [TestFixture]
     public partial class ColorInitializationEqualTests

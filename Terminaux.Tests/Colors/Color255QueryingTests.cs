@@ -19,8 +19,9 @@
 using Newtonsoft.Json.Linq;
 using Shouldly;
 using System;
+using Terminaux.Colors;
 
-namespace Terminaux.Colors.Tests
+namespace Terminaux.Tests.Colors
 {
     [TestFixture]
     public partial class Color255QueryingTests

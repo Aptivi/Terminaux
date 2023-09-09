@@ -18,8 +18,10 @@
 
 using Shouldly;
 using System;
+using Terminaux.Colors;
+using Terminaux.Colors.Accessibility;
 
-namespace Terminaux.Colors.Tests
+namespace Terminaux.Tests.Colors
 {
     [TestFixture]
     public partial class ColorInitializationTests
@@ -102,7 +104,7 @@ namespace Terminaux.Colors.Tests
         {
             // Create instance
             ColorTools.EnableColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Protan;
+            ColorTools.ColorDeficiency = Deficiency.Protan;
             ColorTools.ColorDeficiencySeverity = 1.0;
             var ColorInstance = new Color(18);
 
@@ -136,7 +138,7 @@ namespace Terminaux.Colors.Tests
         {
             // Create instance
             ColorTools.EnableColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Protan;
+            ColorTools.ColorDeficiency = Deficiency.Protan;
             ColorTools.ColorDeficiencySeverity = 0.6;
             var ColorInstance = new Color(18);
 
@@ -170,7 +172,7 @@ namespace Terminaux.Colors.Tests
         {
             // Create instance
             ColorTools.EnableColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Deutan;
+            ColorTools.ColorDeficiency = Deficiency.Deutan;
             ColorTools.ColorDeficiencySeverity = 1.0;
             var ColorInstance = new Color(18);
 
@@ -204,7 +206,7 @@ namespace Terminaux.Colors.Tests
         {
             // Create instance
             ColorTools.EnableColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Deutan;
+            ColorTools.ColorDeficiency = Deficiency.Deutan;
             ColorTools.ColorDeficiencySeverity = 0.6;
             var ColorInstance = new Color(18);
 
@@ -238,7 +240,7 @@ namespace Terminaux.Colors.Tests
         {
             // Create instance
             ColorTools.EnableColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Tritan;
+            ColorTools.ColorDeficiency = Deficiency.Tritan;
             ColorTools.ColorDeficiencySeverity = 1.0;
             var ColorInstance = new Color(18);
 
@@ -272,7 +274,7 @@ namespace Terminaux.Colors.Tests
         {
             // Create instance
             ColorTools.EnableColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Tritan;
+            ColorTools.ColorDeficiency = Deficiency.Tritan;
             ColorTools.ColorDeficiencySeverity = 0.6;
             var ColorInstance = new Color(18);
 
@@ -307,7 +309,7 @@ namespace Terminaux.Colors.Tests
             // Create instance
             ColorTools.EnableColorTransformation = true;
             ColorTools.EnableSimpleColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Protan;
+            ColorTools.ColorDeficiency = Deficiency.Protan;
             ColorTools.ColorDeficiencySeverity = 1.0;
             var ColorInstance = new Color(10);
 
@@ -342,7 +344,7 @@ namespace Terminaux.Colors.Tests
             // Create instance
             ColorTools.EnableColorTransformation = true;
             ColorTools.EnableSimpleColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Protan;
+            ColorTools.ColorDeficiency = Deficiency.Protan;
             ColorTools.ColorDeficiencySeverity = 0.6;
             var ColorInstance = new Color(10);
 
@@ -377,7 +379,7 @@ namespace Terminaux.Colors.Tests
             // Create instance
             ColorTools.EnableColorTransformation = true;
             ColorTools.EnableSimpleColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Deutan;
+            ColorTools.ColorDeficiency = Deficiency.Deutan;
             ColorTools.ColorDeficiencySeverity = 1.0;
             var ColorInstance = new Color(10);
 
@@ -412,7 +414,7 @@ namespace Terminaux.Colors.Tests
             // Create instance
             ColorTools.EnableColorTransformation = true;
             ColorTools.EnableSimpleColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Deutan;
+            ColorTools.ColorDeficiency = Deficiency.Deutan;
             ColorTools.ColorDeficiencySeverity = 0.6;
             var ColorInstance = new Color(10);
 
@@ -447,7 +449,7 @@ namespace Terminaux.Colors.Tests
             // Create instance
             ColorTools.EnableColorTransformation = true;
             ColorTools.EnableSimpleColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Tritan;
+            ColorTools.ColorDeficiency = Deficiency.Tritan;
             ColorTools.ColorDeficiencySeverity = 1.0;
             var ColorInstance = new Color(18);
 
@@ -482,7 +484,7 @@ namespace Terminaux.Colors.Tests
             // Create instance
             ColorTools.EnableColorTransformation = true;
             ColorTools.EnableSimpleColorTransformation = true;
-            ColorTools.ColorDeficiency = Accessibility.Deficiency.Tritan;
+            ColorTools.ColorDeficiency = Deficiency.Tritan;
             ColorTools.ColorDeficiencySeverity = 0.6;
             var ColorInstance = new Color(18);
 

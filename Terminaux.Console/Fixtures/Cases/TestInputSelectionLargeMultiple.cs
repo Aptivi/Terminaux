@@ -17,12 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
-using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.Reader.Inputs;
 using Terminaux.Reader.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
     internal class TestInputSelectionLargeMultiple : IFixture
     {

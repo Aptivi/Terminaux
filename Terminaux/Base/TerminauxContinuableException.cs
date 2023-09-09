@@ -16,18 +16,27 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Figgle;
-using Terminaux.Colors;
-using Terminaux.Writer.FancyWriters;
+using System;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases
+namespace Terminaux.Base
 {
-    internal class PrintFiglet : IFixture
+    /// <summary>
+    /// Terminaux continuable exception class
+    /// </summary>
+    public class TerminauxContinuableException : Exception
     {
-        public string FixtureID => "PrintFiglet";
-        public void RunFixture()
-        {
-            FigletColor.WriteFiglet("Hello world!", FiggleFonts.Small, new Color(ConsoleColors.Green));
-        }
+        /// <inheritdoc/>
+        public TerminauxContinuableException()
+        { }
+
+        /// <inheritdoc/>
+        public TerminauxContinuableException(string message) :
+            base(message)
+        { }
+
+        /// <inheritdoc/>
+        public TerminauxContinuableException(string message, Exception innerException) :
+            base(message, innerException)
+        { }
     }
 }

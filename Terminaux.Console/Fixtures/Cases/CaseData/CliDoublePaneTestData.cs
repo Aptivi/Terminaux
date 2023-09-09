@@ -1,0 +1,127 @@
+﻿
+// Terminaux  Copyright (C) 2023  Aptivi
+// 
+// This file is part of Terminaux
+// 
+// Terminaux is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Terminaux is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using Terminaux.Reader.Inputs.Interactive;
+
+namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
+{
+    internal class CliDoublePaneTestData : BaseInteractiveTui, IInteractiveTui
+    {
+        internal static List<string> strings = new();
+        internal static List<string> strings2 = new();
+
+        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
+        {
+            new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1,  (_, index) => Add(index)),
+            new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2,  (_, index) => Remove(index)),
+            new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3,  (_, _)     => RemoveLast()),
+            new InteractiveTuiBinding(/* Localizable */ "Redraw",      ConsoleKey.F4,  (_, _)     => InteractiveTuiStatus.RedrawRequired = true),
+            new InteractiveTuiBinding(/* Localizable */ "Switch",      ConsoleKey.Tab, (_, _)     => Switch()),
+        };
+
+        /// <inheritdoc/>
+        public override IEnumerable PrimaryDataSource =>
+            strings;
+
+        /// <inheritdoc/>
+        public override IEnumerable SecondaryDataSource =>
+            strings2;
+
+        public override bool SecondPaneInteractable =>
+            true;
+
+        /// <inheritdoc/>
+        public override bool AcceptsEmptyData =>
+            true;
+
+        /// <inheritdoc/>
+        public override void RenderStatus(object item)
+        {
+            string selected = (string)item;
+
+            // Check to see if we're given the test info
+            if (string.IsNullOrEmpty(selected))
+                InteractiveTuiStatus.Status = "No info.";
+            else
+                InteractiveTuiStatus.Status = $"{selected}";
+        }
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItem(object item)
+        {
+            string selected = (string)item;
+            return selected;
+        }
+
+        private static void Add(int index)
+        {
+            if (InteractiveTuiStatus.CurrentPane == 2)
+                strings2.Add($"[{index}] --2-- [{index}]");
+            else
+                strings.Add($"[{index}] --1-- [{index}]");
+            InteractiveTuiTools.ForceRefreshSelection();
+        }
+
+        private static void Remove(int index)
+        {
+            if (InteractiveTuiStatus.CurrentPane == 2)
+            {
+                if (index < strings2.Count)
+                    strings2.RemoveAt(index - 1);
+                if (InteractiveTuiStatus.SecondPaneCurrentSelection > strings2.Count)
+                    InteractiveTuiStatus.SecondPaneCurrentSelection = strings2.Count;
+            }
+            else
+            {
+                if (index < strings.Count)
+                    strings.RemoveAt(index - 1);
+                if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
+                    InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
+            }
+            InteractiveTuiTools.ForceRefreshSelection();
+        }
+
+        private static void RemoveLast()
+        {
+            if (InteractiveTuiStatus.CurrentPane == 2)
+            {
+                strings2.RemoveAt(strings2.Count - 1);
+                if (InteractiveTuiStatus.SecondPaneCurrentSelection > strings2.Count)
+                    InteractiveTuiStatus.SecondPaneCurrentSelection = strings2.Count;
+            }
+            else
+            {
+                strings.RemoveAt(strings.Count - 1);
+                if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
+                    InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
+            }
+            InteractiveTuiTools.ForceRefreshSelection();
+        }
+
+        private static void Switch()
+        {
+            InteractiveTuiStatus.CurrentPane++;
+            if (InteractiveTuiStatus.CurrentPane > 2)
+                InteractiveTuiStatus.CurrentPane = 1;
+            InteractiveTuiStatus.RedrawRequired = true;
+        }
+    }
+}

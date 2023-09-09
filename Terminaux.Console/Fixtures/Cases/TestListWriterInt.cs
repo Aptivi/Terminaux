@@ -18,10 +18,9 @@
 
 using System.Collections.Generic;
 using Terminaux.Colors;
-using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
     internal class TestListWriterInt : IFixture
     {

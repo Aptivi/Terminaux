@@ -16,7 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace Terminaux.Base.Tests
+using Terminaux.Base;
+
+namespace Terminaux.Tests.Base
 {
 
     [TestFixture]

@@ -17,8 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Shouldly;
+using Terminaux.Colors;
 
-namespace Terminaux.Colors.Tests
+namespace Terminaux.Tests.Colors
 {
     [TestFixture]
     public partial class ConsoleColorsInfoInitializationEqualTests

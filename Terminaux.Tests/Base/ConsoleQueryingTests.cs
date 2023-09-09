@@ -17,9 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Shouldly;
+using Terminaux.Base;
 using Terminaux.Sequences.Builder;
 
-namespace Terminaux.Base.Tests
+namespace Terminaux.Tests.Base
 {
 
     [TestFixture]

@@ -18,8 +18,9 @@
 
 using System;
 using System.Diagnostics;
+using Terminaux.Colors;
 
-namespace Terminaux.Colors.Tests
+namespace Terminaux.Tests.Colors
 {
     [TestFixture]
     public partial class ColorInitializationValidityTests

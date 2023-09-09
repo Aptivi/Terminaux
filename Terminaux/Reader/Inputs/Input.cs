@@ -165,7 +165,7 @@ namespace Terminaux.Reader.Inputs
         {
             SpinWait.SpinUntil(() => ConsoleWrappers.ActionKeyAvailable(), Timeout);
             if (!ConsoleWrappers.ActionKeyAvailable())
-                throw new Exception("User didn't provide any input in a timely fashion.");
+                throw new TerminauxContinuableException("User didn't provide any input in a timely fashion.");
             return ConsoleWrappers.ActionReadKey(Intercept);
         }
 

@@ -178,6 +178,30 @@
     "Terminaux - TestInputSelectionLargeMultiple": {
       "commandName": "Project",
       "commandLineArgs": "TestInputSelectionLargeMultiple"
+    },
+    "Terminaux - CliInfoPaneTest": {
+      "commandName": "Project",
+      "commandLineArgs": "CliInfoPaneTest"
+    },
+    "Terminaux - CliInfoPaneTestRefreshing": {
+      "commandName": "Project",
+      "commandLineArgs": "CliInfoPaneTestRefreshing"
+    },
+    "Terminaux - CliInfoPaneSlowTest": {
+      "commandName": "Project",
+      "commandLineArgs": "CliInfoPaneSlowTest"
+    },
+    "Terminaux - CliInfoPaneSlowTestRefreshing": {
+      "commandName": "Project",
+      "commandLineArgs": "CliInfoPaneSlowTestRefreshing"
+    },
+    "Terminaux - CliDoublePaneTest": {
+      "commandName": "Project",
+      "commandLineArgs": "CliDoublePaneTest"
+    },
+    "Terminaux - CliDoublePaneSlowTest": {
+      "commandName": "Project",
+      "commandLineArgs": "CliDoublePaneSlowTest"
     }
   }
 }
