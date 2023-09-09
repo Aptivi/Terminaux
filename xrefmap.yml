@@ -116,6 +116,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleExtensions.FormatString
   nameWithType: ConsoleExtensions.FormatString
+- uid: Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence
+  name: GetClearLineToRightSequence()
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetClearLineToRightSequence
+  commentId: M:Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence
+  fullName: Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence()
+  nameWithType: ConsoleExtensions.GetClearLineToRightSequence()
+- uid: Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence*
+  name: GetClearLineToRightSequence
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetClearLineToRightSequence_
+  commentId: Overload:Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence
+  nameWithType: ConsoleExtensions.GetClearLineToRightSequence
 - uid: Terminaux.Base.ConsoleExtensions.GetFilteredPositions(System.String,System.Object[])
   name: GetFilteredPositions(string, params object[])
   href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetFilteredPositions_System_String_System_Object___
