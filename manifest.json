@@ -206,20 +206,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Figlet.FigletSelector.yml",
+      "source_relative_path": "api/Terminaux.Figlet.FiggleTools.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Figlet.FigletSelector.html"
+          "relative_path": "api/Terminaux.Figlet.FiggleTools.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Figlet.FigletTools.yml",
+      "source_relative_path": "api/Terminaux.Figlet.FigletSelector.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Figlet.FigletTools.html"
+          "relative_path": "api/Terminaux.Figlet.FigletSelector.html"
         }
       },
       "version": ""
@@ -746,6 +746,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.CenteredFigletTextColorLegacy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.CenteredFigletTextColorLegacy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.FancyWriters.CenteredTextColor.yml",
       "output": {
         ".html": {
@@ -766,10 +776,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.FigletColorLegacy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.FigletColorLegacy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.FancyWriters.FigletWhereColor.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.FancyWriters.FigletWhereColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.FigletWhereColorLegacy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.FigletWhereColorLegacy.html"
         }
       },
       "version": ""
