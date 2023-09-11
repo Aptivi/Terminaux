@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Figletize;
 using System;
 using System.Linq;
 using Terminaux.Base;
@@ -37,7 +38,7 @@ namespace Terminaux.Figlet
         {
             // Some initial variables to populate figlet fonts
             string fontName = "";
-            string[] fonts = FigletTools.FigletFonts.Keys.ToArray();
+            string[] fonts = FigletTools.GetFigletFonts().Keys.ToArray();
 
             // Now, clear the console and let the user select a figlet font while displaying a small text in the middle
             // of the console
@@ -53,6 +54,59 @@ namespace Terminaux.Figlet
                 fontName = fonts[selectedFont];
                 var figletFont = FigletTools.GetFigletFont(fontName);
                 CenteredFigletTextColor.WriteCenteredFiglet(figletFont, text);
+
+                // Write the selected font name and the keybindings
+                CenteredTextColor.WriteCentered(ConsoleWrappers.ActionWindowHeight() - 4, fontName);
+                CenteredTextColor.WriteCentered(ConsoleWrappers.ActionWindowHeight() - 2, "[ENTER] Select | [<-|->] Select");
+
+                // Wait for input
+                var key = Input.DetectKeypress().Key;
+                switch (key)
+                {
+                    case ConsoleKey.Enter:
+                        bail = true;
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        selectedFont--;
+                        if (selectedFont < 0)
+                            selectedFont = fonts.Length - 1;
+                        break;
+                    case ConsoleKey.RightArrow:
+                        selectedFont++;
+                        if (selectedFont > fonts.Length - 1)
+                            selectedFont = 0;
+                        break;
+                }
+            }
+
+            ConsoleWrappers.ActionClear();
+            return fontName;
+        }
+
+        /// <summary>
+        /// Prompts the user for a figlet font (for Figgle library)
+        /// </summary>
+        /// <returns>Selected figlet font</returns>
+        public static string PromptForFigletFiggle()
+        {
+            // Some initial variables to populate figlet fonts
+            string fontName = "";
+            string[] fonts = FiggleTools.FigletFonts.Keys.ToArray();
+
+            // Now, clear the console and let the user select a figlet font while displaying a small text in the middle
+            // of the console
+            bool bail = false;
+            string text = "Test";
+            int selectedFont = 0;
+            while (!bail)
+            {
+                ConsoleWrappers.ActionCursorVisible(false);
+                ConsoleWrappers.ActionClear();
+
+                // Write the text using the selected figlet font
+                fontName = fonts[selectedFont];
+                var figletFont = FiggleTools.GetFigletFont(fontName);
+                CenteredFigletTextColorLegacy.WriteCenteredFiglet(figletFont, text);
 
                 // Write the selected font name and the keybindings
                 CenteredTextColor.WriteCentered(ConsoleWrappers.ActionWindowHeight() - 4, fontName);

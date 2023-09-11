@@ -16,23 +16,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Figletize;
+using Figgle;
 using Terminaux.Colors;
-using Terminaux.Figlet;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
-    internal class TestInputFiglet : IFixture
+    internal class PrintFigletFiggleF : IFixture
     {
-        public string FixtureID => "TestInputFiglet";
+        public string FixtureID => "PrintFigletFiggleF";
         public void RunFixture()
         {
-            string font = FigletSelector.PromptForFiglet();
-            var figlet = FigletTools.GetFigletFont(font);
-            TextWriterColor.Write($"Got figlet font {font}!");
-            FigletColor.WriteFiglet("Hello!", figlet, ConsoleColors.Green);
+            FigletColorLegacy.WriteFiglet("Hi, {0}!", FiggleFonts.Small, new Color(ConsoleColors.Green), Vars: new object[] { "world" });
         }
     }
 }

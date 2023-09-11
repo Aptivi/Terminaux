@@ -26,9 +26,9 @@ using Terminaux.Base;
 namespace Terminaux.Figlet
 {
     /// <summary>
-    /// Figlet tools
+    /// Figlet tools (use if you're using Figgle. Otherwise, use the modern Figletize library)
     /// </summary>
-    public static class FigletTools
+    public static class FiggleTools
     {
 
         private readonly static Dictionary<string, string> cachedFiglets = new();

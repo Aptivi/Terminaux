@@ -19,34 +19,31 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
+using Figgle;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Figletize.Utilities;
-using Figletize;
+using Terminaux.Figlet;
 
 namespace Terminaux.Writer.FancyWriters
 {
     /// <summary>
-    /// Figlet writer (positional)
+    /// Figlet writer
     /// </summary>
-    public static class FigletWhereColor
+    public static class FigletColorLegacy
     {
 
         /// <summary>
-        /// Writes the figlet text with position support
+        /// Writes the figlet text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="Left">Column number in console</param>
-        /// <param name="Top">Row number in console</param>
-        /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWherePlain(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, params object[] Vars)
+        public static void WriteFigletPlain(string Text, FiggleFont FigletFont, params object[] Vars)
         {
             try
             {
-                Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
-                TextWriterWhereColor.WriteWhere(Text, Left, Top, Return, Vars);
+                Text = FiggleTools.RenderFiglet(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(Text, true, Vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -56,16 +53,13 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Writes the figlet text with position support
+        /// Writes the figlet text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="Left">Column number in console</param>
-        /// <param name="Top">Row number in console</param>
-        /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, ConsoleColors Color, params object[] Vars)
+        public static void WriteFiglet(string Text, FiggleFont FigletFont, ConsoleColors Color, params object[] Vars)
         {
             try
             {
@@ -73,7 +67,7 @@ namespace Terminaux.Writer.FancyWriters
                 ColorTools.SetConsoleColor(new Color(Color));
 
                 // Actually write
-                WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
+                WriteFigletPlain(Text, FigletFont, Vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -83,17 +77,14 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Writes the figlet text with position support
+        /// Writes the figlet text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="Left">Column number in console</param>
-        /// <param name="Top">Row number in console</param>
-        /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars)
+        public static void WriteFiglet(string Text, FiggleFont FigletFont, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars)
         {
             try
             {
@@ -102,7 +93,7 @@ namespace Terminaux.Writer.FancyWriters
                 ColorTools.SetConsoleColor(new Color(BackgroundColor), true);
 
                 // Actually write
-                WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
+                WriteFigletPlain(Text, FigletFont, Vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -112,16 +103,13 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Writes the figlet text with position support
+        /// Writes the figlet text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="Left">Column number in console</param>
-        /// <param name="Top">Row number in console</param>
-        /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color Color, params object[] Vars)
+        public static void WriteFiglet(string Text, FiggleFont FigletFont, Color Color, params object[] Vars)
         {
             try
             {
@@ -129,7 +117,7 @@ namespace Terminaux.Writer.FancyWriters
                 ColorTools.SetConsoleColor(Color);
 
                 // Actually write
-                WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
+                WriteFigletPlain(Text, FigletFont, Vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -139,17 +127,14 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Writes the figlet text with position support
+        /// Writes the figlet text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="Left">Column number in console</param>
-        /// <param name="Top">Row number in console</param>
-        /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteFiglet(string Text, FiggleFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             try
             {
@@ -158,7 +143,7 @@ namespace Terminaux.Writer.FancyWriters
                 ColorTools.SetConsoleColor(BackgroundColor, true);
 
                 // Actually write
-                WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
+                WriteFigletPlain(Text, FigletFont, Vars);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
