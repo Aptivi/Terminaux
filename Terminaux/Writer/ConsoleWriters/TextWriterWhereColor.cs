@@ -104,9 +104,10 @@ namespace Terminaux.Writer.ConsoleWriters
                             // Write a character individually
                             if (MessageParagraph[i] != '\n')
                             {
-                                string bufferedChar = ConsoleExtensions.BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx);
+                                string bufferedChar = ConsoleExtensions.BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx, out bool isVtSequence);
                                 buffered.Append(bufferedChar);
-                                pos += bufferedChar.Length;
+                                if (!isVtSequence)
+                                    pos += bufferedChar.Length;
                             }
                         }
 

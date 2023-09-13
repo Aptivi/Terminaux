@@ -58,7 +58,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         Thread.Sleep((int)Math.Round(MsEachLetter));
 
                         // Write a character individually
-                        Console.Write(ConsoleExtensions.BufferChar(msg, sequences, ref i, ref vtSeqIdx));
+                        Console.Write(ConsoleExtensions.BufferChar(msg, sequences, ref i, ref vtSeqIdx, out _));
                     }
 
                     // If we're writing a new line, write it

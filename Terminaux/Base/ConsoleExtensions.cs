@@ -378,7 +378,7 @@ namespace Terminaux.Base
                 return target;
         }
 
-        internal static string BufferChar(string text, MatchCollection[] sequencesCollections, ref int i, ref int vtSeqIdx)
+        internal static string BufferChar(string text, MatchCollection[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
         {
             // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
             // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
@@ -395,12 +395,14 @@ namespace Terminaux.Base
             // control sequence matcher to match how it works on Windows.
             char ch = text[i];
             string seq = "";
+            bool vtSeq = false;
             foreach (var sequences in sequencesCollections)
             {
                 if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
                 {
                     // We're at an index which is the same as the captured VT sequence. Get the sequence
                     seq = sequences[vtSeqIdx].Value;
+                    vtSeq = true;
 
                     // Raise the index in case we have the next sequence, but only if we're sure that we have another
                     if (vtSeqIdx + 1 < sequences.Count)
@@ -410,6 +412,7 @@ namespace Terminaux.Base
                     i += seq.Length - 1;
                 }
             }
+            isVtSequence = vtSeq;
             return !string.IsNullOrEmpty(seq) ? seq : ch.ToString();
         }
 

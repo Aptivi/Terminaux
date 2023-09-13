@@ -77,7 +77,7 @@ namespace Terminaux.Writer.ConsoleWriters
                                     exiting = true;
                                 LinesMade = 0;
                             }
-                            buffered.Append(ConsoleExtensions.BufferChar(sentence, sequences, ref i, ref vtSeqIdx));
+                            buffered.Append(ConsoleExtensions.BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));
                         }
                         if (!exiting)
                         {
