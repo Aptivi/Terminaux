@@ -129,15 +129,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence
   nameWithType: ConsoleExtensions.GetClearLineToRightSequence
-- uid: Terminaux.Base.ConsoleExtensions.GetFilteredPositions(System.String,System.Object[])
-  name: GetFilteredPositions(string, params object[])
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetFilteredPositions_System_String_System_Object___
-  commentId: M:Terminaux.Base.ConsoleExtensions.GetFilteredPositions(System.String,System.Object[])
-  name.vb: GetFilteredPositions(String, ParamArray Object())
-  fullName: Terminaux.Base.ConsoleExtensions.GetFilteredPositions(string, params object[])
-  fullName.vb: Terminaux.Base.ConsoleExtensions.GetFilteredPositions(String, ParamArray Object())
-  nameWithType: ConsoleExtensions.GetFilteredPositions(string, params object[])
-  nameWithType.vb: ConsoleExtensions.GetFilteredPositions(String, ParamArray Object())
+- uid: Terminaux.Base.ConsoleExtensions.GetFilteredPositions(System.String,System.Boolean,System.Object[])
+  name: GetFilteredPositions(string, bool, params object[])
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetFilteredPositions_System_String_System_Boolean_System_Object___
+  commentId: M:Terminaux.Base.ConsoleExtensions.GetFilteredPositions(System.String,System.Boolean,System.Object[])
+  name.vb: GetFilteredPositions(String, Boolean, ParamArray Object())
+  fullName: Terminaux.Base.ConsoleExtensions.GetFilteredPositions(string, bool, params object[])
+  fullName.vb: Terminaux.Base.ConsoleExtensions.GetFilteredPositions(String, Boolean, ParamArray Object())
+  nameWithType: ConsoleExtensions.GetFilteredPositions(string, bool, params object[])
+  nameWithType.vb: ConsoleExtensions.GetFilteredPositions(String, Boolean, ParamArray Object())
 - uid: Terminaux.Base.ConsoleExtensions.GetFilteredPositions*
   name: GetFilteredPositions
   href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetFilteredPositions_
