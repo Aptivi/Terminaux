@@ -78,8 +78,6 @@ namespace Terminaux.Writer.FancyWriters
 
             // Write the closing minus sign.
             TextWriterColor.Write(new string('-', RepeatTimes), true, new Color(ConsoleColors.Gray));
-            if (ConsoleWrappers.ActionCursorTop() != ConsoleWrappers.ActionBufferHeight() - 1)
-                ConsoleWrappers.ActionSetCursorTop(ConsoleWrappers.ActionCursorTop() - 1);
         }
 
         /// <summary>
@@ -146,8 +144,6 @@ namespace Terminaux.Writer.FancyWriters
 
             // Write the closing minus sign.
             TextWriterColor.Write(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
-            if (ConsoleWrappers.ActionCursorTop() != ConsoleWrappers.ActionBufferHeight() - 1)
-                ConsoleWrappers.ActionSetCursorTop(ConsoleWrappers.ActionCursorTop() - 1);
         }
 
     }
