@@ -5092,6 +5092,19 @@ references:
   commentId: T:Terminaux.Reader.TermReaderTools
   fullName: Terminaux.Reader.TermReaderTools
   nameWithType: TermReaderTools
+- uid: Terminaux.Reader.TermReaderTools.ClearHistory
+  name: ClearHistory()
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_ClearHistory
+  commentId: M:Terminaux.Reader.TermReaderTools.ClearHistory
+  fullName: Terminaux.Reader.TermReaderTools.ClearHistory()
+  nameWithType: TermReaderTools.ClearHistory()
+- uid: Terminaux.Reader.TermReaderTools.ClearHistory*
+  name: ClearHistory
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_ClearHistory_
+  commentId: Overload:Terminaux.Reader.TermReaderTools.ClearHistory
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderTools.ClearHistory
+  nameWithType: TermReaderTools.ClearHistory
 - uid: Terminaux.Reader.TermReaderTools.Interrupt
   name: Interrupt()
   href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_Interrupt
@@ -5105,6 +5118,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderTools.Interrupt
   nameWithType: TermReaderTools.Interrupt
+- uid: Terminaux.Reader.TermReaderTools.SetHistory(System.Collections.Generic.List{System.String})
+  name: SetHistory(List<string>)
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_SetHistory_System_Collections_Generic_List_System_String__
+  commentId: M:Terminaux.Reader.TermReaderTools.SetHistory(System.Collections.Generic.List{System.String})
+  name.vb: SetHistory(List(Of String))
+  fullName: Terminaux.Reader.TermReaderTools.SetHistory(System.Collections.Generic.List<string>)
+  fullName.vb: Terminaux.Reader.TermReaderTools.SetHistory(System.Collections.Generic.List(Of String))
+  nameWithType: TermReaderTools.SetHistory(List<string>)
+  nameWithType.vb: TermReaderTools.SetHistory(List(Of String))
+- uid: Terminaux.Reader.TermReaderTools.SetHistory*
+  name: SetHistory
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_SetHistory_
+  commentId: Overload:Terminaux.Reader.TermReaderTools.SetHistory
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderTools.SetHistory
+  nameWithType: TermReaderTools.SetHistory
 - uid: Terminaux.Sequences.Builder
   name: Terminaux.Sequences.Builder
   href: api/Terminaux.Sequences.Builder.html

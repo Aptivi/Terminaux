@@ -222,7 +222,7 @@
   "api/Terminaux.Reader.TermReaderTools.html": {
     "href": "api/Terminaux.Reader.TermReaderTools.html",
     "title": "Class TermReaderTools | Terminaux API - Aptivi Internals",
-    "keywords": "Class TermReaderTools Terminal reader tools Inheritance object TermReaderTools Namespace: Terminaux.Reader Assembly: Terminaux.dll Syntax public static class TermReaderTools Methods | Edit this page View Source Interrupt() Interrupts the reading process Declaration public static void Interrupt()"
+    "keywords": "Class TermReaderTools Terminal reader tools Inheritance object TermReaderTools Namespace: Terminaux.Reader Assembly: Terminaux.dll Syntax public static class TermReaderTools Methods | Edit this page View Source ClearHistory() Clears the history Declaration public static void ClearHistory() | Edit this page View Source Interrupt() Interrupts the reading process Declaration public static void Interrupt() | Edit this page View Source SetHistory(List<string>) Sets the history Declaration public static void SetHistory(List<string> History) Parameters Type Name Description List<string> History List of history entries"
   },
   "api/Terminaux.Reader.html": {
     "href": "api/Terminaux.Reader.html",
