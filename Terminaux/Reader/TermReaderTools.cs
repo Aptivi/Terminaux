@@ -47,7 +47,7 @@ namespace Terminaux.Reader
         public static void SetHistory(List<string> History)
         {
             TermReaderState.history = History;
-            TermReaderState.currentHistoryPos = 0;
+            TermReaderState.currentHistoryPos = History.Count;
         }
 
         /// <summary>
