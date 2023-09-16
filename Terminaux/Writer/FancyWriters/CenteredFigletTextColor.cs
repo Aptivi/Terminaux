@@ -16,13 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Figgle;
 using Figletize;
 using Figletize.Utilities;
-using System;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Figlet;
 
 namespace Terminaux.Writer.FancyWriters
 {

@@ -23,7 +23,7 @@ using System.Reflection;
 using Figgle;
 using Terminaux.Base;
 
-namespace Terminaux.Figlet
+namespace Terminaux.Figgle
 {
     /// <summary>
     /// Figlet tools (use if you're using Figgle. Otherwise, use the modern Figletize library)
@@ -211,5 +211,9 @@ namespace Terminaux.Figlet
             cachedGetters.Add(cachedName, expression);
             return expression();
         }
+
+        private static string[] SplitNewLines(this string target) =>
+            target.Replace(Convert.ToChar(13).ToString(), "")
+               .Split(Convert.ToChar(10));
     }
 }

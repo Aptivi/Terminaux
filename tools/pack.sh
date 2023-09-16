@@ -34,6 +34,7 @@ fi
 # Pack binary
 echo Packing binary...
 "$rarpath" a -ep1 -r -m5 /tmp/$version-bin.rar "../Terminaux/bin/$releaseconf/netstandard2.0/"
+"$rarpath" a -ep1 -r -m5 /tmp/$version-bin-figgle.rar "../Terminaux.Figgle/bin/$releaseconf/netstandard2.0/"
 "$rarpath" a -ep1 -r -m5 /tmp/$version-demo.rar "../Terminaux.Console/bin/$releaseconf/net6.0/"
 if [ ! $? == 0 ]; then
 	echo Packing using rar failed.
@@ -41,7 +42,7 @@ if [ ! $? == 0 ]; then
 fi
 
 # Inform success
-mv ~/tmp/$version-bin.rar .
+mv ~/tmp/$version-bin-figgle.rar .
 mv ~/tmp/$version-demo.rar .
 echo Build and pack successful.
 exit 0

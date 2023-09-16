@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyTitle>Terminaux</AssemblyTitle>
-    <AssemblyDescription>Console Manipulation Library</AssemblyDescription>
+    <AssemblyTitle>Terminaux.Figgle</AssemblyTitle>
+    <AssemblyDescription>Console Manipulation Library (Figlet - for Figgle)</AssemblyDescription>
     <Description>A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.</Description>
     <Version>1.6.0</Version>
     <Authors>Aptivi</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <DebugType>portable</DebugType>
-    <AssemblyName>Terminaux</AssemblyName>
-    <PackageId>Terminaux</PackageId>
+    <AssemblyName>Terminaux.Figgle</AssemblyName>
+    <PackageId>Terminaux.Figgle</PackageId>
     <PackageTags>console;shell;readline;gnu;cui;tui;cli;manipulation;console;vt;sequences;color;vt100;truecolor;library;csharp;reader;input;writer;styles;formatter</PackageTags>
     <PackageProjectUrl>https://github.com/Aptivi/Terminaux</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
@@ -26,8 +26,7 @@
     <AssemblyVersion>1.6.0</AssemblyVersion>
     <PackageVersion>1.6.0</PackageVersion>
     <LangVersion>latest</LangVersion>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>False</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,31 +37,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="OfficialAppIcon-Terminaux-512.png">
+    <None Include="..\Terminaux\OfficialAppIcon-Terminaux-512.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Figletize" Version="0.6.0.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Uname.NET" Version="2022.0.1.2" />
+    <PackageReference Include="Figgle" Version="0.5.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
   </ItemGroup>
 
 </Project>

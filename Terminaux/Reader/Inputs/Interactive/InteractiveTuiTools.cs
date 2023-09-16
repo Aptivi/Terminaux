@@ -23,7 +23,6 @@ using System.Diagnostics;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Reader.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 

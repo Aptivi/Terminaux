@@ -51,8 +51,6 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new PrintF(),
             new PrintFiglet(),
             new PrintFigletF(),
-            new PrintFigletFiggle(),
-            new PrintFigletFiggleF(),
             new PrintSep(),
             new PrintSepF(),
             new PrintSepColor(),
@@ -74,7 +72,6 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new TestInputSelectionLargeMultiple(),
             new TestInputChoice(),
             new TestInputFiglet(),
-            new TestInputFigletFiggle(),
             new KeyInfo(),
 
             // Color

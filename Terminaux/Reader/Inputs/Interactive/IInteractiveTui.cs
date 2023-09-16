@@ -18,7 +18,6 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using Terminaux.Colors;
 
 namespace Terminaux.Reader.Inputs.Interactive
 {

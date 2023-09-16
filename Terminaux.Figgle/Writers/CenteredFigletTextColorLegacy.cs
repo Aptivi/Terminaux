@@ -17,12 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Figgle;
-using System;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Figlet;
 
-namespace Terminaux.Writer.FancyWriters
+namespace Terminaux.Figgle.Writers
 {
     /// <summary>
     /// Centered Figlet writer

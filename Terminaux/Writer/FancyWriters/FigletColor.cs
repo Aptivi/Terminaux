@@ -19,10 +19,8 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using Figgle;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Figlet;
 using Figletize.Utilities;
 using Figletize;
 
