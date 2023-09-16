@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Base;
 
@@ -37,6 +38,25 @@ namespace Terminaux.Reader
         {
             if (isWaitingForInput)
                 interrupting = true;
+        }
+
+        /// <summary>
+        /// Sets the history
+        /// </summary>
+        /// <param name="History">List of history entries</param>
+        public static void SetHistory(List<string> History)
+        {
+            TermReaderState.history = History;
+            TermReaderState.currentHistoryPos = 0;
+        }
+
+        /// <summary>
+        /// Clears the history
+        /// </summary>
+        public static void ClearHistory()
+        {
+            TermReaderState.history.Clear();
+            TermReaderState.currentHistoryPos = 0;
         }
 
         internal static ConsoleKeyInfo GetInput(bool interruptible)

@@ -37,6 +37,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new PromptPasswordWithPlaceholder(),
             new PromptPasswordWithPlaceholderHidden(),
             new PromptLooped(),
+            new PromptLoopedHistories(),
             new PromptLoopedMargin(),
             new PromptLoopedManualWrite(),
             new PromptLoopedCompletion(),

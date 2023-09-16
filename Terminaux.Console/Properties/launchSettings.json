@@ -1,219 +1,223 @@
 {
-    "profiles": {
-        "Terminaux - Prompt": {
-            "commandName": "Project"
-        },
-        "Terminaux - PromptWithDefault": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptWithDefault"
-        },
-        "Terminaux - PromptWithPlaceholder": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptWithPlaceholder"
-        },
-        "Terminaux - PromptPassword": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptPassword"
-        },
-        "Terminaux - PromptPasswordWithPlaceholder": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptPasswordWithPlaceholder"
-        },
-        "Terminaux - PromptLooped": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptLooped"
-        },
-        "Terminaux - PromptPasswordHidden": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptPasswordHidden"
-        },
-        "Terminaux - PromptPasswordWithPlaceholderHidden": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptPasswordWithPlaceholderHidden"
-        },
-        "Terminaux - PromptLoopedMargin": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptLoopedMargin"
-        },
-        "Terminaux - PromptLoopedCompletion": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptLoopedCompletion"
-        },
-        "Terminaux - PromptLoopedManualWrite": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptLoopedManualWrite"
-        },
-        "Terminaux - PromptWithOneLineWrap": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptWithOneLineWrap"
-        },
-        "Terminaux - PromptLoopedCompletionOneLineWrap": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptLoopedCompletionOneLineWrap"
-        },
-        "Terminaux - PromptInterruptible": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptInterruptible"
-        },
-        "Terminaux - PromptLoopedCtrlCAsInput": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptLoopedCtrlCAsInput"
-        },
-        "Terminaux - Print": {
-            "commandName": "Project",
-            "commandLineArgs": "Print"
-        },
-        "Terminaux - PrintF": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintF"
-        },
-        "Terminaux - PrintFiglet": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintFiglet"
-        },
-        "Terminaux - PrintFigletF": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintFigletF"
-        },
-        "Terminaux - PrintFigletFiggle": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintFigletFiggle"
-        },
-        "Terminaux - PrintFigletFiggleF": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintFigletFiggleF"
-        },
-        "Terminaux - PrintSep": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintSep"
-        },
-        "Terminaux - PrintSepF": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintSepF"
-        },
-        "Terminaux - PrintSepColor": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintSepColor"
-        },
-        "Terminaux - PrintSepColorF": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintSepColorF"
-        },
-        "Terminaux - PrintWithNewLines": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintWithNewLines"
-        },
-        "Terminaux - PrintWithNulls": {
-            "commandName": "Project",
-            "commandLineArgs": "PrintWithNulls"
-        },
-        "Terminaux - TestDictWriterChar": {
-            "commandName": "Project",
-            "commandLineArgs": "TestDictWriterChar"
-        },
-        "Terminaux - TestDictWriterInt": {
-            "commandName": "Project",
-            "commandLineArgs": "TestDictWriterInt"
-        },
-        "Terminaux - TestDictWriterStr": {
-            "commandName": "Project",
-            "commandLineArgs": "TestDictWriterStr"
-        },
-        "Terminaux - TestListWriterChar": {
-            "commandName": "Project",
-            "commandLineArgs": "TestListWriterChar"
-        },
-        "Terminaux - TestListWriterInt": {
-            "commandName": "Project",
-            "commandLineArgs": "TestListWriterInt"
-        },
-        "Terminaux - TestListWriterStr": {
-            "commandName": "Project",
-            "commandLineArgs": "TestListWriterStr"
-        },
-        "Terminaux - TestTable": {
-            "commandName": "Project",
-            "commandLineArgs": "TestTable"
-        },
-        "Terminaux - TestInputSelection": {
-            "commandName": "Project",
-            "commandLineArgs": "TestInputSelection"
-        },
-        "Terminaux - TestInputChoice": {
-            "commandName": "Project",
-            "commandLineArgs": "TestInputChoice"
-        },
-        "Terminaux - ColorTest": {
-            "commandName": "Project",
-            "commandLineArgs": "ColorTest"
-        },
-        "Terminaux - ColorTrueTest": {
-            "commandName": "Project",
-            "commandLineArgs": "ColorTrueTest"
-        },
-        "Terminaux - KeyInfo": {
-            "commandName": "Project",
-            "commandLineArgs": "KeyInfo"
-        },
-        "Terminaux - ColorWheelTest": {
-            "commandName": "Project",
-            "commandLineArgs": "ColorWheelTest"
-        },
-        "Terminaux - PromptLoopedCompletionMultiLinePrompt": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptLoopedCompletionMultiLinePrompt"
-        },
-        "Terminaux - PromptLoopedCompletionMultiLinePromptWithOneLine": {
-            "commandName": "Project",
-            "commandLineArgs": "PromptLoopedCompletionMultiLinePromptWithOneLine"
-        },
-        "Terminaux - TestInputFiglet": {
-            "commandName": "Project",
-            "commandLineArgs": "TestInputFiglet"
-        },
-        "Terminaux - ColorWithResetTest": {
-            "commandName": "Project",
-            "commandLineArgs": "ColorWithResetTest"
-        },
-        "Terminaux - TestInputSelectionLarge": {
-            "commandName": "Project",
-            "commandLineArgs": "TestInputSelectionLarge"
-        },
-        "Terminaux - TestInputSelectionMultiple": {
-            "commandName": "Project",
-            "commandLineArgs": "TestInputSelectionMultiple"
-        },
-        "Terminaux - TestInputSelectionLargeMultiple": {
-            "commandName": "Project",
-            "commandLineArgs": "TestInputSelectionLargeMultiple"
-        },
-        "Terminaux - CliInfoPaneTest": {
-            "commandName": "Project",
-            "commandLineArgs": "CliInfoPaneTest"
-        },
-        "Terminaux - CliInfoPaneTestRefreshing": {
-            "commandName": "Project",
-            "commandLineArgs": "CliInfoPaneTestRefreshing"
-        },
-        "Terminaux - CliInfoPaneSlowTest": {
-            "commandName": "Project",
-            "commandLineArgs": "CliInfoPaneSlowTest"
-        },
-        "Terminaux - CliInfoPaneSlowTestRefreshing": {
-            "commandName": "Project",
-            "commandLineArgs": "CliInfoPaneSlowTestRefreshing"
-        },
-        "Terminaux - CliDoublePaneTest": {
-            "commandName": "Project",
-            "commandLineArgs": "CliDoublePaneTest"
-        },
-        "Terminaux - CliDoublePaneSlowTest": {
-            "commandName": "Project",
-            "commandLineArgs": "CliDoublePaneSlowTest"
-        },
-        "Terminaux - TestInputFigletFiggle": {
-            "commandName": "Project",
-            "commandLineArgs": "TestInputFigletFiggle"
-        }
+  "profiles": {
+    "Terminaux - Prompt": {
+      "commandName": "Project"
+    },
+    "Terminaux - PromptWithDefault": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptWithDefault"
+    },
+    "Terminaux - PromptWithPlaceholder": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptWithPlaceholder"
+    },
+    "Terminaux - PromptPassword": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPassword"
+    },
+    "Terminaux - PromptPasswordWithPlaceholder": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPasswordWithPlaceholder"
+    },
+    "Terminaux - PromptLooped": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLooped"
+    },
+    "Terminaux - PromptPasswordHidden": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPasswordHidden"
+    },
+    "Terminaux - PromptPasswordWithPlaceholderHidden": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPasswordWithPlaceholderHidden"
+    },
+    "Terminaux - PromptLoopedMargin": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedMargin"
+    },
+    "Terminaux - PromptLoopedCompletion": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCompletion"
+    },
+    "Terminaux - PromptLoopedManualWrite": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedManualWrite"
+    },
+    "Terminaux - PromptWithOneLineWrap": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptWithOneLineWrap"
+    },
+    "Terminaux - PromptLoopedCompletionOneLineWrap": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCompletionOneLineWrap"
+    },
+    "Terminaux - PromptInterruptible": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptInterruptible"
+    },
+    "Terminaux - PromptLoopedCtrlCAsInput": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCtrlCAsInput"
+    },
+    "Terminaux - Print": {
+      "commandName": "Project",
+      "commandLineArgs": "Print"
+    },
+    "Terminaux - PrintF": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintF"
+    },
+    "Terminaux - PrintFiglet": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintFiglet"
+    },
+    "Terminaux - PrintFigletF": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintFigletF"
+    },
+    "Terminaux - PrintFigletFiggle": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintFigletFiggle"
+    },
+    "Terminaux - PrintFigletFiggleF": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintFigletFiggleF"
+    },
+    "Terminaux - PrintSep": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintSep"
+    },
+    "Terminaux - PrintSepF": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintSepF"
+    },
+    "Terminaux - PrintSepColor": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintSepColor"
+    },
+    "Terminaux - PrintSepColorF": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintSepColorF"
+    },
+    "Terminaux - PrintWithNewLines": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintWithNewLines"
+    },
+    "Terminaux - PrintWithNulls": {
+      "commandName": "Project",
+      "commandLineArgs": "PrintWithNulls"
+    },
+    "Terminaux - TestDictWriterChar": {
+      "commandName": "Project",
+      "commandLineArgs": "TestDictWriterChar"
+    },
+    "Terminaux - TestDictWriterInt": {
+      "commandName": "Project",
+      "commandLineArgs": "TestDictWriterInt"
+    },
+    "Terminaux - TestDictWriterStr": {
+      "commandName": "Project",
+      "commandLineArgs": "TestDictWriterStr"
+    },
+    "Terminaux - TestListWriterChar": {
+      "commandName": "Project",
+      "commandLineArgs": "TestListWriterChar"
+    },
+    "Terminaux - TestListWriterInt": {
+      "commandName": "Project",
+      "commandLineArgs": "TestListWriterInt"
+    },
+    "Terminaux - TestListWriterStr": {
+      "commandName": "Project",
+      "commandLineArgs": "TestListWriterStr"
+    },
+    "Terminaux - TestTable": {
+      "commandName": "Project",
+      "commandLineArgs": "TestTable"
+    },
+    "Terminaux - TestInputSelection": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputSelection"
+    },
+    "Terminaux - TestInputChoice": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputChoice"
+    },
+    "Terminaux - ColorTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorTest"
+    },
+    "Terminaux - ColorTrueTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorTrueTest"
+    },
+    "Terminaux - KeyInfo": {
+      "commandName": "Project",
+      "commandLineArgs": "KeyInfo"
+    },
+    "Terminaux - ColorWheelTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorWheelTest"
+    },
+    "Terminaux - PromptLoopedCompletionMultiLinePrompt": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCompletionMultiLinePrompt"
+    },
+    "Terminaux - PromptLoopedCompletionMultiLinePromptWithOneLine": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedCompletionMultiLinePromptWithOneLine"
+    },
+    "Terminaux - TestInputFiglet": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputFiglet"
+    },
+    "Terminaux - ColorWithResetTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorWithResetTest"
+    },
+    "Terminaux - TestInputSelectionLarge": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputSelectionLarge"
+    },
+    "Terminaux - TestInputSelectionMultiple": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputSelectionMultiple"
+    },
+    "Terminaux - TestInputSelectionLargeMultiple": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputSelectionLargeMultiple"
+    },
+    "Terminaux - CliInfoPaneTest": {
+      "commandName": "Project",
+      "commandLineArgs": "CliInfoPaneTest"
+    },
+    "Terminaux - CliInfoPaneTestRefreshing": {
+      "commandName": "Project",
+      "commandLineArgs": "CliInfoPaneTestRefreshing"
+    },
+    "Terminaux - CliInfoPaneSlowTest": {
+      "commandName": "Project",
+      "commandLineArgs": "CliInfoPaneSlowTest"
+    },
+    "Terminaux - CliInfoPaneSlowTestRefreshing": {
+      "commandName": "Project",
+      "commandLineArgs": "CliInfoPaneSlowTestRefreshing"
+    },
+    "Terminaux - CliDoublePaneTest": {
+      "commandName": "Project",
+      "commandLineArgs": "CliDoublePaneTest"
+    },
+    "Terminaux - CliDoublePaneSlowTest": {
+      "commandName": "Project",
+      "commandLineArgs": "CliDoublePaneSlowTest"
+    },
+    "Terminaux - TestInputFigletFiggle": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputFigletFiggle"
+    },
+    "Terminaux - PromptLoopedHistories": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptLoopedHistories"
     }
+  }
 }
