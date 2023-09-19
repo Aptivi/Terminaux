@@ -2,547 +2,547 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Base.ConsoleChecker.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Base.ConsoleExtensions.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Base.ConsolePlatform.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Base.ConsoleResizeListener.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Base.ConsoleWrappers.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Base.TerminauxContinuableException.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Base.TerminauxException.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Base.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.Accessibility.Deficiency.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.Accessibility.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.Color.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.Color255.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.ColorTools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.ColorType.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.ConsoleColors.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.ConsoleColorsInfo.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.Wheel.ColorWheel.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.Wheel.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Colors.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Figlet.FigletSelector.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Figlet.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Bindings.BaseBinding.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Bindings.CustomBindings.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Bindings.IBinding.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Bindings.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Input.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.InputChoiceInfo.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.InputChoiceTools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Interactive.BaseInteractiveTui.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Interactive.IInteractiveTui.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Interactive.InteractiveTuiBinding.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Interactive.InteractiveTuiTools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Interactive.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Styles.ChoiceOutputType.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Styles.ChoiceStyle.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Styles.InputStyle.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Styles.SelectionMultipleStyle.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Styles.SelectionStyle.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.Styles.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.Inputs.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.TermReader.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.TermReaderSettings.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.TermReaderState.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.TermReaderTools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Reader.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.Types.ApcSequences.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.Types.C1Sequences.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.Types.CsiSequences.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.Types.DcsSequences.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.Types.EscSequences.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.Types.OscSequences.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.Types.PmSequences.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.Types.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.VtSequenceBasicChars.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.VtSequenceBuilderTools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.VtSequenceSpecificTypes.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Builder.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Tools.VtSequenceRegexes.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Tools.VtSequenceTools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Tools.VtSequenceType.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Sequences.Tools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.ConsoleWriters.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.BorderColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.BoxColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.BoxFrameColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.CenteredTextColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.FigletColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.FigletWhereColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.InfoBoxColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.PowerLineColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.ProgressBarColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.ProgressBarVerticalColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.TableColor.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.Tools.BorderTools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.Tools.CellOptions.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.Tools.PowerLineSegment.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.Tools.PowerLineTools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.Tools.ProgressTools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.Tools.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.FancyWriters.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.MiscWriters.LineHandleWriter.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/api/Terminaux.Writer.MiscWriters.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aptivi.github.io/Terminaux/index.html</loc>
-    <lastmod>2023-09-19T11:40:02+00:00</lastmod>
+    <lastmod>2023-09-19T11:43:13+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
