@@ -160,7 +160,7 @@ namespace Terminaux.Colors.Wheel
 
             // Write the bound keys list
             string keysStr = "[ESC] Exit | [ENTER] Accept | [H] Help";
-            TextWriterWhereColor.WriteWhere(keysStr, ConsoleWrappers.ActionWindowWidth() / 2 - keysStr.Length / 2, ConsoleWrappers.ActionCursorTop(), new Color(ConsoleColors.White));
+            TextWriterWhereColor.WriteWhere(keysStr, ConsoleWrappers.ActionWindowWidth() / 2 - keysStr.Length / 2, ConsoleWrappers.ActionWindowHeight() - 2, new Color(ConsoleColors.White));
         }
 
         internal static void UpdateColor()
