@@ -115,21 +115,19 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Render text inside it
                 ConsoleWrappers.ActionCursorVisible(false);
-                bool appendMinusOne = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight - (appendMinusOne ? 1 : 0));
                     if (i % maxHeight == 0 && i > 0)
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
-                        appendMinusOne = true;
                         if (waitForInput)
                             Input.DetectKeypress();
                         else
                             Thread.Sleep(5000);
                         BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                     }
+                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight);
                 }
 
                 // Wait until the user presses any key to close the box
@@ -215,19 +213,17 @@ namespace Terminaux.Writer.FancyWriters
                 BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
 
                 // Render text inside it
-                bool appendMinusOne = false;
                 ConsoleWrappers.ActionCursorVisible(false);
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight - (appendMinusOne ? 1 : 0));
                     if (i % maxHeight == 0 && i > 0)
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
-                        appendMinusOne = true;
                         Input.DetectKeypress();
                         BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                     }
+                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight);
                 }
 
                 // Wait until the user presses any key to close the box
@@ -604,22 +600,20 @@ namespace Terminaux.Writer.FancyWriters
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
-                bool appendMinusOne = false;
                 ConsoleWrappers.ActionCursorVisible(false);
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight - (appendMinusOne ? 1 : 0), InfoBoxColor, BackgroundColor);
                     if (i % maxHeight == 0 && i > 0)
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
-                        appendMinusOne = true;
                         if (waitForInput)
                             Input.DetectKeypress();
                         else
                             Thread.Sleep(5000);
                         BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
                     }
+                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight, InfoBoxColor, BackgroundColor);
                 }
 
                 // Wait until the user presses any key to close the box
@@ -715,22 +709,20 @@ namespace Terminaux.Writer.FancyWriters
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
-                bool appendMinusOne = false;
                 ConsoleWrappers.ActionCursorVisible(false);
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight - (appendMinusOne ? 1 : 0), InfoBoxColor, BackgroundColor);
                     if (i % maxHeight == 0 && i > 0)
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
-                        appendMinusOne = true;
                         if (waitForInput)
                             Input.DetectKeypress();
                         else
                             Thread.Sleep(5000);
                         BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
                     }
+                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight, InfoBoxColor, BackgroundColor);
                 }
 
                 // Wait until the user presses any key to close the box
