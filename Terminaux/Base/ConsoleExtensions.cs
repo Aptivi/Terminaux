@@ -129,8 +129,9 @@ namespace Terminaux.Base
                         TopSeekPosition += 1;
                         if (TopSeekPosition > ConsoleWrappers.ActionBufferHeight() - 1)
                         {
-                            // We're at the end of buffer! Decrement by one.
+                            // We're at the end of buffer! Decrement by one and bail.
                             TopSeekPosition -= 1;
+                            break;
                         }
                     }
                 }
