@@ -165,7 +165,7 @@ namespace Terminaux.Reader.Inputs.Styles
             // Make pages based on console window height
             int listStartPosition = ConsoleWrappers.ActionCursorTop();
             int listEndPosition = ConsoleWrappers.ActionWindowHeight() - ConsoleWrappers.ActionCursorTop();
-            int answersPerPage = listEndPosition - 4;
+            int answersPerPage = listEndPosition - 5;
             int pages = AllAnswers.Count / answersPerPage;
             if (AllAnswers.Count % answersPerPage == 0)
                 pages--;
@@ -188,7 +188,7 @@ namespace Terminaux.Reader.Inputs.Styles
                 }
 
                 // Populate the answers
-                int renderedAnswers = 0;
+                int renderedAnswers = 1;
                 for (int AnswerIndex = startIndex; AnswerIndex <= endIndex; AnswerIndex++)
                 {
                     ConsoleWrappers.ActionSetCursorPosition(0, listStartPosition + renderedAnswers);
@@ -208,12 +208,12 @@ namespace Terminaux.Reader.Inputs.Styles
                         string answerIndicator = $"[{(SelectedAnswers.Contains(AnswerIndex + 1) ? "*" : " ")}]";
 
                         // Get the option
-                        string AnswerOption = $" {AnswerInstance}) {answerIndicator} {AnswerTitle}";
-                        int AnswerTitleLeft = AllAnswers.Max(x => $" {x.ChoiceName}) ".Length);
+                        string AnswerOption = $"  {AnswerInstance}) {answerIndicator} {AnswerTitle}";
+                        int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
                         int answerTitleMaxLeft = ConsoleWrappers.ActionWindowWidth();
                         if (AnswerTitleLeft < answerTitleMaxLeft)
                         {
-                            string renderedChoice = $" {AnswerInstance.ChoiceName}) ";
+                            string renderedChoice = $"  {AnswerInstance.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
                             AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{answerIndicator} {AnswerTitle}" + $"{Color255.GetEsc()}[0K";
                         }
@@ -235,7 +235,7 @@ namespace Terminaux.Reader.Inputs.Styles
 
                 // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
                 // we're not switching pages yet.
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrappers.ActionWindowWidth() - 2, listStartPosition - 1, listStartPosition, 4, false);
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrappers.ActionWindowWidth() - 2, listStartPosition, listStartPosition + 1, 4, false);
 
                 // Write description area
                 int descSepArea = ConsoleWrappers.ActionWindowHeight() - 3;
