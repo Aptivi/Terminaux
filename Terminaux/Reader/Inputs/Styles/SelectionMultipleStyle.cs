@@ -183,6 +183,7 @@ namespace Terminaux.Reader.Inputs.Styles
                 // If the refresh is required, refresh the entire screen.
                 if (refreshRequired)
                 {
+                    refreshRequired = false;
                     ConsoleWrappers.ActionClear();
                     TextWriterColor.Write(Question, true, questionColor);
                 }
