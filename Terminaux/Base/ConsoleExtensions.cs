@@ -98,6 +98,9 @@ namespace Terminaux.Base
         /// <param name="Vars">Variables to be formatted in the text</param>
         public static (int, int) GetFilteredPositions(string Text, bool line, params object[] Vars)
         {
+            if (string.IsNullOrEmpty(Text))
+                return (ConsoleWrappers.ActionCursorLeft(), ConsoleWrappers.ActionCursorTop());
+
             // Filter all text from the VT escape sequences
             Text = FilterVTSequences(Text);
 
@@ -105,6 +108,7 @@ namespace Terminaux.Base
             Text = FormatString(Text, Vars);
             Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
             Text = Text.Replace(Convert.ToString(Convert.ToChar(0)), "");
+            var texts = GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth(), ConsoleWrappers.ActionCursorLeft());
             int LeftSeekPosition = ConsoleWrappers.ActionCursorLeft();
             int TopSeekPosition = ConsoleWrappers.ActionCursorTop();
             for (int i = 1; i <= Text.Length; i++)
@@ -131,6 +135,7 @@ namespace Terminaux.Base
                         {
                             // We're at the end of buffer! Decrement by one and bail.
                             TopSeekPosition -= 1;
+                            LeftSeekPosition = texts[texts.Length - 1].Length;
                             break;
                         }
                     }
