@@ -108,6 +108,8 @@ namespace Terminaux.Base
             Text = FormatString(Text, Vars);
             Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
             Text = Text.Replace(Convert.ToString(Convert.ToChar(0)), "");
+            if (string.IsNullOrEmpty(Text))
+                return (ConsoleWrappers.ActionCursorLeft(), ConsoleWrappers.ActionCursorTop());
             var texts = GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth(), ConsoleWrappers.ActionCursorLeft());
             int LeftSeekPosition = ConsoleWrappers.ActionCursorLeft();
             int TopSeekPosition = ConsoleWrappers.ActionCursorTop();
