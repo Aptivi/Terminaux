@@ -4,7 +4,7 @@
     <AssemblyTitle>Terminaux.Figgle</AssemblyTitle>
     <AssemblyDescription>Console Manipulation Library (Figlet - for Figgle)</AssemblyDescription>
     <Description>A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.</Description>
-    <Version>1.6.5</Version>
+    <Version>1.6.6</Version>
     <Authors>Aptivi</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <DebugType>portable</DebugType>
@@ -23,8 +23,8 @@
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>OfficialAppIcon-Terminaux-512.png</PackageIcon>
-    <AssemblyVersion>1.6.5</AssemblyVersion>
-    <PackageVersion>1.6.5</PackageVersion>
+    <AssemblyVersion>1.6.6</AssemblyVersion>
+    <PackageVersion>1.6.6</PackageVersion>
     <LangVersion>latest</LangVersion>
     <SignAssembly>False</SignAssembly>
   </PropertyGroup>
