@@ -19,12 +19,14 @@
 using Terminaux.Colors.Accessibility;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Terminaux.Colors
 {
     /// <summary>
     /// Color information class
     /// </summary>
+    [DebuggerDisplay("Color = {PlainSequenceEnclosed}, TrueColor = {PlainSequenceEnclosedTrueColor}")]
     public class Color : IEquatable<Color>
     {
         /// <summary>

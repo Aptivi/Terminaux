@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Diagnostics;
 using Newtonsoft.Json.Linq;
 
 namespace Terminaux.Colors
@@ -24,6 +25,7 @@ namespace Terminaux.Colors
     /// <summary>
     /// Information for the console colors that fit within the 256 colors
     /// </summary>
+    [DebuggerDisplay("RGB = {R};{G};{B}, ID = {ColorID}")]
     public class ConsoleColorsInfo : IEquatable<ConsoleColorsInfo>
     {
 

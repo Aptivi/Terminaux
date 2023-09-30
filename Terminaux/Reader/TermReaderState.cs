@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Terminaux.Reader
@@ -25,6 +26,7 @@ namespace Terminaux.Reader
     /// <summary>
     /// State of the reader
     /// </summary>
+    [DebuggerDisplay("Pos = {CurrentTextPos}, Input = ({InputPromptLeft}, {InputPromptTop}), Cursor = ({CurrentCursorPosLeft}, {CurrentCursorPosTop})")]
     public class TermReaderState
     {
         // Instance
