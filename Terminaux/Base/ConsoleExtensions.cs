@@ -530,6 +530,17 @@ namespace Terminaux.Base
 
             return IncompleteSentences.ToArray();
         }
+
+        internal static void SwapIfSourceLarger(this ref int SourceNumber, ref int TargetNumber)
+        {
+            int Source = SourceNumber;
+            int Target = TargetNumber;
+            if (SourceNumber > TargetNumber)
+            {
+                SourceNumber = Target;
+                TargetNumber = Source;
+            }
+        }
         #endregion
 
     }

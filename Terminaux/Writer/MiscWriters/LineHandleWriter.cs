@@ -18,6 +18,7 @@
 
 using System;
 using System.IO;
+using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -29,6 +30,58 @@ namespace Terminaux.Writer.MiscWriters
     /// </summary>
     public static class LineHandleWriter
     {
+
+        /// <summary>
+        /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Filename">Path to text file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber) =>
+            PrintLineWithHandleConditional(Condition, Filename, LineNumber, ColumnNumber, new Color(ConsoleColors.Gray));
+
+        /// <summary>
+        /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber) =>
+            PrintLineWithHandleConditional(Condition, Array, LineNumber, ColumnNumber, new Color(ConsoleColors.Gray));
+
+        /// <summary>
+        /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Filename">Path to text file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber, Color color)
+        {
+            if (Condition)
+            {
+                PrintLineWithHandle(Filename, LineNumber, ColumnNumber, color);
+            }
+        }
+
+        /// <summary>
+        /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber, Color color)
+        {
+            if (Condition)
+            {
+                PrintLineWithHandle(Array, LineNumber, ColumnNumber, color);
+            }
+        }
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -54,15 +107,15 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="Filename">Path to text file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber, Color ColorType)
+        /// <param name="color">The color</param>
+        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber, Color color)
         {
             // Read the contents
             Filename = ConsoleExtensions.NeutralizePath(Filename, Environment.CurrentDirectory);
             var FileContents = File.ReadAllLines(Filename);
 
             // Do the job
-            PrintLineWithHandle(FileContents, LineNumber, ColumnNumber, ColorType);
+            PrintLineWithHandle(FileContents, LineNumber, ColumnNumber, color);
         }
 
         /// <summary>
@@ -71,9 +124,107 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="Array">A string array containing the contents of the file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, Color ColorType)
+        /// <param name="color">The color</param>
+        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, Color color) =>
+            TextWriterColor.Write(RenderLineWithHandle(Array, LineNumber, ColumnNumber, color), true, color);
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Filename">Path to text file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        public static string RenderLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber) =>
+            RenderLineWithHandleConditional(Condition, Filename, LineNumber, ColumnNumber, new Color(ConsoleColors.Gray));
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        public static string RenderLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber) =>
+            RenderLineWithHandleConditional(Condition, Array, LineNumber, ColumnNumber, new Color(ConsoleColors.Gray));
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Filename">Path to text file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static string RenderLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber, Color color)
         {
+            if (Condition)
+                return RenderLineWithHandle(Filename, LineNumber, ColumnNumber, color);
+            return "";
+        }
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static string RenderLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber, Color color)
+        {
+            if (Condition)
+                return RenderLineWithHandle(Array, LineNumber, ColumnNumber, color);
+            return "";
+        }
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number
+        /// </summary>
+        /// <param name="Filename">Path to text file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        public static string RenderLineWithHandle(string Filename, int LineNumber, int ColumnNumber) =>
+            RenderLineWithHandle(Filename, LineNumber, ColumnNumber, new Color(ConsoleColors.Gray));
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number
+        /// </summary>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        public static string RenderLineWithHandle(string[] Array, int LineNumber, int ColumnNumber) =>
+            RenderLineWithHandle(Array, LineNumber, ColumnNumber, new Color(ConsoleColors.Gray));
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number
+        /// </summary>
+        /// <param name="Filename">Path to text file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static string RenderLineWithHandle(string Filename, int LineNumber, int ColumnNumber, Color color)
+        {
+            // Read the contents
+            Filename = ConsoleExtensions.NeutralizePath(Filename, Environment.CurrentDirectory);
+            var FileContents = File.ReadAllLines(Filename);
+
+            // Do the job
+            return RenderLineWithHandle(FileContents, LineNumber, ColumnNumber, color);
+        }
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number
+        /// </summary>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static string RenderLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, Color color)
+        {
+            // Get the builder
+            StringBuilder builder = new();
+
             // Get the line index from number
             if (LineNumber <= 0)
                 LineNumber = 1;
@@ -83,13 +234,18 @@ namespace Terminaux.Writer.MiscWriters
 
             // Get the line
             string LineContent = Array[LineIndex];
-            TextWriterColor.Write(" | " + LineContent, true, ColorType);
 
-            // Place the column handle
+            // Now, check the column number
+            if (ColumnNumber < 0 || ColumnNumber > LineContent.Length)
+                ColumnNumber = LineContent.Length;
+
+            // Place the line and the column handle
             int RepeatBlanks = ColumnNumber - 1;
             if (RepeatBlanks < 0)
                 RepeatBlanks = 0;
-            TextWriterColor.Write(" | " + new string(' ', RepeatBlanks) + "^", true, ColorType);
+            builder.AppendLine($"{color.VTSequenceForeground}  | {LineContent}");
+            builder.AppendLine($"{color.VTSequenceForeground}  | {new string(' ', RepeatBlanks)}^");
+            return builder.ToString();
         }
 
     }
