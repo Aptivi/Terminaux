@@ -18,6 +18,9 @@
 
 using Figletize;
 using Figletize.Utilities;
+using System;
+using System.Diagnostics;
+using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
 
@@ -38,10 +41,18 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, params object[] Vars)
         {
-            Text = ConsoleExtensions.FormatString(Text, Vars);
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
-            FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, new Color(ConsoleColors.Gray), Vars);
+            try
+            {
+                Text = ConsoleExtensions.FormatString(Text, Vars);
+                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+                int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
+                FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, new Color(ConsoleColors.Gray), Vars);
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
         }
 
         /// <summary>
@@ -89,10 +100,18 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = ConsoleExtensions.FormatString(Text, Vars);
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
-            FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
+            try
+            {
+                Text = ConsoleExtensions.FormatString(Text, Vars);
+                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+                int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
+                FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
         }
 
         /// <summary>
@@ -103,12 +122,20 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, params object[] Vars)
         {
-            Text = ConsoleExtensions.FormatString(Text, Vars);
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
-            int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
-            int consoleY = ConsoleWrappers.ActionWindowHeight() / 2 - figHeight;
-            FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, new Color(ConsoleColors.Gray), Vars);
+            try
+            {
+                Text = ConsoleExtensions.FormatString(Text, Vars);
+                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+                int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
+                int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
+                int consoleY = ConsoleWrappers.ActionWindowHeight() / 2 - figHeight;
+                FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, new Color(ConsoleColors.Gray), Vars);
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
         }
 
         /// <summary>
@@ -152,12 +179,20 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = ConsoleExtensions.FormatString(Text, Vars);
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
-            int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
-            int consoleY = ConsoleWrappers.ActionWindowHeight() / 2 - figHeight;
-            FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
+            try
+            {
+                Text = ConsoleExtensions.FormatString(Text, Vars);
+                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+                int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
+                int consoleX = ConsoleWrappers.ActionWindowWidth() / 2 - figWidth;
+                int consoleY = ConsoleWrappers.ActionWindowHeight() / 2 - figHeight;
+                FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
         }
 
     }

@@ -95,7 +95,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         }
                     }
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
                     Debug.WriteLine(ex.StackTrace);
@@ -169,7 +169,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         }
                     }
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
                     Debug.WriteLine(ex.StackTrace);

@@ -36,7 +36,8 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="Filename">Path to text file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber) => PrintLineWithHandle(Filename, LineNumber, ColumnNumber, new Color(ConsoleColors.Gray));
+        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber) =>
+            PrintLineWithHandle(Filename, LineNumber, ColumnNumber, new Color(ConsoleColors.Gray));
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -44,7 +45,8 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="Array">A string array containing the contents of the file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber) => PrintLineWithHandle(Array, LineNumber, ColumnNumber, new Color(ConsoleColors.Gray));
+        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber) =>
+            PrintLineWithHandle(Array, LineNumber, ColumnNumber, new Color(ConsoleColors.Gray));
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number

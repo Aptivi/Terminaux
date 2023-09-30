@@ -62,7 +62,7 @@ namespace Terminaux.Writer.FancyWriters
                 string Text = PowerLineTools.RenderSegments(Segments, EndingColor);
                 TextWriterColor.WritePlain(Text, Line);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");

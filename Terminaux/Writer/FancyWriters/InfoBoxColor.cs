@@ -134,7 +134,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (waitForInput)
                     Input.DetectKeypress();
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -234,7 +234,7 @@ namespace Terminaux.Writer.FancyWriters
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -620,7 +620,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (waitForInput)
                     Input.DetectKeypress();
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -729,7 +729,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (waitForInput)
                     Input.DetectKeypress();
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -925,7 +925,7 @@ namespace Terminaux.Writer.FancyWriters
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -1033,7 +1033,7 @@ namespace Terminaux.Writer.FancyWriters
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");

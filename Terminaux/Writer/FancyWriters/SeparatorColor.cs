@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Diagnostics;
+using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -37,47 +39,55 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, bool PrintSuffix, params object[] Vars)
         {
-            bool canPosition = !ConsoleChecker.IsDumb;
-            Text = ConsoleExtensions.FormatString(Text, Vars);
-
-            // Print the suffix and the text
-            if (!string.IsNullOrWhiteSpace(Text))
+            try
             {
-                if (PrintSuffix)
-                    TextWriterColor.Write("- ", false, new Color(ConsoleColors.Gray));
-                if (!Text.EndsWith("-"))
-                    Text += " ";
+                bool canPosition = !ConsoleChecker.IsDumb;
+                Text = ConsoleExtensions.FormatString(Text, Vars);
 
-                // We need to set an appropriate color for the suffix in the text.
-                if (Text.StartsWith("-"))
+                // Print the suffix and the text
+                if (!string.IsNullOrWhiteSpace(Text))
                 {
-                    for (int CharIndex = 0; CharIndex <= Text.Length - 1; CharIndex++)
+                    if (PrintSuffix)
+                        TextWriterColor.Write("- ", false, new Color(ConsoleColors.Gray));
+                    if (!Text.EndsWith("-"))
+                        Text += " ";
+
+                    // We need to set an appropriate color for the suffix in the text.
+                    if (Text.StartsWith("-"))
                     {
-                        if (Convert.ToString(Text[CharIndex]) == "-")
+                        for (int CharIndex = 0; CharIndex <= Text.Length - 1; CharIndex++)
                         {
-                            TextWriterColor.Write(Convert.ToString(Text[CharIndex]), false, new Color(ConsoleColors.Gray));
-                        }
-                        else
-                        {
-                            // We're (mostly) done
-                            Text = Text.Substring(CharIndex);
-                            break;
+                            if (Convert.ToString(Text[CharIndex]) == "-")
+                            {
+                                TextWriterColor.Write(Convert.ToString(Text[CharIndex]), false, new Color(ConsoleColors.Gray));
+                            }
+                            else
+                            {
+                                // We're (mostly) done
+                                Text = Text.Substring(CharIndex);
+                                break;
+                            }
                         }
                     }
+
+                    // Render the text accordingly
+                    Text = canPosition ? Text.Truncate(ConsoleWrappers.ActionWindowWidth() - 6) : Text;
+                    TextWriterColor.Write(Text, false, new Color(ConsoleColors.Gray));
                 }
 
-                // Render the text accordingly
-                Text = canPosition ? Text.Truncate(ConsoleWrappers.ActionWindowWidth() - 6) : Text;
-                TextWriterColor.Write(Text, false, new Color(ConsoleColors.Gray));
+                // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+                int RepeatTimes = 0;
+                if (canPosition)
+                    RepeatTimes = ConsoleWrappers.ActionWindowWidth() - (Text + " ").Length - 1;
+
+                // Write the closing minus sign.
+                TextWriterColor.Write(new string('-', RepeatTimes), true, new Color(ConsoleColors.Gray));
             }
-
-            // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
-            int RepeatTimes = 0;
-            if (canPosition)
-                RepeatTimes = ConsoleWrappers.ActionWindowWidth() - (Text + " ").Length - 1;
-
-            // Write the closing minus sign.
-            TextWriterColor.Write(new string('-', RepeatTimes), true, new Color(ConsoleColors.Gray));
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
         }
 
         /// <summary>
@@ -121,29 +131,37 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            bool canPosition = !ConsoleChecker.IsDumb;
-            Text = ConsoleExtensions.FormatString(Text, Vars);
-
-            // Print the suffix and the text
-            if (!string.IsNullOrWhiteSpace(Text))
+            try
             {
-                if (PrintSuffix)
-                    Text = "- " + Text;
-                if (!Text.EndsWith("-"))
-                    Text += " ";
+                bool canPosition = !ConsoleChecker.IsDumb;
+                Text = ConsoleExtensions.FormatString(Text, Vars);
 
-                // Render the text accordingly
-                Text = canPosition ? Text.Truncate(ConsoleWrappers.ActionWindowWidth() - 6) : Text;
-                TextWriterColor.Write(Text, false, ForegroundColor, BackgroundColor);
+                // Print the suffix and the text
+                if (!string.IsNullOrWhiteSpace(Text))
+                {
+                    if (PrintSuffix)
+                        Text = "- " + Text;
+                    if (!Text.EndsWith("-"))
+                        Text += " ";
+
+                    // Render the text accordingly
+                    Text = canPosition ? Text.Truncate(ConsoleWrappers.ActionWindowWidth() - 6) : Text;
+                    TextWriterColor.Write(Text, false, ForegroundColor, BackgroundColor);
+                }
+
+                // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+                int RepeatTimes = 0;
+                if (canPosition)
+                    RepeatTimes = ConsoleWrappers.ActionWindowWidth() - (Text + " ").Length + 1;
+
+                // Write the closing minus sign.
+                TextWriterColor.Write(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
             }
-
-            // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
-            int RepeatTimes = 0;
-            if (canPosition)
-                RepeatTimes = ConsoleWrappers.ActionWindowWidth() - (Text + " ").Length + 1;
-
-            // Write the closing minus sign.
-            TextWriterColor.Write(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
         }
 
     }

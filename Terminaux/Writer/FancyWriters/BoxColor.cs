@@ -45,7 +45,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Fill the box with spaces inside it
                 TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -77,7 +77,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Fill the box with spaces inside it
                 TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, new Color(ConsoleColors.Gray), new Color(BoxColor));
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -99,7 +99,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Fill the box with spaces inside it
                 TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, new Color(ConsoleColors.Gray), BoxColor);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");

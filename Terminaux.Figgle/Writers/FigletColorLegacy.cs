@@ -44,7 +44,7 @@ namespace Terminaux.Figgle.Writers
                 Text = FiggleTools.RenderFiglet(Text, FigletFont, Vars);
                 TextWriterColor.WritePlain(Text, true, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -68,7 +68,7 @@ namespace Terminaux.Figgle.Writers
                 // Actually write
                 WriteFigletPlain(Text, FigletFont, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -94,7 +94,7 @@ namespace Terminaux.Figgle.Writers
                 // Actually write
                 WriteFigletPlain(Text, FigletFont, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -118,7 +118,7 @@ namespace Terminaux.Figgle.Writers
                 // Actually write
                 WriteFigletPlain(Text, FigletFont, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -144,7 +144,7 @@ namespace Terminaux.Figgle.Writers
                 // Actually write
                 WriteFigletPlain(Text, FigletFont, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");

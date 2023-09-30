@@ -127,7 +127,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Return)
                         ConsoleWrappers.ActionSetCursorPosition(OldLeft, OldTop);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -174,7 +174,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWherePlain(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -227,7 +227,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -283,7 +283,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -336,7 +336,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -392,7 +392,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");

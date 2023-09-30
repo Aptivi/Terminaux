@@ -94,7 +94,7 @@ namespace Terminaux.Writer.FancyWriters
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere("*", Left + 1, Top + MaximumHeight - i, true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -240,7 +240,7 @@ namespace Terminaux.Writer.FancyWriters
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
                 ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -353,7 +353,7 @@ namespace Terminaux.Writer.FancyWriters
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
                 ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");

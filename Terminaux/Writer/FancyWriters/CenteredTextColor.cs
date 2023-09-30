@@ -16,6 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+using System.Diagnostics;
+using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -36,15 +39,23 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCentered(int top, string Text, params object[] Vars)
         {
-            Text = ConsoleExtensions.FormatString(Text, Vars);
-            string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
-            ConsoleWrappers.ActionSetCursorTop(top);
-            for (int i = 0; i < sentences.Length; i++)
+            try
             {
-                string sentence = sentences[i];
-                int consoleInfoX = ConsoleWrappers.ActionWindowWidth() / 2 - sentence.Length / 2;
-                consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrappers.ActionCursorTop(), Vars);
+                Text = ConsoleExtensions.FormatString(Text, Vars);
+                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
+                ConsoleWrappers.ActionSetCursorTop(top);
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = ConsoleWrappers.ActionWindowWidth() / 2 - sentence.Length / 2;
+                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
+                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrappers.ActionCursorTop(), Vars);
+                }
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
             }
         }
 
@@ -89,15 +100,23 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = ConsoleExtensions.FormatString(Text, Vars);
-            string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
-            ConsoleWrappers.ActionSetCursorTop(top);
-            for (int i = 0; i < sentences.Length; i++)
+            try
             {
-                string sentence = sentences[i];
-                int consoleInfoX = ConsoleWrappers.ActionWindowWidth() / 2 - sentence.Length / 2;
-                consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrappers.ActionCursorTop(), ForegroundColor, BackgroundColor, Vars);
+                Text = ConsoleExtensions.FormatString(Text, Vars);
+                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
+                ConsoleWrappers.ActionSetCursorTop(top);
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = ConsoleWrappers.ActionWindowWidth() / 2 - sentence.Length / 2;
+                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
+                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrappers.ActionCursorTop(), ForegroundColor, BackgroundColor, Vars);
+                }
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
             }
         }
 

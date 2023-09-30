@@ -65,7 +65,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Line)
                         Console.WriteLine();
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -93,7 +93,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -122,7 +122,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -150,7 +150,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
@@ -179,7 +179,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
