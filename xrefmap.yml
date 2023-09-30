@@ -13671,6 +13671,184 @@ references:
   commentId: N:Terminaux.Writer.MiscWriters
   fullName: Terminaux.Writer.MiscWriters
   nameWithType: Terminaux.Writer.MiscWriters
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter
+  name: LineHandleRangedWriter
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html
+  commentId: T:Terminaux.Writer.MiscWriters.LineHandleRangedWriter
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter
+  nameWithType: LineHandleRangedWriter
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(System.String,System.Int32,System.Int32,System.Int32)
+  name: PrintLineWithHandle(string, int, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_PrintLineWithHandle_System_String_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(System.String,System.Int32,System.Int32,System.Int32)
+  name.vb: PrintLineWithHandle(String, Integer, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(string, int, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(String, Integer, Integer, Integer)
+  nameWithType: LineHandleRangedWriter.PrintLineWithHandle(string, int, int, int)
+  nameWithType.vb: LineHandleRangedWriter.PrintLineWithHandle(String, Integer, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(System.String,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: PrintLineWithHandle(string, int, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_PrintLineWithHandle_System_String_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(System.String,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: PrintLineWithHandle(String, Integer, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(string, int, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(String, Integer, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleRangedWriter.PrintLineWithHandle(string, int, int, int, Color)
+  nameWithType.vb: LineHandleRangedWriter.PrintLineWithHandle(String, Integer, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(System.String[],System.Int32,System.Int32,System.Int32)
+  name: PrintLineWithHandle(string[], int, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_PrintLineWithHandle_System_String___System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(System.String[],System.Int32,System.Int32,System.Int32)
+  name.vb: PrintLineWithHandle(String(), Integer, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(string[], int, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(String(), Integer, Integer, Integer)
+  nameWithType: LineHandleRangedWriter.PrintLineWithHandle(string[], int, int, int)
+  nameWithType.vb: LineHandleRangedWriter.PrintLineWithHandle(String(), Integer, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(System.String[],System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: PrintLineWithHandle(string[], int, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_PrintLineWithHandle_System_String___System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(System.String[],System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: PrintLineWithHandle(String(), Integer, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(string[], int, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle(String(), Integer, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleRangedWriter.PrintLineWithHandle(string[], int, int, int, Color)
+  nameWithType.vb: LineHandleRangedWriter.PrintLineWithHandle(String(), Integer, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle*
+  name: PrintLineWithHandle
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_PrintLineWithHandle_
+  commentId: Overload:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle
+  isSpec: "True"
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandle
+  nameWithType: LineHandleRangedWriter.PrintLineWithHandle
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,System.Int32)
+  name: PrintLineWithHandleConditional(bool, string, int, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_PrintLineWithHandleConditional_System_Boolean_System_String_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,System.Int32)
+  name.vb: PrintLineWithHandleConditional(Boolean, String, Integer, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(bool, string, int, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(Boolean, String, Integer, Integer, Integer)
+  nameWithType: LineHandleRangedWriter.PrintLineWithHandleConditional(bool, string, int, int, int)
+  nameWithType.vb: LineHandleRangedWriter.PrintLineWithHandleConditional(Boolean, String, Integer, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: PrintLineWithHandleConditional(bool, string, int, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_PrintLineWithHandleConditional_System_Boolean_System_String_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: PrintLineWithHandleConditional(Boolean, String, Integer, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(bool, string, int, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(Boolean, String, Integer, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleRangedWriter.PrintLineWithHandleConditional(bool, string, int, int, int, Color)
+  nameWithType.vb: LineHandleRangedWriter.PrintLineWithHandleConditional(Boolean, String, Integer, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,System.Int32)
+  name: PrintLineWithHandleConditional(bool, string[], int, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_PrintLineWithHandleConditional_System_Boolean_System_String___System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,System.Int32)
+  name.vb: PrintLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(bool, string[], int, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer)
+  nameWithType: LineHandleRangedWriter.PrintLineWithHandleConditional(bool, string[], int, int, int)
+  nameWithType.vb: LineHandleRangedWriter.PrintLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: PrintLineWithHandleConditional(bool, string[], int, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_PrintLineWithHandleConditional_System_Boolean_System_String___System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: PrintLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(bool, string[], int, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleRangedWriter.PrintLineWithHandleConditional(bool, string[], int, int, int, Color)
+  nameWithType.vb: LineHandleRangedWriter.PrintLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional*
+  name: PrintLineWithHandleConditional
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_PrintLineWithHandleConditional_
+  commentId: Overload:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional
+  isSpec: "True"
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.PrintLineWithHandleConditional
+  nameWithType: LineHandleRangedWriter.PrintLineWithHandleConditional
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(System.String,System.Int32,System.Int32,System.Int32)
+  name: RenderLineWithHandle(string, int, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_RenderLineWithHandle_System_String_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(System.String,System.Int32,System.Int32,System.Int32)
+  name.vb: RenderLineWithHandle(String, Integer, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(string, int, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(String, Integer, Integer, Integer)
+  nameWithType: LineHandleRangedWriter.RenderLineWithHandle(string, int, int, int)
+  nameWithType.vb: LineHandleRangedWriter.RenderLineWithHandle(String, Integer, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(System.String,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: RenderLineWithHandle(string, int, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_RenderLineWithHandle_System_String_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(System.String,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: RenderLineWithHandle(String, Integer, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(string, int, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(String, Integer, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleRangedWriter.RenderLineWithHandle(string, int, int, int, Color)
+  nameWithType.vb: LineHandleRangedWriter.RenderLineWithHandle(String, Integer, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(System.String[],System.Int32,System.Int32,System.Int32)
+  name: RenderLineWithHandle(string[], int, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_RenderLineWithHandle_System_String___System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(System.String[],System.Int32,System.Int32,System.Int32)
+  name.vb: RenderLineWithHandle(String(), Integer, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(string[], int, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(String(), Integer, Integer, Integer)
+  nameWithType: LineHandleRangedWriter.RenderLineWithHandle(string[], int, int, int)
+  nameWithType.vb: LineHandleRangedWriter.RenderLineWithHandle(String(), Integer, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(System.String[],System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: RenderLineWithHandle(string[], int, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_RenderLineWithHandle_System_String___System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(System.String[],System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: RenderLineWithHandle(String(), Integer, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(string[], int, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle(String(), Integer, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleRangedWriter.RenderLineWithHandle(string[], int, int, int, Color)
+  nameWithType.vb: LineHandleRangedWriter.RenderLineWithHandle(String(), Integer, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle*
+  name: RenderLineWithHandle
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_RenderLineWithHandle_
+  commentId: Overload:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle
+  isSpec: "True"
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandle
+  nameWithType: LineHandleRangedWriter.RenderLineWithHandle
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,System.Int32)
+  name: RenderLineWithHandleConditional(bool, string, int, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_RenderLineWithHandleConditional_System_Boolean_System_String_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,System.Int32)
+  name.vb: RenderLineWithHandleConditional(Boolean, String, Integer, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(bool, string, int, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(Boolean, String, Integer, Integer, Integer)
+  nameWithType: LineHandleRangedWriter.RenderLineWithHandleConditional(bool, string, int, int, int)
+  nameWithType.vb: LineHandleRangedWriter.RenderLineWithHandleConditional(Boolean, String, Integer, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: RenderLineWithHandleConditional(bool, string, int, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_RenderLineWithHandleConditional_System_Boolean_System_String_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: RenderLineWithHandleConditional(Boolean, String, Integer, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(bool, string, int, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(Boolean, String, Integer, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleRangedWriter.RenderLineWithHandleConditional(bool, string, int, int, int, Color)
+  nameWithType.vb: LineHandleRangedWriter.RenderLineWithHandleConditional(Boolean, String, Integer, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,System.Int32)
+  name: RenderLineWithHandleConditional(bool, string[], int, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_RenderLineWithHandleConditional_System_Boolean_System_String___System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,System.Int32)
+  name.vb: RenderLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(bool, string[], int, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer)
+  nameWithType: LineHandleRangedWriter.RenderLineWithHandleConditional(bool, string[], int, int, int)
+  nameWithType.vb: LineHandleRangedWriter.RenderLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: RenderLineWithHandleConditional(bool, string[], int, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_RenderLineWithHandleConditional_System_Boolean_System_String___System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: RenderLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(bool, string[], int, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleRangedWriter.RenderLineWithHandleConditional(bool, string[], int, int, int, Color)
+  nameWithType.vb: LineHandleRangedWriter.RenderLineWithHandleConditional(Boolean, String(), Integer, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional*
+  name: RenderLineWithHandleConditional
+  href: api/Terminaux.Writer.MiscWriters.LineHandleRangedWriter.html#Terminaux_Writer_MiscWriters_LineHandleRangedWriter_RenderLineWithHandleConditional_
+  commentId: Overload:Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional
+  isSpec: "True"
+  fullName: Terminaux.Writer.MiscWriters.LineHandleRangedWriter.RenderLineWithHandleConditional
+  nameWithType: LineHandleRangedWriter.RenderLineWithHandleConditional
 - uid: Terminaux.Writer.MiscWriters.LineHandleWriter
   name: LineHandleWriter
   href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html
@@ -13720,3 +13898,132 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandle
   nameWithType: LineHandleWriter.PrintLineWithHandle
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32)
+  name: PrintLineWithHandleConditional(bool, string, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_PrintLineWithHandleConditional_System_Boolean_System_String_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32)
+  name.vb: PrintLineWithHandleConditional(Boolean, String, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(bool, string, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(Boolean, String, Integer, Integer)
+  nameWithType: LineHandleWriter.PrintLineWithHandleConditional(bool, string, int, int)
+  nameWithType.vb: LineHandleWriter.PrintLineWithHandleConditional(Boolean, String, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: PrintLineWithHandleConditional(bool, string, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_PrintLineWithHandleConditional_System_Boolean_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: PrintLineWithHandleConditional(Boolean, String, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(bool, string, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(Boolean, String, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleWriter.PrintLineWithHandleConditional(bool, string, int, int, Color)
+  nameWithType.vb: LineHandleWriter.PrintLineWithHandleConditional(Boolean, String, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32)
+  name: PrintLineWithHandleConditional(bool, string[], int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_PrintLineWithHandleConditional_System_Boolean_System_String___System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32)
+  name.vb: PrintLineWithHandleConditional(Boolean, String(), Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(bool, string[], int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(Boolean, String(), Integer, Integer)
+  nameWithType: LineHandleWriter.PrintLineWithHandleConditional(bool, string[], int, int)
+  nameWithType.vb: LineHandleWriter.PrintLineWithHandleConditional(Boolean, String(), Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: PrintLineWithHandleConditional(bool, string[], int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_PrintLineWithHandleConditional_System_Boolean_System_String___System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: PrintLineWithHandleConditional(Boolean, String(), Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(bool, string[], int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional(Boolean, String(), Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleWriter.PrintLineWithHandleConditional(bool, string[], int, int, Color)
+  nameWithType.vb: LineHandleWriter.PrintLineWithHandleConditional(Boolean, String(), Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional*
+  name: PrintLineWithHandleConditional
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_PrintLineWithHandleConditional_
+  commentId: Overload:Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional
+  isSpec: "True"
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.PrintLineWithHandleConditional
+  nameWithType: LineHandleWriter.PrintLineWithHandleConditional
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(System.String,System.Int32,System.Int32)
+  name: RenderLineWithHandle(string, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_RenderLineWithHandle_System_String_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(System.String,System.Int32,System.Int32)
+  name.vb: RenderLineWithHandle(String, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(string, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(String, Integer, Integer)
+  nameWithType: LineHandleWriter.RenderLineWithHandle(string, int, int)
+  nameWithType.vb: LineHandleWriter.RenderLineWithHandle(String, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(System.String,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: RenderLineWithHandle(string, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_RenderLineWithHandle_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(System.String,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: RenderLineWithHandle(String, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(string, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(String, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleWriter.RenderLineWithHandle(string, int, int, Color)
+  nameWithType.vb: LineHandleWriter.RenderLineWithHandle(String, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(System.String[],System.Int32,System.Int32)
+  name: RenderLineWithHandle(string[], int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_RenderLineWithHandle_System_String___System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(System.String[],System.Int32,System.Int32)
+  name.vb: RenderLineWithHandle(String(), Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(string[], int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(String(), Integer, Integer)
+  nameWithType: LineHandleWriter.RenderLineWithHandle(string[], int, int)
+  nameWithType.vb: LineHandleWriter.RenderLineWithHandle(String(), Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(System.String[],System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: RenderLineWithHandle(string[], int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_RenderLineWithHandle_System_String___System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(System.String[],System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: RenderLineWithHandle(String(), Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(string[], int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle(String(), Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleWriter.RenderLineWithHandle(string[], int, int, Color)
+  nameWithType.vb: LineHandleWriter.RenderLineWithHandle(String(), Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle*
+  name: RenderLineWithHandle
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_RenderLineWithHandle_
+  commentId: Overload:Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle
+  isSpec: "True"
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandle
+  nameWithType: LineHandleWriter.RenderLineWithHandle
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32)
+  name: RenderLineWithHandleConditional(bool, string, int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_RenderLineWithHandleConditional_System_Boolean_System_String_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32)
+  name.vb: RenderLineWithHandleConditional(Boolean, String, Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(bool, string, int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(Boolean, String, Integer, Integer)
+  nameWithType: LineHandleWriter.RenderLineWithHandleConditional(bool, string, int, int)
+  nameWithType.vb: LineHandleWriter.RenderLineWithHandleConditional(Boolean, String, Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: RenderLineWithHandleConditional(bool, string, int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_RenderLineWithHandleConditional_System_Boolean_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(System.Boolean,System.String,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: RenderLineWithHandleConditional(Boolean, String, Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(bool, string, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(Boolean, String, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleWriter.RenderLineWithHandleConditional(bool, string, int, int, Color)
+  nameWithType.vb: LineHandleWriter.RenderLineWithHandleConditional(Boolean, String, Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32)
+  name: RenderLineWithHandleConditional(bool, string[], int, int)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_RenderLineWithHandleConditional_System_Boolean_System_String___System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32)
+  name.vb: RenderLineWithHandleConditional(Boolean, String(), Integer, Integer)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(bool, string[], int, int)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(Boolean, String(), Integer, Integer)
+  nameWithType: LineHandleWriter.RenderLineWithHandleConditional(bool, string[], int, int)
+  nameWithType.vb: LineHandleWriter.RenderLineWithHandleConditional(Boolean, String(), Integer, Integer)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: RenderLineWithHandleConditional(bool, string[], int, int, Color)
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_RenderLineWithHandleConditional_System_Boolean_System_String___System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(System.Boolean,System.String[],System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: RenderLineWithHandleConditional(Boolean, String(), Integer, Integer, Color)
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(bool, string[], int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional(Boolean, String(), Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: LineHandleWriter.RenderLineWithHandleConditional(bool, string[], int, int, Color)
+  nameWithType.vb: LineHandleWriter.RenderLineWithHandleConditional(Boolean, String(), Integer, Integer, Color)
+- uid: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional*
+  name: RenderLineWithHandleConditional
+  href: api/Terminaux.Writer.MiscWriters.LineHandleWriter.html#Terminaux_Writer_MiscWriters_LineHandleWriter_RenderLineWithHandleConditional_
+  commentId: Overload:Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional
+  isSpec: "True"
+  fullName: Terminaux.Writer.MiscWriters.LineHandleWriter.RenderLineWithHandleConditional
+  nameWithType: LineHandleWriter.RenderLineWithHandleConditional
