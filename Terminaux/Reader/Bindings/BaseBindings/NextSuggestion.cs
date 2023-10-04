@@ -43,10 +43,38 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
                 // Get a suggestion
                 string suggestion = suggestions[state.CurrentSuggestionsPos];
-                int maxTimes = suggestions.Max((str) => str.Length);
 
-                // Wipe out everything from the right
-                state.CurrentText.Remove(state.CurrentTextPos, state.CurrentText.Length - state.CurrentTextPos);
+                // If there is no suggestion, bail
+                if (string.IsNullOrEmpty(suggestion))
+                    return;
+                int maxTimes = suggestions.Max((str) => str.Length);
+                int oldLength = state.CurrentText.Length;
+
+                // Wipe out everything from the right until the space is spotted
+                string[] splitText = state.CurrentText.ToString().SplitEncloseDoubleQuotes();
+                int pos = 0;
+                for (int i = 0; i < splitText.Length; i++)
+                {
+                    string text = splitText[i] + " ";
+                    bool bail = false;
+                    for (int j = 0; j < text.Length; j++)
+                    {
+                        if (pos == state.CurrentTextPos)
+                        {
+                            if (j + 1 == text.Length)
+                                splitText[i] += suggestion;
+                            else
+                                splitText[i] = splitText[i].Remove(j) + suggestion;
+                            bail = true;
+                            break;
+                        }
+                        pos++;
+                    }
+                    if (bail)
+                        break;
+                }
+                state.CurrentText.Clear();
+                state.CurrentText.Append(string.Join(" ", splitText));
 
                 // Re-write the text and set the current cursor position as appropriate
                 string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
@@ -63,23 +91,8 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 else
                 {
                     ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleWrappers.ActionWriteString(renderedText + new string(' ', state.CurrentText.Length - state.CurrentTextPos), state.settings);
+                    ConsoleWrappers.ActionWriteString(renderedText + new string(' ', oldLength), state.settings);
                 }
-                ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-
-                // Write the suggestion
-                state.CurrentText.Append(suggestion);
-                renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-                if (state.OneLineWrap)
-                {
-                    int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                    string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
-                    renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
-                    ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                    ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
-                }
-                else
-                    ConsoleWrappers.ActionWriteString(suggestion + new string(' ', maxTimes), state.settings);
                 ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
             }
         }

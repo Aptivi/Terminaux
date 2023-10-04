@@ -36,6 +36,7 @@ namespace Terminaux.Base
     /// </summary>
     public static class ConsoleExtensions
     {
+        private static readonly string regexMatchEnclosedStrings = /* lang=regex */ @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+";
 
         /// <summary>
         /// Clears the console buffer, but keeps the current cursor position
@@ -459,6 +460,27 @@ namespace Terminaux.Base
         internal static string[] SplitNewLines(this string target) =>
             target.Replace(Convert.ToChar(13).ToString(), "")
                .Split(Convert.ToChar(10));
+
+        internal static string[] SplitEncloseDoubleQuotes(this string target)
+        {
+            var matches = Regex.Matches(target, regexMatchEnclosedStrings);
+            List<string> splits = new();
+            foreach (Match match in matches)
+                splits.Add(match.Value.ReleaseDoubleQuotes());
+            return splits.ToArray();
+        }
+        internal static string ReleaseDoubleQuotes(this string target)
+        {
+            string ReleasedString = target;
+            if (target.StartsWith("\"") && target.EndsWith("\"") && target != "\"" ||
+                target.StartsWith("'") && target.EndsWith("'") && target != "'" ||
+                target.StartsWith("`") && target.EndsWith("`") && target != "`")
+            {
+                ReleasedString = ReleasedString.Remove(0, 1);
+                ReleasedString = ReleasedString.Remove(ReleasedString.Length - 1);
+            }
+            return ReleasedString;
+        }
 
         internal static string[] GetWrappedSentences(string text, int maximumLength) =>
             GetWrappedSentences(text, maximumLength, 0);
