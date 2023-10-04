@@ -146,6 +146,8 @@ namespace Terminaux.Base
                                 // We're at the end of buffer! Decrement by one and bail.
                                 TopSeekPosition -= 1;
                                 LeftSeekPosition = texts[texts.Length - 1].Length;
+                                if (LeftSeekPosition >= ConsoleWrappers.ActionWindowWidth())
+                                    LeftSeekPosition = ConsoleWrappers.ActionWindowWidth() - 1;
                                 break;
                             }
                         }
