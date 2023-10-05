@@ -121,37 +121,41 @@ namespace Terminaux.Base
             if (!noSeek)
             {
                 var texts = GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth(), ConsoleWrappers.ActionCursorLeft());
-                for (int i = 1; i <= Text.Length; i++)
+                for (int i = 0; i < texts.Length; i++)
                 {
-                    // If we spotted a new line character, get down by one line.
-                    if (Text[i - 1] == Convert.ToChar(10))
+                    string text = texts[i];
+                    for (int j = 1; j <= text.Length; j++)
                     {
-                        if (TopSeekPosition < ConsoleWrappers.ActionBufferHeight() - 1)
-                            TopSeekPosition += 1;
-                        LeftSeekPosition = 0;
-                    }
-                    else
-                    {
-                        // Simulate seeking through text
-                        LeftSeekPosition += 1;
-                        if (LeftSeekPosition >= ConsoleWrappers.ActionWindowWidth())
+                        // If we spotted a new line character, get down by one line.
+                        if (text[j - 1] == Convert.ToChar(10))
                         {
-                            // We've reached end of line
-                            LeftSeekPosition = 0;
-
-                            // Get down by one line
-                            if (i < Text.Length || !line)
+                            if (TopSeekPosition < ConsoleWrappers.ActionBufferHeight() - 1)
                                 TopSeekPosition += 1;
-                            if (TopSeekPosition > ConsoleWrappers.ActionBufferHeight() - 1)
+                            LeftSeekPosition = 0;
+                        }
+                        else
+                        {
+                            // Simulate seeking through text
+                            LeftSeekPosition += 1;
+                            if (LeftSeekPosition >= ConsoleWrappers.ActionWindowWidth())
                             {
-                                // We're at the end of buffer! Decrement by one and bail.
-                                TopSeekPosition -= 1;
-                                LeftSeekPosition = texts[texts.Length - 1].Length;
-                                if (LeftSeekPosition >= ConsoleWrappers.ActionWindowWidth())
-                                    LeftSeekPosition = ConsoleWrappers.ActionWindowWidth() - 1;
-                                break;
+                                // We've reached end of line
+                                LeftSeekPosition = 0;
                             }
                         }
+                    }
+
+                    // Get down by one line
+                    if (i < texts.Length - 1)
+                        TopSeekPosition += 1;
+                    if (TopSeekPosition > ConsoleWrappers.ActionBufferHeight() - 1)
+                    {
+                        // We're at the end of buffer! Decrement by one and bail.
+                        TopSeekPosition -= 1;
+                        LeftSeekPosition = texts[texts.Length - 1].Length;
+                        if (LeftSeekPosition >= ConsoleWrappers.ActionWindowWidth())
+                            LeftSeekPosition = ConsoleWrappers.ActionWindowWidth() - 1;
+                        break;
                     }
                 }
             }
@@ -505,49 +509,54 @@ namespace Terminaux.Base
             {
                 int vtSeqIdx = 0;
                 int vtSeqCompensate = 0;
-                for (int i = 0; i < text.Length; i++)
+                foreach (string splitText in text.SplitNewLines())
                 {
-                    // Check the character to see if we're at the VT sequence
-                    bool explicitNewLine = text[text.Length - 1] == '\n';
-                    char ParagraphChar = text[i];
-                    bool isNewLine = text[i] == '\n';
-                    string seq = "";
-                    if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+                    if (splitText.Length == 0)
+                        IncompleteSentences.Add(splitText);
+                    for (int i = 0; i < splitText.Length; i++)
                     {
-                        // We're at an index which is the same as the captured VT sequence. Get the sequence
-                        seq = sequences[vtSeqIdx].Value;
+                        // Check the character to see if we're at the VT sequence
+                        bool explicitNewLine = splitText[text.Length - 1] == '\n';
+                        char ParagraphChar = splitText[i];
+                        bool isNewLine = splitText[i] == '\n';
+                        string seq = "";
+                        if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+                        {
+                            // We're at an index which is the same as the captured VT sequence. Get the sequence
+                            seq = sequences[vtSeqIdx].Value;
 
-                        // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                        if (vtSeqIdx + 1 < sequences.Count)
-                            vtSeqIdx++;
+                            // Raise the index in case we have the next sequence, but only if we're sure that we have another
+                            if (vtSeqIdx + 1 < sequences.Count)
+                                vtSeqIdx++;
 
-                        // Raise the paragraph index by the length of the sequence
-                        i += seq.Length - 1;
-                        vtSeqCompensate += seq.Length;
-                    }
+                            // Raise the paragraph index by the length of the sequence
+                            i += seq.Length - 1;
+                            vtSeqCompensate += seq.Length;
+                        }
 
-                    // Append the character into the incomplete sentence builder.
-                    if (!isNewLine)
-                        IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
+                        // Append the character into the incomplete sentence builder.
+                        if (!isNewLine)
+                            IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
 
-                    // Also, compensate the \0 characters
-                    if (text[i] == '\0')
-                        vtSeqCompensate++;
+                        // Also, compensate the \0 characters
+                        if (splitText[i] == '\0')
+                            vtSeqCompensate++;
 
-                    // Check to see if we're at the maximum character number or at the new line
-                    if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate |
-                        i == text.Length - 1 |
-                        isNewLine)
-                    {
-                        // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                        IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
-                        if (explicitNewLine)
-                            IncompleteSentences.Add("");
+                        // Check to see if we're at the maximum character number or at the new line
+                        if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate |
+                            i == splitText.Length - 1 |
+                            isNewLine)
+                        {
+                            // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
+                            IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+                            if (explicitNewLine)
+                                IncompleteSentences.Add("");
 
-                        // Clean everything up
-                        IncompleteSentenceBuilder.Clear();
-                        indentLength = 0;
-                        vtSeqCompensate = 0;
+                            // Clean everything up
+                            IncompleteSentenceBuilder.Clear();
+                            indentLength = 0;
+                            vtSeqCompensate = 0;
+                        }
                     }
                 }
             }
