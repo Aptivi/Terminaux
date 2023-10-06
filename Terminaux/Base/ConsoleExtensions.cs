@@ -504,19 +504,19 @@ namespace Terminaux.Base
 
             // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
             // the first time and will be reverted back to zero after the incomplete sentence is formed.
-            var sequencesCollections = VtSequenceTools.MatchVTSequences(text);
-            foreach (var sequences in sequencesCollections)
+            foreach (string splitText in text.SplitNewLines())
             {
-                int vtSeqIdx = 0;
-                int vtSeqCompensate = 0;
-                foreach (string splitText in text.SplitNewLines())
+                var sequencesCollections = VtSequenceTools.MatchVTSequences(splitText);
+                foreach (var sequences in sequencesCollections)
                 {
+                    int vtSeqIdx = 0;
+                    int vtSeqCompensate = 0;
                     if (splitText.Length == 0)
                         IncompleteSentences.Add(splitText);
                     for (int i = 0; i < splitText.Length; i++)
                     {
                         // Check the character to see if we're at the VT sequence
-                        bool explicitNewLine = splitText[text.Length - 1] == '\n';
+                        bool explicitNewLine = splitText[splitText.Length - 1] == '\n';
                         char ParagraphChar = splitText[i];
                         bool isNewLine = splitText[i] == '\n';
                         string seq = "";
