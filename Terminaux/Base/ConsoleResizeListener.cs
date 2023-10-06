@@ -47,6 +47,16 @@ namespace Terminaux.Base
             return false;
         }
 
+        /// <summary>
+        /// Gets the console size from the cached window height and width position
+        /// </summary>
+        public static (int Width, int Height) GetCurrentConsoleSize()
+        {
+            if (!ResizeListenerThread.IsAlive)
+                return (ConsoleWrappers.ActionWindowWidth(), ConsoleWrappers.ActionWindowHeight());
+            return (CurrentWindowWidth, CurrentWindowHeight);
+        }
+
         private static void PollForResize()
         {
             try
