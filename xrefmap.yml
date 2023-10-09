@@ -826,6 +826,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.B
   nameWithType: Color.B
+- uid: Terminaux.Colors.Color.CMYK
+  name: CMYK
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_CMYK
+  commentId: P:Terminaux.Colors.Color.CMYK
+  fullName: Terminaux.Colors.Color.CMYK
+  nameWithType: Color.CMYK
+- uid: Terminaux.Colors.Color.CMYK*
+  name: CMYK
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_CMYK_
+  commentId: Overload:Terminaux.Colors.Color.CMYK
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.CMYK
+  nameWithType: Color.CMYK
 - uid: Terminaux.Colors.Color.ColorEnum16
   name: ColorEnum16
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_ColorEnum16
@@ -1023,6 +1036,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.R
   nameWithType: Color.R
+- uid: Terminaux.Colors.Color.RGB
+  name: RGB
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_RGB
+  commentId: P:Terminaux.Colors.Color.RGB
+  fullName: Terminaux.Colors.Color.RGB
+  nameWithType: Color.RGB
+- uid: Terminaux.Colors.Color.RGB*
+  name: RGB
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_RGB_
+  commentId: Overload:Terminaux.Colors.Color.RGB
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.RGB
+  nameWithType: Color.RGB
 - uid: Terminaux.Colors.Color.Type
   name: Type
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_Type
@@ -3228,6 +3254,469 @@ references:
   fullName.vb: Terminaux.Colors.ConsoleColorsInfo.<>
   nameWithType: ConsoleColorsInfo.operator !=
   nameWithType.vb: ConsoleColorsInfo.<>
+- uid: Terminaux.Colors.Models
+  name: Terminaux.Colors.Models
+  href: api/Terminaux.Colors.Models.html
+  commentId: N:Terminaux.Colors.Models
+  fullName: Terminaux.Colors.Models
+  nameWithType: Terminaux.Colors.Models
+- uid: Terminaux.Colors.Models.CyanMagentaYellow
+  name: CyanMagentaYellow
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html
+  commentId: T:Terminaux.Colors.Models.CyanMagentaYellow
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow
+  nameWithType: CyanMagentaYellow
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.C
+  name: C
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_C
+  commentId: P:Terminaux.Colors.Models.CyanMagentaYellow.C
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.C
+  nameWithType: CyanMagentaYellow.C
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.C*
+  name: C
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_C_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.C
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.C
+  nameWithType: CyanMagentaYellow.C
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.CWhole
+  name: CWhole
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_CWhole
+  commentId: P:Terminaux.Colors.Models.CyanMagentaYellow.CWhole
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.CWhole
+  nameWithType: CyanMagentaYellow.CWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.CWhole*
+  name: CWhole
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_CWhole_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.CWhole
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.CWhole
+  nameWithType: CyanMagentaYellow.CWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.Equals(System.Object)
+  name: Equals(object)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_Equals_System_Object_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.Equals(object)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellow.Equals(Object)
+  nameWithType: CyanMagentaYellow.Equals(object)
+  nameWithType.vb: CyanMagentaYellow.Equals(Object)
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.Equals(Terminaux.Colors.Models.CyanMagentaYellow)
+  name: Equals(CyanMagentaYellow)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_Equals_Terminaux_Colors_Models_CyanMagentaYellow_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.Equals(Terminaux.Colors.Models.CyanMagentaYellow)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.Equals(Terminaux.Colors.Models.CyanMagentaYellow)
+  nameWithType: CyanMagentaYellow.Equals(CyanMagentaYellow)
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.Equals*
+  name: Equals
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_Equals_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.Equals
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.Equals
+  nameWithType: CyanMagentaYellow.Equals
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.GetHashCode
+  name: GetHashCode()
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_GetHashCode
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.GetHashCode
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.GetHashCode()
+  nameWithType: CyanMagentaYellow.GetHashCode()
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.GetHashCode*
+  name: GetHashCode
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_GetHashCode_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.GetHashCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.GetHashCode
+  nameWithType: CyanMagentaYellow.GetHashCode
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.M
+  name: M
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_M
+  commentId: P:Terminaux.Colors.Models.CyanMagentaYellow.M
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.M
+  nameWithType: CyanMagentaYellow.M
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.M*
+  name: M
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_M_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.M
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.M
+  nameWithType: CyanMagentaYellow.M
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.MWhole
+  name: MWhole
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_MWhole
+  commentId: P:Terminaux.Colors.Models.CyanMagentaYellow.MWhole
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.MWhole
+  nameWithType: CyanMagentaYellow.MWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.MWhole*
+  name: MWhole
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_MWhole_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.MWhole
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.MWhole
+  nameWithType: CyanMagentaYellow.MWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.Y
+  name: Y
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_Y
+  commentId: P:Terminaux.Colors.Models.CyanMagentaYellow.Y
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.Y
+  nameWithType: CyanMagentaYellow.Y
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.Y*
+  name: Y
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_Y_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.Y
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.Y
+  nameWithType: CyanMagentaYellow.Y
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.YWhole
+  name: YWhole
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_YWhole
+  commentId: P:Terminaux.Colors.Models.CyanMagentaYellow.YWhole
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.YWhole
+  nameWithType: CyanMagentaYellow.YWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.YWhole*
+  name: YWhole
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_YWhole_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.YWhole
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.YWhole
+  nameWithType: CyanMagentaYellow.YWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.op_Equality(Terminaux.Colors.Models.CyanMagentaYellow,Terminaux.Colors.Models.CyanMagentaYellow)
+  name: operator ==(CyanMagentaYellow, CyanMagentaYellow)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_op_Equality_Terminaux_Colors_Models_CyanMagentaYellow_Terminaux_Colors_Models_CyanMagentaYellow_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.op_Equality(Terminaux.Colors.Models.CyanMagentaYellow,Terminaux.Colors.Models.CyanMagentaYellow)
+  name.vb: =(CyanMagentaYellow, CyanMagentaYellow)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.operator ==(Terminaux.Colors.Models.CyanMagentaYellow, Terminaux.Colors.Models.CyanMagentaYellow)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellow.=(Terminaux.Colors.Models.CyanMagentaYellow, Terminaux.Colors.Models.CyanMagentaYellow)
+  nameWithType: CyanMagentaYellow.operator ==(CyanMagentaYellow, CyanMagentaYellow)
+  nameWithType.vb: CyanMagentaYellow.=(CyanMagentaYellow, CyanMagentaYellow)
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.op_Equality*
+  name: operator ==
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_op_Equality_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.operator ==
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellow.=
+  nameWithType: CyanMagentaYellow.operator ==
+  nameWithType.vb: CyanMagentaYellow.=
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.op_Inequality(Terminaux.Colors.Models.CyanMagentaYellow,Terminaux.Colors.Models.CyanMagentaYellow)
+  name: operator !=(CyanMagentaYellow, CyanMagentaYellow)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_op_Inequality_Terminaux_Colors_Models_CyanMagentaYellow_Terminaux_Colors_Models_CyanMagentaYellow_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.op_Inequality(Terminaux.Colors.Models.CyanMagentaYellow,Terminaux.Colors.Models.CyanMagentaYellow)
+  name.vb: <>(CyanMagentaYellow, CyanMagentaYellow)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.operator !=(Terminaux.Colors.Models.CyanMagentaYellow, Terminaux.Colors.Models.CyanMagentaYellow)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellow.<>(Terminaux.Colors.Models.CyanMagentaYellow, Terminaux.Colors.Models.CyanMagentaYellow)
+  nameWithType: CyanMagentaYellow.operator !=(CyanMagentaYellow, CyanMagentaYellow)
+  nameWithType.vb: CyanMagentaYellow.<>(CyanMagentaYellow, CyanMagentaYellow)
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.op_Inequality*
+  name: operator !=
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_op_Inequality_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.operator !=
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellow.<>
+  nameWithType: CyanMagentaYellow.operator !=
+  nameWithType.vb: CyanMagentaYellow.<>
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey
+  name: CyanMagentaYellowKey
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html
+  commentId: T:Terminaux.Colors.Models.CyanMagentaYellowKey
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey
+  nameWithType: CyanMagentaYellowKey
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.#ctor(Terminaux.Colors.Models.RedGreenBlue)
+  name: CyanMagentaYellowKey(RedGreenBlue)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey__ctor_Terminaux_Colors_Models_RedGreenBlue_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.#ctor(Terminaux.Colors.Models.RedGreenBlue)
+  name.vb: New(RedGreenBlue)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.CyanMagentaYellowKey(Terminaux.Colors.Models.RedGreenBlue)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellowKey.New(Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: CyanMagentaYellowKey.CyanMagentaYellowKey(RedGreenBlue)
+  nameWithType.vb: CyanMagentaYellowKey.New(RedGreenBlue)
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.#ctor*
+  name: CyanMagentaYellowKey
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey__ctor_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.CyanMagentaYellowKey
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellowKey.New
+  nameWithType: CyanMagentaYellowKey.CyanMagentaYellowKey
+  nameWithType.vb: CyanMagentaYellowKey.New
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.CMY
+  name: CMY
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_CMY
+  commentId: P:Terminaux.Colors.Models.CyanMagentaYellowKey.CMY
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.CMY
+  nameWithType: CyanMagentaYellowKey.CMY
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.CMY*
+  name: CMY
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_CMY_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.CMY
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.CMY
+  nameWithType: CyanMagentaYellowKey.CMY
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToRgb
+  name: ConvertToRgb()
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_ConvertToRgb
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToRgb
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToRgb()
+  nameWithType: CyanMagentaYellowKey.ConvertToRgb()
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToRgb*
+  name: ConvertToRgb
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_ConvertToRgb_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToRgb
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToRgb
+  nameWithType: CyanMagentaYellowKey.ConvertToRgb
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.Equals(System.Object)
+  name: Equals(object)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_Equals_System_Object_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.Equals(object)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellowKey.Equals(Object)
+  nameWithType: CyanMagentaYellowKey.Equals(object)
+  nameWithType.vb: CyanMagentaYellowKey.Equals(Object)
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.Equals(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name: Equals(CyanMagentaYellowKey)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_Equals_Terminaux_Colors_Models_CyanMagentaYellowKey_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.Equals(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.Equals(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  nameWithType: CyanMagentaYellowKey.Equals(CyanMagentaYellowKey)
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.Equals*
+  name: Equals
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_Equals_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.Equals
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.Equals
+  nameWithType: CyanMagentaYellowKey.Equals
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.GetHashCode
+  name: GetHashCode()
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_GetHashCode
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.GetHashCode
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.GetHashCode()
+  nameWithType: CyanMagentaYellowKey.GetHashCode()
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.GetHashCode*
+  name: GetHashCode
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_GetHashCode_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.GetHashCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.GetHashCode
+  nameWithType: CyanMagentaYellowKey.GetHashCode
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.K
+  name: K
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_K
+  commentId: P:Terminaux.Colors.Models.CyanMagentaYellowKey.K
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.K
+  nameWithType: CyanMagentaYellowKey.K
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.K*
+  name: K
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_K_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.K
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.K
+  nameWithType: CyanMagentaYellowKey.K
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.KWhole
+  name: KWhole
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_KWhole
+  commentId: P:Terminaux.Colors.Models.CyanMagentaYellowKey.KWhole
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.KWhole
+  nameWithType: CyanMagentaYellowKey.KWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.KWhole*
+  name: KWhole
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_KWhole_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.KWhole
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.KWhole
+  nameWithType: CyanMagentaYellowKey.KWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.op_Equality(Terminaux.Colors.Models.CyanMagentaYellowKey,Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name: operator ==(CyanMagentaYellowKey, CyanMagentaYellowKey)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_op_Equality_Terminaux_Colors_Models_CyanMagentaYellowKey_Terminaux_Colors_Models_CyanMagentaYellowKey_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.op_Equality(Terminaux.Colors.Models.CyanMagentaYellowKey,Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name.vb: =(CyanMagentaYellowKey, CyanMagentaYellowKey)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.operator ==(Terminaux.Colors.Models.CyanMagentaYellowKey, Terminaux.Colors.Models.CyanMagentaYellowKey)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellowKey.=(Terminaux.Colors.Models.CyanMagentaYellowKey, Terminaux.Colors.Models.CyanMagentaYellowKey)
+  nameWithType: CyanMagentaYellowKey.operator ==(CyanMagentaYellowKey, CyanMagentaYellowKey)
+  nameWithType.vb: CyanMagentaYellowKey.=(CyanMagentaYellowKey, CyanMagentaYellowKey)
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.op_Equality*
+  name: operator ==
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_op_Equality_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.operator ==
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellowKey.=
+  nameWithType: CyanMagentaYellowKey.operator ==
+  nameWithType.vb: CyanMagentaYellowKey.=
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.op_Inequality(Terminaux.Colors.Models.CyanMagentaYellowKey,Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name: operator !=(CyanMagentaYellowKey, CyanMagentaYellowKey)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_op_Inequality_Terminaux_Colors_Models_CyanMagentaYellowKey_Terminaux_Colors_Models_CyanMagentaYellowKey_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.op_Inequality(Terminaux.Colors.Models.CyanMagentaYellowKey,Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name.vb: <>(CyanMagentaYellowKey, CyanMagentaYellowKey)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.operator !=(Terminaux.Colors.Models.CyanMagentaYellowKey, Terminaux.Colors.Models.CyanMagentaYellowKey)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellowKey.<>(Terminaux.Colors.Models.CyanMagentaYellowKey, Terminaux.Colors.Models.CyanMagentaYellowKey)
+  nameWithType: CyanMagentaYellowKey.operator !=(CyanMagentaYellowKey, CyanMagentaYellowKey)
+  nameWithType.vb: CyanMagentaYellowKey.<>(CyanMagentaYellowKey, CyanMagentaYellowKey)
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.op_Inequality*
+  name: operator !=
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_op_Inequality_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.operator !=
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellowKey.<>
+  nameWithType: CyanMagentaYellowKey.operator !=
+  nameWithType.vb: CyanMagentaYellowKey.<>
+- uid: Terminaux.Colors.Models.RedGreenBlue
+  name: RedGreenBlue
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html
+  commentId: T:Terminaux.Colors.Models.RedGreenBlue
+  fullName: Terminaux.Colors.Models.RedGreenBlue
+  nameWithType: RedGreenBlue
+- uid: Terminaux.Colors.Models.RedGreenBlue.#ctor(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name: RedGreenBlue(CyanMagentaYellowKey)
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue__ctor_Terminaux_Colors_Models_CyanMagentaYellowKey_
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.#ctor(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name.vb: New(CyanMagentaYellowKey)
+  fullName: Terminaux.Colors.Models.RedGreenBlue.RedGreenBlue(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  fullName.vb: Terminaux.Colors.Models.RedGreenBlue.New(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  nameWithType: RedGreenBlue.RedGreenBlue(CyanMagentaYellowKey)
+  nameWithType.vb: RedGreenBlue.New(CyanMagentaYellowKey)
+- uid: Terminaux.Colors.Models.RedGreenBlue.#ctor*
+  name: RedGreenBlue
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue__ctor_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Terminaux.Colors.Models.RedGreenBlue.RedGreenBlue
+  fullName.vb: Terminaux.Colors.Models.RedGreenBlue.New
+  nameWithType: RedGreenBlue.RedGreenBlue
+  nameWithType.vb: RedGreenBlue.New
+- uid: Terminaux.Colors.Models.RedGreenBlue.B
+  name: B
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_B
+  commentId: P:Terminaux.Colors.Models.RedGreenBlue.B
+  fullName: Terminaux.Colors.Models.RedGreenBlue.B
+  nameWithType: RedGreenBlue.B
+- uid: Terminaux.Colors.Models.RedGreenBlue.B*
+  name: B
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_B_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.B
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.B
+  nameWithType: RedGreenBlue.B
+- uid: Terminaux.Colors.Models.RedGreenBlue.ConvertToCmyk
+  name: ConvertToCmyk()
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_ConvertToCmyk
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.ConvertToCmyk
+  fullName: Terminaux.Colors.Models.RedGreenBlue.ConvertToCmyk()
+  nameWithType: RedGreenBlue.ConvertToCmyk()
+- uid: Terminaux.Colors.Models.RedGreenBlue.ConvertToCmyk*
+  name: ConvertToCmyk
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_ConvertToCmyk_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.ConvertToCmyk
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.ConvertToCmyk
+  nameWithType: RedGreenBlue.ConvertToCmyk
+- uid: Terminaux.Colors.Models.RedGreenBlue.Equals(System.Object)
+  name: Equals(object)
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_Equals_System_Object_
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: Terminaux.Colors.Models.RedGreenBlue.Equals(object)
+  fullName.vb: Terminaux.Colors.Models.RedGreenBlue.Equals(Object)
+  nameWithType: RedGreenBlue.Equals(object)
+  nameWithType.vb: RedGreenBlue.Equals(Object)
+- uid: Terminaux.Colors.Models.RedGreenBlue.Equals(Terminaux.Colors.Models.RedGreenBlue)
+  name: Equals(RedGreenBlue)
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_Equals_Terminaux_Colors_Models_RedGreenBlue_
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.Equals(Terminaux.Colors.Models.RedGreenBlue)
+  fullName: Terminaux.Colors.Models.RedGreenBlue.Equals(Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: RedGreenBlue.Equals(RedGreenBlue)
+- uid: Terminaux.Colors.Models.RedGreenBlue.Equals*
+  name: Equals
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_Equals_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.Equals
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.Equals
+  nameWithType: RedGreenBlue.Equals
+- uid: Terminaux.Colors.Models.RedGreenBlue.G
+  name: G
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_G
+  commentId: P:Terminaux.Colors.Models.RedGreenBlue.G
+  fullName: Terminaux.Colors.Models.RedGreenBlue.G
+  nameWithType: RedGreenBlue.G
+- uid: Terminaux.Colors.Models.RedGreenBlue.G*
+  name: G
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_G_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.G
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.G
+  nameWithType: RedGreenBlue.G
+- uid: Terminaux.Colors.Models.RedGreenBlue.GetHashCode
+  name: GetHashCode()
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_GetHashCode
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.GetHashCode
+  fullName: Terminaux.Colors.Models.RedGreenBlue.GetHashCode()
+  nameWithType: RedGreenBlue.GetHashCode()
+- uid: Terminaux.Colors.Models.RedGreenBlue.GetHashCode*
+  name: GetHashCode
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_GetHashCode_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.GetHashCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.GetHashCode
+  nameWithType: RedGreenBlue.GetHashCode
+- uid: Terminaux.Colors.Models.RedGreenBlue.R
+  name: R
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_R
+  commentId: P:Terminaux.Colors.Models.RedGreenBlue.R
+  fullName: Terminaux.Colors.Models.RedGreenBlue.R
+  nameWithType: RedGreenBlue.R
+- uid: Terminaux.Colors.Models.RedGreenBlue.R*
+  name: R
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_R_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.R
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.R
+  nameWithType: RedGreenBlue.R
+- uid: Terminaux.Colors.Models.RedGreenBlue.op_Equality(Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Models.RedGreenBlue)
+  name: operator ==(RedGreenBlue, RedGreenBlue)
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_op_Equality_Terminaux_Colors_Models_RedGreenBlue_Terminaux_Colors_Models_RedGreenBlue_
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.op_Equality(Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Models.RedGreenBlue)
+  name.vb: =(RedGreenBlue, RedGreenBlue)
+  fullName: Terminaux.Colors.Models.RedGreenBlue.operator ==(Terminaux.Colors.Models.RedGreenBlue, Terminaux.Colors.Models.RedGreenBlue)
+  fullName.vb: Terminaux.Colors.Models.RedGreenBlue.=(Terminaux.Colors.Models.RedGreenBlue, Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: RedGreenBlue.operator ==(RedGreenBlue, RedGreenBlue)
+  nameWithType.vb: RedGreenBlue.=(RedGreenBlue, RedGreenBlue)
+- uid: Terminaux.Colors.Models.RedGreenBlue.op_Equality*
+  name: operator ==
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_op_Equality_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: Terminaux.Colors.Models.RedGreenBlue.operator ==
+  fullName.vb: Terminaux.Colors.Models.RedGreenBlue.=
+  nameWithType: RedGreenBlue.operator ==
+  nameWithType.vb: RedGreenBlue.=
+- uid: Terminaux.Colors.Models.RedGreenBlue.op_Inequality(Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Models.RedGreenBlue)
+  name: operator !=(RedGreenBlue, RedGreenBlue)
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_op_Inequality_Terminaux_Colors_Models_RedGreenBlue_Terminaux_Colors_Models_RedGreenBlue_
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.op_Inequality(Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Models.RedGreenBlue)
+  name.vb: <>(RedGreenBlue, RedGreenBlue)
+  fullName: Terminaux.Colors.Models.RedGreenBlue.operator !=(Terminaux.Colors.Models.RedGreenBlue, Terminaux.Colors.Models.RedGreenBlue)
+  fullName.vb: Terminaux.Colors.Models.RedGreenBlue.<>(Terminaux.Colors.Models.RedGreenBlue, Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: RedGreenBlue.operator !=(RedGreenBlue, RedGreenBlue)
+  nameWithType.vb: RedGreenBlue.<>(RedGreenBlue, RedGreenBlue)
+- uid: Terminaux.Colors.Models.RedGreenBlue.op_Inequality*
+  name: operator !=
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_op_Inequality_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: Terminaux.Colors.Models.RedGreenBlue.operator !=
+  fullName.vb: Terminaux.Colors.Models.RedGreenBlue.<>
+  nameWithType: RedGreenBlue.operator !=
+  nameWithType.vb: RedGreenBlue.<>
 - uid: Terminaux.Colors.Wheel
   name: Terminaux.Colors.Wheel
   href: api/Terminaux.Colors.Wheel.html
