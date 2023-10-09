@@ -20,6 +20,7 @@ using Terminaux.Colors.Accessibility;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Terminaux.Colors.Models;
 
 namespace Terminaux.Colors
 {
@@ -73,6 +74,16 @@ namespace Terminaux.Colors
         /// The blue color value
         /// </summary>
         public int B { get; private set; }
+        /// <summary>
+        /// An instance of RGB
+        /// </summary>
+        public RedGreenBlue RGB =>
+            new(R, G, B);
+        /// <summary>
+        /// An instance of CMYK
+        /// </summary>
+        public CyanMagentaYellowKey CMYK =>
+            RGB.ConvertToCmyk();
         /// <summary>
         /// Hexadecimal representation of the color
         /// </summary>
