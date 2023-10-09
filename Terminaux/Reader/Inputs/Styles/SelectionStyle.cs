@@ -162,7 +162,7 @@ namespace Terminaux.Reader.Inputs.Styles
             ConsoleWrappers.ActionClear();
 
             // Ask a question
-            TextWriterColor.Write(Question, true, questionColor);
+            TextWriterColor.WriteColor(Question, true, questionColor);
 
             // Make pages based on console window height
             int listStartPosition = ConsoleWrappers.ActionCursorTop();
@@ -187,7 +187,7 @@ namespace Terminaux.Reader.Inputs.Styles
                 {
                     refreshRequired = false;
                     ConsoleWrappers.ActionClear();
-                    TextWriterColor.Write(Question, true, questionColor);
+                    TextWriterColor.WriteColor(Question, true, questionColor);
                 }
 
                 // Populate the answers
@@ -244,10 +244,10 @@ namespace Terminaux.Reader.Inputs.Styles
                 int descArea = ConsoleWrappers.ActionWindowHeight() - 2;
                 var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
                 string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate((ConsoleWrappers.ActionWindowWidth() * 2) - 3) : "";
-                TextWriterWhereColor.WriteWhere(new string('=', ConsoleWrappers.ActionWindowWidth()), 0, descSepArea, separatorColor);
+                TextWriterWhereColor.WriteWhereColor(new string('=', ConsoleWrappers.ActionWindowWidth()), 0, descSepArea, separatorColor);
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrappers.ActionWindowWidth()), 0, descArea);
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrappers.ActionWindowWidth()), 0, descArea + 1);
-                TextWriterWhereColor.WriteWhere(descFinal, 0, descArea, textColor);
+                TextWriterWhereColor.WriteWhereColor(descFinal, 0, descArea, textColor);
 
                 // Write keybindings and page and answer number
                 string bindingsRender =
@@ -257,8 +257,8 @@ namespace Terminaux.Reader.Inputs.Styles
                 string numberRender = $"[{currentPage + 1}/{pages + 1}]==[{HighlightedAnswer}/{AllAnswers.Count}]";
                 int bindingsLeft = 2;
                 int numbersLeft = ConsoleWrappers.ActionWindowWidth() - numberRender.Length - bindingsLeft;
-                TextWriterWhereColor.WriteWhere(bindingsRender, bindingsLeft, descSepArea, separatorColor);
-                TextWriterWhereColor.WriteWhere(numberRender, numbersLeft, descSepArea, separatorColor);
+                TextWriterWhereColor.WriteWhereColor(bindingsRender, bindingsLeft, descSepArea, separatorColor);
+                TextWriterWhereColor.WriteWhereColor(numberRender, numbersLeft, descSepArea, separatorColor);
 
                 // Wait for an answer
                 Answer = Input.DetectKeypress();

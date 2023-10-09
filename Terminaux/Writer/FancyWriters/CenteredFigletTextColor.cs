@@ -56,18 +56,18 @@ namespace Terminaux.Writer.FancyWriters
                 {
                     // The fallback figlet also won't fit, so use smaller text
                     consoleX = (ConsoleWrappers.ActionWindowWidth() / 2) - (Text.Length / 2);
-                    TextWriterWhereColor.WriteWhere(Text, consoleX, top, true, new Color(ConsoleColors.Gray), Vars);
+                    TextWriterWhereColor.WriteWhereColor(Text, consoleX, top, true, new Color(ConsoleColors.Gray), Vars);
                 }
                 else
                 {
                     // Write the figlet.
-                    FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, figFontFallback, new Color(ConsoleColors.Gray), Vars);
+                    FigletWhereColor.WriteFigletWhereColor(Text, consoleX, top, true, figFontFallback, new Color(ConsoleColors.Gray), Vars);
                 }
             }
             else
             {
                 // Write the figlet.
-                FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, new Color(ConsoleColors.Gray), Vars);
+                FigletWhereColor.WriteFigletWhereColor(Text, consoleX, top, true, FigletFont, new Color(ConsoleColors.Gray), Vars);
             }
         }
 
@@ -79,8 +79,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredFiglet(top, FigletFont, Text, new Color(Color), new Color(ConsoleColors.Black), Vars);
+        public static void WriteCenteredFigletColor(int top, FigletizeFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
+            WriteCenteredFigletColorBack(top, FigletFont, Text, new Color(Color), new Color(ConsoleColors.Black), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -91,8 +91,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteCenteredFiglet(top, FigletFont, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
+        public static void WriteCenteredFigletColorBack(int top, FigletizeFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
+            WriteCenteredFigletColorBack(top, FigletFont, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -102,8 +102,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, Color Color, params object[] Vars) =>
-            WriteCenteredFiglet(top, FigletFont, Text, Color, new Color(ConsoleColors.Black), Vars);
+        public static void WriteCenteredFigletColor(int top, FigletizeFont FigletFont, string Text, Color Color, params object[] Vars) =>
+            WriteCenteredFigletColorBack(top, FigletFont, Text, Color, new Color(ConsoleColors.Black), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -114,7 +114,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteCenteredFigletColorBack(int top, FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             Text = ConsoleExtensions.FormatString(Text, Vars);
             var figFontFallback = FigletTools.GetFigletFont("small");
@@ -133,18 +133,18 @@ namespace Terminaux.Writer.FancyWriters
                 {
                     // The fallback figlet also won't fit, so use smaller text
                     consoleX = (ConsoleWrappers.ActionWindowWidth() / 2) - (Text.Length / 2);
-                    TextWriterWhereColor.WriteWhere(Text, consoleX, top, true, ForegroundColor, BackgroundColor, Vars);
+                    TextWriterWhereColor.WriteWhereColorBack(Text, consoleX, top, true, ForegroundColor, BackgroundColor, Vars);
                 }
                 else
                 {
                     // Write the figlet.
-                    FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, figFontFallback, ForegroundColor, BackgroundColor, Vars);
+                    FigletWhereColor.WriteFigletWhereColorBack(Text, consoleX, top, true, figFontFallback, ForegroundColor, BackgroundColor, Vars);
                 }
             }
             else
             {
                 // Write the figlet.
-                FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
+                FigletWhereColor.WriteFigletWhereColorBack(Text, consoleX, top, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
             }
         }
 
@@ -174,18 +174,18 @@ namespace Terminaux.Writer.FancyWriters
                     // The fallback figlet also won't fit, so use smaller text
                     consoleX = (ConsoleWrappers.ActionWindowWidth() / 2) - (Text.Length / 2);
                     consoleY = ConsoleWrappers.ActionWindowHeight() / 2;
-                    TextWriterWhereColor.WriteWhere(Text, consoleX, consoleY, true, new Color(ConsoleColors.Gray), Vars);
+                    TextWriterWhereColor.WriteWhereColor(Text, consoleX, consoleY, true, new Color(ConsoleColors.Gray), Vars);
                 }
                 else
                 {
                     // Write the figlet.
-                    FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, figFontFallback, new Color(ConsoleColors.Gray), Vars);
+                    FigletWhereColor.WriteFigletWhereColor(Text, consoleX, consoleY, true, figFontFallback, new Color(ConsoleColors.Gray), Vars);
                 }
             }
             else
             {
                 // Write the figlet.
-                FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, new Color(ConsoleColors.Gray), Vars);
+                FigletWhereColor.WriteFigletWhereColor(Text, consoleX, consoleY, true, FigletFont, new Color(ConsoleColors.Gray), Vars);
             }
         }
 
@@ -196,8 +196,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredFiglet(FigletFont, Text, new Color(Color), new Color(ConsoleColors.Black), Vars);
+        public static void WriteCenteredFigletColor(FigletizeFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
+            WriteCenteredFigletColorBack(FigletFont, Text, new Color(Color), new Color(ConsoleColors.Black), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -207,8 +207,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteCenteredFiglet(FigletFont, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
+        public static void WriteCenteredFigletColorBack(FigletizeFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
+            WriteCenteredFigletColorBack(FigletFont, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -217,8 +217,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, Color Color, params object[] Vars) =>
-            WriteCenteredFiglet(FigletFont, Text, Color, new Color(ConsoleColors.Black), Vars);
+        public static void WriteCenteredFigletColor(FigletizeFont FigletFont, string Text, Color Color, params object[] Vars) =>
+            WriteCenteredFigletColorBack(FigletFont, Text, Color, new Color(ConsoleColors.Black), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -228,7 +228,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteCenteredFigletColorBack(FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             Text = ConsoleExtensions.FormatString(Text, Vars);
             var figFontFallback = FigletTools.GetFigletFont("small");
@@ -248,18 +248,18 @@ namespace Terminaux.Writer.FancyWriters
                     // The fallback figlet also won't fit, so use smaller text
                     consoleX = (ConsoleWrappers.ActionWindowWidth() / 2) - (Text.Length / 2);
                     consoleY = ConsoleWrappers.ActionWindowHeight() / 2;
-                    TextWriterWhereColor.WriteWhere(Text, consoleX, consoleY, true, ForegroundColor, BackgroundColor, Vars);
+                    TextWriterWhereColor.WriteWhereColorBack(Text, consoleX, consoleY, true, ForegroundColor, BackgroundColor, Vars);
                 }
                 else
                 {
                     // Write the figlet.
-                    FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, figFontFallback, ForegroundColor, BackgroundColor, Vars);
+                    FigletWhereColor.WriteFigletWhereColorBack(Text, consoleX, consoleY, true, figFontFallback, ForegroundColor, BackgroundColor, Vars);
                 }
             }
             else
             {
                 // Write the figlet.
-                FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
+                FigletWhereColor.WriteFigletWhereColorBack(Text, consoleX, consoleY, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
             }
         }
 

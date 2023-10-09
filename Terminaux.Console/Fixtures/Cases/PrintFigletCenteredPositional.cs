@@ -27,7 +27,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "PrintFigletCenteredPositional";
         public void RunFixture()
         {
-            CenteredFigletTextColor.WriteCenteredFiglet(5, FigletizeFonts.TryGetByName("banner3"), "Hello world!", new Color(ConsoleColors.Green));
+            CenteredFigletTextColor.WriteCenteredFigletColor(5, FigletizeFonts.TryGetByName("banner3"), "Hello world!", new Color(ConsoleColors.Green));
         }
     }
 }

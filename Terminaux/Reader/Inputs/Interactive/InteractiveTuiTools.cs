@@ -117,7 +117,7 @@ namespace Terminaux.Reader.Inputs.Interactive
                 if (notifyCrash)
                 {
                     notifyCrash = false;
-                    TextWriterColor.Write(crashReason, true, ConsoleColors.Red);
+                    TextWriterColor.WriteColor(crashReason, true, ConsoleColors.Red);
                     TextWriterColor.Write();
                     TextWriterColor.Write("Press any key to exit this program...");
                     Input.DetectKeypress();
@@ -263,13 +263,13 @@ namespace Terminaux.Reader.Inputs.Interactive
                     bool canDraw = renderedBinding.Length + ConsoleWrappers.ActionCursorLeft() < ConsoleWrappers.ActionWindowWidth() - 3;
                     if (canDraw)
                     {
-                        TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrappers.ActionCursorLeft() + 0, ConsoleWrappers.ActionWindowHeight() - 1, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionBackgroundColor);
-                        TextWriterWhereColor.WriteWhere($"{binding.BindingName}  ", ConsoleWrappers.ActionCursorLeft() + 1, ConsoleWrappers.ActionWindowHeight() - 1, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.BackgroundColor);
+                        TextWriterWhereColor.WriteWhereColorBack($" {binding.BindingKeyName} ", ConsoleWrappers.ActionCursorLeft() + 0, ConsoleWrappers.ActionWindowHeight() - 1, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionBackgroundColor);
+                        TextWriterWhereColor.WriteWhereColorBack($"{binding.BindingName}  ", ConsoleWrappers.ActionCursorLeft() + 1, ConsoleWrappers.ActionWindowHeight() - 1, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.BackgroundColor);
                     }
                     else
                     {
                         // We can't render anymore, so just break and write a binding to show more
-                        TextWriterWhereColor.WriteWhere($" K ", ConsoleWrappers.ActionWindowWidth() - 3, ConsoleWrappers.ActionWindowHeight() - 1, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionBackgroundColor);
+                        TextWriterWhereColor.WriteWhereColorBack($" K ", ConsoleWrappers.ActionWindowWidth() - 3, ConsoleWrappers.ActionWindowHeight() - 1, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionBackgroundColor);
                         break;
                     }
                 }
@@ -340,7 +340,7 @@ namespace Terminaux.Reader.Inputs.Interactive
                 var finalBackColor = finalIndex == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemBackColor : InteractiveTuiStatus.PaneItemBackColor;
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
+                TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
                 ColorTools.SetConsoleColor(InteractiveTuiStatus.PaneItemBackColor, true);
             }
 
@@ -412,7 +412,7 @@ namespace Terminaux.Reader.Inputs.Interactive
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + index - startIndex;
                 if (top > 0)
-                    TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
+                    TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
                 ColorTools.SetConsoleColor(InteractiveTuiStatus.PaneItemBackColor, true);
             }
 
@@ -483,13 +483,13 @@ namespace Terminaux.Reader.Inputs.Interactive
                 if (infoIndex >= SeparatorMaximumHeightInterior - 1)
                 {
                     string truncated = "Shift+I = more info";
-                    TextWriterWhereColor.WriteWhere(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
+                    TextWriterWhereColor.WriteWhereColorBack(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
                     break;
                 }
 
                 // Now, render the info
                 string finalInfo = finalInfoStrings[infoIndex];
-                TextWriterWhereColor.WriteWhere(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhereColorBack(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
             }
         }
 
@@ -506,7 +506,7 @@ namespace Terminaux.Reader.Inputs.Interactive
             interactiveTui.RenderStatus(selectedData);
 
             // Now, write info
-            TextWriterWhereColor.WriteWhere(InteractiveTuiStatus.Status.Truncate(ConsoleWrappers.ActionWindowWidth() - 3), 0, 0, InteractiveTuiStatus.ForegroundColor, InteractiveTuiStatus.BackgroundColor);
+            TextWriterWhereColor.WriteWhereColorBack(InteractiveTuiStatus.Status.Truncate(ConsoleWrappers.ActionWindowWidth() - 3), 0, 0, InteractiveTuiStatus.ForegroundColor, InteractiveTuiStatus.BackgroundColor);
             ConsoleExtensions.ClearLineToRight();
         }
 
@@ -562,7 +562,7 @@ namespace Terminaux.Reader.Inputs.Interactive
                         if (pressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) && !string.IsNullOrEmpty(_finalInfoRendered))
                         {
                             // User needs more information in the infobox
-                            InfoBoxColor.WriteInfoBox(_finalInfoRendered, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                            InfoBoxColor.WriteInfoBoxColorBack(_finalInfoRendered, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                             InteractiveTuiStatus.RedrawRequired = true;
                         }
                         break;
@@ -575,7 +575,7 @@ namespace Terminaux.Reader.Inputs.Interactive
                         string[] bindingRepresentations = bindings
                             .Select((itb) => $"{$"[{itb.BindingKeyName}]" + new string(' ', maxBindingLength - $"[{itb.BindingKeyName}]".Length) + $" | {itb.BindingName}"}")
                             .ToArray();
-                        InfoBoxColor.WriteInfoBox(
+                        InfoBoxColor.WriteInfoBoxColorBack(
                             $"{section}{ConsolePlatform.NewLine}" +
                             $"{new string('=', section.Length)}{ConsolePlatform.NewLine}{ConsolePlatform.NewLine}" +
                             $"{string.Join("\n", bindingRepresentations)}"

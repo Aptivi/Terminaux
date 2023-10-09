@@ -111,11 +111,11 @@ namespace Terminaux.Colors.Wheel
                 string bright = color.IsBright ? "Bright" : "Dark";
                 BorderColor.WriteBorder(topLeftCornerPosLeftCurrent, topLeftCornerPosTop, boxWidth, boxHeight, color);
                 BoxColor.WriteBox(topLeftCornerPosLeftCurrent + 1, topLeftCornerPosTop, boxWidth, boxHeight, color);
-                TextWriterWhereColor.WriteWhere(mode, topLeftCornerPosLeftCurrent + boxWidth / 2 - mode.Length / 2, boxHeight + 2, color);
-                TextWriterWhereColor.WriteWhere(color.PlainSequence, topLeftCornerPosLeftCurrent + boxWidth / 2 - color.PlainSequence.Length / 2, boxHeight + 4, color);
-                TextWriterWhereColor.WriteWhere(color.Hex, topLeftCornerPosLeftCurrent + boxWidth / 2 - color.Hex.Length / 2, boxHeight + 5, color);
-                TextWriterWhereColor.WriteWhere(color.Type.ToString(), topLeftCornerPosLeftCurrent + boxWidth / 2 - color.Type.ToString().Length / 2, boxHeight + 6, color);
-                TextWriterWhereColor.WriteWhere(bright, topLeftCornerPosLeftCurrent + boxWidth / 2 - bright.Length / 2, boxHeight + 7, color);
+                TextWriterWhereColor.WriteWhereColor(mode, topLeftCornerPosLeftCurrent + boxWidth / 2 - mode.Length / 2, boxHeight + 2, color);
+                TextWriterWhereColor.WriteWhereColor(color.PlainSequence, topLeftCornerPosLeftCurrent + boxWidth / 2 - color.PlainSequence.Length / 2, boxHeight + 4, color);
+                TextWriterWhereColor.WriteWhereColor(color.Hex, topLeftCornerPosLeftCurrent + boxWidth / 2 - color.Hex.Length / 2, boxHeight + 5, color);
+                TextWriterWhereColor.WriteWhereColor(color.Type.ToString(), topLeftCornerPosLeftCurrent + boxWidth / 2 - color.Type.ToString().Length / 2, boxHeight + 6, color);
+                TextWriterWhereColor.WriteWhereColor(bright, topLeftCornerPosLeftCurrent + boxWidth / 2 - bright.Length / 2, boxHeight + 7, color);
             }
 
             // Write the RGB adjuster
@@ -133,34 +133,34 @@ namespace Terminaux.Colors.Wheel
                 Color redColor = new(255, 0, 0);
                 Color greenColor = new(0, 255, 0);
                 Color blueColor = new(0, 0, 255);
-                TextWriterWhereColor.WriteWhere(adjusterTop, redAdjusterPos, adjusterTopTop, wheelRgbIndicator == 0 ? Color.Empty : redColor, wheelRgbIndicator == 0 ? redColor : Color.Empty);
-                TextWriterWhereColor.WriteWhere($"{wheelColor.R}", redAdjusterPos + ($"{wheelColor.R}".Length == 1 ? 2 : $"{wheelColor.R}".Length / 2), adjusterInfoTop, redColor);
-                TextWriterWhereColor.WriteWhere(adjusterBottom, redAdjusterPos, adjusterBottomTop, wheelRgbIndicator == 0 ? Color.Empty : redColor, wheelRgbIndicator == 0 ? redColor : Color.Empty);
-                TextWriterWhereColor.WriteWhere(adjusterTop, greenAdjusterPos, adjusterTopTop, wheelRgbIndicator == 1 ? Color.Empty : greenColor, wheelRgbIndicator == 1 ? greenColor : Color.Empty);
-                TextWriterWhereColor.WriteWhere($"{wheelColor.G}", greenAdjusterPos + ($"{wheelColor.G}".Length == 1 ? 2 : $"{wheelColor.G}".Length / 2), adjusterInfoTop, greenColor);
-                TextWriterWhereColor.WriteWhere(adjusterBottom, greenAdjusterPos, adjusterBottomTop, wheelRgbIndicator == 1 ? Color.Empty : greenColor, wheelRgbIndicator == 1 ? greenColor : Color.Empty);
-                TextWriterWhereColor.WriteWhere(adjusterTop, blueAdjusterPos, adjusterTopTop, wheelRgbIndicator == 2 ? Color.Empty : blueColor, wheelRgbIndicator == 2 ? blueColor : Color.Empty);
-                TextWriterWhereColor.WriteWhere($"{wheelColor.B}", blueAdjusterPos + ($"{wheelColor.B}".Length == 1 ? 2 : $"{wheelColor.B}".Length / 2), adjusterInfoTop, blueColor);
-                TextWriterWhereColor.WriteWhere(adjusterBottom, blueAdjusterPos, adjusterBottomTop, wheelRgbIndicator == 2 ? Color.Empty : blueColor, wheelRgbIndicator == 2 ? blueColor : Color.Empty);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, redAdjusterPos, adjusterTopTop, wheelRgbIndicator == 0 ? Color.Empty : redColor, wheelRgbIndicator == 0 ? redColor : Color.Empty);
+                TextWriterWhereColor.WriteWhereColor($"{wheelColor.R}", redAdjusterPos + ($"{wheelColor.R}".Length == 1 ? 2 : $"{wheelColor.R}".Length / 2), adjusterInfoTop, redColor);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, redAdjusterPos, adjusterBottomTop, wheelRgbIndicator == 0 ? Color.Empty : redColor, wheelRgbIndicator == 0 ? redColor : Color.Empty);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, greenAdjusterPos, adjusterTopTop, wheelRgbIndicator == 1 ? Color.Empty : greenColor, wheelRgbIndicator == 1 ? greenColor : Color.Empty);
+                TextWriterWhereColor.WriteWhereColor($"{wheelColor.G}", greenAdjusterPos + ($"{wheelColor.G}".Length == 1 ? 2 : $"{wheelColor.G}".Length / 2), adjusterInfoTop, greenColor);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, greenAdjusterPos, adjusterBottomTop, wheelRgbIndicator == 1 ? Color.Empty : greenColor, wheelRgbIndicator == 1 ? greenColor : Color.Empty);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, blueAdjusterPos, adjusterTopTop, wheelRgbIndicator == 2 ? Color.Empty : blueColor, wheelRgbIndicator == 2 ? blueColor : Color.Empty);
+                TextWriterWhereColor.WriteWhereColor($"{wheelColor.B}", blueAdjusterPos + ($"{wheelColor.B}".Length == 1 ? 2 : $"{wheelColor.B}".Length / 2), adjusterInfoTop, blueColor);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, blueAdjusterPos, adjusterBottomTop, wheelRgbIndicator == 2 ? Color.Empty : blueColor, wheelRgbIndicator == 2 ? blueColor : Color.Empty);
             }
             else if (wheelColorMode == ColorType._255Color)
             {
-                TextWriterWhereColor.WriteWhere(adjusterTop, greenAdjusterPos, adjusterTopTop, Color.Empty, wheelColor);
-                TextWriterWhereColor.WriteWhere($"{wheelColor255} [{(int)wheelColor255}]", ConsoleWrappers.ActionWindowWidth() / 2 - ($"{wheelColor255} [{(int)wheelColor255}]".Length == 1 ? 2 : $"{wheelColor255} [{(int)wheelColor255}]".Length / 2), adjusterInfoTop, wheelColor);
-                TextWriterWhereColor.WriteWhere(adjusterBottom, greenAdjusterPos, adjusterBottomTop, Color.Empty, wheelColor);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, greenAdjusterPos, adjusterTopTop, Color.Empty, wheelColor);
+                TextWriterWhereColor.WriteWhereColor($"{wheelColor255} [{(int)wheelColor255}]", ConsoleWrappers.ActionWindowWidth() / 2 - ($"{wheelColor255} [{(int)wheelColor255}]".Length == 1 ? 2 : $"{wheelColor255} [{(int)wheelColor255}]".Length / 2), adjusterInfoTop, wheelColor);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, greenAdjusterPos, adjusterBottomTop, Color.Empty, wheelColor);
             }
             else
             {
                 string renderedName = $"{wheelColor16} [{(int)wheelColor16}]";
-                TextWriterWhereColor.WriteWhere(adjusterTop, greenAdjusterPos, adjusterTopTop, Color.Empty, wheelColor);
-                TextWriterWhereColor.WriteWhere(renderedName, ConsoleWrappers.ActionWindowWidth() / 2 - (renderedName.Length == 1 ? 2 : renderedName.Length / 2), adjusterInfoTop, wheelColor);
-                TextWriterWhereColor.WriteWhere(adjusterBottom, greenAdjusterPos, adjusterBottomTop, Color.Empty, wheelColor);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, greenAdjusterPos, adjusterTopTop, Color.Empty, wheelColor);
+                TextWriterWhereColor.WriteWhereColor(renderedName, ConsoleWrappers.ActionWindowWidth() / 2 - (renderedName.Length == 1 ? 2 : renderedName.Length / 2), adjusterInfoTop, wheelColor);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, greenAdjusterPos, adjusterBottomTop, Color.Empty, wheelColor);
             }
             TextWriterColor.Write("\n");
 
             // Write the bound keys list
             string keysStr = "[ESC] Exit | [ENTER] Accept | [H] Help";
-            TextWriterWhereColor.WriteWhere(keysStr, ConsoleWrappers.ActionWindowWidth() / 2 - keysStr.Length / 2, ConsoleWrappers.ActionWindowHeight() - 2, new Color(ConsoleColors.White));
+            TextWriterWhereColor.WriteWhereColor(keysStr, ConsoleWrappers.ActionWindowWidth() / 2 - keysStr.Length / 2, ConsoleWrappers.ActionWindowHeight() - 2, new Color(ConsoleColors.White));
         }
 
         internal static void UpdateColor()
@@ -209,7 +209,7 @@ namespace Terminaux.Colors.Wheel
                         DecrementRgbIndicator();
                     break;
                 case ConsoleKey.H:
-                    InfoBoxColor.WriteInfoBox( 
+                    InfoBoxColor.WriteInfoBoxColorBack( 
                         "Controls\n" +
                         "--------\n" +
                         "\n" +

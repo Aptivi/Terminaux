@@ -32,27 +32,27 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             var KeyPress = Input.DetectKeypress();
 
             // Pressed key
-            TextWriterColor.Write("- Pressed key: ", false, new Color(ConsoleColors.Green));
-            TextWriterColor.Write(KeyPress.Key.ToString(), true, new Color(ConsoleColors.DarkGreen));
+            TextWriterColor.WriteColor("- Pressed key: ", false, new Color(ConsoleColors.Green));
+            TextWriterColor.WriteColor(KeyPress.Key.ToString(), true, new Color(ConsoleColors.DarkGreen));
 
             // If the pressed key is a control key, don't write the actual key char so as not to corrupt the output
             if (!char.IsControl(KeyPress.KeyChar))
             {
-                TextWriterColor.Write("- " + "Pressed key character: ", false, new Color(ConsoleColors.Green));
-                TextWriterColor.Write(Convert.ToString(KeyPress.KeyChar), true, new Color(ConsoleColors.DarkGreen));
+                TextWriterColor.WriteColor("- " + "Pressed key character: ", false, new Color(ConsoleColors.Green));
+                TextWriterColor.WriteColor(Convert.ToString(KeyPress.KeyChar), true, new Color(ConsoleColors.DarkGreen));
             }
 
             // Pressed key character code
-            TextWriterColor.Write("- " + "Pressed key character code: ", false, new Color(ConsoleColors.Green));
-            TextWriterColor.Write($"0x{Convert.ToInt32(KeyPress.KeyChar):X2} [{Convert.ToInt32(KeyPress.KeyChar)}]", true, new Color(ConsoleColors.DarkGreen));
+            TextWriterColor.WriteColor("- " + "Pressed key character code: ", false, new Color(ConsoleColors.Green));
+            TextWriterColor.WriteColor($"0x{Convert.ToInt32(KeyPress.KeyChar):X2} [{Convert.ToInt32(KeyPress.KeyChar)}]", true, new Color(ConsoleColors.DarkGreen));
 
             // Pressed modifiers
-            TextWriterColor.Write("- " + "Pressed modifiers: ", false, new Color(ConsoleColors.Green));
-            TextWriterColor.Write(KeyPress.Modifiers.ToString(), true, new Color(ConsoleColors.DarkGreen));
+            TextWriterColor.WriteColor("- " + "Pressed modifiers: ", false, new Color(ConsoleColors.Green));
+            TextWriterColor.WriteColor(KeyPress.Modifiers.ToString(), true, new Color(ConsoleColors.DarkGreen));
 
             // Keyboard shortcut
-            TextWriterColor.Write("- " + "Keyboard shortcut: ", false, new Color(ConsoleColors.Green));
-            TextWriterColor.Write($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split(new string[] { ", " }, StringSplitOptions.None))} + {KeyPress.Key}", true, new Color(ConsoleColors.DarkGreen));
+            TextWriterColor.WriteColor("- " + "Keyboard shortcut: ", false, new Color(ConsoleColors.Green));
+            TextWriterColor.WriteColor($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split(new string[] { ", " }, StringSplitOptions.None))} + {KeyPress.Key}", true, new Color(ConsoleColors.DarkGreen));
         }
     }
 }

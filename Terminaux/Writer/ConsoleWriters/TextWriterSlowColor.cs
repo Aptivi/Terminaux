@@ -81,7 +81,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ConsoleColors color, params object[] vars)
+        public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, ConsoleColors color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -110,7 +110,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
+        public static void WriteSlowlyColorBack(string msg, bool Line, double MsEachLetter, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -138,7 +138,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, Color color, params object[] vars)
+        public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, Color color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -167,7 +167,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+        public static void WriteSlowlyColorBack(string msg, bool Line, double MsEachLetter, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {

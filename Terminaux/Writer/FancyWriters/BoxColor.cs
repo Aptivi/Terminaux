@@ -75,7 +75,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, new Color(ConsoleColors.Gray), new Color(BoxColor));
+                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, new Color(ConsoleColors.Gray), new Color(BoxColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -97,7 +97,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, new Color(ConsoleColors.Gray), BoxColor);
+                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, new Color(ConsoleColors.Gray), BoxColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

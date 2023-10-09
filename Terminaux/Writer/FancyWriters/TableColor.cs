@@ -101,15 +101,15 @@ namespace Terminaux.Writer.FancyWriters
                     string Header = Headers[HeaderIndex];
                     int ColumnPosition = ColumnPositions[HeaderIndex];
                     Header ??= "";
-                    TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleWrappers.ActionCursorTop(), false, HeaderForegroundColor, BackgroundColor);
+                    TextWriterWhereColor.WriteWhereColorBack(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleWrappers.ActionCursorTop(), false, HeaderForegroundColor, BackgroundColor);
                 }
                 TextWriterColor.Write();
 
                 // Write the closing minus sign.
                 RepeatTimes = ConsoleWrappers.ActionWindowWidth() - ConsoleWrappers.ActionCursorLeft() - Margin * 2;
                 if (Margin > 0)
-                    TextWriterColor.Write(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
-                TextWriterColor.Write(new string('═', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+                    TextWriterColor.WriteColorBack(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
+                TextWriterColor.WriteColorBack(new string('═', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
 
                 // Write the rows
                 for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
@@ -140,9 +140,9 @@ namespace Terminaux.Writer.FancyWriters
                         // Now, write the cell value
                         string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
                         if (ColoredCell)
-                            TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleWrappers.ActionCursorTop(), false, CellColor, CellBackgroundColor);
+                            TextWriterWhereColor.WriteWhereColorBack(FinalRowValue, ColumnPosition, ConsoleWrappers.ActionCursorTop(), false, CellColor, CellBackgroundColor);
                         else
-                            TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleWrappers.ActionCursorTop(), false, ValueForegroundColor, BackgroundColor);
+                            TextWriterWhereColor.WriteWhereColorBack(FinalRowValue, ColumnPosition, ConsoleWrappers.ActionCursorTop(), false, ValueForegroundColor, BackgroundColor);
                     }
                     TextWriterColor.Write();
 
@@ -152,8 +152,8 @@ namespace Terminaux.Writer.FancyWriters
                         // Write the closing minus sign.
                         RepeatTimes = ConsoleWrappers.ActionWindowWidth() - ConsoleWrappers.ActionCursorLeft() - Margin * 2;
                         if (Margin > 0)
-                            TextWriterColor.Write(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
-                        TextWriterColor.Write(new string('=', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+                            TextWriterColor.WriteColorBack(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
+                        TextWriterColor.WriteColorBack(new string('=', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
                     }
                 }
             }

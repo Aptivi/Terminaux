@@ -40,7 +40,7 @@ namespace Terminaux.Reader.Inputs.Styles
                 Color inputColor = new(ConsoleColors.White);
 
                 // Ask a question
-                TextWriterColor.Write(Question, false, questionColor);
+                TextWriterColor.WriteColor(Question, false, questionColor);
                 ColorTools.SetConsoleColor(inputColor);
 
                 // Wait for an answer

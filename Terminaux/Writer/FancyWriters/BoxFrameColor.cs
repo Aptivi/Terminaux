@@ -227,7 +227,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 // Render the box frame
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                TextWriterWhereColor.WriteWhere(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
+                TextWriterWhereColor.WriteWhereColorBack(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -284,7 +284,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 // Render the box frame
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                TextWriterWhereColor.WriteWhere(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
+                TextWriterWhereColor.WriteWhereColorBack(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

@@ -167,20 +167,20 @@ namespace Terminaux.Reader.Inputs.Styles
                     case ChoiceOutputType.OneLine:
                         {
                             string answersPlace = altAnswers.Length > 0 ? " <{0}/{1}> " : " <{0}> ";
-                            TextWriterColor.Write(Question, false, questionColor);
-                            TextWriterColor.Write(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
+                            TextWriterColor.WriteColor(Question, false, questionColor);
+                            TextWriterColor.WriteColorBack(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
                             break;
                         }
                     case ChoiceOutputType.TwoLines:
                         {
                             string answersPlace = altAnswers.Length > 0 ? "<{0}/{1}> " : "<{0}> ";
-                            TextWriterColor.Write(Question, true, questionColor);
-                            TextWriterColor.Write(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
+                            TextWriterColor.WriteColor(Question, true, questionColor);
+                            TextWriterColor.WriteColorBack(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
                             break;
                         }
                     case ChoiceOutputType.Modern:
                         {
-                            TextWriterColor.Write(Question + ConsolePlatform.NewLine, true, questionColor);
+                            TextWriterColor.WriteColor(Question + ConsolePlatform.NewLine, true, questionColor);
                             for (int AnswerIndex = 0; AnswerIndex <= Answers.Count - 1; AnswerIndex++)
                             {
                                 var AnswerInstance = Answers[AnswerIndex];
@@ -192,10 +192,10 @@ namespace Terminaux.Reader.Inputs.Styles
                                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
                                     AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
                                 }
-                                TextWriterColor.Write(AnswerOption, true, optionColor);
+                                TextWriterColor.WriteColor(AnswerOption, true, optionColor);
                             }
                             if (AltAnswers.Count > 0)
-                                TextWriterColor.Write(" ----------------", true, altOptionColor);
+                                TextWriterColor.WriteColor(" ----------------", true, altOptionColor);
                             for (int AnswerIndex = 0; AnswerIndex <= AltAnswers.Count - 1; AnswerIndex++)
                             {
                                 var AnswerInstance = AltAnswers[AnswerIndex];
@@ -207,16 +207,16 @@ namespace Terminaux.Reader.Inputs.Styles
                                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
                                     AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
                                 }
-                                TextWriterColor.Write(AnswerOption, true, altOptionColor);
+                                TextWriterColor.WriteColor(AnswerOption, true, altOptionColor);
                             }
-                            TextWriterColor.Write(ConsolePlatform.NewLine + ">> ", false, inputColor);
+                            TextWriterColor.WriteColor(ConsolePlatform.NewLine + ">> ", false, inputColor);
                             break;
                         }
                     case ChoiceOutputType.Table:
                         {
                             var ChoiceHeader = new[] { "Possible answers", "Answer description" };
                             var ChoiceData = new string[Answers.Count + AltAnswers.Count, 2];
-                            TextWriterColor.Write(Question, true, questionColor);
+                            TextWriterColor.WriteColor(Question, true, questionColor);
                             for (int AnswerIndex = 0; AnswerIndex <= Answers.Count - 1; AnswerIndex++)
                             {
                                 ChoiceData[AnswerIndex, 0] = Answers[AnswerIndex].ChoiceName;
@@ -228,7 +228,7 @@ namespace Terminaux.Reader.Inputs.Styles
                                 ChoiceData[Answers.Count - 1 + AnswerIndex, 1] = AltAnswers[AnswerIndex].ChoiceTitle ?? "";
                             }
                             TableColor.WriteTable(ChoiceHeader, ChoiceData, 2);
-                            TextWriterColor.Write(ConsolePlatform.NewLine + ">> ", false, inputColor);
+                            TextWriterColor.WriteColor(ConsolePlatform.NewLine + ">> ", false, inputColor);
                             break;
                         }
                 }

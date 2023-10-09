@@ -27,8 +27,8 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "PrintWithNewLines";
         public void RunFixture()
         {
-            TextWriterColor.Write("Hello world!\nHow's your day going?\nShould be directly after this:", false, new Color(ConsoleColors.Green));
-            TextWriterColor.Write(" [{0}, {1}] ", true, new Color(ConsoleColors.Gray), vars: new object[] { ConsoleWrappers.ActionCursorLeft(), ConsoleWrappers.ActionCursorTop() });
+            TextWriterColor.WriteColor("Hello world!\nHow's your day going?\nShould be directly after this:", false, new Color(ConsoleColors.Green));
+            TextWriterColor.WriteColor(" [{0}, {1}] ", true, new Color(ConsoleColors.Gray), vars: new object[] { ConsoleWrappers.ActionCursorLeft(), ConsoleWrappers.ActionCursorTop() });
         }
     }
 }

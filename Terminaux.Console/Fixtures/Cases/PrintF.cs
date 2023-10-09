@@ -26,7 +26,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "PrintF";
         public void RunFixture()
         {
-            TextWriterColor.Write("Hi, {0}!", true, new Color(ConsoleColors.Green), vars: new object[] { "world" });
+            TextWriterColor.WriteColor("Hi, {0}!", true, new Color(ConsoleColors.Green), vars: new object[] { "world" });
         }
     }
 }

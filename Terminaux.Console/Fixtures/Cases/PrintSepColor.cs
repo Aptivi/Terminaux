@@ -26,7 +26,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "PrintSepColor";
         public void RunFixture()
         {
-            SeparatorWriterColor.WriteSeparator("Hello world!", true, new Color(ConsoleColors.Green));
+            SeparatorWriterColor.WriteSeparatorColor("Hello world!", true, new Color(ConsoleColors.Green));
         }
     }
 }

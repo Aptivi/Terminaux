@@ -134,7 +134,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         /// <param name="color">The color</param>
         public static void PrintLineWithHandle(string[] Array, int LineNumber, int startPos, int endPos, Color color) =>
-            TextWriterColor.Write(RenderLineWithHandle(Array, LineNumber, startPos, endPos, color), true, color);
+            TextWriterColor.WriteColor(RenderLineWithHandle(Array, LineNumber, startPos, endPos, color), true, color);
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied

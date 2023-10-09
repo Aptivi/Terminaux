@@ -27,7 +27,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "PrintFiglet";
         public void RunFixture()
         {
-            FigletColor.WriteFiglet("Hello world!", FigletizeFonts.GetByName("small"), new Color(ConsoleColors.Green));
+            FigletColor.WriteFigletColor("Hello world!", FigletizeFonts.GetByName("small"), new Color(ConsoleColors.Green));
         }
     }
 }

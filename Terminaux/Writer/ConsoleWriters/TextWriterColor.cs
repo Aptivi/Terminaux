@@ -98,7 +98,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, params object[] vars) => Write(Text, true, vars);
+        public static void Write(string Text, params object[] vars) =>
+            Write(Text, true, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt.
@@ -106,7 +107,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, params object[] vars) => Write(Text, Line, false, vars);
+        public static void Write(string Text, bool Line, params object[] vars) =>
+            Write(Text, Line, false, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt.
@@ -115,7 +117,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, params object[] vars) => Write(Text, Line, Highlight, new Color(ConsoleColors.Gray), vars);
+        public static void Write(string Text, bool Line, bool Highlight, params object[] vars) =>
+            WriteColor(Text, Line, Highlight, new Color(ConsoleColors.Gray), vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -124,7 +127,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, ConsoleColors color, params object[] vars) => Write(Text, Line, false, color, vars);
+        public static void WriteColor(string Text, bool Line, ConsoleColors color, params object[] vars) =>
+            WriteColor(Text, Line, false, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -134,7 +138,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, ConsoleColors color, params object[] vars)
+        public static void WriteColor(string Text, bool Line, bool Highlight, ConsoleColors color, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -172,7 +176,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) => Write(Text, Line, false, ForegroundColor, BackgroundColor, vars);
+        public static void WriteColorBack(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
+            WriteColorBack(Text, Line, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -183,7 +188,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
+        public static void WriteColorBack(string Text, bool Line, bool Highlight, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -221,7 +226,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, Color color, params object[] vars) => Write(Text, Line, false, color, vars);
+        public static void WriteColor(string Text, bool Line, Color color, params object[] vars) =>
+            WriteColor(Text, Line, false, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -231,7 +237,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, Color color, params object[] vars)
+        public static void WriteColor(string Text, bool Line, bool Highlight, Color color, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -270,7 +276,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars) => Write(Text, Line, false, ForegroundColor, BackgroundColor, vars);
+        public static void WriteColorBack(string Text, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
+            WriteColorBack(Text, Line, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -281,7 +288,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+        public static void WriteColorBack(string Text, bool Line, bool Highlight, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
             lock (WriteLock)
             {

@@ -31,7 +31,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             if (int.TryParse(Text, out int color))
             {
                 var colorInstance = new Color(color);
-                TextWriterColor.Write("Color {0} [{1}]", true, colorInstance, vars: new object[] { colorInstance.PlainSequence, colorInstance.PlainSequenceTrueColor });
+                TextWriterColor.WriteColor("Color {0} [{1}]", true, colorInstance, vars: new object[] { colorInstance.PlainSequence, colorInstance.PlainSequenceTrueColor });
             }
         }
     }

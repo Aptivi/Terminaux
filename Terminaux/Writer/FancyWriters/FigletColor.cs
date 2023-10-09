@@ -59,7 +59,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFiglet(string Text, FigletizeFont FigletFont, ConsoleColors Color, params object[] Vars)
+        public static void WriteFigletColor(string Text, FigletizeFont FigletFont, ConsoleColors Color, params object[] Vars)
         {
             try
             {
@@ -84,7 +84,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFiglet(string Text, FigletizeFont FigletFont, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars)
+        public static void WriteFigletColorBack(string Text, FigletizeFont FigletFont, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars)
         {
             try
             {
@@ -109,7 +109,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFiglet(string Text, FigletizeFont FigletFont, Color Color, params object[] Vars)
+        public static void WriteFigletColor(string Text, FigletizeFont FigletFont, Color Color, params object[] Vars)
         {
             try
             {
@@ -134,7 +134,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFiglet(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteFigletColorBack(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             try
             {

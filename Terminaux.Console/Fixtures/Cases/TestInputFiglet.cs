@@ -32,7 +32,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string font = FigletSelector.PromptForFiglet();
             var figlet = FigletTools.GetFigletFont(font);
             TextWriterColor.Write($"Got figlet font {font}!");
-            FigletColor.WriteFiglet("Hello!", figlet, ConsoleColors.Green);
+            FigletColor.WriteFigletColor("Hello!", figlet, ConsoleColors.Green);
         }
     }
 }
