@@ -35,7 +35,7 @@ namespace Terminaux.Colors.Wheel
         private static ConsoleColors wheelColor255 = ConsoleColors.Green;
         private static ConsoleColor wheelColor16 = ConsoleColor.Green;
         private static Color wheelColor = new(wheelR, wheelG, wheelB);
-        private static int wheelRgbIndicator = 0; // R = 0, G = 1, B = 2
+        private static ColorWheelRgbMode wheelRgbIndicator = ColorWheelRgbMode.Red;
         private static readonly Color infoBoxColorFg = new(ConsoleColors.White);
         private static readonly Color infoBoxColorBg = new(ConsoleColors.DarkRed);
 
@@ -133,15 +133,21 @@ namespace Terminaux.Colors.Wheel
                 Color redColor = new(255, 0, 0);
                 Color greenColor = new(0, 255, 0);
                 Color blueColor = new(0, 0, 255);
-                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, redAdjusterPos, adjusterTopTop, wheelRgbIndicator == 0 ? Color.Empty : redColor, wheelRgbIndicator == 0 ? redColor : Color.Empty);
+                Color finalForeR = wheelRgbIndicator == ColorWheelRgbMode.Red ? Color.Empty : redColor;
+                Color finalBackR = wheelRgbIndicator == ColorWheelRgbMode.Red ? redColor : Color.Empty;
+                Color finalForeG = wheelRgbIndicator == ColorWheelRgbMode.Green ? Color.Empty : greenColor;
+                Color finalBackG = wheelRgbIndicator == ColorWheelRgbMode.Green ? greenColor : Color.Empty;
+                Color finalForeB = wheelRgbIndicator == ColorWheelRgbMode.Blue ? Color.Empty : blueColor;
+                Color finalBackB = wheelRgbIndicator == ColorWheelRgbMode.Blue ? blueColor : Color.Empty;
+                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, redAdjusterPos, adjusterTopTop, finalForeR, finalBackR);
                 TextWriterWhereColor.WriteWhereColor($"{wheelColor.R}", redAdjusterPos + ($"{wheelColor.R}".Length == 1 ? 2 : $"{wheelColor.R}".Length / 2), adjusterInfoTop, redColor);
-                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, redAdjusterPos, adjusterBottomTop, wheelRgbIndicator == 0 ? Color.Empty : redColor, wheelRgbIndicator == 0 ? redColor : Color.Empty);
-                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, greenAdjusterPos, adjusterTopTop, wheelRgbIndicator == 1 ? Color.Empty : greenColor, wheelRgbIndicator == 1 ? greenColor : Color.Empty);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, redAdjusterPos, adjusterBottomTop, finalForeR, finalBackR);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, greenAdjusterPos, adjusterTopTop, finalForeG, finalBackG);
                 TextWriterWhereColor.WriteWhereColor($"{wheelColor.G}", greenAdjusterPos + ($"{wheelColor.G}".Length == 1 ? 2 : $"{wheelColor.G}".Length / 2), adjusterInfoTop, greenColor);
-                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, greenAdjusterPos, adjusterBottomTop, wheelRgbIndicator == 1 ? Color.Empty : greenColor, wheelRgbIndicator == 1 ? greenColor : Color.Empty);
-                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, blueAdjusterPos, adjusterTopTop, wheelRgbIndicator == 2 ? Color.Empty : blueColor, wheelRgbIndicator == 2 ? blueColor : Color.Empty);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, greenAdjusterPos, adjusterBottomTop, finalForeG, finalBackG);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterTop, blueAdjusterPos, adjusterTopTop, finalForeB, finalBackB);
                 TextWriterWhereColor.WriteWhereColor($"{wheelColor.B}", blueAdjusterPos + ($"{wheelColor.B}".Length == 1 ? 2 : $"{wheelColor.B}".Length / 2), adjusterInfoTop, blueColor);
-                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, blueAdjusterPos, adjusterBottomTop, wheelRgbIndicator == 2 ? Color.Empty : blueColor, wheelRgbIndicator == 2 ? blueColor : Color.Empty);
+                TextWriterWhereColor.WriteWhereColorBack(adjusterBottom, blueAdjusterPos, adjusterBottomTop, finalForeB, finalBackB);
             }
             else if (wheelColorMode == ColorType._255Color)
             {
@@ -231,15 +237,15 @@ namespace Terminaux.Colors.Wheel
         private static void IncrementRgbIndicator()
         {
             wheelRgbIndicator++;
-            if (wheelRgbIndicator > 2)
-                wheelRgbIndicator = 0;
+            if (wheelRgbIndicator > ColorWheelRgbMode.Blue)
+                wheelRgbIndicator = ColorWheelRgbMode.Red;
         }
 
         private static void DecrementRgbIndicator()
         {
             wheelRgbIndicator--;
-            if (wheelRgbIndicator < 0)
-                wheelRgbIndicator = 2;
+            if (wheelRgbIndicator < ColorWheelRgbMode.Red)
+                wheelRgbIndicator = ColorWheelRgbMode.Blue;
         }
 
         private static void IncrementSeverity()
@@ -263,17 +269,17 @@ namespace Terminaux.Colors.Wheel
                 case ColorType.TrueColor:
                     switch (wheelRgbIndicator)
                     {
-                        case 0:
+                        case ColorWheelRgbMode.Red:
                             wheelR++;
                             if (wheelR > 255)
                                 wheelR = 0;
                             break;
-                        case 1:
+                        case ColorWheelRgbMode.Green:
                             wheelG++;
                             if (wheelG > 255)
                                 wheelG = 0;
                             break;
-                        case 2:
+                        case ColorWheelRgbMode.Blue:
                             wheelB++;
                             if (wheelB > 255)
                                 wheelB = 0;
@@ -302,17 +308,17 @@ namespace Terminaux.Colors.Wheel
                 case ColorType.TrueColor:
                     switch (wheelRgbIndicator)
                     {
-                        case 0:
+                        case ColorWheelRgbMode.Red:
                             wheelR--;
                             if (wheelR < 0)
                                 wheelR = 255;
                             break;
-                        case 1:
+                        case ColorWheelRgbMode.Green:
                             wheelG--;
                             if (wheelG < 0)
                                 wheelG = 255;
                             break;
-                        case 2:
+                        case ColorWheelRgbMode.Blue:
                             wheelB--;
                             if (wheelB < 0)
                                 wheelB = 255;
