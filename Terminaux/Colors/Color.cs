@@ -170,85 +170,43 @@ namespace Terminaux.Colors
             ColorSpecifier = ColorSpecifier.Replace("\"", "");
 
             // Now, parse the output
-            if (ColorSpecifier.Contains(";"))
+            if (!ColorSpecifier.StartsWith("cmyk:") && ColorSpecifier.Contains(";"))
             {
-                // Split the VT sequence into three parts
-                var ColorSpecifierArray = ColorSpecifier.Split(';');
-                if (ColorSpecifierArray.Length == 3)
-                {
-                    // We got the RGB values! First, check to see if we need to filter the color for the color-blind
-                    int r = Convert.ToInt32(ColorSpecifierArray[0]);
-                    if (r < 0 || r > 255)
-                        throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
-                    int g = Convert.ToInt32(ColorSpecifierArray[1]);
-                    if (g < 0 || g > 255)
-                        throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
-                    int b = Convert.ToInt32(ColorSpecifierArray[2]);
-                    if (b < 0 || b > 255)
-                        throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
-                    if (ColorTools.EnableColorTransformation)
-                    {
-                        // We'll transform.
-                        (int, int, int) transformed;
-                        if (ColorTools.EnableSimpleColorTransformation)
-                            transformed = Vienot1999.Transform(r, g, b, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
-                        else
-                            transformed = Brettel1997.Transform(r, g, b, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
-                        r = transformed.Item1;
-                        g = transformed.Item2;
-                        b = transformed.Item3;
-                    }
+                // Parse it
+                var rgb = ColorParser.ParseSpecifierRgbValues(ColorSpecifier);
+                int r = rgb.R;
+                int g = rgb.G;
+                int b = rgb.B;
 
-                    // Form the sequences
-                    PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
-                    PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                    VTSequenceForeground = VTSequenceForegroundTrueColor = Color255.GetEsc() + $"[38;2;{PlainSequence}m";
-                    VTSequenceBackground = VTSequenceBackgroundTrueColor = Color255.GetEsc() + $"[48;2;{PlainSequence}m";
+                // Form the sequences
+                PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
+                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
+                VTSequenceForeground = VTSequenceForegroundTrueColor = Color255.GetEsc() + $"[38;2;{PlainSequence}m";
+                VTSequenceBackground = VTSequenceBackgroundTrueColor = Color255.GetEsc() + $"[48;2;{PlainSequence}m";
 
-                    // Populate color properties
-                    Type = ColorType.TrueColor;
-                    IsBright = Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d > 255d / 2d;
-                    IsDark = Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d < 255d / 2d;
-                    R = r;
-                    G = g;
-                    B = b;
-                }
-                else
-                {
-                    throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
-                }
+                // Populate color properties
+                Type = ColorType.TrueColor;
+                IsBright = Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d > 255d / 2d;
+                IsDark = Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d < 255d / 2d;
+                R = r;
+                G = g;
+                B = b;
             }
             else if (double.TryParse(ColorSpecifier, out double specifierNum) && specifierNum <= 255 || Enum.IsDefined(typeof(ConsoleColors), ColorSpecifier))
             {
-                // Form the sequences using the information from the color details
                 var parsedEnum = (ConsoleColors)Enum.Parse(typeof(ConsoleColors), ColorSpecifier);
                 var parsedEnum16 = specifierNum <= 15 ? (ConsoleColor)Enum.Parse(typeof(ConsoleColor), ColorSpecifier) : default;
-                var ColorsInfo = new ConsoleColorsInfo(parsedEnum);
 
-                // Check to see if we need to transform color. Else, be sane.
-                int r = Convert.ToInt32(ColorsInfo.R);
-                if (r < 0 || r > 255)
-                    throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
-                int g = Convert.ToInt32(ColorsInfo.G);
-                if (g < 0 || g > 255)
-                    throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
-                int b = Convert.ToInt32(ColorsInfo.B);
-                if (b < 0 || b > 255)
-                    throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
-                if (ColorTools.EnableColorTransformation)
-                {
-                    // We'll transform.
-                    (int, int, int) transformed;
-                    if (ColorTools.EnableSimpleColorTransformation)
-                        transformed = Vienot1999.Transform(r, g, b, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
-                    else
-                        transformed = Brettel1997.Transform(r, g, b, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
-                    r = transformed.Item1;
-                    g = transformed.Item2;
-                    b = transformed.Item3;
-                }
-                PlainSequence = ColorTools.EnableColorTransformation ? $"{r};{g};{b}" : $"{ColorsInfo.ColorID}";
-                PlainSequenceEnclosed = ColorTools.EnableColorTransformation ? $"\"{r};{g};{b}\"" : $"{ColorsInfo.ColorID}";
+                // Parse it
+                var rgb = ColorParser.ParseSpecifierRgbName(ColorSpecifier);
+                var colorsInfo = rgb.cci;
+                int r = rgb.rgb.R;
+                int g = rgb.rgb.G;
+                int b = rgb.rgb.B;
+
+                // Form the sequences
+                PlainSequence = ColorTools.EnableColorTransformation ? $"{r};{g};{b}" : $"{colorsInfo.ColorID}";
+                PlainSequenceEnclosed = ColorTools.EnableColorTransformation ? $"\"{r};{g};{b}\"" : $"{colorsInfo.ColorID}";
                 PlainSequenceTrueColor = $"{r};{g};{b}";
                 PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
                 VTSequenceForeground = ColorTools.EnableColorTransformation ? Color255.GetEsc() + $"[38;2;{PlainSequence}m" : Color255.GetEsc() + $"[38;5;{PlainSequence}m";
@@ -257,9 +215,9 @@ namespace Terminaux.Colors
                 VTSequenceBackgroundTrueColor = Color255.GetEsc() + $"[48;2;{PlainSequenceTrueColor}m";
 
                 // Populate color properties
-                Type = ColorTools.EnableColorTransformation ? ColorType.TrueColor : ColorsInfo.ColorID >= 16 ? ColorType._255Color : ColorType._16Color;
-                IsBright = ColorTools.EnableColorTransformation ? Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d > 255d / 2d : ColorsInfo.IsBright;
-                IsDark = ColorTools.EnableColorTransformation ? Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d < 255d / 2d : ColorsInfo.IsDark;
+                Type = ColorTools.EnableColorTransformation ? ColorType.TrueColor : colorsInfo.ColorID >= 16 ? ColorType._255Color : ColorType._16Color;
+                IsBright = ColorTools.EnableColorTransformation ? Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d > 255d / 2d : colorsInfo.IsBright;
+                IsDark = ColorTools.EnableColorTransformation ? Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d < 255d / 2d : colorsInfo.IsDark;
                 R = r;
                 G = g;
                 B = b;
@@ -268,37 +226,47 @@ namespace Terminaux.Colors
             }
             else if (ColorSpecifier.StartsWith("#"))
             {
-                string finalSpecifier = ColorSpecifier.Substring(1);
-                int ColorDecimal = Convert.ToInt32(finalSpecifier, 16);
-
-                // Convert the RGB values to numbers
-                R = (byte)((ColorDecimal & 0xFF0000) >> 0x10);
-                G = (byte)((ColorDecimal & 0xFF00) >> 8);
-                B = (byte)(ColorDecimal & 0xFF);
-                // First, check to see if we need to filter the color for the color-blind
-                if (ColorTools.EnableColorTransformation)
-                {
-                    // We'll transform.
-                    (int, int, int) transformed;
-                    if (ColorTools.EnableSimpleColorTransformation)
-                        transformed = Vienot1999.Transform(R, G, B, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
-                    else
-                        transformed = Brettel1997.Transform(R, G, B, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
-                    R = transformed.Item1;
-                    G = transformed.Item2;
-                    B = transformed.Item3;
-                }
+                // Parse it
+                var rgb = ColorParser.ParseSpecifierRgbHash(ColorSpecifier);
+                int r = rgb.R;
+                int g = rgb.G;
+                int b = rgb.B;
 
                 // We got the RGB values! Form the sequences
-                PlainSequence = PlainSequenceTrueColor = $"{R};{G};{B}";
-                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{R};{G};{B}\"";
+                PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
+                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
                 VTSequenceForeground = VTSequenceForegroundTrueColor = Color255.GetEsc() + $"[38;2;{PlainSequence}m";
                 VTSequenceBackground = VTSequenceBackgroundTrueColor = Color255.GetEsc() + $"[48;2;{PlainSequence}m";
 
                 // Populate color properties
                 Type = ColorType.TrueColor;
-                IsBright = R + 0.2126d + G + 0.7152d + B + 0.0722d > 255d / 2d;
-                IsDark = R + 0.2126d + G + 0.7152d + B + 0.0722d < 255d / 2d;
+                IsBright = r + 0.2126d + g + 0.7152d + b + 0.0722d > 255d / 2d;
+                IsDark = r + 0.2126d + g + 0.7152d + b + 0.0722d < 255d / 2d;
+                R = r;
+                G = g;
+                B = b;
+            }
+            else if (ColorSpecifier.StartsWith("cmyk:") && ColorSpecifier.Contains(";"))
+            {
+                // Parse it
+                var rgb = ColorParser.ParseSpecifierCmykValues(ColorSpecifier);
+                int r = rgb.R;
+                int g = rgb.G;
+                int b = rgb.B;
+
+                // We got the RGB values! Form the sequences
+                PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
+                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
+                VTSequenceForeground = VTSequenceForegroundTrueColor = Color255.GetEsc() + $"[38;2;{PlainSequence}m";
+                VTSequenceBackground = VTSequenceBackgroundTrueColor = Color255.GetEsc() + $"[48;2;{PlainSequence}m";
+
+                // Populate color properties
+                Type = ColorType.TrueColor;
+                IsBright = r + 0.2126d + g + 0.7152d + b + 0.0722d > 255d / 2d;
+                IsDark = r + 0.2126d + g + 0.7152d + b + 0.0722d < 255d / 2d;
+                R = r;
+                G = g;
+                B = b;
             }
             else
             {

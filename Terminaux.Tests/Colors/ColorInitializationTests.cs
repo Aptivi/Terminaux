@@ -911,5 +911,67 @@ namespace Terminaux.Tests.Colors
             ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
             ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Black);
         }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CMYK)
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCmyk()
+        {
+            // Create instance
+            var ColorInstance = new Color("cmyk:0;100;84;45");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("140;0;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;2;140;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;2;140;0;22m");
+            ColorInstance.R.ShouldBe(140);
+            ColorInstance.G.ShouldBe(0);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.IsBright.ShouldBeTrue();
+            ColorInstance.IsDark.ShouldBeFalse();
+            ColorInstance.Hex.ShouldBe("#8C0016");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CMYK) using the implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCmykImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "cmyk:0;100;84;45";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("140;0;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;2;140;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;2;140;0;22m");
+            ColorInstance.R.ShouldBe(140);
+            ColorInstance.G.ShouldBe(0);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.IsBright.ShouldBeTrue();
+            ColorInstance.IsDark.ShouldBeFalse();
+            ColorInstance.Hex.ShouldBe("#8C0016");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
     }
 }
