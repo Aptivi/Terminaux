@@ -932,6 +932,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.GetHashCode
   nameWithType: Color.GetHashCode
+- uid: Terminaux.Colors.Color.HSL
+  name: HSL
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_HSL
+  commentId: P:Terminaux.Colors.Color.HSL
+  fullName: Terminaux.Colors.Color.HSL
+  nameWithType: Color.HSL
+- uid: Terminaux.Colors.Color.HSL*
+  name: HSL
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_HSL_
+  commentId: Overload:Terminaux.Colors.Color.HSL
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.HSL
+  nameWithType: Color.HSL
 - uid: Terminaux.Colors.Color.Hex
   name: Hex
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_Hex
@@ -3423,6 +3436,15 @@ references:
   commentId: T:Terminaux.Colors.Models.CyanMagentaYellowKey
   fullName: Terminaux.Colors.Models.CyanMagentaYellowKey
   nameWithType: CyanMagentaYellowKey
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.#ctor(Terminaux.Colors.Models.HueSaturationLightness)
+  name: CyanMagentaYellowKey(HueSaturationLightness)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey__ctor_Terminaux_Colors_Models_HueSaturationLightness_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.#ctor(Terminaux.Colors.Models.HueSaturationLightness)
+  name.vb: New(HueSaturationLightness)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.CyanMagentaYellowKey(Terminaux.Colors.Models.HueSaturationLightness)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellowKey.New(Terminaux.Colors.Models.HueSaturationLightness)
+  nameWithType: CyanMagentaYellowKey.CyanMagentaYellowKey(HueSaturationLightness)
+  nameWithType.vb: CyanMagentaYellowKey.New(HueSaturationLightness)
 - uid: Terminaux.Colors.Models.CyanMagentaYellowKey.#ctor(Terminaux.Colors.Models.RedGreenBlue)
   name: CyanMagentaYellowKey(RedGreenBlue)
   href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey__ctor_Terminaux_Colors_Models_RedGreenBlue_
@@ -3455,6 +3477,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.CMY
   nameWithType: CyanMagentaYellowKey.CMY
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToHsl
+  name: ConvertToHsl()
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_ConvertToHsl
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToHsl
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToHsl()
+  nameWithType: CyanMagentaYellowKey.ConvertToHsl()
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToHsl*
+  name: ConvertToHsl
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_ConvertToHsl_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToHsl
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToHsl
+  nameWithType: CyanMagentaYellowKey.ConvertToHsl
 - uid: Terminaux.Colors.Models.CyanMagentaYellowKey.ConvertToRgb
   name: ConvertToRgb()
   href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_ConvertToRgb
@@ -3567,6 +3602,243 @@ references:
   fullName.vb: Terminaux.Colors.Models.CyanMagentaYellowKey.<>
   nameWithType: CyanMagentaYellowKey.operator !=
   nameWithType.vb: CyanMagentaYellowKey.<>
+- uid: Terminaux.Colors.Models.HueSaturationLightness
+  name: HueSaturationLightness
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html
+  commentId: T:Terminaux.Colors.Models.HueSaturationLightness
+  fullName: Terminaux.Colors.Models.HueSaturationLightness
+  nameWithType: HueSaturationLightness
+- uid: Terminaux.Colors.Models.HueSaturationLightness.#ctor(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name: HueSaturationLightness(CyanMagentaYellowKey)
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness__ctor_Terminaux_Colors_Models_CyanMagentaYellowKey_
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.#ctor(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name.vb: New(CyanMagentaYellowKey)
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.HueSaturationLightness(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  fullName.vb: Terminaux.Colors.Models.HueSaturationLightness.New(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  nameWithType: HueSaturationLightness.HueSaturationLightness(CyanMagentaYellowKey)
+  nameWithType.vb: HueSaturationLightness.New(CyanMagentaYellowKey)
+- uid: Terminaux.Colors.Models.HueSaturationLightness.#ctor(Terminaux.Colors.Models.RedGreenBlue)
+  name: HueSaturationLightness(RedGreenBlue)
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness__ctor_Terminaux_Colors_Models_RedGreenBlue_
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.#ctor(Terminaux.Colors.Models.RedGreenBlue)
+  name.vb: New(RedGreenBlue)
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.HueSaturationLightness(Terminaux.Colors.Models.RedGreenBlue)
+  fullName.vb: Terminaux.Colors.Models.HueSaturationLightness.New(Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: HueSaturationLightness.HueSaturationLightness(RedGreenBlue)
+  nameWithType.vb: HueSaturationLightness.New(RedGreenBlue)
+- uid: Terminaux.Colors.Models.HueSaturationLightness.#ctor*
+  name: HueSaturationLightness
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness__ctor_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.HueSaturationLightness
+  fullName.vb: Terminaux.Colors.Models.HueSaturationLightness.New
+  nameWithType: HueSaturationLightness.HueSaturationLightness
+  nameWithType.vb: HueSaturationLightness.New
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmyk
+  name: ConvertToCmyk()
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ConvertToCmyk
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmyk
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmyk()
+  nameWithType: HueSaturationLightness.ConvertToCmyk()
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmyk*
+  name: ConvertToCmyk
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ConvertToCmyk_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmyk
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmyk
+  nameWithType: HueSaturationLightness.ConvertToCmyk
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ConvertToRgb
+  name: ConvertToRgb()
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ConvertToRgb
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.ConvertToRgb
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ConvertToRgb()
+  nameWithType: HueSaturationLightness.ConvertToRgb()
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ConvertToRgb*
+  name: ConvertToRgb
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ConvertToRgb_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.ConvertToRgb
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ConvertToRgb
+  nameWithType: HueSaturationLightness.ConvertToRgb
+- uid: Terminaux.Colors.Models.HueSaturationLightness.Equals(System.Object)
+  name: Equals(object)
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_Equals_System_Object_
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.Equals(object)
+  fullName.vb: Terminaux.Colors.Models.HueSaturationLightness.Equals(Object)
+  nameWithType: HueSaturationLightness.Equals(object)
+  nameWithType.vb: HueSaturationLightness.Equals(Object)
+- uid: Terminaux.Colors.Models.HueSaturationLightness.Equals(Terminaux.Colors.Models.HueSaturationLightness)
+  name: Equals(HueSaturationLightness)
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_Equals_Terminaux_Colors_Models_HueSaturationLightness_
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.Equals(Terminaux.Colors.Models.HueSaturationLightness)
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.Equals(Terminaux.Colors.Models.HueSaturationLightness)
+  nameWithType: HueSaturationLightness.Equals(HueSaturationLightness)
+- uid: Terminaux.Colors.Models.HueSaturationLightness.Equals*
+  name: Equals
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_Equals_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.Equals
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.Equals
+  nameWithType: HueSaturationLightness.Equals
+- uid: Terminaux.Colors.Models.HueSaturationLightness.GetHashCode
+  name: GetHashCode()
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_GetHashCode
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.GetHashCode
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.GetHashCode()
+  nameWithType: HueSaturationLightness.GetHashCode()
+- uid: Terminaux.Colors.Models.HueSaturationLightness.GetHashCode*
+  name: GetHashCode
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_GetHashCode_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.GetHashCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.GetHashCode
+  nameWithType: HueSaturationLightness.GetHashCode
+- uid: Terminaux.Colors.Models.HueSaturationLightness.Hue
+  name: Hue
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_Hue
+  commentId: P:Terminaux.Colors.Models.HueSaturationLightness.Hue
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.Hue
+  nameWithType: HueSaturationLightness.Hue
+- uid: Terminaux.Colors.Models.HueSaturationLightness.Hue*
+  name: Hue
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_Hue_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.Hue
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.Hue
+  nameWithType: HueSaturationLightness.Hue
+- uid: Terminaux.Colors.Models.HueSaturationLightness.HueWhole
+  name: HueWhole
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_HueWhole
+  commentId: P:Terminaux.Colors.Models.HueSaturationLightness.HueWhole
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.HueWhole
+  nameWithType: HueSaturationLightness.HueWhole
+- uid: Terminaux.Colors.Models.HueSaturationLightness.HueWhole*
+  name: HueWhole
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_HueWhole_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.HueWhole
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.HueWhole
+  nameWithType: HueSaturationLightness.HueWhole
+- uid: Terminaux.Colors.Models.HueSaturationLightness.Lightness
+  name: Lightness
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_Lightness
+  commentId: P:Terminaux.Colors.Models.HueSaturationLightness.Lightness
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.Lightness
+  nameWithType: HueSaturationLightness.Lightness
+- uid: Terminaux.Colors.Models.HueSaturationLightness.Lightness*
+  name: Lightness
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_Lightness_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.Lightness
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.Lightness
+  nameWithType: HueSaturationLightness.Lightness
+- uid: Terminaux.Colors.Models.HueSaturationLightness.LightnessWhole
+  name: LightnessWhole
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_LightnessWhole
+  commentId: P:Terminaux.Colors.Models.HueSaturationLightness.LightnessWhole
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.LightnessWhole
+  nameWithType: HueSaturationLightness.LightnessWhole
+- uid: Terminaux.Colors.Models.HueSaturationLightness.LightnessWhole*
+  name: LightnessWhole
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_LightnessWhole_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.LightnessWhole
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.LightnessWhole
+  nameWithType: HueSaturationLightness.LightnessWhole
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ReverseHue
+  name: ReverseHue
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ReverseHue
+  commentId: P:Terminaux.Colors.Models.HueSaturationLightness.ReverseHue
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ReverseHue
+  nameWithType: HueSaturationLightness.ReverseHue
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ReverseHue*
+  name: ReverseHue
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ReverseHue_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.ReverseHue
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ReverseHue
+  nameWithType: HueSaturationLightness.ReverseHue
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ReverseHueWhole
+  name: ReverseHueWhole
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ReverseHueWhole
+  commentId: P:Terminaux.Colors.Models.HueSaturationLightness.ReverseHueWhole
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ReverseHueWhole
+  nameWithType: HueSaturationLightness.ReverseHueWhole
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ReverseHueWhole*
+  name: ReverseHueWhole
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ReverseHueWhole_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.ReverseHueWhole
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ReverseHueWhole
+  nameWithType: HueSaturationLightness.ReverseHueWhole
+- uid: Terminaux.Colors.Models.HueSaturationLightness.Saturation
+  name: Saturation
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_Saturation
+  commentId: P:Terminaux.Colors.Models.HueSaturationLightness.Saturation
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.Saturation
+  nameWithType: HueSaturationLightness.Saturation
+- uid: Terminaux.Colors.Models.HueSaturationLightness.Saturation*
+  name: Saturation
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_Saturation_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.Saturation
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.Saturation
+  nameWithType: HueSaturationLightness.Saturation
+- uid: Terminaux.Colors.Models.HueSaturationLightness.SaturationWhole
+  name: SaturationWhole
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_SaturationWhole
+  commentId: P:Terminaux.Colors.Models.HueSaturationLightness.SaturationWhole
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.SaturationWhole
+  nameWithType: HueSaturationLightness.SaturationWhole
+- uid: Terminaux.Colors.Models.HueSaturationLightness.SaturationWhole*
+  name: SaturationWhole
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_SaturationWhole_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.SaturationWhole
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.SaturationWhole
+  nameWithType: HueSaturationLightness.SaturationWhole
+- uid: Terminaux.Colors.Models.HueSaturationLightness.op_Equality(Terminaux.Colors.Models.HueSaturationLightness,Terminaux.Colors.Models.HueSaturationLightness)
+  name: operator ==(HueSaturationLightness, HueSaturationLightness)
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_op_Equality_Terminaux_Colors_Models_HueSaturationLightness_Terminaux_Colors_Models_HueSaturationLightness_
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.op_Equality(Terminaux.Colors.Models.HueSaturationLightness,Terminaux.Colors.Models.HueSaturationLightness)
+  name.vb: =(HueSaturationLightness, HueSaturationLightness)
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.operator ==(Terminaux.Colors.Models.HueSaturationLightness, Terminaux.Colors.Models.HueSaturationLightness)
+  fullName.vb: Terminaux.Colors.Models.HueSaturationLightness.=(Terminaux.Colors.Models.HueSaturationLightness, Terminaux.Colors.Models.HueSaturationLightness)
+  nameWithType: HueSaturationLightness.operator ==(HueSaturationLightness, HueSaturationLightness)
+  nameWithType.vb: HueSaturationLightness.=(HueSaturationLightness, HueSaturationLightness)
+- uid: Terminaux.Colors.Models.HueSaturationLightness.op_Equality*
+  name: operator ==
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_op_Equality_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.operator ==
+  fullName.vb: Terminaux.Colors.Models.HueSaturationLightness.=
+  nameWithType: HueSaturationLightness.operator ==
+  nameWithType.vb: HueSaturationLightness.=
+- uid: Terminaux.Colors.Models.HueSaturationLightness.op_Inequality(Terminaux.Colors.Models.HueSaturationLightness,Terminaux.Colors.Models.HueSaturationLightness)
+  name: operator !=(HueSaturationLightness, HueSaturationLightness)
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_op_Inequality_Terminaux_Colors_Models_HueSaturationLightness_Terminaux_Colors_Models_HueSaturationLightness_
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.op_Inequality(Terminaux.Colors.Models.HueSaturationLightness,Terminaux.Colors.Models.HueSaturationLightness)
+  name.vb: <>(HueSaturationLightness, HueSaturationLightness)
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.operator !=(Terminaux.Colors.Models.HueSaturationLightness, Terminaux.Colors.Models.HueSaturationLightness)
+  fullName.vb: Terminaux.Colors.Models.HueSaturationLightness.<>(Terminaux.Colors.Models.HueSaturationLightness, Terminaux.Colors.Models.HueSaturationLightness)
+  nameWithType: HueSaturationLightness.operator !=(HueSaturationLightness, HueSaturationLightness)
+  nameWithType.vb: HueSaturationLightness.<>(HueSaturationLightness, HueSaturationLightness)
+- uid: Terminaux.Colors.Models.HueSaturationLightness.op_Inequality*
+  name: operator !=
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_op_Inequality_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.operator !=
+  fullName.vb: Terminaux.Colors.Models.HueSaturationLightness.<>
+  nameWithType: HueSaturationLightness.operator !=
+  nameWithType.vb: HueSaturationLightness.<>
 - uid: Terminaux.Colors.Models.RedGreenBlue
   name: RedGreenBlue
   href: api/Terminaux.Colors.Models.RedGreenBlue.html
@@ -3582,6 +3854,15 @@ references:
   fullName.vb: Terminaux.Colors.Models.RedGreenBlue.New(Terminaux.Colors.Models.CyanMagentaYellowKey)
   nameWithType: RedGreenBlue.RedGreenBlue(CyanMagentaYellowKey)
   nameWithType.vb: RedGreenBlue.New(CyanMagentaYellowKey)
+- uid: Terminaux.Colors.Models.RedGreenBlue.#ctor(Terminaux.Colors.Models.HueSaturationLightness)
+  name: RedGreenBlue(HueSaturationLightness)
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue__ctor_Terminaux_Colors_Models_HueSaturationLightness_
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.#ctor(Terminaux.Colors.Models.HueSaturationLightness)
+  name.vb: New(HueSaturationLightness)
+  fullName: Terminaux.Colors.Models.RedGreenBlue.RedGreenBlue(Terminaux.Colors.Models.HueSaturationLightness)
+  fullName.vb: Terminaux.Colors.Models.RedGreenBlue.New(Terminaux.Colors.Models.HueSaturationLightness)
+  nameWithType: RedGreenBlue.RedGreenBlue(HueSaturationLightness)
+  nameWithType.vb: RedGreenBlue.New(HueSaturationLightness)
 - uid: Terminaux.Colors.Models.RedGreenBlue.#ctor*
   name: RedGreenBlue
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue__ctor_
@@ -3618,6 +3899,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedGreenBlue.ConvertToCmyk
   nameWithType: RedGreenBlue.ConvertToCmyk
+- uid: Terminaux.Colors.Models.RedGreenBlue.ConvertToHsl
+  name: ConvertToHsl()
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_ConvertToHsl
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.ConvertToHsl
+  fullName: Terminaux.Colors.Models.RedGreenBlue.ConvertToHsl()
+  nameWithType: RedGreenBlue.ConvertToHsl()
+- uid: Terminaux.Colors.Models.RedGreenBlue.ConvertToHsl*
+  name: ConvertToHsl
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_ConvertToHsl_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.ConvertToHsl
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.ConvertToHsl
+  nameWithType: RedGreenBlue.ConvertToHsl
 - uid: Terminaux.Colors.Models.RedGreenBlue.Equals(System.Object)
   name: Equals(object)
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_Equals_System_Object_
