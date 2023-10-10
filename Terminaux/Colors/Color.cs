@@ -85,6 +85,11 @@ namespace Terminaux.Colors
         public CyanMagentaYellowKey CMYK =>
             RGB.ConvertToCmyk();
         /// <summary>
+        /// An instance of HSL
+        /// </summary>
+        public HueSaturationLightness HSL =>
+            RGB.ConvertToHsl();
+        /// <summary>
         /// Hexadecimal representation of the color
         /// </summary>
         public string Hex { get; private set; }
@@ -170,7 +175,7 @@ namespace Terminaux.Colors
             ColorSpecifier = ColorSpecifier.Replace("\"", "");
 
             // Now, parse the output
-            if (!ColorSpecifier.StartsWith("cmyk:") && ColorSpecifier.Contains(";"))
+            if (!ColorSpecifier.StartsWith("cmyk:") && !ColorSpecifier.StartsWith("hsl:") && ColorSpecifier.Contains(";"))
             {
                 // Parse it
                 var rgb = ColorParser.ParseSpecifierRgbValues(ColorSpecifier);
@@ -250,6 +255,28 @@ namespace Terminaux.Colors
             {
                 // Parse it
                 var rgb = ColorParser.ParseSpecifierCmykValues(ColorSpecifier);
+                int r = rgb.R;
+                int g = rgb.G;
+                int b = rgb.B;
+
+                // We got the RGB values! Form the sequences
+                PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
+                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
+                VTSequenceForeground = VTSequenceForegroundTrueColor = Color255.GetEsc() + $"[38;2;{PlainSequence}m";
+                VTSequenceBackground = VTSequenceBackgroundTrueColor = Color255.GetEsc() + $"[48;2;{PlainSequence}m";
+
+                // Populate color properties
+                Type = ColorType.TrueColor;
+                IsBright = r + 0.2126d + g + 0.7152d + b + 0.0722d > 255d / 2d;
+                IsDark = r + 0.2126d + g + 0.7152d + b + 0.0722d < 255d / 2d;
+                R = r;
+                G = g;
+                B = b;
+            }
+            else if (ColorSpecifier.StartsWith("hsl:") && ColorSpecifier.Contains(";"))
+            {
+                // Parse it
+                var rgb = ColorParser.ParseSpecifierHslValues(ColorSpecifier);
                 int r = rgb.R;
                 int g = rgb.G;
                 int b = rgb.B;

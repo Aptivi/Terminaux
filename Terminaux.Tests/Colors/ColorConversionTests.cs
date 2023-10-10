@@ -78,5 +78,51 @@ namespace Terminaux.Tests.Colors
             rgb.G.ShouldBe(0);
             rgb.B.ShouldBe(22);
         }
+
+        /// <summary>
+        /// Tests converting an RGB color to HSL
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestConvertRgbToHsl()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 0, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;0;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;2;139;0;22m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(0);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to HSL
+            var hsl = ColorInstance.RGB.ConvertToHsl();
+
+            // Check for property correctness
+            hsl.HueWhole.ShouldBe(350);
+            hsl.ReverseHueWhole.ShouldBe(170);
+            hsl.SaturationWhole.ShouldBe(100);
+            hsl.LightnessWhole.ShouldBe(27);
+
+            // Now, convert back to RGB
+            var rgb = hsl.ConvertToRgb();
+
+            // Check for property correctness
+            rgb.R.ShouldBe(139);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(22);
+        }
     }
 }

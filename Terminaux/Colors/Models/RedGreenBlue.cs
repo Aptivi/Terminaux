@@ -49,6 +49,13 @@ namespace Terminaux.Colors.Models
         public CyanMagentaYellowKey ConvertToCmyk() =>
             new(this);
 
+        /// <summary>
+        /// Converts this instance of RGB color to HSL model
+        /// </summary>
+        /// <returns>An instance of <see cref="HueSaturationLightness"/></returns>
+        public HueSaturationLightness ConvertToHsl() =>
+            new(this);
+
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
             Equals(obj as RedGreenBlue);
@@ -95,9 +102,50 @@ namespace Terminaux.Colors.Models
             double levelK = 1 - (double)cmyk.KWhole / 100;
 
             // Now, get the Cyan, Magenta, and Yellow values
-            int r = (int)(255 * levelC * levelK);
-            int g = (int)(255 * levelM * levelK);
-            int b = (int)(255 * levelY * levelK);
+            int r = (int)Math.Round(255 * levelC * levelK);
+            int g = (int)Math.Round(255 * levelM * levelK);
+            int b = (int)Math.Round(255 * levelY * levelK);
+
+            // Install the values
+            R = r;
+            G = g;
+            B = b;
+        }
+
+        /// <summary>
+        /// Converts the HSL color model to RGB
+        /// </summary>
+        /// <param name="hsl">Instance of HSL</param>
+        /// <exception cref="TerminauxException"></exception>
+        public RedGreenBlue(HueSaturationLightness hsl)
+        {
+            if (hsl is null)
+                throw new TerminauxException("Can't convert a null HSL instance to RGB!");
+
+            // Adjust the RGB values according to saturation
+            int r, g, b;
+            if (hsl.Saturation == 0)
+            {
+                // The saturation is zero, so no need to do actual conversion. Just use the lightness.
+                r = (int)Math.Round(hsl.Lightness * 255);
+                g = (int)Math.Round(hsl.Lightness * 255);
+                b = (int)Math.Round(hsl.Lightness * 255);
+            }
+            else
+            {
+                // First, get the required variables needed for conversion
+                double variable1, variable2;
+                if (hsl.Lightness < 0.5)
+                    variable2 = hsl.Lightness * (1 + hsl.Saturation);
+                else
+                    variable2 = (hsl.Lightness + hsl.Saturation) - (hsl.Saturation * hsl.Lightness);
+                variable1 = 2 * hsl.Lightness - variable2;
+
+                // Now, do the actual work
+                r = (int)Math.Round(255 * GetRgbValueFromHue(variable1, variable2, hsl.Hue + (1 / 3.0d)));
+                g = (int)Math.Round(255 * GetRgbValueFromHue(variable1, variable2, hsl.Hue));
+                b = (int)Math.Round(255 * GetRgbValueFromHue(variable1, variable2, hsl.Hue - (1 / 3.0d)));
+            }
 
             // Install the values
             R = r;
@@ -110,6 +158,24 @@ namespace Terminaux.Colors.Models
             R = r;
             G = g;
             B = b;
+        }
+
+        private double GetRgbValueFromHue(double variable1, double variable2, double variableHue)
+        {
+            // Check the hue
+            if (variableHue < 0)
+                variableHue++;
+            if (variableHue > 1)
+                variableHue--;
+
+            // Now, get the actual value according to the hue
+            if ((6 * variableHue) < 1)
+                return variable1 + (variable2 - variable1) * 6 * variableHue;
+            else if ((2 * variableHue) < 1)
+                return variable2;
+            else if ((3 * variableHue) < 2)
+                return variable1 + (variable2 - variable1) * ((2 / 3.0d - variableHue) * 6);
+            return variable1;
         }
     }
 }

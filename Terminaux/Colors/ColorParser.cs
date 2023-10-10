@@ -113,16 +113,16 @@ namespace Terminaux.Colors
             {
                 // We got the CMYK whole values! First, check to see if we need to filter the color for the color-blind
                 int c = Convert.ToInt32(specifierArray[0]);
-                if (c < 0 || c > 255)
+                if (c < 0 || c > 100)
                     throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
                 int m = Convert.ToInt32(specifierArray[1]);
-                if (m < 0 || m > 255)
+                if (m < 0 || m > 100)
                     throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
                 int y = Convert.ToInt32(specifierArray[2]);
-                if (y < 0 || y > 255)
+                if (y < 0 || y > 100)
                     throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
                 int k = Convert.ToInt32(specifierArray[3]);
-                if (k < 0 || k > 255)
+                if (k < 0 || k > 100)
                     throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
 
                 // First, we need to convert from CMYK to RGB
@@ -144,6 +144,46 @@ namespace Terminaux.Colors
             }
             else
                 throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
+        }
+
+        internal static RedGreenBlue ParseSpecifierHslValues(string specifier)
+        {
+            if (!specifier.Contains(";") || !specifier.StartsWith("hsl:"))
+                throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
+
+            // Split the VT sequence into three parts
+            var specifierArray = specifier.Substring(4).Split(';');
+            if (specifierArray.Length == 3)
+            {
+                // We got the HSL whole values! First, check to see if we need to filter the color for the color-blind
+                int h = Convert.ToInt32(specifierArray[0]);
+                if (h < 0 || h > 360)
+                    throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
+                int s = Convert.ToInt32(specifierArray[1]);
+                if (s < 0 || s > 100)
+                    throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
+                int l = Convert.ToInt32(specifierArray[2]);
+                if (l < 0 || l > 100)
+                    throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
+
+                // First, we need to convert from HSL to RGB
+                double hPart = (double)h / 360;
+                double sPart = (double)s / 100;
+                double lPart = (double)l / 100;
+                var hsl = new HueSaturationLightness(hPart, sPart, lPart);
+                var rgb = hsl.ConvertToRgb();
+                int r = rgb.R;
+                int g = rgb.G;
+                int b = rgb.B;
+
+                // Now, transform
+                var finalRgb = GetTransformedColor(r, g, b);
+
+                // Make a new RGB class
+                return new(finalRgb.r, finalRgb.g, finalRgb.b);
+            }
+            else
+                throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
         }
 
         private static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput)
