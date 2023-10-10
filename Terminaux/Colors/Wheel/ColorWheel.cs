@@ -35,6 +35,7 @@ namespace Terminaux.Colors.Wheel
         private static ConsoleColors wheelColor255 = ConsoleColors.Green;
         private static ConsoleColor wheelColor16 = ConsoleColor.Green;
         private static Color wheelColor = new(wheelR, wheelG, wheelB);
+        private static Color wheelColorProtan, wheelColorDeutan, wheelColorTritan;
         private static ColorWheelRgbMode wheelRgbIndicator = ColorWheelRgbMode.Red;
         private static readonly Color infoBoxColorFg = new(ConsoleColors.White);
         private static readonly Color infoBoxColorBg = new(ConsoleColors.DarkRed);
@@ -84,7 +85,6 @@ namespace Terminaux.Colors.Wheel
             int boxNum;
 
             // Render all the colors based on the current wheel color
-            Color wheelColorProtan, wheelColorDeutan, wheelColorTritan;
             wheelColorProtan = RenderDeficiencyAware(Deficiency.Protan);
             wheelColorDeutan = RenderDeficiencyAware(Deficiency.Deutan);
             wheelColorTritan = RenderDeficiencyAware(Deficiency.Tritan);
@@ -101,14 +101,11 @@ namespace Terminaux.Colors.Wheel
                               boxNum == 2 ? $"Deuteranopia [{wheelSeverity:n2}]" :
                               boxNum == 3 ? $"Tritanopia [{wheelSeverity:n2}]" :
                               "Normal";
-                string bright = color.IsBright ? "Bright" : "Dark";
                 BorderColor.WriteBorder(topLeftCornerPosLeftCurrent, topLeftCornerPosTop, boxWidth, boxHeight, color);
                 BoxColor.WriteBox(topLeftCornerPosLeftCurrent + 1, topLeftCornerPosTop, boxWidth, boxHeight, color);
                 TextWriterWhereColor.WriteWhereColor(mode, topLeftCornerPosLeftCurrent + boxWidth / 2 - mode.Length / 2, boxHeight + 2, color);
                 TextWriterWhereColor.WriteWhereColor(color.PlainSequence, topLeftCornerPosLeftCurrent + boxWidth / 2 - color.PlainSequence.Length / 2, boxHeight + 4, color);
                 TextWriterWhereColor.WriteWhereColor(color.Hex, topLeftCornerPosLeftCurrent + boxWidth / 2 - color.Hex.Length / 2, boxHeight + 5, color);
-                TextWriterWhereColor.WriteWhereColor(color.Type.ToString(), topLeftCornerPosLeftCurrent + boxWidth / 2 - color.Type.ToString().Length / 2, boxHeight + 6, color);
-                TextWriterWhereColor.WriteWhereColor(bright, topLeftCornerPosLeftCurrent + boxWidth / 2 - bright.Length / 2, boxHeight + 7, color);
             }
 
             // Write the RGB adjuster
@@ -158,7 +155,7 @@ namespace Terminaux.Colors.Wheel
             TextWriterColor.Write("\n");
 
             // Write the bound keys list
-            string keysStr = "[ESC] Exit | [ENTER] Accept | [H] Help";
+            string keysStr = "[ESC] Exit | [ENTER] Accept | [I] Info | [H] Help";
             TextWriterWhereColor.WriteWhereColor(keysStr, ConsoleWrappers.ActionWindowWidth() / 2 - keysStr.Length / 2, ConsoleWrappers.ActionWindowHeight() - 2, new Color(ConsoleColors.White));
         }
 
@@ -208,19 +205,117 @@ namespace Terminaux.Colors.Wheel
                         DecrementRgbIndicator();
                     break;
                 case ConsoleKey.H:
-                    InfoBoxColor.WriteInfoBoxColorBack( 
-                        "Controls\n" +
-                        "--------\n" +
-                        "\n" +
-                        "[ESC]       | Exits the color selection\n" +
-                        "[ENTER]     | Accepts the color selection\n" +
-                        "[<-]        | Goes to the previous RGB level\n" +
-                        "[->]        | Goes to the next RGB level\n" +
-                        "[CTRL + <-] | Decreases the color-blind severity\n" +
-                        "[CTRL + ->] | Increases the color-blind severity\n" +
-                        "[TAB]       | Changes the color mode (16, 255, true)\n" +
-                        "[UP]        | Increases the current RGB value of color\n" +
-                        "[DOWN]      | Decreases the current RGB value of color",
+                    InfoBoxColor.WriteInfoBoxColorBack(
+                        """
+                        Controls
+                        --------
+
+                        [ESC]       | Exits the color selection
+                        [ENTER]     | Accepts the color selection
+                        [<-]        | Goes to the previous RGB level
+                        [->]        | Goes to the next RGB level
+                        [CTRL + <-] | Decreases the color-blind severity
+                        [CTRL + ->] | Increases the color-blind severity
+                        [TAB]       | Changes the color mode (16, 255, true)
+                        [UP]        | Increases the current RGB value of color
+                        [DOWN]      | Decreases the current RGB value of color
+                        [I]         | Gives you more information about the colors used
+                        """,
+                        infoBoxColorFg, infoBoxColorBg);
+                    ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                    break;
+                case ConsoleKey.I:
+                    InfoBoxColor.WriteInfoBoxColorBack(
+                        $$"""
+                        Color info
+                        ----------
+
+                        RGB level:        {{wheelColor.PlainSequence}}
+                        RGB level (true): {{wheelColor.PlainSequenceTrueColor}}
+                        RGB hex code:     {{wheelColor.Hex}}
+                        Color type:       {{wheelColor.Type}}
+
+                        CMYK information:
+                          - Black key:    {{wheelColor.CMYK.KWhole}}
+                          - Cyan:         {{wheelColor.CMYK.CMY.CWhole}}
+                          - Magenta:      {{wheelColor.CMYK.CMY.MWhole}}
+                          - Yellow:       {{wheelColor.CMYK.CMY.YWhole}}
+
+                        HSL information:
+                          - Hue (degs):   {{wheelColor.HSL.HueWhole}}'
+                          - Reverse Hue   {{wheelColor.HSL.ReverseHueWhole}}'
+                          - Saturation:   {{wheelColor.HSL.SaturationWhole}}
+                          - Lightness:    {{wheelColor.HSL.LightnessWhole}}
+                        """,
+                        infoBoxColorFg, infoBoxColorBg);
+                    InfoBoxColor.WriteInfoBoxColorBack(
+                        $$"""
+                        Color info (Protan)
+                        -------------------
+
+                        RGB level:        {{wheelColorProtan.PlainSequence}}
+                        RGB level (true): {{wheelColorProtan.PlainSequenceTrueColor}}
+                        RGB hex code:     {{wheelColorProtan.Hex}}
+                        Color type:       {{wheelColorProtan.Type}}
+
+                        CMYK information:
+                          - Black key:    {{wheelColorProtan.CMYK.KWhole}}
+                          - Cyan:         {{wheelColorProtan.CMYK.CMY.CWhole}}
+                          - Magenta:      {{wheelColorProtan.CMYK.CMY.MWhole}}
+                          - Yellow:       {{wheelColorProtan.CMYK.CMY.YWhole}}
+
+                        HSL information:
+                          - Hue (degs):   {{wheelColorProtan.HSL.HueWhole}}'
+                          - Reverse Hue   {{wheelColorProtan.HSL.ReverseHueWhole}}'
+                          - Saturation:   {{wheelColorProtan.HSL.SaturationWhole}}
+                          - Lightness:    {{wheelColorProtan.HSL.LightnessWhole}}
+                        """,
+                        infoBoxColorFg, infoBoxColorBg);
+                    InfoBoxColor.WriteInfoBoxColorBack(
+                        $$"""
+                        Color info (Deutan)
+                        -------------------
+
+                        RGB level:        {{wheelColorDeutan.PlainSequence}}
+                        RGB level (true): {{wheelColorDeutan.PlainSequenceTrueColor}}
+                        RGB hex code:     {{wheelColorDeutan.Hex}}
+                        Color type:       {{wheelColorDeutan.Type}}
+
+                        CMYK information:
+                          - Black key:    {{wheelColorDeutan.CMYK.KWhole}}
+                          - Cyan:         {{wheelColorDeutan.CMYK.CMY.CWhole}}
+                          - Magenta:      {{wheelColorDeutan.CMYK.CMY.MWhole}}
+                          - Yellow:       {{wheelColorDeutan.CMYK.CMY.YWhole}}
+
+                        HSL information:
+                          - Hue (degs):   {{wheelColorDeutan.HSL.HueWhole}}'
+                          - Reverse Hue   {{wheelColorDeutan.HSL.ReverseHueWhole}}'
+                          - Saturation:   {{wheelColorDeutan.HSL.SaturationWhole}}
+                          - Lightness:    {{wheelColorDeutan.HSL.LightnessWhole}}
+                        """,
+                        infoBoxColorFg, infoBoxColorBg);
+                    InfoBoxColor.WriteInfoBoxColorBack(
+                        $$"""
+                        Color info (Tritan)
+                        -------------------
+
+                        RGB level:        {{wheelColorTritan.PlainSequence}}
+                        RGB level (true): {{wheelColorTritan.PlainSequenceTrueColor}}
+                        RGB hex code:     {{wheelColorTritan.Hex}}
+                        Color type:       {{wheelColorTritan.Type}}
+
+                        CMYK information:
+                          - Black key:    {{wheelColorTritan.CMYK.KWhole}}
+                          - Cyan:         {{wheelColorTritan.CMYK.CMY.CWhole}}
+                          - Magenta:      {{wheelColorTritan.CMYK.CMY.MWhole}}
+                          - Yellow:       {{wheelColorTritan.CMYK.CMY.YWhole}}
+
+                        HSL information:
+                          - Hue (degs):   {{wheelColorTritan.HSL.HueWhole}}'
+                          - Reverse Hue   {{wheelColorTritan.HSL.ReverseHueWhole}}'
+                          - Saturation:   {{wheelColorTritan.HSL.SaturationWhole}}
+                          - Lightness:    {{wheelColorTritan.HSL.LightnessWhole}}
+                        """,
                         infoBoxColorFg, infoBoxColorBg);
                     ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
                     break;
