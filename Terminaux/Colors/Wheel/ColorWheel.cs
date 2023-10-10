@@ -85,16 +85,9 @@ namespace Terminaux.Colors.Wheel
 
             // Render all the colors based on the current wheel color
             Color wheelColorProtan, wheelColorDeutan, wheelColorTritan;
-            ColorTools.EnableColorTransformation = true;
-            ColorTools.ColorDeficiencySeverity = wheelSeverity;
-            ColorTools.ColorDeficiency = Deficiency.Protan;
-            wheelColorProtan = new Color(wheelColor.PlainSequence);
-            ColorTools.ColorDeficiency = Deficiency.Deutan;
-            wheelColorDeutan = new Color(wheelColor.PlainSequence);
-            ColorTools.ColorDeficiency = Deficiency.Tritan;
-            wheelColorTritan = new Color(wheelColor.PlainSequence);
-            ColorTools.ColorDeficiency = Deficiency.Protan;
-            ColorTools.EnableColorTransformation = false;
+            wheelColorProtan = RenderDeficiencyAware(Deficiency.Protan);
+            wheelColorDeutan = RenderDeficiencyAware(Deficiency.Deutan);
+            wheelColorTritan = RenderDeficiencyAware(Deficiency.Tritan);
 
             // Render all the boxes now
             for (boxNum = 0; boxNum < 4; boxNum++)
@@ -350,6 +343,17 @@ namespace Terminaux.Colors.Wheel
             wheelColor255 = !fallback ? initialColor.Type == ColorType._255Color ? initialColor.ColorEnum255 : ConsoleColors.Green : ConsoleColors.Green;
             wheelColor16 = !fallback ? initialColor.Type == ColorType._16Color ? initialColor.ColorEnum16 : ConsoleColor.Green : ConsoleColor.Green;
             wheelColor = !fallback ? initialColor : new(wheelR, wheelG, wheelB);
+        }
+
+        private static Color RenderDeficiencyAware(Deficiency deficiency)
+        {
+            ColorTools.EnableColorTransformation = true;
+            ColorTools.ColorDeficiencySeverity = wheelSeverity;
+            ColorTools.ColorDeficiency = deficiency;
+            var color = new Color(wheelColor.PlainSequence);
+            ColorTools.ColorDeficiency = Deficiency.Protan;
+            ColorTools.EnableColorTransformation = false;
+            return color;
         }
     }
 }
