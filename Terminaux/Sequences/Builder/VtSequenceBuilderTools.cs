@@ -240,6 +240,8 @@ namespace Terminaux.Sequences.Builder
                 (new Func<string>(CsiSequences.GenerateCsiSoftTerminalReset), CsiSequences.CsiSoftTerminalResetSequenceRegex, 0) },
             { VtSequenceSpecificTypes.CsiTabClear,
                 (new Func<int, string>(CsiSequences.GenerateCsiTabClear), CsiSequences.CsiTabClearSequenceRegex, 1) },
+            { VtSequenceSpecificTypes.CsiWindowManipulation,
+                (new Func<int, int, int, string>(CsiSequences.GenerateCsiWindowManipulation), CsiSequences.CsiWindowManipulationSequenceRegex, 3) },
 
             // DCS sequences
             { VtSequenceSpecificTypes.DcsRequestResourceValues,
@@ -451,6 +453,8 @@ namespace Terminaux.Sequences.Builder
                 return generatorParameterized10.Invoke((int)arguments[0], (int)arguments[1], arguments[2].ToString());
             else if (generator is Func<int, string, string> generatorParameterized11)
                 return generatorParameterized11.Invoke((int)arguments[0], arguments[1].ToString());
+            else if (generator is Func<int, int, int, string> generatorParameterized12)
+                return generatorParameterized12.Invoke((int)arguments[0], (int)arguments[1], (int)arguments[2]);
             return generator.DynamicInvoke(arguments).ToString();
         }
     }
