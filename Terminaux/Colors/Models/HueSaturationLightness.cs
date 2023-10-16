@@ -199,8 +199,8 @@ namespace Terminaux.Colors.Models
                 // First, the saturation based on the lightness value
                 saturation =
                     lightness < 0.5d ?
-                    maxLevel / (maxLevel + minLevel) :
-                    maxLevel / (2 - maxLevel - minLevel);
+                    deltaLevel / (maxLevel + minLevel) :
+                    deltaLevel / (2 - maxLevel - minLevel);
 
                 // Now, get the delta of R, G, and B values so that we can calculate the hue
                 double deltaR = (((maxLevel - levelR) / 6) + (deltaLevel / 2)) / deltaLevel;
