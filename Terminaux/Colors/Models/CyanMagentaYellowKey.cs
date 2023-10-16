@@ -107,6 +107,12 @@ namespace Terminaux.Colors.Models
             double c = (1 - levelR - key) / (1 - key);
             double m = (1 - levelG - key) / (1 - key);
             double y = (1 - levelB - key) / (1 - key);
+            if (double.IsNaN(c))
+                c = 0;
+            if (double.IsNaN(m))
+                m = 0;
+            if (double.IsNaN(y))
+                y = 0;
             var cmy = new CyanMagentaYellow(c, m, y);
 
             // Install the values
