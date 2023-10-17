@@ -167,6 +167,11 @@ namespace Terminaux.Reader.Inputs.Interactive
                 _refreshSelection = true;
             if (pos == elements)
                 _refreshSelection = true;
+            if (ConsoleResizeListener.WasResized())
+            {
+                _refreshSelection = true;
+                InteractiveTuiStatus.RedrawRequired = true;
+            }
         }
 
         /// <summary>
