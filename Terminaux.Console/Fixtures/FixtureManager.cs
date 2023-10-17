@@ -83,6 +83,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new ColorTrueTest(),
             new ColorWheelTest(),
             new ColorWithResetTest(),
+            new ColorSelectorTest(),
 
             // Interactive TUI
             new CliInfoPaneTest(),
