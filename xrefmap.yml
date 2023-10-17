@@ -1424,6 +1424,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.LoadBack
   nameWithType: ColorTools.LoadBack
+- uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Accessibility.Deficiency,System.Double,System.Boolean)
+  name: RenderColorBlindnessAware(Color, Deficiency, double, bool)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Accessibility_Deficiency_System_Double_System_Boolean_
+  commentId: M:Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Accessibility.Deficiency,System.Double,System.Boolean)
+  name.vb: RenderColorBlindnessAware(Color, Deficiency, Double, Boolean)
+  fullName: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Accessibility.Deficiency, double, bool)
+  fullName.vb: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Accessibility.Deficiency, Double, Boolean)
+  nameWithType: ColorTools.RenderColorBlindnessAware(Color, Deficiency, double, bool)
+  nameWithType.vb: ColorTools.RenderColorBlindnessAware(Color, Deficiency, Double, Boolean)
+- uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware*
+  name: RenderColorBlindnessAware
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_
+  commentId: Overload:Terminaux.Colors.ColorTools.RenderColorBlindnessAware
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.RenderColorBlindnessAware
+  nameWithType: ColorTools.RenderColorBlindnessAware
 - uid: Terminaux.Colors.ColorTools.SRGBToLinearRGB(System.Int32)
   name: SRGBToLinearRGB(int)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SRGBToLinearRGB_System_Int32_
