@@ -469,5 +469,40 @@ namespace Terminaux.Colors
                 _                           => ConsoleColor.Black,
             };
         }
+
+        /// <summary>
+        /// Provides you an easy way to generate new <see cref="Color"/> instances with color blindness applied
+        /// </summary>
+        /// <param name="color">Color to use</param>
+        /// <param name="deficiency">Selected deficiency for color blindness</param>
+        /// <param name="severity">Severity of the color blindness</param>
+        /// <param name="useSimple">Uses the simple method to calculate color values based on color blindness deficiency and severity</param>
+        /// <returns>An instance of <see cref="Color"/> with adjusted color values for color-blindness</returns>
+        public static Color RenderColorBlindnessAware(Color color, Deficiency deficiency, double severity, bool useSimple = false)
+        {
+            // Get some old values
+            var oldDeficiency = ColorDeficiency;
+            var oldSeverity = ColorDeficiencySeverity;
+            var oldTransform = EnableColorTransformation;
+            var oldTransformSimple = EnableSimpleColorTransformation;
+
+            // Now, enable transformation prior to rendering
+            EnableColorTransformation = true;
+            EnableSimpleColorTransformation = useSimple;
+            ColorDeficiencySeverity = severity;
+            ColorDeficiency = deficiency;
+
+            // Get the resulting color
+            var result = new Color(color.PlainSequence);
+
+            // Restore the values
+            ColorDeficiency = oldDeficiency;
+            ColorDeficiencySeverity = oldSeverity;
+            EnableColorTransformation = oldTransform;
+            EnableSimpleColorTransformation = oldTransformSimple;
+
+            // Return the resulting color
+            return result;
+        }
     }
 }

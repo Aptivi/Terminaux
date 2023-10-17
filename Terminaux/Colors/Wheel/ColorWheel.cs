@@ -85,9 +85,9 @@ namespace Terminaux.Colors.Wheel
             int boxNum;
 
             // Render all the colors based on the current wheel color
-            wheelColorProtan = RenderDeficiencyAware(Deficiency.Protan);
-            wheelColorDeutan = RenderDeficiencyAware(Deficiency.Deutan);
-            wheelColorTritan = RenderDeficiencyAware(Deficiency.Tritan);
+            wheelColorProtan = ColorTools.RenderColorBlindnessAware(wheelColor, Deficiency.Protan, wheelSeverity);
+            wheelColorDeutan = ColorTools.RenderColorBlindnessAware(wheelColor, Deficiency.Deutan, wheelSeverity);
+            wheelColorTritan = ColorTools.RenderColorBlindnessAware(wheelColor, Deficiency.Tritan, wheelSeverity);
 
             // Render all the boxes now
             for (boxNum = 0; boxNum < 4; boxNum++)
@@ -438,17 +438,6 @@ namespace Terminaux.Colors.Wheel
             wheelColor255 = !fallback ? initialColor.Type == ColorType._255Color ? initialColor.ColorEnum255 : ConsoleColors.Green : ConsoleColors.Green;
             wheelColor16 = !fallback ? initialColor.Type == ColorType._16Color ? initialColor.ColorEnum16 : ConsoleColor.Green : ConsoleColor.Green;
             wheelColor = !fallback ? initialColor : new(wheelR, wheelG, wheelB);
-        }
-
-        private static Color RenderDeficiencyAware(Deficiency deficiency)
-        {
-            ColorTools.EnableColorTransformation = true;
-            ColorTools.ColorDeficiencySeverity = wheelSeverity;
-            ColorTools.ColorDeficiency = deficiency;
-            var color = new Color(wheelColor.PlainSequence);
-            ColorTools.ColorDeficiency = Deficiency.Protan;
-            ColorTools.EnableColorTransformation = false;
-            return color;
         }
     }
 }
