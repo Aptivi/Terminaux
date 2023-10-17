@@ -190,6 +190,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleExtensions.ResetAll
   nameWithType: ConsoleExtensions.ResetAll
+- uid: Terminaux.Base.ConsoleExtensions.ResetColors
+  name: ResetColors()
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetColors
+  commentId: M:Terminaux.Base.ConsoleExtensions.ResetColors
+  fullName: Terminaux.Base.ConsoleExtensions.ResetColors()
+  nameWithType: ConsoleExtensions.ResetColors()
+- uid: Terminaux.Base.ConsoleExtensions.ResetColors*
+  name: ResetColors
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetColors_
+  commentId: Overload:Terminaux.Base.ConsoleExtensions.ResetColors
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleExtensions.ResetColors
+  nameWithType: ConsoleExtensions.ResetColors
 - uid: Terminaux.Base.ConsoleExtensions.SetTitle(System.String)
   name: SetTitle(string)
   href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_SetTitle_System_String_
