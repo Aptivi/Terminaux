@@ -226,6 +226,15 @@ namespace Terminaux.Base
             Console.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSoftTerminalReset));
         }
 
+        /// <summary>
+        /// Resets the console colors without clearing screen
+        /// </summary>
+        public static void ResetColors()
+        {
+            Console.Write($"{Convert.ToChar(0x1B)}[39m");
+            Console.Write($"{Convert.ToChar(0x1B)}[49m");
+        }
+
         #region Windows-specific
         private const string winKernel = "kernel32.dll";
 
