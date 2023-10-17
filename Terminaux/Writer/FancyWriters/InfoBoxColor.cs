@@ -115,6 +115,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Render text inside it
                 ConsoleWrappers.ActionCursorVisible(false);
+                bool exiting = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -122,7 +123,14 @@ namespace Terminaux.Writer.FancyWriters
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
                         if (waitForInput)
-                            Input.DetectKeypress();
+                        {
+                            var keypress = Input.DetectKeypress();
+                            if (keypress.Key == ConsoleKey.Q)
+                            {
+                                exiting = true;
+                                break;
+                            }
+                        }
                         else
                             Thread.Sleep(5000);
                         BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
@@ -131,7 +139,7 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                if (waitForInput)
+                if (waitForInput && !exiting)
                     Input.DetectKeypress();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -601,6 +609,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Render text inside it
                 ConsoleWrappers.ActionCursorVisible(false);
+                bool exiting = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -608,7 +617,14 @@ namespace Terminaux.Writer.FancyWriters
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
                         if (waitForInput)
-                            Input.DetectKeypress();
+                        {
+                            var keypress = Input.DetectKeypress();
+                            if (keypress.Key == ConsoleKey.Q)
+                            {
+                                exiting = true;
+                                break;
+                            }
+                        }
                         else
                             Thread.Sleep(5000);
                         BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
@@ -617,7 +633,7 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                if (waitForInput)
+                if (waitForInput && !exiting)
                     Input.DetectKeypress();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -710,6 +726,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Render text inside it
                 ConsoleWrappers.ActionCursorVisible(false);
+                bool exiting = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -717,7 +734,14 @@ namespace Terminaux.Writer.FancyWriters
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
                         if (waitForInput)
-                            Input.DetectKeypress();
+                        {
+                            var keypress = Input.DetectKeypress();
+                            if (keypress.Key == ConsoleKey.Q)
+                            {
+                                exiting = true;
+                                break;
+                            }
+                        }
                         else
                             Thread.Sleep(5000);
                         BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
@@ -726,7 +750,7 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                if (waitForInput)
+                if (waitForInput && !exiting)
                     Input.DetectKeypress();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
