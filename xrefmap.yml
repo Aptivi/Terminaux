@@ -11990,6 +11990,15 @@ references:
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(String, Boolean, ParamArray Object())
   nameWithType: TextWriterColor.WritePlain(string, bool, params object[])
   nameWithType.vb: TextWriterColor.WritePlain(String, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(System.String,System.Object[])
+  name: WritePlain(string, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WritePlain_System_String_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(System.String,System.Object[])
+  name.vb: WritePlain(String, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(string, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(String, ParamArray Object())
+  nameWithType: TextWriterColor.WritePlain(string, params object[])
+  nameWithType.vb: TextWriterColor.WritePlain(String, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain*
   name: WritePlain
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WritePlain_
