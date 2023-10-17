@@ -4024,6 +4024,43 @@ references:
   fullName.vb: Terminaux.Colors.Models.RedGreenBlue.<>
   nameWithType: RedGreenBlue.operator !=
   nameWithType.vb: RedGreenBlue.<>
+- uid: Terminaux.Colors.Selector
+  name: Terminaux.Colors.Selector
+  href: api/Terminaux.Colors.Selector.html
+  commentId: N:Terminaux.Colors.Selector
+  fullName: Terminaux.Colors.Selector
+  nameWithType: Terminaux.Colors.Selector
+- uid: Terminaux.Colors.Selector.ColorSelector
+  name: ColorSelector
+  href: api/Terminaux.Colors.Selector.ColorSelector.html
+  commentId: T:Terminaux.Colors.Selector.ColorSelector
+  fullName: Terminaux.Colors.Selector.ColorSelector
+  nameWithType: ColorSelector
+- uid: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector
+  name: OpenColorSelector()
+  href: api/Terminaux.Colors.Selector.ColorSelector.html#Terminaux_Colors_Selector_ColorSelector_OpenColorSelector
+  commentId: M:Terminaux.Colors.Selector.ColorSelector.OpenColorSelector
+  fullName: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector()
+  nameWithType: ColorSelector.OpenColorSelector()
+- uid: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.Color)
+  name: OpenColorSelector(Color)
+  href: api/Terminaux.Colors.Selector.ColorSelector.html#Terminaux_Colors_Selector_ColorSelector_OpenColorSelector_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.Color)
+  nameWithType: ColorSelector.OpenColorSelector(Color)
+- uid: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.ConsoleColors)
+  name: OpenColorSelector(ConsoleColors)
+  href: api/Terminaux.Colors.Selector.ColorSelector.html#Terminaux_Colors_Selector_ColorSelector_OpenColorSelector_Terminaux_Colors_ConsoleColors_
+  commentId: M:Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.ConsoleColors)
+  fullName: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.ConsoleColors)
+  nameWithType: ColorSelector.OpenColorSelector(ConsoleColors)
+- uid: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector*
+  name: OpenColorSelector
+  href: api/Terminaux.Colors.Selector.ColorSelector.html#Terminaux_Colors_Selector_ColorSelector_OpenColorSelector_
+  commentId: Overload:Terminaux.Colors.Selector.ColorSelector.OpenColorSelector
+  isSpec: "True"
+  fullName: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector
+  nameWithType: ColorSelector.OpenColorSelector
 - uid: Terminaux.Colors.Wheel
   name: Terminaux.Colors.Wheel
   href: api/Terminaux.Colors.Wheel.html

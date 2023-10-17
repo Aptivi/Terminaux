@@ -104,6 +104,16 @@
     "title": "Namespace Terminaux.Colors.Models | Terminaux API - Aptivi Internals",
     "keywords": "Namespace Terminaux.Colors.Models Classes CyanMagentaYellow The CMY class instance CyanMagentaYellowKey The CMYK class instance HueSaturationLightness The Hue, Saturation, and Lightness (HSL) model RedGreenBlue The RGB class instance"
   },
+  "api/Terminaux.Colors.Selector.ColorSelector.html": {
+    "href": "api/Terminaux.Colors.Selector.ColorSelector.html",
+    "title": "Class ColorSelector | Terminaux API - Aptivi Internals",
+    "keywords": "Class ColorSelector Color selection application Inheritance object ColorSelector Namespace: Terminaux.Colors.Selector Assembly: Terminaux.dll Syntax public static class ColorSelector Methods | Edit this page View Source OpenColorSelector() Opens the color selector Declaration public static Color OpenColorSelector() Returns Type Description Color An instance of Color to get the resulting color | Edit this page View Source OpenColorSelector(Color) Opens the color selector Declaration public static Color OpenColorSelector(Color initialColor) Parameters Type Name Description Color initialColor Initial color to use Returns Type Description Color An instance of Color to get the resulting color | Edit this page View Source OpenColorSelector(ConsoleColors) Opens the color selector Declaration public static Color OpenColorSelector(ConsoleColors initialColor) Parameters Type Name Description ConsoleColors initialColor Initial color to use Returns Type Description Color An instance of Color to get the resulting color"
+  },
+  "api/Terminaux.Colors.Selector.html": {
+    "href": "api/Terminaux.Colors.Selector.html",
+    "title": "Namespace Terminaux.Colors.Selector | Terminaux API - Aptivi Internals",
+    "keywords": "Namespace Terminaux.Colors.Selector Classes ColorSelector Color selection application"
+  },
   "api/Terminaux.Colors.Wheel.ColorWheel.html": {
     "href": "api/Terminaux.Colors.Wheel.ColorWheel.html",
     "title": "Class ColorWheel | Terminaux API - Aptivi Internals",
