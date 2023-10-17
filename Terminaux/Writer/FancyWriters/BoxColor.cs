@@ -22,6 +22,7 @@ using System.Text;
 using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Writer.FancyWriters
@@ -110,9 +111,9 @@ namespace Terminaux.Writer.FancyWriters
         {
             // Fill the box with spaces inside it
             StringBuilder box = new();
-            box.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + 2)}");
+            box.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2)}");
             for (int y = 1; y <= InteriorHeight; y++)
-                box.Append(new string(' ', InteriorWidth) + VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + y + 2));
+                box.Append(new string(' ', InteriorWidth) + CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2));
             return box.ToString();
         }
     }

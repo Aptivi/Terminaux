@@ -22,6 +22,7 @@ using System.Text;
 using System.Threading;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 
@@ -304,20 +305,20 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Upper frame
                 frameBuilder.Append(
-                    $"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + 1)}" +
+                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}" +
                     $"{UpperLeftCornerChar}{new string(UpperFrameChar, InteriorWidth)}{UpperRightCornerChar}");
 
                 // Left and right edges
                 for (int i = 1; i <= InteriorHeight; i++)
                     frameBuilder.Append(
-                        $"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + i + 1)}" +
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 1)}" +
                         $"{LeftFrameChar}" +
-                        $"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + InteriorWidth + 2, Top + i + 1)}" +
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + i + 1)}" +
                         $"{RightFrameChar}");
 
                 // Lower frame
                 frameBuilder.Append(
-                    $"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + InteriorHeight + 2)}" +
+                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + InteriorHeight + 2)}" +
                     $"{LowerLeftCornerChar}{new string(LowerFrameChar, InteriorWidth)}{LowerRightCornerChar}");
                 return frameBuilder.ToString();
             }

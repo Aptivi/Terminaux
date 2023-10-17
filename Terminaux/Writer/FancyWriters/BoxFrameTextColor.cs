@@ -23,6 +23,7 @@ using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 
@@ -333,7 +334,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Text title
                 string finalText = $" {ConsoleExtensions.FormatString(text, vars).Truncate(InteriorWidth - 5)} ";
                 frameBuilder.Append(
-                    $"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 3, Top + 1)}" +
+                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 3, Top + 1)}" +
                     $"{finalText}");
                 return frameBuilder.ToString();
             }

@@ -18,9 +18,11 @@
 
 using System;
 using System.Diagnostics;
+using System.Text;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 
@@ -80,19 +82,34 @@ namespace Terminaux.Writer.FancyWriters
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
                 // Draw the border
+                StringBuilder borderBuilder = new();
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressUpperLeftCornerChar.ToString() + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true);
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
+                    borderBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
                     for (int i = 0; i < ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset; i++)
-                        TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true);
-                    TextWriterWhereColor.WriteWhere(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true);
+                    {
+                        borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
+                        borderBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);
+                    }
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + MaximumHeight + 2)}");
+                    borderBuilder.Append(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar);
                 }
 
                 // Draw the progress bar
                 for (int i = ProgressFilled; i < MaximumHeight; i++)
-                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
+                {
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
+                    borderBuilder.Append(" ");
+                }
                 for (int i = 0; i < ProgressFilled; i++)
-                    TextWriterWhereColor.WriteWhere("*", Left + 1, Top + MaximumHeight - i, true);
+                {
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
+                    borderBuilder.Append("*");
+                }
+
+                // Render to the console
+                TextWriterColor.WritePlain(borderBuilder.ToString());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -224,21 +241,37 @@ namespace Terminaux.Writer.FancyWriters
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
                 // Draw the border
+                StringBuilder borderBuilder = new();
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhereColor(ProgressTools.ProgressUpperLeftCornerChar.ToString() + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
+                    borderBuilder.Append($"{new Color(FrameColor).VTSequenceForeground}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
+                    borderBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
                     for (int i = 0; i < ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset; i++)
-                        TextWriterWhereColor.WriteWhereColor(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true, FrameColor);
-                    TextWriterWhereColor.WriteWhereColor(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true, FrameColor);
+                    {
+                        borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
+                        borderBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);
+                    }
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + MaximumHeight + 2)}");
+                    borderBuilder.Append(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar);
                 }
 
                 // Draw the progress bar
                 for (int i = ProgressFilled; i < MaximumHeight; i++)
-                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
-                ColorTools.SetConsoleColor(new Color(ProgressColor), true, true);
+                {
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
+                    borderBuilder.Append(" ");
+                }
+                borderBuilder.Append($"{new Color(ProgressColor).VTSequenceBackground}");
                 for (int i = 0; i < ProgressFilled; i++)
-                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
-                ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                {
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
+                    borderBuilder.Append(" ");
+                }
+                borderBuilder.Append($"{new Color(ConsoleColors.Black).VTSequenceBackground}");
+
+                // Render to the console
+                TextWriterColor.WritePlain(borderBuilder.ToString());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -337,21 +370,37 @@ namespace Terminaux.Writer.FancyWriters
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
                 // Draw the border
+                StringBuilder borderBuilder = new();
                 if (DrawBorder)
                 {
-                    TextWriterWhereColor.WriteWhereColor(ProgressTools.ProgressUpperLeftCornerChar.ToString() + ProgressTools.ProgressUpperFrameChar + ProgressTools.ProgressUpperRightCornerChar, Left, Top, true, FrameColor);
+                    borderBuilder.Append($"{FrameColor.VTSequenceForeground}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
+                    borderBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
                     for (int i = 0; i < ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset; i++)
-                        TextWriterWhereColor.WriteWhereColor(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar, Left, Top + i + 1, true, FrameColor);
-                    TextWriterWhereColor.WriteWhereColor(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar, Left, Top + MaximumHeight + 1, true, FrameColor);
+                    {
+                        borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
+                        borderBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);
+                    }
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + MaximumHeight + 2)}");
+                    borderBuilder.Append(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar);
                 }
 
                 // Draw the progress bar
                 for (int i = ProgressFilled; i < MaximumHeight; i++)
-                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
-                ColorTools.SetConsoleColor(ProgressColor, true, true);
+                {
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
+                    borderBuilder.Append(" ");
+                }
+                borderBuilder.Append($"{ProgressColor.VTSequenceBackground}");
                 for (int i = 0; i < ProgressFilled; i++)
-                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
-                ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                {
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
+                    borderBuilder.Append(" ");
+                }
+                borderBuilder.Append($"{new Color(ConsoleColors.Black).VTSequenceBackground}");
+
+                // Render to the console
+                TextWriterColor.WritePlain(borderBuilder.ToString());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
