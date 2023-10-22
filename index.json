@@ -42,7 +42,7 @@
   "api/Terminaux.Colors.Accessibility.Deficiency.html": {
     "href": "api/Terminaux.Colors.Accessibility.Deficiency.html",
     "title": "Enum Deficiency | Terminaux API - Aptivi Internals",
-    "keywords": "Enum Deficiency Color deficiency Namespace: Terminaux.Colors.Accessibility Assembly: Terminaux.dll Syntax public enum Deficiency Fields Name Description Deutan Red/green color blindness. It makes green look more red Protan Red/green color blindness. It makes red look more green Tritan Blue/yellow color blindness."
+    "keywords": "Enum Deficiency Color deficiency Namespace: Terminaux.Colors.Accessibility Assembly: Terminaux.dll Syntax public enum Deficiency Fields Name Description Deutan Red/green color blindness. It makes green look more red Monochromacy Full color blindness, can only see grayscale. Protan Red/green color blindness. It makes red look more green Tritan Blue/yellow color blindness."
   },
   "api/Terminaux.Colors.Accessibility.html": {
     "href": "api/Terminaux.Colors.Accessibility.html",

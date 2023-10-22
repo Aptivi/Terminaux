@@ -753,6 +753,12 @@ references:
   commentId: F:Terminaux.Colors.Accessibility.Deficiency.Deutan
   fullName: Terminaux.Colors.Accessibility.Deficiency.Deutan
   nameWithType: Deficiency.Deutan
+- uid: Terminaux.Colors.Accessibility.Deficiency.Monochromacy
+  name: Monochromacy
+  href: api/Terminaux.Colors.Accessibility.Deficiency.html#Terminaux_Colors_Accessibility_Deficiency_Monochromacy
+  commentId: F:Terminaux.Colors.Accessibility.Deficiency.Monochromacy
+  fullName: Terminaux.Colors.Accessibility.Deficiency.Monochromacy
+  nameWithType: Deficiency.Monochromacy
 - uid: Terminaux.Colors.Accessibility.Deficiency.Protan
   name: Protan
   href: api/Terminaux.Colors.Accessibility.Deficiency.html#Terminaux_Colors_Accessibility_Deficiency_Protan
