@@ -214,5 +214,12 @@ namespace Terminaux.Sequences.Tools
             }
             return sequenceFilterRegex;
         }
+
+        /// <summary>
+        /// A simplification for <see cref="Convert.ToChar(int)"/> function to return the ESC character
+        /// </summary>
+        /// <returns>ESC</returns>
+        internal static char GetEsc() =>
+            Convert.ToChar(0x1B);
     }
 }

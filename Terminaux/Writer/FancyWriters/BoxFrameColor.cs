@@ -21,7 +21,6 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters.Tools;

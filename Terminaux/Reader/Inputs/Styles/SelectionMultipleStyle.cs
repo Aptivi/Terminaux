@@ -199,7 +199,7 @@ namespace Terminaux.Reader.Inputs.Styles
                     if (AnswerIndex >= AllAnswers.Count)
                     {
                         // Write an empty entry that clears the line
-                        TextWriterColor.Write($"{Color255.GetEsc()}[0K");
+                        TextWriterColor.Write($"{VtSequenceTools.GetEsc()}[0K");
                     }
                     else
                     {
@@ -216,7 +216,7 @@ namespace Terminaux.Reader.Inputs.Styles
                         {
                             string renderedChoice = $"  {AnswerInstance.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
-                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{answerIndicator} {AnswerTitle}" + $"{Color255.GetEsc()}[0K";
+                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{answerIndicator} {AnswerTitle}" + $"{VtSequenceTools.GetEsc()}[0K";
                         }
                         var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ?
                                           selectedOptionColor :

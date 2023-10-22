@@ -1,4 +1,4 @@
-﻿
+
 // Terminaux  Copyright (C) 2023  Aptivi
 // 
 // This file is part of Terminaux
@@ -16,25 +16,38 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Shouldly;
 using System;
-using Newtonsoft.Json.Linq;
+using Terminaux.Colors.Data;
+using Terminaux.Sequences.Tools;
 
-namespace Terminaux.Colors
+namespace Terminaux.Tests.Colors
 {
-    /// <summary>
-    /// 255 colors tools
-    /// </summary>
-    public static class Color255
+    [TestFixture]
+    public partial class ConsoleColorDataQueryingTests
     {
         /// <summary>
-        /// The 255 console colors data JSON token to get information about these colors
+        /// Tests querying 255-color data from JSON (parses only needed data)
         /// </summary>
-        public static readonly JToken ColorDataJson = JToken.Parse(Properties.Resources.ConsoleColorsData);
+        [Test]
+        [Description("Querying")]
+        public void TestQueryColorDataFromJson()
+        {
+            for (int ColorIndex = 0; ColorIndex <= 255; ColorIndex++)
+            {
+                var ColorData = ConsoleColorData.GetColorData()[ColorIndex];
+                ColorData.ColorId.ShouldBe(ColorIndex);
+            }
+        }
 
         /// <summary>
-        /// A simplification for <see cref="Convert.ToChar(int)"/> function to return the ESC character
+        /// Tests getting an escape character
         /// </summary>
-        /// <returns>ESC</returns>
-        internal static char GetEsc() => Convert.ToChar(0x1B);
+        [Test]
+        [Description("Querying")]
+        public void TestGetEsc()
+        {
+            VtSequenceTools.GetEsc().ShouldBe(Convert.ToChar(0x1B));
+        }
     }
 }

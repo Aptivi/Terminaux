@@ -18,7 +18,7 @@
 
 using System;
 using System.Diagnostics;
-using Newtonsoft.Json.Linq;
+using Terminaux.Colors.Data;
 
 namespace Terminaux.Colors
 {
@@ -62,13 +62,13 @@ namespace Terminaux.Colors
         {
             if (!((int)ColorValue < 0 | (int)ColorValue > 255))
             {
-                JObject ColorData = (JObject)Color255.ColorDataJson[Convert.ToInt32(ColorValue)];
-                ColorID = (int)ColorData["colorId"];
-                R = (int)ColorData["rgb"]["r"];
-                G = (int)ColorData["rgb"]["g"];
-                B = (int)ColorData["rgb"]["b"];
-                IsBright = R + 0.2126 + G + 0.7152 + B + 0.0722 > 255 / (double)2;
-                IsDark = R + 0.2126 + G + 0.7152 + B + 0.0722 < 255 / (double)2;
+                var ColorData = ConsoleColorData.GetColorData()[Convert.ToInt32(ColorValue)];
+                ColorID = ColorData.ColorId;
+                R = ColorData.RGB.R;
+                G = ColorData.RGB.G;
+                B = ColorData.RGB.B;
+                IsBright = R + 0.2126 + G + 0.7152 + B + 0.0722 > 255 / 2d;
+                IsDark = R + 0.2126 + G + 0.7152 + B + 0.0722 < 255 / 2d;
             }
             else
                 throw new ArgumentOutOfRangeException(nameof(ColorValue), ColorValue, "The color value is outside the range of 0-255.");
