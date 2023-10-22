@@ -50,6 +50,12 @@ namespace Terminaux.Base
             Environment.GetEnvironmentVariable("TMUX") is not null;
 
         /// <summary>
+        /// Is Terminaux running from Mono?
+        /// </summary>
+        public static bool IsRunningFromMono() =>
+            Type.GetType("Mono.Runtime") is not null;
+
+        /// <summary>
         /// Is this system a Windows system?
         /// </summary>
         public static bool IsOnWindows() =>

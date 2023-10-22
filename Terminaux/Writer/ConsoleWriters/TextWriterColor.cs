@@ -65,9 +65,12 @@ namespace Terminaux.Writer.ConsoleWriters
                 {
                     // Get the filtered positions first.
                     int FilteredLeft = default, FilteredTop = default;
-                    var pos = ConsoleExtensions.GetFilteredPositions(Text, Line, vars);
-                    FilteredLeft = pos.Item1;
-                    FilteredTop = pos.Item2;
+                    if (ConsolePlatform.IsRunningFromMono())
+                    {
+                        var pos = ConsoleExtensions.GetFilteredPositions(Text, Line, vars);
+                        FilteredLeft = pos.Item1;
+                        FilteredTop = pos.Item2;
+                    }
 
                     // Actually write
                     if (Line)
@@ -91,7 +94,8 @@ namespace Terminaux.Writer.ConsoleWriters
                     }
 
                     // Return to the processed position
-                    ConsoleWrappers.ActionSetCursorPosition(FilteredLeft, FilteredTop);
+                    if (ConsolePlatform.IsRunningFromMono())
+                        ConsoleWrappers.ActionSetCursorPosition(FilteredLeft, FilteredTop);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
