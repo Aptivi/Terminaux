@@ -19,6 +19,7 @@
 using System;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Colors.Accessibility;
 using Terminaux.Reader.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
@@ -149,6 +150,7 @@ namespace Terminaux.Colors.Selector
             int saturationBarY = 5;
             int lightnessBarY = 9;
             int rgbRampBarY = 13;
+            int grayRampBarY = 19;
             int boxWidth = ConsoleWrappers.ActionWindowWidth() / 2 - 6;
             int boxHeight = 1;
             var initialBackground = new Color(ConsoleColors.Black).VTSequenceBackground;
@@ -180,6 +182,16 @@ namespace Terminaux.Colors.Selector
                 ligRamp.Append($"{new Color($"hsl:{trueColorHue};100;{lig}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
 
+            // Buffer the gray ramp
+            StringBuilder grayRamp = new();
+            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
+            for (int i = 0; i < boxWidth; i++)
+            {
+                double width = (double)i / boxWidth;
+                int gray = (int)(mono.R * width);
+                grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {initialBackground}");
+            }
+
             // Buffer the RGB ramp
             StringBuilder redRamp = new();
             StringBuilder greenRamp = new();
@@ -206,6 +218,8 @@ namespace Terminaux.Colors.Selector
             TextWriterWhereColor.WriteWhere(redRamp.ToString(), hueBarX + 1, rgbRampBarY + 1);
             TextWriterWhereColor.WriteWhere(greenRamp.ToString(), hueBarX + 1, rgbRampBarY + 2);
             TextWriterWhereColor.WriteWhere(blueRamp.ToString(), hueBarX + 1, rgbRampBarY + 3);
+            BoxFrameTextColor.WriteBoxFrame($"Grayscale: {mono.R};{mono.G};{mono.B}", hueBarX, grayRampBarY, boxWidth, boxHeight);
+            TextWriterWhereColor.WriteWhere(grayRamp.ToString(), hueBarX + 1, grayRampBarY + 1);
 
             // Finally, the keybindings
             int bindingsPos = ConsoleWrappers.ActionWindowHeight() - 2;
@@ -221,7 +235,7 @@ namespace Terminaux.Colors.Selector
             int infoBoxX = ConsoleWrappers.ActionWindowWidth() / 2 + 2;
             int infoBoxY = 1;
             int boxWidth = ConsoleWrappers.ActionWindowWidth() / 2 - 6;
-            int boxHeight = 6;
+            int boxHeight = 7;
             int rgbRampBarY = 13;
             var initialBackground = new Color(ConsoleColors.Black).VTSequenceBackground;
 
@@ -241,6 +255,7 @@ namespace Terminaux.Colors.Selector
             }
 
             // then, the boxes
+            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
             BoxFrameTextColor.WriteBoxFrame($"Info for: {colorValue255}", infoBoxX, infoBoxY, boxWidth, boxHeight);
             BoxColor.WriteBox(infoBoxX + 1, infoBoxY, boxWidth, boxHeight);
             TextWriterWhereColor.WriteWhere($"Color ID: {(int)colorValue255}", infoBoxX + 1, infoBoxY + 1);
@@ -249,6 +264,7 @@ namespace Terminaux.Colors.Selector
             TextWriterWhereColor.WriteWhere($"RGB sequence (real): {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4);
             TextWriterWhereColor.WriteWhere($"CMYK: cmyk:{selectedColor.CMYK.CMY.CWhole};{selectedColor.CMYK.CMY.MWhole};{selectedColor.CMYK.CMY.YWhole};{selectedColor.CMYK.KWhole}", infoBoxX + 1, infoBoxY + 5);
             TextWriterWhereColor.WriteWhere($"HSL: hsl:{selectedColor.HSL.HueWhole};{selectedColor.HSL.SaturationWhole};{selectedColor.HSL.LightnessWhole}", infoBoxX + 1, infoBoxY + 6);
+            TextWriterWhereColor.WriteWhere($"Grayscale: {mono.R};{mono.G};{mono.B}", infoBoxX + 1, infoBoxY + 7);
             BoxFrameTextColor.WriteBoxFrame($"Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", infoBoxX, rgbRampBarY, boxWidth, 3);
             TextWriterWhereColor.WriteWhere(redRamp.ToString(), infoBoxX + 1, rgbRampBarY + 1);
             TextWriterWhereColor.WriteWhere(greenRamp.ToString(), infoBoxX + 1, rgbRampBarY + 2);
@@ -268,7 +284,7 @@ namespace Terminaux.Colors.Selector
             int infoBoxX = ConsoleWrappers.ActionWindowWidth() / 2 + 2;
             int infoBoxY = 1;
             int boxWidth = ConsoleWrappers.ActionWindowWidth() / 2 - 6;
-            int boxHeight = 6;
+            int boxHeight = 7;
             int rgbRampBarY = 13;
             var initialBackground = new Color(ConsoleColors.Black).VTSequenceBackground;
 
@@ -288,6 +304,7 @@ namespace Terminaux.Colors.Selector
             }
 
             // then, the boxes
+            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
             BoxFrameTextColor.WriteBoxFrame($"Info for: {colorValue16}", infoBoxX, infoBoxY, boxWidth, boxHeight);
             BoxColor.WriteBox(infoBoxX + 1, infoBoxY, boxWidth, boxHeight);
             TextWriterWhereColor.WriteWhere($"Color ID: {(int)colorValue16}", infoBoxX + 1, infoBoxY + 1);
@@ -296,6 +313,7 @@ namespace Terminaux.Colors.Selector
             TextWriterWhereColor.WriteWhere($"RGB sequence (real): {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4);
             TextWriterWhereColor.WriteWhere($"CMYK: cmyk:{selectedColor.CMYK.CMY.CWhole};{selectedColor.CMYK.CMY.MWhole};{selectedColor.CMYK.CMY.YWhole};{selectedColor.CMYK.KWhole}", infoBoxX + 1, infoBoxY + 5);
             TextWriterWhereColor.WriteWhere($"HSL: hsl:{selectedColor.HSL.HueWhole};{selectedColor.HSL.SaturationWhole};{selectedColor.HSL.LightnessWhole}", infoBoxX + 1, infoBoxY + 6);
+            TextWriterWhereColor.WriteWhere($"Grayscale: {mono.R};{mono.G};{mono.B}", infoBoxX + 1, infoBoxY + 7);
             BoxFrameTextColor.WriteBoxFrame($"Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", infoBoxX, rgbRampBarY, boxWidth, 3);
             TextWriterWhereColor.WriteWhere(redRamp.ToString(), infoBoxX + 1, rgbRampBarY + 1);
             TextWriterWhereColor.WriteWhere(greenRamp.ToString(), infoBoxX + 1, rgbRampBarY + 2);
