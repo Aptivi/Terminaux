@@ -147,7 +147,7 @@
   "api/Terminaux.Figlet.FigletSelector.html": {
     "href": "api/Terminaux.Figlet.FigletSelector.html",
     "title": "Class FigletSelector | Terminaux API - Aptivi Internals",
-    "keywords": "Class FigletSelector Figlet selector Inheritance object FigletSelector Namespace: Terminaux.Figlet Assembly: Terminaux.dll Syntax public static class FigletSelector Methods | Edit this page View Source PromptForFiglet() Prompts the user for a figlet font Declaration public static string PromptForFiglet() Returns Type Description string Selected figlet font"
+    "keywords": "Class FigletSelector Figlet selector Inheritance object FigletSelector Namespace: Terminaux.Figlet Assembly: Terminaux.dll Syntax public static class FigletSelector Methods | Edit this page View Source PromptForFiglet() Prompts the user for a figlet font Declaration public static string PromptForFiglet() Returns Type Description string Selected figlet font | Edit this page View Source PromptForFiglet(string) Prompts the user for a figlet font Declaration public static string PromptForFiglet(string font) Parameters Type Name Description string font Initial font to select Returns Type Description string Selected figlet font"
   },
   "api/Terminaux.Figlet.html": {
     "href": "api/Terminaux.Figlet.html",

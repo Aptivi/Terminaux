@@ -4313,6 +4313,15 @@ references:
   commentId: M:Terminaux.Figlet.FigletSelector.PromptForFiglet
   fullName: Terminaux.Figlet.FigletSelector.PromptForFiglet()
   nameWithType: FigletSelector.PromptForFiglet()
+- uid: Terminaux.Figlet.FigletSelector.PromptForFiglet(System.String)
+  name: PromptForFiglet(string)
+  href: api/Terminaux.Figlet.FigletSelector.html#Terminaux_Figlet_FigletSelector_PromptForFiglet_System_String_
+  commentId: M:Terminaux.Figlet.FigletSelector.PromptForFiglet(System.String)
+  name.vb: PromptForFiglet(String)
+  fullName: Terminaux.Figlet.FigletSelector.PromptForFiglet(string)
+  fullName.vb: Terminaux.Figlet.FigletSelector.PromptForFiglet(String)
+  nameWithType: FigletSelector.PromptForFiglet(string)
+  nameWithType.vb: FigletSelector.PromptForFiglet(String)
 - uid: Terminaux.Figlet.FigletSelector.PromptForFiglet*
   name: PromptForFiglet
   href: api/Terminaux.Figlet.FigletSelector.html#Terminaux_Figlet_FigletSelector_PromptForFiglet_
