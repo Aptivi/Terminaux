@@ -11881,15 +11881,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Tools.VtSequenceTools.DetermineTypeFromText
   nameWithType: VtSequenceTools.DetermineTypeFromText
-- uid: Terminaux.Sequences.Tools.VtSequenceTools.FilterVTSequences(System.String,System.String,Terminaux.Sequences.Tools.VtSequenceType,System.Text.RegularExpressions.RegexOptions)
-  name: FilterVTSequences(string, string, VtSequenceType, RegexOptions)
-  href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_FilterVTSequences_System_String_System_String_Terminaux_Sequences_Tools_VtSequenceType_System_Text_RegularExpressions_RegexOptions_
-  commentId: M:Terminaux.Sequences.Tools.VtSequenceTools.FilterVTSequences(System.String,System.String,Terminaux.Sequences.Tools.VtSequenceType,System.Text.RegularExpressions.RegexOptions)
-  name.vb: FilterVTSequences(String, String, VtSequenceType, RegexOptions)
-  fullName: Terminaux.Sequences.Tools.VtSequenceTools.FilterVTSequences(string, string, Terminaux.Sequences.Tools.VtSequenceType, System.Text.RegularExpressions.RegexOptions)
-  fullName.vb: Terminaux.Sequences.Tools.VtSequenceTools.FilterVTSequences(String, String, Terminaux.Sequences.Tools.VtSequenceType, System.Text.RegularExpressions.RegexOptions)
-  nameWithType: VtSequenceTools.FilterVTSequences(string, string, VtSequenceType, RegexOptions)
-  nameWithType.vb: VtSequenceTools.FilterVTSequences(String, String, VtSequenceType, RegexOptions)
+- uid: Terminaux.Sequences.Tools.VtSequenceTools.FilterVTSequences(System.String,System.String,Terminaux.Sequences.Tools.VtSequenceType)
+  name: FilterVTSequences(string, string, VtSequenceType)
+  href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_FilterVTSequences_System_String_System_String_Terminaux_Sequences_Tools_VtSequenceType_
+  commentId: M:Terminaux.Sequences.Tools.VtSequenceTools.FilterVTSequences(System.String,System.String,Terminaux.Sequences.Tools.VtSequenceType)
+  name.vb: FilterVTSequences(String, String, VtSequenceType)
+  fullName: Terminaux.Sequences.Tools.VtSequenceTools.FilterVTSequences(string, string, Terminaux.Sequences.Tools.VtSequenceType)
+  fullName.vb: Terminaux.Sequences.Tools.VtSequenceTools.FilterVTSequences(String, String, Terminaux.Sequences.Tools.VtSequenceType)
+  nameWithType: VtSequenceTools.FilterVTSequences(string, string, VtSequenceType)
+  nameWithType.vb: VtSequenceTools.FilterVTSequences(String, String, VtSequenceType)
 - uid: Terminaux.Sequences.Tools.VtSequenceTools.FilterVTSequences*
   name: FilterVTSequences
   href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_FilterVTSequences_
@@ -11910,15 +11910,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Tools.VtSequenceTools.GetSequenceFilterRegexFromType
   nameWithType: VtSequenceTools.GetSequenceFilterRegexFromType
-- uid: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType,System.Text.RegularExpressions.RegexOptions)
-  name: IsMatchVTSequences(string, VtSequenceType, RegexOptions)
-  href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_IsMatchVTSequences_System_String_Terminaux_Sequences_Tools_VtSequenceType_System_Text_RegularExpressions_RegexOptions_
-  commentId: M:Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType,System.Text.RegularExpressions.RegexOptions)
-  name.vb: IsMatchVTSequences(String, VtSequenceType, RegexOptions)
-  fullName: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequences(string, Terminaux.Sequences.Tools.VtSequenceType, System.Text.RegularExpressions.RegexOptions)
-  fullName.vb: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequences(String, Terminaux.Sequences.Tools.VtSequenceType, System.Text.RegularExpressions.RegexOptions)
-  nameWithType: VtSequenceTools.IsMatchVTSequences(string, VtSequenceType, RegexOptions)
-  nameWithType.vb: VtSequenceTools.IsMatchVTSequences(String, VtSequenceType, RegexOptions)
+- uid: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType)
+  name: IsMatchVTSequences(string, VtSequenceType)
+  href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_IsMatchVTSequences_System_String_Terminaux_Sequences_Tools_VtSequenceType_
+  commentId: M:Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType)
+  name.vb: IsMatchVTSequences(String, VtSequenceType)
+  fullName: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequences(string, Terminaux.Sequences.Tools.VtSequenceType)
+  fullName.vb: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequences(String, Terminaux.Sequences.Tools.VtSequenceType)
+  nameWithType: VtSequenceTools.IsMatchVTSequences(string, VtSequenceType)
+  nameWithType.vb: VtSequenceTools.IsMatchVTSequences(String, VtSequenceType)
 - uid: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequences*
   name: IsMatchVTSequences
   href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_IsMatchVTSequences_
@@ -11926,15 +11926,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequences
   nameWithType: VtSequenceTools.IsMatchVTSequences
-- uid: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequencesSpecific(System.String,Terminaux.Sequences.Tools.VtSequenceType,System.Text.RegularExpressions.RegexOptions)
-  name: IsMatchVTSequencesSpecific(string, VtSequenceType, RegexOptions)
-  href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_IsMatchVTSequencesSpecific_System_String_Terminaux_Sequences_Tools_VtSequenceType_System_Text_RegularExpressions_RegexOptions_
-  commentId: M:Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequencesSpecific(System.String,Terminaux.Sequences.Tools.VtSequenceType,System.Text.RegularExpressions.RegexOptions)
-  name.vb: IsMatchVTSequencesSpecific(String, VtSequenceType, RegexOptions)
-  fullName: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequencesSpecific(string, Terminaux.Sequences.Tools.VtSequenceType, System.Text.RegularExpressions.RegexOptions)
-  fullName.vb: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequencesSpecific(String, Terminaux.Sequences.Tools.VtSequenceType, System.Text.RegularExpressions.RegexOptions)
-  nameWithType: VtSequenceTools.IsMatchVTSequencesSpecific(string, VtSequenceType, RegexOptions)
-  nameWithType.vb: VtSequenceTools.IsMatchVTSequencesSpecific(String, VtSequenceType, RegexOptions)
+- uid: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequencesSpecific(System.String,Terminaux.Sequences.Tools.VtSequenceType)
+  name: IsMatchVTSequencesSpecific(string, VtSequenceType)
+  href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_IsMatchVTSequencesSpecific_System_String_Terminaux_Sequences_Tools_VtSequenceType_
+  commentId: M:Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequencesSpecific(System.String,Terminaux.Sequences.Tools.VtSequenceType)
+  name.vb: IsMatchVTSequencesSpecific(String, VtSequenceType)
+  fullName: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequencesSpecific(string, Terminaux.Sequences.Tools.VtSequenceType)
+  fullName.vb: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequencesSpecific(String, Terminaux.Sequences.Tools.VtSequenceType)
+  nameWithType: VtSequenceTools.IsMatchVTSequencesSpecific(string, VtSequenceType)
+  nameWithType.vb: VtSequenceTools.IsMatchVTSequencesSpecific(String, VtSequenceType)
 - uid: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequencesSpecific*
   name: IsMatchVTSequencesSpecific
   href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_IsMatchVTSequencesSpecific_
@@ -11942,15 +11942,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Tools.VtSequenceTools.IsMatchVTSequencesSpecific
   nameWithType: VtSequenceTools.IsMatchVTSequencesSpecific
-- uid: Terminaux.Sequences.Tools.VtSequenceTools.MatchVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType,System.Text.RegularExpressions.RegexOptions)
-  name: MatchVTSequences(string, VtSequenceType, RegexOptions)
-  href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_MatchVTSequences_System_String_Terminaux_Sequences_Tools_VtSequenceType_System_Text_RegularExpressions_RegexOptions_
-  commentId: M:Terminaux.Sequences.Tools.VtSequenceTools.MatchVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType,System.Text.RegularExpressions.RegexOptions)
-  name.vb: MatchVTSequences(String, VtSequenceType, RegexOptions)
-  fullName: Terminaux.Sequences.Tools.VtSequenceTools.MatchVTSequences(string, Terminaux.Sequences.Tools.VtSequenceType, System.Text.RegularExpressions.RegexOptions)
-  fullName.vb: Terminaux.Sequences.Tools.VtSequenceTools.MatchVTSequences(String, Terminaux.Sequences.Tools.VtSequenceType, System.Text.RegularExpressions.RegexOptions)
-  nameWithType: VtSequenceTools.MatchVTSequences(string, VtSequenceType, RegexOptions)
-  nameWithType.vb: VtSequenceTools.MatchVTSequences(String, VtSequenceType, RegexOptions)
+- uid: Terminaux.Sequences.Tools.VtSequenceTools.MatchVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType)
+  name: MatchVTSequences(string, VtSequenceType)
+  href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_MatchVTSequences_System_String_Terminaux_Sequences_Tools_VtSequenceType_
+  commentId: M:Terminaux.Sequences.Tools.VtSequenceTools.MatchVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType)
+  name.vb: MatchVTSequences(String, VtSequenceType)
+  fullName: Terminaux.Sequences.Tools.VtSequenceTools.MatchVTSequences(string, Terminaux.Sequences.Tools.VtSequenceType)
+  fullName.vb: Terminaux.Sequences.Tools.VtSequenceTools.MatchVTSequences(String, Terminaux.Sequences.Tools.VtSequenceType)
+  nameWithType: VtSequenceTools.MatchVTSequences(string, VtSequenceType)
+  nameWithType.vb: VtSequenceTools.MatchVTSequences(String, VtSequenceType)
 - uid: Terminaux.Sequences.Tools.VtSequenceTools.MatchVTSequences*
   name: MatchVTSequences
   href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_MatchVTSequences_
@@ -11958,15 +11958,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Tools.VtSequenceTools.MatchVTSequences
   nameWithType: VtSequenceTools.MatchVTSequences
-- uid: Terminaux.Sequences.Tools.VtSequenceTools.SplitVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType,System.Text.RegularExpressions.RegexOptions)
-  name: SplitVTSequences(string, VtSequenceType, RegexOptions)
-  href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_SplitVTSequences_System_String_Terminaux_Sequences_Tools_VtSequenceType_System_Text_RegularExpressions_RegexOptions_
-  commentId: M:Terminaux.Sequences.Tools.VtSequenceTools.SplitVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType,System.Text.RegularExpressions.RegexOptions)
-  name.vb: SplitVTSequences(String, VtSequenceType, RegexOptions)
-  fullName: Terminaux.Sequences.Tools.VtSequenceTools.SplitVTSequences(string, Terminaux.Sequences.Tools.VtSequenceType, System.Text.RegularExpressions.RegexOptions)
-  fullName.vb: Terminaux.Sequences.Tools.VtSequenceTools.SplitVTSequences(String, Terminaux.Sequences.Tools.VtSequenceType, System.Text.RegularExpressions.RegexOptions)
-  nameWithType: VtSequenceTools.SplitVTSequences(string, VtSequenceType, RegexOptions)
-  nameWithType.vb: VtSequenceTools.SplitVTSequences(String, VtSequenceType, RegexOptions)
+- uid: Terminaux.Sequences.Tools.VtSequenceTools.SplitVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType)
+  name: SplitVTSequences(string, VtSequenceType)
+  href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_SplitVTSequences_System_String_Terminaux_Sequences_Tools_VtSequenceType_
+  commentId: M:Terminaux.Sequences.Tools.VtSequenceTools.SplitVTSequences(System.String,Terminaux.Sequences.Tools.VtSequenceType)
+  name.vb: SplitVTSequences(String, VtSequenceType)
+  fullName: Terminaux.Sequences.Tools.VtSequenceTools.SplitVTSequences(string, Terminaux.Sequences.Tools.VtSequenceType)
+  fullName.vb: Terminaux.Sequences.Tools.VtSequenceTools.SplitVTSequences(String, Terminaux.Sequences.Tools.VtSequenceType)
+  nameWithType: VtSequenceTools.SplitVTSequences(string, VtSequenceType)
+  nameWithType.vb: VtSequenceTools.SplitVTSequences(String, VtSequenceType)
 - uid: Terminaux.Sequences.Tools.VtSequenceTools.SplitVTSequences*
   name: SplitVTSequences
   href: api/Terminaux.Sequences.Tools.VtSequenceTools.html#Terminaux_Sequences_Tools_VtSequenceTools_SplitVTSequences_
