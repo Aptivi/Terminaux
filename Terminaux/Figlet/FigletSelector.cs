@@ -34,30 +34,50 @@ namespace Terminaux.Figlet
         /// Prompts the user for a figlet font
         /// </summary>
         /// <returns>Selected figlet font</returns>
-        public static string PromptForFiglet()
+        public static string PromptForFiglet() =>
+            PromptForFiglet("small");
+
+        /// <summary>
+        /// Prompts the user for a figlet font
+        /// </summary>
+        /// <param name="font">Initial font to select</param>
+        /// <returns>Selected figlet font</returns>
+        public static string PromptForFiglet(string font)
         {
             // Some initial variables to populate figlet fonts
-            string fontName = "";
             string[] fonts = FigletTools.GetFigletFonts().Keys.ToArray();
+            string fontName = fonts.Contains(font) ? font : "small";
+
+            // Determine the font index
+            int selectedFont;
+            for (selectedFont = 0; selectedFont < fonts.Length; selectedFont++)
+            {
+                string queriedFont = fonts[selectedFont];
+                if (queriedFont == fontName)
+                    break;
+            }
 
             // Now, clear the console and let the user select a figlet font while displaying a small text in the middle
             // of the console
             bool bail = false;
             string text = "Test";
-            int selectedFont = 0;
+            bool rerender = true;
             while (!bail)
             {
-                ConsoleWrappers.ActionCursorVisible(false);
-                ConsoleWrappers.ActionClear();
+                if (rerender)
+                {
+                    rerender = false;
+                    ConsoleWrappers.ActionCursorVisible(false);
+                    ConsoleWrappers.ActionClear();
+                }
 
                 // Write the text using the selected figlet font
-                fontName = fonts[selectedFont];
                 var figletFont = FigletTools.GetFigletFont(fontName);
                 CenteredFigletTextColor.WriteCenteredFiglet(figletFont, text);
 
                 // Write the selected font name and the keybindings
                 CenteredTextColor.WriteCentered(ConsoleWrappers.ActionWindowHeight() - 4, fontName);
-                CenteredTextColor.WriteCentered(ConsoleWrappers.ActionWindowHeight() - 2, "[ENTER] Select | [<-|->] Select");
+                CenteredTextColor.WriteCentered(ConsoleWrappers.ActionWindowHeight() - 2, "[ENTER] Select | [<-|->] Select | [S] Write font name");
 
                 // Wait for input
                 var key = Input.DetectKeypress().Key;
@@ -70,11 +90,23 @@ namespace Terminaux.Figlet
                         selectedFont--;
                         if (selectedFont < 0)
                             selectedFont = fonts.Length - 1;
+                        fontName = fonts[selectedFont];
+                        rerender = true;
                         break;
                     case ConsoleKey.RightArrow:
                         selectedFont++;
                         if (selectedFont > fonts.Length - 1)
                             selectedFont = 0;
+                        fontName = fonts[selectedFont];
+                        rerender = true;
+                        break;
+                    case ConsoleKey.S:
+                        string promptedFontName = InfoBoxColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
+                        if (!fonts.Contains(promptedFontName))
+                            InfoBoxColor.WriteInfoBox("The font doesn't exist.");
+                        else
+                            fontName = promptedFontName;
+                        rerender = true;
                         break;
                 }
             }
