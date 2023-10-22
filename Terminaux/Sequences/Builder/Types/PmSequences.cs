@@ -26,18 +26,21 @@ namespace Terminaux.Sequences.Builder.Types
     /// </summary>
     public static class PmSequences
     {
+        private static readonly Regex pmPrivacyMessageSequenceRegex = new(@"(\x9e|\x1b\^).+\x9c", RegexOptions.Compiled);
+
         /// <summary>
         /// [PM Pt ST] Regular expression for privacy message
         /// </summary>
-        public static string PmPrivacyMessageSequenceRegex { get => @"(\x9e|\x1b\^).+\x9c"; }
-        
+        public static Regex PmPrivacyMessageSequenceRegex =>
+            pmPrivacyMessageSequenceRegex;
+
         /// <summary>
         /// [PM Pt ST] Generates an escape sequence that can be used for the console
         /// </summary>
         public static string GeneratePmPrivacyMessage(string proprietaryCommands)
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}^{proprietaryCommands}{VtSequenceBasicChars.StChar}";
-	        var regexParser = new Regex(PmPrivacyMessageSequenceRegex);
+	        var regexParser = PmPrivacyMessageSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;

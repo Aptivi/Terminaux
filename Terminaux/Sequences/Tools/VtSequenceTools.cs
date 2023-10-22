@@ -34,13 +34,12 @@ namespace Terminaux.Sequences.Tools
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="replace">Replace the sequences with this text</param>
         /// <param name="type">VT sequence type</param>
-        /// <param name="options">Regular expression options</param>
         /// <returns>The text that doesn't contain the VT sequences</returns>
-        public static string FilterVTSequences(string Text, string replace = "", VtSequenceType type = VtSequenceType.All, RegexOptions options = RegexOptions.None)
+        public static string FilterVTSequences(string Text, string replace = "", VtSequenceType type = VtSequenceType.All)
         {
             // Filter all sequences according to the list of flags
             var typeValues = Enum.GetValues(typeof(VtSequenceType));
-            string sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
+            var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
             if (type != VtSequenceType.All)
             {
                 for (int i = 1; i < typeValues.Length - 1; i++)
@@ -48,13 +47,13 @@ namespace Terminaux.Sequences.Tools
                     // Check to see if there is a flag denoting a type
                     VtSequenceType typeValueEnum = (VtSequenceType)typeValues.GetValue(i);
                     if (type.HasFlag(typeValueEnum))
-                        Text = Regex.Replace(Text, GetSequenceFilterRegexFromType(typeValueEnum), replace, options);
+                        Text = sequenceFilterRegex.Replace(Text, replace);
                 }
             }
             else
                 // We don't want to go through all the types just for "all sequences", because we need this for performance.
                 // We don't want to show that VtSequenceRegexes.AllVTSequences is unimportant and unnecessary.
-                Text = Regex.Replace(Text, sequenceFilterRegex, replace, options);
+                Text = sequenceFilterRegex.Replace(Text, replace);
             return Text;
         }
 
@@ -63,13 +62,12 @@ namespace Terminaux.Sequences.Tools
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="type">VT sequence type</param>
-        /// <param name="options">Regular expression options</param>
         /// <returns>The array of <see cref="MatchCollection"/>s that contain the capture and group information for the found VT sequences</returns>
-        public static MatchCollection[] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All, RegexOptions options = RegexOptions.None)
+        public static MatchCollection[] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
             // Match all sequences according to the list of flags
             var typeValues = Enum.GetValues(typeof(VtSequenceType));
-            string sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
+            var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
             List<MatchCollection> matchCollections = new();
             if (type != VtSequenceType.All)
             {
@@ -78,13 +76,13 @@ namespace Terminaux.Sequences.Tools
                     // Check to see if there is a flag denoting a type
                     VtSequenceType typeValueEnum = (VtSequenceType)typeValues.GetValue(i);
                     if (type.HasFlag(typeValueEnum))
-                        matchCollections.Add(Regex.Matches(Text, GetSequenceFilterRegexFromType(typeValueEnum), options));
+                        matchCollections.Add(sequenceFilterRegex.Matches(Text));
                 }
             }
             else
                 // We don't want to go through all the types just for "all sequences", because we need this for performance.
                 // We don't want to show that VtSequenceRegexes.AllVTSequences is unimportant and unnecessary.
-                matchCollections.Add(Regex.Matches(Text, sequenceFilterRegex, options));
+                matchCollections.Add(sequenceFilterRegex.Matches(Text));
             return matchCollections.ToArray();
         }
 
@@ -93,13 +91,12 @@ namespace Terminaux.Sequences.Tools
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="type">VT sequence type</param>
-        /// <param name="options">Regular expression options</param>
         /// <returns>True if any of the provided VT types are found; otherwise, false.</returns>
-        public static bool IsMatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All, RegexOptions options = RegexOptions.None)
+        public static bool IsMatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
             // Filter all sequences according to the list of flags
             var typeValues = Enum.GetValues(typeof(VtSequenceType));
-            string sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
+            var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
             List<bool> results = new();
             if (type != VtSequenceType.All)
             {
@@ -108,13 +105,13 @@ namespace Terminaux.Sequences.Tools
                     // Check to see if there is a flag denoting a type
                     VtSequenceType typeValueEnum = (VtSequenceType)typeValues.GetValue(i);
                     if (type.HasFlag(typeValueEnum))
-                        results.Add(Regex.IsMatch(Text, GetSequenceFilterRegexFromType(typeValueEnum), options));
+                        results.Add(sequenceFilterRegex.IsMatch(Text));
                 }
             }
             else
                 // We don't want to go through all the types just for "all sequences", because we need this for performance.
                 // We don't want to show that VtSequenceRegexes.AllVTSequences is unimportant and unnecessary.
-                results.Add(Regex.IsMatch(Text, sequenceFilterRegex, options));
+                results.Add(sequenceFilterRegex.IsMatch(Text));
             return results.Contains(true);
         }
 
@@ -123,9 +120,8 @@ namespace Terminaux.Sequences.Tools
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="type">VT sequence type</param>
-        /// <param name="options">Regular expression options</param>
         /// <returns>A dictionary of each VT sequence type with either true/false for any type test.</returns>
-        public static Dictionary<VtSequenceType, bool> IsMatchVTSequencesSpecific(string Text, VtSequenceType type = VtSequenceType.All, RegexOptions options = RegexOptions.None)
+        public static Dictionary<VtSequenceType, bool> IsMatchVTSequencesSpecific(string Text, VtSequenceType type = VtSequenceType.All)
         {
             // Filter all sequences according to the list of flags
             var typeValues = Enum.GetValues(typeof(VtSequenceType));
@@ -135,8 +131,11 @@ namespace Terminaux.Sequences.Tools
                 // Check to see if there is a flag denoting a type
                 VtSequenceType typeValueEnum = (VtSequenceType)typeValues.GetValue(i);
                 if (type.HasFlag(typeValueEnum))
+                {
                     // Go ahead and add the result to the dictionary with the tested type.
-                    results.Add(typeValueEnum, Regex.IsMatch(Text, GetSequenceFilterRegexFromType(typeValueEnum), options));
+                    var sequenceFilterRegex = GetSequenceFilterRegexFromType(typeValueEnum);
+                    results.Add(typeValueEnum, sequenceFilterRegex.IsMatch(Text));
+                }
             }
             return results;
         }
@@ -146,11 +145,13 @@ namespace Terminaux.Sequences.Tools
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="type">VT sequence type</param>
-        /// <param name="options">Regular expression options</param>
         /// <returns>The group of texts that don't contain the VT sequences</returns>
-        public static string[] SplitVTSequences(string Text, VtSequenceType type = VtSequenceType.All, RegexOptions options = RegexOptions.None) =>
+        public static string[] SplitVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
+        {
             // Here, we don't support multiple types.
-            Regex.Split(Text, GetSequenceFilterRegexFromType(type), options);
+            var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
+            return sequenceFilterRegex.Split(Text);
+        }
 
         /// <summary>
         /// Determines the VT sequence type from the given text
@@ -181,10 +182,10 @@ namespace Terminaux.Sequences.Tools
         /// </summary>
         /// <param name="type">VT sequence type</param>
         /// <returns>regular expression from the provided VT sequence <paramref name="type"/></returns>
-        public static string GetSequenceFilterRegexFromType(VtSequenceType type = VtSequenceType.All)
+        public static Regex GetSequenceFilterRegexFromType(VtSequenceType type = VtSequenceType.All)
         {
             // Check the enum to get the needed regular expression for the specific type
-            string sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
+            var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
             switch (type)
             {
                 case VtSequenceType.Csi:
@@ -209,7 +210,7 @@ namespace Terminaux.Sequences.Tools
                     sequenceFilterRegex = VtSequenceRegexes.C1Sequences;
                     break;
                 case VtSequenceType.None:
-                    sequenceFilterRegex = "";
+                    sequenceFilterRegex = new Regex(@"\b\B");
                     break;
             }
             return sequenceFilterRegex;

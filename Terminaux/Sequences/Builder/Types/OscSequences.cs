@@ -26,23 +26,28 @@ namespace Terminaux.Sequences.Builder.Types
     /// </summary>
     public static class OscSequences
     {
+        private static readonly Regex oscOperatingSystemCommandSequenceRegex = new(@"(\x9D|\x1B\]).+[\x07]", RegexOptions.Compiled);
+        private static readonly Regex oscOperatingSystemCommandAltSequenceRegex = new(@"(\x9D|\x1B\]).+[\x9c]", RegexOptions.Compiled);
+
         /// <summary>
         /// [OSC Ps ; Pt BEL] Regular expression for operating system command
         /// </summary>
-        public static string OscOperatingSystemCommandSequenceRegex { get => @"(\x9D|\x1B\]).+[\x07]"; }
+        public static Regex OscOperatingSystemCommandSequenceRegex =>
+            oscOperatingSystemCommandSequenceRegex;
 
         /// <summary>
         /// [OSC Ps ; Pt ST] Regular expression for operating system command
         /// </summary>
-        public static string OscOperatingSystemCommandAltSequenceRegex { get => @"(\x9D|\x1B\]).+[\x9c]"; }
-        
+        public static Regex OscOperatingSystemCommandAltSequenceRegex =>
+            oscOperatingSystemCommandAltSequenceRegex;
+
         /// <summary>
         /// [OSC Ps ; Pt BEL] Generates an escape sequence that can be used for the console
         /// </summary>
         public static string GenerateOscOperatingSystemCommand(string proprietaryCommands)
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}]{proprietaryCommands}{VtSequenceBasicChars.BellChar}";
-	        var regexParser = new Regex(OscOperatingSystemCommandSequenceRegex);
+	        var regexParser = OscOperatingSystemCommandSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -54,7 +59,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateOscOperatingSystemCommandAlt(string proprietaryCommands)
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}]{proprietaryCommands}{VtSequenceBasicChars.StChar}";
-	        var regexParser = new Regex(OscOperatingSystemCommandAltSequenceRegex);
+	        var regexParser = OscOperatingSystemCommandAltSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;

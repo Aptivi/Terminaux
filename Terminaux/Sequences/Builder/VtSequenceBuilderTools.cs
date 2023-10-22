@@ -29,7 +29,8 @@ namespace Terminaux.Sequences.Builder
     /// </summary>
     public static class VtSequenceBuilderTools
     {
-        private static readonly Dictionary<VtSequenceSpecificTypes, (Delegate generator, string matchRegex, int argumentsRequired)> sequenceBuilders = new()
+        private static readonly Regex getTypeRegex = new("(?<=[a-z0-9])[A-Z].*", RegexOptions.Compiled);
+        private static readonly Dictionary<VtSequenceSpecificTypes, (Delegate generator, Regex matchRegex, int argumentsRequired)> sequenceBuilders = new()
         {
             // APC sequences
             { VtSequenceSpecificTypes.ApcApplicationProgramCommand,
@@ -410,14 +411,12 @@ namespace Terminaux.Sequences.Builder
             foreach (var seqType in seqTypeEnumNames)
             {
                 // Now, get the appropriate regex to check to see if there is a match.
-                string regexValue = sequenceBuilders[seqType].matchRegex;
-                var regex = new Regex(regexValue);
+                var regex = sequenceBuilders[seqType].matchRegex;
                 if (regex.IsMatch(sequence))
                 {
                     // It's a match! Get the type and the specific type of the sequence and return them
-                    var regexGettingType = new Regex("(?<=[a-z0-9])[A-Z].*");
                     string enumName = $"{seqType}";
-                    string typeName = $"{regexGettingType.Replace(enumName, "")}";
+                    string typeName = $"{getTypeRegex.Replace(enumName, "")}";
                     VtSequenceType sequenceType = (VtSequenceType)Enum.Parse(typeof(VtSequenceType), typeName);
                     return (sequenceType, seqType);
                 }

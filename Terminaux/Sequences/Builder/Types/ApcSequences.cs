@@ -26,18 +26,22 @@ namespace Terminaux.Sequences.Builder.Types
     /// </summary>
     public static class ApcSequences
     {
+        private static readonly Regex apcApplicationProgramCommandSequenceRegex =
+            new(@"(\x9f|\x1b_).+\x9c", RegexOptions.Compiled);
+
         /// <summary>
         /// [APC Pt ST] Regular expression for application program command
         /// </summary>
-        public static string ApcApplicationProgramCommandSequenceRegex { get => @"(\x9f|\x1b_).+\x9c"; }
-        
+        public static Regex ApcApplicationProgramCommandSequenceRegex =>
+            apcApplicationProgramCommandSequenceRegex;
+
         /// <summary>
         /// [APC Pt ST] Generates an escape sequence that can be used for the console
         /// </summary>
         public static string GenerateApcApplicationProgramCommand(string proprietaryCommands)
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}_{proprietaryCommands}{VtSequenceBasicChars.StChar}";
-	        var regexParser = new Regex(ApcApplicationProgramCommandSequenceRegex);
+	        var regexParser = ApcApplicationProgramCommandSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;

@@ -26,85 +26,118 @@ namespace Terminaux.Sequences.Builder.Types
     /// </summary>
     public static class C1Sequences
     {
+        private readonly static Regex c1IndexSequenceRegex = new(@"\x1bD", RegexOptions.Compiled);
+        private readonly static Regex c1NextLineSequenceRegex = new(@"\x1bE", RegexOptions.Compiled);
+        private readonly static Regex c1TabSetSequenceRegex = new(@"\x1bH", RegexOptions.Compiled);
+        private readonly static Regex c1ReverseIndexSequenceRegex = new(@"\x1bM", RegexOptions.Compiled);
+        private readonly static Regex c1SingleShiftSelectG2CharacterSetSequenceRegex = new(@"\x1bN", RegexOptions.Compiled);
+        private readonly static Regex c1SingleShiftSelectG3CharacterSetSequenceRegex = new(@"\x1bO", RegexOptions.Compiled);
+        private readonly static Regex c1DeviceControlStringSequenceRegex = new(@"\x1bP", RegexOptions.Compiled);
+        private readonly static Regex c1StartOfGuardedAreaSequenceRegex = new(@"\x1bV", RegexOptions.Compiled);
+        private readonly static Regex c1EndOfGuardedAreaSequenceRegex = new(@"\x1bW", RegexOptions.Compiled);
+        private readonly static Regex c1StartOfStringSequenceRegex = new(@"\x1bX", RegexOptions.Compiled);
+        private readonly static Regex c1ReturnTerminalIdSequenceRegex = new(@"\x1bZ", RegexOptions.Compiled);
+        private readonly static Regex c1ControlSequenceIndicatorSequenceRegex = new(@"\x1b\[", RegexOptions.Compiled);
+        private readonly static Regex c1StringTerminatorSequenceRegex = new(@"\x1b\\", RegexOptions.Compiled);
+        private readonly static Regex c1OperatingSystemCommandSequenceRegex = new(@"\x1b\]", RegexOptions.Compiled);
+        private readonly static Regex c1PrivacyMessageSequenceRegex = new(@"\x1b\^", RegexOptions.Compiled);
+        private readonly static Regex c1ApplicationProgramCommandSequenceRegex = new(@"\x1b_", RegexOptions.Compiled);
+
         /// <summary>
         /// [ESC D] Regular expression for index
         /// </summary>
-        public static string C1IndexSequenceRegex { get => @"\x1bD"; }
+        public static Regex C1IndexSequenceRegex =>
+            c1IndexSequenceRegex;
 
         /// <summary>
         /// [ESC E] Regular expression for next line
         /// </summary>
-        public static string C1NextLineSequenceRegex { get => @"\x1bE"; }
+        public static Regex C1NextLineSequenceRegex =>
+            c1NextLineSequenceRegex;
 
         /// <summary>
         /// [ESC H] Regular expression for tab set
         /// </summary>
-        public static string C1TabSetSequenceRegex { get => @"\x1bH"; }
+        public static Regex C1TabSetSequenceRegex =>
+            c1TabSetSequenceRegex;
 
         /// <summary>
         /// [ESC M] Regular expression for reverse index
         /// </summary>
-        public static string C1ReverseIndexSequenceRegex { get => @"\x1bM"; }
+        public static Regex C1ReverseIndexSequenceRegex =>
+            c1ReverseIndexSequenceRegex;
 
         /// <summary>
         /// [ESC N] Regular expression for single shift select of G2 character set
         /// </summary>
-        public static string C1SingleShiftSelectG2CharacterSetSequenceRegex { get => @"\x1bN"; }
+        public static Regex C1SingleShiftSelectG2CharacterSetSequenceRegex =>
+            c1SingleShiftSelectG2CharacterSetSequenceRegex;
 
         /// <summary>
         /// [ESC O] Regular expression for single shift select of G3 character set
         /// </summary>
-        public static string C1SingleShiftSelectG3CharacterSetSequenceRegex { get => @"\x1bO"; }
+        public static Regex C1SingleShiftSelectG3CharacterSetSequenceRegex =>
+            c1SingleShiftSelectG3CharacterSetSequenceRegex;
 
         /// <summary>
         /// [ESC P] Regular expression for device control string
         /// </summary>
-        public static string C1DeviceControlStringSequenceRegex { get => @"\x1bP"; }
+        public static Regex C1DeviceControlStringSequenceRegex =>
+            c1DeviceControlStringSequenceRegex;
 
         /// <summary>
         /// [ESC V] Regular expression for start of guarded area
         /// </summary>
-        public static string C1StartOfGuardedAreaSequenceRegex { get => @"\x1bV"; }
+        public static Regex C1StartOfGuardedAreaSequenceRegex =>
+            c1StartOfGuardedAreaSequenceRegex;
 
         /// <summary>
         /// [ESC W] Regular expression for end of guarded area
         /// </summary>
-        public static string C1EndOfGuardedAreaSequenceRegex { get => @"\x1bW"; }
+        public static Regex C1EndOfGuardedAreaSequenceRegex =>
+            c1EndOfGuardedAreaSequenceRegex;
 
         /// <summary>
         /// [ESC X] Regular expression for start of string
         /// </summary>
-        public static string C1StartOfStringSequenceRegex { get => @"\x1bX"; }
+        public static Regex C1StartOfStringSequenceRegex =>
+            c1StartOfStringSequenceRegex;
 
         /// <summary>
         /// [ESC Z] Regular expression for returning terminal ID
         /// </summary>
-        public static string C1ReturnTerminalIdSequenceRegex { get => @"\x1bZ"; }
+        public static Regex C1ReturnTerminalIdSequenceRegex =>
+            c1ReturnTerminalIdSequenceRegex;
 
         /// <summary>
         /// [ESC [] Regular expression for control sequence introducer
         /// </summary>
-        public static string C1ControlSequenceIndicatorSequenceRegex { get => @"\x1b\["; }
+        public static Regex C1ControlSequenceIndicatorSequenceRegex =>
+            c1ControlSequenceIndicatorSequenceRegex;
 
         /// <summary>
         /// [ESC \] Regular expression for string terminator
         /// </summary>
-        public static string C1StringTerminatorSequenceRegex { get => @"\x1b\\"; }
+        public static Regex C1StringTerminatorSequenceRegex =>
+            c1StringTerminatorSequenceRegex;
 
         /// <summary>
         /// [ESC ]] Regular expression for operating system command
         /// </summary>
-        public static string C1OperatingSystemCommandSequenceRegex { get => @"\x1b\]"; }
+        public static Regex C1OperatingSystemCommandSequenceRegex =>
+            c1OperatingSystemCommandSequenceRegex;
 
         /// <summary>
         /// [ESC ^] Regular expression for privacy message
         /// </summary>
-        public static string C1PrivacyMessageSequenceRegex { get => @"\x1b\^"; }
+        public static Regex C1PrivacyMessageSequenceRegex =>
+            c1PrivacyMessageSequenceRegex;
 
         /// <summary>
         /// [ESC _] Regular expression for application program command
         /// </summary>
-        public static string C1ApplicationProgramCommandSequenceRegex { get => @"\x1b_"; }
+        public static Regex C1ApplicationProgramCommandSequenceRegex =>
+            c1ApplicationProgramCommandSequenceRegex;
         
         /// <summary>
         /// [ESC D] Generates an escape sequence that can be used for the console
@@ -112,7 +145,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1Index()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}D";
-	        var regexParser = new Regex(C1IndexSequenceRegex);
+	        var regexParser = C1IndexSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -124,7 +157,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1NextLine()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}E";
-	        var regexParser = new Regex(C1NextLineSequenceRegex);
+	        var regexParser = C1NextLineSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -136,7 +169,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1TabSet()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}H";
-	        var regexParser = new Regex(C1TabSetSequenceRegex);
+	        var regexParser = C1TabSetSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -148,7 +181,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1ReverseIndex()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}M";
-	        var regexParser = new Regex(C1ReverseIndexSequenceRegex);
+	        var regexParser = C1ReverseIndexSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -160,7 +193,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1SingleShiftSelectG2CharacterSet()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}N";
-	        var regexParser = new Regex(C1SingleShiftSelectG2CharacterSetSequenceRegex);
+	        var regexParser = C1SingleShiftSelectG2CharacterSetSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -172,7 +205,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1SingleShiftSelectG3CharacterSet()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}O";
-	        var regexParser = new Regex(C1SingleShiftSelectG3CharacterSetSequenceRegex);
+	        var regexParser = C1SingleShiftSelectG3CharacterSetSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -184,7 +217,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1DeviceControlString()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P";
-	        var regexParser = new Regex(C1DeviceControlStringSequenceRegex);
+	        var regexParser = C1DeviceControlStringSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -196,7 +229,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1StartOfGuardedArea()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}V";
-	        var regexParser = new Regex(C1StartOfGuardedAreaSequenceRegex);
+	        var regexParser = C1StartOfGuardedAreaSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -208,7 +241,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1EndOfGuardedArea()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}W";
-	        var regexParser = new Regex(C1EndOfGuardedAreaSequenceRegex);
+	        var regexParser = C1EndOfGuardedAreaSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -220,7 +253,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1StartOfString()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}X";
-	        var regexParser = new Regex(C1StartOfStringSequenceRegex);
+	        var regexParser = C1StartOfStringSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -232,7 +265,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1ReturnTerminalId()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}Z";
-	        var regexParser = new Regex(C1ReturnTerminalIdSequenceRegex);
+	        var regexParser = C1ReturnTerminalIdSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -244,7 +277,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1ControlSequenceIndicator()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}[";
-	        var regexParser = new Regex(C1ControlSequenceIndicatorSequenceRegex);
+	        var regexParser = C1ControlSequenceIndicatorSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -256,7 +289,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1StringTerminator()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}\\";
-	        var regexParser = new Regex(C1StringTerminatorSequenceRegex);
+	        var regexParser = C1StringTerminatorSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -268,7 +301,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1OperatingSystemCommand()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}]";
-	        var regexParser = new Regex(C1OperatingSystemCommandSequenceRegex);
+	        var regexParser = C1OperatingSystemCommandSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -280,7 +313,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1PrivacyMessage()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}^";
-	        var regexParser = new Regex(C1PrivacyMessageSequenceRegex);
+	        var regexParser = C1PrivacyMessageSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -292,7 +325,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateC1ApplicationProgramCommand()
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}_";
-	        var regexParser = new Regex(C1ApplicationProgramCommandSequenceRegex);
+	        var regexParser = C1ApplicationProgramCommandSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;

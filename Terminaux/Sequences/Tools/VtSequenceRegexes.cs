@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.Text.RegularExpressions;
+
 namespace Terminaux.Sequences.Tools
 {
     /// <summary>
@@ -23,44 +25,69 @@ namespace Terminaux.Sequences.Tools
     /// </summary>
     public static class VtSequenceRegexes
     {
+        private static readonly Regex csiRegex =
+            new(@"(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]", RegexOptions.Compiled);
+        private static readonly Regex oscRegex =
+            new(@"(\x9D|\x1B\]).+(\x07|\x9c)", RegexOptions.Compiled);
+        private static readonly Regex escRegex =
+            new(@"\x1b [F-Nf-n]|\x1b#[3-8]|\x1b%[@Gg]|\x1b[()*+][A-Za-z0-9=`<>]|\x1b[()*+]""[>4?]|\x1b[()*+]%[0-6=]|\x1b[()*+]&[4-5]|\x1b[-.\/][ABFHLM]|\x1b[6-9Fcl-o=>\|\}~]", RegexOptions.Compiled);
+        private static readonly Regex apcRegex =
+            new(@"(\x9f|\x1b_).+\x9c", RegexOptions.Compiled);
+        private static readonly Regex dcsRegex =
+            new(@"(\x90|\x1bP).+\x9c", RegexOptions.Compiled);
+        private static readonly Regex pmRegex =
+            new(@"(\x9e|\x1b\^).+\x9c", RegexOptions.Compiled);
+        private static readonly Regex c1Regex =
+            new(@"\x1b[DEHMNOVWXYZ78]", RegexOptions.Compiled);
+        private static readonly Regex allRegex =
+            new(CSISequences + "|" + OSCSequences + "|" + ESCSequences + "|" + APCSequences + "|" + DCSSequences + "|" + PMSequences + "|" + C1Sequences, RegexOptions.Compiled);
+
         /// <summary>
         /// CSI sequences
         /// </summary>
-        public static string CSISequences { get => @"(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]"; }
+        public static Regex CSISequences =>
+            csiRegex;
 
         /// <summary>
         /// OSC sequences
         /// </summary>
-        public static string OSCSequences { get => @"(\x9D|\x1B\]).+(\x07|\x9c)"; }
+        public static Regex OSCSequences =>
+            oscRegex;
 
         /// <summary>
         /// ESC sequences
         /// </summary>
-        public static string ESCSequences { get => @"\x1b [F-Nf-n]|\x1b#[3-8]|\x1b%[@Gg]|\x1b[()*+][A-Za-z0-9=`<>]|\x1b[()*+]""[>4?]|\x1b[()*+]%[0-6=]|\x1b[()*+]&[4-5]|\x1b[-.\/][ABFHLM]|\x1b[6-9Fcl-o=>\|\}~]"; }
+        public static Regex ESCSequences =>
+            escRegex;
 
         /// <summary>
         /// APC sequences
         /// </summary>
-        public static string APCSequences { get => @"(\x9f|\x1b_).+\x9c"; }
+        public static Regex APCSequences =>
+            apcRegex;
 
         /// <summary>
         /// DCS sequences
         /// </summary>
-        public static string DCSSequences { get => @"(\x90|\x1bP).+\x9c"; }
+        public static Regex DCSSequences =>
+            dcsRegex;
 
         /// <summary>
         /// PM sequences
         /// </summary>
-        public static string PMSequences { get => @"(\x9e|\x1b\^).+\x9c"; }
+        public static Regex PMSequences =>
+            pmRegex;
 
         /// <summary>
         /// C1 sequences
         /// </summary>
-        public static string C1Sequences { get => @"\x1b[DEHMNOVWXYZ78]"; }
+        public static Regex C1Sequences =>
+            c1Regex;
 
         /// <summary>
         /// All VT sequences
         /// </summary>
-        public static string AllVTSequences { get => CSISequences + "|" + OSCSequences + "|" + ESCSequences + "|" + APCSequences + "|" + DCSSequences + "|" + PMSequences + "|" + C1Sequences; }
+        public static Regex AllVTSequences =>
+            allRegex;
     }
 }

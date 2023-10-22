@@ -26,35 +26,48 @@ namespace Terminaux.Sequences.Builder.Types
     /// </summary>
     public static class DcsSequences
     {
+        private static readonly Regex dcsUserDefinedKeysSequenceRegex = new(@"(\x90|\x1bP)[0-9]*\;[0-9]*\|(.+?)\x9c", RegexOptions.Compiled);
+        private static readonly Regex dcsRequestStatusStringSequenceRegex = new(@"(\x90|\x1bP)\$q(.+?)\x9c", RegexOptions.Compiled);
+        private static readonly Regex dcsRestorePresentationStatusSequenceRegex = new(@"(\x90|\x1bP)[0-9]*\$t[0-9]*\x9c", RegexOptions.Compiled);
+        private static readonly Regex dcsRequestResourceValuesSequenceRegex = new(@"(\x90|\x1bP)\+Q(.+?)\x9c", RegexOptions.Compiled);
+        private static readonly Regex dcsSetTermInfoDataSequenceRegex = new(@"(\x90|\x1bP)\+p(.+?)\x9c", RegexOptions.Compiled);
+        private static readonly Regex dcsRequestTermInfoDataSequenceRegex = new(@"(\x90|\x1bP)\+q(.+?)\x9c", RegexOptions.Compiled);
+
         /// <summary>
         /// [DCS Ps ; Ps | Pt ST] Regular expression for user defined keys
         /// </summary>
-        public static string DcsUserDefinedKeysSequenceRegex { get => @"(\x90|\x1bP)[0-9]*\;[0-9]*\|(.+?)\x9c"; }
+        public static Regex DcsUserDefinedKeysSequenceRegex =>
+            dcsUserDefinedKeysSequenceRegex;
 
         /// <summary>
         /// [DCS $ q Pt ST] Regular expression for requesting status string
         /// </summary>
-        public static string DcsRequestStatusStringSequenceRegex { get => @"(\x90|\x1bP)\$q(.+?)\x9c"; }
+        public static Regex DcsRequestStatusStringSequenceRegex =>
+            dcsRequestStatusStringSequenceRegex;
 
         /// <summary>
         /// [DCS Ps $ t Pt ST] Regular expression for restoring presentation status
         /// </summary>
-        public static string DcsRestorePresentationStatusSequenceRegex { get => @"(\x90|\x1bP)[0-9]*\$t[0-9]*\x9c"; }
+        public static Regex DcsRestorePresentationStatusSequenceRegex =>
+            dcsRestorePresentationStatusSequenceRegex;
 
         /// <summary>
         /// [DCS + Q Pt ST] Regular expression for requesting resource values for xterm
         /// </summary>
-        public static string DcsRequestResourceValuesSequenceRegex { get => @"(\x90|\x1bP)\+Q(.+?)\x9c"; }
+        public static Regex DcsRequestResourceValuesSequenceRegex =>
+            dcsRequestResourceValuesSequenceRegex;
         
         /// <summary>
         /// [DCS + p Pt ST] Regular expression for setting terminfo data for xterm
         /// </summary>
-        public static string DcsSetTermInfoDataSequenceRegex { get => @"(\x90|\x1bP)\+p(.+?)\x9c"; }
+        public static Regex DcsSetTermInfoDataSequenceRegex =>
+            dcsSetTermInfoDataSequenceRegex;
         
         /// <summary>
         /// [DCS + q Pt ST] Regular expression for requesting terminfo data for xterm
         /// </summary>
-        public static string DcsRequestTermInfoDataSequenceRegex { get => @"(\x90|\x1bP)\+q(.+?)\x9c"; }
+        public static Regex DcsRequestTermInfoDataSequenceRegex =>
+            dcsRequestTermInfoDataSequenceRegex;
 	
 	    /// <summary>
         /// [DCS Ps ; Ps | Pt ST] Generates an escape sequence that can be used for the console
@@ -62,7 +75,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateDcsUserDefinedKeys(int clearUdkDefinitions, int dontLockKeys, string keybindings)
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P{clearUdkDefinitions};{dontLockKeys}|{keybindings}{VtSequenceBasicChars.StChar}";
-	        var regexParser = new Regex(DcsUserDefinedKeysSequenceRegex);
+	        var regexParser = DcsUserDefinedKeysSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -74,7 +87,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateDcsRequestStatusString(string status)
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P$q{status}{VtSequenceBasicChars.StChar}";
-	        var regexParser = new Regex(DcsRequestStatusStringSequenceRegex);
+	        var regexParser = DcsRequestStatusStringSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -86,7 +99,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateDcsRestorePresentationStatus(int controlConvert, string status)
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P{controlConvert}$t{status}{VtSequenceBasicChars.StChar}";
-	        var regexParser = new Regex(DcsRestorePresentationStatusSequenceRegex);
+	        var regexParser = DcsRestorePresentationStatusSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -98,7 +111,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateDcsRequestResourceValues(string xtermResourceNames)
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P+Q{xtermResourceNames}{VtSequenceBasicChars.StChar}";
-	        var regexParser = new Regex(DcsRequestResourceValuesSequenceRegex);
+	        var regexParser = DcsRequestResourceValuesSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -110,7 +123,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateDcsSetTermInfoData(string termName)
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P+p{termName}{VtSequenceBasicChars.StChar}";
-	        var regexParser = new Regex(DcsSetTermInfoDataSequenceRegex);
+	        var regexParser = DcsSetTermInfoDataSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
@@ -122,7 +135,7 @@ namespace Terminaux.Sequences.Builder.Types
         public static string GenerateDcsRequestTermInfoData(string termName)
 	    {
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P+q{termName}{VtSequenceBasicChars.StChar}";
-	        var regexParser = new Regex(DcsRequestTermInfoDataSequenceRegex);
+	        var regexParser = DcsRequestTermInfoDataSequenceRegex;
 		    if (!regexParser.IsMatch(result))
 		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
