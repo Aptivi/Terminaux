@@ -290,6 +290,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsolePlatform.IsOnWindows
   nameWithType: ConsolePlatform.IsOnWindows
+- uid: Terminaux.Base.ConsolePlatform.IsRunningFromMono
+  name: IsRunningFromMono()
+  href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsRunningFromMono
+  commentId: M:Terminaux.Base.ConsolePlatform.IsRunningFromMono
+  fullName: Terminaux.Base.ConsolePlatform.IsRunningFromMono()
+  nameWithType: ConsolePlatform.IsRunningFromMono()
+- uid: Terminaux.Base.ConsolePlatform.IsRunningFromMono*
+  name: IsRunningFromMono
+  href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsRunningFromMono_
+  commentId: Overload:Terminaux.Base.ConsolePlatform.IsRunningFromMono
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsolePlatform.IsRunningFromMono
+  nameWithType: ConsolePlatform.IsRunningFromMono
 - uid: Terminaux.Base.ConsolePlatform.IsRunningFromTmux
   name: IsRunningFromTmux()
   href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsRunningFromTmux
