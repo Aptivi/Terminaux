@@ -510,6 +510,39 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests initializing color instance from 255 colors (Monochromacy)
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFrom255ColorsMonochromacy()
+        {
+            // Create instance
+            ColorTools.EnableColorTransformation = true;
+            ColorTools.ColorDeficiency = Deficiency.Monochromacy;
+            var ColorInstance = new Color(18);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("35;35;35");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;2;35;35;35m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;2;35;35;35m");
+            ColorInstance.R.ShouldBe(35);
+            ColorInstance.G.ShouldBe(35);
+            ColorInstance.B.ShouldBe(35);
+            ColorInstance.IsBright.ShouldBeFalse();
+            ColorInstance.IsDark.ShouldBeTrue();
+            ColorInstance.Hex.ShouldBe("#232323");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
         /// Tests initializing color instance from 255 colors (Protanopia)
         /// </summary>
         [Test]
@@ -877,6 +910,37 @@ namespace Terminaux.Tests.Colors
             ColorInstance.IsBright.ShouldBeTrue();
             ColorInstance.IsDark.ShouldBeFalse();
             ColorInstance.Hex.ShouldBe("#002760");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from 255 colors (Monochromacy)
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFrom255ColorsMonochromacyRenderColorBlindnessAware()
+        {
+            // Create instance
+            var ColorInstance = ColorTools.RenderColorBlindnessAware(new Color(18), Deficiency.Monochromacy, 0.6);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("35;35;35");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(Color255.GetEsc() + "[48;2;35;35;35m");
+            ColorInstance.VTSequenceForeground.ShouldBe(Color255.GetEsc() + "[38;2;35;35;35m");
+            ColorInstance.R.ShouldBe(35);
+            ColorInstance.G.ShouldBe(35);
+            ColorInstance.B.ShouldBe(35);
+            ColorInstance.IsBright.ShouldBeFalse();
+            ColorInstance.IsDark.ShouldBeTrue();
+            ColorInstance.Hex.ShouldBe("#232323");
             ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
             ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
         }

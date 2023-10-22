@@ -34,6 +34,10 @@ namespace Terminaux.Colors.Accessibility
         /// <summary>
         /// Blue/yellow color blindness.
         /// </summary>
-        Tritan
+        Tritan,
+        /// <summary>
+        /// Full color blindness, can only see grayscale.
+        /// </summary>
+        Monochromacy,
     }
 }

@@ -192,10 +192,15 @@ namespace Terminaux.Colors
             {
                 // We'll transform.
                 (int, int, int) transformed;
-                if (ColorTools.EnableSimpleColorTransformation)
-                    transformed = Vienot1999.Transform(rInput, gInput, bInput, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
+                if (ColorTools.ColorDeficiency == Deficiency.Monochromacy)
+                    transformed = Monochromacy.Transform(rInput, gInput, bInput);
                 else
-                    transformed = Brettel1997.Transform(rInput, gInput, bInput, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
+                {
+                    if (ColorTools.EnableSimpleColorTransformation)
+                        transformed = Vienot1999.Transform(rInput, gInput, bInput, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
+                    else
+                        transformed = Brettel1997.Transform(rInput, gInput, bInput, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
+                }
                 return (transformed.Item1, transformed.Item2, transformed.Item3);
             }
             return (rInput, gInput, bInput);
