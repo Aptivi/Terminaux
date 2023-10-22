@@ -75,14 +75,6 @@
       "commandName": "Project",
       "commandLineArgs": "PrintFigletF"
     },
-    "Terminaux - PrintFigletFiggle": {
-      "commandName": "Project",
-      "commandLineArgs": "PrintFigletFiggle"
-    },
-    "Terminaux - PrintFigletFiggleF": {
-      "commandName": "Project",
-      "commandLineArgs": "PrintFigletFiggleF"
-    },
     "Terminaux - PrintSep": {
       "commandName": "Project",
       "commandLineArgs": "PrintSep"
@@ -210,10 +202,6 @@
     "Terminaux - CliDoublePaneSlowTest": {
       "commandName": "Project",
       "commandLineArgs": "CliDoublePaneSlowTest"
-    },
-    "Terminaux - TestInputFigletFiggle": {
-      "commandName": "Project",
-      "commandLineArgs": "TestInputFigletFiggle"
     },
     "Terminaux - PromptLoopedHistories": {
       "commandName": "Project",
