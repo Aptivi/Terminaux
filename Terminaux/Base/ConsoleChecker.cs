@@ -140,8 +140,13 @@ namespace Terminaux.Base
         /// </summary>
         public static bool IsConsole256Colors()
         {
-            string TerminalType = ConsolePlatform.GetTerminalType();
-            return TerminalType.Contains("-256col") || ConsoleExtensions.CheckForConHostSequenceSupport() == 7;
+            if (ConsolePlatform.IsOnUnix())
+            {
+                string TerminalType = ConsolePlatform.GetTerminalType();
+                return TerminalType.Contains("-256col");
+            }
+            else
+                return ConsoleExtensions.CheckForConHostSequenceSupport() == 7;
         }
 
         /// <summary>
