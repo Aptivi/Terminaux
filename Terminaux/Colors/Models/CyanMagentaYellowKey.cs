@@ -154,6 +154,39 @@ namespace Terminaux.Colors.Models
             CMY = cmy;
         }
 
+        /// <summary>
+        /// Converts the CMY color model to CMYK
+        /// </summary>
+        /// <param name="cmy">Instance of CMY</param>
+        /// <exception cref="TerminauxException"></exception>
+        public CyanMagentaYellowKey(CyanMagentaYellow cmy)
+        {
+            if (cmy is null)
+                throw new TerminauxException("Can't convert a null CMY instance to CMYK!");
+
+            // Get the level of each color
+            var rgb = cmy.ConvertToRgb();
+            double levelR = (double)rgb.R / 255;
+            double levelG = (double)rgb.G / 255;
+            double levelB = (double)rgb.B / 255;
+
+            // Get the black key (K). .NET's Math.Max doesn't support three variables, so this workaround is added
+            double maxRgLevel = Math.Max(levelR, levelG);
+            double maxLevel = Math.Max(maxRgLevel, levelB);
+            double key = 1 - maxLevel;
+
+            // Now, get the Cyan, Magenta, and Yellow values
+            double c = (1 - levelR - key) / (1 - key);
+            double m = (1 - levelG - key) / (1 - key);
+            double y = (1 - levelB - key) / (1 - key);
+            var resCmy = new CyanMagentaYellow(c, m, y);
+
+            // Install the values
+            K = key;
+            KWhole = (int)Math.Round(key * 100);
+            CMY = resCmy;
+        }
+
         internal CyanMagentaYellowKey(double k, CyanMagentaYellow cmy)
         {
             K = k;

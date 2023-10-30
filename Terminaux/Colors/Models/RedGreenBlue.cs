@@ -43,6 +43,13 @@ namespace Terminaux.Colors.Models
         public int B { get; private set; }
 
         /// <summary>
+        /// Converts this instance of RGB color to CMY model
+        /// </summary>
+        /// <returns>An instance of <see cref="CyanMagentaYellow"/></returns>
+        public CyanMagentaYellow ConvertToCmy() =>
+            new(this);
+
+        /// <summary>
         /// Converts this instance of RGB color to CMYK model
         /// </summary>
         /// <returns>An instance of <see cref="CyanMagentaYellowKey"/></returns>
@@ -146,6 +153,32 @@ namespace Terminaux.Colors.Models
                 g = (int)Math.Round(255 * GetRgbValueFromHue(variable1, variable2, hsl.Hue));
                 b = (int)Math.Round(255 * GetRgbValueFromHue(variable1, variable2, hsl.Hue - (1 / 3.0d)));
             }
+
+            // Install the values
+            R = r;
+            G = g;
+            B = b;
+        }
+
+        /// <summary>
+        /// Converts the CMY color model to RGB
+        /// </summary>
+        /// <param name="cmy">Instance of CMY</param>
+        /// <exception cref="TerminauxException"></exception>
+        public RedGreenBlue(CyanMagentaYellow cmy)
+        {
+            if (cmy is null)
+                throw new TerminauxException("Can't convert a null CMY instance to RGB!");
+
+            // Get the level of each color
+            double levelC = 1 - (double)cmy.CWhole / 100;
+            double levelM = 1 - (double)cmy.MWhole / 100;
+            double levelY = 1 - (double)cmy.YWhole / 100;
+
+            // Now, get the Cyan, Magenta, and Yellow values
+            int r = (int)Math.Round(255 * levelC);
+            int g = (int)Math.Round(255 * levelM);
+            int b = (int)Math.Round(255 * levelY);
 
             // Install the values
             R = r;

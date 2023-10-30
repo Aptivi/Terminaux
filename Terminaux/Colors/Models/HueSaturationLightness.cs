@@ -74,6 +74,13 @@ namespace Terminaux.Colors.Models
         public CyanMagentaYellowKey ConvertToCmyk() =>
             new(this);
 
+        /// <summary>
+        /// Converts this instance of HSL color to CMY model
+        /// </summary>
+        /// <returns>An instance of <see cref="CyanMagentaYellow"/></returns>
+        public CyanMagentaYellow ConvertToCmy() =>
+            new(this);
+
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
             Equals(obj as HueSaturationLightness);
@@ -119,7 +126,7 @@ namespace Terminaux.Colors.Models
             if (cmyk is null)
                 throw new TerminauxException("Can't convert a null CMYK instance to HSL!");
 
-            // Get the Cyan, Magenta, and Yellow values
+            // Get the RGB values
             var rgb = cmyk.ConvertToRgb();
 
             // Do the conversion
@@ -152,6 +159,26 @@ namespace Terminaux.Colors.Models
             LightnessWhole = (int)(Lightness * 100);
             HueWhole = (int)(Hue * 360);
             ReverseHueWhole = (int)(ReverseHue * 360);
+        }
+
+        /// <summary>
+        /// Converts the CMY color model to HSL
+        /// </summary>
+        /// <param name="cmy">Instance of CMY</param>
+        /// <exception cref="TerminauxException"></exception>
+        public HueSaturationLightness(CyanMagentaYellow cmy)
+        {
+            if (cmy is null)
+                throw new TerminauxException("Can't convert a null CMY instance to HSL!");
+
+            // Get the RGB values
+            var rgb = cmy.ConvertToRgb();
+
+            // Do the conversion
+            var (hue, saturation, lightness) = GetHslFromRgb(rgb);
+            Hue = hue;
+            Saturation = saturation;
+            Lightness = lightness;
         }
 
         internal HueSaturationLightness(double hue, double saturation, double lightness)

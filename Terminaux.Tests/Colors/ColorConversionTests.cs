@@ -123,5 +123,50 @@ namespace Terminaux.Tests.Colors
             rgb.G.ShouldBe(0);
             rgb.B.ShouldBe(22);
         }
+
+        /// <summary>
+        /// Tests converting an RGB color to CMY
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestConvertRgbToCmy()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 0, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;0;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(VtSequenceTools.GetEsc() + "[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe(VtSequenceTools.GetEsc() + "[38;2;139;0;22m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(0);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CMYK
+            var cmy = ColorInstance.RGB.ConvertToCmy();
+
+            // Check for property correctness
+            cmy.CWhole.ShouldBe(45);
+            cmy.MWhole.ShouldBe(100);
+            cmy.YWhole.ShouldBe(91);
+
+            // Now, convert back to RGB
+            var rgb = cmy.ConvertToRgb();
+
+            // Check for property correctness
+            rgb.R.ShouldBe(140);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(23);
+        }
     }
 }
