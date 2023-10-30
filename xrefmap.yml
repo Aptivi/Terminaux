@@ -3495,6 +3495,43 @@ references:
   commentId: T:Terminaux.Colors.Models.CyanMagentaYellow
   fullName: Terminaux.Colors.Models.CyanMagentaYellow
   nameWithType: CyanMagentaYellow
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.#ctor(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name: CyanMagentaYellow(CyanMagentaYellowKey)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow__ctor_Terminaux_Colors_Models_CyanMagentaYellowKey_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.#ctor(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name.vb: New(CyanMagentaYellowKey)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.CyanMagentaYellow(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellow.New(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  nameWithType: CyanMagentaYellow.CyanMagentaYellow(CyanMagentaYellowKey)
+  nameWithType.vb: CyanMagentaYellow.New(CyanMagentaYellowKey)
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.#ctor(Terminaux.Colors.Models.HueSaturationLightness)
+  name: CyanMagentaYellow(HueSaturationLightness)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow__ctor_Terminaux_Colors_Models_HueSaturationLightness_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.#ctor(Terminaux.Colors.Models.HueSaturationLightness)
+  name.vb: New(HueSaturationLightness)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.CyanMagentaYellow(Terminaux.Colors.Models.HueSaturationLightness)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellow.New(Terminaux.Colors.Models.HueSaturationLightness)
+  nameWithType: CyanMagentaYellow.CyanMagentaYellow(HueSaturationLightness)
+  nameWithType.vb: CyanMagentaYellow.New(HueSaturationLightness)
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.#ctor(Terminaux.Colors.Models.RedGreenBlue)
+  name: CyanMagentaYellow(RedGreenBlue)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow__ctor_Terminaux_Colors_Models_RedGreenBlue_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.#ctor(Terminaux.Colors.Models.RedGreenBlue)
+  name.vb: New(RedGreenBlue)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.CyanMagentaYellow(Terminaux.Colors.Models.RedGreenBlue)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellow.New(Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: CyanMagentaYellow.CyanMagentaYellow(RedGreenBlue)
+  nameWithType.vb: CyanMagentaYellow.New(RedGreenBlue)
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.#ctor*
+  name: CyanMagentaYellow
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow__ctor_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.CyanMagentaYellow
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellow.New
+  nameWithType: CyanMagentaYellow.CyanMagentaYellow
+  nameWithType.vb: CyanMagentaYellow.New
 - uid: Terminaux.Colors.Models.CyanMagentaYellow.C
   name: C
   href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_C
@@ -3521,6 +3558,45 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.CyanMagentaYellow.CWhole
   nameWithType: CyanMagentaYellow.CWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToCmyk
+  name: ConvertToCmyk()
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_ConvertToCmyk
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.ConvertToCmyk
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToCmyk()
+  nameWithType: CyanMagentaYellow.ConvertToCmyk()
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToCmyk*
+  name: ConvertToCmyk
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_ConvertToCmyk_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.ConvertToCmyk
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToCmyk
+  nameWithType: CyanMagentaYellow.ConvertToCmyk
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToHsl
+  name: ConvertToHsl()
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_ConvertToHsl
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.ConvertToHsl
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToHsl()
+  nameWithType: CyanMagentaYellow.ConvertToHsl()
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToHsl*
+  name: ConvertToHsl
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_ConvertToHsl_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.ConvertToHsl
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToHsl
+  nameWithType: CyanMagentaYellow.ConvertToHsl
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToRgb
+  name: ConvertToRgb()
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_ConvertToRgb
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.ConvertToRgb
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToRgb()
+  nameWithType: CyanMagentaYellow.ConvertToRgb()
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToRgb*
+  name: ConvertToRgb
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_ConvertToRgb_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.ConvertToRgb
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.ConvertToRgb
+  nameWithType: CyanMagentaYellow.ConvertToRgb
 - uid: Terminaux.Colors.Models.CyanMagentaYellow.Equals(System.Object)
   name: Equals(object)
   href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_Equals_System_Object_
@@ -3652,6 +3728,15 @@ references:
   commentId: T:Terminaux.Colors.Models.CyanMagentaYellowKey
   fullName: Terminaux.Colors.Models.CyanMagentaYellowKey
   nameWithType: CyanMagentaYellowKey
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.#ctor(Terminaux.Colors.Models.CyanMagentaYellow)
+  name: CyanMagentaYellowKey(CyanMagentaYellow)
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey__ctor_Terminaux_Colors_Models_CyanMagentaYellow_
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.#ctor(Terminaux.Colors.Models.CyanMagentaYellow)
+  name.vb: New(CyanMagentaYellow)
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.CyanMagentaYellowKey(Terminaux.Colors.Models.CyanMagentaYellow)
+  fullName.vb: Terminaux.Colors.Models.CyanMagentaYellowKey.New(Terminaux.Colors.Models.CyanMagentaYellow)
+  nameWithType: CyanMagentaYellowKey.CyanMagentaYellowKey(CyanMagentaYellow)
+  nameWithType.vb: CyanMagentaYellowKey.New(CyanMagentaYellow)
 - uid: Terminaux.Colors.Models.CyanMagentaYellowKey.#ctor(Terminaux.Colors.Models.HueSaturationLightness)
   name: CyanMagentaYellowKey(HueSaturationLightness)
   href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey__ctor_Terminaux_Colors_Models_HueSaturationLightness_
@@ -3824,6 +3909,15 @@ references:
   commentId: T:Terminaux.Colors.Models.HueSaturationLightness
   fullName: Terminaux.Colors.Models.HueSaturationLightness
   nameWithType: HueSaturationLightness
+- uid: Terminaux.Colors.Models.HueSaturationLightness.#ctor(Terminaux.Colors.Models.CyanMagentaYellow)
+  name: HueSaturationLightness(CyanMagentaYellow)
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness__ctor_Terminaux_Colors_Models_CyanMagentaYellow_
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.#ctor(Terminaux.Colors.Models.CyanMagentaYellow)
+  name.vb: New(CyanMagentaYellow)
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.HueSaturationLightness(Terminaux.Colors.Models.CyanMagentaYellow)
+  fullName.vb: Terminaux.Colors.Models.HueSaturationLightness.New(Terminaux.Colors.Models.CyanMagentaYellow)
+  nameWithType: HueSaturationLightness.HueSaturationLightness(CyanMagentaYellow)
+  nameWithType.vb: HueSaturationLightness.New(CyanMagentaYellow)
 - uid: Terminaux.Colors.Models.HueSaturationLightness.#ctor(Terminaux.Colors.Models.CyanMagentaYellowKey)
   name: HueSaturationLightness(CyanMagentaYellowKey)
   href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness__ctor_Terminaux_Colors_Models_CyanMagentaYellowKey_
@@ -3852,6 +3946,19 @@ references:
   fullName.vb: Terminaux.Colors.Models.HueSaturationLightness.New
   nameWithType: HueSaturationLightness.HueSaturationLightness
   nameWithType.vb: HueSaturationLightness.New
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmy
+  name: ConvertToCmy()
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ConvertToCmy
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmy
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmy()
+  nameWithType: HueSaturationLightness.ConvertToCmy()
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmy*
+  name: ConvertToCmy
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ConvertToCmy_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmy
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmy
+  nameWithType: HueSaturationLightness.ConvertToCmy
 - uid: Terminaux.Colors.Models.HueSaturationLightness.ConvertToCmyk
   name: ConvertToCmyk()
   href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ConvertToCmyk
@@ -4061,6 +4168,15 @@ references:
   commentId: T:Terminaux.Colors.Models.RedGreenBlue
   fullName: Terminaux.Colors.Models.RedGreenBlue
   nameWithType: RedGreenBlue
+- uid: Terminaux.Colors.Models.RedGreenBlue.#ctor(Terminaux.Colors.Models.CyanMagentaYellow)
+  name: RedGreenBlue(CyanMagentaYellow)
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue__ctor_Terminaux_Colors_Models_CyanMagentaYellow_
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.#ctor(Terminaux.Colors.Models.CyanMagentaYellow)
+  name.vb: New(CyanMagentaYellow)
+  fullName: Terminaux.Colors.Models.RedGreenBlue.RedGreenBlue(Terminaux.Colors.Models.CyanMagentaYellow)
+  fullName.vb: Terminaux.Colors.Models.RedGreenBlue.New(Terminaux.Colors.Models.CyanMagentaYellow)
+  nameWithType: RedGreenBlue.RedGreenBlue(CyanMagentaYellow)
+  nameWithType.vb: RedGreenBlue.New(CyanMagentaYellow)
 - uid: Terminaux.Colors.Models.RedGreenBlue.#ctor(Terminaux.Colors.Models.CyanMagentaYellowKey)
   name: RedGreenBlue(CyanMagentaYellowKey)
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue__ctor_Terminaux_Colors_Models_CyanMagentaYellowKey_
@@ -4102,6 +4218,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedGreenBlue.B
   nameWithType: RedGreenBlue.B
+- uid: Terminaux.Colors.Models.RedGreenBlue.ConvertToCmy
+  name: ConvertToCmy()
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_ConvertToCmy
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.ConvertToCmy
+  fullName: Terminaux.Colors.Models.RedGreenBlue.ConvertToCmy()
+  nameWithType: RedGreenBlue.ConvertToCmy()
+- uid: Terminaux.Colors.Models.RedGreenBlue.ConvertToCmy*
+  name: ConvertToCmy
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_ConvertToCmy_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.ConvertToCmy
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.ConvertToCmy
+  nameWithType: RedGreenBlue.ConvertToCmy
 - uid: Terminaux.Colors.Models.RedGreenBlue.ConvertToCmyk
   name: ConvertToCmyk()
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_ConvertToCmyk
