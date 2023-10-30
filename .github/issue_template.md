@@ -1,21 +1,21 @@
 ### Description
-<!-- Describe how this bug happened, and general information about it. Note that we only speak Arabic and English, so if you're on any other language than we know, then translate. -->
-<!-- Note that you need to be as more descriptive as you can so we can understand this bug. -->
+<!-- Describe how this bug happened, and general information about it. Note that you need to be as descriptive as possible. -->
 
 
 ### Expected behavior
-<!-- How do you expect this project to behave on the suspected component. -->
+<!-- How do you expect this program to behave? -->
 
 
 ### Actual behavior
-<!-- What did the suspected component do instead? -->
+<!-- What did it do instead? -->
 
 
 ### Steps to reproduce
-<!-- Provide clear step-by-step instructions on how do you reporduce this bug. -->
-1. 
-1. 
-1. 
+<!-- Provide clear step-by-step instructions about reproducing this bug. -->
+1. Open x
+1. Write `yyy`
+1. Observe a happening instead of z
 
-### Version (include commit number if applicable)
+### Version
 <!-- This should be in this format: <Version> (<Commit>) (<Branch>). Commit number and branch required for development builds. -->
+Version `0.0.0 0000000000000000000000000000000000000000 main`

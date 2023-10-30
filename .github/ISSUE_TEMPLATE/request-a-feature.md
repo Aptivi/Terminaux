@@ -12,9 +12,8 @@ assignees: ''
 
 
 ### What does it add?
+- [ ] New feature
 - [ ] New API functions
-- [ ] New extensions
-- [ ] New implementations
 - [ ] Others
 
-### Have you tried doing it?
+### Have you tried doing it? If so, attach a mod file.

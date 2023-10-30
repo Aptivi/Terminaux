@@ -1,6 +1,6 @@
 ---
 name: Ask a question
-about: Ask us anything about this project.
+about: Ask us anything about KS.
 title: "[Q&A] [FeatureName] - [Question]"
 labels: ''
 assignees: ''
@@ -10,6 +10,9 @@ assignees: ''
 ### Type of question
 <!-- Select the type of the question that you're going to ask here. -->
 - [ ] General
+- [ ] API
+- [ ] Commands
+- [ ] Mods
 - [ ] Others
 
 ### Question
