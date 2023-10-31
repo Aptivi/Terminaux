@@ -186,6 +186,86 @@ namespace Terminaux.Colors
                 throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
         }
 
+        internal static RedGreenBlue ParseSpecifierHsvValues(string specifier)
+        {
+            if (!specifier.Contains(";") || !specifier.StartsWith("hsv:"))
+                throw new ColorSeqException("Invalid HSV color specifier. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+
+            // Split the VT sequence into three parts
+            var specifierArray = specifier.Substring(4).Split(';');
+            if (specifierArray.Length == 3)
+            {
+                // We got the HSL whole values! First, check to see if we need to filter the color for the color-blind
+                int h = Convert.ToInt32(specifierArray[0]);
+                if (h < 0 || h > 360)
+                    throw new ColorSeqException("Invalid HSV color specifier. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+                int s = Convert.ToInt32(specifierArray[1]);
+                if (s < 0 || s > 100)
+                    throw new ColorSeqException("Invalid HSV color specifier. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+                int v = Convert.ToInt32(specifierArray[2]);
+                if (v < 0 || v > 100)
+                    throw new ColorSeqException("Invalid HSV color specifier. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+
+                // First, we need to convert from HSL to RGB
+                double hPart = (double)h / 360;
+                double sPart = (double)s / 100;
+                double vPart = (double)v / 100;
+                var hsv = new HueSaturationValue(hPart, sPart, vPart);
+                var rgb = hsv.ConvertToRgb();
+                int r = rgb.R;
+                int g = rgb.G;
+                int b = rgb.B;
+
+                // Now, transform
+                var finalRgb = GetTransformedColor(r, g, b);
+
+                // Make a new RGB class
+                return new(finalRgb.r, finalRgb.g, finalRgb.b);
+            }
+            else
+                throw new ColorSeqException("Invalid HSV color specifier. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+        }
+
+        internal static RedGreenBlue ParseSpecifierCmyValues(string specifier)
+        {
+            if (!specifier.Contains(";") || !specifier.StartsWith("cmy:"))
+                throw new ColorSeqException("Invalid CMY color specifier. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
+
+            // Split the VT sequence into three parts
+            var specifierArray = specifier.Substring(4).Split(';');
+            if (specifierArray.Length == 3)
+            {
+                // We got the CMY whole values! First, check to see if we need to filter the color for the color-blind
+                int c = Convert.ToInt32(specifierArray[0]);
+                if (c < 0 || c > 100)
+                    throw new ColorSeqException("Invalid CMY color specifier. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
+                int m = Convert.ToInt32(specifierArray[1]);
+                if (m < 0 || m > 100)
+                    throw new ColorSeqException("Invalid CMY color specifier. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
+                int y = Convert.ToInt32(specifierArray[2]);
+                if (y < 0 || y > 100)
+                    throw new ColorSeqException("Invalid CMY color specifier. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
+
+                // First, we need to convert from CMY to RGB
+                double cPart = (double)c / 100;
+                double mPart = (double)m / 100;
+                double yPart = (double)y / 100;
+                var cmy = new CyanMagentaYellow(cPart, mPart, yPart);
+                var rgb = cmy.ConvertToRgb();
+                int r = rgb.R;
+                int g = rgb.G;
+                int b = rgb.B;
+
+                // Now, transform
+                var finalRgb = GetTransformedColor(r, g, b);
+
+                // Make a new RGB class
+                return new(finalRgb.r, finalRgb.g, finalRgb.b);
+            }
+            else
+                throw new ColorSeqException("Invalid CMY color specifier. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
+        }
+
         private static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput)
         {
             if (ColorTools.EnableColorTransformation)
