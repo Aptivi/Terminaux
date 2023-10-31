@@ -56,6 +56,13 @@ namespace Terminaux.Colors.Models
         public HueSaturationLightness ConvertToHsl() =>
             new(this);
 
+        /// <summary>
+        /// Converts this instance of CMYK color to HSV model
+        /// </summary>
+        /// <returns>An instance of <see cref="HueSaturationValue"/></returns>
+        public HueSaturationValue ConvertToHsv() =>
+            new(this);
+
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
             Equals(obj as CyanMagentaYellowKey);
@@ -185,6 +192,39 @@ namespace Terminaux.Colors.Models
             K = key;
             KWhole = (int)Math.Round(key * 100);
             CMY = resCmy;
+        }
+
+        /// <summary>
+        /// Converts the HSV color model to CMYK
+        /// </summary>
+        /// <param name="hsv">Instance of HSV</param>
+        /// <exception cref="TerminauxException"></exception>
+        public CyanMagentaYellowKey(HueSaturationValue hsv)
+        {
+            if (hsv is null)
+                throw new TerminauxException("Can't convert a null HSV instance to CMYK!");
+
+            // Get the level of each color
+            var rgb = hsv.ConvertToRgb();
+            double levelR = (double)rgb.R / 255;
+            double levelG = (double)rgb.G / 255;
+            double levelB = (double)rgb.B / 255;
+
+            // Get the black key (K). .NET's Math.Max doesn't support three variables, so this workaround is added
+            double maxRgLevel = Math.Max(levelR, levelG);
+            double maxLevel = Math.Max(maxRgLevel, levelB);
+            double key = 1 - maxLevel;
+
+            // Now, get the Cyan, Magenta, and Yellow values
+            double c = (1 - levelR - key) / (1 - key);
+            double m = (1 - levelG - key) / (1 - key);
+            double y = (1 - levelB - key) / (1 - key);
+            var cmy = new CyanMagentaYellow(c, m, y);
+
+            // Install the values
+            K = key;
+            KWhole = (int)Math.Round(key * 100);
+            CMY = cmy;
         }
 
         internal CyanMagentaYellowKey(double k, CyanMagentaYellow cmy)

@@ -152,7 +152,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
 
-            // Now, convert to CMYK
+            // Now, convert to CMY
             var cmy = ColorInstance.RGB.ConvertToCmy();
 
             // Check for property correctness
@@ -167,6 +167,52 @@ namespace Terminaux.Tests.Colors
             rgb.R.ShouldBe(140);
             rgb.G.ShouldBe(0);
             rgb.B.ShouldBe(23);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to HSV
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestConvertRgbToHsv()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 0, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;0;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(VtSequenceTools.GetEsc() + "[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe(VtSequenceTools.GetEsc() + "[38;2;139;0;22m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(0);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to HSV
+            var hsv = ColorInstance.RGB.ConvertToHsv();
+
+            // Check for property correctness
+            hsv.HueWhole.ShouldBe(350);
+            hsv.ReverseHueWhole.ShouldBe(170);
+            hsv.SaturationWhole.ShouldBe(100);
+            hsv.ValueWhole.ShouldBe(54);
+
+            // Now, convert back to RGB
+            var rgb = hsv.ConvertToRgb();
+
+            // Check for property correctness
+            rgb.R.ShouldBe(139);
+            rgb.G.ShouldBe(0);
+            rgb.B.ShouldBe(22);
         }
     }
 }

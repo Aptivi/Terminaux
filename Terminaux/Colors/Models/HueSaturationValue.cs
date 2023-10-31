@@ -23,9 +23,9 @@ using Terminaux.Base;
 namespace Terminaux.Colors.Models
 {
     /// <summary>
-    /// The Hue, Saturation, and Lightness (HSL) model
+    /// The Hue, Saturation, and Value (HSV) model
     /// </summary>
-    public class HueSaturationLightness : IEquatable<HueSaturationLightness>
+    public class HueSaturationValue : IEquatable<HueSaturationValue>
     {
         /// <summary>
         /// The position on the color wheel, known as the Hue [0.0 -> 1.0, 0.5 being 180 degrees]
@@ -36,9 +36,9 @@ namespace Terminaux.Colors.Models
         /// </summary>
         public double Saturation { get; private set; }
         /// <summary>
-        /// The lightness of the color, indicating how light the color is [0.0 -> 1.0]
+        /// The value of the color [0.0 -> 1.0]
         /// </summary>
-        public double Lightness { get; private set; }
+        public double Value { get; private set; }
         /// <summary>
         /// The reverse hue position on the color wheel, known as the Reverse Hue [0.0 -> 1.0, 0.5 being 180 degrees]
         /// </summary>
@@ -52,55 +52,55 @@ namespace Terminaux.Colors.Models
         /// </summary>
         public int SaturationWhole { get; private set; }
         /// <summary>
-        /// The lightness of the color, indicating how light the color is [0 -> 100]
+        /// The value of the color [0 -> 100]
         /// </summary>
-        public int LightnessWhole { get; private set; }
+        public int ValueWhole { get; private set; }
         /// <summary>
         /// The reverse hue position on the color wheel, known as the Reverse Hue [0 -> 360]
         /// </summary>
         public double ReverseHueWhole { get; private set; }
 
         /// <summary>
-        /// Converts this instance of HSL color to RGB model
+        /// Converts this instance of HSV color to RGB model
         /// </summary>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         public RedGreenBlue ConvertToRgb() =>
             new(this);
 
         /// <summary>
-        /// Converts this instance of HSL color to CMYK model
+        /// Converts this instance of HSV color to CMYK model
         /// </summary>
         /// <returns>An instance of <see cref="CyanMagentaYellowKey"/></returns>
         public CyanMagentaYellowKey ConvertToCmyk() =>
             new(this);
 
         /// <summary>
-        /// Converts this instance of HSL color to CMY model
+        /// Converts this instance of HSV color to CMY model
         /// </summary>
         /// <returns>An instance of <see cref="CyanMagentaYellow"/></returns>
         public CyanMagentaYellow ConvertToCmy() =>
             new(this);
 
         /// <summary>
-        /// Converts this instance of HSL color to HSV model
+        /// Converts this instance of HSV color to HSL model
         /// </summary>
-        /// <returns>An instance of <see cref="HueSaturationValue"/></returns>
-        public HueSaturationValue ConvertToHsv() =>
+        /// <returns>An instance of <see cref="HueSaturationLightness"/></returns>
+        public HueSaturationLightness ConvertToHsl() =>
             new(this);
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
-            Equals(obj as HueSaturationLightness);
+            Equals(obj as HueSaturationValue);
 
         /// <inheritdoc/>
-        public bool Equals(HueSaturationLightness other) =>
+        public bool Equals(HueSaturationValue other) =>
             other is not null &&
             Hue == other.Hue &&
             Saturation == other.Saturation &&
-            Lightness == other.Lightness &&
+            Value == other.Value &&
             HueWhole == other.HueWhole &&
             SaturationWhole == other.SaturationWhole &&
-            LightnessWhole == other.LightnessWhole;
+            ValueWhole == other.ValueWhole;
 
         /// <inheritdoc/>
         public override int GetHashCode()
@@ -108,149 +108,149 @@ namespace Terminaux.Colors.Models
             int hashCode = -871917995;
             hashCode = hashCode * -1521134295 + Hue.GetHashCode();
             hashCode = hashCode * -1521134295 + Saturation.GetHashCode();
-            hashCode = hashCode * -1521134295 + Lightness.GetHashCode();
+            hashCode = hashCode * -1521134295 + Value.GetHashCode();
             hashCode = hashCode * -1521134295 + HueWhole.GetHashCode();
             hashCode = hashCode * -1521134295 + SaturationWhole.GetHashCode();
-            hashCode = hashCode * -1521134295 + LightnessWhole.GetHashCode();
+            hashCode = hashCode * -1521134295 + ValueWhole.GetHashCode();
             return hashCode;
         }
 
         /// <inheritdoc/>
-        public static bool operator ==(HueSaturationLightness left, HueSaturationLightness right) =>
-            EqualityComparer<HueSaturationLightness>.Default.Equals(left, right);
+        public static bool operator ==(HueSaturationValue left, HueSaturationValue right) =>
+            EqualityComparer<HueSaturationValue>.Default.Equals(left, right);
 
         /// <inheritdoc/>
-        public static bool operator !=(HueSaturationLightness left, HueSaturationLightness right) =>
+        public static bool operator !=(HueSaturationValue left, HueSaturationValue right) =>
             !(left == right);
 
         /// <summary>
-        /// Converts the CMYK color model to HSL
+        /// Converts the CMYK color model to HSV
         /// </summary>
         /// <param name="cmyk">Instance of CMYK</param>
         /// <exception cref="TerminauxException"></exception>
-        public HueSaturationLightness(CyanMagentaYellowKey cmyk)
+        public HueSaturationValue(CyanMagentaYellowKey cmyk)
         {
             if (cmyk is null)
-                throw new TerminauxException("Can't convert a null CMYK instance to HSL!");
+                throw new TerminauxException("Can't convert a null CMYK instance to HSV!");
 
             // Get the RGB values
             var rgb = cmyk.ConvertToRgb();
 
             // Do the conversion
-            var (hue, saturation, lightness) = GetHslFromRgb(rgb);
+            var (hue, saturation, value) = GetHsvFromRgb(rgb);
             Hue = hue;
             Saturation = saturation;
-            Lightness = lightness;
+            Value = value;
             ReverseHue = hue + 0.5;
             if (ReverseHue > 1)
                 ReverseHue--;
 
             SaturationWhole = (int)(Saturation * 100);
-            LightnessWhole = (int)(Lightness * 100);
+            ValueWhole = (int)(Value * 100);
             HueWhole = (int)(Hue * 360);
             ReverseHueWhole = (int)(ReverseHue * 360);
         }
 
         /// <summary>
-        /// Converts the RGB color model to HSL
+        /// Converts the RGB color model to HSV
         /// </summary>
         /// <param name="rgb">Instance of RGB</param>
         /// <exception cref="TerminauxException"></exception>
-        public HueSaturationLightness(RedGreenBlue rgb)
+        public HueSaturationValue(RedGreenBlue rgb)
         {
             if (rgb is null)
-                throw new TerminauxException("Can't convert a null RGB instance to HSL!");
+                throw new TerminauxException("Can't convert a null RGB instance to HSV!");
 
             // Do the conversion
-            var (hue, saturation, lightness) = GetHslFromRgb(rgb);
+            var (hue, saturation, value) = GetHsvFromRgb(rgb);
             Hue = hue;
             Saturation = saturation;
-            Lightness = lightness;
+            Value = value;
             ReverseHue = hue + 0.5;
             if (ReverseHue > 1)
                 ReverseHue--;
 
             SaturationWhole = (int)(Saturation * 100);
-            LightnessWhole = (int)(Lightness * 100);
+            ValueWhole = (int)(Value * 100);
             HueWhole = (int)(Hue * 360);
             ReverseHueWhole = (int)(ReverseHue * 360);
         }
 
         /// <summary>
-        /// Converts the CMY color model to HSL
+        /// Converts the CMY color model to HSV
         /// </summary>
         /// <param name="cmy">Instance of CMY</param>
         /// <exception cref="TerminauxException"></exception>
-        public HueSaturationLightness(CyanMagentaYellow cmy)
+        public HueSaturationValue(CyanMagentaYellow cmy)
         {
             if (cmy is null)
-                throw new TerminauxException("Can't convert a null CMY instance to HSL!");
+                throw new TerminauxException("Can't convert a null CMY instance to HSV!");
 
             // Get the RGB values
             var rgb = cmy.ConvertToRgb();
 
             // Do the conversion
-            var (hue, saturation, lightness) = GetHslFromRgb(rgb);
+            var (hue, saturation, value) = GetHsvFromRgb(rgb);
             Hue = hue;
             Saturation = saturation;
-            Lightness = lightness;
+            Value = value;
             ReverseHue = hue + 0.5;
             if (ReverseHue > 1)
                 ReverseHue--;
 
             SaturationWhole = (int)(Saturation * 100);
-            LightnessWhole = (int)(Lightness * 100);
+            ValueWhole = (int)(Value * 100);
             HueWhole = (int)(Hue * 360);
             ReverseHueWhole = (int)(ReverseHue * 360);
         }
 
         /// <summary>
-        /// Converts the HSV color model to HSL
+        /// Converts the HSL color model to HSV
         /// </summary>
-        /// <param name="hsv">Instance of HSV</param>
+        /// <param name="hsl">Instance of HSL</param>
         /// <exception cref="TerminauxException"></exception>
-        public HueSaturationLightness(HueSaturationValue hsv)
+        public HueSaturationValue(HueSaturationLightness hsl)
         {
-            if (hsv is null)
-                throw new TerminauxException("Can't convert a null HSV instance to HSL!");
+            if (hsl is null)
+                throw new TerminauxException("Can't convert a null HSL instance to HSV!");
 
             // Get the RGB values
-            var rgb = hsv.ConvertToRgb();
+            var rgb = hsl.ConvertToRgb();
 
             // Do the conversion
-            var (hue, saturation, lightness) = GetHslFromRgb(rgb);
+            var (hue, saturation, value) = GetHsvFromRgb(rgb);
             Hue = hue;
             Saturation = saturation;
-            Lightness = lightness;
+            Value = value;
             ReverseHue = hue + 0.5;
             if (ReverseHue > 1)
                 ReverseHue--;
 
             SaturationWhole = (int)(Saturation * 100);
-            LightnessWhole = (int)(Lightness * 100);
+            ValueWhole = (int)(Value * 100);
             HueWhole = (int)(Hue * 360);
             ReverseHueWhole = (int)(ReverseHue * 360);
         }
 
-        internal HueSaturationLightness(double hue, double saturation, double lightness)
+        internal HueSaturationValue(double hue, double saturation, double value)
         {
             Hue = hue;
             Saturation = saturation;
-            Lightness = lightness;
+            Value = value;
             ReverseHue = hue + 0.5;
             if (ReverseHue > 1)
                 ReverseHue--;
 
             SaturationWhole = (int)(Saturation * 100);
-            LightnessWhole = (int)(Lightness * 100);
+            ValueWhole = (int)(Value * 100);
             HueWhole = (int)(Hue * 360);
             ReverseHueWhole = (int)(ReverseHue * 360);
         }
 
-        private (double hue, double saturation, double lightness) GetHslFromRgb(RedGreenBlue rgb)
+        private (double hue, double saturation, double value) GetHsvFromRgb(RedGreenBlue rgb)
         {
             if (rgb is null)
-                throw new TerminauxException("Can't convert a null RGB instance to HSL!");
+                throw new TerminauxException("Can't convert a null RGB instance to HSV!");
 
             // Get the level of each color
             double levelR = (double)rgb.R / 255;
@@ -266,42 +266,33 @@ namespace Terminaux.Colors.Models
             // Get the delta color level
             double deltaLevel = maxLevel - minLevel;
 
-            // Get the lightness
-            double lightness = (maxLevel + minLevel) / 2;
+            // Get the value
+            double value = maxLevel;
 
-            // Get the hue and the saturation
+            // Get the saturation
+            double saturation =
+                value == 0 ?
+                0.0d :
+                deltaLevel / maxLevel;
+            
+            // Get the hue
             double hue = 0.0d;
-            double saturation = 0.0d;
-            if (deltaLevel != 0)
+            if (saturation != 0)
             {
-                // First, the saturation based on the lightness value
-                saturation =
-                    lightness < 0.5d ?
-                    deltaLevel / (maxLevel + minLevel) :
-                    deltaLevel / (2 - maxLevel - minLevel);
-
-                // Now, get the delta of R, G, and B values so that we can calculate the hue
-                double deltaR = (((maxLevel - levelR) / 6) + (deltaLevel / 2)) / deltaLevel;
-                double deltaG = (((maxLevel - levelG) / 6) + (deltaLevel / 2)) / deltaLevel;
-                double deltaB = (((maxLevel - levelB) / 6) + (deltaLevel / 2)) / deltaLevel;
-
-                // Now, calculate the hue
-                if (levelR == maxLevel)
-                    hue = deltaB - deltaG;
-                else if (levelG == maxLevel)
-                    hue = (1 / 3.0d) + deltaR - deltaB;
-                else if (levelB == maxLevel)
-                    hue = (2 / 3.0d) + deltaG - deltaR;
-
-                // Verify the hue value so that we don't overflow
+                if (value == levelR)
+                    hue = 0.0 + (levelG - levelB) / deltaLevel;
+                else if (value == levelG)
+                    hue = 2.0 + (levelB - levelR) / deltaLevel;
+                else
+                    hue = 4.0 + (levelR - levelG) / deltaLevel;
+                hue *= 60;
                 if (hue < 0)
-                    hue++;
-                if (hue > 1)
-                    hue--;
+                    hue += 360;
+                hue /= 360;
             }
 
             // Return the resulting values
-            return (hue, saturation, lightness);
+            return (hue, saturation, value);
         }
     }
 }

@@ -63,6 +63,13 @@ namespace Terminaux.Colors.Models
         public HueSaturationLightness ConvertToHsl() =>
             new(this);
 
+        /// <summary>
+        /// Converts this instance of RGB color to HSV model
+        /// </summary>
+        /// <returns>An instance of <see cref="HueSaturationValue"/></returns>
+        public HueSaturationValue ConvertToHsv() =>
+            new(this);
+
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
             Equals(obj as RedGreenBlue);
@@ -179,6 +186,83 @@ namespace Terminaux.Colors.Models
             int r = (int)Math.Round(255 * levelC);
             int g = (int)Math.Round(255 * levelM);
             int b = (int)Math.Round(255 * levelY);
+
+            // Install the values
+            R = r;
+            G = g;
+            B = b;
+        }
+
+        /// <summary>
+        /// Converts the HSV color model to RGB
+        /// </summary>
+        /// <param name="hsv">Instance of HSV</param>
+        /// <exception cref="TerminauxException"></exception>
+        public RedGreenBlue(HueSaturationValue hsv)
+        {
+            if (hsv is null)
+                throw new TerminauxException("Can't convert a null HSV instance to RGB!");
+
+            // Get the saturation
+            double rFractional = 0.0d, gFractional = 0.0d, bFractional = 0.0d;
+            int r, g, b;
+            double saturation = hsv.Saturation;
+            double value = hsv.Value;
+            if (saturation <= 0)
+            {
+                rFractional = hsv.Value;
+                gFractional = hsv.Value;
+                bFractional = hsv.Value;
+            }
+            else
+            {
+                double hue = hsv.Hue * 6;
+                if (hue == 6)
+                    hue = 0;
+                double i = Math.Floor(hue);
+                double colorVal1 = value * (1 - saturation);
+                double colorVal2 = value * (1 - saturation * (hue - i));
+                double colorVal3 = value * (1 - saturation * (1 - (hue - i)));
+
+                switch (i)
+                {
+                    case 0:
+                        rFractional = value;
+                        gFractional = colorVal3;
+                        bFractional = colorVal1;
+                        break;
+                    case 1:
+                        rFractional = colorVal2;
+                        gFractional = value;
+                        bFractional = colorVal1;
+                        break;
+                    case 2:
+                        rFractional = colorVal1;
+                        gFractional = value;
+                        bFractional = colorVal3;
+                        break;
+                    case 3:
+                        rFractional = colorVal1;
+                        gFractional = colorVal2;
+                        bFractional = value;
+                        break;
+                    case 4:
+                        rFractional = colorVal3;
+                        gFractional = colorVal1;
+                        bFractional = value;
+                        break;
+                    case 5:
+                        rFractional = value;
+                        gFractional = colorVal1;
+                        bFractional = colorVal2;
+                        break;
+                }
+            }
+
+            // Now, get the Cyan, Magenta, and Yellow values
+            r = (int)Math.Round(255 * rFractional);
+            g = (int)Math.Round(255 * gFractional);
+            b = (int)Math.Round(255 * bFractional);
 
             // Install the values
             R = r;

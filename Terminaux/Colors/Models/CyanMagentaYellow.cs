@@ -75,6 +75,13 @@ namespace Terminaux.Colors.Models
         public HueSaturationLightness ConvertToHsl() =>
             new(this);
 
+        /// <summary>
+        /// Converts this instance of CMY color to HSV model
+        /// </summary>
+        /// <returns>An instance of <see cref="HueSaturationValue"/></returns>
+        public HueSaturationValue ConvertToHsv() =>
+            new(this);
+
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
             Equals(obj as CyanMagentaYellow);
@@ -187,6 +194,42 @@ namespace Terminaux.Colors.Models
 
             // Get the level of each color
             var rgb = cmyk.ConvertToRgb();
+            double levelR = (double)rgb.R / 255;
+            double levelG = (double)rgb.G / 255;
+            double levelB = (double)rgb.B / 255;
+
+            // Now, get the Cyan, Magenta, and Yellow values
+            double c = 1 - levelR;
+            double m = 1 - levelG;
+            double y = 1 - levelB;
+            if (double.IsNaN(c))
+                c = 0;
+            if (double.IsNaN(m))
+                m = 0;
+            if (double.IsNaN(y))
+                y = 0;
+
+            // Install the values
+            C = c;
+            M = m;
+            Y = y;
+            CWhole = (int)(c * 100);
+            MWhole = (int)(m * 100);
+            YWhole = (int)(y * 100);
+        }
+
+        /// <summary>
+        /// Converts the HSV color model to CMY
+        /// </summary>
+        /// <param name="hsv">Instance of HSV</param>
+        /// <exception cref="TerminauxException"></exception>
+        public CyanMagentaYellow(HueSaturationValue hsv)
+        {
+            if (hsv is null)
+                throw new TerminauxException("Can't convert a null HSV instance to CMY!");
+
+            // Get the level of each color
+            var rgb = hsv.ConvertToRgb();
             double levelR = (double)rgb.R / 255;
             double levelG = (double)rgb.G / 255;
             double levelB = (double)rgb.B / 255;
