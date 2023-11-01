@@ -858,6 +858,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.B
   nameWithType: Color.B
+- uid: Terminaux.Colors.Color.CMY
+  name: CMY
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_CMY
+  commentId: P:Terminaux.Colors.Color.CMY
+  fullName: Terminaux.Colors.Color.CMY
+  nameWithType: Color.CMY
+- uid: Terminaux.Colors.Color.CMY*
+  name: CMY
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_CMY_
+  commentId: Overload:Terminaux.Colors.Color.CMY
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.CMY
+  nameWithType: Color.CMY
 - uid: Terminaux.Colors.Color.CMYK
   name: CMYK
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_CMYK
@@ -977,6 +990,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.HSL
   nameWithType: Color.HSL
+- uid: Terminaux.Colors.Color.HSV
+  name: HSV
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_HSV
+  commentId: P:Terminaux.Colors.Color.HSV
+  fullName: Terminaux.Colors.Color.HSV
+  nameWithType: Color.HSV
+- uid: Terminaux.Colors.Color.HSV*
+  name: HSV
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_HSV_
+  commentId: Overload:Terminaux.Colors.Color.HSV
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.HSV
+  nameWithType: Color.HSV
 - uid: Terminaux.Colors.Color.Hex
   name: Hex
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_Hex
