@@ -13916,6 +13916,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCentered(Integer, String, ParamArray Object())
   nameWithType: CenteredTextColor.WriteCentered(int, string, params object[])
   nameWithType.vb: CenteredTextColor.WriteCentered(Integer, String, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCentered(System.String,System.Object[])
+  name: WriteCentered(string, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredTextColor.html#Terminaux_Writer_FancyWriters_CenteredTextColor_WriteCentered_System_String_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCentered(System.String,System.Object[])
+  name.vb: WriteCentered(String, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCentered(string, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCentered(String, ParamArray Object())
+  nameWithType: CenteredTextColor.WriteCentered(string, params object[])
+  nameWithType.vb: CenteredTextColor.WriteCentered(String, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCentered*
   name: WriteCentered
   href: api/Terminaux.Writer.FancyWriters.CenteredTextColor.html#Terminaux_Writer_FancyWriters_CenteredTextColor_WriteCentered_
@@ -13941,6 +13950,24 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColor(Integer, String, Terminaux.Colors.ConsoleColors, ParamArray Object())
   nameWithType: CenteredTextColor.WriteCenteredColor(int, string, ConsoleColors, params object[])
   nameWithType.vb: CenteredTextColor.WriteCenteredColor(Integer, String, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name: WriteCenteredColor(string, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredTextColor.html#Terminaux_Writer_FancyWriters_CenteredTextColor_WriteCenteredColor_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteCenteredColor(String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColor(string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColor(String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: CenteredTextColor.WriteCenteredColor(string, Color, params object[])
+  nameWithType.vb: CenteredTextColor.WriteCenteredColor(String, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColor(System.String,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteCenteredColor(string, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredTextColor.html#Terminaux_Writer_FancyWriters_CenteredTextColor_WriteCenteredColor_System_String_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColor(System.String,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteCenteredColor(String, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColor(string, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColor(String, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: CenteredTextColor.WriteCenteredColor(string, ConsoleColors, params object[])
+  nameWithType.vb: CenteredTextColor.WriteCenteredColor(String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColor*
   name: WriteCenteredColor
   href: api/Terminaux.Writer.FancyWriters.CenteredTextColor.html#Terminaux_Writer_FancyWriters_CenteredTextColor_WriteCenteredColor_
@@ -13966,6 +13993,24 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColorBack(Integer, String, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
   nameWithType: CenteredTextColor.WriteCenteredColorBack(int, string, ConsoleColors, ConsoleColors, params object[])
   nameWithType.vb: CenteredTextColor.WriteCenteredColorBack(Integer, String, ConsoleColors, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteCenteredColorBack(string, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredTextColor.html#Terminaux_Writer_FancyWriters_CenteredTextColor_WriteCenteredColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteCenteredColorBack(String, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColorBack(string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColorBack(String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: CenteredTextColor.WriteCenteredColorBack(string, Color, Color, params object[])
+  nameWithType.vb: CenteredTextColor.WriteCenteredColorBack(String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColorBack(System.String,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteCenteredColorBack(string, ConsoleColors, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredTextColor.html#Terminaux_Writer_FancyWriters_CenteredTextColor_WriteCenteredColorBack_System_String_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColorBack(System.String,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteCenteredColorBack(String, ConsoleColors, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColorBack(string, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColorBack(String, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: CenteredTextColor.WriteCenteredColorBack(string, ConsoleColors, ConsoleColors, params object[])
+  nameWithType.vb: CenteredTextColor.WriteCenteredColorBack(String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.CenteredTextColor.WriteCenteredColorBack*
   name: WriteCenteredColorBack
   href: api/Terminaux.Writer.FancyWriters.CenteredTextColor.html#Terminaux_Writer_FancyWriters_CenteredTextColor_WriteCenteredColorBack_
