@@ -67,10 +67,8 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // StringBuilder to put out the final rendering text
-                StringBuilder border = new();
-                border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
-                border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
-                TextWriterWhereColor.WriteWhere(border.ToString(), Left, Top);
+                string rendered = RenderBorderPlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                TextWriterWhereColor.WriteWhere(rendered, Left, Top);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -117,8 +115,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BorderColor">Border color from Terminaux's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">Border background color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BorderColor">Border color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="Color"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, ConsoleColors BorderColor, ConsoleColors BackgroundColor) =>
             WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -150,8 +148,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BorderColor">Border color from Terminaux's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">Border background color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BorderColor">Border color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="Color"/></param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor) =>
             WriteBorder(Left, Top, InteriorWidth, InteriorHeight,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -227,10 +225,8 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // StringBuilder to put out the final rendering text
-                StringBuilder border = new();
-                border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
-                border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
-                TextWriterWhereColor.WriteWhereColorBack(border.ToString(), Left, Top, false, BorderColor, BackgroundColor);
+                string rendered = RenderBorderPlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                TextWriterWhereColor.WriteWhereColorBack(rendered, Left, Top, false, BorderColor, BackgroundColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -286,16 +282,62 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // StringBuilder to put out the final rendering text
-                StringBuilder border = new();
-                border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
-                border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
-                TextWriterWhereColor.WriteWhereColorBack(border.ToString(), Left, Top, false, BorderColor, BackgroundColor);
+                string rendered = RenderBorderPlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                TextWriterWhereColor.WriteWhereColorBack(rendered, Left, Top, false, BorderColor, BackgroundColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
             }
+        }
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        public static string RenderBorderPlain(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
+            RenderBorderPlain(Left, Top, InteriorWidth, InteriorHeight,
+                             BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                             BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                             BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                             BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
+        /// <param name="UpperFrameChar">Upper frame character for border</param>
+        /// <param name="LowerFrameChar">Lower frame character for border</param>
+        /// <param name="LeftFrameChar">Left frame character for border</param>
+        /// <param name="RightFrameChar">Right frame character for border</param>
+        public static string RenderBorderPlain(int Left, int Top, int InteriorWidth, int InteriorHeight,
+                                               char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                               char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar)
+        {
+            StringBuilder border = new();
+            try
+            {
+                // StringBuilder to put out the final rendering text
+                border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
+                border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
+            return border.ToString();
         }
     }
 }
