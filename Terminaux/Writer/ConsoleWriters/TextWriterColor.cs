@@ -136,6 +136,15 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteColor(string Text, ConsoleColors color, params object[] vars) =>
+            WriteColor(Text, true, false, color, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with custom color support.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -179,6 +188,16 @@ namespace Terminaux.Writer.ConsoleWriters
                 }
             }
         }
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with custom color support.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteColorBack(string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
+            WriteColorBack(Text, true, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -235,6 +254,15 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteColor(string Text, Color color, params object[] vars) =>
+            WriteColor(Text, true, false, color, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with custom color support.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
@@ -279,6 +307,16 @@ namespace Terminaux.Writer.ConsoleWriters
                 }
             }
         }
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with custom color support.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteColorBack(string Text, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
+            WriteColorBack(Text, true, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
