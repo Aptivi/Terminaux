@@ -13350,6 +13350,31 @@ references:
   commentId: T:Terminaux.Writer.FancyWriters.BorderColor
   fullName: Terminaux.Writer.FancyWriters.BorderColor
   nameWithType: BorderColor
+- uid: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(System.Int32,System.Int32,System.Int32,System.Int32)
+  name: RenderBorderPlain(int, int, int, int)
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_RenderBorderPlain_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: RenderBorderPlain(Integer, Integer, Integer, Integer)
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(int, int, int, int)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(Integer, Integer, Integer, Integer)
+  nameWithType: BorderColor.RenderBorderPlain(int, int, int, int)
+  nameWithType.vb: BorderColor.RenderBorderPlain(Integer, Integer, Integer, Integer)
+- uid: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char)
+  name: RenderBorderPlain(int, int, int, int, char, char, char, char, char, char, char, char)
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_RenderBorderPlain_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char)
+  name.vb: RenderBorderPlain(Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char)
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(int, int, int, int, char, char, char, char, char, char, char, char)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char)
+  nameWithType: BorderColor.RenderBorderPlain(int, int, int, int, char, char, char, char, char, char, char, char)
+  nameWithType.vb: BorderColor.RenderBorderPlain(Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char)
+- uid: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain*
+  name: RenderBorderPlain
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_RenderBorderPlain_
+  commentId: Overload:Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain
+  isSpec: "True"
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain
+  nameWithType: BorderColor.RenderBorderPlain
 - uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.Int32,System.Int32,System.Int32,System.Int32)
   name: WriteBorder(int, int, int, int)
   href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_Int32_System_Int32_System_Int32_System_Int32_
