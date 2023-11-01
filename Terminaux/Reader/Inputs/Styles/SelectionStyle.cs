@@ -159,6 +159,7 @@ namespace Terminaux.Reader.Inputs.Styles
             // First alt answer index
             int altAnswersFirstIdx = Answers.Count;
             ConsoleKeyInfo Answer;
+            bool origVisible = ConsoleWrappers.ActionGetCursorVisible();
             ConsoleWrappers.ActionCursorVisible(false);
             ConsoleWrappers.ActionClear();
 
@@ -314,14 +315,16 @@ namespace Terminaux.Reader.Inputs.Styles
                         HighlightedAnswer = endIndex == AllAnswers.Count - 1 ? endIndex + 1 : HighlightedAnswer;
                         break;
                     case ConsoleKey.Enter:
-                        TextWriterColor.Write();
                         savedPos = HighlightedAnswer;
+                        ConsoleWrappers.ActionCursorVisible(origVisible);
+                        ConsoleWrappers.ActionClear();
                         return HighlightedAnswer;
                     case ConsoleKey.Escape:
                         if (kiosk)
                             break;
-                        TextWriterColor.Write();
                         savedPos = HighlightedAnswer;
+                        ConsoleWrappers.ActionCursorVisible(origVisible);
+                        ConsoleWrappers.ActionClear();
                         return -1;
                     case ConsoleKey.Tab:
                         if (string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription))
