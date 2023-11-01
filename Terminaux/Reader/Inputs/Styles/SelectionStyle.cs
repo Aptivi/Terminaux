@@ -23,6 +23,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Sequences.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
@@ -161,11 +162,8 @@ namespace Terminaux.Reader.Inputs.Styles
             ConsoleWrappers.ActionCursorVisible(false);
             ConsoleWrappers.ActionClear();
 
-            // Ask a question
-            TextWriterColor.WriteColor(Question, true, questionColor);
-
             // Make pages based on console window height
-            int listStartPosition = ConsoleWrappers.ActionCursorTop();
+            int listStartPosition = ConsoleExtensions.GetWrappedSentences(Question, ConsoleWrappers.ActionWindowWidth()).Length;
             int listEndPosition = ConsoleWrappers.ActionWindowHeight() - ConsoleWrappers.ActionCursorTop();
             int answersPerPage = listEndPosition - 5;
             int pages = AllAnswers.Count / answersPerPage;
@@ -173,6 +171,13 @@ namespace Terminaux.Reader.Inputs.Styles
                 pages--;
             int lastPage = 1;
             bool refreshRequired = false;
+            var selectionBuilder = new StringBuilder();
+
+            // Ask a question
+            selectionBuilder.Append(
+                $"{questionColor.VTSequenceForeground}" +
+                $"{Question}"
+            );
 
             while (true)
             {
@@ -187,21 +192,25 @@ namespace Terminaux.Reader.Inputs.Styles
                 {
                     refreshRequired = false;
                     ConsoleWrappers.ActionClear();
-                    TextWriterColor.WriteColor(Question, true, questionColor);
+                    selectionBuilder.Append(
+                        $"{questionColor.VTSequenceForeground}" +
+                        $"{Question}"
+                    );
                 }
 
                 // Populate the answers
                 int renderedAnswers = 1;
                 for (int AnswerIndex = startIndex; AnswerIndex <= endIndex; AnswerIndex++)
                 {
-                    ConsoleWrappers.ActionSetCursorPosition(0, listStartPosition + renderedAnswers);
+                    selectionBuilder.Append(CsiSequences.GenerateCsiCursorPosition(1, listStartPosition + renderedAnswers + 1));
                     bool AltAnswer = AnswerIndex >= altAnswersFirstIdx;
 
                     // Check to see if we're out of bounds
+                    var clear = ConsoleExtensions.GetClearLineToRightSequence();
                     if (AnswerIndex >= AllAnswers.Count)
                     {
                         // Write an empty entry that clears the line
-                        TextWriterColor.Write($"{VtSequenceTools.GetEsc()}[0K");
+                        selectionBuilder.Append(clear);
                     }
                     else
                     {
@@ -223,8 +232,7 @@ namespace Terminaux.Reader.Inputs.Styles
                                           selectedOptionColor :
                                           AltAnswer ? altOptionColor : optionColor;
                         AnswerOption = $"{AnswerColor.VTSequenceForeground}{AnswerOption}";
-                        TextWriterColor.Write(AnswerOption.Truncate(answerTitleMaxLeft - 3 + VtSequenceTools.MatchVTSequences(AnswerOption)
-                        .Sum((mc) =>
+                        selectionBuilder.Append(AnswerOption.Truncate(answerTitleMaxLeft - 8 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) =>
                         {
                             int sum = 0;
                             foreach (Match item in mc)
@@ -235,19 +243,23 @@ namespace Terminaux.Reader.Inputs.Styles
                     renderedAnswers++;
                 }
 
-                // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
-                // we're not switching pages yet.
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrappers.ActionWindowWidth() - 2, listStartPosition, listStartPosition + 1, 4, false);
-
                 // Write description area
                 int descSepArea = ConsoleWrappers.ActionWindowHeight() - 3;
                 int descArea = ConsoleWrappers.ActionWindowHeight() - 2;
                 var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
                 string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate((ConsoleWrappers.ActionWindowWidth() * 2) - 3) : "";
-                TextWriterWhereColor.WriteWhereColor(new string('=', ConsoleWrappers.ActionWindowWidth()), 0, descSepArea, separatorColor);
-                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrappers.ActionWindowWidth()), 0, descArea);
-                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrappers.ActionWindowWidth()), 0, descArea + 1);
-                TextWriterWhereColor.WriteWhereColor(descFinal, 0, descArea, textColor);
+                selectionBuilder.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(1, descSepArea + 1)}" +
+                    $"{separatorColor.VTSequenceForeground}" +
+                    $"{new string('=', ConsoleWrappers.ActionWindowWidth())}" +
+                    $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 1)}" +
+                    $"{new string(' ', ConsoleWrappers.ActionWindowWidth())}" +
+                    $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 2)}" +
+                    $"{new string(' ', ConsoleWrappers.ActionWindowWidth())}" +
+                    $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 1)}" +
+                    $"{textColor.VTSequenceForeground}" +
+                    descFinal
+                );
 
                 // Write keybindings and page and answer number
                 string bindingsRender =
@@ -257,8 +269,20 @@ namespace Terminaux.Reader.Inputs.Styles
                 string numberRender = $"[{currentPage + 1}/{pages + 1}]==[{HighlightedAnswer}/{AllAnswers.Count}]";
                 int bindingsLeft = 2;
                 int numbersLeft = ConsoleWrappers.ActionWindowWidth() - numberRender.Length - bindingsLeft;
-                TextWriterWhereColor.WriteWhereColor(bindingsRender, bindingsLeft, descSepArea, separatorColor);
-                TextWriterWhereColor.WriteWhereColor(numberRender, numbersLeft, descSepArea, separatorColor);
+                selectionBuilder.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(bindingsLeft + 1, descSepArea + 1)}" +
+                    $"{separatorColor.VTSequenceForeground}" +
+                    bindingsRender +
+                    $"{CsiSequences.GenerateCsiCursorPosition(numbersLeft + 1, descSepArea + 1)}" +
+                    $"{separatorColor.VTSequenceForeground}" +
+                    numberRender
+                );
+                TextWriterColor.WritePlain(selectionBuilder.ToString());
+                selectionBuilder.Clear();
+
+                // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
+                // we're not switching pages yet.
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrappers.ActionWindowWidth() - 2, listStartPosition, listStartPosition + 1, 4, false);
 
                 // Wait for an answer
                 Answer = Input.DetectKeypress();
