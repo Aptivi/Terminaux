@@ -15019,6 +15019,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparator(String, Boolean, ParamArray Object())
   nameWithType: SeparatorWriterColor.WriteSeparator(string, bool, params object[])
   nameWithType.vb: SeparatorWriterColor.WriteSeparator(String, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparator(System.String,System.Object[])
+  name: WriteSeparator(string, params object[])
+  href: api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html#Terminaux_Writer_FancyWriters_SeparatorWriterColor_WriteSeparator_System_String_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparator(System.String,System.Object[])
+  name.vb: WriteSeparator(String, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparator(string, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparator(String, ParamArray Object())
+  nameWithType: SeparatorWriterColor.WriteSeparator(string, params object[])
+  nameWithType.vb: SeparatorWriterColor.WriteSeparator(String, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparator*
   name: WriteSeparator
   href: api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html#Terminaux_Writer_FancyWriters_SeparatorWriterColor_WriteSeparator_
@@ -15044,6 +15053,24 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColor(String, Boolean, Terminaux.Colors.ConsoleColors, ParamArray Object())
   nameWithType: SeparatorWriterColor.WriteSeparatorColor(string, bool, ConsoleColors, params object[])
   nameWithType.vb: SeparatorWriterColor.WriteSeparatorColor(String, Boolean, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name: WriteSeparatorColor(string, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html#Terminaux_Writer_FancyWriters_SeparatorWriterColor_WriteSeparatorColor_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteSeparatorColor(String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColor(string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColor(String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: SeparatorWriterColor.WriteSeparatorColor(string, Color, params object[])
+  nameWithType.vb: SeparatorWriterColor.WriteSeparatorColor(String, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColor(System.String,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteSeparatorColor(string, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html#Terminaux_Writer_FancyWriters_SeparatorWriterColor_WriteSeparatorColor_System_String_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColor(System.String,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteSeparatorColor(String, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColor(string, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColor(String, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: SeparatorWriterColor.WriteSeparatorColor(string, ConsoleColors, params object[])
+  nameWithType.vb: SeparatorWriterColor.WriteSeparatorColor(String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColor*
   name: WriteSeparatorColor
   href: api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html#Terminaux_Writer_FancyWriters_SeparatorWriterColor_WriteSeparatorColor_
@@ -15069,6 +15096,24 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColorBack(String, Boolean, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
   nameWithType: SeparatorWriterColor.WriteSeparatorColorBack(string, bool, ConsoleColors, ConsoleColors, params object[])
   nameWithType.vb: SeparatorWriterColor.WriteSeparatorColorBack(String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteSeparatorColorBack(string, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html#Terminaux_Writer_FancyWriters_SeparatorWriterColor_WriteSeparatorColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteSeparatorColorBack(String, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColorBack(string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColorBack(String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: SeparatorWriterColor.WriteSeparatorColorBack(string, Color, Color, params object[])
+  nameWithType.vb: SeparatorWriterColor.WriteSeparatorColorBack(String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColorBack(System.String,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteSeparatorColorBack(string, ConsoleColors, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html#Terminaux_Writer_FancyWriters_SeparatorWriterColor_WriteSeparatorColorBack_System_String_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColorBack(System.String,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteSeparatorColorBack(String, ConsoleColors, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColorBack(string, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColorBack(String, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: SeparatorWriterColor.WriteSeparatorColorBack(string, ConsoleColors, ConsoleColors, params object[])
+  nameWithType.vb: SeparatorWriterColor.WriteSeparatorColorBack(String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorColorBack*
   name: WriteSeparatorColorBack
   href: api/Terminaux.Writer.FancyWriters.SeparatorWriterColor.html#Terminaux_Writer_FancyWriters_SeparatorWriterColor_WriteSeparatorColorBack_
