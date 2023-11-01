@@ -185,10 +185,15 @@ namespace Terminaux.Colors
             ColorSpecifier = ColorSpecifier.Replace("\"", "");
 
             // Now, parse the output
-            if (!ColorSpecifier.StartsWith("cmyk:") && !ColorSpecifier.StartsWith("hsl:") && ColorSpecifier.Contains(";"))
+            if (ColorSpecifier.Contains(";"))
             {
                 // Parse it
-                var rgb = ColorParser.ParseSpecifierRgbValues(ColorSpecifier);
+                var rgb =
+                    ColorSpecifier.StartsWith("cmyk:") ? ColorParser.ParseSpecifierCmykValues(ColorSpecifier) :
+                    ColorSpecifier.StartsWith("cmy:") ? ColorParser.ParseSpecifierCmyValues(ColorSpecifier) :
+                    ColorSpecifier.StartsWith("hsl:") ? ColorParser.ParseSpecifierHslValues(ColorSpecifier) :
+                    ColorSpecifier.StartsWith("hsv:") ? ColorParser.ParseSpecifierHsvValues(ColorSpecifier) :
+                    ColorParser.ParseSpecifierRgbValues(ColorSpecifier);
                 int r = rgb.R;
                 int g = rgb.G;
                 int b = rgb.B;
@@ -243,94 +248,6 @@ namespace Terminaux.Colors
             {
                 // Parse it
                 var rgb = ColorParser.ParseSpecifierRgbHash(ColorSpecifier);
-                int r = rgb.R;
-                int g = rgb.G;
-                int b = rgb.B;
-
-                // We got the RGB values! Form the sequences
-                PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
-                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                VTSequenceForeground = VTSequenceForegroundTrueColor = VtSequenceTools.GetEsc() + $"[38;2;{PlainSequence}m";
-                VTSequenceBackground = VTSequenceBackgroundTrueColor = VtSequenceTools.GetEsc() + $"[48;2;{PlainSequence}m";
-
-                // Populate color properties
-                Type = ColorType.TrueColor;
-                IsBright = r + 0.2126d + g + 0.7152d + b + 0.0722d > 255d / 2d;
-                IsDark = r + 0.2126d + g + 0.7152d + b + 0.0722d < 255d / 2d;
-                R = r;
-                G = g;
-                B = b;
-            }
-            else if (ColorSpecifier.StartsWith("cmyk:") && ColorSpecifier.Contains(";"))
-            {
-                // Parse it
-                var rgb = ColorParser.ParseSpecifierCmykValues(ColorSpecifier);
-                int r = rgb.R;
-                int g = rgb.G;
-                int b = rgb.B;
-
-                // We got the RGB values! Form the sequences
-                PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
-                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                VTSequenceForeground = VTSequenceForegroundTrueColor = VtSequenceTools.GetEsc() + $"[38;2;{PlainSequence}m";
-                VTSequenceBackground = VTSequenceBackgroundTrueColor = VtSequenceTools.GetEsc() + $"[48;2;{PlainSequence}m";
-
-                // Populate color properties
-                Type = ColorType.TrueColor;
-                IsBright = r + 0.2126d + g + 0.7152d + b + 0.0722d > 255d / 2d;
-                IsDark = r + 0.2126d + g + 0.7152d + b + 0.0722d < 255d / 2d;
-                R = r;
-                G = g;
-                B = b;
-            }
-            else if (ColorSpecifier.StartsWith("cmy:") && ColorSpecifier.Contains(";"))
-            {
-                // Parse it
-                var rgb = ColorParser.ParseSpecifierCmyValues(ColorSpecifier);
-                int r = rgb.R;
-                int g = rgb.G;
-                int b = rgb.B;
-
-                // We got the RGB values! Form the sequences
-                PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
-                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                VTSequenceForeground = VTSequenceForegroundTrueColor = VtSequenceTools.GetEsc() + $"[38;2;{PlainSequence}m";
-                VTSequenceBackground = VTSequenceBackgroundTrueColor = VtSequenceTools.GetEsc() + $"[48;2;{PlainSequence}m";
-
-                // Populate color properties
-                Type = ColorType.TrueColor;
-                IsBright = r + 0.2126d + g + 0.7152d + b + 0.0722d > 255d / 2d;
-                IsDark = r + 0.2126d + g + 0.7152d + b + 0.0722d < 255d / 2d;
-                R = r;
-                G = g;
-                B = b;
-            }
-            else if (ColorSpecifier.StartsWith("hsl:") && ColorSpecifier.Contains(";"))
-            {
-                // Parse it
-                var rgb = ColorParser.ParseSpecifierHslValues(ColorSpecifier);
-                int r = rgb.R;
-                int g = rgb.G;
-                int b = rgb.B;
-
-                // We got the RGB values! Form the sequences
-                PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
-                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                VTSequenceForeground = VTSequenceForegroundTrueColor = VtSequenceTools.GetEsc() + $"[38;2;{PlainSequence}m";
-                VTSequenceBackground = VTSequenceBackgroundTrueColor = VtSequenceTools.GetEsc() + $"[48;2;{PlainSequence}m";
-
-                // Populate color properties
-                Type = ColorType.TrueColor;
-                IsBright = r + 0.2126d + g + 0.7152d + b + 0.0722d > 255d / 2d;
-                IsDark = r + 0.2126d + g + 0.7152d + b + 0.0722d < 255d / 2d;
-                R = r;
-                G = g;
-                B = b;
-            }
-            else if (ColorSpecifier.StartsWith("hsv:") && ColorSpecifier.Contains(";"))
-            {
-                // Parse it
-                var rgb = ColorParser.ParseSpecifierHsvValues(ColorSpecifier);
                 int r = rgb.R;
                 int g = rgb.G;
                 int b = rgb.B;
