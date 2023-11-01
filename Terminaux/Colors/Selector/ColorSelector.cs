@@ -235,7 +235,7 @@ namespace Terminaux.Colors.Selector
             int infoBoxX = ConsoleWrappers.ActionWindowWidth() / 2 + 2;
             int infoBoxY = 1;
             int boxWidth = ConsoleWrappers.ActionWindowWidth() / 2 - 6;
-            int boxHeight = 7;
+            int boxHeight = 9;
             int rgbRampBarY = 13;
             var initialBackground = new Color(ConsoleColors.Black).VTSequenceBackground;
 
@@ -263,8 +263,10 @@ namespace Terminaux.Colors.Selector
             TextWriterWhereColor.WriteWhere($"RGB sequence: {selectedColor.PlainSequence}", infoBoxX + 1, infoBoxY + 3);
             TextWriterWhereColor.WriteWhere($"RGB sequence (real): {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4);
             TextWriterWhereColor.WriteWhere($"CMYK: cmyk:{selectedColor.CMYK.CMY.CWhole};{selectedColor.CMYK.CMY.MWhole};{selectedColor.CMYK.CMY.YWhole};{selectedColor.CMYK.KWhole}", infoBoxX + 1, infoBoxY + 5);
-            TextWriterWhereColor.WriteWhere($"HSL: hsl:{selectedColor.HSL.HueWhole};{selectedColor.HSL.SaturationWhole};{selectedColor.HSL.LightnessWhole}", infoBoxX + 1, infoBoxY + 6);
-            TextWriterWhereColor.WriteWhere($"Grayscale: {mono.R};{mono.G};{mono.B}", infoBoxX + 1, infoBoxY + 7);
+            TextWriterWhereColor.WriteWhere($"CMY: cmy:{selectedColor.CMY.CWhole};{selectedColor.CMY.MWhole};{selectedColor.CMY.YWhole}", infoBoxX + 1, infoBoxY + 6);
+            TextWriterWhereColor.WriteWhere($"HSL: hsl:{selectedColor.HSL.HueWhole};{selectedColor.HSL.SaturationWhole};{selectedColor.HSL.LightnessWhole}", infoBoxX + 1, infoBoxY + 7);
+            TextWriterWhereColor.WriteWhere($"HSV: hsv:{selectedColor.HSV.HueWhole};{selectedColor.HSV.SaturationWhole};{selectedColor.HSV.ValueWhole}", infoBoxX + 1, infoBoxY + 8);
+            TextWriterWhereColor.WriteWhere($"Grayscale: {mono.R};{mono.G};{mono.B}", infoBoxX + 1, infoBoxY + 9);
             BoxFrameTextColor.WriteBoxFrame($"Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", infoBoxX, rgbRampBarY, boxWidth, 3);
             TextWriterWhereColor.WriteWhere(redRamp.ToString(), infoBoxX + 1, rgbRampBarY + 1);
             TextWriterWhereColor.WriteWhere(greenRamp.ToString(), infoBoxX + 1, rgbRampBarY + 2);
@@ -284,7 +286,7 @@ namespace Terminaux.Colors.Selector
             int infoBoxX = ConsoleWrappers.ActionWindowWidth() / 2 + 2;
             int infoBoxY = 1;
             int boxWidth = ConsoleWrappers.ActionWindowWidth() / 2 - 6;
-            int boxHeight = 7;
+            int boxHeight = 9;
             int rgbRampBarY = 13;
             var initialBackground = new Color(ConsoleColors.Black).VTSequenceBackground;
 
@@ -312,8 +314,10 @@ namespace Terminaux.Colors.Selector
             TextWriterWhereColor.WriteWhere($"RGB sequence: {selectedColor.PlainSequence}", infoBoxX + 1, infoBoxY + 3);
             TextWriterWhereColor.WriteWhere($"RGB sequence (real): {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4);
             TextWriterWhereColor.WriteWhere($"CMYK: cmyk:{selectedColor.CMYK.CMY.CWhole};{selectedColor.CMYK.CMY.MWhole};{selectedColor.CMYK.CMY.YWhole};{selectedColor.CMYK.KWhole}", infoBoxX + 1, infoBoxY + 5);
-            TextWriterWhereColor.WriteWhere($"HSL: hsl:{selectedColor.HSL.HueWhole};{selectedColor.HSL.SaturationWhole};{selectedColor.HSL.LightnessWhole}", infoBoxX + 1, infoBoxY + 6);
-            TextWriterWhereColor.WriteWhere($"Grayscale: {mono.R};{mono.G};{mono.B}", infoBoxX + 1, infoBoxY + 7);
+            TextWriterWhereColor.WriteWhere($"CMY: cmy:{selectedColor.CMY.CWhole};{selectedColor.CMY.MWhole};{selectedColor.CMY.YWhole}", infoBoxX + 1, infoBoxY + 6);
+            TextWriterWhereColor.WriteWhere($"HSL: hsl:{selectedColor.HSL.HueWhole};{selectedColor.HSL.SaturationWhole};{selectedColor.HSL.LightnessWhole}", infoBoxX + 1, infoBoxY + 7);
+            TextWriterWhereColor.WriteWhere($"HSV: hsv:{selectedColor.HSV.HueWhole};{selectedColor.HSV.SaturationWhole};{selectedColor.HSV.ValueWhole}", infoBoxX + 1, infoBoxY + 8);
+            TextWriterWhereColor.WriteWhere($"Grayscale: {mono.R};{mono.G};{mono.B}", infoBoxX + 1, infoBoxY + 9);
             BoxFrameTextColor.WriteBoxFrame($"Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", infoBoxX, rgbRampBarY, boxWidth, 3);
             TextWriterWhereColor.WriteWhere(redRamp.ToString(), infoBoxX + 1, rgbRampBarY + 1);
             TextWriterWhereColor.WriteWhere(greenRamp.ToString(), infoBoxX + 1, rgbRampBarY + 2);
