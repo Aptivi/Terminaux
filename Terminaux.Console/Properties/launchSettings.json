@@ -226,6 +226,10 @@
     "Terminaux - ColorSelectorTest": {
       "commandName": "Project",
       "commandLineArgs": "ColorSelectorTest"
+    },
+    "Terminaux - ColorSelectorNoPaletteTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorSelectorNoPaletteTest"
     }
   }
 }

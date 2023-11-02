@@ -30,22 +30,39 @@ namespace Terminaux.Colors
     [DebuggerDisplay("Color = {PlainSequenceEnclosed}, TrueColor = {PlainSequenceEnclosedTrueColor}")]
     public class Color : IEquatable<Color>
     {
+        private string plainSequence;
+        private string foreSequence;
+        private string backSequence;
+
         /// <summary>
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         /// </summary>
-        public string PlainSequence { get; private set; }
+        public string PlainSequence
+        {
+            get => ColorTools.UseTerminalPalette ? plainSequence : PlainSequenceTrueColor;
+            set => plainSequence = value;
+        }
         /// <summary>
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary
         /// </summary>
-        public string PlainSequenceEnclosed { get; private set; }
+        public string PlainSequenceEnclosed =>
+            Type == ColorType.TrueColor ? $"\"{PlainSequence}\"" : PlainSequence;
         /// <summary>
         /// Parsable VT sequence (Foreground)
         /// </summary>
-        public string VTSequenceForeground { get; private set; }
+        public string VTSequenceForeground
+        {
+            get => ColorTools.UseTerminalPalette ? foreSequence : VTSequenceForegroundTrueColor;
+            set => foreSequence = value;
+        }
         /// <summary>
         /// Parsable VT sequence (Background)
         /// </summary>
-        public string VTSequenceBackground { get; private set; }
+        public string VTSequenceBackground
+        {
+            get => ColorTools.UseTerminalPalette ? backSequence : VTSequenceBackgroundTrueColor;
+            set => backSequence = value;
+        }
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         /// </summary>
@@ -200,7 +217,7 @@ namespace Terminaux.Colors
 
                 // Form the sequences
                 PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
-                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
+                PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
                 VTSequenceForeground = VTSequenceForegroundTrueColor = VtSequenceTools.GetEsc() + $"[38;2;{PlainSequence}m";
                 VTSequenceBackground = VTSequenceBackgroundTrueColor = VtSequenceTools.GetEsc() + $"[48;2;{PlainSequence}m";
 
@@ -226,7 +243,6 @@ namespace Terminaux.Colors
 
                 // Form the sequences
                 PlainSequence = ColorTools.EnableColorTransformation ? $"{r};{g};{b}" : $"{colorsInfo.ColorID}";
-                PlainSequenceEnclosed = ColorTools.EnableColorTransformation ? $"\"{r};{g};{b}\"" : $"{colorsInfo.ColorID}";
                 PlainSequenceTrueColor = $"{r};{g};{b}";
                 PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
                 VTSequenceForeground = ColorTools.EnableColorTransformation ? VtSequenceTools.GetEsc() + $"[38;2;{PlainSequence}m" : VtSequenceTools.GetEsc() + $"[38;5;{PlainSequence}m";
@@ -254,7 +270,7 @@ namespace Terminaux.Colors
 
                 // We got the RGB values! Form the sequences
                 PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
-                PlainSequenceEnclosed = PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
+                PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
                 VTSequenceForeground = VTSequenceForegroundTrueColor = VtSequenceTools.GetEsc() + $"[38;2;{PlainSequence}m";
                 VTSequenceBackground = VTSequenceBackgroundTrueColor = VtSequenceTools.GetEsc() + $"[48;2;{PlainSequence}m";
 

@@ -62,6 +62,11 @@ namespace Terminaux.Colors
         /// Enables the simple color transformation. This changes formula from Brettel 1997 (value is false) to Vienot 1999 (value is true)
         /// </summary>
         public static bool EnableSimpleColorTransformation { get; set; } = false;
+        /// <summary>
+        /// If enabled, calls to <see cref="Color.PlainSequence"/> and its siblings return color ID if said color is either a 256 color or a 16 color.
+        /// Otherwise, calls to these properties are wrappers to <see cref="Color.PlainSequenceTrueColor"/> and its siblings. By default, it's enabled.
+        /// </summary>
+        public static bool UseTerminalPalette { get; set; } = true;
 
         /// <summary>
         /// The color deficiency or color blindness type
