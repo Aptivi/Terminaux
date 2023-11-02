@@ -35,34 +35,49 @@ namespace Terminaux.Colors
         private string backSequence;
 
         /// <summary>
-        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
+        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the usage of the terminal palette.
         /// </summary>
         public string PlainSequence
         {
-            get => ColorTools.UseTerminalPalette ? plainSequence : PlainSequenceTrueColor;
+            get => ColorTools.UseTerminalPalette ? PlainSequenceOriginal : PlainSequenceTrueColor;
             set => plainSequence = value;
         }
         /// <summary>
-        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary
+        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary.
         /// </summary>
         public string PlainSequenceEnclosed =>
             Type == ColorType.TrueColor ? $"\"{PlainSequence}\"" : PlainSequence;
+        /// <summary>
+        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; in its original form.
+        /// </summary>
+        public string PlainSequenceOriginal =>
+            plainSequence;
         /// <summary>
         /// Parsable VT sequence (Foreground)
         /// </summary>
         public string VTSequenceForeground
         {
-            get => ColorTools.UseTerminalPalette ? foreSequence : VTSequenceForegroundTrueColor;
+            get => ColorTools.UseTerminalPalette ? VTSequenceForegroundOriginal : VTSequenceForegroundTrueColor;
             set => foreSequence = value;
         }
+        /// <summary>
+        /// Parsable VT sequence (Foreground, original)
+        /// </summary>
+        public string VTSequenceForegroundOriginal =>
+            foreSequence;
         /// <summary>
         /// Parsable VT sequence (Background)
         /// </summary>
         public string VTSequenceBackground
         {
-            get => ColorTools.UseTerminalPalette ? backSequence : VTSequenceBackgroundTrueColor;
+            get => ColorTools.UseTerminalPalette ? VTSequenceBackgroundOriginal : VTSequenceBackgroundTrueColor;
             set => backSequence = value;
         }
+        /// <summary>
+        /// Parsable VT sequence (Background, original)
+        /// </summary>
+        public string VTSequenceBackgroundOriginal =>
+            backSequence;
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         /// </summary>

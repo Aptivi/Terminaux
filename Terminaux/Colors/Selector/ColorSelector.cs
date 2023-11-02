@@ -558,7 +558,7 @@ namespace Terminaux.Colors.Selector
             int boxHeight = ConsoleWrappers.ActionWindowHeight() - 6;
 
             // First, draw the border
-            BoxFrameTextColor.WriteBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor}]", boxX, boxY, boxWidth, boxHeight);
+            BoxFrameTextColor.WriteBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor}, orig: {selectedColor.PlainSequenceOriginal}]", boxX, boxY, boxWidth, boxHeight);
 
             // then, the box
             BoxColor.WriteBox(boxX + 1, boxY, boxWidth, boxHeight, selectedColor);
