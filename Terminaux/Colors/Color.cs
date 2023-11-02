@@ -167,7 +167,10 @@ namespace Terminaux.Colors
                     return ColorTools._empty;
 
                 // Else, cache the empty value and return it
+                bool orig = ColorTools.UseTerminalPalette;
+                ColorTools.UseTerminalPalette = true;
                 ColorTools._empty = new Color(0);
+                ColorTools.UseTerminalPalette = orig;
                 return ColorTools._empty;
             }
         }
