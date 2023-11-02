@@ -27,7 +27,7 @@ namespace Terminaux.Colors
         internal static RedGreenBlue ParseSpecifierRgbValues(string specifier)
         {
             if (!specifier.Contains(";"))
-                throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new ColorSeqException($"Invalid color specifier \"{specifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Split(';');
@@ -36,13 +36,13 @@ namespace Terminaux.Colors
                 // We got the RGB values! First, check to see if we need to filter the color for the color-blind
                 int r = Convert.ToInt32(specifierArray[0]);
                 if (r < 0 || r > 255)
-                    throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                    throw new ColorSeqException($"The red color level is out of range (0 -> 255). {r}");
                 int g = Convert.ToInt32(specifierArray[1]);
                 if (g < 0 || g > 255)
-                    throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                    throw new ColorSeqException($"The green color level is out of range (0 -> 255). {g}");
                 int b = Convert.ToInt32(specifierArray[2]);
                 if (b < 0 || b > 255)
-                    throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                    throw new ColorSeqException($"The blue color level is out of range (0 -> 255). {b}");
 
                 // Now, transform
                 var finalRgb = GetTransformedColor(r, g, b);
@@ -51,13 +51,13 @@ namespace Terminaux.Colors
                 return new(finalRgb.r, finalRgb.g, finalRgb.b);
             }
             else
-                throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new ColorSeqException($"Invalid color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
         }
 
         internal static (RedGreenBlue rgb, ConsoleColorsInfo cci) ParseSpecifierRgbName(string specifier)
         {
             if (!(double.TryParse(specifier, out double specifierNum) && specifierNum <= 255 || Enum.IsDefined(typeof(ConsoleColors), specifier)))
-                throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new ColorSeqException($"Invalid color specifier \"{specifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
 
             // Form the sequences using the information from the color details
             var parsedEnum = (ConsoleColors)Enum.Parse(typeof(ConsoleColors), specifier);
@@ -66,13 +66,13 @@ namespace Terminaux.Colors
             // Check to see if we need to transform color. Else, be sane.
             int r = Convert.ToInt32(ColorsInfo.R);
             if (r < 0 || r > 255)
-                throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new ColorSeqException($"The red color level is out of range (0 -> 255). {r}");
             int g = Convert.ToInt32(ColorsInfo.G);
             if (g < 0 || g > 255)
-                throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new ColorSeqException($"The green color level is out of range (0 -> 255). {g}");
             int b = Convert.ToInt32(ColorsInfo.B);
             if (b < 0 || b > 255)
-                throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new ColorSeqException($"The blue color level is out of range (0 -> 255). {b}");
 
             // Now, transform
             var finalRgb = GetTransformedColor(r, g, b);
@@ -84,7 +84,7 @@ namespace Terminaux.Colors
         internal static RedGreenBlue ParseSpecifierRgbHash(string specifier)
         {
             if (!specifier.StartsWith("#"))
-                throw new ColorSeqException("Invalid color hex specifier. Ensure that it's on the correct format: #RRGGBB");
+                throw new ColorSeqException($"Invalid color hex specifier \"{specifier}\". This specifier must start with the hash tag. Ensure that it's on the correct format: #RRGGBB");
 
             // Get the integral value of the total color
             string finalSpecifier = specifier.Substring(1);
@@ -105,7 +105,7 @@ namespace Terminaux.Colors
         internal static RedGreenBlue ParseSpecifierCmykValues(string specifier)
         {
             if (!specifier.Contains(";") || !specifier.StartsWith("cmyk:"))
-                throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
+                throw new ColorSeqException($"Invalid CMYK color specifier \"{specifier}\". Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(5).Split(';');
@@ -114,16 +114,16 @@ namespace Terminaux.Colors
                 // We got the CMYK whole values! First, check to see if we need to filter the color for the color-blind
                 int c = Convert.ToInt32(specifierArray[0]);
                 if (c < 0 || c > 100)
-                    throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
+                    throw new ColorSeqException($"The cyan color level is out of range (0 -> 100). {c}");
                 int m = Convert.ToInt32(specifierArray[1]);
                 if (m < 0 || m > 100)
-                    throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
+                    throw new ColorSeqException($"The magenta color level is out of range (0 -> 100). {m}");
                 int y = Convert.ToInt32(specifierArray[2]);
                 if (y < 0 || y > 100)
-                    throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
+                    throw new ColorSeqException($"The yellow color level is out of range (0 -> 100). {y}");
                 int k = Convert.ToInt32(specifierArray[3]);
                 if (k < 0 || k > 100)
-                    throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
+                    throw new ColorSeqException($"The black key level is out of range (0 -> 100). {k}");
 
                 // First, we need to convert from CMYK to RGB
                 double cPart = (double)c / 100;
@@ -143,13 +143,13 @@ namespace Terminaux.Colors
                 return new(finalRgb.r, finalRgb.g, finalRgb.b);
             }
             else
-                throw new ColorSeqException("Invalid CMYK color specifier. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
+                throw new ColorSeqException($"Invalid CMYK color specifier \"{specifier}\". The specifier may not be more than four elements. Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
         }
 
         internal static RedGreenBlue ParseSpecifierHslValues(string specifier)
         {
             if (!specifier.Contains(";") || !specifier.StartsWith("hsl:"))
-                throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
+                throw new ColorSeqException($"Invalid HSL color specifier \"{specifier}\". Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
@@ -158,13 +158,13 @@ namespace Terminaux.Colors
                 // We got the HSL whole values! First, check to see if we need to filter the color for the color-blind
                 int h = Convert.ToInt32(specifierArray[0]);
                 if (h < 0 || h > 360)
-                    throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
+                    throw new ColorSeqException($"The hue level is out of range (0' -> 360' degrees). {h}");
                 int s = Convert.ToInt32(specifierArray[1]);
                 if (s < 0 || s > 100)
-                    throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
+                    throw new ColorSeqException($"The saturation level is out of range (0 -> 100). {s}");
                 int l = Convert.ToInt32(specifierArray[2]);
                 if (l < 0 || l > 100)
-                    throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
+                    throw new ColorSeqException($"The lightness level is out of range (0 -> 100). {l}");
 
                 // First, we need to convert from HSL to RGB
                 double hPart = (double)h / 360;
@@ -183,30 +183,30 @@ namespace Terminaux.Colors
                 return new(finalRgb.r, finalRgb.g, finalRgb.b);
             }
             else
-                throw new ColorSeqException("Invalid HSL color specifier. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
+                throw new ColorSeqException($"Invalid HSL color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: hsl:<hue>;<sat>;<lig>");
         }
 
         internal static RedGreenBlue ParseSpecifierHsvValues(string specifier)
         {
             if (!specifier.Contains(";") || !specifier.StartsWith("hsv:"))
-                throw new ColorSeqException("Invalid HSV color specifier. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+                throw new ColorSeqException($"Invalid HSV color specifier \"{specifier}\". Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
             if (specifierArray.Length == 3)
             {
-                // We got the HSL whole values! First, check to see if we need to filter the color for the color-blind
+                // We got the HSV whole values! First, check to see if we need to filter the color for the color-blind
                 int h = Convert.ToInt32(specifierArray[0]);
                 if (h < 0 || h > 360)
-                    throw new ColorSeqException("Invalid HSV color specifier. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+                    throw new ColorSeqException($"The hue level is out of range (0' -> 360' degrees). {h}");
                 int s = Convert.ToInt32(specifierArray[1]);
                 if (s < 0 || s > 100)
-                    throw new ColorSeqException("Invalid HSV color specifier. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+                    throw new ColorSeqException($"The saturation level is out of range (0 -> 100). {s}");
                 int v = Convert.ToInt32(specifierArray[2]);
                 if (v < 0 || v > 100)
-                    throw new ColorSeqException("Invalid HSV color specifier. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+                    throw new ColorSeqException($"The value level is out of range (0 -> 100). {v}");
 
-                // First, we need to convert from HSL to RGB
+                // First, we need to convert from HSV to RGB
                 double hPart = (double)h / 360;
                 double sPart = (double)s / 100;
                 double vPart = (double)v / 100;
@@ -223,13 +223,13 @@ namespace Terminaux.Colors
                 return new(finalRgb.r, finalRgb.g, finalRgb.b);
             }
             else
-                throw new ColorSeqException("Invalid HSV color specifier. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+                throw new ColorSeqException($"Invalid HSV color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
         }
 
         internal static RedGreenBlue ParseSpecifierCmyValues(string specifier)
         {
             if (!specifier.Contains(";") || !specifier.StartsWith("cmy:"))
-                throw new ColorSeqException("Invalid CMY color specifier. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
+                throw new ColorSeqException($"Invalid CMY color specifier \"{specifier}\". Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(4).Split(';');
@@ -238,13 +238,13 @@ namespace Terminaux.Colors
                 // We got the CMY whole values! First, check to see if we need to filter the color for the color-blind
                 int c = Convert.ToInt32(specifierArray[0]);
                 if (c < 0 || c > 100)
-                    throw new ColorSeqException("Invalid CMY color specifier. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
+                    throw new ColorSeqException($"The cyan color level is out of range (0 -> 100). {c}");
                 int m = Convert.ToInt32(specifierArray[1]);
                 if (m < 0 || m > 100)
-                    throw new ColorSeqException("Invalid CMY color specifier. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
+                    throw new ColorSeqException($"The magenta color level is out of range (0 -> 100). {m}");
                 int y = Convert.ToInt32(specifierArray[2]);
                 if (y < 0 || y > 100)
-                    throw new ColorSeqException("Invalid CMY color specifier. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
+                    throw new ColorSeqException($"The yellow color level is out of range (0 -> 100). {y}");
 
                 // First, we need to convert from CMY to RGB
                 double cPart = (double)c / 100;
@@ -263,7 +263,7 @@ namespace Terminaux.Colors
                 return new(finalRgb.r, finalRgb.g, finalRgb.b);
             }
             else
-                throw new ColorSeqException("Invalid CMY color specifier. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
+                throw new ColorSeqException($"Invalid CMY color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
         }
 
         private static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput)
