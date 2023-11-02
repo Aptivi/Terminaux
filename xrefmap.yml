@@ -1581,6 +1581,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.TrySetConsoleColor
   nameWithType: ColorTools.TrySetConsoleColor
+- uid: Terminaux.Colors.ColorTools.UseTerminalPalette
+  name: UseTerminalPalette
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_UseTerminalPalette
+  commentId: P:Terminaux.Colors.ColorTools.UseTerminalPalette
+  fullName: Terminaux.Colors.ColorTools.UseTerminalPalette
+  nameWithType: ColorTools.UseTerminalPalette
+- uid: Terminaux.Colors.ColorTools.UseTerminalPalette*
+  name: UseTerminalPalette
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_UseTerminalPalette_
+  commentId: Overload:Terminaux.Colors.ColorTools.UseTerminalPalette
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.UseTerminalPalette
+  nameWithType: ColorTools.UseTerminalPalette
 - uid: Terminaux.Colors.ColorType
   name: ColorType
   href: api/Terminaux.Colors.ColorType.html
