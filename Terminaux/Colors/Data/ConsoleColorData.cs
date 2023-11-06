@@ -17,12 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Terminaux.Colors.Data
 {
     /// <summary>
     /// Console color data
     /// </summary>
+    [DebuggerDisplay("{Name} [{ColorId}, {HexString}]")]
     public class ConsoleColorData
     {
         [JsonIgnore]
@@ -76,6 +78,7 @@ namespace Terminaux.Colors.Data
         /// <summary>
         /// Decoy class for RGB
         /// </summary>
+        [DebuggerDisplay("RGB = {R}, {G}, {B}")]
         public class Rgb
         {
             [JsonProperty(nameof(r))]
@@ -110,6 +113,7 @@ namespace Terminaux.Colors.Data
         /// <summary>
         /// The hue, saturation, and luminance values
         /// </summary>
+        [DebuggerDisplay("HSL = {H}, {S}, {L}")]
         public class Hsl
         {
             [JsonProperty(nameof(h))]

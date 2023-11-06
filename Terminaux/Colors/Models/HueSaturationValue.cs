@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Terminaux.Base;
 
 namespace Terminaux.Colors.Models
@@ -25,6 +26,7 @@ namespace Terminaux.Colors.Models
     /// <summary>
     /// The Hue, Saturation, and Value (HSV) model
     /// </summary>
+    [DebuggerDisplay("HSV = {HueWhole};{SaturationWhole};{ValueWhole}")]
     public class HueSaturationValue : IEquatable<HueSaturationValue>
     {
         /// <summary>
