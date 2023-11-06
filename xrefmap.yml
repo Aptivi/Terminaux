@@ -6876,6 +6876,19 @@ references:
   commentId: T:Terminaux.Reader.TermReaderState
   fullName: Terminaux.Reader.TermReaderState
   nameWithType: TermReaderState
+- uid: Terminaux.Reader.TermReaderState.CanInsert
+  name: CanInsert
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CanInsert
+  commentId: P:Terminaux.Reader.TermReaderState.CanInsert
+  fullName: Terminaux.Reader.TermReaderState.CanInsert
+  nameWithType: TermReaderState.CanInsert
+- uid: Terminaux.Reader.TermReaderState.CanInsert*
+  name: CanInsert
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CanInsert_
+  commentId: Overload:Terminaux.Reader.TermReaderState.CanInsert
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.CanInsert
+  nameWithType: TermReaderState.CanInsert
 - uid: Terminaux.Reader.TermReaderState.CurrentCursorPosLeft
   name: CurrentCursorPosLeft
   href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentCursorPosLeft
