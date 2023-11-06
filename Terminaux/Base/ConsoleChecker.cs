@@ -62,6 +62,20 @@ namespace Terminaux.Base
         }
 
         /// <summary>
+        /// Platform-dependent home path
+        /// </summary>
+        public static string HomePath
+        {
+            get
+            {
+                if (ConsolePlatform.IsOnUnix())
+                    return Environment.GetEnvironmentVariable("HOME");
+                else
+                    return Environment.GetEnvironmentVariable("USERPROFILE").Replace(@"\", "/");
+            }
+        }
+
+        /// <summary>
         /// Checks the running console for sanity, like the incompatible consoles, insane console types, etc.
         /// <br></br>
         /// The severity of the checks can be described in two categories:
@@ -190,6 +204,21 @@ namespace Terminaux.Base
                 {
                     // We couldn't get the status variable from the global TMUX "status" variable. Assume that it's 1.
                     MinimumHeight--;
+                }
+            }
+            else if (ConsolePlatform.IsRunningFromScreen())
+            {
+                // The status bar for GNU screen is always one row long.
+                string confPath = HomePath + "/.screenrc";
+                string statusKey = "hardstatus";
+                string[] screenRcLines = File.ReadAllLines(confPath);
+                foreach (string line in screenRcLines)
+                {
+                    if (line.StartsWith(statusKey) && line != "hardstatus off")
+                    {
+                        MinimumHeight--;
+                        break;
+                    }
                 }
             }
 

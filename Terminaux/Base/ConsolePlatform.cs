@@ -50,6 +50,12 @@ namespace Terminaux.Base
             Environment.GetEnvironmentVariable("TMUX") is not null;
 
         /// <summary>
+        /// Is Nitrocid KS running from GNU Screen?
+        /// </summary>
+        public static bool IsRunningFromScreen() =>
+            Environment.GetEnvironmentVariable("STY") is not null;
+
+        /// <summary>
         /// Is Terminaux running from Mono?
         /// </summary>
         public static bool IsRunningFromMono() =>
