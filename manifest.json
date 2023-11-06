@@ -255,6 +255,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.RedYellowBlue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.RedYellowBlue.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.yml",
       "output": {
         ".html": {
