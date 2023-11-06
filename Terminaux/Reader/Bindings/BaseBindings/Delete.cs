@@ -38,6 +38,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Remove one character from the current text position
             state.CurrentText.Remove(state.CurrentTextPos, 1);
+            state.canInsert = true;
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();

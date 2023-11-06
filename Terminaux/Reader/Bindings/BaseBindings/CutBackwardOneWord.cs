@@ -53,6 +53,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             }
             state.KillBuffer.Append(state.CurrentText.ToString().Substring(state.CurrentTextPos - steps, steps));
             state.CurrentText.Remove(state.CurrentTextPos - steps, steps);
+            state.canInsert = true;
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();

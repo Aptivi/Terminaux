@@ -64,7 +64,15 @@ namespace Terminaux.Reader.Bindings
             // Insert the character, but in the condition that it's not a control character
             if (char.IsControl(state.pressedKey.KeyChar))
                 return;
-            int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin;
+
+            // If we can't insert, do nothing
+            if (!state.CanInsert)
+                return;
+
+            // Get the longest sentence width and insert the character
+            int width = ConsoleWrappers.ActionWindowWidth();
+            int height = ConsoleWrappers.ActionBufferHeight();
+            int longestSentenceLength = width - state.settings.RightMargin;
             string[] incompleteSentencesPrimary = ConsoleExtensions.GetWrappedSentences(state.CurrentText.ToString(), longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
             state.CurrentText.Insert(state.CurrentTextPos, state.pressedKey.KeyChar);
 
@@ -75,7 +83,7 @@ namespace Terminaux.Reader.Bindings
             // In the case of one line wrap, get the list of sentences
             if (state.OneLineWrap)
             {
-                longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
+                longestSentenceLength = width - state.settings.RightMargin - state.inputPromptLeft - 1;
                 incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
@@ -88,16 +96,23 @@ namespace Terminaux.Reader.Bindings
                 ConsoleWrappers.ActionWriteString(renderedText, state.settings);
                 PositioningTools.HandleTopChangeForInput(ref state);
                 PositioningTools.GoForward(1, ref state);
-                if (state.inputPromptTop + incompleteSentences.Length > ConsoleWrappers.ActionBufferHeight())
+                if (renderedText.Length == (width * height) - 1)
                 {
-                    state.inputPromptTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
-                    state.currentCursorPosTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
+                    state.canInsert = false;
                 }
-                if (state.currentCursorPosTop >= ConsoleWrappers.ActionBufferHeight())
+                else
                 {
-                    state.inputPromptTop -= 1;
-                    state.currentCursorPosTop -= 1;
-                    ConsoleWrappers.ActionWriteLine();
+                    if (state.inputPromptTop + incompleteSentences.Length > height)
+                    {
+                        state.inputPromptTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
+                        state.currentCursorPosTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
+                    }
+                    if (state.currentCursorPosTop >= height)
+                    {
+                        state.currentCursorPosTop = height - 1;
+                        state.inputPromptTop -= 1;
+                        ConsoleWrappers.ActionWriteLine();
+                    }
                 }
             }
             ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);

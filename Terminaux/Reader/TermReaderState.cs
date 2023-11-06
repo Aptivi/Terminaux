@@ -41,6 +41,7 @@ namespace Terminaux.Reader
         internal ConsoleKeyInfo pressedKey;
         internal StringBuilder killBuffer = new();
         internal bool oneLineWrap;
+        internal bool canInsert = true;
         internal TermReaderSettings settings;
 
         // Shared
@@ -93,6 +94,10 @@ namespace Terminaux.Reader
         /// Reader settings (general or overridden)
         /// </summary>
         public TermReaderSettings Settings { get => settings; }
+        /// <summary>
+        /// Can insert a new character?
+        /// </summary>
+        public bool CanInsert { get => canInsert; }
 
         // To static variables
         /// <summary>

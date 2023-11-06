@@ -40,6 +40,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             int times = state.CurrentText.Length - state.CurrentTextPos;
             state.KillBuffer.Append(state.CurrentText.ToString().Substring(state.CurrentTextPos, times));
             state.CurrentText.Remove(state.CurrentTextPos, times);
+            state.canInsert = true;
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
