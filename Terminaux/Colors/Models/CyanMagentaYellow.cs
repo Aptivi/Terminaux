@@ -82,6 +82,12 @@ namespace Terminaux.Colors.Models
         public HueSaturationValue ConvertToHsv() =>
             new(this);
 
+        /// <summary>
+        /// cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;
+        /// </summary>
+        public override string ToString() =>
+            $"cmy:{CWhole};{MWhole};{YWhole}";
+
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
             Equals(obj as CyanMagentaYellow);

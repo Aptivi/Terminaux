@@ -341,6 +341,12 @@ namespace Terminaux.Colors
         public static implicit operator Color(string ColorSpecifier) =>
             new(ColorSpecifier);
 
+        /// <summary>
+        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the usage of the terminal palette.
+        /// </summary>
+        public override string ToString() =>
+            PlainSequence;
+
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
             base.Equals(obj);

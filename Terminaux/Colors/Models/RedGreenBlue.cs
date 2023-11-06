@@ -70,6 +70,12 @@ namespace Terminaux.Colors.Models
         public HueSaturationValue ConvertToHsv() =>
             new(this);
 
+        /// <summary>
+        /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
+        /// </summary>
+        public override string ToString() =>
+            $"{R};{G};{B}";
+
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
             Equals(obj as RedGreenBlue);

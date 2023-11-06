@@ -88,6 +88,12 @@ namespace Terminaux.Colors.Models
         public HueSaturationLightness ConvertToHsl() =>
             new(this);
 
+        /// <summary>
+        /// hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;
+        /// </summary>
+        public override string ToString() =>
+            $"hsv:{HueWhole};{SaturationWhole};{ValueWhole}";
+
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
             Equals(obj as HueSaturationValue);
