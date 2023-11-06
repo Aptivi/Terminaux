@@ -26,6 +26,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleChecker.CheckConsole
   nameWithType: ConsoleChecker.CheckConsole
+- uid: Terminaux.Base.ConsoleChecker.HomePath
+  name: HomePath
+  href: api/Terminaux.Base.ConsoleChecker.html#Terminaux_Base_ConsoleChecker_HomePath
+  commentId: P:Terminaux.Base.ConsoleChecker.HomePath
+  fullName: Terminaux.Base.ConsoleChecker.HomePath
+  nameWithType: ConsoleChecker.HomePath
+- uid: Terminaux.Base.ConsoleChecker.HomePath*
+  name: HomePath
+  href: api/Terminaux.Base.ConsoleChecker.html#Terminaux_Base_ConsoleChecker_HomePath_
+  commentId: Overload:Terminaux.Base.ConsoleChecker.HomePath
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleChecker.HomePath
+  nameWithType: ConsoleChecker.HomePath
 - uid: Terminaux.Base.ConsoleChecker.IsConsole256Colors
   name: IsConsole256Colors()
   href: api/Terminaux.Base.ConsoleChecker.html#Terminaux_Base_ConsoleChecker_IsConsole256Colors
@@ -303,6 +316,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsolePlatform.IsRunningFromMono
   nameWithType: ConsolePlatform.IsRunningFromMono
+- uid: Terminaux.Base.ConsolePlatform.IsRunningFromScreen
+  name: IsRunningFromScreen()
+  href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsRunningFromScreen
+  commentId: M:Terminaux.Base.ConsolePlatform.IsRunningFromScreen
+  fullName: Terminaux.Base.ConsolePlatform.IsRunningFromScreen()
+  nameWithType: ConsolePlatform.IsRunningFromScreen()
+- uid: Terminaux.Base.ConsolePlatform.IsRunningFromScreen*
+  name: IsRunningFromScreen
+  href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsRunningFromScreen_
+  commentId: Overload:Terminaux.Base.ConsolePlatform.IsRunningFromScreen
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsolePlatform.IsRunningFromScreen
+  nameWithType: ConsolePlatform.IsRunningFromScreen
 - uid: Terminaux.Base.ConsolePlatform.IsRunningFromTmux
   name: IsRunningFromTmux()
   href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsRunningFromTmux
