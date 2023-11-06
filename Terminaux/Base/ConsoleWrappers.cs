@@ -406,8 +406,17 @@ namespace Terminaux.Base
         {
             if (settings.RightMargin > 0 || settings.LeftMargin > 0)
             {
-                foreach (char textc in text)
-                    Write(textc, settings);
+                var wrapped = ConsoleExtensions.GetWrappedSentences(text, WindowWidth - settings.RightMargin - settings.LeftMargin, settings.LeftMargin - 1);
+                for (int i = 0; i < wrapped.Length; i++)
+                {
+                    string textWrapped = wrapped[i];
+                    Console.Write(textWrapped);
+                    if (i + 1 < wrapped.Length)
+                    {
+                        WriteLine();
+                        SetCursorLeft(settings.LeftMargin);
+                    }
+                }
             }
             else
                 Console.Write(text, settings);
@@ -415,13 +424,8 @@ namespace Terminaux.Base
 
         private static void Write(string text, TermReaderSettings settings, params object[] args)
         {
-            if (settings.RightMargin > 0 || settings.LeftMargin > 0)
-            {
-                foreach (char textc in string.Format(text, args))
-                    Write(textc, settings);
-            }
-            else
-                Console.Write(string.Format(text, args), settings);
+            string formatted = string.Format(text, args);
+            Write(formatted, settings);
         }
 
         private static void WriteLine() =>
