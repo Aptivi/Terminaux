@@ -153,14 +153,17 @@ namespace Terminaux.Reader.Tools
             int promptTop = state.InputPromptTop;
             int promptTopOld = state.InputPromptTop;
 
+            int width = ConsoleWrappers.ActionWindowWidth();
+            int height = ConsoleWrappers.ActionBufferHeight();
+
             int counted = promptLeft;
             int heightOffset = 1;
             for (int i = promptLeft; i < state.CurrentText.Length + promptLeft; i++)
             {
-                if (counted >= ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin)
+                if (counted >= width - state.settings.RightMargin)
                 {
                     // Reached to the end! Wrap down!
-                    if (promptTop >= ConsoleWrappers.ActionBufferHeight() - heightOffset)
+                    if (promptTop >= height - heightOffset)
                     {
                         heightOffset++;
                         promptTop--;

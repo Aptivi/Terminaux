@@ -404,14 +404,24 @@ namespace Terminaux.Base
 
         private static void Write(string text, TermReaderSettings settings)
         {
-            foreach (char textc in text)
-                Write(textc, settings);
+            if (settings.RightMargin > 0 || settings.LeftMargin > 0)
+            {
+                foreach (char textc in text)
+                    Write(textc, settings);
+            }
+            else
+                Console.Write(text, settings);
         }
 
         private static void Write(string text, TermReaderSettings settings, params object[] args)
         {
-            foreach (char textc in string.Format(text, args))
-                Write(textc, settings);
+            if (settings.RightMargin > 0 || settings.LeftMargin > 0)
+            {
+                foreach (char textc in string.Format(text, args))
+                    Write(textc, settings);
+            }
+            else
+                Console.Write(string.Format(text, args), settings);
         }
 
         private static void WriteLine() =>
@@ -419,15 +429,13 @@ namespace Terminaux.Base
 
         private static void WriteLine(string text, TermReaderSettings settings)
         {
-            foreach (char textc in text)
-                Write(textc, settings);
+            Write(text, settings);
             WriteLine();
         }
 
         private static void WriteLine(string text, TermReaderSettings settings, params object[] args)
         {
-            foreach (char textc in string.Format(text, args))
-                Write(textc, settings);
+            Write(text, settings, args);
             WriteLine();
         }
     }
