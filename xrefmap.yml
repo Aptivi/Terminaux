@@ -1133,6 +1133,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.RGB
   nameWithType: Color.RGB
+- uid: Terminaux.Colors.Color.ToString
+  name: ToString()
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_ToString
+  commentId: M:Terminaux.Colors.Color.ToString
+  fullName: Terminaux.Colors.Color.ToString()
+  nameWithType: Color.ToString()
+- uid: Terminaux.Colors.Color.ToString*
+  name: ToString
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_ToString_
+  commentId: Overload:Terminaux.Colors.Color.ToString
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.ToString
+  nameWithType: Color.ToString
 - uid: Terminaux.Colors.Color.Type
   name: Type
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_Type
@@ -3758,6 +3771,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.CyanMagentaYellow.MWhole
   nameWithType: CyanMagentaYellow.MWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.ToString
+  name: ToString()
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_ToString
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellow.ToString
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.ToString()
+  nameWithType: CyanMagentaYellow.ToString()
+- uid: Terminaux.Colors.Models.CyanMagentaYellow.ToString*
+  name: ToString
+  href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_ToString_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellow.ToString
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellow.ToString
+  nameWithType: CyanMagentaYellow.ToString
 - uid: Terminaux.Colors.Models.CyanMagentaYellow.Y
   name: Y
   href: api/Terminaux.Colors.Models.CyanMagentaYellow.html#Terminaux_Colors_Models_CyanMagentaYellow_Y
@@ -3987,6 +4013,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.KWhole
   nameWithType: CyanMagentaYellowKey.KWhole
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.ToString
+  name: ToString()
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_ToString
+  commentId: M:Terminaux.Colors.Models.CyanMagentaYellowKey.ToString
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.ToString()
+  nameWithType: CyanMagentaYellowKey.ToString()
+- uid: Terminaux.Colors.Models.CyanMagentaYellowKey.ToString*
+  name: ToString
+  href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_ToString_
+  commentId: Overload:Terminaux.Colors.Models.CyanMagentaYellowKey.ToString
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.CyanMagentaYellowKey.ToString
+  nameWithType: CyanMagentaYellowKey.ToString
 - uid: Terminaux.Colors.Models.CyanMagentaYellowKey.op_Equality(Terminaux.Colors.Models.CyanMagentaYellowKey,Terminaux.Colors.Models.CyanMagentaYellowKey)
   name: operator ==(CyanMagentaYellowKey, CyanMagentaYellowKey)
   href: api/Terminaux.Colors.Models.CyanMagentaYellowKey.html#Terminaux_Colors_Models_CyanMagentaYellowKey_op_Equality_Terminaux_Colors_Models_CyanMagentaYellowKey_Terminaux_Colors_Models_CyanMagentaYellowKey_
@@ -4268,6 +4307,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.HueSaturationLightness.SaturationWhole
   nameWithType: HueSaturationLightness.SaturationWhole
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ToString
+  name: ToString()
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ToString
+  commentId: M:Terminaux.Colors.Models.HueSaturationLightness.ToString
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ToString()
+  nameWithType: HueSaturationLightness.ToString()
+- uid: Terminaux.Colors.Models.HueSaturationLightness.ToString*
+  name: ToString
+  href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_ToString_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationLightness.ToString
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationLightness.ToString
+  nameWithType: HueSaturationLightness.ToString
 - uid: Terminaux.Colors.Models.HueSaturationLightness.op_Equality(Terminaux.Colors.Models.HueSaturationLightness,Terminaux.Colors.Models.HueSaturationLightness)
   name: operator ==(HueSaturationLightness, HueSaturationLightness)
   href: api/Terminaux.Colors.Models.HueSaturationLightness.html#Terminaux_Colors_Models_HueSaturationLightness_op_Equality_Terminaux_Colors_Models_HueSaturationLightness_Terminaux_Colors_Models_HueSaturationLightness_
@@ -4523,6 +4575,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.HueSaturationValue.SaturationWhole
   nameWithType: HueSaturationValue.SaturationWhole
+- uid: Terminaux.Colors.Models.HueSaturationValue.ToString
+  name: ToString()
+  href: api/Terminaux.Colors.Models.HueSaturationValue.html#Terminaux_Colors_Models_HueSaturationValue_ToString
+  commentId: M:Terminaux.Colors.Models.HueSaturationValue.ToString
+  fullName: Terminaux.Colors.Models.HueSaturationValue.ToString()
+  nameWithType: HueSaturationValue.ToString()
+- uid: Terminaux.Colors.Models.HueSaturationValue.ToString*
+  name: ToString
+  href: api/Terminaux.Colors.Models.HueSaturationValue.html#Terminaux_Colors_Models_HueSaturationValue_ToString_
+  commentId: Overload:Terminaux.Colors.Models.HueSaturationValue.ToString
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.HueSaturationValue.ToString
+  nameWithType: HueSaturationValue.ToString
 - uid: Terminaux.Colors.Models.HueSaturationValue.Value
   name: Value
   href: api/Terminaux.Colors.Models.HueSaturationValue.html#Terminaux_Colors_Models_HueSaturationValue_Value
@@ -4765,6 +4830,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedGreenBlue.R
   nameWithType: RedGreenBlue.R
+- uid: Terminaux.Colors.Models.RedGreenBlue.ToString
+  name: ToString()
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_ToString
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.ToString
+  fullName: Terminaux.Colors.Models.RedGreenBlue.ToString()
+  nameWithType: RedGreenBlue.ToString()
+- uid: Terminaux.Colors.Models.RedGreenBlue.ToString*
+  name: ToString
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_ToString_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.ToString
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.ToString
+  nameWithType: RedGreenBlue.ToString
 - uid: Terminaux.Colors.Models.RedGreenBlue.op_Equality(Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Models.RedGreenBlue)
   name: operator ==(RedGreenBlue, RedGreenBlue)
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_op_Equality_Terminaux_Colors_Models_RedGreenBlue_Terminaux_Colors_Models_RedGreenBlue_
