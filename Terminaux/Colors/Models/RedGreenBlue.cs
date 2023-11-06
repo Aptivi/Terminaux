@@ -71,6 +71,13 @@ namespace Terminaux.Colors.Models
             new(this);
 
         /// <summary>
+        /// Converts this instance of RGB color to RYB model
+        /// </summary>
+        /// <returns>An instance of <see cref="RedYellowBlue"/></returns>
+        public RedYellowBlue ConvertToRyb() =>
+            new(this);
+
+        /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         /// </summary>
         public override string ToString() =>
@@ -274,6 +281,62 @@ namespace Terminaux.Colors.Models
             R = r;
             G = g;
             B = b;
+        }
+
+        /// <summary>
+        /// Converts the RYB color model to RGB
+        /// </summary>
+        /// <param name="ryb">Instance of RYB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public RedGreenBlue(RedYellowBlue ryb)
+        {
+            if (ryb is null)
+                throw new TerminauxException("Can't convert a null RYB instance to RGB!");
+
+            // Get the whiteness and remove it from all the colors
+            double white = Math.Min(Math.Min(ryb.R, ryb.Y), ryb.B);
+            double redNoWhite = ryb.R - white;
+            double yellowNoWhite = ryb.Y - white;
+            double blueNoWhite = ryb.B - white;
+
+            // Get the resulting max value
+            double maxRyb = Math.Max(Math.Max(redNoWhite, yellowNoWhite), blueNoWhite);
+
+            // Now, remove the green from the yellow and the blue values
+            double greenNoWhite = Math.Min(yellowNoWhite, blueNoWhite);
+            yellowNoWhite -= greenNoWhite;
+            blueNoWhite -= greenNoWhite;
+
+            // Now, check to see if the blue and the green colors are not zeroes. If true, cut these values to half.
+            if (blueNoWhite != 0 && greenNoWhite != 0)
+            {
+                blueNoWhite /= 2.0;
+                greenNoWhite /= 2.0;
+            }
+
+            // Now, redistribute the yellow remnants to the red and the green level
+            redNoWhite += yellowNoWhite;
+            greenNoWhite += yellowNoWhite;
+
+            // Do some normalization
+            double maxRgb = Math.Max(Math.Max(redNoWhite, greenNoWhite), blueNoWhite);
+            if (maxRgb != 0)
+            {
+                double normalizationFactor = maxRyb / maxRgb;
+                redNoWhite *= normalizationFactor;
+                greenNoWhite *= normalizationFactor;
+                blueNoWhite *= normalizationFactor;
+            }
+
+            // Now, restore the white color to the three components
+            redNoWhite += white;
+            greenNoWhite += white;
+            blueNoWhite += white;
+
+            // Install the values
+            R = (int)redNoWhite;
+            G = (int)greenNoWhite;
+            B = (int)blueNoWhite;
         }
 
         internal RedGreenBlue(int r, int g, int b)

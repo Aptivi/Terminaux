@@ -132,6 +132,11 @@ namespace Terminaux.Colors
         public HueSaturationValue HSV =>
             RGB.ConvertToHsv();
         /// <summary>
+        /// An instance of RYB
+        /// </summary>
+        public RedYellowBlue RYB =>
+            RGB.ConvertToRyb();
+        /// <summary>
         /// Hexadecimal representation of the color
         /// </summary>
         public string Hex { get; private set; }
@@ -228,6 +233,7 @@ namespace Terminaux.Colors
                     ColorSpecifier.StartsWith("cmy:") ? ColorParser.ParseSpecifierCmyValues(ColorSpecifier) :
                     ColorSpecifier.StartsWith("hsl:") ? ColorParser.ParseSpecifierHslValues(ColorSpecifier) :
                     ColorSpecifier.StartsWith("hsv:") ? ColorParser.ParseSpecifierHsvValues(ColorSpecifier) :
+                    ColorSpecifier.StartsWith("ryb:") ? ColorParser.ParseSpecifierRybValues(ColorSpecifier) :
                     ColorParser.ParseSpecifierRgbValues(ColorSpecifier);
                 int r = rgb.R;
                 int g = rgb.G;

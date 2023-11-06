@@ -214,5 +214,50 @@ namespace Terminaux.Tests.Colors
             rgb.G.ShouldBe(0);
             rgb.B.ShouldBe(22);
         }
+
+        /// <summary>
+        /// Tests converting an RGB color to RYB
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestConvertRgbToRyb()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(VtSequenceTools.GetEsc() + "[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe(VtSequenceTools.GetEsc() + "[38;2;139;80;22m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(80);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to RYB
+            var ryb = ColorInstance.RGB.ConvertToRyb();
+
+            // Check for property correctness
+            ryb.R.ShouldBe(139);
+            ryb.Y.ShouldBe(137);
+            ryb.B.ShouldBe(22);
+
+            // Now, convert back to RGB
+            var rgb = ryb.ConvertToRgb();
+
+            // Check for property correctness
+            rgb.R.ShouldBe(139);
+            rgb.G.ShouldBe(79);
+            rgb.B.ShouldBe(22);
+        }
     }
 }

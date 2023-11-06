@@ -1596,5 +1596,67 @@ namespace Terminaux.Tests.Colors
             ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
             ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
         }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (RYB)
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorRyb()
+        {
+            // Create instance
+            var ColorInstance = new Color("ryb:139;137;22");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;79;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(VtSequenceTools.GetEsc() + "[48;2;139;79;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe(VtSequenceTools.GetEsc() + "[38;2;139;79;22m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(79);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.IsBright.ShouldBeTrue();
+            ColorInstance.IsDark.ShouldBeFalse();
+            ColorInstance.Hex.ShouldBe("#8B4F16");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (RYB) using the implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorRybImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "ryb:139;137;22";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;79;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe(VtSequenceTools.GetEsc() + "[48;2;139;79;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe(VtSequenceTools.GetEsc() + "[38;2;139;79;22m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(79);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.IsBright.ShouldBeTrue();
+            ColorInstance.IsDark.ShouldBeFalse();
+            ColorInstance.Hex.ShouldBe("#8B4F16");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
     }
 }

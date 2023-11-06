@@ -266,6 +266,43 @@ namespace Terminaux.Colors
                 throw new ColorSeqException($"Invalid CMY color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
         }
 
+        internal static RedGreenBlue ParseSpecifierRybValues(string specifier)
+        {
+            if (!specifier.Contains(";") || !specifier.StartsWith("ryb:"))
+                throw new ColorSeqException($"Invalid RYB color specifier \"{specifier}\". Ensure that it's on the correct format: ryb:<red>;<yellow>;<blue>");
+
+            // Split the VT sequence into three parts
+            var specifierArray = specifier.Substring(4).Split(';');
+            if (specifierArray.Length == 3)
+            {
+                // We got the RYB whole values! First, check to see if we need to filter the color for the color-blind
+                int r = Convert.ToInt32(specifierArray[0]);
+                if (r < 0 || r > 255)
+                    throw new ColorSeqException($"The red level is out of range (0 -> 255). {r}");
+                int y = Convert.ToInt32(specifierArray[1]);
+                if (y < 0 || y > 255)
+                    throw new ColorSeqException($"The yellow level is out of range (0 -> 255). {y}");
+                int b = Convert.ToInt32(specifierArray[2]);
+                if (b < 0 || b > 255)
+                    throw new ColorSeqException($"The blue level is out of range (0 -> 255). {b}");
+
+                // First, we need to convert from RYB to RGB
+                var ryb = new RedYellowBlue(r, y, b);
+                var rgb = ryb.ConvertToRgb();
+                int rgbR = rgb.R;
+                int rgbG = rgb.G;
+                int rgbB = rgb.B;
+
+                // Now, transform
+                var finalRgb = GetTransformedColor(rgbR, rgbG, rgbB);
+
+                // Make a new RGB class
+                return new(finalRgb.r, finalRgb.g, finalRgb.b);
+            }
+            else
+                throw new ColorSeqException($"Invalid RYB color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: ryb:<red>;<yellow>;<blue>");
+        }
+
         private static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput)
         {
             if (ColorTools.EnableColorTransformation)

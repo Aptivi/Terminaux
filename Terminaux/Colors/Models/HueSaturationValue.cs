@@ -91,6 +91,13 @@ namespace Terminaux.Colors.Models
             new(this);
 
         /// <summary>
+        /// Converts this instance of HSV color to RYB model
+        /// </summary>
+        /// <returns>An instance of <see cref="RedYellowBlue"/></returns>
+        public RedYellowBlue ConvertToRyb() =>
+            new(this);
+
+        /// <summary>
         /// hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;
         /// </summary>
         public override string ToString() =>
@@ -224,6 +231,34 @@ namespace Terminaux.Colors.Models
 
             // Get the RGB values
             var rgb = hsl.ConvertToRgb();
+
+            // Do the conversion
+            var (hue, saturation, value) = GetHsvFromRgb(rgb);
+            Hue = hue;
+            Saturation = saturation;
+            Value = value;
+            ReverseHue = hue + 0.5;
+            if (ReverseHue > 1)
+                ReverseHue--;
+
+            SaturationWhole = (int)(Saturation * 100);
+            ValueWhole = (int)(Value * 100);
+            HueWhole = (int)(Hue * 360);
+            ReverseHueWhole = (int)(ReverseHue * 360);
+        }
+
+        /// <summary>
+        /// Converts the RYB color model to HSV
+        /// </summary>
+        /// <param name="ryb">Instance of RYB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public HueSaturationValue(RedYellowBlue ryb)
+        {
+            if (ryb is null)
+                throw new TerminauxException("Can't convert a null RYB instance to HSV!");
+
+            // Get the RGB values
+            var rgb = ryb.ConvertToRgb();
 
             // Do the conversion
             var (hue, saturation, value) = GetHsvFromRgb(rgb);
