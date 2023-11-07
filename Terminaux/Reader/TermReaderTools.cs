@@ -124,7 +124,7 @@ namespace Terminaux.Reader
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
+            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft);
 
             // In the case of one line wrap, get the list of sentences
             if (state.OneLineWrap)
@@ -181,7 +181,7 @@ namespace Terminaux.Reader
 
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
+            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, wrapped[wrapped.Length - 1].Length);
             if (state.OneLineWrap)
             {
                 // We're in the one-line wrap mode!
@@ -189,7 +189,7 @@ namespace Terminaux.Reader
                 incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
+                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - renderedText.Length), state.settings);
                 if (steps > 0)
                 {
                     if (backward)
@@ -201,7 +201,7 @@ namespace Terminaux.Reader
             else
             {
                 ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - incompleteSentences[incompleteSentences.Length - 1].Length), state.settings);
+                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - incompleteSentences[incompleteSentences.Length - 1].Length), state.settings);
                 if (steps > 0)
                 {
                     if (backward)
