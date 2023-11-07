@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Sequences.Tools;
 
 namespace Terminaux.Reader
 {
@@ -76,6 +77,32 @@ namespace Terminaux.Reader
             }
             else
                 return ConsoleWrappers.ActionReadKey(true);
+        }
+
+        internal static int GetMaximumInputLength(TermReaderState state)
+        {
+            // First, get the maximum width and height
+            int width = ConsoleWrappers.ActionWindowWidth();
+            int height = ConsoleWrappers.ActionBufferHeight();
+
+            // Then, get the length for each width and height, subtracting it by one to avoid wrapping
+            int marginWidth = width - state.settings.RightMargin - state.settings.LeftMargin;
+            int cells = marginWidth * height;
+            int length = cells - 1;
+
+            // We need to get the longest sentence width in case we encounter a multiline input prompt
+            int longestSentenceLength = width - state.settings.RightMargin - 1;
+            string[] inputPromptLines = state.InputPromptText.SplitNewLines();
+            string inputPromptLastLine = VtSequenceTools.FilterVTSequences(inputPromptLines[inputPromptLines.Length - 1]);
+            int inputPromptLineTimes = inputPromptLines.Length - 1;
+
+            // Subtract the length accordingly
+            for (int i = 0; i < inputPromptLineTimes; i++)
+                length -= longestSentenceLength;
+            length -= inputPromptLastLine.Length + inputPromptLineTimes;
+
+            // Return the number of length available
+            return length;
         }
     }
 }

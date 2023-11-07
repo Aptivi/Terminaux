@@ -96,7 +96,8 @@ namespace Terminaux.Reader.Bindings
                 ConsoleWrappers.ActionWriteString(renderedText, state.settings);
                 PositioningTools.HandleTopChangeForInput(ref state);
                 PositioningTools.GoForward(1, ref state);
-                if (renderedText.Length == (width * height) - 1)
+                int length = TermReaderTools.GetMaximumInputLength(state);
+                if (renderedText.Length == length)
                 {
                     state.canInsert = false;
                 }
