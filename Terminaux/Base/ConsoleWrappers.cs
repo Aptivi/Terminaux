@@ -419,7 +419,7 @@ namespace Terminaux.Base
                 }
             }
             else
-                Console.Write(text, settings);
+                Console.Write(text);
         }
 
         private static void Write(string text, TermReaderSettings settings, params object[] args)
