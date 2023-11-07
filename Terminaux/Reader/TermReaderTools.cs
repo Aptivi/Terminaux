@@ -200,8 +200,13 @@ namespace Terminaux.Reader
             }
             else
             {
+                int spacesLength = longestSentenceLength - state.settings.LeftMargin - incompleteSentences[incompleteSentences.Length - 1].Length;
+                if (incompleteSentences.Length == 1)
+                    spacesLength -= wrapped[wrapped.Length - 1].Length;
+                if (spacesLength == 0)
+                    spacesLength++;
                 ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - incompleteSentences[incompleteSentences.Length - 1].Length), state.settings);
+                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', spacesLength), state.settings);
                 if (steps > 0)
                 {
                     if (backward)
