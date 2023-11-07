@@ -200,9 +200,9 @@ namespace Terminaux.Reader
             }
             else
             {
-                int spacesLength = longestSentenceLength - state.settings.LeftMargin - incompleteSentences[incompleteSentences.Length - 1].Length;
-                if (incompleteSentences.Length == 1)
-                    spacesLength -= wrapped[wrapped.Length - 1].Length;
+                int spacesLength = longestSentenceLength - (state.inputPromptLeft + state.settings.LeftMargin) - incompleteSentences[incompleteSentences.Length - 1].Length;
+                if (spacesLength < 0)
+                    spacesLength = 0;
                 if (spacesLength == 0)
                     spacesLength++;
                 ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
