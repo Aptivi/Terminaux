@@ -34,15 +34,16 @@ fi
 # Pack binary
 echo Packing binary...
 cd "../Terminaux/bin/$releaseconf/netstandard2.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
-cd "../Terminaux.Figgle/bin/$releaseconf/netstandard2.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
-cd "../Terminaux.Console/bin/$releaseconf/net6.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
+cd "../Terminaux.Figgle/bin/$releaseconf/netstandard2.0/" && "$zippath" -r /tmp/$version-bin-figgle.zip . && cd -
+cd "../Terminaux.Console/bin/$releaseconf/net6.0/" && "$zippath" -r /tmp/$version-demo.zip . && cd -
 if [ ! $? == 0 ]; then
 	echo Packing using zip failed.
 	exit 1
 fi
 
 # Inform success
-mv ~/tmp/$version-bin-figgle.zip .
-mv ~/tmp/$version-demo.zip .
+mv /tmp/$version-bin.zip .
+mv /tmp/$version-bin-figgle.zip .
+mv /tmp/$version-demo.zip .
 echo Build and pack successful.
 exit 0
