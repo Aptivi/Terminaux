@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using Terminaux.Base;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
@@ -41,25 +40,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             state.KillBuffer.Append(state.CurrentText.ToString().Substring(state.CurrentTextPos, times));
             state.CurrentText.Remove(state.CurrentTextPos, times);
             state.canInsert = true;
-
-            // Re-write the text and set the current cursor position as appropriate
-            string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-
-            // In the case of one line wrap, get the list of sentences
-            if (state.OneLineWrap)
-            {
-                int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
-                renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
-                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
-            }
-            else
-            {
-                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', times), state.settings);
-            }
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            TermReaderTools.RefreshPrompt(ref state);
         }
     }
 }

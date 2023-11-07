@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using Terminaux.Base;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
@@ -33,34 +32,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override bool IsExit => false;
 
         /// <inheritdoc/>
-        public override void DoAction(TermReaderState state)
-        {
-            // Determine if the input prompt text is either overflowing or intentionally placing
-            // the newlines using the "incomplete sentences" feature, then refresh the input
-            // prompt.
-            int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin;
-            string[] wrapped = ConsoleExtensions.GetWrappedSentences(state.InputPromptText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
-            ConsoleWrappers.ActionSetCursorPosition(state.settings.LeftMargin, state.InputPromptTop - wrapped.Length + 1);
-            ConsoleWrappers.ActionWriteString(state.InputPromptText, state.Settings);
-
-            // Now, render the current text
-            string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
-            if (state.OneLineWrap)
-            {
-                // We're in the one-line wrap mode!
-                longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
-                renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
-                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
-            }
-            else
-            {
-                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - incompleteSentences[incompleteSentences.Length - 1].Length), state.settings);
-            }
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-        }
+        public override void DoAction(TermReaderState state) =>
+            TermReaderTools.RefreshPrompt(ref state);
     }
 }

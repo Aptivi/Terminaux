@@ -70,25 +70,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // Now, write the history entry
             TermReaderState.currentHistoryPos++;
             string history = state.CurrentHistoryPos == state.History.Count ? "" : state.History[TermReaderState.currentHistoryPos];
-
-            // In the case of one line wrap, get the list of sentences
-            if (state.OneLineWrap)
-            {
-                int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
-                string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(history, longestSentenceLength, 0);
-                string renderedHistory = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, history.Length) : history;
-                ConsoleWrappers.ActionWriteString(renderedHistory + new string(' ', longestSentenceLength - renderedHistory.Length), state.settings);
-                state.CurrentText.Append(history);
-                PositioningTools.GoForwardOneLineWrapAware(history.Length, ref state);
-            }
-            else
-            {
-                ConsoleWrappers.ActionWriteString(history, state.settings);
-                state.CurrentText.Append(history);
-                PositioningTools.HandleTopChangeForInput(ref state);
-                PositioningTools.GoForward(history.Length, ref state);
-            }
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            TermReaderTools.InsertNewText(ref state, history, true);
         }
     }
 }

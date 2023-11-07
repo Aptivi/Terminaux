@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Reader.Tools;
 using Terminaux.Sequences.Tools;
 
 namespace Terminaux.Reader
@@ -103,6 +104,136 @@ namespace Terminaux.Reader
 
             // Return the number of length available
             return length;
+        }
+
+        internal static void InsertNewText(ref TermReaderState state, string newText, bool append = false, bool step = true)
+        {
+            // If we can't insert, do nothing
+            if (!state.CanInsert)
+                return;
+
+            // Get the longest sentence width and insert the character
+            int width = ConsoleWrappers.ActionWindowWidth();
+            int height = ConsoleWrappers.ActionBufferHeight();
+            int longestSentenceLength = width - state.settings.RightMargin;
+            string[] incompleteSentencesPrimary = ConsoleExtensions.GetWrappedSentences(state.CurrentText.ToString(), longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
+            if (append)
+                state.CurrentText.Append(newText);
+            else
+                state.CurrentText.Insert(state.CurrentTextPos, newText);
+
+            // Re-write the text and set the current cursor position as appropriate
+            string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
+            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
+
+            // In the case of one line wrap, get the list of sentences
+            if (state.OneLineWrap)
+            {
+                longestSentenceLength = width - state.settings.RightMargin - state.inputPromptLeft - 1;
+                incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
+                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
+                if (step)
+                    PositioningTools.GoForwardOneLineWrapAware(newText.Length, ref state);
+            }
+            else
+            {
+                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrappers.ActionWriteString(renderedText, state.settings);
+                if (step)
+                {
+                    PositioningTools.HandleTopChangeForInput(ref state);
+                    PositioningTools.GoForward(newText.Length, ref state);
+                    int length = GetMaximumInputLength(state);
+                    if (renderedText.Length == length)
+                    {
+                        state.canInsert = false;
+                    }
+                    else
+                    {
+                        if (state.inputPromptTop + incompleteSentences.Length > height)
+                        {
+                            state.inputPromptTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
+                            state.currentCursorPosTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
+                        }
+                        if (state.currentCursorPosTop >= height)
+                        {
+                            state.currentCursorPosTop = height - 1;
+                            state.inputPromptTop -= 1;
+                            ConsoleWrappers.ActionWriteLine();
+                        }
+                    }
+                }
+            }
+            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+        }
+
+        internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false)
+        {
+            // Determine if the input prompt text is either overflowing or intentionally placing
+            // the newlines using the "incomplete sentences" feature, then refresh the input
+            // prompt.
+            int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin;
+            string[] wrapped = ConsoleExtensions.GetWrappedSentences(state.InputPromptText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
+            ConsoleWrappers.ActionSetCursorPosition(state.settings.LeftMargin, state.InputPromptTop - wrapped.Length + 1);
+            ConsoleWrappers.ActionWriteString(state.InputPromptText, state.Settings);
+
+            // Now, render the current text
+            string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
+            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
+            if (state.OneLineWrap)
+            {
+                // We're in the one-line wrap mode!
+                longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
+                incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
+                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
+                if (steps > 0)
+                {
+                    if (backward)
+                        PositioningTools.GoBackOneLineWrapAware(steps, ref state);
+                    else
+                        PositioningTools.GoForwardOneLineWrapAware(steps, ref state);
+                }
+            }
+            else
+            {
+                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - incompleteSentences[incompleteSentences.Length - 1].Length), state.settings);
+                if (steps > 0)
+                {
+                    if (backward)
+                        PositioningTools.GoBack(steps, ref state);
+                    else
+                        PositioningTools.GoForward(steps, ref state);
+                }
+            }
+            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+        }
+
+        internal static string GetOneLineWrappedSentenceToRender(string[] incompleteSentences, TermReaderState state) =>
+            GetOneLineWrappedSentenceToRender(incompleteSentences, state.CurrentTextPos);
+
+        internal static string GetOneLineWrappedSentenceToRender(string[] incompleteSentences, int targetIndex)
+        {
+            string finalRenderedString = "";
+
+            // Deal with trying to count the characters incrementally for each incomplete sentence until we find an index
+            // that we want, then give the rendered string back.
+            int currentIndex = 0;
+            foreach (string sentence in incompleteSentences)
+            {
+                finalRenderedString = sentence;
+                for (int i = 0; i < sentence.Length && currentIndex != targetIndex; i++)
+                    currentIndex++;
+                if (currentIndex == targetIndex)
+                    break;
+            }
+
+            // Return it!
+            return finalRenderedString;
         }
     }
 }

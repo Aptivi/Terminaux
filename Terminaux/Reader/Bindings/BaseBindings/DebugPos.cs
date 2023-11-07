@@ -50,7 +50,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // In the case of one line wrap, get the list of sentences and debug the positions
             int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
             string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
-            renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
+            renderedText = state.OneLineWrap ? TermReaderTools.GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
             ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             if (state.OneLineWrap)
                 PositioningTools.SeekToOneLineWrapAware(renderedText.Length, ref state);

@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using Terminaux.Base;
-using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings
 {
@@ -65,81 +63,7 @@ namespace Terminaux.Reader.Bindings
             if (char.IsControl(state.pressedKey.KeyChar))
                 return;
 
-            // If we can't insert, do nothing
-            if (!state.CanInsert)
-                return;
-
-            // Get the longest sentence width and insert the character
-            int width = ConsoleWrappers.ActionWindowWidth();
-            int height = ConsoleWrappers.ActionBufferHeight();
-            int longestSentenceLength = width - state.settings.RightMargin;
-            string[] incompleteSentencesPrimary = ConsoleExtensions.GetWrappedSentences(state.CurrentText.ToString(), longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
-            state.CurrentText.Insert(state.CurrentTextPos, state.pressedKey.KeyChar);
-
-            // Re-write the text and set the current cursor position as appropriate
-            string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
-
-            // In the case of one line wrap, get the list of sentences
-            if (state.OneLineWrap)
-            {
-                longestSentenceLength = width - state.settings.RightMargin - state.inputPromptLeft - 1;
-                incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
-                renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
-                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
-                PositioningTools.GoForwardOneLineWrapAware(1, ref state);
-            }
-            else
-            {
-                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedText, state.settings);
-                PositioningTools.HandleTopChangeForInput(ref state);
-                PositioningTools.GoForward(1, ref state);
-                int length = TermReaderTools.GetMaximumInputLength(state);
-                if (renderedText.Length == length)
-                {
-                    state.canInsert = false;
-                }
-                else
-                {
-                    if (state.inputPromptTop + incompleteSentences.Length > height)
-                    {
-                        state.inputPromptTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
-                        state.currentCursorPosTop -= incompleteSentences.Length - incompleteSentencesPrimary.Length;
-                    }
-                    if (state.currentCursorPosTop >= height)
-                    {
-                        state.currentCursorPosTop = height - 1;
-                        state.inputPromptTop -= 1;
-                        ConsoleWrappers.ActionWriteLine();
-                    }
-                }
-            }
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-        }
-
-        internal static string GetOneLineWrappedSentenceToRender(string[] incompleteSentences, TermReaderState state) =>
-            GetOneLineWrappedSentenceToRender(incompleteSentences, state.CurrentTextPos);
-
-        internal static string GetOneLineWrappedSentenceToRender(string[] incompleteSentences, int targetIndex)
-        {
-            string finalRenderedString = "";
-
-            // Deal with trying to count the characters incrementally for each incomplete sentence until we find an index
-            // that we want, then give the rendered string back.
-            int currentIndex = 0;
-            foreach (string sentence in incompleteSentences)
-            {
-                finalRenderedString = sentence;
-                for (int i = 0; i < sentence.Length && currentIndex != targetIndex; i++)
-                    currentIndex++;
-                if (currentIndex == targetIndex)
-                    break;
-            }
-
-            // Return it!
-            return finalRenderedString;
+            TermReaderTools.InsertNewText(ref state, $"{state.pressedKey.KeyChar}");
         }
     }
 }
