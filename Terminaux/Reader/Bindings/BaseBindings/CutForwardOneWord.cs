@@ -53,7 +53,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             state.KillBuffer.Append(state.CurrentText.ToString().Substring(state.CurrentTextPos, steps));
             state.CurrentText.Remove(state.CurrentTextPos, steps);
             state.canInsert = true;
-            TermReaderTools.RefreshPrompt(ref state);
+            TermReaderTools.RefreshPrompt(ref state, 0, false, steps);
         }
     }
 }

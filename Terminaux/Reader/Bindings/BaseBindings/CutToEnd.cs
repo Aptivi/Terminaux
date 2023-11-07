@@ -40,7 +40,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             state.KillBuffer.Append(state.CurrentText.ToString().Substring(state.CurrentTextPos, times));
             state.CurrentText.Remove(state.CurrentTextPos, times);
             state.canInsert = true;
-            TermReaderTools.RefreshPrompt(ref state);
+            TermReaderTools.RefreshPrompt(ref state, 0, false, times);
         }
     }
 }

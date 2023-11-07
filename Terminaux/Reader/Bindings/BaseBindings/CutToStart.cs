@@ -37,10 +37,11 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Remove characters from the current text position to the start
             int times = state.CurrentTextPos;
-            state.KillBuffer.Append(state.CurrentText.ToString().Substring(0, times));
+            string killing = state.CurrentText.ToString().Substring(0, times);
+            state.KillBuffer.Append(killing);
             state.CurrentText.Remove(0, times);
             state.canInsert = true;
-            TermReaderTools.RefreshPrompt(ref state, times, true);
+            TermReaderTools.RefreshPrompt(ref state, times, true, killing.Length);
         }
     }
 }

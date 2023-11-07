@@ -169,7 +169,7 @@ namespace Terminaux.Reader
             ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
 
-        internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false)
+        internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false, int spaces = 0)
         {
             // Determine if the input prompt text is either overflowing or intentionally placing
             // the newlines using the "incomplete sentences" feature, then refresh the input
@@ -205,6 +205,8 @@ namespace Terminaux.Reader
                     spacesLength = 0;
                 if (spacesLength == 0)
                     spacesLength++;
+                if (spaces > 0)
+                    spacesLength = spaces;
                 ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleWrappers.ActionWriteString(renderedText + new string(' ', spacesLength), state.settings);
                 if (steps > 0)
