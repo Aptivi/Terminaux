@@ -35,7 +35,7 @@ fi
 echo Packing binary...
 cd "../Terminaux/bin/$releaseconf/netstandard2.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
 cd "../Terminaux.Figgle/bin/$releaseconf/netstandard2.0/" && "$zippath" -r /tmp/$version-bin-figgle.zip . && cd -
-cd "../Terminaux.Console/bin/$releaseconf/net6.0/" && "$zippath" -r /tmp/$version-demo.zip . && cd -
+cd "../Terminaux.Console/bin/$releaseconf/net8.0/" && "$zippath" -r /tmp/$version-demo.zip . && cd -
 if [ ! $? == 0 ]; then
 	echo Packing using zip failed.
 	exit 1
