@@ -514,6 +514,9 @@ namespace Terminaux.Base
             // Make the text look like it came from Linux
             text = text.Replace(Convert.ToString(Convert.ToChar(13)), "");
 
+            // Convert tabs to four spaces
+            text = text.Replace("\t", "    ");
+
             // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
             // the first time and will be reverted back to zero after the incomplete sentence is formed.
             foreach (string splitText in text.SplitNewLines())
