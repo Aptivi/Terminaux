@@ -25,7 +25,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
     internal static class FixtureManager
     {
         internal static IFixture[] fixtures =
-        {
+        [
             // Reader
             new Prompt(),
             new PromptInterruptible(),
@@ -93,7 +93,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new CliInfoPaneSlowTestRefreshing(),
             new CliDoublePaneTest(),
             new CliDoublePaneSlowTest(),
-        };
+        ];
 
         internal static IFixture GetFixtureFromName(string name)
         {

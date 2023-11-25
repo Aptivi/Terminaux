@@ -24,17 +24,17 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
     internal class PromptLoopedHistories : IFixture
     {
-        private readonly List<string> firstHistory = new()
-        {
+        private readonly List<string> firstHistory =
+        [
             "dotnet new",
             "dotnet build",
-        };
-        private readonly List<string> secondHistory = new()
-        {
+        ];
+        private readonly List<string> secondHistory =
+        [
             "git init",
             "git commit",
             "git push",
-        };
+        ];
 
         public string FixtureID => "PromptLoopedHistories";
 

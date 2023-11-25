@@ -385,7 +385,7 @@ namespace Terminaux.Reader.Inputs.Interactive
             int paneCurrentSelection = paneNum == 2 ? InteractiveTuiStatus.SecondPaneCurrentSelection : InteractiveTuiStatus.FirstPaneCurrentSelection;
             int currentPage = (paneCurrentSelection - 1) / answersPerPage;
             int startIndex = answersPerPage * currentPage;
-            int[] indexes = new[] { lastSelection, currentSelection };
+            int[] indexes = [lastSelection, currentSelection];
             for (int i = 0; i < indexes.Length; i++)
             {
                 // Populate the first pane with changes

@@ -49,9 +49,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             else
             {
                 if (parts[0] == "dotnet")
-                    return new string[] { "build", "restore", "run" };
+                    return ["build", "restore", "run"];
                 else if (parts[0] == "git")
-                    return new string[] { "fetch", "pull", "push" };
+                    return ["fetch", "pull", "push"];
             }
             return Array.Empty<string>();
         }

@@ -126,7 +126,7 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="Answers">Set of answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         public static int[] PromptMultipleSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false) =>
-            PromptMultipleSelection(Question, Answers, new List<InputChoiceInfo>(), kiosk);
+            PromptMultipleSelection(Question, Answers, [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -147,7 +147,7 @@ namespace Terminaux.Reader.Inputs.Styles
             Color textColor = new(ConsoleColors.Gray);
             int HighlightedAnswer = 1;
             List<InputChoiceInfo> AllAnswers = new(Answers);
-            List<int> SelectedAnswers = new();
+            List<int> SelectedAnswers = [];
             AllAnswers.AddRange(AltAnswers);
 
             // Before we proceed, we need to check the highlighted answer number
@@ -322,7 +322,7 @@ namespace Terminaux.Reader.Inputs.Styles
                     case ConsoleKey.Enter:
                         ConsoleWrappers.ActionCursorVisible(origVisible);
                         ConsoleWrappers.ActionClear();
-                        return SelectedAnswers.ToArray();
+                        return [.. SelectedAnswers];
                     case ConsoleKey.Escape:
                         if (kiosk)
                             break;
@@ -334,13 +334,13 @@ namespace Terminaux.Reader.Inputs.Styles
                             break;
                         var infoRenderer = new StringBuilder();
                         infoRenderer.AppendFormat("{0}",
-                            string.Join("\n", new[]
-                            {
+                            string.Join("\n",
+                            [
                                 highlightedAnswer.ChoiceTitle,
                                 new string('-', highlightedAnswer.ChoiceTitle.Length),
                                 "",
                                 highlightedAnswer.ChoiceDescription,
-                            })
+                            ])
                         );
                         InfoBoxColor.WriteInfoBox(infoRenderer.ToString());
                         refreshRequired = true;

@@ -70,7 +70,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             foreach (var Value in (IEnumerable)List[ListEntry])
                                 Values.Add(Value);
                             TextWriterColor.WriteColor("- {0}: ", false, ListKeyColor, ListEntry);
-                            TextWriterColor.WriteColor("{0}", true, ListValueColor, vars: new object[] { string.Join(", ", Values) });
+                            TextWriterColor.WriteColor("{0}", true, ListValueColor, vars: [string.Join(", ", Values)]);
                         }
                         else
                         {
@@ -142,13 +142,13 @@ namespace Terminaux.Writer.ConsoleWriters
                         {
                             foreach (var Value in (IEnumerable)ListEntry)
                                 Values.Add(Value);
-                            TextWriterColor.WriteColor("- {0}: ", false, ListKeyColor, vars: new object[] { EntryNumber });
-                            TextWriterColor.WriteColor("{0}", true, ListValueColor, vars: new object[] { string.Join(", ", Values) });
+                            TextWriterColor.WriteColor("- {0}: ", false, ListKeyColor, vars: [EntryNumber]);
+                            TextWriterColor.WriteColor("{0}", true, ListValueColor, vars: [string.Join(", ", Values)]);
                         }
                         else
                         {
-                            TextWriterColor.WriteColor("- {0}: ", false, ListKeyColor, vars: new object[] { EntryNumber });
-                            TextWriterColor.WriteColor("{0}", true, ListValueColor, vars: new object[] { ListEntry });
+                            TextWriterColor.WriteColor("- {0}: ", false, ListKeyColor, vars: [EntryNumber]);
+                            TextWriterColor.WriteColor("{0}", true, ListValueColor, vars: [ListEntry]);
                         }
                         EntryNumber += 1;
                         if (Wrap)

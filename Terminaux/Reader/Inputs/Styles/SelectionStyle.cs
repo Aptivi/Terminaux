@@ -129,7 +129,7 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="Answers">Set of answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false) =>
-            PromptSelection(Question, Answers, new List<InputChoiceInfo>(), kiosk);
+            PromptSelection(Question, Answers, [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -331,13 +331,13 @@ namespace Terminaux.Reader.Inputs.Styles
                             break;
                         var infoRenderer = new StringBuilder();
                         infoRenderer.AppendFormat("{0}",
-                            string.Join("\n", new[]
-                            {
+                            string.Join("\n",
+                            [
                                 highlightedAnswer.ChoiceTitle,
                                 new string('-', highlightedAnswer.ChoiceTitle.Length),
                                 "",
                                 highlightedAnswer.ChoiceDescription,
-                            })
+                            ])
                         );
                         InfoBoxColor.WriteInfoBox(infoRenderer.ToString());
                         refreshRequired = true;

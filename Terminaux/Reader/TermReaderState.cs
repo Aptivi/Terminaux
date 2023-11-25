@@ -45,7 +45,7 @@ namespace Terminaux.Reader
         internal TermReaderSettings settings;
 
         // Shared
-        internal static List<string> history = new();
+        internal static List<string> history = [];
         internal static int currentHistoryPos;
         internal static int currentSuggestionsPos = -1;
 

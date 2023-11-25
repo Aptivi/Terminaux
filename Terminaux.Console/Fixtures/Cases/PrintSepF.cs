@@ -25,7 +25,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "PrintSepF";
         public void RunFixture()
         {
-            SeparatorWriterColor.WriteSeparator("Hi, {0}!", true, Vars: new object[] { "Terminaux" });
+            SeparatorWriterColor.WriteSeparator("Hi, {0}!", true, Vars: ["Terminaux"]);
         }
     }
 }

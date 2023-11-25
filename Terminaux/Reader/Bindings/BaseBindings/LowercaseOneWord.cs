@@ -24,9 +24,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     {
         /// <inheritdoc/>
         public override ConsoleKeyInfo[] BoundKeys { get; } =
-        {
+        [
             new ConsoleKeyInfo('l', ConsoleKey.L, false, true, false)
-        };
+        ];
 
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)

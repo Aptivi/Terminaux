@@ -26,10 +26,10 @@ namespace Terminaux.Reader.Bindings.BaseBindings
     {
         /// <inheritdoc/>
         public override ConsoleKeyInfo[] BoundKeys { get; } =
-        {
+        [
             new ConsoleKeyInfo('\0', ConsoleKey.Home, false, false, false),
             new ConsoleKeyInfo('\u0001', ConsoleKey.A, false, false, true)
-        };
+        ];
 
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)

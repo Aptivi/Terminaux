@@ -31,7 +31,7 @@ namespace Terminaux.Reader
         private int leftMargin = 0;
         private int rightMargin = 0;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
-        internal char[] suggestionsDelims = new char[] { ' ' };
+        internal char[] suggestionsDelims = [' '];
 
         /// <summary>
         /// Password mask character
@@ -82,7 +82,7 @@ namespace Terminaux.Reader
         /// </summary>
         public char[] SuggestionsDelimiters
         {
-            set => suggestionsDelims = value ?? new char[] { ' ' };
+            set => suggestionsDelims = value ?? [' '];
         }
 
         /// <summary>

@@ -25,17 +25,17 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
 {
     internal class CliDoublePaneSlowTestData : BaseInteractiveTui, IInteractiveTui
     {
-        internal static List<string> strings = new();
-        internal static List<string> strings2 = new();
+        internal static List<string> strings = [];
+        internal static List<string> strings2 = [];
 
-        public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
-        {
+        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        [
             new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1,  (_, index) => Add(index)),
             new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2,  (_, index) => Remove(index)),
             new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3,  (_, _)     => RemoveLast()),
             new InteractiveTuiBinding(/* Localizable */ "Redraw",      ConsoleKey.F4,  (_, _)     => InteractiveTuiStatus.RedrawRequired = true),
             new InteractiveTuiBinding(/* Localizable */ "Switch",      ConsoleKey.Tab, (_, _)     => Switch()),
-        };
+        ];
 
         /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>

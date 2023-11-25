@@ -480,10 +480,10 @@ namespace Terminaux.Base
         internal static string[] SplitEncloseDoubleQuotes(this string target)
         {
             var matches = Regex.Matches(target, regexMatchEnclosedStrings);
-            List<string> splits = new();
+            List<string> splits = [];
             foreach (Match match in matches)
                 splits.Add(match.Value.ReleaseDoubleQuotes());
-            return splits.ToArray();
+            return [.. splits];
         }
         internal static string ReleaseDoubleQuotes(this string target)
         {
@@ -504,7 +504,7 @@ namespace Terminaux.Base
         internal static string[] GetWrappedSentences(string text, int maximumLength, int indentLength)
         {
             if (string.IsNullOrEmpty(text))
-                return new string[] { "" };
+                return [""];
 
             // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
             // sizes.
@@ -573,7 +573,7 @@ namespace Terminaux.Base
                 }
             }
 
-            return IncompleteSentences.ToArray();
+            return [.. IncompleteSentences];
         }
 
         internal static void SwapIfSourceLarger(this ref int SourceNumber, ref int TargetNumber)

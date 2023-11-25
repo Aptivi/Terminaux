@@ -31,8 +31,8 @@ namespace Terminaux.Figgle
     public static class FiggleTools
     {
 
-        private readonly static Dictionary<string, string> cachedFiglets = new();
-        private static readonly Dictionary<string, Func<object>> cachedGetters = new();
+        private readonly static Dictionary<string, string> cachedFiglets = [];
+        private static readonly Dictionary<string, Func<object>> cachedGetters = [];
 
         /// <summary>
         /// The figlet fonts dictionary. It lists all the Figlet fonts supported by the Figgle library.
@@ -66,7 +66,7 @@ namespace Terminaux.Figgle
                 lines.RemoveAt(line);
             }
 
-            return lines.ToArray();
+            return [.. lines];
         }
 
         /// <summary>

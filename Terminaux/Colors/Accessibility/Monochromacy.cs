@@ -33,12 +33,12 @@ namespace Terminaux.Colors.Accessibility
                 throw new ArgumentOutOfRangeException("b");
 
             // Get linear RGB from these three RGB values
-            double[] linears = new double[3]
-            {
+            double[] linears =
+            [
                 ColorTools.SRGBToLinearRGB(r),
                 ColorTools.SRGBToLinearRGB(g),
                 ColorTools.SRGBToLinearRGB(b)
-            };
+            ];
 
             // Transform the color linear values by applying monochromacy
             double monochrome = (0.2126 * linears[0]) + (0.7152 * linears[1]) + (0.0722 * linears[2]);

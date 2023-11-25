@@ -26,32 +26,32 @@ namespace Terminaux.Colors.Accessibility
     {
         static readonly VienotParameters vn_protan = new()
         {
-            TransPlane = new double[9]
-            {
+            TransPlane =
+            [
                 0.11238, 0.88762, 0.00000,
                 0.11238, 0.88762, -0.00000,
                 0.00401, -0.00401, 1.00000
-            }
+            ]
         };
 
         static readonly VienotParameters vn_deutan = new()
         {
-            TransPlane = new double[9]
-            {
+            TransPlane =
+            [
                 0.29275, 0.70725, 0.00000,
                 0.29275, 0.70725, -0.00000,
                 -0.02234, 0.02234, 1.00000
-            }
+            ]
         };
 
         static readonly VienotParameters vn_tritan = new()
         {
-            TransPlane = new double[9]
-            {
+            TransPlane =
+            [
                 1.00000, 0.14461, -0.14461,
                 0.00000, 0.85924, 0.14076,
                 -0.00000, 0.85924, 0.14076
-            }
+            ]
         };
 
         public static (int, int, int) Transform(int r, int g, int b, Deficiency def, double severity)
@@ -82,20 +82,20 @@ namespace Terminaux.Colors.Accessibility
             }
 
             // Get linear RGB from these three RGB values
-            double[] linears = new double[3]
-            {
+            double[] linears =
+            [
                 ColorTools.SRGBToLinearRGB(r),
                 ColorTools.SRGBToLinearRGB(g),
                 ColorTools.SRGBToLinearRGB(b)
-            };
+            ];
 
             var vnt = vn.TransPlane;
-            double[] rgbMatrix = new double[3]
-            {
+            double[] rgbMatrix =
+            [
                 vnt[0]*linears[0] + vnt[1]*linears[1] + vnt[2]*linears[2],
                 vnt[3]*linears[0] + vnt[4]*linears[1] + vnt[5]*linears[2],
                 vnt[6]*linears[0] + vnt[7]*linears[1] + vnt[8]*linears[2],
-            };
+            ];
 
             // Transform the colors with the severity rate in a linear transform method
             if (severity < 0.999d)

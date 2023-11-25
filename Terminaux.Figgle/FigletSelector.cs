@@ -38,7 +38,7 @@ namespace Terminaux.Figgle
         {
             // Some initial variables to populate figlet fonts
             string fontName = "";
-            string[] fonts = FiggleTools.FigletFonts.Keys.ToArray();
+            string[] fonts = [.. FiggleTools.FigletFonts.Keys];
 
             // Now, clear the console and let the user select a figlet font while displaying a small text in the middle
             // of the console

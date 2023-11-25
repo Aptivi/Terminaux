@@ -33,7 +33,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             {
                 var colorInstance = new Color(color);
                 ColorTools.LoadBack(ConsoleColors.Blue);
-                TextWriterColor.WriteColor("Color {0} [{1}]", true, colorInstance, vars: new object[] { colorInstance.PlainSequence, colorInstance.PlainSequenceTrueColor });
+                TextWriterColor.WriteColor("Color {0} [{1}]", true, colorInstance, vars: [colorInstance.PlainSequence, colorInstance.PlainSequenceTrueColor]);
                 TextWriterColor.Write("Press any key to reset all.");
                 Input.DetectKeypress();
                 ConsoleExtensions.ResetAll();

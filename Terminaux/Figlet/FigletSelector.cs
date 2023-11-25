@@ -45,7 +45,7 @@ namespace Terminaux.Figlet
         public static string PromptForFiglet(string font)
         {
             // Some initial variables to populate figlet fonts
-            string[] fonts = FigletTools.GetFigletFonts().Keys.ToArray();
+            string[] fonts = [.. FigletTools.GetFigletFonts().Keys];
             string fontName = fonts.Contains(font) ? font : "small";
 
             // Determine the font index

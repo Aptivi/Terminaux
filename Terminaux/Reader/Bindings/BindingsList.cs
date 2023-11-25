@@ -24,8 +24,8 @@ namespace Terminaux.Reader.Bindings
 {
     internal static class BindingsList
     {
-        internal static List<BaseBinding> baseBindings = new()
-        {
+        internal static List<BaseBinding> baseBindings =
+        [
             new GoRight(),
             new GoLeft(),
             new Home(),
@@ -55,9 +55,9 @@ namespace Terminaux.Reader.Bindings
 #if DEBUG
             new DebugPos()
 #endif
-        };
+        ];
 
-        internal static List<BaseBinding> customBindings = new();
+        internal static List<BaseBinding> customBindings = [];
 
         internal static List<BaseBinding> AllBindings { get => baseBindings.Concat(customBindings).ToList(); }
 
