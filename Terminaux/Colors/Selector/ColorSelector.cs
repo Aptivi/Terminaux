@@ -582,149 +582,98 @@ namespace Terminaux.Colors.Selector
 
         private static void ShowColorInfo(Color selectedColor)
         {
-            var selectedColorProtan = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Protan, 0.6);
-            var selectedColorDeutan = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Deutan, 0.6);
-            var selectedColorTritan = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Tritan, 0.6);
-            var selectedColorMonochromacy = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
-            InfoBoxColor.WriteInfoBox(
-                    $$"""
-                    Color info
-                    ----------
+            ShowColorInfoBox(
+                "Color info",
+                selectedColor
+            );
+            ShowColorInfoBox(
+                "Color info (Protanomaly)",
+                selectedColor,
+                true
+            );
+            ShowColorInfoBox(
+                "Color info (Protanopia)",
+                selectedColor,
+                true,
+                Deficiency.Protan, 1.0
+            );
+            ShowColorInfoBox(
+                "Color info (Deuteranomaly)",
+                selectedColor,
+                true,
+                Deficiency.Deutan
+            );
+            ShowColorInfoBox(
+                "Color info (Deuteranopia)",
+                selectedColor,
+                true,
+                Deficiency.Deutan, 1.0
+            );
+            ShowColorInfoBox(
+                "Color info (Tritanomaly)",
+                selectedColor,
+                true,
+                Deficiency.Tritan
+            );
+            ShowColorInfoBox(
+                "Color info (Tritanopia)",
+                selectedColor,
+                true,
+                Deficiency.Tritan, 1.0
+            );
+            ShowColorInfoBox(
+                "Color info (Monochromacy)",
+                selectedColor,
+                true,
+                Deficiency.Monochromacy
+            );
+        }
 
-                    RGB level:        {{selectedColor.PlainSequence}}
-                    RGB level (true): {{selectedColor.PlainSequenceTrueColor}}
-                    RGB hex code:     {{selectedColor.Hex}}
-                    Color type:       {{selectedColor.Type}}
+        private static void ShowColorInfoBox(string localizedTextTitle, Color selectedColor, bool colorBlind = false, Deficiency deficiency = Deficiency.Protan, double severity = 0.6)
+        {
+            selectedColor =
+                colorBlind ?
+                ColorTools.RenderColorBlindnessAware(selectedColor, deficiency, severity) :
+                selectedColor;
+            string separator = new('-', localizedTextTitle.Length);
+            InfoBoxColor.WriteInfoBox(
+                $$"""
+                {{localizedTextTitle}}
+                {{separator}}
 
-                    CMYK information:      | CMY information:
-                      - Black key:    {{selectedColor.CMYK.KWhole,3}}  |
-                      - Cyan:         {{selectedColor.CMYK.CMY.CWhole,3}}  | - Cyan:        {{selectedColor.CMY.CWhole,3}}
-                      - Magenta:      {{selectedColor.CMYK.CMY.MWhole,3}}  | - Magenta:     {{selectedColor.CMY.CWhole,3}}
-                      - Yellow:       {{selectedColor.CMYK.CMY.YWhole,3}}  | - Yellow:      {{selectedColor.CMY.CWhole,3}}
-                    -----------------------+---------------------
-                    HSL information:       | HSV information:
-                      - Hue (degs):   {{selectedColor.HSL.HueWhole,3}}' | - Hue (degs):  {{selectedColor.HSV.HueWhole,3}}' 
-                      - Reverse Hue:  {{selectedColor.HSL.ReverseHueWhole,3}}' | - Reverse Hue: {{selectedColor.HSV.ReverseHueWhole,3}}' 
-                      - Saturation:   {{selectedColor.HSL.SaturationWhole,3}}  | - Saturation:  {{selectedColor.HSV.SaturationWhole,3}}  
-                      - Lightness:    {{selectedColor.HSL.LightnessWhole,3}}  | - Value:       {{selectedColor.HSV.ValueWhole,3}}  
-                    -----------------------+---------------------
-                    RYB information:
-                      - Red:          {{selectedColor.RYB.R,3}}
-                      - Yellow:       {{selectedColor.RYB.Y,3}}
-                      - Blue:         {{selectedColor.RYB.B,3}}
-                    """
-            );
-            InfoBoxColor.WriteInfoBox(
-                    $$"""
-                    Color info (Protan)
-                    -------------------
+                RGB level:          {{selectedColor.PlainSequence}}
+                RGB level (true):   {{selectedColor.PlainSequenceTrueColor}}
+                RGB hex code:       {{selectedColor.Hex}}
+                Color type:         {{selectedColor.Type}}
                     
-                    RGB level:        {{selectedColorProtan.PlainSequence}}
-                    RGB level (true): {{selectedColorProtan.PlainSequenceTrueColor}}
-                    RGB hex code:     {{selectedColorProtan.Hex}}
-                    Color type:       {{selectedColorProtan.Type}}
+                RYB information:
+                    - Red:            {{selectedColor.RYB.R,3}}
+                    - Yellow:         {{selectedColor.RYB.Y,3}}
+                    - Blue:           {{selectedColor.RYB.B,3}}
+
+                CMYK information:
+                    - Black key:      {{selectedColor.CMYK.KWhole,3}}
+                    - Cyan:           {{selectedColor.CMYK.CMY.CWhole,3}}
+                    - Magenta:        {{selectedColor.CMYK.CMY.MWhole,3}}
+                    - Yellow:         {{selectedColor.CMYK.CMY.YWhole,3}}
                     
-                    CMYK information:      | CMY information:
-                      - Black key:    {{selectedColorProtan.CMYK.KWhole,3}}  |
-                      - Cyan:         {{selectedColorProtan.CMYK.CMY.CWhole,3}}  | - Cyan:        {{selectedColorProtan.CMY.CWhole,3}}
-                      - Magenta:      {{selectedColorProtan.CMYK.CMY.MWhole,3}}  | - Magenta:     {{selectedColorProtan.CMY.CWhole,3}}
-                      - Yellow:       {{selectedColorProtan.CMYK.CMY.YWhole,3}}  | - Yellow:      {{selectedColorProtan.CMY.CWhole,3}}
-                    -----------------------+---------------------
-                    HSL information:       | HSV information:
-                      - Hue (degs):   {{selectedColorProtan.HSL.HueWhole,3}}' | - Hue (degs):  {{selectedColorProtan.HSV.HueWhole,3}}' 
-                      - Reverse Hue:  {{selectedColorProtan.HSL.ReverseHueWhole,3}}' | - Reverse Hue: {{selectedColorProtan.HSV.ReverseHueWhole,3}}' 
-                      - Saturation:   {{selectedColorProtan.HSL.SaturationWhole,3}}  | - Saturation:  {{selectedColorProtan.HSV.SaturationWhole,3}}  
-                      - Lightness:    {{selectedColorProtan.HSL.LightnessWhole,3}}  | - Value:       {{selectedColorProtan.HSV.ValueWhole,3}}  
-                    -----------------------+---------------------
-                    RYB information:
-                      - Red:          {{selectedColorProtan.RYB.R,3}}
-                      - Yellow:       {{selectedColorProtan.RYB.Y,3}}
-                      - Blue:         {{selectedColorProtan.RYB.B,3}}
-                    """
-            );
-            InfoBoxColor.WriteInfoBox(
-                    $$"""
-                    Color info (Deutan)
-                    -------------------
+                CMY information:
+                    - Cyan:           {{selectedColor.CMY.CWhole,3}}
+                    - Magenta:        {{selectedColor.CMY.CWhole,3}}
+                    - Yellow:         {{selectedColor.CMY.CWhole,3}}
                     
-                    RGB level:        {{selectedColorDeutan.PlainSequence}}
-                    RGB level (true): {{selectedColorDeutan.PlainSequenceTrueColor}}
-                    RGB hex code:     {{selectedColorDeutan.Hex}}
-                    Color type:       {{selectedColorDeutan.Type}}
+                HSL information:
+                    - Hue (degs):     {{selectedColor.HSL.HueWhole,3}}'
+                    - Reverse Hue:    {{selectedColor.HSL.ReverseHueWhole,3}}'
+                    - Saturation:     {{selectedColor.HSL.SaturationWhole,3}}
+                    - Lightness:      {{selectedColor.HSL.LightnessWhole,3}}
                     
-                    CMYK information:      | CMY information:
-                      - Black key:    {{selectedColorDeutan.CMYK.KWhole,3}}  |
-                      - Cyan:         {{selectedColorDeutan.CMYK.CMY.CWhole,3}}  | - Cyan:        {{selectedColorDeutan.CMY.CWhole,3}}
-                      - Magenta:      {{selectedColorDeutan.CMYK.CMY.MWhole,3}}  | - Magenta:     {{selectedColorDeutan.CMY.CWhole,3}}
-                      - Yellow:       {{selectedColorDeutan.CMYK.CMY.YWhole,3}}  | - Yellow:      {{selectedColorDeutan.CMY.CWhole,3}}
-                    -----------------------+---------------------
-                    HSL information:       | HSV information:
-                      - Hue (degs):   {{selectedColorDeutan.HSL.HueWhole,3}}' | - Hue (degs):  {{selectedColorDeutan.HSV.HueWhole,3}}' 
-                      - Reverse Hue:  {{selectedColorDeutan.HSL.ReverseHueWhole,3}}' | - Reverse Hue: {{selectedColorDeutan.HSV.ReverseHueWhole,3}}' 
-                      - Saturation:   {{selectedColorDeutan.HSL.SaturationWhole,3}}  | - Saturation:  {{selectedColorDeutan.HSV.SaturationWhole,3}}  
-                      - Lightness:    {{selectedColorDeutan.HSL.LightnessWhole,3}}  | - Value:       {{selectedColorDeutan.HSV.ValueWhole,3}}  
-                    -----------------------+---------------------
-                    RYB information:
-                      - Red:          {{selectedColorDeutan.RYB.R,3}}
-                      - Yellow:       {{selectedColorDeutan.RYB.Y,3}}
-                      - Blue:         {{selectedColorDeutan.RYB.B,3}}
-                    """
-            );
-            InfoBoxColor.WriteInfoBox(
-                    $$"""
-                    Color info (Tritan)
-                    -------------------
-                    
-                    RGB level:        {{selectedColorTritan.PlainSequence}}
-                    RGB level (true): {{selectedColorTritan.PlainSequenceTrueColor}}
-                    RGB hex code:     {{selectedColorTritan.Hex}}
-                    Color type:       {{selectedColorTritan.Type}}
-                    
-                    CMYK information:      | CMY information:
-                      - Black key:    {{selectedColorTritan.CMYK.KWhole,3}}  |
-                      - Cyan:         {{selectedColorTritan.CMYK.CMY.CWhole,3}}  | - Cyan:        {{selectedColorTritan.CMY.CWhole,3}}
-                      - Magenta:      {{selectedColorTritan.CMYK.CMY.MWhole,3}}  | - Magenta:     {{selectedColorTritan.CMY.CWhole,3}}
-                      - Yellow:       {{selectedColorTritan.CMYK.CMY.YWhole,3}}  | - Yellow:      {{selectedColorTritan.CMY.CWhole,3}}
-                    -----------------------+---------------------
-                    HSL information:       | HSV information:
-                      - Hue (degs):   {{selectedColorTritan.HSL.HueWhole,3}}' | - Hue (degs):  {{selectedColorTritan.HSV.HueWhole,3}}' 
-                      - Reverse Hue:  {{selectedColorTritan.HSL.ReverseHueWhole,3}}' | - Reverse Hue: {{selectedColorTritan.HSV.ReverseHueWhole,3}}' 
-                      - Saturation:   {{selectedColorTritan.HSL.SaturationWhole,3}}  | - Saturation:  {{selectedColorTritan.HSV.SaturationWhole,3}}  
-                      - Lightness:    {{selectedColorTritan.HSL.LightnessWhole,3}}  | - Value:       {{selectedColorTritan.HSV.ValueWhole,3}}  
-                    -----------------------+---------------------
-                    RYB information:
-                      - Red:          {{selectedColorTritan.RYB.R,3}}
-                      - Yellow:       {{selectedColorTritan.RYB.Y,3}}
-                      - Blue:         {{selectedColorTritan.RYB.B,3}}
-                    """
-            );
-            InfoBoxColor.WriteInfoBox(
-                    $$"""
-                    Color info (Monochromacy)
-                    -------------------------
-                    
-                    RGB level:        {{selectedColorMonochromacy.PlainSequence}}
-                    RGB level (true): {{selectedColorMonochromacy.PlainSequenceTrueColor}}
-                    RGB hex code:     {{selectedColorMonochromacy.Hex}}
-                    Color type:       {{selectedColorMonochromacy.Type}}
-                    
-                    CMYK information:      | CMY information:
-                      - Black key:    {{selectedColorMonochromacy.CMYK.KWhole,3}}  |
-                      - Cyan:         {{selectedColorMonochromacy.CMYK.CMY.CWhole,3}}  | - Cyan:        {{selectedColorMonochromacy.CMY.CWhole,3}}
-                      - Magenta:      {{selectedColorMonochromacy.CMYK.CMY.MWhole,3}}  | - Magenta:     {{selectedColorMonochromacy.CMY.CWhole,3}}
-                      - Yellow:       {{selectedColorMonochromacy.CMYK.CMY.YWhole,3}}  | - Yellow:      {{selectedColorMonochromacy.CMY.CWhole,3}}
-                    -----------------------+---------------------
-                    HSL information:       | HSV information:
-                      - Hue (degs):   {{selectedColorMonochromacy.HSL.HueWhole,3}}' | - Hue (degs):  {{selectedColorMonochromacy.HSV.HueWhole,3}}' 
-                      - Reverse Hue:  {{selectedColorMonochromacy.HSL.ReverseHueWhole,3}}' | - Reverse Hue: {{selectedColorMonochromacy.HSV.ReverseHueWhole,3}}' 
-                      - Saturation:   {{selectedColorMonochromacy.HSL.SaturationWhole,3}}  | - Saturation:  {{selectedColorMonochromacy.HSV.SaturationWhole,3}}  
-                      - Lightness:    {{selectedColorMonochromacy.HSL.LightnessWhole,3}}  | - Value:       {{selectedColorMonochromacy.HSV.ValueWhole,3}}  
-                    -----------------------+---------------------
-                    RYB information:
-                      - Red:          {{selectedColorMonochromacy.RYB.R,3}}
-                      - Yellow:       {{selectedColorMonochromacy.RYB.Y,3}}
-                      - Blue:         {{selectedColorMonochromacy.RYB.B,3}}
-                    """
+                HSV information:
+                    - Hue (degs):     {{selectedColor.HSV.HueWhole,3}}'
+                    - Reverse Hue:    {{selectedColor.HSV.ReverseHueWhole,3}}'
+                    - Saturation:     {{selectedColor.HSV.SaturationWhole,3}}
+                    - Value:          {{selectedColor.HSV.ValueWhole,3}}
+                """
             );
         }
     }
