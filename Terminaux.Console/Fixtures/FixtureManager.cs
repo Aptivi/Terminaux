@@ -81,7 +81,6 @@ namespace Terminaux.ConsoleDemo.Fixtures
             // Color
             new ColorTest(),
             new ColorTrueTest(),
-            new ColorWheelTest(),
             new ColorWithResetTest(),
             new ColorSelectorTest(),
             new ColorSelectorNoPaletteTest(),

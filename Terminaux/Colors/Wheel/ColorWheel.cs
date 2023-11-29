@@ -19,6 +19,7 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Colors.Accessibility;
+using Terminaux.Colors.Selector;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 
@@ -27,6 +28,7 @@ namespace Terminaux.Colors.Wheel
     /// <summary>
     /// Color wheel class
     /// </summary>
+    [Obsolete($"The legacy color wheel is obsolete. Use {nameof(ColorSelector)} instead.")]
     public static class ColorWheel
     {
         private static double wheelSeverity = 0.60;
@@ -44,6 +46,7 @@ namespace Terminaux.Colors.Wheel
         /// Inputs the user for color selection
         /// </summary>
         /// <returns>The color from the user input</returns>
+        [Obsolete($"The legacy color wheel is obsolete. Use {nameof(ColorSelector)}.{nameof(ColorSelector.OpenColorSelector)}() instead.")]
         public static Color InputForColor() =>
             InputForColor(new Color(ConsoleColors.White));
 
@@ -52,6 +55,7 @@ namespace Terminaux.Colors.Wheel
         /// </summary>
         /// <param name="initialColor">Initial color</param>
         /// <returns>The color from the user input</returns>
+        [Obsolete($"The legacy color wheel is obsolete. Use {nameof(ColorSelector)}.{nameof(ColorSelector.OpenColorSelector)}({nameof(Color)} initialColor) instead.")]
         public static Color InputForColor(Color initialColor)
         {
             ResetColors(initialColor);
