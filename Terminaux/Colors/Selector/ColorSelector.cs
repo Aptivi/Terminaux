@@ -83,7 +83,7 @@ namespace Terminaux.Colors.Selector
                         colorValue16 = selectedColor.ColorEnum16;
                         break;
                     default:
-                        throw new Exception("Invalid color type in the color selector");
+                        throw new TerminauxException("Invalid color type in the color selector");
                 }
                 UpdateColor(ref selectedColor, type);
 
@@ -115,7 +115,7 @@ namespace Terminaux.Colors.Selector
                             bail = HandleKeypress16Colors(ref selectedColor, ref type);
                             break;
                         default:
-                            throw new Exception("Invalid color type in the color selector");
+                            throw new TerminauxException("Invalid color type in the color selector");
                     }
                 }
             }

@@ -148,7 +148,7 @@ namespace Terminaux.Colors
             }
             catch (Exception ex)
             {
-                throw new Exception($"Failed to set background: {ex.Message}");
+                throw new TerminauxException($"Failed to set background: {ex.Message}");
             }
         }
 
@@ -291,7 +291,7 @@ namespace Terminaux.Colors
             }
             else
             {
-                throw new Exception("Invalid hex color specifier.");
+                throw new TerminauxException("Invalid hex color specifier.");
             }
         }
 
@@ -315,12 +315,12 @@ namespace Terminaux.Colors
                 }
                 else
                 {
-                    throw new Exception("Invalid RGB color specifier.");
+                    throw new TerminauxException("Invalid RGB color specifier.");
                 }
             }
             else
             {
-                throw new Exception("Invalid RGB color specifier.");
+                throw new TerminauxException("Invalid RGB color specifier.");
             }
         }
 
@@ -334,11 +334,11 @@ namespace Terminaux.Colors
         public static string ConvertFromRGBToHex(int R, int G, int B)
         {
             if (R < 0 | R > 255)
-                throw new Exception("Invalid red color specifier.");
+                throw new TerminauxException("Invalid red color specifier.");
             if (G < 0 | G > 255)
-                throw new Exception("Invalid green color specifier.");
+                throw new TerminauxException("Invalid green color specifier.");
             if (B < 0 | B > 255)
-                throw new Exception("Invalid blue color specifier.");
+                throw new TerminauxException("Invalid blue color specifier.");
             return $"#{R:X2}{G:X2}{B:X2}";
         }
 

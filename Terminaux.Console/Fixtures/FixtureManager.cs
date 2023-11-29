@@ -18,6 +18,7 @@
 
 using System;
 using System.Linq;
+using Terminaux.Base;
 using Terminaux.ConsoleDemo.Fixtures.Cases;
 
 namespace Terminaux.ConsoleDemo.Fixtures
@@ -102,7 +103,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
                 return detectedFixtures[0];
             }
             else
-                throw new Exception("Fixture doesn't exist.");
+                throw new TerminauxException("Fixture doesn't exist.");
         }
 
         internal static bool DoesFixtureExist(string name)

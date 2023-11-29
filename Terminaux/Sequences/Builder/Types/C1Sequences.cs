@@ -18,6 +18,7 @@
 
 using System;
 using System.Text.RegularExpressions;
+using Terminaux.Base;
 
 namespace Terminaux.Sequences.Builder.Types
 {
@@ -147,7 +148,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}D";
 	        var regexParser = C1IndexSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -159,7 +160,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}E";
 	        var regexParser = C1NextLineSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -171,7 +172,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}H";
 	        var regexParser = C1TabSetSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -183,7 +184,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}M";
 	        var regexParser = C1ReverseIndexSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -195,7 +196,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}N";
 	        var regexParser = C1SingleShiftSelectG2CharacterSetSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -207,7 +208,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}O";
 	        var regexParser = C1SingleShiftSelectG3CharacterSetSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -219,7 +220,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P";
 	        var regexParser = C1DeviceControlStringSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -231,7 +232,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}V";
 	        var regexParser = C1StartOfGuardedAreaSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -243,7 +244,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}W";
 	        var regexParser = C1EndOfGuardedAreaSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -255,7 +256,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}X";
 	        var regexParser = C1StartOfStringSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -267,7 +268,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}Z";
 	        var regexParser = C1ReturnTerminalIdSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -279,7 +280,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}[";
 	        var regexParser = C1ControlSequenceIndicatorSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -291,7 +292,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}\\";
 	        var regexParser = C1StringTerminatorSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -303,7 +304,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}]";
 	        var regexParser = C1OperatingSystemCommandSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -315,7 +316,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}^";
 	        var regexParser = C1PrivacyMessageSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -327,7 +328,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}_";
 	        var regexParser = C1ApplicationProgramCommandSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
     }

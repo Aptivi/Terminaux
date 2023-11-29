@@ -18,6 +18,7 @@
 
 using System;
 using System.Text.RegularExpressions;
+using Terminaux.Base;
 
 namespace Terminaux.Sequences.Builder.Types
 {
@@ -77,7 +78,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P{clearUdkDefinitions};{dontLockKeys}|{keybindings}{VtSequenceBasicChars.StChar}";
 	        var regexParser = DcsUserDefinedKeysSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -89,7 +90,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P$q{status}{VtSequenceBasicChars.StChar}";
 	        var regexParser = DcsRequestStatusStringSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -101,7 +102,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P{controlConvert}$t{status}{VtSequenceBasicChars.StChar}";
 	        var regexParser = DcsRestorePresentationStatusSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -113,7 +114,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P+Q{xtermResourceNames}{VtSequenceBasicChars.StChar}";
 	        var regexParser = DcsRequestResourceValuesSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -125,7 +126,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P+p{termName}{VtSequenceBasicChars.StChar}";
 	        var regexParser = DcsSetTermInfoDataSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
 	
@@ -137,7 +138,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}P+q{termName}{VtSequenceBasicChars.StChar}";
 	        var regexParser = DcsRequestTermInfoDataSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
     }

@@ -327,7 +327,7 @@ namespace Terminaux.Base
                 if (File.Exists(Path) | Directory.Exists(Path))
                     return Path;
                 else
-                    throw new Exception($"Neutralized a non-existent path. {Path}");
+                    throw new TerminauxException($"Neutralized a non-existent path. {Path}");
             else
                 return Path;
         }

@@ -18,6 +18,7 @@
 
 using System;
 using System.Text.RegularExpressions;
+using Terminaux.Base;
 
 namespace Terminaux.Sequences.Builder.Types
 {
@@ -49,7 +50,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}]{proprietaryCommands}{VtSequenceBasicChars.BellChar}";
 	        var regexParser = OscOperatingSystemCommandSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
         
@@ -61,7 +62,7 @@ namespace Terminaux.Sequences.Builder.Types
 		    string result = $"{VtSequenceBasicChars.EscapeChar}]{proprietaryCommands}{VtSequenceBasicChars.StChar}";
 	        var regexParser = OscOperatingSystemCommandAltSequenceRegex;
 		    if (!regexParser.IsMatch(result))
-		        throw new Exception("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+		        throw new TerminauxException("Terminaux failed to generate a working VT sequence. Make sure that you've specified values correctly.");
 		    return result;
 	    }
     }
