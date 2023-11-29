@@ -26,6 +26,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleChecker.CheckConsole
   nameWithType: ConsoleChecker.CheckConsole
+- uid: Terminaux.Base.ConsoleChecker.CheckConsoleSize(System.Int32,System.Int32)
+  name: CheckConsoleSize(int, int)
+  href: api/Terminaux.Base.ConsoleChecker.html#Terminaux_Base_ConsoleChecker_CheckConsoleSize_System_Int32_System_Int32_
+  commentId: M:Terminaux.Base.ConsoleChecker.CheckConsoleSize(System.Int32,System.Int32)
+  name.vb: CheckConsoleSize(Integer, Integer)
+  fullName: Terminaux.Base.ConsoleChecker.CheckConsoleSize(int, int)
+  fullName.vb: Terminaux.Base.ConsoleChecker.CheckConsoleSize(Integer, Integer)
+  nameWithType: ConsoleChecker.CheckConsoleSize(int, int)
+  nameWithType.vb: ConsoleChecker.CheckConsoleSize(Integer, Integer)
+- uid: Terminaux.Base.ConsoleChecker.CheckConsoleSize*
+  name: CheckConsoleSize
+  href: api/Terminaux.Base.ConsoleChecker.html#Terminaux_Base_ConsoleChecker_CheckConsoleSize_
+  commentId: Overload:Terminaux.Base.ConsoleChecker.CheckConsoleSize
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleChecker.CheckConsoleSize
+  nameWithType: ConsoleChecker.CheckConsoleSize
 - uid: Terminaux.Base.ConsoleChecker.HomePath
   name: HomePath
   href: api/Terminaux.Base.ConsoleChecker.html#Terminaux_Base_ConsoleChecker_HomePath
