@@ -108,8 +108,10 @@ namespace Terminaux.Base
             {
                 if (TerminalEmulator == "Apple_Terminal")
                 {
-                    throw new TerminauxException("This application makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors." + ConsolePlatform.NewLine +
-                                        "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html");
+                    throw new TerminauxException(
+                        "This application makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors." + ConsolePlatform.NewLine +
+                        "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html"
+                    );
                 }
             }
 
@@ -124,9 +126,11 @@ namespace Terminaux.Base
             // backend applications are console programs).
             if (IsDumb)
             {
-                throw new TerminauxException("This application makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + ConsolePlatform.NewLine + 
-                                    "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + ConsolePlatform.NewLine +
-                                    "                   We recommend using the \"vt100\" terminal emulators to get the most out of This application.");
+                throw new TerminauxException(
+                    "This application makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + ConsolePlatform.NewLine + 
+                    "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + ConsolePlatform.NewLine +
+                    "                   We recommend using the \"vt100\" terminal emulators to get the most out of this application."
+                );
             }
 
             // Check if the terminal supports 256 colors
@@ -166,11 +170,11 @@ namespace Terminaux.Base
         /// <summary>
         /// Checks the console size with edge cases
         /// </summary>
-        internal static void CheckConsoleSize()
+        /// <param name="minimumWidth">Minimum console window width to check</param>
+        /// <param name="minimumHeight">Minimum console window height to check</param>
+        public static void CheckConsoleSize(int minimumWidth = 80, int minimumHeight = 24)
         {
             // If we're being run on TMUX, the status bar might mess up our interpretation of the window height.
-            int MinimumWidth =  80;
-            int MinimumHeight = 24;
             if (ConsolePlatform.IsRunningFromTmux())
             {
                 try
@@ -191,19 +195,19 @@ namespace Terminaux.Base
                     {
                         // We got it! Now, let's parse it.
                         if (int.TryParse(output, out int numStatusBars))
-                            MinimumHeight -= numStatusBars;
+                            minimumHeight -= numStatusBars;
                     }
                     else
                     {
                         // We couldn't get the status variable from the global TMUX "status" variable because of command error.
                         // Assume that it's 1.
-                        MinimumHeight--;
+                        minimumHeight--;
                     }
                 }
                 catch
                 {
                     // We couldn't get the status variable from the global TMUX "status" variable. Assume that it's 1.
-                    MinimumHeight--;
+                    minimumHeight--;
                 }
             }
             else if (ConsolePlatform.IsRunningFromScreen())
@@ -216,16 +220,19 @@ namespace Terminaux.Base
                 {
                     if (line.StartsWith(statusKey) && line != "hardstatus off")
                     {
-                        MinimumHeight--;
+                        minimumHeight--;
                         break;
                     }
                 }
             }
 
             // Check for the minimum console window requirements (80x24)
-            while (ConsoleWrappers.ActionWindowWidth() < MinimumWidth | ConsoleWrappers.ActionWindowHeight() < MinimumHeight)
+            while (ConsoleWrappers.ActionWindowWidth() < minimumWidth | ConsoleWrappers.ActionWindowHeight() < minimumHeight)
             {
-                Console.WriteLine("Your console is too small to run properly: {0}x{1} | buff: {2}x{3}", ConsoleWrappers.ActionWindowWidth(), ConsoleWrappers.ActionWindowHeight(), Console.BufferWidth, ConsoleWrappers.ActionBufferHeight());
+                Console.WriteLine("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
+                    ConsoleWrappers.ActionWindowWidth(), ConsoleWrappers.ActionWindowHeight(),
+                    Console.BufferWidth, ConsoleWrappers.ActionBufferHeight(),
+                    minimumWidth, minimumHeight);
                 Console.WriteLine("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
                 Input.DetectKeypress();
             }
