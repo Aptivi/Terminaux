@@ -28,6 +28,7 @@ namespace Terminaux.Figgle
     /// <summary>
     /// Figlet selector
     /// </summary>
+    [Obsolete("Figgle is no longer maintained. Use Figletize instead.")]
     public static class FigletSelector
     {
         /// <summary>

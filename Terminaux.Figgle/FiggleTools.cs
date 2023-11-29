@@ -28,6 +28,7 @@ namespace Terminaux.Figgle
     /// <summary>
     /// Figlet tools (use if you're using Figgle. Otherwise, use the modern Figletize library)
     /// </summary>
+    [Obsolete("Figgle is no longer maintained. Use Figletize instead.")]
     public static class FiggleTools
     {
 

@@ -28,6 +28,7 @@ namespace Terminaux.Figgle.Writers
     /// <summary>
     /// Figlet writer
     /// </summary>
+    [Obsolete("Figgle is no longer maintained. Use Figletize instead.")]
     public static class FigletColorLegacy
     {
 

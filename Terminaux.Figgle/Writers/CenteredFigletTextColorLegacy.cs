@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Figgle;
+using System;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -26,6 +27,7 @@ namespace Terminaux.Figgle.Writers
     /// <summary>
     /// Centered Figlet writer
     /// </summary>
+    [Obsolete("Figgle is no longer maintained. Use Figletize instead.")]
     public static class CenteredFigletTextColorLegacy
     {
 
