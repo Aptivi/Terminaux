@@ -103,7 +103,10 @@ namespace Terminaux.ConsoleDemo.Fixtures
                 return detectedFixtures[0];
             }
             else
-                throw new TerminauxException("Fixture doesn't exist.");
+                throw new TerminauxException(
+                    "Fixture doesn't exist. Available fixtures:\n" +
+                    "  - " + string.Join("\n  - ", GetFixtureNames())
+                );
         }
 
         internal static bool DoesFixtureExist(string name)
@@ -111,5 +114,8 @@ namespace Terminaux.ConsoleDemo.Fixtures
             var detectedFixtures = fixtures.Where((fixture) => fixture.FixtureID == name);
             return detectedFixtures.Any();
         }
+
+        internal static string[] GetFixtureNames() =>
+            fixtures.Select((fixture) => fixture.FixtureID).ToArray();
     }
 }
