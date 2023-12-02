@@ -18,7 +18,7 @@
 
 using Shouldly;
 using Terminaux.Base;
-using Terminaux.Sequences.Builder;
+using Textify.Sequences.Builder;
 
 namespace Terminaux.Tests.Base
 {

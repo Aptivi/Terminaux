@@ -18,7 +18,6 @@
 
 using Shouldly;
 using Terminaux.Colors;
-using Terminaux.Sequences.Tools;
 
 namespace Terminaux.Tests.Colors
 {
@@ -51,8 +50,8 @@ namespace Terminaux.Tests.Colors
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe(VtSequenceTools.GetEsc() + "[48;2;139;0;22m");
-            ColorInstance.VTSequenceForeground.ShouldBe(VtSequenceTools.GetEsc() + "[38;2;139;0;22m");
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;0;22m");
             ColorInstance.R.ShouldBe(139);
             ColorInstance.G.ShouldBe(0);
             ColorInstance.B.ShouldBe(22);
@@ -97,8 +96,8 @@ namespace Terminaux.Tests.Colors
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe(VtSequenceTools.GetEsc() + "[48;2;139;0;22m");
-            ColorInstance.VTSequenceForeground.ShouldBe(VtSequenceTools.GetEsc() + "[38;2;139;0;22m");
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;0;22m");
             ColorInstance.R.ShouldBe(139);
             ColorInstance.G.ShouldBe(0);
             ColorInstance.B.ShouldBe(22);
@@ -143,8 +142,8 @@ namespace Terminaux.Tests.Colors
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe(VtSequenceTools.GetEsc() + "[48;2;139;0;22m");
-            ColorInstance.VTSequenceForeground.ShouldBe(VtSequenceTools.GetEsc() + "[38;2;139;0;22m");
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;0;22m");
             ColorInstance.R.ShouldBe(139);
             ColorInstance.G.ShouldBe(0);
             ColorInstance.B.ShouldBe(22);
@@ -188,8 +187,8 @@ namespace Terminaux.Tests.Colors
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;0;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe(VtSequenceTools.GetEsc() + "[48;2;139;0;22m");
-            ColorInstance.VTSequenceForeground.ShouldBe(VtSequenceTools.GetEsc() + "[38;2;139;0;22m");
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;0;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;0;22m");
             ColorInstance.R.ShouldBe(139);
             ColorInstance.G.ShouldBe(0);
             ColorInstance.B.ShouldBe(22);
@@ -234,8 +233,8 @@ namespace Terminaux.Tests.Colors
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("139;80;22");
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe(VtSequenceTools.GetEsc() + "[48;2;139;80;22m");
-            ColorInstance.VTSequenceForeground.ShouldBe(VtSequenceTools.GetEsc() + "[38;2;139;80;22m");
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
             ColorInstance.R.ShouldBe(139);
             ColorInstance.G.ShouldBe(80);
             ColorInstance.B.ShouldBe(22);

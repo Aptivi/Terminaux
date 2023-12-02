@@ -23,10 +23,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
-using Terminaux.Sequences.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
+using Textify.Sequences.Builder.Types;
+using Textify.Sequences.Tools;
 
 namespace Terminaux.Reader.Inputs.Styles
 {
@@ -227,7 +227,7 @@ namespace Terminaux.Reader.Inputs.Styles
                         {
                             string renderedChoice = $"  {AnswerInstance.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
-                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}" + $"{VtSequenceTools.GetEsc()}[0K";
+                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}" + $"\u001b[0K";
                         }
                         var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ?
                                           selectedOptionColor :

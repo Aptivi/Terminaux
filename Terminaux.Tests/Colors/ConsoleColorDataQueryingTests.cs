@@ -19,7 +19,6 @@
 using Shouldly;
 using System;
 using Terminaux.Colors.Data;
-using Terminaux.Sequences.Tools;
 
 namespace Terminaux.Tests.Colors
 {
@@ -38,16 +37,6 @@ namespace Terminaux.Tests.Colors
                 var ColorData = ConsoleColorData.GetColorData()[ColorIndex];
                 ColorData.ColorId.ShouldBe(ColorIndex);
             }
-        }
-
-        /// <summary>
-        /// Tests getting an escape character
-        /// </summary>
-        [Test]
-        [Description("Querying")]
-        public void TestGetEsc()
-        {
-            VtSequenceTools.GetEsc().ShouldBe(Convert.ToChar(0x1B));
         }
     }
 }

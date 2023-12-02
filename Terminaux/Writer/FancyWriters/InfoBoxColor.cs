@@ -27,8 +27,8 @@ using Terminaux.Reader.Inputs;
 using System.Diagnostics;
 using Terminaux.Reader;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
 using System.Text;
+using Textify.Sequences.Builder.Types;
 
 namespace Terminaux.Writer.FancyWriters
 {

@@ -21,9 +21,9 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters.Tools;
+using Textify.Sequences.Builder.Types;
 
 namespace Terminaux.Writer.FancyWriters
 {

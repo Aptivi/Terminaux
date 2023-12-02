@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Terminaux.Colors.Models;
-using Terminaux.Sequences.Tools;
 
 namespace Terminaux.Colors
 {
@@ -242,8 +241,8 @@ namespace Terminaux.Colors
                 // Form the sequences
                 PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
                 PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                VTSequenceForeground = VTSequenceForegroundTrueColor = VtSequenceTools.GetEsc() + $"[38;2;{PlainSequence}m";
-                VTSequenceBackground = VTSequenceBackgroundTrueColor = VtSequenceTools.GetEsc() + $"[48;2;{PlainSequence}m";
+                VTSequenceForeground = VTSequenceForegroundTrueColor = $"\u001b[38;2;{PlainSequence}m";
+                VTSequenceBackground = VTSequenceBackgroundTrueColor = $"\u001b[48;2;{PlainSequence}m";
 
                 // Populate color properties
                 Type = ColorType.TrueColor;
@@ -269,10 +268,10 @@ namespace Terminaux.Colors
                 PlainSequence = ColorTools.EnableColorTransformation ? $"{r};{g};{b}" : $"{colorsInfo.ColorID}";
                 PlainSequenceTrueColor = $"{r};{g};{b}";
                 PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                VTSequenceForeground = ColorTools.EnableColorTransformation ? VtSequenceTools.GetEsc() + $"[38;2;{PlainSequence}m" : VtSequenceTools.GetEsc() + $"[38;5;{PlainSequence}m";
-                VTSequenceBackground = ColorTools.EnableColorTransformation ? VtSequenceTools.GetEsc() + $"[48;2;{PlainSequence}m" : VtSequenceTools.GetEsc() + $"[48;5;{PlainSequence}m";
-                VTSequenceForegroundTrueColor = VtSequenceTools.GetEsc() + $"[38;2;{PlainSequenceTrueColor}m";
-                VTSequenceBackgroundTrueColor = VtSequenceTools.GetEsc() + $"[48;2;{PlainSequenceTrueColor}m";
+                VTSequenceForeground = ColorTools.EnableColorTransformation ? $"\u001b[38;2;{PlainSequence}m" : $"\u001b[38;5;{PlainSequence}m";
+                VTSequenceBackground = ColorTools.EnableColorTransformation ? $"\u001b[48;2;{PlainSequence}m" : $"\u001b[48;5;{PlainSequence}m";
+                VTSequenceForegroundTrueColor = $"\u001b[38;2;{PlainSequenceTrueColor}m";
+                VTSequenceBackgroundTrueColor = $"\u001b[48;2;{PlainSequenceTrueColor}m";
 
                 // Populate color properties
                 Type = ColorTools.EnableColorTransformation ? ColorType.TrueColor : colorsInfo.ColorID >= 16 ? ColorType._255Color : ColorType._16Color;
@@ -295,8 +294,8 @@ namespace Terminaux.Colors
                 // We got the RGB values! Form the sequences
                 PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
                 PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                VTSequenceForeground = VTSequenceForegroundTrueColor = VtSequenceTools.GetEsc() + $"[38;2;{PlainSequence}m";
-                VTSequenceBackground = VTSequenceBackgroundTrueColor = VtSequenceTools.GetEsc() + $"[48;2;{PlainSequence}m";
+                VTSequenceForeground = VTSequenceForegroundTrueColor = $"\u001b[38;2;{PlainSequence}m";
+                VTSequenceBackground = VTSequenceBackgroundTrueColor = $"\u001b[48;2;{PlainSequence}m";
 
                 // Populate color properties
                 Type = ColorType.TrueColor;

@@ -21,7 +21,7 @@ using System.Diagnostics;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Sequences.Tools;
+using Textify.Sequences.Tools;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
