@@ -139,16 +139,6 @@
     "title": "Namespace Terminaux.Colors.Selector | Terminaux API - Aptivi Internals",
     "keywords": "Namespace Terminaux.Colors.Selector Classes ColorSelector Color selection application"
   },
-  "api/Terminaux.Colors.Wheel.ColorWheel.html": {
-    "href": "api/Terminaux.Colors.Wheel.ColorWheel.html",
-    "title": "Class ColorWheel | Terminaux API - Aptivi Internals",
-    "keywords": "Class ColorWheel Color wheel class Inheritance object ColorWheel Namespace: Terminaux.Colors.Wheel Assembly: Terminaux.dll Syntax [Obsolete(\"The legacy color wheel is obsolete. Use ColorSelector instead.\")] public static class ColorWheel Methods | Edit this page View Source InputForColor() Inputs the user for color selection Declaration [Obsolete(\"The legacy color wheel is obsolete. Use ColorSelector.OpenColorSelector() instead.\")] public static Color InputForColor() Returns Type Description Color The color from the user input | Edit this page View Source InputForColor(Color) Inputs the user for color selection Declaration [Obsolete(\"The legacy color wheel is obsolete. Use ColorSelector.OpenColorSelector(Color initialColor) instead.\")] public static Color InputForColor(Color initialColor) Parameters Type Name Description Color initialColor Initial color Returns Type Description Color The color from the user input"
-  },
-  "api/Terminaux.Colors.Wheel.html": {
-    "href": "api/Terminaux.Colors.Wheel.html",
-    "title": "Namespace Terminaux.Colors.Wheel | Terminaux API - Aptivi Internals",
-    "keywords": "Namespace Terminaux.Colors.Wheel Classes ColorWheel Color wheel class"
-  },
   "api/Terminaux.Colors.html": {
     "href": "api/Terminaux.Colors.html",
     "title": "Namespace Terminaux.Colors | Terminaux API - Aptivi Internals",
