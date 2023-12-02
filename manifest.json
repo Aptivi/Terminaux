@@ -55,10 +55,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.ConsoleWrappers.yml",
+      "source_relative_path": "api/Terminaux.Base.ConsoleWrapper.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Base.ConsoleWrappers.html"
+          "relative_path": "api/Terminaux.Base.ConsoleWrapper.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.ConsoleWrapperTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.ConsoleWrapperTools.html"
         }
       },
       "version": ""

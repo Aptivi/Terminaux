@@ -406,298 +406,601 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleResizeListener.WasResized
   nameWithType: ConsoleResizeListener.WasResized
-- uid: Terminaux.Base.ConsoleWrappers
-  name: ConsoleWrappers
-  href: api/Terminaux.Base.ConsoleWrappers.html
-  commentId: T:Terminaux.Base.ConsoleWrappers
-  fullName: Terminaux.Base.ConsoleWrappers
-  nameWithType: ConsoleWrappers
-- uid: Terminaux.Base.ConsoleWrappers.ActionBeep
+- uid: Terminaux.Base.ConsoleWrapper
+  name: ConsoleWrapper
+  href: api/Terminaux.Base.ConsoleWrapper.html
+  commentId: T:Terminaux.Base.ConsoleWrapper
+  fullName: Terminaux.Base.ConsoleWrapper
+  nameWithType: ConsoleWrapper
+- uid: Terminaux.Base.ConsoleWrapper.Beep
+  name: Beep()
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_Beep
+  commentId: M:Terminaux.Base.ConsoleWrapper.Beep
+  fullName: Terminaux.Base.ConsoleWrapper.Beep()
+  nameWithType: ConsoleWrapper.Beep()
+- uid: Terminaux.Base.ConsoleWrapper.Beep*
+  name: Beep
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_Beep_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.Beep
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.Beep
+  nameWithType: ConsoleWrapper.Beep
+- uid: Terminaux.Base.ConsoleWrapper.BufferHeight
+  name: BufferHeight
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_BufferHeight
+  commentId: P:Terminaux.Base.ConsoleWrapper.BufferHeight
+  fullName: Terminaux.Base.ConsoleWrapper.BufferHeight
+  nameWithType: ConsoleWrapper.BufferHeight
+- uid: Terminaux.Base.ConsoleWrapper.BufferHeight*
+  name: BufferHeight
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_BufferHeight_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.BufferHeight
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.BufferHeight
+  nameWithType: ConsoleWrapper.BufferHeight
+- uid: Terminaux.Base.ConsoleWrapper.Clear
+  name: Clear()
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_Clear
+  commentId: M:Terminaux.Base.ConsoleWrapper.Clear
+  fullName: Terminaux.Base.ConsoleWrapper.Clear()
+  nameWithType: ConsoleWrapper.Clear()
+- uid: Terminaux.Base.ConsoleWrapper.Clear*
+  name: Clear
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_Clear_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.Clear
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.Clear
+  nameWithType: ConsoleWrapper.Clear
+- uid: Terminaux.Base.ConsoleWrapper.CursorLeft
+  name: CursorLeft
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_CursorLeft
+  commentId: P:Terminaux.Base.ConsoleWrapper.CursorLeft
+  fullName: Terminaux.Base.ConsoleWrapper.CursorLeft
+  nameWithType: ConsoleWrapper.CursorLeft
+- uid: Terminaux.Base.ConsoleWrapper.CursorLeft*
+  name: CursorLeft
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_CursorLeft_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.CursorLeft
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.CursorLeft
+  nameWithType: ConsoleWrapper.CursorLeft
+- uid: Terminaux.Base.ConsoleWrapper.CursorTop
+  name: CursorTop
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_CursorTop
+  commentId: P:Terminaux.Base.ConsoleWrapper.CursorTop
+  fullName: Terminaux.Base.ConsoleWrapper.CursorTop
+  nameWithType: ConsoleWrapper.CursorTop
+- uid: Terminaux.Base.ConsoleWrapper.CursorTop*
+  name: CursorTop
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_CursorTop_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.CursorTop
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.CursorTop
+  nameWithType: ConsoleWrapper.CursorTop
+- uid: Terminaux.Base.ConsoleWrapper.CursorVisible
+  name: CursorVisible
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_CursorVisible
+  commentId: P:Terminaux.Base.ConsoleWrapper.CursorVisible
+  fullName: Terminaux.Base.ConsoleWrapper.CursorVisible
+  nameWithType: ConsoleWrapper.CursorVisible
+- uid: Terminaux.Base.ConsoleWrapper.CursorVisible*
+  name: CursorVisible
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_CursorVisible_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.CursorVisible
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.CursorVisible
+  nameWithType: ConsoleWrapper.CursorVisible
+- uid: Terminaux.Base.ConsoleWrapper.KeyAvailable
+  name: KeyAvailable
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_KeyAvailable
+  commentId: P:Terminaux.Base.ConsoleWrapper.KeyAvailable
+  fullName: Terminaux.Base.ConsoleWrapper.KeyAvailable
+  nameWithType: ConsoleWrapper.KeyAvailable
+- uid: Terminaux.Base.ConsoleWrapper.KeyAvailable*
+  name: KeyAvailable
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_KeyAvailable_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.KeyAvailable
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.KeyAvailable
+  nameWithType: ConsoleWrapper.KeyAvailable
+- uid: Terminaux.Base.ConsoleWrapper.ReadKey(System.Boolean)
+  name: ReadKey(bool)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_ReadKey_System_Boolean_
+  commentId: M:Terminaux.Base.ConsoleWrapper.ReadKey(System.Boolean)
+  name.vb: ReadKey(Boolean)
+  fullName: Terminaux.Base.ConsoleWrapper.ReadKey(bool)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.ReadKey(Boolean)
+  nameWithType: ConsoleWrapper.ReadKey(bool)
+  nameWithType.vb: ConsoleWrapper.ReadKey(Boolean)
+- uid: Terminaux.Base.ConsoleWrapper.ReadKey*
+  name: ReadKey
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_ReadKey_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.ReadKey
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.ReadKey
+  nameWithType: ConsoleWrapper.ReadKey
+- uid: Terminaux.Base.ConsoleWrapper.SetCursorPosition(System.Int32,System.Int32)
+  name: SetCursorPosition(int, int)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_SetCursorPosition_System_Int32_System_Int32_
+  commentId: M:Terminaux.Base.ConsoleWrapper.SetCursorPosition(System.Int32,System.Int32)
+  name.vb: SetCursorPosition(Integer, Integer)
+  fullName: Terminaux.Base.ConsoleWrapper.SetCursorPosition(int, int)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.SetCursorPosition(Integer, Integer)
+  nameWithType: ConsoleWrapper.SetCursorPosition(int, int)
+  nameWithType.vb: ConsoleWrapper.SetCursorPosition(Integer, Integer)
+- uid: Terminaux.Base.ConsoleWrapper.SetCursorPosition*
+  name: SetCursorPosition
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_SetCursorPosition_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.SetCursorPosition
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.SetCursorPosition
+  nameWithType: ConsoleWrapper.SetCursorPosition
+- uid: Terminaux.Base.ConsoleWrapper.WindowHeight
+  name: WindowHeight
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WindowHeight
+  commentId: P:Terminaux.Base.ConsoleWrapper.WindowHeight
+  fullName: Terminaux.Base.ConsoleWrapper.WindowHeight
+  nameWithType: ConsoleWrapper.WindowHeight
+- uid: Terminaux.Base.ConsoleWrapper.WindowHeight*
+  name: WindowHeight
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WindowHeight_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.WindowHeight
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.WindowHeight
+  nameWithType: ConsoleWrapper.WindowHeight
+- uid: Terminaux.Base.ConsoleWrapper.WindowWidth
+  name: WindowWidth
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WindowWidth
+  commentId: P:Terminaux.Base.ConsoleWrapper.WindowWidth
+  fullName: Terminaux.Base.ConsoleWrapper.WindowWidth
+  nameWithType: ConsoleWrapper.WindowWidth
+- uid: Terminaux.Base.ConsoleWrapper.WindowWidth*
+  name: WindowWidth
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WindowWidth_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.WindowWidth
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.WindowWidth
+  nameWithType: ConsoleWrapper.WindowWidth
+- uid: Terminaux.Base.ConsoleWrapper.Write(System.Char)
+  name: Write(char)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_Write_System_Char_
+  commentId: M:Terminaux.Base.ConsoleWrapper.Write(System.Char)
+  name.vb: Write(Char)
+  fullName: Terminaux.Base.ConsoleWrapper.Write(char)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.Write(Char)
+  nameWithType: ConsoleWrapper.Write(char)
+  nameWithType.vb: ConsoleWrapper.Write(Char)
+- uid: Terminaux.Base.ConsoleWrapper.Write(System.String)
+  name: Write(string)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_Write_System_String_
+  commentId: M:Terminaux.Base.ConsoleWrapper.Write(System.String)
+  name.vb: Write(String)
+  fullName: Terminaux.Base.ConsoleWrapper.Write(string)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.Write(String)
+  nameWithType: ConsoleWrapper.Write(string)
+  nameWithType.vb: ConsoleWrapper.Write(String)
+- uid: Terminaux.Base.ConsoleWrapper.Write(System.String,System.Object[])
+  name: Write(string, params object[])
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_Write_System_String_System_Object___
+  commentId: M:Terminaux.Base.ConsoleWrapper.Write(System.String,System.Object[])
+  name.vb: Write(String, ParamArray Object())
+  fullName: Terminaux.Base.ConsoleWrapper.Write(string, params object[])
+  fullName.vb: Terminaux.Base.ConsoleWrapper.Write(String, ParamArray Object())
+  nameWithType: ConsoleWrapper.Write(string, params object[])
+  nameWithType.vb: ConsoleWrapper.Write(String, ParamArray Object())
+- uid: Terminaux.Base.ConsoleWrapper.Write*
+  name: Write
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_Write_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.Write
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.Write
+  nameWithType: ConsoleWrapper.Write
+- uid: Terminaux.Base.ConsoleWrapper.WriteLine
+  name: WriteLine()
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLine
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteLine
+  fullName: Terminaux.Base.ConsoleWrapper.WriteLine()
+  nameWithType: ConsoleWrapper.WriteLine()
+- uid: Terminaux.Base.ConsoleWrapper.WriteLine(System.String)
+  name: WriteLine(string)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLine_System_String_
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteLine(System.String)
+  name.vb: WriteLine(String)
+  fullName: Terminaux.Base.ConsoleWrapper.WriteLine(string)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteLine(String)
+  nameWithType: ConsoleWrapper.WriteLine(string)
+  nameWithType.vb: ConsoleWrapper.WriteLine(String)
+- uid: Terminaux.Base.ConsoleWrapper.WriteLine(System.String,System.Object[])
+  name: WriteLine(string, params object[])
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLine_System_String_System_Object___
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteLine(System.String,System.Object[])
+  name.vb: WriteLine(String, ParamArray Object())
+  fullName: Terminaux.Base.ConsoleWrapper.WriteLine(string, params object[])
+  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteLine(String, ParamArray Object())
+  nameWithType: ConsoleWrapper.WriteLine(string, params object[])
+  nameWithType.vb: ConsoleWrapper.WriteLine(String, ParamArray Object())
+- uid: Terminaux.Base.ConsoleWrapper.WriteLine(System.String,Terminaux.Reader.TermReaderSettings)
+  name: WriteLine(string, TermReaderSettings)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLine_System_String_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteLine(System.String,Terminaux.Reader.TermReaderSettings)
+  name.vb: WriteLine(String, TermReaderSettings)
+  fullName: Terminaux.Base.ConsoleWrapper.WriteLine(string, Terminaux.Reader.TermReaderSettings)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteLine(String, Terminaux.Reader.TermReaderSettings)
+  nameWithType: ConsoleWrapper.WriteLine(string, TermReaderSettings)
+  nameWithType.vb: ConsoleWrapper.WriteLine(String, TermReaderSettings)
+- uid: Terminaux.Base.ConsoleWrapper.WriteLine(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
+  name: WriteLine(string, TermReaderSettings, params object[])
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLine_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteLine(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
+  name.vb: WriteLine(String, TermReaderSettings, ParamArray Object())
+  fullName: Terminaux.Base.ConsoleWrapper.WriteLine(string, Terminaux.Reader.TermReaderSettings, params object[])
+  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteLine(String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
+  nameWithType: ConsoleWrapper.WriteLine(string, TermReaderSettings, params object[])
+  nameWithType.vb: ConsoleWrapper.WriteLine(String, TermReaderSettings, ParamArray Object())
+- uid: Terminaux.Base.ConsoleWrapper.WriteLine*
+  name: WriteLine
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLine_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.WriteLine
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.WriteLine
+  nameWithType: ConsoleWrapper.WriteLine
+- uid: Terminaux.Base.ConsoleWrapperTools
+  name: ConsoleWrapperTools
+  href: api/Terminaux.Base.ConsoleWrapperTools.html
+  commentId: T:Terminaux.Base.ConsoleWrapperTools
+  fullName: Terminaux.Base.ConsoleWrapperTools
+  nameWithType: ConsoleWrapperTools
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionBeep
   name: ActionBeep
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionBeep
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionBeep
-  fullName: Terminaux.Base.ConsoleWrappers.ActionBeep
-  nameWithType: ConsoleWrappers.ActionBeep
-- uid: Terminaux.Base.ConsoleWrappers.ActionBeep*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionBeep
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionBeep
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionBeep
+  nameWithType: ConsoleWrapperTools.ActionBeep
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionBeep*
   name: ActionBeep
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionBeep_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionBeep
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionBeep_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionBeep
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionBeep
-  nameWithType: ConsoleWrappers.ActionBeep
-- uid: Terminaux.Base.ConsoleWrappers.ActionBufferHeight
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionBeep
+  nameWithType: ConsoleWrapperTools.ActionBeep
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionBufferHeight
   name: ActionBufferHeight
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionBufferHeight
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionBufferHeight
-  fullName: Terminaux.Base.ConsoleWrappers.ActionBufferHeight
-  nameWithType: ConsoleWrappers.ActionBufferHeight
-- uid: Terminaux.Base.ConsoleWrappers.ActionBufferHeight*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionBufferHeight
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionBufferHeight
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionBufferHeight
+  nameWithType: ConsoleWrapperTools.ActionBufferHeight
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionBufferHeight*
   name: ActionBufferHeight
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionBufferHeight_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionBufferHeight
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionBufferHeight_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionBufferHeight
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionBufferHeight
-  nameWithType: ConsoleWrappers.ActionBufferHeight
-- uid: Terminaux.Base.ConsoleWrappers.ActionClear
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionBufferHeight
+  nameWithType: ConsoleWrapperTools.ActionBufferHeight
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionClear
   name: ActionClear
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionClear
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionClear
-  fullName: Terminaux.Base.ConsoleWrappers.ActionClear
-  nameWithType: ConsoleWrappers.ActionClear
-- uid: Terminaux.Base.ConsoleWrappers.ActionClear*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionClear
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionClear
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionClear
+  nameWithType: ConsoleWrapperTools.ActionClear
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionClear*
   name: ActionClear
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionClear_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionClear
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionClear_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionClear
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionClear
-  nameWithType: ConsoleWrappers.ActionClear
-- uid: Terminaux.Base.ConsoleWrappers.ActionCursorLeft
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionClear
+  nameWithType: ConsoleWrapperTools.ActionClear
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionCursorLeft
   name: ActionCursorLeft
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionCursorLeft
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionCursorLeft
-  fullName: Terminaux.Base.ConsoleWrappers.ActionCursorLeft
-  nameWithType: ConsoleWrappers.ActionCursorLeft
-- uid: Terminaux.Base.ConsoleWrappers.ActionCursorLeft*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionCursorLeft
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionCursorLeft
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionCursorLeft
+  nameWithType: ConsoleWrapperTools.ActionCursorLeft
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionCursorLeft*
   name: ActionCursorLeft
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionCursorLeft_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionCursorLeft
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionCursorLeft_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionCursorLeft
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionCursorLeft
-  nameWithType: ConsoleWrappers.ActionCursorLeft
-- uid: Terminaux.Base.ConsoleWrappers.ActionCursorTop
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionCursorLeft
+  nameWithType: ConsoleWrapperTools.ActionCursorLeft
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionCursorTop
   name: ActionCursorTop
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionCursorTop
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionCursorTop
-  fullName: Terminaux.Base.ConsoleWrappers.ActionCursorTop
-  nameWithType: ConsoleWrappers.ActionCursorTop
-- uid: Terminaux.Base.ConsoleWrappers.ActionCursorTop*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionCursorTop
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionCursorTop
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionCursorTop
+  nameWithType: ConsoleWrapperTools.ActionCursorTop
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionCursorTop*
   name: ActionCursorTop
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionCursorTop_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionCursorTop
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionCursorTop_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionCursorTop
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionCursorTop
-  nameWithType: ConsoleWrappers.ActionCursorTop
-- uid: Terminaux.Base.ConsoleWrappers.ActionCursorVisible
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionCursorTop
+  nameWithType: ConsoleWrapperTools.ActionCursorTop
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionCursorVisible
   name: ActionCursorVisible
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionCursorVisible
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionCursorVisible
-  fullName: Terminaux.Base.ConsoleWrappers.ActionCursorVisible
-  nameWithType: ConsoleWrappers.ActionCursorVisible
-- uid: Terminaux.Base.ConsoleWrappers.ActionCursorVisible*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionCursorVisible
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionCursorVisible
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionCursorVisible
+  nameWithType: ConsoleWrapperTools.ActionCursorVisible
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionCursorVisible*
   name: ActionCursorVisible
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionCursorVisible_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionCursorVisible
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionCursorVisible_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionCursorVisible
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionCursorVisible
-  nameWithType: ConsoleWrappers.ActionCursorVisible
-- uid: Terminaux.Base.ConsoleWrappers.ActionGetCursorVisible
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionCursorVisible
+  nameWithType: ConsoleWrapperTools.ActionCursorVisible
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionGetCursorVisible
   name: ActionGetCursorVisible
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionGetCursorVisible
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionGetCursorVisible
-  fullName: Terminaux.Base.ConsoleWrappers.ActionGetCursorVisible
-  nameWithType: ConsoleWrappers.ActionGetCursorVisible
-- uid: Terminaux.Base.ConsoleWrappers.ActionGetCursorVisible*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionGetCursorVisible
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionGetCursorVisible
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionGetCursorVisible
+  nameWithType: ConsoleWrapperTools.ActionGetCursorVisible
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionGetCursorVisible*
   name: ActionGetCursorVisible
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionGetCursorVisible_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionGetCursorVisible
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionGetCursorVisible_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionGetCursorVisible
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionGetCursorVisible
-  nameWithType: ConsoleWrappers.ActionGetCursorVisible
-- uid: Terminaux.Base.ConsoleWrappers.ActionIsDumb
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionGetCursorVisible
+  nameWithType: ConsoleWrapperTools.ActionGetCursorVisible
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionIsDumb
   name: ActionIsDumb
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionIsDumb
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionIsDumb
-  fullName: Terminaux.Base.ConsoleWrappers.ActionIsDumb
-  nameWithType: ConsoleWrappers.ActionIsDumb
-- uid: Terminaux.Base.ConsoleWrappers.ActionIsDumb*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionIsDumb
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionIsDumb
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionIsDumb
+  nameWithType: ConsoleWrapperTools.ActionIsDumb
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionIsDumb*
   name: ActionIsDumb
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionIsDumb_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionIsDumb
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionIsDumb_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionIsDumb
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionIsDumb
-  nameWithType: ConsoleWrappers.ActionIsDumb
-- uid: Terminaux.Base.ConsoleWrappers.ActionKeyAvailable
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionIsDumb
+  nameWithType: ConsoleWrapperTools.ActionIsDumb
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionKeyAvailable
   name: ActionKeyAvailable
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionKeyAvailable
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionKeyAvailable
-  fullName: Terminaux.Base.ConsoleWrappers.ActionKeyAvailable
-  nameWithType: ConsoleWrappers.ActionKeyAvailable
-- uid: Terminaux.Base.ConsoleWrappers.ActionKeyAvailable*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionKeyAvailable
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionKeyAvailable
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionKeyAvailable
+  nameWithType: ConsoleWrapperTools.ActionKeyAvailable
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionKeyAvailable*
   name: ActionKeyAvailable
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionKeyAvailable_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionKeyAvailable
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionKeyAvailable_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionKeyAvailable
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionKeyAvailable
-  nameWithType: ConsoleWrappers.ActionKeyAvailable
-- uid: Terminaux.Base.ConsoleWrappers.ActionReadKey
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionKeyAvailable
+  nameWithType: ConsoleWrapperTools.ActionKeyAvailable
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionReadKey
   name: ActionReadKey
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionReadKey
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionReadKey
-  fullName: Terminaux.Base.ConsoleWrappers.ActionReadKey
-  nameWithType: ConsoleWrappers.ActionReadKey
-- uid: Terminaux.Base.ConsoleWrappers.ActionReadKey*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionReadKey
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionReadKey
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionReadKey
+  nameWithType: ConsoleWrapperTools.ActionReadKey
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionReadKey*
   name: ActionReadKey
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionReadKey_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionReadKey
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionReadKey_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionReadKey
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionReadKey
-  nameWithType: ConsoleWrappers.ActionReadKey
-- uid: Terminaux.Base.ConsoleWrappers.ActionSetCursorLeft
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionReadKey
+  nameWithType: ConsoleWrapperTools.ActionReadKey
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorLeft
   name: ActionSetCursorLeft
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionSetCursorLeft
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionSetCursorLeft
-  fullName: Terminaux.Base.ConsoleWrappers.ActionSetCursorLeft
-  nameWithType: ConsoleWrappers.ActionSetCursorLeft
-- uid: Terminaux.Base.ConsoleWrappers.ActionSetCursorLeft*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetCursorLeft
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionSetCursorLeft
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorLeft
+  nameWithType: ConsoleWrapperTools.ActionSetCursorLeft
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorLeft*
   name: ActionSetCursorLeft
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionSetCursorLeft_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionSetCursorLeft
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetCursorLeft_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionSetCursorLeft
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionSetCursorLeft
-  nameWithType: ConsoleWrappers.ActionSetCursorLeft
-- uid: Terminaux.Base.ConsoleWrappers.ActionSetCursorPosition
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorLeft
+  nameWithType: ConsoleWrapperTools.ActionSetCursorLeft
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorPosition
   name: ActionSetCursorPosition
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionSetCursorPosition
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionSetCursorPosition
-  fullName: Terminaux.Base.ConsoleWrappers.ActionSetCursorPosition
-  nameWithType: ConsoleWrappers.ActionSetCursorPosition
-- uid: Terminaux.Base.ConsoleWrappers.ActionSetCursorPosition*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetCursorPosition
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionSetCursorPosition
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorPosition
+  nameWithType: ConsoleWrapperTools.ActionSetCursorPosition
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorPosition*
   name: ActionSetCursorPosition
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionSetCursorPosition_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionSetCursorPosition
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetCursorPosition_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionSetCursorPosition
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionSetCursorPosition
-  nameWithType: ConsoleWrappers.ActionSetCursorPosition
-- uid: Terminaux.Base.ConsoleWrappers.ActionSetCursorTop
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorPosition
+  nameWithType: ConsoleWrapperTools.ActionSetCursorPosition
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorTop
   name: ActionSetCursorTop
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionSetCursorTop
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionSetCursorTop
-  fullName: Terminaux.Base.ConsoleWrappers.ActionSetCursorTop
-  nameWithType: ConsoleWrappers.ActionSetCursorTop
-- uid: Terminaux.Base.ConsoleWrappers.ActionSetCursorTop*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetCursorTop
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionSetCursorTop
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorTop
+  nameWithType: ConsoleWrapperTools.ActionSetCursorTop
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorTop*
   name: ActionSetCursorTop
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionSetCursorTop_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionSetCursorTop
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetCursorTop_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionSetCursorTop
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionSetCursorTop
-  nameWithType: ConsoleWrappers.ActionSetCursorTop
-- uid: Terminaux.Base.ConsoleWrappers.ActionTreatCtrlCAsInput
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorTop
+  nameWithType: ConsoleWrapperTools.ActionSetCursorTop
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionTreatCtrlCAsInput
   name: ActionTreatCtrlCAsInput
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionTreatCtrlCAsInput
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionTreatCtrlCAsInput
-  fullName: Terminaux.Base.ConsoleWrappers.ActionTreatCtrlCAsInput
-  nameWithType: ConsoleWrappers.ActionTreatCtrlCAsInput
-- uid: Terminaux.Base.ConsoleWrappers.ActionTreatCtrlCAsInput*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionTreatCtrlCAsInput
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionTreatCtrlCAsInput
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionTreatCtrlCAsInput
+  nameWithType: ConsoleWrapperTools.ActionTreatCtrlCAsInput
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionTreatCtrlCAsInput*
   name: ActionTreatCtrlCAsInput
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionTreatCtrlCAsInput_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionTreatCtrlCAsInput
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionTreatCtrlCAsInput_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionTreatCtrlCAsInput
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionTreatCtrlCAsInput
-  nameWithType: ConsoleWrappers.ActionTreatCtrlCAsInput
-- uid: Terminaux.Base.ConsoleWrappers.ActionWindowHeight
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionTreatCtrlCAsInput
+  nameWithType: ConsoleWrapperTools.ActionTreatCtrlCAsInput
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWindowHeight
   name: ActionWindowHeight
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWindowHeight
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionWindowHeight
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWindowHeight
-  nameWithType: ConsoleWrappers.ActionWindowHeight
-- uid: Terminaux.Base.ConsoleWrappers.ActionWindowHeight*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWindowHeight
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWindowHeight
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWindowHeight
+  nameWithType: ConsoleWrapperTools.ActionWindowHeight
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWindowHeight*
   name: ActionWindowHeight
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWindowHeight_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionWindowHeight
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWindowHeight_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWindowHeight
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWindowHeight
-  nameWithType: ConsoleWrappers.ActionWindowHeight
-- uid: Terminaux.Base.ConsoleWrappers.ActionWindowWidth
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWindowHeight
+  nameWithType: ConsoleWrapperTools.ActionWindowHeight
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWindowWidth
   name: ActionWindowWidth
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWindowWidth
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionWindowWidth
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWindowWidth
-  nameWithType: ConsoleWrappers.ActionWindowWidth
-- uid: Terminaux.Base.ConsoleWrappers.ActionWindowWidth*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWindowWidth
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWindowWidth
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWindowWidth
+  nameWithType: ConsoleWrapperTools.ActionWindowWidth
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWindowWidth*
   name: ActionWindowWidth
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWindowWidth_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionWindowWidth
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWindowWidth_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWindowWidth
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWindowWidth
-  nameWithType: ConsoleWrappers.ActionWindowWidth
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteChar
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWindowWidth
+  nameWithType: ConsoleWrapperTools.ActionWindowWidth
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteChar
   name: ActionWriteChar
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteChar
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionWriteChar
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteChar
-  nameWithType: ConsoleWrappers.ActionWriteChar
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteChar*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteChar
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteChar
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteChar
+  nameWithType: ConsoleWrapperTools.ActionWriteChar
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteChar*
   name: ActionWriteChar
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteChar_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionWriteChar
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteChar_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteChar
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteChar
-  nameWithType: ConsoleWrappers.ActionWriteChar
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteLine
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteChar
+  nameWithType: ConsoleWrapperTools.ActionWriteChar
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteCharNonStandalone
+  name: ActionWriteCharNonStandalone
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteCharNonStandalone
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteCharNonStandalone
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteCharNonStandalone
+  nameWithType: ConsoleWrapperTools.ActionWriteCharNonStandalone
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteCharNonStandalone*
+  name: ActionWriteCharNonStandalone
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteCharNonStandalone_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteCharNonStandalone
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteCharNonStandalone
+  nameWithType: ConsoleWrapperTools.ActionWriteCharNonStandalone
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLine
   name: ActionWriteLine
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteLine
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionWriteLine
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteLine
-  nameWithType: ConsoleWrappers.ActionWriteLine
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteLine*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLine
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteLine
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLine
+  nameWithType: ConsoleWrapperTools.ActionWriteLine
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLine*
   name: ActionWriteLine
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteLine_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionWriteLine
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLine_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteLine
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteLine
-  nameWithType: ConsoleWrappers.ActionWriteLine
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteLineParameterized
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLine
+  nameWithType: ConsoleWrapperTools.ActionWriteLine
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterized
   name: ActionWriteLineParameterized
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteLineParameterized
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionWriteLineParameterized
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteLineParameterized
-  nameWithType: ConsoleWrappers.ActionWriteLineParameterized
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteLineParameterized*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineParameterized
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterized
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterized
+  nameWithType: ConsoleWrapperTools.ActionWriteLineParameterized
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterized*
   name: ActionWriteLineParameterized
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteLineParameterized_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionWriteLineParameterized
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineParameterized_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterized
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteLineParameterized
-  nameWithType: ConsoleWrappers.ActionWriteLineParameterized
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteLineString
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterized
+  nameWithType: ConsoleWrapperTools.ActionWriteLineParameterized
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
+  name: ActionWriteLineParameterizedNonStandalone
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineParameterizedNonStandalone
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
+  nameWithType: ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone*
+  name: ActionWriteLineParameterizedNonStandalone
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineParameterizedNonStandalone_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
+  nameWithType: ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineString
   name: ActionWriteLineString
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteLineString
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionWriteLineString
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteLineString
-  nameWithType: ConsoleWrappers.ActionWriteLineString
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteLineString*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineString
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineString
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineString
+  nameWithType: ConsoleWrapperTools.ActionWriteLineString
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineString*
   name: ActionWriteLineString
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteLineString_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionWriteLineString
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineString_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineString
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteLineString
-  nameWithType: ConsoleWrappers.ActionWriteLineString
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteParameterized
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineString
+  nameWithType: ConsoleWrapperTools.ActionWriteLineString
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone
+  name: ActionWriteLineStringNonStandalone
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineStringNonStandalone
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone
+  nameWithType: ConsoleWrapperTools.ActionWriteLineStringNonStandalone
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone*
+  name: ActionWriteLineStringNonStandalone
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineStringNonStandalone_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone
+  nameWithType: ConsoleWrapperTools.ActionWriteLineStringNonStandalone
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterized
   name: ActionWriteParameterized
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteParameterized
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionWriteParameterized
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteParameterized
-  nameWithType: ConsoleWrappers.ActionWriteParameterized
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteParameterized*
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteParameterized
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterized
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterized
+  nameWithType: ConsoleWrapperTools.ActionWriteParameterized
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterized*
   name: ActionWriteParameterized
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteParameterized_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionWriteParameterized
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteParameterized_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterized
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteParameterized
-  nameWithType: ConsoleWrappers.ActionWriteParameterized
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteString
-  name: ActionWriteString
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteString
-  commentId: P:Terminaux.Base.ConsoleWrappers.ActionWriteString
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteString
-  nameWithType: ConsoleWrappers.ActionWriteString
-- uid: Terminaux.Base.ConsoleWrappers.ActionWriteString*
-  name: ActionWriteString
-  href: api/Terminaux.Base.ConsoleWrappers.html#Terminaux_Base_ConsoleWrappers_ActionWriteString_
-  commentId: Overload:Terminaux.Base.ConsoleWrappers.ActionWriteString
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterized
+  nameWithType: ConsoleWrapperTools.ActionWriteParameterized
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
+  name: ActionWriteParameterizedNonStandalone
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteParameterizedNonStandalone
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
+  nameWithType: ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone*
+  name: ActionWriteParameterizedNonStandalone
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteParameterizedNonStandalone_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
   isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrappers.ActionWriteString
-  nameWithType: ConsoleWrappers.ActionWriteString
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
+  nameWithType: ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteString
+  name: ActionWriteString
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteString
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteString
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteString
+  nameWithType: ConsoleWrapperTools.ActionWriteString
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteString*
+  name: ActionWriteString
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteString_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteString
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteString
+  nameWithType: ConsoleWrapperTools.ActionWriteString
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
+  name: ActionWriteStringNonStandalone
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteStringNonStandalone
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
+  nameWithType: ConsoleWrapperTools.ActionWriteStringNonStandalone
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone*
+  name: ActionWriteStringNonStandalone
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteStringNonStandalone_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
+  nameWithType: ConsoleWrapperTools.ActionWriteStringNonStandalone
 - uid: Terminaux.Base.TerminauxContinuableException
   name: TerminauxContinuableException
   href: api/Terminaux.Base.TerminauxContinuableException.html
