@@ -44,7 +44,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 PositioningTools.GoForwardOneLineWrapAware(times, ref state);
             else
                 PositioningTools.GoForward(times, ref state);
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

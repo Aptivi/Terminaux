@@ -73,14 +73,14 @@ namespace Terminaux.Writer.ConsoleWriters
                         msg = ConsoleExtensions.FormatString(msg, vars);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    int OldLeft = ConsoleWrappers.ActionCursorLeft();
-                    int OldTop = ConsoleWrappers.ActionCursorTop();
-                    int width = ConsoleWrappers.ActionWindowWidth() - RightMargin;
+                    int OldLeft = ConsoleWrapper.CursorLeft;
+                    int OldTop = ConsoleWrapper.CursorTop;
+                    int width = ConsoleWrapper.WindowWidth - RightMargin;
                     var Paragraphs = msg.SplitNewLines();
                     if (RightMargin > 0)
                         Paragraphs = ConsoleExtensions.GetWrappedSentences(msg, width);
                     var buffered = new StringBuilder();
-                    ConsoleWrappers.ActionSetCursorPosition(Left, Top);
+                    ConsoleWrapper.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
                     {
                         // We can now check to see if we're writing a letter past the console window width
@@ -125,7 +125,7 @@ namespace Terminaux.Writer.ConsoleWriters
 
                     // Return if we're told to
                     if (Return)
-                        ConsoleWrappers.ActionSetCursorPosition(OldLeft, OldTop);
+                        ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {

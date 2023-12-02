@@ -144,7 +144,7 @@ namespace Terminaux.Colors
             try
             {
                 SetConsoleColor(ColorSequence, true, Force);
-                ConsoleWrappers.ActionClear();
+                ConsoleWrapper.Clear();
             }
             catch (Exception ex)
             {

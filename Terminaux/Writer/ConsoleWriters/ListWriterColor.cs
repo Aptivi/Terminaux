@@ -61,7 +61,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     int OldTop;
 
                     // Try to write list to console
-                    OldTop = ConsoleWrappers.ActionCursorTop();
+                    OldTop = ConsoleWrapper.CursorTop;
                     foreach (TKey ListEntry in List.Keys)
                     {
                         var Values = new List<object>();
@@ -79,16 +79,16 @@ namespace Terminaux.Writer.ConsoleWriters
                         }
                         if (Wrap)
                         {
-                            LinesMade += ConsoleWrappers.ActionCursorTop() - OldTop;
-                            OldTop = ConsoleWrappers.ActionCursorTop();
-                            if (LinesMade == ConsoleWrappers.ActionWindowHeight() - 1)
+                            LinesMade += ConsoleWrapper.CursorTop - OldTop;
+                            OldTop = ConsoleWrapper.CursorTop;
+                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                             {
                                 if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
-                        else if (ConsoleWrappers.ActionKeyAvailable())
+                        else if (ConsoleWrapper.KeyAvailable)
                         {
                             if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
@@ -134,7 +134,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     int EntryNumber = 1;
 
                     // Try to write list to console
-                    OldTop = ConsoleWrappers.ActionCursorTop();
+                    OldTop = ConsoleWrapper.CursorTop;
                     foreach (T ListEntry in List)
                     {
                         var Values = new List<object>();
@@ -153,16 +153,16 @@ namespace Terminaux.Writer.ConsoleWriters
                         EntryNumber += 1;
                         if (Wrap)
                         {
-                            LinesMade += ConsoleWrappers.ActionCursorTop() - OldTop;
-                            OldTop = ConsoleWrappers.ActionCursorTop();
-                            if (LinesMade == ConsoleWrappers.ActionWindowHeight() - 1)
+                            LinesMade += ConsoleWrapper.CursorTop - OldTop;
+                            OldTop = ConsoleWrapper.CursorTop;
+                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                             {
                                 if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
                             }
                         }
-                        else if (ConsoleWrappers.ActionKeyAvailable())
+                        else if (ConsoleWrapper.KeyAvailable)
                         {
                             if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;

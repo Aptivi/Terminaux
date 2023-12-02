@@ -30,11 +30,11 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
 
         public override List<InteractiveTuiBinding> Bindings { get; set; } =
         [
-            new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1,  (_, index) => Add(index)),
-            new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2,  (_, index) => Remove(index)),
-            new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3,  (_, _)     => RemoveLast()),
-            new InteractiveTuiBinding(/* Localizable */ "Redraw",      ConsoleKey.F4,  (_, _)     => InteractiveTuiStatus.RedrawRequired = true),
-            new InteractiveTuiBinding(/* Localizable */ "Switch",      ConsoleKey.Tab, (_, _)     => Switch()),
+            new InteractiveTuiBinding("Add",         ConsoleKey.F1,  (_, index) => Add(index)),
+            new InteractiveTuiBinding("Delete",      ConsoleKey.F2,  (_, index) => Remove(index)),
+            new InteractiveTuiBinding("Delete Last", ConsoleKey.F3,  (_, _)     => RemoveLast()),
+            new InteractiveTuiBinding("Redraw",      ConsoleKey.F4,  (_, _)     => InteractiveTuiStatus.RedrawRequired = true),
+            new InteractiveTuiBinding("Switch",      ConsoleKey.Tab, (_, _)     => Switch()),
         ];
 
         /// <inheritdoc/>

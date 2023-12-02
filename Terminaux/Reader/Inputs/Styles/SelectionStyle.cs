@@ -159,13 +159,13 @@ namespace Terminaux.Reader.Inputs.Styles
             // First alt answer index
             int altAnswersFirstIdx = Answers.Count;
             ConsoleKeyInfo Answer;
-            bool origVisible = ConsoleWrappers.ActionGetCursorVisible();
-            ConsoleWrappers.ActionCursorVisible(false);
-            ConsoleWrappers.ActionClear();
+            bool origVisible = ConsoleWrapper.CursorVisible;
+            ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.Clear();
 
             // Make pages based on console window height
-            int listStartPosition = ConsoleExtensions.GetWrappedSentences(Question, ConsoleWrappers.ActionWindowWidth()).Length;
-            int listEndPosition = ConsoleWrappers.ActionWindowHeight() - ConsoleWrappers.ActionCursorTop();
+            int listStartPosition = ConsoleExtensions.GetWrappedSentences(Question, ConsoleWrapper.WindowWidth).Length;
+            int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
             int answersPerPage = listEndPosition - 5;
             int pages = AllAnswers.Count / answersPerPage;
             if (AllAnswers.Count % answersPerPage == 0)
@@ -192,7 +192,7 @@ namespace Terminaux.Reader.Inputs.Styles
                 if (refreshRequired)
                 {
                     refreshRequired = false;
-                    ConsoleWrappers.ActionClear();
+                    ConsoleWrapper.Clear();
                     selectionBuilder.Append(
                         $"{questionColor.VTSequenceForeground}" +
                         $"{Question}"
@@ -222,7 +222,7 @@ namespace Terminaux.Reader.Inputs.Styles
                         // Get the option
                         string AnswerOption = $"  {AnswerInstance}) {AnswerTitle}";
                         int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
-                        int answerTitleMaxLeft = ConsoleWrappers.ActionWindowWidth();
+                        int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
                         if (AnswerTitleLeft < answerTitleMaxLeft)
                         {
                             string renderedChoice = $"  {AnswerInstance.ChoiceName}) ";
@@ -245,18 +245,18 @@ namespace Terminaux.Reader.Inputs.Styles
                 }
 
                 // Write description area
-                int descSepArea = ConsoleWrappers.ActionWindowHeight() - 3;
-                int descArea = ConsoleWrappers.ActionWindowHeight() - 2;
+                int descSepArea = ConsoleWrapper.WindowHeight - 3;
+                int descArea = ConsoleWrapper.WindowHeight - 2;
                 var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
-                string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate((ConsoleWrappers.ActionWindowWidth() * 2) - 3) : "";
+                string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3) : "";
                 selectionBuilder.Append(
                     $"{CsiSequences.GenerateCsiCursorPosition(1, descSepArea + 1)}" +
                     $"{separatorColor.VTSequenceForeground}" +
-                    $"{new string('=', ConsoleWrappers.ActionWindowWidth())}" +
+                    $"{new string('=', ConsoleWrapper.WindowWidth)}" +
                     $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 1)}" +
-                    $"{new string(' ', ConsoleWrappers.ActionWindowWidth())}" +
+                    $"{new string(' ', ConsoleWrapper.WindowWidth)}" +
                     $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 2)}" +
-                    $"{new string(' ', ConsoleWrappers.ActionWindowWidth())}" +
+                    $"{new string(' ', ConsoleWrapper.WindowWidth)}" +
                     $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 1)}" +
                     $"{textColor.VTSequenceForeground}" +
                     descFinal
@@ -269,7 +269,7 @@ namespace Terminaux.Reader.Inputs.Styles
                     $"[ENTER: select]==[ESC: exit]==[TAB: info]";
                 string numberRender = $"[{currentPage + 1}/{pages + 1}]==[{HighlightedAnswer}/{AllAnswers.Count}]";
                 int bindingsLeft = 2;
-                int numbersLeft = ConsoleWrappers.ActionWindowWidth() - numberRender.Length - bindingsLeft;
+                int numbersLeft = ConsoleWrapper.WindowWidth - numberRender.Length - bindingsLeft;
                 selectionBuilder.Append(
                     $"{CsiSequences.GenerateCsiCursorPosition(bindingsLeft + 1, descSepArea + 1)}" +
                     $"{separatorColor.VTSequenceForeground}" +
@@ -283,7 +283,7 @@ namespace Terminaux.Reader.Inputs.Styles
 
                 // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
                 // we're not switching pages yet.
-                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrappers.ActionWindowWidth() - 2, listStartPosition, listStartPosition + 1, 4, false);
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition, listStartPosition + 1, 4, false);
 
                 // Wait for an answer
                 Answer = Input.DetectKeypress();
@@ -316,15 +316,15 @@ namespace Terminaux.Reader.Inputs.Styles
                         break;
                     case ConsoleKey.Enter:
                         savedPos = HighlightedAnswer;
-                        ConsoleWrappers.ActionCursorVisible(origVisible);
-                        ConsoleWrappers.ActionClear();
+                        ConsoleWrapper.CursorVisible = origVisible;
+                        ConsoleWrapper.Clear();
                         return HighlightedAnswer;
                     case ConsoleKey.Escape:
                         if (kiosk)
                             break;
                         savedPos = HighlightedAnswer;
-                        ConsoleWrappers.ActionCursorVisible(origVisible);
-                        ConsoleWrappers.ActionClear();
+                        ConsoleWrapper.CursorVisible = origVisible;
+                        ConsoleWrapper.Clear();
                         return -1;
                     case ConsoleKey.Tab:
                         if (string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription))

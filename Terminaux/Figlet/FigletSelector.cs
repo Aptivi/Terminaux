@@ -67,8 +67,8 @@ namespace Terminaux.Figlet
                 if (rerender)
                 {
                     rerender = false;
-                    ConsoleWrappers.ActionCursorVisible(false);
-                    ConsoleWrappers.ActionClear();
+                    ConsoleWrapper.CursorVisible = false;
+                    ConsoleWrapper.Clear();
                 }
 
                 // Write the text using the selected figlet font
@@ -76,8 +76,8 @@ namespace Terminaux.Figlet
                 CenteredFigletTextColor.WriteCenteredFiglet(figletFont, text);
 
                 // Write the selected font name and the keybindings
-                CenteredTextColor.WriteCentered(ConsoleWrappers.ActionWindowHeight() - 4, fontName);
-                CenteredTextColor.WriteCentered(ConsoleWrappers.ActionWindowHeight() - 2, "[ENTER] Select | [<-|->] Select | [S] Write font name");
+                CenteredTextColor.WriteCentered(ConsoleWrapper.WindowHeight - 4, fontName);
+                CenteredTextColor.WriteCentered(ConsoleWrapper.WindowHeight - 2, "[ENTER] Select | [<-|->] Select | [S] Write font name");
 
                 // Wait for input
                 var key = Input.DetectKeypress().Key;
@@ -111,7 +111,7 @@ namespace Terminaux.Figlet
                 }
             }
 
-            ConsoleWrappers.ActionClear();
+            ConsoleWrapper.Clear();
             return fontName;
         }
     }

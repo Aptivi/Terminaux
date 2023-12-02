@@ -42,14 +42,14 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = ConsoleExtensions.FormatString(Text, Vars);
-                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
-                ConsoleWrappers.ActionSetCursorTop(top);
+                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                ConsoleWrapper.CursorTop = top;
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrappers.ActionWindowWidth() / 2 - sentence.Length / 2;
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
                     consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrappers.ActionCursorTop(), Vars);
+                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, Vars);
                 }
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -103,14 +103,14 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = ConsoleExtensions.FormatString(Text, Vars);
-                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
-                ConsoleWrappers.ActionSetCursorTop(top);
+                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                ConsoleWrapper.CursorTop = top;
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrappers.ActionWindowWidth() / 2 - sentence.Length / 2;
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
                     consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    TextWriterWhereColor.WriteWhereColorBack(sentence + "\n", consoleInfoX, ConsoleWrappers.ActionCursorTop(), ForegroundColor, BackgroundColor, Vars);
+                    TextWriterWhereColor.WriteWhereColorBack(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, ForegroundColor, BackgroundColor, Vars);
                 }
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -130,14 +130,14 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = ConsoleExtensions.FormatString(Text, Vars);
-                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
-                ConsoleWrappers.ActionSetCursorTop((ConsoleWrappers.ActionWindowHeight() / 2) - (sentences.Length / 2));
+                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                ConsoleWrapper.CursorTop = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrappers.ActionWindowWidth() / 2 - sentence.Length / 2;
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
                     consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrappers.ActionCursorTop(), Vars);
+                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, Vars);
                 }
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -187,14 +187,14 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = ConsoleExtensions.FormatString(Text, Vars);
-                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
-                ConsoleWrappers.ActionSetCursorTop((ConsoleWrappers.ActionWindowHeight() / 2) - (sentences.Length / 2));
+                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                ConsoleWrapper.CursorTop = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrappers.ActionWindowWidth() / 2 - sentence.Length / 2;
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
                     consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    TextWriterWhereColor.WriteWhereColorBack(sentence + "\n", consoleInfoX, ConsoleWrappers.ActionCursorTop(), ForegroundColor, BackgroundColor, Vars);
+                    TextWriterWhereColor.WriteWhereColorBack(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, ForegroundColor, BackgroundColor, Vars);
                 }
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))

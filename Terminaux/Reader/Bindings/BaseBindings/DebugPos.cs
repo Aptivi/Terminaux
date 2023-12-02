@@ -36,29 +36,29 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         {
             // Show debug background positions
             Console.BackgroundColor = ConsoleColor.Green;
-            ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-            ConsoleWrappers.ActionWriteString(" ", state.settings);
+            ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+            ConsoleWrapper.Write(" ", state.settings);
             Thread.Sleep(1000);
             Console.BackgroundColor = ConsoleColor.Red;
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-            ConsoleWrappers.ActionWriteString(" ", state.settings);
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapper.Write(" ", state.settings);
             Thread.Sleep(1000);
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
 
             // In the case of one line wrap, get the list of sentences and debug the positions
-            int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
+            int longestSentenceLength = ConsoleWrapper.WindowWidth - state.settings.RightMargin - state.inputPromptLeft - 1;
             string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
             renderedText = state.OneLineWrap ? TermReaderTools.GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
-            ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+            ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             if (state.OneLineWrap)
                 PositioningTools.SeekToOneLineWrapAware(renderedText.Length, ref state);
             else
                 PositioningTools.SeekTo(renderedText.Length, ref state);
             Console.BackgroundColor = ConsoleColor.Blue;
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-            ConsoleWrappers.ActionWriteString(" ", state.settings);
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapper.Write(" ", state.settings);
             Thread.Sleep(1000);
 
             // Verify seek to 0
@@ -67,8 +67,8 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             else
                 PositioningTools.SeekTo(0, ref state);
             Console.BackgroundColor = ConsoleColor.DarkBlue;
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-            ConsoleWrappers.ActionWriteString(" ", state.settings);
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapper.Write(" ", state.settings);
             Thread.Sleep(1000);
 
             // Verify going forward 5 times
@@ -77,8 +77,8 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             else
                 PositioningTools.GoForward(5, ref state);
             Console.BackgroundColor = ConsoleColor.Magenta;
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-            ConsoleWrappers.ActionWriteString(" ", state.settings);
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapper.Write(" ", state.settings);
             Thread.Sleep(1000);
 
             // Verify going backward 3 times
@@ -87,25 +87,25 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             else
                 PositioningTools.GoBack(3, ref state);
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-            ConsoleWrappers.ActionWriteString(" ", state.settings);
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapper.Write(" ", state.settings);
             Thread.Sleep(1000);
 
             // Now, reset everything
-            ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+            ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             Console.ResetColor();
             if (state.OneLineWrap)
             {
-                ConsoleWrappers.ActionWriteString(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
+                ConsoleWrapper.Write(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
                 PositioningTools.SeekToOneLineWrapAware(renderedText.Length, ref state);
             }
             else
             {
-                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedText + " ", state.settings);
+                ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrapper.Write(renderedText + " ", state.settings);
                 PositioningTools.SeekTo(renderedText.Length, ref state);
             }
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

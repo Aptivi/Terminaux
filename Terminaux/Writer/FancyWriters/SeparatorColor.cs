@@ -117,14 +117,14 @@ namespace Terminaux.Writer.FancyWriters
                     }
 
                     // Render the text accordingly
-                    Text = canPosition ? Text.Truncate(ConsoleWrappers.ActionWindowWidth() - 6) : Text;
+                    Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
                     TextWriterColor.WriteColor(Text, false, new Color(ConsoleColors.Gray));
                 }
 
                 // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
                 int RepeatTimes = 0;
                 if (canPosition)
-                    RepeatTimes = ConsoleWrappers.ActionWindowWidth() - (Text + " ").Length - 1;
+                    RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length - 1;
 
                 // Write the closing minus sign.
                 TextWriterColor.WriteColor(new string('-', RepeatTimes), true, new Color(ConsoleColors.Gray));
@@ -191,14 +191,14 @@ namespace Terminaux.Writer.FancyWriters
                         Text += " ";
 
                     // Render the text accordingly
-                    Text = canPosition ? Text.Truncate(ConsoleWrappers.ActionWindowWidth() - 6) : Text;
+                    Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
                     TextWriterColor.WriteColorBack(Text, false, ForegroundColor, BackgroundColor);
                 }
 
                 // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
                 int RepeatTimes = 0;
                 if (canPosition)
-                    RepeatTimes = ConsoleWrappers.ActionWindowWidth() - (Text + " ").Length + 1;
+                    RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length + 1;
 
                 // Write the closing minus sign.
                 TextWriterColor.WriteColorBack(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);

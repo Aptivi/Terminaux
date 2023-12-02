@@ -94,7 +94,7 @@ namespace Terminaux.Colors.Selector
                     // We need to refresh the screen if it's required
                     if (refresh)
                     {
-                        ConsoleWrappers.ActionCursorVisible(false);
+                        ConsoleWrapper.CursorVisible = false;
                         refresh = false;
                         ColorTools.LoadBack();
                     }
@@ -145,13 +145,13 @@ namespace Terminaux.Colors.Selector
             RenderPreviewBox(selectedColor);
 
             // Then, render the hue, saturation, and lightness bars
-            int hueBarX = ConsoleWrappers.ActionWindowWidth() / 2 + 2;
+            int hueBarX = ConsoleWrapper.WindowWidth / 2 + 2;
             int hueBarY = 1;
             int saturationBarY = 5;
             int lightnessBarY = 9;
             int rgbRampBarY = 13;
             int grayRampBarY = 19;
-            int boxWidth = ConsoleWrappers.ActionWindowWidth() / 2 - 6;
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6;
             int boxHeight = 1;
             var initialBackground = new Color(ConsoleColors.Black).VTSequenceBackground;
 
@@ -222,7 +222,7 @@ namespace Terminaux.Colors.Selector
             TextWriterWhereColor.WriteWhere(grayRamp.ToString(), hueBarX + 1, grayRampBarY + 1);
 
             // Finally, the keybindings
-            int bindingsPos = ConsoleWrappers.ActionWindowHeight() - 2;
+            int bindingsPos = ConsoleWrapper.WindowHeight - 2;
             CenteredTextColor.WriteCentered(bindingsPos, $"[ENTER] Accept color - [H] Help - [ESC] Exit");
         }
 
@@ -232,9 +232,9 @@ namespace Terminaux.Colors.Selector
             RenderPreviewBox(selectedColor);
 
             // Then, render the color info
-            int infoBoxX = ConsoleWrappers.ActionWindowWidth() / 2 + 2;
+            int infoBoxX = ConsoleWrapper.WindowWidth / 2 + 2;
             int infoBoxY = 1;
-            int boxWidth = ConsoleWrappers.ActionWindowWidth() / 2 - 6;
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6;
             int boxHeight = 9;
             int rgbRampBarY = 13;
             var initialBackground = new Color(ConsoleColors.Black).VTSequenceBackground;
@@ -273,7 +273,7 @@ namespace Terminaux.Colors.Selector
             TextWriterWhereColor.WriteWhere(blueRamp.ToString(), infoBoxX + 1, rgbRampBarY + 3);
 
             // Finally, the keybindings
-            int bindingsPos = ConsoleWrappers.ActionWindowHeight() - 2;
+            int bindingsPos = ConsoleWrapper.WindowHeight - 2;
             CenteredTextColor.WriteCentered(bindingsPos, $"[ENTER] Accept color - [H] Help - [ESC] Exit");
         }
 
@@ -283,9 +283,9 @@ namespace Terminaux.Colors.Selector
             RenderPreviewBox(selectedColor);
 
             // Then, render the color info
-            int infoBoxX = ConsoleWrappers.ActionWindowWidth() / 2 + 2;
+            int infoBoxX = ConsoleWrapper.WindowWidth / 2 + 2;
             int infoBoxY = 1;
-            int boxWidth = ConsoleWrappers.ActionWindowWidth() / 2 - 6;
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6;
             int boxHeight = 9;
             int rgbRampBarY = 13;
             var initialBackground = new Color(ConsoleColors.Black).VTSequenceBackground;
@@ -324,7 +324,7 @@ namespace Terminaux.Colors.Selector
             TextWriterWhereColor.WriteWhere(blueRamp.ToString(), infoBoxX + 1, rgbRampBarY + 3);
 
             // Finally, the keybindings
-            int bindingsPos = ConsoleWrappers.ActionWindowHeight() - 2;
+            int bindingsPos = ConsoleWrapper.WindowHeight - 2;
             CenteredTextColor.WriteCentered(bindingsPos, $"[ENTER] Accept color - [H] Help - [ESC] Exit");
         }
 
@@ -554,8 +554,8 @@ namespace Terminaux.Colors.Selector
             // Draw the box that represents the currently selected color
             int boxX = 2;
             int boxY = 1;
-            int boxWidth = ConsoleWrappers.ActionWindowWidth() / 2 - 4;
-            int boxHeight = ConsoleWrappers.ActionWindowHeight() - 6;
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
+            int boxHeight = ConsoleWrapper.WindowHeight - 6;
 
             // First, draw the border
             BoxFrameTextColor.WriteBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor}, orig: {selectedColor.PlainSequenceOriginal}]", boxX, boxY, boxWidth, boxHeight);

@@ -41,7 +41,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             if (suggestions.Length > 1)
             {
                 // Write a new line
-                ConsoleWrappers.ActionWriteLine();
+                ConsoleWrapper.WriteLine();
 
                 // Check to see if we can display 15 characters
                 int max = suggestions.Max((suggestion) => suggestion.Length);
@@ -50,7 +50,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 {
                     // Write each suggestion on their own line
                     foreach (string suggestion in suggestions)
-                        ConsoleWrappers.ActionWriteLineString(suggestion, state.Settings);
+                        ConsoleWrapper.WriteLine(suggestion, state.Settings);
                 }
                 else
                 {
@@ -69,7 +69,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                         // Check to see if we've reached the limit
                         if (line.Length >= maxLineLength)
                         {
-                            ConsoleWrappers.ActionWriteLineString(line.ToString(), state.Settings);
+                            ConsoleWrapper.WriteLine(line.ToString(), state.Settings);
                             line.Clear();
                         }
                     }
@@ -77,13 +77,13 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                     // Flush for the last time
                     if (line.Length > 0)
                     {
-                        ConsoleWrappers.ActionWriteLineString(line.ToString(), state.Settings);
+                        ConsoleWrapper.WriteLine(line.ToString(), state.Settings);
                         line.Clear();
                     }
 
                     // Re-draw
-                    state.inputPromptTop = ConsoleWrappers.ActionCursorTop();
-                    state.currentCursorPosTop = ConsoleWrappers.ActionCursorTop();
+                    state.inputPromptTop = ConsoleWrapper.CursorTop;
+                    state.currentCursorPosTop = ConsoleWrapper.CursorTop;
                     new Refresh().DoAction(state);
                 }
             }

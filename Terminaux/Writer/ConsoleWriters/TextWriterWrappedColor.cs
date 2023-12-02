@@ -51,7 +51,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     Text = Text.Replace(Convert.ToChar(13), default);
 
                     // First, split the text to wrap
-                    string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth());
+                    string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
 
                     // Iterate through sentences
                     var buffered = new StringBuilder();
@@ -69,7 +69,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             char TextChar = sentence[i];
 
                             // Write a character individually
-                            if (LinesMade == ConsoleWrappers.ActionWindowHeight() - 1)
+                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                             {
                                 Console.Write(buffered.ToString());
                                 buffered.Clear();

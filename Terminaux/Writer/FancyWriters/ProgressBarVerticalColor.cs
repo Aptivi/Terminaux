@@ -78,7 +78,7 @@ namespace Terminaux.Writer.FancyWriters
                     Progress = 0;
 
                 // Fill the progress
-                int MaximumHeight = ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset;
+                int MaximumHeight = ConsoleWrapper.WindowHeight - FinalHeightOffset;
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
                 // Draw the border
@@ -87,7 +87,7 @@ namespace Terminaux.Writer.FancyWriters
                 {
                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
                     borderBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
-                    for (int i = 0; i < ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset; i++)
+                    for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                     {
                         borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
                         borderBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);
@@ -237,7 +237,7 @@ namespace Terminaux.Writer.FancyWriters
                     Progress = 0;
 
                 // Fill the progress
-                int MaximumHeight = ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset;
+                int MaximumHeight = ConsoleWrapper.WindowHeight - FinalHeightOffset;
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
                 // Draw the border
@@ -247,7 +247,7 @@ namespace Terminaux.Writer.FancyWriters
                     borderBuilder.Append($"{new Color(FrameColor).VTSequenceForeground}");
                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
                     borderBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
-                    for (int i = 0; i < ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset; i++)
+                    for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                     {
                         borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
                         borderBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);
@@ -366,7 +366,7 @@ namespace Terminaux.Writer.FancyWriters
                     Progress = 0;
 
                 // Fill the progress
-                int MaximumHeight = ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset;
+                int MaximumHeight = ConsoleWrapper.WindowHeight - FinalHeightOffset;
                 int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
                 // Draw the border
@@ -376,7 +376,7 @@ namespace Terminaux.Writer.FancyWriters
                     borderBuilder.Append($"{FrameColor.VTSequenceForeground}");
                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
                     borderBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
-                    for (int i = 0; i < ConsoleWrappers.ActionWindowHeight() - FinalHeightOffset; i++)
+                    for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                     {
                         borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
                         borderBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);

@@ -83,7 +83,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    BoxFrameColor.WriteBoxFramePlain(Left, Top, ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset, 1,
+                    BoxFrameColor.WriteBoxFramePlain(Left, Top, ConsoleWrapper.WindowWidth - FinalWidthOffset, 1,
                         ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
                         ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
                         ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
@@ -95,7 +95,7 @@ namespace Terminaux.Writer.FancyWriters
                     ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                     ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 StringBuilder progBuilder = new();
-                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset - times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string('*', times));
                 TextWriterColor.WritePlain(progBuilder.ToString());
             }
@@ -281,7 +281,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    BoxFrameColor.WriteBoxFrame(Left, Top, ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset, 1,
+                    BoxFrameColor.WriteBoxFrame(Left, Top, ConsoleWrapper.WindowWidth - FinalWidthOffset, 1,
                         ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
                         ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
                         ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
@@ -294,7 +294,7 @@ namespace Terminaux.Writer.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 StringBuilder progBuilder = new();
-                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset - times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
                 progBuilder.Append(new Color(ProgressColor).VTSequenceBackground);
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string(' ', times));
                 progBuilder.Append(new Color(ConsoleColors.Black).VTSequenceBackground);
@@ -446,7 +446,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Draw the border
                 if (DrawBorder)
                 {
-                    BoxFrameColor.WriteBoxFrame(Left, Top, ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset, 1,
+                    BoxFrameColor.WriteBoxFrame(Left, Top, ConsoleWrapper.WindowWidth - FinalWidthOffset, 1,
                         ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
                         ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
                         ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
@@ -459,7 +459,7 @@ namespace Terminaux.Writer.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 StringBuilder progBuilder = new();
-                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrappers.ActionWindowWidth() - FinalWidthOffset - times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
                 progBuilder.Append(ProgressColor.VTSequenceBackground);
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string(' ', times));
                 progBuilder.Append(new Color(ConsoleColors.Black).VTSequenceBackground);

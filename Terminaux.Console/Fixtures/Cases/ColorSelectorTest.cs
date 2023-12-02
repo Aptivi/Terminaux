@@ -28,7 +28,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public void RunFixture()
         {
             var color = ColorSelector.OpenColorSelector();
-            ConsoleWrappers.ActionClear();
+            ConsoleWrapper.Clear();
             TextWriterColor.Write("Color selector returned: {0} [{1}]", color.PlainSequence, color.PlainSequenceTrueColor);
         }
     }

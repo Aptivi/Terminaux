@@ -163,10 +163,10 @@ namespace Terminaux.Reader.Inputs
         /// <param name="Timeout">Timeout</param>
         public static ConsoleKeyInfo ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
         {
-            SpinWait.SpinUntil(() => ConsoleWrappers.ActionKeyAvailable(), Timeout);
-            if (!ConsoleWrappers.ActionKeyAvailable())
+            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
+            if (!ConsoleWrapper.KeyAvailable)
                 throw new TerminauxContinuableException("User didn't provide any input in a timely fashion.");
-            return ConsoleWrappers.ActionReadKey(Intercept);
+            return ConsoleWrapper.ReadKey(Intercept);
         }
 
         /// <summary>
@@ -174,8 +174,8 @@ namespace Terminaux.Reader.Inputs
         /// </summary>
         public static ConsoleKeyInfo DetectKeypress()
         {
-            SpinWait.SpinUntil(() => ConsoleWrappers.ActionKeyAvailable());
-            return ConsoleWrappers.ActionReadKey(true);
+            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
+            return ConsoleWrapper.ReadKey(true);
         }
 
     }

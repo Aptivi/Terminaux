@@ -43,7 +43,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 PositioningTools.GoBackOneLineWrapAware(state.currentTextPos, ref state);
             else
                 PositioningTools.GoBack(state.currentTextPos, ref state);
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

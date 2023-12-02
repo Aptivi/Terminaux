@@ -24,7 +24,7 @@ namespace Terminaux.Base
     /// <summary>
     /// Wrapper for the <see cref="Console"/> class to ensure safety against dumb consoles and Windows-only features.
     /// </summary>
-    public static class ConsoleWrappers
+    public static class ConsoleWrapperTools
     {
         // Actions to modify the wrapper
         internal static Func<bool> actionIsDumb = () => IsDumb;
@@ -43,12 +43,17 @@ namespace Terminaux.Base
         internal static Action actionBeep = Beep;
         internal static Action actionClear = Clear;
         internal static Func<bool, ConsoleKeyInfo> actionReadKey = ReadKey;
-        internal static Action<char, TermReaderSettings> actionWrite = Write;
-        internal static Action<string, TermReaderSettings> actionWrite1 = Write;
-        internal static Action<string, TermReaderSettings, object[]> actionWrite2 = Write;
+        internal static Action<char, TermReaderSettings> actionWriteNonStandalone = WriteNonStandalone;
+        internal static Action<string, TermReaderSettings> actionWriteNonStandalone1 = WriteNonStandalone;
+        internal static Action<string, TermReaderSettings, object[]> actionWriteNonStandalone2 = WriteNonStandalone;
+        internal static Action<string, TermReaderSettings> actionWriteLineNonStandalone1 = WriteLineNonStandalone;
+        internal static Action<string, TermReaderSettings, object[]> actionWriteLineNonStandalone2 = WriteLineNonStandalone;
+        internal static Action<char> actionWrite = Write;
+        internal static Action<string> actionWrite1 = Write;
+        internal static Action<string, object[]> actionWrite2 = Write;
+        internal static Action<string> actionWriteLine1 = WriteLine;
+        internal static Action<string, object[]> actionWriteLine2 = WriteLine;
         internal static Action actionWriteLine = WriteLine;
-        internal static Action<string, TermReaderSettings> actionWriteLine1 = WriteLine;
-        internal static Action<string, TermReaderSettings, object[]> actionWriteLine2 = WriteLine;
 
         // Some default variables
         private static bool cursorVisible = true;
@@ -58,7 +63,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Func<bool> ActionIsDumb
         {
-            get => actionIsDumb;
+            internal get => actionIsDumb;
             set => actionIsDumb = value ?? (() => IsDumb);
         }
         /// <summary>
@@ -66,7 +71,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Func<int> ActionCursorLeft
         {
-            get => actionCursorLeft;
+            internal get => actionCursorLeft;
             set => actionCursorLeft = value ?? (() => CursorLeft);
         }
         /// <summary>
@@ -74,7 +79,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Func<int> ActionCursorTop
         {
-            get => actionCursorTop;
+            internal get => actionCursorTop;
             set => actionCursorTop = value ?? (() => CursorTop);
         }
         /// <summary>
@@ -82,7 +87,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Func<int> ActionWindowWidth
         {
-            get => actionWindowWidth;
+            internal get => actionWindowWidth;
             set => actionWindowWidth = value ?? (() => WindowWidth);
         }
         /// <summary>
@@ -90,7 +95,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Func<int> ActionWindowHeight
         {
-            get => actionWindowHeight;
+            internal get => actionWindowHeight;
             set => actionWindowHeight = value ?? (() => WindowHeight);
         }
         /// <summary>
@@ -98,7 +103,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Func<int> ActionBufferHeight
         {
-            get => actionBufferHeight;
+            internal get => actionBufferHeight;
             set => actionBufferHeight = value ?? (() => WindowHeight);
         }
         /// <summary>
@@ -106,7 +111,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Action<bool> ActionCursorVisible
         {
-            get => actionCursorVisible;
+            internal get => actionCursorVisible;
             set => actionCursorVisible = value ?? ((val) => CursorVisible = val);
         }
         /// <summary>
@@ -114,7 +119,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Func<bool> ActionGetCursorVisible
         {
-            get => actionGetCursorVisible;
+            internal get => actionGetCursorVisible;
             set => actionGetCursorVisible = value ?? (() => CursorVisible);
         }
         /// <summary>
@@ -122,7 +127,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Action<bool> ActionTreatCtrlCAsInput
         {
-            get => actionTreatCtrlCAsInput;
+            internal get => actionTreatCtrlCAsInput;
             set => actionTreatCtrlCAsInput = value ?? ((val) => TreatCtrlCAsInput = val);
         }
         /// <summary>
@@ -130,7 +135,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Func<bool> ActionKeyAvailable
         {
-            get => actionKeyAvailable;
+            internal get => actionKeyAvailable;
             set => actionKeyAvailable = value ?? (() => KeyAvailable);
         }
         /// <summary>
@@ -140,7 +145,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Action<int, int> ActionSetCursorPosition
         {
-            get => actionSetCursorPosition;
+            internal get => actionSetCursorPosition;
             set => actionSetCursorPosition = value ?? SetCursorPosition;
         }
         /// <summary>
@@ -149,7 +154,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Action<int> ActionSetCursorLeft
         {
-            get => actionSetCursorLeft;
+            internal get => actionSetCursorLeft;
             set => actionSetCursorLeft = value ?? SetCursorLeft;
         }
         /// <summary>
@@ -158,7 +163,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Action<int> ActionSetCursorTop
         {
-            get => actionSetCursorTop;
+            internal get => actionSetCursorTop;
             set => actionSetCursorTop = value ?? SetCursorTop;
         }
         /// <summary>
@@ -166,7 +171,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Action ActionBeep
         {
-            get => actionBeep;
+            internal get => actionBeep;
             set => actionBeep = value ?? Beep;
         }
         /// <summary>
@@ -174,7 +179,7 @@ namespace Terminaux.Base
         /// </summary>
         public static Action ActionClear
         {
-            get => actionClear;
+            internal get => actionClear;
             set => actionClear = value ?? Clear;
         }
         /// <summary>
@@ -183,25 +188,25 @@ namespace Terminaux.Base
         /// </summary>
         public static Func<bool, ConsoleKeyInfo> ActionReadKey
         {
-            get => actionReadKey;
+            internal get => actionReadKey;
             set => actionReadKey = value ?? ReadKey;
         }
         /// <summary>
         /// Writes a character to console<br></br><br></br>
         /// - A character
         /// </summary>
-        public static Action<char, TermReaderSettings> ActionWriteChar
+        public static Action<char> ActionWriteChar
         {
-            get => actionWrite;
+            internal get => actionWrite;
             set => actionWrite = value ?? Write;
         }
         /// <summary>
         /// Writes text to console<br></br><br></br>
         /// - The text to write
         /// </summary>
-        public static Action<string, TermReaderSettings> ActionWriteString
+        public static Action<string> ActionWriteString
         {
-            get => actionWrite1;
+            internal get => actionWrite1;
             set => actionWrite1 = value ?? Write;
         }
         /// <summary>
@@ -209,26 +214,18 @@ namespace Terminaux.Base
         /// - The text to write<br></br>
         /// - The arguments to evaluate
         /// </summary>
-        public static Action<string, TermReaderSettings, object[]> ActionWriteParameterized
+        public static Action<string, object[]> ActionWriteParameterized
         {
-            get => actionWrite2;
+            internal get => actionWrite2;
             set => actionWrite2 = value ?? Write;
-        }
-        /// <summary>
-        /// Writes new line to console
-        /// </summary>
-        public static Action ActionWriteLine
-        {
-            get => actionWriteLine;
-            set => actionWriteLine = value ?? WriteLine;
         }
         /// <summary>
         /// Writes text to console with line terminator
         /// - The text to write
         /// </summary>
-        public static Action<string, TermReaderSettings> ActionWriteLineString
+        public static Action<string> ActionWriteLineString
         {
-            get => actionWriteLine1;
+            internal get => actionWriteLine1;
             set => actionWriteLine1 = value ?? WriteLine;
         }
         /// <summary>
@@ -236,10 +233,65 @@ namespace Terminaux.Base
         /// - The text to write<br></br>
         /// - The arguments to evaluate
         /// </summary>
-        public static Action<string, TermReaderSettings, object[]> ActionWriteLineParameterized
+        public static Action<string, object[]> ActionWriteLineParameterized
         {
-            get => actionWriteLine2;
+            internal get => actionWriteLine2;
             set => actionWriteLine2 = value ?? WriteLine;
+        }
+        /// <summary>
+        /// Writes a character to console<br></br><br></br>
+        /// - A character
+        /// </summary>
+        public static Action<char, TermReaderSettings> ActionWriteCharNonStandalone
+        {
+            internal get => actionWriteNonStandalone;
+            set => actionWriteNonStandalone = value ?? WriteNonStandalone;
+        }
+        /// <summary>
+        /// Writes text to console<br></br><br></br>
+        /// - The text to write
+        /// </summary>
+        public static Action<string, TermReaderSettings> ActionWriteStringNonStandalone
+        {
+            internal get => actionWriteNonStandalone1;
+            set => actionWriteNonStandalone1 = value ?? WriteNonStandalone;
+        }
+        /// <summary>
+        /// Writes text to console<br></br><br></br>
+        /// - The text to write<br></br>
+        /// - The arguments to evaluate
+        /// </summary>
+        public static Action<string, TermReaderSettings, object[]> ActionWriteParameterizedNonStandalone
+        {
+            internal get => actionWriteNonStandalone2;
+            set => actionWriteNonStandalone2 = value ?? WriteNonStandalone;
+        }
+        /// <summary>
+        /// Writes text to console with line terminator
+        /// - The text to write
+        /// </summary>
+        public static Action<string, TermReaderSettings> ActionWriteLineStringNonStandalone
+        {
+            internal get => actionWriteLineNonStandalone1;
+            set => actionWriteLineNonStandalone1 = value ?? WriteLineNonStandalone;
+        }
+        /// <summary>
+        /// Writes text to console with line terminator
+        /// - The text to write<br></br>
+        /// - The arguments to evaluate
+        /// </summary>
+        public static Action<string, TermReaderSettings, object[]> ActionWriteLineParameterizedNonStandalone
+        {
+            internal get => actionWriteLineNonStandalone2;
+            set => actionWriteLineNonStandalone2 = value ?? WriteLineNonStandalone;
+        }
+        /// <summary>
+        /// Writes new line to console
+        /// </summary>
+        public static Action ActionWriteLine
+        {
+            internal get => actionWriteLine;
+            set => actionWriteLine = value ?? WriteLine;
         }
 
         // Wrapper starts here
@@ -392,7 +444,7 @@ namespace Terminaux.Base
         private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
             Console.ReadKey(intercept);
 
-        private static void Write(char value, TermReaderSettings settings)
+        private static void WriteNonStandalone(char value, TermReaderSettings settings)
         {
             Console.Write(value);
             if (CursorLeft >= WindowWidth - settings.RightMargin)
@@ -402,7 +454,7 @@ namespace Terminaux.Base
                     WriteLine();
         }
 
-        private static void Write(string text, TermReaderSettings settings)
+        private static void WriteNonStandalone(string text, TermReaderSettings settings)
         {
             if (settings.RightMargin > 0 || settings.LeftMargin > 0)
             {
@@ -422,25 +474,49 @@ namespace Terminaux.Base
                 Console.Write(text);
         }
 
-        private static void Write(string text, TermReaderSettings settings, params object[] args)
+        private static void WriteNonStandalone(string text, TermReaderSettings settings, params object[] args)
         {
             string formatted = string.Format(text, args);
-            Write(formatted, settings);
+            WriteNonStandalone(formatted, settings);
+        }
+
+        private static void WriteLineNonStandalone(string text, TermReaderSettings settings)
+        {
+            WriteNonStandalone(text, settings);
+            WriteLine();
+        }
+
+        private static void WriteLineNonStandalone(string text, TermReaderSettings settings, params object[] args)
+        {
+            WriteNonStandalone(text, settings, args);
+            WriteLine();
+        }
+
+        private static void Write(char value) =>
+            Console.Write(value);
+
+        private static void Write(string text) =>
+            Console.Write(text);
+
+        private static void Write(string text, params object[] args)
+        {
+            string formatted = string.Format(text, args);
+            Write(formatted);
+        }
+
+        private static void WriteLine(string text)
+        {
+            Write(text);
+            WriteLine();
+        }
+
+        private static void WriteLine(string text, params object[] args)
+        {
+            Write(text, args);
+            WriteLine();
         }
 
         private static void WriteLine() =>
             Console.WriteLine();
-
-        private static void WriteLine(string text, TermReaderSettings settings)
-        {
-            Write(text, settings);
-            WriteLine();
-        }
-
-        private static void WriteLine(string text, TermReaderSettings settings, params object[] args)
-        {
-            Write(text, settings, args);
-            WriteLine();
-        }
     }
 }

@@ -50,10 +50,10 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             state.CurrentText.Clear();
             if (state.OneLineWrap)
             {
-                int longestSentenceLength = ConsoleWrappers.ActionWindowWidth() - state.settings.RightMargin - state.inputPromptLeft - 1;
+                int longestSentenceLength = ConsoleWrapper.WindowWidth - state.settings.RightMargin - state.inputPromptLeft - 1;
                 string renderedBlanks = new(' ', longestSentenceLength);
-                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(renderedBlanks, state.settings);
+                ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrapper.Write(renderedBlanks, state.settings);
                 PositioningTools.SeekToOneLineWrapAware(0, ref state);
                 state.currentTextPos = 0;
                 state.currentCursorPosLeft = state.InputPromptLeft;
@@ -61,11 +61,11 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             }
             else
             {
-                ConsoleWrappers.ActionSetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrappers.ActionWriteString(new string(' ', length), state.settings);
+                ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+                ConsoleWrapper.Write(new string(' ', length), state.settings);
                 PositioningTools.SeekTo(0, ref state);
             }
-            ConsoleWrappers.ActionSetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
 
             // Now, write the history entry
             TermReaderState.currentHistoryPos--;

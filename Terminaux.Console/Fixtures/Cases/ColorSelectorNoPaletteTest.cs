@@ -30,7 +30,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         {
             ColorTools.UseTerminalPalette = false;
             var color = ColorSelector.OpenColorSelector();
-            ConsoleWrappers.ActionClear();
+            ConsoleWrapper.Clear();
             TextWriterColor.Write("Color selector returned: {0} [{1}]", color.PlainSequence, color.PlainSequenceTrueColor);
         }
     }

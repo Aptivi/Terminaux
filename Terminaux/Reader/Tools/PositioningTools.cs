@@ -31,8 +31,8 @@ namespace Terminaux.Reader.Tools
             if (steps > state.currentText.Length - state.currentTextPos)
                 steps = state.currentText.Length - state.currentTextPos;
 
-            int width = ConsoleWrappers.ActionWindowWidth();
-            int height = ConsoleWrappers.ActionBufferHeight();
+            int width = ConsoleWrapper.WindowWidth;
+            int height = ConsoleWrapper.BufferHeight;
             for (int i = 0; i < steps; i++)
             {
                 state.currentTextPos++;
@@ -60,7 +60,7 @@ namespace Terminaux.Reader.Tools
             if (steps > state.currentTextPos)
                 steps = state.currentTextPos;
 
-            int width = ConsoleWrappers.ActionWindowWidth();
+            int width = ConsoleWrapper.WindowWidth;
             for (int i = 0; i < steps; i++)
             {
                 state.currentTextPos--;
@@ -97,7 +97,7 @@ namespace Terminaux.Reader.Tools
             if (steps > state.currentText.Length - state.currentTextPos)
                 steps = state.currentText.Length - state.currentTextPos;
 
-            int width = ConsoleWrappers.ActionWindowWidth();
+            int width = ConsoleWrapper.WindowWidth;
             for (int i = 0; i < steps; i++)
             {
                 state.currentTextPos++;
@@ -124,7 +124,7 @@ namespace Terminaux.Reader.Tools
             if (steps > state.currentTextPos)
                 steps = state.currentTextPos;
 
-            int width = ConsoleWrappers.ActionWindowWidth();
+            int width = ConsoleWrapper.WindowWidth;
             for (int i = 0; i < steps; i++)
             {
                 state.currentTextPos--;
@@ -158,8 +158,8 @@ namespace Terminaux.Reader.Tools
             int promptTop = state.InputPromptTop;
             int promptTopOld = state.InputPromptTop;
 
-            int width = ConsoleWrappers.ActionWindowWidth();
-            int height = ConsoleWrappers.ActionBufferHeight();
+            int width = ConsoleWrapper.WindowWidth;
+            int height = ConsoleWrapper.BufferHeight;
 
             int counted = promptLeft;
             int heightOffset = 1;

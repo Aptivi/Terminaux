@@ -43,10 +43,10 @@ namespace Terminaux.Base
         /// </summary>
         public static void ClearKeepPosition()
         {
-            int Left = ConsoleWrappers.ActionCursorLeft();
-            int Top = ConsoleWrappers.ActionCursorTop();
-            ConsoleWrappers.ActionClear();
-            ConsoleWrappers.ActionSetCursorPosition(Left, Top);
+            int Left = ConsoleWrapper.CursorLeft;
+            int Top = ConsoleWrapper.CursorTop;
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.SetCursorPosition(Left, Top);
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Terminaux.Base
         /// <param name="MaximumNumber">The maximum number.</param>
         /// <param name="WidthOffset">The console window width offset. It's usually a multiple of 2.</param>
         /// <returns>How many times to repeat the character</returns>
-        public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset) => (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * ((ConsoleWrappers.ActionWindowWidth() - WidthOffset) * 0.01d));
+        public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset) => (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * ((ConsoleWrapper.WindowWidth - WidthOffset) * 0.01d));
 
         /// <summary>
         /// Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
@@ -99,8 +99,8 @@ namespace Terminaux.Base
         /// <param name="Vars">Variables to be formatted in the text</param>
         public static (int, int) GetFilteredPositions(string Text, bool line, params object[] Vars)
         {
-            int LeftSeekPosition = ConsoleWrappers.ActionCursorLeft();
-            int TopSeekPosition = ConsoleWrappers.ActionCursorTop();
+            int LeftSeekPosition = ConsoleWrapper.CursorLeft;
+            int TopSeekPosition = ConsoleWrapper.CursorTop;
 
             // If the string is null before or after processing the text, don't seek.
             bool noSeek = false;
@@ -120,7 +120,7 @@ namespace Terminaux.Base
             // Really seek if we need to
             if (!noSeek)
             {
-                var texts = GetWrappedSentences(Text, ConsoleWrappers.ActionWindowWidth(), ConsoleWrappers.ActionCursorLeft());
+                var texts = GetWrappedSentences(Text, ConsoleWrapper.WindowWidth, ConsoleWrapper.CursorLeft);
                 for (int i = 0; i < texts.Length; i++)
                 {
                     string text = texts[i];
@@ -129,7 +129,7 @@ namespace Terminaux.Base
                         // If we spotted a new line character, get down by one line.
                         if (text[j - 1] == Convert.ToChar(10))
                         {
-                            if (TopSeekPosition < ConsoleWrappers.ActionBufferHeight() - 1)
+                            if (TopSeekPosition < ConsoleWrapper.BufferHeight - 1)
                                 TopSeekPosition += 1;
                             LeftSeekPosition = 0;
                         }
@@ -137,7 +137,7 @@ namespace Terminaux.Base
                         {
                             // Simulate seeking through text
                             LeftSeekPosition += 1;
-                            if (LeftSeekPosition >= ConsoleWrappers.ActionWindowWidth())
+                            if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
                             {
                                 // We've reached end of line
                                 LeftSeekPosition = 0;
@@ -151,13 +151,13 @@ namespace Terminaux.Base
                         TopSeekPosition += 1;
                         LeftSeekPosition = 0;
                     }
-                    if (TopSeekPosition > ConsoleWrappers.ActionBufferHeight() - 1)
+                    if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
                     {
                         // We're at the end of buffer! Decrement by one and bail.
                         TopSeekPosition -= 1;
                         LeftSeekPosition = texts[texts.Length - 1].Length;
-                        if (LeftSeekPosition >= ConsoleWrappers.ActionWindowWidth())
-                            LeftSeekPosition = ConsoleWrappers.ActionWindowWidth() - 1;
+                        if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
+                            LeftSeekPosition = ConsoleWrapper.WindowWidth - 1;
                         break;
                     }
                 }
@@ -178,7 +178,7 @@ namespace Terminaux.Base
                 // However, filling the line, as seen by the above logic, requires us to set the left
                 // seek position to zero, causing the top seek position to go down one row.
                 TopSeekPosition += 1;
-                if (TopSeekPosition > ConsoleWrappers.ActionBufferHeight() - 1)
+                if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
                     TopSeekPosition -= 1;
                 LeftSeekPosition = 0;
             }

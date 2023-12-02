@@ -187,7 +187,7 @@ namespace Terminaux.Reader.Inputs.Styles
                                 string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
                                 string AnswerOption = $" {AnswerInstance.ChoiceName}) {AnswerTitle}";
                                 int AnswerTitleLeft = answers.Max(x => $" {x}) ".Length);
-                                if (AnswerTitleLeft < ConsoleWrappers.ActionWindowWidth())
+                                if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
                                 {
                                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
                                     AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
@@ -202,7 +202,7 @@ namespace Terminaux.Reader.Inputs.Styles
                                 string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
                                 string AnswerOption = $" {AnswerInstance.ChoiceName}) {AnswerTitle}";
                                 int AnswerTitleLeft = altAnswers.Max(x => $" {x}) ".Length);
-                                if (AnswerTitleLeft < ConsoleWrappers.ActionWindowWidth())
+                                if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
                                 {
                                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
                                     AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";

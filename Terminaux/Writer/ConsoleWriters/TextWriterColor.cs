@@ -95,7 +95,7 @@ namespace Terminaux.Writer.ConsoleWriters
 
                     // Return to the processed position
                     if (ConsolePlatform.IsRunningFromMono())
-                        ConsoleWrappers.ActionSetCursorPosition(FilteredLeft, FilteredTop);
+                        ConsoleWrapper.SetCursorPosition(FilteredLeft, FilteredTop);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {

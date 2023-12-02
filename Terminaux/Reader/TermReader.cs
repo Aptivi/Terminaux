@@ -117,25 +117,25 @@ namespace Terminaux.Reader
                 };
 
                 // Print the input
-                ConsoleWrappers.ActionSetCursorLeft(ConsoleWrappers.ActionCursorLeft() + settings.LeftMargin);
-                ConsoleWrappers.ActionWriteString(inputPrompt, settings);
+                ConsoleWrapper.CursorLeft += settings.LeftMargin;
+                ConsoleWrapper.Write(inputPrompt, settings);
 
                 // Save current state of input
-                readState.inputPromptLeft = ConsoleWrappers.ActionCursorLeft();
-                readState.inputPromptTop = ConsoleWrappers.ActionCursorTop();
+                readState.inputPromptLeft = ConsoleWrapper.CursorLeft;
+                readState.inputPromptTop = ConsoleWrapper.CursorTop;
                 readState.inputPromptText = inputPrompt;
                 readState.passwordMode = password;
                 readState.oneLineWrap = oneLineWrap;
-                ConsoleWrappers.ActionTreatCtrlCAsInput(settings.TreatCtrlCAsInput);
+                ConsoleWrapperTools.ActionTreatCtrlCAsInput(settings.TreatCtrlCAsInput);
 
                 // Get input
-                (int, int) cachedPos = (ConsoleWrappers.ActionCursorLeft(), ConsoleWrappers.ActionCursorTop());
+                (int, int) cachedPos = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                 while (!BindingsReader.IsTerminate(struckKey))
                 {
                     // Get a key
                     TermReaderTools.isWaitingForInput = true;
                     struckKey = TermReaderTools.GetInput(interruptible);
-                    ConsoleWrappers.ActionCursorVisible(false);
+                    ConsoleWrapper.CursorVisible = false;
                     TermReaderTools.isWaitingForInput = false;
 
                     // Install necessary values
@@ -148,16 +148,16 @@ namespace Terminaux.Reader
 
                     // Cursor is visible, but fix cursor on Linux
                     cachedPos = (readState.currentCursorPosLeft, readState.currentCursorPosTop);
-                    ConsoleWrappers.ActionCursorVisible(true);
+                    ConsoleWrapper.CursorVisible = true;
                 }
 
                 // Seek to the end of the text and write a new line
                 if (!readState.OneLineWrap)
                 {
                     PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
-                    ConsoleWrappers.ActionSetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
+                    ConsoleWrapper.SetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
                 }
-                ConsoleWrappers.ActionWriteLine();
+                ConsoleWrapper.WriteLine();
 
                 // Return the input after adding it to history
                 string input = readState.CurrentText.Length == 0 ?
