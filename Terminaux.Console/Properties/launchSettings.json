@@ -147,10 +147,6 @@
       "commandName": "Project",
       "commandLineArgs": "KeyInfo"
     },
-    "Terminaux - ColorWheelTest": {
-      "commandName": "Project",
-      "commandLineArgs": "ColorWheelTest"
-    },
     "Terminaux - PromptLoopedCompletionMultiLinePrompt": {
       "commandName": "Project",
       "commandLineArgs": "PromptLoopedCompletionMultiLinePrompt"

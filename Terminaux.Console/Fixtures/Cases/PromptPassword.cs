@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
+using Terminaux.Base;
 using Terminaux.Reader;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -28,7 +28,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public void RunFixture()
         {
             string input = TermReader.ReadPassword();
-            Console.WriteLine("Password is: " + input);
+            ConsoleWrapper.WriteLine("Password is: " + input);
         }
     }
 }

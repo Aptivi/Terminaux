@@ -16,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Collections.Generic;
+using Terminaux.Base;
 using Terminaux.Reader;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -40,27 +40,27 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            Console.WriteLine("Write \"exit\" to get out of here.");
+            ConsoleWrapper.WriteLine("Write \"exit\" to get out of here.");
             string input = "";
             TermReaderTools.SetHistory(firstHistory);
             while (input != "exit")
             {
                 input = TermReader.Read("[1] > ");
-                Console.WriteLine("You said: " + input);
+                ConsoleWrapper.WriteLine("You said: " + input);
             }
             TermReaderTools.SetHistory(secondHistory);
             string input2 = "";
             while (input2 != "exit")
             {
                 input2 = TermReader.Read("[2] > ");
-                Console.WriteLine("You said: " + input2);
+                ConsoleWrapper.WriteLine("You said: " + input2);
             }
             TermReaderTools.ClearHistory();
             string input3 = "";
             while (input3 != "exit")
             {
                 input3 = TermReader.Read("[3] > ");
-                Console.WriteLine("You said: " + input3);
+                ConsoleWrapper.WriteLine("You said: " + input3);
             }
         }
     }

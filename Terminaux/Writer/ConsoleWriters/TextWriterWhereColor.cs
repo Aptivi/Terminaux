@@ -122,7 +122,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     }
 
                     // Write the resulting buffer
-                    Console.Write(buffered.ToString());
+                    ConsoleWrapper.Write(buffered.ToString());
 
                     // Return if we're told to
                     if (Return)

@@ -58,12 +58,12 @@ namespace Terminaux.Writer.ConsoleWriters
                         Thread.Sleep((int)Math.Round(MsEachLetter));
 
                         // Write a character individually
-                        Console.Write(ConsoleExtensions.BufferChar(msg, sequences, ref i, ref vtSeqIdx, out _));
+                        ConsoleWrapper.Write(ConsoleExtensions.BufferChar(msg, sequences, ref i, ref vtSeqIdx, out _));
                     }
 
                     // If we're writing a new line, write it
                     if (Line)
-                        Console.WriteLine();
+                        ConsoleWrapper.WriteLine();
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {

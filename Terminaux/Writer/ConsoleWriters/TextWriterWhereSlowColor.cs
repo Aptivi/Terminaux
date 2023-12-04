@@ -121,9 +121,9 @@ namespace Terminaux.Writer.ConsoleWriters
 
                             // If we're writing a new line, write it
                             if (Line)
-                                Console.WriteLine(buffered.ToString());
+                                ConsoleWrapper.WriteLine(buffered.ToString());
                             else
-                                Console.Write(buffered.ToString());
+                                ConsoleWrapper.Write(buffered.ToString());
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.

@@ -58,7 +58,7 @@ namespace Terminaux.Base
         /// Clears the line to the right
         /// </summary>
         public static void ClearLineToRight() =>
-            Console.Write(GetClearLineToRightSequence());
+            ConsoleWrapper.Write(GetClearLineToRightSequence());
 
         /// <summary>
         /// Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
@@ -224,8 +224,8 @@ namespace Terminaux.Base
         /// </summary>
         public static void ResetAll()
         {
-            Console.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.EscFullReset));
-            Console.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSoftTerminalReset));
+            ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.EscFullReset));
+            ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSoftTerminalReset));
         }
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace Terminaux.Base
         /// </summary>
         public static void ResetColors()
         {
-            Console.Write($"{Convert.ToChar(0x1B)}[39m");
-            Console.Write($"{Convert.ToChar(0x1B)}[49m");
+            ConsoleWrapper.Write($"{Convert.ToChar(0x1B)}[39m");
+            ConsoleWrapper.Write($"{Convert.ToChar(0x1B)}[49m");
         }
 
         #region Windows-specific

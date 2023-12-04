@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
+using Terminaux.Base;
 using Terminaux.ConsoleDemo.Fixtures;
 
 namespace Terminaux.ConsoleDemo
@@ -27,7 +27,7 @@ namespace Terminaux.ConsoleDemo
         {
             // Get the fixture name from argument and run it
             string chosenFixture = args.Length == 0 ? "Prompt" : args[0];
-            Console.WriteLine($"Fixture to be tested: {chosenFixture}\n");
+            ConsoleWrapper.WriteLine($"Fixture to be tested: {chosenFixture}\n");
             FixtureManager.GetFixtureFromName(chosenFixture).RunFixture();
         }
     }

@@ -39,7 +39,7 @@ namespace Terminaux.Writer.ConsoleWriters
         {
             lock (WriteLock)
             {
-                Console.WriteLine();
+                ConsoleWrapper.WriteLine();
             }
         }
 
@@ -77,20 +77,20 @@ namespace Terminaux.Writer.ConsoleWriters
                     {
                         if (!(vars.Length == 0))
                         {
-                            Console.WriteLine(Text, vars);
+                            ConsoleWrapper.WriteLine(Text, vars);
                         }
                         else
                         {
-                            Console.WriteLine(Text);
+                            ConsoleWrapper.WriteLine(Text);
                         }
                     }
                     else if (!(vars.Length == 0))
                     {
-                        Console.Write(Text, vars);
+                        ConsoleWrapper.Write(Text, vars);
                     }
                     else
                     {
-                        Console.Write(Text);
+                        ConsoleWrapper.Write(Text);
                     }
 
                     // Return to the processed position

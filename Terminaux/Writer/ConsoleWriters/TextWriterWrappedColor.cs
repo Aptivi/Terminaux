@@ -72,7 +72,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             // Write a character individually
                             if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                             {
-                                Console.Write(buffered.ToString());
+                                ConsoleWrapper.Write(buffered.ToString());
                                 buffered.Clear();
                                 if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     exiting = true;
@@ -86,10 +86,10 @@ namespace Terminaux.Writer.ConsoleWriters
                             LinesMade++;
                         }
                     }
-                    Console.Write(buffered.ToString());
+                    ConsoleWrapper.Write(buffered.ToString());
                     buffered.Clear();
                     if (Line)
-                        Console.WriteLine();
+                        ConsoleWrapper.WriteLine();
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
