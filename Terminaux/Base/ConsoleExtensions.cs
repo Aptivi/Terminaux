@@ -28,6 +28,7 @@ using System.Threading;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Sequences.Builder;
 using Textify.Sequences.Tools;
+using Textify.General;
 
 namespace Terminaux.Base
 {
@@ -36,8 +37,6 @@ namespace Terminaux.Base
     /// </summary>
     public static class ConsoleExtensions
     {
-        private static readonly string regexMatchEnclosedStrings = /* lang=regex */ @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+";
-
         /// <summary>
         /// Clears the console buffer, but keeps the current cursor position
         /// </summary>
@@ -120,7 +119,7 @@ namespace Terminaux.Base
             // Really seek if we need to
             if (!noSeek)
             {
-                var texts = GetWrappedSentences(Text, ConsoleWrapper.WindowWidth, ConsoleWrapper.CursorLeft);
+                var texts = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth, ConsoleWrapper.CursorLeft);
                 for (int i = 0; i < texts.Length; i++)
                 {
                     string text = texts[i];
@@ -285,19 +284,6 @@ namespace Terminaux.Base
             }
         }
 
-        internal static string ReplaceLastOccurrence(this string source, string searchText, string replace)
-        {
-            if (source is null)
-                throw new ArgumentNullException(nameof(source));
-            if (searchText is null)
-                throw new ArgumentNullException(nameof(searchText));
-            int position = source.LastIndexOf(searchText);
-            if (position == -1)
-                return source;
-            string result = source.Remove(position, searchText.Length).Insert(position, replace);
-            return result;
-        }
-
         internal static string NeutralizePath(string Path, string Source, bool Strict = false)
         {
             Path ??= "";
@@ -420,21 +406,6 @@ namespace Terminaux.Base
             return commandOutputBuilder.ToString();
         }
 
-        internal static string Truncate(this string target, int threshold)
-        {
-            if (target is null)
-                throw new ArgumentNullException(nameof(target));
-
-            // Try to truncate string. If the string length is bigger than the threshold, it'll be truncated to the length of
-            // the threshold, putting three dots next to it. We don't use ellipsis marks here because we're dealing with the
-            // terminal, and some terminals and some monospace fonts may not support that character, so we mimick it by putting
-            // the three dots.
-            if (target.Length > threshold)
-                return target.Substring(0, threshold - 1) + "...";
-            else
-                return target;
-        }
-
         internal static string BufferChar(string text, MatchCollection[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
         {
             // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
@@ -471,112 +442,6 @@ namespace Terminaux.Base
             }
             isVtSequence = vtSeq;
             return !string.IsNullOrEmpty(seq) ? seq : ch.ToString();
-        }
-
-        internal static string[] SplitNewLines(this string target) =>
-            target.Replace(Convert.ToChar(13).ToString(), "")
-               .Split(Convert.ToChar(10));
-
-        internal static string[] SplitEncloseDoubleQuotes(this string target)
-        {
-            var matches = Regex.Matches(target, regexMatchEnclosedStrings);
-            List<string> splits = [];
-            foreach (Match match in matches)
-                splits.Add(match.Value.ReleaseDoubleQuotes());
-            return [.. splits];
-        }
-        internal static string ReleaseDoubleQuotes(this string target)
-        {
-            string ReleasedString = target;
-            if (target.StartsWith("\"") && target.EndsWith("\"") && target != "\"" ||
-                target.StartsWith("'") && target.EndsWith("'") && target != "'" ||
-                target.StartsWith("`") && target.EndsWith("`") && target != "`")
-            {
-                ReleasedString = ReleasedString.Remove(0, 1);
-                ReleasedString = ReleasedString.Remove(ReleasedString.Length - 1);
-            }
-            return ReleasedString;
-        }
-
-        internal static string[] GetWrappedSentences(string text, int maximumLength) =>
-            GetWrappedSentences(text, maximumLength, 0);
-
-        internal static string[] GetWrappedSentences(string text, int maximumLength, int indentLength)
-        {
-            if (string.IsNullOrEmpty(text))
-                return [""];
-
-            // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
-            // sizes.
-            var IncompleteSentences = new List<string>();
-            var IncompleteSentenceBuilder = new StringBuilder();
-
-            // Make the text look like it came from Linux
-            text = text.Replace(Convert.ToString(Convert.ToChar(13)), "");
-
-            // Convert tabs to four spaces
-            text = text.Replace("\t", "    ");
-
-            // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
-            // the first time and will be reverted back to zero after the incomplete sentence is formed.
-            foreach (string splitText in text.SplitNewLines())
-            {
-                var sequencesCollections = VtSequenceTools.MatchVTSequences(splitText);
-                foreach (var sequences in sequencesCollections)
-                {
-                    int vtSeqIdx = 0;
-                    int vtSeqCompensate = 0;
-                    if (splitText.Length == 0)
-                        IncompleteSentences.Add(splitText);
-                    for (int i = 0; i < splitText.Length; i++)
-                    {
-                        // Check the character to see if we're at the VT sequence
-                        bool explicitNewLine = splitText[splitText.Length - 1] == '\n';
-                        char ParagraphChar = splitText[i];
-                        bool isNewLine = splitText[i] == '\n';
-                        string seq = "";
-                        if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
-                        {
-                            // We're at an index which is the same as the captured VT sequence. Get the sequence
-                            seq = sequences[vtSeqIdx].Value;
-
-                            // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                            if (vtSeqIdx + 1 < sequences.Count)
-                                vtSeqIdx++;
-
-                            // Raise the paragraph index by the length of the sequence
-                            i += seq.Length - 1;
-                            vtSeqCompensate += seq.Length;
-                        }
-
-                        // Append the character into the incomplete sentence builder.
-                        if (!isNewLine)
-                            IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
-
-                        // Also, compensate the \0 characters
-                        if (splitText[i] == '\0')
-                            vtSeqCompensate++;
-
-                        // Check to see if we're at the maximum character number or at the new line
-                        if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate |
-                            i == splitText.Length - 1 |
-                            isNewLine)
-                        {
-                            // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                            IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
-                            if (explicitNewLine)
-                                IncompleteSentences.Add("");
-
-                            // Clean everything up
-                            IncompleteSentenceBuilder.Clear();
-                            indentLength = 0;
-                            vtSeqCompensate = 0;
-                        }
-                    }
-                }
-            }
-
-            return [.. IncompleteSentences];
         }
 
         internal static void SwapIfSourceLarger(this ref int SourceNumber, ref int TargetNumber)

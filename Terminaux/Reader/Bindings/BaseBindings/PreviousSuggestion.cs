@@ -19,6 +19,7 @@
 using System;
 using System.Linq;
 using Terminaux.Base;
+using Textify.General;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {

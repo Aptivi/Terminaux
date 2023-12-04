@@ -22,6 +22,7 @@ using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Terminaux.Writer.FancyWriters
 {

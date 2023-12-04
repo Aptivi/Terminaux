@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
+using Textify.General;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
 
@@ -164,7 +165,7 @@ namespace Terminaux.Reader.Inputs.Styles
             ConsoleWrapper.Clear();
 
             // Make pages based on console window height
-            int listStartPosition = ConsoleExtensions.GetWrappedSentences(Question, ConsoleWrapper.WindowWidth).Length;
+            int listStartPosition = TextTools.GetWrappedSentences(Question, ConsoleWrapper.WindowWidth).Length;
             int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
             int answersPerPage = listEndPosition - 5;
             int pages = AllAnswers.Count / answersPerPage;

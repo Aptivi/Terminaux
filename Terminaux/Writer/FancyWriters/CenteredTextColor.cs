@@ -22,6 +22,7 @@ using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -42,7 +43,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = ConsoleExtensions.FormatString(Text, Vars);
-                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 ConsoleWrapper.CursorTop = top;
                 for (int i = 0; i < sentences.Length; i++)
                 {
@@ -103,7 +104,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = ConsoleExtensions.FormatString(Text, Vars);
-                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 ConsoleWrapper.CursorTop = top;
                 for (int i = 0; i < sentences.Length; i++)
                 {
@@ -130,7 +131,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = ConsoleExtensions.FormatString(Text, Vars);
-                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 ConsoleWrapper.CursorTop = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
                 for (int i = 0; i < sentences.Length; i++)
                 {
@@ -187,7 +188,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = ConsoleExtensions.FormatString(Text, Vars);
-                string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 ConsoleWrapper.CursorTop = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
                 for (int i = 0; i < sentences.Length; i++)
                 {

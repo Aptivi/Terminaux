@@ -22,6 +22,7 @@ using System.Text;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Textify.General;
 using Textify.Sequences.Builder;
 using Textify.Sequences.Tools;
 
@@ -84,7 +85,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     int width = ConsoleWrapper.WindowWidth - RightMargin;
                     var Paragraphs = msg.SplitNewLines();
                     if (RightMargin > 0)
-                        Paragraphs = ConsoleExtensions.GetWrappedSentences(msg, width);
+                        Paragraphs = TextTools.GetWrappedSentences(msg, width);
                     var buffered = new StringBuilder();
                     ConsoleWrapper.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)

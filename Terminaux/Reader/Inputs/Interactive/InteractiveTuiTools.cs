@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
+using Textify.General;
 
 namespace Terminaux.Reader.Inputs.Interactive
 {
@@ -481,7 +482,7 @@ namespace Terminaux.Reader.Inputs.Interactive
             var finalForeColorSecondPane = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
             BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor);
             _finalInfoRendered = finalInfoRendered;
-            string[] finalInfoStrings = ConsoleExtensions.GetWrappedSentences(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
+            string[] finalInfoStrings = TextTools.GetWrappedSentences(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
             for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)
             {
                 // Check to see if the info is overpopulated

@@ -20,6 +20,7 @@ using System;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Reader.Tools;
+using Textify.General;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
@@ -49,7 +50,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // In the case of one line wrap, get the list of sentences and debug the positions
             int longestSentenceLength = ConsoleWrapper.WindowWidth - state.settings.RightMargin - state.inputPromptLeft - 1;
-            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
+            string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
             renderedText = state.OneLineWrap ? TermReaderTools.GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             if (state.OneLineWrap)

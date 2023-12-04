@@ -23,6 +23,7 @@ using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Reader.Inputs;
+using Textify.General;
 using Textify.Sequences.Tools;
 
 namespace Terminaux.Writer.ConsoleWriters
@@ -51,7 +52,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     Text = Text.Replace(Convert.ToChar(13), default);
 
                     // First, split the text to wrap
-                    string[] sentences = ConsoleExtensions.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                    string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
 
                     // Iterate through sentences
                     var buffered = new StringBuilder();

@@ -29,6 +29,7 @@ using Terminaux.Reader;
 using Terminaux.Colors;
 using System.Text;
 using Textify.Sequences.Builder.Types;
+using Textify.General;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -89,7 +90,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -199,7 +200,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -595,7 +596,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -729,7 +730,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -948,7 +949,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }
@@ -1074,7 +1075,7 @@ namespace Terminaux.Writer.FancyWriters
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
                 {
-                    var lineSentences = ConsoleExtensions.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
                 }

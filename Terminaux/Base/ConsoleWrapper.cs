@@ -19,6 +19,7 @@
 
 using System;
 using Terminaux.Reader;
+using Textify.General;
 
 namespace Terminaux.Base
 {
@@ -163,7 +164,7 @@ namespace Terminaux.Base
         {
             if (settings.RightMargin > 0 || settings.LeftMargin > 0)
             {
-                var wrapped = ConsoleExtensions.GetWrappedSentences(text, WindowWidth - settings.RightMargin - settings.LeftMargin, settings.LeftMargin - 1);
+                var wrapped = TextTools.GetWrappedSentences(text, WindowWidth - settings.RightMargin - settings.LeftMargin, settings.LeftMargin - 1);
                 for (int i = 0; i < wrapped.Length; i++)
                 {
                     string textWrapped = wrapped[i];

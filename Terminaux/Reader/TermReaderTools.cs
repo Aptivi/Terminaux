@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Reader.Tools;
+using Textify.General;
 using Textify.Sequences.Tools;
 
 namespace Terminaux.Reader
@@ -116,7 +117,7 @@ namespace Terminaux.Reader
             int width = ConsoleWrapper.WindowWidth;
             int height = ConsoleWrapper.BufferHeight;
             int longestSentenceLength = width - state.settings.RightMargin;
-            string[] incompleteSentencesPrimary = ConsoleExtensions.GetWrappedSentences(state.CurrentText.ToString(), longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
+            string[] incompleteSentencesPrimary = TextTools.GetWrappedSentences(state.CurrentText.ToString(), longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
             if (append)
                 state.CurrentText.Append(newText);
             else
@@ -124,13 +125,13 @@ namespace Terminaux.Reader
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft);
+            string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, state.inputPromptLeft);
 
             // In the case of one line wrap, get the list of sentences
             if (state.OneLineWrap)
             {
                 longestSentenceLength = width - state.settings.RightMargin - state.inputPromptLeft - 1;
-                incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleWrapper.Write(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
@@ -175,18 +176,18 @@ namespace Terminaux.Reader
             // the newlines using the "incomplete sentences" feature, then refresh the input
             // prompt.
             int longestSentenceLength = ConsoleWrapper.WindowWidth - state.settings.RightMargin;
-            string[] wrapped = ConsoleExtensions.GetWrappedSentences(state.InputPromptText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
+            string[] wrapped = TextTools.GetWrappedSentences(state.InputPromptText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
             ConsoleWrapper.SetCursorPosition(state.settings.LeftMargin, state.InputPromptTop - wrapped.Length + 1);
             ConsoleWrapper.Write(state.InputPromptText, state.Settings);
 
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, wrapped[wrapped.Length - 1].Length);
+            string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, wrapped[wrapped.Length - 1].Length);
             if (state.OneLineWrap)
             {
                 // We're in the one-line wrap mode!
                 longestSentenceLength = ConsoleWrapper.WindowWidth - state.settings.RightMargin - state.inputPromptLeft - 1;
-                incompleteSentences = ConsoleExtensions.GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleWrapper.Write(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - renderedText.Length), state.settings);
