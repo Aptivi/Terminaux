@@ -18,8 +18,10 @@
 
 using System;
 using Terminaux.Base;
+using Terminaux.Colors;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.Tools;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Reader
 {
@@ -110,76 +112,95 @@ namespace Terminaux.Reader
         {
             lock (readLock)
             {
+                string input = defaultValue;
                 var struckKey = new ConsoleKeyInfo();
                 var readState = new TermReaderState
                 {
                     settings = settings
                 };
 
-                // Print the input
-                ConsoleWrapper.CursorLeft += settings.LeftMargin;
-                ConsoleWrapper.Write(inputPrompt, settings);
+                // Save some variable states
+                bool ctrlCAsInput = ConsoleWrapper.TreatCtrlCAsInput;
 
-                // Save current state of input
-                readState.inputPromptLeft = ConsoleWrapper.CursorLeft;
-                readState.inputPromptTop = ConsoleWrapper.CursorTop;
-                readState.inputPromptText = inputPrompt;
-                readState.passwordMode = password;
-                readState.oneLineWrap = oneLineWrap;
-                ConsoleWrapperTools.ActionTreatCtrlCAsInput(settings.TreatCtrlCAsInput);
-
-                // Get input
-                (int, int) cachedPos = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
-                while (!BindingsReader.IsTerminate(struckKey))
+                // Handle all possible errors
+                try
                 {
-                    // Get a key
-                    TermReaderTools.isWaitingForInput = true;
-                    struckKey = TermReaderTools.GetInput(interruptible);
-                    ConsoleWrapper.CursorVisible = false;
-                    TermReaderTools.isWaitingForInput = false;
+                    // Print the input
+                    ConsoleWrapper.CursorLeft += settings.LeftMargin;
+                    ConsoleWrapper.Write(inputPrompt, settings);
 
-                    // Install necessary values
-                    readState.currentCursorPosLeft = cachedPos.Item1;
-                    readState.currentCursorPosTop = cachedPos.Item2;
-                    readState.pressedKey = struckKey;
+                    // Save current state of input
+                    readState.inputPromptLeft = ConsoleWrapper.CursorLeft;
+                    readState.inputPromptTop = ConsoleWrapper.CursorTop;
+                    readState.inputPromptText = inputPrompt;
+                    readState.passwordMode = password;
+                    readState.oneLineWrap = oneLineWrap;
+                    ConsoleWrapper.TreatCtrlCAsInput = settings.TreatCtrlCAsInput;
 
-                    // Handle it
-                    BindingsReader.Execute(readState);
+                    // Get input
+                    (int, int) cachedPos = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                    while (!BindingsReader.IsTerminate(struckKey))
+                    {
+                        // Get a key
+                        TermReaderTools.isWaitingForInput = true;
+                        struckKey = TermReaderTools.GetInput(interruptible);
+                        ConsoleWrapper.CursorVisible = false;
+                        TermReaderTools.isWaitingForInput = false;
 
-                    // Cursor is visible, but fix cursor on Linux
-                    cachedPos = (readState.currentCursorPosLeft, readState.currentCursorPosTop);
-                    ConsoleWrapper.CursorVisible = true;
+                        // Install necessary values
+                        readState.currentCursorPosLeft = cachedPos.Item1;
+                        readState.currentCursorPosTop = cachedPos.Item2;
+                        readState.pressedKey = struckKey;
+
+                        // Handle it
+                        BindingsReader.Execute(readState);
+
+                        // Cursor is visible, but fix cursor on Linux
+                        cachedPos = (readState.currentCursorPosLeft, readState.currentCursorPosTop);
+                        ConsoleWrapper.CursorVisible = true;
+                    }
+
+                    // Seek to the end of the text and write a new line
+                    if (!readState.OneLineWrap)
+                    {
+                        PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
+                        ConsoleWrapper.SetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
+                    }
+                    ConsoleWrapper.WriteLine();
+
+                    // Return the input after adding it to history
+                    input =
+                        readState.CurrentText.Length == 0 ?
+                        defaultValue :
+                        readState.CurrentText.ToString();
+                    if (!password && settings.HistoryEnabled)
+                    {
+                        // We don't want passwords in the history. Also, check to see if the history entry can be added or not based
+                        // on the following conditions:
+                        //
+                        // - If the input is not empty
+                        // - If the last input is not the same as the currently supplied input
+                        // - Can also be added if the history is zero
+                        if (!string.IsNullOrWhiteSpace(input) &&
+                            ((TermReaderState.history.Count > 0 && TermReaderState.history[TermReaderState.history.Count - 1] != input) || TermReaderState.history.Count == 0))
+                            TermReaderState.history.Add(input);
+                    }
                 }
-
-                // Seek to the end of the text and write a new line
-                if (!readState.OneLineWrap)
+                catch (Exception ex)
                 {
-                    PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
-                    ConsoleWrapper.SetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
+                    TextWriterColor.WriteColor($"Input reader has failed: {ex.Message}", ConsoleColors.Red);
+                    TextWriterColor.WriteColor(ex.StackTrace, ConsoleColors.Red);
                 }
-                ConsoleWrapper.WriteLine();
-
-                // Return the input after adding it to history
-                string input = readState.CurrentText.Length == 0 ?
-                               defaultValue :
-                               readState.CurrentText.ToString();
-                if (!password && settings.HistoryEnabled)
+                finally
                 {
-                    // We don't want passwords in the history. Also, check to see if the history entry can be added or not based
-                    // on the following conditions:
-                    //
-                    // - If the input is not empty
-                    // - If the last input is not the same as the currently supplied input
-                    // - Can also be added if the history is zero
-                    if (!string.IsNullOrWhiteSpace(input) &&
-                        ((TermReaderState.history.Count > 0 && TermReaderState.history[TermReaderState.history.Count - 1] != input) || TermReaderState.history.Count == 0))
-                        TermReaderState.history.Add(input);
-                }
+                    // Reset the auto complete position and suggestions
+                    TermReaderState.currentSuggestionsPos = 0;
+                    TermReaderState.currentHistoryPos = TermReaderState.history.Count;
+                    settings.Suggestions = (_, _, _) => Array.Empty<string>();
 
-                // Reset the auto complete position and suggestions
-                TermReaderState.currentSuggestionsPos = 0;
-                TermReaderState.currentHistoryPos = TermReaderState.history.Count;
-                settings.Suggestions = ((_, _, _) => Array.Empty<string>());
+                    // Reset the CTRL + C state
+                    ConsoleWrapper.TreatCtrlCAsInput = ctrlCAsInput;
+                }
                 return input;
             }
         }

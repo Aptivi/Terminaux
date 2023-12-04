@@ -36,6 +36,7 @@ namespace Terminaux.Base
         internal static Action<bool> actionCursorVisible = (val) => CursorVisible = val;
         internal static Func<bool> actionGetCursorVisible = () => CursorVisible;
         internal static Action<bool> actionTreatCtrlCAsInput = (val) => TreatCtrlCAsInput = val;
+        internal static Func<bool> actionGetTreatCtrlCAsInput = () => TreatCtrlCAsInput;
         internal static Func<bool> actionKeyAvailable = () => KeyAvailable;
         internal static Action<int, int> actionSetCursorPosition = SetCursorPosition;
         internal static Action<int> actionSetCursorLeft = SetCursorLeft;
@@ -123,12 +124,20 @@ namespace Terminaux.Base
             set => actionGetCursorVisible = value ?? (() => CursorVisible);
         }
         /// <summary>
-        /// The cursor visibility mode
+        /// Whether to treat CTRL + C as input
         /// </summary>
         public static Action<bool> ActionTreatCtrlCAsInput
         {
             internal get => actionTreatCtrlCAsInput;
             set => actionTreatCtrlCAsInput = value ?? ((val) => TreatCtrlCAsInput = val);
+        }
+        /// <summary>
+        /// Whether to treat CTRL + C as input
+        /// </summary>
+        public static Func<bool> ActionGetTreatCtrlCAsInput
+        {
+            internal get => actionGetTreatCtrlCAsInput;
+            set => actionGetTreatCtrlCAsInput = value ?? (() => TreatCtrlCAsInput);
         }
         /// <summary>
         /// Whether a key is pressed
@@ -400,6 +409,12 @@ namespace Terminaux.Base
 
         private static bool TreatCtrlCAsInput
         {
+            get
+            {
+                if (IsDumb)
+                    return false;
+                return Console.TreatControlCAsInput;
+            }
             set
             {
                 if (!IsDumb)

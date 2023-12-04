@@ -88,6 +88,15 @@ namespace Terminaux.Base
             ConsoleWrapperTools.ActionKeyAvailable();
 
         /// <summary>
+        /// Whether to treat Ctrl + C as input or not
+        /// </summary>
+        public static bool TreatCtrlCAsInput
+        {
+            get => ConsoleWrapperTools.ActionGetTreatCtrlCAsInput();
+            set => ConsoleWrapperTools.ActionTreatCtrlCAsInput(value);
+        }
+
+        /// <summary>
         /// Clears the console screen.
         /// </summary>
         public static void Clear() =>
