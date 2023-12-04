@@ -577,22 +577,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleExtensions.FilterVTSequences
   nameWithType: ConsoleExtensions.FilterVTSequences
-- uid: Terminaux.Base.ConsoleExtensions.FormatString(System.String,System.Object[])
-  name: FormatString(string, params object[])
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_FormatString_System_String_System_Object___
-  commentId: M:Terminaux.Base.ConsoleExtensions.FormatString(System.String,System.Object[])
-  name.vb: FormatString(String, ParamArray Object())
-  fullName: Terminaux.Base.ConsoleExtensions.FormatString(string, params object[])
-  fullName.vb: Terminaux.Base.ConsoleExtensions.FormatString(String, ParamArray Object())
-  nameWithType: ConsoleExtensions.FormatString(string, params object[])
-  nameWithType.vb: ConsoleExtensions.FormatString(String, ParamArray Object())
-- uid: Terminaux.Base.ConsoleExtensions.FormatString*
-  name: FormatString
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_FormatString_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.FormatString
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.FormatString
-  nameWithType: ConsoleExtensions.FormatString
 - uid: Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence
   name: GetClearLineToRightSequence()
   href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetClearLineToRightSequence
@@ -754,6 +738,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsolePlatform.IsOnUnix
   nameWithType: ConsolePlatform.IsOnUnix
+- uid: Terminaux.Base.ConsolePlatform.IsOnUnixMusl
+  name: IsOnUnixMusl()
+  href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsOnUnixMusl
+  commentId: M:Terminaux.Base.ConsolePlatform.IsOnUnixMusl
+  fullName: Terminaux.Base.ConsolePlatform.IsOnUnixMusl()
+  nameWithType: ConsolePlatform.IsOnUnixMusl()
+- uid: Terminaux.Base.ConsolePlatform.IsOnUnixMusl*
+  name: IsOnUnixMusl
+  href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsOnUnixMusl_
+  commentId: Overload:Terminaux.Base.ConsolePlatform.IsOnUnixMusl
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsolePlatform.IsOnUnixMusl
+  nameWithType: ConsolePlatform.IsOnUnixMusl
 - uid: Terminaux.Base.ConsolePlatform.IsOnWindows
   name: IsOnWindows()
   href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsOnWindows
@@ -767,6 +764,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsolePlatform.IsOnWindows
   nameWithType: ConsolePlatform.IsOnWindows
+- uid: Terminaux.Base.ConsolePlatform.IsRunningFromGrilo
+  name: IsRunningFromGrilo()
+  href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsRunningFromGrilo
+  commentId: M:Terminaux.Base.ConsolePlatform.IsRunningFromGrilo
+  fullName: Terminaux.Base.ConsolePlatform.IsRunningFromGrilo()
+  nameWithType: ConsolePlatform.IsRunningFromGrilo()
+- uid: Terminaux.Base.ConsolePlatform.IsRunningFromGrilo*
+  name: IsRunningFromGrilo
+  href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsRunningFromGrilo_
+  commentId: Overload:Terminaux.Base.ConsolePlatform.IsRunningFromGrilo
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsolePlatform.IsRunningFromGrilo
+  nameWithType: ConsolePlatform.IsRunningFromGrilo
 - uid: Terminaux.Base.ConsolePlatform.IsRunningFromMono
   name: IsRunningFromMono()
   href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_IsRunningFromMono
