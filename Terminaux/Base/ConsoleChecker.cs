@@ -143,7 +143,7 @@ namespace Terminaux.Base
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 if (ConsolePlatform.IsOnWindows())
-                    Console.WriteLine("Warning: Terminaux makes use of the 256 colors. Don't worry; Nitrocid will automatically set your terminal to handle these sequences, assuming that you're running a supported terminal. Press any key to continue.", true);
+                    Console.WriteLine("Warning: Terminaux makes use of the 256 colors. Don't worry; this application will automatically set your terminal to handle these sequences, assuming that you're running a supported terminal. Press any key to continue.", true);
                 else
                     Console.WriteLine("Warning: This application makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", TerminalType);
                 Input.DetectKeypress();
