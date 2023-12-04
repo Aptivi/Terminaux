@@ -615,6 +615,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.ListEntryWriterColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.ListEntryWriterColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.ListWriterColor.yml",
       "output": {
         ".html": {
@@ -689,6 +699,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.FancyWriters.BorderColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BorderTextColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.BorderTextColor.html"
         }
       },
       "version": ""
