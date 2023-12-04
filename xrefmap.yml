@@ -7,6 +7,454 @@ references:
   commentId: N:Terminaux.Base
   fullName: Terminaux.Base
   nameWithType: Terminaux.Base
+- uid: Terminaux.Base.Buffered
+  name: Terminaux.Base.Buffered
+  href: api/Terminaux.Base.Buffered.html
+  commentId: N:Terminaux.Base.Buffered
+  fullName: Terminaux.Base.Buffered
+  nameWithType: Terminaux.Base.Buffered
+- uid: Terminaux.Base.Buffered.Screen
+  name: Screen
+  href: api/Terminaux.Base.Buffered.Screen.html
+  commentId: T:Terminaux.Base.Buffered.Screen
+  fullName: Terminaux.Base.Buffered.Screen
+  nameWithType: Screen
+- uid: Terminaux.Base.Buffered.Screen.#ctor
+  name: Screen()
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen__ctor
+  commentId: M:Terminaux.Base.Buffered.Screen.#ctor
+  name.vb: New()
+  fullName: Terminaux.Base.Buffered.Screen.Screen()
+  fullName.vb: Terminaux.Base.Buffered.Screen.New()
+  nameWithType: Screen.Screen()
+  nameWithType.vb: Screen.New()
+- uid: Terminaux.Base.Buffered.Screen.#ctor*
+  name: Screen
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen__ctor_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Terminaux.Base.Buffered.Screen.Screen
+  fullName.vb: Terminaux.Base.Buffered.Screen.New
+  nameWithType: Screen.Screen
+  nameWithType.vb: Screen.New
+- uid: Terminaux.Base.Buffered.Screen.AddBufferedPart(System.String,Terminaux.Base.Buffered.ScreenPart)
+  name: AddBufferedPart(string, ScreenPart)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_AddBufferedPart_System_String_Terminaux_Base_Buffered_ScreenPart_
+  commentId: M:Terminaux.Base.Buffered.Screen.AddBufferedPart(System.String,Terminaux.Base.Buffered.ScreenPart)
+  name.vb: AddBufferedPart(String, ScreenPart)
+  fullName: Terminaux.Base.Buffered.Screen.AddBufferedPart(string, Terminaux.Base.Buffered.ScreenPart)
+  fullName.vb: Terminaux.Base.Buffered.Screen.AddBufferedPart(String, Terminaux.Base.Buffered.ScreenPart)
+  nameWithType: Screen.AddBufferedPart(string, ScreenPart)
+  nameWithType.vb: Screen.AddBufferedPart(String, ScreenPart)
+- uid: Terminaux.Base.Buffered.Screen.AddBufferedPart*
+  name: AddBufferedPart
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_AddBufferedPart_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.AddBufferedPart
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.Screen.AddBufferedPart
+  nameWithType: Screen.AddBufferedPart
+- uid: Terminaux.Base.Buffered.Screen.CheckBufferedPart(System.Int32)
+  name: CheckBufferedPart(int)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_CheckBufferedPart_System_Int32_
+  commentId: M:Terminaux.Base.Buffered.Screen.CheckBufferedPart(System.Int32)
+  name.vb: CheckBufferedPart(Integer)
+  fullName: Terminaux.Base.Buffered.Screen.CheckBufferedPart(int)
+  fullName.vb: Terminaux.Base.Buffered.Screen.CheckBufferedPart(Integer)
+  nameWithType: Screen.CheckBufferedPart(int)
+  nameWithType.vb: Screen.CheckBufferedPart(Integer)
+- uid: Terminaux.Base.Buffered.Screen.CheckBufferedPart(System.String)
+  name: CheckBufferedPart(string)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_CheckBufferedPart_System_String_
+  commentId: M:Terminaux.Base.Buffered.Screen.CheckBufferedPart(System.String)
+  name.vb: CheckBufferedPart(String)
+  fullName: Terminaux.Base.Buffered.Screen.CheckBufferedPart(string)
+  fullName.vb: Terminaux.Base.Buffered.Screen.CheckBufferedPart(String)
+  nameWithType: Screen.CheckBufferedPart(string)
+  nameWithType.vb: Screen.CheckBufferedPart(String)
+- uid: Terminaux.Base.Buffered.Screen.CheckBufferedPart*
+  name: CheckBufferedPart
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_CheckBufferedPart_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.CheckBufferedPart
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.Screen.CheckBufferedPart
+  nameWithType: Screen.CheckBufferedPart
+- uid: Terminaux.Base.Buffered.Screen.EditBufferedPart(System.Int32,Terminaux.Base.Buffered.ScreenPart)
+  name: EditBufferedPart(int, ScreenPart)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_EditBufferedPart_System_Int32_Terminaux_Base_Buffered_ScreenPart_
+  commentId: M:Terminaux.Base.Buffered.Screen.EditBufferedPart(System.Int32,Terminaux.Base.Buffered.ScreenPart)
+  name.vb: EditBufferedPart(Integer, ScreenPart)
+  fullName: Terminaux.Base.Buffered.Screen.EditBufferedPart(int, Terminaux.Base.Buffered.ScreenPart)
+  fullName.vb: Terminaux.Base.Buffered.Screen.EditBufferedPart(Integer, Terminaux.Base.Buffered.ScreenPart)
+  nameWithType: Screen.EditBufferedPart(int, ScreenPart)
+  nameWithType.vb: Screen.EditBufferedPart(Integer, ScreenPart)
+- uid: Terminaux.Base.Buffered.Screen.EditBufferedPart(System.String,Terminaux.Base.Buffered.ScreenPart)
+  name: EditBufferedPart(string, ScreenPart)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_EditBufferedPart_System_String_Terminaux_Base_Buffered_ScreenPart_
+  commentId: M:Terminaux.Base.Buffered.Screen.EditBufferedPart(System.String,Terminaux.Base.Buffered.ScreenPart)
+  name.vb: EditBufferedPart(String, ScreenPart)
+  fullName: Terminaux.Base.Buffered.Screen.EditBufferedPart(string, Terminaux.Base.Buffered.ScreenPart)
+  fullName.vb: Terminaux.Base.Buffered.Screen.EditBufferedPart(String, Terminaux.Base.Buffered.ScreenPart)
+  nameWithType: Screen.EditBufferedPart(string, ScreenPart)
+  nameWithType.vb: Screen.EditBufferedPart(String, ScreenPart)
+- uid: Terminaux.Base.Buffered.Screen.EditBufferedPart*
+  name: EditBufferedPart
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_EditBufferedPart_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.EditBufferedPart
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.Screen.EditBufferedPart
+  nameWithType: Screen.EditBufferedPart
+- uid: Terminaux.Base.Buffered.Screen.GetBuffer
+  name: GetBuffer()
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_GetBuffer
+  commentId: M:Terminaux.Base.Buffered.Screen.GetBuffer
+  fullName: Terminaux.Base.Buffered.Screen.GetBuffer()
+  nameWithType: Screen.GetBuffer()
+- uid: Terminaux.Base.Buffered.Screen.GetBuffer*
+  name: GetBuffer
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_GetBuffer_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.GetBuffer
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.Screen.GetBuffer
+  nameWithType: Screen.GetBuffer
+- uid: Terminaux.Base.Buffered.Screen.GetBufferedPart(System.Int32)
+  name: GetBufferedPart(int)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_GetBufferedPart_System_Int32_
+  commentId: M:Terminaux.Base.Buffered.Screen.GetBufferedPart(System.Int32)
+  name.vb: GetBufferedPart(Integer)
+  fullName: Terminaux.Base.Buffered.Screen.GetBufferedPart(int)
+  fullName.vb: Terminaux.Base.Buffered.Screen.GetBufferedPart(Integer)
+  nameWithType: Screen.GetBufferedPart(int)
+  nameWithType.vb: Screen.GetBufferedPart(Integer)
+- uid: Terminaux.Base.Buffered.Screen.GetBufferedPart(System.String)
+  name: GetBufferedPart(string)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_GetBufferedPart_System_String_
+  commentId: M:Terminaux.Base.Buffered.Screen.GetBufferedPart(System.String)
+  name.vb: GetBufferedPart(String)
+  fullName: Terminaux.Base.Buffered.Screen.GetBufferedPart(string)
+  fullName.vb: Terminaux.Base.Buffered.Screen.GetBufferedPart(String)
+  nameWithType: Screen.GetBufferedPart(string)
+  nameWithType.vb: Screen.GetBufferedPart(String)
+- uid: Terminaux.Base.Buffered.Screen.GetBufferedPart*
+  name: GetBufferedPart
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_GetBufferedPart_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.GetBufferedPart
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.Screen.GetBufferedPart
+  nameWithType: Screen.GetBufferedPart
+- uid: Terminaux.Base.Buffered.Screen.RemoveBufferedPart(System.Int32)
+  name: RemoveBufferedPart(int)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_RemoveBufferedPart_System_Int32_
+  commentId: M:Terminaux.Base.Buffered.Screen.RemoveBufferedPart(System.Int32)
+  name.vb: RemoveBufferedPart(Integer)
+  fullName: Terminaux.Base.Buffered.Screen.RemoveBufferedPart(int)
+  fullName.vb: Terminaux.Base.Buffered.Screen.RemoveBufferedPart(Integer)
+  nameWithType: Screen.RemoveBufferedPart(int)
+  nameWithType.vb: Screen.RemoveBufferedPart(Integer)
+- uid: Terminaux.Base.Buffered.Screen.RemoveBufferedPart(System.String)
+  name: RemoveBufferedPart(string)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_RemoveBufferedPart_System_String_
+  commentId: M:Terminaux.Base.Buffered.Screen.RemoveBufferedPart(System.String)
+  name.vb: RemoveBufferedPart(String)
+  fullName: Terminaux.Base.Buffered.Screen.RemoveBufferedPart(string)
+  fullName.vb: Terminaux.Base.Buffered.Screen.RemoveBufferedPart(String)
+  nameWithType: Screen.RemoveBufferedPart(string)
+  nameWithType.vb: Screen.RemoveBufferedPart(String)
+- uid: Terminaux.Base.Buffered.Screen.RemoveBufferedPart*
+  name: RemoveBufferedPart
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_RemoveBufferedPart_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.RemoveBufferedPart
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.Screen.RemoveBufferedPart
+  nameWithType: Screen.RemoveBufferedPart
+- uid: Terminaux.Base.Buffered.Screen.RemoveBufferedParts
+  name: RemoveBufferedParts()
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_RemoveBufferedParts
+  commentId: M:Terminaux.Base.Buffered.Screen.RemoveBufferedParts
+  fullName: Terminaux.Base.Buffered.Screen.RemoveBufferedParts()
+  nameWithType: Screen.RemoveBufferedParts()
+- uid: Terminaux.Base.Buffered.Screen.RemoveBufferedParts*
+  name: RemoveBufferedParts
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_RemoveBufferedParts_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.RemoveBufferedParts
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.Screen.RemoveBufferedParts
+  nameWithType: Screen.RemoveBufferedParts
+- uid: Terminaux.Base.Buffered.Screen.ScreenParts
+  name: ScreenParts
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_ScreenParts
+  commentId: P:Terminaux.Base.Buffered.Screen.ScreenParts
+  fullName: Terminaux.Base.Buffered.Screen.ScreenParts
+  nameWithType: Screen.ScreenParts
+- uid: Terminaux.Base.Buffered.Screen.ScreenParts*
+  name: ScreenParts
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_ScreenParts_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.ScreenParts
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.Screen.ScreenParts
+  nameWithType: Screen.ScreenParts
+- uid: Terminaux.Base.Buffered.ScreenPart
+  name: ScreenPart
+  href: api/Terminaux.Base.Buffered.ScreenPart.html
+  commentId: T:Terminaux.Base.Buffered.ScreenPart
+  fullName: Terminaux.Base.Buffered.ScreenPart
+  nameWithType: ScreenPart
+- uid: Terminaux.Base.Buffered.ScreenPart.#ctor
+  name: ScreenPart()
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart__ctor
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.#ctor
+  name.vb: New()
+  fullName: Terminaux.Base.Buffered.ScreenPart.ScreenPart()
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.New()
+  nameWithType: ScreenPart.ScreenPart()
+  nameWithType.vb: ScreenPart.New()
+- uid: Terminaux.Base.Buffered.ScreenPart.#ctor*
+  name: ScreenPart
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart__ctor_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Terminaux.Base.Buffered.ScreenPart.ScreenPart
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.New
+  nameWithType: ScreenPart.ScreenPart
+  nameWithType.vb: ScreenPart.New
+- uid: Terminaux.Base.Buffered.ScreenPart.AddDynamicText(System.Func{System.String})
+  name: AddDynamicText(Func<string>)
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_AddDynamicText_System_Func_System_String__
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.AddDynamicText(System.Func{System.String})
+  name.vb: AddDynamicText(Func(Of String))
+  fullName: Terminaux.Base.Buffered.ScreenPart.AddDynamicText(System.Func<string>)
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.AddDynamicText(System.Func(Of String))
+  nameWithType: ScreenPart.AddDynamicText(Func<string>)
+  nameWithType.vb: ScreenPart.AddDynamicText(Func(Of String))
+- uid: Terminaux.Base.Buffered.ScreenPart.AddDynamicText*
+  name: AddDynamicText
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_AddDynamicText_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.AddDynamicText
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.AddDynamicText
+  nameWithType: ScreenPart.AddDynamicText
+- uid: Terminaux.Base.Buffered.ScreenPart.AddText(System.String)
+  name: AddText(string)
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_AddText_System_String_
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.AddText(System.String)
+  name.vb: AddText(String)
+  fullName: Terminaux.Base.Buffered.ScreenPart.AddText(string)
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.AddText(String)
+  nameWithType: ScreenPart.AddText(string)
+  nameWithType.vb: ScreenPart.AddText(String)
+- uid: Terminaux.Base.Buffered.ScreenPart.AddText*
+  name: AddText
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_AddText_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.AddText
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.AddText
+  nameWithType: ScreenPart.AddText
+- uid: Terminaux.Base.Buffered.ScreenPart.AddTextLine(System.String)
+  name: AddTextLine(string)
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_AddTextLine_System_String_
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.AddTextLine(System.String)
+  name.vb: AddTextLine(String)
+  fullName: Terminaux.Base.Buffered.ScreenPart.AddTextLine(string)
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.AddTextLine(String)
+  nameWithType: ScreenPart.AddTextLine(string)
+  nameWithType.vb: ScreenPart.AddTextLine(String)
+- uid: Terminaux.Base.Buffered.ScreenPart.AddTextLine*
+  name: AddTextLine
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_AddTextLine_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.AddTextLine
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.AddTextLine
+  nameWithType: ScreenPart.AddTextLine
+- uid: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color,System.Boolean)
+  name: BackgroundColor(Color, bool)
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_BackgroundColor_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color,System.Boolean)
+  name.vb: BackgroundColor(Color, Boolean)
+  fullName: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color, Boolean)
+  nameWithType: ScreenPart.BackgroundColor(Color, bool)
+  nameWithType.vb: ScreenPart.BackgroundColor(Color, Boolean)
+- uid: Terminaux.Base.Buffered.ScreenPart.BackgroundColor*
+  name: BackgroundColor
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_BackgroundColor_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.BackgroundColor
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.BackgroundColor
+  nameWithType: ScreenPart.BackgroundColor
+- uid: Terminaux.Base.Buffered.ScreenPart.Clear
+  name: Clear()
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_Clear
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.Clear
+  fullName: Terminaux.Base.Buffered.ScreenPart.Clear()
+  nameWithType: ScreenPart.Clear()
+- uid: Terminaux.Base.Buffered.ScreenPart.Clear*
+  name: Clear
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_Clear_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.Clear
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.Clear
+  nameWithType: ScreenPart.Clear
+- uid: Terminaux.Base.Buffered.ScreenPart.ForegroundColor(Terminaux.Colors.Color,System.Boolean)
+  name: ForegroundColor(Color, bool)
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ForegroundColor_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.ForegroundColor(Terminaux.Colors.Color,System.Boolean)
+  name.vb: ForegroundColor(Color, Boolean)
+  fullName: Terminaux.Base.Buffered.ScreenPart.ForegroundColor(Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.ForegroundColor(Terminaux.Colors.Color, Boolean)
+  nameWithType: ScreenPart.ForegroundColor(Color, bool)
+  nameWithType.vb: ScreenPart.ForegroundColor(Color, Boolean)
+- uid: Terminaux.Base.Buffered.ScreenPart.ForegroundColor*
+  name: ForegroundColor
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ForegroundColor_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.ForegroundColor
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.ForegroundColor
+  nameWithType: ScreenPart.ForegroundColor
+- uid: Terminaux.Base.Buffered.ScreenPart.GetBuffer
+  name: GetBuffer()
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_GetBuffer
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.GetBuffer
+  fullName: Terminaux.Base.Buffered.ScreenPart.GetBuffer()
+  nameWithType: ScreenPart.GetBuffer()
+- uid: Terminaux.Base.Buffered.ScreenPart.GetBuffer*
+  name: GetBuffer
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_GetBuffer_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.GetBuffer
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.GetBuffer
+  nameWithType: ScreenPart.GetBuffer
+- uid: Terminaux.Base.Buffered.ScreenPart.LeftPosition(System.Int32)
+  name: LeftPosition(int)
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_LeftPosition_System_Int32_
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.LeftPosition(System.Int32)
+  name.vb: LeftPosition(Integer)
+  fullName: Terminaux.Base.Buffered.ScreenPart.LeftPosition(int)
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.LeftPosition(Integer)
+  nameWithType: ScreenPart.LeftPosition(int)
+  nameWithType.vb: ScreenPart.LeftPosition(Integer)
+- uid: Terminaux.Base.Buffered.ScreenPart.LeftPosition*
+  name: LeftPosition
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_LeftPosition_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.LeftPosition
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.LeftPosition
+  nameWithType: ScreenPart.LeftPosition
+- uid: Terminaux.Base.Buffered.ScreenPart.Position(System.Int32,System.Int32)
+  name: Position(int, int)
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_Position_System_Int32_System_Int32_
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.Position(System.Int32,System.Int32)
+  name.vb: Position(Integer, Integer)
+  fullName: Terminaux.Base.Buffered.ScreenPart.Position(int, int)
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.Position(Integer, Integer)
+  nameWithType: ScreenPart.Position(int, int)
+  nameWithType.vb: ScreenPart.Position(Integer, Integer)
+- uid: Terminaux.Base.Buffered.ScreenPart.Position*
+  name: Position
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_Position_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.Position
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.Position
+  nameWithType: ScreenPart.Position
+- uid: Terminaux.Base.Buffered.ScreenPart.ResetColor
+  name: ResetColor()
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ResetColor
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.ResetColor
+  fullName: Terminaux.Base.Buffered.ScreenPart.ResetColor()
+  nameWithType: ScreenPart.ResetColor()
+- uid: Terminaux.Base.Buffered.ScreenPart.ResetColor*
+  name: ResetColor
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ResetColor_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.ResetColor
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.ResetColor
+  nameWithType: ScreenPart.ResetColor
+- uid: Terminaux.Base.Buffered.ScreenPart.TopPosition(System.Int32)
+  name: TopPosition(int)
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_TopPosition_System_Int32_
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.TopPosition(System.Int32)
+  name.vb: TopPosition(Integer)
+  fullName: Terminaux.Base.Buffered.ScreenPart.TopPosition(int)
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.TopPosition(Integer)
+  nameWithType: ScreenPart.TopPosition(int)
+  nameWithType.vb: ScreenPart.TopPosition(Integer)
+- uid: Terminaux.Base.Buffered.ScreenPart.TopPosition*
+  name: TopPosition
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_TopPosition_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.TopPosition
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.TopPosition
+  nameWithType: ScreenPart.TopPosition
+- uid: Terminaux.Base.Buffered.ScreenTools
+  name: ScreenTools
+  href: api/Terminaux.Base.Buffered.ScreenTools.html
+  commentId: T:Terminaux.Base.Buffered.ScreenTools
+  fullName: Terminaux.Base.Buffered.ScreenTools
+  nameWithType: ScreenTools
+- uid: Terminaux.Base.Buffered.ScreenTools.CurrentScreen
+  name: CurrentScreen
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_CurrentScreen
+  commentId: P:Terminaux.Base.Buffered.ScreenTools.CurrentScreen
+  fullName: Terminaux.Base.Buffered.ScreenTools.CurrentScreen
+  nameWithType: ScreenTools.CurrentScreen
+- uid: Terminaux.Base.Buffered.ScreenTools.CurrentScreen*
+  name: CurrentScreen
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_CurrentScreen_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenTools.CurrentScreen
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenTools.CurrentScreen
+  nameWithType: ScreenTools.CurrentScreen
+- uid: Terminaux.Base.Buffered.ScreenTools.Render(System.Boolean)
+  name: Render(bool)
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_Render_System_Boolean_
+  commentId: M:Terminaux.Base.Buffered.ScreenTools.Render(System.Boolean)
+  name.vb: Render(Boolean)
+  fullName: Terminaux.Base.Buffered.ScreenTools.Render(bool)
+  fullName.vb: Terminaux.Base.Buffered.ScreenTools.Render(Boolean)
+  nameWithType: ScreenTools.Render(bool)
+  nameWithType.vb: ScreenTools.Render(Boolean)
+- uid: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen,System.Boolean)
+  name: Render(Screen, bool)
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_Render_Terminaux_Base_Buffered_Screen_System_Boolean_
+  commentId: M:Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen,System.Boolean)
+  name.vb: Render(Screen, Boolean)
+  fullName: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen, bool)
+  fullName.vb: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen, Boolean)
+  nameWithType: ScreenTools.Render(Screen, bool)
+  nameWithType.vb: ScreenTools.Render(Screen, Boolean)
+- uid: Terminaux.Base.Buffered.ScreenTools.Render*
+  name: Render
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_Render_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenTools.Render
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenTools.Render
+  nameWithType: ScreenTools.Render
+- uid: Terminaux.Base.Buffered.ScreenTools.SetCurrent(Terminaux.Base.Buffered.Screen)
+  name: SetCurrent(Screen)
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_SetCurrent_Terminaux_Base_Buffered_Screen_
+  commentId: M:Terminaux.Base.Buffered.ScreenTools.SetCurrent(Terminaux.Base.Buffered.Screen)
+  fullName: Terminaux.Base.Buffered.ScreenTools.SetCurrent(Terminaux.Base.Buffered.Screen)
+  nameWithType: ScreenTools.SetCurrent(Screen)
+- uid: Terminaux.Base.Buffered.ScreenTools.SetCurrent*
+  name: SetCurrent
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_SetCurrent_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenTools.SetCurrent
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenTools.SetCurrent
+  nameWithType: ScreenTools.SetCurrent
+- uid: Terminaux.Base.Buffered.ScreenTools.UnsetCurrent(Terminaux.Base.Buffered.Screen)
+  name: UnsetCurrent(Screen)
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_UnsetCurrent_Terminaux_Base_Buffered_Screen_
+  commentId: M:Terminaux.Base.Buffered.ScreenTools.UnsetCurrent(Terminaux.Base.Buffered.Screen)
+  fullName: Terminaux.Base.Buffered.ScreenTools.UnsetCurrent(Terminaux.Base.Buffered.Screen)
+  nameWithType: ScreenTools.UnsetCurrent(Screen)
+- uid: Terminaux.Base.Buffered.ScreenTools.UnsetCurrent*
+  name: UnsetCurrent
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_UnsetCurrent_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenTools.UnsetCurrent
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenTools.UnsetCurrent
+  nameWithType: ScreenTools.UnsetCurrent
 - uid: Terminaux.Base.ConsoleChecker
   name: ConsoleChecker
   href: api/Terminaux.Base.ConsoleChecker.html

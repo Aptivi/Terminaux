@@ -15,6 +15,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Buffered.Screen.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Buffered.Screen.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Buffered.ScreenPart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Buffered.ScreenPart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Buffered.ScreenTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Buffered.ScreenTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Buffered.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Buffered.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.ConsoleChecker.yml",
       "output": {
         ".html": {
