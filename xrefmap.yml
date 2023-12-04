@@ -535,6 +535,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapper.SetCursorPosition
   nameWithType: ConsoleWrapper.SetCursorPosition
+- uid: Terminaux.Base.ConsoleWrapper.TreatCtrlCAsInput
+  name: TreatCtrlCAsInput
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_TreatCtrlCAsInput
+  commentId: P:Terminaux.Base.ConsoleWrapper.TreatCtrlCAsInput
+  fullName: Terminaux.Base.ConsoleWrapper.TreatCtrlCAsInput
+  nameWithType: ConsoleWrapper.TreatCtrlCAsInput
+- uid: Terminaux.Base.ConsoleWrapper.TreatCtrlCAsInput*
+  name: TreatCtrlCAsInput
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_TreatCtrlCAsInput_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.TreatCtrlCAsInput
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.TreatCtrlCAsInput
+  nameWithType: ConsoleWrapper.TreatCtrlCAsInput
 - uid: Terminaux.Base.ConsoleWrapper.WindowHeight
   name: WindowHeight
   href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WindowHeight
@@ -741,6 +754,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionGetCursorVisible
   nameWithType: ConsoleWrapperTools.ActionGetCursorVisible
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionGetTreatCtrlCAsInput
+  name: ActionGetTreatCtrlCAsInput
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionGetTreatCtrlCAsInput
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionGetTreatCtrlCAsInput
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionGetTreatCtrlCAsInput
+  nameWithType: ConsoleWrapperTools.ActionGetTreatCtrlCAsInput
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionGetTreatCtrlCAsInput*
+  name: ActionGetTreatCtrlCAsInput
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionGetTreatCtrlCAsInput_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionGetTreatCtrlCAsInput
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionGetTreatCtrlCAsInput
+  nameWithType: ConsoleWrapperTools.ActionGetTreatCtrlCAsInput
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionIsDumb
   name: ActionIsDumb
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionIsDumb
