@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Terminaux.Base;
+using Textify.General;
 
 namespace Terminaux.Tests.Base
 {
@@ -33,7 +34,7 @@ namespace Terminaux.Tests.Base
         [TestCase("Destroy {0 ships!", 3, ExpectedResult = "Destroy {0 ships!")]
         [Description("Action")]
         public string TestFormatString(string Expression, params object[] Vars) =>
-            ConsoleExtensions.FormatString(Expression, Vars);
+            TextTools.FormatString(Expression, Vars);
 
     }
 }

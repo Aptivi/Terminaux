@@ -332,7 +332,7 @@ namespace Terminaux.Writer.FancyWriters
                 frameBuilder.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
 
                 // Text title
-                string finalText = $" {ConsoleExtensions.FormatString(text, vars).Truncate(InteriorWidth - 5)} ";
+                string finalText = $" {TextTools.FormatString(text, vars).Truncate(InteriorWidth - 5)} ";
                 frameBuilder.Append(
                     $"{CsiSequences.GenerateCsiCursorPosition(Left + 3, Top + 1)}" +
                     $"{finalText}");

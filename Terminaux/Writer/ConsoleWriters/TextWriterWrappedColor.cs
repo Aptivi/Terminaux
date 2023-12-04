@@ -48,7 +48,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 {
                     // Format string as needed
                     if (!(vars.Length == 0))
-                        Text = ConsoleExtensions.FormatString(Text, vars);
+                        Text = TextTools.FormatString(Text, vars);
                     Text = Text.Replace(Convert.ToChar(13), default);
 
                     // First, split the text to wrap

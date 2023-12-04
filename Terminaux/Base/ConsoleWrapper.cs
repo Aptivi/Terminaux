@@ -29,8 +29,6 @@ namespace Terminaux.Base
     public static class ConsoleWrapper
     {
 
-        private static bool cursorVisible = true;
-
         /// <summary>
         /// The cursor left position
         /// </summary>
@@ -72,14 +70,8 @@ namespace Terminaux.Base
         /// </summary>
         public static bool CursorVisible
         {
-            get => cursorVisible;
-            set
-            {
-                // We can't call Get accessor of the primary CursorVisible since this is Windows only, so we have this decoy variable
-                // to make it work on Linux, Android, and macOS.
-                cursorVisible = value;
-                ConsoleWrapperTools.ActionCursorVisible(value);
-            }
+            get => ConsoleWrapperTools.ActionGetCursorVisible();
+            set => ConsoleWrapperTools.ActionCursorVisible(value);
         }
 
         /// <summary>

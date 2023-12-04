@@ -21,6 +21,7 @@ using Figletize.Utilities;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -39,7 +40,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, params object[] Vars)
         {
-            Text = ConsoleExtensions.FormatString(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont);
@@ -116,7 +117,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFigletColorBack(int top, FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = ConsoleExtensions.FormatString(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont);
@@ -156,7 +157,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, params object[] Vars)
         {
-            Text = ConsoleExtensions.FormatString(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
@@ -230,7 +231,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFigletColorBack(FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = ConsoleExtensions.FormatString(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;

@@ -21,6 +21,7 @@ using System.Diagnostics;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Textify.General;
 using Textify.Sequences.Tools;
 
 namespace Terminaux.Writer.ConsoleWriters
@@ -45,7 +46,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 {
                     // Format string as needed
                     if (!(vars.Length == 0))
-                        msg = ConsoleExtensions.FormatString(msg, vars);
+                        msg = TextTools.FormatString(msg, vars);
 
                     // Grab each VT sequence from the message and fetch their indexes
                     var sequences = VtSequenceTools.MatchVTSequences(msg);

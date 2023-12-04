@@ -18,6 +18,8 @@
 
 using SpecProbe.Software.Kernel;
 using System;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace Terminaux.Base
 {
@@ -42,6 +44,12 @@ namespace Terminaux.Base
         /// </summary>
         public static string GetTerminalType() =>
             Environment.GetEnvironmentVariable("TERM") ?? "";
+
+        /// <summary>
+        /// Is Nitrocid KS running from GRILO?
+        /// </summary>
+        public static bool IsRunningFromGrilo() =>
+            (Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
 
         /// <summary>
         /// Is Terminaux running from TMUX?
@@ -74,6 +82,25 @@ namespace Terminaux.Base
             Environment.OSVersion.Platform == PlatformID.Unix;
 
         /// <summary>
+        /// Is this system a Unix system that contains musl libc?
+        /// </summary>
+        /// <returns>True if running on Unix systems that use musl libc. Otherwise, false.</returns>
+        public static bool IsOnUnixMusl()
+        {
+            try
+            {
+                if (!IsOnUnix() || IsOnMacOS() || IsOnWindows())
+                    return false;
+                var gnuRel = gnuGetLibcVersion();
+                return false;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        /// <summary>
         /// Is this system a macOS system?
         /// </summary>
         public static bool IsOnMacOS()
@@ -86,5 +113,10 @@ namespace Terminaux.Base
             else
                 return false;
         }
+
+        #region Interop
+        [DllImport("libc", EntryPoint = "gnu_get_libc_version")]
+        private static extern IntPtr gnuGetLibcVersion();
+        #endregion
     }
 }

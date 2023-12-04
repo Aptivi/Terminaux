@@ -42,7 +42,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                Text = ConsoleExtensions.FormatString(Text, Vars);
+                Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 ConsoleWrapper.CursorTop = top;
                 for (int i = 0; i < sentences.Length; i++)
@@ -103,7 +103,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                Text = ConsoleExtensions.FormatString(Text, Vars);
+                Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 ConsoleWrapper.CursorTop = top;
                 for (int i = 0; i < sentences.Length; i++)
@@ -130,7 +130,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                Text = ConsoleExtensions.FormatString(Text, Vars);
+                Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 ConsoleWrapper.CursorTop = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
                 for (int i = 0; i < sentences.Length; i++)
@@ -187,7 +187,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                Text = ConsoleExtensions.FormatString(Text, Vars);
+                Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 ConsoleWrapper.CursorTop = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
                 for (int i = 0; i < sentences.Length; i++)

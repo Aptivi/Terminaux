@@ -71,7 +71,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 {
                     // Format the message as necessary
                     if (!(vars.Length == 0))
-                        msg = ConsoleExtensions.FormatString(msg, vars);
+                        msg = TextTools.FormatString(msg, vars);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     int OldLeft = ConsoleWrapper.CursorLeft;

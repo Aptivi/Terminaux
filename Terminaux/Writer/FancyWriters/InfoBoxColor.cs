@@ -85,7 +85,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = ConsoleExtensions.FormatString(text, vars);
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
@@ -195,7 +195,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = ConsoleExtensions.FormatString(text, vars);
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
@@ -591,7 +591,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = ConsoleExtensions.FormatString(text, vars);
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
@@ -725,7 +725,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = ConsoleExtensions.FormatString(text, vars);
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
@@ -944,7 +944,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = ConsoleExtensions.FormatString(text, vars);
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)
@@ -1070,7 +1070,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = ConsoleExtensions.FormatString(text, vars);
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
                 List<string> splitFinalLines = [];
                 foreach (var line in splitLines)

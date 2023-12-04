@@ -89,7 +89,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 bool canPosition = !ConsoleChecker.IsDumb;
-                Text = ConsoleExtensions.FormatString(Text, Vars);
+                Text = TextTools.FormatString(Text, Vars);
 
                 // Print the suffix and the text
                 if (!string.IsNullOrWhiteSpace(Text))
@@ -181,7 +181,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 bool canPosition = !ConsoleChecker.IsDumb;
-                Text = ConsoleExtensions.FormatString(Text, Vars);
+                Text = TextTools.FormatString(Text, Vars);
 
                 // Print the suffix and the text
                 if (!string.IsNullOrWhiteSpace(Text))

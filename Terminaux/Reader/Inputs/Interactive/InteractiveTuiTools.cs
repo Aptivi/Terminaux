@@ -108,7 +108,7 @@ namespace Terminaux.Reader.Inputs.Interactive
                 catch (Exception ex)
                 {
                     notifyCrash = true;
-                    crashReason = ConsoleExtensions.FormatString("The interactive TUI, {0}, has crashed for the following reason:", interactiveTui.GetType().Name) + $" {ex.Message}";
+                    crashReason = TextTools.FormatString("The interactive TUI, {0}, has crashed for the following reason:", interactiveTui.GetType().Name) + $" {ex.Message}";
                 }
 
                 // Clear the console to clean up

@@ -67,7 +67,8 @@ namespace Terminaux.Base
         /// <param name="MaximumNumber">The maximum number.</param>
         /// <param name="WidthOffset">The console window width offset. It's usually a multiple of 2.</param>
         /// <returns>How many times to repeat the character</returns>
-        public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset) => (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * ((ConsoleWrapper.WindowWidth - WidthOffset) * 0.01d));
+        public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset) =>
+            (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * ((ConsoleWrapper.WindowWidth - WidthOffset) * 0.01d));
 
         /// <summary>
         /// Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
@@ -76,7 +77,8 @@ namespace Terminaux.Base
         /// <param name="MaximumNumber">The maximum number.</param>
         /// <param name="TargetWidth">The target width</param>
         /// <returns>How many times to repeat the character</returns>
-        public static int PercentRepeatTargeted(int CurrentNumber, int MaximumNumber, int TargetWidth) => (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * (TargetWidth * 0.01d));
+        public static int PercentRepeatTargeted(int CurrentNumber, int MaximumNumber, int TargetWidth) =>
+            (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * (TargetWidth * 0.01d));
 
         /// <summary>
         /// Filters the VT sequences that matches the regex
@@ -110,7 +112,7 @@ namespace Terminaux.Base
             Text = FilterVTSequences(Text);
 
             // Seek through filtered text (make it seem like it came from Linux by removing CR (\r)), return to the old position, and return the filtered positions
-            Text = FormatString(Text, Vars);
+            Text = TextTools.FormatString(Text, Vars);
             Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
             Text = Text.Replace(Convert.ToString(Convert.ToChar(0)), "");
             if (string.IsNullOrEmpty(Text))
@@ -199,27 +201,6 @@ namespace Terminaux.Base
         }
 
         /// <summary>
-        /// Formats the string
-        /// </summary>
-        /// <param name="Format">The string to format</param>
-        /// <param name="Vars">The variables used</param>
-        /// <returns>A formatted string if successful, or the unformatted one if failed.</returns>
-        public static string FormatString(string Format, params object[] Vars)
-        {
-            string FormattedString = Format;
-            try
-            {
-                if (Vars.Length > 0)
-                    FormattedString = string.Format(Format, Vars);
-            }
-            catch
-            {
-                return Format;
-            }
-            return FormattedString;
-        }
-
-        /// <summary>
         /// Resets the entire console
         /// </summary>
         public static void ResetAll()
@@ -267,23 +248,6 @@ namespace Terminaux.Base
         #endregion
 
         #region Internal extensions
-        internal static IEnumerable<int> AllIndexesOf(this string target, string value)
-        {
-            if (target is null)
-                throw new ArgumentNullException(nameof(target));
-            if (string.IsNullOrEmpty(value))
-                throw new ArgumentException("Empty string specified", nameof(value));
-            int index = 0;
-            while (true)
-            {
-                index = target.IndexOf(value, index);
-                if (index == -1)
-                    break;
-                yield return index;
-                index += value.Length;
-            }
-        }
-
         internal static string NeutralizePath(string Path, string Source, bool Strict = false)
         {
             Path ??= "";
