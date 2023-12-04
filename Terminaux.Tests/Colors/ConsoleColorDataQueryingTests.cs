@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Shouldly;
-using System;
 using Terminaux.Colors.Data;
 
 namespace Terminaux.Tests.Colors

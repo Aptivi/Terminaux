@@ -19,6 +19,7 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
+using Terminaux.Base.Buffered;
 
 namespace Terminaux.Base
 {
@@ -63,7 +64,7 @@ namespace Terminaux.Base
             {
                 while (true)
                 {
-                    Thread.Sleep(100);
+                    Thread.Sleep(10);
 
                     // We need to call the WindowHeight and WindowWidth properties on the Terminal console driver, because
                     // this polling works for all the terminals. Other drivers that don't use the terminal may not even
@@ -73,6 +74,10 @@ namespace Terminaux.Base
                         ResizeDetected = true;
                         CurrentWindowWidth = Console.WindowWidth;
                         CurrentWindowHeight = Console.WindowHeight;
+
+                        // Also, tell the screen-based apps to refresh themselves
+                        if (ScreenTools.CurrentScreen is not null)
+                            ScreenTools.Render();
                     }
                 }
             }

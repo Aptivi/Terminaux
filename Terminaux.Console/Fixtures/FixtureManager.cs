@@ -92,6 +92,9 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new CliInfoPaneSlowTestRefreshing(),
             new CliDoublePaneTest(),
             new CliDoublePaneSlowTest(),
+            
+            // Screen
+            new TestScreen(),
         ];
 
         internal static IFixture GetFixtureFromName(string name)
