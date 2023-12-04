@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Diagnostics;
-using System.Text;
 using System.Threading;
 using Terminaux.Colors;
+using System.Text;
 using Terminaux.Writer.ConsoleWriters;
+using System.Diagnostics;
 using Textify.Sequences.Builder.Types;
 
 namespace Terminaux.Writer.FancyWriters
@@ -48,7 +48,7 @@ namespace Terminaux.Writer.FancyWriters
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -60,7 +60,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         public static void WriteBox(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
-            WriteBox(Left, Top, InteriorWidth, InteriorHeight, ConsoleColors.Black);
+            WriteBox(Left, Top, InteriorWidth, InteriorHeight, ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Writes the box plainly
@@ -75,12 +75,12 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, new Color(ConsoleColors.Gray), new Color(BoxColor));
+                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, ColorTools.currentForegroundColor, new Color(BoxColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -97,22 +97,59 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, new Color(ConsoleColors.Gray), BoxColor);
+                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, ColorTools.currentForegroundColor, BoxColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
-        internal static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight)
+        /// <summary>
+        /// Renders the box
+        /// </summary>
+        /// <param name="Left">Where to place the box horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <returns>The rendered box</returns>
+        public static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight)
         {
             // Fill the box with spaces inside it
             StringBuilder box = new();
-            box.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2)}");
+            box.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2));
             for (int y = 1; y <= InteriorHeight; y++)
-                box.Append(new string(' ', InteriorWidth) + CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2));
+                box.Append(
+                    new string(' ', InteriorWidth) +
+                    CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2)
+                );
+            return box.ToString();
+        }
+
+        /// <summary>
+        /// Renders the box
+        /// </summary>
+        /// <param name="Left">Where to place the box horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="BoxColor">Box color</param>
+        /// <returns>The rendered box</returns>
+        public static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BoxColor)
+        {
+            // Fill the box with spaces inside it
+            StringBuilder box = new();
+            box.Append(
+                BoxColor.VTSequenceBackground +
+                CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2)
+            );
+            for (int y = 1; y <= InteriorHeight; y++)
+                box.Append(
+                    new string(' ', InteriorWidth) +
+                    CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2)
+                );
+            box.Append(ColorTools.currentBackgroundColor.VTSequenceBackground);
             return box.ToString();
         }
     }

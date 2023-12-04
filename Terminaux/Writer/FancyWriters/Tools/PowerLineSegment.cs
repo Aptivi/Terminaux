@@ -28,12 +28,12 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// Foreground color of the segment
         /// </summary>
-        public Color SegmentForeground { get; } = new Color(ConsoleColors.Gray);
+        public Color SegmentForeground { get; } = ColorTools.currentForegroundColor;
 
         /// <summary>
         /// Background color or next segment transition color of the segment
         /// </summary>
-        public Color SegmentBackground { get; } = new Color(ConsoleColors.Black);
+        public Color SegmentBackground { get; } = ColorTools.currentBackgroundColor;
 
         /// <summary>
         /// Segment icon. This should be an iconic character.

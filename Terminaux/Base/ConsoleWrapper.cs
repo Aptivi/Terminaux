@@ -30,6 +30,12 @@ namespace Terminaux.Base
     {
 
         /// <summary>
+        /// Checks to see if the console is dumb
+        /// </summary>
+        public static bool IsDumb =>
+            ConsoleWrapperTools.ActionIsDumb();
+
+        /// <summary>
         /// The cursor left position
         /// </summary>
         public static int CursorLeft

@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Diagnostics;
 using System.Threading;
 using Terminaux.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Figletize.Utilities;
 using Figletize;
+using System.Text;
+using Terminaux.Writer.ConsoleWriters;
+using System.Diagnostics;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -45,13 +46,12 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
-                TextWriterWhereColor.WriteWhere(Text, Left, Top, Return, Vars);
+                TextWriterColor.WritePlain(RenderFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -78,7 +78,7 @@ namespace Terminaux.Writer.FancyWriters
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -107,7 +107,7 @@ namespace Terminaux.Writer.FancyWriters
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -134,7 +134,7 @@ namespace Terminaux.Writer.FancyWriters
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -163,8 +163,52 @@ namespace Terminaux.Writer.FancyWriters
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Renders the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletWherePlain(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, params object[] Vars)
+        {
+            Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
+            var builder = new StringBuilder();
+            builder.Append(
+                TextWriterWhereColor.RenderWherePlain(Text, Left, Top, Return, Vars)
+            );
+            return builder.ToString();
+        }
+
+        /// <summary>
+        /// Renders the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
+            var builder = new StringBuilder();
+            builder.Append(
+                ForegroundColor.VTSequenceForeground +
+                BackgroundColor.VTSequenceBackground +
+                TextWriterWhereColor.RenderWherePlain(Text, Left, Top, Return, Vars) +
+                ColorTools.currentForegroundColor.VTSequenceForeground +
+                ColorTools.currentBackgroundColor.VTSequenceBackground
+            );
+            return builder.ToString();
         }
 
     }

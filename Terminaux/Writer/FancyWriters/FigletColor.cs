@@ -17,12 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Diagnostics;
 using System.Threading;
 using Terminaux.Colors;
-using Terminaux.Writer.ConsoleWriters;
 using Figletize.Utilities;
 using Figletize;
+using System.Text;
+using Terminaux.Writer.ConsoleWriters;
+using System.Diagnostics;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -31,6 +32,42 @@ namespace Terminaux.Writer.FancyWriters
     /// </summary>
     public static class FigletColor
     {
+
+        /// <summary>
+        /// Renders the figlet text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletPlain(string Text, FigletizeFont FigletFont, params object[] Vars)
+        {
+            var builder = new StringBuilder();
+            builder.Append(
+                FigletTools.RenderFiglet(Text, FigletFont, Vars)
+            );
+            return builder.ToString();
+        }
+
+        /// <summary>
+        /// Renders the figlet text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletPlain(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            var builder = new StringBuilder();
+            builder.Append(
+                ForegroundColor.VTSequenceForeground +
+                BackgroundColor.VTSequenceBackground +
+                FigletTools.RenderFiglet(Text, FigletFont, Vars) +
+                ColorTools.currentForegroundColor.VTSequenceForeground +
+                ColorTools.currentBackgroundColor.VTSequenceBackground
+            );
+            return builder.ToString();
+        }
 
         /// <summary>
         /// Writes the figlet text
@@ -42,13 +79,12 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
-                TextWriterColor.WritePlain(Text, true, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -63,16 +99,12 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(new Color(Color));
-
-                // Actually write
-                WriteFigletPlain(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Color, ColorTools.currentBackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -88,17 +120,12 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(new Color(ForegroundColor));
-                ColorTools.SetConsoleColor(new Color(BackgroundColor), true);
-
-                // Actually write
-                WriteFigletPlain(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -113,16 +140,12 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(Color);
-
-                // Actually write
-                WriteFigletPlain(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Color, ColorTools.currentBackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -138,17 +161,12 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(ForegroundColor);
-                ColorTools.SetConsoleColor(BackgroundColor, true);
-
-                // Actually write
-                WriteFigletPlain(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 

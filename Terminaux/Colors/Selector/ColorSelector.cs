@@ -19,10 +19,12 @@
 using System;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Buffered;
 using Terminaux.Colors.Accessibility;
 using Terminaux.Reader.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
+using Textify.Sequences.Builder.Types;
 
 namespace Terminaux.Colors.Selector
 {
@@ -36,7 +38,6 @@ namespace Terminaux.Colors.Selector
         private static int trueColorLightness = 50;
         private static ConsoleColors colorValue255 = ConsoleColors.Magenta;
         private static ConsoleColor colorValue16 = ConsoleColor.Magenta;
-        private static bool refresh = true;
         private static bool save = true;
 
         /// <summary>
@@ -66,8 +67,13 @@ namespace Terminaux.Colors.Selector
             ColorType type = initialColor.Type;
 
             // Color selector entry
+            var screen = new Screen();
+            ScreenTools.SetCurrent(screen);
             try
             {
+                // Make a screen part
+                var screenPart = new ScreenPart();
+
                 // Set initial colors
                 switch (type)
                 {
@@ -91,32 +97,50 @@ namespace Terminaux.Colors.Selector
                 bool bail = false;
                 while (!bail)
                 {
-                    // We need to refresh the screen if it's required
-                    if (refresh)
-                    {
-                        ConsoleWrapper.CursorVisible = false;
-                        refresh = false;
-                        ColorTools.LoadBack();
-                    }
+                    // We need to refresh the screen
+                    screenPart.AddText(
+                        $"{ColorTools.currentBackgroundColor.VTSequenceBackground}" +
+                        $"{CsiSequences.GenerateCsiEraseInDisplay(2)}"
+                    );
 
                     // Now, render the selector and handle input
                     switch (type)
                     {
                         case ColorType.TrueColor:
-                            RenderTrueColorSelector(selectedColor);
+                            screenPart.AddDynamicText(() =>
+                            {
+                                ConsoleWrapper.CursorVisible = false;
+                                return RenderTrueColorSelector(selectedColor);
+                            });
+                            screen.AddBufferedPart("Color selector", screenPart);
+                            ScreenTools.Render();
                             bail = HandleKeypressTrueColor(ref selectedColor, ref type);
                             break;
                         case ColorType._255Color:
-                            Render255ColorsSelector(selectedColor);
+                            screenPart.AddDynamicText(() =>
+                            {
+                                ConsoleWrapper.CursorVisible = false;
+                                return Render255ColorsSelector(selectedColor);
+                            });
+                            screen.AddBufferedPart("Color selector", screenPart);
+                            ScreenTools.Render();
                             bail = HandleKeypress255Colors(ref selectedColor, ref type);
                             break;
                         case ColorType._16Color:
-                            Render16ColorsSelector(selectedColor);
+                            screenPart.AddDynamicText(() =>
+                            {
+                                ConsoleWrapper.CursorVisible = false;
+                                return Render16ColorsSelector(selectedColor);
+                            });
+                            screen.AddBufferedPart("Color selector", screenPart);
+                            ScreenTools.Render();
                             bail = HandleKeypress16Colors(ref selectedColor, ref type);
                             break;
                         default:
-                            throw new TerminauxException("Invalid color type in the color selector");
+                            throw new TerminauxException("invalid color type in the color selector");
                     }
+                    screenPart.Clear();
+                    screen.RemoveBufferedParts();
                 }
             }
             catch (Exception ex)
@@ -129,29 +153,31 @@ namespace Terminaux.Colors.Selector
             finally
             {
                 // Return the selected color
-                refresh = true;
                 if (!save)
                 {
                     save = true;
                     selectedColor = initialColor;
                 }
             }
+            ScreenTools.UnsetCurrent(screen);
             return selectedColor;
         }
 
-        private static void RenderTrueColorSelector(Color selectedColor)
+        private static string RenderTrueColorSelector(Color selectedColor)
         {
+            var selector = new StringBuilder();
+
             // First, render the preview box
-            RenderPreviewBox(selectedColor);
+            selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, render the hue, saturation, and lightness bars
-            int hueBarX = ConsoleWrapper.WindowWidth / 2 + 2;
+            int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 3;
             int hueBarY = 1;
             int saturationBarY = 5;
             int lightnessBarY = 9;
             int rgbRampBarY = 13;
             int grayRampBarY = 19;
-            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6;
+            int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
             int boxHeight = 1;
             var initialBackground = new Color(ConsoleColors.Black).VTSequenceBackground;
 
@@ -163,6 +189,11 @@ namespace Terminaux.Colors.Selector
                 int hue = (int)(360 * width);
                 hueRamp.Append($"{new Color($"hsl:{hue};100;50").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
+            selector.Append(
+                BoxFrameTextColor.RenderBoxFrame($"Hue: {trueColorHue}/360", hueBarX, hueBarY, boxWidth, boxHeight) +
+                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, hueBarY + 2) +
+                hueRamp.ToString()
+            );
 
             // Buffer the saturation ramp
             StringBuilder satRamp = new();
@@ -172,6 +203,11 @@ namespace Terminaux.Colors.Selector
                 int sat = (int)(100 * width);
                 satRamp.Append($"{new Color($"hsl:{trueColorHue};{sat};50").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
+            selector.Append(
+                BoxFrameTextColor.RenderBoxFrame($"Saturation: {trueColorSaturation}/100", hueBarX, saturationBarY, boxWidth, boxHeight) +
+                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, saturationBarY + 2) +
+                satRamp.ToString()
+            );
 
             // Buffer the lightness ramp
             StringBuilder ligRamp = new();
@@ -181,6 +217,11 @@ namespace Terminaux.Colors.Selector
                 int lig = (int)(100 * width);
                 ligRamp.Append($"{new Color($"hsl:{trueColorHue};100;{lig}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
+            selector.Append(
+                BoxFrameTextColor.RenderBoxFrame($"Lightness: {trueColorLightness}/100", hueBarX, lightnessBarY, boxWidth, boxHeight) +
+                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, lightnessBarY + 2) +
+                ligRamp.ToString()
+            );
 
             // Buffer the gray ramp
             StringBuilder grayRamp = new();
@@ -191,6 +232,11 @@ namespace Terminaux.Colors.Selector
                 int gray = (int)(mono.R * width);
                 grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
+            selector.Append(
+                BoxFrameTextColor.RenderBoxFrame($"Gray: {trueColorLightness}/100", hueBarX, grayRampBarY, boxWidth, boxHeight) +
+                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, grayRampBarY + 2) +
+                ligRamp.ToString()
+            );
 
             // Buffer the RGB ramp
             StringBuilder redRamp = new();
@@ -206,30 +252,28 @@ namespace Terminaux.Colors.Selector
                 greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {initialBackground}");
                 blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
-
-            // then, the boxes
-            BoxFrameTextColor.WriteBoxFrame($"Hue: {trueColorHue}/360", hueBarX, hueBarY, boxWidth, boxHeight);
-            TextWriterWhereColor.WriteWhere(hueRamp.ToString(), hueBarX + 1, hueBarY + 1);
-            BoxFrameTextColor.WriteBoxFrame($"Saturation: {trueColorSaturation}/100", hueBarX, saturationBarY, boxWidth, boxHeight);
-            TextWriterWhereColor.WriteWhere(satRamp.ToString(), hueBarX + 1, saturationBarY + 1);
-            BoxFrameTextColor.WriteBoxFrame($"Lightness: {trueColorLightness}/100", hueBarX, lightnessBarY, boxWidth, boxHeight);
-            TextWriterWhereColor.WriteWhere(ligRamp.ToString(), hueBarX + 1, lightnessBarY + 1);
-            BoxFrameTextColor.WriteBoxFrame($"Red, Green, and Blue: {selectedColor}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2);
-            TextWriterWhereColor.WriteWhere(redRamp.ToString(), hueBarX + 1, rgbRampBarY + 1);
-            TextWriterWhereColor.WriteWhere(greenRamp.ToString(), hueBarX + 1, rgbRampBarY + 2);
-            TextWriterWhereColor.WriteWhere(blueRamp.ToString(), hueBarX + 1, rgbRampBarY + 3);
-            BoxFrameTextColor.WriteBoxFrame($"Grayscale: {mono}", hueBarX, grayRampBarY, boxWidth, boxHeight);
-            TextWriterWhereColor.WriteWhere(grayRamp.ToString(), hueBarX + 1, grayRampBarY + 1);
+            selector.Append(
+                BoxFrameTextColor.RenderBoxFrame("Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2) +
+                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 2) +
+                redRamp.ToString() +
+                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 3) +
+                greenRamp.ToString() +
+                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 4) +
+                blueRamp.ToString()
+            );
 
             // Finally, the keybindings
             int bindingsPos = ConsoleWrapper.WindowHeight - 2;
-            CenteredTextColor.WriteCentered(bindingsPos, $"[ENTER] Accept color - [H] Help - [ESC] Exit");
+            selector.Append(CenteredTextColor.RenderCentered(bindingsPos, "[ENTER] Accept color - [H] Help - [ESC] Exit"));
+            return selector.ToString();
         }
 
-        private static void Render255ColorsSelector(Color selectedColor)
+        private static string Render255ColorsSelector(Color selectedColor)
         {
+            var selector = new StringBuilder();
+
             // First, render the preview box
-            RenderPreviewBox(selectedColor);
+            selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, render the color info
             int infoBoxX = ConsoleWrapper.WindowWidth / 2 + 2;
@@ -253,34 +297,44 @@ namespace Terminaux.Colors.Selector
                 greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {initialBackground}");
                 blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
+            selector.Append(
+                BoxFrameTextColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", infoBoxX, rgbRampBarY, boxWidth, 3) +
+                CsiSequences.GenerateCsiCursorPosition(infoBoxX + 2, rgbRampBarY + 2) +
+                redRamp.ToString() +
+                CsiSequences.GenerateCsiCursorPosition(infoBoxX + 2, rgbRampBarY + 3) +
+                greenRamp.ToString() +
+                CsiSequences.GenerateCsiCursorPosition(infoBoxX + 2, rgbRampBarY + 4) +
+                blueRamp.ToString()
+            );
 
             // then, the boxes
             var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
-            BoxFrameTextColor.WriteBoxFrame($"Info for: {colorValue255}", infoBoxX, infoBoxY, boxWidth, boxHeight);
-            BoxColor.WriteBox(infoBoxX + 1, infoBoxY, boxWidth, boxHeight);
-            TextWriterWhereColor.WriteWhere($"Color ID: {(int)colorValue255}", infoBoxX + 1, infoBoxY + 1);
-            TextWriterWhereColor.WriteWhere($"Hex: {selectedColor.Hex}", infoBoxX + 1, infoBoxY + 2);
-            TextWriterWhereColor.WriteWhere($"RGB sequence: {selectedColor.PlainSequence}", infoBoxX + 1, infoBoxY + 3);
-            TextWriterWhereColor.WriteWhere($"RGB sequence (real): {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4);
-            TextWriterWhereColor.WriteWhere($"CMYK: {selectedColor.CMYK.CMY}", infoBoxX + 1, infoBoxY + 5);
-            TextWriterWhereColor.WriteWhere($"CMY: {selectedColor.CMY}", infoBoxX + 1, infoBoxY + 6);
-            TextWriterWhereColor.WriteWhere($"HSL: {selectedColor.HSL}", infoBoxX + 1, infoBoxY + 7);
-            TextWriterWhereColor.WriteWhere($"HSV: {selectedColor.HSV}", infoBoxX + 1, infoBoxY + 8);
-            TextWriterWhereColor.WriteWhere($"RYB: {selectedColor.RYB}, Grayscale: {mono}", infoBoxX + 1, infoBoxY + 9);
-            BoxFrameTextColor.WriteBoxFrame($"Red, Green, and Blue: {selectedColor}", infoBoxX, rgbRampBarY, boxWidth, 3);
-            TextWriterWhereColor.WriteWhere(redRamp.ToString(), infoBoxX + 1, rgbRampBarY + 1);
-            TextWriterWhereColor.WriteWhere(greenRamp.ToString(), infoBoxX + 1, rgbRampBarY + 2);
-            TextWriterWhereColor.WriteWhere(blueRamp.ToString(), infoBoxX + 1, rgbRampBarY + 3);
+            selector.Append(
+                BoxFrameTextColor.RenderBoxFrame($"Info for: {colorValue255}", infoBoxX, infoBoxY, boxWidth, boxHeight) +
+                BoxColor.RenderBox(infoBoxX + 1, infoBoxY, boxWidth, boxHeight) +
+                TextWriterWhereColor.RenderWherePlain($"Color ID: {(int)colorValue255}", infoBoxX + 1, infoBoxY + 1) +
+                TextWriterWhereColor.RenderWherePlain($"Hex: {selectedColor.Hex}", infoBoxX + 1, infoBoxY + 2) +
+                TextWriterWhereColor.RenderWherePlain($"RGB sequence: {selectedColor.PlainSequence}", infoBoxX + 1, infoBoxY + 3) +
+                TextWriterWhereColor.RenderWherePlain($"RGB sequence (real): {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4) +
+                TextWriterWhereColor.RenderWherePlain($"CMYK: {selectedColor.CMYK}", infoBoxX + 1, infoBoxY + 5) +
+                TextWriterWhereColor.RenderWherePlain($"CMY: {selectedColor.CMY}", infoBoxX + 1, infoBoxY + 6) +
+                TextWriterWhereColor.RenderWherePlain($"HSL: {selectedColor.HSL}", infoBoxX + 1, infoBoxY + 7) +
+                TextWriterWhereColor.RenderWherePlain($"HSV: {selectedColor.HSV}", infoBoxX + 1, infoBoxY + 8) +
+                TextWriterWhereColor.RenderWherePlain($"RYB: {selectedColor.RYB}, Grayscale: {mono}", infoBoxX + 1, infoBoxY + 9)
+            );
 
             // Finally, the keybindings
             int bindingsPos = ConsoleWrapper.WindowHeight - 2;
-            CenteredTextColor.WriteCentered(bindingsPos, $"[ENTER] Accept color - [H] Help - [ESC] Exit");
+            selector.Append(CenteredTextColor.RenderCentered(bindingsPos, "[ENTER] Accept color - [H] Help - [ESC] Exit"));
+            return selector.ToString();
         }
 
-        private static void Render16ColorsSelector(Color selectedColor)
+        private static string Render16ColorsSelector(Color selectedColor)
         {
+            var selector = new StringBuilder();
+
             // First, render the preview box
-            RenderPreviewBox(selectedColor);
+            selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, render the color info
             int infoBoxX = ConsoleWrapper.WindowWidth / 2 + 2;
@@ -304,28 +358,36 @@ namespace Terminaux.Colors.Selector
                 greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {initialBackground}");
                 blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
+            selector.Append(
+                BoxFrameTextColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", infoBoxX, rgbRampBarY, boxWidth, 3) +
+                CsiSequences.GenerateCsiCursorPosition(infoBoxX + 2, rgbRampBarY + 2) +
+                redRamp.ToString() +
+                CsiSequences.GenerateCsiCursorPosition(infoBoxX + 2, rgbRampBarY + 3) +
+                greenRamp.ToString() +
+                CsiSequences.GenerateCsiCursorPosition(infoBoxX + 2, rgbRampBarY + 4) +
+                blueRamp.ToString()
+            );
 
             // then, the boxes
             var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
-            BoxFrameTextColor.WriteBoxFrame($"Info for: {colorValue16}", infoBoxX, infoBoxY, boxWidth, boxHeight);
-            BoxColor.WriteBox(infoBoxX + 1, infoBoxY, boxWidth, boxHeight);
-            TextWriterWhereColor.WriteWhere($"Color ID: {(int)colorValue16}", infoBoxX + 1, infoBoxY + 1);
-            TextWriterWhereColor.WriteWhere($"Hex: {selectedColor.Hex}", infoBoxX + 1, infoBoxY + 2);
-            TextWriterWhereColor.WriteWhere($"RGB sequence: {selectedColor.PlainSequence}", infoBoxX + 1, infoBoxY + 3);
-            TextWriterWhereColor.WriteWhere($"RGB sequence (real): {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4);
-            TextWriterWhereColor.WriteWhere($"CMYK: {selectedColor.CMYK}", infoBoxX + 1, infoBoxY + 5);
-            TextWriterWhereColor.WriteWhere($"CMY: {selectedColor.CMY}", infoBoxX + 1, infoBoxY + 6);
-            TextWriterWhereColor.WriteWhere($"HSL: {selectedColor.HSL}", infoBoxX + 1, infoBoxY + 7);
-            TextWriterWhereColor.WriteWhere($"HSV: {selectedColor.HSV}", infoBoxX + 1, infoBoxY + 8);
-            TextWriterWhereColor.WriteWhere($"RYB: {selectedColor.RYB}, Grayscale: {mono}", infoBoxX + 1, infoBoxY + 9);
-            BoxFrameTextColor.WriteBoxFrame($"Red, Green, and Blue: {selectedColor}", infoBoxX, rgbRampBarY, boxWidth, 3);
-            TextWriterWhereColor.WriteWhere(redRamp.ToString(), infoBoxX + 1, rgbRampBarY + 1);
-            TextWriterWhereColor.WriteWhere(greenRamp.ToString(), infoBoxX + 1, rgbRampBarY + 2);
-            TextWriterWhereColor.WriteWhere(blueRamp.ToString(), infoBoxX + 1, rgbRampBarY + 3);
+            selector.Append(
+                BoxFrameTextColor.RenderBoxFrame($"Info for: {colorValue16}", infoBoxX, infoBoxY, boxWidth, boxHeight) +
+                BoxColor.RenderBox(infoBoxX + 1, infoBoxY, boxWidth, boxHeight) +
+                TextWriterWhereColor.RenderWherePlain($"Color ID: {(int)colorValue16}", infoBoxX + 1, infoBoxY + 1) +
+                TextWriterWhereColor.RenderWherePlain($"Hex: {selectedColor.Hex}", infoBoxX + 1, infoBoxY + 2) +
+                TextWriterWhereColor.RenderWherePlain($"RGB sequence: {selectedColor.PlainSequence}", infoBoxX + 1, infoBoxY + 3) +
+                TextWriterWhereColor.RenderWherePlain($"RGB sequence (real): {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4) +
+                TextWriterWhereColor.RenderWherePlain($"CMYK: {selectedColor.CMYK}", infoBoxX + 1, infoBoxY + 5) +
+                TextWriterWhereColor.RenderWherePlain($"CMY: {selectedColor.CMY}", infoBoxX + 1, infoBoxY + 6) +
+                TextWriterWhereColor.RenderWherePlain($"HSL: {selectedColor.HSL}", infoBoxX + 1, infoBoxY + 7) +
+                TextWriterWhereColor.RenderWherePlain($"HSV: {selectedColor.HSV}", infoBoxX + 1, infoBoxY + 8) +
+                TextWriterWhereColor.RenderWherePlain($"RYB: {selectedColor.RYB}, Grayscale: {mono}", infoBoxX + 1, infoBoxY + 9)
+            );
 
             // Finally, the keybindings
             int bindingsPos = ConsoleWrapper.WindowHeight - 2;
-            CenteredTextColor.WriteCentered(bindingsPos, $"[ENTER] Accept color - [H] Help - [ESC] Exit");
+            selector.Append(CenteredTextColor.RenderCentered(bindingsPos, "[ENTER] Accept color - [H] Help - [ESC] Exit"));
+            return selector.ToString();
         }
 
         private static bool HandleKeypressTrueColor(ref Color selectedColor, ref ColorType type)
@@ -347,7 +409,6 @@ namespace Terminaux.Colors.Selector
                         if (type > ColorType._16Color)
                             type = ColorType.TrueColor;
                     }
-                    refresh = true;
                     break;
                 case ConsoleKey.LeftArrow:
                     if (keypress.Modifiers.HasFlag(ConsoleModifiers.Control))
@@ -405,11 +466,9 @@ namespace Terminaux.Colors.Selector
                         [I]                  | Color information
                         """
                     );
-                    refresh = true;
                     break;
                 case ConsoleKey.I:
                     ShowColorInfo(selectedColor);
-                    refresh = true;
                     break;
                 case ConsoleKey.Enter:
                     bail = true;
@@ -442,7 +501,6 @@ namespace Terminaux.Colors.Selector
                         if (type > ColorType._16Color)
                             type = ColorType.TrueColor;
                     }
-                    refresh = true;
                     break;
                 case ConsoleKey.LeftArrow:
                     colorValue255--;
@@ -468,11 +526,9 @@ namespace Terminaux.Colors.Selector
                         [I]                  | Color information
                         """
                     );
-                    refresh = true;
                     break;
                 case ConsoleKey.I:
                     ShowColorInfo(selectedColor);
-                    refresh = true;
                     break;
                 case ConsoleKey.Enter:
                     bail = true;
@@ -505,7 +561,6 @@ namespace Terminaux.Colors.Selector
                         if (type > ColorType._16Color)
                             type = ColorType.TrueColor;
                     }
-                    refresh = true;
                     break;
                 case ConsoleKey.LeftArrow:
                     colorValue16--;
@@ -531,11 +586,9 @@ namespace Terminaux.Colors.Selector
                         [I]                  | Color information
                         """
                     );
-                    refresh = true;
                     break;
                 case ConsoleKey.I:
                     ShowColorInfo(selectedColor);
-                    refresh = true;
                     break;
                 case ConsoleKey.Enter:
                     bail = true;
@@ -549,8 +602,10 @@ namespace Terminaux.Colors.Selector
             return bail;
         }
 
-        private static void RenderPreviewBox(Color selectedColor)
+        private static string RenderPreviewBox(Color selectedColor)
         {
+            var builder = new StringBuilder();
+
             // Draw the box that represents the currently selected color
             int boxX = 2;
             int boxY = 1;
@@ -558,10 +613,15 @@ namespace Terminaux.Colors.Selector
             int boxHeight = ConsoleWrapper.WindowHeight - 6;
 
             // First, draw the border
-            BoxFrameTextColor.WriteBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor}, orig: {selectedColor.PlainSequenceOriginal}]", boxX, boxY, boxWidth, boxHeight);
+            builder.Append(BoxFrameTextColor.RenderBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor}]", boxX, boxY, boxWidth, boxHeight));
 
             // then, the box
-            BoxColor.WriteBox(boxX + 1, boxY, boxWidth, boxHeight, selectedColor);
+            builder.Append(
+                selectedColor.VTSequenceBackground +
+                BoxColor.RenderBox(boxX + 1, boxY, boxWidth, boxHeight) +
+                ColorTools.currentBackgroundColor.VTSequenceBackground
+            );
+            return builder.ToString();
         }
 
         private static void UpdateColor(ref Color selectedColor, ColorType newType)

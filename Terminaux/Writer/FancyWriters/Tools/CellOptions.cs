@@ -37,11 +37,13 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// The column, or row value, index
         /// </summary>
-        public int ColumnIndex { get => ColumnNumber - 1; }
+        public int ColumnIndex =>
+            ColumnNumber - 1;
         /// <summary>
         /// The row index
         /// </summary>
-        public int RowIndex { get => RowNumber - 1; }
+        public int RowIndex =>
+            RowNumber - 1;
         /// <summary>
         /// Whether to color the cell
         /// </summary>
@@ -49,11 +51,11 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// The custom cell color
         /// </summary>
-        public Color CellColor { get; set; } = new Color(ConsoleColors.Gray);
+        public Color CellColor { get; set; } = ColorTools.currentForegroundColor;
         /// <summary>
         /// The custom background cell color
         /// </summary>
-        public Color CellBackgroundColor { get; set; } = new Color(ConsoleColors.Black);
+        public Color CellBackgroundColor { get; set; } = ColorTools.currentBackgroundColor;
 
         /// <summary>
         /// Makes a new instance of the cell options class

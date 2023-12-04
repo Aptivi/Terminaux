@@ -17,14 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Diagnostics;
-using System.Text;
 using System.Threading;
-using Terminaux.Base;
 using Terminaux.Colors;
+using System.Text;
+using Terminaux.Base;
 using Textify.General;
-using Textify.Sequences.Builder;
 using Textify.Sequences.Tools;
+using System.Diagnostics;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -33,6 +32,7 @@ namespace Terminaux.Writer.ConsoleWriters
     /// </summary>
     public static class TextWriterWhereSlowColor
     {
+
         /// <summary>
         /// Outputs the text into the terminal prompt with location support.
         /// </summary>
@@ -76,10 +76,10 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     // Format string as needed
-                    if (!(vars.Length == 0))
+                    if (vars.Length > 0)
                         msg = TextTools.FormatString(msg, vars);
 
-                    // Write text in another place. By the way, we check the text for newlines and console width excess
+                    // Write text in another place slowly
                     int OldLeft = ConsoleWrapper.CursorLeft;
                     int OldTop = ConsoleWrapper.CursorTop;
                     int width = ConsoleWrapper.WindowWidth - RightMargin;
@@ -105,8 +105,8 @@ namespace Terminaux.Writer.ConsoleWriters
                             Thread.Sleep((int)Math.Round(MsEachLetter));
                             if (MessageParagraph[i] == '\n' || RightMargin > 0 && pos > width)
                             {
-                                buffered.Append($"{VtSequenceBasicChars.EscapeChar}[1B");
-                                buffered.Append($"{VtSequenceBasicChars.EscapeChar}[{Left + 1}G");
+                                buffered.Append($"{CharManager.GetEsc()}[1B");
+                                buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
                                 pos = OldLeft;
                             }
 
@@ -127,10 +127,10 @@ namespace Terminaux.Writer.ConsoleWriters
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
-                        if (!(MessageParagraphIndex == Paragraphs.Length - 1))
+                        if (MessageParagraphIndex != Paragraphs.Length - 1)
                         {
-                            buffered.Append($"{VtSequenceBasicChars.EscapeChar}[1B");
-                            buffered.Append($"{VtSequenceBasicChars.EscapeChar}[{Left + 1}G");
+                            buffered.Append($"{CharManager.GetEsc()}[1B");
+                            buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
                             pos = OldLeft;
                         }
                     }
@@ -140,7 +140,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -193,7 +193,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -244,7 +244,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(new Color(color));
-                    ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
 
                     // Write text in another place slowly
                     WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
@@ -252,7 +252,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -314,7 +314,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -365,7 +365,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
 
                     // Write text in another place slowly
                     WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
@@ -373,7 +373,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -435,7 +435,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }

@@ -33,7 +33,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// </summary>
         /// <param name="segments">List of segments to render</param>
         public static string RenderSegments(List<PowerLineSegment> segments) =>
-            RenderSegments(segments, new Color(ConsoleColors.Black));
+            RenderSegments(segments, ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Renders the segments

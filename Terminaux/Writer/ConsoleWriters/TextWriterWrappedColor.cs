@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Diagnostics;
-using System.Text;
 using System.Threading;
-using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Reader.Inputs;
+using System.Text;
 using Textify.General;
+using Terminaux.Base;
 using Textify.Sequences.Tools;
+using Terminaux.Reader.Inputs;
+using System.Diagnostics;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -33,8 +33,9 @@ namespace Terminaux.Writer.ConsoleWriters
     /// </summary>
     public static class TextWriterWrappedColor
     {
+
         /// <summary>
-        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed.
+        /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
@@ -47,7 +48,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     // Format string as needed
-                    if (!(vars.Length == 0))
+                    if (vars.Length > 0)
                         Text = TextTools.FormatString(Text, vars);
                     Text = Text.Replace(Convert.ToChar(13), default);
 
@@ -56,16 +57,15 @@ namespace Terminaux.Writer.ConsoleWriters
 
                     // Iterate through sentences
                     var buffered = new StringBuilder();
-                    bool exiting = false;
-                    foreach (string sentence in sentences)
+                    for (int idx = 0; idx < sentences.Length; idx++)
                     {
-                        if (exiting)
-                            break;
+                        string sentence = sentences[idx];
 
                         // Grab each VT sequence from the paragraph and fetch their indexes
                         var sequences = VtSequenceTools.MatchVTSequences(sentence);
                         int vtSeqIdx = 0;
-                        for (int i = 0; i < sentence.Length && !exiting; i++)
+                        bool bail = false;
+                        for (int i = 0; i < sentence.Length; i++)
                         {
                             char TextChar = sentence[i];
 
@@ -74,13 +74,36 @@ namespace Terminaux.Writer.ConsoleWriters
                             {
                                 ConsoleWrapper.Write(buffered.ToString());
                                 buffered.Clear();
-                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                    exiting = true;
+                                var key = Input.DetectKeypress().Key;
+                                switch (key)
+                                {
+                                    case ConsoleKey.Escape:
+                                        return;
+                                    case ConsoleKey.PageUp:
+                                        bail = true;
+                                        idx -= ConsoleWrapper.WindowHeight * 2 - 1;
+                                        if (idx < 0)
+                                            idx = -1;
+                                        LinesMade = 0;
+                                        break;
+                                    case ConsoleKey.Home:
+                                        bail = true;
+                                        idx = -1;
+                                        break;
+                                    case ConsoleKey.End:
+                                        bail = true;
+                                        idx = sentences.Length - 1 - ConsoleWrapper.WindowHeight;
+                                        if (idx < 0)
+                                            idx = -1;
+                                        break;
+                                }
                                 LinesMade = 0;
                             }
+                            if (bail)
+                                break;
                             buffered.Append(ConsoleExtensions.BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));
                         }
-                        if (!exiting)
+                        if (!bail && idx < sentences.Length - 1)
                         {
                             buffered.AppendLine();
                             LinesMade++;
@@ -94,7 +117,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -114,7 +137,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 {
                     // Try to write to console
                     ColorTools.SetConsoleColor(new Color(color));
-                    ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
 
                     // Write wrapped output
                     WriteWrappedPlain(Text, Line, vars);
@@ -122,7 +145,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -151,7 +174,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -171,7 +194,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 {
                     // Set the console color to selected background and foreground colors
                     ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
 
                     // Write wrapped output
                     WriteWrappedPlain(Text, Line, vars);
@@ -179,7 +202,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -208,7 +231,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }

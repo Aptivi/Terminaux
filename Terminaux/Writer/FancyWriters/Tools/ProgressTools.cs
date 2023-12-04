@@ -1,4 +1,5 @@
-﻿// Terminaux  Copyright (C) 2023  Aptivi
+﻿
+// Terminaux  Copyright (C) 2023  Aptivi
 // 
 // This file is part of Terminaux
 // 

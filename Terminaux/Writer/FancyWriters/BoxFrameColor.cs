@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Diagnostics;
-using System.Text;
 using System.Threading;
 using Terminaux.Colors;
-using Terminaux.Writer.ConsoleWriters;
+using System.Text;
 using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.ConsoleWriters;
+using System.Diagnostics;
 using Textify.Sequences.Builder.Types;
 
 namespace Terminaux.Writer.FancyWriters
@@ -74,7 +74,7 @@ namespace Terminaux.Writer.FancyWriters
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -91,7 +91,7 @@ namespace Terminaux.Writer.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(ConsoleColors.Gray), new Color(ConsoleColors.Black));
+                        ConsoleColors.Gray, ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -107,7 +107,7 @@ namespace Terminaux.Writer.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(BoxFrameColor), new Color(ConsoleColors.Black));
+                        new Color(BoxFrameColor), ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -116,8 +116,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BoxFrameColor">BoxFrame color from Terminaux's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">BoxFrame background color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">BoxFrame background color from Nitrocid KS's <see cref="Color"/></param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, ConsoleColors BoxFrameColor, ConsoleColors BackgroundColor) =>
             WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -140,7 +140,7 @@ namespace Terminaux.Writer.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BoxFrameColor, new Color(ConsoleColors.Black));
+                        BoxFrameColor, ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -149,8 +149,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BoxFrameColor">BoxFrame color from Terminaux's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">BoxFrame background color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BoxFrameColor">BoxFrame color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">BoxFrame background color from Nitrocid KS's <see cref="Color"/></param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BoxFrameColor, Color BackgroundColor) =>
             WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -177,7 +177,7 @@ namespace Terminaux.Writer.FancyWriters
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(ConsoleColors.Gray), new Color(ConsoleColors.Black));
+            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, ConsoleColors.Gray, ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -199,7 +199,7 @@ namespace Terminaux.Writer.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color BoxFrameColor) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxFrameColor, new Color(ConsoleColors.Black));
+            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxFrameColor, ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -232,7 +232,7 @@ namespace Terminaux.Writer.FancyWriters
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
@@ -256,7 +256,7 @@ namespace Terminaux.Writer.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors BoxFrameColor) =>
-            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(BoxFrameColor), new Color(ConsoleColors.Black));
+            WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(BoxFrameColor), ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -289,13 +289,44 @@ namespace Terminaux.Writer.FancyWriters
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
 
-        internal static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                              char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                              char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar)
+        /// <summary>
+        /// Renders the box frame
+        /// </summary>
+        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <returns>The rendered frame</returns>
+        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
+            RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight,
+                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar);
+
+        /// <summary>
+        /// Renders the box frame
+        /// </summary>
+        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for box frame</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for box frame</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for box frame</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for box frame</param>
+        /// <param name="UpperFrameChar">Upper frame character for box frame</param>
+        /// <param name="LowerFrameChar">Lower frame character for box frame</param>
+        /// <param name="LeftFrameChar">Left frame character for box frame</param>
+        /// <param name="RightFrameChar">Right frame character for box frame</param>
+        /// <returns>The rendered frame</returns>
+        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
+                                            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar)
         {
             try
             {
@@ -324,7 +355,96 @@ namespace Terminaux.Writer.FancyWriters
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders the box frame
+        /// </summary>
+        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="BoxFrameColor">BoxFrame color</param>
+        /// <param name="BackgroundColor">BoxFrame background color</param>
+        /// <returns>The rendered frame</returns>
+        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
+                                            Color BoxFrameColor, Color BackgroundColor) =>
+            RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight,
+                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                BoxFrameColor, BackgroundColor);
+
+        /// <summary>
+        /// Renders the box frame
+        /// </summary>
+        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for box frame</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for box frame</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for box frame</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for box frame</param>
+        /// <param name="UpperFrameChar">Upper frame character for box frame</param>
+        /// <param name="LowerFrameChar">Lower frame character for box frame</param>
+        /// <param name="LeftFrameChar">Left frame character for box frame</param>
+        /// <param name="RightFrameChar">Right frame character for box frame</param>
+        /// <param name="BoxFrameColor">BoxFrame color</param>
+        /// <param name="BackgroundColor">BoxFrame background color</param>
+        /// <returns>The rendered frame</returns>
+        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
+                                            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+                                            Color BoxFrameColor, Color BackgroundColor)
+        {
+            try
+            {
+                // StringBuilder is here to formulate the whole string consisting of box frame
+                StringBuilder frameBuilder = new();
+
+                // Colors
+                frameBuilder.Append(
+                    BoxFrameColor.VTSequenceForeground +
+                    BackgroundColor.VTSequenceBackground
+                );
+
+                // Upper frame
+                frameBuilder.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}" +
+                    $"{UpperLeftCornerChar}{new string(UpperFrameChar, InteriorWidth)}{UpperRightCornerChar}"
+                );
+
+                // Left and right edges
+                for (int i = 1; i <= InteriorHeight; i++)
+                    frameBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 1)}" +
+                        $"{LeftFrameChar}" +
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + i + 1)}" +
+                        $"{RightFrameChar}"
+                    );
+
+                // Lower frame
+                frameBuilder.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + InteriorHeight + 2)}" +
+                    $"{LowerLeftCornerChar}{new string(LowerFrameChar, InteriorWidth)}{LowerRightCornerChar}"
+                );
+
+                // Write the resulting buffer
+                frameBuilder.Append(
+                    ColorTools.currentForegroundColor.VTSequenceForeground +
+                    ColorTools.currentBackgroundColor.VTSequenceBackground
+                );
+                return frameBuilder.ToString();
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
             return "";
         }

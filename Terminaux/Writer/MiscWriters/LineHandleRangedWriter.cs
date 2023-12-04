@@ -26,7 +26,7 @@ using Terminaux.Writer.ConsoleWriters;
 namespace Terminaux.Writer.MiscWriters
 {
     /// <summary>
-    /// Ranged line handle writer
+    /// Ranged line handle writer (with start and end positions)
     /// </summary>
     public static class LineHandleRangedWriter
     {
@@ -40,7 +40,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself as the start.</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int startPos, int endPos) =>
-            PrintLineWithHandleConditional(Condition, Filename, LineNumber, startPos, endPos, new Color(ConsoleColors.Gray));
+            PrintLineWithHandleConditional(Condition, Filename, LineNumber, startPos, endPos, ColorTools.currentForegroundColor);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -51,7 +51,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int startPos, int endPos) =>
-            PrintLineWithHandleConditional(Condition, Array, LineNumber, startPos, endPos, new Color(ConsoleColors.Gray));
+            PrintLineWithHandleConditional(Condition, Array, LineNumber, startPos, endPos, ColorTools.currentForegroundColor);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -95,7 +95,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static void PrintLineWithHandle(string Filename, int LineNumber, int startPos, int endPos) =>
-            PrintLineWithHandle(Filename, LineNumber, startPos, endPos, new Color(ConsoleColors.Gray));
+            PrintLineWithHandle(Filename, LineNumber, startPos, endPos, ColorTools.currentForegroundColor);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -105,7 +105,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static void PrintLineWithHandle(string[] Array, int LineNumber, int startPos, int endPos) =>
-            PrintLineWithHandle(Array, LineNumber, startPos, endPos, new Color(ConsoleColors.Gray));
+            PrintLineWithHandle(Array, LineNumber, startPos, endPos, ColorTools.currentForegroundColor);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -145,7 +145,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static string RenderLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int startPos, int endPos) =>
-            RenderLineWithHandleConditional(Condition, Filename, LineNumber, startPos, endPos, new Color(ConsoleColors.Gray));
+            RenderLineWithHandleConditional(Condition, Filename, LineNumber, startPos, endPos, ColorTools.currentForegroundColor);
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -156,7 +156,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static string RenderLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int startPos, int endPos) =>
-            RenderLineWithHandleConditional(Condition, Array, LineNumber, startPos, endPos, new Color(ConsoleColors.Gray));
+            RenderLineWithHandleConditional(Condition, Array, LineNumber, startPos, endPos, ColorTools.currentForegroundColor);
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -198,7 +198,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static string RenderLineWithHandle(string Filename, int LineNumber, int startPos, int endPos) =>
-            RenderLineWithHandle(Filename, LineNumber, startPos, endPos, new Color(ConsoleColors.Gray));
+            RenderLineWithHandle(Filename, LineNumber, startPos, endPos, ColorTools.currentForegroundColor);
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number
@@ -208,7 +208,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         public static string RenderLineWithHandle(string[] Array, int LineNumber, int startPos, int endPos) =>
-            RenderLineWithHandle(Array, LineNumber, startPos, endPos, new Color(ConsoleColors.Gray));
+            RenderLineWithHandle(Array, LineNumber, startPos, endPos, ColorTools.currentForegroundColor);
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number
@@ -269,6 +269,12 @@ namespace Terminaux.Writer.MiscWriters
                 RepeatMarkers = 0;
             builder.AppendLine($"{color.VTSequenceForeground}  | {LineContent}");
             builder.AppendLine($"{color.VTSequenceForeground}  | {new string(' ', RepeatBlanks)}^{new string('~', RepeatMarkers)}");
+
+            // Write the resulting buffer
+            builder.Append(
+                ColorTools.currentForegroundColor.VTSequenceForeground +
+                ColorTools.currentBackgroundColor.VTSequenceBackground
+            );
             return builder.ToString();
         }
 

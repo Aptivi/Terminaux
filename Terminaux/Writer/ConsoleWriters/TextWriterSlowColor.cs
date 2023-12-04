@@ -31,8 +31,9 @@ namespace Terminaux.Writer.ConsoleWriters
     /// </summary>
     public static class TextWriterSlowColor
     {
+
         /// <summary>
-        /// Outputs the text into the terminal prompt slowly with no color support.
+        /// Outputs the text into the terminal prompt slowly with color support.
         /// </summary>
         /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
@@ -45,7 +46,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     // Format string as needed
-                    if (!(vars.Length == 0))
+                    if (vars.Length > 0)
                         msg = TextTools.FormatString(msg, vars);
 
                     // Grab each VT sequence from the message and fetch their indexes
@@ -69,7 +70,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -89,7 +90,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(new Color(color));
-                    ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
 
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -97,7 +98,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -126,7 +127,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -146,7 +147,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
 
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
@@ -154,7 +155,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
@@ -183,9 +184,10 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
             }
         }
+
     }
 }

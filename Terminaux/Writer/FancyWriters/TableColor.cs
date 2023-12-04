@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
@@ -42,8 +43,43 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Margin">Safe threshold from left</param>
         /// <param name="SeparateRows">Separate the rows?</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null) =>
-            WriteTable(Headers, Rows, Margin, new Color(ConsoleColors.DarkGray), new Color(ConsoleColors.White), new Color(ConsoleColors.Gray), new Color(ConsoleColors.Black), SeparateRows, CellOptions);
+        public static void WriteTablePlain(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null)
+        {
+            try
+            {
+                TextWriterColor.WritePlain(RenderTablePlain(Headers, Rows, Margin, SeparateRows, CellOptions));
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Draw a table with text
+        /// </summary>
+        /// <param name="Headers">Headers to insert to the table.</param>
+        /// <param name="Rows">Rows to insert to the table.</param>
+        /// <param name="Margin">Safe threshold from left</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
+        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null)
+        {
+            try
+            {
+                var sep = new Color(ConsoleColors.Gray);
+                var header = new Color(ConsoleColors.White);
+                var value = new Color(ConsoleColors.DarkCyan);
+                var back = ColorTools.currentBackgroundColor;
+                TextWriterColor.WritePlain(RenderTable(Headers, Rows, Margin, sep, header, value, back, SeparateRows, CellOptions));
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+            }
+        }
 
         /// <summary>
         /// Draw a table with text
@@ -76,15 +112,39 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                int ColumnCapacity = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)Headers.Length);
+                TextWriterColor.WritePlain(RenderTable(Headers, Rows, Margin, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, SeparateRows, CellOptions));
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Renders a table with text
+        /// </summary>
+        /// <param name="Headers">Headers to insert to the table.</param>
+        /// <param name="Rows">Rows to insert to the table.</param>
+        /// <param name="Margin">Margin offset</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
+        public static string RenderTablePlain(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null)
+        {
+            try
+            {
+                int width = ConsoleWrapper.WindowWidth;
+                var table = new StringBuilder();
+                int ColumnCapacity = (int)Math.Round(width / (double)Headers.Length);
                 var ColumnPositions = new List<int>();
                 int RepeatTimes;
+                int line = 1;
 
                 // Populate the positions
-                TextWriterColor.Write();
-                for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
+                table.AppendLine();
+                for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= width : ColumnPosition >= width; ColumnPosition += ColumnCapacity)
                 {
-                    if (!(ColumnPosition >= ConsoleWrapper.WindowWidth))
+                    if (ColumnPosition < width)
                     {
                         ColumnPositions.Add(ColumnPosition);
                         if (ColumnPositions.Count == 1)
@@ -97,29 +157,152 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Write the headers
+                var headerBuilder = new StringBuilder();
                 for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
                 {
                     string Header = Headers[HeaderIndex];
                     int ColumnPosition = ColumnPositions[HeaderIndex];
                     Header ??= "";
-                    TextWriterWhereColor.WriteWhereColorBack(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleWrapper.CursorTop, false, HeaderForegroundColor, BackgroundColor);
+                    string renderedHeader = Header.Truncate(ColumnCapacity - 3 - Margin);
+                    if (HeaderIndex == 0)
+                        headerBuilder.Append(new string(' ', ColumnPosition));
+                    headerBuilder.Append(renderedHeader);
+                    if (HeaderIndex < Headers.Length - 1)
+                        headerBuilder.Append(new string(' ', ColumnPositions[HeaderIndex + 1] - headerBuilder.Length));
                 }
-                TextWriterColor.Write();
+                table.AppendLine(headerBuilder.ToString());
+                line++;
 
                 // Write the closing minus sign.
-                RepeatTimes = ConsoleWrapper.WindowWidth - ConsoleWrapper.CursorLeft - Margin * 2;
+                RepeatTimes = width - Margin * 2;
                 if (Margin > 0)
-                    TextWriterColor.WriteColorBack(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
-                TextWriterColor.WriteColorBack(new string('═', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+                    table.Append(new string(' ', Margin));
+                table.AppendLine(new string('═', RepeatTimes));
+                line++;
 
                 // Write the rows
+                var rowBuilder = new StringBuilder();
+                for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
+                {
+                    for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
+                    {
+                        string RowValue = Rows[RowIndex, RowValueIndex];
+                        int ColumnPosition = ColumnPositions[RowValueIndex];
+                        RowValue ??= "";
+
+                        // Now, write the cell value
+                        string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
+                        if (RowValueIndex == 0)
+                            rowBuilder.Append(new string(' ', ColumnPosition));
+                        rowBuilder.Append(FinalRowValue);
+                        if (RowValueIndex < Headers.Length - 1)
+                            rowBuilder.Append(new string(' ', ColumnPositions[RowValueIndex + 1] - rowBuilder.Length));
+                    }
+                    table.AppendLine(rowBuilder.ToString());
+                    rowBuilder.Clear();
+                    line++;
+
+                    // Separate the rows optionally
+                    if (SeparateRows)
+                    {
+                        // Write the closing minus sign.
+                        RepeatTimes = width - Margin * 2;
+                        if (Margin > 0)
+                            table.Append(new string(' ', Margin));
+                        table.AppendLine(new string('═', RepeatTimes));
+                        line++;
+                    }
+                }
+                return table.ToString();
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a table with text
+        /// </summary>
+        /// <param name="Headers">Headers to insert to the table.</param>
+        /// <param name="Rows">Rows to insert to the table.</param>
+        /// <param name="Margin">Margin offset</param>
+        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="CellOptions">Specifies the cell options</param>
+        /// <param name="SeparatorForegroundColor">A separator foreground color that will be changed to.</param>
+        /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
+        /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        public static string RenderTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
+        {
+            try
+            {
+                int width = ConsoleWrapper.WindowWidth;
+                var table = new StringBuilder();
+                int ColumnCapacity = (int)Math.Round(width / (double)Headers.Length);
+                var ColumnPositions = new List<int>();
+                int RepeatTimes;
+                int line = 1;
+
+                // Populate the positions
+                table.AppendLine();
+                for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= width : ColumnPosition >= width; ColumnPosition += ColumnCapacity)
+                {
+                    if (ColumnPosition < width)
+                    {
+                        ColumnPositions.Add(ColumnPosition);
+                        if (ColumnPositions.Count == 1)
+                            ColumnPosition = 0;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                // Write the headers
+                var headerBuilder = new StringBuilder();
+                table.Append(
+                    HeaderForegroundColor.VTSequenceForeground +
+                    BackgroundColor.VTSequenceBackground
+                );
+                for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
+                {
+                    string Header = Headers[HeaderIndex];
+                    int ColumnPosition = ColumnPositions[HeaderIndex];
+                    Header ??= "";
+                    string renderedHeader = Header.Truncate(ColumnCapacity - 3 - Margin);
+                    if (HeaderIndex == 0)
+                        headerBuilder.Append(new string(' ', ColumnPosition));
+                    headerBuilder.Append(renderedHeader);
+                    if (HeaderIndex < Headers.Length - 1)
+                        headerBuilder.Append(new string(' ', ColumnPositions[HeaderIndex + 1] - headerBuilder.Length));
+                }
+                table.AppendLine(headerBuilder.ToString());
+                line++;
+
+                // Write the closing minus sign.
+                RepeatTimes = width - Margin * 2;
+                table.Append(
+                    SeparatorForegroundColor.VTSequenceForeground +
+                    BackgroundColor.VTSequenceBackground
+                );
+                if (Margin > 0)
+                    table.Append(new string(' ', Margin));
+                table.AppendLine(new string('═', RepeatTimes));
+                line++;
+
+                // Write the rows
+                var rowBuilder = new StringBuilder();
                 for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
                 {
                     for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                     {
                         var ColoredCell = false;
-                        var CellColor = new Color(ConsoleColors.Gray);
-                        var CellBackgroundColor = new Color(ConsoleColors.Black);
+                        var CellColor = ColorTools.currentForegroundColor;
+                        var CellBackgroundColor = ColorTools.currentBackgroundColor;
                         string RowValue = Rows[RowIndex, RowValueIndex];
                         int ColumnPosition = ColumnPositions[RowValueIndex];
                         RowValue ??= "";
@@ -141,28 +324,50 @@ namespace Terminaux.Writer.FancyWriters
                         // Now, write the cell value
                         string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
                         if (ColoredCell)
-                            TextWriterWhereColor.WriteWhereColorBack(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop, false, CellColor, CellBackgroundColor);
+                            table.Append(
+                                CellColor.VTSequenceForeground +
+                                CellBackgroundColor.VTSequenceBackground
+                            );
                         else
-                            TextWriterWhereColor.WriteWhereColorBack(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop, false, ValueForegroundColor, BackgroundColor);
+                            table.Append(
+                                ValueForegroundColor.VTSequenceForeground +
+                                BackgroundColor.VTSequenceBackground
+                            );
+                        if (RowValueIndex == 0)
+                            rowBuilder.Append(new string(' ', ColumnPosition));
+                        rowBuilder.Append(FinalRowValue);
+                        if (RowValueIndex < Headers.Length - 1)
+                            rowBuilder.Append(new string(' ', ColumnPositions[RowValueIndex + 1] - rowBuilder.Length));
                     }
-                    TextWriterColor.Write();
+                    table.AppendLine(rowBuilder.ToString());
+                    rowBuilder.Clear();
+                    line++;
 
                     // Separate the rows optionally
                     if (SeparateRows)
                     {
                         // Write the closing minus sign.
-                        RepeatTimes = ConsoleWrapper.WindowWidth - ConsoleWrapper.CursorLeft - Margin * 2;
+                        RepeatTimes = width - Margin * 2;
                         if (Margin > 0)
-                            TextWriterColor.WriteColorBack(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
-                        TextWriterColor.WriteColorBack(new string('=', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+                            table.Append(new string(' ', Margin));
+                        table.AppendLine(new string('═', RepeatTimes));
+                        line++;
                     }
                 }
+
+                // Write the resulting buffer
+                table.Append(
+                    ColorTools.currentForegroundColor.VTSequenceForeground +
+                    ColorTools.currentBackgroundColor.VTSequenceBackground
+                );
+                return table.ToString();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
+            return "";
         }
 
     }

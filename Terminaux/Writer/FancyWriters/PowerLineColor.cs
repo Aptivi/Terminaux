@@ -19,8 +19,9 @@
 using System;
 using System.Threading;
 using System.Collections.Generic;
-using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Colors;
+using System.Text;
+using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 
@@ -37,8 +38,18 @@ namespace Terminaux.Writer.FancyWriters
         /// </summary>
         /// <param name="Segments">Segments to write</param>
         /// <param name="Line">Write new line after writing the segments</param>
-        public static void WritePowerLinePlain(List<PowerLineSegment> Segments, bool Line = false) =>
-            WritePowerLine(Segments, new Color(ConsoleColors.Black), Line);
+        public static void WritePowerLinePlain(List<PowerLineSegment> Segments, bool Line = false)
+        {
+            try
+            {
+                TextWriterColor.WritePlain(RenderPowerLine(Segments, Line), false);
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+            }
+        }
 
         /// <summary>
         /// Writes the PowerLine text
@@ -59,14 +70,36 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                string Text = PowerLineTools.RenderSegments(Segments, EndingColor);
-                TextWriterColor.WritePlain(Text, Line);
+                TextWriterColor.WritePlain(RenderPowerLine(Segments, EndingColor, Line), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Renders the PowerLine text
+        /// </summary>
+        /// <param name="Segments">Segments to write</param>
+        /// <param name="Line">Write new line after writing the segments</param>
+        public static string RenderPowerLine(List<PowerLineSegment> Segments, bool Line = false) =>
+            RenderPowerLine(Segments, ColorTools.currentBackgroundColor, Line);
+
+        /// <summary>
+        /// Renders the PowerLine text
+        /// </summary>
+        /// <param name="Segments">Segments to write</param>
+        /// <param name="EndingColor">A color that will be changed at the end of the transition</param>
+        /// <param name="Line">Write new line after writing the segments</param>
+        public static string RenderPowerLine(List<PowerLineSegment> Segments, Color EndingColor, bool Line = false)
+        {
+            var segment = new StringBuilder();
+            segment.Append(PowerLineTools.RenderSegments(Segments, EndingColor));
+            if (Line)
+                segment.AppendLine();
+            return segment.ToString();
         }
 
     }

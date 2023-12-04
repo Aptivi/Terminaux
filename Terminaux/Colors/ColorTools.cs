@@ -345,6 +345,18 @@ namespace Terminaux.Colors
         /// <summary>
         /// Gets a random color instance
         /// </summary>
+        /// <param name="selectBlack">Whether to select the black color or not</param>
+        /// <returns>A color instance</returns>
+        public static Color GetRandomColor(bool selectBlack = true) =>
+            GetRandomColor(ColorType.TrueColor,
+                selectBlack ? 0 : 1, 255,
+                selectBlack ? 0 : 1, 255,
+                selectBlack ? 0 : 1, 255,
+                selectBlack ? 0 : 1, 255);
+
+        /// <summary>
+        /// Gets a random color instance
+        /// </summary>
         /// <param name="type">Color type to generate</param>
         /// <param name="selectBlack">Whether to select the black color or not</param>
         /// <returns>A color instance</returns>
