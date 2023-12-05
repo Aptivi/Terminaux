@@ -18,6 +18,7 @@
 
 using Newtonsoft.Json;
 using System.Diagnostics;
+using Terminaux.Base.Resources;
 
 namespace Terminaux.Colors.Data
 {
@@ -151,7 +152,7 @@ namespace Terminaux.Colors.Data
         /// <returns></returns>
         public static ConsoleColorData[] GetColorData()
         {
-            instances ??= JsonConvert.DeserializeObject<ConsoleColorData[]>(Properties.Resources.ConsoleColorsData);
+            instances ??= JsonConvert.DeserializeObject<ConsoleColorData[]>(ConsoleResources.ConsoleColorsData);
             return instances;
         }
     }
