@@ -355,26 +355,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Figlet.FigletSelector.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Figlet.FigletSelector.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Figlet.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Figlet.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Input.yml",
       "output": {
         ".html": {
@@ -479,6 +459,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Styles.Choice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.FigletSelector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.FigletSelector.html"
         }
       },
       "version": ""

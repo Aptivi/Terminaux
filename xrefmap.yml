@@ -6156,40 +6156,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector
   nameWithType: ColorSelector.OpenColorSelector
-- uid: Terminaux.Figlet
-  name: Terminaux.Figlet
-  href: api/Terminaux.Figlet.html
-  commentId: N:Terminaux.Figlet
-  fullName: Terminaux.Figlet
-  nameWithType: Terminaux.Figlet
-- uid: Terminaux.Figlet.FigletSelector
-  name: FigletSelector
-  href: api/Terminaux.Figlet.FigletSelector.html
-  commentId: T:Terminaux.Figlet.FigletSelector
-  fullName: Terminaux.Figlet.FigletSelector
-  nameWithType: FigletSelector
-- uid: Terminaux.Figlet.FigletSelector.PromptForFiglet
-  name: PromptForFiglet()
-  href: api/Terminaux.Figlet.FigletSelector.html#Terminaux_Figlet_FigletSelector_PromptForFiglet
-  commentId: M:Terminaux.Figlet.FigletSelector.PromptForFiglet
-  fullName: Terminaux.Figlet.FigletSelector.PromptForFiglet()
-  nameWithType: FigletSelector.PromptForFiglet()
-- uid: Terminaux.Figlet.FigletSelector.PromptForFiglet(System.String)
-  name: PromptForFiglet(string)
-  href: api/Terminaux.Figlet.FigletSelector.html#Terminaux_Figlet_FigletSelector_PromptForFiglet_System_String_
-  commentId: M:Terminaux.Figlet.FigletSelector.PromptForFiglet(System.String)
-  name.vb: PromptForFiglet(String)
-  fullName: Terminaux.Figlet.FigletSelector.PromptForFiglet(string)
-  fullName.vb: Terminaux.Figlet.FigletSelector.PromptForFiglet(String)
-  nameWithType: FigletSelector.PromptForFiglet(string)
-  nameWithType.vb: FigletSelector.PromptForFiglet(String)
-- uid: Terminaux.Figlet.FigletSelector.PromptForFiglet*
-  name: PromptForFiglet
-  href: api/Terminaux.Figlet.FigletSelector.html#Terminaux_Figlet_FigletSelector_PromptForFiglet_
-  commentId: Overload:Terminaux.Figlet.FigletSelector.PromptForFiglet
-  isSpec: "True"
-  fullName: Terminaux.Figlet.FigletSelector.PromptForFiglet
-  nameWithType: FigletSelector.PromptForFiglet
 - uid: Terminaux.Inputs
   name: Terminaux.Inputs
   href: api/Terminaux.Inputs.html
@@ -7084,6 +7050,34 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice
   nameWithType: ChoiceStyle.PromptChoice
+- uid: Terminaux.Inputs.Styles.FigletSelector
+  name: FigletSelector
+  href: api/Terminaux.Inputs.Styles.FigletSelector.html
+  commentId: T:Terminaux.Inputs.Styles.FigletSelector
+  fullName: Terminaux.Inputs.Styles.FigletSelector
+  nameWithType: FigletSelector
+- uid: Terminaux.Inputs.Styles.FigletSelector.PromptForFiglet
+  name: PromptForFiglet()
+  href: api/Terminaux.Inputs.Styles.FigletSelector.html#Terminaux_Inputs_Styles_FigletSelector_PromptForFiglet
+  commentId: M:Terminaux.Inputs.Styles.FigletSelector.PromptForFiglet
+  fullName: Terminaux.Inputs.Styles.FigletSelector.PromptForFiglet()
+  nameWithType: FigletSelector.PromptForFiglet()
+- uid: Terminaux.Inputs.Styles.FigletSelector.PromptForFiglet(System.String)
+  name: PromptForFiglet(string)
+  href: api/Terminaux.Inputs.Styles.FigletSelector.html#Terminaux_Inputs_Styles_FigletSelector_PromptForFiglet_System_String_
+  commentId: M:Terminaux.Inputs.Styles.FigletSelector.PromptForFiglet(System.String)
+  name.vb: PromptForFiglet(String)
+  fullName: Terminaux.Inputs.Styles.FigletSelector.PromptForFiglet(string)
+  fullName.vb: Terminaux.Inputs.Styles.FigletSelector.PromptForFiglet(String)
+  nameWithType: FigletSelector.PromptForFiglet(string)
+  nameWithType.vb: FigletSelector.PromptForFiglet(String)
+- uid: Terminaux.Inputs.Styles.FigletSelector.PromptForFiglet*
+  name: PromptForFiglet
+  href: api/Terminaux.Inputs.Styles.FigletSelector.html#Terminaux_Inputs_Styles_FigletSelector_PromptForFiglet_
+  commentId: Overload:Terminaux.Inputs.Styles.FigletSelector.PromptForFiglet
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.FigletSelector.PromptForFiglet
+  nameWithType: FigletSelector.PromptForFiglet
 - uid: Terminaux.Inputs.Styles.Infobox
   name: Terminaux.Inputs.Styles.Infobox
   href: api/Terminaux.Inputs.Styles.Infobox.html

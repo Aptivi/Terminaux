@@ -169,16 +169,6 @@
     "title": "Namespace Terminaux.Colors | Terminaux API - Aptivi",
     "keywords": "Namespace Terminaux.Colors Classes Color Color information class ColorTools Color tools and management ConsoleColorsInfo Information for the console colors that fit within the 256 colors Enums ColorType Color type enumeration ConsoleColors All 255 console colors"
   },
-  "api/Terminaux.Figlet.FigletSelector.html": {
-    "href": "api/Terminaux.Figlet.FigletSelector.html",
-    "title": "Class FigletSelector | Terminaux API - Aptivi",
-    "keywords": "Class FigletSelector Figlet selector Inheritance object FigletSelector Namespace: Terminaux.Figlet Assembly: Terminaux.dll Syntax public static class FigletSelector Methods | Edit this page View Source PromptForFiglet() Prompts the user for a figlet font Declaration public static string PromptForFiglet() Returns Type Description string Selected figlet font | Edit this page View Source PromptForFiglet(string) Prompts the user for a figlet font Declaration public static string PromptForFiglet(string font) Parameters Type Name Description string font Initial font to select Returns Type Description string Selected figlet font"
-  },
-  "api/Terminaux.Figlet.html": {
-    "href": "api/Terminaux.Figlet.html",
-    "title": "Namespace Terminaux.Figlet | Terminaux API - Aptivi",
-    "keywords": "Namespace Terminaux.Figlet Classes FigletSelector Figlet selector"
-  },
   "api/Terminaux.Inputs.Input.html": {
     "href": "api/Terminaux.Inputs.Input.html",
     "title": "Class Input | Terminaux API - Aptivi",
@@ -233,6 +223,11 @@
     "href": "api/Terminaux.Inputs.Styles.Choice.html",
     "title": "Namespace Terminaux.Inputs.Styles.Choice | Terminaux API - Aptivi",
     "keywords": "Namespace Terminaux.Inputs.Styles.Choice Classes ChoiceStyle Choice style for input module Enums ChoiceOutputType The enumeration for the choice command output type"
+  },
+  "api/Terminaux.Inputs.Styles.FigletSelector.html": {
+    "href": "api/Terminaux.Inputs.Styles.FigletSelector.html",
+    "title": "Class FigletSelector | Terminaux API - Aptivi",
+    "keywords": "Class FigletSelector Figlet selector Inheritance object FigletSelector Namespace: Terminaux.Inputs.Styles Assembly: Terminaux.dll Syntax public static class FigletSelector Methods | Edit this page View Source PromptForFiglet() Prompts the user for a figlet font Declaration public static string PromptForFiglet() Returns Type Description string Selected figlet font | Edit this page View Source PromptForFiglet(string) Prompts the user for a figlet font Declaration public static string PromptForFiglet(string font) Parameters Type Name Description string font Initial font to select Returns Type Description string Selected figlet font"
   },
   "api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html": {
     "href": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html",
@@ -327,7 +322,7 @@
   "api/Terminaux.Inputs.Styles.html": {
     "href": "api/Terminaux.Inputs.Styles.html",
     "title": "Namespace Terminaux.Inputs.Styles | Terminaux API - Aptivi",
-    "keywords": "Namespace Terminaux.Inputs.Styles Classes InputStyle Input style module"
+    "keywords": "Namespace Terminaux.Inputs.Styles Classes FigletSelector Figlet selector InputStyle Input style module"
   },
   "api/Terminaux.Inputs.html": {
     "href": "api/Terminaux.Inputs.html",
