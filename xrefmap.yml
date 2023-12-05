@@ -9875,6 +9875,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderState.History
   nameWithType: TermReaderState.History
+- uid: Terminaux.Reader.TermReaderState.InputPromptLastLineLength
+  name: InputPromptLastLineLength
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLastLineLength
+  commentId: P:Terminaux.Reader.TermReaderState.InputPromptLastLineLength
+  fullName: Terminaux.Reader.TermReaderState.InputPromptLastLineLength
+  nameWithType: TermReaderState.InputPromptLastLineLength
+- uid: Terminaux.Reader.TermReaderState.InputPromptLastLineLength*
+  name: InputPromptLastLineLength
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLastLineLength_
+  commentId: Overload:Terminaux.Reader.TermReaderState.InputPromptLastLineLength
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.InputPromptLastLineLength
+  nameWithType: TermReaderState.InputPromptLastLineLength
 - uid: Terminaux.Reader.TermReaderState.InputPromptLeft
   name: InputPromptLeft
   href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLeft
@@ -9927,6 +9940,71 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderState.KillBuffer
   nameWithType: TermReaderState.KillBuffer
+- uid: Terminaux.Reader.TermReaderState.LeftMargin
+  name: LeftMargin
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_LeftMargin
+  commentId: P:Terminaux.Reader.TermReaderState.LeftMargin
+  fullName: Terminaux.Reader.TermReaderState.LeftMargin
+  nameWithType: TermReaderState.LeftMargin
+- uid: Terminaux.Reader.TermReaderState.LeftMargin*
+  name: LeftMargin
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_LeftMargin_
+  commentId: Overload:Terminaux.Reader.TermReaderState.LeftMargin
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.LeftMargin
+  nameWithType: TermReaderState.LeftMargin
+- uid: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeft
+  name: LongestSentenceLengthFromLeft
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_LongestSentenceLengthFromLeft
+  commentId: P:Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeft
+  fullName: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeft
+  nameWithType: TermReaderState.LongestSentenceLengthFromLeft
+- uid: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeft*
+  name: LongestSentenceLengthFromLeft
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_LongestSentenceLengthFromLeft_
+  commentId: Overload:Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeft
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeft
+  nameWithType: TermReaderState.LongestSentenceLengthFromLeft
+- uid: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForFirstLine
+  name: LongestSentenceLengthFromLeftForFirstLine
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_LongestSentenceLengthFromLeftForFirstLine
+  commentId: P:Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForFirstLine
+  fullName: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForFirstLine
+  nameWithType: TermReaderState.LongestSentenceLengthFromLeftForFirstLine
+- uid: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForFirstLine*
+  name: LongestSentenceLengthFromLeftForFirstLine
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_LongestSentenceLengthFromLeftForFirstLine_
+  commentId: Overload:Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForFirstLine
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForFirstLine
+  nameWithType: TermReaderState.LongestSentenceLengthFromLeftForFirstLine
+- uid: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForGeneralLine
+  name: LongestSentenceLengthFromLeftForGeneralLine
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_LongestSentenceLengthFromLeftForGeneralLine
+  commentId: P:Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForGeneralLine
+  fullName: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForGeneralLine
+  nameWithType: TermReaderState.LongestSentenceLengthFromLeftForGeneralLine
+- uid: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForGeneralLine*
+  name: LongestSentenceLengthFromLeftForGeneralLine
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_LongestSentenceLengthFromLeftForGeneralLine_
+  commentId: Overload:Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForGeneralLine
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.LongestSentenceLengthFromLeftForGeneralLine
+  nameWithType: TermReaderState.LongestSentenceLengthFromLeftForGeneralLine
+- uid: Terminaux.Reader.TermReaderState.MaximumInputPositionLeft
+  name: MaximumInputPositionLeft
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_MaximumInputPositionLeft
+  commentId: P:Terminaux.Reader.TermReaderState.MaximumInputPositionLeft
+  fullName: Terminaux.Reader.TermReaderState.MaximumInputPositionLeft
+  nameWithType: TermReaderState.MaximumInputPositionLeft
+- uid: Terminaux.Reader.TermReaderState.MaximumInputPositionLeft*
+  name: MaximumInputPositionLeft
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_MaximumInputPositionLeft_
+  commentId: Overload:Terminaux.Reader.TermReaderState.MaximumInputPositionLeft
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.MaximumInputPositionLeft
+  nameWithType: TermReaderState.MaximumInputPositionLeft
 - uid: Terminaux.Reader.TermReaderState.OneLineWrap
   name: OneLineWrap
   href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_OneLineWrap
@@ -9966,6 +10044,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderState.PressedKey
   nameWithType: TermReaderState.PressedKey
+- uid: Terminaux.Reader.TermReaderState.RightMargin
+  name: RightMargin
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_RightMargin
+  commentId: P:Terminaux.Reader.TermReaderState.RightMargin
+  fullName: Terminaux.Reader.TermReaderState.RightMargin
+  nameWithType: TermReaderState.RightMargin
+- uid: Terminaux.Reader.TermReaderState.RightMargin*
+  name: RightMargin
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_RightMargin_
+  commentId: Overload:Terminaux.Reader.TermReaderState.RightMargin
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.RightMargin
+  nameWithType: TermReaderState.RightMargin
 - uid: Terminaux.Reader.TermReaderState.Settings
   name: Settings
   href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_Settings
