@@ -39,11 +39,10 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 return;
 
             // Just set the positions to the maximum!
-            int times = state.CurrentText.Length - state.currentTextPos;
             if (state.OneLineWrap)
-                PositioningTools.GoForwardOneLineWrapAware(times, ref state);
+                PositioningTools.GoRightmostOneLineWrapAware(ref state);
             else
-                PositioningTools.GoForward(times, ref state);
+                PositioningTools.GoRightmost(ref state);
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }

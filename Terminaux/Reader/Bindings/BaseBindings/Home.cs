@@ -40,9 +40,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Just set the positions to zero!
             if (state.OneLineWrap)
-                PositioningTools.GoBackOneLineWrapAware(state.currentTextPos, ref state);
+                PositioningTools.GoLeftmostOneLineWrapAware(ref state);
             else
-                PositioningTools.GoBack(state.currentTextPos, ref state);
+                PositioningTools.GoLeftmost(ref state);
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }

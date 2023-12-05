@@ -23,6 +23,12 @@ namespace Terminaux.Reader.Tools
 {
     internal static class PositioningTools
     {
+        internal static void GoLeftmost(ref TermReaderState state) =>
+            GoBack(state.currentTextPos, ref state);
+        
+        internal static void GoRightmost(ref TermReaderState state) =>
+            GoForward(state.currentText.Length - state.currentTextPos, ref state);
+
         internal static void GoForward(ref TermReaderState state) =>
             GoForward(1, ref state);
 
@@ -87,6 +93,11 @@ namespace Terminaux.Reader.Tools
             GoBack(fromPos, ref state);
             GoForward(steps, ref state);
         }
+        internal static void GoLeftmostOneLineWrapAware(ref TermReaderState state) =>
+            GoBackOneLineWrapAware(state.currentTextPos, ref state);
+
+        internal static void GoRightmostOneLineWrapAware(ref TermReaderState state) =>
+            GoForwardOneLineWrapAware(state.currentText.Length - state.currentTextPos, ref state);
 
         internal static void GoForwardOneLineWrapAware(ref TermReaderState state) =>
             GoForwardOneLineWrapAware(1, ref state);
