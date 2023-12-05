@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Terminaux.Base;
 using Terminaux.ConsoleDemo.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.Interactive;
 
@@ -25,7 +26,13 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
     {
         public string FixtureID =>
             "CliInfoPaneTestRefreshing";
-        public void RunFixture() =>
+        public void RunFixture()
+        {
+            // Run the resize listener
+            ConsoleResizeListener.StartResizeListener();
+
+            // Start the demo TUI app
             InteractiveTuiTools.OpenInteractiveTui(new CliInfoPaneTestRefreshingData());
+        }
     }
 }
