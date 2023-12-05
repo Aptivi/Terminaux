@@ -31,7 +31,8 @@ namespace Terminaux.Base
         /// <summary>
         /// New line constant
         /// </summary>
-        public static string NewLine { get => Environment.NewLine; }
+        public static string NewLine =>
+            Environment.NewLine;
 
         /// <summary>
         /// Polls $TERM_PROGRAM to get terminal emulator

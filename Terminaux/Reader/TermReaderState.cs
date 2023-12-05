@@ -53,69 +53,85 @@ namespace Terminaux.Reader
         /// <summary>
         /// Left position of the input prompt
         /// </summary>
-        public int InputPromptLeft { get => inputPromptLeft; }
+        public int InputPromptLeft =>
+            inputPromptLeft;
         /// <summary>
         /// Top position of the input prompt
         /// </summary>
-        public int InputPromptTop { get => inputPromptTop; }
+        public int InputPromptTop =>
+            inputPromptTop;
         /// <summary>
         /// Current cursor left position
         /// </summary>
-        public int CurrentCursorPosLeft { get => currentCursorPosLeft; }
+        public int CurrentCursorPosLeft =>
+            currentCursorPosLeft;
         /// <summary>
         /// Current cursor top position
         /// </summary>
-        public int CurrentCursorPosTop { get => currentCursorPosTop; }
+        public int CurrentCursorPosTop =>
+            currentCursorPosTop;
         /// <summary>
         /// Current text character number
         /// </summary>
-        public int CurrentTextPos { get => currentTextPos; }
+        public int CurrentTextPos =>
+            currentTextPos;
         /// <summary>
         /// Input prompt text
         /// </summary>
-        public string InputPromptText { get => inputPromptText; }
+        public string InputPromptText =>
+            inputPromptText;
         /// <summary>
         /// Current text
         /// </summary>
-        public StringBuilder CurrentText { get => currentText; }
+        public StringBuilder CurrentText =>
+            currentText;
         /// <summary>
         /// Password Mode
         /// </summary>
-        public bool PasswordMode { get => passwordMode; }
+        public bool PasswordMode =>
+            passwordMode;
         /// <summary>
         /// Currently pressed key
         /// </summary>
-        public ConsoleKeyInfo PressedKey { get => pressedKey; }
+        public ConsoleKeyInfo PressedKey =>
+            pressedKey;
         /// <summary>
         /// Text to be pasted
         /// </summary>
-        public StringBuilder KillBuffer { get => killBuffer; }
+        public StringBuilder KillBuffer =>
+            killBuffer;
         /// <summary>
         /// Reader settings (general or overridden)
         /// </summary>
-        public TermReaderSettings Settings { get => settings; }
+        public TermReaderSettings Settings =>
+            settings;
         /// <summary>
         /// Can insert a new character?
         /// </summary>
-        public bool CanInsert { get => canInsert; }
+        public bool CanInsert =>
+            canInsert;
 
         // To static variables
         /// <summary>
         /// History entries
         /// </summary>
-        public List<string> History { get => history; }
+        public List<string> History =>
+            history;
         /// <summary>
         /// Current history number
         /// </summary>
-        public int CurrentHistoryPos { get => currentHistoryPos; }
+        public int CurrentHistoryPos =>
+            currentHistoryPos;
         /// <summary>
         /// Current suggestion number
         /// </summary>
-        public int CurrentSuggestionsPos { get => currentSuggestionsPos; }
+        public int CurrentSuggestionsPos =>
+            currentSuggestionsPos;
         /// <summary>
         /// Whether one line wrapping is enabled
         /// </summary>
-        public bool OneLineWrap { get => oneLineWrap; }
+        public bool OneLineWrap =>
+            oneLineWrap;
 
         internal TermReaderState() { }
     }
