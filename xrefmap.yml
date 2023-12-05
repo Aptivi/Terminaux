@@ -848,6 +848,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleResizeListener.GetCurrentConsoleSize
   nameWithType: ConsoleResizeListener.GetCurrentConsoleSize
+- uid: Terminaux.Base.ConsoleResizeListener.StartResizeListener(System.Action)
+  name: StartResizeListener(Action)
+  href: api/Terminaux.Base.ConsoleResizeListener.html#Terminaux_Base_ConsoleResizeListener_StartResizeListener_System_Action_
+  commentId: M:Terminaux.Base.ConsoleResizeListener.StartResizeListener(System.Action)
+  fullName: Terminaux.Base.ConsoleResizeListener.StartResizeListener(System.Action)
+  nameWithType: ConsoleResizeListener.StartResizeListener(Action)
+- uid: Terminaux.Base.ConsoleResizeListener.StartResizeListener*
+  name: StartResizeListener
+  href: api/Terminaux.Base.ConsoleResizeListener.html#Terminaux_Base_ConsoleResizeListener_StartResizeListener_
+  commentId: Overload:Terminaux.Base.ConsoleResizeListener.StartResizeListener
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleResizeListener.StartResizeListener
+  nameWithType: ConsoleResizeListener.StartResizeListener
 - uid: Terminaux.Base.ConsoleResizeListener.WasResized(System.Boolean)
   name: WasResized(bool)
   href: api/Terminaux.Base.ConsoleResizeListener.html#Terminaux_Base_ConsoleResizeListener_WasResized_System_Boolean_
