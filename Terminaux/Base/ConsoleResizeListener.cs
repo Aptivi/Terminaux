@@ -30,7 +30,7 @@ namespace Terminaux.Base
     {
         private static int CurrentWindowWidth;
         private static int CurrentWindowHeight;
-        private static readonly Thread ResizeListenerThread = new(PollForResize) { Name = "Console Resize Listener Thread", IsBackground = true };
+        private static Thread ResizeListenerThread = new((_) => PollForResize(null)) { Name = "Console Resize Listener Thread", IsBackground = true };
         private static bool ResizeDetected;
 
         /// <summary>
@@ -58,26 +58,59 @@ namespace Terminaux.Base
             return (CurrentWindowWidth, CurrentWindowHeight);
         }
 
-        private static void PollForResize()
+        /// <summary>
+        /// Starts the console resize listener
+        /// </summary>
+        /// <param name="customHandler">Specifies the custom console resize handler that will be called if resize is detected</param>
+        public static void StartResizeListener(Action customHandler = null)
+        {
+            CurrentWindowWidth = Console.WindowWidth;
+            CurrentWindowHeight = Console.WindowHeight;
+            if (!ResizeListenerThread.IsAlive)
+            {
+                if (customHandler is not null)
+                {
+                    ResizeListenerThread = new((l) => PollForResize((Action)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
+                    ResizeListenerThread.Start(customHandler);
+                }
+                else
+                    ResizeListenerThread.Start(null);
+            }
+        }
+
+        private static bool CheckResized()
+        {
+            if (CurrentWindowHeight != Console.WindowHeight |
+                CurrentWindowWidth != Console.WindowWidth)
+                return true;
+            return false;
+        }
+
+        private static void HandleResized()
+        {
+            // Tell the screen-based apps to refresh themselves
+            if (ScreenTools.CurrentScreen is not null)
+                ScreenTools.Render();
+        }
+
+        private static void PollForResize(Action customHandler)
         {
             try
             {
                 while (true)
                 {
                     Thread.Sleep(10);
+                    bool update = CheckResized();
 
-                    // We need to call the WindowHeight and WindowWidth properties on the Terminal console driver, because
-                    // this polling works for all the terminals. Other drivers that don't use the terminal may not even
-                    // implement these two properties.
-                    if (CurrentWindowHeight != Console.WindowHeight | CurrentWindowWidth != Console.WindowWidth)
+                    if (update)
                     {
                         ResizeDetected = true;
                         CurrentWindowWidth = Console.WindowWidth;
                         CurrentWindowHeight = Console.WindowHeight;
-
-                        // Also, tell the screen-based apps to refresh themselves
-                        if (ScreenTools.CurrentScreen is not null)
-                            ScreenTools.Render();
+                        if (customHandler is null)
+                            HandleResized();
+                        else
+                            customHandler();
                     }
                 }
             }
@@ -86,14 +119,6 @@ namespace Terminaux.Base
                 Debug.WriteLine($"Failed to detect console resize: {ex.Message}");
                 Debug.WriteLine(ex.StackTrace);
             }
-        }
-
-        internal static void StartResizeListener()
-        {
-            CurrentWindowWidth = Console.WindowWidth;
-            CurrentWindowHeight = Console.WindowHeight;
-            if (!ResizeListenerThread.IsAlive)
-                ResizeListenerThread.Start();
         }
     }
 }
