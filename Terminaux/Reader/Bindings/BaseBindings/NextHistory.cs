@@ -50,7 +50,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             state.CurrentText.Clear();
             if (state.OneLineWrap)
             {
-                int longestSentenceLength = ConsoleWrapper.WindowWidth - state.settings.RightMargin - state.inputPromptLeft - 1;
+                int longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
                 string renderedBlanks = new(' ', longestSentenceLength);
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleWrapper.Write(renderedBlanks, state.settings);

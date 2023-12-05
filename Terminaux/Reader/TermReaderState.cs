@@ -20,6 +20,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using Terminaux.Base;
+using Textify.General;
+using Textify.Sequences.Tools;
 
 namespace Terminaux.Reader
 {
@@ -51,7 +54,7 @@ namespace Terminaux.Reader
 
         // To instance variables
         /// <summary>
-        /// Left position of the input prompt
+        /// Left position of the input prompt (with the left margin)
         /// </summary>
         public int InputPromptLeft =>
             inputPromptLeft;
@@ -60,6 +63,16 @@ namespace Terminaux.Reader
         /// </summary>
         public int InputPromptTop =>
             inputPromptTop;
+        /// <summary>
+        /// Left margin
+        /// </summary>
+        public int LeftMargin =>
+            settings.LeftMargin;
+        /// <summary>
+        /// Right margin
+        /// </summary>
+        public int RightMargin =>
+            settings.RightMargin;
         /// <summary>
         /// Current cursor left position
         /// </summary>
@@ -71,6 +84,44 @@ namespace Terminaux.Reader
         public int CurrentCursorPosTop =>
             currentCursorPosTop;
         /// <summary>
+        /// Maximum input left position
+        /// </summary>
+        public int MaximumInputPositionLeft =>
+            LongestSentenceLengthFromLeft - 1;
+        /// <summary>
+        /// Longest sentence length (from the leftmost position, without offset created by the last line in the prompt)
+        /// </summary>
+        public int LongestSentenceLengthFromLeft
+        {
+            get
+            {
+                int width = ConsoleWrapper.WindowWidth;
+                return width - settings.RightMargin;
+            }
+        }
+        /// <summary>
+        /// Longest sentence length (from the leftmost position, with the length of the last line in the prompt plus the left margin)
+        /// </summary>
+        public int LongestSentenceLengthFromLeftForFirstLine
+        {
+            get
+            {
+                int width = ConsoleWrapper.WindowWidth;
+                return width - settings.RightMargin - inputPromptLeft - 1;
+            }
+        }
+        /// <summary>
+        /// Longest sentence length (from the leftmost position, with the left margin)
+        /// </summary>
+        public int LongestSentenceLengthFromLeftForGeneralLine
+        {
+            get
+            {
+                int width = ConsoleWrapper.WindowWidth;
+                return width - settings.RightMargin - settings.LeftMargin - 1;
+            }
+        }
+        /// <summary>
         /// Current text character number
         /// </summary>
         public int CurrentTextPos =>
@@ -80,6 +131,18 @@ namespace Terminaux.Reader
         /// </summary>
         public string InputPromptText =>
             inputPromptText;
+        /// <summary>
+        /// Input prompt last line length
+        /// </summary>
+        public int InputPromptLastLineLength
+        {
+            get
+            {
+                string[] inputPromptLines = InputPromptText.SplitNewLines();
+                string inputPromptLastLine = VtSequenceTools.FilterVTSequences(inputPromptLines[inputPromptLines.Length - 1]);
+                return inputPromptLastLine.Length;
+            }
+        }
         /// <summary>
         /// Current text
         /// </summary>

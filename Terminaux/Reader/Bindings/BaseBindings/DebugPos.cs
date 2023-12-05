@@ -36,20 +36,46 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override void DoAction(TermReaderState state)
         {
             // Show debug background positions
+            Console.ForegroundColor = ConsoleColor.Black;
+
+            // state.InputPromptLeft, state.InputPromptTop
             Console.BackgroundColor = ConsoleColor.Green;
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-            ConsoleWrapper.Write(" ", state.settings);
+            ConsoleWrapper.Write("I", state.settings);
             Thread.Sleep(1000);
+
+            // state.CurrentCursorPosLeft, state.CurrentCursorPosTop
             Console.BackgroundColor = ConsoleColor.Red;
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-            ConsoleWrapper.Write(" ", state.settings);
+            ConsoleWrapper.Write("C", state.settings);
+            Thread.Sleep(1000);
+
+            // state.LeftMargin, state.InputPromptTop
+            // Targets: state.MaximumInputPositionLeft, state.LongestSentenceLengthFromLeft
+            Console.BackgroundColor = ConsoleColor.Yellow;
+            ConsoleWrapper.SetCursorPosition(state.LeftMargin, state.InputPromptTop);
+            ConsoleWrapper.Write("|", state.settings);
+            ConsoleWrapper.SetCursorPosition(state.MaximumInputPositionLeft, state.InputPromptTop);
+            ConsoleWrapper.Write("M", state.settings);
+            ConsoleWrapper.SetCursorPosition(state.LongestSentenceLengthFromLeft >= ConsoleWrapper.WindowWidth ? state.LongestSentenceLengthFromLeft - 1 : state.LongestSentenceLengthFromLeft, state.InputPromptTop);
+            ConsoleWrapper.Write("L", state.settings);
+
+            // 0, state.InputPromptTop
+            // Targets: state.LongestSentenceLengthFromLeftForFirstLine, state.LongestSentenceLengthFromLeftForGeneralLine
+            Console.BackgroundColor = ConsoleColor.DarkYellow;
+            ConsoleWrapper.SetCursorPosition(0, state.InputPromptTop);
+            ConsoleWrapper.Write("#", state.settings);
+            ConsoleWrapper.SetCursorPosition(state.LongestSentenceLengthFromLeftForFirstLine, state.InputPromptTop);
+            ConsoleWrapper.Write("F", state.settings);
+            ConsoleWrapper.SetCursorPosition(state.LongestSentenceLengthFromLeftForGeneralLine, state.InputPromptTop);
+            ConsoleWrapper.Write("G", state.settings);
             Thread.Sleep(1000);
 
             // Re-write the text and set the current cursor position as appropriate
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
 
             // In the case of one line wrap, get the list of sentences and debug the positions
-            int longestSentenceLength = ConsoleWrapper.WindowWidth - state.settings.RightMargin - state.inputPromptLeft - 1;
+            int longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
             string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
             renderedText = state.OneLineWrap ? TermReaderTools.GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
@@ -59,7 +85,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 PositioningTools.SeekTo(renderedText.Length, ref state);
             Console.BackgroundColor = ConsoleColor.Blue;
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-            ConsoleWrapper.Write(" ", state.settings);
+            ConsoleWrapper.Write("S", state.settings);
             Thread.Sleep(1000);
 
             // Verify seek to 0
@@ -69,7 +95,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 PositioningTools.SeekTo(0, ref state);
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-            ConsoleWrapper.Write(" ", state.settings);
+            ConsoleWrapper.Write("Z", state.settings);
             Thread.Sleep(1000);
 
             // Verify going forward 5 times
@@ -79,7 +105,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 PositioningTools.GoForward(5, ref state);
             Console.BackgroundColor = ConsoleColor.Magenta;
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-            ConsoleWrapper.Write(" ", state.settings);
+            ConsoleWrapper.Write("5", state.settings);
             Thread.Sleep(1000);
 
             // Verify going backward 3 times
@@ -89,24 +115,13 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 PositioningTools.GoBack(3, ref state);
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
             ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
-            ConsoleWrapper.Write(" ", state.settings);
+            ConsoleWrapper.Write("3", state.settings);
             Thread.Sleep(1000);
 
             // Now, reset everything
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             Console.ResetColor();
-            if (state.OneLineWrap)
-            {
-                ConsoleWrapper.Write(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
-                PositioningTools.SeekToOneLineWrapAware(renderedText.Length, ref state);
-            }
-            else
-            {
-                ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrapper.Write(renderedText + " ", state.settings);
-                PositioningTools.SeekTo(renderedText.Length, ref state);
-            }
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            TermReaderTools.RefreshPrompt(ref state);
         }
     }
 }

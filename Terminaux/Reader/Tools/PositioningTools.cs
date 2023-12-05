@@ -31,7 +31,6 @@ namespace Terminaux.Reader.Tools
             if (steps > state.currentText.Length - state.currentTextPos)
                 steps = state.currentText.Length - state.currentTextPos;
 
-            int width = ConsoleWrapper.WindowWidth;
             int height = ConsoleWrapper.BufferHeight;
             for (int i = 0; i < steps; i++)
             {
@@ -42,7 +41,7 @@ namespace Terminaux.Reader.Tools
                     continue;
 
                 state.currentCursorPosLeft++;
-                if (state.CurrentCursorPosLeft >= width - state.settings.RightMargin)
+                if (state.CurrentCursorPosLeft > state.MaximumInputPositionLeft)
                 {
                     // Reached to the end! Wrap down!
                     state.currentCursorPosLeft = state.settings.LeftMargin;
