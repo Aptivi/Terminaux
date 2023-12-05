@@ -20,11 +20,10 @@ using Figletize;
 using System;
 using System.Linq;
 using Terminaux.Base;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.FancyWriters;
 
-namespace Terminaux.Figlet
+namespace Terminaux.Inputs.Styles
 {
     /// <summary>
     /// Figlet selector

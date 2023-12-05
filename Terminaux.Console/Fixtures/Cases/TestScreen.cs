@@ -23,7 +23,6 @@ using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Writer.FancyWriters;
 using Textify.Sequences.Builder.Types;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases

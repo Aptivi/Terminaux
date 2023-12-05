@@ -18,7 +18,7 @@
 
 using Figletize;
 using Terminaux.Colors;
-using Terminaux.Figlet;
+using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 
