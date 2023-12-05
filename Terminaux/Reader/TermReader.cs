@@ -154,6 +154,11 @@ namespace Terminaux.Reader
 
                         // Handle it
                         BindingsReader.Execute(readState);
+                        bool differed =
+                            cachedPos.Item1 != readState.currentCursorPosLeft ||
+                            cachedPos.Item2 != readState.currentCursorPosTop;
+                        if (differed)
+                            PositioningTools.Commit(readState);
 
                         // Cursor is visible, but fix cursor on Linux
                         cachedPos = (readState.currentCursorPosLeft, readState.currentCursorPosTop);

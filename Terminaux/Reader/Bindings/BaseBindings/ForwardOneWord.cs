@@ -57,7 +57,6 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 PositioningTools.GoForwardOneLineWrapAware(steps, ref state);
             else
                 PositioningTools.GoForward(steps, ref state);
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
         }
     }
 }

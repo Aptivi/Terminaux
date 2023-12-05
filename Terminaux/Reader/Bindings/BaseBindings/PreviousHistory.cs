@@ -65,7 +65,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 ConsoleWrapper.Write(new string(' ', length), state.settings);
                 PositioningTools.SeekTo(0, ref state);
             }
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            PositioningTools.Commit(state);
 
             // Now, write the history entry
             TermReaderState.currentHistoryPos--;

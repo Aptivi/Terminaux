@@ -157,7 +157,7 @@ namespace Terminaux.Reader
                     }
                 }
             }
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            PositioningTools.Commit(state);
         }
 
         internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false, int spaces = 0)
@@ -208,7 +208,7 @@ namespace Terminaux.Reader
                         PositioningTools.GoForward(steps, ref state);
                 }
             }
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            PositioningTools.Commit(state);
         }
 
         internal static string GetOneLineWrappedSentenceToRender(string[] incompleteSentences, TermReaderState state) =>

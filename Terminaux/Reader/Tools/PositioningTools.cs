@@ -162,6 +162,9 @@ namespace Terminaux.Reader.Tools
             GoForwardOneLineWrapAware(steps, ref state);
         }
 
+        internal static void Commit(TermReaderState state) =>
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+
         internal static void HandleTopChangeForInput(ref TermReaderState state)
         {
             int promptLeft = state.InputPromptLeft;

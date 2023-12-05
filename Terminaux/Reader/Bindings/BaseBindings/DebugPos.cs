@@ -46,7 +46,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // state.CurrentCursorPosLeft, state.CurrentCursorPosTop
             Console.BackgroundColor = ConsoleColor.Red;
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            PositioningTools.Commit(state);
             ConsoleWrapper.Write("C", state.settings);
             Thread.Sleep(1000);
 
@@ -84,7 +84,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             else
                 PositioningTools.SeekTo(renderedText.Length, ref state);
             Console.BackgroundColor = ConsoleColor.Blue;
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            PositioningTools.Commit(state);
             ConsoleWrapper.Write("S", state.settings);
             Thread.Sleep(1000);
 
@@ -94,7 +94,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             else
                 PositioningTools.SeekTo(0, ref state);
             Console.BackgroundColor = ConsoleColor.DarkBlue;
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            PositioningTools.Commit(state);
             ConsoleWrapper.Write("Z", state.settings);
             Thread.Sleep(1000);
 
@@ -104,7 +104,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             else
                 PositioningTools.GoForward(5, ref state);
             Console.BackgroundColor = ConsoleColor.Magenta;
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            PositioningTools.Commit(state);
             ConsoleWrapper.Write("5", state.settings);
             Thread.Sleep(1000);
 
@@ -114,7 +114,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             else
                 PositioningTools.GoBack(3, ref state);
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            PositioningTools.Commit(state);
             ConsoleWrapper.Write("3", state.settings);
             Thread.Sleep(1000);
 
