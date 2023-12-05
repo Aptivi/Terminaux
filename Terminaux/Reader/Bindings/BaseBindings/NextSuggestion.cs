@@ -77,6 +77,10 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 state.CurrentText.Append(string.Join(" ", splitText));
                 TermReaderTools.RefreshPrompt(ref state);
             }
+            else
+            {
+                BindingsList.fallbackBinding.DoAction(state);
+            }
         }
     }
 }
