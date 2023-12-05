@@ -33,8 +33,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
             new InteractiveTuiBinding("Add",         ConsoleKey.F1,  (_, index) => Add(index)),
             new InteractiveTuiBinding("Delete",      ConsoleKey.F2,  (_, index) => Remove(index)),
             new InteractiveTuiBinding("Delete Last", ConsoleKey.F3,  (_, _)     => RemoveLast()),
-            new InteractiveTuiBinding("Redraw",      ConsoleKey.F4,  (_, _)     => InteractiveTuiStatus.RedrawRequired = true),
-            new InteractiveTuiBinding("Switch",      ConsoleKey.Tab, (_, _)     => Switch()),
         ];
 
         /// <inheritdoc/>
@@ -52,10 +50,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
         /// <inheritdoc/>
         public override bool AcceptsEmptyData =>
             true;
-
-        /// <inheritdoc/>
-        public override bool FastRefresh =>
-            false;
 
         /// <inheritdoc/>
         public override void RenderStatus(object item)
@@ -116,14 +110,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
                 if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
                     InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
             }
-        }
-
-        private static void Switch()
-        {
-            InteractiveTuiStatus.CurrentPane++;
-            if (InteractiveTuiStatus.CurrentPane > 2)
-                InteractiveTuiStatus.CurrentPane = 1;
-            InteractiveTuiStatus.RedrawRequired = true;
         }
     }
 }

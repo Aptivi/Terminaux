@@ -21,11 +21,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Textify.General;
+using Textify.Sequences.Builder.Types;
+using Textify.Sequences.Tools;
 
 namespace Terminaux.Reader.Inputs.Interactive
 {
@@ -35,10 +39,7 @@ namespace Terminaux.Reader.Inputs.Interactive
     public static class InteractiveTuiTools
     {
 
-        private static int _lastFirstPanePos = 0;
-        private static int _lastSecondPanePos = 0;
         private static string _finalInfoRendered = "";
-        private static bool _refreshSelection = true;
         private static readonly object _interactiveTuiLock = new();
 
         /// <summary>
@@ -52,6 +53,7 @@ namespace Terminaux.Reader.Inputs.Interactive
             {
                 if (interactiveTui is null)
                     throw new TerminauxException("Please provide a base Interactive TUI class and try again.");
+                BaseInteractiveTui.instance.Add(interactiveTui);
 
                 // First, check to see if the interactive TUI has no data source
                 if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
@@ -67,7 +69,8 @@ namespace Terminaux.Reader.Inputs.Interactive
                 // Now, run the application
                 bool notifyCrash = false;
                 string crashReason = "";
-                _refreshSelection = true;
+                var screen = new Screen();
+                ScreenTools.SetCurrent(screen);
                 try
                 {
                     // Loop until the user requests to exit
@@ -78,31 +81,24 @@ namespace Terminaux.Reader.Inputs.Interactive
                         CheckSelectionForUnderflow(interactiveTui);
 
                         // Draw the boxes
-                        DrawInteractiveTui(interactiveTui);
+                        DrawInteractiveTui(interactiveTui, ref screen);
 
                         // Draw the first pane
-                        if (_refreshSelection || !interactiveTui.FastRefresh)
-                            DrawInteractiveTuiItems(interactiveTui, 1);
-                        else
-                            DrawInteractiveTuiItemsDelta(interactiveTui, 1, _lastFirstPanePos, InteractiveTuiStatus.FirstPaneCurrentSelection);
+                        DrawInteractiveTuiItems(interactiveTui, 1, ref screen);
 
                         // Draw the second pane
                         if (interactiveTui.SecondPaneInteractable)
-                        {
-                            if (_refreshSelection || !interactiveTui.FastRefresh)
-                                DrawInteractiveTuiItems(interactiveTui, 2);
-                            else
-                                DrawInteractiveTuiItemsDelta(interactiveTui, 2, _lastSecondPanePos, InteractiveTuiStatus.SecondPaneCurrentSelection);
-                        }
+                            DrawInteractiveTuiItems(interactiveTui, 2, ref screen);
                         else
-                        {
-                            DrawInformationOnSecondPane(interactiveTui);
-                        }
-                        _refreshSelection = false;
-                        DrawStatus(interactiveTui);
+                            DrawInformationOnSecondPane(interactiveTui, ref screen);
+                        DrawStatus(interactiveTui, ref screen);
 
                         // Wait for user input
+                        ScreenTools.Render(screen);
                         RespondToUserInput(interactiveTui);
+
+                        // Reset, in case selection changed
+                        screen.RemoveBufferedParts();
                     }
                 }
                 catch (Exception ex)
@@ -110,6 +106,11 @@ namespace Terminaux.Reader.Inputs.Interactive
                     notifyCrash = true;
                     crashReason = TextTools.FormatString("The interactive TUI, {0}, has crashed for the following reason:", interactiveTui.GetType().Name) + $" {ex.Message}";
                 }
+                finally
+                {
+                    BaseInteractiveTui.instance.Remove(interactiveTui);
+                }
+                ScreenTools.UnsetCurrent(screen);
 
                 // Clear the console to clean up
                 ColorTools.LoadBack();
@@ -125,7 +126,6 @@ namespace Terminaux.Reader.Inputs.Interactive
                 }
 
                 // Reset some static variables
-                InteractiveTuiStatus.RedrawRequired = true;
                 InteractiveTuiStatus.CurrentPane = 1;
                 InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
                 InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
@@ -151,35 +151,11 @@ namespace Terminaux.Reader.Inputs.Interactive
                 pos = elements;
 
             // Now, process the movement
-            int itemsPerPage = ConsoleWrapper.WindowHeight - 4;
-            _lastFirstPanePos = InteractiveTuiStatus.FirstPaneCurrentSelection;
-            _lastSecondPanePos = InteractiveTuiStatus.SecondPaneCurrentSelection;
             if (InteractiveTuiStatus.CurrentPane == 2)
                 InteractiveTuiStatus.SecondPaneCurrentSelection = pos;
             else
                 InteractiveTuiStatus.FirstPaneCurrentSelection = pos;
-
-            // Check if we need delta or full re-population
-            if (pos % itemsPerPage == 0)
-                _refreshSelection = true;
-            if ((pos - 1) % itemsPerPage == 0)
-                _refreshSelection = true;
-            if (pos == 1)
-                _refreshSelection = true;
-            if (pos == elements)
-                _refreshSelection = true;
-            if (ConsoleResizeListener.WasResized())
-            {
-                _refreshSelection = true;
-                InteractiveTuiStatus.RedrawRequired = true;
-            }
         }
-
-        /// <summary>
-        /// Forces the refresh
-        /// </summary>
-        public static void ForceRefreshSelection() =>
-            _refreshSelection = true;
 
         internal static int CountElements(IEnumerable enumerable)
         {
@@ -209,97 +185,144 @@ namespace Terminaux.Reader.Inputs.Interactive
             return dataObject;
         }
 
-        private static void DrawInteractiveTui(BaseInteractiveTui interactiveTui)
+        private static void DrawInteractiveTui(BaseInteractiveTui interactiveTui, ref Screen screen)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             Debug.Assert(interactiveTui is not null,
                 "attempted to render TUI items on null");
+
+            // Make a screen part
+            var part = new ScreenPart();
 
             // Prepare the console
             ConsoleWrapper.CursorVisible = false;
             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            int SeparatorMinimumHeight = 1;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
             // Redraw the entire TUI screen
-            if (InteractiveTuiStatus.RedrawRequired)
+            part.BackgroundColor(InteractiveTuiStatus.BackgroundColor);
+            part.AddText(CsiSequences.GenerateCsiEraseInDisplay(2));
+
+            // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
+            // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
+            //
+            //       |  vvvvvvvvvvvvvvvvvvvv  (SeparatorHalfConsoleWidthInterior)
+            //       | v                    v (SeparatorHalfConsoleWidth)
+            // H: 0  |
+            // H: 1  | a--------------------+c---------------------+ < ----> (SeparatorMinimumHeight)
+            // H: 2  | |b                   ||d                    |  < ----> (SeparatorMinimumHeightInterior)
+            // H: 3  | |                    ||                     |  <
+            // H: 4  | |                    ||                     |  <
+            // H: 5  | |                    ||                     |  <
+            // H: 6  | |                    ||                     |  <
+            // H: 7  | |                    ||                     |  <
+            // H: 8  | |                    ||                     |  < ----> (SeparatorMaximumHeightInterior)
+            // H: 9  | +--------------------++---------------------+ < ----> (SeparatorMaximumHeight)
+            // H: 10 |
+            //       | where a is the dimension for the first pane upper left corner           (0, SeparatorMinimumHeight                                     (usually 1))
+            //       |   and b is the dimension for the first pane interior upper left corner  (1, SeparatorMinimumHeightInterior                             (usually 2))
+            //       |   and c is the dimension for the second pane upper left corner          (SeparatorHalfConsoleWidth, SeparatorMinimumHeight             (usually 1))
+            //       |   and d is the dimension for the second pane interior upper left corner (SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior (usually 2))
+
+            // First, the horizontal and vertical separators
+            var finalForeColorFirstPane = InteractiveTuiStatus.CurrentPane == 1 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
+            var finalForeColorSecondPane = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
+            part.AddDynamicText(new(() =>
             {
-                _refreshSelection = true;
-                ColorTools.LoadBack(InteractiveTuiStatus.BackgroundColor);
+                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                int SeparatorMinimumHeight = 1;
+                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                var builder = new StringBuilder();
+                builder.Append(finalForeColorFirstPane.VTSequenceForeground);
+                builder.Append(InteractiveTuiStatus.PaneBackgroundColor.VTSequenceBackground);
+                builder.Append(BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior));
+                return builder.ToString();
+            }));
+            part.AddDynamicText(new(() =>
+            {
+                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                int SeparatorMinimumHeight = 1;
+                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                var builder = new StringBuilder();
+                builder.Append(finalForeColorSecondPane.VTSequenceForeground);
+                builder.Append(InteractiveTuiStatus.PaneBackgroundColor.VTSequenceBackground);
+                builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
+                return builder.ToString();
+            }));
 
-                // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
-                // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
-                //
-                //       |  vvvvvvvvvvvvvvvvvvvv  (SeparatorHalfConsoleWidthInterior)
-                //       | v                    v (SeparatorHalfConsoleWidth)
-                // H: 0  |
-                // H: 1  | a--------------------+c---------------------+ < ----> (SeparatorMinimumHeight)
-                // H: 2  | |b                   ||d                    |  < ----> (SeparatorMinimumHeightInterior)
-                // H: 3  | |                    ||                     |  <
-                // H: 4  | |                    ||                     |  <
-                // H: 5  | |                    ||                     |  <
-                // H: 6  | |                    ||                     |  <
-                // H: 7  | |                    ||                     |  <
-                // H: 8  | |                    ||                     |  < ----> (SeparatorMaximumHeightInterior)
-                // H: 9  | +--------------------++---------------------+ < ----> (SeparatorMaximumHeight)
-                // H: 10 |
-                //       | where a is the dimension for the first pane upper left corner           (0, SeparatorMinimumHeight                                     (usually 1))
-                //       |   and b is the dimension for the first pane interior upper left corner  (1, SeparatorMinimumHeightInterior                             (usually 2))
-                //       |   and c is the dimension for the second pane upper left corner          (SeparatorHalfConsoleWidth, SeparatorMinimumHeight             (usually 1))
-                //       |   and d is the dimension for the second pane interior upper left corner (SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior (usually 2))
-
-                // First, the horizontal and vertical separators
-                var finalForeColorFirstPane = InteractiveTuiStatus.CurrentPane == 1 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
-                var finalForeColorSecondPane = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
-                BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane, InteractiveTuiStatus.PaneBackgroundColor);
-                BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor);
-
-                // Render the key bindings
-                ConsoleWrapper.CursorLeft = 0;
-                var finalBindings = new List<InteractiveTuiBinding>(interactiveTui.Bindings)
+            // Populate appropriate bindings, depending on the SecondPaneInteractable value
+            List<InteractiveTuiBinding> finalBindings;
+            if (interactiveTui.Bindings.Count == 0)
+                finalBindings =
+                [
+                    new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null)
+                ];
+            else
+                finalBindings = new(interactiveTui.Bindings)
                 {
-                    new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null),
-                    new InteractiveTuiBinding("Keybindings", ConsoleKey.K, null),
+                    new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null),
+                    new InteractiveTuiBinding(/* Localizable */ "Keybindings", ConsoleKey.K, null),
                 };
+            if (interactiveTui.SecondPaneInteractable)
+                finalBindings.Add(
+                    new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab, null)
+                );
+
+            // Render the key bindings
+            part.AddDynamicText(() =>
+            {
+                var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
                 foreach (InteractiveTuiBinding binding in finalBindings)
                 {
                     // First, check to see if the rendered binding info is going to exceed the console window width
-                    string renderedBinding = $" {binding.BindingKeyName} {binding.BindingName}  ";
-                    bool canDraw = renderedBinding.Length + ConsoleWrapper.CursorLeft < ConsoleWrapper.WindowWidth - 3;
+                    string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {binding.BindingName}  ";
+                    int actualLength = VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()).Length;
+                    bool canDraw = renderedBinding.Length + actualLength < ConsoleWrapper.WindowWidth - 3;
                     if (canDraw)
                     {
-                        TextWriterWhereColor.WriteWhereColorBack($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionBackgroundColor);
-                        TextWriterWhereColor.WriteWhereColorBack($"{binding.BindingName}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.BackgroundColor);
+                        bindingsBuilder.Append(
+                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
+                            GetBindingKeyShortcut(binding, false) +
+                            $"{InteractiveTuiStatus.OptionForegroundColor.VTSequenceForeground}" +
+                            $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
+                            $" {binding.BindingName}  "
+                        );
                     }
                     else
                     {
                         // We can't render anymore, so just break and write a binding to show more
-                        TextWriterWhereColor.WriteWhereColorBack($" K ", ConsoleWrapper.WindowWidth - 3, ConsoleWrapper.WindowHeight - 1, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionBackgroundColor);
+                        bindingsBuilder.Append(
+                            $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
+                            $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
+                            " K "
+                        );
                         break;
                     }
                 }
+                return bindingsBuilder.ToString();
+            });
 
-                // Don't require redraw
-                InteractiveTuiStatus.RedrawRequired = false;
-            }
+            screen.AddBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}", part);
         }
 
-        private static void DrawInteractiveTuiItems(BaseInteractiveTui interactiveTui, int paneNum)
+        private static void DrawInteractiveTuiItems(BaseInteractiveTui interactiveTui, int paneNum, ref Screen screen)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             Debug.Assert(interactiveTui is not null,
                 "attempted to render TUI items on null");
+            Debug.Assert(screen is not null,
+                "attempted to render TUI items on no screen");
 
             // Check to make sure that we're not rendering the second pane on the first-pane-only interactive TUI
             Debug.Assert(!interactiveTui.SecondPaneInteractable && paneNum == 1 || interactiveTui.SecondPaneInteractable,
                 "tried to render interactive TUI items for the secondary pane on an interactive TUI that only allows interaction from one pane.");
 
-            // Get some positions
-            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            int SeparatorMinimumHeightInterior = 2;
-            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+            // Make a screen part
+            var part = new ScreenPart();
 
             // Check the pane number
             if (paneNum < 1)
@@ -312,137 +335,81 @@ namespace Terminaux.Reader.Inputs.Interactive
             int dataCount = CountElements(data);
 
             // Render the pane right away
-            int answersPerPage = SeparatorMaximumHeightInterior;
-            int paneCurrentSelection = paneNum == 2 ? InteractiveTuiStatus.SecondPaneCurrentSelection : InteractiveTuiStatus.FirstPaneCurrentSelection;
-            int currentPage = (paneCurrentSelection - 1) / answersPerPage;
-            int startIndex = answersPerPage * currentPage;
-            for (int i = 0; i <= answersPerPage - 1; i++)
+            part.AddDynamicText(() =>
             {
-                // Populate the first pane
-                string finalEntry = "";
-                int finalIndex = i + startIndex;
-                if (finalIndex <= dataCount - 1)
+                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                int SeparatorMinimumHeightInterior = 2;
+                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                int answersPerPage = SeparatorMaximumHeightInterior;
+                int paneCurrentSelection = paneNum == 2 ? InteractiveTuiStatus.SecondPaneCurrentSelection : InteractiveTuiStatus.FirstPaneCurrentSelection;
+                int currentPage = (paneCurrentSelection - 1) / answersPerPage;
+                int startIndex = answersPerPage * currentPage;
+                var builder = new StringBuilder();
+                for (int i = 0; i <= answersPerPage - 1; i++)
                 {
-                    // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
+                    // Populate the first pane
+                    string finalEntry = "";
+                    int finalIndex = i + startIndex;
                     object dataObject = null;
-                    int steppedItems = 0;
-                    foreach (var item in data)
+                    if (finalIndex <= dataCount - 1)
                     {
-                        steppedItems++;
-                        if (steppedItems == startIndex + i + 1)
+                        // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
+                        int steppedItems = 0;
+                        foreach (var item in data)
                         {
-                            // We found the item that we need! Assign it to dataObject so GetEntryFromItem() can formulate a string.
-                            dataObject = item;
-                            break;
+                            steppedItems++;
+                            if (steppedItems == startIndex + i + 1)
+                            {
+                                // We found the item that we need! Assign it to dataObject so GetEntryFromItem() can formulate a string.
+                                dataObject = item;
+                                break;
+                            }
                         }
-                    }
 
-                    // Here, we're now doing our job
-                    finalEntry = interactiveTui.GetEntryFromItem(dataObject).Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                        // Render an entry
+                        var finalForeColor = finalIndex == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemForeColor : InteractiveTuiStatus.PaneItemForeColor;
+                        var finalBackColor = finalIndex == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemBackColor : InteractiveTuiStatus.PaneItemBackColor;
+                        int leftPos = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
+                        int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
+                        finalEntry = interactiveTui.GetEntryFromItem(dataObject).Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                        string text =
+                            $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, top + 1)}" +
+                            $"{finalForeColor.VTSequenceForeground}" +
+                            $"{finalBackColor.VTSequenceBackground}" +
+                            finalEntry +
+                            new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)) +
+                            $"{InteractiveTuiStatus.PaneItemBackColor.VTSequenceBackground}";
+                        builder.Append(text);
+                    }
                 }
 
-                // Render an entry
-                var finalForeColor = finalIndex == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemForeColor : InteractiveTuiStatus.PaneItemForeColor;
-                var finalBackColor = finalIndex == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemBackColor : InteractiveTuiStatus.PaneItemBackColor;
-                int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
-                int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)), left, top, finalForeColor, finalBackColor);
-                ColorTools.SetConsoleColor(InteractiveTuiStatus.PaneItemBackColor, true);
-            }
+                // Render the vertical bar
+                int left = paneNum == 2 ? (SeparatorHalfConsoleWidthInterior * 2) + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
+                builder.Append(ProgressBarVerticalColor.RenderVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor, false));
+                return builder.ToString();
+            });
 
-            // Render the vertical bar
-            int actualLeft = paneNum == 2 ? (SeparatorHalfConsoleWidthInterior * 2) + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
-            ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), actualLeft, 1, 2, 2, false);
+            screen.AddBufferedPart($"Interactive TUI - Items - {interactiveTui.GetType().Name}", part);
         }
 
-        private static void DrawInteractiveTuiItemsDelta(BaseInteractiveTui interactiveTui, int paneNum, int lastSelection, int currentSelection)
+        private static void DrawInformationOnSecondPane(BaseInteractiveTui interactiveTui, ref Screen screen)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             Debug.Assert(interactiveTui is not null,
                 "attempted to render TUI items on null");
-
-            // Check to make sure that we're not rendering the second pane on the first-pane-only interactive TUI
-            Debug.Assert(!interactiveTui.SecondPaneInteractable && paneNum == 1 || interactiveTui.SecondPaneInteractable,
-                "tried to render interactive TUI items for the secondary pane on an interactive TUI that only allows interaction from one pane.");
-
-            // Get some positions
-            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            int SeparatorMinimumHeightInterior = 2;
-            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-
-            // Check the pane number
-            if (paneNum < 1)
-                paneNum = 1;
-            if (paneNum > 2)
-                paneNum = 2;
-
-            // Get how many data are there in the chosen data source
-            var data = paneNum == 2 ? interactiveTui.SecondaryDataSource : interactiveTui.PrimaryDataSource;
-            int dataCount = CountElements(data);
-
-            // Render the pane right away
-            int answersPerPage = SeparatorMaximumHeightInterior;
-            int paneCurrentSelection = paneNum == 2 ? InteractiveTuiStatus.SecondPaneCurrentSelection : InteractiveTuiStatus.FirstPaneCurrentSelection;
-            int currentPage = (paneCurrentSelection - 1) / answersPerPage;
-            int startIndex = answersPerPage * currentPage;
-            int[] indexes = [lastSelection, currentSelection];
-            for (int i = 0; i < indexes.Length; i++)
-            {
-                // Populate the first pane with changes
-                int index = indexes[i] - 1 < 0 ? 0 : indexes[i] - 1;
-                string finalEntry = "";
-                if (index <= dataCount - 1)
-                {
-                    // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
-                    object dataObject = null;
-                    int steppedItems = 0;
-                    foreach (var item in data)
-                    {
-                        steppedItems++;
-                        if (steppedItems == index + 1)
-                        {
-                            // We found the item that we need! Assign it to dataObject so GetEntryFromItem() can formulate a string.
-                            dataObject = item;
-                            break;
-                        }
-                    }
-
-                    // Here, we're now doing our job
-                    finalEntry = interactiveTui.GetEntryFromItem(dataObject).Truncate(SeparatorHalfConsoleWidthInterior - 4);
-                }
-
-                // Render an entry
-                var finalForeColor = index == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemForeColor : InteractiveTuiStatus.PaneItemForeColor;
-                var finalBackColor = index == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemBackColor : InteractiveTuiStatus.PaneItemBackColor;
-                int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
-                int top = SeparatorMinimumHeightInterior + index - startIndex;
-                if (top > 0)
-                    TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)), left, top, finalForeColor, finalBackColor);
-                ColorTools.SetConsoleColor(InteractiveTuiStatus.PaneItemBackColor, true);
-            }
-
-            // Render the vertical bar
-            int actualLeft = paneNum == 2 ? (SeparatorHalfConsoleWidthInterior * 2) + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
-            ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), actualLeft, 1, 2, 2, false);
-            _refreshSelection = false;
-        }
-
-        private static void DrawInformationOnSecondPane(BaseInteractiveTui interactiveTui)
-        {
-            // Check to make sure that we don't get nulls on interactiveTui
-            Debug.Assert(interactiveTui is not null,
-                "attempted to render TUI items on null");
+            Debug.Assert(screen is not null,
+                "attempted to render TUI items on no screen");
 
             // Check to make sure that we're not rendering the information pane on the both-panes interactive TUI
             Debug.Assert(!interactiveTui.SecondPaneInteractable,
                 "tried to render information the secondary pane on an interactive TUI that allows interaction from two panes, messing the selection rendering up there.");
+            // Make a screen part
+            var part = new ScreenPart();
 
             // Populate some positions
             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            int SeparatorMinimumHeight = 1;
-            int SeparatorMinimumHeightInterior = 2;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
             // Populate some colors
@@ -471,7 +438,9 @@ namespace Terminaux.Reader.Inputs.Interactive
                     finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
                 }
                 else
+                {
                     finalInfoRendered = "No info.";
+                }
             }
             catch
             {
@@ -480,27 +449,49 @@ namespace Terminaux.Reader.Inputs.Interactive
 
             // Now, write info
             var finalForeColorSecondPane = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
-            BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor);
-            _finalInfoRendered = finalInfoRendered;
-            string[] finalInfoStrings = TextTools.GetWrappedSentences(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
-            for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)
+            part.AddDynamicText(() =>
             {
-                // Check to see if the info is overpopulated
-                if (infoIndex >= SeparatorMaximumHeightInterior - 1)
-                {
-                    string truncated = "Shift+I = more info";
-                    TextWriterWhereColor.WriteWhereColorBack(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
-                    break;
-                }
+                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                int SeparatorMinimumHeight = 1;
+                int SeparatorMinimumHeightInterior = 2;
+                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                var builder = new StringBuilder();
+                builder.Append(finalForeColorSecondPane.VTSequenceForeground);
+                builder.Append(InteractiveTuiStatus.PaneBackgroundColor.VTSequenceBackground);
+                builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
 
-                // Now, render the info
-                string finalInfo = finalInfoStrings[infoIndex];
-                TextWriterWhereColor.WriteWhereColorBack(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
-            }
+                _finalInfoRendered = finalInfoRendered;
+                string[] finalInfoStrings = TextTools.GetWrappedSentences(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
+                for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)
+                {
+                    // Check to see if the info is overpopulated
+                    if (infoIndex >= SeparatorMaximumHeightInterior - 1)
+                    {
+                        string truncated = "Shift+I = more info";
+                        builder.Append(ForegroundColor.VTSequenceForeground);
+                        builder.Append(PaneItemBackColor.VTSequenceBackground);
+                        builder.Append(TextWriterWhereColor.RenderWherePlain(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
+                        break;
+                    }
+
+                    // Now, render the info
+                    string finalInfo = finalInfoStrings[infoIndex];
+                    builder.Append(ForegroundColor.VTSequenceForeground);
+                    builder.Append(PaneItemBackColor.VTSequenceBackground);
+                    builder.Append(TextWriterWhereColor.RenderWherePlain(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
+                }
+                return builder.ToString();
+            });
+
+            screen.AddBufferedPart($"Interactive TUI - Info (2nd pane) - {interactiveTui.GetType().Name}", part);
         }
 
-        private static void DrawStatus(BaseInteractiveTui interactiveTui)
+        private static void DrawStatus(BaseInteractiveTui interactiveTui, ref Screen screen)
         {
+            // Make a screen part
+            var part = new ScreenPart();
+
             // Populate some necessary variables
             int paneCurrentSelection = InteractiveTuiStatus.CurrentPane == 2 ?
                                        InteractiveTuiStatus.SecondPaneCurrentSelection :
@@ -512,8 +503,16 @@ namespace Terminaux.Reader.Inputs.Interactive
             interactiveTui.RenderStatus(selectedData);
 
             // Now, write info
-            TextWriterWhereColor.WriteWhereColorBack(InteractiveTuiStatus.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, InteractiveTuiStatus.ForegroundColor, InteractiveTuiStatus.BackgroundColor);
-            ConsoleExtensions.ClearLineToRight();
+            part.AddDynamicText(() =>
+            {
+                var builder = new StringBuilder();
+                builder.Append(InteractiveTuiStatus.ForegroundColor.VTSequenceForeground);
+                builder.Append(InteractiveTuiStatus.BackgroundColor.VTSequenceBackground);
+                builder.Append(TextWriterWhereColor.RenderWherePlain(InteractiveTuiStatus.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0));
+                builder.Append(ConsoleExtensions.GetClearLineToRightSequence());
+                return builder.ToString();
+            });
+            screen.AddBufferedPart($"Interactive TUI - Status - {interactiveTui.GetType().Name}", part);
         }
 
         private static void RespondToUserInput(BaseInteractiveTui interactiveTui)
@@ -530,6 +529,7 @@ namespace Terminaux.Reader.Inputs.Interactive
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
             int dataCount = CountElements(data);
+            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
             // Populate selected data
             object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
@@ -558,43 +558,66 @@ namespace Terminaux.Reader.Inputs.Interactive
                         else
                             SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
                         break;
-                    case ConsoleKey.PageUp:
+                    case ConsoleKey.Home:
                         SelectionMovement(interactiveTui, 1);
                         break;
-                    case ConsoleKey.PageDown:
+                    case ConsoleKey.End:
                         SelectionMovement(interactiveTui, dataCount);
+                        break;
+                    case ConsoleKey.PageUp:
+                        {
+                            int answersPerPage = SeparatorMaximumHeightInterior;
+                            int currentPage = (paneCurrentSelection - 1) / answersPerPage;
+                            int startIndex = answersPerPage * currentPage;
+                            SelectionMovement(interactiveTui, startIndex);
+                        }
+                        break;
+                    case ConsoleKey.PageDown:
+                        {
+                            int answersPerPage = SeparatorMaximumHeightInterior;
+                            int currentPage = (paneCurrentSelection - 1) / answersPerPage;
+                            int startIndex = answersPerPage * (currentPage + 1) + 1;
+                            SelectionMovement(interactiveTui, startIndex);
+                        }
                         break;
                     case ConsoleKey.I:
                         if (pressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) && !string.IsNullOrEmpty(_finalInfoRendered))
                         {
                             // User needs more information in the infobox
                             InfoBoxColor.WriteInfoBoxColorBack(_finalInfoRendered, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
-                            InteractiveTuiStatus.RedrawRequired = true;
                         }
                         break;
                     case ConsoleKey.K:
+                        // First, check the bindings length
+                        var bindings = interactiveTui.Bindings;
+                        if (bindings.Count == 0)
+                            break;
+
                         // User needs an infobox that shows all available keys
                         string section = "Available keys";
-                        var bindings = interactiveTui.Bindings;
                         int maxBindingLength = bindings
-                            .Max((itb) => $"[{itb.BindingKeyName}]".Length);
+                            .Max((itb) => GetBindingKeyShortcut(itb).Length);
                         string[] bindingRepresentations = bindings
-                            .Select((itb) => $"{$"[{itb.BindingKeyName}]" + new string(' ', maxBindingLength - $"[{itb.BindingKeyName}]".Length) + $" | {itb.BindingName}"}")
+                            .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - GetBindingKeyShortcut(itb).Length) + $" | {itb.BindingName}"}")
                             .ToArray();
                         InfoBoxColor.WriteInfoBoxColorBack(
-                            $"{section}{ConsolePlatform.NewLine}" +
-                            $"{new string('=', section.Length)}{ConsolePlatform.NewLine}{ConsolePlatform.NewLine}" +
+                            $"{section}{CharManager.NewLine}" +
+                            $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                             $"{string.Join("\n", bindingRepresentations)}"
                         , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
-                        InteractiveTuiStatus.RedrawRequired = true;
                         break;
                     case ConsoleKey.Escape:
                         // User needs to exit
                         interactiveTui.HandleExit();
                         interactiveTui.isExiting = true;
                         break;
+                    case ConsoleKey.Tab:
+                        // User needs to switch sides
+                        SwitchSides(interactiveTui);
+                        break;
                     default:
-                        var implementedBindings = interactiveTui.Bindings.Where((binding) => binding.BindingKeyName == pressedKey.Key);
+                        var implementedBindings = interactiveTui.Bindings.Where((binding) =>
+                            binding.BindingKeyName == pressedKey.Key && binding.BindingKeyModifiers == pressedKey.Modifiers);
                         foreach (var implementedBinding in implementedBindings)
                             implementedBinding.BindingAction.Invoke(selectedData, paneCurrentSelection - 1);
                         break;
@@ -612,6 +635,22 @@ namespace Terminaux.Reader.Inputs.Interactive
                 InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
             if (InteractiveTuiStatus.SecondPaneCurrentSelection <= 0 && CountElements(interactiveTui.SecondaryDataSource) > 0)
                 InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
+        }
+
+        private static string GetBindingKeyShortcut(InteractiveTuiBinding bind, bool mark = true)
+        {
+            string markStart = mark ? "[" : " ";
+            string markEnd = mark ? "]" : " ";
+            return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
+        }
+
+        private static void SwitchSides(BaseInteractiveTui interactiveTui)
+        {
+            if (!interactiveTui.SecondPaneInteractable)
+                return;
+            InteractiveTuiStatus.CurrentPane++;
+            if (InteractiveTuiStatus.CurrentPane > 2)
+                InteractiveTuiStatus.CurrentPane = 1;
         }
     }
 }

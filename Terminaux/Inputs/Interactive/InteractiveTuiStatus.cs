@@ -23,10 +23,6 @@ namespace Terminaux.Reader.Inputs.Interactive
     internal static class InteractiveTuiStatus
     {
         /// <summary>
-        /// Whether redrawing is required
-        /// </summary>
-        public static bool RedrawRequired { get; set; } = true;
-        /// <summary>
         /// Current selection for the first pane
         /// </summary>
         public static int FirstPaneCurrentSelection { get; set; } = 1;

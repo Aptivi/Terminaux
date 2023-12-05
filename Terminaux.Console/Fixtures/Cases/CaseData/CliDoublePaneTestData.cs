@@ -33,8 +33,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
             new InteractiveTuiBinding("Add",         ConsoleKey.F1,  (_, index) => Add(index)),
             new InteractiveTuiBinding("Delete",      ConsoleKey.F2,  (_, index) => Remove(index)),
             new InteractiveTuiBinding("Delete Last", ConsoleKey.F3,  (_, _)     => RemoveLast()),
-            new InteractiveTuiBinding("Redraw",      ConsoleKey.F4,  (_, _)     => InteractiveTuiStatus.RedrawRequired = true),
-            new InteractiveTuiBinding("Switch",      ConsoleKey.Tab, (_, _)     => Switch()),
         ];
 
         /// <inheritdoc/>
@@ -77,7 +75,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
                 strings2.Add($"[{index}] --2-- [{index}]");
             else
                 strings.Add($"[{index}] --1-- [{index}]");
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void Remove(int index)
@@ -96,7 +93,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
                 if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
                     InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
             }
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void RemoveLast()
@@ -113,15 +109,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
                 if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
                     InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
             }
-            InteractiveTuiTools.ForceRefreshSelection();
-        }
-
-        private static void Switch()
-        {
-            InteractiveTuiStatus.CurrentPane++;
-            if (InteractiveTuiStatus.CurrentPane > 2)
-                InteractiveTuiStatus.CurrentPane = 1;
-            InteractiveTuiStatus.RedrawRequired = true;
         }
     }
 }

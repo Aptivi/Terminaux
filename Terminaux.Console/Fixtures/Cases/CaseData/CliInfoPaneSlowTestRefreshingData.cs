@@ -33,7 +33,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
             new InteractiveTuiBinding("Add",         ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]")),
             new InteractiveTuiBinding("Delete",      ConsoleKey.F2, (_, index) => strings.RemoveAt(index)),
             new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _)     => strings.RemoveAt(strings.Count - 1)),
-            new InteractiveTuiBinding("Redraw",      ConsoleKey.F4, (_, _)     => InteractiveTuiStatus.RedrawRequired = true),
         ];
 
         /// <inheritdoc/>
@@ -47,10 +46,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
         /// <inheritdoc/>
         public override bool AcceptsEmptyData =>
             true;
-
-        /// <inheritdoc/>
-        public override bool FastRefresh =>
-            false;
 
         /// <inheritdoc/>
         public override string GetInfoFromItem(object item)

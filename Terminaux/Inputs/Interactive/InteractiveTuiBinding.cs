@@ -27,23 +27,33 @@ namespace Terminaux.Reader.Inputs.Interactive
     {
         private readonly string _bindingName;
         private readonly ConsoleKey _bindingKeyName;
+        private readonly ConsoleModifiers _bindingKeyModifiers;
         private readonly Action<object, int> _bindingAction;
 
         /// <summary>
         /// Key binding name
         /// </summary>
-        public string BindingName { get => _bindingName; }
+        public string BindingName =>
+            _bindingName;
 
         /// <summary>
         /// Which key is bound to the action?
         /// </summary>
-        public ConsoleKey BindingKeyName { get => _bindingKeyName; }
+        public ConsoleKey BindingKeyName =>
+            _bindingKeyName;
+
+        /// <summary>
+        /// Which key is bound to the action?
+        /// </summary>
+        public ConsoleModifiers BindingKeyModifiers =>
+            _bindingKeyModifiers;
 
         /// <summary>
         /// The action to execute.
         /// The integer argument denotes the currently selected data
         /// </summary>
-        public Action<object, int> BindingAction { get => _bindingAction; }
+        public Action<object, int> BindingAction =>
+            _bindingAction;
 
         /// <summary>
         /// Makes a new instance of an interactive TUI key binding
@@ -51,10 +61,22 @@ namespace Terminaux.Reader.Inputs.Interactive
         /// <param name="bindingName">Key binding name</param>
         /// <param name="bindingKeyName">Which key is bound to the action?</param>
         /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
-        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int> bindingAction)
+        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int> bindingAction) :
+            this(bindingName, bindingKeyName, default, bindingAction)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of an interactive TUI key binding
+        /// </summary>
+        /// <param name="bindingName">Key binding name</param>
+        /// <param name="bindingKeyName">Which key is bound to the action?</param>
+        /// <param name="bindingKeyModifiers">Which modifiers of the key is bound to the action?</param>
+        /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
+        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers, Action<object, int> bindingAction)
         {
             _bindingName = bindingName;
             _bindingKeyName = bindingKeyName;
+            _bindingKeyModifiers = bindingKeyModifiers;
             _bindingAction = bindingAction;
         }
     }

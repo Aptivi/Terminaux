@@ -33,7 +33,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
             new InteractiveTuiBinding("Add",         ConsoleKey.F1, (_, index) => Add(index)),
             new InteractiveTuiBinding("Delete",      ConsoleKey.F2, (_, index) => Remove(index)),
             new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _)     => RemoveLast()),
-            new InteractiveTuiBinding("Redraw",      ConsoleKey.F4, (_, _)     => InteractiveTuiStatus.RedrawRequired = true),
         ];
 
         /// <inheritdoc/>
@@ -75,19 +74,16 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
         private static void Add(int index)
         {
             strings.Add($"[{index}] --+-- [{index}]");
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void Remove(int index)
         {
             strings.RemoveAt(index);
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void RemoveLast()
         {
             strings.RemoveAt(strings.Count - 1);
-            InteractiveTuiTools.ForceRefreshSelection();
         }
     }
 }

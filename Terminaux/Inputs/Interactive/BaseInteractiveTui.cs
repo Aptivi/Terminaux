@@ -27,6 +27,7 @@ namespace Terminaux.Reader.Inputs.Interactive
     /// </summary>
     public class BaseInteractiveTui : IInteractiveTui
     {
+        internal static List<BaseInteractiveTui> instance = [];
         internal bool isExiting = false;
 
         /// <inheritdoc/>
@@ -37,21 +38,27 @@ namespace Terminaux.Reader.Inputs.Interactive
         public virtual int RefreshInterval => 0;
         /// <inheritdoc/>
         public virtual bool AcceptsEmptyData => false;
-        /// <inheritdoc/>
-        public virtual bool FastRefresh => true;
 
         /// <inheritdoc/>
         public virtual IEnumerable PrimaryDataSource => Array.Empty<string>();
         /// <inheritdoc/>
         public virtual IEnumerable SecondaryDataSource => Array.Empty<string>();
 
+        /// <summary>
+        /// The interactive TUI instance
+        /// </summary>
+        public static BaseInteractiveTui Instance =>
+            instance.Count > 0 ?
+            instance[instance.Count - 1] :
+            null;
+
         /// <inheritdoc/>
         public virtual string GetEntryFromItem(object item) =>
-            item is not null ? item.ToString() : "???";
+            item is not null ? item.ToString() : "";
 
         /// <inheritdoc/>
         public virtual string GetInfoFromItem(object item) =>
-            item is not null ? "No info." : "???";
+            item is not null ? "No info." : "";
 
         /// <inheritdoc/>
         public virtual void HandleExit() { }
