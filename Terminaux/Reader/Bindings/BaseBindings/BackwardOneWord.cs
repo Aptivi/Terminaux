@@ -53,10 +53,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             }
 
             // Deterministically change position
-            if (state.OneLineWrap)
-                PositioningTools.GoBackOneLineWrapAware(steps, ref state);
-            else
-                PositioningTools.GoBack(steps, ref state);
+            PositioningTools.GoBack(steps, ref state);
         }
     }
 }

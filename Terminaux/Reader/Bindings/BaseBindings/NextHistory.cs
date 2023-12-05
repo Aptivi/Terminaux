@@ -54,7 +54,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 string renderedBlanks = new(' ', longestSentenceLength);
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 ConsoleWrapper.Write(renderedBlanks, state.settings);
-                PositioningTools.SeekToOneLineWrapAware(0, ref state);
+                PositioningTools.SeekTo(0, ref state);
                 state.currentTextPos = 0;
                 state.currentCursorPosLeft = state.InputPromptLeft;
                 state.currentCursorPosTop = state.InputPromptTop;

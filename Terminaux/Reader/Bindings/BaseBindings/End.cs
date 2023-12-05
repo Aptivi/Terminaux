@@ -39,10 +39,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 return;
 
             // Just set the positions to the maximum!
-            if (state.OneLineWrap)
-                PositioningTools.GoRightmostOneLineWrapAware(ref state);
-            else
-                PositioningTools.GoRightmost(ref state);
+            PositioningTools.GoRightmost(ref state);
         }
     }
 }

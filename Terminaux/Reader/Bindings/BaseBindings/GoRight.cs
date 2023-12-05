@@ -39,10 +39,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 return;
 
             // Just set the position one character further than the input start position!
-            if (state.OneLineWrap)
-                PositioningTools.GoForwardOneLineWrapAware(ref state);
-            else
-                PositioningTools.GoForward(ref state);
+            PositioningTools.GoForward(ref state);
         }
     }
 }

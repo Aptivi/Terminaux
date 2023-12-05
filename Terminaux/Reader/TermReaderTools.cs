@@ -140,7 +140,7 @@ namespace Terminaux.Reader
                 if (step)
                 {
                     PositioningTools.HandleTopChangeForInput(ref state);
-                    PositioningTools.GoForward(newText.Length, ref state);
+                    PositioningTools.GoForwardOneLineWrapDisabled(newText.Length, ref state);
                     int length = GetMaximumInputLength(state);
                     if (renderedText.Length == length)
                     {
@@ -203,9 +203,9 @@ namespace Terminaux.Reader
                 if (steps > 0)
                 {
                     if (backward)
-                        PositioningTools.GoBack(steps, ref state);
+                        PositioningTools.GoBackOneLineWrapDisabled(steps, ref state);
                     else
-                        PositioningTools.GoForward(steps, ref state);
+                        PositioningTools.GoForwardOneLineWrapDisabled(steps, ref state);
                 }
             }
             PositioningTools.Commit(state);

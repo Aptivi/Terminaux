@@ -79,40 +79,28 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
             renderedText = state.OneLineWrap ? TermReaderTools.GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-            if (state.OneLineWrap)
-                PositioningTools.SeekToOneLineWrapAware(renderedText.Length, ref state);
-            else
-                PositioningTools.SeekTo(renderedText.Length, ref state);
+            PositioningTools.SeekTo(renderedText.Length, ref state);
             Console.BackgroundColor = ConsoleColor.Blue;
             PositioningTools.Commit(state);
             ConsoleWrapper.Write("S", state.settings);
             Thread.Sleep(1000);
 
             // Verify seek to 0
-            if (state.OneLineWrap)
-                PositioningTools.SeekToOneLineWrapAware(0, ref state);
-            else
-                PositioningTools.SeekTo(0, ref state);
+            PositioningTools.SeekTo(0, ref state);
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             PositioningTools.Commit(state);
             ConsoleWrapper.Write("Z", state.settings);
             Thread.Sleep(1000);
 
             // Verify going forward 5 times
-            if (state.OneLineWrap)
-                PositioningTools.GoForwardOneLineWrapAware(5, ref state);
-            else
-                PositioningTools.GoForward(5, ref state);
+            PositioningTools.GoForward(5, ref state);
             Console.BackgroundColor = ConsoleColor.Magenta;
             PositioningTools.Commit(state);
             ConsoleWrapper.Write("5", state.settings);
             Thread.Sleep(1000);
 
             // Verify going backward 3 times
-            if (state.OneLineWrap)
-                PositioningTools.GoBackOneLineWrapAware(3, ref state);
-            else
-                PositioningTools.GoBack(3, ref state);
+            PositioningTools.GoBack(3, ref state);
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
             PositioningTools.Commit(state);
             ConsoleWrapper.Write("3", state.settings);

@@ -39,10 +39,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 return;
 
             // Just set the positions to zero!
-            if (state.OneLineWrap)
-                PositioningTools.GoLeftmostOneLineWrapAware(ref state);
-            else
-                PositioningTools.GoLeftmost(ref state);
+            PositioningTools.GoLeftmost(ref state);
         }
     }
 }

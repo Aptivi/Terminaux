@@ -21,18 +21,133 @@ using Terminaux.Reader.Bindings.BaseBindings;
 
 namespace Terminaux.Reader.Tools
 {
-    internal static class PositioningTools
+    /// <summary>
+    /// Positioning tools for the console input reader
+    /// </summary>
+    public static class PositioningTools
     {
-        internal static void GoLeftmost(ref TermReaderState state) =>
-            GoBack(state.currentTextPos, ref state);
+        /// <summary>
+        /// Goes to the beginning of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// </summary>
+        /// <param name="state">State of the terminal reader in its present state</param>
+        public static void GoLeftmost(ref TermReaderState state)
+        {
+            if (state.OneLineWrap)
+                GoLeftmostOneLineWrapAware(ref state);
+            else
+                GoLeftmostOneLineWrapDisabled(ref state);
+        }
+
+        /// <summary>
+        /// Goes to the end of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// </summary>
+        /// <param name="state">State of the terminal reader in its present state</param>
+        public static void GoRightmost(ref TermReaderState state)
+        {
+            if (state.OneLineWrap)
+                GoRightmostOneLineWrapAware(ref state);
+            else
+                GoRightmostOneLineWrapDisabled(ref state);
+        }
+
+        /// <summary>
+        /// Goes one step closer to the end of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// </summary>
+        /// <param name="state">State of the terminal reader in its present state</param>
+        public static void GoForward(ref TermReaderState state)
+        {
+            if (state.OneLineWrap)
+                GoForwardOneLineWrapAware(ref state);
+            else
+                GoForwardOneLineWrapDisabled(ref state);
+        }
+
+        /// <summary>
+        /// Goes to the number of <paramref name="steps"/> closer to the end of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// </summary>
+        /// <param name="steps">The number of steps to go closer to the end of the text</param>
+        /// <param name="state">State of the terminal reader in its present state</param>
+        public static void GoForward(int steps, ref TermReaderState state)
+        {
+            if (state.OneLineWrap)
+                GoForwardOneLineWrapAware(steps, ref state);
+            else
+                GoForwardOneLineWrapDisabled(steps, ref state);
+        }
+
+        /// <summary>
+        /// Goes one step closer to the beginning of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// </summary>
+        /// <param name="state">State of the terminal reader in its present state</param>
+        public static void GoBack(ref TermReaderState state)
+        {
+            if (state.OneLineWrap)
+                GoBackOneLineWrapAware(ref state);
+            else
+                GoBackOneLineWrapDisabled(ref state);
+        }
+
+        /// <summary>
+        /// Goes to the number of <paramref name="steps"/> closer to the beginning of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// </summary>
+        /// <param name="steps">The number of steps to go closer to the beginning of the text</param>
+        /// <param name="state">State of the terminal reader in its present state</param>
+        public static void GoBack(int steps, ref TermReaderState state)
+        {
+            if (state.OneLineWrap)
+                GoBackOneLineWrapAware(steps, ref state);
+            else
+                GoBackOneLineWrapDisabled(steps, ref state);
+        }
+
+        /// <summary>
+        /// Seeks to the selected text position number, <paramref name="pos"/> (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// </summary>
+        /// <param name="pos">The text position number (zero-based)</param>
+        /// <param name="state">State of the terminal reader in its present state</param>
+        public static void SeekTo(int pos, ref TermReaderState state)
+        {
+            if (state.OneLineWrap)
+                SeekToOneLineWrapAware(pos, ref state);
+            else
+                SeekToOneLineWrapDisabled(pos, ref state);
+        }
+
+        /// <summary>
+        /// Seeks to the selected text position number, <paramref name="pos"/> (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// </summary>
+        /// <param name="fromPos">The text position number offset (zero-based)</param>
+        /// <param name="pos">The text position number (zero-based)</param>
+        /// <param name="state">State of the terminal reader in its present state</param>
+        public static void SeekTo(int fromPos, int pos, ref TermReaderState state)
+        {
+            if (state.OneLineWrap)
+                SeekToOneLineWrapAware(fromPos, pos, ref state);
+            else
+                SeekToOneLineWrapDisabled(fromPos, pos, ref state);
+        }
+
+        /// <summary>
+        /// Commits the positional changes by changing the cursor dimensions to the current position according to the reader state
+        /// </summary>
+        /// <param name="state">State of the terminal reader in its present state</param>
+        /// <remarks>
+        /// You don't need to call this function most of the time, except if you want to show the cursor changes or if you want to write directly to that position.
+        /// </remarks>
+        public static void Commit(TermReaderState state) =>
+            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+
+        #region Actual functions
+        internal static void GoLeftmostOneLineWrapDisabled(ref TermReaderState state) =>
+            GoBackOneLineWrapDisabled(state.currentTextPos, ref state);
         
-        internal static void GoRightmost(ref TermReaderState state) =>
-            GoForward(state.currentText.Length - state.currentTextPos, ref state);
+        internal static void GoRightmostOneLineWrapDisabled(ref TermReaderState state) =>
+            GoForwardOneLineWrapDisabled(state.currentText.Length - state.currentTextPos, ref state);
 
-        internal static void GoForward(ref TermReaderState state) =>
-            GoForward(1, ref state);
+        internal static void GoForwardOneLineWrapDisabled(ref TermReaderState state) =>
+            GoForwardOneLineWrapDisabled(1, ref state);
 
-        internal static void GoForward(int steps, ref TermReaderState state)
+        internal static void GoForwardOneLineWrapDisabled(int steps, ref TermReaderState state)
         {
             if (steps > state.currentText.Length - state.currentTextPos)
                 steps = state.currentText.Length - state.currentTextPos;
@@ -57,10 +172,10 @@ namespace Terminaux.Reader.Tools
             }
         }
 
-        internal static void GoBack(ref TermReaderState state) =>
-            GoBack(1, ref state);
+        internal static void GoBackOneLineWrapDisabled(ref TermReaderState state) =>
+            GoBackOneLineWrapDisabled(1, ref state);
 
-        internal static void GoBack(int steps, ref TermReaderState state)
+        internal static void GoBackOneLineWrapDisabled(int steps, ref TermReaderState state)
         {
             if (steps > state.currentTextPos)
                 steps = state.currentTextPos;
@@ -85,14 +200,6 @@ namespace Terminaux.Reader.Tools
             }
         }
 
-        internal static void SeekTo(int steps, ref TermReaderState state) =>
-            SeekTo(state.currentTextPos, steps, ref state);
-
-        internal static void SeekTo(int fromPos, int steps, ref TermReaderState state)
-        {
-            GoBack(fromPos, ref state);
-            GoForward(steps, ref state);
-        }
         internal static void GoLeftmostOneLineWrapAware(ref TermReaderState state) =>
             GoBackOneLineWrapAware(state.currentTextPos, ref state);
 
@@ -153,6 +260,15 @@ namespace Terminaux.Reader.Tools
             }
         }
 
+        internal static void SeekToOneLineWrapDisabled(int steps, ref TermReaderState state) =>
+            SeekToOneLineWrapDisabled(state.currentTextPos, steps, ref state);
+
+        internal static void SeekToOneLineWrapDisabled(int fromPos, int steps, ref TermReaderState state)
+        {
+            GoBackOneLineWrapDisabled(fromPos, ref state);
+            GoForwardOneLineWrapDisabled(steps, ref state);
+        }
+
         internal static void SeekToOneLineWrapAware(int steps, ref TermReaderState state) =>
             SeekToOneLineWrapAware(state.currentTextPos, steps, ref state);
 
@@ -161,9 +277,6 @@ namespace Terminaux.Reader.Tools
             GoBackOneLineWrapAware(fromPos, ref state);
             GoForwardOneLineWrapAware(steps, ref state);
         }
-
-        internal static void Commit(TermReaderState state) =>
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
 
         internal static void HandleTopChangeForInput(ref TermReaderState state)
         {
@@ -194,5 +307,6 @@ namespace Terminaux.Reader.Tools
             state.inputPromptTop = promptTop;
             state.currentCursorPosTop -= promptTopOld - promptTop;
         }
+        #endregion
     }
 }
