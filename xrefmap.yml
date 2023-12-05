@@ -10118,6 +10118,138 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderTools.SetHistory
   nameWithType: TermReaderTools.SetHistory
+- uid: Terminaux.Reader.Tools
+  name: Terminaux.Reader.Tools
+  href: api/Terminaux.Reader.Tools.html
+  commentId: N:Terminaux.Reader.Tools
+  fullName: Terminaux.Reader.Tools
+  nameWithType: Terminaux.Reader.Tools
+- uid: Terminaux.Reader.Tools.PositioningTools
+  name: PositioningTools
+  href: api/Terminaux.Reader.Tools.PositioningTools.html
+  commentId: T:Terminaux.Reader.Tools.PositioningTools
+  fullName: Terminaux.Reader.Tools.PositioningTools
+  nameWithType: PositioningTools
+- uid: Terminaux.Reader.Tools.PositioningTools.Commit(Terminaux.Reader.TermReaderState)
+  name: Commit(TermReaderState)
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_Commit_Terminaux_Reader_TermReaderState_
+  commentId: M:Terminaux.Reader.Tools.PositioningTools.Commit(Terminaux.Reader.TermReaderState)
+  fullName: Terminaux.Reader.Tools.PositioningTools.Commit(Terminaux.Reader.TermReaderState)
+  nameWithType: PositioningTools.Commit(TermReaderState)
+- uid: Terminaux.Reader.Tools.PositioningTools.Commit*
+  name: Commit
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_Commit_
+  commentId: Overload:Terminaux.Reader.Tools.PositioningTools.Commit
+  isSpec: "True"
+  fullName: Terminaux.Reader.Tools.PositioningTools.Commit
+  nameWithType: PositioningTools.Commit
+- uid: Terminaux.Reader.Tools.PositioningTools.GoBack(System.Int32,Terminaux.Reader.TermReaderState@)
+  name: GoBack(int, ref TermReaderState)
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_GoBack_System_Int32_Terminaux_Reader_TermReaderState__
+  commentId: M:Terminaux.Reader.Tools.PositioningTools.GoBack(System.Int32,Terminaux.Reader.TermReaderState@)
+  name.vb: GoBack(Integer, TermReaderState)
+  fullName: Terminaux.Reader.Tools.PositioningTools.GoBack(int, ref Terminaux.Reader.TermReaderState)
+  fullName.vb: Terminaux.Reader.Tools.PositioningTools.GoBack(Integer, Terminaux.Reader.TermReaderState)
+  nameWithType: PositioningTools.GoBack(int, ref TermReaderState)
+  nameWithType.vb: PositioningTools.GoBack(Integer, TermReaderState)
+- uid: Terminaux.Reader.Tools.PositioningTools.GoBack(Terminaux.Reader.TermReaderState@)
+  name: GoBack(ref TermReaderState)
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_GoBack_Terminaux_Reader_TermReaderState__
+  commentId: M:Terminaux.Reader.Tools.PositioningTools.GoBack(Terminaux.Reader.TermReaderState@)
+  name.vb: GoBack(TermReaderState)
+  fullName: Terminaux.Reader.Tools.PositioningTools.GoBack(ref Terminaux.Reader.TermReaderState)
+  fullName.vb: Terminaux.Reader.Tools.PositioningTools.GoBack(Terminaux.Reader.TermReaderState)
+  nameWithType: PositioningTools.GoBack(ref TermReaderState)
+  nameWithType.vb: PositioningTools.GoBack(TermReaderState)
+- uid: Terminaux.Reader.Tools.PositioningTools.GoBack*
+  name: GoBack
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_GoBack_
+  commentId: Overload:Terminaux.Reader.Tools.PositioningTools.GoBack
+  isSpec: "True"
+  fullName: Terminaux.Reader.Tools.PositioningTools.GoBack
+  nameWithType: PositioningTools.GoBack
+- uid: Terminaux.Reader.Tools.PositioningTools.GoForward(System.Int32,Terminaux.Reader.TermReaderState@)
+  name: GoForward(int, ref TermReaderState)
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_GoForward_System_Int32_Terminaux_Reader_TermReaderState__
+  commentId: M:Terminaux.Reader.Tools.PositioningTools.GoForward(System.Int32,Terminaux.Reader.TermReaderState@)
+  name.vb: GoForward(Integer, TermReaderState)
+  fullName: Terminaux.Reader.Tools.PositioningTools.GoForward(int, ref Terminaux.Reader.TermReaderState)
+  fullName.vb: Terminaux.Reader.Tools.PositioningTools.GoForward(Integer, Terminaux.Reader.TermReaderState)
+  nameWithType: PositioningTools.GoForward(int, ref TermReaderState)
+  nameWithType.vb: PositioningTools.GoForward(Integer, TermReaderState)
+- uid: Terminaux.Reader.Tools.PositioningTools.GoForward(Terminaux.Reader.TermReaderState@)
+  name: GoForward(ref TermReaderState)
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_GoForward_Terminaux_Reader_TermReaderState__
+  commentId: M:Terminaux.Reader.Tools.PositioningTools.GoForward(Terminaux.Reader.TermReaderState@)
+  name.vb: GoForward(TermReaderState)
+  fullName: Terminaux.Reader.Tools.PositioningTools.GoForward(ref Terminaux.Reader.TermReaderState)
+  fullName.vb: Terminaux.Reader.Tools.PositioningTools.GoForward(Terminaux.Reader.TermReaderState)
+  nameWithType: PositioningTools.GoForward(ref TermReaderState)
+  nameWithType.vb: PositioningTools.GoForward(TermReaderState)
+- uid: Terminaux.Reader.Tools.PositioningTools.GoForward*
+  name: GoForward
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_GoForward_
+  commentId: Overload:Terminaux.Reader.Tools.PositioningTools.GoForward
+  isSpec: "True"
+  fullName: Terminaux.Reader.Tools.PositioningTools.GoForward
+  nameWithType: PositioningTools.GoForward
+- uid: Terminaux.Reader.Tools.PositioningTools.GoLeftmost(Terminaux.Reader.TermReaderState@)
+  name: GoLeftmost(ref TermReaderState)
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_GoLeftmost_Terminaux_Reader_TermReaderState__
+  commentId: M:Terminaux.Reader.Tools.PositioningTools.GoLeftmost(Terminaux.Reader.TermReaderState@)
+  name.vb: GoLeftmost(TermReaderState)
+  fullName: Terminaux.Reader.Tools.PositioningTools.GoLeftmost(ref Terminaux.Reader.TermReaderState)
+  fullName.vb: Terminaux.Reader.Tools.PositioningTools.GoLeftmost(Terminaux.Reader.TermReaderState)
+  nameWithType: PositioningTools.GoLeftmost(ref TermReaderState)
+  nameWithType.vb: PositioningTools.GoLeftmost(TermReaderState)
+- uid: Terminaux.Reader.Tools.PositioningTools.GoLeftmost*
+  name: GoLeftmost
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_GoLeftmost_
+  commentId: Overload:Terminaux.Reader.Tools.PositioningTools.GoLeftmost
+  isSpec: "True"
+  fullName: Terminaux.Reader.Tools.PositioningTools.GoLeftmost
+  nameWithType: PositioningTools.GoLeftmost
+- uid: Terminaux.Reader.Tools.PositioningTools.GoRightmost(Terminaux.Reader.TermReaderState@)
+  name: GoRightmost(ref TermReaderState)
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_GoRightmost_Terminaux_Reader_TermReaderState__
+  commentId: M:Terminaux.Reader.Tools.PositioningTools.GoRightmost(Terminaux.Reader.TermReaderState@)
+  name.vb: GoRightmost(TermReaderState)
+  fullName: Terminaux.Reader.Tools.PositioningTools.GoRightmost(ref Terminaux.Reader.TermReaderState)
+  fullName.vb: Terminaux.Reader.Tools.PositioningTools.GoRightmost(Terminaux.Reader.TermReaderState)
+  nameWithType: PositioningTools.GoRightmost(ref TermReaderState)
+  nameWithType.vb: PositioningTools.GoRightmost(TermReaderState)
+- uid: Terminaux.Reader.Tools.PositioningTools.GoRightmost*
+  name: GoRightmost
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_GoRightmost_
+  commentId: Overload:Terminaux.Reader.Tools.PositioningTools.GoRightmost
+  isSpec: "True"
+  fullName: Terminaux.Reader.Tools.PositioningTools.GoRightmost
+  nameWithType: PositioningTools.GoRightmost
+- uid: Terminaux.Reader.Tools.PositioningTools.SeekTo(System.Int32,System.Int32,Terminaux.Reader.TermReaderState@)
+  name: SeekTo(int, int, ref TermReaderState)
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_SeekTo_System_Int32_System_Int32_Terminaux_Reader_TermReaderState__
+  commentId: M:Terminaux.Reader.Tools.PositioningTools.SeekTo(System.Int32,System.Int32,Terminaux.Reader.TermReaderState@)
+  name.vb: SeekTo(Integer, Integer, TermReaderState)
+  fullName: Terminaux.Reader.Tools.PositioningTools.SeekTo(int, int, ref Terminaux.Reader.TermReaderState)
+  fullName.vb: Terminaux.Reader.Tools.PositioningTools.SeekTo(Integer, Integer, Terminaux.Reader.TermReaderState)
+  nameWithType: PositioningTools.SeekTo(int, int, ref TermReaderState)
+  nameWithType.vb: PositioningTools.SeekTo(Integer, Integer, TermReaderState)
+- uid: Terminaux.Reader.Tools.PositioningTools.SeekTo(System.Int32,Terminaux.Reader.TermReaderState@)
+  name: SeekTo(int, ref TermReaderState)
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_SeekTo_System_Int32_Terminaux_Reader_TermReaderState__
+  commentId: M:Terminaux.Reader.Tools.PositioningTools.SeekTo(System.Int32,Terminaux.Reader.TermReaderState@)
+  name.vb: SeekTo(Integer, TermReaderState)
+  fullName: Terminaux.Reader.Tools.PositioningTools.SeekTo(int, ref Terminaux.Reader.TermReaderState)
+  fullName.vb: Terminaux.Reader.Tools.PositioningTools.SeekTo(Integer, Terminaux.Reader.TermReaderState)
+  nameWithType: PositioningTools.SeekTo(int, ref TermReaderState)
+  nameWithType.vb: PositioningTools.SeekTo(Integer, TermReaderState)
+- uid: Terminaux.Reader.Tools.PositioningTools.SeekTo*
+  name: SeekTo
+  href: api/Terminaux.Reader.Tools.PositioningTools.html#Terminaux_Reader_Tools_PositioningTools_SeekTo_
+  commentId: Overload:Terminaux.Reader.Tools.PositioningTools.SeekTo
+  isSpec: "True"
+  fullName: Terminaux.Reader.Tools.PositioningTools.SeekTo
+  nameWithType: PositioningTools.SeekTo
 - uid: Terminaux.Writer.ConsoleWriters
   name: Terminaux.Writer.ConsoleWriters
   href: api/Terminaux.Writer.ConsoleWriters.html

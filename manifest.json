@@ -755,6 +755,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Tools.PositioningTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Tools.PositioningTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Tools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Tools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Reader.yml",
       "output": {
         ".html": {
