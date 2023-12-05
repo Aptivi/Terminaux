@@ -209,7 +209,7 @@ namespace Terminaux.Base
         /// </summary>
         /// <param name="text">The text to write</param>
         public static void WriteLine(string text) =>
-            ConsoleWrapperTools.ActionWriteString(text);
+            ConsoleWrapperTools.ActionWriteLineString(text);
 
         /// <summary>
         /// Writes text to console with line terminator
