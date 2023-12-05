@@ -18,7 +18,7 @@
 
 using System;
 
-namespace Terminaux.Reader.Inputs.Interactive
+namespace Terminaux.Inputs.Interactive
 {
     /// <summary>
     /// Interactive TUI binding information class

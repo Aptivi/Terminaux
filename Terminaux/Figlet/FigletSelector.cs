@@ -20,7 +20,8 @@ using Figletize;
 using System;
 using System.Linq;
 using Terminaux.Base;
-using Terminaux.Reader.Inputs;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Figlet
@@ -101,7 +102,7 @@ namespace Terminaux.Figlet
                         rerender = true;
                         break;
                     case ConsoleKey.S:
-                        string promptedFontName = InfoBoxColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
+                        string promptedFontName = InfoBoxInputColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
                         if (!fonts.Contains(promptedFontName))
                             InfoBoxColor.WriteInfoBox("The font doesn't exist.");
                         else

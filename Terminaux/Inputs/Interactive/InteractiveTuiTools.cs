@@ -25,13 +25,14 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Colors;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Textify.General;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
 
-namespace Terminaux.Reader.Inputs.Interactive
+namespace Terminaux.Inputs.Interactive
 {
     /// <summary>
     /// Tools for the interactive TUI implementation
@@ -385,7 +386,7 @@ namespace Terminaux.Reader.Inputs.Interactive
                 }
 
                 // Render the vertical bar
-                int left = paneNum == 2 ? (SeparatorHalfConsoleWidthInterior * 2) + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
+                int left = paneNum == 2 ? SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
                 builder.Append(ProgressBarVerticalColor.RenderVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor, false));
                 return builder.ToString();
             });

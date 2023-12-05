@@ -19,7 +19,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Terminaux.Reader.Inputs.Interactive;
+using Terminaux.Inputs.Interactive;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
 {

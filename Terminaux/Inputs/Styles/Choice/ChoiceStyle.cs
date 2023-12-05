@@ -1,20 +1,21 @@
-﻿
+﻿//
 // Terminaux  Copyright (C) 2023  Aptivi
-// 
+//
 // This file is part of Terminaux
-// 
+//
 // Terminaux is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-// 
+//
 // Terminaux is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
 
 using System;
 using System.Collections.Generic;
@@ -23,8 +24,9 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
+using Textify.General;
 
-namespace Terminaux.Reader.Inputs.Styles
+namespace Terminaux.Inputs.Styles.Choice
 {
     /// <summary>
     /// Choice style for input module
@@ -39,8 +41,8 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static string PromptChoice(string Question, string AnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => 
-            PromptChoice(Question, AnswersStr, Array.Empty<string>(), OutputType, PressEnter);
+        public static string PromptChoice(string Question, string AnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, AnswersStr, [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -51,7 +53,7 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, AnswersStr, AnswersTitles, "", Array.Empty<string>(), OutputType, PressEnter);
+            PromptChoice(Question, AnswersStr, AnswersTitles, "", [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -63,7 +65,7 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, Array.Empty<string>(), OutputType, PressEnter);
+            PromptChoice(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -85,8 +87,8 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="Answers">Set of answers.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static string PromptChoice(string Question, string[] Answers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => 
-            PromptChoice(Question, Answers, Array.Empty<string>(), OutputType, PressEnter);
+        public static string PromptChoice(string Question, string[] Answers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, Answers, [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -97,7 +99,7 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, Answers, AnswersTitles, Array.Empty<string>(), Array.Empty<string>(), OutputType, PressEnter);
+            PromptChoice(Question, Answers, AnswersTitles, [], [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -109,7 +111,7 @@ namespace Terminaux.Reader.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, Answers, AnswersTitles, AlternateAnswers, Array.Empty<string>(), OutputType, PressEnter);
+            PromptChoice(Question, Answers, AnswersTitles, AlternateAnswers, [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -168,19 +170,19 @@ namespace Terminaux.Reader.Inputs.Styles
                         {
                             string answersPlace = altAnswers.Length > 0 ? " <{0}/{1}> " : " <{0}> ";
                             TextWriterColor.WriteColor(Question, false, questionColor);
-                            TextWriterColor.WriteColorBack(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
+                            TextWriterColor.WriteColor(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
                             break;
                         }
                     case ChoiceOutputType.TwoLines:
                         {
                             string answersPlace = altAnswers.Length > 0 ? "<{0}/{1}> " : "<{0}> ";
                             TextWriterColor.WriteColor(Question, true, questionColor);
-                            TextWriterColor.WriteColorBack(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
+                            TextWriterColor.WriteColor(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
                             break;
                         }
                     case ChoiceOutputType.Modern:
                         {
-                            TextWriterColor.WriteColor(Question + ConsolePlatform.NewLine, true, questionColor);
+                            TextWriterColor.WriteColor(Question + CharManager.NewLine, true, questionColor);
                             for (int AnswerIndex = 0; AnswerIndex <= Answers.Count - 1; AnswerIndex++)
                             {
                                 var AnswerInstance = Answers[AnswerIndex];
@@ -209,7 +211,7 @@ namespace Terminaux.Reader.Inputs.Styles
                                 }
                                 TextWriterColor.WriteColor(AnswerOption, true, altOptionColor);
                             }
-                            TextWriterColor.WriteColor(ConsolePlatform.NewLine + ">> ", false, inputColor);
+                            TextWriterColor.WriteColor(CharManager.NewLine + ">> ", false, inputColor);
                             break;
                         }
                     case ChoiceOutputType.Table:
@@ -228,7 +230,7 @@ namespace Terminaux.Reader.Inputs.Styles
                                 ChoiceData[Answers.Count - 1 + AnswerIndex, 1] = AltAnswers[AnswerIndex].ChoiceTitle ?? "";
                             }
                             TableColor.WriteTable(ChoiceHeader, ChoiceData, 2);
-                            TextWriterColor.WriteColor(ConsolePlatform.NewLine + ">> ", false, inputColor);
+                            TextWriterColor.WriteColor(CharManager.NewLine + ">> ", false, inputColor);
                             break;
                         }
                 }

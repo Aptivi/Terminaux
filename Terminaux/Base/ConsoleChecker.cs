@@ -19,7 +19,7 @@
 using System;
 using System.IO;
 using System.Reflection;
-using Terminaux.Reader.Inputs;
+using Terminaux.Inputs;
 
 namespace Terminaux.Base
 {

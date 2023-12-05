@@ -21,7 +21,8 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Colors;
-using Terminaux.Reader.Inputs;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.FancyWriters;
 using Textify.Sequences.Builder.Types;
 

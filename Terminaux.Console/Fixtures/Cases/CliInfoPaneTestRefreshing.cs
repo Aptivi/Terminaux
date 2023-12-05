@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Terminaux.ConsoleDemo.Fixtures.Cases.CaseData;
-using Terminaux.Reader.Inputs.Interactive;
+using Terminaux.Inputs.Interactive;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {

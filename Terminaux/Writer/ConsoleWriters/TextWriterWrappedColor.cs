@@ -23,8 +23,8 @@ using System.Text;
 using Textify.General;
 using Terminaux.Base;
 using Textify.Sequences.Tools;
-using Terminaux.Reader.Inputs;
 using System.Diagnostics;
+using Terminaux.Inputs;
 
 namespace Terminaux.Writer.ConsoleWriters
 {

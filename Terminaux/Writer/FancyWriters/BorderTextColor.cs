@@ -125,8 +125,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BorderColor">Border color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BorderColor">Border color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">Border background color from Terminaux's <see cref="Color"/></param>
         public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, ConsoleColors BorderColor, ConsoleColors BackgroundColor, params object[] vars) =>
             WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -162,8 +162,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BorderColor">Border color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">Border background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BorderColor">Border color from Terminaux's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">Border background color from Terminaux's <see cref="Color"/></param>
         public static void WriteBorderText(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor, params object[] vars) =>
             WriteBorderText(text, Left, Top, InteriorWidth, InteriorHeight,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,

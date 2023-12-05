@@ -18,7 +18,7 @@
 
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Reader.Inputs;
+using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases

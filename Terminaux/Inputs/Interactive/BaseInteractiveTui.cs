@@ -20,7 +20,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Terminaux.Reader.Inputs.Interactive
+namespace Terminaux.Inputs.Interactive
 {
     /// <summary>
     /// A base class for your interactive user interface for terminal apps

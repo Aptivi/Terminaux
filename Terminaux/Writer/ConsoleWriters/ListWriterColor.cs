@@ -23,9 +23,9 @@ using System.Threading;
 using Terminaux.Colors;
 using System.Text;
 using System.Diagnostics;
-using Terminaux.Reader.Inputs;
 using Terminaux.Base;
 using Textify.General;
+using Terminaux.Inputs;
 
 namespace Terminaux.Writer.ConsoleWriters
 {

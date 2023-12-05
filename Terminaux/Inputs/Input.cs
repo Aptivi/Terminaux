@@ -1,32 +1,35 @@
-﻿
+﻿//
 // Terminaux  Copyright (C) 2023  Aptivi
-// 
+//
 // This file is part of Terminaux
-// 
+//
 // Terminaux is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-// 
+//
 // Terminaux is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
-// 
+//
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
 
 using System;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Reader;
 
-namespace Terminaux.Reader.Inputs
+namespace Terminaux.Inputs
 {
     /// <summary>
     /// Console input module
     /// </summary>
     public static class Input
     {
+        internal static TermReaderSettings globalSettings = new();
         internal static string currentMask = "*";
 
         /// <summary>
@@ -39,29 +42,14 @@ namespace Terminaux.Reader.Inputs
         /// Reads the line from the console
         /// </summary>
         public static string ReadLine() =>
-            ReadLine("", "");
-
-        /// <summary>
-        /// Reads the line from the console
-        /// </summary>
-        /// <param name="settings">Settigns containing reader-related settings</param>
-        public static string ReadLine(TermReaderSettings settings) =>
-            ReadLine("", "", settings);
+            ReadLine("", "", globalSettings);
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         public static string ReadLine(string InputText) =>
-            ReadLine(InputText, "");
-
-        /// <summary>
-        /// Reads the line from the console
-        /// </summary>
-        /// <param name="InputText">Input text to write</param>
-        /// <param name="settings">Settigns containing reader-related settings</param>
-        public static string ReadLine(string InputText, TermReaderSettings settings) =>
-            ReadLine(InputText, "", settings);
+            ReadLine(InputText, "", globalSettings);
 
         /// <summary>
         /// Reads the line from the console
@@ -69,44 +57,29 @@ namespace Terminaux.Reader.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         public static string ReadLine(string InputText, string DefaultValue) =>
-            ReadLine(InputText, DefaultValue, new TermReaderSettings(), false);
+            ReadLine(InputText, DefaultValue, globalSettings);
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
-        /// <param name="settings">Settigns containing reader-related settings</param>
+        /// <param name="settings">Reader settings</param>
         public static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings) =>
-            ReadLine(InputText, DefaultValue, settings, false);
+            ReadLine(InputText, DefaultValue, false, settings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         public static string ReadLineWrapped() =>
-            ReadLineWrapped("", "");
-
-        /// <summary>
-        /// Reads the line from the console (wrapped to one line)
-        /// </summary>
-        /// <param name="settings">Settigns containing reader-related settings</param>
-        public static string ReadLineWrapped(TermReaderSettings settings) =>
-            ReadLineWrapped("", "", settings);
+            ReadLineWrapped("", "", globalSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         public static string ReadLineWrapped(string InputText) =>
-            ReadLineWrapped(InputText, "");
-
-        /// <summary>
-        /// Reads the line from the console (wrapped to one line)
-        /// </summary>
-        /// <param name="InputText">Input text to write</param>
-        /// <param name="settings">Settigns containing reader-related settings</param>
-        public static string ReadLineWrapped(string InputText, TermReaderSettings settings) =>
-            ReadLineWrapped(InputText, "", settings);
+            ReadLineWrapped(InputText, "", globalSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
@@ -114,25 +87,34 @@ namespace Terminaux.Reader.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         public static string ReadLineWrapped(string InputText, string DefaultValue) =>
-            ReadLine(InputText, DefaultValue, new TermReaderSettings(), true);
+            ReadLineWrapped(InputText, DefaultValue, globalSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
-        /// <param name="settings">Settigns containing reader-related settings</param>
+        /// <param name="settings">Reader settings</param>
         public static string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings) =>
-            ReadLine(InputText, DefaultValue, settings, true);
+            ReadLine(InputText, DefaultValue, true, settings);
 
         /// <summary>
-        /// Reads the line from the console.
+        /// Reads the line from the console unsafely. This doesn't wait until the screensaver lock mode is released.
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
-        /// <param name="settings">Settigns containing reader-related settings</param>
-        public static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings, bool OneLineWrap = false) =>
+        public static string ReadLine(string InputText, string DefaultValue, bool OneLineWrap = false) =>
+            ReadLine(InputText, DefaultValue, OneLineWrap, globalSettings);
+
+        /// <summary>
+        /// Reads the line from the console unsafely. This doesn't wait until the screensaver lock mode is released.
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
+        /// <param name="DefaultValue">Default value</param>
+        /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
+        /// <param name="settings">Reader settings</param>
+        public static string ReadLine(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null) =>
             TermReader.Read(InputText, DefaultValue, settings, false, OneLineWrap);
 
         /// <summary>
@@ -149,10 +131,30 @@ namespace Terminaux.Reader.Inputs
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
-        /// <param name="MaskChar">Specifies the password mask character</param>
-        public static string ReadLineNoInput(char MaskChar)
+        public static string ReadLineNoInput(TermReaderSettings settings)
         {
-            string pass = TermReader.ReadPassword(new TermReaderSettings() { PasswordMaskChar = MaskChar });
+            if (!string.IsNullOrEmpty(CurrentMask))
+                return ReadLineNoInput(CurrentMask[0], settings);
+            else
+                return ReadLineNoInput(Convert.ToChar("\0"), settings);
+        }
+
+        /// <summary>
+        /// Reads the next line of characters from the standard input stream without showing input being written by user.
+        /// </summary>
+        /// <param name="MaskChar">Specifies the password mask character</param>
+        public static string ReadLineNoInput(char MaskChar) =>
+            ReadLineNoInput(MaskChar, new TermReaderSettings());
+
+        /// <summary>
+        /// Reads the next line of characters from the standard input stream without showing input being written by user.
+        /// </summary>
+        /// <param name="MaskChar">Specifies the password mask character</param>
+        /// <param name="settings">Reader settings</param>
+        public static string ReadLineNoInput(char MaskChar, TermReaderSettings settings)
+        {
+            settings.PasswordMaskChar = MaskChar;
+            string pass = TermReader.ReadPassword(settings);
             return pass;
         }
 

@@ -46,7 +46,7 @@ namespace Terminaux.Base
             Environment.GetEnvironmentVariable("TERM") ?? "";
 
         /// <summary>
-        /// Is Nitrocid KS running from GRILO?
+        /// Is Terminaux running from GRILO?
         /// </summary>
         public static bool IsRunningFromGrilo() =>
             (Assembly.GetEntryAssembly()?.GetName()?.Name?.StartsWith("GRILO")) ?? false;
@@ -58,7 +58,7 @@ namespace Terminaux.Base
             Environment.GetEnvironmentVariable("TMUX") is not null;
 
         /// <summary>
-        /// Is Nitrocid KS running from GNU Screen?
+        /// Is Terminaux running from GNU Screen?
         /// </summary>
         public static bool IsRunningFromScreen() =>
             Environment.GetEnvironmentVariable("STY") is not null;

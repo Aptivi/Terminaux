@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
-using Terminaux.Reader.Inputs;
-using Terminaux.Reader.Inputs.Styles;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Selection;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {

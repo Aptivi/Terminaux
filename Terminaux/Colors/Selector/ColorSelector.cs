@@ -21,7 +21,8 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Colors.Accessibility;
-using Terminaux.Reader.Inputs;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Textify.Sequences.Builder.Types;
@@ -171,7 +172,7 @@ namespace Terminaux.Colors.Selector
             selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, render the hue, saturation, and lightness bars
-            int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 3;
+            int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 2;
             int hueBarY = 1;
             int saturationBarY = 5;
             int lightnessBarY = 9;
@@ -253,7 +254,7 @@ namespace Terminaux.Colors.Selector
                 blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
             selector.Append(
-                BoxFrameTextColor.RenderBoxFrame("Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2) +
+                BoxFrameTextColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2) +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 2) +
                 redRamp.ToString() +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 3) +
