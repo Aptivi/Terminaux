@@ -193,7 +193,7 @@ namespace Terminaux.Colors
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
         /// <exception cref="ColorSeqException"></exception>
         public Color(ConsoleColors ColorDef)
-            : this(Convert.ToInt32(ColorDef))
+            : this((int)ColorDef >= 0 && ColorDef <= ConsoleColors.White ? Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorDef)) : Convert.ToInt32(ColorDef))
         { }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Terminaux.Colors
         /// <param name="ColorNum">The color number</param>
         /// <exception cref="ColorSeqException"></exception>
         public Color(int ColorNum)
-            : this($"{ColorNum}")
+            : this(ColorNum >= 0 && ColorNum <= (int)ConsoleColors.White ? $"{Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorNum))}" : $"{ColorNum}")
         { }
 
         /// <summary>
@@ -318,7 +318,7 @@ namespace Terminaux.Colors
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
         /// <exception cref="ColorSeqException"></exception>
         public static implicit operator Color(ConsoleColors ColorDef) =>
-            new(Convert.ToInt32(ColorDef));
+            new((int)ColorDef >= 0 && ColorDef <= ConsoleColors.White ? Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorDef)) : Convert.ToInt32(ColorDef));
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -334,7 +334,7 @@ namespace Terminaux.Colors
         /// <param name="ColorNum">The color number</param>
         /// <exception cref="ColorSeqException"></exception>
         public static implicit operator Color(int ColorNum) =>
-            new($"{ColorNum}");
+            new(ColorNum >= 0 && ColorNum <= (int)ConsoleColors.White ? $"{Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorNum))}" : $"{ColorNum}");
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
