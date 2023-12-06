@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Reader.Tools;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Textify.Sequences.Tools;
 
@@ -135,14 +136,14 @@ namespace Terminaux.Reader
                 string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrapper.Write(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings);
+                TextWriterColor.WriteForReader(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings, false);
                 if (step)
                     PositioningTools.GoForwardOneLineWrapAware(newText.Length, ref state);
             }
             else
             {
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrapper.Write(renderedText, state.settings);
+                TextWriterColor.WriteForReader(renderedText, state.settings, false);
                 if (step)
                 {
                     PositioningTools.HandleTopChangeForInput(ref state);
@@ -158,7 +159,7 @@ namespace Terminaux.Reader
                         {
                             state.currentCursorPosTop = height - 1;
                             state.inputPromptTop -= 1;
-                            ConsoleWrapper.WriteLine();
+                            TextWriterColor.Write();
                         }
                     }
                 }
@@ -174,7 +175,7 @@ namespace Terminaux.Reader
             int longestSentenceLength = state.LongestSentenceLengthFromLeft;
             string[] wrapped = TextTools.GetWrappedSentences(state.InputPromptText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
             ConsoleWrapper.SetCursorPosition(state.settings.LeftMargin, state.InputPromptTop - wrapped.Length + 1);
-            ConsoleWrapper.Write(state.InputPromptText, state.Settings);
+            TextWriterColor.WriteForReader(state.InputPromptText, state.Settings, false);
 
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
@@ -186,7 +187,7 @@ namespace Terminaux.Reader
                 incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrapper.Write(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - renderedText.Length), state.settings);
+                TextWriterColor.WriteForReader(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - renderedText.Length), state.settings, false);
                 if (steps > 0)
                 {
                     if (backward)
@@ -205,7 +206,7 @@ namespace Terminaux.Reader
                 if (spaces > 0)
                     spacesLength = spaces;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrapper.Write(renderedText + new string(' ', spacesLength), state.settings);
+                TextWriterColor.WriteForReader(renderedText + new string(' ', spacesLength), state.settings, false);
                 if (steps > 0)
                 {
                     if (backward)

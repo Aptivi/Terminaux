@@ -127,7 +127,7 @@ namespace Terminaux.Reader
                 {
                     // Print the input
                     ConsoleWrapper.CursorLeft += settings.LeftMargin;
-                    ConsoleWrapper.Write(inputPrompt, settings);
+                    TextWriterColor.WriteForReader(inputPrompt, settings, false);
 
                     // Save current state of input
                     readState.inputPromptLeft = ConsoleWrapper.CursorLeft;
@@ -171,7 +171,7 @@ namespace Terminaux.Reader
                         PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
                         ConsoleWrapper.SetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
                     }
-                    ConsoleWrapper.WriteLine();
+                    TextWriterColor.Write();
 
                     // Return the input after adding it to history
                     input =

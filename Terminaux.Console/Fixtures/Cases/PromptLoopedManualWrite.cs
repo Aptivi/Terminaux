@@ -18,6 +18,7 @@
 
 using Terminaux.Base;
 using Terminaux.Reader;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
@@ -27,13 +28,13 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            ConsoleWrapper.WriteLine("Write \"exit\" to get out of here.");
+            TextWriterColor.Write("Write \"exit\" to get out of here.");
             string input = "";
             while (input != "exit")
             {
                 ConsoleWrapper.Write(">> ");
                 input = TermReader.Read();
-                ConsoleWrapper.WriteLine("You said: " + input);
+                TextWriterColor.Write("You said: " + input);
             }
         }
     }

@@ -20,6 +20,7 @@ using System;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
@@ -41,7 +42,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             if (suggestions.Length > 1)
             {
                 // Write a new line
-                ConsoleWrapper.WriteLine();
+                TextWriterColor.Write();
 
                 // Check to see if we can display 15 characters
                 int max = suggestions.Max((suggestion) => suggestion.Length);
@@ -50,7 +51,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 {
                     // Write each suggestion on their own line
                     foreach (string suggestion in suggestions)
-                        ConsoleWrapper.WriteLine(suggestion, state.Settings);
+                        TextWriterColor.WriteForReader(suggestion, state.Settings);
                 }
                 else
                 {
@@ -69,7 +70,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                         // Check to see if we've reached the limit
                         if (line.Length >= maxLineLength)
                         {
-                            ConsoleWrapper.WriteLine(line.ToString(), state.Settings);
+                            TextWriterColor.WriteForReader(line.ToString(), state.Settings);
                             line.Clear();
                         }
                     }
@@ -77,7 +78,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                     // Flush for the last time
                     if (line.Length > 0)
                     {
-                        ConsoleWrapper.WriteLine(line.ToString(), state.Settings);
+                        TextWriterColor.WriteForReader(line.ToString(), state.Settings);
                         line.Clear();
                     }
 

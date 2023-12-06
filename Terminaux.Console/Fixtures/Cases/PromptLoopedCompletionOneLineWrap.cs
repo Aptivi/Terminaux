@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using Terminaux.Base;
 using Terminaux.Reader;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
@@ -28,7 +28,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            ConsoleWrapper.WriteLine("Write \"exit\" to get out of here.");
+            TextWriterColor.Write("Write \"exit\" to get out of here.");
             string input = "";
             while (input != "exit")
             {
@@ -38,7 +38,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
                     HistoryEnabled = true,
                 };
                 input = TermReader.Read(">> ", "", settings, false, true);
-                ConsoleWrapper.WriteLine("You said: " + input);
+                TextWriterColor.Write("You said: " + input);
             }
         }
 

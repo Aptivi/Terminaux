@@ -20,6 +20,7 @@ using System;
 using System.IO;
 using System.Reflection;
 using Terminaux.Inputs;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Base
 {
@@ -143,9 +144,9 @@ namespace Terminaux.Base
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 if (ConsolePlatform.IsOnWindows())
-                    ConsoleWrapper.WriteLine("Warning: Terminaux makes use of the 256 colors. Don't worry; this application will automatically set your terminal to handle these sequences, assuming that you're running a supported terminal. Press any key to continue.", true);
+                    TextWriterColor.WritePlain("Warning: Terminaux makes use of the 256 colors. Don't worry; this application will automatically set your terminal to handle these sequences, assuming that you're running a supported terminal. Press any key to continue.", true);
                 else
-                    ConsoleWrapper.WriteLine("Warning: This application makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", TerminalType);
+                    TextWriterColor.WritePlain("Warning: This application makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", TerminalType);
                 Input.DetectKeypress();
             }
 
@@ -229,11 +230,11 @@ namespace Terminaux.Base
             // Check for the minimum console window requirements (80x24)
             while (ConsoleWrapper.WindowWidth < minimumWidth | ConsoleWrapper.WindowHeight < minimumHeight)
             {
-                ConsoleWrapper.WriteLine("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
+                TextWriterColor.WritePlain("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
                     ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight,
                     Console.BufferWidth, ConsoleWrapper.BufferHeight,
                     minimumWidth, minimumHeight);
-                ConsoleWrapper.WriteLine("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
+                TextWriterColor.WritePlain("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
                 Input.DetectKeypress();
             }
         }

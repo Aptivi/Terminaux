@@ -18,8 +18,8 @@
 
 using System.Threading;
 using System.Threading.Tasks;
-using Terminaux.Base;
 using Terminaux.Reader;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
@@ -36,7 +36,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             });
             interruptTask.Start();
             string input = TermReader.Read("You have five seconds to say anything: ", "", false, false, true);
-            ConsoleWrapper.WriteLine("You said: " + input);
+            TextWriterColor.Write("You said: " + input);
         }
     }
 }
