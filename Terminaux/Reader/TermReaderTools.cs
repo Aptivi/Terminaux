@@ -35,6 +35,12 @@ namespace Terminaux.Reader
         internal static bool isWaitingForInput = false;
 
         /// <summary>
+        /// Specifies whether the terminal reader is busy waiting for input or not
+        /// </summary>
+        public static bool Busy =>
+            isWaitingForInput;
+
+        /// <summary>
         /// Interrupts the reading process
         /// </summary>
         public static void Interrupt()
