@@ -166,7 +166,7 @@ namespace Terminaux.Reader.Tools
                 {
                     // Reached to the end! Wrap down!
                     state.currentCursorPosLeft = state.settings.LeftMargin;
-                    if (state.currentCursorPosTop < height)
+                    if (state.currentCursorPosTop < height - 1)
                         state.currentCursorPosTop++;
                 }
             }

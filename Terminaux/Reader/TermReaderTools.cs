@@ -119,52 +119,21 @@ namespace Terminaux.Reader
             if (!state.CanInsert)
                 return;
 
+            // Check for maximum length
+            int length = GetMaximumInputLength(state);
+            if (state.currentText.Length + newText.Length == length)
+            {
+                state.canInsert = false;
+            }
+
             // Get the longest sentence width and insert the character
-            int height = ConsoleWrapper.BufferHeight;
             if (append)
                 state.CurrentText.Append(newText);
             else
                 state.CurrentText.Insert(state.CurrentTextPos, newText);
 
-            // Re-write the text and set the current cursor position as appropriate
-            string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-
-            // In the case of one line wrap, get the list of sentences
-            if (state.OneLineWrap)
-            {
-                int longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
-                string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
-                renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
-                ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReader(renderedText + new string(' ', longestSentenceLength - renderedText.Length), state.settings, false);
-                if (step)
-                    PositioningTools.GoForwardOneLineWrapAware(newText.Length, ref state);
-            }
-            else
-            {
-                ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReader(renderedText, state.settings, false);
-                if (step)
-                {
-                    PositioningTools.HandleTopChangeForInput(ref state);
-                    PositioningTools.GoForwardOneLineWrapDisabled(newText.Length, ref state);
-                    int length = GetMaximumInputLength(state);
-                    if (renderedText.Length == length)
-                    {
-                        state.canInsert = false;
-                    }
-                    else
-                    {
-                        if (state.currentCursorPosTop >= height)
-                        {
-                            state.currentCursorPosTop = height - 1;
-                            state.inputPromptTop -= 1;
-                            TextWriterColor.Write();
-                        }
-                    }
-                }
-            }
-            PositioningTools.Commit(state);
+            // Refresh
+            RefreshPrompt(ref state, step ? newText.Length : 0);
         }
 
         internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false, int spaces = 0)
