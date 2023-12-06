@@ -175,6 +175,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.ColorBrightness.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.ColorBrightness.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.ColorTools.yml",
       "output": {
         ".html": {

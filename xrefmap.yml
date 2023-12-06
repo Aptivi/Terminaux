@@ -1713,6 +1713,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.B
   nameWithType: Color.B
+- uid: Terminaux.Colors.Color.Brightness
+  name: Brightness
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_Brightness
+  commentId: P:Terminaux.Colors.Color.Brightness
+  fullName: Terminaux.Colors.Color.Brightness
+  nameWithType: Color.Brightness
+- uid: Terminaux.Colors.Color.Brightness*
+  name: Brightness
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_Brightness_
+  commentId: Overload:Terminaux.Colors.Color.Brightness
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.Brightness
+  nameWithType: Color.Brightness
 - uid: Terminaux.Colors.Color.CMY
   name: CMY
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_CMY
@@ -1871,32 +1884,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.Hex
   nameWithType: Color.Hex
-- uid: Terminaux.Colors.Color.IsBright
-  name: IsBright
-  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_IsBright
-  commentId: P:Terminaux.Colors.Color.IsBright
-  fullName: Terminaux.Colors.Color.IsBright
-  nameWithType: Color.IsBright
-- uid: Terminaux.Colors.Color.IsBright*
-  name: IsBright
-  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_IsBright_
-  commentId: Overload:Terminaux.Colors.Color.IsBright
-  isSpec: "True"
-  fullName: Terminaux.Colors.Color.IsBright
-  nameWithType: Color.IsBright
-- uid: Terminaux.Colors.Color.IsDark
-  name: IsDark
-  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_IsDark
-  commentId: P:Terminaux.Colors.Color.IsDark
-  fullName: Terminaux.Colors.Color.IsDark
-  nameWithType: Color.IsDark
-- uid: Terminaux.Colors.Color.IsDark*
-  name: IsDark
-  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_IsDark_
-  commentId: Overload:Terminaux.Colors.Color.IsDark
-  isSpec: "True"
-  fullName: Terminaux.Colors.Color.IsDark
-  nameWithType: Color.IsDark
 - uid: Terminaux.Colors.Color.PlainSequence
   name: PlainSequence
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequence
@@ -2189,6 +2176,24 @@ references:
   fullName.vb: Terminaux.Colors.Color.<>
   nameWithType: Color.operator !=
   nameWithType.vb: Color.<>
+- uid: Terminaux.Colors.ColorBrightness
+  name: ColorBrightness
+  href: api/Terminaux.Colors.ColorBrightness.html
+  commentId: T:Terminaux.Colors.ColorBrightness
+  fullName: Terminaux.Colors.ColorBrightness
+  nameWithType: ColorBrightness
+- uid: Terminaux.Colors.ColorBrightness.Dark
+  name: Dark
+  href: api/Terminaux.Colors.ColorBrightness.html#Terminaux_Colors_ColorBrightness_Dark
+  commentId: F:Terminaux.Colors.ColorBrightness.Dark
+  fullName: Terminaux.Colors.ColorBrightness.Dark
+  nameWithType: ColorBrightness.Dark
+- uid: Terminaux.Colors.ColorBrightness.Light
+  name: Light
+  href: api/Terminaux.Colors.ColorBrightness.html#Terminaux_Colors_ColorBrightness_Light
+  commentId: F:Terminaux.Colors.ColorBrightness.Light
+  fullName: Terminaux.Colors.ColorBrightness.Light
+  nameWithType: ColorBrightness.Light
 - uid: Terminaux.Colors.ColorTools
   name: ColorTools
   href: api/Terminaux.Colors.ColorTools.html
