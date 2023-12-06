@@ -255,7 +255,7 @@ namespace Terminaux.Inputs.Interactive
 
             // Populate appropriate bindings, depending on the SecondPaneInteractable value
             List<InteractiveTuiBinding> finalBindings;
-            if (interactiveTui.Bindings.Count == 0)
+            if (interactiveTui.Bindings is null || interactiveTui.Bindings.Count == 0)
                 finalBindings =
                 [
                     new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null)
@@ -591,7 +591,7 @@ namespace Terminaux.Inputs.Interactive
                     case ConsoleKey.K:
                         // First, check the bindings length
                         var bindings = interactiveTui.Bindings;
-                        if (bindings.Count == 0)
+                        if (bindings is null || bindings.Count == 0)
                             break;
 
                         // User needs an infobox that shows all available keys
@@ -617,7 +617,13 @@ namespace Terminaux.Inputs.Interactive
                         SwitchSides(interactiveTui);
                         break;
                     default:
-                        var implementedBindings = interactiveTui.Bindings.Where((binding) =>
+                        // First, check the bindings
+                        var allBindings = interactiveTui.Bindings;
+                        if (allBindings is null || allBindings.Count == 0)
+                            break;
+
+                        // Now, get the implemented bindings from the pressed key
+                        var implementedBindings = allBindings.Where((binding) =>
                             binding.BindingKeyName == pressedKey.Key && binding.BindingKeyModifiers == pressedKey.Modifiers);
                         foreach (var implementedBinding in implementedBindings)
                             implementedBinding.BindingAction.Invoke(selectedData, paneCurrentSelection - 1);

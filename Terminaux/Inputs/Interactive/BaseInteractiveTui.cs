@@ -31,7 +31,7 @@ namespace Terminaux.Inputs.Interactive
         internal bool isExiting = false;
 
         /// <inheritdoc/>
-        public virtual List<InteractiveTuiBinding> Bindings { get; set; }
+        public virtual List<InteractiveTuiBinding> Bindings { get; set; } = [];
         /// <inheritdoc/>
         public virtual bool SecondPaneInteractable => false;
         /// <inheritdoc/>
