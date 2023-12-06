@@ -10081,6 +10081,19 @@ references:
   commentId: T:Terminaux.Reader.TermReaderTools
   fullName: Terminaux.Reader.TermReaderTools
   nameWithType: TermReaderTools
+- uid: Terminaux.Reader.TermReaderTools.Busy
+  name: Busy
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_Busy
+  commentId: P:Terminaux.Reader.TermReaderTools.Busy
+  fullName: Terminaux.Reader.TermReaderTools.Busy
+  nameWithType: TermReaderTools.Busy
+- uid: Terminaux.Reader.TermReaderTools.Busy*
+  name: Busy
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_Busy_
+  commentId: Overload:Terminaux.Reader.TermReaderTools.Busy
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderTools.Busy
+  nameWithType: TermReaderTools.Busy
 - uid: Terminaux.Reader.TermReaderTools.ClearHistory
   name: ClearHistory()
   href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_ClearHistory
