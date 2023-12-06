@@ -25,25 +25,6 @@ using Textify.Sequences.Builder;
 namespace Terminaux.Colors
 {
     /// <summary>
-    /// Color type enumeration
-    /// </summary>
-    public enum ColorType
-    {
-        /// <summary>
-        /// Color is a true color
-        /// </summary>
-        TrueColor,
-        /// <summary>
-        /// Color is a 8-bit color
-        /// </summary>
-        _255Color,
-        /// <summary>
-        /// Color is a 4-bit color
-        /// </summary>
-        _16Color
-    }
-
-    /// <summary>
     /// Color tools and management
     /// </summary>
     public static class ColorTools
@@ -157,7 +138,7 @@ namespace Terminaux.Colors
         /// </summary>
         public static Color GetGray()
         {
-            if (currentBackgroundColor.IsBright)
+            if (currentBackgroundColor.Brightness == ColorBrightness.Dark)
                 return new Color(ConsoleColors.Black);
             else
                 return new Color(ConsoleColors.Gray);

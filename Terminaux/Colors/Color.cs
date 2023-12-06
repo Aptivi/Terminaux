@@ -29,6 +29,7 @@ namespace Terminaux.Colors
     [DebuggerDisplay("Color = {PlainSequenceEnclosed}, TrueColor = {PlainSequenceEnclosedTrueColor}")]
     public class Color : IEquatable<Color>
     {
+        private static (ConsoleColor unapplicable16, ConsoleColors unapplicable255) unapplicable = ((ConsoleColor)(-1), (ConsoleColors)(-1));
         private string plainSequence;
         private string foreSequence;
         private string backSequence;
@@ -144,21 +145,17 @@ namespace Terminaux.Colors
         /// </summary>
         public ColorType Type { get; private set; }
         /// <summary>
-        /// Is the color bright?
+        /// Determines the color brightness whether it indicates dark or light mode
         /// </summary>
-        public bool IsBright { get; private set; }
-        /// <summary>
-        /// Is the color dark?
-        /// </summary>
-        public bool IsDark { get; private set; }
+        public ColorBrightness Brightness { get; private set; }
         /// <summary>
         /// The color value converted to <see cref="ConsoleColors"/>. Not applicable [-1] to true color
         /// </summary>
-        public ConsoleColors ColorEnum255 { get; private set; } = (ConsoleColors)(-1);
+        public ConsoleColors ColorEnum255 { get; private set; } = unapplicable.unapplicable255;
         /// <summary>
         /// The color value converted to <see cref="ConsoleColor"/>. Not applicable [-1] to true color and 256 colors
         /// </summary>
-        public ConsoleColor ColorEnum16 { get; private set; } = (ConsoleColor)(-1);
+        public ConsoleColor ColorEnum16 { get; private set; } = unapplicable.unapplicable16;
         /// <summary>
         /// Empty color singleton
         /// </summary>
@@ -187,7 +184,8 @@ namespace Terminaux.Colors
         /// <param name="B">The blue level</param>
         /// <exception cref="ColorSeqException"></exception>
         public Color(int R, int G, int B)
-            : this($"{R};{G};{B}") { }
+            : this($"{R};{G};{B}")
+        { }
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -195,7 +193,8 @@ namespace Terminaux.Colors
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
         /// <exception cref="ColorSeqException"></exception>
         public Color(ConsoleColors ColorDef)
-            : this(Convert.ToInt32(ColorDef)) { }
+            : this(Convert.ToInt32(ColorDef))
+        { }
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -203,7 +202,8 @@ namespace Terminaux.Colors
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColor"/></param>
         /// <exception cref="ColorSeqException"></exception>
         public Color(ConsoleColor ColorDef)
-            : this(Convert.ToInt32(ColorTools.CorrectStandardColor(ColorDef))) { }
+            : this(Convert.ToInt32(ColorTools.CorrectStandardColor(ColorDef)))
+        { }
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -211,7 +211,8 @@ namespace Terminaux.Colors
         /// <param name="ColorNum">The color number</param>
         /// <exception cref="ColorSeqException"></exception>
         public Color(int ColorNum)
-            : this($"{ColorNum}") { }
+            : this($"{ColorNum}")
+        { }
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -246,8 +247,7 @@ namespace Terminaux.Colors
 
                 // Populate color properties
                 Type = ColorType.TrueColor;
-                IsBright = Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d > 255d / 2d;
-                IsDark = Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d < 255d / 2d;
+                Brightness = DetectDark(r, g, b) ? ColorBrightness.Dark : ColorBrightness.Light;
                 R = r;
                 G = g;
                 B = b;
@@ -275,8 +275,7 @@ namespace Terminaux.Colors
 
                 // Populate color properties
                 Type = ColorTools.EnableColorTransformation ? ColorType.TrueColor : colorsInfo.ColorID >= 16 ? ColorType._255Color : ColorType._16Color;
-                IsBright = ColorTools.EnableColorTransformation ? Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d > 255d / 2d : colorsInfo.IsBright;
-                IsDark = ColorTools.EnableColorTransformation ? Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d < 255d / 2d : colorsInfo.IsDark;
+                Brightness = DetectDark(r, g, b) ? ColorBrightness.Dark : ColorBrightness.Light;
                 R = r;
                 G = g;
                 B = b;
@@ -299,8 +298,7 @@ namespace Terminaux.Colors
 
                 // Populate color properties
                 Type = ColorType.TrueColor;
-                IsBright = r + 0.2126d + g + 0.7152d + b + 0.0722d > 255d / 2d;
-                IsDark = r + 0.2126d + g + 0.7152d + b + 0.0722d < 255d / 2d;
+                Brightness = DetectDark(r, g, b) ? ColorBrightness.Dark : ColorBrightness.Light;
                 R = r;
                 G = g;
                 B = b;
@@ -391,8 +389,7 @@ namespace Terminaux.Colors
                 other.B == other2.B &&
                 other.Hex == other2.Hex &&
                 other.Type == other2.Type &&
-                other.IsBright == other2.IsBright &&
-                other.IsDark == other2.IsDark &&
+                other.Brightness == other2.Brightness &&
                 other.ColorEnum255 == other2.ColorEnum255 &&
                 other.ColorEnum16 == other2.ColorEnum16
             ;
@@ -409,7 +406,7 @@ namespace Terminaux.Colors
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            int hashCode = 238546354;
+            int hashCode = -1193100686;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequence);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceEnclosed);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForeground);
@@ -423,11 +420,13 @@ namespace Terminaux.Colors
             hashCode = hashCode * -1521134295 + B.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Hex);
             hashCode = hashCode * -1521134295 + Type.GetHashCode();
-            hashCode = hashCode * -1521134295 + IsBright.GetHashCode();
-            hashCode = hashCode * -1521134295 + IsDark.GetHashCode();
+            hashCode = hashCode * -1521134295 + Brightness.GetHashCode();
             hashCode = hashCode * -1521134295 + ColorEnum255.GetHashCode();
             hashCode = hashCode * -1521134295 + ColorEnum16.GetHashCode();
             return hashCode;
         }
+
+        private bool DetectDark(int r, int g, int b) =>
+            Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d < 255d / 2d;
     }
 }
