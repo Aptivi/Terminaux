@@ -230,6 +230,10 @@
     "Terminaux - TestScreen": {
       "commandName": "Project",
       "commandLineArgs": "TestScreen"
+    },
+    "Terminaux - ConsoleSizeCheck": {
+      "commandName": "Project",
+      "commandLineArgs": "ConsoleSizeCheck"
     }
   }
 }

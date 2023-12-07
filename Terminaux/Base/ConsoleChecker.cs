@@ -173,7 +173,7 @@ namespace Terminaux.Base
         /// </summary>
         /// <param name="minimumWidth">Minimum console window width to check</param>
         /// <param name="minimumHeight">Minimum console window height to check</param>
-        public static void CheckConsoleSize(int minimumWidth = 80, int minimumHeight = 24)
+        public static bool CheckConsoleSize(int minimumWidth = 80, int minimumHeight = 24)
         {
             // If we're being run on TMUX, the status bar might mess up our interpretation of the window height.
             if (ConsolePlatform.IsRunningFromTmux())
@@ -228,7 +228,20 @@ namespace Terminaux.Base
             }
 
             // Check for the minimum console window requirements (80x24)
-            while (ConsoleWrapper.WindowWidth < minimumWidth | ConsoleWrapper.WindowHeight < minimumHeight)
+            return
+                !(ConsoleWrapper.WindowWidth < minimumWidth |
+                  ConsoleWrapper.WindowHeight < minimumHeight);
+        }
+
+        /// <summary>
+        /// Checks the console size with edge cases, prompting the user to resize the screen if the minimum console size requirements is not satisfied.
+        /// </summary>
+        /// <param name="minimumWidth">Minimum console window width to check</param>
+        /// <param name="minimumHeight">Minimum console window height to check</param>
+        public static void CheckConsoleSizePrompt(int minimumWidth = 80, int minimumHeight = 24)
+        {
+            // Check for the minimum console window requirements (80x24)
+            while (!CheckConsoleSize(minimumWidth, minimumHeight))
             {
                 TextWriterColor.WritePlain("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
                     ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight,

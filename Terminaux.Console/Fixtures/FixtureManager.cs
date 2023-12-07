@@ -95,6 +95,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             
             // Screen
             new TestScreen(),
+            new ConsoleSizeCheck(),
         ];
 
         internal static IFixture GetFixtureFromName(string name)
