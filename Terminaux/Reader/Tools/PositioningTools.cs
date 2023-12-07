@@ -277,36 +277,6 @@ namespace Terminaux.Reader.Tools
             GoBackOneLineWrapAware(fromPos, ref state);
             GoForwardOneLineWrapAware(steps, ref state);
         }
-
-        internal static void HandleTopChangeForInput(ref TermReaderState state)
-        {
-            int promptLeft = state.InputPromptLeft;
-            int promptTop = state.InputPromptTop;
-            int promptTopOld = state.InputPromptTop;
-
-            int width = ConsoleWrapper.WindowWidth;
-            int height = ConsoleWrapper.BufferHeight;
-
-            int counted = promptLeft;
-            int heightOffset = 1;
-            for (int i = promptLeft; i < state.CurrentText.Length + promptLeft; i++)
-            {
-                if (counted >= width - state.settings.RightMargin)
-                {
-                    // Reached to the end! Wrap down!
-                    if (promptTop >= height - heightOffset)
-                    {
-                        heightOffset++;
-                        promptTop--;
-                        counted = 0;
-                        continue;
-                    }
-                }
-                counted++;
-            }
-            state.inputPromptTop = promptTop;
-            state.currentCursorPosTop -= promptTopOld - promptTop;
-        }
         #endregion
     }
 }

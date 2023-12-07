@@ -162,9 +162,11 @@ namespace Terminaux.Base
         {
             if (settings.RightMargin > 0 || settings.LeftMargin > 0)
             {
+                int top = settings.state.inputPromptTop;
                 var wrapped = TextTools.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLastLineLength);
                 for (int i = 0; i < wrapped.Length; i++)
                 {
+                    int wrapTop = top + i;
                     string textWrapped = wrapped[i];
                     Write(textWrapped);
                     if (i + 1 < wrapped.Length)
@@ -172,7 +174,14 @@ namespace Terminaux.Base
                         WriteLine();
                         CursorLeft = settings.LeftMargin;
                     }
+                    if (wrapTop >= BufferHeight)
+                    {
+                        top--;
+                        settings.state.currentCursorPosTop--;
+                        CursorLeft = settings.LeftMargin;
+                    }
                 }
+                settings.state.inputPromptTop = top;
             }
             else
                 Write(text);
