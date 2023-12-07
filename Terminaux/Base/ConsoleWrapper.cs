@@ -160,31 +160,26 @@ namespace Terminaux.Base
         /// <param name="settings">Reader settings</param>
         internal static void Write(string text, TermReaderSettings settings)
         {
-            if (settings.RightMargin > 0 || settings.LeftMargin > 0)
+            int top = settings.state.inputPromptTop;
+            var wrapped = TextTools.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLeft - settings.state.LeftMargin);
+            for (int i = 0; i < wrapped.Length; i++)
             {
-                int top = settings.state.inputPromptTop;
-                var wrapped = TextTools.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLastLineLength);
-                for (int i = 0; i < wrapped.Length; i++)
+                int wrapTop = top + i;
+                string textWrapped = wrapped[i];
+                Write(textWrapped);
+                if (i + 1 < wrapped.Length)
                 {
-                    int wrapTop = top + i;
-                    string textWrapped = wrapped[i];
-                    Write(textWrapped);
-                    if (i + 1 < wrapped.Length)
-                    {
-                        WriteLine();
-                        CursorLeft = settings.LeftMargin;
-                    }
-                    if (wrapTop >= BufferHeight)
-                    {
-                        top--;
-                        settings.state.currentCursorPosTop--;
-                        CursorLeft = settings.LeftMargin;
-                    }
+                    WriteLine();
+                    CursorLeft = settings.LeftMargin;
                 }
-                settings.state.inputPromptTop = top;
+                if (wrapTop >= BufferHeight && !settings.state.writingPrompt)
+                {
+                    top--;
+                    settings.state.currentCursorPosTop--;
+                    CursorLeft = settings.LeftMargin;
+                }
             }
-            else
-                Write(text);
+            settings.state.inputPromptTop = top;
         }
 
         /// <summary>

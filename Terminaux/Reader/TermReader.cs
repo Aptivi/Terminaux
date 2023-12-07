@@ -129,7 +129,9 @@ namespace Terminaux.Reader
                     ConsoleWrapper.CursorLeft += settings.LeftMargin;
                     readState.settings.state = readState;
                     readState.inputPromptText = inputPrompt;
+                    readState.writingPrompt = true;
                     TextWriterColor.WriteForReader(inputPrompt, settings, false);
+                    readState.writingPrompt = false;
 
                     // Save current state of input
                     readState.inputPromptLeft = ConsoleWrapper.CursorLeft;

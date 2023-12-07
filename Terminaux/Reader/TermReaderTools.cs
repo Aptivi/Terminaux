@@ -105,7 +105,7 @@ namespace Terminaux.Reader
 
             // Subtract the length accordingly
             for (int i = 0; i < inputPromptLineTimes; i++)
-                length -= longestSentenceLength;
+                length -= longestSentenceLength + 1;
 
             // Return the number of length available
             return length;
@@ -120,7 +120,10 @@ namespace Terminaux.Reader
             // Check for maximum length
             int length = GetMaximumInputLength(state);
             if (state.currentText.Length + newText.Length >= length)
+            {
                 state.canInsert = false;
+                newText = newText.Substring(0, length - state.currentText.Length);
+            }
 
             // Get the longest sentence width and insert the character
             if (append)
@@ -140,7 +143,9 @@ namespace Terminaux.Reader
             int longestSentenceLength = state.LongestSentenceLengthFromLeft;
             string[] wrapped = TextTools.GetWrappedSentences(state.InputPromptText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
             ConsoleWrapper.SetCursorPosition(state.settings.LeftMargin, state.InputPromptTop - wrapped.Length + 1);
+            state.writingPrompt = true;
             TextWriterColor.WriteForReader(state.InputPromptText, state.Settings, false);
+            state.writingPrompt = false;
 
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();

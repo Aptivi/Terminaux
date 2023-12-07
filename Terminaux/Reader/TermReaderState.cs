@@ -45,6 +45,7 @@ namespace Terminaux.Reader
         internal StringBuilder killBuffer = new();
         internal bool oneLineWrap;
         internal bool canInsert = true;
+        internal bool writingPrompt;
         internal TermReaderSettings settings;
 
         // Shared
