@@ -127,12 +127,13 @@ namespace Terminaux.Reader
                 {
                     // Print the input
                     ConsoleWrapper.CursorLeft += settings.LeftMargin;
+                    readState.settings.state = readState;
+                    readState.inputPromptText = inputPrompt;
                     TextWriterColor.WriteForReader(inputPrompt, settings, false);
 
                     // Save current state of input
                     readState.inputPromptLeft = ConsoleWrapper.CursorLeft;
                     readState.inputPromptTop = ConsoleWrapper.CursorTop;
-                    readState.inputPromptText = inputPrompt;
                     readState.passwordMode = password;
                     readState.oneLineWrap = oneLineWrap;
                     ConsoleWrapper.TreatCtrlCAsInput = settings.TreatCtrlCAsInput;

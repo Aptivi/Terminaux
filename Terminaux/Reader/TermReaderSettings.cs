@@ -30,6 +30,7 @@ namespace Terminaux.Reader
         private bool treatCtrlCAsInput;
         private int leftMargin = 0;
         private int rightMargin = 0;
+        internal TermReaderState state;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
         internal char[] suggestionsDelims = [' '];
 

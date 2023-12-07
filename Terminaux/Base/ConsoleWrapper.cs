@@ -162,7 +162,7 @@ namespace Terminaux.Base
         {
             if (settings.RightMargin > 0 || settings.LeftMargin > 0)
             {
-                var wrapped = TextTools.GetWrappedSentences(text, WindowWidth - settings.RightMargin - settings.LeftMargin, settings.LeftMargin - 1);
+                var wrapped = TextTools.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLastLineLength);
                 for (int i = 0; i < wrapped.Length; i++)
                 {
                     string textWrapped = wrapped[i];

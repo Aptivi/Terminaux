@@ -122,15 +122,18 @@ namespace Terminaux.Reader
             // Check for maximum length
             int length = GetMaximumInputLength(state);
             if (state.currentText.Length + newText.Length == length)
-            {
                 state.canInsert = false;
-            }
 
             // Get the longest sentence width and insert the character
+            var wrappedInitial = TextTools.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeftForGeneralLine + 1, state.InputPromptLastLineLength);
             if (append)
                 state.CurrentText.Append(newText);
             else
                 state.CurrentText.Insert(state.CurrentTextPos, newText);
+            var wrappedChanged = TextTools.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeftForGeneralLine + 1, state.InputPromptLastLineLength);
+            int offset = wrappedChanged.Length - wrappedInitial.Length;
+            if (state.InputPromptTop + offset >= ConsoleWrapper.BufferHeight)
+                state.inputPromptTop -= offset;
 
             // Refresh
             RefreshPrompt(ref state, step ? newText.Length : 0);
