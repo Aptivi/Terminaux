@@ -33,10 +33,6 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         {
             // Re-write the text and set the current cursor position as appropriate
             string toYank = state.KillBuffer.ToString();
-            int maxChars = TermReaderTools.GetMaximumInputLength(state);
-            if (state.CurrentText.Length + toYank.Length > maxChars)
-                toYank = toYank.Substring(0, maxChars - state.CurrentText.Length);
-            
             TermReaderTools.InsertNewText(ref state, toYank);
         }
     }

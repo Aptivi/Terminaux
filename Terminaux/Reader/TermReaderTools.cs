@@ -96,18 +96,16 @@ namespace Terminaux.Reader
             // Then, get the length for each width and height, subtracting it by one to avoid wrapping
             int marginWidth = state.LongestSentenceLengthFromLeftForGeneralLine + 1;
             int cells = marginWidth * height;
-            int length = cells - 1;
+            int length = cells - 1 - (state.LongestSentenceLengthFromLeftForGeneralLine - state.LongestSentenceLengthFromLeftForFirstLine);
 
             // We need to get the longest sentence width in case we encounter a multiline input prompt
             int longestSentenceLength = state.MaximumInputPositionLeft;
             string[] inputPromptLines = state.InputPromptText.SplitNewLines();
-            string inputPromptLastLine = VtSequenceTools.FilterVTSequences(inputPromptLines[inputPromptLines.Length - 1]);
             int inputPromptLineTimes = inputPromptLines.Length - 1;
 
             // Subtract the length accordingly
             for (int i = 0; i < inputPromptLineTimes; i++)
                 length -= longestSentenceLength;
-            length -= inputPromptLastLine.Length + inputPromptLineTimes;
 
             // Return the number of length available
             return length;
@@ -121,7 +119,7 @@ namespace Terminaux.Reader
 
             // Check for maximum length
             int length = GetMaximumInputLength(state);
-            if (state.currentText.Length + newText.Length == length)
+            if (state.currentText.Length + newText.Length >= length)
                 state.canInsert = false;
 
             // Get the longest sentence width and insert the character
