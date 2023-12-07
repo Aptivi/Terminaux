@@ -490,6 +490,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleChecker.CheckConsoleSize
   nameWithType: ConsoleChecker.CheckConsoleSize
+- uid: Terminaux.Base.ConsoleChecker.CheckConsoleSizePrompt(System.Int32,System.Int32)
+  name: CheckConsoleSizePrompt(int, int)
+  href: api/Terminaux.Base.ConsoleChecker.html#Terminaux_Base_ConsoleChecker_CheckConsoleSizePrompt_System_Int32_System_Int32_
+  commentId: M:Terminaux.Base.ConsoleChecker.CheckConsoleSizePrompt(System.Int32,System.Int32)
+  name.vb: CheckConsoleSizePrompt(Integer, Integer)
+  fullName: Terminaux.Base.ConsoleChecker.CheckConsoleSizePrompt(int, int)
+  fullName.vb: Terminaux.Base.ConsoleChecker.CheckConsoleSizePrompt(Integer, Integer)
+  nameWithType: ConsoleChecker.CheckConsoleSizePrompt(int, int)
+  nameWithType.vb: ConsoleChecker.CheckConsoleSizePrompt(Integer, Integer)
+- uid: Terminaux.Base.ConsoleChecker.CheckConsoleSizePrompt*
+  name: CheckConsoleSizePrompt
+  href: api/Terminaux.Base.ConsoleChecker.html#Terminaux_Base_ConsoleChecker_CheckConsoleSizePrompt_
+  commentId: Overload:Terminaux.Base.ConsoleChecker.CheckConsoleSizePrompt
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleChecker.CheckConsoleSizePrompt
+  nameWithType: ConsoleChecker.CheckConsoleSizePrompt
 - uid: Terminaux.Base.ConsoleChecker.HomePath
   name: HomePath
   href: api/Terminaux.Base.ConsoleChecker.html#Terminaux_Base_ConsoleChecker_HomePath
