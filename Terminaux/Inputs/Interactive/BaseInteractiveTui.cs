@@ -19,6 +19,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Terminaux.Base.Buffered;
 
 namespace Terminaux.Inputs.Interactive
 {
@@ -27,7 +28,8 @@ namespace Terminaux.Inputs.Interactive
     /// </summary>
     public class BaseInteractiveTui : IInteractiveTui
     {
-        internal static List<BaseInteractiveTui> instance = [];
+        internal static List<BaseInteractiveTui> instances = [];
+        internal Screen screen;
         internal bool isExiting = false;
 
         /// <inheritdoc/>
@@ -48,9 +50,15 @@ namespace Terminaux.Inputs.Interactive
         /// The interactive TUI instance
         /// </summary>
         public static BaseInteractiveTui Instance =>
-            instance.Count > 0 ?
-            instance[instance.Count - 1] :
+            instances.Count > 0 ?
+            instances[instances.Count - 1] :
             null;
+
+        /// <summary>
+        /// The screen instance for this interactive TUI
+        /// </summary>
+        public Screen Screen =>
+            screen;
 
         /// <inheritdoc/>
         public virtual string GetEntryFromItem(object item) =>
