@@ -6621,6 +6621,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.RenderStatus
   nameWithType: BaseInteractiveTui.RenderStatus
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen
+  name: Screen
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_Screen
+  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen
+  nameWithType: BaseInteractiveTui.Screen
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen*
+  name: Screen
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_Screen_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen
+  nameWithType: BaseInteractiveTui.Screen
 - uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondPaneInteractable
   name: SecondPaneInteractable
   href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_SecondPaneInteractable
