@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using SpecProbe.Platform;
 using SpecProbe.Software.Kernel;
 using System;
 using System.Reflection;
@@ -29,12 +30,6 @@ namespace Terminaux.Base
     /// </summary>
     public static class ConsolePlatform
     {
-        /// <summary>
-        /// New line constant
-        /// </summary>
-        public static string NewLine =>
-            Environment.NewLine;
-
         /// <summary>
         /// Polls $TERM_PROGRAM to get terminal emulator
         /// </summary>
@@ -75,13 +70,19 @@ namespace Terminaux.Base
         /// Is this system a Windows system?
         /// </summary>
         public static bool IsOnWindows() =>
-            Environment.OSVersion.Platform == PlatformID.Win32NT;
+            PlatformHelper.IsOnWindows();
 
         /// <summary>
         /// Is this system a Unix system? True for macOS, too!
         /// </summary>
         public static bool IsOnUnix() =>
-            Environment.OSVersion.Platform == PlatformID.Unix;
+            PlatformHelper.IsOnUnix();
+
+        /// <summary>
+        /// Is this system a macOS system?
+        /// </summary>
+        public static bool IsOnMacOS() =>
+            PlatformHelper.IsOnMacOS();
 
         /// <summary>
         /// Is this system a Unix system that contains musl libc?
@@ -100,20 +101,6 @@ namespace Terminaux.Base
             {
                 return true;
             }
-        }
-
-        /// <summary>
-        /// Is this system a macOS system?
-        /// </summary>
-        public static bool IsOnMacOS()
-        {
-            if (IsOnUnix())
-            {
-                string System = UnameManager.GetUname(UnameTypes.KernelName);
-                return System.Contains("Darwin");
-            }
-            else
-                return false;
         }
 
         #region Interop
