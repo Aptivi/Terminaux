@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Terminaux.Base;
 
 namespace Terminaux.Colors.Models
 {
@@ -64,41 +63,6 @@ namespace Terminaux.Colors.Models
         public double ReverseHueWhole { get; private set; }
 
         /// <summary>
-        /// Converts this instance of HSV color to RGB model
-        /// </summary>
-        /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
-        public RedGreenBlue ConvertToRgb() =>
-            new(this);
-
-        /// <summary>
-        /// Converts this instance of HSV color to CMYK model
-        /// </summary>
-        /// <returns>An instance of <see cref="CyanMagentaYellowKey"/></returns>
-        public CyanMagentaYellowKey ConvertToCmyk() =>
-            new(this);
-
-        /// <summary>
-        /// Converts this instance of HSV color to CMY model
-        /// </summary>
-        /// <returns>An instance of <see cref="CyanMagentaYellow"/></returns>
-        public CyanMagentaYellow ConvertToCmy() =>
-            new(this);
-
-        /// <summary>
-        /// Converts this instance of HSV color to HSL model
-        /// </summary>
-        /// <returns>An instance of <see cref="HueSaturationLightness"/></returns>
-        public HueSaturationLightness ConvertToHsl() =>
-            new(this);
-
-        /// <summary>
-        /// Converts this instance of HSV color to RYB model
-        /// </summary>
-        /// <returns>An instance of <see cref="RedYellowBlue"/></returns>
-        public RedYellowBlue ConvertToRyb() =>
-            new(this);
-
-        /// <summary>
         /// hsv:&lt;H&gt;;&lt;S&gt;;&lt;V&gt;
         /// </summary>
         public override string ToString() =>
@@ -139,143 +103,6 @@ namespace Terminaux.Colors.Models
         public static bool operator !=(HueSaturationValue left, HueSaturationValue right) =>
             !(left == right);
 
-        /// <summary>
-        /// Converts the CMYK color model to HSV
-        /// </summary>
-        /// <param name="cmyk">Instance of CMYK</param>
-        /// <exception cref="TerminauxException"></exception>
-        public HueSaturationValue(CyanMagentaYellowKey cmyk)
-        {
-            if (cmyk is null)
-                throw new TerminauxException("Can't convert a null CMYK instance to HSV!");
-
-            // Get the RGB values
-            var rgb = cmyk.ConvertToRgb();
-
-            // Do the conversion
-            var (hue, saturation, value) = GetHsvFromRgb(rgb);
-            Hue = hue;
-            Saturation = saturation;
-            Value = value;
-            ReverseHue = hue + 0.5;
-            if (ReverseHue > 1)
-                ReverseHue--;
-
-            SaturationWhole = (int)(Saturation * 100);
-            ValueWhole = (int)(Value * 100);
-            HueWhole = (int)(Hue * 360);
-            ReverseHueWhole = (int)(ReverseHue * 360);
-        }
-
-        /// <summary>
-        /// Converts the RGB color model to HSV
-        /// </summary>
-        /// <param name="rgb">Instance of RGB</param>
-        /// <exception cref="TerminauxException"></exception>
-        public HueSaturationValue(RedGreenBlue rgb)
-        {
-            if (rgb is null)
-                throw new TerminauxException("Can't convert a null RGB instance to HSV!");
-
-            // Do the conversion
-            var (hue, saturation, value) = GetHsvFromRgb(rgb);
-            Hue = hue;
-            Saturation = saturation;
-            Value = value;
-            ReverseHue = hue + 0.5;
-            if (ReverseHue > 1)
-                ReverseHue--;
-
-            SaturationWhole = (int)(Saturation * 100);
-            ValueWhole = (int)(Value * 100);
-            HueWhole = (int)(Hue * 360);
-            ReverseHueWhole = (int)(ReverseHue * 360);
-        }
-
-        /// <summary>
-        /// Converts the CMY color model to HSV
-        /// </summary>
-        /// <param name="cmy">Instance of CMY</param>
-        /// <exception cref="TerminauxException"></exception>
-        public HueSaturationValue(CyanMagentaYellow cmy)
-        {
-            if (cmy is null)
-                throw new TerminauxException("Can't convert a null CMY instance to HSV!");
-
-            // Get the RGB values
-            var rgb = cmy.ConvertToRgb();
-
-            // Do the conversion
-            var (hue, saturation, value) = GetHsvFromRgb(rgb);
-            Hue = hue;
-            Saturation = saturation;
-            Value = value;
-            ReverseHue = hue + 0.5;
-            if (ReverseHue > 1)
-                ReverseHue--;
-
-            SaturationWhole = (int)(Saturation * 100);
-            ValueWhole = (int)(Value * 100);
-            HueWhole = (int)(Hue * 360);
-            ReverseHueWhole = (int)(ReverseHue * 360);
-        }
-
-        /// <summary>
-        /// Converts the HSL color model to HSV
-        /// </summary>
-        /// <param name="hsl">Instance of HSL</param>
-        /// <exception cref="TerminauxException"></exception>
-        public HueSaturationValue(HueSaturationLightness hsl)
-        {
-            if (hsl is null)
-                throw new TerminauxException("Can't convert a null HSL instance to HSV!");
-
-            // Get the RGB values
-            var rgb = hsl.ConvertToRgb();
-
-            // Do the conversion
-            var (hue, saturation, value) = GetHsvFromRgb(rgb);
-            Hue = hue;
-            Saturation = saturation;
-            Value = value;
-            ReverseHue = hue + 0.5;
-            if (ReverseHue > 1)
-                ReverseHue--;
-
-            SaturationWhole = (int)(Saturation * 100);
-            ValueWhole = (int)(Value * 100);
-            HueWhole = (int)(Hue * 360);
-            ReverseHueWhole = (int)(ReverseHue * 360);
-        }
-
-        /// <summary>
-        /// Converts the RYB color model to HSV
-        /// </summary>
-        /// <param name="ryb">Instance of RYB</param>
-        /// <exception cref="TerminauxException"></exception>
-        public HueSaturationValue(RedYellowBlue ryb)
-        {
-            if (ryb is null)
-                throw new TerminauxException("Can't convert a null RYB instance to HSV!");
-
-            // Get the RGB values
-            var rgb = ryb.ConvertToRgb();
-
-            // Do the conversion
-            var (hue, saturation, value) = GetHsvFromRgb(rgb);
-            Hue = hue;
-            Saturation = saturation;
-            Value = value;
-            ReverseHue = hue + 0.5;
-            if (ReverseHue > 1)
-                ReverseHue--;
-
-            SaturationWhole = (int)(Saturation * 100);
-            ValueWhole = (int)(Value * 100);
-            HueWhole = (int)(Hue * 360);
-            ReverseHueWhole = (int)(ReverseHue * 360);
-        }
-
         internal HueSaturationValue(double hue, double saturation, double value)
         {
             Hue = hue;
@@ -289,54 +116,6 @@ namespace Terminaux.Colors.Models
             ValueWhole = (int)(Value * 100);
             HueWhole = (int)(Hue * 360);
             ReverseHueWhole = (int)(ReverseHue * 360);
-        }
-
-        private (double hue, double saturation, double value) GetHsvFromRgb(RedGreenBlue rgb)
-        {
-            if (rgb is null)
-                throw new TerminauxException("Can't convert a null RGB instance to HSV!");
-
-            // Get the level of each color
-            double levelR = (double)rgb.R / 255;
-            double levelG = (double)rgb.G / 255;
-            double levelB = (double)rgb.B / 255;
-
-            // Get the minimum and maximum color level. .NET's Math.Max doesn't support three variables, so this workaround is added
-            double minRgLevel = Math.Min(levelR, levelG);
-            double minLevel = Math.Min(minRgLevel, levelB);
-            double maxRgLevel = Math.Max(levelR, levelG);
-            double maxLevel = Math.Max(maxRgLevel, levelB);
-
-            // Get the delta color level
-            double deltaLevel = maxLevel - minLevel;
-
-            // Get the value
-            double value = maxLevel;
-
-            // Get the saturation
-            double saturation =
-                value == 0 ?
-                0.0d :
-                deltaLevel / maxLevel;
-            
-            // Get the hue
-            double hue = 0.0d;
-            if (saturation != 0)
-            {
-                if (value == levelR)
-                    hue = 0.0 + (levelG - levelB) / deltaLevel;
-                else if (value == levelG)
-                    hue = 2.0 + (levelB - levelR) / deltaLevel;
-                else
-                    hue = 4.0 + (levelR - levelG) / deltaLevel;
-                hue *= 60;
-                if (hue < 0)
-                    hue += 360;
-                hue /= 360;
-            }
-
-            // Return the resulting values
-            return (hue, saturation, value);
         }
     }
 }

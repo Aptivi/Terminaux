@@ -21,6 +21,7 @@ using System;
 using Terminaux.Base;
 using Terminaux.Colors.Accessibility;
 using Terminaux.Colors.Models;
+using Terminaux.Colors.Models.Conversion;
 
 namespace Terminaux.Colors
 {
@@ -133,7 +134,7 @@ namespace Terminaux.Colors
                 double yPart = (double)y / 100;
                 double kPart = (double)k / 100;
                 var cmyk = new CyanMagentaYellowKey(kPart, new(cPart, mPart, yPart));
-                var rgb = cmyk.ConvertToRgb();
+                var rgb = RgbConversionTools.ConvertFrom(cmyk);
                 int r = rgb.R;
                 int g = rgb.G;
                 int b = rgb.B;
@@ -173,7 +174,7 @@ namespace Terminaux.Colors
                 double sPart = (double)s / 100;
                 double lPart = (double)l / 100;
                 var hsl = new HueSaturationLightness(hPart, sPart, lPart);
-                var rgb = hsl.ConvertToRgb();
+                var rgb = RgbConversionTools.ConvertFrom(hsl);
                 int r = rgb.R;
                 int g = rgb.G;
                 int b = rgb.B;
@@ -213,7 +214,7 @@ namespace Terminaux.Colors
                 double sPart = (double)s / 100;
                 double vPart = (double)v / 100;
                 var hsv = new HueSaturationValue(hPart, sPart, vPart);
-                var rgb = hsv.ConvertToRgb();
+                var rgb = RgbConversionTools.ConvertFrom(hsv);
                 int r = rgb.R;
                 int g = rgb.G;
                 int b = rgb.B;
@@ -253,7 +254,7 @@ namespace Terminaux.Colors
                 double mPart = (double)m / 100;
                 double yPart = (double)y / 100;
                 var cmy = new CyanMagentaYellow(cPart, mPart, yPart);
-                var rgb = cmy.ConvertToRgb();
+                var rgb = RgbConversionTools.ConvertFrom(cmy);
                 int r = rgb.R;
                 int g = rgb.G;
                 int b = rgb.B;
@@ -290,7 +291,7 @@ namespace Terminaux.Colors
 
                 // First, we need to convert from RYB to RGB
                 var ryb = new RedYellowBlue(r, y, b);
-                var rgb = ryb.ConvertToRgb();
+                var rgb = RgbConversionTools.ConvertFrom(ryb);
                 int rgbR = rgb.R;
                 int rgbG = rgb.G;
                 int rgbB = rgb.B;

@@ -114,31 +114,6 @@ namespace Terminaux.Colors
         public RedGreenBlue RGB =>
             new(R, G, B);
         /// <summary>
-        /// An instance of CMYK
-        /// </summary>
-        public CyanMagentaYellowKey CMYK =>
-            RGB.ConvertToCmyk();
-        /// <summary>
-        /// An instance of CMY
-        /// </summary>
-        public CyanMagentaYellow CMY =>
-            RGB.ConvertToCmy();
-        /// <summary>
-        /// An instance of HSL
-        /// </summary>
-        public HueSaturationLightness HSL =>
-            RGB.ConvertToHsl();
-        /// <summary>
-        /// An instance of HSV
-        /// </summary>
-        public HueSaturationValue HSV =>
-            RGB.ConvertToHsv();
-        /// <summary>
-        /// An instance of RYB
-        /// </summary>
-        public RedYellowBlue RYB =>
-            RGB.ConvertToRyb();
-        /// <summary>
         /// Hexadecimal representation of the color
         /// </summary>
         public string Hex { get; private set; }

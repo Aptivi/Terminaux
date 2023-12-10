@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Terminaux.Base;
 
 namespace Terminaux.Colors.Models
 {
@@ -54,41 +53,6 @@ namespace Terminaux.Colors.Models
         /// The yellow color value [0 -> 100]
         /// </summary>
         public int YWhole { get; private set; }
-
-        /// <summary>
-        /// Converts this instance of CMY color to CMYK model
-        /// </summary>
-        /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
-        public CyanMagentaYellowKey ConvertToCmyk() =>
-            new(this);
-
-        /// <summary>
-        /// Converts this instance of CMY color to RGB model
-        /// </summary>
-        /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
-        public RedGreenBlue ConvertToRgb() =>
-            new(this);
-
-        /// <summary>
-        /// Converts this instance of CMY color to HSL model
-        /// </summary>
-        /// <returns>An instance of <see cref="HueSaturationLightness"/></returns>
-        public HueSaturationLightness ConvertToHsl() =>
-            new(this);
-
-        /// <summary>
-        /// Converts this instance of CMY color to HSV model
-        /// </summary>
-        /// <returns>An instance of <see cref="HueSaturationValue"/></returns>
-        public HueSaturationValue ConvertToHsv() =>
-            new(this);
-
-        /// <summary>
-        /// Converts this instance of CMY color to RYB model
-        /// </summary>
-        /// <returns>An instance of <see cref="RedYellowBlue"/></returns>
-        public RedYellowBlue ConvertToRyb() =>
-            new(this);
 
         /// <summary>
         /// cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;
@@ -125,120 +89,6 @@ namespace Terminaux.Colors.Models
         public static bool operator !=(CyanMagentaYellow left, CyanMagentaYellow right) =>
             !(left == right);
 
-        /// <summary>
-        /// Converts the RGB color model to CMY
-        /// </summary>
-        /// <param name="rgb">Instance of RGB</param>
-        /// <exception cref="TerminauxException"></exception>
-        public CyanMagentaYellow(RedGreenBlue rgb)
-        {
-            if (rgb is null)
-                throw new TerminauxException("Can't convert a null RGB instance to CMY!");
-
-            // Get the level of each color
-            var (c, m, y) = GetCmyFromRgb(rgb);
-
-            // Install the values
-            C = c;
-            M = m;
-            Y = y;
-            CWhole = (int)(c * 100);
-            MWhole = (int)(m * 100);
-            YWhole = (int)(y * 100);
-        }
-
-        /// <summary>
-        /// Converts the HSL color model to CMY
-        /// </summary>
-        /// <param name="hsl">Instance of HSL</param>
-        /// <exception cref="TerminauxException"></exception>
-        public CyanMagentaYellow(HueSaturationLightness hsl)
-        {
-            if (hsl is null)
-                throw new TerminauxException("Can't convert a null HSL instance to CMY!");
-
-            // Get the level of each color
-            var rgb = hsl.ConvertToRgb();
-            var (c, m, y) = GetCmyFromRgb(rgb);
-
-            // Install the values
-            C = c;
-            M = m;
-            Y = y;
-            CWhole = (int)(c * 100);
-            MWhole = (int)(m * 100);
-            YWhole = (int)(y * 100);
-        }
-
-        /// <summary>
-        /// Converts the CMYK color model to CMY
-        /// </summary>
-        /// <param name="cmyk">Instance of CMYK</param>
-        /// <exception cref="TerminauxException"></exception>
-        public CyanMagentaYellow(CyanMagentaYellowKey cmyk)
-        {
-            if (cmyk is null)
-                throw new TerminauxException("Can't convert a null CMYK instance to CMY!");
-
-            // Get the level of each color
-            var rgb = cmyk.ConvertToRgb();
-            var (c, m, y) = GetCmyFromRgb(rgb);
-
-            // Install the values
-            C = c;
-            M = m;
-            Y = y;
-            CWhole = (int)(c * 100);
-            MWhole = (int)(m * 100);
-            YWhole = (int)(y * 100);
-        }
-
-        /// <summary>
-        /// Converts the HSV color model to CMY
-        /// </summary>
-        /// <param name="hsv">Instance of HSV</param>
-        /// <exception cref="TerminauxException"></exception>
-        public CyanMagentaYellow(HueSaturationValue hsv)
-        {
-            if (hsv is null)
-                throw new TerminauxException("Can't convert a null HSV instance to CMY!");
-
-            // Get the level of each color
-            var rgb = hsv.ConvertToRgb();
-            var (c, m, y) = GetCmyFromRgb(rgb);
-
-            // Install the values
-            C = c;
-            M = m;
-            Y = y;
-            CWhole = (int)(c * 100);
-            MWhole = (int)(m * 100);
-            YWhole = (int)(y * 100);
-        }
-
-        /// <summary>
-        /// Converts the RYB color model to CMY
-        /// </summary>
-        /// <param name="ryb">Instance of RYB</param>
-        /// <exception cref="TerminauxException"></exception>
-        public CyanMagentaYellow(RedYellowBlue ryb)
-        {
-            if (ryb is null)
-                throw new TerminauxException("Can't convert a null RYB instance to CMY!");
-
-            // Get the level of each color
-            var rgb = ryb.ConvertToRgb();
-            var (c, m, y) = GetCmyFromRgb(rgb);
-
-            // Install the values
-            C = c;
-            M = m;
-            Y = y;
-            CWhole = (int)(c * 100);
-            MWhole = (int)(m * 100);
-            YWhole = (int)(y * 100);
-        }
-
         internal CyanMagentaYellow(double c, double m, double y)
         {
             C = c;
@@ -247,26 +97,6 @@ namespace Terminaux.Colors.Models
             CWhole = (int)(c * 100);
             MWhole = (int)(m * 100);
             YWhole = (int)(y * 100);
-        }
-
-        private (double c, double m, double y) GetCmyFromRgb(RedGreenBlue rgb)
-        {
-            double levelR = (double)rgb.R / 255;
-            double levelG = (double)rgb.G / 255;
-            double levelB = (double)rgb.B / 255;
-
-            // Now, get the Cyan, Magenta, and Yellow values
-            double c = 1 - levelR;
-            double m = 1 - levelG;
-            double y = 1 - levelB;
-            if (double.IsNaN(c))
-                c = 0;
-            if (double.IsNaN(m))
-                m = 0;
-            if (double.IsNaN(y))
-                y = 0;
-
-            return (c, m, y);
         }
     }
 }

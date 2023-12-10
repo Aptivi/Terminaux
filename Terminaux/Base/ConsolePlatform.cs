@@ -18,7 +18,6 @@
 //
 
 using SpecProbe.Platform;
-using SpecProbe.Software.Kernel;
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;

@@ -22,6 +22,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Colors.Accessibility;
+using Terminaux.Colors.Models.Conversion;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
@@ -77,12 +78,13 @@ namespace Terminaux.Colors.Selector
                 var screenPart = new ScreenPart();
 
                 // Set initial colors
+                var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
                 switch (type)
                 {
                     case ColorType.TrueColor:
-                        trueColorHue = selectedColor.HSL.HueWhole;
-                        trueColorSaturation = selectedColor.HSL.SaturationWhole;
-                        trueColorLightness = selectedColor.HSL.LightnessWhole;
+                        trueColorHue = hsl.HueWhole;
+                        trueColorSaturation = hsl.SaturationWhole;
+                        trueColorLightness = hsl.LightnessWhole;
                         break;
                     case ColorType._255Color:
                         colorValue255 = selectedColor.ColorEnum255;
@@ -311,6 +313,11 @@ namespace Terminaux.Colors.Selector
 
             // then, the boxes
             var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
+            var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmyk = CmykConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmy = CmyConversionTools.ConvertFrom(selectedColor.RGB);
             selector.Append(
                 BoxFrameTextColor.RenderBoxFrame($"Info for: {colorValue255}", infoBoxX, infoBoxY, boxWidth, boxHeight) +
                 BoxColor.RenderBox(infoBoxX + 1, infoBoxY, boxWidth, boxHeight) +
@@ -318,11 +325,11 @@ namespace Terminaux.Colors.Selector
                 TextWriterWhereColor.RenderWherePlain($"Hex: {selectedColor.Hex}", infoBoxX + 1, infoBoxY + 2) +
                 TextWriterWhereColor.RenderWherePlain($"RGB sequence: {selectedColor.PlainSequence}", infoBoxX + 1, infoBoxY + 3) +
                 TextWriterWhereColor.RenderWherePlain($"RGB sequence (real): {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4) +
-                TextWriterWhereColor.RenderWherePlain($"CMYK: {selectedColor.CMYK}", infoBoxX + 1, infoBoxY + 5) +
-                TextWriterWhereColor.RenderWherePlain($"CMY: {selectedColor.CMY}", infoBoxX + 1, infoBoxY + 6) +
-                TextWriterWhereColor.RenderWherePlain($"HSL: {selectedColor.HSL}", infoBoxX + 1, infoBoxY + 7) +
-                TextWriterWhereColor.RenderWherePlain($"HSV: {selectedColor.HSV}", infoBoxX + 1, infoBoxY + 8) +
-                TextWriterWhereColor.RenderWherePlain($"RYB: {selectedColor.RYB}, Grayscale: {mono}", infoBoxX + 1, infoBoxY + 9)
+                TextWriterWhereColor.RenderWherePlain($"CMYK: {cmyk}", infoBoxX + 1, infoBoxY + 5) +
+                TextWriterWhereColor.RenderWherePlain($"CMY: {cmy}", infoBoxX + 1, infoBoxY + 6) +
+                TextWriterWhereColor.RenderWherePlain($"HSL: {hsl}", infoBoxX + 1, infoBoxY + 7) +
+                TextWriterWhereColor.RenderWherePlain($"HSV: {hsv}", infoBoxX + 1, infoBoxY + 8) +
+                TextWriterWhereColor.RenderWherePlain($"RYB: {ryb}, Grayscale: {mono}", infoBoxX + 1, infoBoxY + 9)
             );
 
             // Finally, the keybindings
@@ -372,6 +379,11 @@ namespace Terminaux.Colors.Selector
 
             // then, the boxes
             var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
+            var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmyk = CmykConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmy = CmyConversionTools.ConvertFrom(selectedColor.RGB);
             selector.Append(
                 BoxFrameTextColor.RenderBoxFrame($"Info for: {colorValue16}", infoBoxX, infoBoxY, boxWidth, boxHeight) +
                 BoxColor.RenderBox(infoBoxX + 1, infoBoxY, boxWidth, boxHeight) +
@@ -379,11 +391,11 @@ namespace Terminaux.Colors.Selector
                 TextWriterWhereColor.RenderWherePlain($"Hex: {selectedColor.Hex}", infoBoxX + 1, infoBoxY + 2) +
                 TextWriterWhereColor.RenderWherePlain($"RGB sequence: {selectedColor.PlainSequence}", infoBoxX + 1, infoBoxY + 3) +
                 TextWriterWhereColor.RenderWherePlain($"RGB sequence (real): {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4) +
-                TextWriterWhereColor.RenderWherePlain($"CMYK: {selectedColor.CMYK}", infoBoxX + 1, infoBoxY + 5) +
-                TextWriterWhereColor.RenderWherePlain($"CMY: {selectedColor.CMY}", infoBoxX + 1, infoBoxY + 6) +
-                TextWriterWhereColor.RenderWherePlain($"HSL: {selectedColor.HSL}", infoBoxX + 1, infoBoxY + 7) +
-                TextWriterWhereColor.RenderWherePlain($"HSV: {selectedColor.HSV}", infoBoxX + 1, infoBoxY + 8) +
-                TextWriterWhereColor.RenderWherePlain($"RYB: {selectedColor.RYB}, Grayscale: {mono}", infoBoxX + 1, infoBoxY + 9)
+                TextWriterWhereColor.RenderWherePlain($"CMYK: {cmyk}", infoBoxX + 1, infoBoxY + 5) +
+                TextWriterWhereColor.RenderWherePlain($"CMY: {cmy}", infoBoxX + 1, infoBoxY + 6) +
+                TextWriterWhereColor.RenderWherePlain($"HSL: {hsl}", infoBoxX + 1, infoBoxY + 7) +
+                TextWriterWhereColor.RenderWherePlain($"HSV: {hsv}", infoBoxX + 1, infoBoxY + 8) +
+                TextWriterWhereColor.RenderWherePlain($"RYB: {ryb}, Grayscale: {mono}", infoBoxX + 1, infoBoxY + 9)
             );
 
             // Finally, the keybindings
@@ -698,6 +710,11 @@ namespace Terminaux.Colors.Selector
                 ColorTools.RenderColorBlindnessAware(selectedColor, deficiency, severity) :
                 selectedColor;
             string separator = new('-', localizedTextTitle.Length);
+            var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
+            var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmyk = CmykConversionTools.ConvertFrom(selectedColor.RGB);
+            var cmy = CmyConversionTools.ConvertFrom(selectedColor.RGB);
             InfoBoxColor.WriteInfoBox(
                 $$"""
                 {{localizedTextTitle}}
@@ -709,32 +726,32 @@ namespace Terminaux.Colors.Selector
                 Color type:         {{selectedColor.Type}}
                     
                 RYB information:
-                    - Red:            {{selectedColor.RYB.R,3}}
-                    - Yellow:         {{selectedColor.RYB.Y,3}}
-                    - Blue:           {{selectedColor.RYB.B,3}}
+                    - Red:            {{ryb.R,3}}
+                    - Yellow:         {{ryb.Y,3}}
+                    - Blue:           {{ryb.B,3}}
 
                 CMYK information:
-                    - Black key:      {{selectedColor.CMYK.KWhole,3}}
-                    - Cyan:           {{selectedColor.CMYK.CMY.CWhole,3}}
-                    - Magenta:        {{selectedColor.CMYK.CMY.MWhole,3}}
-                    - Yellow:         {{selectedColor.CMYK.CMY.YWhole,3}}
+                    - Black key:      {{cmyk.KWhole,3}}
+                    - Cyan:           {{cmyk.CMY.CWhole,3}}
+                    - Magenta:        {{cmyk.CMY.MWhole,3}}
+                    - Yellow:         {{cmyk.CMY.YWhole,3}}
                     
                 CMY information:
-                    - Cyan:           {{selectedColor.CMY.CWhole,3}}
-                    - Magenta:        {{selectedColor.CMY.CWhole,3}}
-                    - Yellow:         {{selectedColor.CMY.CWhole,3}}
+                    - Cyan:           {{cmy.CWhole,3}}
+                    - Magenta:        {{cmy.CWhole,3}}
+                    - Yellow:         {{cmy.CWhole,3}}
                     
                 HSL information:
-                    - Hue (degs):     {{selectedColor.HSL.HueWhole,3}}'
-                    - Reverse Hue:    {{selectedColor.HSL.ReverseHueWhole,3}}'
-                    - Saturation:     {{selectedColor.HSL.SaturationWhole,3}}
-                    - Lightness:      {{selectedColor.HSL.LightnessWhole,3}}
+                    - Hue (degs):     {{hsl.HueWhole,3}}'
+                    - Reverse Hue:    {{hsl.ReverseHueWhole,3}}'
+                    - Saturation:     {{hsl.SaturationWhole,3}}
+                    - Lightness:      {{hsl.LightnessWhole,3}}
                     
                 HSV information:
-                    - Hue (degs):     {{selectedColor.HSV.HueWhole,3}}'
-                    - Reverse Hue:    {{selectedColor.HSV.ReverseHueWhole,3}}'
-                    - Saturation:     {{selectedColor.HSV.SaturationWhole,3}}
-                    - Value:          {{selectedColor.HSV.ValueWhole,3}}
+                    - Hue (degs):     {{hsv.HueWhole,3}}'
+                    - Reverse Hue:    {{hsv.ReverseHueWhole,3}}'
+                    - Saturation:     {{hsv.SaturationWhole,3}}
+                    - Value:          {{hsv.ValueWhole,3}}
                 """
             );
         }

@@ -19,6 +19,7 @@
 
 using Shouldly;
 using Terminaux.Colors;
+using Terminaux.Colors.Models.Conversion;
 
 namespace Terminaux.Tests.Colors
 {
@@ -61,7 +62,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.RGB.B.ShouldBe(22);
 
             // Now, convert to CMYK
-            var cmyk = ColorInstance.RGB.ConvertToCmyk();
+            var cmyk = CmykConversionTools.ConvertFrom(ColorInstance.RGB);
 
             // Check for property correctness
             cmyk.KWhole.ShouldBe(45);
@@ -70,7 +71,7 @@ namespace Terminaux.Tests.Colors
             cmyk.CMY.YWhole.ShouldBe(84);
 
             // Now, convert back to RGB
-            var rgb = cmyk.ConvertToRgb();
+            var rgb = RgbConversionTools.ConvertFrom(cmyk);
 
             // Check for property correctness
             rgb.R.ShouldBe(140);
@@ -107,7 +108,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.RGB.B.ShouldBe(22);
 
             // Now, convert to HSL
-            var hsl = ColorInstance.RGB.ConvertToHsl();
+            var hsl = HslConversionTools.ConvertFrom(ColorInstance.RGB);
 
             // Check for property correctness
             hsl.HueWhole.ShouldBe(350);
@@ -116,7 +117,7 @@ namespace Terminaux.Tests.Colors
             hsl.LightnessWhole.ShouldBe(27);
 
             // Now, convert back to RGB
-            var rgb = hsl.ConvertToRgb();
+            var rgb = RgbConversionTools.ConvertFrom(hsl);
 
             // Check for property correctness
             rgb.R.ShouldBe(139);
@@ -153,7 +154,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.RGB.B.ShouldBe(22);
 
             // Now, convert to CMY
-            var cmy = ColorInstance.RGB.ConvertToCmy();
+            var cmy = CmyConversionTools.ConvertFrom(ColorInstance.RGB);
 
             // Check for property correctness
             cmy.CWhole.ShouldBe(45);
@@ -161,7 +162,7 @@ namespace Terminaux.Tests.Colors
             cmy.YWhole.ShouldBe(91);
 
             // Now, convert back to RGB
-            var rgb = cmy.ConvertToRgb();
+            var rgb = RgbConversionTools.ConvertFrom(cmy);
 
             // Check for property correctness
             rgb.R.ShouldBe(140);
@@ -198,7 +199,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.RGB.B.ShouldBe(22);
 
             // Now, convert to HSV
-            var hsv = ColorInstance.RGB.ConvertToHsv();
+            var hsv = HsvConversionTools.ConvertFrom(ColorInstance.RGB);
 
             // Check for property correctness
             hsv.HueWhole.ShouldBe(350);
@@ -207,7 +208,7 @@ namespace Terminaux.Tests.Colors
             hsv.ValueWhole.ShouldBe(54);
 
             // Now, convert back to RGB
-            var rgb = hsv.ConvertToRgb();
+            var rgb = RgbConversionTools.ConvertFrom(hsv);
 
             // Check for property correctness
             rgb.R.ShouldBe(139);
@@ -244,7 +245,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.RGB.B.ShouldBe(22);
 
             // Now, convert to RYB
-            var ryb = ColorInstance.RGB.ConvertToRyb();
+            var ryb = RybConversionTools.ConvertFrom(ColorInstance.RGB);
 
             // Check for property correctness
             ryb.R.ShouldBe(139);
@@ -252,7 +253,7 @@ namespace Terminaux.Tests.Colors
             ryb.B.ShouldBe(22);
 
             // Now, convert back to RGB
-            var rgb = ryb.ConvertToRgb();
+            var rgb = RgbConversionTools.ConvertFrom(ryb);
 
             // Check for property correctness
             rgb.R.ShouldBe(139);
