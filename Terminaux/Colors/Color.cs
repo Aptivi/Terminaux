@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Terminaux.Base;
 using Terminaux.Colors.Models;
 
 namespace Terminaux.Colors
@@ -183,7 +184,7 @@ namespace Terminaux.Colors
         /// <param name="R">The red level</param>
         /// <param name="G">The green level</param>
         /// <param name="B">The blue level</param>
-        /// <exception cref="ColorSeqException"></exception>
+        /// <exception cref="TerminauxException"></exception>
         public Color(int R, int G, int B)
             : this($"{R};{G};{B}")
         { }
@@ -192,7 +193,7 @@ namespace Terminaux.Colors
         /// Makes a new instance of color class from specifier.
         /// </summary>
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
-        /// <exception cref="ColorSeqException"></exception>
+        /// <exception cref="TerminauxException"></exception>
         public Color(ConsoleColors ColorDef)
             : this((int)ColorDef >= 0 && ColorDef <= ConsoleColors.White ? Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorDef)) : Convert.ToInt32(ColorDef))
         { }
@@ -201,7 +202,7 @@ namespace Terminaux.Colors
         /// Makes a new instance of color class from specifier.
         /// </summary>
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColor"/></param>
-        /// <exception cref="ColorSeqException"></exception>
+        /// <exception cref="TerminauxException"></exception>
         public Color(ConsoleColor ColorDef)
             : this(Convert.ToInt32(ColorTools.CorrectStandardColor(ColorDef)))
         { }
@@ -210,7 +211,7 @@ namespace Terminaux.Colors
         /// Makes a new instance of color class from specifier.
         /// </summary>
         /// <param name="ColorNum">The color number</param>
-        /// <exception cref="ColorSeqException"></exception>
+        /// <exception cref="TerminauxException"></exception>
         public Color(int ColorNum)
             : this(ColorNum >= 0 && ColorNum <= (int)ConsoleColors.White ? $"{Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorNum))}" : $"{ColorNum}")
         { }
@@ -219,7 +220,7 @@ namespace Terminaux.Colors
         /// Makes a new instance of color class from specifier.
         /// </summary>
         /// <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, or a hexadecimal representation of a number (#AABBCC for example)</param>
-        /// <exception cref="ColorSeqException"></exception>
+        /// <exception cref="TerminauxException"></exception>
         public Color(string ColorSpecifier)
         {
             // Remove stray double quotes
@@ -306,7 +307,7 @@ namespace Terminaux.Colors
             }
             else
             {
-                throw new ColorSeqException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new TerminauxException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
             }
 
             // Populate the hexadecimal representation of the color
@@ -317,7 +318,7 @@ namespace Terminaux.Colors
         /// Makes a new instance of color class from specifier.
         /// </summary>
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
-        /// <exception cref="ColorSeqException"></exception>
+        /// <exception cref="TerminauxException"></exception>
         public static implicit operator Color(ConsoleColors ColorDef) =>
             new((int)ColorDef >= 0 && ColorDef <= ConsoleColors.White ? Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorDef)) : Convert.ToInt32(ColorDef));
 
@@ -325,7 +326,7 @@ namespace Terminaux.Colors
         /// Makes a new instance of color class from specifier.
         /// </summary>
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColor"/></param>
-        /// <exception cref="ColorSeqException"></exception>
+        /// <exception cref="TerminauxException"></exception>
         public static implicit operator Color(ConsoleColor ColorDef) =>
             new(Convert.ToInt32(ColorTools.CorrectStandardColor(ColorDef)));
 
@@ -333,7 +334,7 @@ namespace Terminaux.Colors
         /// Makes a new instance of color class from specifier.
         /// </summary>
         /// <param name="ColorNum">The color number</param>
-        /// <exception cref="ColorSeqException"></exception>
+        /// <exception cref="TerminauxException"></exception>
         public static implicit operator Color(int ColorNum) =>
             new(ColorNum >= 0 && ColorNum <= (int)ConsoleColors.White ? $"{Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorNum))}" : $"{ColorNum}");
 
@@ -341,7 +342,7 @@ namespace Terminaux.Colors
         /// Makes a new instance of color class from specifier.
         /// </summary>
         /// <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, or a hexadecimal representation of a number (#AABBCC for example)</param>
-        /// <exception cref="ColorSeqException"></exception>
+        /// <exception cref="TerminauxException"></exception>
         public static implicit operator Color(string ColorSpecifier) =>
             new(ColorSpecifier);
 
