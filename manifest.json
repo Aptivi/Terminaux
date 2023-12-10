@@ -265,6 +265,76 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.CmyConversionTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Conversion.CmyConversionTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.CmykConversionTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Conversion.CmykConversionTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.HslConversionTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Conversion.HslConversionTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.HsvConversionTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Conversion.HsvConversionTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.RgbConversionTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Conversion.RgbConversionTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.RybConversionTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Conversion.RybConversionTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Conversion.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.CyanMagentaYellow.yml",
       "output": {
         ".html": {
