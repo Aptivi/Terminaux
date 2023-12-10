@@ -144,7 +144,7 @@ namespace Terminaux.Inputs
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
         public static string ReadLineNoInput(char MaskChar) =>
-            ReadLineNoInput(MaskChar, new TermReaderSettings());
+            ReadLineNoInput(MaskChar, globalSettings);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -29,11 +30,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public void RunFixture()
         {
             TextWriterColor.Write("Write \"exit\" to get out of here.");
-            var settings = new TermReaderSettings()
-            {
-                LeftMargin = 4,
-                RightMargin = 4,
-            };
+            var settings = Input.globalSettings;
+            settings.LeftMargin = 4;
+            settings.RightMargin = 4;
             string input = "";
             while (input != "exit")
             {

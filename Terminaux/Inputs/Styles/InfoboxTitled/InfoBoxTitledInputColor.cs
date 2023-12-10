@@ -132,10 +132,8 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
                 ConsoleWrapper.SetCursorPosition(inputPosX + 1, inputPosY + 1);
 
                 // Wait until the user presses any key to close the box
-                var settings = new TermReaderSettings()
-                {
-                    RightMargin = inputPosX - 2,
-                };
+                var settings = Input.globalSettings;
+                settings.RightMargin = inputPosX - 2;
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
@@ -359,10 +357,8 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
                     $"{InfoBoxTitledColor.VTSequenceForeground}" +
                     $"{BackgroundColor.VTSequenceBackground}"
                 , false);
-                var settings = new TermReaderSettings()
-                {
-                    RightMargin = inputPosX - 2,
-                };
+                var settings = Input.globalSettings;
+                settings.RightMargin = inputPosX - 2;
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
@@ -495,10 +491,8 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
                     $"{new Color(InfoBoxTitledColor).VTSequenceForeground}" +
                     $"{new Color(BackgroundColor).VTSequenceBackground}"
                 , false);
-                var settings = new TermReaderSettings()
-                {
-                    RightMargin = inputPosX - 2,
-                };
+                var settings = Input.globalSettings;
+                settings.RightMargin = inputPosX - 2;
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }

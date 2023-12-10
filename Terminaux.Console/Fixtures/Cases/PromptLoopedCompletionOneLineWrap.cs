@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -33,11 +34,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string input = "";
             while (input != "exit")
             {
-                var settings = new TermReaderSettings()
-                {
-                    Suggestions = GetSuggestions,
-                    HistoryEnabled = true,
-                };
+                var settings = Input.globalSettings;
+                settings.Suggestions = GetSuggestions;
+                settings.HistoryEnabled = true;
                 input = TermReader.Read(">> ", "", settings, false, true);
                 TextWriterColor.Write("You said: " + input);
             }
