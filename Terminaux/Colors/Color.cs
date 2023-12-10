@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Terminaux.Base;
 using Terminaux.Colors.Models;
+using Terminaux.Colors.Models.Parsing;
 
 namespace Terminaux.Colors
 {
@@ -206,12 +207,12 @@ namespace Terminaux.Colors
             {
                 // Parse it
                 var rgb =
-                    ColorSpecifier.StartsWith("cmyk:") ? ColorParser.ParseSpecifierCmykValues(ColorSpecifier) :
-                    ColorSpecifier.StartsWith("cmy:") ? ColorParser.ParseSpecifierCmyValues(ColorSpecifier) :
-                    ColorSpecifier.StartsWith("hsl:") ? ColorParser.ParseSpecifierHslValues(ColorSpecifier) :
-                    ColorSpecifier.StartsWith("hsv:") ? ColorParser.ParseSpecifierHsvValues(ColorSpecifier) :
-                    ColorSpecifier.StartsWith("ryb:") ? ColorParser.ParseSpecifierRybValues(ColorSpecifier) :
-                    ColorParser.ParseSpecifierRgbValues(ColorSpecifier);
+                    ColorSpecifier.StartsWith("cmyk:") ? CmykParsingTools.ParseSpecifierToRgb(ColorSpecifier) :
+                    ColorSpecifier.StartsWith("cmy:") ? CmyParsingTools.ParseSpecifierToRgb(ColorSpecifier) :
+                    ColorSpecifier.StartsWith("hsl:") ? HslParsingTools.ParseSpecifierToRgb(ColorSpecifier) :
+                    ColorSpecifier.StartsWith("hsv:") ? HsvParsingTools.ParseSpecifierToRgb(ColorSpecifier) :
+                    ColorSpecifier.StartsWith("ryb:") ? RybParsingTools.ParseSpecifierToRgb(ColorSpecifier) :
+                    RgbParsingTools.ParseSpecifier(ColorSpecifier);
                 int r = rgb.R;
                 int g = rgb.G;
                 int b = rgb.B;
@@ -235,7 +236,7 @@ namespace Terminaux.Colors
                 var parsedEnum16 = specifierNum <= 15 ? (ConsoleColor)Enum.Parse(typeof(ConsoleColor), ColorSpecifier) : default;
 
                 // Parse it
-                var rgb = ColorParser.ParseSpecifierRgbName(ColorSpecifier);
+                var rgb = RgbParsingTools.ParseSpecifierRgbName(ColorSpecifier);
                 var colorsInfo = rgb.cci;
                 int r = rgb.rgb.R;
                 int g = rgb.rgb.G;
@@ -262,7 +263,7 @@ namespace Terminaux.Colors
             else if (ColorSpecifier.StartsWith("#"))
             {
                 // Parse it
-                var rgb = ColorParser.ParseSpecifierRgbHash(ColorSpecifier);
+                var rgb = RgbParsingTools.ParseSpecifierRgbHash(ColorSpecifier);
                 int r = rgb.R;
                 int g = rgb.G;
                 int b = rgb.B;

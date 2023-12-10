@@ -1,0 +1,90 @@
+﻿//
+// Terminaux  Copyright (C) 2023-2024  Aptivi
+//
+// This file is part of Terminaux
+//
+// Terminaux is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Terminaux is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using System;
+using Terminaux.Base;
+using Terminaux.Colors.Accessibility;
+using Terminaux.Colors.Models.Conversion;
+
+namespace Terminaux.Colors.Models.Parsing
+{
+    /// <summary>
+    /// Tools to parse HSV specifiers
+    /// </summary>
+    public static class HsvParsingTools
+    {
+        /// <summary>
+        /// Parses the specifier and returns an instance of <see cref="HueSaturationValue"/>
+        /// </summary>
+        /// <param name="specifier">Specifier of HSV</param>
+        /// <returns>An instance of <see cref="HueSaturationValue"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static HueSaturationValue ParseSpecifier(string specifier)
+        {
+            if (!specifier.Contains(";") || !specifier.StartsWith("hsv:"))
+                throw new TerminauxException($"Invalid HSV color specifier \"{specifier}\". Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
+
+            // Split the VT sequence into three parts
+            var specifierArray = specifier.Substring(4).Split(';');
+            if (specifierArray.Length == 3)
+            {
+                // We got the HSV whole values! First, check to see if we need to filter the color for the color-blind
+                int h = Convert.ToInt32(specifierArray[0]);
+                if (h < 0 || h > 360)
+                    throw new TerminauxException($"The hue level is out of range (0' -> 360' degrees). {h}");
+                int s = Convert.ToInt32(specifierArray[1]);
+                if (s < 0 || s > 100)
+                    throw new TerminauxException($"The saturation level is out of range (0 -> 100). {s}");
+                int v = Convert.ToInt32(specifierArray[2]);
+                if (v < 0 || v > 100)
+                    throw new TerminauxException($"The value level is out of range (0 -> 100). {v}");
+
+                // First, we need to convert from HSV to RGB
+                double hPart = (double)h / 360;
+                double sPart = (double)s / 100;
+                double vPart = (double)v / 100;
+                var hsv = new HueSaturationValue(hPart, sPart, vPart);
+                return hsv;
+            }
+            else
+                throw new TerminauxException($"Invalid HSV color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: hsv:<C>;<M>;<Y>");
+        }
+
+        /// <summary>
+        /// Parses the specifier and returns an instance of <see cref="HueSaturationValue"/> converted to <see cref="RedGreenBlue"/>
+        /// </summary>
+        /// <param name="specifier">Specifier of HSV</param>
+        /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ParseSpecifierToRgb(string specifier)
+        {
+            var hsv = ParseSpecifier(specifier);
+            var rgb = RgbConversionTools.ConvertFrom(hsv);
+            int r = rgb.R;
+            int g = rgb.G;
+            int b = rgb.B;
+
+            // Now, transform
+            var finalRgb = TransformationTools.GetTransformedColor(r, g, b);
+
+            // Make a new RGB class
+            return new(finalRgb.r, finalRgb.g, finalRgb.b);
+        }
+    }
+}
