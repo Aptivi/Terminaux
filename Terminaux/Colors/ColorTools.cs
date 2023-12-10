@@ -22,6 +22,7 @@ using System;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Textify.Sequences.Builder;
+using System.Collections.Generic;
 
 namespace Terminaux.Colors
 {
@@ -30,6 +31,12 @@ namespace Terminaux.Colors
     /// </summary>
     public static class ColorTools
     {
+        internal static List<int> unseeables = [
+            (int)ConsoleColors.Black,
+            (int)ConsoleColors.Grey0,
+            (int)ConsoleColors.Grey3,
+            (int)ConsoleColors.Grey7,
+        ];
         internal static Color currentForegroundColor = new(ConsoleColors.White);
         internal static Color currentBackgroundColor = Color.Empty;
         internal static Color _empty;
@@ -325,16 +332,17 @@ namespace Terminaux.Colors
         }
 
         /// <summary>
-        /// Gets a random color instance
+        /// Gets a random color instance (true color)
         /// </summary>
         /// <param name="selectBlack">Whether to select the black color or not</param>
         /// <returns>A color instance</returns>
-        public static Color GetRandomColor(bool selectBlack = true) =>
-            GetRandomColor(ColorType.TrueColor,
-                selectBlack ? 0 : 1, 255,
-                selectBlack ? 0 : 1, 255,
-                selectBlack ? 0 : 1, 255,
-                selectBlack ? 0 : 1, 255);
+        public static Color GetRandomColor(bool selectBlack = true)
+        {
+            var color = GetRandomColor(ColorType.TrueColor, 0, 255, 0, 255, 0, 255, 0, 255);
+            while (!IsSeeable(ColorType.TrueColor, 0, color.R, color.G, color.B) && !selectBlack)
+                color = GetRandomColor(ColorType.TrueColor, 0, 255, 0, 255, 0, 255, 0, 255);
+            return color;
+        }
 
         /// <summary>
         /// Gets a random color instance
@@ -342,12 +350,23 @@ namespace Terminaux.Colors
         /// <param name="type">Color type to generate</param>
         /// <param name="selectBlack">Whether to select the black color or not</param>
         /// <returns>A color instance</returns>
-        public static Color GetRandomColor(ColorType type, bool selectBlack = true) =>
-            GetRandomColor(type,
-                selectBlack ? 0 : 1, type != ColorType._16Color ? 255 : 15,
-                selectBlack ? 0 : 1, 255,
-                selectBlack ? 0 : 1, 255,
-                selectBlack ? 0 : 1, 255);
+        public static Color GetRandomColor(ColorType type, bool selectBlack = true)
+        {
+            int maxColor = type != ColorType._16Color ? 255 : 15;
+            var color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255);
+            int colorLevel = 0;
+            var colorType = color.Type;
+            if (colorType != ColorType.TrueColor)
+                colorLevel = int.Parse(color.PlainSequence);
+            while (!IsSeeable(colorType, colorLevel, color.R, color.G, color.B) && !selectBlack)
+            {
+                color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255);
+                if (colorType != ColorType.TrueColor)
+                    colorLevel = int.Parse(color.PlainSequence);
+
+            }
+            return color;
+        }
 
         /// <summary>
         /// Gets a random color instance
@@ -380,6 +399,25 @@ namespace Terminaux.Colors
                 default:
                     return Color.Empty;
             }
+        }
+
+        internal static bool IsSeeable(ColorType type, int minColor, int minColorR, int minColorG, int minColorB)
+        {
+            // Forbid setting these colors as they're considered too dark
+            bool seeable = true;
+            if (type == ColorType.TrueColor)
+            {
+                // Consider any color with all of the color levels less than 30 unseeable
+                if (minColorR < 30 && minColorG < 30 && minColorB < 30)
+                    seeable = false;
+            }
+            else
+            {
+                // Consider any blacklisted color as unseeable
+                if (unseeables.Contains(minColor))
+                    seeable = false;
+            }
+            return seeable;
         }
 
         /// <summary>

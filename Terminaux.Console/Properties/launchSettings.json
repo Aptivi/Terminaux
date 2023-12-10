@@ -234,6 +234,18 @@
     "Terminaux - ConsoleSizeCheck": {
       "commandName": "Project",
       "commandLineArgs": "ConsoleSizeCheck"
+    },
+    "Terminaux - ColorRandomTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorRandomTest"
+    },
+    "Terminaux - ColorRandom256Test": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorRandom256Test"
+    },
+    "Terminaux - ColorRandom16Test": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorRandom16Test"
     }
   }
 }
