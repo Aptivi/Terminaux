@@ -832,19 +832,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsolePlatform.IsRunningFromTmux
   nameWithType: ConsolePlatform.IsRunningFromTmux
-- uid: Terminaux.Base.ConsolePlatform.NewLine
-  name: NewLine
-  href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_NewLine
-  commentId: P:Terminaux.Base.ConsolePlatform.NewLine
-  fullName: Terminaux.Base.ConsolePlatform.NewLine
-  nameWithType: ConsolePlatform.NewLine
-- uid: Terminaux.Base.ConsolePlatform.NewLine*
-  name: NewLine
-  href: api/Terminaux.Base.ConsolePlatform.html#Terminaux_Base_ConsolePlatform_NewLine_
-  commentId: Overload:Terminaux.Base.ConsolePlatform.NewLine
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsolePlatform.NewLine
-  nameWithType: ConsolePlatform.NewLine
 - uid: Terminaux.Base.ConsoleResizeListener
   name: ConsoleResizeListener
   href: api/Terminaux.Base.ConsoleResizeListener.html
