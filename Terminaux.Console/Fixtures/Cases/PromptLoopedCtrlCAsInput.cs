@@ -29,7 +29,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            var settings = Input.globalSettings;
+            var settings = Input.GlobalReaderSettings;
             settings.TreatCtrlCAsInput = true;
             TextWriterColor.Write("Write \"exit\" to get out of here.");
             string input = "";

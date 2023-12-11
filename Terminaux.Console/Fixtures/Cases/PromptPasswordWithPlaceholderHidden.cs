@@ -29,7 +29,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            var settings = Input.globalSettings;
+            var settings = Input.GlobalReaderSettings;
             settings.PasswordMaskChar = '\0';
             string input = TermReader.ReadPassword("Enter password: ", settings);
             TextWriterColor.Write("Password is: " + input);

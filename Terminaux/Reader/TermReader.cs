@@ -99,7 +99,7 @@ namespace Terminaux.Reader
         /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string Read(string inputPrompt, string defaultValue, bool password = false, bool oneLineWrap = false, bool interruptible = false) =>
-            Read(inputPrompt, defaultValue, Input.globalSettings, password, oneLineWrap, interruptible);
+            Read(inputPrompt, defaultValue, Input.GlobalReaderSettings, password, oneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the input

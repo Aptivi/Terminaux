@@ -35,7 +35,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string input = "";
             while (input != "exit")
             {
-                var settings = Input.globalSettings;
+                var settings = Input.GlobalReaderSettings;
                 settings.Suggestions = GetSuggestions;
                 input = TermReader.Read(">> ", settings);
                 TextWriterColor.Write("You said: " + input);

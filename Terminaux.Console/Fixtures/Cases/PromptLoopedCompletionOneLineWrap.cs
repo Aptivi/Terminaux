@@ -34,7 +34,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string input = "";
             while (input != "exit")
             {
-                var settings = Input.globalSettings;
+                var settings = Input.GlobalReaderSettings;
                 settings.Suggestions = GetSuggestions;
                 settings.HistoryEnabled = true;
                 input = TermReader.Read(">> ", "", settings, false, true);

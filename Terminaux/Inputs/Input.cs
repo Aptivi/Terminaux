@@ -33,6 +33,12 @@ namespace Terminaux.Inputs
         internal static string currentMask = "*";
 
         /// <summary>
+        /// The global reader settings
+        /// </summary>
+        public static TermReaderSettings GlobalReaderSettings =>
+            globalSettings;
+
+        /// <summary>
         /// Current mask character
         /// </summary>
         public static string CurrentMask =>
@@ -42,14 +48,14 @@ namespace Terminaux.Inputs
         /// Reads the line from the console
         /// </summary>
         public static string ReadLine() =>
-            ReadLine("", "", globalSettings);
+            ReadLine("", "", GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         public static string ReadLine(string InputText) =>
-            ReadLine(InputText, "", globalSettings);
+            ReadLine(InputText, "", GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console
@@ -57,7 +63,7 @@ namespace Terminaux.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         public static string ReadLine(string InputText, string DefaultValue) =>
-            ReadLine(InputText, DefaultValue, globalSettings);
+            ReadLine(InputText, DefaultValue, GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console
@@ -72,14 +78,14 @@ namespace Terminaux.Inputs
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         public static string ReadLineWrapped() =>
-            ReadLineWrapped("", "", globalSettings);
+            ReadLineWrapped("", "", GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         public static string ReadLineWrapped(string InputText) =>
-            ReadLineWrapped(InputText, "", globalSettings);
+            ReadLineWrapped(InputText, "", GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
@@ -87,7 +93,7 @@ namespace Terminaux.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         public static string ReadLineWrapped(string InputText, string DefaultValue) =>
-            ReadLineWrapped(InputText, DefaultValue, globalSettings);
+            ReadLineWrapped(InputText, DefaultValue, GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
@@ -105,7 +111,7 @@ namespace Terminaux.Inputs
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
         public static string ReadLine(string InputText, string DefaultValue, bool OneLineWrap = false) =>
-            ReadLine(InputText, DefaultValue, OneLineWrap, globalSettings);
+            ReadLine(InputText, DefaultValue, OneLineWrap, GlobalReaderSettings);
 
         /// <summary>
         /// Reads the line from the console unsafely. This doesn't wait until the screensaver lock mode is released.
@@ -144,7 +150,7 @@ namespace Terminaux.Inputs
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
         public static string ReadLineNoInput(char MaskChar) =>
-            ReadLineNoInput(MaskChar, globalSettings);
+            ReadLineNoInput(MaskChar, GlobalReaderSettings);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.

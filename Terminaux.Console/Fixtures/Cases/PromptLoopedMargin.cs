@@ -30,7 +30,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public void RunFixture()
         {
             TextWriterColor.Write("Write \"exit\" to get out of here.");
-            var settings = Input.globalSettings;
+            var settings = Input.GlobalReaderSettings;
             settings.LeftMargin = 4;
             settings.RightMargin = 4;
             string input = "";
