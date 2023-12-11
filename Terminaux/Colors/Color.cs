@@ -296,7 +296,7 @@ namespace Terminaux.Colors
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
         /// <exception cref="TerminauxException"></exception>
         public static implicit operator Color(ConsoleColors ColorDef) =>
-            new((int)ColorDef >= 0 && ColorDef <= ConsoleColors.White ? Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorDef)) : Convert.ToInt32(ColorDef));
+            new(ColorDef);
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -304,7 +304,7 @@ namespace Terminaux.Colors
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColor"/></param>
         /// <exception cref="TerminauxException"></exception>
         public static implicit operator Color(ConsoleColor ColorDef) =>
-            new(Convert.ToInt32(ColorTools.CorrectStandardColor(ColorDef)));
+            new(ColorDef);
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -312,7 +312,7 @@ namespace Terminaux.Colors
         /// <param name="ColorNum">The color number</param>
         /// <exception cref="TerminauxException"></exception>
         public static implicit operator Color(int ColorNum) =>
-            new(ColorNum >= 0 && ColorNum <= (int)ConsoleColors.White ? $"{Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorNum))}" : $"{ColorNum}");
+            new(ColorNum);
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
