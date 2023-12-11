@@ -47,13 +47,10 @@ namespace Terminaux.Colors
         /// </summary>
         public int B { get; }
         /// <summary>
-        /// Is the color bright?
+        /// A <see cref="Colors.Color"/> instance to get more information
         /// </summary>
-        public bool IsBright { get; }
-        /// <summary>
-        /// Is the color dark?
-        /// </summary>
-        public bool IsDark { get; }
+        public Color Color =>
+            new(R, G, B);
 
         /// <summary>
         /// Makes a new instance of 255-color console color information
@@ -68,8 +65,6 @@ namespace Terminaux.Colors
                 R = ColorData.RGB.R;
                 G = ColorData.RGB.G;
                 B = ColorData.RGB.B;
-                IsBright = R + 0.2126 + G + 0.7152 + B + 0.0722 > 255 / 2d;
-                IsDark = R + 0.2126 + G + 0.7152 + B + 0.0722 < 255 / 2d;
             }
             else
                 throw new ArgumentOutOfRangeException(nameof(ColorValue), ColorValue, "The color value is outside the range of 0-255.");
@@ -104,8 +99,6 @@ namespace Terminaux.Colors
                 other.R == other2.R &&
                 other.G == other2.G &&
                 other.B == other2.B &&
-                other.IsBright == other2.IsBright &&
-                other.IsDark == other2.IsDark &&
                 other.ColorID == other2.ColorID
             ;
         }
@@ -113,13 +106,11 @@ namespace Terminaux.Colors
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            int hashCode = 1196421183;
+            int hashCode = 1523239773;
             hashCode = hashCode * -1521134295 + ColorID.GetHashCode();
             hashCode = hashCode * -1521134295 + R.GetHashCode();
             hashCode = hashCode * -1521134295 + G.GetHashCode();
             hashCode = hashCode * -1521134295 + B.GetHashCode();
-            hashCode = hashCode * -1521134295 + IsBright.GetHashCode();
-            hashCode = hashCode * -1521134295 + IsDark.GetHashCode();
             return hashCode;
         }
 

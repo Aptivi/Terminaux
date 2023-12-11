@@ -40,8 +40,6 @@ namespace Terminaux.Tests.Colors
             ConsoleColorsInfoInstance.R.ShouldBe(218);
             ConsoleColorsInfoInstance.G.ShouldBe(218);
             ConsoleColorsInfoInstance.B.ShouldBe(218);
-            ConsoleColorsInfoInstance.IsBright.ShouldBeTrue();
-            ConsoleColorsInfoInstance.IsDark.ShouldBeFalse();
         }
 
         /// <summary>
@@ -59,8 +57,6 @@ namespace Terminaux.Tests.Colors
             ConsoleColorsInfoInstance.R.ShouldBe(28);
             ConsoleColorsInfoInstance.G.ShouldBe(28);
             ConsoleColorsInfoInstance.B.ShouldBe(28);
-            ConsoleColorsInfoInstance.IsBright.ShouldBeFalse();
-            ConsoleColorsInfoInstance.IsDark.ShouldBeTrue();
         }
     }
 }
