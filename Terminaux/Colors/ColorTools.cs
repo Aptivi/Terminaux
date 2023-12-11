@@ -48,10 +48,6 @@ namespace Terminaux.Colors
         /// </summary>
         public static bool EnableColorTransformation { get; set; } = false;
         /// <summary>
-        /// Enables the simple color transformation. This changes formula from Brettel 1997 (value is false) to Vienot 1999 (value is true)
-        /// </summary>
-        public static bool EnableSimpleColorTransformation { get; set; } = false;
-        /// <summary>
         /// If enabled, calls to <see cref="Color.PlainSequence"/> and its siblings return color ID if said color is either a 256 color or a 16 color.
         /// Otherwise, calls to these properties are wrappers to <see cref="Color.PlainSequenceTrueColor"/> and its siblings. By default, it's enabled.
         /// </summary>
@@ -61,6 +57,10 @@ namespace Terminaux.Colors
         /// The color deficiency or color blindness type
         /// </summary>
         public static Deficiency ColorDeficiency { get; set; } = Deficiency.Protan;
+        /// <summary>
+        /// The color transformation method for color blindness
+        /// </summary>
+        public static TransformationMethod ColorTransformationMethod { get; set; } = TransformationMethod.Brettel1997;
 
         /// <summary>
         /// The color deficiency severity
@@ -513,19 +513,19 @@ namespace Terminaux.Colors
         /// <param name="color">Color to use</param>
         /// <param name="deficiency">Selected deficiency for color blindness</param>
         /// <param name="severity">Severity of the color blindness</param>
-        /// <param name="useSimple">Uses the simple method to calculate color values based on color blindness deficiency and severity</param>
+        /// <param name="method">Choose color blindness calculation method</param>
         /// <returns>An instance of <see cref="Color"/> with adjusted color values for color-blindness</returns>
-        public static Color RenderColorBlindnessAware(Color color, Deficiency deficiency, double severity, bool useSimple = false)
+        public static Color RenderColorBlindnessAware(Color color, Deficiency deficiency, double severity, TransformationMethod method = TransformationMethod.Brettel1997)
         {
             // Get some old values
             var oldDeficiency = ColorDeficiency;
             var oldSeverity = ColorDeficiencySeverity;
             var oldTransform = EnableColorTransformation;
-            var oldTransformSimple = EnableSimpleColorTransformation;
+            var oldMethod = ColorTransformationMethod;
 
             // Now, enable transformation prior to rendering
             EnableColorTransformation = true;
-            EnableSimpleColorTransformation = useSimple;
+            ColorTransformationMethod = method;
             ColorDeficiencySeverity = severity;
             ColorDeficiency = deficiency;
 
@@ -536,7 +536,7 @@ namespace Terminaux.Colors
             ColorDeficiency = oldDeficiency;
             ColorDeficiencySeverity = oldSeverity;
             EnableColorTransformation = oldTransform;
-            EnableSimpleColorTransformation = oldTransformSimple;
+            ColorTransformationMethod = oldMethod;
 
             // Return the resulting color
             return result;

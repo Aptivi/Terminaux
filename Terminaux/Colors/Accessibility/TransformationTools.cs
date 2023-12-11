@@ -31,10 +31,13 @@ namespace Terminaux.Colors.Accessibility
                     transformed = Monochromacy.Transform(rInput, gInput, bInput);
                 else
                 {
-                    if (ColorTools.EnableSimpleColorTransformation)
-                        transformed = Vienot1999.Transform(rInput, gInput, bInput, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
-                    else
-                        transformed = Brettel1997.Transform(rInput, gInput, bInput, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity);
+                    transformed = ColorTools.ColorTransformationMethod switch
+                    {
+                        TransformationMethod.Vienot1999 =>
+                            Vienot1999.Transform(rInput, gInput, bInput, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity),
+                        _ =>
+                            Brettel1997.Transform(rInput, gInput, bInput, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity),
+                    };
                 }
                 return (transformed.Item1, transformed.Item2, transformed.Item3);
             }

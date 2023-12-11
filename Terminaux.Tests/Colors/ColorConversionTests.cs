@@ -19,6 +19,7 @@
 
 using Shouldly;
 using Terminaux.Colors;
+using Terminaux.Colors.Accessibility;
 using Terminaux.Colors.Models.Conversion;
 
 namespace Terminaux.Tests.Colors
@@ -30,7 +31,7 @@ namespace Terminaux.Tests.Colors
         public void ResetColorDeficiency()
         {
             ColorTools.EnableColorTransformation = false;
-            ColorTools.EnableSimpleColorTransformation = false;
+            ColorTools.ColorTransformationMethod = TransformationMethod.Brettel1997;
         }
 
         /// <summary>
