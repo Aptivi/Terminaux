@@ -147,7 +147,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(ConsoleColors.Gray), new Color(ConsoleColors.Black), vars);
+                        new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -162,7 +162,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(ConsoleColors.Gray), new Color(ConsoleColors.Black), vars);
+                        new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -177,7 +177,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxProgressColor), new Color(ConsoleColors.Black), vars);
+                        new Color(InfoBoxProgressColor), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -193,7 +193,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxProgressColor), new Color(ConsoleColors.Black), vars);
+                        new Color(InfoBoxProgressColor), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -241,7 +241,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxProgressColor, new Color(ConsoleColors.Black), vars);
+                        InfoBoxProgressColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -257,7 +257,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxProgressColor, new Color(ConsoleColors.Black), vars);
+                        InfoBoxProgressColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -314,7 +314,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
-                new Color(ConsoleColors.Gray), new Color(ConsoleColors.Black), vars);
+                new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -339,7 +339,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
-                new Color(ConsoleColors.Gray), new Color(ConsoleColors.Black), vars);
+                new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -361,7 +361,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxProgressColor), new Color(ConsoleColors.Black), vars);
+            WriteInfoBoxProgressColorBack(progress, text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxProgressColor), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -409,7 +409,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxProgressColor, new Color(ConsoleColors.Black), vars);
+            WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxProgressColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -452,7 +452,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxProgressColor), new Color(ConsoleColors.Black), vars);
+            WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxProgressColor), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -496,7 +496,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxProgressColor, new Color(ConsoleColors.Black), vars);
+            WriteInfoBoxProgressColorBack(progress, text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxProgressColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -577,8 +577,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                 int progressPosY = borderY + maxHeight - 3;
                 int maxProgressWidth = maxWidth - 4;
                 boxBuffer.Append(
-                    new Color(ConsoleColors.White).VTSequenceForeground +
-                    new Color(ConsoleColors.Black).VTSequenceBackground
+                    ColorTools.currentForegroundColor.VTSequenceForeground +
+                    ColorTools.currentBackgroundColor.VTSequenceBackground
                 );
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);

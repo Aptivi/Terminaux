@@ -97,7 +97,7 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
             {
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
                     return CsiSequences.GenerateCsiEraseInDisplay(2) + CsiSequences.GenerateCsiCursorPosition(1, 1);
                 });
                 ScreenTools.SetCurrent(screen);
@@ -245,7 +245,7 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(ConsoleColors.Gray), new Color(ConsoleColors.Black), vars);
+                        new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -262,7 +262,7 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledButtonsColor), new Color(ConsoleColors.Black), vars);
+                        new Color(InfoBoxTitledButtonsColor), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -297,7 +297,7 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxTitledButtonsColor, new Color(ConsoleColors.Black), vars);
+                        InfoBoxTitledButtonsColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -341,7 +341,7 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
-                new Color(ConsoleColors.Gray), new Color(ConsoleColors.Black), vars);
+                new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -364,7 +364,7 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxTitledButtonsColor, params object[] vars) =>
-            WriteInfoBoxTitledButtonsColorBack(title, buttons, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxTitledButtonsColor), new Color(ConsoleColors.Black), vars);
+            WriteInfoBoxTitledButtonsColorBack(title, buttons, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxTitledButtonsColor), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -415,7 +415,7 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxTitledButtonsColor, params object[] vars) =>
-            WriteInfoBoxTitledButtonsColorBack(title, buttons, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledButtonsColor, new Color(ConsoleColors.Black), vars);
+            WriteInfoBoxTitledButtonsColorBack(title, buttons, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledButtonsColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -464,7 +464,7 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
             {
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    ColorTools.SetConsoleColor(new Color(ConsoleColors.Black), true);
+                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
                     return CsiSequences.GenerateCsiEraseInDisplay(2) + CsiSequences.GenerateCsiCursorPosition(1, 1);
                 });
                 ScreenTools.SetCurrent(screen);
@@ -552,8 +552,8 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
 
                     // Reset colors
                     boxBuffer.Append(
-                        new Color(ConsoleColors.White).VTSequenceForeground +
-                        new Color(ConsoleColors.Black).VTSequenceBackground
+                        ColorTools.currentForegroundColor.VTSequenceForeground +
+                        ColorTools.currentBackgroundColor.VTSequenceBackground
                     );
                     return boxBuffer.ToString();
                 });
