@@ -4088,6 +4088,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ConsoleColorsInfo.B
   nameWithType: ConsoleColorsInfo.B
+- uid: Terminaux.Colors.ConsoleColorsInfo.Color
+  name: Color
+  href: api/Terminaux.Colors.ConsoleColorsInfo.html#Terminaux_Colors_ConsoleColorsInfo_Color
+  commentId: P:Terminaux.Colors.ConsoleColorsInfo.Color
+  fullName: Terminaux.Colors.ConsoleColorsInfo.Color
+  nameWithType: ConsoleColorsInfo.Color
+- uid: Terminaux.Colors.ConsoleColorsInfo.Color*
+  name: Color
+  href: api/Terminaux.Colors.ConsoleColorsInfo.html#Terminaux_Colors_ConsoleColorsInfo_Color_
+  commentId: Overload:Terminaux.Colors.ConsoleColorsInfo.Color
+  isSpec: "True"
+  fullName: Terminaux.Colors.ConsoleColorsInfo.Color
+  nameWithType: ConsoleColorsInfo.Color
 - uid: Terminaux.Colors.ConsoleColorsInfo.ColorID
   name: ColorID
   href: api/Terminaux.Colors.ConsoleColorsInfo.html#Terminaux_Colors_ConsoleColorsInfo_ColorID
@@ -4155,32 +4168,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ConsoleColorsInfo.GetHashCode
   nameWithType: ConsoleColorsInfo.GetHashCode
-- uid: Terminaux.Colors.ConsoleColorsInfo.IsBright
-  name: IsBright
-  href: api/Terminaux.Colors.ConsoleColorsInfo.html#Terminaux_Colors_ConsoleColorsInfo_IsBright
-  commentId: P:Terminaux.Colors.ConsoleColorsInfo.IsBright
-  fullName: Terminaux.Colors.ConsoleColorsInfo.IsBright
-  nameWithType: ConsoleColorsInfo.IsBright
-- uid: Terminaux.Colors.ConsoleColorsInfo.IsBright*
-  name: IsBright
-  href: api/Terminaux.Colors.ConsoleColorsInfo.html#Terminaux_Colors_ConsoleColorsInfo_IsBright_
-  commentId: Overload:Terminaux.Colors.ConsoleColorsInfo.IsBright
-  isSpec: "True"
-  fullName: Terminaux.Colors.ConsoleColorsInfo.IsBright
-  nameWithType: ConsoleColorsInfo.IsBright
-- uid: Terminaux.Colors.ConsoleColorsInfo.IsDark
-  name: IsDark
-  href: api/Terminaux.Colors.ConsoleColorsInfo.html#Terminaux_Colors_ConsoleColorsInfo_IsDark
-  commentId: P:Terminaux.Colors.ConsoleColorsInfo.IsDark
-  fullName: Terminaux.Colors.ConsoleColorsInfo.IsDark
-  nameWithType: ConsoleColorsInfo.IsDark
-- uid: Terminaux.Colors.ConsoleColorsInfo.IsDark*
-  name: IsDark
-  href: api/Terminaux.Colors.ConsoleColorsInfo.html#Terminaux_Colors_ConsoleColorsInfo_IsDark_
-  commentId: Overload:Terminaux.Colors.ConsoleColorsInfo.IsDark
-  isSpec: "True"
-  fullName: Terminaux.Colors.ConsoleColorsInfo.IsDark
-  nameWithType: ConsoleColorsInfo.IsDark
 - uid: Terminaux.Colors.ConsoleColorsInfo.R
   name: R
   href: api/Terminaux.Colors.ConsoleColorsInfo.html#Terminaux_Colors_ConsoleColorsInfo_R
