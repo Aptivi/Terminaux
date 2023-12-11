@@ -5949,6 +5949,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Input.DetectKeypress
   nameWithType: Input.DetectKeypress
+- uid: Terminaux.Inputs.Input.GlobalReaderSettings
+  name: GlobalReaderSettings
+  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_GlobalReaderSettings
+  commentId: P:Terminaux.Inputs.Input.GlobalReaderSettings
+  fullName: Terminaux.Inputs.Input.GlobalReaderSettings
+  nameWithType: Input.GlobalReaderSettings
+- uid: Terminaux.Inputs.Input.GlobalReaderSettings*
+  name: GlobalReaderSettings
+  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_GlobalReaderSettings_
+  commentId: Overload:Terminaux.Inputs.Input.GlobalReaderSettings
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Input.GlobalReaderSettings
+  nameWithType: Input.GlobalReaderSettings
 - uid: Terminaux.Inputs.Input.ReadKeyTimeout(System.Boolean,System.TimeSpan)
   name: ReadKeyTimeout(bool, TimeSpan)
   href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadKeyTimeout_System_Boolean_System_TimeSpan_
