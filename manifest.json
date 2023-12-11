@@ -155,6 +155,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Accessibility.TransformationMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Accessibility.TransformationMethod.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Accessibility.yml",
       "output": {
         ".html": {

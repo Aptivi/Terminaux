@@ -1642,6 +1642,24 @@ references:
   commentId: F:Terminaux.Colors.Accessibility.Deficiency.Tritan
   fullName: Terminaux.Colors.Accessibility.Deficiency.Tritan
   nameWithType: Deficiency.Tritan
+- uid: Terminaux.Colors.Accessibility.TransformationMethod
+  name: TransformationMethod
+  href: api/Terminaux.Colors.Accessibility.TransformationMethod.html
+  commentId: T:Terminaux.Colors.Accessibility.TransformationMethod
+  fullName: Terminaux.Colors.Accessibility.TransformationMethod
+  nameWithType: TransformationMethod
+- uid: Terminaux.Colors.Accessibility.TransformationMethod.Brettel1997
+  name: Brettel1997
+  href: api/Terminaux.Colors.Accessibility.TransformationMethod.html#Terminaux_Colors_Accessibility_TransformationMethod_Brettel1997
+  commentId: F:Terminaux.Colors.Accessibility.TransformationMethod.Brettel1997
+  fullName: Terminaux.Colors.Accessibility.TransformationMethod.Brettel1997
+  nameWithType: TransformationMethod.Brettel1997
+- uid: Terminaux.Colors.Accessibility.TransformationMethod.Vienot1999
+  name: Vienot1999
+  href: api/Terminaux.Colors.Accessibility.TransformationMethod.html#Terminaux_Colors_Accessibility_TransformationMethod_Vienot1999
+  commentId: F:Terminaux.Colors.Accessibility.TransformationMethod.Vienot1999
+  fullName: Terminaux.Colors.Accessibility.TransformationMethod.Vienot1999
+  nameWithType: TransformationMethod.Vienot1999
 - uid: Terminaux.Colors.Color
   name: Color
   href: api/Terminaux.Colors.Color.html
@@ -2164,6 +2182,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.ColorDeficiencySeverity
   nameWithType: ColorTools.ColorDeficiencySeverity
+- uid: Terminaux.Colors.ColorTools.ColorTransformationMethod
+  name: ColorTransformationMethod
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorTransformationMethod
+  commentId: P:Terminaux.Colors.ColorTools.ColorTransformationMethod
+  fullName: Terminaux.Colors.ColorTools.ColorTransformationMethod
+  nameWithType: ColorTools.ColorTransformationMethod
+- uid: Terminaux.Colors.ColorTools.ColorTransformationMethod*
+  name: ColorTransformationMethod
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorTransformationMethod_
+  commentId: Overload:Terminaux.Colors.ColorTools.ColorTransformationMethod
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.ColorTransformationMethod
+  nameWithType: ColorTools.ColorTransformationMethod
 - uid: Terminaux.Colors.ColorTools.ConvertFromHexToRGB(System.String)
   name: ConvertFromHexToRGB(string)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ConvertFromHexToRGB_System_String_
@@ -2231,19 +2262,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.EnableColorTransformation
   nameWithType: ColorTools.EnableColorTransformation
-- uid: Terminaux.Colors.ColorTools.EnableSimpleColorTransformation
-  name: EnableSimpleColorTransformation
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_EnableSimpleColorTransformation
-  commentId: P:Terminaux.Colors.ColorTools.EnableSimpleColorTransformation
-  fullName: Terminaux.Colors.ColorTools.EnableSimpleColorTransformation
-  nameWithType: ColorTools.EnableSimpleColorTransformation
-- uid: Terminaux.Colors.ColorTools.EnableSimpleColorTransformation*
-  name: EnableSimpleColorTransformation
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_EnableSimpleColorTransformation_
-  commentId: Overload:Terminaux.Colors.ColorTools.EnableSimpleColorTransformation
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.EnableSimpleColorTransformation
-  nameWithType: ColorTools.EnableSimpleColorTransformation
 - uid: Terminaux.Colors.ColorTools.GetGray
   name: GetGray()
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray
@@ -2329,15 +2347,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.LoadBack
   nameWithType: ColorTools.LoadBack
-- uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Accessibility.Deficiency,System.Double,System.Boolean)
-  name: RenderColorBlindnessAware(Color, Deficiency, double, bool)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Accessibility_Deficiency_System_Double_System_Boolean_
-  commentId: M:Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Accessibility.Deficiency,System.Double,System.Boolean)
-  name.vb: RenderColorBlindnessAware(Color, Deficiency, Double, Boolean)
-  fullName: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Accessibility.Deficiency, double, bool)
-  fullName.vb: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Accessibility.Deficiency, Double, Boolean)
-  nameWithType: ColorTools.RenderColorBlindnessAware(Color, Deficiency, double, bool)
-  nameWithType.vb: ColorTools.RenderColorBlindnessAware(Color, Deficiency, Double, Boolean)
+- uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Accessibility.Deficiency,System.Double,Terminaux.Colors.Accessibility.TransformationMethod)
+  name: RenderColorBlindnessAware(Color, Deficiency, double, TransformationMethod)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Accessibility_Deficiency_System_Double_Terminaux_Colors_Accessibility_TransformationMethod_
+  commentId: M:Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Accessibility.Deficiency,System.Double,Terminaux.Colors.Accessibility.TransformationMethod)
+  name.vb: RenderColorBlindnessAware(Color, Deficiency, Double, TransformationMethod)
+  fullName: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Accessibility.Deficiency, double, Terminaux.Colors.Accessibility.TransformationMethod)
+  fullName.vb: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Accessibility.Deficiency, Double, Terminaux.Colors.Accessibility.TransformationMethod)
+  nameWithType: ColorTools.RenderColorBlindnessAware(Color, Deficiency, double, TransformationMethod)
+  nameWithType.vb: ColorTools.RenderColorBlindnessAware(Color, Deficiency, Double, TransformationMethod)
 - uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware*
   name: RenderColorBlindnessAware
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_
