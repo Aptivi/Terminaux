@@ -145,36 +145,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Accessibility.Deficiency.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Accessibility.Deficiency.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Accessibility.TransformationMethod.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Accessibility.TransformationMethod.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Accessibility.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Accessibility.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Color.yml",
       "output": {
         ".html": {
@@ -499,6 +469,36 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Selector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.TransformationFormula.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.TransformationFormula.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.TransformationMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.TransformationMethod.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.html"
         }
       },
       "version": ""

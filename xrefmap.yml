@@ -1606,60 +1606,6 @@ references:
   commentId: N:Terminaux.Colors
   fullName: Terminaux.Colors
   nameWithType: Terminaux.Colors
-- uid: Terminaux.Colors.Accessibility
-  name: Terminaux.Colors.Accessibility
-  href: api/Terminaux.Colors.Accessibility.html
-  commentId: N:Terminaux.Colors.Accessibility
-  fullName: Terminaux.Colors.Accessibility
-  nameWithType: Terminaux.Colors.Accessibility
-- uid: Terminaux.Colors.Accessibility.Deficiency
-  name: Deficiency
-  href: api/Terminaux.Colors.Accessibility.Deficiency.html
-  commentId: T:Terminaux.Colors.Accessibility.Deficiency
-  fullName: Terminaux.Colors.Accessibility.Deficiency
-  nameWithType: Deficiency
-- uid: Terminaux.Colors.Accessibility.Deficiency.Deutan
-  name: Deutan
-  href: api/Terminaux.Colors.Accessibility.Deficiency.html#Terminaux_Colors_Accessibility_Deficiency_Deutan
-  commentId: F:Terminaux.Colors.Accessibility.Deficiency.Deutan
-  fullName: Terminaux.Colors.Accessibility.Deficiency.Deutan
-  nameWithType: Deficiency.Deutan
-- uid: Terminaux.Colors.Accessibility.Deficiency.Monochromacy
-  name: Monochromacy
-  href: api/Terminaux.Colors.Accessibility.Deficiency.html#Terminaux_Colors_Accessibility_Deficiency_Monochromacy
-  commentId: F:Terminaux.Colors.Accessibility.Deficiency.Monochromacy
-  fullName: Terminaux.Colors.Accessibility.Deficiency.Monochromacy
-  nameWithType: Deficiency.Monochromacy
-- uid: Terminaux.Colors.Accessibility.Deficiency.Protan
-  name: Protan
-  href: api/Terminaux.Colors.Accessibility.Deficiency.html#Terminaux_Colors_Accessibility_Deficiency_Protan
-  commentId: F:Terminaux.Colors.Accessibility.Deficiency.Protan
-  fullName: Terminaux.Colors.Accessibility.Deficiency.Protan
-  nameWithType: Deficiency.Protan
-- uid: Terminaux.Colors.Accessibility.Deficiency.Tritan
-  name: Tritan
-  href: api/Terminaux.Colors.Accessibility.Deficiency.html#Terminaux_Colors_Accessibility_Deficiency_Tritan
-  commentId: F:Terminaux.Colors.Accessibility.Deficiency.Tritan
-  fullName: Terminaux.Colors.Accessibility.Deficiency.Tritan
-  nameWithType: Deficiency.Tritan
-- uid: Terminaux.Colors.Accessibility.TransformationMethod
-  name: TransformationMethod
-  href: api/Terminaux.Colors.Accessibility.TransformationMethod.html
-  commentId: T:Terminaux.Colors.Accessibility.TransformationMethod
-  fullName: Terminaux.Colors.Accessibility.TransformationMethod
-  nameWithType: TransformationMethod
-- uid: Terminaux.Colors.Accessibility.TransformationMethod.Brettel1997
-  name: Brettel1997
-  href: api/Terminaux.Colors.Accessibility.TransformationMethod.html#Terminaux_Colors_Accessibility_TransformationMethod_Brettel1997
-  commentId: F:Terminaux.Colors.Accessibility.TransformationMethod.Brettel1997
-  fullName: Terminaux.Colors.Accessibility.TransformationMethod.Brettel1997
-  nameWithType: TransformationMethod.Brettel1997
-- uid: Terminaux.Colors.Accessibility.TransformationMethod.Vienot1999
-  name: Vienot1999
-  href: api/Terminaux.Colors.Accessibility.TransformationMethod.html#Terminaux_Colors_Accessibility_TransformationMethod_Vienot1999
-  commentId: F:Terminaux.Colors.Accessibility.TransformationMethod.Vienot1999
-  fullName: Terminaux.Colors.Accessibility.TransformationMethod.Vienot1999
-  nameWithType: TransformationMethod.Vienot1999
 - uid: Terminaux.Colors.Color
   name: Color
   href: api/Terminaux.Colors.Color.html
@@ -2156,32 +2102,32 @@ references:
   commentId: T:Terminaux.Colors.ColorTools
   fullName: Terminaux.Colors.ColorTools
   nameWithType: ColorTools
-- uid: Terminaux.Colors.ColorTools.ColorDeficiency
-  name: ColorDeficiency
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorDeficiency
-  commentId: P:Terminaux.Colors.ColorTools.ColorDeficiency
-  fullName: Terminaux.Colors.ColorTools.ColorDeficiency
-  nameWithType: ColorTools.ColorDeficiency
-- uid: Terminaux.Colors.ColorTools.ColorDeficiency*
-  name: ColorDeficiency
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorDeficiency_
-  commentId: Overload:Terminaux.Colors.ColorTools.ColorDeficiency
+- uid: Terminaux.Colors.ColorTools.ColorBlindnessSeverity
+  name: ColorBlindnessSeverity
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorBlindnessSeverity
+  commentId: P:Terminaux.Colors.ColorTools.ColorBlindnessSeverity
+  fullName: Terminaux.Colors.ColorTools.ColorBlindnessSeverity
+  nameWithType: ColorTools.ColorBlindnessSeverity
+- uid: Terminaux.Colors.ColorTools.ColorBlindnessSeverity*
+  name: ColorBlindnessSeverity
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorBlindnessSeverity_
+  commentId: Overload:Terminaux.Colors.ColorTools.ColorBlindnessSeverity
   isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.ColorDeficiency
-  nameWithType: ColorTools.ColorDeficiency
-- uid: Terminaux.Colors.ColorTools.ColorDeficiencySeverity
-  name: ColorDeficiencySeverity
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorDeficiencySeverity
-  commentId: P:Terminaux.Colors.ColorTools.ColorDeficiencySeverity
-  fullName: Terminaux.Colors.ColorTools.ColorDeficiencySeverity
-  nameWithType: ColorTools.ColorDeficiencySeverity
-- uid: Terminaux.Colors.ColorTools.ColorDeficiencySeverity*
-  name: ColorDeficiencySeverity
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorDeficiencySeverity_
-  commentId: Overload:Terminaux.Colors.ColorTools.ColorDeficiencySeverity
+  fullName: Terminaux.Colors.ColorTools.ColorBlindnessSeverity
+  nameWithType: ColorTools.ColorBlindnessSeverity
+- uid: Terminaux.Colors.ColorTools.ColorTransformationFormula
+  name: ColorTransformationFormula
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorTransformationFormula
+  commentId: P:Terminaux.Colors.ColorTools.ColorTransformationFormula
+  fullName: Terminaux.Colors.ColorTools.ColorTransformationFormula
+  nameWithType: ColorTools.ColorTransformationFormula
+- uid: Terminaux.Colors.ColorTools.ColorTransformationFormula*
+  name: ColorTransformationFormula
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorTransformationFormula_
+  commentId: Overload:Terminaux.Colors.ColorTools.ColorTransformationFormula
   isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.ColorDeficiencySeverity
-  nameWithType: ColorTools.ColorDeficiencySeverity
+  fullName: Terminaux.Colors.ColorTools.ColorTransformationFormula
+  nameWithType: ColorTools.ColorTransformationFormula
 - uid: Terminaux.Colors.ColorTools.ColorTransformationMethod
   name: ColorTransformationMethod
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ColorTransformationMethod
@@ -2347,15 +2293,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.LoadBack
   nameWithType: ColorTools.LoadBack
-- uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Accessibility.Deficiency,System.Double,Terminaux.Colors.Accessibility.TransformationMethod)
-  name: RenderColorBlindnessAware(Color, Deficiency, double, TransformationMethod)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Accessibility_Deficiency_System_Double_Terminaux_Colors_Accessibility_TransformationMethod_
-  commentId: M:Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Accessibility.Deficiency,System.Double,Terminaux.Colors.Accessibility.TransformationMethod)
-  name.vb: RenderColorBlindnessAware(Color, Deficiency, Double, TransformationMethod)
-  fullName: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Accessibility.Deficiency, double, Terminaux.Colors.Accessibility.TransformationMethod)
-  fullName.vb: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Accessibility.Deficiency, Double, Terminaux.Colors.Accessibility.TransformationMethod)
-  nameWithType: ColorTools.RenderColorBlindnessAware(Color, Deficiency, double, TransformationMethod)
-  nameWithType.vb: ColorTools.RenderColorBlindnessAware(Color, Deficiency, Double, TransformationMethod)
+- uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double,Terminaux.Colors.Transformation.TransformationMethod)
+  name: RenderColorBlindnessAware(Color, TransformationFormula, double, TransformationMethod)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Transformation_TransformationFormula_System_Double_Terminaux_Colors_Transformation_TransformationMethod_
+  commentId: M:Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double,Terminaux.Colors.Transformation.TransformationMethod)
+  name.vb: RenderColorBlindnessAware(Color, TransformationFormula, Double, TransformationMethod)
+  fullName: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Transformation.TransformationFormula, double, Terminaux.Colors.Transformation.TransformationMethod)
+  fullName.vb: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Transformation.TransformationFormula, Double, Terminaux.Colors.Transformation.TransformationMethod)
+  nameWithType: ColorTools.RenderColorBlindnessAware(Color, TransformationFormula, double, TransformationMethod)
+  nameWithType.vb: ColorTools.RenderColorBlindnessAware(Color, TransformationFormula, Double, TransformationMethod)
 - uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware*
   name: RenderColorBlindnessAware
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_
@@ -5911,6 +5857,60 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector
   nameWithType: ColorSelector.OpenColorSelector
+- uid: Terminaux.Colors.Transformation
+  name: Terminaux.Colors.Transformation
+  href: api/Terminaux.Colors.Transformation.html
+  commentId: N:Terminaux.Colors.Transformation
+  fullName: Terminaux.Colors.Transformation
+  nameWithType: Terminaux.Colors.Transformation
+- uid: Terminaux.Colors.Transformation.TransformationFormula
+  name: TransformationFormula
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html
+  commentId: T:Terminaux.Colors.Transformation.TransformationFormula
+  fullName: Terminaux.Colors.Transformation.TransformationFormula
+  nameWithType: TransformationFormula
+- uid: Terminaux.Colors.Transformation.TransformationFormula.Deutan
+  name: Deutan
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_Deutan
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Deutan
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.Deutan
+  nameWithType: TransformationFormula.Deutan
+- uid: Terminaux.Colors.Transformation.TransformationFormula.Monochromacy
+  name: Monochromacy
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_Monochromacy
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Monochromacy
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.Monochromacy
+  nameWithType: TransformationFormula.Monochromacy
+- uid: Terminaux.Colors.Transformation.TransformationFormula.Protan
+  name: Protan
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_Protan
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Protan
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.Protan
+  nameWithType: TransformationFormula.Protan
+- uid: Terminaux.Colors.Transformation.TransformationFormula.Tritan
+  name: Tritan
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_Tritan
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Tritan
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.Tritan
+  nameWithType: TransformationFormula.Tritan
+- uid: Terminaux.Colors.Transformation.TransformationMethod
+  name: TransformationMethod
+  href: api/Terminaux.Colors.Transformation.TransformationMethod.html
+  commentId: T:Terminaux.Colors.Transformation.TransformationMethod
+  fullName: Terminaux.Colors.Transformation.TransformationMethod
+  nameWithType: TransformationMethod
+- uid: Terminaux.Colors.Transformation.TransformationMethod.Brettel1997
+  name: Brettel1997
+  href: api/Terminaux.Colors.Transformation.TransformationMethod.html#Terminaux_Colors_Transformation_TransformationMethod_Brettel1997
+  commentId: F:Terminaux.Colors.Transformation.TransformationMethod.Brettel1997
+  fullName: Terminaux.Colors.Transformation.TransformationMethod.Brettel1997
+  nameWithType: TransformationMethod.Brettel1997
+- uid: Terminaux.Colors.Transformation.TransformationMethod.Vienot1999
+  name: Vienot1999
+  href: api/Terminaux.Colors.Transformation.TransformationMethod.html#Terminaux_Colors_Transformation_TransformationMethod_Vienot1999
+  commentId: F:Terminaux.Colors.Transformation.TransformationMethod.Vienot1999
+  fullName: Terminaux.Colors.Transformation.TransformationMethod.Vienot1999
+  nameWithType: TransformationMethod.Vienot1999
 - uid: Terminaux.Inputs
   name: Terminaux.Inputs
   href: api/Terminaux.Inputs.html
