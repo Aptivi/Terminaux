@@ -1719,6 +1719,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.ColorEnum255
   nameWithType: Color.ColorEnum255
+- uid: Terminaux.Colors.Color.ColorId
+  name: ColorId
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_ColorId
+  commentId: P:Terminaux.Colors.Color.ColorId
+  fullName: Terminaux.Colors.Color.ColorId
+  nameWithType: Color.ColorId
+- uid: Terminaux.Colors.Color.ColorId*
+  name: ColorId
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_ColorId_
+  commentId: Overload:Terminaux.Colors.Color.ColorId
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.ColorId
+  nameWithType: Color.ColorId
 - uid: Terminaux.Colors.Color.Empty
   name: Empty
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_Empty
@@ -5466,60 +5479,82 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.Parsing.HsvParsingTools.ParseSpecifierToRgb
   nameWithType: HsvParsingTools.ParseSpecifierToRgb
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools
+  name: ParsingTools
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html
+  commentId: T:Terminaux.Colors.Models.Parsing.ParsingTools
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools
+  nameWithType: ParsingTools
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier(System.String)
+  name: ParseSpecifier(string)
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifier_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier(System.String)
+  name.vb: ParseSpecifier(String)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier(String)
+  nameWithType: ParsingTools.ParseSpecifier(string)
+  nameWithType.vb: ParsingTools.ParseSpecifier(String)
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier*
+  name: ParseSpecifier
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifier_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier
+  nameWithType: ParsingTools.ParseSpecifier
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(System.String)
+  name: ParseSpecifierRgbHash(string)
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbHash_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(System.String)
+  name.vb: ParseSpecifierRgbHash(String)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(String)
+  nameWithType: ParsingTools.ParseSpecifierRgbHash(string)
+  nameWithType.vb: ParsingTools.ParseSpecifierRgbHash(String)
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash*
+  name: ParseSpecifierRgbHash
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbHash_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash
+  nameWithType: ParsingTools.ParseSpecifierRgbHash
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(System.String)
+  name: ParseSpecifierRgbName(string)
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbName_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(System.String)
+  name.vb: ParseSpecifierRgbName(String)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(String)
+  nameWithType: ParsingTools.ParseSpecifierRgbName(string)
+  nameWithType.vb: ParsingTools.ParseSpecifierRgbName(String)
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName*
+  name: ParseSpecifierRgbName
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbName_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName
+  nameWithType: ParsingTools.ParseSpecifierRgbName
 - uid: Terminaux.Colors.Models.Parsing.RgbParsingTools
   name: RgbParsingTools
   href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html
   commentId: T:Terminaux.Colors.Models.Parsing.RgbParsingTools
   fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools
   nameWithType: RgbParsingTools
-- uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifier(System.String)
-  name: ParseSpecifier(string)
-  href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_ParseSpecifier_System_String_
-  commentId: M:Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifier(System.String)
-  name.vb: ParseSpecifier(String)
-  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifier(string)
-  fullName.vb: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifier(String)
-  nameWithType: RgbParsingTools.ParseSpecifier(string)
-  nameWithType.vb: RgbParsingTools.ParseSpecifier(String)
-- uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifier*
-  name: ParseSpecifier
-  href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_ParseSpecifier_
-  commentId: Overload:Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifier
+- uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb(System.String)
+  name: ParseSpecifierToRgb(string)
+  href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_ParseSpecifierToRgb_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb(System.String)
+  name.vb: ParseSpecifierToRgb(String)
+  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb(String)
+  nameWithType: RgbParsingTools.ParseSpecifierToRgb(string)
+  nameWithType.vb: RgbParsingTools.ParseSpecifierToRgb(String)
+- uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb*
+  name: ParseSpecifierToRgb
+  href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_ParseSpecifierToRgb_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb
   isSpec: "True"
-  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifier
-  nameWithType: RgbParsingTools.ParseSpecifier
-- uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbHash(System.String)
-  name: ParseSpecifierRgbHash(string)
-  href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_ParseSpecifierRgbHash_System_String_
-  commentId: M:Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbHash(System.String)
-  name.vb: ParseSpecifierRgbHash(String)
-  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbHash(string)
-  fullName.vb: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbHash(String)
-  nameWithType: RgbParsingTools.ParseSpecifierRgbHash(string)
-  nameWithType.vb: RgbParsingTools.ParseSpecifierRgbHash(String)
-- uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbHash*
-  name: ParseSpecifierRgbHash
-  href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_ParseSpecifierRgbHash_
-  commentId: Overload:Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbHash
-  isSpec: "True"
-  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbHash
-  nameWithType: RgbParsingTools.ParseSpecifierRgbHash
-- uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbName(System.String)
-  name: ParseSpecifierRgbName(string)
-  href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_ParseSpecifierRgbName_System_String_
-  commentId: M:Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbName(System.String)
-  name.vb: ParseSpecifierRgbName(String)
-  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbName(string)
-  fullName.vb: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbName(String)
-  nameWithType: RgbParsingTools.ParseSpecifierRgbName(string)
-  nameWithType.vb: RgbParsingTools.ParseSpecifierRgbName(String)
-- uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbName*
-  name: ParseSpecifierRgbName
-  href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_ParseSpecifierRgbName_
-  commentId: Overload:Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbName
-  isSpec: "True"
-  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierRgbName
-  nameWithType: RgbParsingTools.ParseSpecifierRgbName
+  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb
+  nameWithType: RgbParsingTools.ParseSpecifierToRgb
 - uid: Terminaux.Colors.Models.Parsing.RybParsingTools
   name: RybParsingTools
   href: api/Terminaux.Colors.Models.Parsing.RybParsingTools.html
