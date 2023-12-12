@@ -21,8 +21,8 @@ using System;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
-using Terminaux.Colors.Accessibility;
 using Terminaux.Colors.Models.Conversion;
+using Terminaux.Colors.Transformation;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
@@ -229,7 +229,7 @@ namespace Terminaux.Colors.Selector
 
             // Buffer the gray ramp
             StringBuilder grayRamp = new();
-            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
+            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
             for (int i = 0; i < boxWidth; i++)
             {
                 double width = (double)i / boxWidth;
@@ -312,7 +312,7 @@ namespace Terminaux.Colors.Selector
             );
 
             // then, the boxes
-            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
+            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
             var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
             var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
             var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
@@ -378,7 +378,7 @@ namespace Terminaux.Colors.Selector
             );
 
             // then, the boxes
-            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, Deficiency.Monochromacy, 0.6);
+            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
             var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
             var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
             var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
@@ -669,45 +669,45 @@ namespace Terminaux.Colors.Selector
                 "Color info (Protanopia)",
                 selectedColor,
                 true,
-                Deficiency.Protan, 1.0
+                TransformationFormula.Protan, 1.0
             );
             ShowColorInfoBox(
                 "Color info (Deuteranomaly)",
                 selectedColor,
                 true,
-                Deficiency.Deutan
+                TransformationFormula.Deutan
             );
             ShowColorInfoBox(
                 "Color info (Deuteranopia)",
                 selectedColor,
                 true,
-                Deficiency.Deutan, 1.0
+                TransformationFormula.Deutan, 1.0
             );
             ShowColorInfoBox(
                 "Color info (Tritanomaly)",
                 selectedColor,
                 true,
-                Deficiency.Tritan
+                TransformationFormula.Tritan
             );
             ShowColorInfoBox(
                 "Color info (Tritanopia)",
                 selectedColor,
                 true,
-                Deficiency.Tritan, 1.0
+                TransformationFormula.Tritan, 1.0
             );
             ShowColorInfoBox(
                 "Color info (Monochromacy)",
                 selectedColor,
                 true,
-                Deficiency.Monochromacy
+                TransformationFormula.Monochromacy
             );
         }
 
-        private static void ShowColorInfoBox(string localizedTextTitle, Color selectedColor, bool colorBlind = false, Deficiency deficiency = Deficiency.Protan, double severity = 0.6)
+        private static void ShowColorInfoBox(string localizedTextTitle, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
         {
             selectedColor =
                 colorBlind ?
-                ColorTools.RenderColorBlindnessAware(selectedColor, deficiency, severity) :
+                ColorTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
                 selectedColor;
             string separator = new('-', localizedTextTitle.Length);
             var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);

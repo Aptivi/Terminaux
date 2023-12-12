@@ -19,7 +19,7 @@
 
 using System;
 
-namespace Terminaux.Colors.Accessibility
+namespace Terminaux.Colors.Transformation.Formulas
 {
     // Refer to Viénot, F., Brettel, H., & Mollon, J. D. (1999). Digital video colourmaps for checking the legibility of displays by dichromats. Color Research & Application, 24(4), 243–252.
     // for more information.
@@ -29,9 +29,15 @@ namespace Terminaux.Colors.Accessibility
         {
             TransPlane =
             [
-                0.11238, 0.88762, 0.00000,
-                0.11238, 0.88762, -0.00000,
-                0.00401, -0.00401, 1.00000
+                0.11238,
+                0.88762,
+                0.00000,
+                0.11238,
+                0.88762,
+                -0.00000,
+                0.00401,
+                -0.00401,
+                1.00000
             ]
         };
 
@@ -39,9 +45,15 @@ namespace Terminaux.Colors.Accessibility
         {
             TransPlane =
             [
-                0.29275, 0.70725, 0.00000,
-                0.29275, 0.70725, -0.00000,
-                -0.02234, 0.02234, 1.00000
+                0.29275,
+                0.70725,
+                0.00000,
+                0.29275,
+                0.70725,
+                -0.00000,
+                -0.02234,
+                0.02234,
+                1.00000
             ]
         };
 
@@ -49,13 +61,19 @@ namespace Terminaux.Colors.Accessibility
         {
             TransPlane =
             [
-                1.00000, 0.14461, -0.14461,
-                0.00000, 0.85924, 0.14076,
-                -0.00000, 0.85924, 0.14076
+                1.00000,
+                0.14461,
+                -0.14461,
+                0.00000,
+                0.85924,
+                0.14076,
+                -0.00000,
+                0.85924,
+                0.14076
             ]
         };
 
-        public static (int, int, int) Transform(int r, int g, int b, Deficiency def, double severity)
+        public static (int, int, int) Transform(int r, int g, int b, TransformationFormula def, double severity)
         {
             // Check values
             if (r < 0 || r > 255)
@@ -71,13 +89,13 @@ namespace Terminaux.Colors.Accessibility
             VienotParameters vn = null;
             switch (def)
             {
-                case Deficiency.Protan:
+                case TransformationFormula.Protan:
                     vn = vn_protan;
                     break;
-                case Deficiency.Deutan:
+                case TransformationFormula.Deutan:
                     vn = vn_deutan;
                     break;
-                case Deficiency.Tritan:
+                case TransformationFormula.Tritan:
                     vn = vn_tritan;
                     break;
             }
@@ -93,9 +111,9 @@ namespace Terminaux.Colors.Accessibility
             var vnt = vn.TransPlane;
             double[] rgbMatrix =
             [
-                vnt[0]*linears[0] + vnt[1]*linears[1] + vnt[2]*linears[2],
-                vnt[3]*linears[0] + vnt[4]*linears[1] + vnt[5]*linears[2],
-                vnt[6]*linears[0] + vnt[7]*linears[1] + vnt[8]*linears[2],
+                vnt[0] * linears[0] + vnt[1] * linears[1] + vnt[2] * linears[2],
+                vnt[3] * linears[0] + vnt[4] * linears[1] + vnt[5] * linears[2],
+                vnt[6] * linears[0] + vnt[7] * linears[1] + vnt[8] * linears[2],
             ];
 
             // Transform the colors with the severity rate in a linear transform method

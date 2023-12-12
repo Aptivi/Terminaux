@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Colors.Accessibility
+namespace Terminaux.Colors.Transformation
 {
     /// <summary>
     /// Color transformation method

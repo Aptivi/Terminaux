@@ -19,7 +19,7 @@
 
 using System;
 using Terminaux.Base;
-using Terminaux.Colors.Accessibility;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors.Models.Parsing
 {

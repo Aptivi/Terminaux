@@ -19,8 +19,8 @@
 
 using System;
 using Terminaux.Base;
-using Terminaux.Colors.Accessibility;
 using Terminaux.Colors.Models.Conversion;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors.Models.Parsing
 {

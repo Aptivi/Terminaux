@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Colors.Accessibility
+namespace Terminaux.Colors.Transformation
 {
     /// <summary>
-    /// Color deficiency
+    /// Color transformation formula
     /// </summary>
-    public enum Deficiency
+    public enum TransformationFormula
     {
         /// <summary>
         /// Red/green color blindness. It makes red look more green

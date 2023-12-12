@@ -20,7 +20,7 @@
 using Shouldly;
 using System;
 using Terminaux.Colors;
-using Terminaux.Colors.Accessibility;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Tests.Colors
 {
@@ -28,7 +28,7 @@ namespace Terminaux.Tests.Colors
     public partial class ColorInitializationEqualTests
     {
         [SetUp]
-        public void ResetColorDeficiency()
+        public void ResetColorFormula()
         {
             ColorTools.EnableColorTransformation = false;
             ColorTools.ColorTransformationMethod = TransformationMethod.Brettel1997;

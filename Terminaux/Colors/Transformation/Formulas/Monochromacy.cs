@@ -19,7 +19,7 @@
 
 using System;
 
-namespace Terminaux.Colors.Accessibility
+namespace Terminaux.Colors.Transformation.Formulas
 {
     internal static class Monochromacy
     {
@@ -42,7 +42,7 @@ namespace Terminaux.Colors.Accessibility
             ];
 
             // Transform the color linear values by applying monochromacy
-            double monochrome = (0.2126 * linears[0]) + (0.7152 * linears[1]) + (0.0722 * linears[2]);
+            double monochrome = 0.2126 * linears[0] + 0.7152 * linears[1] + 0.0722 * linears[2];
             int sMono = ColorTools.LinearRGBTosRGB(monochrome);
             return (sMono, sMono, sMono);
         }

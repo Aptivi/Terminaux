@@ -17,12 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Colors.Accessibility
+namespace Terminaux.Colors.Transformation.Formulas
 {
-    internal class BrettelParameters
+    internal class VienotParameters
     {
-        internal double[] TransPlane1;
-        internal double[] TransPlane2;
-        internal double[] SeparationPlaneNormalRGB;
+        internal double[] TransPlane;
     }
 }

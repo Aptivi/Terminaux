@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Colors.Accessibility
+using Terminaux.Colors.Transformation.Formulas;
+
+namespace Terminaux.Colors.Transformation
 {
     internal static class TransformationTools
     {
@@ -27,16 +29,16 @@ namespace Terminaux.Colors.Accessibility
             {
                 // We'll transform.
                 (int, int, int) transformed;
-                if (ColorTools.ColorDeficiency == Deficiency.Monochromacy)
+                if (ColorTools.ColorTransformationFormula == TransformationFormula.Monochromacy)
                     transformed = Monochromacy.Transform(rInput, gInput, bInput);
                 else
                 {
                     transformed = ColorTools.ColorTransformationMethod switch
                     {
                         TransformationMethod.Vienot1999 =>
-                            Vienot1999.Transform(rInput, gInput, bInput, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity),
+                            Vienot1999.Transform(rInput, gInput, bInput, ColorTools.ColorTransformationFormula, ColorTools.ColorBlindnessSeverity),
                         _ =>
-                            Brettel1997.Transform(rInput, gInput, bInput, ColorTools.ColorDeficiency, ColorTools.ColorDeficiencySeverity),
+                            Brettel1997.Transform(rInput, gInput, bInput, ColorTools.ColorTransformationFormula, ColorTools.ColorBlindnessSeverity),
                     };
                 }
                 return (transformed.Item1, transformed.Item2, transformed.Item3);

@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors.Accessibility;
 using System;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Textify.Sequences.Builder;
 using System.Collections.Generic;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors
 {
@@ -41,7 +41,7 @@ namespace Terminaux.Colors
         internal static Color currentBackgroundColor = Color.Empty;
         internal static Color _empty;
         internal static Random rng = new();
-        private static double _deficiency = 0.6;
+        private static double _blindnessSeverity = 0.6;
 
         /// <summary>
         /// Enables the color transformation to adjust to color blindness upon making a new instance of color
@@ -54,19 +54,22 @@ namespace Terminaux.Colors
         public static bool UseTerminalPalette { get; set; } = true;
 
         /// <summary>
-        /// The color deficiency or color blindness type
+        /// The color transformation formula to use when generating transformed colors, such as color blindness.
         /// </summary>
-        public static Deficiency ColorDeficiency { get; set; } = Deficiency.Protan;
+        public static TransformationFormula ColorTransformationFormula { get; set; } = TransformationFormula.Protan;
         /// <summary>
-        /// The color transformation method for color blindness
+        /// The color transformation method for color blindness.
         /// </summary>
         public static TransformationMethod ColorTransformationMethod { get; set; } = TransformationMethod.Brettel1997;
 
         /// <summary>
-        /// The color deficiency severity
+        /// The color blindness severity (Only for color blindness formulas):<br></br>
+        ///   - <see cref="TransformationFormula.Protan"/><br></br>
+        ///   - <see cref="TransformationFormula.Deutan"/><br></br>
+        ///   - <see cref="TransformationFormula.Tritan"/>
         /// </summary>
-        public static double ColorDeficiencySeverity { 
-            get => _deficiency;
+        public static double ColorBlindnessSeverity { 
+            get => _blindnessSeverity;
             set
             {
                 if (value < 0)
@@ -74,7 +77,7 @@ namespace Terminaux.Colors
                 if (value > 1)
                     throw new ArgumentOutOfRangeException("value");
 
-                _deficiency = value;
+                _blindnessSeverity = value;
             }
         }
 
@@ -511,30 +514,30 @@ namespace Terminaux.Colors
         /// Provides you an easy way to generate new <see cref="Color"/> instances with color blindness applied
         /// </summary>
         /// <param name="color">Color to use</param>
-        /// <param name="deficiency">Selected deficiency for color blindness</param>
+        /// <param name="formula">Selected formula for color blindness</param>
         /// <param name="severity">Severity of the color blindness</param>
         /// <param name="method">Choose color blindness calculation method</param>
         /// <returns>An instance of <see cref="Color"/> with adjusted color values for color-blindness</returns>
-        public static Color RenderColorBlindnessAware(Color color, Deficiency deficiency, double severity, TransformationMethod method = TransformationMethod.Brettel1997)
+        public static Color RenderColorBlindnessAware(Color color, TransformationFormula formula, double severity, TransformationMethod method = TransformationMethod.Brettel1997)
         {
             // Get some old values
-            var oldDeficiency = ColorDeficiency;
-            var oldSeverity = ColorDeficiencySeverity;
+            var oldFormula = ColorTransformationFormula;
+            var oldSeverity = ColorBlindnessSeverity;
             var oldTransform = EnableColorTransformation;
             var oldMethod = ColorTransformationMethod;
 
             // Now, enable transformation prior to rendering
             EnableColorTransformation = true;
             ColorTransformationMethod = method;
-            ColorDeficiencySeverity = severity;
-            ColorDeficiency = deficiency;
+            ColorBlindnessSeverity = severity;
+            ColorTransformationFormula = formula;
 
             // Get the resulting color
             var result = new Color(color.PlainSequence);
 
             // Restore the values
-            ColorDeficiency = oldDeficiency;
-            ColorDeficiencySeverity = oldSeverity;
+            ColorTransformationFormula = oldFormula;
+            ColorBlindnessSeverity = oldSeverity;
             EnableColorTransformation = oldTransform;
             ColorTransformationMethod = oldMethod;
 
