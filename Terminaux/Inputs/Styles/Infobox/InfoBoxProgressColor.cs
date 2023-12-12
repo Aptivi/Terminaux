@@ -1,14 +1,14 @@
 ﻿//
-// Terminaux  Copyright (C) 2023-2024  Aptivi
+// Nitrocid KS  Copyright (C) 2018-2024  Aptivi
 //
-// This file is part of Terminaux
+// This file is part of Nitrocid KS
 //
-// Terminaux is free software: you can redistribute it and/or modify
+// Nitrocid KS is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
 //
-// Terminaux is distributed in the hope that it will be useful,
+// Nitrocid KS is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY, without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
@@ -20,14 +20,14 @@
 using System;
 using System.Threading;
 using System.Collections.Generic;
+using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Colors;
 using System.Text;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.FancyWriters;
+using Terminaux.Base.Buffered;
 using Terminaux.Base;
 using Textify.General;
-using Terminaux.Writer.FancyWriters;
 using Textify.Sequences.Builder.Types;
-using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 
 namespace Terminaux.Inputs.Styles.Infobox
@@ -69,60 +69,78 @@ namespace Terminaux.Inputs.Styles.Infobox
                                             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
+            bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
+            var infoBoxScreenPart = new ScreenPart();
+            var screen = new Screen();
+            if (initialScreenIsNull)
+            {
+                infoBoxScreenPart.AddDynamicText(() =>
+                {
+                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
+                    return CsiSequences.GenerateCsiEraseInDisplay(2) + CsiSequences.GenerateCsiCursorPosition(1, 1);
+                });
+                ScreenTools.SetCurrent(screen);
+            }
+            ScreenTools.CurrentScreen.AddBufferedPart("Informational box", infoBoxScreenPart);
             try
             {
-                // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = TextTools.FormatString(text, vars);
-                string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = [];
-                foreach (var line in splitLines)
+                infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
-                    foreach (var lineSentence in lineSentences)
-                        splitFinalLines.Add(lineSentence);
-                }
-
-                // Trim the new lines until we reach a full line
-                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
-                {
-                    string line = splitFinalLines[i];
-                    if (!string.IsNullOrWhiteSpace(line))
-                        break;
-                    splitFinalLines.RemoveAt(i);
-                }
-
-                // Fill the info box with text inside it
-                int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count + 5;
-                if (maxHeight >= ConsoleWrapper.WindowHeight)
-                    maxHeight = ConsoleWrapper.WindowHeight - 4;
-                int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-                int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                var boxBuffer = new StringBuilder();
-                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                boxBuffer.Append(border);
-
-                // Render text inside it
-                ConsoleWrapper.CursorVisible = false;
-                for (int i = 0; i < splitFinalLines.Count; i++)
-                {
-                    var line = splitFinalLines[i];
-                    if (i % (maxHeight - 5) == 0 && i > 0)
+                    // Deal with the lines to actually fit text in the infobox
+                    string finalInfoRendered = TextTools.FormatString(text, vars);
+                    string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+                    List<string> splitFinalLines = [];
+                    foreach (var line in splitLines)
                     {
-                        // Reached the end of the box. Bail, because we need to print the progress.
-                        break;
+                        var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                        foreach (var lineSentence in lineSentences)
+                            splitFinalLines.Add(lineSentence);
                     }
-                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
-                }
 
-                // Render the final result and write the progress bar
-                int progressPosX = borderX + 4;
-                int progressPosY = borderY + maxHeight - 3;
-                int maxProgressWidth = maxWidth - 4;
-                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                ProgressBarColor.WriteProgressPlain(progress, progressPosX, progressPosY, maxProgressWidth);
-                boxBuffer.Clear();
+                    // Trim the new lines until we reach a full line
+                    for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                    {
+                        string line = splitFinalLines[i];
+                        if (!string.IsNullOrWhiteSpace(line))
+                            break;
+                        splitFinalLines.RemoveAt(i);
+                    }
+
+                    // Fill the info box with text inside it
+                    int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                    int maxHeight = splitFinalLines.Count + 5;
+                    if (maxHeight >= ConsoleWrapper.WindowHeight)
+                        maxHeight = ConsoleWrapper.WindowHeight - 4;
+                    int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
+                    int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
+                    int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
+                    var boxBuffer = new StringBuilder();
+                    string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                    boxBuffer.Append(border);
+
+                    // Render text inside it
+                    ConsoleWrapper.CursorVisible = false;
+                    for (int i = 0; i < splitFinalLines.Count; i++)
+                    {
+                        var line = splitFinalLines[i];
+                        if (i % (maxHeight - 5) == 0 && i > 0)
+                        {
+                            // Reached the end of the box. Bail, because we need to print the progress.
+                            break;
+                        }
+                        boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                    }
+
+                    // Render the final result and write the progress bar
+                    int progressPosX = borderX + 4;
+                    int progressPosY = borderY + maxHeight - 3;
+                    int maxProgressWidth = maxWidth - 4;
+                    boxBuffer.Append(ProgressBarColor.RenderProgressPlain(progress, progressPosX, progressPosY, maxProgressWidth, 0));
+                    return boxBuffer.ToString();
+                });
+
+                // Render the screen
+                ScreenTools.Render();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -132,6 +150,9 @@ namespace Terminaux.Inputs.Styles.Infobox
             finally
             {
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
+                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box");
+                if (initialScreenIsNull)
+                    ScreenTools.UnsetCurrent(screen);
             }
         }
 
@@ -521,68 +542,86 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
+            bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
+            var infoBoxScreenPart = new ScreenPart();
+            var screen = new Screen();
+            if (initialScreenIsNull)
+            {
+                infoBoxScreenPart.AddDynamicText(() =>
+                {
+                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
+                    return CsiSequences.GenerateCsiEraseInDisplay(2) + CsiSequences.GenerateCsiCursorPosition(1, 1);
+                });
+                ScreenTools.SetCurrent(screen);
+            }
+            ScreenTools.CurrentScreen.AddBufferedPart("Informational box", infoBoxScreenPart);
             try
             {
-                // Deal with the lines to actually fit text in the infobox
-                string finalInfoRendered = TextTools.FormatString(text, vars);
-                string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                List<string> splitFinalLines = [];
-                foreach (var line in splitLines)
+                infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
-                    foreach (var lineSentence in lineSentences)
-                        splitFinalLines.Add(lineSentence);
-                }
-
-                // Trim the new lines until we reach a full line
-                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
-                {
-                    string line = splitFinalLines[i];
-                    if (!string.IsNullOrWhiteSpace(line))
-                        break;
-                    splitFinalLines.RemoveAt(i);
-                }
-
-                // Fill the info box with text inside it
-                int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count + 5;
-                if (maxHeight >= ConsoleWrapper.WindowHeight)
-                    maxHeight = ConsoleWrapper.WindowHeight - 4;
-                int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-                int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                var boxBuffer = new StringBuilder();
-                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                boxBuffer.Append(
-                    $"{InfoBoxProgressColor.VTSequenceForeground}" +
-                    $"{BackgroundColor.VTSequenceBackground}" +
-                    $"{border}"
-                );
-
-                // Render text inside it
-                ConsoleWrapper.CursorVisible = false;
-                for (int i = 0; i < splitFinalLines.Count; i++)
-                {
-                    var line = splitFinalLines[i];
-                    if (i % (maxHeight - 5) == 0 && i > 0)
+                    // Deal with the lines to actually fit text in the infobox
+                    string finalInfoRendered = TextTools.FormatString(text, vars);
+                    string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+                    List<string> splitFinalLines = [];
+                    foreach (var line in splitLines)
                     {
-                        // Reached the end of the box. Bail, because we need to print the progress.
-                        break;
+                        var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                        foreach (var lineSentence in lineSentences)
+                            splitFinalLines.Add(lineSentence);
                     }
-                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
-                }
 
-                // Render the final result and write the progress bar
-                int progressPosX = borderX + 4;
-                int progressPosY = borderY + maxHeight - 3;
-                int maxProgressWidth = maxWidth - 4;
-                boxBuffer.Append(
-                    ColorTools.currentForegroundColor.VTSequenceForeground +
-                    ColorTools.currentBackgroundColor.VTSequenceBackground
-                );
-                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
-                boxBuffer.Clear();
+                    // Trim the new lines until we reach a full line
+                    for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                    {
+                        string line = splitFinalLines[i];
+                        if (!string.IsNullOrWhiteSpace(line))
+                            break;
+                        splitFinalLines.RemoveAt(i);
+                    }
+
+                    // Fill the info box with text inside it
+                    int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                    int maxHeight = splitFinalLines.Count + 5;
+                    if (maxHeight >= ConsoleWrapper.WindowHeight)
+                        maxHeight = ConsoleWrapper.WindowHeight - 4;
+                    int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
+                    int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
+                    int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
+                    var boxBuffer = new StringBuilder();
+                    string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                    boxBuffer.Append(
+                        $"{InfoBoxProgressColor.VTSequenceForeground}" +
+                        $"{BackgroundColor.VTSequenceBackground}" +
+                        $"{border}"
+                    );
+
+                    // Render text inside it
+                    ConsoleWrapper.CursorVisible = false;
+                    for (int i = 0; i < splitFinalLines.Count; i++)
+                    {
+                        var line = splitFinalLines[i];
+                        if (i % (maxHeight - 5) == 0 && i > 0)
+                        {
+                            // Reached the end of the box. Bail, because we need to print the progress.
+                            break;
+                        }
+                        boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                    }
+
+                    // Render the final result and write the progress bar
+                    int progressPosX = borderX + 4;
+                    int progressPosY = borderY + maxHeight - 3;
+                    int maxProgressWidth = maxWidth - 4;
+                    boxBuffer.Append(
+                        ColorTools.currentForegroundColor.VTSequenceForeground +
+                        ColorTools.currentBackgroundColor.VTSequenceBackground +
+                        ProgressBarColor.RenderProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, 0, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor)
+                    );
+                    return boxBuffer.ToString();
+                });
+
+                // Render the screen
+                ScreenTools.Render();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -592,6 +631,9 @@ namespace Terminaux.Inputs.Styles.Infobox
             finally
             {
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
+                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box");
+                if (initialScreenIsNull)
+                    ScreenTools.UnsetCurrent(screen);
             }
         }
     }
