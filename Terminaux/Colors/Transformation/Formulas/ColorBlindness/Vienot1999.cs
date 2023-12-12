@@ -19,7 +19,7 @@
 
 using System;
 
-namespace Terminaux.Colors.Transformation.Formulas
+namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
 {
     // Refer to Viénot, F., Brettel, H., & Mollon, J. D. (1999). Digital video colourmaps for checking the legibility of displays by dichromats. Color Research & Application, 24(4), 243–252.
     // for more information.

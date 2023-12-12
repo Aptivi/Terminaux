@@ -28,22 +28,16 @@ namespace Terminaux.Colors.Transformation
             if (ColorTools.EnableColorTransformation)
             {
                 // We'll transform.
-                (int, int, int) transformed;
-                if (ColorTools.ColorTransformationFormula == TransformationFormula.Monochromacy)
-                    transformed = Monochromacy.Transform(rInput, gInput, bInput);
-                else if (ColorTools.ColorTransformationFormula == TransformationFormula.Inverse)
-                    transformed = Inverse.Transform(rInput, gInput, bInput);
-                else
+                var transformed = ColorTools.ColorTransformationFormula switch
                 {
-                    transformed = ColorTools.ColorTransformationMethod switch
-                    {
-                        TransformationMethod.Vienot1999 =>
-                            Vienot1999.Transform(rInput, gInput, bInput, ColorTools.ColorTransformationFormula, ColorTools.ColorBlindnessSeverity),
-                        _ =>
-                            Brettel1997.Transform(rInput, gInput, bInput, ColorTools.ColorTransformationFormula, ColorTools.ColorBlindnessSeverity),
-                    };
-                }
-                return (transformed.Item1, transformed.Item2, transformed.Item3);
+                    TransformationFormula.Monochromacy =>
+                        Monochromacy.Transform(rInput, gInput, bInput),
+                    TransformationFormula.Inverse =>
+                        Inverse.Transform(rInput, gInput, bInput),
+                    _ =>
+                        ColorBlind.Transform(rInput, gInput, bInput),
+                };
+                return transformed;
             }
             return (rInput, gInput, bInput);
         }

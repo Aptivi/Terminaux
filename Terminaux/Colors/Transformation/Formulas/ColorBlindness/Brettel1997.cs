@@ -19,7 +19,7 @@
 
 using System;
 
-namespace Terminaux.Colors.Transformation.Formulas
+namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
 {
     // Refer to Hans Brettel, Françoise Viénot, and John D. Mollon, "Computerized simulation of color appearance for dichromats," J. Opt. Soc. Am. A 14, 2647-2655 (1997)
     // for more information.
