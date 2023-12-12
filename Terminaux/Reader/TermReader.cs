@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Inputs;
@@ -32,6 +33,7 @@ namespace Terminaux.Reader
     /// </summary>
     public static class TermReader
     {
+        internal static readonly List<TermReaderState> states = [];
         private static readonly object readLock = new();
 
         /// <summary>
@@ -120,6 +122,7 @@ namespace Terminaux.Reader
                 {
                     settings = settings
                 };
+                states.Add(readState);
 
                 // Save some variable states
                 bool ctrlCAsInput = ConsoleWrapper.TreatCtrlCAsInput;
@@ -211,6 +214,7 @@ namespace Terminaux.Reader
                     // Reset the CTRL + C state
                     ConsoleWrapper.TreatCtrlCAsInput = ctrlCAsInput;
                 }
+                states.Remove(readState);
                 return input;
             }
         }

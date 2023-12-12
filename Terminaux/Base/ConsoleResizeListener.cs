@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using Terminaux.Base.Buffered;
+using Terminaux.Reader;
 
 namespace Terminaux.Base
 {
@@ -87,11 +88,19 @@ namespace Terminaux.Base
             return false;
         }
 
-        private static void HandleResized()
+        private static void EssentialHandler()
         {
             // Tell the screen-based apps to refresh themselves
             if (ScreenTools.CurrentScreen is not null)
                 ScreenTools.Render();
+
+            // Tell the reader to refresh itself
+            if (TermReaderTools.Busy)
+            {
+                var state = TermReader.states[TermReader.states.Count - 1];
+                TermReaderTools.RefreshPrompt(ref state);
+                TermReader.states[TermReader.states.Count - 1] = state;
+            }
         }
 
         private static void PollForResize(Action customHandler)
@@ -108,10 +117,9 @@ namespace Terminaux.Base
                         ResizeDetected = true;
                         CurrentWindowWidth = Console.WindowWidth;
                         CurrentWindowHeight = Console.WindowHeight;
-                        if (customHandler is null)
-                            HandleResized();
-                        else
+                        if (customHandler is not null)
                             customHandler();
+                        EssentialHandler();
                     }
                 }
             }
