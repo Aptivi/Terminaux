@@ -1133,6 +1133,68 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests initializing color instance from true color
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromIncompleteHex()
+        {
+            // Create instance
+            var ColorInstance = new Color("#FFF");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("255;255;255");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;255;255;255m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;255;255;255m");
+            ColorInstance.R.ShouldBe(255);
+            ColorInstance.G.ShouldBe(255);
+            ColorInstance.B.ShouldBe(255);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
+            ColorInstance.Hex.ShouldBe("#FFFFFF");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color using the implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromIncompleteHexImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "#FFF";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("255;255;255");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;255;255;255m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;255;255;255m");
+            ColorInstance.R.ShouldBe(255);
+            ColorInstance.G.ShouldBe(255);
+            ColorInstance.B.ShouldBe(255);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
+            ColorInstance.Hex.ShouldBe("#FFFFFF");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
         /// Tests initializing color instance from color name taken from <see cref="ConsoleColors"/>
         /// </summary>
         [Test]

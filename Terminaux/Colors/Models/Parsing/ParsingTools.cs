@@ -92,6 +92,16 @@ namespace Terminaux.Colors.Models.Parsing
 
             // Get the integral value of the total color
             string finalSpecifier = specifier.Substring(1);
+            if (finalSpecifier.Length == 3)
+            {
+                char first = finalSpecifier[0];
+                char second = finalSpecifier[1];
+                char third = finalSpecifier[2];
+                finalSpecifier = $"{first}{first}{second}{second}{third}{third}";
+            }
+            else if (finalSpecifier.Length != 6)
+                throw new TerminauxException($"Invalid color hex length \"{specifier}\". Ensure that it's on the correct format: #RRGGBB");
+
             int ColorDecimal = Convert.ToInt32(finalSpecifier, 16);
 
             // Convert the RGB values to numbers
