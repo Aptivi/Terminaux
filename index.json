@@ -232,7 +232,7 @@
   "api/Terminaux.Colors.Transformation.TransformationFormula.html": {
     "href": "api/Terminaux.Colors.Transformation.TransformationFormula.html",
     "title": "Enum TransformationFormula | Terminaux API - Aptivi",
-    "keywords": "Enum TransformationFormula Color transformation formula Namespace: Terminaux.Colors.Transformation Assembly: Terminaux.dll Syntax public enum TransformationFormula Fields Name Description Deutan Red/green color blindness. It makes green look more red Monochromacy Full color blindness, can only see grayscale. Protan Red/green color blindness. It makes red look more green Tritan Blue/yellow color blindness."
+    "keywords": "Enum TransformationFormula Color transformation formula Namespace: Terminaux.Colors.Transformation Assembly: Terminaux.dll Syntax public enum TransformationFormula Fields Name Description Deutan Red/green color blindness. It makes green look more red Inverse Inverse colors Monochromacy Full color blindness, can only see grayscale. Protan Red/green color blindness. It makes red look more green Tritan Blue/yellow color blindness."
   },
   "api/Terminaux.Colors.Transformation.TransformationMethod.html": {
     "href": "api/Terminaux.Colors.Transformation.TransformationMethod.html",

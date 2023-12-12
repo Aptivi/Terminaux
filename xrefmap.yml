@@ -5875,6 +5875,12 @@ references:
   commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Deutan
   fullName: Terminaux.Colors.Transformation.TransformationFormula.Deutan
   nameWithType: TransformationFormula.Deutan
+- uid: Terminaux.Colors.Transformation.TransformationFormula.Inverse
+  name: Inverse
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_Inverse
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Inverse
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.Inverse
+  nameWithType: TransformationFormula.Inverse
 - uid: Terminaux.Colors.Transformation.TransformationFormula.Monochromacy
   name: Monochromacy
   href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_Monochromacy
