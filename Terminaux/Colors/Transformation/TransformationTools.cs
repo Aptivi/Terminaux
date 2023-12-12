@@ -31,6 +31,8 @@ namespace Terminaux.Colors.Transformation
                 (int, int, int) transformed;
                 if (ColorTools.ColorTransformationFormula == TransformationFormula.Monochromacy)
                     transformed = Monochromacy.Transform(rInput, gInput, bInput);
+                else if (ColorTools.ColorTransformationFormula == TransformationFormula.Inverse)
+                    transformed = Inverse.Transform(rInput, gInput, bInput);
                 else
                 {
                     transformed = ColorTools.ColorTransformationMethod switch

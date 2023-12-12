@@ -17,32 +17,27 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Colors.Transformation
+using System;
+
+namespace Terminaux.Colors.Transformation.Formulas
 {
-    /// <summary>
-    /// Color transformation formula
-    /// </summary>
-    public enum TransformationFormula
+    internal static class Inverse
     {
-        /// <summary>
-        /// Red/green color blindness. It makes red look more green
-        /// </summary>
-        Protan,
-        /// <summary>
-        /// Red/green color blindness. It makes green look more red
-        /// </summary>
-        Deutan,
-        /// <summary>
-        /// Blue/yellow color blindness.
-        /// </summary>
-        Tritan,
-        /// <summary>
-        /// Full color blindness, can only see grayscale.
-        /// </summary>
-        Monochromacy,
-        /// <summary>
-        /// Inverse colors
-        /// </summary>
-        Inverse,
+        public static (int, int, int) Transform(int r, int g, int b)
+        {
+            // Check values
+            if (r < 0 || r > 255)
+                throw new ArgumentOutOfRangeException("r");
+            if (g < 0 || g > 255)
+                throw new ArgumentOutOfRangeException("g");
+            if (b < 0 || b > 255)
+                throw new ArgumentOutOfRangeException("b");
+
+            // Inverse the RGB
+            int invR = 255 - r;
+            int invG = 255 - g;
+            int invB = 255 - b;
+            return (invR, invG, invB);
+        }
     }
 }

@@ -701,6 +701,12 @@ namespace Terminaux.Colors.Selector
                 true,
                 TransformationFormula.Monochromacy
             );
+            ShowColorInfoBox(
+                "Color info (Inverse)",
+                selectedColor,
+                true,
+                TransformationFormula.Inverse
+            );
         }
 
         private static void ShowColorInfoBox(string localizedTextTitle, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
