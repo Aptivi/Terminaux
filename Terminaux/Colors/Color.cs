@@ -241,7 +241,7 @@ namespace Terminaux.Colors
                 RGB = rgb;
             }
             else
-                throw new TerminauxException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new TerminauxException($"Invalid color specifier \"{ColorSpecifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
         }
 
         /// <summary>
