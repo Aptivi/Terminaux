@@ -61,6 +61,7 @@ namespace Terminaux.Inputs.Styles
             // Now, clear the console and let the user select a figlet font while displaying a small text in the middle
             // of the console
             bool bail = false;
+            bool cancel = false;
             string text = "Test";
             bool rerender = true;
             while (!bail)
@@ -78,7 +79,7 @@ namespace Terminaux.Inputs.Styles
 
                 // Write the selected font name and the keybindings
                 CenteredTextColor.WriteCentered(ConsoleWrapper.WindowHeight - 4, fontName);
-                CenteredTextColor.WriteCentered(ConsoleWrapper.WindowHeight - 2, "[ENTER] Select | [<-|->] Select | [S] Write font name");
+                CenteredTextColor.WriteCentered(ConsoleWrapper.WindowHeight - 2, "[ESC] Cancel | [ENTER] Submit | [<-|->] Select | [S] Font...");
 
                 // Wait for input
                 var key = Input.DetectKeypress().Key;
@@ -86,6 +87,10 @@ namespace Terminaux.Inputs.Styles
                 {
                     case ConsoleKey.Enter:
                         bail = true;
+                        break;
+                    case ConsoleKey.Escape:
+                        bail = true;
+                        cancel = true;
                         break;
                     case ConsoleKey.LeftArrow:
                         selectedFont--;
@@ -113,7 +118,7 @@ namespace Terminaux.Inputs.Styles
             }
 
             ConsoleWrapper.Clear();
-            return fontName;
+            return cancel ? font : fontName;
         }
     }
 }
