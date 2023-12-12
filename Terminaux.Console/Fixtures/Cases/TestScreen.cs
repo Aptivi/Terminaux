@@ -40,10 +40,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
                 // First, clear the screen
                 ColorTools.LoadBack();
 
-                // Then, run the resize listener
-                ConsoleResizeListener.StartResizeListener();
-
-                // Finally, show the resizable sticks
+                // Then, show the resizable sticks
                 var stickScreenPart = new ScreenPart();
                 stickScreenPart.Position(0, 1);
                 stickScreenPart.BackgroundColor(new Color(ConsoleColors.Gray));

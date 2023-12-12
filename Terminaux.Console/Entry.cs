@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base;
 using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -26,6 +27,9 @@ namespace Terminaux.ConsoleDemo
     {
         static void Main(string[] args)
         {
+            // Run the resize listener
+            ConsoleResizeListener.StartResizeListener();
+
             // Get the fixture name from argument and run it
             string chosenFixture = args.Length == 0 ? "Prompt" : args[0];
             TextWriterColor.Write($"Fixture to be tested: {chosenFixture}\n");

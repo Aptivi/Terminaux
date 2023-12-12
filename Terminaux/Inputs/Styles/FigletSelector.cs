@@ -20,7 +20,9 @@
 using Figletize;
 using System;
 using System.Linq;
+using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.FancyWriters;
 
@@ -60,64 +62,81 @@ namespace Terminaux.Inputs.Styles
 
             // Now, clear the console and let the user select a figlet font while displaying a small text in the middle
             // of the console
-            bool bail = false;
             bool cancel = false;
-            string text = "Test";
-            bool rerender = true;
-            while (!bail)
+            var screen = new Screen();
+            try
             {
-                if (rerender)
+                bool bail = false;
+                string text = "Test";
+
+                // Make a buffer that represents the TUI
+                var screenPart = new ScreenPart();
+                screenPart.AddDynamicText(() =>
                 {
-                    rerender = false;
+                    var buffer = new StringBuilder();
                     ConsoleWrapper.CursorVisible = false;
                     ConsoleWrapper.Clear();
-                }
 
-                // Write the text using the selected figlet font
-                var figletFont = FigletTools.GetFigletFont(fontName);
-                CenteredFigletTextColor.WriteCenteredFiglet(figletFont, text);
+                    // Write the text using the selected figlet font
+                    var figletFont = FigletTools.GetFigletFont(fontName);
+                    buffer.Append(CenteredFigletTextColor.RenderCenteredFiglet(figletFont, text));
 
-                // Write the selected font name and the keybindings
-                CenteredTextColor.WriteCentered(ConsoleWrapper.WindowHeight - 4, fontName);
-                CenteredTextColor.WriteCentered(ConsoleWrapper.WindowHeight - 2, "[ESC] Cancel | [ENTER] Submit | [<-|->] Select | [S] Font...");
+                    // Write the selected font name and the keybindings
+                    buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 4, fontName));
+                    buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 2, "[ESC] Cancel | [ENTER] Submit | [<-|->] Select | [S] Font..."));
+                    return buffer.ToString();
+                });
 
-                // Wait for input
-                var key = Input.DetectKeypress().Key;
-                switch (key)
+                // Now, make the interactive TUI resizable.
+                screen.AddBufferedPart("Figlet selector", screenPart);
+                ScreenTools.SetCurrent(screen);
+                while (!bail)
                 {
-                    case ConsoleKey.Enter:
-                        bail = true;
-                        break;
-                    case ConsoleKey.Escape:
-                        bail = true;
-                        cancel = true;
-                        break;
-                    case ConsoleKey.LeftArrow:
-                        selectedFont--;
-                        if (selectedFont < 0)
-                            selectedFont = fonts.Length - 1;
-                        fontName = fonts[selectedFont];
-                        rerender = true;
-                        break;
-                    case ConsoleKey.RightArrow:
-                        selectedFont++;
-                        if (selectedFont > fonts.Length - 1)
-                            selectedFont = 0;
-                        fontName = fonts[selectedFont];
-                        rerender = true;
-                        break;
-                    case ConsoleKey.S:
-                        string promptedFontName = InfoBoxInputColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
-                        if (!fonts.Contains(promptedFontName))
-                            InfoBoxColor.WriteInfoBox("The font doesn't exist.");
-                        else
-                            fontName = promptedFontName;
-                        rerender = true;
-                        break;
+                    // Render
+                    ScreenTools.Render();
+
+                    // Wait for input
+                    var key = Input.DetectKeypress().Key;
+                    switch (key)
+                    {
+                        case ConsoleKey.Enter:
+                            bail = true;
+                            break;
+                        case ConsoleKey.Escape:
+                            bail = true;
+                            cancel = true;
+                            break;
+                        case ConsoleKey.LeftArrow:
+                            selectedFont--;
+                            if (selectedFont < 0)
+                                selectedFont = fonts.Length - 1;
+                            fontName = fonts[selectedFont];
+                            break;
+                        case ConsoleKey.RightArrow:
+                            selectedFont++;
+                            if (selectedFont > fonts.Length - 1)
+                                selectedFont = 0;
+                            fontName = fonts[selectedFont];
+                            break;
+                        case ConsoleKey.S:
+                            string promptedFontName = InfoBoxInputColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
+                            if (!fonts.Contains(promptedFontName))
+                                InfoBoxColor.WriteInfoBox("The font doesn't exist.");
+                            else
+                                fontName = promptedFontName;
+                            break;
+                    }
                 }
             }
-
-            ConsoleWrapper.Clear();
+            catch (Exception ex)
+            {
+                InfoBoxColor.WriteInfoBox("Figlet selector failed: " + ex.Message);
+            }
+            finally
+            {
+                ScreenTools.UnsetCurrent(screen);
+                ConsoleWrapper.Clear();
+            }
             return cancel ? font : fontName;
         }
     }
