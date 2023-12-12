@@ -544,5 +544,13 @@ namespace Terminaux.Colors
             // Return the resulting color
             return result;
         }
+
+        internal static string GetColorIdStringFrom(ConsoleColors colorDef) =>
+            GetColorIdStringFrom((int)colorDef);
+
+        internal static string GetColorIdStringFrom(int colorNum) =>
+            colorNum >= 0 && colorNum <= (int)ConsoleColors.White ?
+            $"{(int)TranslateToX11ColorMap((ConsoleColor)colorNum)}" :
+            $"{colorNum}";
     }
 }

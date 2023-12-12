@@ -183,7 +183,7 @@ namespace Terminaux.Colors
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
         /// <exception cref="TerminauxException"></exception>
         public Color(ConsoleColors ColorDef)
-            : this((int)ColorDef >= 0 && ColorDef <= ConsoleColors.White ? Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorDef)) : Convert.ToInt32(ColorDef))
+            : this(ColorTools.GetColorIdStringFrom(ColorDef))
         { }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace Terminaux.Colors
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColor"/></param>
         /// <exception cref="TerminauxException"></exception>
         public Color(ConsoleColor ColorDef)
-            : this(Convert.ToInt32(ColorTools.CorrectStandardColor(ColorDef)))
+            : this((int)ColorTools.CorrectStandardColor(ColorDef))
         { }
 
         /// <summary>
@@ -201,7 +201,7 @@ namespace Terminaux.Colors
         /// <param name="ColorNum">The color number</param>
         /// <exception cref="TerminauxException"></exception>
         public Color(int ColorNum)
-            : this(ColorNum >= 0 && ColorNum <= (int)ConsoleColors.White ? $"{Convert.ToInt32(ColorTools.TranslateToX11ColorMap((ConsoleColor)ColorNum))}" : $"{ColorNum}")
+            : this(ColorTools.GetColorIdStringFrom(ColorNum))
         { }
 
         /// <summary>
