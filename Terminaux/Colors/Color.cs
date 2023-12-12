@@ -33,107 +33,15 @@ namespace Terminaux.Colors
     public class Color : IEquatable<Color>
     {
         private static (ConsoleColor unapplicable16, ConsoleColors unapplicable255) unapplicable = ((ConsoleColor)(-1), (ConsoleColors)(-1));
-        private string plainSequence;
-        private string foreSequence;
-        private string backSequence;
 
-        /// <summary>
-        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the usage of the terminal palette.
-        /// </summary>
-        public string PlainSequence
-        {
-            get => ColorTools.UseTerminalPalette ? PlainSequenceOriginal : PlainSequenceTrueColor;
-            set => plainSequence = value;
-        }
-        /// <summary>
-        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary.
-        /// </summary>
-        public string PlainSequenceEnclosed =>
-            Type == ColorType.TrueColor ? $"\"{PlainSequence}\"" : PlainSequence;
-        /// <summary>
-        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; in its original form.
-        /// </summary>
-        public string PlainSequenceOriginal =>
-            plainSequence;
-        /// <summary>
-        /// Parsable VT sequence (Foreground)
-        /// </summary>
-        public string VTSequenceForeground
-        {
-            get => ColorTools.UseTerminalPalette ? VTSequenceForegroundOriginal : VTSequenceForegroundTrueColor;
-            set => foreSequence = value;
-        }
-        /// <summary>
-        /// Parsable VT sequence (Foreground, original)
-        /// </summary>
-        public string VTSequenceForegroundOriginal =>
-            foreSequence;
-        /// <summary>
-        /// Parsable VT sequence (Background)
-        /// </summary>
-        public string VTSequenceBackground
-        {
-            get => ColorTools.UseTerminalPalette ? VTSequenceBackgroundOriginal : VTSequenceBackgroundTrueColor;
-            set => backSequence = value;
-        }
-        /// <summary>
-        /// Parsable VT sequence (Background, original)
-        /// </summary>
-        public string VTSequenceBackgroundOriginal =>
-            backSequence;
-        /// <summary>
-        /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
-        /// </summary>
-        public string PlainSequenceTrueColor { get; private set; }
-        /// <summary>
-        /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary
-        /// </summary>
-        public string PlainSequenceEnclosedTrueColor { get; private set; }
-        /// <summary>
-        /// Parsable VT sequence (Foreground, true color)
-        /// </summary>
-        public string VTSequenceForegroundTrueColor { get; private set; }
-        /// <summary>
-        /// Parsable VT sequence (Background, true color)
-        /// </summary>
-        public string VTSequenceBackgroundTrueColor { get; private set; }
-        /// <summary>
-        /// The red color value
-        /// </summary>
-        public int R { get; private set; }
-        /// <summary>
-        /// The green color value
-        /// </summary>
-        public int G { get; private set; }
-        /// <summary>
-        /// The blue color value
-        /// </summary>
-        public int B { get; private set; }
         /// <summary>
         /// An instance of RGB
         /// </summary>
-        public RedGreenBlue RGB =>
-            new(R, G, B);
+        public RedGreenBlue RGB { get; private set; }
         /// <summary>
-        /// Hexadecimal representation of the color
+        /// The color ID for 256- and 16-color modes.
         /// </summary>
-        public string Hex { get; private set; }
-        /// <summary>
-        /// Color type
-        /// </summary>
-        public ColorType Type { get; private set; }
-        /// <summary>
-        /// Determines the color brightness whether it indicates dark or light mode
-        /// </summary>
-        public ColorBrightness Brightness { get; private set; }
-        /// <summary>
-        /// The color value converted to <see cref="ConsoleColors"/>. Not applicable [-1] to true color
-        /// </summary>
-        public ConsoleColors ColorEnum255 { get; private set; } = unapplicable.unapplicable255;
-        /// <summary>
-        /// The color value converted to <see cref="ConsoleColor"/>. Not applicable [-1] to true color and 256 colors
-        /// </summary>
-        public ConsoleColor ColorEnum16 { get; private set; } = unapplicable.unapplicable16;
+        public int ColorId { get; private set; } = -1;
         /// <summary>
         /// Empty color singleton
         /// </summary>
@@ -153,6 +61,110 @@ namespace Terminaux.Colors
                 return ColorTools._empty;
             }
         }
+
+        /// <summary>
+        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the usage of the terminal palette.
+        /// </summary>
+        public string PlainSequence =>
+            ColorTools.UseTerminalPalette ?
+            PlainSequenceOriginal :
+            PlainSequenceTrueColor;
+        /// <summary>
+        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary.
+        /// </summary>
+        public string PlainSequenceEnclosed =>
+            Type == ColorType.TrueColor ? $"\"{PlainSequence}\"" : PlainSequence;
+        /// <summary>
+        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; in its original form.
+        /// </summary>
+        public string PlainSequenceOriginal =>
+            Type == ColorType.TrueColor ? $"{R};{G};{B}" : $"{ColorId}";
+        /// <summary>
+        /// Parsable VT sequence (Foreground)
+        /// </summary>
+        public string VTSequenceForeground =>
+            ColorTools.UseTerminalPalette ?
+            VTSequenceForegroundOriginal :
+            VTSequenceForegroundTrueColor;
+        /// <summary>
+        /// Parsable VT sequence (Foreground, original)
+        /// </summary>
+        public string VTSequenceForegroundOriginal =>
+            Type == ColorType.TrueColor ? $"\u001b[38;2;{PlainSequence}m" : $"\u001b[38;5;{PlainSequence}m";
+        /// <summary>
+        /// Parsable VT sequence (Background)
+        /// </summary>
+        public string VTSequenceBackground =>
+            ColorTools.UseTerminalPalette ?
+            VTSequenceBackgroundOriginal :
+            VTSequenceBackgroundTrueColor;
+        /// <summary>
+        /// Parsable VT sequence (Background, original)
+        /// </summary>
+        public string VTSequenceBackgroundOriginal =>
+            Type == ColorType.TrueColor ? $"\u001b[48;2;{PlainSequence}m" : $"\u001b[48;5;{PlainSequence}m";
+        /// <summary>
+        /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
+        /// </summary>
+        public string PlainSequenceTrueColor =>
+            $"{R};{G};{B}";
+        /// <summary>
+        /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary
+        /// </summary>
+        public string PlainSequenceEnclosedTrueColor =>
+            $"\"{PlainSequenceTrueColor}\"";
+        /// <summary>
+        /// Parsable VT sequence (Foreground, true color)
+        /// </summary>
+        public string VTSequenceForegroundTrueColor =>
+            $"\u001b[38;2;{PlainSequenceTrueColor}m";
+        /// <summary>
+        /// Parsable VT sequence (Background, true color)
+        /// </summary>
+        public string VTSequenceBackgroundTrueColor =>
+            $"\u001b[48;2;{PlainSequenceTrueColor}m";
+        /// <summary>
+        /// The red color value
+        /// </summary>
+        public int R =>
+            RGB.R;
+        /// <summary>
+        /// The green color value
+        /// </summary>
+        public int G =>
+            RGB.G;
+        /// <summary>
+        /// The blue color value
+        /// </summary>
+        public int B =>
+            RGB.B;
+        /// <summary>
+        /// Hexadecimal representation of the color
+        /// </summary>
+        public string Hex =>
+            $"#{R:X2}{G:X2}{B:X2}";
+        /// <summary>
+        /// Color type
+        /// </summary>
+        public ColorType Type =>
+            ColorId == -1 ? ColorType.TrueColor :
+            ColorId >= 16 ? ColorType._255Color :
+            ColorType._16Color;
+        /// <summary>
+        /// Determines the color brightness whether it indicates dark or light mode
+        /// </summary>
+        public ColorBrightness Brightness =>
+            DetectDark(R, G, B) ? ColorBrightness.Dark : ColorBrightness.Light;
+        /// <summary>
+        /// The color value converted to <see cref="ConsoleColors"/>. Not applicable [-1] to true color
+        /// </summary>
+        public ConsoleColors ColorEnum255 =>
+            Type == ColorType._255Color ? (ConsoleColors)ColorId : unapplicable.unapplicable255;
+        /// <summary>
+        /// The color value converted to <see cref="ConsoleColor"/>. Not applicable [-1] to true color and 256 colors
+        /// </summary>
+        public ConsoleColor ColorEnum16 =>
+            Type == ColorType._16Color ? (ConsoleColor)ColorId : unapplicable.unapplicable16;
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -206,88 +218,30 @@ namespace Terminaux.Colors
             if (ColorSpecifier.Contains(";"))
             {
                 // Parse it
-                var rgb =
-                    ColorSpecifier.StartsWith("cmyk:") ? CmykParsingTools.ParseSpecifierToRgb(ColorSpecifier) :
-                    ColorSpecifier.StartsWith("cmy:") ? CmyParsingTools.ParseSpecifierToRgb(ColorSpecifier) :
-                    ColorSpecifier.StartsWith("hsl:") ? HslParsingTools.ParseSpecifierToRgb(ColorSpecifier) :
-                    ColorSpecifier.StartsWith("hsv:") ? HsvParsingTools.ParseSpecifierToRgb(ColorSpecifier) :
-                    ColorSpecifier.StartsWith("ryb:") ? RybParsingTools.ParseSpecifierToRgb(ColorSpecifier) :
-                    RgbParsingTools.ParseSpecifier(ColorSpecifier);
-                int r = rgb.R;
-                int g = rgb.G;
-                int b = rgb.B;
-
-                // Form the sequences
-                PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
-                PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                VTSequenceForeground = VTSequenceForegroundTrueColor = $"\u001b[38;2;{PlainSequence}m";
-                VTSequenceBackground = VTSequenceBackgroundTrueColor = $"\u001b[48;2;{PlainSequence}m";
-
-                // Populate color properties
-                Type = ColorType.TrueColor;
-                Brightness = DetectDark(r, g, b) ? ColorBrightness.Dark : ColorBrightness.Light;
-                R = r;
-                G = g;
-                B = b;
+                var rgb = ParsingTools.ParseSpecifier(ColorSpecifier);
+                RGB = rgb;
             }
-            else if (double.TryParse(ColorSpecifier, out double specifierNum) && specifierNum <= 255 || Enum.IsDefined(typeof(ConsoleColors), ColorSpecifier))
+            else if (
+                double.TryParse(ColorSpecifier, out double specifierNum) && specifierNum <= 255 ||
+                Enum.IsDefined(typeof(ConsoleColors), ColorSpecifier))
             {
-                var parsedEnum = (ConsoleColors)Enum.Parse(typeof(ConsoleColors), ColorSpecifier);
-                var parsedEnum16 = specifierNum <= 15 ? (ConsoleColor)Enum.Parse(typeof(ConsoleColor), ColorSpecifier) : default;
-
                 // Parse it
-                var rgb = RgbParsingTools.ParseSpecifierRgbName(ColorSpecifier);
+                var rgb = ParsingTools.ParseSpecifierRgbName(ColorSpecifier);
                 var colorsInfo = rgb.cci;
-                int r = rgb.rgb.R;
-                int g = rgb.rgb.G;
-                int b = rgb.rgb.B;
 
-                // Form the sequences
-                PlainSequence = ColorTools.EnableColorTransformation ? $"{r};{g};{b}" : $"{colorsInfo.ColorID}";
-                PlainSequenceTrueColor = $"{r};{g};{b}";
-                PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                VTSequenceForeground = ColorTools.EnableColorTransformation ? $"\u001b[38;2;{PlainSequence}m" : $"\u001b[38;5;{PlainSequence}m";
-                VTSequenceBackground = ColorTools.EnableColorTransformation ? $"\u001b[48;2;{PlainSequence}m" : $"\u001b[48;5;{PlainSequence}m";
-                VTSequenceForegroundTrueColor = $"\u001b[38;2;{PlainSequenceTrueColor}m";
-                VTSequenceBackgroundTrueColor = $"\u001b[48;2;{PlainSequenceTrueColor}m";
-
-                // Populate color properties
-                Type = ColorTools.EnableColorTransformation ? ColorType.TrueColor : colorsInfo.ColorID >= 16 ? ColorType._255Color : ColorType._16Color;
-                Brightness = DetectDark(r, g, b) ? ColorBrightness.Dark : ColorBrightness.Light;
-                R = r;
-                G = g;
-                B = b;
-                ColorEnum255 = Type == ColorType._255Color ? parsedEnum : (ConsoleColors)(-1);
-                ColorEnum16 = Type == ColorType._16Color ? parsedEnum16 : (ConsoleColor)(-1);
+                // Populate RGB info
+                if (!ColorTools.EnableColorTransformation)
+                    ColorId = colorsInfo.ColorID;
+                RGB = rgb.rgb;
             }
             else if (ColorSpecifier.StartsWith("#"))
             {
                 // Parse it
-                var rgb = RgbParsingTools.ParseSpecifierRgbHash(ColorSpecifier);
-                int r = rgb.R;
-                int g = rgb.G;
-                int b = rgb.B;
-
-                // We got the RGB values! Form the sequences
-                PlainSequence = PlainSequenceTrueColor = $"{r};{g};{b}";
-                PlainSequenceEnclosedTrueColor = $"\"{r};{g};{b}\"";
-                VTSequenceForeground = VTSequenceForegroundTrueColor = $"\u001b[38;2;{PlainSequence}m";
-                VTSequenceBackground = VTSequenceBackgroundTrueColor = $"\u001b[48;2;{PlainSequence}m";
-
-                // Populate color properties
-                Type = ColorType.TrueColor;
-                Brightness = DetectDark(r, g, b) ? ColorBrightness.Dark : ColorBrightness.Light;
-                R = r;
-                G = g;
-                B = b;
+                var rgb = ParsingTools.ParseSpecifierRgbHash(ColorSpecifier);
+                RGB = rgb;
             }
             else
-            {
                 throw new TerminauxException("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
-            }
-
-            // Populate the hexadecimal representation of the color
-            Hex = $"#{R:X2}{G:X2}{B:X2}";
         }
 
         /// <summary>
@@ -362,6 +316,7 @@ namespace Terminaux.Colors
                 other.PlainSequenceEnclosedTrueColor == other2.PlainSequenceEnclosedTrueColor &&
                 other.VTSequenceForegroundTrueColor == other2.VTSequenceForegroundTrueColor &&
                 other.VTSequenceBackgroundTrueColor == other2.VTSequenceBackgroundTrueColor &&
+                other.ColorId == other2.ColorId &&
                 other.R == other2.R &&
                 other.G == other2.G &&
                 other.B == other2.B &&
@@ -384,7 +339,7 @@ namespace Terminaux.Colors
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            int hashCode = -1193100686;
+            int hashCode = 1612857879;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequence);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceEnclosed);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForeground);
@@ -393,6 +348,7 @@ namespace Terminaux.Colors
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceEnclosedTrueColor);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForegroundTrueColor);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceBackgroundTrueColor);
+            hashCode = hashCode * -1521134295 + ColorId.GetHashCode();
             hashCode = hashCode * -1521134295 + R.GetHashCode();
             hashCode = hashCode * -1521134295 + G.GetHashCode();
             hashCode = hashCode * -1521134295 + B.GetHashCode();
