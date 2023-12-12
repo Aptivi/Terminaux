@@ -340,6 +340,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.ScreenPart.LeftPosition
   nameWithType: ScreenPart.LeftPosition
+- uid: Terminaux.Base.Buffered.ScreenPart.Order
+  name: Order
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_Order
+  commentId: P:Terminaux.Base.Buffered.ScreenPart.Order
+  fullName: Terminaux.Base.Buffered.ScreenPart.Order
+  nameWithType: ScreenPart.Order
+- uid: Terminaux.Base.Buffered.ScreenPart.Order*
+  name: Order
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_Order_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.Order
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.Order
+  nameWithType: ScreenPart.Order
 - uid: Terminaux.Base.Buffered.ScreenPart.Position(System.Int32,System.Int32)
   name: Position(int, int)
   href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_Position_System_Int32_System_Int32_
