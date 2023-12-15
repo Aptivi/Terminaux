@@ -240,7 +240,7 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxTitledButtons(string title, string[] buttons, string text, params object[] vars) =>
-            WriteInfoBoxTitledButtonsColor(title, buttons, text,
+            WriteInfoBoxTitledButtonsColorBack(title, buttons, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
@@ -336,7 +336,7 @@ namespace Terminaux.Inputs.Styles.InfoboxTitled
         public static int WriteInfoBoxTitledButtons(string title, string[] buttons, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
-            WriteInfoBoxTitledButtonsColor(title, buttons, text,
+            WriteInfoBoxTitledButtonsColorBack(title, buttons, text,
                 UpperLeftCornerChar, LowerLeftCornerChar,
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,

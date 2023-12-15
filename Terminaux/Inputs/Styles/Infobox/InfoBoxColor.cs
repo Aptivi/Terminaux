@@ -248,7 +248,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, bool waitForInput, params object[] vars) =>
-            WriteInfoBoxColor(text, waitForInput,
+            WriteInfoBoxColorBack(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
