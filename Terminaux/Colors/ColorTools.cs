@@ -149,7 +149,7 @@ namespace Terminaux.Colors
         /// </summary>
         public static Color GetGray()
         {
-            if (currentBackgroundColor.Brightness == ColorBrightness.Dark)
+            if (currentBackgroundColor.Brightness == ColorBrightness.Light)
                 return new Color(ConsoleColors.Black);
             else
                 return new Color(ConsoleColors.Gray);
