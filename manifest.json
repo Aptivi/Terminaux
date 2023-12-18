@@ -585,6 +585,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiTools.yml",
       "output": {
         ".html": {
