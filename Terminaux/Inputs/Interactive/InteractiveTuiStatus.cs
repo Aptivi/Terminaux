@@ -21,7 +21,10 @@ using Terminaux.Colors;
 
 namespace Terminaux.Inputs.Interactive
 {
-    internal static class InteractiveTuiStatus
+    /// <summary>
+    /// Interactive TUI status
+    /// </summary>
+    public static class InteractiveTuiStatus
     {
         /// <summary>
         /// Current selection for the first pane
