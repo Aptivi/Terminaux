@@ -620,7 +620,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     var boxBuffer = new StringBuilder();
                     string border =
                         !string.IsNullOrEmpty(title) ?
-                        BorderTextColor.RenderBorderTextPlain(title, borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar) :
+                        BorderColor.RenderBorderPlain(title, borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar) :
                         BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                     boxBuffer.Append(
                         $"{(useColor ? InfoBoxTitledButtonsColor.VTSequenceForeground : "")}" +
@@ -665,7 +665,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         if (useColor)
                         {
                             boxBuffer.Append(
-                                BorderTextColor.RenderBorderText(title, buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor) +
+                                BorderColor.RenderBorder(title, buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor) +
                                 TextWriterWhereColor.RenderWhere(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor)
                             );
                         }

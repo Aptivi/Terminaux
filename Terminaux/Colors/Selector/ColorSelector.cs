@@ -194,7 +194,7 @@ namespace Terminaux.Colors.Selector
                 hueRamp.Append($"{new Color($"hsl:{hue};100;50").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
             selector.Append(
-                BoxFrameTextColor.RenderBoxFrame($"Hue: {(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)}/360", hueBarX, hueBarY, boxWidth, boxHeight) +
+                BoxFrameColor.RenderBoxFrame($"Hue: {(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)}/360", hueBarX, hueBarY, boxWidth, boxHeight) +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, hueBarY + 2) +
                 hueRamp.ToString()
             );
@@ -208,7 +208,7 @@ namespace Terminaux.Colors.Selector
                 satRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};{sat};50").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
             selector.Append(
-                BoxFrameTextColor.RenderBoxFrame($"Saturation: {(type == ColorType.TrueColor ? trueColorSaturation : HslConversionTools.ConvertFrom(selectedColor.RGB).SaturationWhole)}/100", hueBarX, saturationBarY, boxWidth, boxHeight) +
+                BoxFrameColor.RenderBoxFrame($"Saturation: {(type == ColorType.TrueColor ? trueColorSaturation : HslConversionTools.ConvertFrom(selectedColor.RGB).SaturationWhole)}/100", hueBarX, saturationBarY, boxWidth, boxHeight) +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, saturationBarY + 2) +
                 satRamp.ToString()
             );
@@ -222,7 +222,7 @@ namespace Terminaux.Colors.Selector
                 ligRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};100;{lig}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
             selector.Append(
-                BoxFrameTextColor.RenderBoxFrame($"Lightness: {(type == ColorType.TrueColor ? trueColorLightness : HslConversionTools.ConvertFrom(selectedColor.RGB).LightnessWhole)}/100", hueBarX, lightnessBarY, boxWidth, boxHeight) +
+                BoxFrameColor.RenderBoxFrame($"Lightness: {(type == ColorType.TrueColor ? trueColorLightness : HslConversionTools.ConvertFrom(selectedColor.RGB).LightnessWhole)}/100", hueBarX, lightnessBarY, boxWidth, boxHeight) +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, lightnessBarY + 2) +
                 ligRamp.ToString()
             );
@@ -237,7 +237,7 @@ namespace Terminaux.Colors.Selector
                 grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
             selector.Append(
-                BoxFrameTextColor.RenderBoxFrame($"Gray: {mono.R}/255", hueBarX, grayRampBarY, boxWidth, boxHeight) +
+                BoxFrameColor.RenderBoxFrame($"Gray: {mono.R}/255", hueBarX, grayRampBarY, boxWidth, boxHeight) +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, grayRampBarY + 2) +
                 grayRamp.ToString()
             );
@@ -257,7 +257,7 @@ namespace Terminaux.Colors.Selector
                 blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
             selector.Append(
-                BoxFrameTextColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2) +
+                BoxFrameColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2) +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 2) +
                 redRamp.ToString() +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 3) +
@@ -495,7 +495,7 @@ namespace Terminaux.Colors.Selector
             int boxHeight = ConsoleWrapper.WindowHeight - 6;
 
             // First, draw the border
-            builder.Append(BoxFrameTextColor.RenderBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor}{(type != ColorType.TrueColor ? $" | {(type == ColorType._16Color ? colorValue16 : colorValue255)}" : "")}]", boxX, boxY, boxWidth, boxHeight));
+            builder.Append(BoxFrameColor.RenderBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor}{(type != ColorType.TrueColor ? $" | {(type == ColorType._16Color ? colorValue16 : colorValue255)}" : "")}]", boxX, boxY, boxWidth, boxHeight));
 
             // then, the box
             builder.Append(
