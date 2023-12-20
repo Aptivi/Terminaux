@@ -5346,6 +5346,22 @@ references:
   commentId: T:Terminaux.Colors.Models.Parsing.CmyParsingTools
   fullName: Terminaux.Colors.Models.Parsing.CmyParsingTools
   nameWithType: CmyParsingTools
+- uid: Terminaux.Colors.Models.Parsing.CmyParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name: IsSpecifierValid(string, bool)
+  href: api/Terminaux.Colors.Models.Parsing.CmyParsingTools.html#Terminaux_Colors_Models_Parsing_CmyParsingTools_IsSpecifierValid_System_String_System_Boolean_
+  commentId: M:Terminaux.Colors.Models.Parsing.CmyParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name.vb: IsSpecifierValid(String, Boolean)
+  fullName: Terminaux.Colors.Models.Parsing.CmyParsingTools.IsSpecifierValid(string, bool)
+  fullName.vb: Terminaux.Colors.Models.Parsing.CmyParsingTools.IsSpecifierValid(String, Boolean)
+  nameWithType: CmyParsingTools.IsSpecifierValid(string, bool)
+  nameWithType.vb: CmyParsingTools.IsSpecifierValid(String, Boolean)
+- uid: Terminaux.Colors.Models.Parsing.CmyParsingTools.IsSpecifierValid*
+  name: IsSpecifierValid
+  href: api/Terminaux.Colors.Models.Parsing.CmyParsingTools.html#Terminaux_Colors_Models_Parsing_CmyParsingTools_IsSpecifierValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.CmyParsingTools.IsSpecifierValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.CmyParsingTools.IsSpecifierValid
+  nameWithType: CmyParsingTools.IsSpecifierValid
 - uid: Terminaux.Colors.Models.Parsing.CmyParsingTools.ParseSpecifier(System.String)
   name: ParseSpecifier(string)
   href: api/Terminaux.Colors.Models.Parsing.CmyParsingTools.html#Terminaux_Colors_Models_Parsing_CmyParsingTools_ParseSpecifier_System_String_
@@ -5384,6 +5400,22 @@ references:
   commentId: T:Terminaux.Colors.Models.Parsing.CmykParsingTools
   fullName: Terminaux.Colors.Models.Parsing.CmykParsingTools
   nameWithType: CmykParsingTools
+- uid: Terminaux.Colors.Models.Parsing.CmykParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name: IsSpecifierValid(string, bool)
+  href: api/Terminaux.Colors.Models.Parsing.CmykParsingTools.html#Terminaux_Colors_Models_Parsing_CmykParsingTools_IsSpecifierValid_System_String_System_Boolean_
+  commentId: M:Terminaux.Colors.Models.Parsing.CmykParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name.vb: IsSpecifierValid(String, Boolean)
+  fullName: Terminaux.Colors.Models.Parsing.CmykParsingTools.IsSpecifierValid(string, bool)
+  fullName.vb: Terminaux.Colors.Models.Parsing.CmykParsingTools.IsSpecifierValid(String, Boolean)
+  nameWithType: CmykParsingTools.IsSpecifierValid(string, bool)
+  nameWithType.vb: CmykParsingTools.IsSpecifierValid(String, Boolean)
+- uid: Terminaux.Colors.Models.Parsing.CmykParsingTools.IsSpecifierValid*
+  name: IsSpecifierValid
+  href: api/Terminaux.Colors.Models.Parsing.CmykParsingTools.html#Terminaux_Colors_Models_Parsing_CmykParsingTools_IsSpecifierValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.CmykParsingTools.IsSpecifierValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.CmykParsingTools.IsSpecifierValid
+  nameWithType: CmykParsingTools.IsSpecifierValid
 - uid: Terminaux.Colors.Models.Parsing.CmykParsingTools.ParseSpecifier(System.String)
   name: ParseSpecifier(string)
   href: api/Terminaux.Colors.Models.Parsing.CmykParsingTools.html#Terminaux_Colors_Models_Parsing_CmykParsingTools_ParseSpecifier_System_String_
@@ -5422,6 +5454,22 @@ references:
   commentId: T:Terminaux.Colors.Models.Parsing.HslParsingTools
   fullName: Terminaux.Colors.Models.Parsing.HslParsingTools
   nameWithType: HslParsingTools
+- uid: Terminaux.Colors.Models.Parsing.HslParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name: IsSpecifierValid(string, bool)
+  href: api/Terminaux.Colors.Models.Parsing.HslParsingTools.html#Terminaux_Colors_Models_Parsing_HslParsingTools_IsSpecifierValid_System_String_System_Boolean_
+  commentId: M:Terminaux.Colors.Models.Parsing.HslParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name.vb: IsSpecifierValid(String, Boolean)
+  fullName: Terminaux.Colors.Models.Parsing.HslParsingTools.IsSpecifierValid(string, bool)
+  fullName.vb: Terminaux.Colors.Models.Parsing.HslParsingTools.IsSpecifierValid(String, Boolean)
+  nameWithType: HslParsingTools.IsSpecifierValid(string, bool)
+  nameWithType.vb: HslParsingTools.IsSpecifierValid(String, Boolean)
+- uid: Terminaux.Colors.Models.Parsing.HslParsingTools.IsSpecifierValid*
+  name: IsSpecifierValid
+  href: api/Terminaux.Colors.Models.Parsing.HslParsingTools.html#Terminaux_Colors_Models_Parsing_HslParsingTools_IsSpecifierValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.HslParsingTools.IsSpecifierValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.HslParsingTools.IsSpecifierValid
+  nameWithType: HslParsingTools.IsSpecifierValid
 - uid: Terminaux.Colors.Models.Parsing.HslParsingTools.ParseSpecifier(System.String)
   name: ParseSpecifier(string)
   href: api/Terminaux.Colors.Models.Parsing.HslParsingTools.html#Terminaux_Colors_Models_Parsing_HslParsingTools_ParseSpecifier_System_String_
@@ -5460,6 +5508,22 @@ references:
   commentId: T:Terminaux.Colors.Models.Parsing.HsvParsingTools
   fullName: Terminaux.Colors.Models.Parsing.HsvParsingTools
   nameWithType: HsvParsingTools
+- uid: Terminaux.Colors.Models.Parsing.HsvParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name: IsSpecifierValid(string, bool)
+  href: api/Terminaux.Colors.Models.Parsing.HsvParsingTools.html#Terminaux_Colors_Models_Parsing_HsvParsingTools_IsSpecifierValid_System_String_System_Boolean_
+  commentId: M:Terminaux.Colors.Models.Parsing.HsvParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name.vb: IsSpecifierValid(String, Boolean)
+  fullName: Terminaux.Colors.Models.Parsing.HsvParsingTools.IsSpecifierValid(string, bool)
+  fullName.vb: Terminaux.Colors.Models.Parsing.HsvParsingTools.IsSpecifierValid(String, Boolean)
+  nameWithType: HsvParsingTools.IsSpecifierValid(string, bool)
+  nameWithType.vb: HsvParsingTools.IsSpecifierValid(String, Boolean)
+- uid: Terminaux.Colors.Models.Parsing.HsvParsingTools.IsSpecifierValid*
+  name: IsSpecifierValid
+  href: api/Terminaux.Colors.Models.Parsing.HsvParsingTools.html#Terminaux_Colors_Models_Parsing_HsvParsingTools_IsSpecifierValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.HsvParsingTools.IsSpecifierValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.HsvParsingTools.IsSpecifierValid
+  nameWithType: HsvParsingTools.IsSpecifierValid
 - uid: Terminaux.Colors.Models.Parsing.HsvParsingTools.ParseSpecifier(System.String)
   name: ParseSpecifier(string)
   href: api/Terminaux.Colors.Models.Parsing.HsvParsingTools.html#Terminaux_Colors_Models_Parsing_HsvParsingTools_ParseSpecifier_System_String_
@@ -5498,6 +5562,54 @@ references:
   commentId: T:Terminaux.Colors.Models.Parsing.ParsingTools
   fullName: Terminaux.Colors.Models.Parsing.ParsingTools
   nameWithType: ParsingTools
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierConsoleColors(System.String)
+  name: IsSpecifierConsoleColors(string)
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_IsSpecifierConsoleColors_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierConsoleColors(System.String)
+  name.vb: IsSpecifierConsoleColors(String)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierConsoleColors(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierConsoleColors(String)
+  nameWithType: ParsingTools.IsSpecifierConsoleColors(string)
+  nameWithType.vb: ParsingTools.IsSpecifierConsoleColors(String)
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierConsoleColors*
+  name: IsSpecifierConsoleColors
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_IsSpecifierConsoleColors_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierConsoleColors
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierConsoleColors
+  nameWithType: ParsingTools.IsSpecifierConsoleColors
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValid(System.String)
+  name: IsSpecifierValid(string)
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_IsSpecifierValid_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValid(System.String)
+  name.vb: IsSpecifierValid(String)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValid(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValid(String)
+  nameWithType: ParsingTools.IsSpecifierValid(string)
+  nameWithType.vb: ParsingTools.IsSpecifierValid(String)
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValid*
+  name: IsSpecifierValid
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_IsSpecifierValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValid
+  nameWithType: ParsingTools.IsSpecifierValid
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValidRgbHash(System.String)
+  name: IsSpecifierValidRgbHash(string)
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_IsSpecifierValidRgbHash_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValidRgbHash(System.String)
+  name.vb: IsSpecifierValidRgbHash(String)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValidRgbHash(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValidRgbHash(String)
+  nameWithType: ParsingTools.IsSpecifierValidRgbHash(string)
+  nameWithType.vb: ParsingTools.IsSpecifierValidRgbHash(String)
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValidRgbHash*
+  name: IsSpecifierValidRgbHash
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_IsSpecifierValidRgbHash_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValidRgbHash
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValidRgbHash
+  nameWithType: ParsingTools.IsSpecifierValidRgbHash
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier(System.String)
   name: ParseSpecifier(string)
   href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifier_System_String_
@@ -5552,6 +5664,22 @@ references:
   commentId: T:Terminaux.Colors.Models.Parsing.RgbParsingTools
   fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools
   nameWithType: RgbParsingTools
+- uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name: IsSpecifierValid(string, bool)
+  href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_IsSpecifierValid_System_String_System_Boolean_
+  commentId: M:Terminaux.Colors.Models.Parsing.RgbParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name.vb: IsSpecifierValid(String, Boolean)
+  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.IsSpecifierValid(string, bool)
+  fullName.vb: Terminaux.Colors.Models.Parsing.RgbParsingTools.IsSpecifierValid(String, Boolean)
+  nameWithType: RgbParsingTools.IsSpecifierValid(string, bool)
+  nameWithType.vb: RgbParsingTools.IsSpecifierValid(String, Boolean)
+- uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.IsSpecifierValid*
+  name: IsSpecifierValid
+  href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_IsSpecifierValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.RgbParsingTools.IsSpecifierValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.IsSpecifierValid
+  nameWithType: RgbParsingTools.IsSpecifierValid
 - uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb(System.String)
   name: ParseSpecifierToRgb(string)
   href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_ParseSpecifierToRgb_System_String_
@@ -5574,6 +5702,22 @@ references:
   commentId: T:Terminaux.Colors.Models.Parsing.RybParsingTools
   fullName: Terminaux.Colors.Models.Parsing.RybParsingTools
   nameWithType: RybParsingTools
+- uid: Terminaux.Colors.Models.Parsing.RybParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name: IsSpecifierValid(string, bool)
+  href: api/Terminaux.Colors.Models.Parsing.RybParsingTools.html#Terminaux_Colors_Models_Parsing_RybParsingTools_IsSpecifierValid_System_String_System_Boolean_
+  commentId: M:Terminaux.Colors.Models.Parsing.RybParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name.vb: IsSpecifierValid(String, Boolean)
+  fullName: Terminaux.Colors.Models.Parsing.RybParsingTools.IsSpecifierValid(string, bool)
+  fullName.vb: Terminaux.Colors.Models.Parsing.RybParsingTools.IsSpecifierValid(String, Boolean)
+  nameWithType: RybParsingTools.IsSpecifierValid(string, bool)
+  nameWithType.vb: RybParsingTools.IsSpecifierValid(String, Boolean)
+- uid: Terminaux.Colors.Models.Parsing.RybParsingTools.IsSpecifierValid*
+  name: IsSpecifierValid
+  href: api/Terminaux.Colors.Models.Parsing.RybParsingTools.html#Terminaux_Colors_Models_Parsing_RybParsingTools_IsSpecifierValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.RybParsingTools.IsSpecifierValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.RybParsingTools.IsSpecifierValid
+  nameWithType: RybParsingTools.IsSpecifierValid
 - uid: Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifier(System.String)
   name: ParseSpecifier(string)
   href: api/Terminaux.Colors.Models.Parsing.RybParsingTools.html#Terminaux_Colors_Models_Parsing_RybParsingTools_ParseSpecifier_System_String_
