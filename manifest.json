@@ -165,6 +165,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.ColorSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.ColorSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.ColorTools.yml",
       "output": {
         ".html": {

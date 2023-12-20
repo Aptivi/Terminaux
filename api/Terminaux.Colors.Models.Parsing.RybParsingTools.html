@@ -272,19 +272,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Models_Parsing_RybParsingTools_ParseSpecifierToRgb_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Models_Parsing_RybParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb(System.String%2CTerminaux.Colors.ColorSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Models/Parsing/RybParsingTools.cs/#L106">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Models/Parsing/RybParsingTools.cs/#L107">View Source</a>
   </span>
   <a id="Terminaux_Colors_Models_Parsing_RybParsingTools_ParseSpecifierToRgb_" data-uid="Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb*"></a>
-  <h4 id="Terminaux_Colors_Models_Parsing_RybParsingTools_ParseSpecifierToRgb_System_String_" data-uid="Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb(System.String)">ParseSpecifierToRgb(string)</h4>
+  <h4 id="Terminaux_Colors_Models_Parsing_RybParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_" data-uid="Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)">ParseSpecifierToRgb(string, ColorSettings)</h4>
   <div class="markdown level1 summary"><p>Parses the specifier and returns an instance of <a class="xref" href="Terminaux.Colors.Models.RedYellowBlue.html">RedYellowBlue</a> converted to <a class="xref" href="Terminaux.Colors.Models.RedGreenBlue.html">RedGreenBlue</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static RedGreenBlue ParseSpecifierToRgb(string specifier)</code></pre>
+    <pre><code class="lang-csharp hljs">public static RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings settings = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -300,6 +300,12 @@
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">specifier</span></td>
         <td><p>Specifier of RGB</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.ColorSettings.html">ColorSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Settings to use. Use null for global settings</p>
 </td>
       </tr>
     </tbody>
