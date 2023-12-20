@@ -18,26 +18,17 @@
 //
 
 using System;
+using Terminaux.Base;
 
-namespace Terminaux.Colors.Transformation.Formulas
+namespace Terminaux.Colors.Transformation
 {
-    internal class Inverse : BaseTransformationFormula, ITransformationFormula
+    /// <summary>
+    /// Color transformation formula
+    /// </summary>
+    internal abstract class BaseTransformationFormula : ITransformationFormula
     {
-        public override (int, int, int) Transform(int r, int g, int b)
-        {
-            // Check values
-            if (r < 0 || r > 255)
-                throw new ArgumentOutOfRangeException("r");
-            if (g < 0 || g > 255)
-                throw new ArgumentOutOfRangeException("g");
-            if (b < 0 || b > 255)
-                throw new ArgumentOutOfRangeException("b");
-
-            // Inverse the RGB
-            int invR = 255 - r;
-            int invG = 255 - g;
-            int invB = 255 - b;
-            return (invR, invG, invB);
-        }
+        /// <inheritdoc/>
+        public virtual (int r, int g, int b) Transform(int r, int g, int b) =>
+            throw new TerminauxException("Not implemented yet.", new NotImplementedException());
     }
 }

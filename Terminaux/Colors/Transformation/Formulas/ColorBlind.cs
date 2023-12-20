@@ -22,9 +22,9 @@ using Terminaux.Colors.Transformation.Formulas.ColorBlindness;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {
-    internal static class ColorBlind
+    internal class ColorBlind : BaseTransformationFormula, ITransformationFormula
     {
-        public static (int, int, int) Transform(int r, int g, int b)
+        public override (int, int, int) Transform(int r, int g, int b)
         {
             // Check values
             if (r < 0 || r > 255)

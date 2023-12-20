@@ -17,26 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using Terminaux.Colors.Transformation.Formulas;
 
 namespace Terminaux.Colors.Transformation
 {
     internal static class TransformationTools
     {
+        private static readonly Dictionary<TransformationFormula, BaseTransformationFormula> formulas = new()
+        {
+            { TransformationFormula.Monochromacy, new Monochromacy() },
+            { TransformationFormula.Inverse, new Inverse() },
+            { TransformationFormula.Protan, new ColorBlind() },
+            { TransformationFormula.Deutan, new ColorBlind() },
+            { TransformationFormula.Tritan, new ColorBlind() },
+        };
+
         internal static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput)
         {
             if (ColorTools.EnableColorTransformation)
             {
                 // We'll transform.
-                var transformed = ColorTools.ColorTransformationFormula switch
-                {
-                    TransformationFormula.Monochromacy =>
-                        Monochromacy.Transform(rInput, gInput, bInput),
-                    TransformationFormula.Inverse =>
-                        Inverse.Transform(rInput, gInput, bInput),
-                    _ =>
-                        ColorBlind.Transform(rInput, gInput, bInput),
-                };
+                var transformed = formulas[ColorTools.ColorTransformationFormula].Transform(rInput, gInput, bInput);
                 return transformed;
             }
             return (rInput, gInput, bInput);

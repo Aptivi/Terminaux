@@ -17,27 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-
-namespace Terminaux.Colors.Transformation.Formulas
+namespace Terminaux.Colors.Transformation
 {
-    internal class Inverse : BaseTransformationFormula, ITransformationFormula
+    /// <summary>
+    /// Transformation formula interface
+    /// </summary>
+    internal interface ITransformationFormula
     {
-        public override (int, int, int) Transform(int r, int g, int b)
-        {
-            // Check values
-            if (r < 0 || r > 255)
-                throw new ArgumentOutOfRangeException("r");
-            if (g < 0 || g > 255)
-                throw new ArgumentOutOfRangeException("g");
-            if (b < 0 || b > 255)
-                throw new ArgumentOutOfRangeException("b");
-
-            // Inverse the RGB
-            int invR = 255 - r;
-            int invG = 255 - g;
-            int invB = 255 - b;
-            return (invR, invG, invB);
-        }
+        /// <summary>
+        /// Transforms the colors using the implementation formula.
+        /// </summary>
+        /// <param name="r">Red color level</param>
+        /// <param name="g">Green color level</param>
+        /// <param name="b">Blue color level</param>
+        /// <returns>Transformed RGB values</returns>
+        (int r, int g, int b) Transform(int r, int g, int b);
     }
 }

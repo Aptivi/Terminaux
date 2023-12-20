@@ -21,9 +21,9 @@ using System;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {
-    internal static class Monochromacy
+    internal class Monochromacy : BaseTransformationFormula, ITransformationFormula
     {
-        public static (int, int, int) Transform(int r, int g, int b)
+        public override (int, int, int) Transform(int r, int g, int b)
         {
             // Check values
             if (r < 0 || r > 255)
