@@ -38,6 +38,29 @@ namespace Terminaux.Colors.Models.Parsing
             specifier.Contains(";");
 
         /// <summary>
+        /// Does the string specifier represent a valid model-agnostic specifier and contain valid values?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid model-agnostic specifier and contains valid values</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierAndValueValid(string specifier)
+        {
+            if (IsSpecifierConsoleColors(specifier))
+                return true;
+            if (IsSpecifierAndValueValidRgbHash(specifier))
+                return true;
+            if (!IsSpecifierValid(specifier))
+                return false;
+
+            return 
+                CmykParsingTools.IsSpecifierAndValueValid(specifier) ||
+                CmyParsingTools.IsSpecifierAndValueValid(specifier) ||
+                HslParsingTools.IsSpecifierAndValueValid(specifier) ||
+                HsvParsingTools.IsSpecifierAndValueValid(specifier) ||
+                RgbParsingTools.IsSpecifierAndValueValid(specifier) ||
+                RybParsingTools.IsSpecifierAndValueValid(specifier);
+        }
+
+        /// <summary>
         /// Does the string specifier represent either a color name taken from <see cref="ConsoleColors"/> or a color number from 0 to 255?
         /// </summary>
         /// <param name="specifier">Specifier that represents either a color name taken from <see cref="ConsoleColors"/> or a color number from 0 to 255</param>
@@ -65,21 +88,83 @@ namespace Terminaux.Colors.Models.Parsing
         }
 
         /// <summary>
+        /// Does the string specifier represent a valid RGB hash (#RGB or #RRGGBB) as in HTML?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid RGB hash (#RGB or #RRGGBB) as in HTML</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierAndValueValidRgbHash(string specifier)
+        {
+            if (!IsSpecifierValidRgbHash(specifier))
+                return false;
+
+            // Get the integral value of the total color
+            string finalSpecifier = specifier.Substring(1);
+            if (finalSpecifier.Length == 3)
+            {
+                char first = finalSpecifier[0];
+                char second = finalSpecifier[1];
+                char third = finalSpecifier[2];
+                finalSpecifier = $"{first}{first}{second}{second}{third}{third}";
+            }
+            else if (finalSpecifier.Length != 6)
+                return false;
+
+            return int.TryParse(finalSpecifier, NumberStyles.HexNumber, null, out _);
+        }
+
+        /// <summary>
         /// Parses the specifier and returns an instance of <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RGB</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static RedGreenBlue ParseSpecifier(string specifier)
+        public static (RedGreenBlue rgb, ConsoleColorsInfo cci) ParseSpecifier(string specifier)
         {
+            // Necessary variables
+            (RedGreenBlue rgb, ConsoleColorsInfo cci) tuple = (null, null);
+            bool usesColorId = IsSpecifierConsoleColors(specifier);
+
+            // Check to see if we're going to use the color ID
+            if (usesColorId)
+                tuple = ParseSpecifierRgbName(specifier);
+
+            // Get the RGB
             var rgb =
-                    specifier.StartsWith("cmyk:") ? CmykParsingTools.ParseSpecifierToRgb(specifier) :
-                    specifier.StartsWith("cmy:") ? CmyParsingTools.ParseSpecifierToRgb(specifier) :
-                    specifier.StartsWith("hsl:") ? HslParsingTools.ParseSpecifierToRgb(specifier) :
-                    specifier.StartsWith("hsv:") ? HsvParsingTools.ParseSpecifierToRgb(specifier) :
-                    specifier.StartsWith("ryb:") ? RybParsingTools.ParseSpecifierToRgb(specifier) :
-                    RgbParsingTools.ParseSpecifierToRgb(specifier);
-            return rgb;
+                // Color models
+                CmykParsingTools.IsSpecifierValid(specifier) ? CmykParsingTools.ParseSpecifierToRgb(specifier) :
+                CmyParsingTools.IsSpecifierValid(specifier) ? CmyParsingTools.ParseSpecifierToRgb(specifier) :
+                HslParsingTools.IsSpecifierValid(specifier) ? HslParsingTools.ParseSpecifierToRgb(specifier) :
+                HsvParsingTools.IsSpecifierValid(specifier) ? HsvParsingTools.ParseSpecifierToRgb(specifier) :
+                RybParsingTools.IsSpecifierValid(specifier) ? RybParsingTools.ParseSpecifierToRgb(specifier) :
+
+                // Colors and hash
+                usesColorId ? tuple.rgb :
+                IsSpecifierValidRgbHash(specifier) ? ParseSpecifierRgbHash(specifier) :
+
+                // Fallback
+                RgbParsingTools.ParseSpecifierToRgb(specifier);
+            return (rgb, tuple.cci);
+        }
+
+        /// <summary>
+        /// Parses the specifier and returns an instance of <see cref="RedGreenBlue"/>
+        /// </summary>
+        /// <param name="specifier">Specifier of RGB</param>
+        /// <param name="output">Output for both the RGB component and the color info for 256- and 16-color modes</param>
+        /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static bool TryParseSpecifier(string specifier, out (RedGreenBlue rgb, ConsoleColorsInfo cci) output)
+        {
+            try
+            {
+                output = ParseSpecifier(specifier);
+                return true;
+            }
+            catch
+            {
+                output = (null, null);
+                return false;
+            }
         }
 
         /// <summary>
@@ -116,6 +201,27 @@ namespace Terminaux.Colors.Models.Parsing
         }
 
         /// <summary>
+        /// Parses the specifier that holds the color name and returns an instance of <see cref="RedGreenBlue"/>
+        /// </summary>
+        /// <param name="specifier">Color name defined in <see cref="ConsoleColors"/></param>
+        /// <param name="output">Output for both the RGB component and the color info for 256- and 16-color modes</param>
+        /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static bool TryParseSpecifierRgbName(string specifier, out (RedGreenBlue rgb, ConsoleColorsInfo cci) output)
+        {
+            try
+            {
+                output = ParseSpecifierRgbName(specifier);
+                return true;
+            }
+            catch
+            {
+                output = (null, null);
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Parses the hex representation of RGB and returns an instance of <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RGB in hex representation</param>
@@ -138,7 +244,9 @@ namespace Terminaux.Colors.Models.Parsing
             else if (finalSpecifier.Length != 6)
                 throw new TerminauxException($"Invalid color hex length \"{specifier}\". Ensure that it's on the correct format: #RRGGBB");
 
-            int ColorDecimal = Convert.ToInt32(finalSpecifier, 16);
+            bool valid = int.TryParse(finalSpecifier, NumberStyles.HexNumber, null, out int ColorDecimal);
+            if (!valid)
+                throw new TerminauxException($"Can't resolve color hex \"{specifier}\".");
 
             // Convert the RGB values to numbers
             int r = (byte)((ColorDecimal & 0xFF0000) >> 0x10);
@@ -150,6 +258,27 @@ namespace Terminaux.Colors.Models.Parsing
 
             // Make a new RGB class
             return new(finalRgb.r, finalRgb.g, finalRgb.b);
+        }
+
+        /// <summary>
+        /// Parses the hex representation of RGB and returns an instance of <see cref="RedGreenBlue"/>
+        /// </summary>
+        /// <param name="specifier">Specifier of RGB in hex representation</param>
+        /// <param name="output">Output for the RGB component</param>
+        /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static bool TryParseSpecifierRgbHash(string specifier, out RedGreenBlue output)
+        {
+            try
+            {
+                output = ParseSpecifierRgbHash(specifier);
+                return true;
+            }
+            catch
+            {
+                output = null;
+                return false;
+            }
         }
     }
 }

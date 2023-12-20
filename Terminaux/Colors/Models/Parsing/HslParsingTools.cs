@@ -41,6 +41,29 @@ namespace Terminaux.Colors.Models.Parsing
             (!checkParts || (checkParts && specifier.Substring(4).Split(';').Length == 3));
 
         /// <summary>
+        /// Does the string specifier represent a valid HSL specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid HSL specifier</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierAndValueValid(string specifier)
+        {
+            if (!IsSpecifierValid(specifier, true))
+                return false;
+
+            var specifierArray = specifier.Substring(4).Split(';');
+            int h = Convert.ToInt32(specifierArray[0]);
+            if (h < 0 || h > 360)
+                return false;
+            int s = Convert.ToInt32(specifierArray[1]);
+            if (s < 0 || s > 100)
+                return false;
+            int l = Convert.ToInt32(specifierArray[2]);
+            if (l < 0 || l > 100)
+                return false;
+            return true;
+        }
+
+        /// <summary>
         /// Parses the specifier and returns an instance of <see cref="HueSaturationLightness"/>
         /// </summary>
         /// <param name="specifier">Specifier of HSL</param>

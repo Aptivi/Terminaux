@@ -215,31 +215,10 @@ namespace Terminaux.Colors
             ColorSpecifier = ColorSpecifier.Replace("\"", "");
 
             // Now, parse the output
-            if (ParsingTools.IsSpecifierValid(ColorSpecifier))
-            {
-                // Parse it
-                var rgb = ParsingTools.ParseSpecifier(ColorSpecifier);
-                RGB = rgb;
-            }
-            else if (ParsingTools.IsSpecifierConsoleColors(ColorSpecifier))
-            {
-                // Parse it
-                var rgb = ParsingTools.ParseSpecifierRgbName(ColorSpecifier);
-                var colorsInfo = rgb.cci;
-
-                // Populate RGB info
-                if (!ColorTools.EnableColorTransformation)
-                    ColorId = colorsInfo.ColorID;
-                RGB = rgb.rgb;
-            }
-            else if (ParsingTools.IsSpecifierValidRgbHash(ColorSpecifier))
-            {
-                // Parse it
-                var rgb = ParsingTools.ParseSpecifierRgbHash(ColorSpecifier);
-                RGB = rgb;
-            }
-            else
-                throw new TerminauxException($"Invalid color specifier \"{ColorSpecifier}\".");
+            var rgb = ParsingTools.ParseSpecifier(ColorSpecifier);
+            if (rgb.cci is not null && !ColorTools.EnableColorTransformation)
+                ColorId = rgb.cci.ColorID;
+            RGB = rgb.rgb;
         }
 
         /// <summary>

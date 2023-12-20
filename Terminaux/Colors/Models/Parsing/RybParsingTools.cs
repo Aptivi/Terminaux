@@ -41,6 +41,29 @@ namespace Terminaux.Colors.Models.Parsing
             (!checkParts || (checkParts && specifier.Substring(4).Split(';').Length == 3));
 
         /// <summary>
+        /// Does the string specifier represent a valid RYB specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid RYB specifier</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierAndValueValid(string specifier)
+        {
+            if (!IsSpecifierValid(specifier, true))
+                return false;
+
+            var specifierArray = specifier.Substring(4).Split(';');
+            int r = Convert.ToInt32(specifierArray[0]);
+            if (r < 0 || r > 255)
+                return false;
+            int y = Convert.ToInt32(specifierArray[1]);
+            if (y < 0 || y > 255)
+                return false;
+            int b = Convert.ToInt32(specifierArray[2]);
+            if (b < 0 || b > 255)
+                return false;
+            return true;
+        }
+
+        /// <summary>
         /// Parses the specifier and returns an instance of <see cref="RedYellowBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RYB</param>

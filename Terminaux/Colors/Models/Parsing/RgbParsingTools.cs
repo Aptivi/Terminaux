@@ -39,6 +39,29 @@ namespace Terminaux.Colors.Models.Parsing
             (!checkParts || (checkParts && specifier.Split(';').Length == 3));
 
         /// <summary>
+        /// Does the string specifier represent a valid RGB specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid RGB specifier</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierAndValueValid(string specifier)
+        {
+            if (!IsSpecifierValid(specifier, true))
+                return false;
+
+            var specifierArray = specifier.Split(';');
+            int r = Convert.ToInt32(specifierArray[0]);
+            if (r < 0 || r > 255)
+                return false;
+            int g = Convert.ToInt32(specifierArray[1]);
+            if (g < 0 || g > 255)
+                return false;
+            int b = Convert.ToInt32(specifierArray[2]);
+            if (b < 0 || b > 255)
+                return false;
+            return true;
+        }
+
+        /// <summary>
         /// Parses the specifier and returns an instance of <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RGB</param>

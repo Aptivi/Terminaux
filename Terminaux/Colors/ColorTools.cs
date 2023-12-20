@@ -168,7 +168,7 @@ namespace Terminaux.Colors
                 throw new ArgumentNullException(nameof(ColorSequence));
 
             // Define reset background sequence
-            string resetSequence = VtSequenceBasicChars.EscapeChar + $"[49m";
+            string resetSequence = $"{VtSequenceBasicChars.EscapeChar}[49m";
 
             // Set background
             if (Background)

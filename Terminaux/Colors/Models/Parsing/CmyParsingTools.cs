@@ -41,6 +41,29 @@ namespace Terminaux.Colors.Models.Parsing
             (!checkParts || (checkParts && specifier.Substring(4).Split(';').Length == 3));
 
         /// <summary>
+        /// Does the string specifier represent a valid CMY specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid CMY specifier</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierAndValueValid(string specifier)
+        {
+            if (!IsSpecifierValid(specifier, true))
+                return false;
+
+            var specifierArray = specifier.Substring(4).Split(';');
+            int c = Convert.ToInt32(specifierArray[0]);
+            if (c < 0 || c > 100)
+                return false;
+            int m = Convert.ToInt32(specifierArray[1]);
+            if (m < 0 || m > 100)
+                return false;
+            int y = Convert.ToInt32(specifierArray[2]);
+            if (y < 0 || y > 100)
+                return false;
+            return true;
+        }
+
+        /// <summary>
         /// Parses the specifier and returns an instance of <see cref="CyanMagentaYellow"/>
         /// </summary>
         /// <param name="specifier">Specifier of CMY</param>
