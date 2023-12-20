@@ -215,15 +215,13 @@ namespace Terminaux.Colors
             ColorSpecifier = ColorSpecifier.Replace("\"", "");
 
             // Now, parse the output
-            if (ColorSpecifier.Contains(";"))
+            if (ParsingTools.IsSpecifierValid(ColorSpecifier))
             {
                 // Parse it
                 var rgb = ParsingTools.ParseSpecifier(ColorSpecifier);
                 RGB = rgb;
             }
-            else if (
-                double.TryParse(ColorSpecifier, out double specifierNum) && specifierNum <= 255 ||
-                Enum.IsDefined(typeof(ConsoleColors), ColorSpecifier))
+            else if (ParsingTools.IsSpecifierConsoleColors(ColorSpecifier))
             {
                 // Parse it
                 var rgb = ParsingTools.ParseSpecifierRgbName(ColorSpecifier);
@@ -234,14 +232,14 @@ namespace Terminaux.Colors
                     ColorId = colorsInfo.ColorID;
                 RGB = rgb.rgb;
             }
-            else if (ColorSpecifier.StartsWith("#"))
+            else if (ParsingTools.IsSpecifierValidRgbHash(ColorSpecifier))
             {
                 // Parse it
                 var rgb = ParsingTools.ParseSpecifierRgbHash(ColorSpecifier);
                 RGB = rgb;
             }
             else
-                throw new TerminauxException($"Invalid color specifier \"{ColorSpecifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new TerminauxException($"Invalid color specifier \"{ColorSpecifier}\".");
         }
 
         /// <summary>

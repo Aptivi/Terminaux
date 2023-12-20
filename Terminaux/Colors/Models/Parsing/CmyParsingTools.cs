@@ -30,6 +30,17 @@ namespace Terminaux.Colors.Models.Parsing
     public static class CmyParsingTools
     {
         /// <summary>
+        /// Does the string specifier represent a valid CMY specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid CMY specifier</param>
+        /// <param name="checkParts">Whether to check the parts count or not</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierValid(string specifier, bool checkParts = false) =>
+            specifier.Contains(";") &&
+            specifier.StartsWith("cmy:") &&
+            (!checkParts || (checkParts && specifier.Substring(4).Split(';').Length == 3));
+
+        /// <summary>
         /// Parses the specifier and returns an instance of <see cref="CyanMagentaYellow"/>
         /// </summary>
         /// <param name="specifier">Specifier of CMY</param>
@@ -37,7 +48,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <exception cref="TerminauxException"></exception>
         public static CyanMagentaYellow ParseSpecifier(string specifier)
         {
-            if (!specifier.Contains(";") || !specifier.StartsWith("cmy:"))
+            if (!IsSpecifierValid(specifier))
                 throw new TerminauxException($"Invalid CMY color specifier \"{specifier}\". Ensure that it's on the correct format: cmy:<C>;<M>;<Y>");
 
             // Split the VT sequence into three parts

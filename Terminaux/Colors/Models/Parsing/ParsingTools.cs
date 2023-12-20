@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Globalization;
 using Terminaux.Base;
 using Terminaux.Colors.Transformation;
 
@@ -28,6 +29,41 @@ namespace Terminaux.Colors.Models.Parsing
     /// </summary>
     public static class ParsingTools
     {
+        /// <summary>
+        /// Does the string specifier represent a valid model-agnostic specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid model-agnostic specifier</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierValid(string specifier) =>
+            specifier.Contains(";");
+
+        /// <summary>
+        /// Does the string specifier represent either a color name taken from <see cref="ConsoleColors"/> or a color number from 0 to 255?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents either a color name taken from <see cref="ConsoleColors"/> or a color number from 0 to 255</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierConsoleColors(string specifier)
+        {
+            if (double.TryParse(specifier, out double specifierNum))
+                return specifierNum >= 0 && specifierNum <= 255;
+            return Enum.IsDefined(typeof(ConsoleColors), specifier);
+        }
+
+        /// <summary>
+        /// Does the string specifier represent a valid RGB hash (#RGB or #RRGGBB) as in HTML?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid RGB hash (#RGB or #RRGGBB) as in HTML</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierValidRgbHash(string specifier)
+        {
+            if (!specifier.StartsWith("#"))
+                return false;
+            string finalSpecifier = specifier.Substring(1);
+            return
+                finalSpecifier.Length == 3 ||
+                finalSpecifier.Length == 6;
+        }
+
         /// <summary>
         /// Parses the specifier and returns an instance of <see cref="RedGreenBlue"/>
         /// </summary>
@@ -54,7 +90,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <exception cref="TerminauxException"></exception>
         public static (RedGreenBlue rgb, ConsoleColorsInfo cci) ParseSpecifierRgbName(string specifier)
         {
-            if (!(double.TryParse(specifier, out double specifierNum) && specifierNum <= 255 || Enum.IsDefined(typeof(ConsoleColors), specifier)))
+            if (!IsSpecifierConsoleColors(specifier))
                 throw new TerminauxException($"Invalid color specifier \"{specifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
 
             // Form the sequences using the information from the color details
@@ -87,7 +123,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <exception cref="TerminauxException"></exception>
         public static RedGreenBlue ParseSpecifierRgbHash(string specifier)
         {
-            if (!specifier.StartsWith("#"))
+            if (!IsSpecifierValidRgbHash(specifier))
                 throw new TerminauxException($"Invalid color hex specifier \"{specifier}\". This specifier must start with the hash tag. Ensure that it's on the correct format: #RRGGBB");
 
             // Get the integral value of the total color

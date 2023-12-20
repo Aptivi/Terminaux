@@ -30,6 +30,17 @@ namespace Terminaux.Colors.Models.Parsing
     public static class RybParsingTools
     {
         /// <summary>
+        /// Does the string specifier represent a valid RYB specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid RYB specifier</param>
+        /// <param name="checkParts">Whether to check the parts count or not</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierValid(string specifier, bool checkParts = false) =>
+            specifier.Contains(";") &&
+            specifier.StartsWith("ryb:") &&
+            (!checkParts || (checkParts && specifier.Substring(4).Split(';').Length == 3));
+
+        /// <summary>
         /// Parses the specifier and returns an instance of <see cref="RedYellowBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RYB</param>
@@ -37,7 +48,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <exception cref="TerminauxException"></exception>
         public static RedYellowBlue ParseSpecifier(string specifier)
         {
-            if (!specifier.Contains(";") || !specifier.StartsWith("ryb:"))
+            if (!IsSpecifierValid(specifier))
                 throw new TerminauxException($"Invalid RYB color specifier \"{specifier}\". Ensure that it's on the correct format: ryb:<red>;<yellow>;<blue>");
 
             // Split the VT sequence into three parts

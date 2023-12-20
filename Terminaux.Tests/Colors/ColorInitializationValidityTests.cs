@@ -20,6 +20,7 @@
 using System;
 using System.Diagnostics;
 using Terminaux.Colors;
+using Terminaux.Colors.Models.Parsing;
 using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Tests.Colors
@@ -144,5 +145,70 @@ namespace Terminaux.Tests.Colors
                 return false;
             }
         }
+
+        /// <summary>
+        /// Tests trying to check the color specifier syntax validity from hex
+        /// </summary>
+        [TestCase("#0F0F0F", ExpectedResult = true)]
+        [TestCase("#0G0G0G", ExpectedResult = true)]
+        [TestCase("#FFF", ExpectedResult = true)]
+        [TestCase("#GGG", ExpectedResult = true)]
+        [Description("Validity")]
+        public bool TestIsSpecifierValidFromHex(string TargetHex) =>
+            ParsingTools.IsSpecifierValidRgbHash(TargetHex);
+
+        /// <summary>
+        /// Tests trying to check the color specifier syntax validity from color numbers
+        /// </summary>
+        [TestCase(26, ExpectedResult = true)]
+        [TestCase(260, ExpectedResult = false)]
+        [TestCase(-26, ExpectedResult = false)]
+        [Description("Validity")]
+        public bool TestIsSpecifierValidFromColorNum(int TargetColorNum) =>
+            ParsingTools.IsSpecifierConsoleColors($"{TargetColorNum}");
+
+        /// <summary>
+        /// Tests trying to check the color specifier syntax validity from RGB
+        /// </summary>
+        [TestCase(4, 4, 4, ExpectedResult = true)]
+        [TestCase(400, 4, 4, ExpectedResult = true)]
+        [TestCase(4, 400, 4, ExpectedResult = true)]
+        [TestCase(4, 4, 400, ExpectedResult = true)]
+        [TestCase(4, 400, 400, ExpectedResult = true)]
+        [TestCase(400, 4, 400, ExpectedResult = true)]
+        [TestCase(400, 400, 4, ExpectedResult = true)]
+        [TestCase(400, 400, 400, ExpectedResult = true)]
+        [TestCase(-4, 4, 4, ExpectedResult = true)]
+        [TestCase(4, -4, 4, ExpectedResult = true)]
+        [TestCase(4, 4, -4, ExpectedResult = true)]
+        [TestCase(4, -4, -4, ExpectedResult = true)]
+        [TestCase(-4, 4, -4, ExpectedResult = true)]
+        [TestCase(-4, -4, 4, ExpectedResult = true)]
+        [TestCase(-4, -4, -4, ExpectedResult = true)]
+        [Description("Validity")]
+        public bool TestIsSpecifierValidFromRGB(int R, int G, int B) =>
+            ParsingTools.IsSpecifierValid($"{R};{G};{B}");
+
+        /// <summary>
+        /// Tests trying to check the color specifier syntax validity from RGB color specifier
+        /// </summary>
+        [TestCase("4;4;4", ExpectedResult = true)]
+        [TestCase("400;4;4", ExpectedResult = true)]
+        [TestCase("4;400;4", ExpectedResult = true)]
+        [TestCase("4;4;400", ExpectedResult = true)]
+        [TestCase("4;400;400", ExpectedResult = true)]
+        [TestCase("400;4;400", ExpectedResult = true)]
+        [TestCase("400;400;4", ExpectedResult = true)]
+        [TestCase("400;400;400", ExpectedResult = true)]
+        [TestCase("-4;4;4", ExpectedResult = true)]
+        [TestCase("4;-4;4", ExpectedResult = true)]
+        [TestCase("4;4;-4", ExpectedResult = true)]
+        [TestCase("4;-4;-4", ExpectedResult = true)]
+        [TestCase("-4;4;-4", ExpectedResult = true)]
+        [TestCase("-4;-4;4", ExpectedResult = true)]
+        [TestCase("-4;-4;-4", ExpectedResult = true)]
+        [Description("Validity")]
+        public bool TestIsSpecifierValidFromSpecifier(string specifier) =>
+            ParsingTools.IsSpecifierValid(specifier);
     }
 }

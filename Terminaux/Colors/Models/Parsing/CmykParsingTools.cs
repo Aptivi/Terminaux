@@ -30,6 +30,17 @@ namespace Terminaux.Colors.Models.Parsing
     public static class CmykParsingTools
     {
         /// <summary>
+        /// Does the string specifier represent a valid CMYK specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid CMYK specifier</param>
+        /// <param name="checkParts">Whether to check the parts count or not</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierValid(string specifier, bool checkParts = false) =>
+            specifier.Contains(";") &&
+            specifier.StartsWith("cmyk:") &&
+            (!checkParts || (checkParts && specifier.Substring(5).Split(';').Length == 4));
+
+        /// <summary>
         /// Parses the specifier and returns an instance of <see cref="CyanMagentaYellowKey"/>
         /// </summary>
         /// <param name="specifier">Specifier of CMYK</param>
@@ -37,7 +48,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <exception cref="TerminauxException"></exception>
         public static CyanMagentaYellowKey ParseSpecifier(string specifier)
         {
-            if (!specifier.Contains(";") || !specifier.StartsWith("cmyk:"))
+            if (!IsSpecifierValid(specifier))
                 throw new TerminauxException($"Invalid CMYK color specifier \"{specifier}\". Ensure that it's on the correct format: cmyk:<C>;<M>;<Y>;<K>");
 
             // Split the VT sequence into three parts

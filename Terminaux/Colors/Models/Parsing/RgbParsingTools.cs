@@ -29,6 +29,16 @@ namespace Terminaux.Colors.Models.Parsing
     public static class RgbParsingTools
     {
         /// <summary>
+        /// Does the string specifier represent a valid RGB specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid RGB specifier</param>
+        /// <param name="checkParts">Whether to check the parts count or not</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierValid(string specifier, bool checkParts = false) =>
+            specifier.Contains(";") &&
+            (!checkParts || (checkParts && specifier.Split(';').Length == 3));
+
+        /// <summary>
         /// Parses the specifier and returns an instance of <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RGB</param>
@@ -36,7 +46,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <exception cref="TerminauxException"></exception>
         public static RedGreenBlue ParseSpecifierToRgb(string specifier)
         {
-            if (!specifier.Contains(";"))
+            if (!IsSpecifierValid(specifier))
                 throw new TerminauxException($"Invalid color specifier \"{specifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
 
             // Split the VT sequence into three parts

@@ -30,6 +30,17 @@ namespace Terminaux.Colors.Models.Parsing
     public static class HsvParsingTools
     {
         /// <summary>
+        /// Does the string specifier represent a valid HSV specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid HSV specifier</param>
+        /// <param name="checkParts">Whether to check the parts count or not</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static bool IsSpecifierValid(string specifier, bool checkParts = false) =>
+            specifier.Contains(";") &&
+            specifier.StartsWith("hsv:") &&
+            (!checkParts || (checkParts && specifier.Substring(4).Split(';').Length == 3));
+
+        /// <summary>
         /// Parses the specifier and returns an instance of <see cref="HueSaturationValue"/>
         /// </summary>
         /// <param name="specifier">Specifier of HSV</param>
@@ -37,7 +48,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <exception cref="TerminauxException"></exception>
         public static HueSaturationValue ParseSpecifier(string specifier)
         {
-            if (!specifier.Contains(";") || !specifier.StartsWith("hsv:"))
+            if (!IsSpecifierValid(specifier))
                 throw new TerminauxException($"Invalid HSV color specifier \"{specifier}\". Ensure that it's on the correct format: hsv:<hue>;<sat>;<val>");
 
             // Split the VT sequence into three parts
