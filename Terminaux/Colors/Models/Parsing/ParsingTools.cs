@@ -116,9 +116,10 @@ namespace Terminaux.Colors.Models.Parsing
         /// Parses the specifier and returns an instance of <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RGB</param>
+        /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static (RedGreenBlue rgb, ConsoleColorsInfo cci) ParseSpecifier(string specifier)
+        public static (RedGreenBlue rgb, ConsoleColorsInfo cci) ParseSpecifier(string specifier, ColorSettings settings = null)
         {
             // Necessary variables
             (RedGreenBlue rgb, ConsoleColorsInfo cci) tuple = (null, null);
@@ -126,23 +127,23 @@ namespace Terminaux.Colors.Models.Parsing
 
             // Check to see if we're going to use the color ID
             if (usesColorId)
-                tuple = ParseSpecifierRgbName(specifier);
+                tuple = ParseSpecifierRgbName(specifier, settings);
 
             // Get the RGB
             var rgb =
                 // Color models
-                CmykParsingTools.IsSpecifierValid(specifier) ? CmykParsingTools.ParseSpecifierToRgb(specifier) :
-                CmyParsingTools.IsSpecifierValid(specifier) ? CmyParsingTools.ParseSpecifierToRgb(specifier) :
-                HslParsingTools.IsSpecifierValid(specifier) ? HslParsingTools.ParseSpecifierToRgb(specifier) :
-                HsvParsingTools.IsSpecifierValid(specifier) ? HsvParsingTools.ParseSpecifierToRgb(specifier) :
-                RybParsingTools.IsSpecifierValid(specifier) ? RybParsingTools.ParseSpecifierToRgb(specifier) :
+                CmykParsingTools.IsSpecifierValid(specifier) ? CmykParsingTools.ParseSpecifierToRgb(specifier, settings) :
+                CmyParsingTools.IsSpecifierValid(specifier) ? CmyParsingTools.ParseSpecifierToRgb(specifier, settings) :
+                HslParsingTools.IsSpecifierValid(specifier) ? HslParsingTools.ParseSpecifierToRgb(specifier, settings) :
+                HsvParsingTools.IsSpecifierValid(specifier) ? HsvParsingTools.ParseSpecifierToRgb(specifier, settings) :
+                RybParsingTools.IsSpecifierValid(specifier) ? RybParsingTools.ParseSpecifierToRgb(specifier, settings) :
 
                 // Colors and hash
                 usesColorId ? tuple.rgb :
-                IsSpecifierValidRgbHash(specifier) ? ParseSpecifierRgbHash(specifier) :
+                IsSpecifierValidRgbHash(specifier) ? ParseSpecifierRgbHash(specifier, settings) :
 
                 // Fallback
-                RgbParsingTools.ParseSpecifierToRgb(specifier);
+                RgbParsingTools.ParseSpecifierToRgb(specifier, settings);
             return (rgb, tuple.cci);
         }
 
@@ -171,9 +172,10 @@ namespace Terminaux.Colors.Models.Parsing
         /// Parses the specifier that holds the color name and returns an instance of <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Color name defined in <see cref="ConsoleColors"/></param>
+        /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static (RedGreenBlue rgb, ConsoleColorsInfo cci) ParseSpecifierRgbName(string specifier)
+        public static (RedGreenBlue rgb, ConsoleColorsInfo cci) ParseSpecifierRgbName(string specifier, ColorSettings settings = null)
         {
             if (!IsSpecifierConsoleColors(specifier))
                 throw new TerminauxException($"Invalid color specifier \"{specifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
@@ -194,7 +196,8 @@ namespace Terminaux.Colors.Models.Parsing
                 throw new TerminauxException($"The blue color level is out of range (0 -> 255). {b}");
 
             // Now, transform
-            var finalRgb = TransformationTools.GetTransformedColor(r, g, b);
+            settings = settings is null ? ColorTools.GlobalSettings : settings;
+            var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
 
             // Make a new RGB class
             return (new(finalRgb.r, finalRgb.g, finalRgb.b), ColorsInfo);
@@ -225,9 +228,10 @@ namespace Terminaux.Colors.Models.Parsing
         /// Parses the hex representation of RGB and returns an instance of <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RGB in hex representation</param>
+        /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static RedGreenBlue ParseSpecifierRgbHash(string specifier)
+        public static RedGreenBlue ParseSpecifierRgbHash(string specifier, ColorSettings settings = null)
         {
             if (!IsSpecifierValidRgbHash(specifier))
                 throw new TerminauxException($"Invalid color hex specifier \"{specifier}\". This specifier must start with the hash tag. Ensure that it's on the correct format: #RRGGBB");
@@ -254,7 +258,8 @@ namespace Terminaux.Colors.Models.Parsing
             int b = (byte)(ColorDecimal & 0xFF);
 
             // Now, transform
-            var finalRgb = TransformationTools.GetTransformedColor(r, g, b);
+            settings = settings is null ? ColorTools.GlobalSettings : settings;
+            var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
 
             // Make a new RGB class
             return new(finalRgb.r, finalRgb.g, finalRgb.b);

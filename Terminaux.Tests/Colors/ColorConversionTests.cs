@@ -20,20 +20,12 @@
 using Shouldly;
 using Terminaux.Colors;
 using Terminaux.Colors.Models.Conversion;
-using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Tests.Colors
 {
     [TestFixture]
     public partial class ColorConversionTests
     {
-        [SetUp]
-        public void ResetColorFormula()
-        {
-            ColorTools.EnableColorTransformation = false;
-            ColorTools.ColorTransformationMethod = TransformationMethod.Brettel1997;
-        }
-
         /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>

@@ -24,7 +24,7 @@ namespace Terminaux.Colors.Transformation.Formulas
 {
     internal class ColorBlind : BaseTransformationFormula, ITransformationFormula
     {
-        public override (int, int, int) Transform(int r, int g, int b)
+        public override (int, int, int) Transform(int r, int g, int b, ColorSettings settings)
         {
             // Check values
             if (r < 0 || r > 255)
@@ -34,12 +34,13 @@ namespace Terminaux.Colors.Transformation.Formulas
             if (b < 0 || b > 255)
                 throw new ArgumentOutOfRangeException("b");
 
-            var transformed = ColorTools.ColorTransformationMethod switch
+            settings = settings is null ? ColorTools.GlobalSettings : settings;
+            var transformed = settings.ColorTransformationMethod switch
             {
                 TransformationMethod.Vienot1999 =>
-                    Vienot1999.Transform(r, g, b, ColorTools.ColorTransformationFormula, ColorTools.ColorBlindnessSeverity),
+                    Vienot1999.Transform(r, g, b, settings.ColorTransformationFormula, settings.ColorBlindnessSeverity),
                 _ =>
-                    Brettel1997.Transform(r, g, b, ColorTools.ColorTransformationFormula, ColorTools.ColorBlindnessSeverity),
+                    Brettel1997.Transform(r, g, b, settings.ColorTransformationFormula, settings.ColorBlindnessSeverity),
             };
             return transformed;
         }

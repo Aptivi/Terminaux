@@ -29,8 +29,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "ColorSelectorNoPaletteTest";
         public void RunFixture()
         {
-            ColorTools.UseTerminalPalette = false;
-            var color = ColorSelector.OpenColorSelector();
+            var color = ColorSelector.OpenColorSelector(new Color(ConsoleColors.White, new ColorSettings() { UseTerminalPalette = false }));
             ConsoleWrapper.Clear();
             TextWriterColor.Write("Color selector returned: {0} [{1}]", color.PlainSequence, color.PlainSequenceTrueColor);
         }

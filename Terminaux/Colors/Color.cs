@@ -32,6 +32,7 @@ namespace Terminaux.Colors
     [DebuggerDisplay("Color = {PlainSequenceEnclosed}, TrueColor = {PlainSequenceEnclosedTrueColor}")]
     public class Color : IEquatable<Color>
     {
+        private readonly ColorSettings settings;
         private static (ConsoleColor unapplicable16, ConsoleColors unapplicable255) unapplicable = ((ConsoleColor)(-1), (ConsoleColors)(-1));
 
         /// <summary>
@@ -54,10 +55,7 @@ namespace Terminaux.Colors
                     return ColorTools._empty;
 
                 // Else, cache the empty value and return it
-                bool orig = ColorTools.UseTerminalPalette;
-                ColorTools.UseTerminalPalette = true;
-                ColorTools._empty = new Color(0);
-                ColorTools.UseTerminalPalette = orig;
+                ColorTools._empty = new Color(0, new());
                 return ColorTools._empty;
             }
         }
@@ -66,7 +64,7 @@ namespace Terminaux.Colors
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the usage of the terminal palette.
         /// </summary>
         public string PlainSequence =>
-            ColorTools.UseTerminalPalette ?
+            settings.UseTerminalPalette ?
             PlainSequenceOriginal :
             PlainSequenceTrueColor;
         /// <summary>
@@ -83,7 +81,7 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Foreground)
         /// </summary>
         public string VTSequenceForeground =>
-            ColorTools.UseTerminalPalette ?
+            settings.UseTerminalPalette ?
             VTSequenceForegroundOriginal :
             VTSequenceForegroundTrueColor;
         /// <summary>
@@ -95,7 +93,7 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Background)
         /// </summary>
         public string VTSequenceBackground =>
-            ColorTools.UseTerminalPalette ?
+            settings.UseTerminalPalette ?
             VTSequenceBackgroundOriginal :
             VTSequenceBackgroundTrueColor;
         /// <summary>
@@ -180,10 +178,32 @@ namespace Terminaux.Colors
         /// <summary>
         /// Makes a new instance of color class from specifier.
         /// </summary>
+        /// <param name="R">The red level</param>
+        /// <param name="G">The green level</param>
+        /// <param name="B">The blue level</param>
+        /// <param name="settings">Color settings to use while building the color</param>
+        /// <exception cref="TerminauxException"></exception>
+        public Color(int R, int G, int B, ColorSettings settings)
+            : this($"{R};{G};{B}", settings)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
         /// <exception cref="TerminauxException"></exception>
         public Color(ConsoleColors ColorDef)
             : this(ColorTools.GetColorIdStringFrom(ColorDef))
+        { }
+
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
+        /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
+        /// <param name="settings">Color settings to use while building the color</param>
+        /// <exception cref="TerminauxException"></exception>
+        public Color(ConsoleColors ColorDef, ColorSettings settings)
+            : this(ColorTools.GetColorIdStringFrom(ColorDef), settings)
         { }
 
         /// <summary>
@@ -198,6 +218,16 @@ namespace Terminaux.Colors
         /// <summary>
         /// Makes a new instance of color class from specifier.
         /// </summary>
+        /// <param name="ColorDef">The color taken from <see cref="ConsoleColor"/></param>
+        /// <param name="settings">Color settings to use while building the color</param>
+        /// <exception cref="TerminauxException"></exception>
+        public Color(ConsoleColor ColorDef, ColorSettings settings)
+            : this((int)ColorTools.CorrectStandardColor(ColorDef), settings)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
         /// <param name="ColorNum">The color number</param>
         /// <exception cref="TerminauxException"></exception>
         public Color(int ColorNum)
@@ -207,16 +237,39 @@ namespace Terminaux.Colors
         /// <summary>
         /// Makes a new instance of color class from specifier.
         /// </summary>
+        /// <param name="ColorNum">The color number</param>
+        /// <param name="settings">Color settings to use while building the color</param>
+        /// <exception cref="TerminauxException"></exception>
+        public Color(int ColorNum, ColorSettings settings)
+            : this(ColorTools.GetColorIdStringFrom(ColorNum), settings)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
         /// <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, or a hexadecimal representation of a number (#AABBCC for example)</param>
         /// <exception cref="TerminauxException"></exception>
         public Color(string ColorSpecifier)
+            : this(ColorSpecifier, ColorTools.GlobalSettings)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
+        /// <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, or a hexadecimal representation of a number (#AABBCC for example)</param>
+        /// <param name="settings">Color settings to use while building the color</param>
+        /// <exception cref="TerminauxException"></exception>
+        public Color(string ColorSpecifier, ColorSettings settings)
         {
             // Remove stray double quotes
             ColorSpecifier = ColorSpecifier.Replace("\"", "");
 
+            // Install the settings. This is necessary for ParseSpecifier.
+            this.settings = settings;
+
             // Now, parse the output
-            var rgb = ParsingTools.ParseSpecifier(ColorSpecifier);
-            if (rgb.cci is not null && !ColorTools.EnableColorTransformation)
+            var rgb = ParsingTools.ParseSpecifier(ColorSpecifier, settings);
+            if (rgb.cci is not null && !settings.EnableColorTransformation)
                 ColorId = rgb.cci.ColorID;
             RGB = rgb.rgb;
         }

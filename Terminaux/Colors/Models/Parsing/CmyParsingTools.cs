@@ -104,9 +104,10 @@ namespace Terminaux.Colors.Models.Parsing
         /// Parses the specifier and returns an instance of <see cref="CyanMagentaYellow"/> converted to <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of CMY</param>
+        /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static RedGreenBlue ParseSpecifierToRgb(string specifier)
+        public static RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings settings = null)
         {
             var cmy = ParseSpecifier(specifier);
             var rgb = RgbConversionTools.ConvertFrom(cmy);
@@ -115,7 +116,8 @@ namespace Terminaux.Colors.Models.Parsing
             int b = rgb.B;
 
             // Now, transform
-            var finalRgb = TransformationTools.GetTransformedColor(r, g, b);
+            settings = settings is null ? ColorTools.GlobalSettings : settings;
+            var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
 
             // Make a new RGB class
             return new(finalRgb.r, finalRgb.g, finalRgb.b);

@@ -28,7 +28,7 @@ namespace Terminaux.Colors.Transformation
     internal abstract class BaseTransformationFormula : ITransformationFormula
     {
         /// <inheritdoc/>
-        public virtual (int r, int g, int b) Transform(int r, int g, int b) =>
+        public virtual (int r, int g, int b) Transform(int r, int g, int b, ColorSettings settings) =>
             throw new TerminauxException("Not implemented yet.", new NotImplementedException());
     }
 }

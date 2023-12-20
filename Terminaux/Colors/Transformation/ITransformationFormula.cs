@@ -30,7 +30,8 @@ namespace Terminaux.Colors.Transformation
         /// <param name="r">Red color level</param>
         /// <param name="g">Green color level</param>
         /// <param name="b">Blue color level</param>
+        /// <param name="settings">Color settings to use</param>
         /// <returns>Transformed RGB values</returns>
-        (int r, int g, int b) Transform(int r, int g, int b);
+        (int r, int g, int b) Transform(int r, int g, int b, ColorSettings settings);
     }
 }

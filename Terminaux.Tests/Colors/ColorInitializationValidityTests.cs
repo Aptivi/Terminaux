@@ -28,13 +28,6 @@ namespace Terminaux.Tests.Colors
     [TestFixture]
     public partial class ColorInitializationValidityTests
     {
-        [SetUp]
-        public void ResetColorFormula()
-        {
-            ColorTools.EnableColorTransformation = false;
-            ColorTools.ColorTransformationMethod = TransformationMethod.Brettel1997;
-        }
-
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>

@@ -33,12 +33,12 @@ namespace Terminaux.Colors.Transformation
             { TransformationFormula.Tritan, new ColorBlind() },
         };
 
-        internal static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput)
+        internal static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput, ColorSettings settings)
         {
-            if (ColorTools.EnableColorTransformation)
+            if (settings.EnableColorTransformation)
             {
                 // We'll transform.
-                var transformed = formulas[ColorTools.ColorTransformationFormula].Transform(rInput, gInput, bInput);
+                var transformed = formulas[settings.ColorTransformationFormula].Transform(rInput, gInput, bInput, settings);
                 return transformed;
             }
             return (rInput, gInput, bInput);

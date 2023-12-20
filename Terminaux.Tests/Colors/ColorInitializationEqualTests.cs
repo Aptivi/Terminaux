@@ -27,13 +27,6 @@ namespace Terminaux.Tests.Colors
     [TestFixture]
     public partial class ColorInitializationEqualTests
     {
-        [SetUp]
-        public void ResetColorFormula()
-        {
-            ColorTools.EnableColorTransformation = false;
-            ColorTools.ColorTransformationMethod = TransformationMethod.Brettel1997;
-        }
-
         /// <summary>
         /// Tests initializing color instance from 255 colors and comparing the equality using the operator
         /// </summary>

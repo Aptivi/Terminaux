@@ -41,45 +41,13 @@ namespace Terminaux.Colors
         internal static Color currentBackgroundColor = Color.Empty;
         internal static Color _empty;
         internal static Random rng = new();
-        private static double _blindnessSeverity = 0.6;
+        private static readonly ColorSettings globalSettings = new();
 
         /// <summary>
-        /// Enables the color transformation to adjust to color blindness upon making a new instance of color
+        /// Global color settings
         /// </summary>
-        public static bool EnableColorTransformation { get; set; } = false;
-        /// <summary>
-        /// If enabled, calls to <see cref="Color.PlainSequence"/> and its siblings return color ID if said color is either a 256 color or a 16 color.
-        /// Otherwise, calls to these properties are wrappers to <see cref="Color.PlainSequenceTrueColor"/> and its siblings. By default, it's enabled.
-        /// </summary>
-        public static bool UseTerminalPalette { get; set; } = true;
-
-        /// <summary>
-        /// The color transformation formula to use when generating transformed colors, such as color blindness.
-        /// </summary>
-        public static TransformationFormula ColorTransformationFormula { get; set; } = TransformationFormula.Protan;
-        /// <summary>
-        /// The color transformation method for color blindness.
-        /// </summary>
-        public static TransformationMethod ColorTransformationMethod { get; set; } = TransformationMethod.Brettel1997;
-
-        /// <summary>
-        /// The color blindness severity (Only for color blindness formulas):<br></br>
-        ///   - <see cref="TransformationFormula.Protan"/><br></br>
-        ///   - <see cref="TransformationFormula.Deutan"/><br></br>
-        ///   - <see cref="TransformationFormula.Tritan"/>
-        /// </summary>
-        public static double ColorBlindnessSeverity { 
-            get => _blindnessSeverity;
-            set
-            {
-                if (value < 0)
-                    throw new ArgumentOutOfRangeException("value");
-                if (value > 1)
-                    throw new ArgumentOutOfRangeException("value");
-
-                _blindnessSeverity = value;
-            }
-        }
+        public static ColorSettings GlobalSettings =>
+            globalSettings ?? new();
 
         /// <summary>
         /// Converts from sRGB to Linear RGB using a color number
@@ -520,26 +488,15 @@ namespace Terminaux.Colors
         /// <returns>An instance of <see cref="Color"/> with adjusted color values for color-blindness</returns>
         public static Color RenderColorBlindnessAware(Color color, TransformationFormula formula, double severity, TransformationMethod method = TransformationMethod.Brettel1997)
         {
-            // Get some old values
-            var oldFormula = ColorTransformationFormula;
-            var oldSeverity = ColorBlindnessSeverity;
-            var oldTransform = EnableColorTransformation;
-            var oldMethod = ColorTransformationMethod;
-
-            // Now, enable transformation prior to rendering
-            EnableColorTransformation = true;
-            ColorTransformationMethod = method;
-            ColorBlindnessSeverity = severity;
-            ColorTransformationFormula = formula;
-
             // Get the resulting color
-            var result = new Color(color.PlainSequence);
-
-            // Restore the values
-            ColorTransformationFormula = oldFormula;
-            ColorBlindnessSeverity = oldSeverity;
-            EnableColorTransformation = oldTransform;
-            ColorTransformationMethod = oldMethod;
+            var settings = new ColorSettings()
+            {
+                EnableColorTransformation = true,
+                ColorTransformationMethod = method,
+                ColorBlindnessSeverity = severity,
+                ColorTransformationFormula = formula,
+            };
+            var result = new Color(color.PlainSequence, settings);
 
             // Return the resulting color
             return result;

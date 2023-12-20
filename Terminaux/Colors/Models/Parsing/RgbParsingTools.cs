@@ -65,9 +65,10 @@ namespace Terminaux.Colors.Models.Parsing
         /// Parses the specifier and returns an instance of <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RGB</param>
+        /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static RedGreenBlue ParseSpecifierToRgb(string specifier)
+        public static RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings settings = null)
         {
             if (!IsSpecifierValid(specifier))
                 throw new TerminauxException($"Invalid color specifier \"{specifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
@@ -88,7 +89,8 @@ namespace Terminaux.Colors.Models.Parsing
                     throw new TerminauxException($"The blue color level is out of range (0 -> 255). {b}");
 
                 // Now, transform
-                var finalRgb = TransformationTools.GetTransformedColor(r, g, b);
+                settings = settings is null ? ColorTools.GlobalSettings : settings;
+                var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
 
                 // Make a new RGB class
                 return new(finalRgb.r, finalRgb.g, finalRgb.b);
