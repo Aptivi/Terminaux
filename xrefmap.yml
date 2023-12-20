@@ -11574,6 +11574,24 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.RenderBorder(Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color)
   nameWithType: BorderColor.RenderBorder(int, int, int, int, Color, Color)
   nameWithType.vb: BorderColor.RenderBorder(Integer, Integer, Integer, Integer, Color, Color)
+- uid: Terminaux.Writer.FancyWriters.BorderColor.RenderBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_RenderBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.RenderBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.RenderBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.RenderBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderColor.RenderBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  nameWithType.vb: BorderColor.RenderBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.RenderBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderBorder(string, int, int, int, int, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_RenderBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.RenderBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderBorder(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.RenderBorder(string, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.RenderBorder(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderColor.RenderBorder(string, int, int, int, int, Color, Color, params object[])
+  nameWithType.vb: BorderColor.RenderBorder(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.BorderColor.RenderBorder*
   name: RenderBorder
   href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_RenderBorder_
@@ -11599,6 +11617,24 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char)
   nameWithType: BorderColor.RenderBorderPlain(int, int, int, int, char, char, char, char, char, char, char, char)
   nameWithType.vb: BorderColor.RenderBorderPlain(Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char)
+- uid: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name: RenderBorderPlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_RenderBorderPlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name.vb: RenderBorderPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  nameWithType: BorderColor.RenderBorderPlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  nameWithType.vb: BorderColor.RenderBorderPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
+  name: RenderBorderPlain(string, int, int, int, int, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_RenderBorderPlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
+  name.vb: RenderBorderPlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(string, int, int, int, int, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
+  nameWithType: BorderColor.RenderBorderPlain(string, int, int, int, int, params object[])
+  nameWithType.vb: BorderColor.RenderBorderPlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.BorderColor.RenderBorderPlain*
   name: RenderBorderPlain
   href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_RenderBorderPlain_
@@ -11696,6 +11732,96 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(Integer, Integer, Integer, Integer, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors)
   nameWithType: BorderColor.WriteBorder(int, int, int, int, ConsoleColors, ConsoleColors)
   nameWithType.vb: BorderColor.WriteBorder(Integer, Integer, Integer, Integer, ConsoleColors, ConsoleColors)
+- uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name: WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name.vb: WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  nameWithType: BorderColor.WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  nameWithType.vb: BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
+  name: WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderColor.WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, params object[])
+  nameWithType.vb: BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderColor.WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  nameWithType.vb: BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: BorderColor.WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
+  nameWithType.vb: BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: BorderColor.WriteBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
+  nameWithType.vb: BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
+  name: WriteBorder(string, int, int, int, int, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
+  name.vb: WriteBorder(String, Integer, Integer, Integer, Integer, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(string, int, int, int, int, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, ParamArray Object())
+  nameWithType: BorderColor.WriteBorder(string, int, int, int, int, params object[])
+  nameWithType.vb: BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Object[])
+  name: WriteBorder(string, int, int, int, int, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBorder(String, Integer, Integer, Integer, Integer, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(string, int, int, int, int, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderColor.WriteBorder(string, int, int, int, int, Color, params object[])
+  nameWithType.vb: BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteBorder(string, int, int, int, int, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBorder(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(string, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderColor.WriteBorder(string, int, int, int, int, Color, Color, params object[])
+  nameWithType.vb: BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteBorder(string, int, int, int, int, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteBorder(String, Integer, Integer, Integer, Integer, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(string, int, int, int, int, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: BorderColor.WriteBorder(string, int, int, int, int, ConsoleColors, params object[])
+  nameWithType.vb: BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteBorder(string, int, int, int, int, ConsoleColors, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteBorder(String, Integer, Integer, Integer, Integer, ConsoleColors, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(string, int, int, int, int, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: BorderColor.WriteBorder(string, int, int, int, int, ConsoleColors, ConsoleColors, params object[])
+  nameWithType.vb: BorderColor.WriteBorder(String, Integer, Integer, Integer, Integer, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.BorderColor.WriteBorder*
   name: WriteBorder
   href: api/Terminaux.Writer.FancyWriters.BorderColor.html#Terminaux_Writer_FancyWriters_BorderColor_WriteBorder_
@@ -11728,184 +11854,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.BorderColor.WriteBorderPlain
   nameWithType: BorderColor.WriteBorderPlain
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor
-  name: BorderTextColor
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html
-  commentId: T:Terminaux.Writer.FancyWriters.BorderTextColor
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor
-  nameWithType: BorderTextColor
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BorderTextColor.RenderBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  nameWithType.vb: BorderTextColor.RenderBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderBorderText(string, int, int, int, int, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderBorderText(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText(string, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BorderTextColor.RenderBorderText(string, int, int, int, int, Color, Color, params object[])
-  nameWithType.vb: BorderTextColor.RenderBorderText(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText*
-  name: RenderBorderText
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderText_
-  commentId: Overload:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderText
-  nameWithType: BorderTextColor.RenderBorderText
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name: RenderBorderTextPlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderTextPlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name.vb: RenderBorderTextPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  nameWithType: BorderTextColor.RenderBorderTextPlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  nameWithType.vb: BorderTextColor.RenderBorderTextPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name: RenderBorderTextPlain(string, int, int, int, int, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderTextPlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name.vb: RenderBorderTextPlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain(string, int, int, int, int, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  nameWithType: BorderTextColor.RenderBorderTextPlain(string, int, int, int, int, params object[])
-  nameWithType.vb: BorderTextColor.RenderBorderTextPlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain*
-  name: RenderBorderTextPlain
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderTextPlain_
-  commentId: Overload:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderTextPlain
-  nameWithType: BorderTextColor.RenderBorderTextPlain
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name: WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name.vb: WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
-  name: WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderText(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name: WriteBorderText(string, int, int, int, int, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name.vb: WriteBorderText(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(string, int, int, int, int, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderText(string, int, int, int, int, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Object[])
-  name: WriteBorderText(string, int, int, int, int, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteBorderText(String, Integer, Integer, Integer, Integer, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(string, int, int, int, int, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderText(string, int, int, int, int, Color, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteBorderText(string, int, int, int, int, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteBorderText(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(string, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderText(string, int, int, int, int, Color, Color, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteBorderText(string, int, int, int, int, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteBorderText(String, Integer, Integer, Integer, Integer, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(string, int, int, int, int, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderText(string, int, int, int, int, ConsoleColors, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, ConsoleColors, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteBorderText(string, int, int, int, int, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteBorderText(String, Integer, Integer, Integer, Integer, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(string, int, int, int, int, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderText(string, int, int, int, int, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderText(String, Integer, Integer, Integer, Integer, ConsoleColors, ConsoleColors, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText*
-  name: WriteBorderText
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderText_
-  commentId: Overload:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderText
-  nameWithType: BorderTextColor.WriteBorderText
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name: WriteBorderTextPlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderTextPlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name.vb: WriteBorderTextPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderTextPlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderTextPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name: WriteBorderTextPlain(string, int, int, int, int, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderTextPlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name.vb: WriteBorderTextPlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain(string, int, int, int, int, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  nameWithType: BorderTextColor.WriteBorderTextPlain(string, int, int, int, int, params object[])
-  nameWithType.vb: BorderTextColor.WriteBorderTextPlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain*
-  name: WriteBorderTextPlain
-  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderTextPlain_
-  commentId: Overload:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderTextPlain
-  nameWithType: BorderTextColor.WriteBorderTextPlain
 - uid: Terminaux.Writer.FancyWriters.BoxColor
   name: BoxColor
   href: api/Terminaux.Writer.FancyWriters.BoxColor.html
@@ -12029,6 +11977,42 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color)
   nameWithType: BoxFrameColor.RenderBoxFrame(int, int, int, int, Color, Color)
   nameWithType.vb: BoxFrameColor.RenderBoxFrame(Integer, Integer, Integer, Integer, Color, Color)
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name: RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_RenderBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name.vb: RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  nameWithType: BoxFrameColor.RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  nameWithType.vb: BoxFrameColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_RenderBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BoxFrameColor.RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  nameWithType.vb: BoxFrameColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
+  name: RenderBoxFrame(string, int, int, int, int, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_RenderBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
+  name.vb: RenderBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(string, int, int, int, int, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
+  nameWithType: BoxFrameColor.RenderBoxFrame(string, int, int, int, int, params object[])
+  nameWithType.vb: BoxFrameColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderBoxFrame(string, int, int, int, int, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_RenderBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderBoxFrame(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(string, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BoxFrameColor.RenderBoxFrame(string, int, int, int, int, Color, Color, params object[])
+  nameWithType.vb: BoxFrameColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.BoxFrameColor.RenderBoxFrame*
   name: RenderBoxFrame
   href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_RenderBoxFrame_
@@ -12126,6 +12110,96 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(Integer, Integer, Integer, Integer, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors)
   nameWithType: BoxFrameColor.WriteBoxFrame(int, int, int, int, ConsoleColors, ConsoleColors)
   nameWithType.vb: BoxFrameColor.WriteBoxFrame(Integer, Integer, Integer, Integer, ConsoleColors, ConsoleColors)
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name: WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
+  name: WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
+  name: WriteBoxFrame(string, int, int, int, int, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
+  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(string, int, int, int, int, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFrame(string, int, int, int, int, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Object[])
+  name: WriteBoxFrame(string, int, int, int, int, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(string, int, int, int, int, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFrame(string, int, int, int, int, Color, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteBoxFrame(string, int, int, int, int, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(string, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFrame(string, int, int, int, int, Color, Color, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteBoxFrame(string, int, int, int, int, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(string, int, int, int, int, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFrame(string, int, int, int, int, ConsoleColors, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteBoxFrame(string, int, int, int, int, ConsoleColors, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, ConsoleColors, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(string, int, int, int, int, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFrame(string, int, int, int, int, ConsoleColors, ConsoleColors, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFrame*
   name: WriteBoxFrame
   href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFrame_
@@ -12151,6 +12225,24 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain(Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char)
   nameWithType: BoxFrameColor.WriteBoxFramePlain(int, int, int, int, char, char, char, char, char, char, char, char)
   nameWithType.vb: BoxFrameColor.WriteBoxFramePlain(Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char)
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name: WriteBoxFramePlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFramePlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name.vb: WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFramePlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
+  name: WriteBoxFramePlain(string, int, int, int, int, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFramePlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
+  name.vb: WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain(string, int, int, int, int, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
+  nameWithType: BoxFrameColor.WriteBoxFramePlain(string, int, int, int, int, params object[])
+  nameWithType.vb: BoxFrameColor.WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain*
   name: WriteBoxFramePlain
   href: api/Terminaux.Writer.FancyWriters.BoxFrameColor.html#Terminaux_Writer_FancyWriters_BoxFrameColor_WriteBoxFramePlain_
@@ -12158,177 +12250,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.BoxFrameColor.WriteBoxFramePlain
   nameWithType: BoxFrameColor.WriteBoxFramePlain
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor
-  name: BoxFrameTextColor
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html
-  commentId: T:Terminaux.Writer.FancyWriters.BoxFrameTextColor
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor
-  nameWithType: BoxFrameTextColor
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name: RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_RenderBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name.vb: RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  nameWithType: BoxFrameTextColor.RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  nameWithType.vb: BoxFrameTextColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_RenderBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BoxFrameTextColor.RenderBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  nameWithType.vb: BoxFrameTextColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name: RenderBoxFrame(string, int, int, int, int, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_RenderBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name.vb: RenderBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(string, int, int, int, int, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  nameWithType: BoxFrameTextColor.RenderBoxFrame(string, int, int, int, int, params object[])
-  nameWithType.vb: BoxFrameTextColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderBoxFrame(string, int, int, int, int, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_RenderBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderBoxFrame(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(string, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BoxFrameTextColor.RenderBoxFrame(string, int, int, int, int, Color, Color, params object[])
-  nameWithType.vb: BoxFrameTextColor.RenderBoxFrame(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame*
-  name: RenderBoxFrame
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_RenderBoxFrame_
-  commentId: Overload:Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.RenderBoxFrame
-  nameWithType: BoxFrameTextColor.RenderBoxFrame
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name: WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
-  name: WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name: WriteBoxFrame(string, int, int, int, int, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Object[])
-  name: WriteBoxFrame(string, int, int, int, int, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, Color, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteBoxFrame(string, int, int, int, int, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, Color, Color, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteBoxFrame(string, int, int, int, int, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, ConsoleColors, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, ConsoleColors, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteBoxFrame(string, int, int, int, int, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_System_String_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(System.String,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteBoxFrame(String, Integer, Integer, Integer, Integer, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFrame(string, int, int, int, int, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFrame(String, Integer, Integer, Integer, Integer, ConsoleColors, ConsoleColors, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame*
-  name: WriteBoxFrame
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFrame_
-  commentId: Overload:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFrame
-  nameWithType: BoxFrameTextColor.WriteBoxFrame
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name: WriteBoxFramePlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFramePlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name.vb: WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFramePlain(string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name: WriteBoxFramePlain(string, int, int, int, int, params object[])
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFramePlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Object[])
-  name.vb: WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain(string, int, int, int, int, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
-  nameWithType: BoxFrameTextColor.WriteBoxFramePlain(string, int, int, int, int, params object[])
-  nameWithType.vb: BoxFrameTextColor.WriteBoxFramePlain(String, Integer, Integer, Integer, Integer, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain*
-  name: WriteBoxFramePlain
-  href: api/Terminaux.Writer.FancyWriters.BoxFrameTextColor.html#Terminaux_Writer_FancyWriters_BoxFrameTextColor_WriteBoxFramePlain_
-  commentId: Overload:Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain
-  isSpec: "True"
-  fullName: Terminaux.Writer.FancyWriters.BoxFrameTextColor.WriteBoxFramePlain
-  nameWithType: BoxFrameTextColor.WriteBoxFramePlain
 - uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor
   name: CenteredFigletTextColor
   href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html
