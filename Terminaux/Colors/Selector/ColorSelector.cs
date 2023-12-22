@@ -612,8 +612,8 @@ namespace Terminaux.Colors.Selector
                     
                 CMY information:
                     - Cyan:           {{cmy.CWhole,3}}
-                    - Magenta:        {{cmy.CWhole,3}}
-                    - Yellow:         {{cmy.CWhole,3}}
+                    - Magenta:        {{cmy.MWhole,3}}
+                    - Yellow:         {{cmy.YWhole,3}}
                     
                 HSL information:
                     - Hue (degs):     {{hsl.HueWhole,3}}'
