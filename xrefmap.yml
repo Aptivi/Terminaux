@@ -10805,15 +10805,6 @@ references:
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.Write
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.Write()
   nameWithType: TextWriterColor.Write()
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.Write(System.String,System.Boolean,System.Boolean,System.Object[])
-  name: Write(string, bool, bool, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_Write_System_String_System_Boolean_System_Boolean_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.Write(System.String,System.Boolean,System.Boolean,System.Object[])
-  name.vb: Write(String, Boolean, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.Write(string, bool, bool, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.Write(String, Boolean, Boolean, ParamArray Object())
-  nameWithType: TextWriterColor.Write(string, bool, bool, params object[])
-  nameWithType.vb: TextWriterColor.Write(String, Boolean, Boolean, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.Write(System.String,System.Boolean,System.Object[])
   name: Write(string, bool, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_Write_System_String_System_Boolean_System_Object___
@@ -10839,24 +10830,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.Write
   nameWithType: TextWriterColor.Write
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColor(System.String,System.Boolean,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name: WriteColor(string, bool, bool, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteColor_System_String_System_Boolean_System_Boolean_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColor(System.String,System.Boolean,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteColor(String, Boolean, Boolean, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColor(string, bool, bool, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColor(String, Boolean, Boolean, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterColor.WriteColor(string, bool, bool, Color, params object[])
-  nameWithType.vb: TextWriterColor.WriteColor(String, Boolean, Boolean, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColor(System.String,System.Boolean,System.Boolean,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteColor(string, bool, bool, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteColor_System_String_System_Boolean_System_Boolean_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColor(System.String,System.Boolean,System.Boolean,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteColor(String, Boolean, Boolean, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColor(string, bool, bool, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColor(String, Boolean, Boolean, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: TextWriterColor.WriteColor(string, bool, bool, ConsoleColors, params object[])
-  nameWithType.vb: TextWriterColor.WriteColor(String, Boolean, Boolean, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name: WriteColor(string, bool, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteColor_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
@@ -10900,24 +10873,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColor
   nameWithType: TextWriterColor.WriteColor
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack(System.String,System.Boolean,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteColorBack(string, bool, bool, Color, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteColorBack_System_String_System_Boolean_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack(System.String,System.Boolean,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteColorBack(String, Boolean, Boolean, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack(string, bool, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack(String, Boolean, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterColor.WriteColorBack(string, bool, bool, Color, Color, params object[])
-  nameWithType.vb: TextWriterColor.WriteColorBack(String, Boolean, Boolean, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack(System.String,System.Boolean,System.Boolean,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteColorBack(string, bool, bool, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteColorBack_System_String_System_Boolean_System_Boolean_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack(System.String,System.Boolean,System.Boolean,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteColorBack(String, Boolean, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack(string, bool, bool, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack(String, Boolean, Boolean, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: TextWriterColor.WriteColorBack(string, bool, bool, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: TextWriterColor.WriteColorBack(String, Boolean, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack(System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteColorBack(string, bool, Color, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteColorBack_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10961,15 +10916,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack
   nameWithType: TextWriterColor.WriteColorBack
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Object[])
-  name: WriteForReader(string, TermReaderSettings, bool, bool, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,System.Object[])
-  name.vb: WriteForReader(String, TermReaderSettings, Boolean, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings, bool, bool, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(String, Terminaux.Reader.TermReaderSettings, Boolean, Boolean, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReader(string, TermReaderSettings, bool, bool, params object[])
-  nameWithType.vb: TextWriterColor.WriteForReader(String, TermReaderSettings, Boolean, Boolean, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
   name: WriteForReader(string, TermReaderSettings, bool, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Object___
@@ -10995,24 +10941,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader
   nameWithType: TextWriterColor.WriteForReader
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColor(string, TermReaderSettings, bool, bool, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteForReaderColor(String, TermReaderSettings, Boolean, Boolean, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings, bool, bool, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(String, Terminaux.Reader.TermReaderSettings, Boolean, Boolean, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReaderColor(string, TermReaderSettings, bool, bool, Color, params object[])
-  nameWithType.vb: TextWriterColor.WriteForReaderColor(String, TermReaderSettings, Boolean, Boolean, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteForReaderColor(string, TermReaderSettings, bool, bool, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteForReaderColor(String, TermReaderSettings, Boolean, Boolean, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings, bool, bool, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(String, Terminaux.Reader.TermReaderSettings, Boolean, Boolean, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReaderColor(string, TermReaderSettings, bool, bool, ConsoleColors, params object[])
-  nameWithType.vb: TextWriterColor.WriteForReaderColor(String, TermReaderSettings, Boolean, Boolean, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name: WriteForReaderColor(string, TermReaderSettings, bool, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_System_Object___
@@ -11056,24 +10984,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor
   nameWithType: TextWriterColor.WriteForReaderColor
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColorBack(string, TermReaderSettings, bool, bool, Color, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteForReaderColorBack(String, TermReaderSettings, Boolean, Boolean, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings, bool, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(String, Terminaux.Reader.TermReaderSettings, Boolean, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReaderColorBack(string, TermReaderSettings, bool, bool, Color, Color, params object[])
-  nameWithType.vb: TextWriterColor.WriteForReaderColorBack(String, TermReaderSettings, Boolean, Boolean, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name: WriteForReaderColorBack(string, TermReaderSettings, bool, bool, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Boolean_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Boolean,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
-  name.vb: WriteForReaderColorBack(String, TermReaderSettings, Boolean, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings, bool, bool, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(String, Terminaux.Reader.TermReaderSettings, Boolean, Boolean, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReaderColorBack(string, TermReaderSettings, bool, bool, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: TextWriterColor.WriteForReaderColorBack(String, TermReaderSettings, Boolean, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteForReaderColorBack(string, TermReaderSettings, bool, Color, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11117,31 +11027,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack
   nameWithType: TextWriterColor.WriteForReaderColorBack
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
-  name: WriteForReaderPlain(string, TermReaderSettings, bool, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderPlain_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
-  name.vb: WriteForReaderPlain(String, TermReaderSettings, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain(string, Terminaux.Reader.TermReaderSettings, bool, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain(String, Terminaux.Reader.TermReaderSettings, Boolean, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReaderPlain(string, TermReaderSettings, bool, params object[])
-  nameWithType.vb: TextWriterColor.WriteForReaderPlain(String, TermReaderSettings, Boolean, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
-  name: WriteForReaderPlain(string, TermReaderSettings, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderPlain_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
-  name.vb: WriteForReaderPlain(String, TermReaderSettings, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain(string, Terminaux.Reader.TermReaderSettings, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain(String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReaderPlain(string, TermReaderSettings, params object[])
-  nameWithType.vb: TextWriterColor.WriteForReaderPlain(String, TermReaderSettings, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain*
-  name: WriteForReaderPlain
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderPlain_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain
-  isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderPlain
-  nameWithType: TextWriterColor.WriteForReaderPlain
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(System.String,System.Boolean,System.Object[])
   name: WritePlain(string, bool, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WritePlain_System_String_System_Boolean_System_Object___
@@ -11160,6 +11045,24 @@ references:
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(String, ParamArray Object())
   nameWithType: TextWriterColor.WritePlain(string, params object[])
   nameWithType.vb: TextWriterColor.WritePlain(String, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
+  name: WritePlain(string, TermReaderSettings, bool, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WritePlain_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
+  name.vb: WritePlain(String, TermReaderSettings, Boolean, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(string, Terminaux.Reader.TermReaderSettings, bool, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(String, Terminaux.Reader.TermReaderSettings, Boolean, ParamArray Object())
+  nameWithType: TextWriterColor.WritePlain(string, TermReaderSettings, bool, params object[])
+  nameWithType.vb: TextWriterColor.WritePlain(String, TermReaderSettings, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
+  name: WritePlain(string, TermReaderSettings, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WritePlain_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
+  name.vb: WritePlain(String, TermReaderSettings, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(string, Terminaux.Reader.TermReaderSettings, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain(String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
+  nameWithType: TextWriterColor.WritePlain(string, TermReaderSettings, params object[])
+  nameWithType.vb: TextWriterColor.WritePlain(String, TermReaderSettings, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain*
   name: WritePlain
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WritePlain_
@@ -11167,6 +11070,234 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WritePlain
   nameWithType: TextWriterColor.WritePlain
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor
+  name: TextWriterHighlightedColor
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html
+  commentId: T:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor
+  nameWithType: TextWriterHighlightedColor
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(System.String,System.Boolean,System.Object[])
+  name: Write(string, bool, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Write_System_String_System_Boolean_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(System.String,System.Boolean,System.Object[])
+  name.vb: Write(String, Boolean, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(string, bool, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(String, Boolean, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.Write(string, bool, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.Write(String, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(System.String,System.Object[])
+  name: Write(string, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Write_System_String_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(System.String,System.Object[])
+  name.vb: Write(String, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(string, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(String, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.Write(string, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.Write(String, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write*
+  name: Write
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Write_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write
+  nameWithType: TextWriterHighlightedColor.Write
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  name: WriteColor(string, bool, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteColor(String, Boolean, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(string, bool, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(String, Boolean, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteColor(string, bool, Color, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteColor(String, Boolean, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String,System.Boolean,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteColor(string, bool, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_System_String_System_Boolean_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String,System.Boolean,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteColor(String, Boolean, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(string, bool, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(String, Boolean, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteColor(string, bool, ConsoleColors, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteColor(String, Boolean, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name: WriteColor(string, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteColor(String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteColor(string, Color, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteColor(String, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteColor(string, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_System_String_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteColor(String, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(string, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(String, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteColor(string, ConsoleColors, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteColor(String, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor*
+  name: WriteColor
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor
+  nameWithType: TextWriterHighlightedColor.WriteColor
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteColorBack(string, bool, Color, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteColorBack(String, Boolean, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(string, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(String, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteColorBack(string, bool, Color, Color, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteColorBack(String, Boolean, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String,System.Boolean,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteColorBack(string, bool, ConsoleColors, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_System_String_System_Boolean_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String,System.Boolean,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteColorBack(String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(string, bool, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(String, Boolean, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteColorBack(string, bool, ConsoleColors, ConsoleColors, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteColorBack(String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteColorBack(string, Color, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteColorBack(String, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteColorBack(string, Color, Color, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteColorBack(String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteColorBack(string, ConsoleColors, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_System_String_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteColorBack(String, ConsoleColors, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(string, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(String, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteColorBack(string, ConsoleColors, ConsoleColors, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteColorBack(String, ConsoleColors, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack*
+  name: WriteColorBack
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack
+  nameWithType: TextWriterHighlightedColor.WriteColorBack
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
+  name: WriteForReader(string, TermReaderSettings, bool, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
+  name.vb: WriteForReader(String, TermReaderSettings, Boolean, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings, bool, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(String, Terminaux.Reader.TermReaderSettings, Boolean, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteForReader(string, TermReaderSettings, bool, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteForReader(String, TermReaderSettings, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
+  name: WriteForReader(string, TermReaderSettings, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
+  name.vb: WriteForReader(String, TermReaderSettings, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteForReader(string, TermReaderSettings, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteForReader(String, TermReaderSettings, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader*
+  name: WriteForReader
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader
+  nameWithType: TextWriterHighlightedColor.WriteForReader
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  name: WriteForReaderColor(string, TermReaderSettings, bool, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteForReaderColor(String, TermReaderSettings, Boolean, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings, bool, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(String, Terminaux.Reader.TermReaderSettings, Boolean, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(string, TermReaderSettings, bool, Color, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColor(String, TermReaderSettings, Boolean, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteForReaderColor(string, TermReaderSettings, bool, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteForReaderColor(String, TermReaderSettings, Boolean, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings, bool, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(String, Terminaux.Reader.TermReaderSettings, Boolean, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(string, TermReaderSettings, bool, ConsoleColors, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColor(String, TermReaderSettings, Boolean, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,System.Object[])
+  name: WriteForReaderColor(string, TermReaderSettings, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteForReaderColor(String, TermReaderSettings, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(String, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(string, TermReaderSettings, Color, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColor(String, TermReaderSettings, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteForReaderColor(string, TermReaderSettings, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteForReaderColor(String, TermReaderSettings, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(String, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(string, TermReaderSettings, ConsoleColors, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColor(String, TermReaderSettings, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor*
+  name: WriteForReaderColor
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColor
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteForReaderColorBack(string, TermReaderSettings, bool, Color, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteForReaderColorBack(String, TermReaderSettings, Boolean, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(String, Terminaux.Reader.TermReaderSettings, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(string, TermReaderSettings, bool, Color, Color, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColorBack(String, TermReaderSettings, Boolean, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteForReaderColorBack(string, TermReaderSettings, bool, ConsoleColors, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteForReaderColorBack(String, TermReaderSettings, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings, bool, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(String, Terminaux.Reader.TermReaderSettings, Boolean, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(string, TermReaderSettings, bool, ConsoleColors, ConsoleColors, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColorBack(String, TermReaderSettings, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteForReaderColorBack(string, TermReaderSettings, Color, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteForReaderColorBack(String, TermReaderSettings, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(String, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(string, TermReaderSettings, Color, Color, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColorBack(String, TermReaderSettings, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name: WriteForReaderColorBack(string, TermReaderSettings, ConsoleColors, ConsoleColors, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_ConsoleColors_Terminaux_Colors_ConsoleColors_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.ConsoleColors,Terminaux.Colors.ConsoleColors,System.Object[])
+  name.vb: WriteForReaderColorBack(String, TermReaderSettings, ConsoleColors, ConsoleColors, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(String, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.ConsoleColors, Terminaux.Colors.ConsoleColors, ParamArray Object())
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(string, TermReaderSettings, ConsoleColors, ConsoleColors, params object[])
+  nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColorBack(String, TermReaderSettings, ConsoleColors, ConsoleColors, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack*
+  name: WriteForReaderColorBack
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor
   name: TextWriterSlowColor
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html
