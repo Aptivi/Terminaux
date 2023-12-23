@@ -54,10 +54,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Figletize" Version="0.7.0.1" />
+    <PackageReference Include="Figletize" Version="0.7.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="SpecProbe.Software" Version="1.2.0.1" />
-    <PackageReference Include="Textify.Offline" Version="1.1.0" />
+    <PackageReference Include="SpecProbe.Software" Version="1.2.0.2" />
+    <PackageReference Include="Textify.Offline" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
