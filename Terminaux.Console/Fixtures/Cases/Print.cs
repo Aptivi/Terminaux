@@ -28,6 +28,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public void RunFixture()
         {
             TextWriterColor.WriteColor("Hello world!", true, new Color(ConsoleColors.Green));
+            TextWriterHighlightedColor.WriteColor("Hello highlighted world!", true, new Color(ConsoleColors.Green));
         }
     }
 }
