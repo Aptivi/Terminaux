@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Inputs;
@@ -116,6 +117,10 @@ namespace Terminaux.Reader
         {
             lock (readLock)
             {
+                // Wait until the previous input is complete
+                SpinWait.SpinUntil(() => !TermReaderTools.Busy);
+
+                // Initialize everything
                 string input = defaultValue;
                 var struckKey = new ConsoleKeyInfo();
                 var readState = new TermReaderState

@@ -119,8 +119,13 @@ namespace Terminaux.Base
         /// Reads a key
         /// </summary>
         /// <param name="intercept">Whether to intercept</param>
-        public static ConsoleKeyInfo ReadKey(bool intercept = false) =>
-            ConsoleWrapperTools.ActionReadKey(intercept);
+        public static ConsoleKeyInfo ReadKey(bool intercept = false)
+        {
+            TermReaderTools.isWaitingForInput = true;
+            var key = ConsoleWrapperTools.ActionReadKey(intercept);
+            TermReaderTools.isWaitingForInput = false;
+            return key;
+        }
 
         /// <summary>
         /// Writes a character to console

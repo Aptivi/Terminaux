@@ -171,7 +171,9 @@ namespace Terminaux.Inputs
         /// <param name="Timeout">Timeout</param>
         public static ConsoleKeyInfo ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
         {
+            TermReaderTools.isWaitingForInput = true;
             SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
+            TermReaderTools.isWaitingForInput = false;
             if (!ConsoleWrapper.KeyAvailable)
                 throw new TerminauxContinuableException("User didn't provide any input in a timely fashion.");
             return ConsoleWrapper.ReadKey(Intercept);
