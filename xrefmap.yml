@@ -369,19 +369,45 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.ScreenPart.Position
   nameWithType: ScreenPart.Position
-- uid: Terminaux.Base.Buffered.ScreenPart.ResetColor
-  name: ResetColor()
-  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ResetColor
-  commentId: M:Terminaux.Base.Buffered.ScreenPart.ResetColor
-  fullName: Terminaux.Base.Buffered.ScreenPart.ResetColor()
-  nameWithType: ScreenPart.ResetColor()
-- uid: Terminaux.Base.Buffered.ScreenPart.ResetColor*
-  name: ResetColor
-  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ResetColor_
-  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.ResetColor
+- uid: Terminaux.Base.Buffered.ScreenPart.ResetBackgroundColor
+  name: ResetBackgroundColor()
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ResetBackgroundColor
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.ResetBackgroundColor
+  fullName: Terminaux.Base.Buffered.ScreenPart.ResetBackgroundColor()
+  nameWithType: ScreenPart.ResetBackgroundColor()
+- uid: Terminaux.Base.Buffered.ScreenPart.ResetBackgroundColor*
+  name: ResetBackgroundColor
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ResetBackgroundColor_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.ResetBackgroundColor
   isSpec: "True"
-  fullName: Terminaux.Base.Buffered.ScreenPart.ResetColor
-  nameWithType: ScreenPart.ResetColor
+  fullName: Terminaux.Base.Buffered.ScreenPart.ResetBackgroundColor
+  nameWithType: ScreenPart.ResetBackgroundColor
+- uid: Terminaux.Base.Buffered.ScreenPart.ResetColors
+  name: ResetColors()
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ResetColors
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.ResetColors
+  fullName: Terminaux.Base.Buffered.ScreenPart.ResetColors()
+  nameWithType: ScreenPart.ResetColors()
+- uid: Terminaux.Base.Buffered.ScreenPart.ResetColors*
+  name: ResetColors
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ResetColors_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.ResetColors
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.ResetColors
+  nameWithType: ScreenPart.ResetColors
+- uid: Terminaux.Base.Buffered.ScreenPart.ResetForegroundColor
+  name: ResetForegroundColor()
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ResetForegroundColor
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.ResetForegroundColor
+  fullName: Terminaux.Base.Buffered.ScreenPart.ResetForegroundColor()
+  nameWithType: ScreenPart.ResetForegroundColor()
+- uid: Terminaux.Base.Buffered.ScreenPart.ResetForegroundColor*
+  name: ResetForegroundColor
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_ResetForegroundColor_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.ResetForegroundColor
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.ResetForegroundColor
+  nameWithType: ScreenPart.ResetForegroundColor
 - uid: Terminaux.Base.Buffered.ScreenPart.TopPosition(System.Int32)
   name: TopPosition(int)
   href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_TopPosition_System_Int32_
