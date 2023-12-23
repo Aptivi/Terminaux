@@ -49,7 +49,7 @@ namespace Terminaux.Reader.Bindings
             new UppercaseOneWord(),
             new LowercaseOneWord(),
             new UpAndForwardOneWord(),
-            new LoAndForwardOneWord(),
+            new LowAndForwardOneWord(),
             new ShowSuggestions(),
             new Refresh(),
             new InsertMode(),

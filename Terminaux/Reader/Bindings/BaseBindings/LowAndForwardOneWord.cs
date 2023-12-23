@@ -21,7 +21,7 @@ using System;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
-    internal class LoAndForwardOneWord : BaseBinding, IBinding
+    internal class LowAndForwardOneWord : BaseBinding, IBinding
     {
         /// <inheritdoc/>
         public override ConsoleKeyInfo[] BoundKeys { get; } =
