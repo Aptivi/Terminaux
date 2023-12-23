@@ -144,7 +144,7 @@ namespace Terminaux.Reader
             string[] wrapped = TextTools.GetWrappedSentences(state.InputPromptText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
             ConsoleWrapper.SetCursorPosition(state.settings.LeftMargin, state.InputPromptTop - wrapped.Length + 1);
             state.writingPrompt = true;
-            TextWriterColor.WriteForReader(state.InputPromptText, state.Settings, false);
+            TextWriterColor.WriteForReaderColorBack(state.InputPromptText, state.Settings, false, state.Settings.InputForegroundColor, state.Settings.InputBackgroundColor);
             state.writingPrompt = false;
 
             // Now, render the current text
@@ -157,7 +157,7 @@ namespace Terminaux.Reader
                 incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReader(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - renderedText.Length), state.settings, false);
+                TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - renderedText.Length), state.settings, false, state.Settings.InputForegroundColor, state.Settings.InputBackgroundColor);
                 if (steps > 0)
                 {
                     if (backward)
@@ -176,7 +176,7 @@ namespace Terminaux.Reader
                 if (spaces > 0)
                     spacesLength = spaces;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReader(renderedText + new string(' ', spacesLength), state.settings, false);
+                TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', spacesLength), state.settings, false, state.Settings.InputForegroundColor, state.Settings.InputBackgroundColor);
                 if (steps > 0)
                 {
                     if (backward)

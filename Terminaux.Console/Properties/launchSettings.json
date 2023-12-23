@@ -270,6 +270,10 @@
     "Terminaux - TestInputInfoBoxColoredInput": {
       "commandName": "Project",
       "commandLineArgs": "TestInputInfoBoxColoredInput"
+    },
+    "Terminaux - TestInputInfoBoxInput": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputInfoBoxInput"
     }
   }
 }

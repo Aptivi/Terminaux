@@ -30,6 +30,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Textify.Sequences.Builder;
 using Textify.Sequences.Tools;
 using Textify.General;
+using Terminaux.Colors;
 
 namespace Terminaux.Base
 {
@@ -217,6 +218,8 @@ namespace Terminaux.Base
         {
             ConsoleWrapper.Write($"{Convert.ToChar(0x1B)}[39m");
             ConsoleWrapper.Write($"{Convert.ToChar(0x1B)}[49m");
+            ColorTools.currentForegroundColor = ConsoleColor.Gray;
+            ColorTools.currentBackgroundColor = ConsoleColor.Black;
         }
 
         #region Windows-specific

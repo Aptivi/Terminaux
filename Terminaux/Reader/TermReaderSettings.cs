@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Colors;
 
 namespace Terminaux.Reader
 {
@@ -31,6 +32,8 @@ namespace Terminaux.Reader
         private bool treatCtrlCAsInput;
         private int leftMargin = 0;
         private int rightMargin = 0;
+        private Color inputForegroundColor;
+        private Color inputBackgroundColor;
         internal TermReaderState state;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
         internal char[] suggestionsDelims = [' '];
@@ -69,6 +72,24 @@ namespace Terminaux.Reader
         {
             get => rightMargin;
             set => rightMargin = value;
+        }
+
+        /// <summary>
+        /// Input foreground color
+        /// </summary>
+        public Color InputForegroundColor
+        {
+            get => inputForegroundColor ?? ColorTools.currentForegroundColor;
+            set => inputForegroundColor = value;
+        }
+
+        /// <summary>
+        /// Input background color
+        /// </summary>
+        public Color InputBackgroundColor
+        {
+            get => inputBackgroundColor ?? ColorTools.currentBackgroundColor;
+            set => inputBackgroundColor = value;
         }
 
         /// <summary>

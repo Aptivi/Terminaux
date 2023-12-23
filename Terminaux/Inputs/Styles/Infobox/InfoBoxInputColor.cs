@@ -600,6 +600,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     RightMargin = rightMargin,
                 };
+                if (useColor)
+                {
+                    settings.InputForegroundColor = InfoBoxTitledColor;
+                    settings.InputBackgroundColor = BackgroundColor;
+                }
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
