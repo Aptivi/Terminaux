@@ -46,7 +46,6 @@ namespace Terminaux.Base
         internal static Action actionBeep = Beep;
         internal static Action actionClear = Clear;
         internal static Func<bool, ConsoleKeyInfo> actionReadKey = ReadKey;
-        internal static Action<char, TermReaderSettings> actionWriteNonStandalone = WriteNonStandalone;
         internal static Action<string, TermReaderSettings> actionWriteNonStandalone1 = WriteNonStandalone;
         internal static Action<string, TermReaderSettings, object[]> actionWriteNonStandalone2 = WriteNonStandalone;
         internal static Action<string, TermReaderSettings> actionWriteLineNonStandalone1 = WriteLineNonStandalone;
@@ -250,15 +249,6 @@ namespace Terminaux.Base
             set => actionWriteLine2 = value ?? WriteLine;
         }
         /// <summary>
-        /// Writes a character to console<br></br><br></br>
-        /// - A character
-        /// </summary>
-        public static Action<char, TermReaderSettings> ActionWriteCharNonStandalone
-        {
-            internal get => actionWriteNonStandalone;
-            set => actionWriteNonStandalone = value ?? WriteNonStandalone;
-        }
-        /// <summary>
         /// Writes text to console<br></br><br></br>
         /// - The text to write
         /// </summary>
@@ -460,16 +450,6 @@ namespace Terminaux.Base
 
         private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
             Console.ReadKey(intercept);
-
-        private static void WriteNonStandalone(char value, TermReaderSettings settings)
-        {
-            Console.Write(value);
-            if (CursorLeft >= WindowWidth - settings.RightMargin)
-                if (CursorTop != BufferHeight)
-                    SetCursorPosition(settings.LeftMargin, CursorTop + 1);
-                else
-                    WriteLine();
-        }
 
         private static void WriteNonStandalone(string text, TermReaderSettings settings)
         {

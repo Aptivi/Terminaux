@@ -130,23 +130,6 @@ namespace Terminaux.Base
             ConsoleWrapperTools.ActionWriteChar(value);
 
         /// <summary>
-        /// Writes a character to console
-        /// </summary>
-        /// <param name="value">A character</param>
-        /// <param name="settings">Reader settings</param>
-        internal static void Write(char value, TermReaderSettings settings)
-        {
-            ConsoleWrapperTools.ActionWriteCharNonStandalone(value, settings);
-            if (CursorLeft >= WindowWidth - settings.RightMargin)
-            {
-                if (CursorTop != BufferHeight)
-                    SetCursorPosition(settings.LeftMargin, CursorTop + 1);
-                else
-                    WriteLine();
-            }
-        }
-
-        /// <summary>
         /// Writes text to console
         /// </summary>
         /// <param name="text">The text to write</param>
