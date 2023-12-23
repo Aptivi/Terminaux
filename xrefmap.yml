@@ -9762,6 +9762,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.Bindings.BaseBinding.IsExit
   nameWithType: BaseBinding.IsExit
+- uid: Terminaux.Reader.Bindings.BaseBinding.ResetSuggestionsTextPos
+  name: ResetSuggestionsTextPos
+  href: api/Terminaux.Reader.Bindings.BaseBinding.html#Terminaux_Reader_Bindings_BaseBinding_ResetSuggestionsTextPos
+  commentId: P:Terminaux.Reader.Bindings.BaseBinding.ResetSuggestionsTextPos
+  fullName: Terminaux.Reader.Bindings.BaseBinding.ResetSuggestionsTextPos
+  nameWithType: BaseBinding.ResetSuggestionsTextPos
+- uid: Terminaux.Reader.Bindings.BaseBinding.ResetSuggestionsTextPos*
+  name: ResetSuggestionsTextPos
+  href: api/Terminaux.Reader.Bindings.BaseBinding.html#Terminaux_Reader_Bindings_BaseBinding_ResetSuggestionsTextPos_
+  commentId: Overload:Terminaux.Reader.Bindings.BaseBinding.ResetSuggestionsTextPos
+  isSpec: "True"
+  fullName: Terminaux.Reader.Bindings.BaseBinding.ResetSuggestionsTextPos
+  nameWithType: BaseBinding.ResetSuggestionsTextPos
 - uid: Terminaux.Reader.Bindings.CustomBindings
   name: CustomBindings
   href: api/Terminaux.Reader.Bindings.CustomBindings.html
@@ -9839,6 +9852,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.Bindings.IBinding.DoAction
   nameWithType: IBinding.DoAction
+- uid: Terminaux.Reader.Bindings.IBinding.ResetSuggestionsTextPos
+  name: ResetSuggestionsTextPos
+  href: api/Terminaux.Reader.Bindings.IBinding.html#Terminaux_Reader_Bindings_IBinding_ResetSuggestionsTextPos
+  commentId: P:Terminaux.Reader.Bindings.IBinding.ResetSuggestionsTextPos
+  fullName: Terminaux.Reader.Bindings.IBinding.ResetSuggestionsTextPos
+  nameWithType: IBinding.ResetSuggestionsTextPos
+- uid: Terminaux.Reader.Bindings.IBinding.ResetSuggestionsTextPos*
+  name: ResetSuggestionsTextPos
+  href: api/Terminaux.Reader.Bindings.IBinding.html#Terminaux_Reader_Bindings_IBinding_ResetSuggestionsTextPos_
+  commentId: Overload:Terminaux.Reader.Bindings.IBinding.ResetSuggestionsTextPos
+  isSpec: "True"
+  fullName: Terminaux.Reader.Bindings.IBinding.ResetSuggestionsTextPos
+  nameWithType: IBinding.ResetSuggestionsTextPos
 - uid: Terminaux.Reader.TermReader
   name: TermReader
   href: api/Terminaux.Reader.TermReader.html
@@ -10150,6 +10176,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderState.CurrentSuggestionsPos
   nameWithType: TermReaderState.CurrentSuggestionsPos
+- uid: Terminaux.Reader.TermReaderState.CurrentSuggestionsTextPos
+  name: CurrentSuggestionsTextPos
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentSuggestionsTextPos
+  commentId: P:Terminaux.Reader.TermReaderState.CurrentSuggestionsTextPos
+  fullName: Terminaux.Reader.TermReaderState.CurrentSuggestionsTextPos
+  nameWithType: TermReaderState.CurrentSuggestionsTextPos
+- uid: Terminaux.Reader.TermReaderState.CurrentSuggestionsTextPos*
+  name: CurrentSuggestionsTextPos
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentSuggestionsTextPos_
+  commentId: Overload:Terminaux.Reader.TermReaderState.CurrentSuggestionsTextPos
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.CurrentSuggestionsTextPos
+  nameWithType: TermReaderState.CurrentSuggestionsTextPos
 - uid: Terminaux.Reader.TermReaderState.CurrentText
   name: CurrentText
   href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_CurrentText
