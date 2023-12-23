@@ -680,6 +680,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleExtensions.ResetAll
   nameWithType: ConsoleExtensions.ResetAll
+- uid: Terminaux.Base.ConsoleExtensions.ResetBackground
+  name: ResetBackground()
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetBackground
+  commentId: M:Terminaux.Base.ConsoleExtensions.ResetBackground
+  fullName: Terminaux.Base.ConsoleExtensions.ResetBackground()
+  nameWithType: ConsoleExtensions.ResetBackground()
+- uid: Terminaux.Base.ConsoleExtensions.ResetBackground*
+  name: ResetBackground
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetBackground_
+  commentId: Overload:Terminaux.Base.ConsoleExtensions.ResetBackground
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleExtensions.ResetBackground
+  nameWithType: ConsoleExtensions.ResetBackground
 - uid: Terminaux.Base.ConsoleExtensions.ResetColors
   name: ResetColors()
   href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetColors
@@ -693,6 +706,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleExtensions.ResetColors
   nameWithType: ConsoleExtensions.ResetColors
+- uid: Terminaux.Base.ConsoleExtensions.ResetForeground
+  name: ResetForeground()
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetForeground
+  commentId: M:Terminaux.Base.ConsoleExtensions.ResetForeground
+  fullName: Terminaux.Base.ConsoleExtensions.ResetForeground()
+  nameWithType: ConsoleExtensions.ResetForeground()
+- uid: Terminaux.Base.ConsoleExtensions.ResetForeground*
+  name: ResetForeground
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetForeground_
+  commentId: Overload:Terminaux.Base.ConsoleExtensions.ResetForeground
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleExtensions.ResetForeground
+  nameWithType: ConsoleExtensions.ResetForeground
 - uid: Terminaux.Base.ConsoleExtensions.SetTitle(System.String)
   name: SetTitle(string)
   href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_SetTitle_System_String_
