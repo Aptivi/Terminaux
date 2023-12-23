@@ -229,7 +229,7 @@ namespace Terminaux.Reader.Tools
                 {
                     // Reached to the end! Go back to the prompt position.
                     state.currentCursorPosLeft = state.InputPromptLeft + 1;
-                    new Refresh().DoAction(state);
+                    TermReaderTools.RefreshPrompt(ref state);
                 }
             }
         }
@@ -256,7 +256,7 @@ namespace Terminaux.Reader.Tools
                 {
                     // Reached to the beginning! Go back to the furthest position, plus the extra character being printed.
                     state.currentCursorPosLeft = width - state.settings.RightMargin - 1;
-                    new Refresh().DoAction(state);
+                    TermReaderTools.RefreshPrompt(ref state);
                 }
             }
         }
