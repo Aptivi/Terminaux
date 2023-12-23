@@ -77,7 +77,19 @@ namespace Terminaux.Reader.Bindings
                         "    "
                     ]
                 );
-            TermReaderTools.InsertNewText(ref state, text);
+            if (state.insertIsReplace)
+            {
+                if (state.CurrentTextPos == state.CurrentText.Length)
+                    TermReaderTools.InsertNewText(ref state, text);
+                else
+                {
+                    state.CurrentText.Remove(state.CurrentTextPos, 1);
+                    state.CurrentText.Insert(state.CurrentTextPos, text);
+                    TermReaderTools.RefreshPrompt(ref state, 1);
+                }
+            }
+            else
+                TermReaderTools.InsertNewText(ref state, text);
         }
     }
 }

@@ -47,6 +47,7 @@ namespace Terminaux.Reader
         internal bool oneLineWrap;
         internal bool canInsert = true;
         internal bool writingPrompt;
+        internal bool insertIsReplace;
         internal TermReaderSettings settings;
 
         // Shared
