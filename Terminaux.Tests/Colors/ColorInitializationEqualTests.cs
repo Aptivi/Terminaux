@@ -20,7 +20,6 @@
 using Shouldly;
 using System;
 using Terminaux.Colors;
-using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Tests.Colors
 {

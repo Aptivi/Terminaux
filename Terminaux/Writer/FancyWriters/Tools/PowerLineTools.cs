@@ -89,6 +89,10 @@ namespace Terminaux.Writer.FancyWriters.Tools
             }
 
             // Return the final string
+            SegmentStringBuilder.Append(
+                ColorTools.currentForegroundColor.VTSequenceForeground +
+                ColorTools.currentBackgroundColor.VTSequenceBackground
+            );
             return SegmentStringBuilder.ToString();
         }
     }

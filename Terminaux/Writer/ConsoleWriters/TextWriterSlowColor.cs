@@ -84,25 +84,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, ConsoleColors color, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                try
-                {
-                    ColorTools.SetConsoleColor(new Color(color));
-                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
-
-                    // Write text slowly
-                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
-                }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-                }
-            }
-        }
+        public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, ConsoleColors color, params object[] vars) =>
+            WriteSlowlyColorBack(msg, Line, MsEachLetter, new Color(color), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt slowly with color support.
@@ -113,25 +96,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowlyColorBack(string msg, bool Line, double MsEachLetter, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                try
-                {
-                    ColorTools.SetConsoleColor(new Color(ForegroundColor));
-                    ColorTools.SetConsoleColor(new Color(BackgroundColor));
-
-                    // Write text slowly
-                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
-                }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-                }
-            }
-        }
+        public static void WriteSlowlyColorBack(string msg, bool Line, double MsEachLetter, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
+            WriteSlowlyColorBack(msg, Line, MsEachLetter, new Color(ForegroundColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt slowly with color support.
@@ -141,25 +107,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, Color color, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                try
-                {
-                    ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
-
-                    // Write text slowly
-                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
-                }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-                }
-            }
-        }
+        public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, Color color, params object[] vars) =>
+            WriteSlowlyColorBack(msg, Line, MsEachLetter, color, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt slowly with color support.
@@ -181,6 +130,9 @@ namespace Terminaux.Writer.ConsoleWriters
 
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+
+                    // Reset the colors
+                    ConsoleExtensions.ResetColors();
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {

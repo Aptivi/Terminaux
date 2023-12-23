@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Base;
-using Terminaux.Reader.Bindings.BaseBindings;
 
 namespace Terminaux.Reader.Tools
 {

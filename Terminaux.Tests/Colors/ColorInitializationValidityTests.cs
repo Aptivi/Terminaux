@@ -21,7 +21,6 @@ using System;
 using System.Diagnostics;
 using Terminaux.Colors;
 using Terminaux.Colors.Models.Parsing;
-using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Tests.Colors
 {

@@ -238,25 +238,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="RightMargin">The right margin</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowlyColor(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ConsoleColors color, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                try
-                {
-                    ColorTools.SetConsoleColor(new Color(color));
-                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
-
-                    // Write text in another place slowly
-                    WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
-                }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-                }
-            }
-        }
+        public static void WriteWhereSlowlyColor(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ConsoleColors color, params object[] vars) =>
+            WriteWhereSlowlyColorBack(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, new Color(color), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -300,25 +283,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowlyColorBack(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                try
-                {
-                    ColorTools.SetConsoleColor(new Color(ForegroundColor));
-                    ColorTools.SetConsoleColor(new Color(BackgroundColor));
-
-                    // Write text in another place slowly
-                    WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
-                }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-                }
-            }
-        }
+        public static void WriteWhereSlowlyColorBack(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
+            WriteWhereSlowlyColorBack(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, new Color(ForegroundColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -359,25 +325,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="RightMargin">The right margin</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWhereSlowlyColor(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, Color color, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                try
-                {
-                    ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
-
-                    // Write text in another place slowly
-                    WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
-                }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-                }
-            }
-        }
+        public static void WriteWhereSlowlyColor(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, Color color, params object[] vars) =>
+            WriteWhereSlowlyColorBack(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, color, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -432,6 +381,9 @@ namespace Terminaux.Writer.ConsoleWriters
 
                     // Write text in another place slowly
                     WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+
+                    // Reset the colors
+                    ConsoleExtensions.ResetColors();
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {

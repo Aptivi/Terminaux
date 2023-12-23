@@ -29,109 +29,8 @@ namespace Terminaux.Writer.ConsoleWriters
     /// <summary>
     /// Console text writer with color support
     /// </summary>
-    public static class TextWriterColor
+    public static class TextWriterHighlightedColor
     {
-
-        internal static object WriteLock = new();
-
-        /// <summary>
-        /// Outputs the new line into the terminal prompt.
-        /// </summary>
-        public static void Write()
-        {
-            lock (WriteLock)
-            {
-                try
-                {
-                    ConsoleWrapper.WriteLine();
-                }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt plainly.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WritePlain(string Text, params object[] vars) =>
-            WritePlain(Text, true, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt plainly.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WritePlain(string Text, bool Line, params object[] vars) =>
-            WritePlain(Text, null, Line, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt plainly. Use for TermReader custom bindings.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="settings">Terminal reader settings</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WritePlain(string Text, TermReaderSettings settings, params object[] vars) =>
-            WritePlain(Text, settings, true, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt plainly. Use for TermReader custom bindings.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="settings">Terminal reader settings</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WritePlain(string Text, TermReaderSettings settings, bool Line, params object[] vars)
-        {
-            lock (WriteLock)
-            {
-                try
-                {
-                    // Actually write
-                    if (Line)
-                    {
-                        if (vars.Length > 0)
-                        {
-                            if (settings is null)
-                                ConsoleWrapper.WriteLine(Text, vars);
-                            else
-                                ConsoleWrapper.WriteLine(Text, settings, vars);
-                        }
-                        else
-                        {
-                            if (settings is null)
-                                ConsoleWrapper.WriteLine(Text);
-                            else
-                                ConsoleWrapper.WriteLine(Text, settings);
-                        }
-                    }
-                    else if (vars.Length > 0)
-                    {
-                        if (settings is null)
-                            ConsoleWrapper.Write(Text, vars);
-                        else
-                            ConsoleWrapper.Write(Text, settings, vars);
-                    }
-                    else
-                    {
-                        if (settings is null)
-                            ConsoleWrapper.Write(Text);
-                        else
-                            ConsoleWrapper.Write(Text, settings);
-                    }
-                }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-                }
-            }
-        }
 
         /// <summary>
         /// Outputs the text into the terminal prompt.
@@ -167,7 +66,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteColor(string Text, bool Line, ConsoleColors color, params object[] vars) =>
-            WriteColor(Text, Line, new Color(color), ColorTools.currentBackgroundColor, vars);
+            WriteColorBack(Text, Line, new Color(color), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -336,16 +235,19 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteForReaderColorBack(string Text, TermReaderSettings settings, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
-            lock (WriteLock)
+            lock (TextWriterColor.WriteLock)
             {
                 try
                 {
                     // Try to write to console
-                    ColorTools.SetConsoleColor(ForegroundColor);
-                    ColorTools.SetConsoleColor(BackgroundColor, true);
+                    ColorTools.SetConsoleColor(ForegroundColor, true);
+                    ColorTools.SetConsoleColor(BackgroundColor);
 
                     // Write the text to console
-                    WritePlain(Text, settings, Line, vars);
+                    TextWriterColor.WritePlain(Text, settings, false, vars);
+                    ColorTools.SetConsoleColor(ForegroundColor);
+                    ColorTools.SetConsoleColor(BackgroundColor, true);
+                    TextWriterColor.WritePlain("", settings, Line);
 
                     // Reset the colors
                     ConsoleExtensions.ResetColors();

@@ -18,8 +18,6 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors
