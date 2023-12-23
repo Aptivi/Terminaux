@@ -44,6 +44,7 @@ namespace Terminaux.Reader.Tools
         /// <param name="state">State of the terminal reader in its present state</param>
         public static void GoRightmost(ref TermReaderState state)
         {
+            GoLeftmost(ref state);
             if (state.OneLineWrap)
                 GoRightmostOneLineWrapAware(ref state);
             else
