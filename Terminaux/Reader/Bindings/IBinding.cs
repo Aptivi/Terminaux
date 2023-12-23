@@ -32,6 +32,11 @@ namespace Terminaux.Reader.Bindings
         public ConsoleKeyInfo[] BoundKeys { get; }
 
         /// <summary>
+        /// Resets the suggestions text position
+        /// </summary>
+        public bool ResetSuggestionsTextPos { get; }
+
+        /// <summary>
         /// Whether the bind matched
         /// </summary>
         /// <param name="input">Key</param>

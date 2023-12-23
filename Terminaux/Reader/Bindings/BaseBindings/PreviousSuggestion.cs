@@ -19,6 +19,7 @@
 
 using System;
 using System.Linq;
+using Terminaux.Reader.Tools;
 using Textify.General;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
@@ -32,10 +33,15 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         ];
 
         /// <inheritdoc/>
+        public override bool ResetSuggestionsTextPos =>
+            false;
+
+        /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
             // Get suggestions
-            string[] suggestions = state.settings.suggestions(state.CurrentText.ToString(), state.CurrentTextPos, state.settings.suggestionsDelims);
+            bool setTextPos = TermReaderState.currentSuggestionsTextPos == -1;
+            string[] suggestions = state.settings.suggestions(state.CurrentText.ToString(), !setTextPos ? TermReaderState.currentSuggestionsTextPos : state.CurrentTextPos, state.settings.suggestionsDelims);
             if (suggestions.Length > 0)
             {
                 TermReaderState.currentSuggestionsPos--;
@@ -62,7 +68,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                     bool bail = false;
                     for (int j = 0; j < text.Length; j++)
                     {
-                        if (pos == state.CurrentTextPos)
+                        if (pos == state.CurrentTextPos || pos == TermReaderState.currentSuggestionsTextPos)
                         {
                             if (j + 1 == text.Length)
                                 splitText[i] += suggestion;
@@ -74,10 +80,15 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                         pos++;
                     }
                     if (bail)
+                    {
+                        if (setTextPos)
+                            TermReaderState.currentSuggestionsTextPos = state.CurrentTextPos;
                         break;
+                    }
                 }
                 state.CurrentText.Clear();
                 state.CurrentText.Append(string.Join(" ", splitText));
+                PositioningTools.GoRightmost(ref state);
                 TermReaderTools.RefreshPrompt(ref state);
             }
         }

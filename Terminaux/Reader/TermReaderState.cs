@@ -54,6 +54,7 @@ namespace Terminaux.Reader
         internal static List<string> history = [];
         internal static int currentHistoryPos;
         internal static int currentSuggestionsPos = -1;
+        internal static int currentSuggestionsTextPos = -1;
 
         // To instance variables
         /// <summary>
@@ -193,6 +194,11 @@ namespace Terminaux.Reader
         /// </summary>
         public int CurrentSuggestionsPos =>
             currentSuggestionsPos;
+        /// <summary>
+        /// Current suggestions text position
+        /// </summary>
+        public int CurrentSuggestionsTextPos =>
+            currentSuggestionsTextPos;
         /// <summary>
         /// Whether one line wrapping is enabled
         /// </summary>

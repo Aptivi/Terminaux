@@ -31,11 +31,18 @@ namespace Terminaux.Reader.Bindings
 
             // Execute the commands based on them
             foreach (var chosenBinding in chosenBindings)
+            {
                 chosenBinding.DoAction(state);
+                if (chosenBinding.ResetSuggestionsTextPos)
+                    TermReaderState.currentSuggestionsTextPos = -1;
+            }
 
             // If there are no bindings, select the "print character" action
             if (!chosenBindings.Any())
+            {
                 BindingsList.fallbackBinding.DoAction(state);
+                TermReaderState.currentSuggestionsTextPos = -1;
+            }
         }
 
         internal static bool IsTerminate(ConsoleKeyInfo cki)

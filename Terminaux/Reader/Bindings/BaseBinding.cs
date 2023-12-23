@@ -33,6 +33,11 @@ namespace Terminaux.Reader.Bindings
         public virtual ConsoleKeyInfo[] BoundKeys { get; }
 
         /// <summary>
+        /// Resets the suggestions text position
+        /// </summary>
+        public virtual bool ResetSuggestionsTextPos { get; } = true;
+
+        /// <summary>
         /// Does this binding cause the input to exit?
         /// </summary>
         public virtual bool IsExit { get; }

@@ -107,7 +107,7 @@ namespace Terminaux.Reader
         /// <summary>
         /// Reads the input
         /// </summary>
-        /// <param name="settings">Settigns containing reader-related settings</param>
+        /// <param name="settings">Settings containing reader-related settings</param>
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="defaultValue">Default value to use if no input is provided</param>
         /// <param name="password">Whether the password mode is enabled</param>
