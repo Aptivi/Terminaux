@@ -9923,6 +9923,32 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderSettings.HistoryEnabled
   nameWithType: TermReaderSettings.HistoryEnabled
+- uid: Terminaux.Reader.TermReaderSettings.InputBackgroundColor
+  name: InputBackgroundColor
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_InputBackgroundColor
+  commentId: P:Terminaux.Reader.TermReaderSettings.InputBackgroundColor
+  fullName: Terminaux.Reader.TermReaderSettings.InputBackgroundColor
+  nameWithType: TermReaderSettings.InputBackgroundColor
+- uid: Terminaux.Reader.TermReaderSettings.InputBackgroundColor*
+  name: InputBackgroundColor
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_InputBackgroundColor_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.InputBackgroundColor
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderSettings.InputBackgroundColor
+  nameWithType: TermReaderSettings.InputBackgroundColor
+- uid: Terminaux.Reader.TermReaderSettings.InputForegroundColor
+  name: InputForegroundColor
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_InputForegroundColor
+  commentId: P:Terminaux.Reader.TermReaderSettings.InputForegroundColor
+  fullName: Terminaux.Reader.TermReaderSettings.InputForegroundColor
+  nameWithType: TermReaderSettings.InputForegroundColor
+- uid: Terminaux.Reader.TermReaderSettings.InputForegroundColor*
+  name: InputForegroundColor
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_InputForegroundColor_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.InputForegroundColor
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderSettings.InputForegroundColor
+  nameWithType: TermReaderSettings.InputForegroundColor
 - uid: Terminaux.Reader.TermReaderSettings.LeftMargin
   name: LeftMargin
   href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_LeftMargin
