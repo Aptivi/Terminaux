@@ -122,13 +122,25 @@ namespace Terminaux.Base.Buffered
         }
 
         /// <summary>
-        /// Adds the VT sequence to reset the colors to the kernel-defined colors
+        /// Adds the VT sequence to reset the colors
         /// </summary>
-        public void ResetColor()
+        public void ResetColors()
         {
-            AddText($"{Convert.ToChar(0x1B)}[39m");
-            AddText($"{Convert.ToChar(0x1B)}[49m");
+            ResetForegroundColor();
+            ResetBackgroundColor();
         }
+
+        /// <summary>
+        /// Adds the VT sequence to reset the foreground color
+        /// </summary>
+        public void ResetForegroundColor() =>
+            AddText($"{Convert.ToChar(0x1B)}[39m");
+
+        /// <summary>
+        /// Adds the VT sequence to reset the background color
+        /// </summary>
+        public void ResetBackgroundColor() =>
+            AddText($"{Convert.ToChar(0x1B)}[49m");
 
         /// <summary>
         /// Clears the buffer
