@@ -40,6 +40,8 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
                     TextWriterColor.WriteColor("NB Color {0} [{1}]", true, colorInstanceNoBlack, colorInstanceNoBlack.PlainSequence, colorInstanceNoBlack.PlainSequenceTrueColor);
                 }
             }
+            if (ConsoleWrapper.KeyAvailable)
+                ConsoleWrapper.ReadKey(true);
         }
     }
 }
