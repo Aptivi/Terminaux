@@ -246,50 +246,18 @@ namespace Terminaux.Colors
         /// </summary>
         /// <param name="Hex">A hexadecimal representation of a color (#AABBCC for example)</param>
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
-        public static string ConvertFromHexToRGB(string Hex)
-        {
-            if (Hex.StartsWith("#"))
-            {
-                int ColorDecimal = Convert.ToInt32(Hex.Substring(1), 16);
-                int R = (byte)((ColorDecimal & 0xFF0000) >> 0x10);
-                int G = (byte)((ColorDecimal & 0xFF00) >> 8);
-                int B = (byte)(ColorDecimal & 0xFF);
-                return $"{R};{G};{B}";
-            }
-            else
-            {
-                throw new TerminauxException("Invalid hex color specifier.");
-            }
-        }
+        [Obsolete("Use Color.Hex instead. It'll be removed in a future release.")]
+        public static string ConvertFromHexToRGB(string Hex) =>
+            new Color(Hex).PlainSequence;
 
         /// <summary>
         /// Converts from the RGB sequence of a color to the hexadecimal representation
         /// </summary>
         /// <param name="RGBSequence">&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
-        public static string ConvertFromRGBToHex(string RGBSequence)
-        {
-            if (RGBSequence.Contains(Convert.ToString(';')))
-            {
-                // Split the VT sequence into three parts
-                var ColorSpecifierArray = RGBSequence.Split(';');
-                if (ColorSpecifierArray.Length == 3)
-                {
-                    int R = Convert.ToInt32(ColorSpecifierArray[0]);
-                    int G = Convert.ToInt32(ColorSpecifierArray[1]);
-                    int B = Convert.ToInt32(ColorSpecifierArray[2]);
-                    return $"#{R:X2}{G:X2}{B:X2}";
-                }
-                else
-                {
-                    throw new TerminauxException("Invalid RGB color specifier.");
-                }
-            }
-            else
-            {
-                throw new TerminauxException("Invalid RGB color specifier.");
-            }
-        }
+        [Obsolete("Use Color.Hex instead. It'll be removed in a future release.")]
+        public static string ConvertFromRGBToHex(string RGBSequence) =>
+            new Color(RGBSequence).Hex;
 
         /// <summary>
         /// Converts from the RGB sequence of a color to the hexadecimal representation
@@ -298,16 +266,9 @@ namespace Terminaux.Colors
         /// <param name="G">The green level</param>
         /// <param name="B">The blue level</param>
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
-        public static string ConvertFromRGBToHex(int R, int G, int B)
-        {
-            if (R < 0 | R > 255)
-                throw new TerminauxException("Invalid red color specifier.");
-            if (G < 0 | G > 255)
-                throw new TerminauxException("Invalid green color specifier.");
-            if (B < 0 | B > 255)
-                throw new TerminauxException("Invalid blue color specifier.");
-            return $"#{R:X2}{G:X2}{B:X2}";
-        }
+        [Obsolete("Use Color.Hex instead. It'll be removed in a future release.")]
+        public static string ConvertFromRGBToHex(int R, int G, int B) =>
+            new Color(R, G, B).Hex;
 
         /// <summary>
         /// Gets a random color instance (true color)
