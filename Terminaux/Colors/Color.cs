@@ -261,9 +261,6 @@ namespace Terminaux.Colors
         /// <exception cref="TerminauxException"></exception>
         public Color(string ColorSpecifier, ColorSettings settings)
         {
-            // Remove stray double quotes
-            ColorSpecifier = ColorSpecifier.Replace("\"", "");
-
             // Install the settings. This is necessary for ParseSpecifier.
             this.settings = settings;
 
