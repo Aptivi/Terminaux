@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base;
 using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors
@@ -60,9 +61,9 @@ namespace Terminaux.Colors
             set
             {
                 if (value < 0)
-                    throw new ArgumentOutOfRangeException("value");
+                    throw new TerminauxException("Blindness severity should not be less than zero.");
                 if (value > 1)
-                    throw new ArgumentOutOfRangeException("value");
+                    throw new TerminauxException("Blindness severity should not be greater than one.");
 
                 _blindnessSeverity = value;
             }
