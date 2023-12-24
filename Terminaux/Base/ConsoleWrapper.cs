@@ -160,7 +160,7 @@ namespace Terminaux.Base
                     WriteLine();
                     CursorLeft = settings.LeftMargin;
                 }
-                if (wrapTop >= BufferHeight && !settings.state.writingPrompt)
+                if (wrapTop >= BufferHeight && !settings.state.writingPrompt && top > 0)
                 {
                     top--;
                     settings.state.currentCursorPosTop--;

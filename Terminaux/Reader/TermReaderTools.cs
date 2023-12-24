@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Reader.Tools;
@@ -118,12 +119,6 @@ namespace Terminaux.Reader
                 return;
 
             // Check for maximum length
-            int length = GetMaximumInputLength(state);
-            if (state.currentText.Length + newText.Length >= length)
-            {
-                state.canInsert = false;
-                newText = newText.Substring(0, length - state.currentText.Length);
-            }
 
             // Get the longest sentence width and insert the character
             if (append)
@@ -150,6 +145,15 @@ namespace Terminaux.Reader
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
             string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, wrapped[wrapped.Length - 1].Length);
+            if (incompleteSentences.Length > ConsoleWrapper.WindowHeight)
+            {
+                var intermediate = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin);
+                int offset = incompleteSentences.Length - ConsoleWrapper.WindowHeight;
+                string[] intermediateSplit = intermediate.Skip(offset).ToArray();
+                string intermediateText = string.Join("", intermediateSplit);
+                renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, intermediateText.Length) : intermediateText;
+                incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, wrapped[wrapped.Length - 1].Length);
+            }
             if (state.OneLineWrap)
             {
                 // We're in the one-line wrap mode!
