@@ -275,13 +275,8 @@ namespace Terminaux.Colors
         /// </summary>
         /// <param name="selectBlack">Whether to select the black color or not</param>
         /// <returns>A color instance</returns>
-        public static Color GetRandomColor(bool selectBlack = true)
-        {
-            var color = GetRandomColor(ColorType.TrueColor, 0, 255, 0, 255, 0, 255, 0, 255);
-            while (!IsSeeable(ColorType.TrueColor, 0, color.R, color.G, color.B) && !selectBlack)
-                color = GetRandomColor(ColorType.TrueColor, 0, 255, 0, 255, 0, 255, 0, 255);
-            return color;
-        }
+        public static Color GetRandomColor(bool selectBlack = true) =>
+            GetRandomColor(ColorType.TrueColor, selectBlack);
 
         /// <summary>
         /// Gets a random color instance
