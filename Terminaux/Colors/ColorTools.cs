@@ -115,9 +115,16 @@ namespace Terminaux.Colors
         /// <summary>
         /// Gets the gray color according to the brightness of the background color
         /// </summary>
-        public static Color GetGray()
+        public static Color GetGray() =>
+            GetGray(currentBackgroundColor);
+
+        /// <summary>
+        /// Gets the gray color according to the brightness of the specified color
+        /// </summary>
+        /// <param name="color">Target color to use when getting the gray color</param>
+        public static Color GetGray(Color color)
         {
-            if (currentBackgroundColor.Brightness == ColorBrightness.Light)
+            if (color.Brightness == ColorBrightness.Light)
                 return new Color(ConsoleColors.Black);
             else
                 return new Color(ConsoleColors.Gray);
