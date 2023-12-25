@@ -40,6 +40,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Just set the positions to the maximum!
             PositioningTools.GoRightmost(ref state);
+            TermReaderTools.RefreshPrompt(ref state);
         }
     }
 }

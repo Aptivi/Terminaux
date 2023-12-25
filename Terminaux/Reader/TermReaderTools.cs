@@ -148,8 +148,8 @@ namespace Terminaux.Reader
             if (incompleteSentences.Length > ConsoleWrapper.WindowHeight)
             {
                 var intermediate = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin);
-                int offset = incompleteSentences.Length - ConsoleWrapper.WindowHeight;
-                string[] intermediateSplit = intermediate.Skip(offset).ToArray();
+                (int offset, int take) = GetRenderedStringOffsets(intermediate, state);
+                string[] intermediateSplit = intermediate.Skip(offset).Take(take).ToArray();
                 string intermediateText = string.Join("", intermediateSplit);
                 renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, intermediateText.Length) : intermediateText;
                 incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, wrapped[wrapped.Length - 1].Length);
@@ -213,6 +213,36 @@ namespace Terminaux.Reader
 
             // Return it!
             return finalRenderedString;
+        }
+
+        internal static (int offset, int take) GetRenderedStringOffsets(string[] incompleteSentences, TermReaderState state) =>
+            GetRenderedStringOffsets(incompleteSentences, state.CurrentTextPos);
+
+        internal static (int offset, int take) GetRenderedStringOffsets(string[] incompleteSentences, int targetIndex)
+        {
+            // Deal with trying to count the characters incrementally for each incomplete sentence until we find an index
+            // that we want, then give the rendered string back.
+            int currentIndex = 0;
+            int skipFirst = 0;
+            int take = 0;
+            List<string> rendered = [];
+            foreach (string sentence in incompleteSentences)
+            {
+                bool incrementSkip = currentIndex < targetIndex;
+                currentIndex += sentence.Length;
+                take++;
+                if (take >= ConsoleWrapper.WindowHeight)
+                {
+                    take--;
+                    if (incrementSkip)
+                        skipFirst++;
+                    else
+                        break;
+                }
+            }
+
+            // Return it!
+            return (skipFirst, take);
         }
     }
 }
