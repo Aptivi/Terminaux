@@ -145,14 +145,14 @@ namespace Terminaux.Reader
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
             string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, wrapped[wrapped.Length - 1].Length);
-            if (incompleteSentences.Length > ConsoleWrapper.WindowHeight)
+            if (incompleteSentences.Length > ConsoleWrapper.BufferHeight || renderedText.Length - 1 == GetMaximumInputLength(state))
             {
-                var intermediate = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin);
+                var intermediate = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
                 (int offset, int take) = GetRenderedStringOffsets(intermediate, state);
                 string[] intermediateSplit = intermediate.Skip(offset).Take(take).ToArray();
                 string intermediateText = string.Join("", intermediateSplit);
                 renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, intermediateText.Length) : intermediateText;
-                incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, wrapped[wrapped.Length - 1].Length);
+                incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin);
             }
             if (state.OneLineWrap)
             {
@@ -175,8 +175,6 @@ namespace Terminaux.Reader
                 int spacesLength = longestSentenceLength - (state.inputPromptLeft + state.settings.LeftMargin) - incompleteSentences[incompleteSentences.Length - 1].Length;
                 if (spacesLength < 0)
                     spacesLength = 0;
-                if (spacesLength == 0)
-                    spacesLength++;
                 if (spaces > 0)
                     spacesLength = spaces;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
@@ -231,7 +229,7 @@ namespace Terminaux.Reader
                 bool incrementSkip = currentIndex < targetIndex;
                 currentIndex += sentence.Length;
                 take++;
-                if (take >= ConsoleWrapper.WindowHeight)
+                if (take > ConsoleWrapper.BufferHeight)
                 {
                     take--;
                     if (incrementSkip)

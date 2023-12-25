@@ -195,7 +195,7 @@ namespace Terminaux.Reader.Tools
                 {
                     // Reached to the beginning! Wrap up!
                     state.currentCursorPosLeft = width - 1 - state.settings.RightMargin;
-                    if (state.currentCursorPosTop > 0)
+                    if (state.currentCursorPosTop > 0 && state.CurrentTextPos < TermReaderTools.GetMaximumInputLength(state))
                         state.currentCursorPosTop--;
                 }
             }
