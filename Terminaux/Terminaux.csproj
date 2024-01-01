@@ -4,7 +4,7 @@
     <AssemblyTitle>Terminaux</AssemblyTitle>
     <AssemblyDescription>Console Manipulation Library</AssemblyDescription>
     <Description>A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.</Description>
-    <Version>2.2.0</Version>
+    <Version>2.3.0</Version>
     <Authors>Aptivi</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <DebugType>portable</DebugType>
@@ -23,8 +23,8 @@
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>OfficialAppIcon-Terminaux-512.png</PackageIcon>
-    <AssemblyVersion>2.2.0</AssemblyVersion>
-    <PackageVersion>2.2.0</PackageVersion>
+    <AssemblyVersion>2.3.0</AssemblyVersion>
+    <PackageVersion>2.3.0</PackageVersion>
     <LangVersion>latest</LangVersion>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
