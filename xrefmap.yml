@@ -6346,12 +6346,24 @@ references:
   commentId: T:Terminaux.Colors.Transformation.TransformationFormula
   fullName: Terminaux.Colors.Transformation.TransformationFormula
   nameWithType: TransformationFormula
+- uid: Terminaux.Colors.Transformation.TransformationFormula.BlueScale
+  name: BlueScale
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_BlueScale
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.BlueScale
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.BlueScale
+  nameWithType: TransformationFormula.BlueScale
 - uid: Terminaux.Colors.Transformation.TransformationFormula.Deutan
   name: Deutan
   href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_Deutan
   commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Deutan
   fullName: Terminaux.Colors.Transformation.TransformationFormula.Deutan
   nameWithType: TransformationFormula.Deutan
+- uid: Terminaux.Colors.Transformation.TransformationFormula.GreenScale
+  name: GreenScale
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_GreenScale
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.GreenScale
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.GreenScale
+  nameWithType: TransformationFormula.GreenScale
 - uid: Terminaux.Colors.Transformation.TransformationFormula.Inverse
   name: Inverse
   href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_Inverse
@@ -6370,6 +6382,12 @@ references:
   commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Protan
   fullName: Terminaux.Colors.Transformation.TransformationFormula.Protan
   nameWithType: TransformationFormula.Protan
+- uid: Terminaux.Colors.Transformation.TransformationFormula.RedScale
+  name: RedScale
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_RedScale
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.RedScale
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.RedScale
+  nameWithType: TransformationFormula.RedScale
 - uid: Terminaux.Colors.Transformation.TransformationFormula.Tritan
   name: Tritan
   href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_Tritan
