@@ -44,5 +44,17 @@ namespace Terminaux.Colors.Transformation
         /// Inverse colors
         /// </summary>
         Inverse,
+        /// <summary>
+        /// Blue tinted monochromacy
+        /// </summary>
+        BlueScale,
+        /// <summary>
+        /// Green tinted monochromacy
+        /// </summary>
+        GreenScale,
+        /// <summary>
+        /// Red tinted monochromacy
+        /// </summary>
+        RedScale,
     }
 }

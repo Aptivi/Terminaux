@@ -31,6 +31,9 @@ namespace Terminaux.Colors.Transformation
             { TransformationFormula.Protan, new ColorBlind() },
             { TransformationFormula.Deutan, new ColorBlind() },
             { TransformationFormula.Tritan, new ColorBlind() },
+            { TransformationFormula.BlueScale, new BlueScale() },
+            { TransformationFormula.GreenScale, new GreenScale() },
+            { TransformationFormula.RedScale, new RedScale() },
         };
 
         internal static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput, ColorSettings settings)

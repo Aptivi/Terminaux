@@ -574,6 +574,24 @@ namespace Terminaux.Colors.Selector
                 true,
                 TransformationFormula.Inverse
             );
+            ShowColorInfoBox(
+                "Color info (Blue Monochromacy)",
+                selectedColor,
+                true,
+                TransformationFormula.BlueScale
+            );
+            ShowColorInfoBox(
+                "Color info (Green Monochromacy)",
+                selectedColor,
+                true,
+                TransformationFormula.GreenScale
+            );
+            ShowColorInfoBox(
+                "Color info (Red Monochromacy)",
+                selectedColor,
+                true,
+                TransformationFormula.RedScale
+            );
         }
 
         private static void ShowColorInfoBox(string localizedTextTitle, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
