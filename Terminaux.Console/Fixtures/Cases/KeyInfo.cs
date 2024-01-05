@@ -48,12 +48,18 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             TextWriterColor.WriteColor($"0x{Convert.ToInt32(KeyPress.KeyChar):X2} [{Convert.ToInt32(KeyPress.KeyChar)}]", true, new Color(ConsoleColors.DarkGreen));
 
             // Pressed modifiers
-            TextWriterColor.WriteColor("- " + "Pressed modifiers: ", false, new Color(ConsoleColors.Green));
-            TextWriterColor.WriteColor(KeyPress.Modifiers.ToString(), true, new Color(ConsoleColors.DarkGreen));
+            if (KeyPress.Modifiers != 0)
+            {
+                TextWriterColor.WriteColor("- " + "Pressed modifiers: ", false, new Color(ConsoleColors.Green));
+                TextWriterColor.WriteColor(KeyPress.Modifiers.ToString(), true, new Color(ConsoleColors.DarkGreen));
+            }
 
             // Keyboard shortcut
             TextWriterColor.WriteColor("- " + "Keyboard shortcut: ", false, new Color(ConsoleColors.Green));
-            TextWriterColor.WriteColor($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split(new string[] { ", " }, StringSplitOptions.None))} + {KeyPress.Key}", true, new Color(ConsoleColors.DarkGreen));
+            if (KeyPress.Modifiers != 0)
+                TextWriterColor.WriteColor($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split(new string[] { ", " }, StringSplitOptions.None))} + {KeyPress.Key}", true, new Color(ConsoleColors.DarkGreen));
+            else
+                TextWriterColor.WriteColor($"{KeyPress.Key}", true, new Color(ConsoleColors.DarkGreen));
         }
     }
 }
