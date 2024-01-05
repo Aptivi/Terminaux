@@ -110,8 +110,8 @@ namespace Terminaux.Base.Checks
                 TextWriterColor.WritePlain($"The console type you're currently using, {TerminalType}, is greylisted: {justification2}");
 
             // Check the blacklist and the greylist for the terminal emulator
-            var (emuBlacklisted, emuJustification) = TerminalTypeBlacklist.IsTypeBlacklisted();
-            var (emuGreylisted, emuJustification2) = TerminalTypeGreylist.IsTypeGreylisted();
+            var (emuBlacklisted, emuJustification) = TerminalEmulatorBlacklist.IsEmulatorBlacklisted();
+            var (emuGreylisted, emuJustification2) = TerminalEmulatorGreylist.IsEmulatorGreylisted();
             if (emuBlacklisted)
             {
                 throw new TerminauxException(
@@ -119,7 +119,7 @@ namespace Terminaux.Base.Checks
                 );
             }
             if (emuGreylisted)
-                TextWriterColor.WritePlain($"The terminal emulator you're currently using, {TerminalType}, is greylisted: {emuJustification2}");
+                TextWriterColor.WritePlain($"The terminal emulator you're currently using, {TerminalEmulator}, is greylisted: {emuJustification2}");
 
             // Don't check again.
             acknowledged = true;

@@ -274,6 +274,10 @@
     "Terminaux - TestInputInfoBoxInput": {
       "commandName": "Project",
       "commandLineArgs": "TestInputInfoBoxInput"
+    },
+    "Terminaux - ConsoleCheck": {
+      "commandName": "Project",
+      "commandLineArgs": "ConsoleCheck"
     }
   }
 }
