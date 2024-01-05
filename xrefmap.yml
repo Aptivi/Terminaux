@@ -2403,6 +2403,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.GlobalSettings
   nameWithType: ColorTools.GlobalSettings
+- uid: Terminaux.Colors.ColorTools.IsSeeable(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32)
+  name: IsSeeable(ColorType, int, int, int, int)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_IsSeeable_Terminaux_Colors_ColorType_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Colors.ColorTools.IsSeeable(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: IsSeeable(ColorType, Integer, Integer, Integer, Integer)
+  fullName: Terminaux.Colors.ColorTools.IsSeeable(Terminaux.Colors.ColorType, int, int, int, int)
+  fullName.vb: Terminaux.Colors.ColorTools.IsSeeable(Terminaux.Colors.ColorType, Integer, Integer, Integer, Integer)
+  nameWithType: ColorTools.IsSeeable(ColorType, int, int, int, int)
+  nameWithType.vb: ColorTools.IsSeeable(ColorType, Integer, Integer, Integer, Integer)
+- uid: Terminaux.Colors.ColorTools.IsSeeable*
+  name: IsSeeable
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_IsSeeable_
+  commentId: Overload:Terminaux.Colors.ColorTools.IsSeeable
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.IsSeeable
+  nameWithType: ColorTools.IsSeeable
 - uid: Terminaux.Colors.ColorTools.LinearRGBTosRGB(System.Double)
   name: LinearRGBTosRGB(double)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_LinearRGBTosRGB_System_Double_
