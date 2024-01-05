@@ -105,6 +105,9 @@ namespace Terminaux.Base.Checks
 
         internal static (bool greylisted, string justification) IsEmulatorGreylisted(string terminalEmulator)
         {
+            if (string.IsNullOrEmpty(terminalEmulator))
+                return (false, "");
+
             var emulators = GetGreylistedEmulators();
             foreach (var emulator in emulators)
             {

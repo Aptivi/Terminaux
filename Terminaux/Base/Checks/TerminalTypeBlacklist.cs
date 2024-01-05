@@ -105,6 +105,9 @@ namespace Terminaux.Base.Checks
 
         internal static (bool blacklisted, string justification) IsTypeBlacklisted(string terminalType)
         {
+            if (string.IsNullOrEmpty(terminalType))
+                return (false, "");
+
             var types = GetBlacklistedTypes();
             foreach (var type in types)
             {

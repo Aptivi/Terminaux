@@ -108,6 +108,9 @@ namespace Terminaux.Base.Checks
 
         internal static (bool blacklisted, string justification) IsEmulatorBlacklisted(string terminalEmulator)
         {
+            if (string.IsNullOrEmpty(terminalEmulator))
+                return (false, "");
+
             var emulators = GetBlacklistedEmulators();
             foreach (var emulator in emulators)
             {

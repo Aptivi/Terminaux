@@ -108,6 +108,9 @@ namespace Terminaux.Base.Checks
 
         internal static (bool greylisted, string justification) IsTypeGreylisted(string terminalType)
         {
+            if (string.IsNullOrEmpty(terminalType))
+                return (false, "");
+
             var types = GetGreylistedTypes();
             foreach (var type in types)
             {
