@@ -23,7 +23,7 @@ using System.Reflection;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.Base
+namespace Terminaux.Base.Checks
 {
     /// <summary>
     /// Console sanity checking module
@@ -79,14 +79,6 @@ namespace Terminaux.Base
 
         /// <summary>
         /// Checks the running console for sanity, like the incompatible consoles, insane console types, etc.
-        /// <br></br>
-        /// The severity of the checks can be described in two categories:
-        /// <br></br>
-        /// <br></br>
-        /// 1. Error: We'll throw <see cref="Exception"/> when we detect that the console is not conforming to the standards.
-        /// <br></br>
-        /// 2. Warning: We'll just issue a warning in yellow text using the plain 16-color writer when we detect that the console is not
-        ///             supporting optional features, like 256-colors.
         /// </summary>
         public static void CheckConsole()
         {
@@ -95,68 +87,46 @@ namespace Terminaux.Base
             string TerminalType = ConsolePlatform.GetTerminalType();
             string TerminalEmulator = ConsolePlatform.GetTerminalEmulator();
 
-            // First: Check if the console is running on Apple_Terminal (terminal.app).
-            // Severity: Error
-            // Explanation below:
-            // ---
-            // This check is needed because we have the stock Terminal.app (Apple_Terminal according to $TERM_PROGRAM) that has incompatibilities with
-            // VT sequences, causing broken display. It claims it supports XTerm, yet it isn't fully XTerm-compliant, so we exit the program early when
-            // this stock terminal is spotted.
-            // ---
-            // More information regarding this check: The blacklisted terminals will not be able to run this application properly, because they have
-            // broken support for colors and possibly more features. For example, we have Apple_Terminal that has no support for 255 and true colors;
-            // it only supports 16 colors setting by VT sequences and nothing can change that, although it's fully XTerm compliant.
-            if (ConsolePlatform.IsOnMacOS())
-            {
-                if (TerminalEmulator == "Apple_Terminal")
-                {
-                    throw new TerminauxException(
-                        "This application makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors." + Environment.NewLine +
-                        "Possible solution: Download iTerm2 here: https://iterm2.com/downloads.html"
-                    );
-                }
-            }
-
             // Check if the terminal type is "dumb".
-            // Severity: Error
-            // Explanation below:
-            // ---
-            // The "dumb" terminals usually are not useful for interactive applications, since they only provide the stdout and stderr streams without
-            // support for console cursor manipulation, which This application heavily depends on. These terminals are used for streaming output to the
-            // appropriate variable, like the frontend applications that rely on console applications and their outputs to do their job (for example,
-            // Brasero, a disk burning program, uses wodim, xorriso, and such applications to do its very intent of burning a blank CD-ROM. All these
-            // backend applications are console programs).
             if (IsDumb)
             {
                 throw new TerminauxException(
-                    "This application makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + Environment.NewLine + 
+                    "This application makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + Environment.NewLine +
                     "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + Environment.NewLine +
                     "                   We recommend using the \"vt100\" terminal emulators to get the most out of this application."
                 );
             }
 
-            // Check if the terminal supports 256 colors
-            // Severity: Warning
-            // Explanation below
-            // ---
-            // This application makes use of the 256 colors to print its own text by default. Even if we specify the 16-color compatibility values, we
-            // still use the VT sequence to print colored text, but this will be changed later.
-            if (!IsConsole256Colors())
+            // Check the blacklist and the greylist for the console type
+            var (blacklisted, justification) = TerminalTypeBlacklist.IsTypeBlacklisted();
+            var (greylisted, justification2) = TerminalTypeGreylist.IsTypeGreylisted();
+            if (blacklisted)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                if (ConsolePlatform.IsOnWindows())
-                    TextWriterColor.WritePlain("Warning: Terminaux makes use of the 256 colors. Don't worry; this application will automatically set your terminal to handle these sequences, assuming that you're running a supported terminal. Press any key to continue.", true);
-                else
-                    TextWriterColor.WritePlain("Warning: This application makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", TerminalType);
-                Input.DetectKeypress();
+                throw new TerminauxException(
+                    $"The console type you're currently using, {TerminalType}, is blacklisted: {justification}"
+                );
             }
+            if (greylisted)
+                TextWriterColor.WritePlain($"The console type you're currently using, {TerminalType}, is greylisted: {justification2}");
+
+            // Check the blacklist and the greylist for the terminal emulator
+            var (emuBlacklisted, emuJustification) = TerminalTypeBlacklist.IsTypeBlacklisted();
+            var (emuGreylisted, emuJustification2) = TerminalTypeGreylist.IsTypeGreylisted();
+            if (emuBlacklisted)
+            {
+                throw new TerminauxException(
+                    $"The terminal emulator you're currently using, {TerminalEmulator}, is blacklisted: {emuJustification}"
+                );
+            }
+            if (emuGreylisted)
+                TextWriterColor.WritePlain($"The terminal emulator you're currently using, {TerminalType}, is greylisted: {emuJustification2}");
 
             // Don't check again.
             acknowledged = true;
         }
 
         /// <summary>
-        /// Does the console support 256 colors? Always true on Windows
+        /// Does the console support 256 colors?
         /// </summary>
         public static bool IsConsole256Colors()
         {
