@@ -23,6 +23,7 @@ using Terminaux.Base;
 using Textify.Sequences.Builder;
 using System.Collections.Generic;
 using Terminaux.Colors.Transformation;
+using Terminaux.Colors.Models.Parsing;
 
 namespace Terminaux.Colors
 {
@@ -335,20 +336,36 @@ namespace Terminaux.Colors
             }
         }
 
-        internal static bool IsSeeable(ColorType type, int minColor, int minColorR, int minColorG, int minColorB)
+        /// <summary>
+        /// Checks to see if the specified color is considered seeable
+        /// </summary>
+        /// <param name="type">The color type to use</param>
+        /// <param name="colorLevel">The color level that is in the range of 0-255</param>
+        /// <param name="colorR">The red color level</param>
+        /// <param name="colorG">The green color level</param>
+        /// <param name="colorB">The blue color level</param>
+        /// <returns>True if the specified color is considered "seeable." False otherwise.</returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static bool IsSeeable(ColorType type, int colorLevel, int colorR, int colorG, int colorB)
         {
+            // First, check the values
+            if (type < ColorType.TrueColor || type > ColorType._16Color)
+                throw new TerminauxException("Color type is invalid");
+            if (TryParseColor(type == ColorType.TrueColor ? $"{colorR};{colorG};{colorB}" : $"{colorLevel}"))
+                throw new TerminauxException("Color specifier for seeability is invalid");
+
             // Forbid setting these colors as they're considered too dark
             bool seeable = true;
             if (type == ColorType.TrueColor)
             {
                 // Consider any color with all of the color levels less than 30 unseeable
-                if (minColorR < 30 && minColorG < 30 && minColorB < 30)
+                if (colorR < 30 && colorG < 30 && colorB < 30)
                     seeable = false;
             }
             else
             {
                 // Consider any blacklisted color as unseeable
-                if (unseeables.Contains(minColor))
+                if (unseeables.Contains(colorLevel))
                     seeable = false;
             }
             return seeable;
