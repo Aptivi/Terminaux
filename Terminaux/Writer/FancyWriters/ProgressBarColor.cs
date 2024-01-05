@@ -74,7 +74,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterColor.WritePlain(RenderProgressPlain(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, DrawBorder, Targeted));
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -246,7 +246,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterColor.WritePlain(RenderProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, BackgroundColor, DrawBorder, Targeted));
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -382,7 +382,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterColor.WritePlain(RenderProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, BackgroundColor, DrawBorder, Targeted));
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -433,7 +433,7 @@ namespace Terminaux.Writer.FancyWriters
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string('*', times));
                 return progBuilder.ToString();
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -495,7 +495,7 @@ namespace Terminaux.Writer.FancyWriters
                 progBuilder.Append(ColorTools.currentBackgroundColor.VTSequenceBackground);
                 return progBuilder.ToString();
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);

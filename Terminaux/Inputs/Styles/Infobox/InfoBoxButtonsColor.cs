@@ -720,7 +720,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     }
                 }
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 cancel = true;
                 Debug.WriteLine(ex.StackTrace);

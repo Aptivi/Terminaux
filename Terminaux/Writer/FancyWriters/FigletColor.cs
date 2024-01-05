@@ -82,7 +82,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Vars), false);
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -102,7 +102,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Color, ColorTools.currentBackgroundColor, Vars), false);
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -123,7 +123,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -143,7 +143,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Color, ColorTools.currentBackgroundColor, Vars), false);
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -164,7 +164,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);

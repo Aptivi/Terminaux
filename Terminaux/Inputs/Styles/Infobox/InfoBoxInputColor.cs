@@ -608,7 +608,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);

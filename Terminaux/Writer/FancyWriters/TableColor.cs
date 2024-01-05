@@ -50,7 +50,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterColor.WritePlain(RenderTablePlain(Headers, Rows, Margin, SeparateRows, CellOptions));
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -75,7 +75,7 @@ namespace Terminaux.Writer.FancyWriters
                 var back = ColorTools.currentBackgroundColor;
                 TextWriterColor.WritePlain(RenderTable(Headers, Rows, Margin, sep, header, value, back, SeparateRows, CellOptions));
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -115,7 +115,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterColor.WritePlain(RenderTable(Headers, Rows, Margin, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, SeparateRows, CellOptions));
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -216,7 +216,7 @@ namespace Terminaux.Writer.FancyWriters
                 }
                 return table.ToString();
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -363,7 +363,7 @@ namespace Terminaux.Writer.FancyWriters
                 );
                 return table.ToString();
             }
-            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);

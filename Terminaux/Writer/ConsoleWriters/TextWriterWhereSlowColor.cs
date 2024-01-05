@@ -138,7 +138,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Return)
                         ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
                 }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                catch (Exception ex)
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -191,7 +191,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Write text in another place slowly
                     WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                catch (Exception ex)
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
@@ -385,7 +385,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     // Reset the colors
                     ConsoleExtensions.ResetColors();
                 }
-                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                catch (Exception ex)
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
