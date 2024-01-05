@@ -25,6 +25,7 @@ using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Textify.Sequences.Builder.Types;
 
@@ -345,11 +346,15 @@ namespace Terminaux.Colors.Selector
                         [UP]                 | Increase saturation
                         [TAB]                | Change color mode
                         [I]                  | Color information
+                        [V]                  | Color information (visual)
                         """
                     );
                     break;
                 case ConsoleKey.I:
                     ShowColorInfo(selectedColor);
+                    break;
+                case ConsoleKey.V:
+                    ShowColorInfoVisually(selectedColor);
                     break;
                 case ConsoleKey.Enter:
                     bail = true;
@@ -405,11 +410,15 @@ namespace Terminaux.Colors.Selector
                         [RIGHT]              | Next color
                         [TAB]                | Change color mode
                         [I]                  | Color information
+                        [V]                  | Color information (visual)
                         """
                     );
                     break;
                 case ConsoleKey.I:
                     ShowColorInfo(selectedColor);
+                    break;
+                case ConsoleKey.V:
+                    ShowColorInfoVisually(selectedColor);
                     break;
                 case ConsoleKey.Enter:
                     bail = true;
@@ -465,11 +474,15 @@ namespace Terminaux.Colors.Selector
                         [RIGHT]              | Next color
                         [TAB]                | Change color mode
                         [I]                  | Color information
+                        [V]                  | Color information (visual)
                         """
                     );
                     break;
                 case ConsoleKey.I:
                     ShowColorInfo(selectedColor);
+                    break;
+                case ConsoleKey.V:
+                    ShowColorInfoVisually(selectedColor);
                     break;
                 case ConsoleKey.Enter:
                     bail = true;
@@ -645,6 +658,88 @@ namespace Terminaux.Colors.Selector
                     - Value:          {{hsv.ValueWhole,3}}
                 """
             );
+        }
+
+        private static void ShowColorInfoVisually(Color selectedColor)
+        {
+            ShowColorUsingBackground(
+                "Color info",
+                selectedColor
+            );
+            ShowColorUsingBackground(
+                "Color info (Protanomaly)",
+                selectedColor,
+                true
+            );
+            ShowColorUsingBackground(
+                "Color info (Protanopia)",
+                selectedColor,
+                true,
+                TransformationFormula.Protan, 1.0
+            );
+            ShowColorUsingBackground(
+                "Color info (Deuteranomaly)",
+                selectedColor,
+                true,
+                TransformationFormula.Deutan
+            );
+            ShowColorUsingBackground(
+                "Color info (Deuteranopia)",
+                selectedColor,
+                true,
+                TransformationFormula.Deutan, 1.0
+            );
+            ShowColorUsingBackground(
+                "Color info (Tritanomaly)",
+                selectedColor,
+                true,
+                TransformationFormula.Tritan
+            );
+            ShowColorUsingBackground(
+                "Color info (Tritanopia)",
+                selectedColor,
+                true,
+                TransformationFormula.Tritan, 1.0
+            );
+            ShowColorUsingBackground(
+                "Color info (Monochromacy)",
+                selectedColor,
+                true,
+                TransformationFormula.Monochromacy
+            );
+            ShowColorUsingBackground(
+                "Color info (Inverse)",
+                selectedColor,
+                true,
+                TransformationFormula.Inverse
+            );
+            ShowColorUsingBackground(
+                "Color info (Blue Monochromacy)",
+                selectedColor,
+                true,
+                TransformationFormula.BlueScale
+            );
+            ShowColorUsingBackground(
+                "Color info (Green Monochromacy)",
+                selectedColor,
+                true,
+                TransformationFormula.GreenScale
+            );
+            ShowColorUsingBackground(
+                "Color info (Red Monochromacy)",
+                selectedColor,
+                true,
+                TransformationFormula.RedScale
+            );
+        }
+
+        private static void ShowColorUsingBackground(string localizedTextTitle, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
+        {
+            selectedColor =
+                colorBlind ?
+                ColorTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
+                selectedColor;
+            InfoBoxColor.WriteInfoBoxColorBack(localizedTextTitle, ColorTools.GetGray(selectedColor), selectedColor);
         }
     }
 }
