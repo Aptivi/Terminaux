@@ -346,9 +346,6 @@ namespace Terminaux.Writer.ConsoleWriters
 
                     // Write the text to console
                     WritePlain(Text, settings, Line, vars);
-
-                    // Reset the colors
-                    ConsoleExtensions.ResetColors();
                 }
                 catch (Exception ex)
                 {
