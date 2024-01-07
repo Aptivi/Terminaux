@@ -68,30 +68,34 @@ namespace Terminaux.Reader
         /// <summary>
         /// Reads the input with password character masking
         /// </summary>
-        public static string ReadPassword() =>
-            Read("", "", true);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadPassword(bool interruptible = false) =>
+            Read("", "", true, false, interruptible);
 
         /// <summary>
         /// Reads the input with password character masking
         /// </summary>
         /// <param name="settings">Settigns containing reader-related settings</param>
-        public static string ReadPassword(TermReaderSettings settings) =>
-            Read("", "", settings, true);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadPassword(TermReaderSettings settings, bool interruptible = false) =>
+            Read("", "", settings, true, false, interruptible);
 
         /// <summary>
         /// Reads the input with password character masking
         /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
-        public static string ReadPassword(string inputPrompt) =>
-            Read(inputPrompt, "", true);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadPassword(string inputPrompt, bool interruptible = false) =>
+            Read(inputPrompt, "", true, false, interruptible);
 
         /// <summary>
         /// Reads the input with password character masking
         /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="settings">Settigns containing reader-related settings</param>
-        public static string ReadPassword(string inputPrompt, TermReaderSettings settings) =>
-            Read(inputPrompt, "", settings, true);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadPassword(string inputPrompt, TermReaderSettings settings, bool interruptible = false) =>
+            Read(inputPrompt, "", settings, true, false, interruptible);
 
         /// <summary>
         /// Reads the input

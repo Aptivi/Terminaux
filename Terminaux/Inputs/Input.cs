@@ -47,23 +47,26 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Reads the line from the console
         /// </summary>
-        public static string ReadLine() =>
-            ReadLine("", "", GlobalReaderSettings);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLine(bool interruptible = false) =>
+            ReadLine("", "", GlobalReaderSettings, interruptible);
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
-        public static string ReadLine(string InputText) =>
-            ReadLine(InputText, "", GlobalReaderSettings);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLine(string InputText, bool interruptible = false) =>
+            ReadLine(InputText, "", GlobalReaderSettings, interruptible);
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
-        public static string ReadLine(string InputText, string DefaultValue) =>
-            ReadLine(InputText, DefaultValue, GlobalReaderSettings);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLine(string InputText, string DefaultValue, bool interruptible = false) =>
+            ReadLine(InputText, DefaultValue, GlobalReaderSettings, interruptible);
 
         /// <summary>
         /// Reads the line from the console
@@ -71,29 +74,33 @@ namespace Terminaux.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings) =>
-            ReadLine(InputText, DefaultValue, false, settings);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings, bool interruptible = false) =>
+            ReadLine(InputText, DefaultValue, false, settings, interruptible);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
-        public static string ReadLineWrapped() =>
-            ReadLineWrapped("", "", GlobalReaderSettings);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLineWrapped(bool interruptible = false) =>
+            ReadLineWrapped("", "", GlobalReaderSettings, interruptible);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         /// <param name="InputText">Input text to write</param>
-        public static string ReadLineWrapped(string InputText) =>
-            ReadLineWrapped(InputText, "", GlobalReaderSettings);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLineWrapped(string InputText, bool interruptible = false) =>
+            ReadLineWrapped(InputText, "", GlobalReaderSettings, interruptible);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
-        public static string ReadLineWrapped(string InputText, string DefaultValue) =>
-            ReadLineWrapped(InputText, DefaultValue, GlobalReaderSettings);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLineWrapped(string InputText, string DefaultValue, bool interruptible = false) =>
+            ReadLineWrapped(InputText, DefaultValue, GlobalReaderSettings, interruptible);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
@@ -101,8 +108,9 @@ namespace Terminaux.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings) =>
-            ReadLine(InputText, DefaultValue, true, settings);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings, bool interruptible = false) =>
+            ReadLine(InputText, DefaultValue, true, settings, interruptible);
 
         /// <summary>
         /// Reads the line from the console unsafely. This doesn't wait until the screensaver lock mode is released.
@@ -110,8 +118,9 @@ namespace Terminaux.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
-        public static string ReadLine(string InputText, string DefaultValue, bool OneLineWrap = false) =>
-            ReadLine(InputText, DefaultValue, OneLineWrap, GlobalReaderSettings);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLine(string InputText, string DefaultValue, bool OneLineWrap = false, bool interruptible = false) =>
+            ReadLine(InputText, DefaultValue, OneLineWrap, GlobalReaderSettings, interruptible);
 
         /// <summary>
         /// Reads the line from the console unsafely. This doesn't wait until the screensaver lock mode is released.
@@ -120,47 +129,53 @@ namespace Terminaux.Inputs
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLine(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null) =>
-            TermReader.Read(InputText, DefaultValue, settings, false, OneLineWrap);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLine(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null, bool interruptible = false) =>
+            TermReader.Read(InputText, DefaultValue, settings, false, OneLineWrap, interruptible);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
-        public static string ReadLineNoInput()
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLineNoInput(bool interruptible = false)
         {
             if (!string.IsNullOrEmpty(CurrentMask))
-                return ReadLineNoInput(CurrentMask[0]);
+                return ReadLineNoInput(CurrentMask[0], interruptible);
             else
-                return ReadLineNoInput(Convert.ToChar("\0"));
+                return ReadLineNoInput(Convert.ToChar("\0"), interruptible);
         }
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
-        public static string ReadLineNoInput(TermReaderSettings settings)
+        /// <param name="settings">Reader settings</param>
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLineNoInput(TermReaderSettings settings, bool interruptible = false)
         {
             if (!string.IsNullOrEmpty(CurrentMask))
-                return ReadLineNoInput(CurrentMask[0], settings);
+                return ReadLineNoInput(CurrentMask[0], settings, interruptible);
             else
-                return ReadLineNoInput(Convert.ToChar("\0"), settings);
+                return ReadLineNoInput(Convert.ToChar("\0"), settings, interruptible);
         }
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
-        public static string ReadLineNoInput(char MaskChar) =>
-            ReadLineNoInput(MaskChar, GlobalReaderSettings);
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLineNoInput(char MaskChar, bool interruptible = false) =>
+            ReadLineNoInput(MaskChar, GlobalReaderSettings, interruptible);
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
         /// <param name="settings">Reader settings</param>
-        public static string ReadLineNoInput(char MaskChar, TermReaderSettings settings)
+        /// <param name="interruptible">Whether the prompt is interruptible or not</param>
+        public static string ReadLineNoInput(char MaskChar, TermReaderSettings settings, bool interruptible = false)
         {
             settings.PasswordMaskChar = MaskChar;
-            string pass = TermReader.ReadPassword(settings);
+            string pass = TermReader.ReadPassword(settings, interruptible);
             return pass;
         }
 
