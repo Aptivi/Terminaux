@@ -351,7 +351,7 @@ namespace Terminaux.Colors
             // First, check the values
             if (type < ColorType.TrueColor || type > ColorType._16Color)
                 throw new TerminauxException("Color type is invalid");
-            if (TryParseColor(type == ColorType.TrueColor ? $"{colorR};{colorG};{colorB}" : $"{colorLevel}"))
+            if (!TryParseColor(type == ColorType.TrueColor ? $"{colorR};{colorG};{colorB}" : $"{colorLevel}"))
                 throw new TerminauxException("Color specifier for seeability is invalid");
 
             // Forbid setting these colors as they're considered too dark
