@@ -36,6 +36,11 @@ namespace Terminaux.Base
         private static bool ResizeDetected;
 
         /// <summary>
+        /// Whether to run the base console resize handler or not after running a custom action
+        /// </summary>
+        public static bool RunEssentialHandler { get; set; } = true;
+
+        /// <summary>
         /// This property checks to see if the console has been resized since the last time it has been called or the listener has started.
         /// </summary>
         /// <param name="reset">Reset the resized value once this is called</param>
@@ -117,9 +122,17 @@ namespace Terminaux.Base
                         ResizeDetected = true;
                         CurrentWindowWidth = Console.WindowWidth;
                         CurrentWindowHeight = Console.WindowHeight;
+
+                        // If the custom handler is set, run it and (optionally) run the custom handler with it. Otherwise, run the
+                        // essential handler regardless of the value of RunEssentialHandler to maintain consistency.
                         if (customHandler is not null)
+                        {
                             customHandler();
-                        EssentialHandler();
+                            if (RunEssentialHandler)
+                                EssentialHandler();
+                        }
+                        else
+                            EssentialHandler();
                     }
                 }
             }
