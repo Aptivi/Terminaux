@@ -30,17 +30,32 @@ namespace Terminaux.Colors.Models
     public class RedGreenBlue : IEquatable<RedGreenBlue>
     {
         /// <summary>
-        /// The red color value
+        /// The red color value [0 -> 255]
         /// </summary>
         public int R { get; private set; }
         /// <summary>
-        /// The green color value
+        /// The green color value [0 -> 255]
         /// </summary>
         public int G { get; private set; }
         /// <summary>
-        /// The blue color value
+        /// The blue color value [0 -> 255]
         /// </summary>
         public int B { get; private set; }
+        /// <summary>
+        /// The red color value [0.0 -> 0.1]
+        /// </summary>
+        public double RNormalized =>
+            R / 255d;
+        /// <summary>
+        /// The green color value [0.0 -> 0.1]
+        /// </summary>
+        public double GNormalized =>
+            G / 255d;
+        /// <summary>
+        /// The blue color value [0.0 -> 0.1]
+        /// </summary>
+        public double BNormalized =>
+            B / 255d;
 
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;

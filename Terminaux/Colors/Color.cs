@@ -122,20 +122,35 @@ namespace Terminaux.Colors
         public string VTSequenceBackgroundTrueColor =>
             $"\u001b[48;2;{PlainSequenceTrueColor}m";
         /// <summary>
-        /// The red color value
+        /// The red color value [0 -> 255]
         /// </summary>
         public int R =>
             RGB.R;
         /// <summary>
-        /// The green color value
+        /// The green color value [0 -> 255]
         /// </summary>
         public int G =>
             RGB.G;
         /// <summary>
-        /// The blue color value
+        /// The blue color value [0 -> 255]
         /// </summary>
         public int B =>
             RGB.B;
+        /// <summary>
+        /// The red color value [0.0 -> 0.1]
+        /// </summary>
+        public double RNormalized =>
+            RGB.RNormalized;
+        /// <summary>
+        /// The green color value [0.0 -> 0.1]
+        /// </summary>
+        public double GNormalized =>
+            RGB.GNormalized;
+        /// <summary>
+        /// The blue color value [0.0 -> 0.1]
+        /// </summary>
+        public double BNormalized =>
+            RGB.BNormalized;
         /// <summary>
         /// Hexadecimal representation of the color
         /// </summary>
