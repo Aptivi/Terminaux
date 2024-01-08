@@ -1,15 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyTitle>Terminaux</AssemblyTitle>
-    <AssemblyDescription>Console Manipulation Library</AssemblyDescription>
-    <Description>A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.</Description>
+    <AssemblyTitle>Terminaux.ResizeListener</AssemblyTitle>
+    <AssemblyDescription>Console Manipulation Library - Resize Listener</AssemblyDescription>
+    <Description>
+      A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.
+      
+      This provides developers the console resize listener component for both .NET Framework 4.8 and .NET 8.0 applications.
+    </Description>
     <Version>2.4.0</Version>
     <Authors>Aptivi</Authors>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
     <DebugType>portable</DebugType>
-    <AssemblyName>Terminaux</AssemblyName>
-    <PackageId>Terminaux</PackageId>
+    <AssemblyName>Terminaux.ResizeListener</AssemblyName>
+    <PackageId>Terminaux.ResizeListener</PackageId>
     <PackageTags>console;shell;readline;gnu;cui;tui;cli;manipulation;console;vt;sequences;color;vt100;truecolor;library;csharp;reader;input;writer;styles;formatter</PackageTags>
     <PackageProjectUrl>https://github.com/Aptivi/Terminaux</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
@@ -38,10 +42,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="OfficialAppIcon-Terminaux-512.png">
+    <None Include="..\Terminaux\OfficialAppIcon-Terminaux-512.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SpecProbe.Software" Version="1.2.0.2" Condition="'$(TargetFramework)' == 'net8.0'" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -54,25 +62,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Figletize" Version="0.7.0.2" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="SpecProbe.Software" Version="1.2.0.2" />
-    <PackageReference Include="Textify.Offline" Version="1.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Base\Resources\ConsoleResources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ConsoleResources.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Base\Resources\ConsoleResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ConsoleResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
   </ItemGroup>
 
 </Project>

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.ConsoleDemo", "Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Tests", "Terminaux.Tests\Terminaux.Tests.csproj", "{23C5263C-ACEF-4135-B684-9C38279B88AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminaux.ResizeListener", "Terminaux.ResizeListener\Terminaux.ResizeListener.csproj", "{B3D948F4-DEF1-474E-BB78-EF77FB0923AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{23C5263C-ACEF-4135-B684-9C38279B88AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C5263C-ACEF-4135-B684-9C38279B88AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C5263C-ACEF-4135-B684-9C38279B88AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3D948F4-DEF1-474E-BB78-EF77FB0923AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3D948F4-DEF1-474E-BB78-EF77FB0923AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3D948F4-DEF1-474E-BB78-EF77FB0923AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3D948F4-DEF1-474E-BB78-EF77FB0923AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

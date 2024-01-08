@@ -20,22 +20,23 @@
 using System;
 using System.Diagnostics;
 using System.Threading;
-using Terminaux.Base.Buffered;
 using Terminaux.Reader;
+using Terminaux.Base.Buffered;
 
 #if NET8_0_OR_GREATER
+using SpecProbe.Platform;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 #endif
 
-namespace Terminaux.Base
+namespace Terminaux.ResizeListener
 {
     /// <summary>
     /// The console resize listener module
     /// </summary>
     public static class ConsoleResizeListener
     {
-        internal static bool usesSigWinch;
+        internal static bool usesSigWinch = false;
         private static bool ResizeDetected;
         private static int CurrentWindowWidth;
         private static int CurrentWindowHeight;
@@ -86,7 +87,7 @@ namespace Terminaux.Base
 
             // PosixSignalRegistration is not available for .NET Framework, so we need to 
 #if NET8_0_OR_GREATER
-            usesSigWinch = ConsolePlatform.IsOnUnix();
+            usesSigWinch = PlatformHelper.IsOnUnix();
             if (usesSigWinch)
             {
                 // This is to get around the platform compatibility since we've been already guarded by ConsolePlatform.IsOnUnix().
@@ -96,16 +97,16 @@ namespace Terminaux.Base
             else
             {
 #endif
-                if (!ResizeListenerThread.IsAlive)
+            if (!ResizeListenerThread.IsAlive)
+            {
+                if (customHandler is not null)
                 {
-                    if (customHandler is not null)
-                    {
-                        ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
-                        ResizeListenerThread.Start(customHandler);
-                    }
-                    else
-                        ResizeListenerThread.Start(null);
+                    ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
+                    ResizeListenerThread.Start(customHandler);
                 }
+                else
+                    ResizeListenerThread.Start(null);
+            }
 #if NET8_0_OR_GREATER
             }
 #endif
