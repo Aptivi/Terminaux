@@ -207,7 +207,10 @@ namespace Terminaux.Inputs.Styles.Selection
                         int pages = AllAnswers.Count / answersPerPage;
                         if (AllAnswers.Count % answersPerPage == 0)
                             pages--;
-                        var selectionBuilder = new StringBuilder(CsiSequences.GenerateCsiEraseInDisplay(2));
+                        var selectionBuilder = new StringBuilder(
+                            $"{ColorTools.currentBackgroundColor.VTSequenceBackground}" +
+                            CsiSequences.GenerateCsiEraseInDisplay(2)
+                        );
 
                         // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,
                         // causing confusion. Pages, again, are one-based.
