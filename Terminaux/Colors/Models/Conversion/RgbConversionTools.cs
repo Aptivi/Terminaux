@@ -244,6 +244,72 @@ namespace Terminaux.Colors.Models.Conversion
             return new((int)redNoWhite, (int)greenNoWhite, (int)blueNoWhite);
         }
 
+        /// <summary>
+        /// Converts the YIQ color model to RGB
+        /// </summary>
+        /// <param name="yiq">Instance of YIQ</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ConvertFrom(LumaInPhaseQuadrature yiq)
+        {
+            if (yiq is null)
+                throw new TerminauxException("Can't convert a null YIQ instance to RGB!");
+
+            // Get the RGB by matrix transform
+            int r = (int)Math.Round((yiq.Luma + (0.956 * yiq.InPhase) + (0.621 * yiq.Quadrature)) * 255);
+            int g = (int)Math.Round((yiq.Luma + (-0.272 * yiq.InPhase) + (-0.647 * yiq.Quadrature)) * 255);
+            int b = (int)Math.Round((yiq.Luma + (-1.105 * yiq.InPhase) + (1.702 * yiq.Quadrature)) * 255);
+
+            // Verify that we don't go out of bounds
+            if (r < 0)
+                r = 0;
+            else if (r > 255)
+                r = 255;
+            if (g < 0)
+                g = 0;
+            else if (g > 255)
+                g = 255;
+            if (b < 0)
+                b = 0;
+            else if (b > 255)
+                b = 255;
+
+            // Install the values
+            return new(r, g, b);
+        }
+
+        /// <summary>
+        /// Converts the YUV color model to RGB
+        /// </summary>
+        /// <param name="yuv">Instance of YUV</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ConvertFrom(LumaChromaUv yuv)
+        {
+            if (yuv is null)
+                throw new TerminauxException("Can't convert a null YUV instance to RGB!");
+
+            // Get the RGB by matrix transform
+            int r = (int)Math.Round(yuv.Luma + 1.4075 * (yuv.ChromaV - 128));
+            int g = (int)Math.Round(yuv.Luma - 0.3455 * (yuv.ChromaU - 128) - (0.7169 * (yuv.ChromaV - 128)));
+            int b = (int)Math.Round(yuv.Luma + 1.7790 + (yuv.ChromaU - 128));
+
+            // Verify that we don't go out of bounds
+            if (r < 0)
+                r = 0;
+            else if (r > 255)
+                r = 255;
+            if (g < 0)
+                g = 0;
+            else if (g > 255)
+                g = 255;
+            if (b < 0)
+                b = 0;
+            else if (b > 255)
+                b = 255;
+
+            // Install the values
+            return new(r, g, b);
+        }
+
         private static double GetRgbValueFromHue(double variable1, double variable2, double variableHue)
         {
             // Check the hue

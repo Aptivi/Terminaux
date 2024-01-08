@@ -114,6 +114,42 @@ namespace Terminaux.Colors.Models.Conversion
             return new(hue, saturation, value);
         }
 
+        /// <summary>
+        /// Converts the YIQ color model to HSV
+        /// </summary>
+        /// <param name="yiq">Instance of YIQ</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static HueSaturationValue ConvertFrom(LumaInPhaseQuadrature yiq)
+        {
+            if (yiq is null)
+                throw new TerminauxException("Can't convert a null YIQ instance to HSV!");
+
+            // Get the RGB values
+            var rgb = RgbConversionTools.ConvertFrom(yiq);
+
+            // Do the conversion
+            var (hue, saturation, value) = GetHsvFromRgb(rgb);
+            return new(hue, saturation, value);
+        }
+
+        /// <summary>
+        /// Converts the YUV color model to HSV
+        /// </summary>
+        /// <param name="yuv">Instance of YUV</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static HueSaturationValue ConvertFrom(LumaChromaUv yuv)
+        {
+            if (yuv is null)
+                throw new TerminauxException("Can't convert a null YUV instance to HSV!");
+
+            // Get the RGB values
+            var rgb = RgbConversionTools.ConvertFrom(yuv);
+
+            // Do the conversion
+            var (hue, saturation, value) = GetHsvFromRgb(rgb);
+            return new(hue, saturation, value);
+        }
+
         private static (double hue, double saturation, double value) GetHsvFromRgb(RedGreenBlue rgb)
         {
             if (rgb is null)

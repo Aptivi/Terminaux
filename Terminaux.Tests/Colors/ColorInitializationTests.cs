@@ -1752,5 +1752,129 @@ namespace Terminaux.Tests.Colors
             ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
             ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
         }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YIQ)
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYiq()
+        {
+            // Create instance
+            var ColorInstance = new Color("yiq:0.35697647058823523;0.21090980392156861;-0.021686274509803937");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(80);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
+            ColorInstance.Hex.ShouldBe("#8B5016");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YIQ) using the implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYiqImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "yiq:0.35697647058823523;0.21090980392156861;-0.021686274509803937";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(80);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
+            ColorInstance.Hex.ShouldBe("#8B5016");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YUV)
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYuv()
+        {
+            // Create instance
+            var ColorInstance = new Color("yuv:91.028999999999982;89.044576;162.216096");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;54");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;54m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;54m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(80);
+            ColorInstance.B.ShouldBe(54);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
+            ColorInstance.Hex.ShouldBe("#8B5036");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YUV) using the implicit operator
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYuvImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "yuv:91.028999999999982;89.044576;162.216096";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;54");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;54m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;54m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(80);
+            ColorInstance.B.ShouldBe(54);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
+            ColorInstance.Hex.ShouldBe("#8B5036");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
     }
 }

@@ -253,5 +253,95 @@ namespace Terminaux.Tests.Colors
             rgb.G.ShouldBe(79);
             rgb.B.ShouldBe(22);
         }
+
+        /// <summary>
+        /// Tests converting an RGB color to YIQ
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestConvertRgbToYiq()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(80);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to YIQ
+            var yiq = YiqConversionTools.ConvertFrom(ColorInstance.RGB);
+
+            // Check for property correctness
+            yiq.Luma.ShouldBe(0.35697647058823523);
+            yiq.InPhase.ShouldBe(0.21090980392156861);
+            yiq.Quadrature.ShouldBe(-0.021686274509803937);
+
+            // Now, convert back to RGB
+            var rgb = RgbConversionTools.ConvertFrom(yiq);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(139);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YUV
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestConvertRgbToYuv()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.R.ShouldBe(139);
+            ColorInstance.G.ShouldBe(80);
+            ColorInstance.B.ShouldBe(22);
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to YUV
+            var yuv = YuvConversionTools.ConvertFrom(ColorInstance.RGB);
+
+            // Check for property correctness
+            yuv.Luma.ShouldBe(91.028999999999982);
+            yuv.ChromaU.ShouldBe(89.044576);
+            yuv.ChromaV.ShouldBe(162.216096);
+
+            // Now, convert back to RGB
+            var rgb = RgbConversionTools.ConvertFrom(yuv);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(139);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(54);
+        }
     }
 }

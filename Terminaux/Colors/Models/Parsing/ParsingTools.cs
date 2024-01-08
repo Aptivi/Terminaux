@@ -57,7 +57,9 @@ namespace Terminaux.Colors.Models.Parsing
                 HslParsingTools.IsSpecifierAndValueValid(specifier) ||
                 HsvParsingTools.IsSpecifierAndValueValid(specifier) ||
                 RgbParsingTools.IsSpecifierAndValueValid(specifier) ||
-                RybParsingTools.IsSpecifierAndValueValid(specifier);
+                RybParsingTools.IsSpecifierAndValueValid(specifier) ||
+                YiqParsingTools.IsSpecifierAndValueValid(specifier) ||
+                YuvParsingTools.IsSpecifierAndValueValid(specifier);
         }
 
         /// <summary>
@@ -137,6 +139,8 @@ namespace Terminaux.Colors.Models.Parsing
                 HslParsingTools.IsSpecifierValid(specifier) ? HslParsingTools.ParseSpecifierToRgb(specifier, settings) :
                 HsvParsingTools.IsSpecifierValid(specifier) ? HsvParsingTools.ParseSpecifierToRgb(specifier, settings) :
                 RybParsingTools.IsSpecifierValid(specifier) ? RybParsingTools.ParseSpecifierToRgb(specifier, settings) :
+                YiqParsingTools.IsSpecifierValid(specifier) ? YiqParsingTools.ParseSpecifierToRgb(specifier, settings) :
+                YuvParsingTools.IsSpecifierValid(specifier) ? YuvParsingTools.ParseSpecifierToRgb(specifier, settings) :
 
                 // Colors and hash
                 usesColorId ? tuple.rgb :

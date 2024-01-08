@@ -116,6 +116,42 @@ namespace Terminaux.Colors.Models.Conversion
             return new(key, cmy);
         }
 
+        /// <summary>
+        /// Converts the YIQ color model to CMYK
+        /// </summary>
+        /// <param name="yiq">Instance of YIQ</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static CyanMagentaYellowKey ConvertFrom(LumaInPhaseQuadrature yiq)
+        {
+            if (yiq is null)
+                throw new TerminauxException("Can't convert a null YIQ instance to CMYK!");
+
+            // Get the level of each color
+            var rgb = RgbConversionTools.ConvertFrom(yiq);
+            var (cmy, key) = GetCmykFromRgb(rgb);
+
+            // Install the values
+            return new(key, cmy);
+        }
+
+        /// <summary>
+        /// Converts the YUV color model to CMYK
+        /// </summary>
+        /// <param name="yuv">Instance of YUV</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static CyanMagentaYellowKey ConvertFrom(LumaChromaUv yuv)
+        {
+            if (yuv is null)
+                throw new TerminauxException("Can't convert a null YUV instance to CMYK!");
+
+            // Get the level of each color
+            var rgb = RgbConversionTools.ConvertFrom(yuv);
+            var (cmy, key) = GetCmykFromRgb(rgb);
+
+            // Install the values
+            return new(key, cmy);
+        }
+
         private static (CyanMagentaYellow cmy, double k) GetCmykFromRgb(RedGreenBlue rgb)
         {
             double levelR = (double)rgb.R / 255;
