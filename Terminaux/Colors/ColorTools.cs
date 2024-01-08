@@ -108,19 +108,29 @@ namespace Terminaux.Colors
         /// <summary>
         /// Gets the gray color according to the brightness of the background color
         /// </summary>
-        public static Color GetGray() =>
-            GetGray(currentBackgroundColor);
+        /// <param name="contrastType">Contrast type</param>
+        public static Color GetGray(ColorContrastType contrastType = ColorContrastType.Light) =>
+            GetGray(currentBackgroundColor, contrastType);
 
         /// <summary>
         /// Gets the gray color according to the brightness of the specified color
         /// </summary>
         /// <param name="color">Target color to use when getting the gray color</param>
-        public static Color GetGray(Color color)
+        /// <param name="contrastType">Contrast type</param>
+        public static Color GetGray(Color color, ColorContrastType contrastType = ColorContrastType.Light)
         {
-            if (color.Brightness == ColorBrightness.Light)
-                return new Color(ConsoleColors.Black);
-            else
-                return new Color(ConsoleColors.Gray);
+            switch (contrastType)
+            {
+                case ColorContrastType.Half:
+                    return ColorContrast.GetContrastColorHalf(color);
+                case ColorContrastType.Ntsc:
+                    return ColorContrast.GetContrastColorNtsc(color);
+                default:
+                    if (color.Brightness == ColorBrightness.Light)
+                        return new Color(ConsoleColors.Black);
+                    else
+                        return new Color(ConsoleColors.Gray);
+            }
         }
 
         /// <summary>

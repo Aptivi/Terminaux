@@ -172,5 +172,111 @@ namespace Terminaux.Tests.Colors
         public string TestGetContrastColorHalf(string speciifer) =>
             ColorContrast.GetContrastColorHalf(speciifer).Hex;
 
+        /// <summary>
+        /// Tests trying to get the contrast color (NTSC)
+        /// </summary>
+        [TestCase("#EF4444", ExpectedResult = "#FFFFFF")]
+        [TestCase("#FAA31B", ExpectedResult = "#000000")]
+        [TestCase("#FFF000", ExpectedResult = "#000000")]
+        [TestCase("#82C341", ExpectedResult = "#000000")]
+        [TestCase("#009F75", ExpectedResult = "#FFFFFF")]
+        [TestCase("#88C6ED", ExpectedResult = "#000000")]
+        [TestCase("#394BA0", ExpectedResult = "#FFFFFF")]
+        [TestCase("#D54799", ExpectedResult = "#FFFFFF")]
+        [TestCase("#CCCCCC", ExpectedResult = "#000000")]
+        [TestCase("#999999", ExpectedResult = "#000000")]
+        [TestCase("#666666", ExpectedResult = "#FFFFFF")]
+        [TestCase("#333333", ExpectedResult = "#FFFFFF")]
+        [TestCase("#FF0000", ExpectedResult = "#FFFFFF")]
+        [TestCase("#00FF00", ExpectedResult = "#000000")]
+        [TestCase("#0000FF", ExpectedResult = "#FFFFFF")]
+        [TestCase("#FFFF00", ExpectedResult = "#000000")]
+        [TestCase("#FF00FF", ExpectedResult = "#FFFFFF")]
+        [TestCase("#00FFFF", ExpectedResult = "#000000")]
+        [TestCase("#FFCC00", ExpectedResult = "#000000")]
+        [TestCase("#CCFF00", ExpectedResult = "#000000")]
+        [TestCase("#00CCFF", ExpectedResult = "#000000")]
+        [TestCase("#FF6600", ExpectedResult = "#000000")]
+        [TestCase("#FF0066", ExpectedResult = "#FFFFFF")]
+        [TestCase("#006666", ExpectedResult = "#FFFFFF")]
+        [TestCase("#0099CC", ExpectedResult = "#FFFFFF")]
+        [TestCase("#666600", ExpectedResult = "#FFFFFF")]
+        [TestCase("#CC00CC", ExpectedResult = "#FFFFFF")]
+        [TestCase("#CC6666", ExpectedResult = "#000000")]
+        [Description("Querying")]
+        public string TestGetContrastColorUsingGetGrayNtsc(string speciifer) =>
+            ColorTools.GetGray(speciifer, ColorContrastType.Ntsc).Hex;
+
+        /// <summary>
+        /// Tests trying to get the contrast color (Half)
+        /// </summary>
+        [TestCase("#EF4444", ExpectedResult = "#000000")]
+        [TestCase("#FAA31B", ExpectedResult = "#000000")]
+        [TestCase("#FFF000", ExpectedResult = "#000000")]
+        [TestCase("#82C341", ExpectedResult = "#000000")]
+        [TestCase("#009F75", ExpectedResult = "#FFFFFF")]
+        [TestCase("#88C6ED", ExpectedResult = "#000000")]
+        [TestCase("#394BA0", ExpectedResult = "#FFFFFF")]
+        [TestCase("#D54799", ExpectedResult = "#000000")]
+        [TestCase("#CCCCCC", ExpectedResult = "#000000")]
+        [TestCase("#999999", ExpectedResult = "#000000")]
+        [TestCase("#666666", ExpectedResult = "#FFFFFF")]
+        [TestCase("#333333", ExpectedResult = "#FFFFFF")]
+        [TestCase("#FF0000", ExpectedResult = "#000000")]
+        [TestCase("#00FF00", ExpectedResult = "#FFFFFF")]
+        [TestCase("#0000FF", ExpectedResult = "#FFFFFF")]
+        [TestCase("#FFFF00", ExpectedResult = "#000000")]
+        [TestCase("#FF00FF", ExpectedResult = "#000000")]
+        [TestCase("#00FFFF", ExpectedResult = "#FFFFFF")]
+        [TestCase("#FFCC00", ExpectedResult = "#000000")]
+        [TestCase("#CCFF00", ExpectedResult = "#000000")]
+        [TestCase("#00CCFF", ExpectedResult = "#FFFFFF")]
+        [TestCase("#FF6600", ExpectedResult = "#000000")]
+        [TestCase("#FF0066", ExpectedResult = "#000000")]
+        [TestCase("#006666", ExpectedResult = "#FFFFFF")]
+        [TestCase("#0099CC", ExpectedResult = "#FFFFFF")]
+        [TestCase("#666600", ExpectedResult = "#FFFFFF")]
+        [TestCase("#CC00CC", ExpectedResult = "#000000")]
+        [TestCase("#CC6666", ExpectedResult = "#000000")]
+        [Description("Querying")]
+        public string TestGetContrastColorUsingGetGrayHalf(string speciifer) =>
+            ColorTools.GetGray(speciifer, ColorContrastType.Half).Hex;
+
+        /// <summary>
+        /// Tests trying to get the contrast color (Light)
+        /// </summary>
+        [TestCase("#EF4444", ExpectedResult = "#000000")]
+        [TestCase("#FAA31B", ExpectedResult = "#000000")]
+        [TestCase("#FFF000", ExpectedResult = "#000000")]
+        [TestCase("#82C341", ExpectedResult = "#000000")]
+        [TestCase("#009F75", ExpectedResult = "#000000")]
+        [TestCase("#88C6ED", ExpectedResult = "#000000")]
+        [TestCase("#394BA0", ExpectedResult = "#000000")]
+        [TestCase("#D54799", ExpectedResult = "#000000")]
+        [TestCase("#CCCCCC", ExpectedResult = "#000000")]
+        [TestCase("#999999", ExpectedResult = "#000000")]
+        [TestCase("#666666", ExpectedResult = "#000000")]
+        [TestCase("#333333", ExpectedResult = "#000000")]
+        [TestCase("#FF0000", ExpectedResult = "#000000")]
+        [TestCase("#00FF00", ExpectedResult = "#000000")]
+        [TestCase("#0000FF", ExpectedResult = "#000000")]
+        [TestCase("#FFFF00", ExpectedResult = "#000000")]
+        [TestCase("#FF00FF", ExpectedResult = "#000000")]
+        [TestCase("#00FFFF", ExpectedResult = "#000000")]
+        [TestCase("#FFCC00", ExpectedResult = "#000000")]
+        [TestCase("#CCFF00", ExpectedResult = "#000000")]
+        [TestCase("#00CCFF", ExpectedResult = "#000000")]
+        [TestCase("#FF6600", ExpectedResult = "#000000")]
+        [TestCase("#FF0066", ExpectedResult = "#000000")]
+        [TestCase("#006666", ExpectedResult = "#000000")]
+        [TestCase("#0099CC", ExpectedResult = "#000000")]
+        [TestCase("#666600", ExpectedResult = "#000000")]
+        [TestCase("#003045", ExpectedResult = "#C0C0C0")]
+        [TestCase("#CC00CC", ExpectedResult = "#000000")]
+        [TestCase("#CC6666", ExpectedResult = "#000000")]
+        [Description("Querying")]
+        public string TestGetContrastColorUsingGetGrayLight(string speciifer) =>
+            ColorTools.GetGray(speciifer, ColorContrastType.Light).Hex;
+
     }
 }
