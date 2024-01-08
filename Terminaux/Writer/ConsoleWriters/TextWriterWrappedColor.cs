@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Threading;
 using Terminaux.Colors;
 using System.Text;
 using Textify.General;

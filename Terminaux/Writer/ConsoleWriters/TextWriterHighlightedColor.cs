@@ -19,7 +19,6 @@
 
 using System;
 using System.Diagnostics;
-using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Reader;

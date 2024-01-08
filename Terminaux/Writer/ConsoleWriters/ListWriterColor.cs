@@ -20,7 +20,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using Terminaux.Colors;
 using System.Text;
 using System.Diagnostics;

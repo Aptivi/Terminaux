@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Threading;
 using Terminaux.Colors;
 using Figletize.Utilities;
 using Figletize;

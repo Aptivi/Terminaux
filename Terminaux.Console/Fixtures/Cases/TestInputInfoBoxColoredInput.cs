@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 

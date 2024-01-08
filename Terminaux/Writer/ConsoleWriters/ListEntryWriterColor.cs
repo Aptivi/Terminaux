@@ -20,7 +20,6 @@
 using System;
 using System.Diagnostics;
 using System.Text;
-using System.Threading;
 using Terminaux.Colors;
 
 namespace Terminaux.Writer.ConsoleWriters

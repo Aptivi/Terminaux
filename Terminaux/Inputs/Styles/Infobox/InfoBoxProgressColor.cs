@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Threading;
 using System.Collections.Generic;
 using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Colors;
