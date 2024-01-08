@@ -2545,6 +2545,54 @@ references:
   commentId: F:Terminaux.Colors.ColorBrightness.Light
   fullName: Terminaux.Colors.ColorBrightness.Light
   nameWithType: ColorBrightness.Light
+- uid: Terminaux.Colors.ColorContrast
+  name: ColorContrast
+  href: api/Terminaux.Colors.ColorContrast.html
+  commentId: T:Terminaux.Colors.ColorContrast
+  fullName: Terminaux.Colors.ColorContrast
+  nameWithType: ColorContrast
+- uid: Terminaux.Colors.ColorContrast.GetContrastColorHalf(Terminaux.Colors.Color)
+  name: GetContrastColorHalf(Color)
+  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_GetContrastColorHalf_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.ColorContrast.GetContrastColorHalf(Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.ColorContrast.GetContrastColorHalf(Terminaux.Colors.Color)
+  nameWithType: ColorContrast.GetContrastColorHalf(Color)
+- uid: Terminaux.Colors.ColorContrast.GetContrastColorHalf*
+  name: GetContrastColorHalf
+  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_GetContrastColorHalf_
+  commentId: Overload:Terminaux.Colors.ColorContrast.GetContrastColorHalf
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorContrast.GetContrastColorHalf
+  nameWithType: ColorContrast.GetContrastColorHalf
+- uid: Terminaux.Colors.ColorContrast.GetContrastColorNtsc(Terminaux.Colors.Color)
+  name: GetContrastColorNtsc(Color)
+  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_GetContrastColorNtsc_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.ColorContrast.GetContrastColorNtsc(Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.ColorContrast.GetContrastColorNtsc(Terminaux.Colors.Color)
+  nameWithType: ColorContrast.GetContrastColorNtsc(Color)
+- uid: Terminaux.Colors.ColorContrast.GetContrastColorNtsc*
+  name: GetContrastColorNtsc
+  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_GetContrastColorNtsc_
+  commentId: Overload:Terminaux.Colors.ColorContrast.GetContrastColorNtsc
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorContrast.GetContrastColorNtsc
+  nameWithType: ColorContrast.GetContrastColorNtsc
+- uid: Terminaux.Colors.ColorContrast.IsSeeable(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32)
+  name: IsSeeable(ColorType, int, int, int, int)
+  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_IsSeeable_Terminaux_Colors_ColorType_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Colors.ColorContrast.IsSeeable(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: IsSeeable(ColorType, Integer, Integer, Integer, Integer)
+  fullName: Terminaux.Colors.ColorContrast.IsSeeable(Terminaux.Colors.ColorType, int, int, int, int)
+  fullName.vb: Terminaux.Colors.ColorContrast.IsSeeable(Terminaux.Colors.ColorType, Integer, Integer, Integer, Integer)
+  nameWithType: ColorContrast.IsSeeable(ColorType, int, int, int, int)
+  nameWithType.vb: ColorContrast.IsSeeable(ColorType, Integer, Integer, Integer, Integer)
+- uid: Terminaux.Colors.ColorContrast.IsSeeable*
+  name: IsSeeable
+  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_IsSeeable_
+  commentId: Overload:Terminaux.Colors.ColorContrast.IsSeeable
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorContrast.IsSeeable
+  nameWithType: ColorContrast.IsSeeable
 - uid: Terminaux.Colors.ColorSettings
   name: ColorSettings
   href: api/Terminaux.Colors.ColorSettings.html
@@ -2742,22 +2790,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.GlobalSettings
   nameWithType: ColorTools.GlobalSettings
-- uid: Terminaux.Colors.ColorTools.IsSeeable(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32)
-  name: IsSeeable(ColorType, int, int, int, int)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_IsSeeable_Terminaux_Colors_ColorType_System_Int32_System_Int32_System_Int32_System_Int32_
-  commentId: M:Terminaux.Colors.ColorTools.IsSeeable(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32)
-  name.vb: IsSeeable(ColorType, Integer, Integer, Integer, Integer)
-  fullName: Terminaux.Colors.ColorTools.IsSeeable(Terminaux.Colors.ColorType, int, int, int, int)
-  fullName.vb: Terminaux.Colors.ColorTools.IsSeeable(Terminaux.Colors.ColorType, Integer, Integer, Integer, Integer)
-  nameWithType: ColorTools.IsSeeable(ColorType, int, int, int, int)
-  nameWithType.vb: ColorTools.IsSeeable(ColorType, Integer, Integer, Integer, Integer)
-- uid: Terminaux.Colors.ColorTools.IsSeeable*
-  name: IsSeeable
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_IsSeeable_
-  commentId: Overload:Terminaux.Colors.ColorTools.IsSeeable
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.IsSeeable
-  nameWithType: ColorTools.IsSeeable
 - uid: Terminaux.Colors.ColorTools.LinearRGBTosRGB(System.Double)
   name: LinearRGBTosRGB(double)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_LinearRGBTosRGB_System_Double_

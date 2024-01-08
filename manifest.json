@@ -215,6 +215,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.ColorContrast.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.ColorContrast.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.ColorSettings.yml",
       "output": {
         ".html": {
