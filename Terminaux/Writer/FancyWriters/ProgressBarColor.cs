@@ -195,7 +195,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="Targeted">Targeted percentage?</param>
         public static void WriteProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, ConsoleColors ProgressColor, ConsoleColors FrameColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, ConsoleColors.Black, DrawBorder, Targeted);
+            WriteProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, DrawBorder, Targeted);
 
         /// <summary>
         /// Writes the progress bar
@@ -398,47 +398,37 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="LeftWidthOffset">Width offset from the left</param>
         /// <param name="RightWidthOffset">Width offset from the right</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static string RenderProgressPlain(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, bool DrawBorder = true, bool Targeted = false)
-        {
-            try
-            {
-                // Get the final width offset
-                int FinalWidthOffset = LeftWidthOffset + RightWidthOffset;
+        public static string RenderProgressPlain(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, bool DrawBorder = true, bool Targeted = false) =>
+            RenderProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ColorTools.currentForegroundColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder, Targeted);
 
-                // Check the progress value
-                if (Progress > 100)
-                    Progress = 100;
-                if (Progress < 0)
-                    Progress = 0;
+        /// <summary>
+        /// Renders the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="LeftWidthOffset">Width offset from the left</param>
+        /// <param name="RightWidthOffset">Width offset from the right</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="Targeted">Targeted percentage?</param>
+        public static string RenderProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, Color ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
+            RenderProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder, Targeted);
 
-                // Draw the border
-                StringBuilder progBuilder = new();
-                if (DrawBorder)
-                {
-                    progBuilder.Append(
-                        BoxFrameColor.RenderBoxFrame(Left, Top, ConsoleWrapper.WindowWidth - FinalWidthOffset, 1,
-                            ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
-                            ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
-                            ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
-                            ProgressTools.ProgressLeftFrameChar, ProgressTools.ProgressRightFrameChar)
-                    );
-                }
-
-                // Draw the progress bar
-                int times = Targeted ?
-                    ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
-                    ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
-                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
-                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string('*', times));
-                return progBuilder.ToString();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-            }
-            return "";
-        }
+        /// <summary>
+        /// Renders the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="LeftWidthOffset">Width offset from the left</param>
+        /// <param name="RightWidthOffset">Width offset from the right</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="Targeted">Targeted percentage?</param>
+        public static string RenderProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, Color ProgressColor, Color FrameColor, bool DrawBorder = true, bool Targeted = false) =>
+            RenderProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, true, DrawBorder, Targeted);
 
         /// <summary>
         /// Renders the progress bar
@@ -453,7 +443,24 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="Targeted">Targeted percentage?</param>
-        public static string RenderProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true, bool Targeted = false)
+        public static string RenderProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true, bool Targeted = false) =>
+            RenderProgress(Progress, Left, Top, LeftWidthOffset, RightWidthOffset, ProgressColor, FrameColor, BackgroundColor, true, DrawBorder, Targeted);
+
+        /// <summary>
+        /// Renders the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="LeftWidthOffset">Width offset from the left</param>
+        /// <param name="RightWidthOffset">Width offset from the right</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="BackgroundColor">The progress bar background color</param>
+        /// <param name="useColor">Whether to use the color or not</param>
+        /// <param name="Targeted">Targeted percentage?</param>
+        internal static string RenderProgress(double Progress, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool useColor, bool DrawBorder = true, bool Targeted = false)
         {
             try
             {
@@ -470,10 +477,13 @@ namespace Terminaux.Writer.FancyWriters
                 StringBuilder progBuilder = new();
                 if (DrawBorder)
                 {
-                    progBuilder.Append(
-                        FrameColor.VTSequenceForeground +
-                        BackgroundColor.VTSequenceBackground
-                    );
+                    if (useColor)
+                    {
+                        progBuilder.Append(
+                            FrameColor.VTSequenceForeground +
+                            BackgroundColor.VTSequenceBackground
+                        );
+                    }
                     progBuilder.Append(
                         BoxFrameColor.RenderBoxFrame(Left, Top, ConsoleWrapper.WindowWidth - FinalWidthOffset, 1,
                             ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
@@ -488,10 +498,14 @@ namespace Terminaux.Writer.FancyWriters
                     ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                     ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
-                progBuilder.Append(ProgressColor.VTSequenceBackground);
-                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string(' ', times));
-                progBuilder.Append(ColorTools.currentForegroundColor.VTSequenceForeground);
-                progBuilder.Append(ColorTools.currentBackgroundColor.VTSequenceBackground);
+                if (useColor)
+                    progBuilder.Append(ProgressColor.VTSequenceBackground);
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string(useColor ? ' ' : '*', times));
+                if (useColor)
+                {
+                    progBuilder.Append(ColorTools.currentForegroundColor.VTSequenceForeground);
+                    progBuilder.Append(ColorTools.currentBackgroundColor.VTSequenceBackground);
+                }
                 return progBuilder.ToString();
             }
             catch (Exception ex)

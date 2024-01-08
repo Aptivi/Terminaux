@@ -312,32 +312,17 @@ namespace Terminaux.Writer.FancyWriters
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCentered(string Text, params object[] Vars)
-        {
-            try
-            {
-                var centered = new StringBuilder();
-                Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-                for (int i = 0; i < sentences.Length; i++)
-                {
-                    string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
-                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    centered.Append(
-                        TextWriterWhereColor.RenderWherePlain(sentence + "\n", consoleInfoX, top, Vars)
-                    );
-                }
-                return centered.ToString();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-            }
-            return "";
-        }
+        public static string RenderCentered(string Text, params object[] Vars) =>
+            RenderCentered(Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
+
+        /// <summary>
+        /// Renders a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCentered(string Text, Color ForegroundColor, params object[] Vars) =>
+            RenderCentered(Text, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
 
         /// <summary>
         /// Renders a centered text
@@ -346,32 +331,25 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCentered(string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static string RenderCentered(string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+            RenderCentered(Text, ForegroundColor, BackgroundColor, true, Vars);
+
+        /// <summary>
+        /// Renders a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="useColor">Whether to use the color or not</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        internal static string RenderCentered(string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
         {
             try
             {
-                var centered = new StringBuilder();
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-                for (int i = 0; i < sentences.Length; i++)
-                {
-                    string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
-                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    centered.Append(
-                        ForegroundColor.VTSequenceForeground +
-                        BackgroundColor.VTSequenceBackground +
-                        TextWriterWhereColor.RenderWherePlain(sentence + "\n", consoleInfoX, top, Vars)
-                    );
-                }
-
-                // Write the resulting buffer
-                centered.Append(
-                    ColorTools.currentForegroundColor.VTSequenceForeground +
-                    ColorTools.currentBackgroundColor.VTSequenceBackground
-                );
-                return centered.ToString();
+                return RenderCentered(top, Text, ForegroundColor, BackgroundColor, useColor, Vars);
             }
             catch (Exception ex)
             {
@@ -387,31 +365,18 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="top">Top position to write centered text to</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCentered(int top, string Text, params object[] Vars)
-        {
-            try
-            {
-                var centered = new StringBuilder();
-                Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                for (int i = 0; i < sentences.Length; i++)
-                {
-                    string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
-                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    centered.Append(
-                        TextWriterWhereColor.RenderWherePlain(sentence + "\n", consoleInfoX, top, Vars)
-                    );
-                }
-                return centered.ToString();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-            }
-            return "";
-        }
+        public static string RenderCentered(int top, string Text, params object[] Vars) =>
+            RenderCentered(top, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
+
+        /// <summary>
+        /// Renders a centered text
+        /// </summary>
+        /// <param name="top">Top position to write centered text to</param>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCentered(int top, string Text, Color ForegroundColor, params object[] Vars) =>
+            RenderCentered(top, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
 
         /// <summary>
         /// Renders a centered text
@@ -421,7 +386,19 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static string RenderCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+            RenderCentered(top, Text, ForegroundColor, BackgroundColor, true, Vars);
+
+        /// <summary>
+        /// Renders a centered text
+        /// </summary>
+        /// <param name="top">Top position to write centered text to</param>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="useColor">Whether to use the color or not</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        internal static string RenderCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
         {
             try
             {
@@ -434,17 +411,20 @@ namespace Terminaux.Writer.FancyWriters
                     int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
                     consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
                     centered.Append(
-                        ForegroundColor.VTSequenceForeground +
-                        BackgroundColor.VTSequenceBackground +
+                        $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
                         TextWriterWhereColor.RenderWherePlain(sentence + "\n", consoleInfoX, top, Vars)
                     );
                 }
 
                 // Write the resulting buffer
-                centered.Append(
-                    ColorTools.currentForegroundColor.VTSequenceForeground +
-                    ColorTools.currentBackgroundColor.VTSequenceBackground
-                );
+                if (useColor)
+                {
+                    centered.Append(
+                        ColorTools.currentForegroundColor.VTSequenceForeground +
+                        ColorTools.currentBackgroundColor.VTSequenceBackground
+                    );
+                }
                 return centered.ToString();
             }
             catch (Exception ex)
@@ -469,6 +449,29 @@ namespace Terminaux.Writer.FancyWriters
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
                 return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a centered text (just the first line)
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCenteredOneLine(string Text, Color ForegroundColor, params object[] Vars)
+        {
+            try
+            {
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
+                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, ColorTools.currentBackgroundColor);
             }
             catch (Exception ex)
             {
@@ -515,6 +518,29 @@ namespace Terminaux.Writer.FancyWriters
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a centered text (just the first line)
+        /// </summary>
+        /// <param name="top">Top position to write centered text to</param>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCenteredOneLine(int top, string Text, Color ForegroundColor, params object[] Vars)
+        {
+            try
+            {
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, ColorTools.currentBackgroundColor);
             }
             catch (Exception ex)
             {

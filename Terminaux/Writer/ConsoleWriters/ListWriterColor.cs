@@ -53,42 +53,12 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 try
                 {
-                    // Variables
-                    var LinesMade = 0;
-
                     // Try to write list to console
                     string buffered = RenderList(List);
-                    string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
-                    var buffer = new StringBuilder();
-                    for (int idx = 0; idx < bufferedLines.Length; idx++)
-                    {
-                        string bufferedLine = bufferedLines[idx];
-                        var Values = new List<object>();
-                        buffer.Append(bufferedLine);
-                        if (idx < bufferedLines.Length - 1)
-                            buffer.AppendLine();
-
-                        if (Wrap)
-                        {
-                            LinesMade += 1;
-                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
-                            {
-                                TextWriterColor.WritePlain(buffer.ToString(), false);
-                                buffer.Clear();
-                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                    break;
-                                LinesMade = 0;
-                            }
-                        }
-                        else if (ConsoleWrapper.KeyAvailable)
-                        {
-                            TextWriterColor.WritePlain(buffer.ToString(), false);
-                            buffer.Clear();
-                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                break;
-                        }
-                    }
-                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                    if (Wrap)
+                        TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
+                    else
+                        TextWriterColor.WritePlain(buffered, false);
                 }
                 catch (Exception ex)
                 {
@@ -154,42 +124,12 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 try
                 {
-                    // Variables
-                    var LinesMade = 0;
-
                     // Try to write list to console
                     string buffered = RenderList(List, ListKeyColor, ListValueColor);
-                    string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
-                    var buffer = new StringBuilder();
-                    for (int idx = 0; idx < bufferedLines.Length; idx++)
-                    {
-                        string bufferedLine = bufferedLines[idx];
-                        var Values = new List<object>();
-                        buffer.Append(bufferedLine);
-                        if (idx < bufferedLines.Length - 1)
-                            buffer.AppendLine();
-
-                        if (Wrap)
-                        {
-                            LinesMade += 1;
-                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
-                            {
-                                TextWriterColor.WritePlain(buffer.ToString(), false);
-                                buffer.Clear();
-                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                    break;
-                                LinesMade = 0;
-                            }
-                        }
-                        else if (ConsoleWrapper.KeyAvailable)
-                        {
-                            TextWriterColor.WritePlain(buffer.ToString(), false);
-                            buffer.Clear();
-                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                break;
-                        }
-                    }
-                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                    if (Wrap)
+                        TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
+                    else
+                        TextWriterColor.WritePlain(buffered, false);
                 }
                 catch (Exception ex)
                 {
@@ -203,25 +143,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Renders the list entries.
         /// </summary>
         /// <param name="List">A dictionary that will be listed.</param>
-        public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List)
-        {
-            var listBuilder = new StringBuilder();
-            foreach (TKey ListEntry in List.Keys)
-            {
-                var Values = new List<object>();
-                var value = List[ListEntry];
-                if (value as IEnumerable is not null & value as string is null)
-                {
-                    foreach (var Value in (IEnumerable)value)
-                        Values.Add(Value);
-                    string valuesString = string.Join(", ", Values);
-                    listBuilder.AppendLine($"- {ListEntry}: {valuesString}");
-                }
-                else
-                    listBuilder.AppendLine($"- {ListEntry}: {value}");
-            }
-            return listBuilder.ToString();
-        }
+        public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List) =>
+            RenderList(List, ColorTools.GetGray(), ColorTools.GetGray(), false);
 
         /// <summary>
         /// Renders the list entries.
@@ -229,7 +152,17 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor)
+        public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor) =>
+            RenderList(List, ListKeyColor, ListValueColor, true);
+
+        /// <summary>
+        /// Renders the list entries.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed.</param>
+        /// <param name="ListKeyColor">A key color.</param>
+        /// <param name="ListValueColor">A value color.</param>
+        /// <param name="useColor">Whether to use the colors or not</param>
+        internal static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor, bool useColor)
         {
             var listBuilder = new StringBuilder();
             foreach (TKey ListEntry in List.Keys)
@@ -242,21 +175,22 @@ namespace Terminaux.Writer.ConsoleWriters
                         Values.Add(Value);
                     string valuesString = string.Join(", ", Values);
                     listBuilder.AppendLine(
-                        $"{ListKeyColor.VTSequenceForeground}" +
+                        $"{(useColor ? ListKeyColor.VTSequenceForeground : "")}" +
                         $"- {ListEntry}: " +
-                        $"{ListValueColor.VTSequenceForeground}" +
+                        $"{(useColor ? ListValueColor.VTSequenceForeground : "")}" +
                         $"{valuesString}"
                     );
                 }
                 else
                     listBuilder.AppendLine(
-                        $"{ListKeyColor.VTSequenceForeground}" +
+                        $"{(useColor ? ListKeyColor.VTSequenceForeground : "")}" +
                         $"- {ListEntry}: " +
-                        $"{ListValueColor.VTSequenceForeground}" +
+                        $"{(useColor ? ListValueColor.VTSequenceForeground : "")}" +
                         $"{value}"
                     );
             }
-            listBuilder.Append(ColorTools.currentForegroundColor.VTSequenceForeground);
+            if (useColor)
+                listBuilder.Append(ColorTools.currentForegroundColor.VTSequenceForeground);
             return listBuilder.ToString();
         }
         #endregion
@@ -280,42 +214,12 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 try
                 {
-                    // Variables
-                    var LinesMade = 0;
-
                     // Try to write list to console
                     string buffered = RenderList(List);
-                    string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
-                    var buffer = new StringBuilder();
-                    for (int idx = 0; idx < bufferedLines.Length; idx++)
-                    {
-                        string bufferedLine = bufferedLines[idx];
-                        var Values = new List<object>();
-                        buffer.Append(bufferedLine);
-                        if (idx < bufferedLines.Length - 1)
-                            buffer.AppendLine();
-
-                        if (Wrap)
-                        {
-                            LinesMade += 1;
-                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
-                            {
-                                TextWriterColor.WritePlain(buffer.ToString(), false);
-                                buffer.Clear();
-                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                    break;
-                                LinesMade = 0;
-                            }
-                        }
-                        else if (ConsoleWrapper.KeyAvailable)
-                        {
-                            TextWriterColor.WritePlain(buffer.ToString(), false);
-                            buffer.Clear();
-                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                break;
-                        }
-                    }
-                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                    if (Wrap)
+                        TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
+                    else
+                        TextWriterColor.WritePlain(buffered, false);
                 }
                 catch (Exception ex)
                 {
@@ -381,42 +285,12 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 try
                 {
-                    // Variables
-                    var LinesMade = 0;
-
                     // Try to write list to console
                     string buffered = RenderList(List, ListKeyColor, ListValueColor);
-                    string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
-                    var buffer = new StringBuilder();
-                    for (int idx = 0; idx < bufferedLines.Length; idx++)
-                    {
-                        string bufferedLine = bufferedLines[idx];
-                        var Values = new List<object>();
-                        buffer.Append(bufferedLine);
-                        if (idx < bufferedLines.Length - 1)
-                            buffer.AppendLine();
-
-                        if (Wrap)
-                        {
-                            LinesMade += 1;
-                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
-                            {
-                                TextWriterColor.WritePlain(buffer.ToString(), false);
-                                buffer.Clear();
-                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                    break;
-                                LinesMade = 0;
-                            }
-                        }
-                        else if (ConsoleWrapper.KeyAvailable)
-                        {
-                            TextWriterColor.WritePlain(buffer.ToString(), false);
-                            buffer.Clear();
-                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                break;
-                        }
-                    }
-                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                    if (Wrap)
+                        TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
+                    else
+                        TextWriterColor.WritePlain(buffered, false);
                 }
                 catch (Exception ex)
                 {
@@ -430,26 +304,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Renders the list entries.
         /// </summary>
         /// <param name="List">A dictionary that will be listed.</param>
-        public static string RenderList<T>(IEnumerable<T> List)
-        {
-            var listBuilder = new StringBuilder();
-            int EntryNumber = 1;
-            foreach (T ListEntry in List)
-            {
-                var Values = new List<object>();
-                if (ListEntry as IEnumerable is not null & ListEntry as string is null)
-                {
-                    foreach (var Value in (IEnumerable)ListEntry)
-                        Values.Add(Value);
-                    string valuesString = string.Join(", ", Values);
-                    listBuilder.AppendLine($"- {EntryNumber}: {valuesString}");
-                }
-                else
-                    listBuilder.AppendLine($"- {EntryNumber}: {ListEntry}");
-                EntryNumber += 1;
-            }
-            return listBuilder.ToString();
-        }
+        public static string RenderList<T>(IEnumerable<T> List) =>
+            RenderList(List, ColorTools.GetGray(), ColorTools.GetGray(), false);
 
         /// <summary>
         /// Renders the list entries.
@@ -457,7 +313,17 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor)
+        public static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor) =>
+            RenderList(List, ListKeyColor, ListValueColor, true);
+
+        /// <summary>
+        /// Renders the list entries.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed.</param>
+        /// <param name="ListKeyColor">A key color.</param>
+        /// <param name="ListValueColor">A value color.</param>
+        /// <param name="useColor">Whether to use the colors or not</param>
+        internal static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor, bool useColor)
         {
             var listBuilder = new StringBuilder();
             int EntryNumber = 1;
@@ -470,22 +336,23 @@ namespace Terminaux.Writer.ConsoleWriters
                         Values.Add(Value);
                     string valuesString = string.Join(", ", Values);
                     listBuilder.AppendLine(
-                        $"{ListKeyColor.VTSequenceForeground}" +
+                        $"{(useColor ? ListKeyColor.VTSequenceForeground : "")}" +
                         $"- {EntryNumber}: " +
-                        $"{ListValueColor.VTSequenceForeground}" +
+                        $"{(useColor ? ListValueColor.VTSequenceForeground : "")}" +
                         $"{valuesString}"
                     );
                 }
                 else
                     listBuilder.AppendLine(
-                        $"{ListKeyColor.VTSequenceForeground}" +
+                        $"{(useColor ? ListKeyColor.VTSequenceForeground : "")}" +
                         $"- {EntryNumber}: " +
-                        $"{ListValueColor.VTSequenceForeground}" +
+                        $"{(useColor ? ListValueColor.VTSequenceForeground : "")}" +
                         $"{ListEntry}"
                     );
                 EntryNumber += 1;
             }
-            listBuilder.Append(ColorTools.currentForegroundColor.VTSequenceForeground);
+            if (useColor)
+                listBuilder.Append(ColorTools.currentForegroundColor.VTSequenceForeground);
             return listBuilder.ToString();
         }
         #endregion

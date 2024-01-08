@@ -65,9 +65,13 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new TestDictWriterChar(),
             new TestDictWriterInt(),
             new TestDictWriterStr(),
+            new TestDictWriterLarge(),
+            new TestDictWriterLargeWrap(),
             new TestListWriterChar(),
             new TestListWriterInt(),
             new TestListWriterStr(),
+            new TestListWriterLarge(),
+            new TestListWriterLargeWrap(),
             new TestTable(),
 
             // Input

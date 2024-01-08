@@ -34,42 +34,6 @@ namespace Terminaux.Writer.FancyWriters
     {
 
         /// <summary>
-        /// Renders the figlet text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFigletPlain(string Text, FigletizeFont FigletFont, params object[] Vars)
-        {
-            var builder = new StringBuilder();
-            builder.Append(
-                FigletTools.RenderFiglet(Text, FigletFont, Vars)
-            );
-            return builder.ToString();
-        }
-
-        /// <summary>
-        /// Renders the figlet text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFigletPlain(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
-        {
-            var builder = new StringBuilder();
-            builder.Append(
-                ForegroundColor.VTSequenceForeground +
-                BackgroundColor.VTSequenceBackground +
-                FigletTools.RenderFiglet(Text, FigletFont, Vars) +
-                ColorTools.currentForegroundColor.VTSequenceForeground +
-                ColorTools.currentBackgroundColor.VTSequenceBackground
-            );
-            return builder.ToString();
-        }
-
-        /// <summary>
         /// Writes the figlet text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
@@ -99,7 +63,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Color, ColorTools.currentBackgroundColor, Vars), false);
+                TextWriterColor.WritePlain(RenderFiglet(Text, FigletFont, Color, ColorTools.currentBackgroundColor, Vars), false);
             }
             catch (Exception ex)
             {
@@ -120,7 +84,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterColor.WritePlain(RenderFiglet(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex)
             {
@@ -140,7 +104,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Color, ColorTools.currentBackgroundColor, Vars), false);
+                TextWriterColor.WritePlain(RenderFiglet(Text, FigletFont, Color, ColorTools.currentBackgroundColor, Vars), false);
             }
             catch (Exception ex)
             {
@@ -161,13 +125,65 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterColor.WritePlain(RenderFiglet(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.StackTrace);
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Renders the figlet text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletPlain(string Text, FigletizeFont FigletFont, params object[] Vars) =>
+            RenderFiglet(Text, FigletFont, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
+
+        /// <summary>
+        /// Renders the figlet text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFiglet(string Text, FigletizeFont FigletFont, Color ForegroundColor, params object[] Vars) =>
+            RenderFiglet(Text, FigletFont, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
+
+        /// <summary>
+        /// Renders the figlet text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFiglet(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+            RenderFiglet(Text, FigletFont, ForegroundColor, BackgroundColor, true, Vars);
+
+        /// <summary>
+        /// Renders the figlet text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="useColor">Whether to use the color or not</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        internal static string RenderFiglet(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
+        {
+            var builder = new StringBuilder();
+            builder.Append(
+                $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
+                $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                FigletTools.RenderFiglet(Text, FigletFont, Vars) +
+                $"{(useColor ? ColorTools.currentForegroundColor.VTSequenceForeground : "")}" +
+                $"{(useColor ? ColorTools.currentBackgroundColor.VTSequenceBackground : "")}"
+            );
+            return builder.ToString();
         }
 
     }

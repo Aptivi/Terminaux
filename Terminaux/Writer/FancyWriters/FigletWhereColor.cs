@@ -69,11 +69,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColorDry(new Color(Color));
-
-                // Actually write
-                WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletWhere(Text, Left, Top, Return, FigletFont, Color, Vars), false);
             }
             catch (Exception ex)
             {
@@ -97,12 +93,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColorDry(new Color(ForegroundColor));
-                ColorTools.SetConsoleColorDry(new Color(BackgroundColor), true);
-
-                // Actually write
-                WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletWhere(Text, Left, Top, Return, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex)
             {
@@ -125,11 +116,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColorDry(Color);
-
-                // Actually write
-                WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletWhere(Text, Left, Top, Return, FigletFont, Color, Vars), false);
             }
             catch (Exception ex)
             {
@@ -153,12 +140,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColorDry(ForegroundColor);
-                ColorTools.SetConsoleColorDry(BackgroundColor, true);
-
-                // Actually write
-                WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletWhere(Text, Left, Top, Return, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex)
             {
@@ -176,15 +158,21 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFigletWherePlain(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, params object[] Vars)
-        {
-            Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
-            var builder = new StringBuilder();
-            builder.Append(
-                TextWriterWhereColor.RenderWherePlain(Text, Left, Top, Return, Vars)
-            );
-            return builder.ToString();
-        }
+        public static string RenderFigletWherePlain(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, params object[] Vars) =>
+            RenderFigletWhere(Text, Left, Top, Return, FigletFont, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
+
+        /// <summary>
+        /// Renders the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, params object[] Vars) =>
+            RenderFigletWhere(Text, Left, Top, Return, FigletFont, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
 
         /// <summary>
         /// Renders the figlet text with position support
@@ -197,16 +185,31 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+            RenderFigletWhere(Text, Left, Top, Return, FigletFont, ForegroundColor, BackgroundColor, true, Vars);
+
+        /// <summary>
+        /// Renders the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="useColor">Whether to use the color or not</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        internal static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
         {
             Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
             var builder = new StringBuilder();
             builder.Append(
-                ForegroundColor.VTSequenceForeground +
-                BackgroundColor.VTSequenceBackground +
+                $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
+                $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
                 TextWriterWhereColor.RenderWherePlain(Text, Left, Top, Return, Vars) +
-                ColorTools.currentForegroundColor.VTSequenceForeground +
-                ColorTools.currentBackgroundColor.VTSequenceBackground
+                $"{(useColor ? ColorTools.currentForegroundColor.VTSequenceForeground : "")}" +
+                $"{(useColor ? ColorTools.currentBackgroundColor.VTSequenceBackground : "")}"
             );
             return builder.ToString();
         }

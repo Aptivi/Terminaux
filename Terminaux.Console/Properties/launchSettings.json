@@ -111,6 +111,14 @@
       "commandName": "Project",
       "commandLineArgs": "TestDictWriterStr"
     },
+    "Terminaux - TestDictWriterLarge": {
+      "commandName": "Project",
+      "commandLineArgs": "TestDictWriterLarge"
+    },
+    "Terminaux - TestDictWriterLargeWrap": {
+      "commandName": "Project",
+      "commandLineArgs": "TestDictWriterLargeWrap"
+    },
     "Terminaux - TestListWriterChar": {
       "commandName": "Project",
       "commandLineArgs": "TestListWriterChar"
@@ -122,6 +130,14 @@
     "Terminaux - TestListWriterStr": {
       "commandName": "Project",
       "commandLineArgs": "TestListWriterStr"
+    },
+    "Terminaux - TestListWriterLarge": {
+      "commandName": "Project",
+      "commandLineArgs": "TestListWriterLarge"
+    },
+    "Terminaux - TestListWriterLargeWrap": {
+      "commandName": "Project",
+      "commandLineArgs": "TestListWriterLargeWrap"
     },
     "Terminaux - TestTable": {
       "commandName": "Project",
