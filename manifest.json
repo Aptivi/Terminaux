@@ -265,26 +265,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.ConsoleColors.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.ConsoleColors.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.ConsoleColorsInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.ConsoleColorsInfo.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Data.ConsoleColorData.Hsl.yml",
       "output": {
         ".html": {
@@ -309,6 +289,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Data.ConsoleColorData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Data.ConsoleColors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Data.ConsoleColors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Data.ConsoleColorsInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Data.ConsoleColorsInfo.html"
         }
       },
       "version": ""
