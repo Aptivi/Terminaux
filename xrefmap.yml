@@ -1223,6 +1223,54 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsolePlatform.IsRunningFromTmux
   nameWithType: ConsolePlatform.IsRunningFromTmux
+- uid: Terminaux.Base.ConsoleResizeHandler
+  name: ConsoleResizeHandler
+  href: api/Terminaux.Base.ConsoleResizeHandler.html
+  commentId: T:Terminaux.Base.ConsoleResizeHandler
+  fullName: Terminaux.Base.ConsoleResizeHandler
+  nameWithType: ConsoleResizeHandler
+- uid: Terminaux.Base.ConsoleResizeHandler.GetCurrentConsoleSize
+  name: GetCurrentConsoleSize()
+  href: api/Terminaux.Base.ConsoleResizeHandler.html#Terminaux_Base_ConsoleResizeHandler_GetCurrentConsoleSize
+  commentId: M:Terminaux.Base.ConsoleResizeHandler.GetCurrentConsoleSize
+  fullName: Terminaux.Base.ConsoleResizeHandler.GetCurrentConsoleSize()
+  nameWithType: ConsoleResizeHandler.GetCurrentConsoleSize()
+- uid: Terminaux.Base.ConsoleResizeHandler.GetCurrentConsoleSize*
+  name: GetCurrentConsoleSize
+  href: api/Terminaux.Base.ConsoleResizeHandler.html#Terminaux_Base_ConsoleResizeHandler_GetCurrentConsoleSize_
+  commentId: Overload:Terminaux.Base.ConsoleResizeHandler.GetCurrentConsoleSize
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleResizeHandler.GetCurrentConsoleSize
+  nameWithType: ConsoleResizeHandler.GetCurrentConsoleSize
+- uid: Terminaux.Base.ConsoleResizeHandler.RunEssentialHandler
+  name: RunEssentialHandler
+  href: api/Terminaux.Base.ConsoleResizeHandler.html#Terminaux_Base_ConsoleResizeHandler_RunEssentialHandler
+  commentId: P:Terminaux.Base.ConsoleResizeHandler.RunEssentialHandler
+  fullName: Terminaux.Base.ConsoleResizeHandler.RunEssentialHandler
+  nameWithType: ConsoleResizeHandler.RunEssentialHandler
+- uid: Terminaux.Base.ConsoleResizeHandler.RunEssentialHandler*
+  name: RunEssentialHandler
+  href: api/Terminaux.Base.ConsoleResizeHandler.html#Terminaux_Base_ConsoleResizeHandler_RunEssentialHandler_
+  commentId: Overload:Terminaux.Base.ConsoleResizeHandler.RunEssentialHandler
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleResizeHandler.RunEssentialHandler
+  nameWithType: ConsoleResizeHandler.RunEssentialHandler
+- uid: Terminaux.Base.ConsoleResizeHandler.WasResized(System.Boolean)
+  name: WasResized(bool)
+  href: api/Terminaux.Base.ConsoleResizeHandler.html#Terminaux_Base_ConsoleResizeHandler_WasResized_System_Boolean_
+  commentId: M:Terminaux.Base.ConsoleResizeHandler.WasResized(System.Boolean)
+  name.vb: WasResized(Boolean)
+  fullName: Terminaux.Base.ConsoleResizeHandler.WasResized(bool)
+  fullName.vb: Terminaux.Base.ConsoleResizeHandler.WasResized(Boolean)
+  nameWithType: ConsoleResizeHandler.WasResized(bool)
+  nameWithType.vb: ConsoleResizeHandler.WasResized(Boolean)
+- uid: Terminaux.Base.ConsoleResizeHandler.WasResized*
+  name: WasResized
+  href: api/Terminaux.Base.ConsoleResizeHandler.html#Terminaux_Base_ConsoleResizeHandler_WasResized_
+  commentId: Overload:Terminaux.Base.ConsoleResizeHandler.WasResized
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleResizeHandler.WasResized
+  nameWithType: ConsoleResizeHandler.WasResized
 - uid: Terminaux.Base.ConsoleWrapper
   name: ConsoleWrapper
   href: api/Terminaux.Base.ConsoleWrapper.html
