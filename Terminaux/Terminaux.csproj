@@ -6,7 +6,7 @@
     <Description>A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.</Description>
     <Version>2.4.0</Version>
     <Authors>Aptivi</Authors>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>net8.0;net48</TargetFrameworks>
     <DebugType>portable</DebugType>
     <AssemblyName>Terminaux</AssemblyName>
     <PackageId>Terminaux</PackageId>

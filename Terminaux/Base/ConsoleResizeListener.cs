@@ -23,6 +23,11 @@ using System.Threading;
 using Terminaux.Base.Buffered;
 using Terminaux.Reader;
 
+#if NET8_0_OR_GREATER
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+#endif
+
 namespace Terminaux.Base
 {
     /// <summary>
@@ -30,10 +35,15 @@ namespace Terminaux.Base
     /// </summary>
     public static class ConsoleResizeListener
     {
+        internal static bool usesSigWinch;
+        private static bool ResizeDetected;
         private static int CurrentWindowWidth;
         private static int CurrentWindowHeight;
         private static Thread ResizeListenerThread = new((_) => PollForResize(null)) { Name = "Console Resize Listener Thread", IsBackground = true };
-        private static bool ResizeDetected;
+
+#if NET8_0_OR_GREATER
+        internal static List<PosixSignalRegistration> signalHandlers = [];
+#endif
 
         /// <summary>
         /// Whether to run the base console resize handler or not after running a custom action
@@ -60,7 +70,7 @@ namespace Terminaux.Base
         /// </summary>
         public static (int Width, int Height) GetCurrentConsoleSize()
         {
-            if (!ResizeListenerThread.IsAlive)
+            if (!ResizeListenerThread.IsAlive && !usesSigWinch)
                 return (Console.WindowWidth, Console.WindowHeight);
             return (CurrentWindowWidth, CurrentWindowHeight);
         }
@@ -69,20 +79,36 @@ namespace Terminaux.Base
         /// Starts the console resize listener
         /// </summary>
         /// <param name="customHandler">Specifies the custom console resize handler that will be called if resize is detected</param>
-        public static void StartResizeListener(Action customHandler = null)
+        public static void StartResizeListener(Action<int, int, int, int> customHandler = null)
         {
             CurrentWindowWidth = Console.WindowWidth;
             CurrentWindowHeight = Console.WindowHeight;
-            if (!ResizeListenerThread.IsAlive)
+
+            // PosixSignalRegistration is not available for .NET Framework, so we need to 
+#if NET8_0_OR_GREATER
+            usesSigWinch = ConsolePlatform.IsOnUnix();
+            if (usesSigWinch)
             {
-                if (customHandler is not null)
-                {
-                    ResizeListenerThread = new((l) => PollForResize((Action)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
-                    ResizeListenerThread.Start(customHandler);
-                }
-                else
-                    ResizeListenerThread.Start(null);
+                // This is to get around the platform compatibility since we've been already guarded by ConsolePlatform.IsOnUnix().
+                const PosixSignal winch = (PosixSignal)(-7);
+                signalHandlers.Add(PosixSignalRegistration.Create(winch, (psc) => SigWindowChange(psc, (oldX, oldY, newX, newY) => PollForResize(customHandler))));
             }
+            else
+            {
+#endif
+                if (!ResizeListenerThread.IsAlive)
+                {
+                    if (customHandler is not null)
+                    {
+                        ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
+                        ResizeListenerThread.Start(customHandler);
+                    }
+                    else
+                        ResizeListenerThread.Start(null);
+                }
+#if NET8_0_OR_GREATER
+            }
+#endif
         }
 
         private static bool CheckResized()
@@ -108,32 +134,34 @@ namespace Terminaux.Base
             }
         }
 
-        private static void PollForResize(Action customHandler)
+        private static void HandleResize(Action<int, int, int, int> customHandler)
+        {
+            int oldX = CurrentWindowWidth;
+            int oldY = CurrentWindowHeight;
+            ResizeDetected = true;
+            CurrentWindowWidth = Console.WindowWidth;
+            CurrentWindowHeight = Console.WindowHeight;
+
+            // If the custom handler is set, run it and (optionally) run the custom handler with it. Otherwise, run the
+            // essential handler regardless of the value of RunEssentialHandler to maintain consistency.
+            if (customHandler is not null)
+            {
+                customHandler(oldX, oldY, CurrentWindowWidth, CurrentWindowHeight);
+                if (RunEssentialHandler)
+                    EssentialHandler();
+            }
+            else
+                EssentialHandler();
+        }
+
+        private static void PollForResize(Action<int, int, int, int> customHandler)
         {
             try
             {
                 while (true)
                 {
-                    Thread.Sleep(10);
-                    bool update = CheckResized();
-
-                    if (update)
-                    {
-                        ResizeDetected = true;
-                        CurrentWindowWidth = Console.WindowWidth;
-                        CurrentWindowHeight = Console.WindowHeight;
-
-                        // If the custom handler is set, run it and (optionally) run the custom handler with it. Otherwise, run the
-                        // essential handler regardless of the value of RunEssentialHandler to maintain consistency.
-                        if (customHandler is not null)
-                        {
-                            customHandler();
-                            if (RunEssentialHandler)
-                                EssentialHandler();
-                        }
-                        else
-                            EssentialHandler();
-                    }
+                    SpinWait.SpinUntil(CheckResized);
+                    HandleResize(customHandler);
                 }
             }
             catch (Exception ex)
@@ -142,5 +170,13 @@ namespace Terminaux.Base
                 Debug.WriteLine(ex.StackTrace);
             }
         }
+
+#if NET8_0_OR_GREATER
+        private static void SigWindowChange(PosixSignalContext psc, Action<int, int, int, int> customHandler)
+        {
+            HandleResize(customHandler);
+            psc.Cancel = true;
+        }
+#endif
     }
 }
