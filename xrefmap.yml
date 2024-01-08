@@ -2790,6 +2790,32 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.CorrectStandardColor
   nameWithType: ColorTools.CorrectStandardColor
+- uid: Terminaux.Colors.ColorTools.CurrentBackgroundColor
+  name: CurrentBackgroundColor
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CurrentBackgroundColor
+  commentId: P:Terminaux.Colors.ColorTools.CurrentBackgroundColor
+  fullName: Terminaux.Colors.ColorTools.CurrentBackgroundColor
+  nameWithType: ColorTools.CurrentBackgroundColor
+- uid: Terminaux.Colors.ColorTools.CurrentBackgroundColor*
+  name: CurrentBackgroundColor
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CurrentBackgroundColor_
+  commentId: Overload:Terminaux.Colors.ColorTools.CurrentBackgroundColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.CurrentBackgroundColor
+  nameWithType: ColorTools.CurrentBackgroundColor
+- uid: Terminaux.Colors.ColorTools.CurrentForegroundColor
+  name: CurrentForegroundColor
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CurrentForegroundColor
+  commentId: P:Terminaux.Colors.ColorTools.CurrentForegroundColor
+  fullName: Terminaux.Colors.ColorTools.CurrentForegroundColor
+  nameWithType: ColorTools.CurrentForegroundColor
+- uid: Terminaux.Colors.ColorTools.CurrentForegroundColor*
+  name: CurrentForegroundColor
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CurrentForegroundColor_
+  commentId: Overload:Terminaux.Colors.ColorTools.CurrentForegroundColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.CurrentForegroundColor
+  nameWithType: ColorTools.CurrentForegroundColor
 - uid: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color,Terminaux.Colors.ColorContrastType)
   name: GetGray(Color, ColorContrastType)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray_Terminaux_Colors_Color_Terminaux_Colors_ColorContrastType_
