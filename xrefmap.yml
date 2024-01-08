@@ -2632,6 +2632,30 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorContrast.IsSeeable
   nameWithType: ColorContrast.IsSeeable
+- uid: Terminaux.Colors.ColorContrastType
+  name: ColorContrastType
+  href: api/Terminaux.Colors.ColorContrastType.html
+  commentId: T:Terminaux.Colors.ColorContrastType
+  fullName: Terminaux.Colors.ColorContrastType
+  nameWithType: ColorContrastType
+- uid: Terminaux.Colors.ColorContrastType.Half
+  name: Half
+  href: api/Terminaux.Colors.ColorContrastType.html#Terminaux_Colors_ColorContrastType_Half
+  commentId: F:Terminaux.Colors.ColorContrastType.Half
+  fullName: Terminaux.Colors.ColorContrastType.Half
+  nameWithType: ColorContrastType.Half
+- uid: Terminaux.Colors.ColorContrastType.Light
+  name: Light
+  href: api/Terminaux.Colors.ColorContrastType.html#Terminaux_Colors_ColorContrastType_Light
+  commentId: F:Terminaux.Colors.ColorContrastType.Light
+  fullName: Terminaux.Colors.ColorContrastType.Light
+  nameWithType: ColorContrastType.Light
+- uid: Terminaux.Colors.ColorContrastType.Ntsc
+  name: Ntsc
+  href: api/Terminaux.Colors.ColorContrastType.html#Terminaux_Colors_ColorContrastType_Ntsc
+  commentId: F:Terminaux.Colors.ColorContrastType.Ntsc
+  fullName: Terminaux.Colors.ColorContrastType.Ntsc
+  nameWithType: ColorContrastType.Ntsc
 - uid: Terminaux.Colors.ColorSettings
   name: ColorSettings
   href: api/Terminaux.Colors.ColorSettings.html
@@ -2763,18 +2787,18 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.CorrectStandardColor
   nameWithType: ColorTools.CorrectStandardColor
-- uid: Terminaux.Colors.ColorTools.GetGray
-  name: GetGray()
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray
-  commentId: M:Terminaux.Colors.ColorTools.GetGray
-  fullName: Terminaux.Colors.ColorTools.GetGray()
-  nameWithType: ColorTools.GetGray()
-- uid: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color)
-  name: GetGray(Color)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray_Terminaux_Colors_Color_
-  commentId: M:Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color)
-  fullName: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color)
-  nameWithType: ColorTools.GetGray(Color)
+- uid: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color,Terminaux.Colors.ColorContrastType)
+  name: GetGray(Color, ColorContrastType)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray_Terminaux_Colors_Color_Terminaux_Colors_ColorContrastType_
+  commentId: M:Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color,Terminaux.Colors.ColorContrastType)
+  fullName: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color, Terminaux.Colors.ColorContrastType)
+  nameWithType: ColorTools.GetGray(Color, ColorContrastType)
+- uid: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.ColorContrastType)
+  name: GetGray(ColorContrastType)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray_Terminaux_Colors_ColorContrastType_
+  commentId: M:Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.ColorContrastType)
+  fullName: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.ColorContrastType)
+  nameWithType: ColorTools.GetGray(ColorContrastType)
 - uid: Terminaux.Colors.ColorTools.GetGray*
   name: GetGray
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray_
