@@ -619,6 +619,8 @@ namespace Terminaux.Colors.Selector
             var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
             var cmyk = CmykConversionTools.ConvertFrom(selectedColor.RGB);
             var cmy = CmyConversionTools.ConvertFrom(selectedColor.RGB);
+            var yiq = YiqConversionTools.ConvertFrom(selectedColor.RGB);
+            var yuv = YuvConversionTools.ConvertFrom(selectedColor.RGB);
             InfoBoxColor.WriteInfoBox(
                 $$"""
                 {{localizedTextTitle}}
@@ -656,6 +658,16 @@ namespace Terminaux.Colors.Selector
                     - Reverse Hue:    {{hsv.ReverseHueWhole,3}}'
                     - Saturation:     {{hsv.SaturationWhole,3}}
                     - Value:          {{hsv.ValueWhole,3}}
+                    
+                YIQ information:
+                    - Luma:           {{yiq.Luma,3}}
+                    - In-Phase:       {{yiq.InPhase,3}}
+                    - Quadrature:     {{yiq.Quadrature,3}}
+                    
+                YUV information:
+                    - Luma:           {{yuv.Luma,3}}
+                    - Chroma (U):     {{yuv.ChromaU,3}}
+                    - Chroma (V):     {{yuv.ChromaV,3}}
                 """
             );
         }
