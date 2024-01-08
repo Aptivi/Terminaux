@@ -375,6 +375,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.YiqConversionTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.YuvConversionTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.Conversion.yml",
       "output": {
         ".html": {
@@ -419,6 +439,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Models.HueSaturationValue.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.LumaChromaUv.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.LumaChromaUv.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.LumaInPhaseQuadrature.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html"
         }
       },
       "version": ""
@@ -489,6 +529,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Models.Parsing.RybParsingTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.YiqParsingTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.YuvParsingTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html"
         }
       },
       "version": ""

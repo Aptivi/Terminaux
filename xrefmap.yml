@@ -4942,6 +4942,18 @@ references:
   commentId: M:Terminaux.Colors.Models.Conversion.CmyConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
   fullName: Terminaux.Colors.Models.Conversion.CmyConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
   nameWithType: CmyConversionTools.ConvertFrom(HueSaturationValue)
+- uid: Terminaux.Colors.Models.Conversion.CmyConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  name: ConvertFrom(LumaChromaUv)
+  href: api/Terminaux.Colors.Models.Conversion.CmyConversionTools.html#Terminaux_Colors_Models_Conversion_CmyConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaChromaUv_
+  commentId: M:Terminaux.Colors.Models.Conversion.CmyConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  fullName: Terminaux.Colors.Models.Conversion.CmyConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  nameWithType: CmyConversionTools.ConvertFrom(LumaChromaUv)
+- uid: Terminaux.Colors.Models.Conversion.CmyConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name: ConvertFrom(LumaInPhaseQuadrature)
+  href: api/Terminaux.Colors.Models.Conversion.CmyConversionTools.html#Terminaux_Colors_Models_Conversion_CmyConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaInPhaseQuadrature_
+  commentId: M:Terminaux.Colors.Models.Conversion.CmyConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  fullName: Terminaux.Colors.Models.Conversion.CmyConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  nameWithType: CmyConversionTools.ConvertFrom(LumaInPhaseQuadrature)
 - uid: Terminaux.Colors.Models.Conversion.CmyConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
   name: ConvertFrom(RedGreenBlue)
   href: api/Terminaux.Colors.Models.Conversion.CmyConversionTools.html#Terminaux_Colors_Models_Conversion_CmyConversionTools_ConvertFrom_Terminaux_Colors_Models_RedGreenBlue_
@@ -4985,6 +4997,18 @@ references:
   commentId: M:Terminaux.Colors.Models.Conversion.CmykConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
   fullName: Terminaux.Colors.Models.Conversion.CmykConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
   nameWithType: CmykConversionTools.ConvertFrom(HueSaturationValue)
+- uid: Terminaux.Colors.Models.Conversion.CmykConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  name: ConvertFrom(LumaChromaUv)
+  href: api/Terminaux.Colors.Models.Conversion.CmykConversionTools.html#Terminaux_Colors_Models_Conversion_CmykConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaChromaUv_
+  commentId: M:Terminaux.Colors.Models.Conversion.CmykConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  fullName: Terminaux.Colors.Models.Conversion.CmykConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  nameWithType: CmykConversionTools.ConvertFrom(LumaChromaUv)
+- uid: Terminaux.Colors.Models.Conversion.CmykConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name: ConvertFrom(LumaInPhaseQuadrature)
+  href: api/Terminaux.Colors.Models.Conversion.CmykConversionTools.html#Terminaux_Colors_Models_Conversion_CmykConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaInPhaseQuadrature_
+  commentId: M:Terminaux.Colors.Models.Conversion.CmykConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  fullName: Terminaux.Colors.Models.Conversion.CmykConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  nameWithType: CmykConversionTools.ConvertFrom(LumaInPhaseQuadrature)
 - uid: Terminaux.Colors.Models.Conversion.CmykConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
   name: ConvertFrom(RedGreenBlue)
   href: api/Terminaux.Colors.Models.Conversion.CmykConversionTools.html#Terminaux_Colors_Models_Conversion_CmykConversionTools_ConvertFrom_Terminaux_Colors_Models_RedGreenBlue_
@@ -5028,6 +5052,18 @@ references:
   commentId: M:Terminaux.Colors.Models.Conversion.HslConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
   fullName: Terminaux.Colors.Models.Conversion.HslConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
   nameWithType: HslConversionTools.ConvertFrom(HueSaturationValue)
+- uid: Terminaux.Colors.Models.Conversion.HslConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  name: ConvertFrom(LumaChromaUv)
+  href: api/Terminaux.Colors.Models.Conversion.HslConversionTools.html#Terminaux_Colors_Models_Conversion_HslConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaChromaUv_
+  commentId: M:Terminaux.Colors.Models.Conversion.HslConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  fullName: Terminaux.Colors.Models.Conversion.HslConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  nameWithType: HslConversionTools.ConvertFrom(LumaChromaUv)
+- uid: Terminaux.Colors.Models.Conversion.HslConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name: ConvertFrom(LumaInPhaseQuadrature)
+  href: api/Terminaux.Colors.Models.Conversion.HslConversionTools.html#Terminaux_Colors_Models_Conversion_HslConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaInPhaseQuadrature_
+  commentId: M:Terminaux.Colors.Models.Conversion.HslConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  fullName: Terminaux.Colors.Models.Conversion.HslConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  nameWithType: HslConversionTools.ConvertFrom(LumaInPhaseQuadrature)
 - uid: Terminaux.Colors.Models.Conversion.HslConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
   name: ConvertFrom(RedGreenBlue)
   href: api/Terminaux.Colors.Models.Conversion.HslConversionTools.html#Terminaux_Colors_Models_Conversion_HslConversionTools_ConvertFrom_Terminaux_Colors_Models_RedGreenBlue_
@@ -5071,6 +5107,18 @@ references:
   commentId: M:Terminaux.Colors.Models.Conversion.HsvConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationLightness)
   fullName: Terminaux.Colors.Models.Conversion.HsvConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationLightness)
   nameWithType: HsvConversionTools.ConvertFrom(HueSaturationLightness)
+- uid: Terminaux.Colors.Models.Conversion.HsvConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  name: ConvertFrom(LumaChromaUv)
+  href: api/Terminaux.Colors.Models.Conversion.HsvConversionTools.html#Terminaux_Colors_Models_Conversion_HsvConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaChromaUv_
+  commentId: M:Terminaux.Colors.Models.Conversion.HsvConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  fullName: Terminaux.Colors.Models.Conversion.HsvConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  nameWithType: HsvConversionTools.ConvertFrom(LumaChromaUv)
+- uid: Terminaux.Colors.Models.Conversion.HsvConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name: ConvertFrom(LumaInPhaseQuadrature)
+  href: api/Terminaux.Colors.Models.Conversion.HsvConversionTools.html#Terminaux_Colors_Models_Conversion_HsvConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaInPhaseQuadrature_
+  commentId: M:Terminaux.Colors.Models.Conversion.HsvConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  fullName: Terminaux.Colors.Models.Conversion.HsvConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  nameWithType: HsvConversionTools.ConvertFrom(LumaInPhaseQuadrature)
 - uid: Terminaux.Colors.Models.Conversion.HsvConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
   name: ConvertFrom(RedGreenBlue)
   href: api/Terminaux.Colors.Models.Conversion.HsvConversionTools.html#Terminaux_Colors_Models_Conversion_HsvConversionTools_ConvertFrom_Terminaux_Colors_Models_RedGreenBlue_
@@ -5120,6 +5168,18 @@ references:
   commentId: M:Terminaux.Colors.Models.Conversion.RgbConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
   fullName: Terminaux.Colors.Models.Conversion.RgbConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
   nameWithType: RgbConversionTools.ConvertFrom(HueSaturationValue)
+- uid: Terminaux.Colors.Models.Conversion.RgbConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  name: ConvertFrom(LumaChromaUv)
+  href: api/Terminaux.Colors.Models.Conversion.RgbConversionTools.html#Terminaux_Colors_Models_Conversion_RgbConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaChromaUv_
+  commentId: M:Terminaux.Colors.Models.Conversion.RgbConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  fullName: Terminaux.Colors.Models.Conversion.RgbConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  nameWithType: RgbConversionTools.ConvertFrom(LumaChromaUv)
+- uid: Terminaux.Colors.Models.Conversion.RgbConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name: ConvertFrom(LumaInPhaseQuadrature)
+  href: api/Terminaux.Colors.Models.Conversion.RgbConversionTools.html#Terminaux_Colors_Models_Conversion_RgbConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaInPhaseQuadrature_
+  commentId: M:Terminaux.Colors.Models.Conversion.RgbConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  fullName: Terminaux.Colors.Models.Conversion.RgbConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  nameWithType: RgbConversionTools.ConvertFrom(LumaInPhaseQuadrature)
 - uid: Terminaux.Colors.Models.Conversion.RgbConversionTools.ConvertFrom(Terminaux.Colors.Models.RedYellowBlue)
   name: ConvertFrom(RedYellowBlue)
   href: api/Terminaux.Colors.Models.Conversion.RgbConversionTools.html#Terminaux_Colors_Models_Conversion_RgbConversionTools_ConvertFrom_Terminaux_Colors_Models_RedYellowBlue_
@@ -5163,6 +5223,18 @@ references:
   commentId: M:Terminaux.Colors.Models.Conversion.RybConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
   fullName: Terminaux.Colors.Models.Conversion.RybConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
   nameWithType: RybConversionTools.ConvertFrom(HueSaturationValue)
+- uid: Terminaux.Colors.Models.Conversion.RybConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  name: ConvertFrom(LumaChromaUv)
+  href: api/Terminaux.Colors.Models.Conversion.RybConversionTools.html#Terminaux_Colors_Models_Conversion_RybConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaChromaUv_
+  commentId: M:Terminaux.Colors.Models.Conversion.RybConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  fullName: Terminaux.Colors.Models.Conversion.RybConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  nameWithType: RybConversionTools.ConvertFrom(LumaChromaUv)
+- uid: Terminaux.Colors.Models.Conversion.RybConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name: ConvertFrom(LumaInPhaseQuadrature)
+  href: api/Terminaux.Colors.Models.Conversion.RybConversionTools.html#Terminaux_Colors_Models_Conversion_RybConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaInPhaseQuadrature_
+  commentId: M:Terminaux.Colors.Models.Conversion.RybConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  fullName: Terminaux.Colors.Models.Conversion.RybConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  nameWithType: RybConversionTools.ConvertFrom(LumaInPhaseQuadrature)
 - uid: Terminaux.Colors.Models.Conversion.RybConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
   name: ConvertFrom(RedGreenBlue)
   href: api/Terminaux.Colors.Models.Conversion.RybConversionTools.html#Terminaux_Colors_Models_Conversion_RybConversionTools_ConvertFrom_Terminaux_Colors_Models_RedGreenBlue_
@@ -5176,6 +5248,116 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.Conversion.RybConversionTools.ConvertFrom
   nameWithType: RybConversionTools.ConvertFrom
+- uid: Terminaux.Colors.Models.Conversion.YiqConversionTools
+  name: YiqConversionTools
+  href: api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html
+  commentId: T:Terminaux.Colors.Models.Conversion.YiqConversionTools
+  fullName: Terminaux.Colors.Models.Conversion.YiqConversionTools
+  nameWithType: YiqConversionTools
+- uid: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellow)
+  name: ConvertFrom(CyanMagentaYellow)
+  href: api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html#Terminaux_Colors_Models_Conversion_YiqConversionTools_ConvertFrom_Terminaux_Colors_Models_CyanMagentaYellow_
+  commentId: M:Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellow)
+  fullName: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellow)
+  nameWithType: YiqConversionTools.ConvertFrom(CyanMagentaYellow)
+- uid: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name: ConvertFrom(CyanMagentaYellowKey)
+  href: api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html#Terminaux_Colors_Models_Conversion_YiqConversionTools_ConvertFrom_Terminaux_Colors_Models_CyanMagentaYellowKey_
+  commentId: M:Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  fullName: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  nameWithType: YiqConversionTools.ConvertFrom(CyanMagentaYellowKey)
+- uid: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationLightness)
+  name: ConvertFrom(HueSaturationLightness)
+  href: api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html#Terminaux_Colors_Models_Conversion_YiqConversionTools_ConvertFrom_Terminaux_Colors_Models_HueSaturationLightness_
+  commentId: M:Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationLightness)
+  fullName: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationLightness)
+  nameWithType: YiqConversionTools.ConvertFrom(HueSaturationLightness)
+- uid: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
+  name: ConvertFrom(HueSaturationValue)
+  href: api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html#Terminaux_Colors_Models_Conversion_YiqConversionTools_ConvertFrom_Terminaux_Colors_Models_HueSaturationValue_
+  commentId: M:Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
+  fullName: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
+  nameWithType: YiqConversionTools.ConvertFrom(HueSaturationValue)
+- uid: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  name: ConvertFrom(LumaChromaUv)
+  href: api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html#Terminaux_Colors_Models_Conversion_YiqConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaChromaUv_
+  commentId: M:Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  fullName: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaChromaUv)
+  nameWithType: YiqConversionTools.ConvertFrom(LumaChromaUv)
+- uid: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
+  name: ConvertFrom(RedGreenBlue)
+  href: api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html#Terminaux_Colors_Models_Conversion_YiqConversionTools_ConvertFrom_Terminaux_Colors_Models_RedGreenBlue_
+  commentId: M:Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
+  fullName: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: YiqConversionTools.ConvertFrom(RedGreenBlue)
+- uid: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.RedYellowBlue)
+  name: ConvertFrom(RedYellowBlue)
+  href: api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html#Terminaux_Colors_Models_Conversion_YiqConversionTools_ConvertFrom_Terminaux_Colors_Models_RedYellowBlue_
+  commentId: M:Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.RedYellowBlue)
+  fullName: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom(Terminaux.Colors.Models.RedYellowBlue)
+  nameWithType: YiqConversionTools.ConvertFrom(RedYellowBlue)
+- uid: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom*
+  name: ConvertFrom
+  href: api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html#Terminaux_Colors_Models_Conversion_YiqConversionTools_ConvertFrom_
+  commentId: Overload:Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Conversion.YiqConversionTools.ConvertFrom
+  nameWithType: YiqConversionTools.ConvertFrom
+- uid: Terminaux.Colors.Models.Conversion.YuvConversionTools
+  name: YuvConversionTools
+  href: api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html
+  commentId: T:Terminaux.Colors.Models.Conversion.YuvConversionTools
+  fullName: Terminaux.Colors.Models.Conversion.YuvConversionTools
+  nameWithType: YuvConversionTools
+- uid: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellow)
+  name: ConvertFrom(CyanMagentaYellow)
+  href: api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html#Terminaux_Colors_Models_Conversion_YuvConversionTools_ConvertFrom_Terminaux_Colors_Models_CyanMagentaYellow_
+  commentId: M:Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellow)
+  fullName: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellow)
+  nameWithType: YuvConversionTools.ConvertFrom(CyanMagentaYellow)
+- uid: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  name: ConvertFrom(CyanMagentaYellowKey)
+  href: api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html#Terminaux_Colors_Models_Conversion_YuvConversionTools_ConvertFrom_Terminaux_Colors_Models_CyanMagentaYellowKey_
+  commentId: M:Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  fullName: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.CyanMagentaYellowKey)
+  nameWithType: YuvConversionTools.ConvertFrom(CyanMagentaYellowKey)
+- uid: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationLightness)
+  name: ConvertFrom(HueSaturationLightness)
+  href: api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html#Terminaux_Colors_Models_Conversion_YuvConversionTools_ConvertFrom_Terminaux_Colors_Models_HueSaturationLightness_
+  commentId: M:Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationLightness)
+  fullName: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationLightness)
+  nameWithType: YuvConversionTools.ConvertFrom(HueSaturationLightness)
+- uid: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
+  name: ConvertFrom(HueSaturationValue)
+  href: api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html#Terminaux_Colors_Models_Conversion_YuvConversionTools_ConvertFrom_Terminaux_Colors_Models_HueSaturationValue_
+  commentId: M:Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
+  fullName: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.HueSaturationValue)
+  nameWithType: YuvConversionTools.ConvertFrom(HueSaturationValue)
+- uid: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name: ConvertFrom(LumaInPhaseQuadrature)
+  href: api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html#Terminaux_Colors_Models_Conversion_YuvConversionTools_ConvertFrom_Terminaux_Colors_Models_LumaInPhaseQuadrature_
+  commentId: M:Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  fullName: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  nameWithType: YuvConversionTools.ConvertFrom(LumaInPhaseQuadrature)
+- uid: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
+  name: ConvertFrom(RedGreenBlue)
+  href: api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html#Terminaux_Colors_Models_Conversion_YuvConversionTools_ConvertFrom_Terminaux_Colors_Models_RedGreenBlue_
+  commentId: M:Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
+  fullName: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: YuvConversionTools.ConvertFrom(RedGreenBlue)
+- uid: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.RedYellowBlue)
+  name: ConvertFrom(RedYellowBlue)
+  href: api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html#Terminaux_Colors_Models_Conversion_YuvConversionTools_ConvertFrom_Terminaux_Colors_Models_RedYellowBlue_
+  commentId: M:Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.RedYellowBlue)
+  fullName: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom(Terminaux.Colors.Models.RedYellowBlue)
+  nameWithType: YuvConversionTools.ConvertFrom(RedYellowBlue)
+- uid: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom*
+  name: ConvertFrom
+  href: api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html#Terminaux_Colors_Models_Conversion_YuvConversionTools_ConvertFrom_
+  commentId: Overload:Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Conversion.YuvConversionTools.ConvertFrom
+  nameWithType: YuvConversionTools.ConvertFrom
 - uid: Terminaux.Colors.Models.CyanMagentaYellow
   name: CyanMagentaYellow
   href: api/Terminaux.Colors.Models.CyanMagentaYellow.html
@@ -5869,6 +6051,268 @@ references:
   fullName.vb: Terminaux.Colors.Models.HueSaturationValue.<>
   nameWithType: HueSaturationValue.operator !=
   nameWithType.vb: HueSaturationValue.<>
+- uid: Terminaux.Colors.Models.LumaChromaUv
+  name: LumaChromaUv
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html
+  commentId: T:Terminaux.Colors.Models.LumaChromaUv
+  fullName: Terminaux.Colors.Models.LumaChromaUv
+  nameWithType: LumaChromaUv
+- uid: Terminaux.Colors.Models.LumaChromaUv.ChromaU
+  name: ChromaU
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ChromaU
+  commentId: P:Terminaux.Colors.Models.LumaChromaUv.ChromaU
+  fullName: Terminaux.Colors.Models.LumaChromaUv.ChromaU
+  nameWithType: LumaChromaUv.ChromaU
+- uid: Terminaux.Colors.Models.LumaChromaUv.ChromaU*
+  name: ChromaU
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ChromaU_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.ChromaU
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaChromaUv.ChromaU
+  nameWithType: LumaChromaUv.ChromaU
+- uid: Terminaux.Colors.Models.LumaChromaUv.ChromaV
+  name: ChromaV
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ChromaV
+  commentId: P:Terminaux.Colors.Models.LumaChromaUv.ChromaV
+  fullName: Terminaux.Colors.Models.LumaChromaUv.ChromaV
+  nameWithType: LumaChromaUv.ChromaV
+- uid: Terminaux.Colors.Models.LumaChromaUv.ChromaV*
+  name: ChromaV
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ChromaV_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.ChromaV
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaChromaUv.ChromaV
+  nameWithType: LumaChromaUv.ChromaV
+- uid: Terminaux.Colors.Models.LumaChromaUv.Equals(System.Object)
+  name: Equals(object)
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_Equals_System_Object_
+  commentId: M:Terminaux.Colors.Models.LumaChromaUv.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: Terminaux.Colors.Models.LumaChromaUv.Equals(object)
+  fullName.vb: Terminaux.Colors.Models.LumaChromaUv.Equals(Object)
+  nameWithType: LumaChromaUv.Equals(object)
+  nameWithType.vb: LumaChromaUv.Equals(Object)
+- uid: Terminaux.Colors.Models.LumaChromaUv.Equals(Terminaux.Colors.Models.LumaChromaUv)
+  name: Equals(LumaChromaUv)
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_Equals_Terminaux_Colors_Models_LumaChromaUv_
+  commentId: M:Terminaux.Colors.Models.LumaChromaUv.Equals(Terminaux.Colors.Models.LumaChromaUv)
+  fullName: Terminaux.Colors.Models.LumaChromaUv.Equals(Terminaux.Colors.Models.LumaChromaUv)
+  nameWithType: LumaChromaUv.Equals(LumaChromaUv)
+- uid: Terminaux.Colors.Models.LumaChromaUv.Equals*
+  name: Equals
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_Equals_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.Equals
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaChromaUv.Equals
+  nameWithType: LumaChromaUv.Equals
+- uid: Terminaux.Colors.Models.LumaChromaUv.GetHashCode
+  name: GetHashCode()
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_GetHashCode
+  commentId: M:Terminaux.Colors.Models.LumaChromaUv.GetHashCode
+  fullName: Terminaux.Colors.Models.LumaChromaUv.GetHashCode()
+  nameWithType: LumaChromaUv.GetHashCode()
+- uid: Terminaux.Colors.Models.LumaChromaUv.GetHashCode*
+  name: GetHashCode
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_GetHashCode_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.GetHashCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaChromaUv.GetHashCode
+  nameWithType: LumaChromaUv.GetHashCode
+- uid: Terminaux.Colors.Models.LumaChromaUv.Luma
+  name: Luma
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_Luma
+  commentId: P:Terminaux.Colors.Models.LumaChromaUv.Luma
+  fullName: Terminaux.Colors.Models.LumaChromaUv.Luma
+  nameWithType: LumaChromaUv.Luma
+- uid: Terminaux.Colors.Models.LumaChromaUv.Luma*
+  name: Luma
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_Luma_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.Luma
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaChromaUv.Luma
+  nameWithType: LumaChromaUv.Luma
+- uid: Terminaux.Colors.Models.LumaChromaUv.ToString
+  name: ToString()
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ToString
+  commentId: M:Terminaux.Colors.Models.LumaChromaUv.ToString
+  fullName: Terminaux.Colors.Models.LumaChromaUv.ToString()
+  nameWithType: LumaChromaUv.ToString()
+- uid: Terminaux.Colors.Models.LumaChromaUv.ToString*
+  name: ToString
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ToString_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.ToString
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaChromaUv.ToString
+  nameWithType: LumaChromaUv.ToString
+- uid: Terminaux.Colors.Models.LumaChromaUv.op_Equality(Terminaux.Colors.Models.LumaChromaUv,Terminaux.Colors.Models.LumaChromaUv)
+  name: operator ==(LumaChromaUv, LumaChromaUv)
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_op_Equality_Terminaux_Colors_Models_LumaChromaUv_Terminaux_Colors_Models_LumaChromaUv_
+  commentId: M:Terminaux.Colors.Models.LumaChromaUv.op_Equality(Terminaux.Colors.Models.LumaChromaUv,Terminaux.Colors.Models.LumaChromaUv)
+  name.vb: =(LumaChromaUv, LumaChromaUv)
+  fullName: Terminaux.Colors.Models.LumaChromaUv.operator ==(Terminaux.Colors.Models.LumaChromaUv, Terminaux.Colors.Models.LumaChromaUv)
+  fullName.vb: Terminaux.Colors.Models.LumaChromaUv.=(Terminaux.Colors.Models.LumaChromaUv, Terminaux.Colors.Models.LumaChromaUv)
+  nameWithType: LumaChromaUv.operator ==(LumaChromaUv, LumaChromaUv)
+  nameWithType.vb: LumaChromaUv.=(LumaChromaUv, LumaChromaUv)
+- uid: Terminaux.Colors.Models.LumaChromaUv.op_Equality*
+  name: operator ==
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_op_Equality_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: Terminaux.Colors.Models.LumaChromaUv.operator ==
+  fullName.vb: Terminaux.Colors.Models.LumaChromaUv.=
+  nameWithType: LumaChromaUv.operator ==
+  nameWithType.vb: LumaChromaUv.=
+- uid: Terminaux.Colors.Models.LumaChromaUv.op_Inequality(Terminaux.Colors.Models.LumaChromaUv,Terminaux.Colors.Models.LumaChromaUv)
+  name: operator !=(LumaChromaUv, LumaChromaUv)
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_op_Inequality_Terminaux_Colors_Models_LumaChromaUv_Terminaux_Colors_Models_LumaChromaUv_
+  commentId: M:Terminaux.Colors.Models.LumaChromaUv.op_Inequality(Terminaux.Colors.Models.LumaChromaUv,Terminaux.Colors.Models.LumaChromaUv)
+  name.vb: <>(LumaChromaUv, LumaChromaUv)
+  fullName: Terminaux.Colors.Models.LumaChromaUv.operator !=(Terminaux.Colors.Models.LumaChromaUv, Terminaux.Colors.Models.LumaChromaUv)
+  fullName.vb: Terminaux.Colors.Models.LumaChromaUv.<>(Terminaux.Colors.Models.LumaChromaUv, Terminaux.Colors.Models.LumaChromaUv)
+  nameWithType: LumaChromaUv.operator !=(LumaChromaUv, LumaChromaUv)
+  nameWithType.vb: LumaChromaUv.<>(LumaChromaUv, LumaChromaUv)
+- uid: Terminaux.Colors.Models.LumaChromaUv.op_Inequality*
+  name: operator !=
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_op_Inequality_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: Terminaux.Colors.Models.LumaChromaUv.operator !=
+  fullName.vb: Terminaux.Colors.Models.LumaChromaUv.<>
+  nameWithType: LumaChromaUv.operator !=
+  nameWithType.vb: LumaChromaUv.<>
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature
+  name: LumaInPhaseQuadrature
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html
+  commentId: T:Terminaux.Colors.Models.LumaInPhaseQuadrature
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature
+  nameWithType: LumaInPhaseQuadrature
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.Equals(System.Object)
+  name: Equals(object)
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_Equals_System_Object_
+  commentId: M:Terminaux.Colors.Models.LumaInPhaseQuadrature.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.Equals(object)
+  fullName.vb: Terminaux.Colors.Models.LumaInPhaseQuadrature.Equals(Object)
+  nameWithType: LumaInPhaseQuadrature.Equals(object)
+  nameWithType.vb: LumaInPhaseQuadrature.Equals(Object)
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.Equals(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name: Equals(LumaInPhaseQuadrature)
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_Equals_Terminaux_Colors_Models_LumaInPhaseQuadrature_
+  commentId: M:Terminaux.Colors.Models.LumaInPhaseQuadrature.Equals(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.Equals(Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  nameWithType: LumaInPhaseQuadrature.Equals(LumaInPhaseQuadrature)
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.Equals*
+  name: Equals
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_Equals_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.Equals
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.Equals
+  nameWithType: LumaInPhaseQuadrature.Equals
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.GetHashCode
+  name: GetHashCode()
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_GetHashCode
+  commentId: M:Terminaux.Colors.Models.LumaInPhaseQuadrature.GetHashCode
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.GetHashCode()
+  nameWithType: LumaInPhaseQuadrature.GetHashCode()
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.GetHashCode*
+  name: GetHashCode
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_GetHashCode_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.GetHashCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.GetHashCode
+  nameWithType: LumaInPhaseQuadrature.GetHashCode
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhase
+  name: InPhase
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_InPhase
+  commentId: P:Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhase
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhase
+  nameWithType: LumaInPhaseQuadrature.InPhase
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhase*
+  name: InPhase
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_InPhase_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhase
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhase
+  nameWithType: LumaInPhaseQuadrature.InPhase
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.Luma
+  name: Luma
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_Luma
+  commentId: P:Terminaux.Colors.Models.LumaInPhaseQuadrature.Luma
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.Luma
+  nameWithType: LumaInPhaseQuadrature.Luma
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.Luma*
+  name: Luma
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_Luma_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.Luma
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.Luma
+  nameWithType: LumaInPhaseQuadrature.Luma
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.Quadrature
+  name: Quadrature
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_Quadrature
+  commentId: P:Terminaux.Colors.Models.LumaInPhaseQuadrature.Quadrature
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.Quadrature
+  nameWithType: LumaInPhaseQuadrature.Quadrature
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.Quadrature*
+  name: Quadrature
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_Quadrature_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.Quadrature
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.Quadrature
+  nameWithType: LumaInPhaseQuadrature.Quadrature
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.ToString
+  name: ToString()
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_ToString
+  commentId: M:Terminaux.Colors.Models.LumaInPhaseQuadrature.ToString
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.ToString()
+  nameWithType: LumaInPhaseQuadrature.ToString()
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.ToString*
+  name: ToString
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_ToString_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.ToString
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.ToString
+  nameWithType: LumaInPhaseQuadrature.ToString
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.op_Equality(Terminaux.Colors.Models.LumaInPhaseQuadrature,Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name: operator ==(LumaInPhaseQuadrature, LumaInPhaseQuadrature)
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_op_Equality_Terminaux_Colors_Models_LumaInPhaseQuadrature_Terminaux_Colors_Models_LumaInPhaseQuadrature_
+  commentId: M:Terminaux.Colors.Models.LumaInPhaseQuadrature.op_Equality(Terminaux.Colors.Models.LumaInPhaseQuadrature,Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name.vb: =(LumaInPhaseQuadrature, LumaInPhaseQuadrature)
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.operator ==(Terminaux.Colors.Models.LumaInPhaseQuadrature, Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  fullName.vb: Terminaux.Colors.Models.LumaInPhaseQuadrature.=(Terminaux.Colors.Models.LumaInPhaseQuadrature, Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  nameWithType: LumaInPhaseQuadrature.operator ==(LumaInPhaseQuadrature, LumaInPhaseQuadrature)
+  nameWithType.vb: LumaInPhaseQuadrature.=(LumaInPhaseQuadrature, LumaInPhaseQuadrature)
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.op_Equality*
+  name: operator ==
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_op_Equality_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.operator ==
+  fullName.vb: Terminaux.Colors.Models.LumaInPhaseQuadrature.=
+  nameWithType: LumaInPhaseQuadrature.operator ==
+  nameWithType.vb: LumaInPhaseQuadrature.=
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.op_Inequality(Terminaux.Colors.Models.LumaInPhaseQuadrature,Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name: operator !=(LumaInPhaseQuadrature, LumaInPhaseQuadrature)
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_op_Inequality_Terminaux_Colors_Models_LumaInPhaseQuadrature_Terminaux_Colors_Models_LumaInPhaseQuadrature_
+  commentId: M:Terminaux.Colors.Models.LumaInPhaseQuadrature.op_Inequality(Terminaux.Colors.Models.LumaInPhaseQuadrature,Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  name.vb: <>(LumaInPhaseQuadrature, LumaInPhaseQuadrature)
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.operator !=(Terminaux.Colors.Models.LumaInPhaseQuadrature, Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  fullName.vb: Terminaux.Colors.Models.LumaInPhaseQuadrature.<>(Terminaux.Colors.Models.LumaInPhaseQuadrature, Terminaux.Colors.Models.LumaInPhaseQuadrature)
+  nameWithType: LumaInPhaseQuadrature.operator !=(LumaInPhaseQuadrature, LumaInPhaseQuadrature)
+  nameWithType.vb: LumaInPhaseQuadrature.<>(LumaInPhaseQuadrature, LumaInPhaseQuadrature)
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.op_Inequality*
+  name: operator !=
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_op_Inequality_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.operator !=
+  fullName.vb: Terminaux.Colors.Models.LumaInPhaseQuadrature.<>
+  nameWithType: LumaInPhaseQuadrature.operator !=
+  nameWithType.vb: LumaInPhaseQuadrature.<>
 - uid: Terminaux.Colors.Models.Parsing
   name: Terminaux.Colors.Models.Parsing
   href: api/Terminaux.Colors.Models.Parsing.html
@@ -6461,6 +6905,146 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb
   nameWithType: RybParsingTools.ParseSpecifierToRgb
+- uid: Terminaux.Colors.Models.Parsing.YiqParsingTools
+  name: YiqParsingTools
+  href: api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html
+  commentId: T:Terminaux.Colors.Models.Parsing.YiqParsingTools
+  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools
+  nameWithType: YiqParsingTools
+- uid: Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierAndValueValid(System.String)
+  name: IsSpecifierAndValueValid(string)
+  href: api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html#Terminaux_Colors_Models_Parsing_YiqParsingTools_IsSpecifierAndValueValid_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierAndValueValid(System.String)
+  name.vb: IsSpecifierAndValueValid(String)
+  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierAndValueValid(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierAndValueValid(String)
+  nameWithType: YiqParsingTools.IsSpecifierAndValueValid(string)
+  nameWithType.vb: YiqParsingTools.IsSpecifierAndValueValid(String)
+- uid: Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierAndValueValid*
+  name: IsSpecifierAndValueValid
+  href: api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html#Terminaux_Colors_Models_Parsing_YiqParsingTools_IsSpecifierAndValueValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierAndValueValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierAndValueValid
+  nameWithType: YiqParsingTools.IsSpecifierAndValueValid
+- uid: Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name: IsSpecifierValid(string, bool)
+  href: api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html#Terminaux_Colors_Models_Parsing_YiqParsingTools_IsSpecifierValid_System_String_System_Boolean_
+  commentId: M:Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name.vb: IsSpecifierValid(String, Boolean)
+  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierValid(string, bool)
+  fullName.vb: Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierValid(String, Boolean)
+  nameWithType: YiqParsingTools.IsSpecifierValid(string, bool)
+  nameWithType.vb: YiqParsingTools.IsSpecifierValid(String, Boolean)
+- uid: Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierValid*
+  name: IsSpecifierValid
+  href: api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html#Terminaux_Colors_Models_Parsing_YiqParsingTools_IsSpecifierValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.IsSpecifierValid
+  nameWithType: YiqParsingTools.IsSpecifierValid
+- uid: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifier(System.String)
+  name: ParseSpecifier(string)
+  href: api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html#Terminaux_Colors_Models_Parsing_YiqParsingTools_ParseSpecifier_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifier(System.String)
+  name.vb: ParseSpecifier(String)
+  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifier(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifier(String)
+  nameWithType: YiqParsingTools.ParseSpecifier(string)
+  nameWithType.vb: YiqParsingTools.ParseSpecifier(String)
+- uid: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifier*
+  name: ParseSpecifier
+  href: api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html#Terminaux_Colors_Models_Parsing_YiqParsingTools_ParseSpecifier_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifier
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifier
+  nameWithType: YiqParsingTools.ParseSpecifier
+- uid: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
+  name: ParseSpecifierToRgb(string, ColorSettings)
+  href: api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html#Terminaux_Colors_Models_Parsing_YiqParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
+  name.vb: ParseSpecifierToRgb(String, ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings)
+  fullName.vb: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb(String, Terminaux.Colors.ColorSettings)
+  nameWithType: YiqParsingTools.ParseSpecifierToRgb(string, ColorSettings)
+  nameWithType.vb: YiqParsingTools.ParseSpecifierToRgb(String, ColorSettings)
+- uid: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb*
+  name: ParseSpecifierToRgb
+  href: api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html#Terminaux_Colors_Models_Parsing_YiqParsingTools_ParseSpecifierToRgb_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb
+  nameWithType: YiqParsingTools.ParseSpecifierToRgb
+- uid: Terminaux.Colors.Models.Parsing.YuvParsingTools
+  name: YuvParsingTools
+  href: api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html
+  commentId: T:Terminaux.Colors.Models.Parsing.YuvParsingTools
+  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools
+  nameWithType: YuvParsingTools
+- uid: Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierAndValueValid(System.String)
+  name: IsSpecifierAndValueValid(string)
+  href: api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html#Terminaux_Colors_Models_Parsing_YuvParsingTools_IsSpecifierAndValueValid_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierAndValueValid(System.String)
+  name.vb: IsSpecifierAndValueValid(String)
+  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierAndValueValid(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierAndValueValid(String)
+  nameWithType: YuvParsingTools.IsSpecifierAndValueValid(string)
+  nameWithType.vb: YuvParsingTools.IsSpecifierAndValueValid(String)
+- uid: Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierAndValueValid*
+  name: IsSpecifierAndValueValid
+  href: api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html#Terminaux_Colors_Models_Parsing_YuvParsingTools_IsSpecifierAndValueValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierAndValueValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierAndValueValid
+  nameWithType: YuvParsingTools.IsSpecifierAndValueValid
+- uid: Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name: IsSpecifierValid(string, bool)
+  href: api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html#Terminaux_Colors_Models_Parsing_YuvParsingTools_IsSpecifierValid_System_String_System_Boolean_
+  commentId: M:Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierValid(System.String,System.Boolean)
+  name.vb: IsSpecifierValid(String, Boolean)
+  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierValid(string, bool)
+  fullName.vb: Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierValid(String, Boolean)
+  nameWithType: YuvParsingTools.IsSpecifierValid(string, bool)
+  nameWithType.vb: YuvParsingTools.IsSpecifierValid(String, Boolean)
+- uid: Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierValid*
+  name: IsSpecifierValid
+  href: api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html#Terminaux_Colors_Models_Parsing_YuvParsingTools_IsSpecifierValid_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierValid
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.IsSpecifierValid
+  nameWithType: YuvParsingTools.IsSpecifierValid
+- uid: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifier(System.String)
+  name: ParseSpecifier(string)
+  href: api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html#Terminaux_Colors_Models_Parsing_YuvParsingTools_ParseSpecifier_System_String_
+  commentId: M:Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifier(System.String)
+  name.vb: ParseSpecifier(String)
+  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifier(string)
+  fullName.vb: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifier(String)
+  nameWithType: YuvParsingTools.ParseSpecifier(string)
+  nameWithType.vb: YuvParsingTools.ParseSpecifier(String)
+- uid: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifier*
+  name: ParseSpecifier
+  href: api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html#Terminaux_Colors_Models_Parsing_YuvParsingTools_ParseSpecifier_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifier
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifier
+  nameWithType: YuvParsingTools.ParseSpecifier
+- uid: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
+  name: ParseSpecifierToRgb(string, ColorSettings)
+  href: api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html#Terminaux_Colors_Models_Parsing_YuvParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
+  name.vb: ParseSpecifierToRgb(String, ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings)
+  fullName.vb: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb(String, Terminaux.Colors.ColorSettings)
+  nameWithType: YuvParsingTools.ParseSpecifierToRgb(string, ColorSettings)
+  nameWithType.vb: YuvParsingTools.ParseSpecifierToRgb(String, ColorSettings)
+- uid: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb*
+  name: ParseSpecifierToRgb
+  href: api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html#Terminaux_Colors_Models_Parsing_YuvParsingTools_ParseSpecifierToRgb_
+  commentId: Overload:Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb
+  nameWithType: YuvParsingTools.ParseSpecifierToRgb
 - uid: Terminaux.Colors.Models.RedGreenBlue
   name: RedGreenBlue
   href: api/Terminaux.Colors.Models.RedGreenBlue.html
