@@ -23,9 +23,6 @@ using System.Collections.Generic;
 using Terminaux.Colors;
 using System.Text;
 using System.Diagnostics;
-using Terminaux.Base;
-using Textify.General;
-using Terminaux.Inputs;
 using Terminaux.Colors.Data;
 
 namespace Terminaux.Writer.ConsoleWriters

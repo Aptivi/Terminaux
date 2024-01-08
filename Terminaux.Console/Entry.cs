@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Base;
 using Terminaux.ConsoleDemo.Fixtures;
+using Terminaux.ResizeListener;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo

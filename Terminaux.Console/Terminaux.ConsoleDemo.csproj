@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Terminaux.ResizeListener\Terminaux.ResizeListener.csproj" />
     <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
   </ItemGroup>
 

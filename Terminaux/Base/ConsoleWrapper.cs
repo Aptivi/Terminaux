@@ -57,13 +57,13 @@ namespace Terminaux.Base
         /// The console window width (columns)
         /// </summary>
         public static int WindowWidth =>
-            ConsoleResizeListener.GetCurrentConsoleSize().Width;
+            ConsoleResizeHandler.GetCurrentConsoleSize().Width;
 
         /// <summary>
         /// The console window height (rows)
         /// </summary>
         public static int WindowHeight =>
-            ConsoleResizeListener.GetCurrentConsoleSize().Height;
+            ConsoleResizeHandler.GetCurrentConsoleSize().Height;
 
         /// <summary>
         /// The console buffer height (rows)
