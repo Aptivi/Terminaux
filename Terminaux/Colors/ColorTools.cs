@@ -21,9 +21,7 @@ using System;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Textify.Sequences.Builder;
-using System.Collections.Generic;
 using Terminaux.Colors.Transformation;
-using Terminaux.Colors.Models.Parsing;
 
 namespace Terminaux.Colors
 {
@@ -32,12 +30,6 @@ namespace Terminaux.Colors
     /// </summary>
     public static class ColorTools
     {
-        internal static List<int> unseeables = [
-            (int)ConsoleColors.Black,
-            (int)ConsoleColors.Grey0,
-            (int)ConsoleColors.Grey3,
-            (int)ConsoleColors.Grey7,
-        ];
         internal static Color currentForegroundColor = new(ConsoleColors.White);
         internal static Color currentBackgroundColor = Color.Empty;
         internal static Color _empty;
@@ -293,7 +285,7 @@ namespace Terminaux.Colors
             var colorType = color.Type;
             if (colorType != ColorType.TrueColor)
                 colorLevel = int.Parse(color.PlainSequence);
-            while (!IsSeeable(colorType, colorLevel, color.R, color.G, color.B) && !selectBlack)
+            while (!ColorContrast.IsSeeable(colorType, colorLevel, color.R, color.G, color.B) && !selectBlack)
             {
                 color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255);
                 if (colorType != ColorType.TrueColor)
@@ -334,41 +326,6 @@ namespace Terminaux.Colors
                 default:
                     return Color.Empty;
             }
-        }
-
-        /// <summary>
-        /// Checks to see if the specified color is considered seeable
-        /// </summary>
-        /// <param name="type">The color type to use</param>
-        /// <param name="colorLevel">The color level that is in the range of 0-255</param>
-        /// <param name="colorR">The red color level</param>
-        /// <param name="colorG">The green color level</param>
-        /// <param name="colorB">The blue color level</param>
-        /// <returns>True if the specified color is considered "seeable." False otherwise.</returns>
-        /// <exception cref="TerminauxException"></exception>
-        public static bool IsSeeable(ColorType type, int colorLevel, int colorR, int colorG, int colorB)
-        {
-            // First, check the values
-            if (type < ColorType.TrueColor || type > ColorType._16Color)
-                throw new TerminauxException("Color type is invalid");
-            if (!TryParseColor(type == ColorType.TrueColor ? $"{colorR};{colorG};{colorB}" : $"{colorLevel}"))
-                throw new TerminauxException("Color specifier for seeability is invalid");
-
-            // Forbid setting these colors as they're considered too dark
-            bool seeable = true;
-            if (type == ColorType.TrueColor)
-            {
-                // Consider any color with all of the color levels less than 30 unseeable
-                if (colorR < 30 && colorG < 30 && colorB < 30)
-                    seeable = false;
-            }
-            else
-            {
-                // Consider any blacklisted color as unseeable
-                if (unseeables.Contains(colorLevel))
-                    seeable = false;
-            }
-            return seeable;
         }
 
         /// <summary>
