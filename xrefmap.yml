@@ -2915,6 +2915,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.SetConsoleColor
   nameWithType: ColorTools.SetConsoleColor
+- uid: Terminaux.Colors.ColorTools.SetConsoleColorDry(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
+  name: SetConsoleColorDry(Color, bool, bool, bool)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SetConsoleColorDry_Terminaux_Colors_Color_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:Terminaux.Colors.ColorTools.SetConsoleColorDry(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
+  name.vb: SetConsoleColorDry(Color, Boolean, Boolean, Boolean)
+  fullName: Terminaux.Colors.ColorTools.SetConsoleColorDry(Terminaux.Colors.Color, bool, bool, bool)
+  fullName.vb: Terminaux.Colors.ColorTools.SetConsoleColorDry(Terminaux.Colors.Color, Boolean, Boolean, Boolean)
+  nameWithType: ColorTools.SetConsoleColorDry(Color, bool, bool, bool)
+  nameWithType.vb: ColorTools.SetConsoleColorDry(Color, Boolean, Boolean, Boolean)
+- uid: Terminaux.Colors.ColorTools.SetConsoleColorDry*
+  name: SetConsoleColorDry
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SetConsoleColorDry_
+  commentId: Overload:Terminaux.Colors.ColorTools.SetConsoleColorDry
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.SetConsoleColorDry
+  nameWithType: ColorTools.SetConsoleColorDry
 - uid: Terminaux.Colors.ColorTools.TranslateToStandardColorMap(Terminaux.Colors.ConsoleColors)
   name: TranslateToStandardColorMap(ConsoleColors)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TranslateToStandardColorMap_Terminaux_Colors_ConsoleColors_
@@ -2975,15 +2991,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.TryParseColor
   nameWithType: ColorTools.TryParseColor
-- uid: Terminaux.Colors.ColorTools.TrySetConsoleColor(Terminaux.Colors.Color,System.Boolean)
-  name: TrySetConsoleColor(Color, bool)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TrySetConsoleColor_Terminaux_Colors_Color_System_Boolean_
-  commentId: M:Terminaux.Colors.ColorTools.TrySetConsoleColor(Terminaux.Colors.Color,System.Boolean)
-  name.vb: TrySetConsoleColor(Color, Boolean)
-  fullName: Terminaux.Colors.ColorTools.TrySetConsoleColor(Terminaux.Colors.Color, bool)
-  fullName.vb: Terminaux.Colors.ColorTools.TrySetConsoleColor(Terminaux.Colors.Color, Boolean)
-  nameWithType: ColorTools.TrySetConsoleColor(Color, bool)
-  nameWithType.vb: ColorTools.TrySetConsoleColor(Color, Boolean)
+- uid: Terminaux.Colors.ColorTools.TrySetConsoleColor(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
+  name: TrySetConsoleColor(Color, bool, bool, bool)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TrySetConsoleColor_Terminaux_Colors_Color_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:Terminaux.Colors.ColorTools.TrySetConsoleColor(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
+  name.vb: TrySetConsoleColor(Color, Boolean, Boolean, Boolean)
+  fullName: Terminaux.Colors.ColorTools.TrySetConsoleColor(Terminaux.Colors.Color, bool, bool, bool)
+  fullName.vb: Terminaux.Colors.ColorTools.TrySetConsoleColor(Terminaux.Colors.Color, Boolean, Boolean, Boolean)
+  nameWithType: ColorTools.TrySetConsoleColor(Color, bool, bool, bool)
+  nameWithType.vb: ColorTools.TrySetConsoleColor(Color, Boolean, Boolean, Boolean)
 - uid: Terminaux.Colors.ColorTools.TrySetConsoleColor*
   name: TrySetConsoleColor
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TrySetConsoleColor_
@@ -2991,6 +3007,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.TrySetConsoleColor
   nameWithType: ColorTools.TrySetConsoleColor
+- uid: Terminaux.Colors.ColorTools.TrySetConsoleColorDry(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
+  name: TrySetConsoleColorDry(Color, bool, bool, bool)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TrySetConsoleColorDry_Terminaux_Colors_Color_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:Terminaux.Colors.ColorTools.TrySetConsoleColorDry(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
+  name.vb: TrySetConsoleColorDry(Color, Boolean, Boolean, Boolean)
+  fullName: Terminaux.Colors.ColorTools.TrySetConsoleColorDry(Terminaux.Colors.Color, bool, bool, bool)
+  fullName.vb: Terminaux.Colors.ColorTools.TrySetConsoleColorDry(Terminaux.Colors.Color, Boolean, Boolean, Boolean)
+  nameWithType: ColorTools.TrySetConsoleColorDry(Color, bool, bool, bool)
+  nameWithType.vb: ColorTools.TrySetConsoleColorDry(Color, Boolean, Boolean, Boolean)
+- uid: Terminaux.Colors.ColorTools.TrySetConsoleColorDry*
+  name: TrySetConsoleColorDry
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TrySetConsoleColorDry_
+  commentId: Overload:Terminaux.Colors.ColorTools.TrySetConsoleColorDry
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.TrySetConsoleColorDry
+  nameWithType: ColorTools.TrySetConsoleColorDry
 - uid: Terminaux.Colors.ColorType
   name: ColorType
   href: api/Terminaux.Colors.ColorType.html
