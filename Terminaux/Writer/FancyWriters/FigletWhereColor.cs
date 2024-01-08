@@ -71,7 +71,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(new Color(Color));
+                ColorTools.SetConsoleColorDry(new Color(Color));
 
                 // Actually write
                 WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
@@ -99,8 +99,8 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(new Color(ForegroundColor));
-                ColorTools.SetConsoleColor(new Color(BackgroundColor), true);
+                ColorTools.SetConsoleColorDry(new Color(ForegroundColor));
+                ColorTools.SetConsoleColorDry(new Color(BackgroundColor), true);
 
                 // Actually write
                 WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
@@ -127,7 +127,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(Color);
+                ColorTools.SetConsoleColorDry(Color);
 
                 // Actually write
                 WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
@@ -155,8 +155,8 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(ForegroundColor);
-                ColorTools.SetConsoleColor(BackgroundColor, true);
+                ColorTools.SetConsoleColorDry(ForegroundColor);
+                ColorTools.SetConsoleColorDry(BackgroundColor, true);
 
                 // Actually write
                 WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);

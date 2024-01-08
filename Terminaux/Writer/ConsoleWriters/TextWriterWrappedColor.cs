@@ -169,8 +169,8 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     // Set the console color to selected background and foreground colors
-                    ColorTools.SetConsoleColor(ForegroundColor);
-                    ColorTools.SetConsoleColor(BackgroundColor, true);
+                    ColorTools.SetConsoleColorDry(ForegroundColor);
+                    ColorTools.SetConsoleColorDry(BackgroundColor, true);
 
                     // Write wrapped output
                     WriteWrappedPlain(Text, Line, vars);

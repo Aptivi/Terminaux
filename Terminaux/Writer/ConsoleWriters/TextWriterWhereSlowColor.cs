@@ -376,8 +376,8 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColor(ForegroundColor);
-                    ColorTools.SetConsoleColor(BackgroundColor, true);
+                    ColorTools.SetConsoleColorDry(ForegroundColor);
+                    ColorTools.SetConsoleColorDry(BackgroundColor, true);
 
                     // Write text in another place slowly
                     WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);

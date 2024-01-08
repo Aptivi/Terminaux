@@ -130,46 +130,53 @@ namespace Terminaux.Colors
         /// <param name="Background">Whether to set background or not</param>
         /// <param name="ForceSet">Force set background even if background setting is disabled</param>
         /// <param name="canSetBackground">Can the console set the background?</param>
-        public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false, bool canSetBackground = true)
-        {
-            if (ColorSequence is null)
-                throw new ArgumentNullException(nameof(ColorSequence));
-
-            // Define reset background sequence
-            string resetSequence = $"{VtSequenceBasicChars.EscapeChar}[49m";
-
-            // Set background
-            if (Background)
-            {
-                if (canSetBackground | ForceSet)
-                {
-                    TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
-                    currentBackgroundColor = ColorSequence;
-                }
-                else if (!canSetBackground)
-                {
-                    TextWriterColor.WritePlain(resetSequence, false);
-                    currentBackgroundColor = Color.Empty;
-                }
-            }
-            else
-            {
-                TextWriterColor.WritePlain(ColorSequence.VTSequenceForeground, false);
-                currentForegroundColor = ColorSequence;
-            }
-        }
+        public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false, bool canSetBackground = true) =>
+            SetConsoleColorInternal(ColorSequence, Background, ForceSet, canSetBackground, true);
 
         /// <summary>
         /// Sets the console color
         /// </summary>
         /// <param name="ColorSequence">The color instance</param>
         /// <param name="Background">Whether to set background or not</param>
+        /// <param name="ForceSet">Force set background even if background setting is disabled</param>
+        /// <param name="canSetBackground">Can the console set the background?</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TrySetConsoleColor(Color ColorSequence, bool Background)
+        public static bool TrySetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false, bool canSetBackground = true)
         {
             try
             {
-                SetConsoleColor(ColorSequence, Background);
+                SetConsoleColor(ColorSequence, Background, ForceSet, canSetBackground);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Sets the console color dryly
+        /// </summary>
+        /// <param name="ColorSequence">The color instance</param>
+        /// <param name="Background">Whether to set background or not</param>
+        /// <param name="ForceSet">Force set background even if background setting is disabled</param>
+        /// <param name="canSetBackground">Can the console set the background?</param>
+        public static void SetConsoleColorDry(Color ColorSequence, bool Background = false, bool ForceSet = false, bool canSetBackground = true) =>
+            SetConsoleColorInternal(ColorSequence, Background, ForceSet, canSetBackground, false);
+
+        /// <summary>
+        /// Sets the console color dryly
+        /// </summary>
+        /// <param name="ColorSequence">The color instance</param>
+        /// <param name="Background">Whether to set background or not</param>
+        /// <param name="ForceSet">Force set background even if background setting is disabled</param>
+        /// <param name="canSetBackground">Can the console set the background?</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TrySetConsoleColorDry(Color ColorSequence, bool Background = false, bool ForceSet = false, bool canSetBackground = true)
+        {
+            try
+            {
+                SetConsoleColorDry(ColorSequence, Background, ForceSet, canSetBackground);
                 return true;
             }
             catch (Exception)
@@ -446,5 +453,37 @@ namespace Terminaux.Colors
             colorNum >= 0 && colorNum <= (int)ConsoleColors.White ?
             $"{(int)TranslateToX11ColorMap((ConsoleColor)colorNum)}" :
             $"{colorNum}";
+
+        internal static void SetConsoleColorInternal(Color ColorSequence, bool Background, bool ForceSet, bool canSetBackground, bool needsToSetCurrentColors)
+        {
+            if (ColorSequence is null)
+                throw new ArgumentNullException(nameof(ColorSequence));
+
+            // Define reset background sequence
+            string resetSequence = $"{VtSequenceBasicChars.EscapeChar}[49m";
+
+            // Set background
+            if (Background)
+            {
+                if (canSetBackground | ForceSet)
+                {
+                    TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
+                    if (needsToSetCurrentColors)
+                        currentBackgroundColor = ColorSequence;
+                }
+                else if (!canSetBackground)
+                {
+                    TextWriterColor.WritePlain(resetSequence, false);
+                    if (needsToSetCurrentColors)
+                        currentBackgroundColor = Color.Empty;
+                }
+            }
+            else
+            {
+                TextWriterColor.WritePlain(ColorSequence.VTSequenceForeground, false);
+                if (needsToSetCurrentColors)
+                    currentForegroundColor = ColorSequence;
+            }
+        }
     }
 }

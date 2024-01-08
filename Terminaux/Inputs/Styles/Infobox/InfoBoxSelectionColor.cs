@@ -528,7 +528,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             {
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    ColorTools.SetConsoleColor(ColorTools.currentBackgroundColor, true);
+                    ColorTools.SetConsoleColorDry(ColorTools.currentBackgroundColor, true);
                     return CsiSequences.GenerateCsiEraseInDisplay(2) + CsiSequences.GenerateCsiCursorPosition(1, 1);
                 });
                 ScreenTools.SetCurrent(screen);

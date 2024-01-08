@@ -43,11 +43,11 @@ namespace Terminaux.Inputs.Styles
 
                 // Ask a question
                 TextWriterColor.WriteColor(Question, false, questionColor);
-                ColorTools.SetConsoleColor(inputColor);
+                ColorTools.SetConsoleColorDry(inputColor);
 
                 // Wait for an answer
                 Answer = Input.ReadLine();
-                ColorTools.SetConsoleColor(textColor);
+                ColorTools.SetConsoleColorDry(textColor);
 
                 return Answer;
             }
@@ -68,11 +68,11 @@ namespace Terminaux.Inputs.Styles
 
                 // Ask a question
                 TextWriterColor.WriteColor(Question, false, questionColor);
-                ColorTools.SetConsoleColor(inputColor);
+                ColorTools.SetConsoleColorDry(inputColor);
 
                 // Wait for an answer
                 Answer = Input.ReadLineNoInput();
-                ColorTools.SetConsoleColor(textColor);
+                ColorTools.SetConsoleColorDry(textColor);
 
                 return Answer;
             }

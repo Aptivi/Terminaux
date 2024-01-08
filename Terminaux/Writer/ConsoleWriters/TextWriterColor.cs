@@ -341,8 +341,8 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    ColorTools.SetConsoleColor(ForegroundColor);
-                    ColorTools.SetConsoleColor(BackgroundColor, true);
+                    ColorTools.SetConsoleColorDry(ForegroundColor);
+                    ColorTools.SetConsoleColorDry(BackgroundColor, true);
 
                     // Write the text to console
                     WritePlain(Text, settings, Line, vars);

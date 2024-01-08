@@ -240,13 +240,13 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    ColorTools.SetConsoleColor(ForegroundColor, true);
-                    ColorTools.SetConsoleColor(BackgroundColor);
+                    ColorTools.SetConsoleColorDry(ForegroundColor, true);
+                    ColorTools.SetConsoleColorDry(BackgroundColor);
 
                     // Write the text to console
                     TextWriterColor.WritePlain(Text, settings, false, vars);
-                    ColorTools.SetConsoleColor(ForegroundColor);
-                    ColorTools.SetConsoleColor(BackgroundColor, true);
+                    ColorTools.SetConsoleColorDry(ForegroundColor);
+                    ColorTools.SetConsoleColorDry(BackgroundColor, true);
                     TextWriterColor.WritePlain("", settings, Line);
 
                     // Reset the colors

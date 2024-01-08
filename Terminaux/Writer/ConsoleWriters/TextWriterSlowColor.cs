@@ -125,8 +125,8 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColor(ForegroundColor);
-                    ColorTools.SetConsoleColor(BackgroundColor, true);
+                    ColorTools.SetConsoleColorDry(ForegroundColor);
+                    ColorTools.SetConsoleColorDry(BackgroundColor, true);
 
                     // Write text slowly
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
