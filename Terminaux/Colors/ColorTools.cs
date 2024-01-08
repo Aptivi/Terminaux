@@ -44,6 +44,18 @@ namespace Terminaux.Colors
             globalSettings ?? new();
 
         /// <summary>
+        /// Current foreground color
+        /// </summary>
+        public static Color CurrentForegroundColor =>
+            currentForegroundColor;
+
+        /// <summary>
+        /// Current background color
+        /// </summary>
+        public static Color CurrentBackgroundColor =>
+            currentBackgroundColor;
+
+        /// <summary>
         /// Converts from sRGB to Linear RGB using a color number
         /// </summary>
         /// <param name="colorNum">Color number from 0 to 255</param>
