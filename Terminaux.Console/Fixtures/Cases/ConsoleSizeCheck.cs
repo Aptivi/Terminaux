@@ -19,6 +19,7 @@
 
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases

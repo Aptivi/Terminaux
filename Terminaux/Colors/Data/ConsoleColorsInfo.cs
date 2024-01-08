@@ -19,9 +19,8 @@
 
 using System;
 using System.Diagnostics;
-using Terminaux.Colors.Data;
 
-namespace Terminaux.Colors
+namespace Terminaux.Colors.Data
 {
     /// <summary>
     /// Information for the console colors that fit within the 256 colors

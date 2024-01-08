@@ -24,6 +24,7 @@ using System.Text;
 using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
+using Terminaux.Colors.Data;
 
 namespace Terminaux.Writer.FancyWriters
 {

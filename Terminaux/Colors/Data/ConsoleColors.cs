@@ -19,7 +19,7 @@
 
 #pragma warning disable CS1591
 
-namespace Terminaux.Colors
+namespace Terminaux.Colors.Data
 {
     /// <summary>
     /// All 255 console colors

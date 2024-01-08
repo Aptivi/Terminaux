@@ -19,6 +19,7 @@
 
 using Figletize;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases

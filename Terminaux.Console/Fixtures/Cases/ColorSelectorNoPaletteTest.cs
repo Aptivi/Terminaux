@@ -19,6 +19,7 @@
 
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Colors.Selector;
 using Terminaux.Writer.ConsoleWriters;
 

@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using System.Text;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 
 namespace Terminaux.Writer.ConsoleWriters
 {

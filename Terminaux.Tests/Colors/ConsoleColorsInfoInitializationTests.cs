@@ -18,7 +18,7 @@
 //
 
 using Shouldly;
-using Terminaux.Colors;
+using Terminaux.Colors.Data;
 
 namespace Terminaux.Tests.Colors
 {

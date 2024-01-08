@@ -20,6 +20,7 @@
 using System;
 using System.Globalization;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors.Models.Parsing

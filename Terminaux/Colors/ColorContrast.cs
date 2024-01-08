@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 
 namespace Terminaux.Colors
 {

@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Parsing;
 
