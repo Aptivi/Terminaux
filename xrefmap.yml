@@ -2116,6 +2116,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.B
   nameWithType: Color.B
+- uid: Terminaux.Colors.Color.BNormalized
+  name: BNormalized
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_BNormalized
+  commentId: P:Terminaux.Colors.Color.BNormalized
+  fullName: Terminaux.Colors.Color.BNormalized
+  nameWithType: Color.BNormalized
+- uid: Terminaux.Colors.Color.BNormalized*
+  name: BNormalized
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_BNormalized_
+  commentId: Overload:Terminaux.Colors.Color.BNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.BNormalized
+  nameWithType: Color.BNormalized
 - uid: Terminaux.Colors.Color.Brightness
   name: Brightness
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_Brightness
@@ -2222,6 +2235,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.G
   nameWithType: Color.G
+- uid: Terminaux.Colors.Color.GNormalized
+  name: GNormalized
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_GNormalized
+  commentId: P:Terminaux.Colors.Color.GNormalized
+  fullName: Terminaux.Colors.Color.GNormalized
+  nameWithType: Color.GNormalized
+- uid: Terminaux.Colors.Color.GNormalized*
+  name: GNormalized
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_GNormalized_
+  commentId: Overload:Terminaux.Colors.Color.GNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.GNormalized
+  nameWithType: Color.GNormalized
 - uid: Terminaux.Colors.Color.GetHashCode
   name: GetHashCode()
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_GetHashCode
@@ -2339,6 +2365,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.RGB
   nameWithType: Color.RGB
+- uid: Terminaux.Colors.Color.RNormalized
+  name: RNormalized
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_RNormalized
+  commentId: P:Terminaux.Colors.Color.RNormalized
+  fullName: Terminaux.Colors.Color.RNormalized
+  nameWithType: Color.RNormalized
+- uid: Terminaux.Colors.Color.RNormalized*
+  name: RNormalized
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_RNormalized_
+  commentId: Overload:Terminaux.Colors.Color.RNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.RNormalized
+  nameWithType: Color.RNormalized
 - uid: Terminaux.Colors.Color.ToString
   name: ToString()
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_ToString
@@ -6441,6 +6480,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedGreenBlue.B
   nameWithType: RedGreenBlue.B
+- uid: Terminaux.Colors.Models.RedGreenBlue.BNormalized
+  name: BNormalized
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_BNormalized
+  commentId: P:Terminaux.Colors.Models.RedGreenBlue.BNormalized
+  fullName: Terminaux.Colors.Models.RedGreenBlue.BNormalized
+  nameWithType: RedGreenBlue.BNormalized
+- uid: Terminaux.Colors.Models.RedGreenBlue.BNormalized*
+  name: BNormalized
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_BNormalized_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.BNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.BNormalized
+  nameWithType: RedGreenBlue.BNormalized
 - uid: Terminaux.Colors.Models.RedGreenBlue.Equals(System.Object)
   name: Equals(object)
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_Equals_System_Object_
@@ -6476,6 +6528,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedGreenBlue.G
   nameWithType: RedGreenBlue.G
+- uid: Terminaux.Colors.Models.RedGreenBlue.GNormalized
+  name: GNormalized
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_GNormalized
+  commentId: P:Terminaux.Colors.Models.RedGreenBlue.GNormalized
+  fullName: Terminaux.Colors.Models.RedGreenBlue.GNormalized
+  nameWithType: RedGreenBlue.GNormalized
+- uid: Terminaux.Colors.Models.RedGreenBlue.GNormalized*
+  name: GNormalized
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_GNormalized_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.GNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.GNormalized
+  nameWithType: RedGreenBlue.GNormalized
 - uid: Terminaux.Colors.Models.RedGreenBlue.GetHashCode
   name: GetHashCode()
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_GetHashCode
@@ -6502,6 +6567,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedGreenBlue.R
   nameWithType: RedGreenBlue.R
+- uid: Terminaux.Colors.Models.RedGreenBlue.RNormalized
+  name: RNormalized
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_RNormalized
+  commentId: P:Terminaux.Colors.Models.RedGreenBlue.RNormalized
+  fullName: Terminaux.Colors.Models.RedGreenBlue.RNormalized
+  nameWithType: RedGreenBlue.RNormalized
+- uid: Terminaux.Colors.Models.RedGreenBlue.RNormalized*
+  name: RNormalized
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_RNormalized_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.RNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.RNormalized
+  nameWithType: RedGreenBlue.RNormalized
 - uid: Terminaux.Colors.Models.RedGreenBlue.ToString
   name: ToString()
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_ToString
