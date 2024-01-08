@@ -85,7 +85,6 @@ namespace Terminaux.Writer.ConsoleWriters
                                         idx -= ConsoleWrapper.WindowHeight * 2 - 1;
                                         if (idx < 0)
                                             idx = -1;
-                                        LinesMade = 0;
                                         break;
                                     case ConsoleKey.PageDown:
                                         bail = true;
@@ -93,7 +92,23 @@ namespace Terminaux.Writer.ConsoleWriters
                                             idx = sentences.Length - 1 - ConsoleWrapper.WindowHeight;
                                         else
                                             idx--;
-                                        LinesMade = 0;
+                                        break;
+                                    case ConsoleKey.UpArrow:
+                                        bail = true;
+                                        idx -= ConsoleWrapper.WindowHeight + 1;
+                                        if (idx < 0)
+                                            idx = -1;
+                                        break;
+                                    case ConsoleKey.DownArrow:
+                                        bail = true;
+                                        if (idx >= sentences.Length - 1)
+                                        {
+                                            idx = sentences.Length - 1 - ConsoleWrapper.WindowHeight;
+                                            break;
+                                        }
+                                        idx -= ConsoleWrapper.WindowHeight - 1;
+                                        if (idx < 0)
+                                            idx = -1;
                                         break;
                                     case ConsoleKey.Home:
                                         bail = true;
