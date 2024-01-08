@@ -22,7 +22,6 @@ using System.Diagnostics;
 using System.Threading;
 using Terminaux.Base;
 
-
 #if NET8_0_OR_GREATER
 using SpecProbe.Platform;
 using System.Collections.Generic;
@@ -50,7 +49,7 @@ namespace Terminaux.ResizeListener
         {
             ConsoleResizeHandler.SetCachedWindowDimensions(Console.WindowWidth, Console.WindowHeight);
 
-            // PosixSignalRegistration is not available for .NET Framework, so we need to 
+            // PosixSignalRegistration is not available for .NET Framework, so we need to guard accordingly
 #if NET8_0_OR_GREATER
             ConsoleResizeHandler.usesSigWinch = PlatformHelper.IsOnUnix();
             if (ConsoleResizeHandler.usesSigWinch)
@@ -62,16 +61,16 @@ namespace Terminaux.ResizeListener
             else
             {
 #endif
-            if (!ResizeListenerThread.IsAlive)
-            {
-                if (customHandler is not null)
+                if (!ResizeListenerThread.IsAlive)
                 {
-                    ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
-                    ResizeListenerThread.Start(customHandler);
+                    if (customHandler is not null)
+                    {
+                        ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
+                        ResizeListenerThread.Start(customHandler);
+                    }
+                    else
+                        ResizeListenerThread.Start(null);
                 }
-                else
-                    ResizeListenerThread.Start(null);
-            }
 #if NET8_0_OR_GREATER
             }
 #endif
