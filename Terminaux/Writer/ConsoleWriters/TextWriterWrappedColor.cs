@@ -87,6 +87,14 @@ namespace Terminaux.Writer.ConsoleWriters
                                             idx = -1;
                                         LinesMade = 0;
                                         break;
+                                    case ConsoleKey.PageDown:
+                                        bail = true;
+                                        if (idx > sentences.Length - 1 - ConsoleWrapper.WindowHeight)
+                                            idx = sentences.Length - 1 - ConsoleWrapper.WindowHeight;
+                                        else
+                                            idx--;
+                                        LinesMade = 0;
+                                        break;
                                     case ConsoleKey.Home:
                                         bail = true;
                                         idx = -1;
