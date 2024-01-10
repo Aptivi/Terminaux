@@ -2904,6 +2904,28 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.LoadBack
   nameWithType: ColorTools.LoadBack
+- uid: Terminaux.Colors.ColorTools.LoadBackDry
+  name: LoadBackDry()
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_LoadBackDry
+  commentId: M:Terminaux.Colors.ColorTools.LoadBackDry
+  fullName: Terminaux.Colors.ColorTools.LoadBackDry()
+  nameWithType: ColorTools.LoadBackDry()
+- uid: Terminaux.Colors.ColorTools.LoadBackDry(Terminaux.Colors.Color,System.Boolean)
+  name: LoadBackDry(Color, bool)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_LoadBackDry_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Colors.ColorTools.LoadBackDry(Terminaux.Colors.Color,System.Boolean)
+  name.vb: LoadBackDry(Color, Boolean)
+  fullName: Terminaux.Colors.ColorTools.LoadBackDry(Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Colors.ColorTools.LoadBackDry(Terminaux.Colors.Color, Boolean)
+  nameWithType: ColorTools.LoadBackDry(Color, bool)
+  nameWithType.vb: ColorTools.LoadBackDry(Color, Boolean)
+- uid: Terminaux.Colors.ColorTools.LoadBackDry*
+  name: LoadBackDry
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_LoadBackDry_
+  commentId: Overload:Terminaux.Colors.ColorTools.LoadBackDry
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.LoadBackDry
+  nameWithType: ColorTools.LoadBackDry
 - uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double,Terminaux.Colors.Transformation.TransformationMethod)
   name: RenderColorBlindnessAware(Color, TransformationFormula, double, TransformationMethod)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Transformation_TransformationFormula_System_Double_Terminaux_Colors_Transformation_TransformationMethod_
