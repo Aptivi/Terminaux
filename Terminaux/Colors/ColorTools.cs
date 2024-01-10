@@ -119,6 +119,30 @@ namespace Terminaux.Colors
         }
 
         /// <summary>
+        /// Loads the background dryly
+        /// </summary>
+        public static void LoadBackDry() =>
+            LoadBackDry(currentBackgroundColor);
+
+        /// <summary>
+        /// Loads the background dryly
+        /// </summary>
+        /// <param name="ColorSequence">Color sequence used to load background</param>
+        /// <param name="Force">Force set background even if background setting is disabled</param>
+        public static void LoadBackDry(Color ColorSequence, bool Force = false)
+        {
+            try
+            {
+                SetConsoleColorDry(ColorSequence, true, Force);
+                ConsoleWrapper.Clear();
+            }
+            catch (Exception ex)
+            {
+                throw new TerminauxException($"Failed to set background: {ex.Message}");
+            }
+        }
+
+        /// <summary>
         /// Gets the gray color according to the brightness of the background color
         /// </summary>
         /// <param name="contrastType">Contrast type</param>
