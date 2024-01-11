@@ -102,6 +102,12 @@ namespace Terminaux.Base
             ConsoleWrapperTools.ActionClear();
 
         /// <summary>
+        /// Clears the console screen while loading the background.
+        /// </summary>
+        public static void ClearLoadBack() =>
+            ConsoleWrapperTools.ActionClearLoadBack();
+
+        /// <summary>
         /// Sets the cursor position
         /// </summary>
         /// <param name="left">The left to be set (from 0)</param>

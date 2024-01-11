@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Colors;
 using Terminaux.Reader;
 using Textify.General;
 
@@ -45,6 +46,7 @@ namespace Terminaux.Base
         internal static Action<int> actionSetCursorTop = SetCursorTop;
         internal static Action actionBeep = Beep;
         internal static Action actionClear = Clear;
+        internal static Action actionClearLoadBack = ClearLoadBack;
         internal static Func<bool, ConsoleKeyInfo> actionReadKey = ReadKey;
         internal static Action<string, TermReaderSettings> actionWriteNonStandalone1 = WriteNonStandalone;
         internal static Action<string, TermReaderSettings, object[]> actionWriteNonStandalone2 = WriteNonStandalone;
@@ -191,6 +193,14 @@ namespace Terminaux.Base
         {
             internal get => actionClear;
             set => actionClear = value ?? Clear;
+        }
+        /// <summary>
+        /// Clears the console while loading the background
+        /// </summary>
+        public static Action ActionClearLoadBack
+        {
+            internal get => actionClearLoadBack;
+            set => actionClearLoadBack = value ?? ClearLoadBack;
         }
         /// <summary>
         /// Reads a key<br></br><br></br>
@@ -447,6 +457,12 @@ namespace Terminaux.Base
 
         private static void Clear() =>
             Console.Clear();
+
+        private static void ClearLoadBack()
+        {
+            Console.Write(ColorTools.CurrentBackgroundColor.VTSequenceBackground);
+            Console.Clear();
+        }
 
         private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
             Console.ReadKey(intercept);

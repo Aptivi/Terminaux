@@ -294,6 +294,14 @@
     "Terminaux - ConsoleCheck": {
       "commandName": "Project",
       "commandLineArgs": "ConsoleCheck"
+    },
+    "Terminaux - ColorBackTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorBackTest"
+    },
+    "Terminaux - ColorBackTestDry": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorBackTestDry"
     }
   }
 }

@@ -99,6 +99,8 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new ColorRandomTest(),
             new ColorRandom256Test(),
             new ColorRandom16Test(),
+            new ColorBackTest(),
+            new ColorBackTestDry(),
 
             // Interactive TUI
             new CliInfoPaneTest(),
