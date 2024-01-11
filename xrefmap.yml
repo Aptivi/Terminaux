@@ -1316,6 +1316,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapper.Clear
   nameWithType: ConsoleWrapper.Clear
+- uid: Terminaux.Base.ConsoleWrapper.ClearLoadBack
+  name: ClearLoadBack()
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_ClearLoadBack
+  commentId: M:Terminaux.Base.ConsoleWrapper.ClearLoadBack
+  fullName: Terminaux.Base.ConsoleWrapper.ClearLoadBack()
+  nameWithType: ConsoleWrapper.ClearLoadBack()
+- uid: Terminaux.Base.ConsoleWrapper.ClearLoadBack*
+  name: ClearLoadBack
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_ClearLoadBack_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.ClearLoadBack
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.ClearLoadBack
+  nameWithType: ConsoleWrapper.ClearLoadBack
 - uid: Terminaux.Base.ConsoleWrapper.CursorLeft
   name: CursorLeft
   href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_CursorLeft
@@ -1580,6 +1593,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionClear
   nameWithType: ConsoleWrapperTools.ActionClear
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionClearLoadBack
+  name: ActionClearLoadBack
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionClearLoadBack
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionClearLoadBack
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionClearLoadBack
+  nameWithType: ConsoleWrapperTools.ActionClearLoadBack
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionClearLoadBack*
+  name: ActionClearLoadBack
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionClearLoadBack_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionClearLoadBack
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionClearLoadBack
+  nameWithType: ConsoleWrapperTools.ActionClearLoadBack
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionCursorLeft
   name: ActionCursorLeft
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionCursorLeft
