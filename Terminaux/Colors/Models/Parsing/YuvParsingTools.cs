@@ -52,7 +52,7 @@ namespace Terminaux.Colors.Models.Parsing
 
             var specifierArray = specifier.Substring(4).Split(';');
             double y = Convert.ToDouble(specifierArray[0]);
-            if (y < 0.0d || y > 1.0d)
+            if (y < 0.0d || y > 255.0d)
                 return false;
             double u = Convert.ToDouble(specifierArray[1]);
             if (u < 0.0d || u > 255.0d)
