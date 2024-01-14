@@ -19,6 +19,7 @@
 
 using System.Diagnostics;
 using Terminaux.Colors;
+using Terminaux.Colors.Interop;
 
 namespace Terminaux.Tests.Colors
 {
@@ -134,8 +135,8 @@ namespace Terminaux.Tests.Colors
         [TestCase("#CC00CC", ExpectedResult = "#FFFFFF")]
         [TestCase("#CC6666", ExpectedResult = "#000000")]
         [Description("Querying")]
-        public string TestGetContrastColorNtsc(string speciifer) =>
-            ColorContrast.GetContrastColorNtsc(speciifer).Hex;
+        public string TestGetContrastColorNtsc(string specifier) =>
+            ColorContrast.GetContrastColorNtsc(specifier).Hex;
 
         /// <summary>
         /// Tests trying to get the contrast color (Half)
@@ -169,8 +170,8 @@ namespace Terminaux.Tests.Colors
         [TestCase("#CC00CC", ExpectedResult = "#000000")]
         [TestCase("#CC6666", ExpectedResult = "#000000")]
         [Description("Querying")]
-        public string TestGetContrastColorHalf(string speciifer) =>
-            ColorContrast.GetContrastColorHalf(speciifer).Hex;
+        public string TestGetContrastColorHalf(string specifier) =>
+            ColorContrast.GetContrastColorHalf(specifier).Hex;
 
         /// <summary>
         /// Tests trying to get the contrast color (NTSC)
@@ -204,8 +205,8 @@ namespace Terminaux.Tests.Colors
         [TestCase("#CC00CC", ExpectedResult = "#FFFFFF")]
         [TestCase("#CC6666", ExpectedResult = "#000000")]
         [Description("Querying")]
-        public string TestGetContrastColorUsingGetGrayNtsc(string speciifer) =>
-            ColorTools.GetGray(speciifer, ColorContrastType.Ntsc).Hex;
+        public string TestGetContrastColorUsingGetGrayNtsc(string specifier) =>
+            ColorTools.GetGray(specifier, ColorContrastType.Ntsc).Hex;
 
         /// <summary>
         /// Tests trying to get the contrast color (Half)
@@ -239,8 +240,8 @@ namespace Terminaux.Tests.Colors
         [TestCase("#CC00CC", ExpectedResult = "#000000")]
         [TestCase("#CC6666", ExpectedResult = "#000000")]
         [Description("Querying")]
-        public string TestGetContrastColorUsingGetGrayHalf(string speciifer) =>
-            ColorTools.GetGray(speciifer, ColorContrastType.Half).Hex;
+        public string TestGetContrastColorUsingGetGrayHalf(string specifier) =>
+            ColorTools.GetGray(specifier, ColorContrastType.Half).Hex;
 
         /// <summary>
         /// Tests trying to get the contrast color (Light)
@@ -275,8 +276,52 @@ namespace Terminaux.Tests.Colors
         [TestCase("#CC00CC", ExpectedResult = "#000000")]
         [TestCase("#CC6666", ExpectedResult = "#000000")]
         [Description("Querying")]
-        public string TestGetContrastColorUsingGetGrayLight(string speciifer) =>
-            ColorTools.GetGray(speciifer, ColorContrastType.Light).Hex;
+        public string TestGetContrastColorUsingGetGrayLight(string specifier) =>
+            ColorTools.GetGray(specifier, ColorContrastType.Light).Hex;
 
+        /// <summary>
+        /// Tests trying to convert from Color to Drawing.Color
+        /// </summary>
+        [TestCase("#FFFFEE", ExpectedResult = "255;255;238")]
+        [Description("Querying")]
+        public string TestConvertToDrawing(string specifier)
+        {
+            var drawing = SystemColorConverter.ToDrawingColor(specifier);
+            return $"{drawing.R};{drawing.G};{drawing.B}";
+        }
+
+        /// <summary>
+        /// Tests trying to convert from Drawing.Color to Color
+        /// </summary>
+        [TestCase(255, 255, 238, ExpectedResult = "255;255;238")]
+        [Description("Querying")]
+        public string TestConvertFromDrawing(int r, int g, int b)
+        {
+            var drawing = System.Drawing.Color.FromArgb(r, g, b);
+            var our = SystemColorConverter.FromDrawingColor(drawing);
+            return our.ToString();
+        }
+
+        /// <summary>
+        /// Tests trying to convert from Color to Drawing.Color (null check)
+        /// </summary>
+        [TestCase(ExpectedResult = "0;0;0")]
+        [Description("Querying")]
+        public string TestConvertToDrawingWithNull()
+        {
+            var drawing = SystemColorConverter.ToDrawingColor(null);
+            return $"{drawing.R};{drawing.G};{drawing.B}";
+        }
+
+        /// <summary>
+        /// Tests trying to convert from Drawing.Color to Color (null check)
+        /// </summary>
+        [TestCase(ExpectedResult = "0")]
+        [Description("Querying")]
+        public string TestConvertFromDrawingWithNull()
+        {
+            var our = SystemColorConverter.FromDrawingColor(System.Drawing.Color.Empty);
+            return our.ToString();
+        }
     }
 }
