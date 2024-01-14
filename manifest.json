@@ -755,6 +755,126 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.ChoiceInputElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.ChoiceInputElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.DynamicTextElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.DynamicTextElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.IElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.IElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.InputElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.InputElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.MaskedInputElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.MaskedInputElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.MultipleChoiceInputElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.MultipleChoiceInputElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.TextElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.TextElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.PresentationPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.PresentationPage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.PresentationTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.PresentationTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Slideshow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Slideshow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Choice.ChoiceOutputType.yml",
       "output": {
         ".html": {
