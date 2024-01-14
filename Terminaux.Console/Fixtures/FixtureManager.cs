@@ -113,6 +113,12 @@ namespace Terminaux.ConsoleDemo.Fixtures
             // Screen
             new TestScreen(),
 
+            // Presentation
+            new TestPresentation(),
+            new TestPresentationKiosk(),
+            new TestPresentationRequired(),
+            new TestPresentationKioskRequired(),
+
             // Misc
             new ConsoleSizeCheck(),
             new ConsoleCheck(),

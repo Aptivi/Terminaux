@@ -302,6 +302,22 @@
     "Terminaux - ColorBackTestDry": {
       "commandName": "Project",
       "commandLineArgs": "ColorBackTestDry"
+    },
+    "Terminaux - TestPresentation": {
+      "commandName": "Project",
+      "commandLineArgs": "TestPresentation"
+    },
+    "Terminaux - TestPresentationKiosk": {
+      "commandName": "Project",
+      "commandLineArgs": "TestPresentationKiosk"
+    },
+    "Terminaux - TestPresentationRequired": {
+      "commandName": "Project",
+      "commandLineArgs": "TestPresentationRequired"
+    },
+    "Terminaux - TestPresentationKioskRequired": {
+      "commandName": "Project",
+      "commandLineArgs": "TestPresentationKioskRequired"
     }
   }
 }
