@@ -154,6 +154,16 @@
     "title": "Namespace Terminaux.Colors.Data | Terminaux API - Aptivi",
     "keywords": "Namespace Terminaux.Colors.Data Classes ConsoleColorData Console color data ConsoleColorData.Hsl The hue, saturation, and luminance values ConsoleColorData.Rgb Decoy class for RGB ConsoleColorsInfo Information for the console colors that fit within the 256 colors Enums ConsoleColors All 255 console colors"
   },
+  "api/Terminaux.Colors.Interop.SystemColorConverter.html": {
+    "href": "api/Terminaux.Colors.Interop.SystemColorConverter.html",
+    "title": "Class SystemColorConverter | Terminaux API - Aptivi",
+    "keywords": "Class SystemColorConverter Provides you with tools to convert System.Drawing's Color to and from Terminaux's Color Inheritance object SystemColorConverter Namespace: Terminaux.Colors.Interop Assembly: Terminaux.dll Syntax public static class SystemColorConverter Methods | Edit this page View Source FromDrawingColor(Color) Converts from System.Drawing's Color to Terminaux's Color Declaration public static Color FromDrawingColor(Color drawingColor) Parameters Type Name Description Color drawingColor System.Drawing's Color Returns Type Description Color Terminaux's Color | Edit this page View Source ToDrawingColor(Color) Converts from Terminaux's Color to System.Drawing's Color Declaration public static Color ToDrawingColor(Color ourColor) Parameters Type Name Description Color ourColor Terminaux's Color Returns Type Description Color System.Drawing's Color"
+  },
+  "api/Terminaux.Colors.Interop.html": {
+    "href": "api/Terminaux.Colors.Interop.html",
+    "title": "Namespace Terminaux.Colors.Interop | Terminaux API - Aptivi",
+    "keywords": "Namespace Terminaux.Colors.Interop Classes SystemColorConverter Provides you with tools to convert System.Drawing's Color to and from Terminaux's Color"
+  },
   "api/Terminaux.Colors.Models.Conversion.CmyConversionTools.html": {
     "href": "api/Terminaux.Colors.Models.Conversion.CmyConversionTools.html",
     "title": "Class CmyConversionTools | Terminaux API - Aptivi",

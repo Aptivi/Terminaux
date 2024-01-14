@@ -5023,6 +5023,44 @@ references:
   fullName.vb: Terminaux.Colors.Data.ConsoleColorsInfo.<>
   nameWithType: ConsoleColorsInfo.operator !=
   nameWithType.vb: ConsoleColorsInfo.<>
+- uid: Terminaux.Colors.Interop
+  name: Terminaux.Colors.Interop
+  href: api/Terminaux.Colors.Interop.html
+  commentId: N:Terminaux.Colors.Interop
+  fullName: Terminaux.Colors.Interop
+  nameWithType: Terminaux.Colors.Interop
+- uid: Terminaux.Colors.Interop.SystemColorConverter
+  name: SystemColorConverter
+  href: api/Terminaux.Colors.Interop.SystemColorConverter.html
+  commentId: T:Terminaux.Colors.Interop.SystemColorConverter
+  fullName: Terminaux.Colors.Interop.SystemColorConverter
+  nameWithType: SystemColorConverter
+- uid: Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor(System.Drawing.Color)
+  name: FromDrawingColor(Color)
+  href: api/Terminaux.Colors.Interop.SystemColorConverter.html#Terminaux_Colors_Interop_SystemColorConverter_FromDrawingColor_System_Drawing_Color_
+  commentId: M:Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor(System.Drawing.Color)
+  fullName: Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor(System.Drawing.Color)
+  nameWithType: SystemColorConverter.FromDrawingColor(Color)
+- uid: Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor*
+  name: FromDrawingColor
+  href: api/Terminaux.Colors.Interop.SystemColorConverter.html#Terminaux_Colors_Interop_SystemColorConverter_FromDrawingColor_
+  commentId: Overload:Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor
+  nameWithType: SystemColorConverter.FromDrawingColor
+- uid: Terminaux.Colors.Interop.SystemColorConverter.ToDrawingColor(Terminaux.Colors.Color)
+  name: ToDrawingColor(Color)
+  href: api/Terminaux.Colors.Interop.SystemColorConverter.html#Terminaux_Colors_Interop_SystemColorConverter_ToDrawingColor_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Interop.SystemColorConverter.ToDrawingColor(Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.Interop.SystemColorConverter.ToDrawingColor(Terminaux.Colors.Color)
+  nameWithType: SystemColorConverter.ToDrawingColor(Color)
+- uid: Terminaux.Colors.Interop.SystemColorConverter.ToDrawingColor*
+  name: ToDrawingColor
+  href: api/Terminaux.Colors.Interop.SystemColorConverter.html#Terminaux_Colors_Interop_SystemColorConverter_ToDrawingColor_
+  commentId: Overload:Terminaux.Colors.Interop.SystemColorConverter.ToDrawingColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Interop.SystemColorConverter.ToDrawingColor
+  nameWithType: SystemColorConverter.ToDrawingColor
 - uid: Terminaux.Colors.Models
   name: Terminaux.Colors.Models
   href: api/Terminaux.Colors.Models.html

@@ -325,6 +325,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Interop.SystemColorConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Interop.SystemColorConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Interop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Interop.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.Conversion.CmyConversionTools.yml",
       "output": {
         ".html": {
