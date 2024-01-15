@@ -221,7 +221,7 @@ namespace Terminaux.Colors.Selector
 
             // Buffer the gray ramp
             StringBuilder grayRamp = new();
-            var mono = ColorTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
+            var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
             for (int i = 0; i < boxWidth; i++)
             {
                 double width = (double)i / boxWidth;
@@ -603,7 +603,7 @@ namespace Terminaux.Colors.Selector
         {
             selectedColor =
                 colorBlind ?
-                ColorTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
+                TransformationTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
                 selectedColor;
             string separator = new('-', localizedTextTitle.Length);
             var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
@@ -741,7 +741,7 @@ namespace Terminaux.Colors.Selector
         {
             selectedColor =
                 colorBlind ?
-                ColorTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
+                TransformationTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
                 selectedColor;
             InfoBoxColor.WriteInfoBoxColorBack(localizedTextTitle, ColorTools.GetGray(selectedColor), selectedColor);
         }

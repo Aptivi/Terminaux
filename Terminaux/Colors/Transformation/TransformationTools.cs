@@ -22,7 +22,10 @@ using Terminaux.Colors.Transformation.Formulas;
 
 namespace Terminaux.Colors.Transformation
 {
-    internal static class TransformationTools
+    /// <summary>
+    /// Color transformation tools
+    /// </summary>
+    public static class TransformationTools
     {
         private static readonly Dictionary<TransformationFormula, BaseTransformationFormula> formulas = new()
         {
@@ -35,6 +38,30 @@ namespace Terminaux.Colors.Transformation
             { TransformationFormula.GreenScale, new GreenScale() },
             { TransformationFormula.RedScale, new RedScale() },
         };
+
+        /// <summary>
+        /// Provides you an easy way to generate new <see cref="Color"/> instances with color blindness applied
+        /// </summary>
+        /// <param name="color">Color to use</param>
+        /// <param name="formula">Selected formula for color blindness</param>
+        /// <param name="severity">Severity of the color blindness</param>
+        /// <param name="method">Choose color blindness calculation method</param>
+        /// <returns>An instance of <see cref="Color"/> with adjusted color values for color-blindness</returns>
+        public static Color RenderColorBlindnessAware(Color color, TransformationFormula formula, double severity, TransformationMethod method = TransformationMethod.Brettel1997)
+        {
+            // Get the resulting color
+            var settings = new ColorSettings()
+            {
+                EnableColorTransformation = true,
+                ColorTransformationMethod = method,
+                ColorBlindnessSeverity = severity,
+                ColorTransformationFormula = formula,
+            };
+            var result = new Color(color.PlainSequence, settings);
+
+            // Return the resulting color
+            return result;
+        }
 
         internal static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput, ColorSettings settings)
         {

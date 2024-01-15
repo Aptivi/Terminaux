@@ -440,30 +440,6 @@ namespace Terminaux.Colors
             };
         }
 
-        /// <summary>
-        /// Provides you an easy way to generate new <see cref="Color"/> instances with color blindness applied
-        /// </summary>
-        /// <param name="color">Color to use</param>
-        /// <param name="formula">Selected formula for color blindness</param>
-        /// <param name="severity">Severity of the color blindness</param>
-        /// <param name="method">Choose color blindness calculation method</param>
-        /// <returns>An instance of <see cref="Color"/> with adjusted color values for color-blindness</returns>
-        public static Color RenderColorBlindnessAware(Color color, TransformationFormula formula, double severity, TransformationMethod method = TransformationMethod.Brettel1997)
-        {
-            // Get the resulting color
-            var settings = new ColorSettings()
-            {
-                EnableColorTransformation = true,
-                ColorTransformationMethod = method,
-                ColorBlindnessSeverity = severity,
-                ColorTransformationFormula = formula,
-            };
-            var result = new Color(color.PlainSequence, settings);
-
-            // Return the resulting color
-            return result;
-        }
-
         internal static string GetColorIdStringFrom(ConsoleColors colorDef) =>
             GetColorIdStringFrom((int)colorDef);
 
