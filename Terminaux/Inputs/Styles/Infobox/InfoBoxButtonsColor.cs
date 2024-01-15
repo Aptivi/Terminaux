@@ -490,7 +490,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         var buttonBackgroundColor = selected ? InfoBoxTitledButtonsColor : BackgroundColor;
 
                         // Trim the button text to the max button width
-                        buttonText = buttonText.Truncate(maxButtonWidth - 6);
+                        buttonText = buttonText.Truncate(maxButtonWidth - 7);
                         int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
