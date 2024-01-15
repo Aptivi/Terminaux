@@ -289,35 +289,6 @@ namespace Terminaux.Colors
         }
 
         /// <summary>
-        /// Converts from the hexadecimal representation of a color to the RGB sequence
-        /// </summary>
-        /// <param name="Hex">A hexadecimal representation of a color (#AABBCC for example)</param>
-        /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
-        [Obsolete("Use Color.Hex instead. It'll be removed in a future release.")]
-        public static string ConvertFromHexToRGB(string Hex) =>
-            new Color(Hex).PlainSequence;
-
-        /// <summary>
-        /// Converts from the RGB sequence of a color to the hexadecimal representation
-        /// </summary>
-        /// <param name="RGBSequence">&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
-        /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
-        [Obsolete("Use Color.Hex instead. It'll be removed in a future release.")]
-        public static string ConvertFromRGBToHex(string RGBSequence) =>
-            new Color(RGBSequence).Hex;
-
-        /// <summary>
-        /// Converts from the RGB sequence of a color to the hexadecimal representation
-        /// </summary>
-        /// <param name="R">The red level</param>
-        /// <param name="G">The green level</param>
-        /// <param name="B">The blue level</param>
-        /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
-        [Obsolete("Use Color.Hex instead. It'll be removed in a future release.")]
-        public static string ConvertFromRGBToHex(int R, int G, int B) =>
-            new Color(R, G, B).Hex;
-
-        /// <summary>
         /// Gets a random color instance (true color)
         /// </summary>
         /// <param name="selectBlack">Whether to select the black color or not</param>
