@@ -2746,19 +2746,6 @@ references:
   commentId: T:Terminaux.Colors.ColorTools
   fullName: Terminaux.Colors.ColorTools
   nameWithType: ColorTools
-- uid: Terminaux.Colors.ColorTools.CorrectStandardColor(System.ConsoleColor)
-  name: CorrectStandardColor(ConsoleColor)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CorrectStandardColor_System_ConsoleColor_
-  commentId: M:Terminaux.Colors.ColorTools.CorrectStandardColor(System.ConsoleColor)
-  fullName: Terminaux.Colors.ColorTools.CorrectStandardColor(System.ConsoleColor)
-  nameWithType: ColorTools.CorrectStandardColor(ConsoleColor)
-- uid: Terminaux.Colors.ColorTools.CorrectStandardColor*
-  name: CorrectStandardColor
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CorrectStandardColor_
-  commentId: Overload:Terminaux.Colors.ColorTools.CorrectStandardColor
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.CorrectStandardColor
-  nameWithType: ColorTools.CorrectStandardColor
 - uid: Terminaux.Colors.ColorTools.CurrentBackgroundColor
   name: CurrentBackgroundColor
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CurrentBackgroundColor
@@ -2959,32 +2946,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.SetConsoleColorDry
   nameWithType: ColorTools.SetConsoleColorDry
-- uid: Terminaux.Colors.ColorTools.TranslateToStandardColorMap(Terminaux.Colors.Data.ConsoleColors)
-  name: TranslateToStandardColorMap(ConsoleColors)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TranslateToStandardColorMap_Terminaux_Colors_Data_ConsoleColors_
-  commentId: M:Terminaux.Colors.ColorTools.TranslateToStandardColorMap(Terminaux.Colors.Data.ConsoleColors)
-  fullName: Terminaux.Colors.ColorTools.TranslateToStandardColorMap(Terminaux.Colors.Data.ConsoleColors)
-  nameWithType: ColorTools.TranslateToStandardColorMap(ConsoleColors)
-- uid: Terminaux.Colors.ColorTools.TranslateToStandardColorMap*
-  name: TranslateToStandardColorMap
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TranslateToStandardColorMap_
-  commentId: Overload:Terminaux.Colors.ColorTools.TranslateToStandardColorMap
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.TranslateToStandardColorMap
-  nameWithType: ColorTools.TranslateToStandardColorMap
-- uid: Terminaux.Colors.ColorTools.TranslateToX11ColorMap(System.ConsoleColor)
-  name: TranslateToX11ColorMap(ConsoleColor)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TranslateToX11ColorMap_System_ConsoleColor_
-  commentId: M:Terminaux.Colors.ColorTools.TranslateToX11ColorMap(System.ConsoleColor)
-  fullName: Terminaux.Colors.ColorTools.TranslateToX11ColorMap(System.ConsoleColor)
-  nameWithType: ColorTools.TranslateToX11ColorMap(ConsoleColor)
-- uid: Terminaux.Colors.ColorTools.TranslateToX11ColorMap*
-  name: TranslateToX11ColorMap
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TranslateToX11ColorMap_
-  commentId: Overload:Terminaux.Colors.ColorTools.TranslateToX11ColorMap
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.TranslateToX11ColorMap
-  nameWithType: ColorTools.TranslateToX11ColorMap
 - uid: Terminaux.Colors.ColorTools.TryParseColor(System.Int32)
   name: TryParseColor(int)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TryParseColor_System_Int32_
@@ -5126,6 +5087,51 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.Conversion.CmykConversionTools.ConvertFrom
   nameWithType: CmykConversionTools.ConvertFrom
+- uid: Terminaux.Colors.Models.Conversion.ConversionTools
+  name: ConversionTools
+  href: api/Terminaux.Colors.Models.Conversion.ConversionTools.html
+  commentId: T:Terminaux.Colors.Models.Conversion.ConversionTools
+  fullName: Terminaux.Colors.Models.Conversion.ConversionTools
+  nameWithType: ConversionTools
+- uid: Terminaux.Colors.Models.Conversion.ConversionTools.CorrectStandardColor(System.ConsoleColor)
+  name: CorrectStandardColor(ConsoleColor)
+  href: api/Terminaux.Colors.Models.Conversion.ConversionTools.html#Terminaux_Colors_Models_Conversion_ConversionTools_CorrectStandardColor_System_ConsoleColor_
+  commentId: M:Terminaux.Colors.Models.Conversion.ConversionTools.CorrectStandardColor(System.ConsoleColor)
+  fullName: Terminaux.Colors.Models.Conversion.ConversionTools.CorrectStandardColor(System.ConsoleColor)
+  nameWithType: ConversionTools.CorrectStandardColor(ConsoleColor)
+- uid: Terminaux.Colors.Models.Conversion.ConversionTools.CorrectStandardColor*
+  name: CorrectStandardColor
+  href: api/Terminaux.Colors.Models.Conversion.ConversionTools.html#Terminaux_Colors_Models_Conversion_ConversionTools_CorrectStandardColor_
+  commentId: Overload:Terminaux.Colors.Models.Conversion.ConversionTools.CorrectStandardColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Conversion.ConversionTools.CorrectStandardColor
+  nameWithType: ConversionTools.CorrectStandardColor
+- uid: Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToStandardColorMap(Terminaux.Colors.Data.ConsoleColors)
+  name: TranslateToStandardColorMap(ConsoleColors)
+  href: api/Terminaux.Colors.Models.Conversion.ConversionTools.html#Terminaux_Colors_Models_Conversion_ConversionTools_TranslateToStandardColorMap_Terminaux_Colors_Data_ConsoleColors_
+  commentId: M:Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToStandardColorMap(Terminaux.Colors.Data.ConsoleColors)
+  fullName: Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToStandardColorMap(Terminaux.Colors.Data.ConsoleColors)
+  nameWithType: ConversionTools.TranslateToStandardColorMap(ConsoleColors)
+- uid: Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToStandardColorMap*
+  name: TranslateToStandardColorMap
+  href: api/Terminaux.Colors.Models.Conversion.ConversionTools.html#Terminaux_Colors_Models_Conversion_ConversionTools_TranslateToStandardColorMap_
+  commentId: Overload:Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToStandardColorMap
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToStandardColorMap
+  nameWithType: ConversionTools.TranslateToStandardColorMap
+- uid: Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToX11ColorMap(System.ConsoleColor)
+  name: TranslateToX11ColorMap(ConsoleColor)
+  href: api/Terminaux.Colors.Models.Conversion.ConversionTools.html#Terminaux_Colors_Models_Conversion_ConversionTools_TranslateToX11ColorMap_System_ConsoleColor_
+  commentId: M:Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToX11ColorMap(System.ConsoleColor)
+  fullName: Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToX11ColorMap(System.ConsoleColor)
+  nameWithType: ConversionTools.TranslateToX11ColorMap(ConsoleColor)
+- uid: Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToX11ColorMap*
+  name: TranslateToX11ColorMap
+  href: api/Terminaux.Colors.Models.Conversion.ConversionTools.html#Terminaux_Colors_Models_Conversion_ConversionTools_TranslateToX11ColorMap_
+  commentId: Overload:Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToX11ColorMap
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.Conversion.ConversionTools.TranslateToX11ColorMap
+  nameWithType: ConversionTools.TranslateToX11ColorMap
 - uid: Terminaux.Colors.Models.Conversion.HslConversionTools
   name: HslConversionTools
   href: api/Terminaux.Colors.Models.Conversion.HslConversionTools.html
