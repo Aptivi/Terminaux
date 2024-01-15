@@ -23,6 +23,7 @@ using System.Diagnostics;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Models;
+using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Models.Parsing;
 
 namespace Terminaux.Colors
@@ -228,7 +229,7 @@ namespace Terminaux.Colors
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColor"/></param>
         /// <exception cref="TerminauxException"></exception>
         public Color(ConsoleColor ColorDef)
-            : this((int)ColorTools.CorrectStandardColor(ColorDef))
+            : this((int)ConversionTools.CorrectStandardColor(ColorDef))
         { }
 
         /// <summary>
@@ -238,7 +239,7 @@ namespace Terminaux.Colors
         /// <param name="settings">Color settings to use while building the color</param>
         /// <exception cref="TerminauxException"></exception>
         public Color(ConsoleColor ColorDef, ColorSettings settings)
-            : this((int)ColorTools.CorrectStandardColor(ColorDef), settings)
+            : this((int)ConversionTools.CorrectStandardColor(ColorDef), settings)
         { }
 
         /// <summary>

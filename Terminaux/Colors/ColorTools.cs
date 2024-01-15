@@ -21,8 +21,8 @@ using System;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
 using Textify.Sequences.Builder;
-using Terminaux.Colors.Transformation;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Models.Conversion;
 
 namespace Terminaux.Colors
 {
@@ -353,99 +353,12 @@ namespace Terminaux.Colors
             }
         }
 
-        /// <summary>
-        /// Translates the color from .NET's <see cref="ConsoleColor"/> to X11's representation, <see cref="ConsoleColors"/>
-        /// </summary>
-        /// <param name="color">.NET's <see cref="ConsoleColor"/> to translate this color to</param>
-        /// <returns>X11's representation of this color, <see cref="ConsoleColors"/></returns>
-        public static ConsoleColors TranslateToX11ColorMap(ConsoleColor color)
-        {
-            return color switch
-            {
-                ConsoleColor.Black          => ConsoleColors.Black,
-                ConsoleColor.DarkBlue       => ConsoleColors.DarkRed,
-                ConsoleColor.DarkGreen      => ConsoleColors.DarkGreen,
-                ConsoleColor.DarkCyan       => ConsoleColors.DarkYellow,
-                ConsoleColor.DarkRed        => ConsoleColors.DarkBlue,
-                ConsoleColor.DarkMagenta    => ConsoleColors.DarkMagenta,
-                ConsoleColor.DarkYellow     => ConsoleColors.DarkCyan,
-                ConsoleColor.Gray           => ConsoleColors.Gray,
-                ConsoleColor.DarkGray       => ConsoleColors.DarkGray,
-                ConsoleColor.Blue           => ConsoleColors.Red,
-                ConsoleColor.Green          => ConsoleColors.Green,
-                ConsoleColor.Cyan           => ConsoleColors.Yellow,
-                ConsoleColor.Red            => ConsoleColors.Blue,
-                ConsoleColor.Magenta        => ConsoleColors.Magenta,
-                ConsoleColor.Yellow         => ConsoleColors.Cyan,
-                ConsoleColor.White          => ConsoleColors.White,
-                _                           => ConsoleColors.Black,
-            };
-        }
-
-        /// <summary>
-        /// Translates the color from X11's <see cref="ConsoleColors"/> to .NET's representation, <see cref="ConsoleColor"/>
-        /// </summary>
-        /// <param name="color">X11's <see cref="ConsoleColors"/> to translate this color to</param>
-        /// <returns>.NET's representation of this color, <see cref="ConsoleColor"/></returns>
-        public static ConsoleColor TranslateToStandardColorMap(ConsoleColors color)
-        {
-            return color switch
-            {
-                ConsoleColors.Black         => ConsoleColor.Black,
-                ConsoleColors.DarkRed       => ConsoleColor.DarkBlue,
-                ConsoleColors.DarkGreen     => ConsoleColor.DarkGreen,
-                ConsoleColors.DarkYellow    => ConsoleColor.DarkCyan,
-                ConsoleColors.DarkBlue      => ConsoleColor.DarkRed,
-                ConsoleColors.DarkMagenta   => ConsoleColor.DarkMagenta,
-                ConsoleColors.DarkCyan      => ConsoleColor.DarkYellow,
-                ConsoleColors.Gray          => ConsoleColor.Gray,
-                ConsoleColors.DarkGray      => ConsoleColor.DarkGray,
-                ConsoleColors.Red           => ConsoleColor.Blue,
-                ConsoleColors.Green         => ConsoleColor.Green,
-                ConsoleColors.Yellow        => ConsoleColor.Cyan,
-                ConsoleColors.Blue          => ConsoleColor.Red,
-                ConsoleColors.Magenta       => ConsoleColor.Magenta,
-                ConsoleColors.Cyan          => ConsoleColor.Yellow,
-                ConsoleColors.White         => ConsoleColor.White,
-                _                           => ConsoleColor.Black,
-            };
-        }
-
-        /// <summary>
-        /// Corrects the color map for <see cref="ConsoleColor"/> according to the X11 specification
-        /// </summary>
-        /// <param name="color">.NET's <see cref="ConsoleColor"/> to correct this color</param>
-        /// <returns>Corrected <see cref="ConsoleColor"/></returns>
-        public static ConsoleColor CorrectStandardColor(ConsoleColor color)
-        {
-            return color switch
-            {
-                ConsoleColor.Black          => ConsoleColor.Black,
-                ConsoleColor.DarkBlue       => ConsoleColor.DarkRed,
-                ConsoleColor.DarkGreen      => ConsoleColor.DarkGreen,
-                ConsoleColor.DarkCyan       => ConsoleColor.DarkYellow,
-                ConsoleColor.DarkRed        => ConsoleColor.DarkBlue,
-                ConsoleColor.DarkMagenta    => ConsoleColor.DarkMagenta,
-                ConsoleColor.DarkYellow     => ConsoleColor.DarkCyan,
-                ConsoleColor.Gray           => ConsoleColor.Gray,
-                ConsoleColor.DarkGray       => ConsoleColor.DarkGray,
-                ConsoleColor.Blue           => ConsoleColor.Red,
-                ConsoleColor.Green          => ConsoleColor.Green,
-                ConsoleColor.Cyan           => ConsoleColor.Yellow,
-                ConsoleColor.Red            => ConsoleColor.Blue,
-                ConsoleColor.Magenta        => ConsoleColor.Magenta,
-                ConsoleColor.Yellow         => ConsoleColor.Cyan,
-                ConsoleColor.White          => ConsoleColor.White,
-                _                           => ConsoleColor.Black,
-            };
-        }
-
         internal static string GetColorIdStringFrom(ConsoleColors colorDef) =>
             GetColorIdStringFrom((int)colorDef);
 
         internal static string GetColorIdStringFrom(int colorNum) =>
             colorNum >= 0 && colorNum <= (int)ConsoleColors.White ?
-            $"{(int)TranslateToX11ColorMap((ConsoleColor)colorNum)}" :
+            $"{(int)ConversionTools.TranslateToX11ColorMap((ConsoleColor)colorNum)}" :
             $"{colorNum}";
 
         internal static void SetConsoleColorInternal(Color ColorSequence, bool Background, bool ForceSet, bool canSetBackground, bool needsToSetCurrentColors)
