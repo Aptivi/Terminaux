@@ -28,7 +28,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            string input = TermReader.ReadPassword("Enter password: ");
+            string input = TermReader.ReadPassword("Enter password: ", false);
             TextWriterColor.Write("Password is: " + input);
         }
     }

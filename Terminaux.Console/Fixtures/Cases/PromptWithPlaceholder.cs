@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Reader;
-
 using Terminaux.Writer.ConsoleWriters;
+
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
     internal class PromptWithPlaceholder : IFixture
@@ -28,7 +28,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            string input = TermReader.Read("You'll say: ", "Hello World!");
+            string input = TermReader.Read("You'll say: ", "Hello World!", false, false, false);
             TextWriterColor.Write("You said: " + input);
         }
     }

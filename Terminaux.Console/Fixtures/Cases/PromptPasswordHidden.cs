@@ -31,7 +31,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         {
             var settings = Input.GlobalReaderSettings;
             settings.PasswordMaskChar = '\0';
-            string input = TermReader.ReadPassword(settings);
+            string input = TermReader.ReadPassword(settings, false);
             TextWriterColor.Write("Password is: " + input);
         }
     }

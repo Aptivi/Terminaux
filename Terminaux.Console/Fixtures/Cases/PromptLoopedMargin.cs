@@ -36,7 +36,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string input = "";
             while (input != "exit")
             {
-                input = TermReader.Read(">> ", settings);
+                input = TermReader.Read(">> ", "", settings, false, false, false);
                 TextWriterColor.Write("You said: " + input);
             }
         }

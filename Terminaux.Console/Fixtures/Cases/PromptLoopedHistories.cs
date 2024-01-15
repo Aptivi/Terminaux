@@ -46,21 +46,21 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             TermReaderTools.SetHistory(firstHistory);
             while (input != "exit")
             {
-                input = TermReader.Read("[1] > ");
+                input = TermReader.Read("[1] > ", "", false, false, false);
                 TextWriterColor.Write("You said: " + input);
             }
             TermReaderTools.SetHistory(secondHistory);
             string input2 = "";
             while (input2 != "exit")
             {
-                input2 = TermReader.Read("[2] > ");
+                input2 = TermReader.Read("[2] > ", "", false, false, false);
                 TextWriterColor.Write("You said: " + input2);
             }
             TermReaderTools.ClearHistory();
             string input3 = "";
             while (input3 != "exit")
             {
-                input3 = TermReader.Read("[3] > ");
+                input3 = TermReader.Read("[3] > ", "", false, false, false);
                 TextWriterColor.Write("You said: " + input3);
             }
         }

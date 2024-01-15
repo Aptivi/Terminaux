@@ -37,7 +37,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             {
                 var settings = Input.GlobalReaderSettings;
                 settings.Suggestions = GetSuggestions;
-                input = TermReader.Read("| Say something!\n->> ", "", settings, false, true);
+                input = TermReader.Read("| Say something!\n->> ", "", settings, false, true, false);
                 TextWriterColor.Write("You said: " + input);
             }
         }

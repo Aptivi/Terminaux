@@ -33,7 +33,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string input = "";
             while (input != "exit")
             {
-                ConsoleWrapper.Write(">> ");
+                ConsoleWrapper.Write(">> ", "", false, false, false);
                 input = TermReader.Read();
                 TextWriterColor.Write("You said: " + input);
             }

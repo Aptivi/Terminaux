@@ -32,7 +32,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string input = "";
             while (input != "exit")
             {
-                input = TermReader.Read(">> ");
+                input = TermReader.Read(">> ", "", false, false, false);
                 TextWriterColor.Write("You said: " + input);
             }
         }

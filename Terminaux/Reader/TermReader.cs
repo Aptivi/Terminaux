@@ -69,7 +69,7 @@ namespace Terminaux.Reader
         /// Reads the input with password character masking
         /// </summary>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(bool interruptible = false) =>
+        public static string ReadPassword(bool interruptible = true) =>
             Read("", "", true, false, interruptible);
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Terminaux.Reader
         /// </summary>
         /// <param name="settings">Settigns containing reader-related settings</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(TermReaderSettings settings, bool interruptible = false) =>
+        public static string ReadPassword(TermReaderSettings settings, bool interruptible = true) =>
             Read("", "", settings, true, false, interruptible);
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Terminaux.Reader
         /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(string inputPrompt, bool interruptible = false) =>
+        public static string ReadPassword(string inputPrompt, bool interruptible = true) =>
             Read(inputPrompt, "", true, false, interruptible);
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Terminaux.Reader
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="settings">Settigns containing reader-related settings</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string ReadPassword(string inputPrompt, TermReaderSettings settings, bool interruptible = false) =>
+        public static string ReadPassword(string inputPrompt, TermReaderSettings settings, bool interruptible = true) =>
             Read(inputPrompt, "", settings, true, false, interruptible);
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Terminaux.Reader
         /// <param name="password">Whether the password mode is enabled</param>
         /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(string inputPrompt, string defaultValue, bool password = false, bool oneLineWrap = false, bool interruptible = false) =>
+        public static string Read(string inputPrompt, string defaultValue, bool password = false, bool oneLineWrap = false, bool interruptible = true) =>
             Read(inputPrompt, defaultValue, Input.GlobalReaderSettings, password, oneLineWrap, interruptible);
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace Terminaux.Reader
         /// <param name="password">Whether the password mode is enabled</param>
         /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(string inputPrompt, string defaultValue, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = false)
+        public static string Read(string inputPrompt, string defaultValue, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true)
         {
             lock (readLock)
             {
