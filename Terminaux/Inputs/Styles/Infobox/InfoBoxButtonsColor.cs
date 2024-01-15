@@ -99,39 +99,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxButtonsColor(string[] buttons, string text, ConsoleColors InfoBoxButtonsColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(buttons, text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxButtonsColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
-        /// <param name="InfoBoxButtonsColor">InfoBoxButtons color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxButtons background color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxButtonsColorBack(string[] buttons, string text, ConsoleColors InfoBoxButtonsColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(buttons, text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxButtonsColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
-        /// <param name="InfoBoxButtonsColor">InfoBoxButtons color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColor(string[] buttons, string text, Color InfoBoxButtonsColor, params object[] vars) =>
             WriteInfoBoxButtonsColorBack(buttons, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -181,55 +148,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
                 new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxButtonsColor">InfoBoxButtons color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxButtonsColor(string[] buttons, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxButtonsColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(buttons, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxButtonsColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxButtonsColor">InfoBoxButtons color</param>
-        /// <param name="BackgroundColor">InfoBoxButtons background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxButtonsColorBack(string[] buttons, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxButtonsColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(
-                buttons, text,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(InfoBoxButtonsColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -340,41 +258,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxButtonsColor(string title, string[] buttons, string text, ConsoleColors InfoBoxTitledButtonsColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(title, buttons, text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledButtonsColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
-        /// <param name="InfoBoxTitledButtonsColor">InfoBoxTitledButtons color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxTitledButtons background color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxButtonsColorBack(string title, string[] buttons, string text, ConsoleColors InfoBoxTitledButtonsColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(title, buttons, text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledButtonsColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
-        /// <param name="InfoBoxTitledButtonsColor">InfoBoxTitledButtons color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColor(string title, string[] buttons, string text, Color InfoBoxTitledButtonsColor, params object[] vars) =>
             WriteInfoBoxButtonsColorBack(title, buttons, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -426,57 +309,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
                 new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxTitledButtonsColor">InfoBoxTitledButtons color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxButtonsColor(string title, string[] buttons, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxTitledButtonsColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(title, buttons, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxTitledButtonsColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxTitledButtonsColor">InfoBoxTitledButtons color</param>
-        /// <param name="BackgroundColor">InfoBoxTitledButtons background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
-        public static int WriteInfoBoxButtonsColorBack(string title, string[] buttons, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxTitledButtonsColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(
-                title, buttons, text,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(InfoBoxTitledButtonsColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Writes the info box plainly

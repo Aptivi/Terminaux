@@ -55,14 +55,6 @@ namespace Terminaux.Colors.Selector
         /// </summary>
         /// <param name="initialColor">Initial color to use</param>
         /// <returns>An instance of Color to get the resulting color</returns>
-        public static Color OpenColorSelector(ConsoleColors initialColor) =>
-            OpenColorSelector(new Color(initialColor));
-
-        /// <summary>
-        /// Opens the color selector
-        /// </summary>
-        /// <param name="initialColor">Initial color to use</param>
-        /// <returns>An instance of Color to get the resulting color</returns>
         public static Color OpenColorSelector(Color initialColor)
         {
             // Initial color is selected

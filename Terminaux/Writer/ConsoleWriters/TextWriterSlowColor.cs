@@ -22,7 +22,6 @@ using System.Diagnostics;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Colors.Data;
 using Textify.General;
 using Textify.Sequences.Tools;
 

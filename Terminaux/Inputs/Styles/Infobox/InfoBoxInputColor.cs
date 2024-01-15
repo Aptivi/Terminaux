@@ -92,35 +92,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputColor(string text, ConsoleColors InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputColorBack(string text, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="InfoBoxColor">InfoBox color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInputColor(string text, Color InfoBoxColor, params object[] vars) =>
             WriteInfoBoxInputColorBack(text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -161,50 +132,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
             WriteInfoBoxInputColorBack(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxColor">InfoBox color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputColor(string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxColor">InfoBox color</param>
-        /// <param name="BackgroundColor">InfoBox background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputColorBack(string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(text,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(InfoBoxColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -303,37 +230,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputColor(string title, string text, ConsoleColors InfoBoxTitledColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(title, text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="InfoBoxTitledColor">InfoBoxTitled color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxTitled background color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputColorBack(string title, string text, ConsoleColors InfoBoxTitledColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(title, text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInputColor(string title, string text, Color InfoBoxTitledColor, params object[] vars) =>
             WriteInfoBoxInputColorBack(title, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -376,52 +272,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
             WriteInfoBoxInputColorBack(title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputColor(string title, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxTitledColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxTitledColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
-        /// <param name="BackgroundColor">InfoBoxTitled background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string WriteInfoBoxInputColorBack(string title, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxTitledColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(title, text,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(InfoBoxTitledColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Writes the info box plainly

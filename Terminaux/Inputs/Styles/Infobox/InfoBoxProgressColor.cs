@@ -110,70 +110,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text, ConsoleColors InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxProgressColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="waitForInput">Waits for input or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text, bool waitForInput, ConsoleColors InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxProgressColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text, ConsoleColors InfoBoxProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxProgressColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="waitForInput">Waits for input or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text, bool waitForInput, ConsoleColors InfoBoxProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxProgressColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgressColor(double progress, string text, Color InfoBoxProgressColor, params object[] vars) =>
             WriteInfoBoxProgressColorBack(progress, text, true,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -294,55 +230,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="RightFrameChar">Right frame character for info box</param>
         /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
         /// <param name="text">Text to be written.</param>
-        /// <param name="waitForInput">Waits for input or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text, bool waitForInput,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxProgressColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="waitForInput">Waits for input or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text, bool waitForInput,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(
-                progress, text, waitForInput,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(InfoBoxProgressColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
-        /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgressColor(double progress, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
@@ -370,49 +257,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxProgressColor, BackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(double progress, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxProgressColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxProgressColor">InfoBoxProgress color</param>
-        /// <param name="BackgroundColor">InfoBoxProgress background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(double progress, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
             WriteInfoBoxProgressColorBack(progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxProgressColor, BackgroundColor, vars);
 
         /// <summary>
@@ -527,74 +371,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
                         new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(string title, double progress, string text, ConsoleColors InfoBoxTitledProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, true,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledProgressColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="waitForInput">Waits for input or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(string title, double progress, string text, bool waitForInput, ConsoleColors InfoBoxTitledProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, waitForInput,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledProgressColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxTitledProgress background color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(string title, double progress, string text, ConsoleColors InfoBoxTitledProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, true,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledProgressColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxTitledProgress background color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="waitForInput">Waits for input or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(string title, double progress, string text, bool waitForInput, ConsoleColors InfoBoxTitledProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, waitForInput,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledProgressColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -730,57 +506,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="RightFrameChar">Right frame character for info box</param>
         /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color</param>
         /// <param name="text">Text to be written.</param>
-        /// <param name="waitForInput">Waits for input or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(string title, double progress, string text, bool waitForInput,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxTitledProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxTitledProgressColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color</param>
-        /// <param name="BackgroundColor">InfoBoxTitledProgress background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="waitForInput">Waits for input or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(string title, double progress, string text, bool waitForInput,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxTitledProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(
-                title, progress, text, waitForInput,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(InfoBoxTitledProgressColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color</param>
-        /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgressColor(string title, double progress, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
@@ -809,51 +534,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxTitledProgressColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledProgressColor, BackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColor(string title, double progress, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxTitledProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxTitledProgressColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="progress">Progress percentage from 0 to 100</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxTitledProgressColor">InfoBoxTitledProgress color</param>
-        /// <param name="BackgroundColor">InfoBoxTitledProgress background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBoxProgressColorBack(string title, double progress, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxTitledProgressColor, ConsoleColors BackgroundColor, params object[] vars) =>
             WriteInfoBoxProgressColorBack(title, progress, text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledProgressColor, BackgroundColor, vars);
 
         /// <summary>

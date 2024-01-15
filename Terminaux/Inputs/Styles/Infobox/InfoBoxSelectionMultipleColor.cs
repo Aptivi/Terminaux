@@ -100,39 +100,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultipleColor(InputChoiceInfo[] selections, string text, ConsoleColors InfoBoxSelectionMultipleColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(selections, text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxSelectionMultipleColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="selections">List of choices</param>
-        /// <param name="InfoBoxSelectionMultipleColor">InfoBoxSelectionMultiple color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxSelectionMultiple background color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[] selections, string text, ConsoleColors InfoBoxSelectionMultipleColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(selections, text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxSelectionMultipleColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="selections">List of choices</param>
-        /// <param name="InfoBoxSelectionMultipleColor">InfoBoxSelectionMultiple color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultipleColor(InputChoiceInfo[] selections, string text, Color InfoBoxSelectionMultipleColor, params object[] vars) =>
             WriteInfoBoxSelectionMultipleColorBack(selections, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -182,55 +149,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
                 new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="selections">List of choices</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxSelectionMultipleColor">InfoBoxSelectionMultiple color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultipleColor(InputChoiceInfo[] selections, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxSelectionMultipleColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(selections, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxSelectionMultipleColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="selections">List of choices</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxSelectionMultipleColor">InfoBoxSelectionMultiple color</param>
-        /// <param name="BackgroundColor">InfoBoxSelectionMultiple background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[] selections, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxSelectionMultipleColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(
-                selections, text,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(InfoBoxSelectionMultipleColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -324,41 +242,6 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultipleColor(string title, InputChoiceInfo[] selections, string text, ConsoleColors InfoBoxTitledSelectionMultipleColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(title, selections, text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledSelectionMultipleColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="selections">List of choices</param>
-        /// <param name="InfoBoxTitledSelectionMultipleColor">InfoBoxTitledSelectionMultiple color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="BackgroundColor">InfoBoxTitledSelectionMultiple background color from Nitrocid KS's <see cref="Color"/></param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultipleColorBack(string title, InputChoiceInfo[] selections, string text, ConsoleColors InfoBoxTitledSelectionMultipleColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(title, selections, text,
-                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxTitledSelectionMultipleColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="selections">List of choices</param>
-        /// <param name="InfoBoxTitledSelectionMultipleColor">InfoBoxTitledSelectionMultiple color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultipleColor(string title, InputChoiceInfo[] selections, string text, Color InfoBoxTitledSelectionMultipleColor, params object[] vars) =>
             WriteInfoBoxSelectionMultipleColorBack(title, selections, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -410,57 +293,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
                 new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="selections">List of choices</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxTitledSelectionMultipleColor">InfoBoxTitledSelectionMultiple color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultipleColor(string title, InputChoiceInfo[] selections, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxTitledSelectionMultipleColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(title, selections, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxTitledSelectionMultipleColor), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="selections">List of choices</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
-        /// <param name="UpperFrameChar">Upper frame character for info box</param>
-        /// <param name="LowerFrameChar">Lower frame character for info box</param>
-        /// <param name="LeftFrameChar">Left frame character for info box</param>
-        /// <param name="RightFrameChar">Right frame character for info box</param>
-        /// <param name="InfoBoxTitledSelectionMultipleColor">InfoBoxTitledSelectionMultiple color</param>
-        /// <param name="BackgroundColor">InfoBoxTitledSelectionMultiple background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
-        public static int[] WriteInfoBoxSelectionMultipleColorBack(string title, InputChoiceInfo[] selections, string text,
-                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-                                       ConsoleColors InfoBoxTitledSelectionMultipleColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(
-                title, selections, text,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(InfoBoxTitledSelectionMultipleColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Writes the info box plainly
