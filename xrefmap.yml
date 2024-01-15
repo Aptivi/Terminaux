@@ -7525,12 +7525,6 @@ references:
   commentId: M:Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.Color)
   fullName: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.Color)
   nameWithType: ColorSelector.OpenColorSelector(Color)
-- uid: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.Data.ConsoleColors)
-  name: OpenColorSelector(ConsoleColors)
-  href: api/Terminaux.Colors.Selector.ColorSelector.html#Terminaux_Colors_Selector_ColorSelector_OpenColorSelector_Terminaux_Colors_Data_ConsoleColors_
-  commentId: M:Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.Data.ConsoleColors)
-  fullName: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector(Terminaux.Colors.Data.ConsoleColors)
-  nameWithType: ColorSelector.OpenColorSelector(ConsoleColors)
 - uid: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector*
   name: OpenColorSelector
   href: api/Terminaux.Colors.Selector.ColorSelector.html#Terminaux_Colors_Selector_ColorSelector_OpenColorSelector_
@@ -9818,15 +9812,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String, String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string, string[], string, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String, String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String,System.String[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxButtonsColor(string, string[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String_System_String___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String,System.String[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxButtonsColor(String, String(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string, string[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String, String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string, string[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String, String(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String,System.String[],System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxButtonsColor(string, string[], string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String_System_String___System_String_Terminaux_Colors_Color_System_Object___
@@ -9836,15 +9821,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String, String(), String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string, string[], string, Color, params object[])
   nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String, String(), String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String,System.String[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxButtonsColor(string, string[], string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String_System_String___System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String,System.String[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxButtonsColor(String, String(), String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string, string[], string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String, String(), String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string, string[], string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String, String(), String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxButtonsColor(string[], string, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -9854,15 +9830,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string[], string, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxButtonsColor(string[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxButtonsColor(String(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String[],System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxButtonsColor(string[], string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String___System_String_Terminaux_Colors_Color_System_Object___
@@ -9872,15 +9839,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String(), String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string[], string, Color, params object[])
   nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String(), String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxButtonsColor(string[], string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String___System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxButtonsColor(String(), String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string[], string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String(), String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(string[], string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColor(String(), String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor*
   name: WriteInfoBoxButtonsColor
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_
@@ -9897,15 +9855,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String, String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string, string[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String, String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String,System.String[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxButtonsColorBack(string, string[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String_System_String___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String,System.String[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxButtonsColorBack(String, String(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string, string[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String, String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string, string[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String, String(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String,System.String[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxButtonsColorBack(string, string[], string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String_System_String___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -9915,15 +9864,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String, String(), String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string, string[], string, Color, Color, params object[])
   nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String, String(), String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String,System.String[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxButtonsColorBack(string, string[], string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String_System_String___System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String,System.String[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxButtonsColorBack(String, String(), String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string, string[], string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String, String(), String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string, string[], string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String, String(), String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxButtonsColorBack(string[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -9933,15 +9873,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxButtonsColorBack(string[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxButtonsColorBack(String(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxButtonsColorBack(string[], string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -9951,15 +9882,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String(), String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string[], string, Color, Color, params object[])
   nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String(), String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxButtonsColorBack(string[], string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String___System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxButtonsColorBack(String(), String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string[], string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String(), String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(string[], string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(String(), String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack*
   name: WriteInfoBoxButtonsColorBack
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_
@@ -10104,15 +10026,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColor(string, bool, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColor(string, bool, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColor(String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColor(string, bool, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColor(string, bool, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
@@ -10122,15 +10035,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, Boolean, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColor(string, bool, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, Boolean, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColor(string, bool, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_Boolean_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColor(String, Boolean, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(string, bool, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, Boolean, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColor(string, bool, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, Boolean, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColor(string, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -10140,15 +10044,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColor(string, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColor(string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColor(String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColor(string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColor(string, string, bool, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -10158,15 +10053,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColor(string, string, bool, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColor(string, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColor(String, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(string, string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColor(string, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColor(string, string, bool, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
@@ -10176,15 +10062,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, String, Boolean, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColor(string, string, bool, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, String, Boolean, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColor(string, string, bool, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_String_System_Boolean_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColor(String, String, Boolean, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(string, string, bool, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, String, Boolean, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColor(string, string, bool, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, String, Boolean, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColor(string, string, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -10194,15 +10071,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColor(string, string, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColor(string, string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColor(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(string, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColor(string, string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColor(string, string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_String_Terminaux_Colors_Color_System_Object___
@@ -10212,15 +10080,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColor(string, string, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColor(string, string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColor(String, String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(string, string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColor(string, string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColor(string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_Terminaux_Colors_Color_System_Object___
@@ -10230,15 +10089,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColor(string, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColor(string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColor(String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor(String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColor(string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColor(String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColor*
   name: WriteInfoBoxColor
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColor_
@@ -10255,15 +10105,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, bool, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColorBack(string, bool, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColorBack(String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, bool, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColorBack(string, bool, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10273,15 +10114,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, bool, Color, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, Boolean, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColorBack(string, bool, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_Boolean_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColorBack(String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(string, bool, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, Boolean, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, bool, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColorBack(string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10291,15 +10123,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColorBack(string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColorBack(String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColorBack(string, string, bool, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10309,15 +10132,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, string, bool, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColorBack(string, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColorBack(String, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(string, string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColorBack(string, string, bool, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10327,15 +10141,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, String, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, string, bool, Color, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, String, Boolean, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColorBack(string, string, bool, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_String_System_Boolean_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColorBack(String, String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(string, string, bool, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, String, Boolean, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, string, bool, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColorBack(string, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10345,15 +10150,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColorBack(string, string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColorBack(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(string, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColorBack(string, string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10363,15 +10159,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, string, Color, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColorBack(string, string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColorBack(String, String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(string, string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxColorBack(string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10381,15 +10168,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, Color, Color, params object[])
   nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxColorBack(string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxColorBack(String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack(String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxColor.WriteInfoBoxColorBack(string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxColor.WriteInfoBoxColorBack(String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxColor.WriteInfoBoxColorBack*
   name: WriteInfoBoxColorBack
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxColor_WriteInfoBoxColorBack_
@@ -10516,15 +10294,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxInputColor.WriteInfoBoxInputColor(string, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColor(String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxInputColor(string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColor_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxInputColor(String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxInputColor.WriteInfoBoxInputColor(string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColor(String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxInputColor(string, string, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColor_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -10534,15 +10303,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxInputColor.WriteInfoBoxInputColor(string, string, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColor(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxInputColor(string, string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColor_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxInputColor(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(string, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxInputColor.WriteInfoBoxInputColor(string, string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColor(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxInputColor(string, string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColor_System_String_System_String_Terminaux_Colors_Color_System_Object___
@@ -10552,15 +10312,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(String, String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxInputColor.WriteInfoBoxInputColor(string, string, Color, params object[])
   nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColor(String, String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxInputColor(string, string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColor_System_String_System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxInputColor(String, String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(string, string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(String, String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxInputColor.WriteInfoBoxInputColor(string, string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColor(String, String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxInputColor(string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColor_System_String_Terminaux_Colors_Color_System_Object___
@@ -10570,15 +10321,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxInputColor.WriteInfoBoxInputColor(string, Color, params object[])
   nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColor(String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxInputColor(string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColor_System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxInputColor(String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor(String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxInputColor.WriteInfoBoxInputColor(string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColor(String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColor*
   name: WriteInfoBoxInputColor
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColor_
@@ -10595,15 +10337,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxInputColor.WriteInfoBoxInputColorBack(string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColorBack(String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxInputColorBack(string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColorBack_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxInputColorBack(String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxInputColor.WriteInfoBoxInputColorBack(string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColorBack(String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxInputColorBack(string, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColorBack_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10613,15 +10346,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxInputColor.WriteInfoBoxInputColorBack(string, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColorBack(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxInputColorBack(string, string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColorBack_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxInputColorBack(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(string, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxInputColor.WriteInfoBoxInputColorBack(string, string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColorBack(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxInputColorBack(string, string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColorBack_System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10631,15 +10355,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(String, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxInputColor.WriteInfoBoxInputColorBack(string, string, Color, Color, params object[])
   nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColorBack(String, String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxInputColorBack(string, string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColorBack_System_String_System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxInputColorBack(String, String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(string, string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(String, String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxInputColor.WriteInfoBoxInputColorBack(string, string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColorBack(String, String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxInputColorBack(string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10649,15 +10364,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxInputColor.WriteInfoBoxInputColorBack(string, Color, Color, params object[])
   nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColorBack(String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxInputColorBack(string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColorBack_System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxInputColorBack(String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack(String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxInputColor.WriteInfoBoxInputColorBack(string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxInputColor.WriteInfoBoxInputColorBack(String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.WriteInfoBoxInputColorBack*
   name: WriteInfoBoxInputColorBack
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxInputColor_WriteInfoBoxInputColorBack_
@@ -10802,15 +10508,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, bool, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColor(double, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColor(double, string, bool, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
@@ -10820,15 +10517,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, bool, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColor(double, string, bool, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_System_Boolean_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(Double, String, Boolean, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, bool, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, bool, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColor(double, string, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -10838,15 +10526,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColor(double, string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColor(double, string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_Terminaux_Colors_Color_System_Object___
@@ -10856,15 +10535,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColor(double, string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(Double, String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColor(string, double, string, bool, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -10874,15 +10544,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, bool, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColor(string, double, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColor(string, double, string, bool, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
@@ -10892,15 +10553,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, bool, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColor(string, double, string, bool, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_System_Boolean_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(String, Double, String, Boolean, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, bool, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, bool, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColor(string, double, string, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -10910,15 +10562,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, char, char, char, char, char, char, char, char, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColor(string, double, string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColor(string, double, string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_Terminaux_Colors_Color_System_Object___
@@ -10928,15 +10571,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColor(string, double, string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(String, Double, String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor*
   name: WriteInfoBoxProgressColor
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_
@@ -10953,15 +10587,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, bool, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColorBack(double, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColorBack(double, string, bool, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10971,15 +10596,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, bool, Color, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColorBack(double, string, bool, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_System_Boolean_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(Double, String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, bool, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, bool, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColorBack(double, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -10989,15 +10605,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColorBack(double, string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColorBack(double, string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11007,15 +10614,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, Color, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColorBack(double, string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(Double, String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColorBack(string, double, string, bool, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11025,15 +10623,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, bool, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColorBack(string, double, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, bool, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColorBack(string, double, string, bool, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11043,15 +10632,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, bool, Color, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColorBack(string, double, string, bool, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_System_Boolean_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Boolean,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(String, Double, String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, bool, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, bool, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColorBack(string, double, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11061,15 +10641,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColorBack(string, double, string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColorBack(string, double, string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11079,15 +10650,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, Color, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxProgressColorBack(string, double, string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(String, Double, String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack*
   name: WriteInfoBoxProgressColorBack
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_
@@ -11187,15 +10749,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelection
   nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelection
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionColor(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionColor(String, InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(string, Terminaux.Inputs.InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(String, Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(String, InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxSelectionColor(string, InputChoiceInfo[], string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_System_Object___
@@ -11205,24 +10758,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(String, Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(string, InputChoiceInfo[], string, Color, params object[])
   nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(String, InputChoiceInfo(), String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionColor(string, InputChoiceInfo[], string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionColor(String, InputChoiceInfo(), String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(string, Terminaux.Inputs.InputChoiceInfo[], string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(String, Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(string, InputChoiceInfo[], string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(String, InputChoiceInfo(), String, ConsoleColors, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionColor(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColor_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionColor(InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(Terminaux.Inputs.InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxSelectionColor(InputChoiceInfo[], string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColor_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_System_Object___
@@ -11232,15 +10767,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(InputChoiceInfo[], string, Color, params object[])
   nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(InputChoiceInfo(), String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionColor(InputChoiceInfo[], string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColor_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionColor(InputChoiceInfo(), String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(Terminaux.Inputs.InputChoiceInfo[], string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor(Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(InputChoiceInfo[], string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColor(InputChoiceInfo(), String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColor*
   name: WriteInfoBoxSelectionColor
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColor_
@@ -11257,15 +10783,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(String, Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(String, InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionColorBack(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionColorBack(String, InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(string, Terminaux.Inputs.InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(String, Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(String, InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxSelectionColorBack(string, InputChoiceInfo[], string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11275,15 +10792,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(String, Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(string, InputChoiceInfo[], string, Color, Color, params object[])
   nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(String, InputChoiceInfo(), String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionColorBack(string, InputChoiceInfo[], string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionColorBack(String, InputChoiceInfo(), String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(string, Terminaux.Inputs.InputChoiceInfo[], string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(String, Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(string, InputChoiceInfo[], string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(String, InputChoiceInfo(), String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxSelectionColorBack(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11293,15 +10801,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionColorBack(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionColorBack(InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxSelectionColorBack(InputChoiceInfo[], string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11311,15 +10810,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(InputChoiceInfo[], string, Color, Color, params object[])
   nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(InputChoiceInfo(), String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionColorBack(InputChoiceInfo[], string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionColorBack(InputChoiceInfo(), String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo[], string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(InputChoiceInfo[], string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack(InputChoiceInfo(), String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.WriteInfoBoxSelectionColorBack*
   name: WriteInfoBoxSelectionColorBack
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionColor_WriteInfoBoxSelectionColorBack_
@@ -11419,15 +10909,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple
   nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionMultipleColor(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionMultipleColor(String, InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(string, Terminaux.Inputs.InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(String, Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(String, InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxSelectionMultipleColor(string, InputChoiceInfo[], string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_System_Object___
@@ -11437,24 +10918,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(String, Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(string, InputChoiceInfo[], string, Color, params object[])
   nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(String, InputChoiceInfo(), String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionMultipleColor(string, InputChoiceInfo[], string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionMultipleColor(String, InputChoiceInfo(), String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(string, Terminaux.Inputs.InputChoiceInfo[], string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(String, Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(string, InputChoiceInfo[], string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(String, InputChoiceInfo(), String, ConsoleColors, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionMultipleColor(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColor_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionMultipleColor(InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(Terminaux.Inputs.InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxSelectionMultipleColor(InputChoiceInfo[], string, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColor_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_System_Object___
@@ -11464,15 +10927,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(InputChoiceInfo[], string, Color, params object[])
   nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(InputChoiceInfo(), String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionMultipleColor(InputChoiceInfo[], string, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColor_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionMultipleColor(InputChoiceInfo(), String, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(Terminaux.Inputs.InputChoiceInfo[], string, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(InputChoiceInfo[], string, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor(InputChoiceInfo(), String, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColor*
   name: WriteInfoBoxSelectionMultipleColor
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColor_
@@ -11489,15 +10943,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(String, Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(String, InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionMultipleColorBack(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionMultipleColorBack(String, InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(string, Terminaux.Inputs.InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(String, Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(String, InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxSelectionMultipleColorBack(string, InputChoiceInfo[], string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11507,15 +10952,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(String, Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(string, InputChoiceInfo[], string, Color, Color, params object[])
   nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(String, InputChoiceInfo(), String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionMultipleColorBack(string, InputChoiceInfo[], string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionMultipleColorBack(String, InputChoiceInfo(), String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(string, Terminaux.Inputs.InputChoiceInfo[], string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(String, Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(string, InputChoiceInfo[], string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(String, InputChoiceInfo(), String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11525,15 +10961,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo(), String, Char, Char, Char, Char, Char, Char, Char, Char, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[], string, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -11543,15 +10970,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[], string, Color, Color, params object[])
   nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo(), String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name: WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[], string, ConsoleColors, ConsoleColors, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Data_ConsoleColors_Terminaux_Colors_Data_ConsoleColors_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Data.ConsoleColors,Terminaux.Colors.Data.ConsoleColors,System.Object[])
-  name.vb: WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo(), String, ConsoleColors, ConsoleColors, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo[], string, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(Terminaux.Inputs.InputChoiceInfo(), String, Terminaux.Colors.Data.ConsoleColors, Terminaux.Colors.Data.ConsoleColors, ParamArray Object())
-  nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[], string, ConsoleColors, ConsoleColors, params object[])
-  nameWithType.vb: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo(), String, ConsoleColors, ConsoleColors, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultipleColorBack*
   name: WriteInfoBoxSelectionMultipleColorBack
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxSelectionMultipleColor_WriteInfoBoxSelectionMultipleColorBack_
