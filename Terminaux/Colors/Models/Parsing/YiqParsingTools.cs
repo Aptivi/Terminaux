@@ -51,14 +51,14 @@ namespace Terminaux.Colors.Models.Parsing
                 return false;
 
             var specifierArray = specifier.Substring(4).Split(';');
-            double y = Convert.ToDouble(specifierArray[0]);
-            if (y < 0.0d || y > 1.0d)
+            int y = Convert.ToInt32(specifierArray[0]);
+            if (y < 0 || y > 255)
                 return false;
-            double i = Convert.ToDouble(specifierArray[1]);
-            if (i < -0.5957d || i > 0.5957d)
+            int i = Convert.ToInt32(specifierArray[1]);
+            if (i < 0 || i > 255)
                 return false;
-            double q = Convert.ToDouble(specifierArray[2]);
-            if (q < -0.5226d || q > 0.5226d)
+            int q = Convert.ToInt32(specifierArray[2]);
+            if (q < 0 || q > 255)
                 return false;
             return true;
         }
@@ -79,15 +79,15 @@ namespace Terminaux.Colors.Models.Parsing
             if (specifierArray.Length == 3)
             {
                 // We got the YIQ whole values! First, check to see if we need to filter the color for the color-blind
-                double y = Convert.ToDouble(specifierArray[0]);
-                if (y < 0.0d || y > 1.0d)
-                    throw new TerminauxException($"The luma level is out of range (0.0 -> 1.0). {y}");
-                double i = Convert.ToDouble(specifierArray[1]);
-                if (i < -0.5957d || i > 0.5957d)
-                    throw new TerminauxException($"The in-phase level is out of range (-0.5957 -> 0.5957). {i}");
-                double q = Convert.ToDouble(specifierArray[2]);
-                if (q < -0.5226d || q > 0.5226d)
-                    throw new TerminauxException($"The quadrature level is out of range (-0.5226 -> 0.5226). {q}");
+                int y = Convert.ToInt32(specifierArray[0]);
+                if (y < 0 || y > 255)
+                    throw new TerminauxException($"The luma level is out of range (0 -> 255). {y}");
+                int i = Convert.ToInt32(specifierArray[1]);
+                if (i < 0 || i > 255)
+                    throw new TerminauxException($"The in-phase level is out of range (0 -> 255). {i}");
+                int q = Convert.ToInt32(specifierArray[2]);
+                if (q < 0 || q > 255)
+                    throw new TerminauxException($"The quadrature level is out of range (0 -> 255). {q}");
 
                 // First, we need to convert from YIQ to RGB
                 var yiq = new LumaInPhaseQuadrature(y, i, q);

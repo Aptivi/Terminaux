@@ -32,15 +32,15 @@ namespace Terminaux.Colors.Models
         /// <summary>
         /// The Y component, known as luma information [0 -> 255]
         /// </summary>
-        public double Luma { get; private set; }
+        public int Luma { get; private set; }
         /// <summary>
         /// The U component, known as chroma [0 -> 255]
         /// </summary>
-        public double ChromaU { get; private set; }
+        public int ChromaU { get; private set; }
         /// <summary>
         /// The V component, known as chroma [0 -> 255]
         /// </summary>
-        public double ChromaV { get; private set; }
+        public int ChromaV { get; private set; }
 
         /// <summary>
         /// yuv:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;
@@ -77,7 +77,7 @@ namespace Terminaux.Colors.Models
         public static bool operator !=(LumaChromaUv left, LumaChromaUv right) =>
             !(left == right);
 
-        internal LumaChromaUv(double luma, double inphase, double quadrature)
+        internal LumaChromaUv(int luma, int inphase, int quadrature)
         {
             Luma = luma;
             ChromaU = inphase;

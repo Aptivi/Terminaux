@@ -286,15 +286,15 @@ namespace Terminaux.Tests.Colors
             var yiq = YiqConversionTools.ConvertFrom(ColorInstance.RGB);
 
             // Check for property correctness
-            yiq.Luma.ShouldBe(0.35697647058823523);
-            yiq.InPhase.ShouldBe(0.21090980392156861);
-            yiq.Quadrature.ShouldBe(-0.021686274509803937);
+            yiq.Luma.ShouldBe(91);
+            yiq.InPhase.ShouldBe(181);
+            yiq.Quadrature.ShouldBe(122);
 
             // Now, convert back to RGB
             var rgb = RgbConversionTools.ConvertFrom(yiq);
 
             // Check for property correctness
-            rgb.R.ShouldBe(139);
+            rgb.R.ShouldBe(138);
             rgb.G.ShouldBe(80);
             rgb.B.ShouldBe(22);
         }
@@ -331,9 +331,9 @@ namespace Terminaux.Tests.Colors
             var yuv = YuvConversionTools.ConvertFrom(ColorInstance.RGB);
 
             // Check for property correctness
-            yuv.Luma.ShouldBe(91.028999999999982);
-            yuv.ChromaU.ShouldBe(89.044576);
-            yuv.ChromaV.ShouldBe(162.216096);
+            yuv.Luma.ShouldBe(91);
+            yuv.ChromaU.ShouldBe(89);
+            yuv.ChromaV.ShouldBe(162);
 
             // Now, convert back to RGB
             var rgb = RgbConversionTools.ConvertFrom(yuv);

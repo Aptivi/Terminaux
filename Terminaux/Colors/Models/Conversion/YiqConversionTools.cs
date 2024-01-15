@@ -149,15 +149,15 @@ namespace Terminaux.Colors.Models.Conversion
             return new(y, i, q);
         }
 
-        private static (double y, double i, double q) GetYiqFromRgb(RedGreenBlue rgb)
+        private static (int y, int i, int q) GetYiqFromRgb(RedGreenBlue rgb)
         {
             if (rgb is null)
                 throw new TerminauxException("Can't convert a null RGB instance to YIQ!");
 
             // Get the YIQ values
-            double y = ((0.299 * rgb.R) + (0.587 * rgb.G) + (0.114 * rgb.B)) / 255;
-            double i = ((0.596 * rgb.R) + (-0.275 * rgb.G) + (-0.321 * rgb.B)) / 255;
-            double q = ((0.212 * rgb.R) + (-0.523 * rgb.G) + (0.311 * rgb.B)) / 255;
+            int y = (int)((0.299d * rgb.R) + (0.587d * rgb.G) + (0.114d * rgb.B));
+            int i = (int)((0.596d * rgb.R) + (-0.275d * rgb.G) + (-0.321d * rgb.B) + 128);
+            int q = (int)((0.212d * rgb.R) + (-0.523d * rgb.G) + (0.311d * rgb.B) + 128);
 
             // Return the resulting values
             return (y, i, q);

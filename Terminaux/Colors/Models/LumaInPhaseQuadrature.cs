@@ -30,17 +30,17 @@ namespace Terminaux.Colors.Models
     public class LumaInPhaseQuadrature : IEquatable<LumaInPhaseQuadrature>
     {
         /// <summary>
-        /// The Y component, known as luma information [0.0 -> 1.0]
+        /// The Y component, known as luma information [0 -> 255]
         /// </summary>
-        public double Luma { get; private set; }
+        public int Luma { get; private set; }
         /// <summary>
-        /// The I component, known as chrominance information [-0.5957 -> 0.5957]
+        /// The I component, known as chrominance information [0 -> 255]
         /// </summary>
-        public double InPhase { get; private set; }
+        public int InPhase { get; private set; }
         /// <summary>
-        /// The Q component, known as chrominance information [-0.5226 -> 0.5226]
+        /// The Q component, known as chrominance information [0 -> 255]
         /// </summary>
-        public double Quadrature { get; private set; }
+        public int Quadrature { get; private set; }
 
         /// <summary>
         /// yiq:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;
@@ -77,7 +77,7 @@ namespace Terminaux.Colors.Models
         public static bool operator !=(LumaInPhaseQuadrature left, LumaInPhaseQuadrature right) =>
             !(left == right);
 
-        internal LumaInPhaseQuadrature(double luma, double inphase, double quadrature)
+        internal LumaInPhaseQuadrature(int luma, int inphase, int quadrature)
         {
             Luma = luma;
             InPhase = inphase;

@@ -51,14 +51,14 @@ namespace Terminaux.Colors.Models.Parsing
                 return false;
 
             var specifierArray = specifier.Substring(4).Split(';');
-            double y = Convert.ToDouble(specifierArray[0]);
-            if (y < 0.0d || y > 255.0d)
+            int y = Convert.ToInt32(specifierArray[0]);
+            if (y < 0 || y > 255)
                 return false;
-            double u = Convert.ToDouble(specifierArray[1]);
-            if (u < 0.0d || u > 255.0d)
+            int u = Convert.ToInt32(specifierArray[1]);
+            if (u < 0 || u > 255)
                 return false;
-            double v = Convert.ToDouble(specifierArray[2]);
-            if (v < 0.0d || v > 255.0d)
+            int v = Convert.ToInt32(specifierArray[2]);
+            if (v < 0 || v > 255)
                 return false;
             return true;
         }
@@ -79,15 +79,15 @@ namespace Terminaux.Colors.Models.Parsing
             if (specifierArray.Length == 3)
             {
                 // We got the YUV whole values! First, check to see if we need to filter the color for the color-blind
-                double y = Convert.ToDouble(specifierArray[0]);
-                if (y < 0.0d || y > 255.0d)
-                    throw new TerminauxException($"The luma level is out of range (0.0 -> 255.0). {y}");
-                double u = Convert.ToDouble(specifierArray[1]);
-                if (u < 0.0d || u > 255.0d)
-                    throw new TerminauxException($"The chroma (U) level is out of range (0.0 -> 255.0). {u}");
-                double v = Convert.ToDouble(specifierArray[2]);
-                if (v < 0.0d || v > 255.0d)
-                    throw new TerminauxException($"The chroma (V) level is out of range (0.0 -> 255.0). {v}");
+                int y = Convert.ToInt32(specifierArray[0]);
+                if (y < 0 || y > 255)
+                    throw new TerminauxException($"The luma level is out of range (0 -> 255). {y}");
+                int u = Convert.ToInt32(specifierArray[1]);
+                if (u < 0 || u > 255)
+                    throw new TerminauxException($"The chroma (U) level is out of range (0 -> 255). {u}");
+                int v = Convert.ToInt32(specifierArray[2]);
+                if (v < 0 || v > 255)
+                    throw new TerminauxException($"The chroma (V) level is out of range (0 -> 255). {v}");
 
                 // First, we need to convert from YUV to RGB
                 var yuv = new LumaChromaUv(y, u, v);

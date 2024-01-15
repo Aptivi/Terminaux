@@ -255,9 +255,9 @@ namespace Terminaux.Colors.Models.Conversion
                 throw new TerminauxException("Can't convert a null YIQ instance to RGB!");
 
             // Get the RGB by matrix transform
-            int r = (int)Math.Round((yiq.Luma + (0.956 * yiq.InPhase) + (0.621 * yiq.Quadrature)) * 255);
-            int g = (int)Math.Round((yiq.Luma + (-0.272 * yiq.InPhase) + (-0.647 * yiq.Quadrature)) * 255);
-            int b = (int)Math.Round((yiq.Luma + (-1.105 * yiq.InPhase) + (1.702 * yiq.Quadrature)) * 255);
+            int r = (int)Math.Round(yiq.Luma + (0.956 * (yiq.InPhase - 128)) + (0.621 * (yiq.Quadrature - 128)));
+            int g = (int)Math.Round(yiq.Luma + (-0.272 * (yiq.InPhase - 128)) + (-0.647 * (yiq.Quadrature - 128)));
+            int b = (int)Math.Round((yiq.Luma + (-1.105 * (yiq.InPhase - 128)) + (1.702 * (yiq.Quadrature - 128))));
 
             // Verify that we don't go out of bounds
             if (r < 0)

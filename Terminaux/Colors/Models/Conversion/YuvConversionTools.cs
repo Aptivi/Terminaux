@@ -149,15 +149,15 @@ namespace Terminaux.Colors.Models.Conversion
             return new(y, u, v);
         }
 
-        private static (double y, double u, double v) GetYuvFromRgb(RedGreenBlue rgb)
+        private static (int y, int u, int v) GetYuvFromRgb(RedGreenBlue rgb)
         {
             if (rgb is null)
                 throw new TerminauxException("Can't convert a null RGB instance to YUV!");
 
             // Get the YUV values
-            double y = (0.299 * rgb.R) + (0.587 * rgb.G) + (0.114 * rgb.B);
-            double u = (-0.168736 * rgb.R) + (-0.331264 * rgb.G) + (0.500000 * rgb.B) + 128;
-            double v = (0.500000 * rgb.R) + (-0.418688 * rgb.G) + (-0.081312 * rgb.B) + 128;
+            int y = (int)((0.299d * rgb.R) + (0.587d * rgb.G) + (0.114d * rgb.B));
+            int u = (int)((-0.168736d * rgb.R) + (-0.331264d * rgb.G) + (0.500000d * rgb.B) + 128);
+            int v = (int)((0.500000d * rgb.R) + (-0.418688d * rgb.G) + (-0.081312d * rgb.B) + 128);
 
             // Return the resulting values
             return (y, u, v);
