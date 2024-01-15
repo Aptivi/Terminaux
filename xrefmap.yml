@@ -2746,47 +2746,6 @@ references:
   commentId: T:Terminaux.Colors.ColorTools
   fullName: Terminaux.Colors.ColorTools
   nameWithType: ColorTools
-- uid: Terminaux.Colors.ColorTools.ConvertFromHexToRGB(System.String)
-  name: ConvertFromHexToRGB(string)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ConvertFromHexToRGB_System_String_
-  commentId: M:Terminaux.Colors.ColorTools.ConvertFromHexToRGB(System.String)
-  name.vb: ConvertFromHexToRGB(String)
-  fullName: Terminaux.Colors.ColorTools.ConvertFromHexToRGB(string)
-  fullName.vb: Terminaux.Colors.ColorTools.ConvertFromHexToRGB(String)
-  nameWithType: ColorTools.ConvertFromHexToRGB(string)
-  nameWithType.vb: ColorTools.ConvertFromHexToRGB(String)
-- uid: Terminaux.Colors.ColorTools.ConvertFromHexToRGB*
-  name: ConvertFromHexToRGB
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ConvertFromHexToRGB_
-  commentId: Overload:Terminaux.Colors.ColorTools.ConvertFromHexToRGB
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.ConvertFromHexToRGB
-  nameWithType: ColorTools.ConvertFromHexToRGB
-- uid: Terminaux.Colors.ColorTools.ConvertFromRGBToHex(System.Int32,System.Int32,System.Int32)
-  name: ConvertFromRGBToHex(int, int, int)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ConvertFromRGBToHex_System_Int32_System_Int32_System_Int32_
-  commentId: M:Terminaux.Colors.ColorTools.ConvertFromRGBToHex(System.Int32,System.Int32,System.Int32)
-  name.vb: ConvertFromRGBToHex(Integer, Integer, Integer)
-  fullName: Terminaux.Colors.ColorTools.ConvertFromRGBToHex(int, int, int)
-  fullName.vb: Terminaux.Colors.ColorTools.ConvertFromRGBToHex(Integer, Integer, Integer)
-  nameWithType: ColorTools.ConvertFromRGBToHex(int, int, int)
-  nameWithType.vb: ColorTools.ConvertFromRGBToHex(Integer, Integer, Integer)
-- uid: Terminaux.Colors.ColorTools.ConvertFromRGBToHex(System.String)
-  name: ConvertFromRGBToHex(string)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ConvertFromRGBToHex_System_String_
-  commentId: M:Terminaux.Colors.ColorTools.ConvertFromRGBToHex(System.String)
-  name.vb: ConvertFromRGBToHex(String)
-  fullName: Terminaux.Colors.ColorTools.ConvertFromRGBToHex(string)
-  fullName.vb: Terminaux.Colors.ColorTools.ConvertFromRGBToHex(String)
-  nameWithType: ColorTools.ConvertFromRGBToHex(string)
-  nameWithType.vb: ColorTools.ConvertFromRGBToHex(String)
-- uid: Terminaux.Colors.ColorTools.ConvertFromRGBToHex*
-  name: ConvertFromRGBToHex
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ConvertFromRGBToHex_
-  commentId: Overload:Terminaux.Colors.ColorTools.ConvertFromRGBToHex
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.ConvertFromRGBToHex
-  nameWithType: ColorTools.ConvertFromRGBToHex
 - uid: Terminaux.Colors.ColorTools.CorrectStandardColor(System.ConsoleColor)
   name: CorrectStandardColor(ConsoleColor)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CorrectStandardColor_System_ConsoleColor_
