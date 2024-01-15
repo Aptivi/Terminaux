@@ -75,25 +75,6 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorColor(string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, true, new Color(Color), ColorTools.currentBackgroundColor, Vars);
-
-        /// <summary>
-        /// Draw a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorColorBack(string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, true, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
-
-        /// <summary>
-        /// Draw a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="Color">A color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparatorColor(string Text, Color Color, params object[] Vars) =>
             WriteSeparatorColorBack(Text, true, Color, ColorTools.currentBackgroundColor, Vars);
 
@@ -125,27 +106,6 @@ namespace Terminaux.Writer.FancyWriters
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
-
-        /// <summary>
-        /// Draw a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
-        /// <param name="Color">A color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorColor(string Text, bool PrintSuffix, ConsoleColors Color, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, PrintSuffix, new Color(Color), ColorTools.currentBackgroundColor, Vars);
-
-        /// <summary>
-        /// Draw a separator with text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorColorBack(string Text, bool PrintSuffix, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, PrintSuffix, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
         /// Draw a separator with text

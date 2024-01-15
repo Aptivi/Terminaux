@@ -60,27 +60,6 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredColor(int top, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredColorBack(top, Text, new Color(Color), ColorTools.currentBackgroundColor, Vars);
-
-        /// <summary>
-        /// Draws a centered text
-        /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredColorBack(int top, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteCenteredColorBack(top, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
-
-        /// <summary>
-        /// Draws a centered text
-        /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
-        /// <param name="Color">A color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredColor(int top, string Text, Color Color, params object[] Vars) =>
             WriteCenteredColorBack(top, Text, Color, ColorTools.currentBackgroundColor, Vars);
 
@@ -123,27 +102,6 @@ namespace Terminaux.Writer.FancyWriters
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
-
-        /// <summary>
-        /// Draws a centered text (just the first line)
-        /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
-        /// <param name="Color">A color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLineColor(int top, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredOneLineColorBack(top, Text, new Color(Color), ColorTools.currentBackgroundColor, Vars);
-
-        /// <summary>
-        /// Draws a centered text (just the first line)
-        /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLineColorBack(int top, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteCenteredOneLineColorBack(top, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -200,25 +158,6 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredColor(string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredColorBack(Text, new Color(Color), ColorTools.currentBackgroundColor, Vars);
-
-        /// <summary>
-        /// Draws a centered text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredColorBack(string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteCenteredColorBack(Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
-
-        /// <summary>
-        /// Draws a centered text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
-        /// <param name="Color">A color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredColor(string Text, Color Color, params object[] Vars) =>
             WriteCenteredColorBack(Text, Color, ColorTools.currentBackgroundColor, Vars);
 
@@ -259,25 +198,6 @@ namespace Terminaux.Writer.FancyWriters
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
-
-        /// <summary>
-        /// Draws a centered text (just the first line)
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
-        /// <param name="Color">A color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLineColor(string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredOneLineColorBack(Text, new Color(Color), ColorTools.currentBackgroundColor, Vars);
-
-        /// <summary>
-        /// Draws a centered text (just the first line)
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLineColorBack(string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteCenteredOneLineColorBack(Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)

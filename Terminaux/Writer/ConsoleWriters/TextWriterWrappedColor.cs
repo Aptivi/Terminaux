@@ -153,27 +153,6 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrappedColor(string Text, bool Line, ConsoleColors color, params object[] vars) =>
-            WriteWrappedColorBack(Text, Line, new Color(color), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrappedColorBack(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteWrappedColorBack(Text, Line, new Color(ForegroundColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support and wraps the long terminal output if needed.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="color">A color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWrappedColor(string Text, bool Line, Color color, params object[] vars) =>
             WriteWrappedColorBack(Text, Line, color, ColorTools.currentBackgroundColor, vars);
 

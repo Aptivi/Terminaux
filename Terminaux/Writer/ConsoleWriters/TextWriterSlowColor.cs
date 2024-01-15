@@ -85,29 +85,6 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, ConsoleColors color, params object[] vars) =>
-            WriteSlowlyColorBack(msg, Line, MsEachLetter, new Color(color), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt slowly with color support.
-        /// </summary>
-        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowlyColorBack(string msg, bool Line, double MsEachLetter, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteSlowlyColorBack(msg, Line, MsEachLetter, new Color(ForegroundColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt slowly with color support.
-        /// </summary>
-        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-        /// <param name="color">A color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, Color color, params object[] vars) =>
             WriteSlowlyColorBack(msg, Line, MsEachLetter, color, ColorTools.currentBackgroundColor, vars);
 

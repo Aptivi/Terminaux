@@ -55,46 +55,6 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteColor(string Text, ConsoleColors color, params object[] vars) =>
-            WriteColor(Text, true, color, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="color">A color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteColor(string Text, bool Line, ConsoleColors color, params object[] vars) =>
-            WriteColorBack(Text, Line, new Color(color), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteColorBack(string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteColorBack(Text, true, ForegroundColor, BackgroundColor, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteColorBack(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteColorBack(Text, Line, new Color(ForegroundColor), new Color(BackgroundColor), vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="color">A color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteColor(string Text, Color color, params object[] vars) =>
             WriteColor(Text, true, color, vars);
 
@@ -147,50 +107,6 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteForReader(string Text, TermReaderSettings settings, bool Line, params object[] vars) =>
             WriteForReaderColor(Text, settings, Line, ColorTools.currentForegroundColor, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="settings">Terminal reader settings</param>
-        /// <param name="color">A color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColor(string Text, TermReaderSettings settings, ConsoleColors color, params object[] vars) =>
-            WriteForReaderColor(Text, settings, true, color, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="settings">Terminal reader settings</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="color">A color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColor(string Text, TermReaderSettings settings, bool Line, ConsoleColors color, params object[] vars) =>
-            WriteForReaderColorBack(Text, settings, Line, new Color(color), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="settings">Terminal reader settings</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColorBack(string Text, TermReaderSettings settings, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteForReaderColorBack(Text, settings, true, ForegroundColor, BackgroundColor, vars);
-
-        /// <summary>
-        /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
-        /// </summary>
-        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="settings">Terminal reader settings</param>
-        /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColorBack(string Text, TermReaderSettings settings, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteForReaderColorBack(Text, settings, Line, new Color(ForegroundColor), new Color(BackgroundColor), vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.

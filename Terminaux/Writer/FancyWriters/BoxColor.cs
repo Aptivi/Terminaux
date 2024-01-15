@@ -71,28 +71,6 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BoxColor">Box color</param>
-        public static void WriteBox(int Left, int Top, int InteriorWidth, int InteriorHeight, ConsoleColors BoxColor)
-        {
-            try
-            {
-                // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight, new Color(BoxColor)), Left, Top);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Writes the box plainly
-        /// </summary>
-        /// <param name="Left">Where to place the box horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the box vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="BoxColor">Box color</param>
         public static void WriteBox(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BoxColor)
         {
             try

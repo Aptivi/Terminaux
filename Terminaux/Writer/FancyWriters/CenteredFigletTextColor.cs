@@ -64,29 +64,6 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColor(int top, FigletizeFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredFigletColorBack(top, FigletFont, Text, new Color(Color), ColorTools.currentBackgroundColor, Vars);
-
-        /// <summary>
-        /// Draw a centered figlet with text
-        /// </summary>
-        /// <param name="top">Top position to write centered figlet text to</param>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColorBack(int top, FigletizeFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteCenteredFigletColorBack(top, FigletFont, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
-
-        /// <summary>
-        /// Draw a centered figlet with text
-        /// </summary>
-        /// <param name="top">Top position to write centered figlet text to</param>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
-        /// <param name="Color">A color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFigletColor(int top, FigletizeFont FigletFont, string Text, Color Color, params object[] Vars) =>
             WriteCenteredFigletColorBack(top, FigletFont, Text, Color, ColorTools.currentBackgroundColor, Vars);
 
@@ -130,27 +107,6 @@ namespace Terminaux.Writer.FancyWriters
                 Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
             }
         }
-
-        /// <summary>
-        /// Draw a centered figlet with text
-        /// </summary>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
-        /// <param name="Color">A color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColor(FigletizeFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredFigletColorBack(FigletFont, Text, new Color(Color), ColorTools.currentBackgroundColor, Vars);
-
-        /// <summary>
-        /// Draw a centered figlet with text
-        /// </summary>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColorBack(FigletizeFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteCenteredFigletColorBack(FigletFont, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
