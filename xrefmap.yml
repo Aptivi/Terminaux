@@ -2911,22 +2911,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.LoadBackDry
   nameWithType: ColorTools.LoadBackDry
-- uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double,Terminaux.Colors.Transformation.TransformationMethod)
-  name: RenderColorBlindnessAware(Color, TransformationFormula, double, TransformationMethod)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Transformation_TransformationFormula_System_Double_Terminaux_Colors_Transformation_TransformationMethod_
-  commentId: M:Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double,Terminaux.Colors.Transformation.TransformationMethod)
-  name.vb: RenderColorBlindnessAware(Color, TransformationFormula, Double, TransformationMethod)
-  fullName: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Transformation.TransformationFormula, double, Terminaux.Colors.Transformation.TransformationMethod)
-  fullName.vb: Terminaux.Colors.ColorTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Transformation.TransformationFormula, Double, Terminaux.Colors.Transformation.TransformationMethod)
-  nameWithType: ColorTools.RenderColorBlindnessAware(Color, TransformationFormula, double, TransformationMethod)
-  nameWithType.vb: ColorTools.RenderColorBlindnessAware(Color, TransformationFormula, Double, TransformationMethod)
-- uid: Terminaux.Colors.ColorTools.RenderColorBlindnessAware*
-  name: RenderColorBlindnessAware
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderColorBlindnessAware_
-  commentId: Overload:Terminaux.Colors.ColorTools.RenderColorBlindnessAware
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.RenderColorBlindnessAware
-  nameWithType: ColorTools.RenderColorBlindnessAware
 - uid: Terminaux.Colors.ColorTools.SRGBToLinearRGB(System.Int32)
   name: SRGBToLinearRGB(int)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SRGBToLinearRGB_System_Int32_
@@ -7569,6 +7553,28 @@ references:
   commentId: F:Terminaux.Colors.Transformation.TransformationMethod.Vienot1999
   fullName: Terminaux.Colors.Transformation.TransformationMethod.Vienot1999
   nameWithType: TransformationMethod.Vienot1999
+- uid: Terminaux.Colors.Transformation.TransformationTools
+  name: TransformationTools
+  href: api/Terminaux.Colors.Transformation.TransformationTools.html
+  commentId: T:Terminaux.Colors.Transformation.TransformationTools
+  fullName: Terminaux.Colors.Transformation.TransformationTools
+  nameWithType: TransformationTools
+- uid: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double,Terminaux.Colors.Transformation.TransformationMethod)
+  name: RenderColorBlindnessAware(Color, TransformationFormula, double, TransformationMethod)
+  href: api/Terminaux.Colors.Transformation.TransformationTools.html#Terminaux_Colors_Transformation_TransformationTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Transformation_TransformationFormula_System_Double_Terminaux_Colors_Transformation_TransformationMethod_
+  commentId: M:Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double,Terminaux.Colors.Transformation.TransformationMethod)
+  name.vb: RenderColorBlindnessAware(Color, TransformationFormula, Double, TransformationMethod)
+  fullName: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Transformation.TransformationFormula, double, Terminaux.Colors.Transformation.TransformationMethod)
+  fullName.vb: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Transformation.TransformationFormula, Double, Terminaux.Colors.Transformation.TransformationMethod)
+  nameWithType: TransformationTools.RenderColorBlindnessAware(Color, TransformationFormula, double, TransformationMethod)
+  nameWithType.vb: TransformationTools.RenderColorBlindnessAware(Color, TransformationFormula, Double, TransformationMethod)
+- uid: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware*
+  name: RenderColorBlindnessAware
+  href: api/Terminaux.Colors.Transformation.TransformationTools.html#Terminaux_Colors_Transformation_TransformationTools_RenderColorBlindnessAware_
+  commentId: Overload:Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware
+  isSpec: "True"
+  fullName: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware
+  nameWithType: TransformationTools.RenderColorBlindnessAware
 - uid: Terminaux.Inputs
   name: Terminaux.Inputs
   href: api/Terminaux.Inputs.html
