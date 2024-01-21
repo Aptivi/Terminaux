@@ -60,9 +60,9 @@ namespace Terminaux.Colors.Interop
 
             // Now, get our color's RGB component and convert that to Drawing's Color. Alpha is assumed to be 100%
             // as Terminaux doesn't support "transparency" yet.
-            int r = ourColor.R;
-            int g = ourColor.G;
-            int b = ourColor.B;
+            int r = ourColor.RGB.R;
+            int g = ourColor.RGB.G;
+            int b = ourColor.RGB.B;
             var color = DrawingColor.FromArgb(r, g, b);
             return color;
         }

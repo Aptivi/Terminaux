@@ -78,7 +78,7 @@ namespace Terminaux.Colors
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; in its original form.
         /// </summary>
         public string PlainSequenceOriginal =>
-            Type == ColorType.TrueColor ? $"{R};{G};{B}" : $"{ColorId}";
+            Type == ColorType.TrueColor ? $"{RGB.R};{RGB.G};{RGB.B}" : $"{ColorId}";
         /// <summary>
         /// Parsable VT sequence (Foreground)
         /// </summary>
@@ -107,7 +107,7 @@ namespace Terminaux.Colors
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         /// </summary>
         public string PlainSequenceTrueColor =>
-            $"{R};{G};{B}";
+            $"{RGB.R};{RGB.G};{RGB.B}";
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary
         /// </summary>
@@ -124,40 +124,10 @@ namespace Terminaux.Colors
         public string VTSequenceBackgroundTrueColor =>
             $"\u001b[48;2;{PlainSequenceTrueColor}m";
         /// <summary>
-        /// The red color value [0 -> 255]
-        /// </summary>
-        public int R =>
-            RGB.R;
-        /// <summary>
-        /// The green color value [0 -> 255]
-        /// </summary>
-        public int G =>
-            RGB.G;
-        /// <summary>
-        /// The blue color value [0 -> 255]
-        /// </summary>
-        public int B =>
-            RGB.B;
-        /// <summary>
-        /// The red color value [0.0 -> 0.1]
-        /// </summary>
-        public double RNormalized =>
-            RGB.RNormalized;
-        /// <summary>
-        /// The green color value [0.0 -> 0.1]
-        /// </summary>
-        public double GNormalized =>
-            RGB.GNormalized;
-        /// <summary>
-        /// The blue color value [0.0 -> 0.1]
-        /// </summary>
-        public double BNormalized =>
-            RGB.BNormalized;
-        /// <summary>
         /// Hexadecimal representation of the color
         /// </summary>
         public string Hex =>
-            $"#{R:X2}{G:X2}{B:X2}";
+            $"#{RGB.R:X2}{RGB.G:X2}{RGB.B:X2}";
         /// <summary>
         /// Color type
         /// </summary>
@@ -169,7 +139,7 @@ namespace Terminaux.Colors
         /// Determines the color brightness whether it indicates dark or light mode
         /// </summary>
         public ColorBrightness Brightness =>
-            DetectDark(R, G, B) ? ColorBrightness.Dark : ColorBrightness.Light;
+            DetectDark(RGB.R, RGB.G, RGB.B) ? ColorBrightness.Dark : ColorBrightness.Light;
         /// <summary>
         /// The color value converted to <see cref="ConsoleColors"/>. Not applicable [-1] to true color
         /// </summary>
@@ -361,9 +331,6 @@ namespace Terminaux.Colors
                 other.VTSequenceForegroundTrueColor == other2.VTSequenceForegroundTrueColor &&
                 other.VTSequenceBackgroundTrueColor == other2.VTSequenceBackgroundTrueColor &&
                 other.ColorId == other2.ColorId &&
-                other.R == other2.R &&
-                other.G == other2.G &&
-                other.B == other2.B &&
                 other.Hex == other2.Hex &&
                 other.Type == other2.Type &&
                 other.Brightness == other2.Brightness &&
@@ -383,7 +350,7 @@ namespace Terminaux.Colors
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            int hashCode = 1612857879;
+            int hashCode = -1117772193;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequence);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceEnclosed);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForeground);
@@ -393,9 +360,6 @@ namespace Terminaux.Colors
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForegroundTrueColor);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceBackgroundTrueColor);
             hashCode = hashCode * -1521134295 + ColorId.GetHashCode();
-            hashCode = hashCode * -1521134295 + R.GetHashCode();
-            hashCode = hashCode * -1521134295 + G.GetHashCode();
-            hashCode = hashCode * -1521134295 + B.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Hex);
             hashCode = hashCode * -1521134295 + Type.GetHashCode();
             hashCode = hashCode * -1521134295 + Brightness.GetHashCode();

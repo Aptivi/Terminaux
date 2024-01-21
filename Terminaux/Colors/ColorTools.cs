@@ -310,7 +310,7 @@ namespace Terminaux.Colors
             var colorType = color.Type;
             if (colorType != ColorType.TrueColor)
                 colorLevel = int.Parse(color.PlainSequence);
-            while (!ColorContrast.IsSeeable(colorType, colorLevel, color.R, color.G, color.B) && !selectBlack)
+            while (!ColorContrast.IsSeeable(colorType, colorLevel, color.RGB.R, color.RGB.G, color.RGB.B) && !selectBlack)
             {
                 color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255);
                 if (colorType != ColorType.TrueColor)

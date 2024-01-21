@@ -45,9 +45,9 @@ namespace Terminaux.Colors
         {
             var black = new Color(ConsoleColors.Black);
             var white = new Color(ConsoleColors.White);
-            int r = color.R;
-            int g = color.G;
-            int b = color.B;
+            int r = color.RGB.R;
+            int g = color.RGB.G;
+            int b = color.RGB.B;
             double lumaInfo = ((r * (0.299d * 1000)) + (g * (0.587d * 1000)) + (b * (0.114d * 1000))) / 1000;
             return lumaInfo >= 128 ? black : white;
         }

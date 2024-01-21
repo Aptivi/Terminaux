@@ -47,9 +47,6 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;0;22m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;0;22m");
-            ColorInstance.R.ShouldBe(139);
-            ColorInstance.G.ShouldBe(0);
-            ColorInstance.B.ShouldBe(22);
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -93,9 +90,6 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;0;22m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;0;22m");
-            ColorInstance.R.ShouldBe(139);
-            ColorInstance.G.ShouldBe(0);
-            ColorInstance.B.ShouldBe(22);
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -139,9 +133,6 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;0;22m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;0;22m");
-            ColorInstance.R.ShouldBe(139);
-            ColorInstance.G.ShouldBe(0);
-            ColorInstance.B.ShouldBe(22);
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -184,9 +175,6 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;0;22m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;0;22m");
-            ColorInstance.R.ShouldBe(139);
-            ColorInstance.G.ShouldBe(0);
-            ColorInstance.B.ShouldBe(22);
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -230,9 +218,6 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
-            ColorInstance.R.ShouldBe(139);
-            ColorInstance.G.ShouldBe(80);
-            ColorInstance.B.ShouldBe(22);
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -275,9 +260,6 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
-            ColorInstance.R.ShouldBe(139);
-            ColorInstance.G.ShouldBe(80);
-            ColorInstance.B.ShouldBe(22);
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);
@@ -320,9 +302,6 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Type.ShouldBe(ColorType.TrueColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
-            ColorInstance.R.ShouldBe(139);
-            ColorInstance.G.ShouldBe(80);
-            ColorInstance.B.ShouldBe(22);
             ColorInstance.RGB.R.ShouldBe(139);
             ColorInstance.RGB.G.ShouldBe(80);
             ColorInstance.RGB.B.ShouldBe(22);

@@ -225,11 +225,11 @@ namespace Terminaux.Colors.Selector
             for (int i = 0; i < boxWidth; i++)
             {
                 double width = (double)i / boxWidth;
-                int gray = (int)(mono.R * width);
+                int gray = (int)(mono.RGB.R * width);
                 grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
             selector.Append(
-                BoxFrameColor.RenderBoxFrame($"Gray: {mono.R}/255", hueBarX, grayRampBarY, boxWidth, boxHeight) +
+                BoxFrameColor.RenderBoxFrame($"Gray: {mono.RGB.R}/255", hueBarX, grayRampBarY, boxWidth, boxHeight) +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, grayRampBarY + 2) +
                 grayRamp.ToString()
             );
@@ -241,15 +241,15 @@ namespace Terminaux.Colors.Selector
             for (int i = 0; i < boxWidth; i++)
             {
                 double width = (double)i / boxWidth;
-                int red = (int)(selectedColor.R * width);
-                int green = (int)(selectedColor.G * width);
-                int blue = (int)(selectedColor.B * width);
+                int red = (int)(selectedColor.RGB.R * width);
+                int green = (int)(selectedColor.RGB.G * width);
+                int blue = (int)(selectedColor.RGB.B * width);
                 redRamp.Append($"{new Color($"{red};0;0").VTSequenceBackgroundTrueColor} {initialBackground}");
                 greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {initialBackground}");
                 blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
             selector.Append(
-                BoxFrameColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.R};{selectedColor.G};{selectedColor.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2) +
+                BoxFrameColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.RGB.R};{selectedColor.RGB.G};{selectedColor.RGB.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2) +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 2) +
                 redRamp.ToString() +
                 CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 3) +
