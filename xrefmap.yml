@@ -987,6 +987,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleExtensions.GetFilteredPositions
   nameWithType: ConsoleExtensions.GetFilteredPositions
+- uid: Terminaux.Base.ConsoleExtensions.InitializeSequences
+  name: InitializeSequences()
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_InitializeSequences
+  commentId: M:Terminaux.Base.ConsoleExtensions.InitializeSequences
+  fullName: Terminaux.Base.ConsoleExtensions.InitializeSequences()
+  nameWithType: ConsoleExtensions.InitializeSequences()
+- uid: Terminaux.Base.ConsoleExtensions.InitializeSequences*
+  name: InitializeSequences
+  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_InitializeSequences_
+  commentId: Overload:Terminaux.Base.ConsoleExtensions.InitializeSequences
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleExtensions.InitializeSequences
+  nameWithType: ConsoleExtensions.InitializeSequences
 - uid: Terminaux.Base.ConsoleExtensions.PercentRepeat(System.Int32,System.Int32,System.Int32)
   name: PercentRepeat(int, int, int)
   href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_PercentRepeat_System_Int32_System_Int32_System_Int32_
