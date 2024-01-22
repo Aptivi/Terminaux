@@ -41,6 +41,18 @@ namespace Terminaux.Colors.Models
         /// The V component, known as chroma [0 -> 255]
         /// </summary>
         public int ChromaV { get; private set; }
+        /// <summary>
+        /// The Y component, known as luma information [0.0 -> 1.0]
+        /// </summary>
+        public double LumaNormalized { get; private set; }
+        /// <summary>
+        /// The U component, known as chrominance information [-0.5019 -> 0.5019]
+        /// </summary>
+        public double ChromaUNormalized { get; private set; }
+        /// <summary>
+        /// The V component, known as chrominance information [-0.5019 -> 0.5019]
+        /// </summary>
+        public double ChromaVNormalized { get; private set; }
 
         /// <summary>
         /// yuv:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;
@@ -77,11 +89,14 @@ namespace Terminaux.Colors.Models
         public static bool operator !=(LumaChromaUv left, LumaChromaUv right) =>
             !(left == right);
 
-        internal LumaChromaUv(int luma, int inphase, int quadrature)
+        internal LumaChromaUv(int luma, int chromaU, int chromaV)
         {
             Luma = luma;
-            ChromaU = inphase;
-            ChromaV = quadrature;
+            ChromaU = chromaU;
+            ChromaV = chromaV;
+            LumaNormalized = luma / 255d;
+            ChromaUNormalized = (chromaU - 128) / 255d;
+            ChromaVNormalized = (chromaV - 128) / 255d;
         }
     }
 }

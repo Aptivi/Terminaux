@@ -41,6 +41,18 @@ namespace Terminaux.Colors.Models
         /// The Q component, known as chrominance information [0 -> 255]
         /// </summary>
         public int Quadrature { get; private set; }
+        /// <summary>
+        /// The Y component, known as luma information [0.0 -> 1.0]
+        /// </summary>
+        public double LumaNormalized { get; private set; }
+        /// <summary>
+        /// The I component, known as chrominance information [-0.5957 -> 0.5957]
+        /// </summary>
+        public double InPhaseNormalized { get; private set; }
+        /// <summary>
+        /// The Q component, known as chrominance information [-0.5226 -> 0.5226]
+        /// </summary>
+        public double QuadratureNormalized { get; private set; }
 
         /// <summary>
         /// yiq:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;
@@ -82,6 +94,9 @@ namespace Terminaux.Colors.Models
             Luma = luma;
             InPhase = inphase;
             Quadrature = quadrature;
+            LumaNormalized = luma / 255d;
+            InPhaseNormalized = (inphase - 128) / 255d;
+            QuadratureNormalized = (quadrature - 128) / 255d;
         }
     }
 }
