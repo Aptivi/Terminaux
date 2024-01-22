@@ -250,8 +250,14 @@ namespace Terminaux.Base
         [DllImport(winKernel, SetLastError = true)]
         private static extern IntPtr GetStdHandle(int handle);
 
-        internal static bool InitializeSequences()
+        /// <summary>
+        /// Initializes the VT sequence handling for Windows systems.
+        /// </summary>
+        /// <returns></returns>
+        public static bool InitializeSequences()
         {
+            if (!ConsolePlatform.IsOnWindows())
+                return true;
             IntPtr stdHandle = GetStdHandle(-11);
             int mode = CheckForConHostSequenceSupport();
             if (mode != 7)
