@@ -318,6 +318,10 @@
     "Terminaux - TestPresentationKioskRequired": {
       "commandName": "Project",
       "commandLineArgs": "TestPresentationKioskRequired"
+    },
+    "Terminaux - BorderText": {
+      "commandName": "Project",
+      "commandLineArgs": "BorderText"
     }
   }
 }

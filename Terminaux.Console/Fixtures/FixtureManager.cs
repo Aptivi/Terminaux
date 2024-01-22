@@ -73,6 +73,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new TestListWriterLarge(),
             new TestListWriterLargeWrap(),
             new TestTable(),
+            new BorderText(),
 
             // Input
             new TestInputSelection(),
