@@ -22,7 +22,7 @@ using System.IO;
 using System.Reflection;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
-using TermInfo;
+using Terminaux.TermInfo;
 
 namespace Terminaux.Base.Checks
 {
