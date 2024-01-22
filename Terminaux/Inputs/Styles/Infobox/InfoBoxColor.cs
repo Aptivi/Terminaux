@@ -737,21 +737,79 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Wait until the user presses any key to close the box
+                    string[] splitFinalLines;
+                    int maxHeight;
                     if (waitForInput)
                     {
                         var keypress = Input.DetectKeypress();
-                        if (keypress.Key == ConsoleKey.Q)
+                        splitFinalLines = GetFinalLines();
+                        maxHeight = splitFinalLines.Length;
+                        if (maxHeight >= ConsoleWrapper.WindowHeight)
+                            maxHeight = ConsoleWrapper.WindowHeight - 4;
+                        switch (keypress.Key)
                         {
-                            exiting = true;
-                            break;
+                            case ConsoleKey.Q:
+                                exiting = true;
+                                break;
+                            case ConsoleKey.PageUp:
+                                currIdx -= maxHeight * 2 - 1;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                delay = false;
+                                exiting = false;
+                                break;
+                            case ConsoleKey.PageDown:
+                                currIdx += increment;
+                                if (currIdx > splitFinalLines.Length - maxHeight)
+                                    currIdx = splitFinalLines.Length - maxHeight;
+                                delay = false;
+                                exiting = false;
+                                break;
+                            case ConsoleKey.UpArrow:
+                                currIdx -= 1;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                delay = false;
+                                exiting = false;
+                                break;
+                            case ConsoleKey.DownArrow:
+                                currIdx += 1;
+                                if (currIdx > splitFinalLines.Length - maxHeight)
+                                    currIdx = splitFinalLines.Length - maxHeight;
+                                delay = false;
+                                exiting = false;
+                                break;
+                            case ConsoleKey.Home:
+                                currIdx = 0;
+                                delay = false;
+                                exiting = false;
+                                break;
+                            case ConsoleKey.End:
+                                currIdx = splitFinalLines.Length - maxHeight;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                delay = false;
+                                exiting = false;
+                                break;
                         }
-                        if (delay)
+
+                        if (delay && !exiting)
+                        {
                             currIdx += increment;
+                            if (currIdx > splitFinalLines.Length - maxHeight)
+                                currIdx = splitFinalLines.Length - maxHeight;
+                        }
                     }
                     else if (delay)
                     {
                         Thread.Sleep(5000);
+                        splitFinalLines = GetFinalLines();
+                        maxHeight = splitFinalLines.Length;
+                        if (maxHeight >= ConsoleWrapper.WindowHeight)
+                            maxHeight = ConsoleWrapper.WindowHeight - 4;
                         currIdx += increment;
+                        if (currIdx > splitFinalLines.Length - maxHeight)
+                            currIdx = splitFinalLines.Length - maxHeight;
                     }
                 }
             }
