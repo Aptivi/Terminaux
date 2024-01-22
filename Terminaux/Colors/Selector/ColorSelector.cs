@@ -391,10 +391,8 @@ namespace Terminaux.Colors.Selector
                         colorValue255 = ConsoleColors.Black;
                     break;
                 case ConsoleKey.H:
-                    InfoBoxColor.WriteInfoBox(
+                    InfoBoxColor.WriteInfoBox("Available keybindings",
                         $$"""
-                        Available keybindings
-
                         [ENTER]              | Accept color
                         [ESC]                | Exit
                         [H]                  | Help page
@@ -455,10 +453,8 @@ namespace Terminaux.Colors.Selector
                         colorValue16 = ConsoleColor.Black;
                     break;
                 case ConsoleKey.H:
-                    InfoBoxColor.WriteInfoBox(
+                    InfoBoxColor.WriteInfoBox("Available keybindings",
                         $$"""
-                        Available keybindings
-
                         [ENTER]              | Accept color
                         [ESC]                | Exit
                         [H]                  | Help page
@@ -605,7 +601,6 @@ namespace Terminaux.Colors.Selector
                 colorBlind ?
                 TransformationTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
                 selectedColor;
-            string separator = new('-', localizedTextTitle.Length);
             var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
             var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
             var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
@@ -613,11 +608,8 @@ namespace Terminaux.Colors.Selector
             var cmy = CmyConversionTools.ConvertFrom(selectedColor.RGB);
             var yiq = YiqConversionTools.ConvertFrom(selectedColor.RGB);
             var yuv = YuvConversionTools.ConvertFrom(selectedColor.RGB);
-            InfoBoxColor.WriteInfoBox(
+            InfoBoxColor.WriteInfoBox(localizedTextTitle,
                 $$"""
-                {{localizedTextTitle}}
-                {{separator}}
-
                 RGB level:          {{selectedColor.PlainSequence}}
                 RGB level (true):   {{selectedColor.PlainSequenceTrueColor}}
                 RGB hex code:       {{selectedColor.Hex}}

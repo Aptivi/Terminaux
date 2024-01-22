@@ -591,7 +591,7 @@ namespace Terminaux.Writer.FancyWriters
                                                char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                                Color BorderColor, Color BackgroundColor, bool useColor, params object[] vars) =>
             BorderTextColor.RenderBorder(
-                "", text, Left, Top, InteriorWidth, InteriorHeight,
+                text, "", Left, Top, InteriorWidth, InteriorHeight,
                 UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
                 BorderColor, BackgroundColor, useColor, vars
