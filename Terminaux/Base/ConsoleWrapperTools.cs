@@ -460,8 +460,8 @@ namespace Terminaux.Base
 
         private static void ClearLoadBack()
         {
-            Console.Write(ColorTools.CurrentBackgroundColor.VTSequenceBackground);
-            Console.Clear();
+            Write(ColorTools.CurrentBackgroundColor.VTSequenceBackground);
+            Clear();
         }
 
         private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
@@ -469,22 +469,26 @@ namespace Terminaux.Base
 
         private static void WriteNonStandalone(string text, TermReaderSettings settings)
         {
-            if (settings.RightMargin > 0 || settings.LeftMargin > 0)
+            int top = settings.state.inputPromptTop;
+            var wrapped = TextTools.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLeft - settings.state.LeftMargin);
+            for (int i = 0; i < wrapped.Length; i++)
             {
-                var wrapped = TextTools.GetWrappedSentences(text, WindowWidth - settings.RightMargin - settings.LeftMargin, settings.LeftMargin - 1);
-                for (int i = 0; i < wrapped.Length; i++)
+                int wrapTop = top + i;
+                string textWrapped = wrapped[i];
+                Write(textWrapped);
+                if (i + 1 < wrapped.Length)
                 {
-                    string textWrapped = wrapped[i];
-                    Console.Write(textWrapped);
-                    if (i + 1 < wrapped.Length)
-                    {
-                        WriteLine();
-                        SetCursorLeft(settings.LeftMargin);
-                    }
+                    WriteLine();
+                    CursorLeft = settings.LeftMargin;
+                }
+                if (wrapTop >= BufferHeight && !settings.state.writingPrompt && top > 0)
+                {
+                    top--;
+                    settings.state.currentCursorPosTop--;
+                    CursorLeft = settings.LeftMargin;
                 }
             }
-            else
-                Console.Write(text);
+            settings.state.inputPromptTop = top;
         }
 
         private static void WriteNonStandalone(string text, TermReaderSettings settings, params object[] args)

@@ -152,29 +152,8 @@ namespace Terminaux.Base
         /// </summary>
         /// <param name="text">The text to write</param>
         /// <param name="settings">Reader settings</param>
-        internal static void Write(string text, TermReaderSettings settings)
-        {
-            int top = settings.state.inputPromptTop;
-            var wrapped = TextTools.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLeft - settings.state.LeftMargin);
-            for (int i = 0; i < wrapped.Length; i++)
-            {
-                int wrapTop = top + i;
-                string textWrapped = wrapped[i];
-                Write(textWrapped);
-                if (i + 1 < wrapped.Length)
-                {
-                    WriteLine();
-                    CursorLeft = settings.LeftMargin;
-                }
-                if (wrapTop >= BufferHeight && !settings.state.writingPrompt && top > 0)
-                {
-                    top--;
-                    settings.state.currentCursorPosTop--;
-                    CursorLeft = settings.LeftMargin;
-                }
-            }
-            settings.state.inputPromptTop = top;
-        }
+        internal static void Write(string text, TermReaderSettings settings) =>
+            ConsoleWrapperTools.ActionWriteStringNonStandalone(text, settings);
 
         /// <summary>
         /// Writes text to console
@@ -190,11 +169,8 @@ namespace Terminaux.Base
         /// <param name="text">The text to write</param>
         /// <param name="settings">Reader settings</param>
         /// <param name="args">The arguments to evaluate</param>
-        internal static void Write(string text, TermReaderSettings settings, params object[] args)
-        {
-            string finalText = string.Format(text, args);
-            Write(finalText, settings);
-        }
+        internal static void Write(string text, TermReaderSettings settings, params object[] args) =>
+            ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone(text, settings, args);
 
         /// <summary>
         /// Writes new line to console
@@ -214,11 +190,8 @@ namespace Terminaux.Base
         /// </summary>
         /// <param name="text">The text to write</param>
         /// <param name="settings">Reader settings</param>
-        public static void WriteLine(string text, TermReaderSettings settings)
-        {
-            Write(text, settings);
-            WriteLine();
-        }
+        public static void WriteLine(string text, TermReaderSettings settings) =>
+            ConsoleWrapperTools.ActionWriteLineStringNonStandalone(text, settings);
 
         /// <summary>
         /// Writes text to console with line terminator
@@ -234,10 +207,7 @@ namespace Terminaux.Base
         /// <param name="text">The text to write</param>
         /// <param name="settings">Reader settings</param>
         /// <param name="args">The arguments to evaluate</param>
-        public static void WriteLine(string text, TermReaderSettings settings, params object[] args)
-        {
-            Write(text, settings, args);
-            WriteLine();
-        }
+        public static void WriteLine(string text, TermReaderSettings settings, params object[] args) =>
+            ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone(text, settings, args);
     }
 }
