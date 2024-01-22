@@ -690,7 +690,7 @@ namespace Terminaux.Writer.FancyWriters
                 );
 
                 // Text title
-                if (!string.IsNullOrEmpty(text))
+                if (!string.IsNullOrEmpty(text) && InteriorWidth - 6 > 0)
                 {
                     string finalText = $" {TextTools.FormatString(text, vars).Truncate(InteriorWidth - 6)} ";
                     frameBuilder.Append(
