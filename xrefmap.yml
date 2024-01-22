@@ -6096,6 +6096,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.LumaChromaUv.ChromaU
   nameWithType: LumaChromaUv.ChromaU
+- uid: Terminaux.Colors.Models.LumaChromaUv.ChromaUNormalized
+  name: ChromaUNormalized
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ChromaUNormalized
+  commentId: P:Terminaux.Colors.Models.LumaChromaUv.ChromaUNormalized
+  fullName: Terminaux.Colors.Models.LumaChromaUv.ChromaUNormalized
+  nameWithType: LumaChromaUv.ChromaUNormalized
+- uid: Terminaux.Colors.Models.LumaChromaUv.ChromaUNormalized*
+  name: ChromaUNormalized
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ChromaUNormalized_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.ChromaUNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaChromaUv.ChromaUNormalized
+  nameWithType: LumaChromaUv.ChromaUNormalized
 - uid: Terminaux.Colors.Models.LumaChromaUv.ChromaV
   name: ChromaV
   href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ChromaV
@@ -6109,6 +6122,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.LumaChromaUv.ChromaV
   nameWithType: LumaChromaUv.ChromaV
+- uid: Terminaux.Colors.Models.LumaChromaUv.ChromaVNormalized
+  name: ChromaVNormalized
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ChromaVNormalized
+  commentId: P:Terminaux.Colors.Models.LumaChromaUv.ChromaVNormalized
+  fullName: Terminaux.Colors.Models.LumaChromaUv.ChromaVNormalized
+  nameWithType: LumaChromaUv.ChromaVNormalized
+- uid: Terminaux.Colors.Models.LumaChromaUv.ChromaVNormalized*
+  name: ChromaVNormalized
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ChromaVNormalized_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.ChromaVNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaChromaUv.ChromaVNormalized
+  nameWithType: LumaChromaUv.ChromaVNormalized
 - uid: Terminaux.Colors.Models.LumaChromaUv.Equals(System.Object)
   name: Equals(object)
   href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_Equals_System_Object_
@@ -6157,6 +6183,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.LumaChromaUv.Luma
   nameWithType: LumaChromaUv.Luma
+- uid: Terminaux.Colors.Models.LumaChromaUv.LumaNormalized
+  name: LumaNormalized
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_LumaNormalized
+  commentId: P:Terminaux.Colors.Models.LumaChromaUv.LumaNormalized
+  fullName: Terminaux.Colors.Models.LumaChromaUv.LumaNormalized
+  nameWithType: LumaChromaUv.LumaNormalized
+- uid: Terminaux.Colors.Models.LumaChromaUv.LumaNormalized*
+  name: LumaNormalized
+  href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_LumaNormalized_
+  commentId: Overload:Terminaux.Colors.Models.LumaChromaUv.LumaNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaChromaUv.LumaNormalized
+  nameWithType: LumaChromaUv.LumaNormalized
 - uid: Terminaux.Colors.Models.LumaChromaUv.ToString
   name: ToString()
   href: api/Terminaux.Colors.Models.LumaChromaUv.html#Terminaux_Colors_Models_LumaChromaUv_ToString
@@ -6262,6 +6301,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhase
   nameWithType: LumaInPhaseQuadrature.InPhase
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhaseNormalized
+  name: InPhaseNormalized
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_InPhaseNormalized
+  commentId: P:Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhaseNormalized
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhaseNormalized
+  nameWithType: LumaInPhaseQuadrature.InPhaseNormalized
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhaseNormalized*
+  name: InPhaseNormalized
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_InPhaseNormalized_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhaseNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.InPhaseNormalized
+  nameWithType: LumaInPhaseQuadrature.InPhaseNormalized
 - uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.Luma
   name: Luma
   href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_Luma
@@ -6275,6 +6327,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.Luma
   nameWithType: LumaInPhaseQuadrature.Luma
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.LumaNormalized
+  name: LumaNormalized
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_LumaNormalized
+  commentId: P:Terminaux.Colors.Models.LumaInPhaseQuadrature.LumaNormalized
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.LumaNormalized
+  nameWithType: LumaInPhaseQuadrature.LumaNormalized
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.LumaNormalized*
+  name: LumaNormalized
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_LumaNormalized_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.LumaNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.LumaNormalized
+  nameWithType: LumaInPhaseQuadrature.LumaNormalized
 - uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.Quadrature
   name: Quadrature
   href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_Quadrature
@@ -6288,6 +6353,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.Quadrature
   nameWithType: LumaInPhaseQuadrature.Quadrature
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.QuadratureNormalized
+  name: QuadratureNormalized
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_QuadratureNormalized
+  commentId: P:Terminaux.Colors.Models.LumaInPhaseQuadrature.QuadratureNormalized
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.QuadratureNormalized
+  nameWithType: LumaInPhaseQuadrature.QuadratureNormalized
+- uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.QuadratureNormalized*
+  name: QuadratureNormalized
+  href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_QuadratureNormalized_
+  commentId: Overload:Terminaux.Colors.Models.LumaInPhaseQuadrature.QuadratureNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.LumaInPhaseQuadrature.QuadratureNormalized
+  nameWithType: LumaInPhaseQuadrature.QuadratureNormalized
 - uid: Terminaux.Colors.Models.LumaInPhaseQuadrature.ToString
   name: ToString()
   href: api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html#Terminaux_Colors_Models_LumaInPhaseQuadrature_ToString
