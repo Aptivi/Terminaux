@@ -20,6 +20,7 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Reader.Tools;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
@@ -54,7 +55,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 int longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
                 string renderedBlanks = new(' ', longestSentenceLength);
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrapper.Write(renderedBlanks, state.settings);
+                TextWriterColor.WritePlain(renderedBlanks, state.settings);
                 PositioningTools.SeekTo(0, ref state);
                 state.currentTextPos = 0;
                 state.currentCursorPosLeft = state.InputPromptLeft;
@@ -63,7 +64,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             else
             {
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                ConsoleWrapper.Write(new string(' ', length), state.settings);
+                TextWriterColor.WritePlain(new string(' ', length), state.settings);
                 PositioningTools.SeekTo(0, ref state);
             }
             PositioningTools.Commit(state);

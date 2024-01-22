@@ -21,6 +21,7 @@ using System;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Reader.Tools;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
@@ -42,34 +43,34 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // state.InputPromptLeft, state.InputPromptTop
             Console.BackgroundColor = ConsoleColor.Green;
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-            ConsoleWrapper.Write("I", state.settings);
+            TextWriterColor.WritePlain("I", state.settings);
             Thread.Sleep(1000);
 
             // state.CurrentCursorPosLeft, state.CurrentCursorPosTop
             Console.BackgroundColor = ConsoleColor.Red;
             PositioningTools.Commit(state);
-            ConsoleWrapper.Write("C", state.settings);
+            TextWriterColor.WritePlain("C", state.settings);
             Thread.Sleep(1000);
 
             // state.LeftMargin, state.InputPromptTop
             // Targets: state.MaximumInputPositionLeft, state.LongestSentenceLengthFromLeft
             Console.BackgroundColor = ConsoleColor.Yellow;
             ConsoleWrapper.SetCursorPosition(state.LeftMargin, state.InputPromptTop);
-            ConsoleWrapper.Write("|", state.settings);
+            TextWriterColor.WritePlain("|", state.settings);
             ConsoleWrapper.SetCursorPosition(state.MaximumInputPositionLeft, state.InputPromptTop);
-            ConsoleWrapper.Write("M", state.settings);
+            TextWriterColor.WritePlain("M", state.settings);
             ConsoleWrapper.SetCursorPosition(state.LongestSentenceLengthFromLeft >= ConsoleWrapper.WindowWidth ? state.LongestSentenceLengthFromLeft - 1 : state.LongestSentenceLengthFromLeft, state.InputPromptTop);
-            ConsoleWrapper.Write("L", state.settings);
+            TextWriterColor.WritePlain("L", state.settings);
 
             // 0, state.InputPromptTop
             // Targets: state.LongestSentenceLengthFromLeftForFirstLine, state.LongestSentenceLengthFromLeftForGeneralLine
             Console.BackgroundColor = ConsoleColor.DarkYellow;
             ConsoleWrapper.SetCursorPosition(0, state.InputPromptTop);
-            ConsoleWrapper.Write("#", state.settings);
+            TextWriterColor.WritePlain("#", state.settings);
             ConsoleWrapper.SetCursorPosition(state.LongestSentenceLengthFromLeftForFirstLine, state.InputPromptTop);
-            ConsoleWrapper.Write("F", state.settings);
+            TextWriterColor.WritePlain("F", state.settings);
             ConsoleWrapper.SetCursorPosition(state.LongestSentenceLengthFromLeftForGeneralLine, state.InputPromptTop);
-            ConsoleWrapper.Write("G", state.settings);
+            TextWriterColor.WritePlain("G", state.settings);
             Thread.Sleep(1000);
 
             // Re-write the text and set the current cursor position as appropriate
@@ -83,28 +84,28 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             PositioningTools.SeekTo(renderedText.Length, ref state);
             Console.BackgroundColor = ConsoleColor.Blue;
             PositioningTools.Commit(state);
-            ConsoleWrapper.Write("S", state.settings);
+            TextWriterColor.WritePlain("S", state.settings);
             Thread.Sleep(1000);
 
             // Verify seek to 0
             PositioningTools.SeekTo(0, ref state);
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             PositioningTools.Commit(state);
-            ConsoleWrapper.Write("Z", state.settings);
+            TextWriterColor.WritePlain("Z", state.settings);
             Thread.Sleep(1000);
 
             // Verify going forward 5 times
             PositioningTools.GoForward(5, ref state);
             Console.BackgroundColor = ConsoleColor.Magenta;
             PositioningTools.Commit(state);
-            ConsoleWrapper.Write("5", state.settings);
+            TextWriterColor.WritePlain("5", state.settings);
             Thread.Sleep(1000);
 
             // Verify going backward 3 times
             PositioningTools.GoBack(3, ref state);
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
             PositioningTools.Commit(state);
-            ConsoleWrapper.Write("3", state.settings);
+            TextWriterColor.WritePlain("3", state.settings);
             Thread.Sleep(1000);
 
             // Now, reset everything
