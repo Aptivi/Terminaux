@@ -22,6 +22,7 @@ using System.IO;
 using System.Reflection;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
+using TermInfo;
 
 namespace Terminaux.Base.Checks
 {
@@ -121,6 +122,10 @@ namespace Terminaux.Base.Checks
             if (emuGreylisted)
                 TextWriterColor.WritePlain($"The terminal emulator you're currently using, {TerminalEmulator}, is greylisted: {emuJustification2}");
 
+            // Check for 256 colors
+            if (!IsConsole256Colors() && ConsolePlatform.IsOnUnix())
+                TextWriterColor.WritePlain($"Terminal type {TerminalType} doesn't support 256 colors according to terminfo");
+
             // Don't check again.
             acknowledged = true;
         }
@@ -133,7 +138,10 @@ namespace Terminaux.Base.Checks
             if (ConsolePlatform.IsOnUnix())
             {
                 string TerminalType = ConsolePlatform.GetTerminalType();
-                return TerminalType.Contains("-256col");
+                var termInfo = TermInfoDesc.Load(TerminalType);
+                if (termInfo == null)
+                    return true;
+                return termInfo.MaxColors >= 256;
             }
             else
                 return ConsoleExtensions.CheckForConHostSequenceSupport() == 7;
