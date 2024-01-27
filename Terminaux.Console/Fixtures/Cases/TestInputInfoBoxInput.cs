@@ -27,7 +27,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "TestInputInfoBoxInput";
         public void RunFixture()
         {
-            string answer = InfoBoxInputColor.WriteInfoBoxInput("Write your text.");
+            string answer = InfoBoxInputColor.WriteInfoBoxInput(FixtureID, "Write your text.");
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

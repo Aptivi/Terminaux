@@ -34,7 +34,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
                 "22.04 (Jammy Jellyfish)",
                 "24.04 (Noble Numbat)",
             };
-            int selected = InfoBoxButtonsColor.WriteInfoBoxButtons(choices, "Which Ubuntu version would you like to run?");
+            int selected = InfoBoxButtonsColor.WriteInfoBoxButtons(FixtureID, choices, "Which Ubuntu version would you like to run?");
             TextWriterWhereColor.WriteWhere($"{selected}", 0, 0);
         }
     }

@@ -32,7 +32,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"Number #{i + 1}"));
-            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection([.. choices], "Select a number");
+            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(FixtureID, [.. choices], "Select a number");
             TextWriterWhereColor.WriteWhere($"{selected}", 0, 0);
         }
     }

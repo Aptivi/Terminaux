@@ -497,7 +497,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         if (useColor)
                         {
                             boxBuffer.Append(
-                                BorderColor.RenderBorder(title, buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor) +
+                                BorderColor.RenderBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor) +
                                 TextWriterWhereColor.RenderWhere(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor)
                             );
                         }
