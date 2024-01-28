@@ -576,7 +576,7 @@ namespace Terminaux.Inputs.Interactive
                 if (interactiveTui.RefreshInterval == 0 || interactiveTui.SecondPaneInteractable)
                     pressedKey = Input.DetectKeypress();
                 else
-                    pressedKey = Input.ReadKeyTimeout(true, TimeSpan.FromMilliseconds(interactiveTui.RefreshInterval));
+                    pressedKey = Input.ReadKeyTimeout(true, TimeSpan.FromMilliseconds(interactiveTui.RefreshInterval)).result;
 
                 // Handle the key
                 switch (pressedKey.Key)

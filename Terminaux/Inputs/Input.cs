@@ -184,14 +184,12 @@ namespace Terminaux.Inputs
         /// </summary>
         /// <param name="Intercept">Whether to intercept an input</param>
         /// <param name="Timeout">Timeout</param>
-        public static ConsoleKeyInfo ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
+        public static (ConsoleKeyInfo result, bool provided) ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
         {
             TermReaderTools.isWaitingForInput = true;
-            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
+            bool result = SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
             TermReaderTools.isWaitingForInput = false;
-            if (!ConsoleWrapper.KeyAvailable)
-                throw new TerminauxContinuableException("User didn't provide any input in a timely fashion.");
-            return ConsoleWrapper.ReadKey(Intercept);
+            return (!result ? default : ConsoleWrapper.ReadKey(Intercept), result);
         }
 
         /// <summary>
