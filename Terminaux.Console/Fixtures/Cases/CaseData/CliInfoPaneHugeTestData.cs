@@ -1,0 +1,68 @@
+﻿//
+// Terminaux  Copyright (C) 2023-2024  Aptivi
+//
+// This file is part of Terminaux
+//
+// Terminaux is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Terminaux is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using System;
+using System.Collections;
+using Terminaux.Inputs.Interactive;
+using Textify.NameGen;
+
+namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
+{
+    internal class CliInfoPaneHugeTestData : BaseInteractiveTui, IInteractiveTui
+    {
+        internal static string[] strings = [];
+
+        /// <inheritdoc/>
+        public override IEnumerable PrimaryDataSource
+        {
+            get
+            {
+                if (strings.Length == 0)
+                    strings = NameGenerator.FindFirstNames("");
+                return strings;
+            }
+        }
+
+        /// <inheritdoc/>
+        public override bool AcceptsEmptyData =>
+            true;
+
+        /// <inheritdoc/>
+        public override string GetInfoFromItem(object item)
+        {
+            string selected = (string)item;
+
+            // Check to see if we're given the test info
+            if (string.IsNullOrEmpty(selected))
+                InteractiveTuiStatus.Status = "No info.";
+            else
+                InteractiveTuiStatus.Status = $"{selected}";
+
+            // Now, populate the info to the status
+            return $" {InteractiveTuiStatus.Status}";
+        }
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItem(object item)
+        {
+            string selected = (string)item;
+            return selected;
+        }
+    }
+}

@@ -195,6 +195,10 @@
       "commandName": "Project",
       "commandLineArgs": "CliInfoPaneTest"
     },
+    "Terminaux - CliInfoPaneHugeTest": {
+      "commandName": "Project",
+      "commandLineArgs": "CliInfoPaneHugeTest"
+    },
     "Terminaux - CliInfoPaneTestRefreshing": {
       "commandName": "Project",
       "commandLineArgs": "CliInfoPaneTestRefreshing"

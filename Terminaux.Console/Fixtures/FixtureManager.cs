@@ -108,6 +108,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             // Interactive TUI
             new CliInfoPaneTest(),
             new CliInfoPaneTestRefreshing(),
+            new CliInfoPaneHugeTest(),
             new CliInfoPaneSlowTest(),
             new CliInfoPaneSlowTestRefreshing(),
             new CliDoublePaneTest(),
