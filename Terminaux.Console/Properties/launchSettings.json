@@ -362,6 +362,10 @@
     "Terminaux - BorderText": {
       "commandName": "Project",
       "commandLineArgs": "BorderText"
+    },
+    "Terminaux - ColorTransparencyTest": {
+      "commandName": "Project",
+      "commandLineArgs": "ColorTransparencyTest"
     }
   }
 }

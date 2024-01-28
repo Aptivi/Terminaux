@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Terminaux.Colors.Data;
 
 namespace Terminaux.Colors.Models
 {
@@ -98,5 +99,42 @@ namespace Terminaux.Colors.Models
             G = g;
             B = b;
         }
+
+        internal void FinalizeValues(ColorSettings settings)
+        {
+            // First step: Apply fake "transparency"
+            int alpha = settings.Opacity;
+            var alphaColor = settings.OpacityColor;
+            ApplyTransparency(alpha, alphaColor);
+        }
+
+        #region Color finalizers
+        private void ApplyTransparency(int alpha, Color alphaColor)
+        {
+            if (alpha == 255 || alphaColor is null)
+                return;
+
+            // In order to apply "transparency," we need to get both the normalized alpha and the inverse
+            // normalized alpha levels in order to apply them to the color RGB levels.
+            double normalColorLevel = alpha / 255d;
+            double alphaColorLevel = (255 - alpha) / 255d;
+
+            // Now, apply the "transparency."
+            int normalR = (int)(R * normalColorLevel);
+            int normalG = (int)(G * normalColorLevel);
+            int normalB = (int)(B * normalColorLevel);
+            int alphaR = (int)(alphaColor.RGB.R * alphaColorLevel);
+            int alphaG = (int)(alphaColor.RGB.G * alphaColorLevel);
+            int alphaB = (int)(alphaColor.RGB.B * alphaColorLevel);
+            int resultR = normalR + alphaR;
+            int resultG = normalG + alphaG;
+            int resultB = normalB + alphaB;
+
+            // Install the resulting values
+            R = resultR;
+            G = resultG;
+            B = resultB;
+        }
+        #endregion
     }
 }

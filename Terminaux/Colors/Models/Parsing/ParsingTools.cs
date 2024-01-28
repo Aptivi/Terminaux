@@ -149,6 +149,9 @@ namespace Terminaux.Colors.Models.Parsing
 
                 // Fallback
                 RgbParsingTools.ParseSpecifierToRgb(specifier, settings);
+
+            // Finalize the RGB values according to the settings as needed.
+            rgb.FinalizeValues(settings);
             return (rgb, tuple.cci);
         }
 

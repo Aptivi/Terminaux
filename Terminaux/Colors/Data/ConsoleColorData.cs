@@ -19,7 +19,9 @@
 
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Linq;
 using Terminaux.Base.Resources;
+using Terminaux.Colors.Models;
 
 namespace Terminaux.Colors.Data
 {
@@ -155,6 +157,42 @@ namespace Terminaux.Colors.Data
         {
             instances ??= JsonConvert.DeserializeObject<ConsoleColorData[]>(ConsoleResources.ConsoleColorsData);
             return instances;
+        }
+
+        /// <summary>
+        /// Gets a color data instance that matches 
+        /// </summary>
+        /// <param name="color">Color to match</param>
+        /// <returns>Either an instance of <see cref="ConsoleColorData"/> if found, or <see langword="null"/> if not found</returns>
+        public static ConsoleColorData MatchColorData(Color color) =>
+            MatchColorData(color.RGB);
+
+        /// <summary>
+        /// Gets a color data instance that matches 
+        /// </summary>
+        /// <param name="rgb">Color to match</param>
+        /// <returns>Either an instance of <see cref="ConsoleColorData"/> if found, or <see langword="null"/> if not found</returns>
+        public static ConsoleColorData MatchColorData(RedGreenBlue rgb) =>
+            MatchColorData(rgb.R, rgb.G, rgb.B);
+
+        /// <summary>
+        /// Gets a color data instance that matches 
+        /// </summary>
+        /// <param name="r">Red color level to match</param>
+        /// <param name="g">Green color level to match</param>
+        /// <param name="b">Blue color level to match</param>
+        /// <returns>Either an instance of <see cref="ConsoleColorData"/> if found, or <see langword="null"/> if not found</returns>
+        public static ConsoleColorData MatchColorData(int r, int g, int b)
+        {
+            var instances = GetColorData();
+
+            // Get an instance that matches the conditions
+            var instance = instances.FirstOrDefault((data) =>
+                data.RGB.R == r &&
+                data.RGB.G == g &&
+                data.RGB.B == b
+            );
+            return instance;
         }
     }
 }
