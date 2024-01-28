@@ -3063,6 +3063,34 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.Hsl.S
   nameWithType: ConsoleColorData.Hsl.S
+- uid: Terminaux.Colors.Data.ConsoleColorData.MatchColorData(System.Int32,System.Int32,System.Int32)
+  name: MatchColorData(int, int, int)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_MatchColorData_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.MatchColorData(System.Int32,System.Int32,System.Int32)
+  name.vb: MatchColorData(Integer, Integer, Integer)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.MatchColorData(int, int, int)
+  fullName.vb: Terminaux.Colors.Data.ConsoleColorData.MatchColorData(Integer, Integer, Integer)
+  nameWithType: ConsoleColorData.MatchColorData(int, int, int)
+  nameWithType.vb: ConsoleColorData.MatchColorData(Integer, Integer, Integer)
+- uid: Terminaux.Colors.Data.ConsoleColorData.MatchColorData(Terminaux.Colors.Color)
+  name: MatchColorData(Color)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_MatchColorData_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.MatchColorData(Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.MatchColorData(Terminaux.Colors.Color)
+  nameWithType: ConsoleColorData.MatchColorData(Color)
+- uid: Terminaux.Colors.Data.ConsoleColorData.MatchColorData(Terminaux.Colors.Models.RedGreenBlue)
+  name: MatchColorData(RedGreenBlue)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_MatchColorData_Terminaux_Colors_Models_RedGreenBlue_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.MatchColorData(Terminaux.Colors.Models.RedGreenBlue)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.MatchColorData(Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: ConsoleColorData.MatchColorData(RedGreenBlue)
+- uid: Terminaux.Colors.Data.ConsoleColorData.MatchColorData*
+  name: MatchColorData
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_MatchColorData_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.MatchColorData
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorData.MatchColorData
+  nameWithType: ConsoleColorData.MatchColorData
 - uid: Terminaux.Colors.Data.ConsoleColorData.Name
   name: Name
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_Name
