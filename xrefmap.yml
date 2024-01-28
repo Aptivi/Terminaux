@@ -2619,6 +2619,32 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorSettings.EnableColorTransformation
   nameWithType: ColorSettings.EnableColorTransformation
+- uid: Terminaux.Colors.ColorSettings.Opacity
+  name: Opacity
+  href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings_Opacity
+  commentId: P:Terminaux.Colors.ColorSettings.Opacity
+  fullName: Terminaux.Colors.ColorSettings.Opacity
+  nameWithType: ColorSettings.Opacity
+- uid: Terminaux.Colors.ColorSettings.Opacity*
+  name: Opacity
+  href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings_Opacity_
+  commentId: Overload:Terminaux.Colors.ColorSettings.Opacity
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorSettings.Opacity
+  nameWithType: ColorSettings.Opacity
+- uid: Terminaux.Colors.ColorSettings.OpacityColor
+  name: OpacityColor
+  href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings_OpacityColor
+  commentId: P:Terminaux.Colors.ColorSettings.OpacityColor
+  fullName: Terminaux.Colors.ColorSettings.OpacityColor
+  nameWithType: ColorSettings.OpacityColor
+- uid: Terminaux.Colors.ColorSettings.OpacityColor*
+  name: OpacityColor
+  href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings_OpacityColor_
+  commentId: Overload:Terminaux.Colors.ColorSettings.OpacityColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorSettings.OpacityColor
+  nameWithType: ColorSettings.OpacityColor
 - uid: Terminaux.Colors.ColorSettings.UseTerminalPalette
   name: UseTerminalPalette
   href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings_UseTerminalPalette
