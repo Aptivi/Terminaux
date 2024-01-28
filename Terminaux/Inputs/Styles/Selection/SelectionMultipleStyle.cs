@@ -209,6 +209,7 @@ namespace Terminaux.Inputs.Styles.Selection
 
                         // Populate the answers
                         int renderedAnswers = 1;
+                        int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
                         for (int AnswerIndex = startIndex; AnswerIndex <= endIndex; AnswerIndex++)
                         {
                             selectionBuilder.Append(CsiSequences.GenerateCsiCursorPosition(1, listStartPosition + renderedAnswers + 1));
@@ -231,7 +232,6 @@ namespace Terminaux.Inputs.Styles.Selection
 
                                 // Get the option
                                 string AnswerOption = $"{(selected ? ">" : " ")} {AnswerInstance}) {answerIndicator} {AnswerTitle}";
-                                int AnswerTitleLeft = AllAnswers.Max(x => $"{(selected ? ">" : " ")} {x.ChoiceName}) ".Length);
                                 int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
                                 if (AnswerTitleLeft < answerTitleMaxLeft)
                                 {

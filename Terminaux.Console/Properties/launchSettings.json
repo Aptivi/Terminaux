@@ -207,6 +207,14 @@
       "commandName": "Project",
       "commandLineArgs": "TestInputSelectionLargeMultiple"
     },
+    "Terminaux - TestInputSelectionHuge": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputSelectionHuge"
+    },
+    "Terminaux - TestInputSelectionHugeMultiple": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputSelectionHugeMultiple"
+    },
     "Terminaux - CliInfoPaneTest": {
       "commandName": "Project",
       "commandLineArgs": "CliInfoPaneTest"
