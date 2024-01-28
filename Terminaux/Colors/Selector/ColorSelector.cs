@@ -278,6 +278,12 @@ namespace Terminaux.Colors.Selector
                             type = ColorType.TrueColor;
                     }
                     break;
+                case ConsoleKey.O:
+                    ColorTools.GlobalSettings.Opacity++;
+                    break;
+                case ConsoleKey.P:
+                    ColorTools.GlobalSettings.Opacity--;
+                    break;
 
                 // Non-unified
                 case ConsoleKey.LeftArrow:
@@ -353,6 +359,8 @@ namespace Terminaux.Colors.Selector
                                 [CTRL] + [RIGHT]     | Increase lightness
                                 [DOWN]               | Reduce saturation
                                 [UP]                 | Increase saturation
+                                [O]                  | Increase opaqueness
+                                [P]                  | Increase transparency
                                 [TAB]                | Change color mode
                                 [I]                  | Color information
                                 [V]                  | Color information (visual)
@@ -368,6 +376,8 @@ namespace Terminaux.Colors.Selector
                                 [H]                  | Help page
                                 [LEFT]               | Previous color
                                 [RIGHT]              | Next color
+                                [O]                  | Increase opaqueness
+                                [P]                  | Increase transparency
                                 [TAB]                | Change color mode
                                 [I]                  | Color information
                                 [V]                  | Color information (visual)
