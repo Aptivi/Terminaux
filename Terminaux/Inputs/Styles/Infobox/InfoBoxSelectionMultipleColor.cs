@@ -347,6 +347,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        Color InfoBoxTitledSelectionMultipleColor, Color BackgroundColor, bool useColor, params object[] vars)
         {
             List<int> selectedChoices = [];
+            int AnswerTitleLeft = selections.Max(x => $"  [ ] {x.ChoiceName}) ".Length);
 
             // First, verify that we have selections
             if (selections is null || selections.Length == 0)
@@ -438,7 +439,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                     }
 
                     // Now, render the selections
-                    int AnswerTitleLeft = selections.Max(x => $"  [ ] {x.ChoiceName}) ".Length);
                     int currentPage = currentSelection / selectionChoices;
                     int startIndex = selectionChoices * currentPage;
                     for (int i = 0; i <= selectionChoices - 1; i++)

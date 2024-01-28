@@ -184,12 +184,12 @@ namespace Terminaux.Inputs.Styles.Choice
                     case ChoiceOutputType.Modern:
                         {
                             TextWriterColor.WriteColor(Question + CharManager.NewLine, true, questionColor);
+                            int AnswerTitleLeft = answers.Max(x => $" {x}) ".Length);
                             for (int AnswerIndex = 0; AnswerIndex <= Answers.Count - 1; AnswerIndex++)
                             {
                                 var AnswerInstance = Answers[AnswerIndex];
                                 string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
                                 string AnswerOption = $" {AnswerInstance.ChoiceName}) {AnswerTitle}";
-                                int AnswerTitleLeft = answers.Max(x => $" {x}) ".Length);
                                 if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
                                 {
                                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
@@ -199,12 +199,12 @@ namespace Terminaux.Inputs.Styles.Choice
                             }
                             if (AltAnswers.Count > 0)
                                 TextWriterColor.WriteColor(" ----------------", true, altOptionColor);
+                            AnswerTitleLeft = altAnswers.Max(x => $" {x}) ".Length);
                             for (int AnswerIndex = 0; AnswerIndex <= AltAnswers.Count - 1; AnswerIndex++)
                             {
                                 var AnswerInstance = AltAnswers[AnswerIndex];
                                 string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
                                 string AnswerOption = $" {AnswerInstance.ChoiceName}) {AnswerTitle}";
-                                int AnswerTitleLeft = altAnswers.Max(x => $" {x}) ".Length);
                                 if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
                                 {
                                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;

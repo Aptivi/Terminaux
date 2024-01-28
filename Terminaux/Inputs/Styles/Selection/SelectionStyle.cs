@@ -174,6 +174,7 @@ namespace Terminaux.Inputs.Styles.Selection
             int HighlightedAnswer = 1;
             List<InputChoiceInfo> AllAnswers = new(Answers);
             AllAnswers.AddRange(AltAnswers);
+            int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
 
             // Before we proceed, we need to check the highlighted answer number
             if (HighlightedAnswer > AllAnswers.Count)
@@ -227,7 +228,6 @@ namespace Terminaux.Inputs.Styles.Selection
 
                         // Populate the answers
                         int renderedAnswers = 1;
-                        int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
                         for (int AnswerIndex = startIndex; AnswerIndex <= endIndex; AnswerIndex++)
                         {
                             selectionBuilder.Append(CsiSequences.GenerateCsiCursorPosition(1, listStartPosition + renderedAnswers + 1));
