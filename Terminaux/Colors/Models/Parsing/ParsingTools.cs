@@ -151,7 +151,8 @@ namespace Terminaux.Colors.Models.Parsing
                 RgbParsingTools.ParseSpecifierToRgb(specifier, settings);
 
             // Finalize the RGB values according to the settings as needed.
-            rgb.FinalizeValues(settings);
+            if (settings is not null)
+                rgb.FinalizeValues(settings);
             return (rgb, tuple.cci);
         }
 
