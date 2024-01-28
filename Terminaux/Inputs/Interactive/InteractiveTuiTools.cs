@@ -165,30 +165,66 @@ namespace Terminaux.Inputs.Interactive
 
         internal static int CountElements(IEnumerable enumerable)
         {
-            int dataCount = 0;
-            foreach (var item in enumerable)
-                // IEnumerable from System.Collections doesn't implement Count() or Length, hence the array, List<>, Dictionary<>,
-                // and other collections have either Count or Length. This is an ugly hack that we should live with.
-                dataCount++;
-            return dataCount;
+            // First, focus on the known types
+            if (enumerable is Array arrayEnumerable)
+            {
+                // It's an array!
+                return arrayEnumerable.Length;
+            }
+            else if (enumerable is IList listEnumerable)
+            {
+                // It's a list!
+                return listEnumerable.Count;
+            }
+            else if (enumerable is IDictionary dictionaryEnumerable)
+            {
+                // It's a dictionary!
+                return dictionaryEnumerable.Count;
+            }
+            else if (enumerable is ICollection collectionEnumerable)
+            {
+                // It's a collection!
+                return collectionEnumerable.Count;
+            }
+
+            // We're in the unknown IEnumerable.
+            var generic = enumerable.OfType<object>();
+            return generic.Count();
         }
 
         internal static object GetElementFromIndex(IEnumerable enumerable, int index)
         {
-            // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
-            object dataObject = null;
-            int steppedItems = 0;
-            foreach (var item in enumerable)
+            if (index < 0)
+                return null;
+
+            // First, focus on the known types
+            if (enumerable is Array arrayEnumerable)
             {
-                steppedItems++;
-                if (steppedItems == index + 1)
-                {
-                    // We found the item that we need! Assign it to dataObject so GetEntryFromItem() can formulate a string.
-                    dataObject = item;
-                    break;
-                }
+                // It's an array!
+                return arrayEnumerable.GetValue(index);
             }
-            return dataObject;
+            else if (enumerable is IList listEnumerable)
+            {
+                // It's a list!
+                return listEnumerable[index];
+            }
+            else if (enumerable is IDictionary dictionaryEnumerable)
+            {
+                // It's a dictionary!
+                var keys = new object[dictionaryEnumerable.Count];
+                dictionaryEnumerable.Keys.CopyTo(keys, 0);
+                var key = keys[index];
+                return dictionaryEnumerable[key];
+            }
+            else if (enumerable is ICollection collectionEnumerable)
+            {
+                var collection = collectionEnumerable.OfType<object>();
+                return collection.ElementAt(index);
+            }
+
+            // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
+            var generic = enumerable.OfType<object>();
+            return generic.ElementAt(index);
         }
 
         private static void DrawInteractiveTui(BaseInteractiveTui interactiveTui)
@@ -361,17 +397,7 @@ namespace Terminaux.Inputs.Interactive
                     if (finalIndex <= dataCount - 1)
                     {
                         // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
-                        int steppedItems = 0;
-                        foreach (var item in data)
-                        {
-                            steppedItems++;
-                            if (steppedItems == startIndex + i + 1)
-                            {
-                                // We found the item that we need! Assign it to dataObject so GetEntryFromItem() can formulate a string.
-                                dataObject = item;
-                                break;
-                            }
-                        }
+                        dataObject = GetElementFromIndex(data, startIndex + i);
 
                         // Render an entry
                         var finalForeColor = finalIndex == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemForeColor : InteractiveTuiStatus.PaneItemForeColor;
