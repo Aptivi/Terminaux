@@ -99,42 +99,25 @@ namespace Terminaux.Colors.Selector
                         $"{CsiSequences.GenerateCsiEraseInDisplay(2)}"
                     );
 
-                    // Now, render the selector and handle input
-                    switch (type)
+                    // Now, render the selector
+                    screenPart.AddDynamicText(() =>
                     {
-                        case ColorType.TrueColor:
-                            screenPart.AddDynamicText(() =>
-                            {
-                                ConsoleWrapper.CursorVisible = false;
-                                return RenderColorSelector(selectedColor, type);
-                            });
-                            screen.AddBufferedPart("Color selector", screenPart);
-                            ScreenTools.Render();
-                            bail = HandleKeypressTrueColor(ref selectedColor, ref type);
-                            break;
-                        case ColorType._255Color:
-                            screenPart.AddDynamicText(() =>
-                            {
-                                ConsoleWrapper.CursorVisible = false;
-                                return RenderColorSelector(selectedColor, type);
-                            });
-                            screen.AddBufferedPart("Color selector", screenPart);
-                            ScreenTools.Render();
-                            bail = HandleKeypress255Colors(ref selectedColor, ref type);
-                            break;
-                        case ColorType._16Color:
-                            screenPart.AddDynamicText(() =>
-                            {
-                                ConsoleWrapper.CursorVisible = false;
-                                return RenderColorSelector(selectedColor, type);
-                            });
-                            screen.AddBufferedPart("Color selector", screenPart);
-                            ScreenTools.Render();
-                            bail = HandleKeypress16Colors(ref selectedColor, ref type);
-                            break;
-                        default:
-                            throw new TerminauxException("invalid color type in the color selector");
-                    }
+                        ConsoleWrapper.CursorVisible = false;
+                        return RenderColorSelector(selectedColor, type);
+                    });
+                    screen.AddBufferedPart("Color selector", screenPart);
+                    ScreenTools.Render();
+
+                    // Handle input
+                    bail = type switch
+                    {
+                        ColorType.TrueColor => HandleKeypressTrueColor(ref selectedColor, ref type),
+                        ColorType._255Color => HandleKeypress255Colors(ref selectedColor, ref type),
+                        ColorType._16Color  => HandleKeypress16Colors(ref selectedColor, ref type),
+                        _                   => throw new TerminauxException("Invalid color type in the color selector"),
+                    };
+
+                    // Clean up after ourselves
                     screenPart.Clear();
                     screen.RemoveBufferedParts();
                 }
