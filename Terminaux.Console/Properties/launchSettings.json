@@ -283,6 +283,14 @@
       "commandName": "Project",
       "commandLineArgs": "TestInputInfoBoxSelectionLargeMultiple"
     },
+    "Terminaux - TestInputInfoBoxSelectionHuge": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputInfoBoxSelectionHuge"
+    },
+    "Terminaux - TestInputInfoBoxSelectionHugeMultiple": {
+      "commandName": "Project",
+      "commandLineArgs": "TestInputInfoBoxSelectionHugeMultiple"
+    },
     "Terminaux - TestInputInfoBoxColoredInput": {
       "commandName": "Project",
       "commandLineArgs": "TestInputInfoBoxColoredInput"
