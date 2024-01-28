@@ -8,7 +8,7 @@
       
       This provides developers the console resize listener component for both .NET Framework 4.8 and .NET 8.0 applications.
     </Description>
-    <Version>2.6.2</Version>
+    <Version>2.7.0</Version>
     <Authors>Aptivi</Authors>
     <TargetFrameworks>net8.0;net48</TargetFrameworks>
     <DebugType>portable</DebugType>
@@ -27,8 +27,8 @@
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>OfficialAppIcon-Terminaux-512.png</PackageIcon>
-    <AssemblyVersion>2.6.2</AssemblyVersion>
-    <PackageVersion>2.6.2</PackageVersion>
+    <AssemblyVersion>2.7.0</AssemblyVersion>
+    <PackageVersion>2.7.0</PackageVersion>
     <LangVersion>latest</LangVersion>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
