@@ -17,18 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Colors.Data;
 
 namespace Terminaux.Tests.Colors
 {
-    [TestFixture]
+    [TestClass]
     public partial class ConsoleColorsInfoInitializationTests
     {
         /// <summary>
         /// Tests initializing an instance of ConsoleColorsInfo from a bright color
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeConsoleColorsInfoInstanceBright()
         {
@@ -45,7 +46,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing an instance of ConsoleColorsInfo from a dark color
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeConsoleColorsInfoInstanceDark()
         {

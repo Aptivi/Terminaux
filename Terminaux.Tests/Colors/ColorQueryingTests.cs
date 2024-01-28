@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shouldly;
 using System.Diagnostics;
 using Terminaux.Colors;
 using Terminaux.Colors.Interop;
@@ -24,304 +26,327 @@ using Terminaux.Colors.Interop;
 namespace Terminaux.Tests.Colors
 {
 
-    [TestFixture]
+    [TestClass]
     public class ColorQueryingTests
     {
 
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
-        [TestCase("#0F0F0F", ExpectedResult = true)]
-        [TestCase("#0G0G0G", ExpectedResult = false)]
+        [DataRow("#0F0F0F", true)]
+        [DataRow("#0G0G0G", false)]
         [Description("Querying")]
-        public bool TestTryParseColorFromHex(string TargetHex)
+        public void TestTryParseColorFromHex(string TargetHex, bool expected)
         {
             Debug.WriteLine($"Trying {TargetHex}...");
-            return ColorTools.TryParseColor(TargetHex);
+            bool result = ColorTools.TryParseColor(TargetHex);
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
-        [TestCase(26, ExpectedResult = true)]
-        [TestCase(260, ExpectedResult = false)]
-        [TestCase(-26, ExpectedResult = false)]
+        [DataRow(26, true)]
+        [DataRow(260, false)]
+        [DataRow(-26, false)]
         [Description("Querying")]
-        public bool TestTryParseColorFromColorNum(int TargetColorNum)
+        public void TestTryParseColorFromColorNum(int TargetColorNum, bool expected)
         {
             Debug.WriteLine($"Trying colornum {TargetColorNum}...");
-            return ColorTools.TryParseColor(TargetColorNum);
+            bool result = ColorTools.TryParseColor(TargetColorNum);
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
-        [TestCase(4, 4, 4, ExpectedResult = true)]
-        [TestCase(400, 4, 4, ExpectedResult = false)]
-        [TestCase(4, 400, 4, ExpectedResult = false)]
-        [TestCase(4, 4, 400, ExpectedResult = false)]
-        [TestCase(4, 400, 400, ExpectedResult = false)]
-        [TestCase(400, 4, 400, ExpectedResult = false)]
-        [TestCase(400, 400, 4, ExpectedResult = false)]
-        [TestCase(400, 400, 400, ExpectedResult = false)]
-        [TestCase(-4, 4, 4, ExpectedResult = false)]
-        [TestCase(4, -4, 4, ExpectedResult = false)]
-        [TestCase(4, 4, -4, ExpectedResult = false)]
-        [TestCase(4, -4, -4, ExpectedResult = false)]
-        [TestCase(-4, 4, -4, ExpectedResult = false)]
-        [TestCase(-4, -4, 4, ExpectedResult = false)]
-        [TestCase(-4, -4, -4, ExpectedResult = false)]
+        [DataRow(4, 4, 4, true)]
+        [DataRow(400, 4, 4, false)]
+        [DataRow(4, 400, 4, false)]
+        [DataRow(4, 4, 400, false)]
+        [DataRow(4, 400, 400, false)]
+        [DataRow(400, 4, 400, false)]
+        [DataRow(400, 400, 4, false)]
+        [DataRow(400, 400, 400, false)]
+        [DataRow(-4, 4, 4, false)]
+        [DataRow(4, -4, 4, false)]
+        [DataRow(4, 4, -4, false)]
+        [DataRow(4, -4, -4, false)]
+        [DataRow(-4, 4, -4, false)]
+        [DataRow(-4, -4, 4, false)]
+        [DataRow(-4, -4, -4, false)]
         [Description("Querying")]
-        public bool TestTryParseColorFromRGB(int R, int G, int B)
+        public void TestTryParseColorFromRGB(int R, int G, int B, bool expected)
         {
             Debug.WriteLine($"Trying rgb {R}, {G}, {B}...");
-            return ColorTools.TryParseColor(R, G, B);
+            bool result = ColorTools.TryParseColor(R, G, B);
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
-        [TestCase("4;4;4", ExpectedResult = true)]
-        [TestCase("400;4;4", ExpectedResult = false)]
-        [TestCase("4;400;4", ExpectedResult = false)]
-        [TestCase("4;4;400", ExpectedResult = false)]
-        [TestCase("4;400;400", ExpectedResult = false)]
-        [TestCase("400;4;400", ExpectedResult = false)]
-        [TestCase("400;400;4", ExpectedResult = false)]
-        [TestCase("400;400;400", ExpectedResult = false)]
-        [TestCase("-4;4;4", ExpectedResult = false)]
-        [TestCase("4;-4;4", ExpectedResult = false)]
-        [TestCase("4;4;-4", ExpectedResult = false)]
-        [TestCase("4;-4;-4", ExpectedResult = false)]
-        [TestCase("-4;4;-4", ExpectedResult = false)]
-        [TestCase("-4;-4;4", ExpectedResult = false)]
-        [TestCase("-4;-4;-4", ExpectedResult = false)]
+        [DataRow("4;4;4", true)]
+        [DataRow("400;4;4", false)]
+        [DataRow("4;400;4", false)]
+        [DataRow("4;4;400", false)]
+        [DataRow("4;400;400", false)]
+        [DataRow("400;4;400", false)]
+        [DataRow("400;400;4", false)]
+        [DataRow("400;400;400", false)]
+        [DataRow("-4;4;4", false)]
+        [DataRow("4;-4;4", false)]
+        [DataRow("4;4;-4", false)]
+        [DataRow("4;-4;-4", false)]
+        [DataRow("-4;4;-4", false)]
+        [DataRow("-4;-4;4", false)]
+        [DataRow("-4;-4;-4", false)]
         [Description("Querying")]
-        public bool TestTryParseColorFromSpecifier(string specifier)
+        public void TestTryParseColorFromSpecifier(string specifier, bool expected)
         {
             Debug.WriteLine($"Trying rgb specifier {specifier}...");
-            return ColorTools.TryParseColor(specifier);
+            bool result = ColorTools.TryParseColor(specifier);
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to get the contrast color (NTSC)
         /// </summary>
-        [TestCase("#EF4444", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FAA31B", ExpectedResult = "#000000")]
-        [TestCase("#FFF000", ExpectedResult = "#000000")]
-        [TestCase("#82C341", ExpectedResult = "#000000")]
-        [TestCase("#009F75", ExpectedResult = "#FFFFFF")]
-        [TestCase("#88C6ED", ExpectedResult = "#000000")]
-        [TestCase("#394BA0", ExpectedResult = "#FFFFFF")]
-        [TestCase("#D54799", ExpectedResult = "#FFFFFF")]
-        [TestCase("#CCCCCC", ExpectedResult = "#000000")]
-        [TestCase("#999999", ExpectedResult = "#000000")]
-        [TestCase("#666666", ExpectedResult = "#FFFFFF")]
-        [TestCase("#333333", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FF0000", ExpectedResult = "#FFFFFF")]
-        [TestCase("#00FF00", ExpectedResult = "#000000")]
-        [TestCase("#0000FF", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FFFF00", ExpectedResult = "#000000")]
-        [TestCase("#FF00FF", ExpectedResult = "#FFFFFF")]
-        [TestCase("#00FFFF", ExpectedResult = "#000000")]
-        [TestCase("#FFCC00", ExpectedResult = "#000000")]
-        [TestCase("#CCFF00", ExpectedResult = "#000000")]
-        [TestCase("#00CCFF", ExpectedResult = "#000000")]
-        [TestCase("#FF6600", ExpectedResult = "#000000")]
-        [TestCase("#FF0066", ExpectedResult = "#FFFFFF")]
-        [TestCase("#006666", ExpectedResult = "#FFFFFF")]
-        [TestCase("#0099CC", ExpectedResult = "#FFFFFF")]
-        [TestCase("#666600", ExpectedResult = "#FFFFFF")]
-        [TestCase("#CC00CC", ExpectedResult = "#FFFFFF")]
-        [TestCase("#CC6666", ExpectedResult = "#000000")]
+        [DataRow("#EF4444", "#FFFFFF")]
+        [DataRow("#FAA31B", "#000000")]
+        [DataRow("#FFF000", "#000000")]
+        [DataRow("#82C341", "#000000")]
+        [DataRow("#009F75", "#FFFFFF")]
+        [DataRow("#88C6ED", "#000000")]
+        [DataRow("#394BA0", "#FFFFFF")]
+        [DataRow("#D54799", "#FFFFFF")]
+        [DataRow("#CCCCCC", "#000000")]
+        [DataRow("#999999", "#000000")]
+        [DataRow("#666666", "#FFFFFF")]
+        [DataRow("#333333", "#FFFFFF")]
+        [DataRow("#FF0000", "#FFFFFF")]
+        [DataRow("#00FF00", "#000000")]
+        [DataRow("#0000FF", "#FFFFFF")]
+        [DataRow("#FFFF00", "#000000")]
+        [DataRow("#FF00FF", "#FFFFFF")]
+        [DataRow("#00FFFF", "#000000")]
+        [DataRow("#FFCC00", "#000000")]
+        [DataRow("#CCFF00", "#000000")]
+        [DataRow("#00CCFF", "#000000")]
+        [DataRow("#FF6600", "#000000")]
+        [DataRow("#FF0066", "#FFFFFF")]
+        [DataRow("#006666", "#FFFFFF")]
+        [DataRow("#0099CC", "#FFFFFF")]
+        [DataRow("#666600", "#FFFFFF")]
+        [DataRow("#CC00CC", "#FFFFFF")]
+        [DataRow("#CC6666", "#000000")]
         [Description("Querying")]
-        public string TestGetContrastColorNtsc(string specifier) =>
-            ColorContrast.GetContrastColorNtsc(specifier).Hex;
+        public void TestGetContrastColorNtsc(string specifier, string expected)
+        {
+            string result = ColorContrast.GetContrastColorNtsc(specifier).Hex;
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to get the contrast color (Half)
         /// </summary>
-        [TestCase("#EF4444", ExpectedResult = "#000000")]
-        [TestCase("#FAA31B", ExpectedResult = "#000000")]
-        [TestCase("#FFF000", ExpectedResult = "#000000")]
-        [TestCase("#82C341", ExpectedResult = "#000000")]
-        [TestCase("#009F75", ExpectedResult = "#FFFFFF")]
-        [TestCase("#88C6ED", ExpectedResult = "#000000")]
-        [TestCase("#394BA0", ExpectedResult = "#FFFFFF")]
-        [TestCase("#D54799", ExpectedResult = "#000000")]
-        [TestCase("#CCCCCC", ExpectedResult = "#000000")]
-        [TestCase("#999999", ExpectedResult = "#000000")]
-        [TestCase("#666666", ExpectedResult = "#FFFFFF")]
-        [TestCase("#333333", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FF0000", ExpectedResult = "#000000")]
-        [TestCase("#00FF00", ExpectedResult = "#FFFFFF")]
-        [TestCase("#0000FF", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FFFF00", ExpectedResult = "#000000")]
-        [TestCase("#FF00FF", ExpectedResult = "#000000")]
-        [TestCase("#00FFFF", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FFCC00", ExpectedResult = "#000000")]
-        [TestCase("#CCFF00", ExpectedResult = "#000000")]
-        [TestCase("#00CCFF", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FF6600", ExpectedResult = "#000000")]
-        [TestCase("#FF0066", ExpectedResult = "#000000")]
-        [TestCase("#006666", ExpectedResult = "#FFFFFF")]
-        [TestCase("#0099CC", ExpectedResult = "#FFFFFF")]
-        [TestCase("#666600", ExpectedResult = "#FFFFFF")]
-        [TestCase("#CC00CC", ExpectedResult = "#000000")]
-        [TestCase("#CC6666", ExpectedResult = "#000000")]
+        [DataRow("#EF4444", "#000000")]
+        [DataRow("#FAA31B", "#000000")]
+        [DataRow("#FFF000", "#000000")]
+        [DataRow("#82C341", "#000000")]
+        [DataRow("#009F75", "#FFFFFF")]
+        [DataRow("#88C6ED", "#000000")]
+        [DataRow("#394BA0", "#FFFFFF")]
+        [DataRow("#D54799", "#000000")]
+        [DataRow("#CCCCCC", "#000000")]
+        [DataRow("#999999", "#000000")]
+        [DataRow("#666666", "#FFFFFF")]
+        [DataRow("#333333", "#FFFFFF")]
+        [DataRow("#FF0000", "#000000")]
+        [DataRow("#00FF00", "#FFFFFF")]
+        [DataRow("#0000FF", "#FFFFFF")]
+        [DataRow("#FFFF00", "#000000")]
+        [DataRow("#FF00FF", "#000000")]
+        [DataRow("#00FFFF", "#FFFFFF")]
+        [DataRow("#FFCC00", "#000000")]
+        [DataRow("#CCFF00", "#000000")]
+        [DataRow("#00CCFF", "#FFFFFF")]
+        [DataRow("#FF6600", "#000000")]
+        [DataRow("#FF0066", "#000000")]
+        [DataRow("#006666", "#FFFFFF")]
+        [DataRow("#0099CC", "#FFFFFF")]
+        [DataRow("#666600", "#FFFFFF")]
+        [DataRow("#CC00CC", "#000000")]
+        [DataRow("#CC6666", "#000000")]
         [Description("Querying")]
-        public string TestGetContrastColorHalf(string specifier) =>
-            ColorContrast.GetContrastColorHalf(specifier).Hex;
+        public void TestGetContrastColorHalf(string specifier, string expected)
+        {
+            string result = ColorContrast.GetContrastColorHalf(specifier).Hex;
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to get the contrast color (NTSC)
         /// </summary>
-        [TestCase("#EF4444", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FAA31B", ExpectedResult = "#000000")]
-        [TestCase("#FFF000", ExpectedResult = "#000000")]
-        [TestCase("#82C341", ExpectedResult = "#000000")]
-        [TestCase("#009F75", ExpectedResult = "#FFFFFF")]
-        [TestCase("#88C6ED", ExpectedResult = "#000000")]
-        [TestCase("#394BA0", ExpectedResult = "#FFFFFF")]
-        [TestCase("#D54799", ExpectedResult = "#FFFFFF")]
-        [TestCase("#CCCCCC", ExpectedResult = "#000000")]
-        [TestCase("#999999", ExpectedResult = "#000000")]
-        [TestCase("#666666", ExpectedResult = "#FFFFFF")]
-        [TestCase("#333333", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FF0000", ExpectedResult = "#FFFFFF")]
-        [TestCase("#00FF00", ExpectedResult = "#000000")]
-        [TestCase("#0000FF", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FFFF00", ExpectedResult = "#000000")]
-        [TestCase("#FF00FF", ExpectedResult = "#FFFFFF")]
-        [TestCase("#00FFFF", ExpectedResult = "#000000")]
-        [TestCase("#FFCC00", ExpectedResult = "#000000")]
-        [TestCase("#CCFF00", ExpectedResult = "#000000")]
-        [TestCase("#00CCFF", ExpectedResult = "#000000")]
-        [TestCase("#FF6600", ExpectedResult = "#000000")]
-        [TestCase("#FF0066", ExpectedResult = "#FFFFFF")]
-        [TestCase("#006666", ExpectedResult = "#FFFFFF")]
-        [TestCase("#0099CC", ExpectedResult = "#FFFFFF")]
-        [TestCase("#666600", ExpectedResult = "#FFFFFF")]
-        [TestCase("#CC00CC", ExpectedResult = "#FFFFFF")]
-        [TestCase("#CC6666", ExpectedResult = "#000000")]
+        [DataRow("#EF4444", "#FFFFFF")]
+        [DataRow("#FAA31B", "#000000")]
+        [DataRow("#FFF000", "#000000")]
+        [DataRow("#82C341", "#000000")]
+        [DataRow("#009F75", "#FFFFFF")]
+        [DataRow("#88C6ED", "#000000")]
+        [DataRow("#394BA0", "#FFFFFF")]
+        [DataRow("#D54799", "#FFFFFF")]
+        [DataRow("#CCCCCC", "#000000")]
+        [DataRow("#999999", "#000000")]
+        [DataRow("#666666", "#FFFFFF")]
+        [DataRow("#333333", "#FFFFFF")]
+        [DataRow("#FF0000", "#FFFFFF")]
+        [DataRow("#00FF00", "#000000")]
+        [DataRow("#0000FF", "#FFFFFF")]
+        [DataRow("#FFFF00", "#000000")]
+        [DataRow("#FF00FF", "#FFFFFF")]
+        [DataRow("#00FFFF", "#000000")]
+        [DataRow("#FFCC00", "#000000")]
+        [DataRow("#CCFF00", "#000000")]
+        [DataRow("#00CCFF", "#000000")]
+        [DataRow("#FF6600", "#000000")]
+        [DataRow("#FF0066", "#FFFFFF")]
+        [DataRow("#006666", "#FFFFFF")]
+        [DataRow("#0099CC", "#FFFFFF")]
+        [DataRow("#666600", "#FFFFFF")]
+        [DataRow("#CC00CC", "#FFFFFF")]
+        [DataRow("#CC6666", "#000000")]
         [Description("Querying")]
-        public string TestGetContrastColorUsingGetGrayNtsc(string specifier) =>
-            ColorTools.GetGray(specifier, ColorContrastType.Ntsc).Hex;
+        public void TestGetContrastColorUsingGetGrayNtsc(string specifier, string expected)
+        {
+            string result = ColorTools.GetGray(specifier, ColorContrastType.Ntsc).Hex;
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to get the contrast color (Half)
         /// </summary>
-        [TestCase("#EF4444", ExpectedResult = "#000000")]
-        [TestCase("#FAA31B", ExpectedResult = "#000000")]
-        [TestCase("#FFF000", ExpectedResult = "#000000")]
-        [TestCase("#82C341", ExpectedResult = "#000000")]
-        [TestCase("#009F75", ExpectedResult = "#FFFFFF")]
-        [TestCase("#88C6ED", ExpectedResult = "#000000")]
-        [TestCase("#394BA0", ExpectedResult = "#FFFFFF")]
-        [TestCase("#D54799", ExpectedResult = "#000000")]
-        [TestCase("#CCCCCC", ExpectedResult = "#000000")]
-        [TestCase("#999999", ExpectedResult = "#000000")]
-        [TestCase("#666666", ExpectedResult = "#FFFFFF")]
-        [TestCase("#333333", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FF0000", ExpectedResult = "#000000")]
-        [TestCase("#00FF00", ExpectedResult = "#FFFFFF")]
-        [TestCase("#0000FF", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FFFF00", ExpectedResult = "#000000")]
-        [TestCase("#FF00FF", ExpectedResult = "#000000")]
-        [TestCase("#00FFFF", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FFCC00", ExpectedResult = "#000000")]
-        [TestCase("#CCFF00", ExpectedResult = "#000000")]
-        [TestCase("#00CCFF", ExpectedResult = "#FFFFFF")]
-        [TestCase("#FF6600", ExpectedResult = "#000000")]
-        [TestCase("#FF0066", ExpectedResult = "#000000")]
-        [TestCase("#006666", ExpectedResult = "#FFFFFF")]
-        [TestCase("#0099CC", ExpectedResult = "#FFFFFF")]
-        [TestCase("#666600", ExpectedResult = "#FFFFFF")]
-        [TestCase("#CC00CC", ExpectedResult = "#000000")]
-        [TestCase("#CC6666", ExpectedResult = "#000000")]
+        [DataRow("#EF4444", "#000000")]
+        [DataRow("#FAA31B", "#000000")]
+        [DataRow("#FFF000", "#000000")]
+        [DataRow("#82C341", "#000000")]
+        [DataRow("#009F75", "#FFFFFF")]
+        [DataRow("#88C6ED", "#000000")]
+        [DataRow("#394BA0", "#FFFFFF")]
+        [DataRow("#D54799", "#000000")]
+        [DataRow("#CCCCCC", "#000000")]
+        [DataRow("#999999", "#000000")]
+        [DataRow("#666666", "#FFFFFF")]
+        [DataRow("#333333", "#FFFFFF")]
+        [DataRow("#FF0000", "#000000")]
+        [DataRow("#00FF00", "#FFFFFF")]
+        [DataRow("#0000FF", "#FFFFFF")]
+        [DataRow("#FFFF00", "#000000")]
+        [DataRow("#FF00FF", "#000000")]
+        [DataRow("#00FFFF", "#FFFFFF")]
+        [DataRow("#FFCC00", "#000000")]
+        [DataRow("#CCFF00", "#000000")]
+        [DataRow("#00CCFF", "#FFFFFF")]
+        [DataRow("#FF6600", "#000000")]
+        [DataRow("#FF0066", "#000000")]
+        [DataRow("#006666", "#FFFFFF")]
+        [DataRow("#0099CC", "#FFFFFF")]
+        [DataRow("#666600", "#FFFFFF")]
+        [DataRow("#CC00CC", "#000000")]
+        [DataRow("#CC6666", "#000000")]
         [Description("Querying")]
-        public string TestGetContrastColorUsingGetGrayHalf(string specifier) =>
-            ColorTools.GetGray(specifier, ColorContrastType.Half).Hex;
+        public void TestGetContrastColorUsingGetGrayHalf(string specifier, string expected)
+        {
+            string result = ColorTools.GetGray(specifier, ColorContrastType.Half).Hex;
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to get the contrast color (Light)
         /// </summary>
-        [TestCase("#EF4444", ExpectedResult = "#000000")]
-        [TestCase("#FAA31B", ExpectedResult = "#000000")]
-        [TestCase("#FFF000", ExpectedResult = "#000000")]
-        [TestCase("#82C341", ExpectedResult = "#000000")]
-        [TestCase("#009F75", ExpectedResult = "#000000")]
-        [TestCase("#88C6ED", ExpectedResult = "#000000")]
-        [TestCase("#394BA0", ExpectedResult = "#000000")]
-        [TestCase("#D54799", ExpectedResult = "#000000")]
-        [TestCase("#CCCCCC", ExpectedResult = "#000000")]
-        [TestCase("#999999", ExpectedResult = "#000000")]
-        [TestCase("#666666", ExpectedResult = "#000000")]
-        [TestCase("#333333", ExpectedResult = "#000000")]
-        [TestCase("#FF0000", ExpectedResult = "#000000")]
-        [TestCase("#00FF00", ExpectedResult = "#000000")]
-        [TestCase("#0000FF", ExpectedResult = "#000000")]
-        [TestCase("#FFFF00", ExpectedResult = "#000000")]
-        [TestCase("#FF00FF", ExpectedResult = "#000000")]
-        [TestCase("#00FFFF", ExpectedResult = "#000000")]
-        [TestCase("#FFCC00", ExpectedResult = "#000000")]
-        [TestCase("#CCFF00", ExpectedResult = "#000000")]
-        [TestCase("#00CCFF", ExpectedResult = "#000000")]
-        [TestCase("#FF6600", ExpectedResult = "#000000")]
-        [TestCase("#FF0066", ExpectedResult = "#000000")]
-        [TestCase("#006666", ExpectedResult = "#000000")]
-        [TestCase("#0099CC", ExpectedResult = "#000000")]
-        [TestCase("#666600", ExpectedResult = "#000000")]
-        [TestCase("#003045", ExpectedResult = "#C0C0C0")]
-        [TestCase("#CC00CC", ExpectedResult = "#000000")]
-        [TestCase("#CC6666", ExpectedResult = "#000000")]
+        [DataRow("#EF4444", "#000000")]
+        [DataRow("#FAA31B", "#000000")]
+        [DataRow("#FFF000", "#000000")]
+        [DataRow("#82C341", "#000000")]
+        [DataRow("#009F75", "#000000")]
+        [DataRow("#88C6ED", "#000000")]
+        [DataRow("#394BA0", "#000000")]
+        [DataRow("#D54799", "#000000")]
+        [DataRow("#CCCCCC", "#000000")]
+        [DataRow("#999999", "#000000")]
+        [DataRow("#666666", "#000000")]
+        [DataRow("#333333", "#000000")]
+        [DataRow("#FF0000", "#000000")]
+        [DataRow("#00FF00", "#000000")]
+        [DataRow("#0000FF", "#000000")]
+        [DataRow("#FFFF00", "#000000")]
+        [DataRow("#FF00FF", "#000000")]
+        [DataRow("#00FFFF", "#000000")]
+        [DataRow("#FFCC00", "#000000")]
+        [DataRow("#CCFF00", "#000000")]
+        [DataRow("#00CCFF", "#000000")]
+        [DataRow("#FF6600", "#000000")]
+        [DataRow("#FF0066", "#000000")]
+        [DataRow("#006666", "#000000")]
+        [DataRow("#0099CC", "#000000")]
+        [DataRow("#666600", "#000000")]
+        [DataRow("#003045", "#C0C0C0")]
+        [DataRow("#CC00CC", "#000000")]
+        [DataRow("#CC6666", "#000000")]
         [Description("Querying")]
-        public string TestGetContrastColorUsingGetGrayLight(string specifier) =>
-            ColorTools.GetGray(specifier, ColorContrastType.Light).Hex;
+        public void TestGetContrastColorUsingGetGrayLight(string specifier, string expected)
+        {
+            string result = ColorTools.GetGray(specifier, ColorContrastType.Light).Hex;
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to convert from Color to Drawing.Color
         /// </summary>
-        [TestCase("#FFFFEE", ExpectedResult = "255;255;238")]
+        [DataRow("#FFFFEE", "255;255;238")]
         [Description("Querying")]
-        public string TestConvertToDrawing(string specifier)
+        public void TestConvertToDrawing(string specifier, string expected)
         {
             var drawing = SystemColorConverter.ToDrawingColor(specifier);
-            return $"{drawing.R};{drawing.G};{drawing.B}";
+            string result = $"{drawing.R};{drawing.G};{drawing.B}";
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to convert from Drawing.Color to Color
         /// </summary>
-        [TestCase(255, 255, 238, ExpectedResult = "255;255;238")]
+        [DataRow(255, 255, 238, "255;255;238")]
         [Description("Querying")]
-        public string TestConvertFromDrawing(int r, int g, int b)
+        public void TestConvertFromDrawing(int r, int g, int b, string expected)
         {
             var drawing = System.Drawing.Color.FromArgb(r, g, b);
             var our = SystemColorConverter.FromDrawingColor(drawing);
-            return our.ToString();
+            string result = our.ToString();
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to convert from Color to Drawing.Color (null check)
         /// </summary>
-        [TestCase(ExpectedResult = "0;0;0")]
+        [DataRow("0;0;0")]
         [Description("Querying")]
-        public string TestConvertToDrawingWithNull()
+        public void TestConvertToDrawingWithNull(string expected)
         {
             var drawing = SystemColorConverter.ToDrawingColor(null);
-            return $"{drawing.R};{drawing.G};{drawing.B}";
+            string result = $"{drawing.R};{drawing.G};{drawing.B}";
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to convert from Drawing.Color to Color (null check)
         /// </summary>
-        [TestCase(ExpectedResult = "0")]
+        [DataRow("0")]
         [Description("Querying")]
-        public string TestConvertFromDrawingWithNull()
+        public void TestConvertFromDrawingWithNull(string expected)
         {
             var our = SystemColorConverter.FromDrawingColor(System.Drawing.Color.Empty);
-            return our.ToString();
+            string result = our.ToString();
+            result.ShouldBe(expected);
         }
     }
 }

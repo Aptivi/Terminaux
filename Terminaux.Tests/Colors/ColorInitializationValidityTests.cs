@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Shouldly;
 using System;
 using System.Diagnostics;
 using Terminaux.Colors;
@@ -24,418 +26,466 @@ using Terminaux.Colors.Models.Parsing;
 
 namespace Terminaux.Tests.Colors
 {
-    [TestFixture]
+    [TestClass]
     public partial class ColorInitializationValidityTests
     {
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
-        [TestCase("#0F0F0F", ExpectedResult = true)]
-        [TestCase("#0G0G0G", ExpectedResult = false)]
+        [DataRow("#0F0F0F", true)]
+        [DataRow("#0G0G0G", false)]
         [Description("Validity")]
-        public bool TestTryParseColorFromHex(string TargetHex)
+        public void TestTryParseColorFromHex(string TargetHex, bool expected)
         {
+            bool result = false;
             try
             {
                 Debug.WriteLine($"Trying {TargetHex}...");
                 var col = new Color(TargetHex);
-                return true;
+                result = true;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
-                return false;
             }
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
-        [TestCase(26, ExpectedResult = true)]
-        [TestCase(260, ExpectedResult = false)]
-        [TestCase(-26, ExpectedResult = false)]
+        [DataRow(26, true)]
+        [DataRow(260, false)]
+        [DataRow(-26, false)]
         [Description("Validity")]
-        public bool TestTryParseColorFromColorNum(int TargetColorNum)
+        public void TestTryParseColorFromColorNum(int TargetColorNum, bool expected)
         {
+            bool result = false;
             try
             {
                 Debug.WriteLine($"Trying colornum {TargetColorNum}...");
                 var col = new Color(TargetColorNum);
-                return true;
+                result = true;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
-                return false;
             }
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
-        [TestCase(4, 4, 4, ExpectedResult = true)]
-        [TestCase(400, 4, 4, ExpectedResult = false)]
-        [TestCase(4, 400, 4, ExpectedResult = false)]
-        [TestCase(4, 4, 400, ExpectedResult = false)]
-        [TestCase(4, 400, 400, ExpectedResult = false)]
-        [TestCase(400, 4, 400, ExpectedResult = false)]
-        [TestCase(400, 400, 4, ExpectedResult = false)]
-        [TestCase(400, 400, 400, ExpectedResult = false)]
-        [TestCase(-4, 4, 4, ExpectedResult = false)]
-        [TestCase(4, -4, 4, ExpectedResult = false)]
-        [TestCase(4, 4, -4, ExpectedResult = false)]
-        [TestCase(4, -4, -4, ExpectedResult = false)]
-        [TestCase(-4, 4, -4, ExpectedResult = false)]
-        [TestCase(-4, -4, 4, ExpectedResult = false)]
-        [TestCase(-4, -4, -4, ExpectedResult = false)]
+        [DataRow(4, 4, 4, true)]
+        [DataRow(400, 4, 4, false)]
+        [DataRow(4, 400, 4, false)]
+        [DataRow(4, 4, 400, false)]
+        [DataRow(4, 400, 400, false)]
+        [DataRow(400, 4, 400, false)]
+        [DataRow(400, 400, 4, false)]
+        [DataRow(400, 400, 400, false)]
+        [DataRow(-4, 4, 4, false)]
+        [DataRow(4, -4, 4, false)]
+        [DataRow(4, 4, -4, false)]
+        [DataRow(4, -4, -4, false)]
+        [DataRow(-4, 4, -4, false)]
+        [DataRow(-4, -4, 4, false)]
+        [DataRow(-4, -4, -4, false)]
         [Description("Validity")]
-        public bool TestTryParseColorFromRGB(int R, int G, int B)
+        public void TestTryParseColorFromRGB(int R, int G, int B, bool expected)
         {
+            bool result = false;
             try
             {
                 Debug.WriteLine($"Trying rgb {R}, {G}, {B}...");
                 var col = new Color(R, G, B);
-                return true;
+                result = true;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
-                return false;
             }
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from RGB color specifier
         /// </summary>
-        [TestCase("4;4;4", ExpectedResult = true)]
-        [TestCase("400;4;4", ExpectedResult = false)]
-        [TestCase("4;400;4", ExpectedResult = false)]
-        [TestCase("4;4;400", ExpectedResult = false)]
-        [TestCase("4;400;400", ExpectedResult = false)]
-        [TestCase("400;4;400", ExpectedResult = false)]
-        [TestCase("400;400;4", ExpectedResult = false)]
-        [TestCase("400;400;400", ExpectedResult = false)]
-        [TestCase("-4;4;4", ExpectedResult = false)]
-        [TestCase("4;-4;4", ExpectedResult = false)]
-        [TestCase("4;4;-4", ExpectedResult = false)]
-        [TestCase("4;-4;-4", ExpectedResult = false)]
-        [TestCase("-4;4;-4", ExpectedResult = false)]
-        [TestCase("-4;-4;4", ExpectedResult = false)]
-        [TestCase("-4;-4;-4", ExpectedResult = false)]
+        [DataRow("4;4;4", true)]
+        [DataRow("400;4;4", false)]
+        [DataRow("4;400;4", false)]
+        [DataRow("4;4;400", false)]
+        [DataRow("4;400;400", false)]
+        [DataRow("400;4;400", false)]
+        [DataRow("400;400;4", false)]
+        [DataRow("400;400;400", false)]
+        [DataRow("-4;4;4", false)]
+        [DataRow("4;-4;4", false)]
+        [DataRow("4;4;-4", false)]
+        [DataRow("4;-4;-4", false)]
+        [DataRow("-4;4;-4", false)]
+        [DataRow("-4;-4;4", false)]
+        [DataRow("-4;-4;-4", false)]
         [Description("Validity")]
-        public bool TestTryParseColorFromSpecifier(string specifier)
+        public void TestTryParseColorFromSpecifier(string specifier, bool expected)
         {
+            bool result = false;
             try
             {
                 Debug.WriteLine($"Trying rgb specifier {specifier}...");
                 var col = new Color(specifier);
-                return true;
+                result = true;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
-                return false;
             }
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to check the color specifier syntax validity from hex
         /// </summary>
-        [TestCase("#0F0F0F", ExpectedResult = true)]
-        [TestCase("#0G0G0G", ExpectedResult = true)]
-        [TestCase("#FFF", ExpectedResult = true)]
-        [TestCase("#GGG", ExpectedResult = true)]
+        [DataRow("#0F0F0F", true)]
+        [DataRow("#0G0G0G", true)]
+        [DataRow("#FFF", true)]
+        [DataRow("#GGG", true)]
         [Description("Validity")]
-        public bool TestIsSpecifierValidFromHex(string TargetHex) =>
-            ParsingTools.IsSpecifierValidRgbHash(TargetHex);
+        public void TestIsSpecifierValidFromHex(string TargetHex, bool expected)
+        {
+            bool result = ParsingTools.IsSpecifierValidRgbHash(TargetHex);
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to check the color specifier syntax validity from color numbers
         /// </summary>
-        [TestCase(26, ExpectedResult = true)]
-        [TestCase(260, ExpectedResult = false)]
-        [TestCase(-26, ExpectedResult = false)]
+        [DataRow(26, true)]
+        [DataRow(260, false)]
+        [DataRow(-26, false)]
         [Description("Validity")]
-        public bool TestIsSpecifierValidFromColorNum(int TargetColorNum) =>
-            ParsingTools.IsSpecifierConsoleColors($"{TargetColorNum}");
+        public void TestIsSpecifierValidFromColorNum(int TargetColorNum, bool expected)
+        {
+            bool result = ParsingTools.IsSpecifierConsoleColors($"{TargetColorNum}");
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to check the color specifier syntax validity from RGB
         /// </summary>
-        [TestCase(4, 4, 4, ExpectedResult = true)]
-        [TestCase(400, 4, 4, ExpectedResult = true)]
-        [TestCase(4, 400, 4, ExpectedResult = true)]
-        [TestCase(4, 4, 400, ExpectedResult = true)]
-        [TestCase(4, 400, 400, ExpectedResult = true)]
-        [TestCase(400, 4, 400, ExpectedResult = true)]
-        [TestCase(400, 400, 4, ExpectedResult = true)]
-        [TestCase(400, 400, 400, ExpectedResult = true)]
-        [TestCase(-4, 4, 4, ExpectedResult = true)]
-        [TestCase(4, -4, 4, ExpectedResult = true)]
-        [TestCase(4, 4, -4, ExpectedResult = true)]
-        [TestCase(4, -4, -4, ExpectedResult = true)]
-        [TestCase(-4, 4, -4, ExpectedResult = true)]
-        [TestCase(-4, -4, 4, ExpectedResult = true)]
-        [TestCase(-4, -4, -4, ExpectedResult = true)]
+        [DataRow(4, 4, 4, true)]
+        [DataRow(400, 4, 4, true)]
+        [DataRow(4, 400, 4, true)]
+        [DataRow(4, 4, 400, true)]
+        [DataRow(4, 400, 400, true)]
+        [DataRow(400, 4, 400, true)]
+        [DataRow(400, 400, 4, true)]
+        [DataRow(400, 400, 400, true)]
+        [DataRow(-4, 4, 4, true)]
+        [DataRow(4, -4, 4, true)]
+        [DataRow(4, 4, -4, true)]
+        [DataRow(4, -4, -4, true)]
+        [DataRow(-4, 4, -4, true)]
+        [DataRow(-4, -4, 4, true)]
+        [DataRow(-4, -4, -4, true)]
         [Description("Validity")]
-        public bool TestIsSpecifierValidFromRGB(int R, int G, int B) =>
-            ParsingTools.IsSpecifierValid($"{R};{G};{B}");
+        public void TestIsSpecifierValidFromRGB(int R, int G, int B, bool expected)
+        {
+            bool result = ParsingTools.IsSpecifierValid($"{R};{G};{B}");
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to check the color specifier syntax validity from RGB color specifier
         /// </summary>
-        [TestCase("4;4;4", ExpectedResult = true)]
-        [TestCase("400;4;4", ExpectedResult = true)]
-        [TestCase("4;400;4", ExpectedResult = true)]
-        [TestCase("4;4;400", ExpectedResult = true)]
-        [TestCase("4;400;400", ExpectedResult = true)]
-        [TestCase("400;4;400", ExpectedResult = true)]
-        [TestCase("400;400;4", ExpectedResult = true)]
-        [TestCase("400;400;400", ExpectedResult = true)]
-        [TestCase("-4;4;4", ExpectedResult = true)]
-        [TestCase("4;-4;4", ExpectedResult = true)]
-        [TestCase("4;4;-4", ExpectedResult = true)]
-        [TestCase("4;-4;-4", ExpectedResult = true)]
-        [TestCase("-4;4;-4", ExpectedResult = true)]
-        [TestCase("-4;-4;4", ExpectedResult = true)]
-        [TestCase("-4;-4;-4", ExpectedResult = true)]
+        [DataRow("4;4;4", true)]
+        [DataRow("400;4;4", true)]
+        [DataRow("4;400;4", true)]
+        [DataRow("4;4;400", true)]
+        [DataRow("4;400;400", true)]
+        [DataRow("400;4;400", true)]
+        [DataRow("400;400;4", true)]
+        [DataRow("400;400;400", true)]
+        [DataRow("-4;4;4", true)]
+        [DataRow("4;-4;4", true)]
+        [DataRow("4;4;-4", true)]
+        [DataRow("4;-4;-4", true)]
+        [DataRow("-4;4;-4", true)]
+        [DataRow("-4;-4;4", true)]
+        [DataRow("-4;-4;-4", true)]
         [Description("Validity")]
-        public bool TestIsSpecifierValidFromSpecifier(string specifier) =>
-            ParsingTools.IsSpecifierValid(specifier);
+        public void TestIsSpecifierValidFromSpecifier(string specifier, bool expected)
+        {
+            bool result = ParsingTools.IsSpecifierValid(specifier);
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
-        [TestCase("#0F0F0F", ExpectedResult = true)]
-        [TestCase("#0G0G0G", ExpectedResult = false)]
-        [TestCase("#FFF", ExpectedResult = true)]
-        [TestCase("#GGG", ExpectedResult = false)]
+        [DataRow("#0F0F0F", true)]
+        [DataRow("#0G0G0G", false)]
+        [DataRow("#FFF", true)]
+        [DataRow("#GGG", false)]
         [Description("Validity")]
-        public bool TestIsSpecifierAndValueValidFromHex(string TargetHex) =>
-            ParsingTools.IsSpecifierAndValueValid(TargetHex);
+        public void TestIsSpecifierAndValueValidFromHex(string TargetHex, bool expected)
+        {
+            bool result = ParsingTools.IsSpecifierAndValueValid(TargetHex);
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
-        [TestCase(26, ExpectedResult = true)]
-        [TestCase(260, ExpectedResult = false)]
-        [TestCase(-26, ExpectedResult = false)]
+        [DataRow(26, true)]
+        [DataRow(260, false)]
+        [DataRow(-26, false)]
         [Description("Validity")]
-        public bool TestIsSpecifierAndValueValidFromColorNum(int TargetColorNum) =>
-            ParsingTools.IsSpecifierAndValueValid($"{TargetColorNum}");
+        public void TestIsSpecifierAndValueValidFromColorNum(int TargetColorNum, bool expected)
+        {
+            bool result = ParsingTools.IsSpecifierAndValueValid($"{TargetColorNum}");
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
-        [TestCase(4, 4, 4, ExpectedResult = true)]
-        [TestCase(400, 4, 4, ExpectedResult = false)]
-        [TestCase(4, 400, 4, ExpectedResult = false)]
-        [TestCase(4, 4, 400, ExpectedResult = false)]
-        [TestCase(4, 400, 400, ExpectedResult = false)]
-        [TestCase(400, 4, 400, ExpectedResult = false)]
-        [TestCase(400, 400, 4, ExpectedResult = false)]
-        [TestCase(400, 400, 400, ExpectedResult = false)]
-        [TestCase(-4, 4, 4, ExpectedResult = false)]
-        [TestCase(4, -4, 4, ExpectedResult = false)]
-        [TestCase(4, 4, -4, ExpectedResult = false)]
-        [TestCase(4, -4, -4, ExpectedResult = false)]
-        [TestCase(-4, 4, -4, ExpectedResult = false)]
-        [TestCase(-4, -4, 4, ExpectedResult = false)]
-        [TestCase(-4, -4, -4, ExpectedResult = false)]
+        [DataRow(4, 4, 4, true)]
+        [DataRow(400, 4, 4, false)]
+        [DataRow(4, 400, 4, false)]
+        [DataRow(4, 4, 400, false)]
+        [DataRow(4, 400, 400, false)]
+        [DataRow(400, 4, 400, false)]
+        [DataRow(400, 400, 4, false)]
+        [DataRow(400, 400, 400, false)]
+        [DataRow(-4, 4, 4, false)]
+        [DataRow(4, -4, 4, false)]
+        [DataRow(4, 4, -4, false)]
+        [DataRow(4, -4, -4, false)]
+        [DataRow(-4, 4, -4, false)]
+        [DataRow(-4, -4, 4, false)]
+        [DataRow(-4, -4, -4, false)]
         [Description("Validity")]
-        public bool TestIsSpecifierAndValueValidFromRGB(int R, int G, int B) =>
-            ParsingTools.IsSpecifierAndValueValid($"{R};{G};{B}");
+        public void TestIsSpecifierAndValueValidFromRGB(int R, int G, int B, bool expected)
+        {
+            bool result = ParsingTools.IsSpecifierAndValueValid($"{R};{G};{B}");
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to parse the color from RGB color specifier
         /// </summary>
-        [TestCase("4;4;4", ExpectedResult = true)]
-        [TestCase("400;4;4", ExpectedResult = false)]
-        [TestCase("4;400;4", ExpectedResult = false)]
-        [TestCase("4;4;400", ExpectedResult = false)]
-        [TestCase("4;400;400", ExpectedResult = false)]
-        [TestCase("400;4;400", ExpectedResult = false)]
-        [TestCase("400;400;4", ExpectedResult = false)]
-        [TestCase("400;400;400", ExpectedResult = false)]
-        [TestCase("-4;4;4", ExpectedResult = false)]
-        [TestCase("4;-4;4", ExpectedResult = false)]
-        [TestCase("4;4;-4", ExpectedResult = false)]
-        [TestCase("4;-4;-4", ExpectedResult = false)]
-        [TestCase("-4;4;-4", ExpectedResult = false)]
-        [TestCase("-4;-4;4", ExpectedResult = false)]
-        [TestCase("-4;-4;-4", ExpectedResult = false)]
+        [DataRow("4;4;4", true)]
+        [DataRow("400;4;4", false)]
+        [DataRow("4;400;4", false)]
+        [DataRow("4;4;400", false)]
+        [DataRow("4;400;400", false)]
+        [DataRow("400;4;400", false)]
+        [DataRow("400;400;4", false)]
+        [DataRow("400;400;400", false)]
+        [DataRow("-4;4;4", false)]
+        [DataRow("4;-4;4", false)]
+        [DataRow("4;4;-4", false)]
+        [DataRow("4;-4;-4", false)]
+        [DataRow("-4;4;-4", false)]
+        [DataRow("-4;-4;4", false)]
+        [DataRow("-4;-4;-4", false)]
         [Description("Validity")]
-        public bool TestIsSpecifierAndValueValidFromSpecifier(string specifier) =>
-            ParsingTools.IsSpecifierAndValueValid(specifier);
+        public void TestIsSpecifierAndValueValidFromSpecifier(string specifier, bool expected)
+        {
+            bool result = ParsingTools.IsSpecifierAndValueValid(specifier);
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
-        [TestCase("#0F0F0F", ExpectedResult = true)]
-        [TestCase("#0G0G0G", ExpectedResult = false)]
-        [TestCase("#FFF", ExpectedResult = true)]
-        [TestCase("#GGG", ExpectedResult = false)]
+        [DataRow("#0F0F0F", true)]
+        [DataRow("#0G0G0G", false)]
+        [DataRow("#FFF", true)]
+        [DataRow("#GGG", false)]
         [Description("Validity")]
-        public bool TestParseSpecifierFromHex(string TargetHex)
+        public void TestParseSpecifierFromHex(string TargetHex, bool expected)
         {
+            bool result = false;
             try
             {
                 ParsingTools.ParseSpecifier(TargetHex);
-                return true;
+                result = true;
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                Debug.WriteLine(ex.ToString());
             }
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
-        [TestCase(26, ExpectedResult = true)]
-        [TestCase(260, ExpectedResult = false)]
-        [TestCase(-26, ExpectedResult = false)]
+        [DataRow(26, true)]
+        [DataRow(260, false)]
+        [DataRow(-26, false)]
         [Description("Validity")]
-        public bool TestParseSpecifierFromColorNum(int TargetColorNum)
+        public void TestParseSpecifierFromColorNum(int TargetColorNum, bool expected)
         {
+            bool result = false;
             try
             {
                 ParsingTools.ParseSpecifier($"{TargetColorNum}");
-                return true;
+                result = true;
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                Debug.WriteLine(ex.ToString());
             }
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
-        [TestCase(4, 4, 4, ExpectedResult = true)]
-        [TestCase(400, 4, 4, ExpectedResult = false)]
-        [TestCase(4, 400, 4, ExpectedResult = false)]
-        [TestCase(4, 4, 400, ExpectedResult = false)]
-        [TestCase(4, 400, 400, ExpectedResult = false)]
-        [TestCase(400, 4, 400, ExpectedResult = false)]
-        [TestCase(400, 400, 4, ExpectedResult = false)]
-        [TestCase(400, 400, 400, ExpectedResult = false)]
-        [TestCase(-4, 4, 4, ExpectedResult = false)]
-        [TestCase(4, -4, 4, ExpectedResult = false)]
-        [TestCase(4, 4, -4, ExpectedResult = false)]
-        [TestCase(4, -4, -4, ExpectedResult = false)]
-        [TestCase(-4, 4, -4, ExpectedResult = false)]
-        [TestCase(-4, -4, 4, ExpectedResult = false)]
-        [TestCase(-4, -4, -4, ExpectedResult = false)]
+        [DataRow(4, 4, 4, true)]
+        [DataRow(400, 4, 4, false)]
+        [DataRow(4, 400, 4, false)]
+        [DataRow(4, 4, 400, false)]
+        [DataRow(4, 400, 400, false)]
+        [DataRow(400, 4, 400, false)]
+        [DataRow(400, 400, 4, false)]
+        [DataRow(400, 400, 400, false)]
+        [DataRow(-4, 4, 4, false)]
+        [DataRow(4, -4, 4, false)]
+        [DataRow(4, 4, -4, false)]
+        [DataRow(4, -4, -4, false)]
+        [DataRow(-4, 4, -4, false)]
+        [DataRow(-4, -4, 4, false)]
+        [DataRow(-4, -4, -4, false)]
         [Description("Validity")]
-        public bool TestParseSpecifierFromRGB(int R, int G, int B)
+        public void TestParseSpecifierFromRGB(int R, int G, int B, bool expected)
         {
+            bool result = false;
             try
             {
                 ParsingTools.ParseSpecifier($"{R};{G};{B}");
-                return true;
+                result = true;
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                Debug.WriteLine(ex.ToString());
             }
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from RGB color specifier
         /// </summary>
-        [TestCase("4;4;4", ExpectedResult = true)]
-        [TestCase("400;4;4", ExpectedResult = false)]
-        [TestCase("4;400;4", ExpectedResult = false)]
-        [TestCase("4;4;400", ExpectedResult = false)]
-        [TestCase("4;400;400", ExpectedResult = false)]
-        [TestCase("400;4;400", ExpectedResult = false)]
-        [TestCase("400;400;4", ExpectedResult = false)]
-        [TestCase("400;400;400", ExpectedResult = false)]
-        [TestCase("-4;4;4", ExpectedResult = false)]
-        [TestCase("4;-4;4", ExpectedResult = false)]
-        [TestCase("4;4;-4", ExpectedResult = false)]
-        [TestCase("4;-4;-4", ExpectedResult = false)]
-        [TestCase("-4;4;-4", ExpectedResult = false)]
-        [TestCase("-4;-4;4", ExpectedResult = false)]
-        [TestCase("-4;-4;-4", ExpectedResult = false)]
+        [DataRow("4;4;4", true)]
+        [DataRow("400;4;4", false)]
+        [DataRow("4;400;4", false)]
+        [DataRow("4;4;400", false)]
+        [DataRow("4;400;400", false)]
+        [DataRow("400;4;400", false)]
+        [DataRow("400;400;4", false)]
+        [DataRow("400;400;400", false)]
+        [DataRow("-4;4;4", false)]
+        [DataRow("4;-4;4", false)]
+        [DataRow("4;4;-4", false)]
+        [DataRow("4;-4;-4", false)]
+        [DataRow("-4;4;-4", false)]
+        [DataRow("-4;-4;4", false)]
+        [DataRow("-4;-4;-4", false)]
         [Description("Validity")]
-        public bool TestParseSpecifierFromSpecifier(string specifier)
+        public void TestParseSpecifierFromSpecifier(string specifier, bool expected)
         {
+            bool result = false;
             try
             {
                 ParsingTools.ParseSpecifier(specifier);
-                return true;
+                result = true;
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                Debug.WriteLine(ex.ToString());
             }
+            result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
-        [TestCase("#0F0F0F", ExpectedResult = true)]
-        [TestCase("#0G0G0G", ExpectedResult = false)]
-        [TestCase("#FFF", ExpectedResult = true)]
-        [TestCase("#GGG", ExpectedResult = false)]
+        [DataRow("#0F0F0F", true)]
+        [DataRow("#0G0G0G", false)]
+        [DataRow("#FFF", true)]
+        [DataRow("#GGG", false)]
         [Description("Validity")]
-        public bool TestTryParseSpecifierFromHex(string TargetHex) =>
-            ParsingTools.TryParseSpecifier(TargetHex, out _);
+        public void TestTryParseSpecifierFromHex(string TargetHex, bool expected)
+        {
+            bool result = ParsingTools.TryParseSpecifier(TargetHex, out _);
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
-        [TestCase(26, ExpectedResult = true)]
-        [TestCase(260, ExpectedResult = false)]
-        [TestCase(-26, ExpectedResult = false)]
+        [DataRow(26, true)]
+        [DataRow(260, false)]
+        [DataRow(-26, false)]
         [Description("Validity")]
-        public bool TestTryParseSpecifierFromColorNum(int TargetColorNum) =>
-            ParsingTools.TryParseSpecifier($"{TargetColorNum}", out _);
+        public void TestTryParseSpecifierFromColorNum(int TargetColorNum, bool expected)
+        {
+            bool result = ParsingTools.TryParseSpecifier($"{TargetColorNum}", out _);
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
-        [TestCase(4, 4, 4, ExpectedResult = true)]
-        [TestCase(400, 4, 4, ExpectedResult = false)]
-        [TestCase(4, 400, 4, ExpectedResult = false)]
-        [TestCase(4, 4, 400, ExpectedResult = false)]
-        [TestCase(4, 400, 400, ExpectedResult = false)]
-        [TestCase(400, 4, 400, ExpectedResult = false)]
-        [TestCase(400, 400, 4, ExpectedResult = false)]
-        [TestCase(400, 400, 400, ExpectedResult = false)]
-        [TestCase(-4, 4, 4, ExpectedResult = false)]
-        [TestCase(4, -4, 4, ExpectedResult = false)]
-        [TestCase(4, 4, -4, ExpectedResult = false)]
-        [TestCase(4, -4, -4, ExpectedResult = false)]
-        [TestCase(-4, 4, -4, ExpectedResult = false)]
-        [TestCase(-4, -4, 4, ExpectedResult = false)]
-        [TestCase(-4, -4, -4, ExpectedResult = false)]
+        [DataRow(4, 4, 4, true)]
+        [DataRow(400, 4, 4, false)]
+        [DataRow(4, 400, 4, false)]
+        [DataRow(4, 4, 400, false)]
+        [DataRow(4, 400, 400, false)]
+        [DataRow(400, 4, 400, false)]
+        [DataRow(400, 400, 4, false)]
+        [DataRow(400, 400, 400, false)]
+        [DataRow(-4, 4, 4, false)]
+        [DataRow(4, -4, 4, false)]
+        [DataRow(4, 4, -4, false)]
+        [DataRow(4, -4, -4, false)]
+        [DataRow(-4, 4, -4, false)]
+        [DataRow(-4, -4, 4, false)]
+        [DataRow(-4, -4, -4, false)]
         [Description("Validity")]
-        public bool TestTryParseSpecifierFromRGB(int R, int G, int B) =>
-            ParsingTools.TryParseSpecifier($"{R};{G};{B}", out _);
+        public void TestTryParseSpecifierFromRGB(int R, int G, int B, bool expected)
+        {
+            bool result = ParsingTools.TryParseSpecifier($"{R};{G};{B}", out _);
+            result.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests trying to parse the color from RGB color specifier
         /// </summary>
-        [TestCase("4;4;4", ExpectedResult = true)]
-        [TestCase("400;4;4", ExpectedResult = false)]
-        [TestCase("4;400;4", ExpectedResult = false)]
-        [TestCase("4;4;400", ExpectedResult = false)]
-        [TestCase("4;400;400", ExpectedResult = false)]
-        [TestCase("400;4;400", ExpectedResult = false)]
-        [TestCase("400;400;4", ExpectedResult = false)]
-        [TestCase("400;400;400", ExpectedResult = false)]
-        [TestCase("-4;4;4", ExpectedResult = false)]
-        [TestCase("4;-4;4", ExpectedResult = false)]
-        [TestCase("4;4;-4", ExpectedResult = false)]
-        [TestCase("4;-4;-4", ExpectedResult = false)]
-        [TestCase("-4;4;-4", ExpectedResult = false)]
-        [TestCase("-4;-4;4", ExpectedResult = false)]
-        [TestCase("-4;-4;-4", ExpectedResult = false)]
+        [DataRow("4;4;4", true)]
+        [DataRow("400;4;4", false)]
+        [DataRow("4;400;4", false)]
+        [DataRow("4;4;400", false)]
+        [DataRow("4;400;400", false)]
+        [DataRow("400;4;400", false)]
+        [DataRow("400;400;4", false)]
+        [DataRow("400;400;400", false)]
+        [DataRow("-4;4;4", false)]
+        [DataRow("4;-4;4", false)]
+        [DataRow("4;4;-4", false)]
+        [DataRow("4;-4;-4", false)]
+        [DataRow("-4;4;-4", false)]
+        [DataRow("-4;-4;4", false)]
+        [DataRow("-4;-4;-4", false)]
         [Description("Validity")]
-        public bool TestTryParseSpecifierFromSpecifier(string specifier) =>
-            ParsingTools.TryParseSpecifier(specifier, out _);
+        public void TestTryParseSpecifierFromSpecifier(string specifier, bool expected)
+        {
+            bool result = ParsingTools.TryParseSpecifier(specifier, out _);
+            result.ShouldBe(expected);
+        }
     }
 }

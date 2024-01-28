@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using Terminaux.Colors;
@@ -24,13 +25,13 @@ using Terminaux.Colors.Data;
 
 namespace Terminaux.Tests.Colors
 {
-    [TestFixture]
+    [TestClass]
     public partial class ColorInitializationEqualTests
     {
         /// <summary>
         /// Tests initializing color instance from 255 colors and comparing the equality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFrom255ColorsWhetherTheyEqualUsingSymbols()
         {
@@ -45,7 +46,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors and comparing the inequality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFrom255ColorsWhetherTheyDontEqualUsingSymbols()
         {
@@ -60,7 +61,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors and comparing the equality using Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFrom255ColorsWhetherTheyEqualUsingEquals()
         {
@@ -75,7 +76,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors and comparing the inequality using Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFrom255ColorsWhetherTheyDontEqualUsingEquals()
         {
@@ -90,7 +91,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 16 colors and comparing the equality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFrom16ColorsWhetherTheyEqualUsingSymbols()
         {
@@ -105,7 +106,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 16 colors and comparing the inequality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFrom16ColorsWhetherTheyDontEqualUsingSymbols()
         {
@@ -120,7 +121,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 16 colors and comparing the equality using the Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFrom16ColorsWhetherTheyEqualUsingEquals()
         {
@@ -135,7 +136,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 16 colors and comparing the inequality using the Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFrom16ColorsWhetherTheyDontEqualUsingEquals()
         {
@@ -150,7 +151,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color and comparing the equality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromTrueColorWhetherTheyEqualUsingSymbols()
         {
@@ -165,7 +166,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color and comparing the inequality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromTrueColorWhetherTheyDontEqualUsingSymbols()
         {
@@ -180,7 +181,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color and comparing the equality using the Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromTrueColorWhetherTheyEqualUsingEquals()
         {
@@ -195,7 +196,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color and comparing the inequality using the Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromTrueColorWhetherTheyDontEqualUsingEquals()
         {
@@ -210,7 +211,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color numbers and comparing the equality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromTrueColorNumbersWhetherTheyEqualUsingSymbols()
         {
@@ -225,7 +226,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color numbers and comparing the inequality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromTrueColorNumbersWhetherTheyDontEqualUsingSymbols()
         {
@@ -240,7 +241,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color numbers and comparing the equality using the Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromTrueColorNumbersWhetherTheyEqualUsingEquals()
         {
@@ -255,7 +256,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color numbers and comparing the inequality using the Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromTrueColorNumbersWhetherTheyDontEqualUsingEquals()
         {
@@ -270,7 +271,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color and comparing the equality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromHexWhetherTheyEqualUsingSymbols()
         {
@@ -285,7 +286,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color and comparing the inequality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromHexWhetherTheyDontEqualUsingSymbols()
         {
@@ -300,7 +301,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color and comparing the equality using the Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromHexWhetherTheyEqualUsingEquals()
         {
@@ -315,7 +316,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color and comparing the inequality using the Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromHexWhetherTheyDontEqualUsingEquals()
         {
@@ -330,7 +331,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from color name taken from <see cref="ConsoleColors"/> and comparing the equality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromNameWhetherTheyEqualUsingSymbols()
         {
@@ -345,7 +346,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from color name taken from <see cref="ConsoleColors"/> and comparing the inequality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromNameWhetherTheyDontEqualUsingSymbols()
         {
@@ -360,7 +361,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from color name taken from <see cref="ConsoleColors"/> and comparing the equality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromNameWhetherTheyEqualUsingEquals()
         {
@@ -375,7 +376,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from color name taken from <see cref="ConsoleColors"/> and comparing the inequality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeColorInstanceFromNameWhetherTheyDontEqualUsingEquals()
         {

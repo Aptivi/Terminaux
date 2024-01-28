@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using Terminaux.Colors;
@@ -25,13 +26,13 @@ using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Tests.Colors
 {
-    [TestFixture]
+    [TestClass]
     public partial class ColorInitializationTests
     {
         /// <summary>
         /// Tests initializing color instance from 255 colors
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255Colors()
         {
@@ -62,7 +63,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors using an implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsImplicit()
         {
@@ -93,7 +94,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Protanopia)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsProtanopia()
         {
@@ -130,7 +131,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Protanomaly)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsProtanomaly()
         {
@@ -167,7 +168,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Deuteranopia)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsDeuteranopia()
         {
@@ -204,7 +205,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Deuteranomaly)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsDeuteranomaly()
         {
@@ -241,7 +242,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Tritanopia)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsTritanopia()
         {
@@ -278,7 +279,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Tritanomaly)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsTritanomaly()
         {
@@ -315,7 +316,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Protanopia, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsProtanopiaSimple()
         {
@@ -353,7 +354,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Protanomaly, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsProtanomalySimple()
         {
@@ -391,7 +392,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Deuteranopia, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsDeuteranopiaSimple()
         {
@@ -429,7 +430,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Deuteranomaly, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsDeuteranomalySimple()
         {
@@ -467,7 +468,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Tritanopia, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsTritanopiaSimple()
         {
@@ -505,7 +506,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Tritanomaly, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsTritanomalySimple()
         {
@@ -543,7 +544,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Monochromacy)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsMonochromacy()
         {
@@ -579,7 +580,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Protanopia)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsProtanopiaRenderColorBlindnessAware()
         {
@@ -610,7 +611,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Protanomaly)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsProtanomalyRenderColorBlindnessAware()
         {
@@ -641,7 +642,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Deuteranopia)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsDeuteranopiaRenderColorBlindnessAware()
         {
@@ -672,7 +673,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Deuteranomaly)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsDeuteranomalyRenderColorBlindnessAware()
         {
@@ -703,7 +704,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Tritanopia)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsTritanopiaRenderColorBlindnessAware()
         {
@@ -734,7 +735,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Tritanomaly)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsTritanomalyRenderColorBlindnessAware()
         {
@@ -765,7 +766,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Protanopia, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsProtanopiaSimpleRenderColorBlindnessAware()
         {
@@ -796,7 +797,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Protanomaly, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsProtanomalySimpleRenderColorBlindnessAware()
         {
@@ -827,7 +828,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Deuteranopia, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsDeuteranopiaSimpleRenderColorBlindnessAware()
         {
@@ -858,7 +859,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Deuteranomaly, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsDeuteranomalySimpleRenderColorBlindnessAware()
         {
@@ -889,7 +890,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Tritanopia, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsTritanopiaSimpleRenderColorBlindnessAware()
         {
@@ -920,7 +921,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Tritanomaly, Vienot)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsTritanomalySimpleRenderColorBlindnessAware()
         {
@@ -951,7 +952,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 255 colors (Monochromacy)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom255ColorsMonochromacyRenderColorBlindnessAware()
         {
@@ -982,7 +983,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from 16 colors
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFrom16Colors()
         {
@@ -1013,7 +1014,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColor()
         {
@@ -1044,7 +1045,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color using the implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorImplicit()
         {
@@ -1075,7 +1076,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color numbers
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorNumbers()
         {
@@ -1106,7 +1107,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromHex()
         {
@@ -1137,7 +1138,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color using the implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromHexImplicit()
         {
@@ -1168,7 +1169,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromIncompleteHex()
         {
@@ -1199,7 +1200,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color using the implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromIncompleteHexImplicit()
         {
@@ -1230,7 +1231,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from color name taken from <see cref="ConsoleColors"/>
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromName()
         {
@@ -1261,7 +1262,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from color name taken from <see cref="ConsoleColors"/> using an implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromNameImplicit()
         {
@@ -1292,7 +1293,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from enum
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromEnum()
         {
@@ -1323,7 +1324,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from enum using an implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromEnumImplicit()
         {
@@ -1354,7 +1355,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from enum (16 colors)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromEnum16()
         {
@@ -1385,7 +1386,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from enum (16 colors) using an implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromEnum16Implicit()
         {
@@ -1416,7 +1417,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests getting empty color
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestGetEmptyColor()
         {
@@ -1447,7 +1448,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (CMYK)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorCmyk()
         {
@@ -1478,7 +1479,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (CMYK) using the implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorCmykImplicit()
         {
@@ -1509,7 +1510,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (CMY)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorCmy()
         {
@@ -1540,7 +1541,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (CMY) using the implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorCmyImplicit()
         {
@@ -1571,7 +1572,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (HSL)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorHsl()
         {
@@ -1602,7 +1603,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (HSL) using the implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorHslImplicit()
         {
@@ -1633,7 +1634,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (HSV)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorHsv()
         {
@@ -1664,7 +1665,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (HSV) using the implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorHsvImplicit()
         {
@@ -1695,7 +1696,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (RYB)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorRyb()
         {
@@ -1726,7 +1727,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (RYB) using the implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorRybImplicit()
         {
@@ -1757,7 +1758,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (YIQ)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorYiq()
         {
@@ -1788,7 +1789,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (YIQ) using the implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorYiqImplicit()
         {
@@ -1819,7 +1820,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (YUV)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorYuv()
         {
@@ -1850,7 +1851,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing color instance from true color (YUV) using the implicit operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestInitializeColorInstanceFromTrueColorYuvImplicit()
         {

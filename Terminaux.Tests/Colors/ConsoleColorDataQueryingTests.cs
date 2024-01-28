@@ -17,18 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Colors.Data;
 
 namespace Terminaux.Tests.Colors
 {
-    [TestFixture]
+    [TestClass]
     public partial class ConsoleColorDataQueryingTests
     {
         /// <summary>
         /// Tests querying 255-color data from JSON (parses only needed data)
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestQueryColorDataFromJson()
         {

@@ -17,19 +17,20 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Colors;
 using Terminaux.Colors.Models.Conversion;
 
 namespace Terminaux.Tests.Colors
 {
-    [TestFixture]
+    [TestClass]
     public partial class ColorConversionTests
     {
         /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestConvertRgbToCmyk()
         {
@@ -72,7 +73,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests converting an RGB color to HSL
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestConvertRgbToHsl()
         {
@@ -115,7 +116,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests converting an RGB color to CMY
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestConvertRgbToCmy()
         {
@@ -157,7 +158,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests converting an RGB color to HSV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestConvertRgbToHsv()
         {
@@ -200,7 +201,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests converting an RGB color to RYB
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestConvertRgbToRyb()
         {
@@ -242,7 +243,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests converting an RGB color to YIQ
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestConvertRgbToYiq()
         {
@@ -284,7 +285,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests converting an RGB color to YUV
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Initialization")]
         public void TestConvertRgbToYuv()
         {

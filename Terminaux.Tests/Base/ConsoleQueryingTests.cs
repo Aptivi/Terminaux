@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Base;
 using Textify.Sequences.Builder;
@@ -24,14 +25,14 @@ using Textify.Sequences.Builder;
 namespace Terminaux.Tests.Base
 {
 
-    [TestFixture]
+    [TestClass]
     public class ConsoleQueryingTests
     {
 
         /// <summary>
         /// Tests getting how many times to repeat the character to represent the appropriate percentage level for the specified number.
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestPercentRepeatTargeted() =>
             ConsoleExtensions.PercentRepeatTargeted(25, 200, 100).ShouldBe(12);
@@ -39,7 +40,7 @@ namespace Terminaux.Tests.Base
         /// <summary>
         /// Tests filtering the VT sequences that matches the regex
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Querying")]
         public void TestFilterVTSequences()
         {

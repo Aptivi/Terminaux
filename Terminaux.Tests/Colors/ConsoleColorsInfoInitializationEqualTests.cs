@@ -17,18 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Colors.Data;
 
 namespace Terminaux.Tests.Colors
 {
-    [TestFixture]
+    [TestClass]
     public partial class ConsoleColorsInfoInitializationEqualTests
     {
         /// <summary>
         /// Tests initializing an instance of ConsoleColorsInfo and comparing the equality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeConsoleColorsInfoWhetherTheyEqualUsingSymbols()
         {
@@ -43,7 +44,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing an instance of ConsoleColorsInfo and comparing the inequality using the operator
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeConsoleColorsInfoWhetherTheyDontEqualUsingSymbols()
         {
@@ -58,7 +59,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing an instance of ConsoleColorsInfo and comparing the equality using the Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeConsoleColorsInfoWhetherTheyEqualUsingEquals()
         {
@@ -73,7 +74,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests initializing an instance of ConsoleColorsInfo and comparing the inequality using the Equals function
         /// </summary>
-        [Test]
+        [TestMethod]
         [Description("Equality")]
         public void TestInitializeConsoleColorsInfoWhetherTheyDontEqualUsingEquals()
         {
