@@ -1931,49 +1931,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
   nameWithType: ConsoleWrapperTools.ActionWriteStringNonStandalone
-- uid: Terminaux.Base.TerminauxContinuableException
-  name: TerminauxContinuableException
-  href: api/Terminaux.Base.TerminauxContinuableException.html
-  commentId: T:Terminaux.Base.TerminauxContinuableException
-  fullName: Terminaux.Base.TerminauxContinuableException
-  nameWithType: TerminauxContinuableException
-- uid: Terminaux.Base.TerminauxContinuableException.#ctor
-  name: TerminauxContinuableException()
-  href: api/Terminaux.Base.TerminauxContinuableException.html#Terminaux_Base_TerminauxContinuableException__ctor
-  commentId: M:Terminaux.Base.TerminauxContinuableException.#ctor
-  name.vb: New()
-  fullName: Terminaux.Base.TerminauxContinuableException.TerminauxContinuableException()
-  fullName.vb: Terminaux.Base.TerminauxContinuableException.New()
-  nameWithType: TerminauxContinuableException.TerminauxContinuableException()
-  nameWithType.vb: TerminauxContinuableException.New()
-- uid: Terminaux.Base.TerminauxContinuableException.#ctor(System.String)
-  name: TerminauxContinuableException(string)
-  href: api/Terminaux.Base.TerminauxContinuableException.html#Terminaux_Base_TerminauxContinuableException__ctor_System_String_
-  commentId: M:Terminaux.Base.TerminauxContinuableException.#ctor(System.String)
-  name.vb: New(String)
-  fullName: Terminaux.Base.TerminauxContinuableException.TerminauxContinuableException(string)
-  fullName.vb: Terminaux.Base.TerminauxContinuableException.New(String)
-  nameWithType: TerminauxContinuableException.TerminauxContinuableException(string)
-  nameWithType.vb: TerminauxContinuableException.New(String)
-- uid: Terminaux.Base.TerminauxContinuableException.#ctor(System.String,System.Exception)
-  name: TerminauxContinuableException(string, Exception)
-  href: api/Terminaux.Base.TerminauxContinuableException.html#Terminaux_Base_TerminauxContinuableException__ctor_System_String_System_Exception_
-  commentId: M:Terminaux.Base.TerminauxContinuableException.#ctor(System.String,System.Exception)
-  name.vb: New(String, Exception)
-  fullName: Terminaux.Base.TerminauxContinuableException.TerminauxContinuableException(string, System.Exception)
-  fullName.vb: Terminaux.Base.TerminauxContinuableException.New(String, System.Exception)
-  nameWithType: TerminauxContinuableException.TerminauxContinuableException(string, Exception)
-  nameWithType.vb: TerminauxContinuableException.New(String, Exception)
-- uid: Terminaux.Base.TerminauxContinuableException.#ctor*
-  name: TerminauxContinuableException
-  href: api/Terminaux.Base.TerminauxContinuableException.html#Terminaux_Base_TerminauxContinuableException__ctor_
-  commentId: Overload:Terminaux.Base.TerminauxContinuableException.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Terminaux.Base.TerminauxContinuableException.TerminauxContinuableException
-  fullName.vb: Terminaux.Base.TerminauxContinuableException.New
-  nameWithType: TerminauxContinuableException.TerminauxContinuableException
-  nameWithType.vb: TerminauxContinuableException.New
 - uid: Terminaux.Base.TerminauxException
   name: TerminauxException
   href: api/Terminaux.Base.TerminauxException.html

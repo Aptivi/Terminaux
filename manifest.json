@@ -165,16 +165,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.TerminauxContinuableException.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Base.TerminauxContinuableException.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.TerminauxException.yml",
       "output": {
         ".html": {
