@@ -26,16 +26,26 @@ namespace Terminaux.Base
     /// </summary>
     public class TerminauxException : Exception
     {
-        /// <inheritdoc/>
-        public TerminauxException()
+        /// <summary>
+        /// Makes an empty <see cref="TerminauxException"/> exception instance with the default message
+        /// </summary>
+        public TerminauxException() :
+            base("General Terminaux error!")
         { }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Makes a <see cref="TerminauxException"/> exception instance
+        /// </summary>
+        /// <param name="message">A message to specify</param>
         public TerminauxException(string message) :
             base(message)
         { }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Makes a <see cref="TerminauxException"/> exception instance
+        /// </summary>
+        /// <param name="message">A message to specify</param>
+        /// <param name="innerException">An inner exception to specify</param>
         public TerminauxException(string message, Exception innerException) :
             base(message, innerException)
         { }
