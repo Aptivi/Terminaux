@@ -109,13 +109,10 @@ namespace Terminaux.Colors.Selector
                     ScreenTools.Render();
 
                     // Handle input
-                    bail = type switch
-                    {
-                        ColorType.TrueColor => HandleKeypressTrueColor(ref selectedColor, ref type),
-                        ColorType._255Color => HandleKeypress255Colors(ref selectedColor, ref type),
-                        ColorType._16Color  => HandleKeypress16Colors(ref selectedColor, ref type),
-                        _                   => throw new TerminauxException("Invalid color type in the color selector"),
-                    };
+                    bail =
+                        type == ColorType.TrueColor || type == ColorType._255Color || type == ColorType._16Color ?
+                        HandleKeypress(ref selectedColor, ref type) :
+                        throw new TerminauxException("Invalid color type in the color selector");
 
                     // Clean up after ourselves
                     screenPart.Clear();
@@ -247,12 +244,26 @@ namespace Terminaux.Colors.Selector
             return selector.ToString();
         }
 
-        private static bool HandleKeypressTrueColor(ref Color selectedColor, ref ColorType type)
+        private static bool HandleKeypress(ref Color selectedColor, ref ColorType type)
         {
             bool bail = false;
             var keypress = Input.DetectKeypress();
             switch (keypress.Key)
             {
+                // Unified
+                case ConsoleKey.I:
+                    ShowColorInfo(selectedColor);
+                    break;
+                case ConsoleKey.V:
+                    ShowColorInfoVisually(selectedColor);
+                    break;
+                case ConsoleKey.Enter:
+                    bail = true;
+                    break;
+                case ConsoleKey.Escape:
+                    bail = true;
+                    save = false;
+                    break;
                 case ConsoleKey.Tab:
                     if (keypress.Modifiers.HasFlag(ConsoleModifiers.Shift))
                     {
@@ -267,200 +278,119 @@ namespace Terminaux.Colors.Selector
                             type = ColorType.TrueColor;
                     }
                     break;
+
+                // Non-unified
                 case ConsoleKey.LeftArrow:
-                    if (keypress.Modifiers.HasFlag(ConsoleModifiers.Control))
+                    switch (type)
                     {
-                        trueColorLightness--;
-                        if (trueColorLightness < 0)
-                            trueColorLightness = 100;
-                    }
-                    else
-                    {
-                        trueColorHue--;
-                        if (trueColorHue < 0)
-                            trueColorHue = 360;
+                        case ColorType.TrueColor:
+                            if (keypress.Modifiers.HasFlag(ConsoleModifiers.Control))
+                            {
+                                trueColorLightness--;
+                                if (trueColorLightness < 0)
+                                    trueColorLightness = 100;
+                            }
+                            else
+                            {
+                                trueColorHue--;
+                                if (trueColorHue < 0)
+                                    trueColorHue = 360;
+                            }
+                            break;
+                        case ColorType._255Color:
+                            colorValue255--;
+                            if (colorValue255 < ConsoleColors.Black)
+                                colorValue255 = ConsoleColors.Grey93;
+                            break;
+                        case ColorType._16Color:
+                            colorValue16--;
+                            if (colorValue16 < ConsoleColor.Black)
+                                colorValue16 = ConsoleColor.White;
+                            break;
                     }
                     break;
                 case ConsoleKey.RightArrow:
-                    if (keypress.Modifiers.HasFlag(ConsoleModifiers.Control))
+                    switch (type)
                     {
-                        trueColorLightness++;
-                        if (trueColorLightness > 100)
-                            trueColorLightness = 0;
-                    }
-                    else
-                    {
-                        trueColorHue++;
-                        if (trueColorHue > 360)
-                            trueColorHue = 0;
+                        case ColorType.TrueColor:
+                            if (keypress.Modifiers.HasFlag(ConsoleModifiers.Control))
+                            {
+                                trueColorLightness++;
+                                if (trueColorLightness > 100)
+                                    trueColorLightness = 0;
+                            }
+                            else
+                            {
+                                trueColorHue++;
+                                if (trueColorHue > 360)
+                                    trueColorHue = 0;
+                            }
+                            break;
+                        case ColorType._255Color:
+                            colorValue255++;
+                            if (colorValue255 > ConsoleColors.Grey93)
+                                colorValue255 = ConsoleColors.Black;
+                            break;
+                        case ColorType._16Color:
+                            colorValue16++;
+                            if (colorValue16 > ConsoleColor.White)
+                                colorValue16 = ConsoleColor.Black;
+                            break;
                     }
                     break;
+                case ConsoleKey.H:
+                    switch (type)
+                    {
+                        case ColorType.TrueColor:
+                            InfoBoxColor.WriteInfoBox("Available keybindings",
+                                $$"""
+                                [ENTER]              | Accept color
+                                [ESC]                | Exit
+                                [H]                  | Help page
+                                [LEFT]               | Reduce hue
+                                [CTRL] + [LEFT]      | Reduce lightness
+                                [RIGHT]              | Increase hue
+                                [CTRL] + [RIGHT]     | Increase lightness
+                                [DOWN]               | Reduce saturation
+                                [UP]                 | Increase saturation
+                                [TAB]                | Change color mode
+                                [I]                  | Color information
+                                [V]                  | Color information (visual)
+                                """
+                            );
+                            break;
+                        case ColorType._255Color:
+                        case ColorType._16Color:
+                            InfoBoxColor.WriteInfoBox("Available keybindings",
+                                $$"""
+                                [ENTER]              | Accept color
+                                [ESC]                | Exit
+                                [H]                  | Help page
+                                [LEFT]               | Previous color
+                                [RIGHT]              | Next color
+                                [TAB]                | Change color mode
+                                [I]                  | Color information
+                                [V]                  | Color information (visual)
+                                """
+                            );
+                            break;
+                    }
+                    break;
+                
+                // Only for true color
                 case ConsoleKey.UpArrow:
+                    if (type != ColorType.TrueColor)
+                        break;
                     trueColorSaturation++;
                     if (trueColorSaturation > 100)
                         trueColorSaturation = 0;
                     break;
                 case ConsoleKey.DownArrow:
+                    if (type != ColorType.TrueColor)
+                        break;
                     trueColorSaturation--;
                     if (trueColorSaturation < 0)
                         trueColorSaturation = 100;
-                    break;
-                case ConsoleKey.H:
-                    InfoBoxColor.WriteInfoBox(
-                        $$"""
-                        Available keybindings
-
-                        [ENTER]              | Accept color
-                        [ESC]                | Exit
-                        [H]                  | Help page
-                        [LEFT]               | Reduce hue
-                        [CTRL] + [LEFT]      | Reduce lightness
-                        [RIGHT]              | Increase hue
-                        [CTRL] + [RIGHT]     | Increase lightness
-                        [DOWN]               | Reduce saturation
-                        [UP]                 | Increase saturation
-                        [TAB]                | Change color mode
-                        [I]                  | Color information
-                        [V]                  | Color information (visual)
-                        """
-                    );
-                    break;
-                case ConsoleKey.I:
-                    ShowColorInfo(selectedColor);
-                    break;
-                case ConsoleKey.V:
-                    ShowColorInfoVisually(selectedColor);
-                    break;
-                case ConsoleKey.Enter:
-                    bail = true;
-                    break;
-                case ConsoleKey.Escape:
-                    bail = true;
-                    save = false;
-                    break;
-            }
-            UpdateColor(ref selectedColor, type);
-            return bail;
-        }
-
-        private static bool HandleKeypress255Colors(ref Color selectedColor, ref ColorType type)
-        {
-            bool bail = false;
-            var keypress = Input.DetectKeypress();
-            switch (keypress.Key)
-            {
-                case ConsoleKey.Tab:
-                    if (keypress.Modifiers.HasFlag(ConsoleModifiers.Shift))
-                    {
-                        type--;
-                        if (type < ColorType.TrueColor)
-                            type = ColorType._16Color;
-                    }
-                    else
-                    {
-                        type++;
-                        if (type > ColorType._16Color)
-                            type = ColorType.TrueColor;
-                    }
-                    break;
-                case ConsoleKey.LeftArrow:
-                    colorValue255--;
-                    if (colorValue255 < ConsoleColors.Black)
-                        colorValue255 = ConsoleColors.Grey93;
-                    break;
-                case ConsoleKey.RightArrow:
-                    colorValue255++;
-                    if (colorValue255 > ConsoleColors.Grey93)
-                        colorValue255 = ConsoleColors.Black;
-                    break;
-                case ConsoleKey.H:
-                    InfoBoxColor.WriteInfoBox("Available keybindings",
-                        $$"""
-                        [ENTER]              | Accept color
-                        [ESC]                | Exit
-                        [H]                  | Help page
-                        [LEFT]               | Previous color
-                        [RIGHT]              | Next color
-                        [TAB]                | Change color mode
-                        [I]                  | Color information
-                        [V]                  | Color information (visual)
-                        """
-                    );
-                    break;
-                case ConsoleKey.I:
-                    ShowColorInfo(selectedColor);
-                    break;
-                case ConsoleKey.V:
-                    ShowColorInfoVisually(selectedColor);
-                    break;
-                case ConsoleKey.Enter:
-                    bail = true;
-                    break;
-                case ConsoleKey.Escape:
-                    bail = true;
-                    save = false;
-                    break;
-            }
-            UpdateColor(ref selectedColor, type);
-            return bail;
-        }
-
-        private static bool HandleKeypress16Colors(ref Color selectedColor, ref ColorType type)
-        {
-            bool bail = false;
-            var keypress = Input.DetectKeypress();
-            switch (keypress.Key)
-            {
-                case ConsoleKey.Tab:
-                    if (keypress.Modifiers.HasFlag(ConsoleModifiers.Shift))
-                    {
-                        type--;
-                        if (type < ColorType.TrueColor)
-                            type = ColorType._16Color;
-                    }
-                    else
-                    {
-                        type++;
-                        if (type > ColorType._16Color)
-                            type = ColorType.TrueColor;
-                    }
-                    break;
-                case ConsoleKey.LeftArrow:
-                    colorValue16--;
-                    if (colorValue16 < ConsoleColor.Black)
-                        colorValue16 = ConsoleColor.White;
-                    break;
-                case ConsoleKey.RightArrow:
-                    colorValue16++;
-                    if (colorValue16 > ConsoleColor.White)
-                        colorValue16 = ConsoleColor.Black;
-                    break;
-                case ConsoleKey.H:
-                    InfoBoxColor.WriteInfoBox("Available keybindings",
-                        $$"""
-                        [ENTER]              | Accept color
-                        [ESC]                | Exit
-                        [H]                  | Help page
-                        [LEFT]               | Previous color
-                        [RIGHT]              | Next color
-                        [TAB]                | Change color mode
-                        [I]                  | Color information
-                        [V]                  | Color information (visual)
-                        """
-                    );
-                    break;
-                case ConsoleKey.I:
-                    ShowColorInfo(selectedColor);
-                    break;
-                case ConsoleKey.V:
-                    ShowColorInfoVisually(selectedColor);
-                    break;
-                case ConsoleKey.Enter:
-                    bail = true;
-                    break;
-                case ConsoleKey.Escape:
-                    bail = true;
-                    save = false;
                     break;
             }
             UpdateColor(ref selectedColor, type);
