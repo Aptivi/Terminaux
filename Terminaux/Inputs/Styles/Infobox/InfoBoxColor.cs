@@ -615,7 +615,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
         {
-            bool initialCursorVisible = ConsoleWrapper.CursorVisible;
+            bool initialCursorVisible = waitForInput && ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
             var infoBoxPageScreenPart = new ScreenPart() { Order = 1 };
