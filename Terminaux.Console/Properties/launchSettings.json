@@ -31,6 +31,10 @@
       "commandName": "Project",
       "commandLineArgs": "PromptPasswordWithPlaceholderHidden"
     },
+    "Terminaux - PromptPasswordCustomMask": {
+      "commandName": "Project",
+      "commandLineArgs": "PromptPasswordCustomMask"
+    },
     "Terminaux - PromptLoopedMargin": {
       "commandName": "Project",
       "commandLineArgs": "PromptLoopedMargin"

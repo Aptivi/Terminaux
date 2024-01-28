@@ -41,8 +41,11 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Current mask character
         /// </summary>
-        public static string CurrentMask =>
-            currentMask;
+        public static string CurrentMask
+        {
+            get => currentMask;
+            set => currentMask = value;
+        }
 
         /// <summary>
         /// Reads the line from the console
