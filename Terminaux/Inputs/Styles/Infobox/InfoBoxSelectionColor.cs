@@ -438,6 +438,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     }
 
                     // Now, render the selections
+                    int AnswerTitleLeft = selections.Max(x => $"  {x.ChoiceName}) ".Length);
                     int currentPage = currentSelection / selectionChoices;
                     int startIndex = selectionChoices * currentPage;
                     for (int i = 0; i <= selectionChoices - 1; i++)
@@ -452,7 +453,6 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                         // Get the option
                         string AnswerOption = $"{(selected ? ">" : " ")} {choice}) {AnswerTitle}";
-                        int AnswerTitleLeft = selections.Max(x => $"{(selected ? ">" : " ")} {x.ChoiceName}) ".Length);
                         int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
                         if (AnswerTitleLeft < answerTitleMaxLeft)
                         {
