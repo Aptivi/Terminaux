@@ -40,12 +40,24 @@ namespace Terminaux.Inputs
         public string ChoiceDescription { get; }
 
         /// <summary>
+        /// Whether this choice is the default choice or not. If multiple choices in the same choice list have <see cref="ChoiceDefault"/>
+        /// set to true, most of the tools will automatically select the first default, ignoring the rest.
+        /// </summary>
+        public bool ChoiceDefault { get; }
+
+        /// <summary>
+        /// Whether this choice is the selected choice by default or not.
+        /// </summary>
+        public bool ChoiceDefaultSelected { get; }
+
+        /// <summary>
         /// Makes a new instance of choice information
         /// </summary>
         /// <param name="choiceName">Choice name</param>
         /// <param name="choiceTitle">Choice title</param>
         public InputChoiceInfo(string choiceName, string choiceTitle)
-            : this(choiceName, choiceTitle, "") { }
+            : this(choiceName, choiceTitle, "", false)
+        { }
 
         /// <summary>
         /// Makes a new instance of choice information
@@ -54,10 +66,35 @@ namespace Terminaux.Inputs
         /// <param name="choiceTitle">Choice title</param>
         /// <param name="choiceDescription">Choice description</param>
         public InputChoiceInfo(string choiceName, string choiceTitle, string choiceDescription)
+            : this(choiceName, choiceTitle, choiceDescription, false)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of choice information
+        /// </summary>
+        /// <param name="choiceName">Choice name</param>
+        /// <param name="choiceTitle">Choice title</param>
+        /// <param name="choiceDescription">Choice description</param>
+        /// <param name="choiceDefault">Whether this choice is the default choice or not</param>
+        public InputChoiceInfo(string choiceName, string choiceTitle, string choiceDescription, bool choiceDefault)
+            : this(choiceName, choiceTitle, choiceDescription, choiceDefault, false)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of choice information
+        /// </summary>
+        /// <param name="choiceName">Choice name</param>
+        /// <param name="choiceTitle">Choice title</param>
+        /// <param name="choiceDescription">Choice description</param>
+        /// <param name="choiceDefault">Whether this choice is the default choice or not</param>
+        /// <param name="choiceDefaultSelected">Whether this choice is the selected choice by default</param>
+        public InputChoiceInfo(string choiceName, string choiceTitle, string choiceDescription, bool choiceDefault, bool choiceDefaultSelected)
         {
             ChoiceName = choiceName;
             ChoiceTitle = choiceTitle;
             ChoiceDescription = choiceDescription;
+            ChoiceDefault = choiceDefault;
+            ChoiceDefaultSelected = choiceDefaultSelected;
         }
     }
 }

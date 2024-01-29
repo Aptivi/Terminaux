@@ -158,9 +158,13 @@ namespace Terminaux.Inputs.Styles.Selection
             AllAnswers.AddRange(AltAnswers);
             int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
 
+            // Make selected choices from the ChoiceDefaultSelected value.
+            SelectedAnswers = AllAnswers.Any((ici) => ici.ChoiceDefaultSelected) ? AllAnswers.Select((ici, idx) => (idx, ici.ChoiceDefaultSelected)).Where((tuple) => tuple.ChoiceDefaultSelected).Select((tuple) => tuple.idx + 1).ToList() : [];
+
             // Before we proceed, we need to check the highlighted answer number
             if (HighlightedAnswer > AllAnswers.Count)
                 HighlightedAnswer = 1;
+            HighlightedAnswer = AllAnswers.Any((ici) => ici.ChoiceDefault) ? AllAnswers.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx + 1 : 1;
 
             // First alt answer index
             int altAnswersFirstIdx = Answers.Count;
@@ -380,6 +384,7 @@ namespace Terminaux.Inputs.Styles.Selection
                 InfoBoxColor.WriteInfoBox("Failed to initialize the selection input:" + $" {ex.Message}");
             }
             ScreenTools.UnsetCurrent(selectionScreen);
+            SelectedAnswers.Sort();
             return [.. SelectedAnswers];
         }
 

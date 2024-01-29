@@ -179,6 +179,7 @@ namespace Terminaux.Inputs.Styles.Selection
             // Before we proceed, we need to check the highlighted answer number
             if (HighlightedAnswer > AllAnswers.Count)
                 HighlightedAnswer = 1;
+            HighlightedAnswer = AllAnswers.Any((ici) => ici.ChoiceDefault) ? AllAnswers.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx + 1 : 1;
 
             // First alt answer index
             int altAnswersFirstIdx = Answers.Length;

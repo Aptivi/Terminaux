@@ -349,10 +349,14 @@ namespace Terminaux.Inputs.Styles.Infobox
             List<int> selectedChoices = [];
             int AnswerTitleLeft = selections.Max(x => $"  [ ] {x.ChoiceName}) ".Length);
 
-            // First, verify that we have selections
+            // Make selected choices from the ChoiceDefaultSelected value.
+            selectedChoices = selections.Any((ici) => ici.ChoiceDefaultSelected) ? selections.Select((ici, idx) => (idx, ici.ChoiceDefaultSelected)).Where((tuple) => tuple.ChoiceDefaultSelected).Select((tuple) => tuple.idx).ToList() : [];
+
+            // Verify that we have selections
             if (selections is null || selections.Length == 0)
                 return [.. selectedChoices];
 
+            // Now, some logic to get the informational box ready
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
             var infoBoxScreenPart = new ScreenPart();
@@ -369,7 +373,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             ScreenTools.CurrentScreen.AddBufferedPart("Informational box", infoBoxScreenPart);
             try
             {
-                int currentSelection = 0;
+                int currentSelection = selections.Any((ici) => ici.ChoiceDefault) ? selections.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
                 int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
@@ -583,6 +587,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
 
             // Return the selected choices
+            selectedChoices.Sort();
             return [.. selectedChoices];
         }
     }
