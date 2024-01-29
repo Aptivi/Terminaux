@@ -121,6 +121,12 @@ namespace Terminaux.Base
             ConsoleWrapperTools.ActionBeep();
 
         /// <summary>
+        /// Beeps the console (VT Sequence method)
+        /// </summary>
+        public static void BeepSeq() =>
+            ConsoleWrapperTools.ActionBeepSeq();
+
+        /// <summary>
         /// Reads a key
         /// </summary>
         /// <param name="intercept">Whether to intercept</param>

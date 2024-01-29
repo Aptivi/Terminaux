@@ -45,6 +45,7 @@ namespace Terminaux.Base
         internal static Action<int> actionSetCursorLeft = SetCursorLeft;
         internal static Action<int> actionSetCursorTop = SetCursorTop;
         internal static Action actionBeep = Beep;
+        internal static Action actionBeepSeq = BeepSeq;
         internal static Action actionClear = Clear;
         internal static Action actionClearLoadBack = ClearLoadBack;
         internal static Func<bool, ConsoleKeyInfo> actionReadKey = ReadKey;
@@ -185,6 +186,14 @@ namespace Terminaux.Base
         {
             internal get => actionBeep;
             set => actionBeep = value ?? Beep;
+        }
+        /// <summary>
+        /// Beeps the console (VT Sequence method)
+        /// </summary>
+        public static Action ActionBeepSeq
+        {
+            internal get => actionBeepSeq;
+            set => actionBeepSeq = value ?? BeepSeq;
         }
         /// <summary>
         /// Clears the console
@@ -454,6 +463,9 @@ namespace Terminaux.Base
 
         private static void Beep() =>
             Console.Beep();
+
+        private static void BeepSeq() =>
+            Write('\a');
 
         private static void Clear() =>
             Console.Clear();
