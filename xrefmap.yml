@@ -7461,6 +7461,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedYellowBlue.B
   nameWithType: RedYellowBlue.B
+- uid: Terminaux.Colors.Models.RedYellowBlue.BNormalized
+  name: BNormalized
+  href: api/Terminaux.Colors.Models.RedYellowBlue.html#Terminaux_Colors_Models_RedYellowBlue_BNormalized
+  commentId: P:Terminaux.Colors.Models.RedYellowBlue.BNormalized
+  fullName: Terminaux.Colors.Models.RedYellowBlue.BNormalized
+  nameWithType: RedYellowBlue.BNormalized
+- uid: Terminaux.Colors.Models.RedYellowBlue.BNormalized*
+  name: BNormalized
+  href: api/Terminaux.Colors.Models.RedYellowBlue.html#Terminaux_Colors_Models_RedYellowBlue_BNormalized_
+  commentId: Overload:Terminaux.Colors.Models.RedYellowBlue.BNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedYellowBlue.BNormalized
+  nameWithType: RedYellowBlue.BNormalized
 - uid: Terminaux.Colors.Models.RedYellowBlue.Equals(System.Object)
   name: Equals(object)
   href: api/Terminaux.Colors.Models.RedYellowBlue.html#Terminaux_Colors_Models_RedYellowBlue_Equals_System_Object_
@@ -7509,6 +7522,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedYellowBlue.R
   nameWithType: RedYellowBlue.R
+- uid: Terminaux.Colors.Models.RedYellowBlue.RNormalized
+  name: RNormalized
+  href: api/Terminaux.Colors.Models.RedYellowBlue.html#Terminaux_Colors_Models_RedYellowBlue_RNormalized
+  commentId: P:Terminaux.Colors.Models.RedYellowBlue.RNormalized
+  fullName: Terminaux.Colors.Models.RedYellowBlue.RNormalized
+  nameWithType: RedYellowBlue.RNormalized
+- uid: Terminaux.Colors.Models.RedYellowBlue.RNormalized*
+  name: RNormalized
+  href: api/Terminaux.Colors.Models.RedYellowBlue.html#Terminaux_Colors_Models_RedYellowBlue_RNormalized_
+  commentId: Overload:Terminaux.Colors.Models.RedYellowBlue.RNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedYellowBlue.RNormalized
+  nameWithType: RedYellowBlue.RNormalized
 - uid: Terminaux.Colors.Models.RedYellowBlue.ToString
   name: ToString()
   href: api/Terminaux.Colors.Models.RedYellowBlue.html#Terminaux_Colors_Models_RedYellowBlue_ToString
@@ -7535,6 +7561,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedYellowBlue.Y
   nameWithType: RedYellowBlue.Y
+- uid: Terminaux.Colors.Models.RedYellowBlue.YNormalized
+  name: YNormalized
+  href: api/Terminaux.Colors.Models.RedYellowBlue.html#Terminaux_Colors_Models_RedYellowBlue_YNormalized
+  commentId: P:Terminaux.Colors.Models.RedYellowBlue.YNormalized
+  fullName: Terminaux.Colors.Models.RedYellowBlue.YNormalized
+  nameWithType: RedYellowBlue.YNormalized
+- uid: Terminaux.Colors.Models.RedYellowBlue.YNormalized*
+  name: YNormalized
+  href: api/Terminaux.Colors.Models.RedYellowBlue.html#Terminaux_Colors_Models_RedYellowBlue_YNormalized_
+  commentId: Overload:Terminaux.Colors.Models.RedYellowBlue.YNormalized
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedYellowBlue.YNormalized
+  nameWithType: RedYellowBlue.YNormalized
 - uid: Terminaux.Colors.Models.RedYellowBlue.op_Equality(Terminaux.Colors.Models.RedYellowBlue,Terminaux.Colors.Models.RedYellowBlue)
   name: operator ==(RedYellowBlue, RedYellowBlue)
   href: api/Terminaux.Colors.Models.RedYellowBlue.html#Terminaux_Colors_Models_RedYellowBlue_op_Equality_Terminaux_Colors_Models_RedYellowBlue_Terminaux_Colors_Models_RedYellowBlue_
