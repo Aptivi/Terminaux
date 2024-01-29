@@ -389,8 +389,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     if (maxHeight >= ConsoleWrapper.WindowHeight)
                         maxHeight = ConsoleWrapper.WindowHeight - 4;
                     int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                    int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2;
-                    int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2;
+                    int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
+                    int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
                     var boxBuffer = new StringBuilder();
                     string border =
                         !string.IsNullOrEmpty(title) ?
