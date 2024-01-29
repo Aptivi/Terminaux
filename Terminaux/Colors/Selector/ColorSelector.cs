@@ -153,6 +153,7 @@ namespace Terminaux.Colors.Selector
             int lightnessBarY = 9;
             int rgbRampBarY = 13;
             int grayRampBarY = 19;
+            int transparencyRampBarY = 23;
             int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
             int boxHeight = 1;
             var initialBackground = ColorTools.currentBackgroundColor.VTSequenceBackground;
@@ -208,24 +209,6 @@ namespace Terminaux.Colors.Selector
                 );
             }
 
-            // Buffer the gray ramp
-            if (ConsoleWrapper.WindowHeight - 3 > grayRampBarY + 2)
-            {
-                StringBuilder grayRamp = new();
-                var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
-                for (int i = 0; i < boxWidth; i++)
-                {
-                    double width = (double)i / boxWidth;
-                    int gray = (int)(mono.RGB.R * width);
-                    grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {initialBackground}");
-                }
-                selector.Append(
-                    BoxFrameColor.RenderBoxFrame($"Gray: {mono.RGB.R}/255", hueBarX, grayRampBarY, boxWidth, boxHeight) +
-                    CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, grayRampBarY + 2) +
-                    grayRamp.ToString()
-                );
-            }
-
             // Buffer the RGB ramp
             if (ConsoleWrapper.WindowHeight - 3 > rgbRampBarY + 4)
             {
@@ -250,6 +233,42 @@ namespace Terminaux.Colors.Selector
                     greenRamp.ToString() +
                     CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 4) +
                     blueRamp.ToString()
+                );
+            }
+
+            // Buffer the gray ramp
+            if (ConsoleWrapper.WindowHeight - 3 > grayRampBarY + 2)
+            {
+                StringBuilder grayRamp = new();
+                var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
+                for (int i = 0; i < boxWidth; i++)
+                {
+                    double width = (double)i / boxWidth;
+                    int gray = (int)(mono.RGB.R * width);
+                    grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                }
+                selector.Append(
+                    BoxFrameColor.RenderBoxFrame($"Gray: {mono.RGB.R}/255", hueBarX, grayRampBarY, boxWidth, boxHeight) +
+                    CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, grayRampBarY + 2) +
+                    grayRamp.ToString()
+                );
+            }
+
+            // Buffer the transparency ramp
+            if (ConsoleWrapper.WindowHeight - 3 > transparencyRampBarY + 2)
+            {
+                StringBuilder transparencyRamp = new();
+                var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
+                for (int i = 0; i < boxWidth; i++)
+                {
+                    double width = (double)i / boxWidth;
+                    int transparency = (int)(mono.RGB.originalAlpha * width);
+                    transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                }
+                selector.Append(
+                    BoxFrameColor.RenderBoxFrame($"Transparency: {ColorTools.GlobalSettings.Opacity}/255", hueBarX, transparencyRampBarY, boxWidth, boxHeight) +
+                    CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, transparencyRampBarY + 2) +
+                    transparencyRamp.ToString()
                 );
             }
 
