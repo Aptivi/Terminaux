@@ -70,6 +70,46 @@ namespace Terminaux.Reader
             TermReaderState.currentHistoryPos = 0;
         }
 
+        /// <summary>
+        /// Refreshes the reader prompt
+        /// </summary>
+        public static void Refresh()
+        {
+            if (!Busy)
+                return;
+
+            // Get the current state
+            var state = TermReader.states[TermReader.states.Count - 1];
+
+            // Check to see if the console has been resized before
+            if (ConsoleResizeHandler.WasResized(false))
+            {
+                // It's been resized. Now, get the current text position
+                int textPos = state.CurrentTextPos;
+
+                // Go to the leftmost position
+                PositioningTools.GoLeftmost(ref state);
+
+                // Fix the values up
+                state.inputPromptLeft = state.InputPromptLastLineLength;
+                state.inputPromptTop = state.InputPromptTopBegin + state.InputPromptHeight - 1;
+                if (state.inputPromptTop >= ConsoleWrapper.WindowHeight)
+                    state.inputPromptTop = ConsoleWrapper.WindowHeight - 1;
+                state.currentCursorPosLeft = state.InputPromptLeft;
+                state.currentCursorPosTop = state.InputPromptTop;
+
+                // Go to the old position
+                PositioningTools.SeekTo(textPos, ref state);
+                TermReader.cachedPos = (state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            }
+
+            // Refresh the prompt
+            RefreshPrompt(ref state);
+
+            // Save the state
+            TermReader.states[TermReader.states.Count - 1] = state;
+        }
+
         internal static ConsoleKeyInfo GetInput(bool interruptible)
         {
             if (interruptible)

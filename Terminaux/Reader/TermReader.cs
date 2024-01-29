@@ -34,6 +34,7 @@ namespace Terminaux.Reader
     /// </summary>
     public static class TermReader
     {
+        internal static (int, int) cachedPos = default;
         internal static readonly List<TermReaderState> states = [];
         private static readonly object readLock = new();
 
@@ -143,6 +144,8 @@ namespace Terminaux.Reader
                     ConsoleWrapper.CursorLeft += settings.LeftMargin;
                     readState.settings.state = readState;
                     readState.inputPromptText = inputPrompt;
+                    readState.inputPromptLeftBegin = ConsoleWrapper.CursorLeft;
+                    readState.inputPromptTopBegin = ConsoleWrapper.CursorTop;
                     readState.writingPrompt = true;
                     TextWriterColor.WriteForReader(inputPrompt, settings, false);
                     readState.writingPrompt = false;
@@ -155,7 +158,7 @@ namespace Terminaux.Reader
                     ConsoleWrapper.TreatCtrlCAsInput = settings.TreatCtrlCAsInput;
 
                     // Get input
-                    (int, int) cachedPos = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                    cachedPos = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                     while (!BindingsReader.IsTerminate(struckKey))
                     {
                         // Get a key

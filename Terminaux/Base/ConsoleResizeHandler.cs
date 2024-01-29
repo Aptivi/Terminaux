@@ -105,11 +105,7 @@ namespace Terminaux.Base
 
             // Tell the reader to refresh itself
             if (TermReaderTools.Busy)
-            {
-                var state = TermReader.states[TermReader.states.Count - 1];
-                TermReaderTools.RefreshPrompt(ref state);
-                TermReader.states[TermReader.states.Count - 1] = state;
-            }
+                TermReaderTools.Refresh();
         }
     }
 }

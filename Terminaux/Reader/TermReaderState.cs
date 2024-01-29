@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Textify.General;
@@ -34,6 +35,8 @@ namespace Terminaux.Reader
     public class TermReaderState
     {
         // Instance
+        internal int inputPromptLeftBegin;
+        internal int inputPromptTopBegin;
         internal int inputPromptLeft;
         internal int inputPromptTop;
         internal int currentCursorPosLeft;
@@ -57,6 +60,16 @@ namespace Terminaux.Reader
         internal static int currentSuggestionsTextPos = -1;
 
         // To instance variables
+        /// <summary>
+        /// Left position of the input prompt (where the first letter of the input prompt is located)
+        /// </summary>
+        public int InputPromptLeftBegin =>
+            inputPromptLeftBegin;
+        /// <summary>
+        /// Top position of the input prompt (where the first letter of the input prompt is located)
+        /// </summary>
+        public int InputPromptTopBegin =>
+            inputPromptTopBegin;
         /// <summary>
         /// Left position of the input prompt (with the left margin)
         /// </summary>
@@ -136,13 +149,24 @@ namespace Terminaux.Reader
         public string InputPromptText =>
             inputPromptText;
         /// <summary>
+        /// Input prompt text
+        /// </summary>
+        public int InputPromptHeight
+        {
+            get
+            {
+                string[] inputPromptLines = TextTools.GetWrappedSentences(InputPromptText, ConsoleWrapper.WindowWidth);
+                return inputPromptLines.Length;
+            }
+        }
+        /// <summary>
         /// Input prompt last line length
         /// </summary>
         public int InputPromptLastLineLength
         {
             get
             {
-                string[] inputPromptLines = InputPromptText.SplitNewLines();
+                string[] inputPromptLines = TextTools.GetWrappedSentences(InputPromptText, ConsoleWrapper.WindowWidth);
                 string inputPromptLastLine = VtSequenceTools.FilterVTSequences(inputPromptLines[inputPromptLines.Length - 1]);
                 return inputPromptLastLine.Length;
             }
