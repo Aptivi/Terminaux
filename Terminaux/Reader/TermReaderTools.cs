@@ -176,15 +176,14 @@ namespace Terminaux.Reader
             // the newlines using the "incomplete sentences" feature, then refresh the input
             // prompt.
             int longestSentenceLength = state.LongestSentenceLengthFromLeft;
-            string[] wrapped = TextTools.GetWrappedSentences(state.InputPromptText, longestSentenceLength, state.inputPromptLeft + state.settings.LeftMargin);
-            ConsoleWrapper.SetCursorPosition(state.settings.LeftMargin, state.InputPromptTop - wrapped.Length + 1);
+            ConsoleWrapper.SetCursorPosition(state.InputPromptLeftBegin, state.InputPromptTopBegin);
             state.writingPrompt = true;
             TextWriterColor.WriteForReaderColorBack(state.InputPromptText, state.Settings, false, state.Settings.InputForegroundColor, state.Settings.InputBackgroundColor);
             state.writingPrompt = false;
 
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, wrapped[wrapped.Length - 1].Length);
+            string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
             if (incompleteSentences.Length > ConsoleWrapper.BufferHeight || renderedText.Length - 1 == GetMaximumInputLength(state))
             {
                 var intermediate = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
