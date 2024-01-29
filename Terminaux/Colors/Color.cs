@@ -44,7 +44,7 @@ namespace Terminaux.Colors
         /// <summary>
         /// The color ID for 256- and 16-color modes.
         /// </summary>
-        public int ColorId { get; private set; } = -1;
+        public ConsoleColorData ColorId { get; private set; } = null;
         /// <summary>
         /// Empty color singleton
         /// </summary>
@@ -78,7 +78,7 @@ namespace Terminaux.Colors
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; in its original form.
         /// </summary>
         public string PlainSequenceOriginal =>
-            Type == ColorType.TrueColor ? $"{RGB.R};{RGB.G};{RGB.B}" : $"{ColorId}";
+            Type == ColorType.TrueColor ? $"{RGB.R};{RGB.G};{RGB.B}" : $"{ColorId.ColorId}";
         /// <summary>
         /// Parsable VT sequence (Foreground)
         /// </summary>
@@ -132,8 +132,8 @@ namespace Terminaux.Colors
         /// Color type
         /// </summary>
         public ColorType Type =>
-            ColorId == -1 ? ColorType.TrueColor :
-            ColorId >= 16 ? ColorType._255Color :
+            ColorId is null ? ColorType.TrueColor :
+            ColorId.ColorId >= 16 ? ColorType._255Color :
             ColorType._16Color;
         /// <summary>
         /// Determines the color brightness whether it indicates dark or light mode
@@ -144,12 +144,16 @@ namespace Terminaux.Colors
         /// The color value converted to <see cref="ConsoleColors"/>. Not applicable [-1] to true color
         /// </summary>
         public ConsoleColors ColorEnum255 =>
-            Type == ColorType._255Color ? (ConsoleColors)ColorId : unapplicable.unapplicable255;
+            Type == ColorType._255Color || (Type == ColorType._16Color && ColorId.ColorId < 16) ?
+            (ConsoleColors)ColorId.ColorId :
+            unapplicable.unapplicable255;
         /// <summary>
         /// The color value converted to <see cref="ConsoleColor"/>. Not applicable [-1] to true color and 256 colors
         /// </summary>
         public ConsoleColor ColorEnum16 =>
-            Type == ColorType._16Color ? (ConsoleColor)ColorId : unapplicable.unapplicable16;
+            Type == ColorType._16Color || (Type == ColorType._255Color && ColorId.ColorId < 16) ?
+            (ConsoleColor)ColorId.ColorId :
+            unapplicable.unapplicable16;
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -257,8 +261,7 @@ namespace Terminaux.Colors
             {
                 // Verify that we're using the correct ID for transparency
                 var data = ConsoleColorData.MatchColorData(rgb.rgb);
-                if (data is not null)
-                    ColorId = data.ColorId;
+                ColorId = data;
             }
             RGB = rgb.rgb;
         }

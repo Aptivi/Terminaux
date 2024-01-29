@@ -18,6 +18,8 @@
 //
 
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Terminaux.Base.Resources;
@@ -29,7 +31,7 @@ namespace Terminaux.Colors.Data
     /// Console color data
     /// </summary>
     [DebuggerDisplay("{Name} [{ColorId}, {HexString}]")]
-    public class ConsoleColorData
+    public class ConsoleColorData : IEquatable<ConsoleColorData>
     {
         [JsonIgnore]
         private static ConsoleColorData[] instances = null;
@@ -194,5 +196,26 @@ namespace Terminaux.Colors.Data
             );
             return instance;
         }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj) =>
+            Equals(obj as ConsoleColorData);
+
+        /// <inheritdoc/>
+        public bool Equals(ConsoleColorData other) =>
+            other is not null &&
+            ColorId == other.ColorId;
+
+        /// <inheritdoc/>
+        public override int GetHashCode() =>
+            -1308032243 + ColorId.GetHashCode();
+
+        /// <inheritdoc/>
+        public static bool operator ==(ConsoleColorData left, ConsoleColorData right) =>
+            EqualityComparer<ConsoleColorData>.Default.Equals(left, right);
+
+        /// <inheritdoc/>
+        public static bool operator !=(ConsoleColorData left, ConsoleColorData right) =>
+            !(left == right);
     }
 }
