@@ -20,11 +20,13 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using DrawingColor = System.Drawing.Color;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Models.Parsing;
+using Terminaux.Colors.Interop;
 
 namespace Terminaux.Colors
 {
@@ -269,6 +271,19 @@ namespace Terminaux.Colors
         /// <summary>
         /// Makes a new instance of color class from specifier.
         /// </summary>
+        /// <param name="color">The color from Drawing</param>
+        /// <exception cref="TerminauxException"></exception>
+        public Color(DrawingColor color)
+        {
+            var result = SystemColorConverter.FromDrawingColor(color);
+            this.settings = result.settings;
+            ColorId = result.ColorId;
+            RGB = result.RGB;
+        }
+
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
         /// <param name="ColorDef">The color taken from <see cref="ConsoleColors"/></param>
         /// <exception cref="TerminauxException"></exception>
         public static implicit operator Color(ConsoleColors ColorDef) =>
@@ -297,6 +312,14 @@ namespace Terminaux.Colors
         /// <exception cref="TerminauxException"></exception>
         public static implicit operator Color(string ColorSpecifier) =>
             new(ColorSpecifier);
+
+        /// <summary>
+        /// Makes a new instance of color class from specifier.
+        /// </summary>
+        /// <param name="color">The color from Drawing</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static implicit operator Color(DrawingColor color) =>
+            new(color);
 
         /// <summary>
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the usage of the terminal palette.

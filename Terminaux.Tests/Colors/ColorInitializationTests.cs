@@ -20,6 +20,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
+using DrawingColor = System.Drawing.Color;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
@@ -1875,6 +1876,71 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
             ColorInstance.Hex.ShouldBe("#8B5036");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from Drawing's color
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromDrawingColor()
+        {
+            // Create instance
+            var sourceDrawingBrushColor = DrawingColor.FromArgb(94, 0, 63);
+            var ColorInstance = new Color(sourceDrawingBrushColor);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("94;0;63");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;94;0;63m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;94;0;63m");
+            ColorInstance.RGB.R.ShouldBe(94);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(63);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
+            ColorInstance.Hex.ShouldBe("#5E003F");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from Drawing's color (transparent)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromDrawingColorTransparent()
+        {
+            // Create instance
+            var sourceDrawingBrushColor = DrawingColor.FromArgb(128, 94, 0, 63);
+            var ColorInstance = new Color(sourceDrawingBrushColor);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("47;0;31");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;47;0;31m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;47;0;31m");
+            ColorInstance.RGB.R.ShouldBe(47);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(31);
+            ColorInstance.RGB.originalAlpha.ShouldBe(128);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#2F001F");
             ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
             ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
         }
