@@ -1303,6 +1303,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapper.Beep
   nameWithType: ConsoleWrapper.Beep
+- uid: Terminaux.Base.ConsoleWrapper.BeepSeq
+  name: BeepSeq()
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_BeepSeq
+  commentId: M:Terminaux.Base.ConsoleWrapper.BeepSeq
+  fullName: Terminaux.Base.ConsoleWrapper.BeepSeq()
+  nameWithType: ConsoleWrapper.BeepSeq()
+- uid: Terminaux.Base.ConsoleWrapper.BeepSeq*
+  name: BeepSeq
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_BeepSeq_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.BeepSeq
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.BeepSeq
+  nameWithType: ConsoleWrapper.BeepSeq
 - uid: Terminaux.Base.ConsoleWrapper.BufferHeight
   name: BufferHeight
   href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_BufferHeight
@@ -1580,6 +1593,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionBeep
   nameWithType: ConsoleWrapperTools.ActionBeep
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionBeepSeq
+  name: ActionBeepSeq
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionBeepSeq
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionBeepSeq
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionBeepSeq
+  nameWithType: ConsoleWrapperTools.ActionBeepSeq
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionBeepSeq*
+  name: ActionBeepSeq
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionBeepSeq_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionBeepSeq
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionBeepSeq
+  nameWithType: ConsoleWrapperTools.ActionBeepSeq
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionBufferHeight
   name: ActionBufferHeight
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionBufferHeight
