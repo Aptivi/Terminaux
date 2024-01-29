@@ -367,19 +367,11 @@ namespace Terminaux.Inputs.Styles.Selection
                             HighlightedAnswer = -1;
                             break;
                         case ConsoleKey.Tab:
-                            if (string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription))
-                                break;
-                            var infoRenderer = new StringBuilder();
-                            infoRenderer.AppendFormat("{0}",
-                                string.Join("\n",
-                                [
-                                    highlightedAnswer.ChoiceTitle,
-                                    new string('-', highlightedAnswer.ChoiceTitle.Length > ConsoleWrapper.WindowWidth ? ConsoleWrapper.WindowWidth - 4 : highlightedAnswer.ChoiceTitle.Length),
-                                    "",
-                                    highlightedAnswer.ChoiceDescription,
-                                ])
-                            );
-                            InfoBoxColor.WriteInfoBox(infoRenderer.ToString());
+                            string choiceName = highlightedAnswer.ChoiceName;
+                            string choiceTitle = highlightedAnswer.ChoiceTitle;
+                            string choiceDesc = highlightedAnswer.ChoiceDescription;
+                            if (!string.IsNullOrWhiteSpace(choiceDesc))
+                                InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
                             break;
                     }
 

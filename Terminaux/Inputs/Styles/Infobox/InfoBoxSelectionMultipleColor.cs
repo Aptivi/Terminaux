@@ -520,6 +520,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Handle keypress
+                    var selectedInstance = selections[currentSelection];
                     var key = Input.DetectKeypress().Key;
                     switch (key)
                     {
@@ -560,6 +561,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (currentSelection > selections.Length - 1)
                                     currentSelection = selections.Length - 1;
                             }
+                            break;
+                        case ConsoleKey.Tab:
+                            string choiceName = selectedInstance.ChoiceName;
+                            string choiceTitle = selectedInstance.ChoiceTitle;
+                            string choiceDesc = selectedInstance.ChoiceDescription;
+                            if (!string.IsNullOrWhiteSpace(choiceDesc))
+                                InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
                             break;
                         case ConsoleKey.Enter:
                             bail = true;
