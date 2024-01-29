@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Colors;
-using System.Text;
 using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;

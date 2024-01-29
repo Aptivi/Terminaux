@@ -21,7 +21,6 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
-using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases

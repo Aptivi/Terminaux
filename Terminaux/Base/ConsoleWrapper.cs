@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Reader;
-using Textify.General;
 
 namespace Terminaux.Base
 {
