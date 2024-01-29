@@ -144,7 +144,7 @@ namespace Terminaux.Colors.Selector
             var selector = new StringBuilder();
 
             // First, render the preview box
-            selector.Append(RenderPreviewBox(selectedColor, type));
+            selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, render the hue, saturation, and lightness bars
             int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 2;
@@ -158,85 +158,100 @@ namespace Terminaux.Colors.Selector
             var initialBackground = ColorTools.currentBackgroundColor.VTSequenceBackground;
 
             // Buffer the hue ramp
-            StringBuilder hueRamp = new();
-            for (int i = 0; i < boxWidth; i++)
+            if (ConsoleWrapper.WindowHeight - 3 > hueBarY + 2)
             {
-                double width = (double)i / boxWidth;
-                int hue = (int)(360 * width);
-                hueRamp.Append($"{new Color($"hsl:{hue};100;50").VTSequenceBackgroundTrueColor} {initialBackground}");
+                StringBuilder hueRamp = new();
+                for (int i = 0; i < boxWidth; i++)
+                {
+                    double width = (double)i / boxWidth;
+                    int hue = (int)(360 * width);
+                    hueRamp.Append($"{new Color($"hsl:{hue};100;50").VTSequenceBackgroundTrueColor} {initialBackground}");
+                }
+                selector.Append(
+                    BoxFrameColor.RenderBoxFrame($"Hue: {(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)}/360", hueBarX, hueBarY, boxWidth, boxHeight) +
+                    CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, hueBarY + 2) +
+                    hueRamp.ToString()
+                );
             }
-            selector.Append(
-                BoxFrameColor.RenderBoxFrame($"Hue: {(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)}/360", hueBarX, hueBarY, boxWidth, boxHeight) +
-                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, hueBarY + 2) +
-                hueRamp.ToString()
-            );
 
             // Buffer the saturation ramp
-            StringBuilder satRamp = new();
-            for (int i = 0; i < boxWidth; i++)
+            if (ConsoleWrapper.WindowHeight - 3 > saturationBarY + 2)
             {
-                double width = (double)i / boxWidth;
-                int sat = (int)(100 * width);
-                satRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};{sat};50").VTSequenceBackgroundTrueColor} {initialBackground}");
+                StringBuilder satRamp = new();
+                for (int i = 0; i < boxWidth; i++)
+                {
+                    double width = (double)i / boxWidth;
+                    int sat = (int)(100 * width);
+                    satRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};{sat};50").VTSequenceBackgroundTrueColor} {initialBackground}");
+                }
+                selector.Append(
+                    BoxFrameColor.RenderBoxFrame($"Saturation: {(type == ColorType.TrueColor ? trueColorSaturation : HslConversionTools.ConvertFrom(selectedColor.RGB).SaturationWhole)}/100", hueBarX, saturationBarY, boxWidth, boxHeight) +
+                    CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, saturationBarY + 2) +
+                    satRamp.ToString()
+                );
             }
-            selector.Append(
-                BoxFrameColor.RenderBoxFrame($"Saturation: {(type == ColorType.TrueColor ? trueColorSaturation : HslConversionTools.ConvertFrom(selectedColor.RGB).SaturationWhole)}/100", hueBarX, saturationBarY, boxWidth, boxHeight) +
-                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, saturationBarY + 2) +
-                satRamp.ToString()
-            );
 
             // Buffer the lightness ramp
-            StringBuilder ligRamp = new();
-            for (int i = 0; i < boxWidth; i++)
+            if (ConsoleWrapper.WindowHeight - 3 > lightnessBarY + 2)
             {
-                double width = (double)i / boxWidth;
-                int lig = (int)(100 * width);
-                ligRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};100;{lig}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                StringBuilder ligRamp = new();
+                for (int i = 0; i < boxWidth; i++)
+                {
+                    double width = (double)i / boxWidth;
+                    int lig = (int)(100 * width);
+                    ligRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};100;{lig}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                }
+                selector.Append(
+                    BoxFrameColor.RenderBoxFrame($"Lightness: {(type == ColorType.TrueColor ? trueColorLightness : HslConversionTools.ConvertFrom(selectedColor.RGB).LightnessWhole)}/100", hueBarX, lightnessBarY, boxWidth, boxHeight) +
+                    CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, lightnessBarY + 2) +
+                    ligRamp.ToString()
+                );
             }
-            selector.Append(
-                BoxFrameColor.RenderBoxFrame($"Lightness: {(type == ColorType.TrueColor ? trueColorLightness : HslConversionTools.ConvertFrom(selectedColor.RGB).LightnessWhole)}/100", hueBarX, lightnessBarY, boxWidth, boxHeight) +
-                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, lightnessBarY + 2) +
-                ligRamp.ToString()
-            );
 
             // Buffer the gray ramp
-            StringBuilder grayRamp = new();
-            var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
-            for (int i = 0; i < boxWidth; i++)
+            if (ConsoleWrapper.WindowHeight - 3 > grayRampBarY + 2)
             {
-                double width = (double)i / boxWidth;
-                int gray = (int)(mono.RGB.R * width);
-                grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                StringBuilder grayRamp = new();
+                var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
+                for (int i = 0; i < boxWidth; i++)
+                {
+                    double width = (double)i / boxWidth;
+                    int gray = (int)(mono.RGB.R * width);
+                    grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                }
+                selector.Append(
+                    BoxFrameColor.RenderBoxFrame($"Gray: {mono.RGB.R}/255", hueBarX, grayRampBarY, boxWidth, boxHeight) +
+                    CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, grayRampBarY + 2) +
+                    grayRamp.ToString()
+                );
             }
-            selector.Append(
-                BoxFrameColor.RenderBoxFrame($"Gray: {mono.RGB.R}/255", hueBarX, grayRampBarY, boxWidth, boxHeight) +
-                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, grayRampBarY + 2) +
-                grayRamp.ToString()
-            );
 
             // Buffer the RGB ramp
-            StringBuilder redRamp = new();
-            StringBuilder greenRamp = new();
-            StringBuilder blueRamp = new();
-            for (int i = 0; i < boxWidth; i++)
+            if (ConsoleWrapper.WindowHeight - 3 > rgbRampBarY + 4)
             {
-                double width = (double)i / boxWidth;
-                int red = (int)(selectedColor.RGB.R * width);
-                int green = (int)(selectedColor.RGB.G * width);
-                int blue = (int)(selectedColor.RGB.B * width);
-                redRamp.Append($"{new Color($"{red};0;0").VTSequenceBackgroundTrueColor} {initialBackground}");
-                greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {initialBackground}");
-                blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                StringBuilder redRamp = new();
+                StringBuilder greenRamp = new();
+                StringBuilder blueRamp = new();
+                for (int i = 0; i < boxWidth; i++)
+                {
+                    double width = (double)i / boxWidth;
+                    int red = (int)(selectedColor.RGB.R * width);
+                    int green = (int)(selectedColor.RGB.G * width);
+                    int blue = (int)(selectedColor.RGB.B * width);
+                    redRamp.Append($"{new Color($"{red};0;0").VTSequenceBackgroundTrueColor} {initialBackground}");
+                    greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {initialBackground}");
+                    blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                }
+                selector.Append(
+                    BoxFrameColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.RGB.R};{selectedColor.RGB.G};{selectedColor.RGB.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2) +
+                    CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 2) +
+                    redRamp.ToString() +
+                    CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 3) +
+                    greenRamp.ToString() +
+                    CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 4) +
+                    blueRamp.ToString()
+                );
             }
-            selector.Append(
-                BoxFrameColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.RGB.R};{selectedColor.RGB.G};{selectedColor.RGB.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2) +
-                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 2) +
-                redRamp.ToString() +
-                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 3) +
-                greenRamp.ToString() +
-                CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, rgbRampBarY + 4) +
-                blueRamp.ToString()
-            );
 
             // Finally, the keybindings
             int bindingsPos = ConsoleWrapper.WindowHeight - 2;
@@ -407,7 +422,7 @@ namespace Terminaux.Colors.Selector
             return bail;
         }
 
-        private static string RenderPreviewBox(Color selectedColor, ColorType type)
+        private static string RenderPreviewBox(Color selectedColor)
         {
             var builder = new StringBuilder();
 
