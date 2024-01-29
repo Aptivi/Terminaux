@@ -2030,6 +2030,15 @@ references:
   fullName.vb: Terminaux.Colors.Color.New(System.ConsoleColor, Terminaux.Colors.ColorSettings)
   nameWithType: Color.Color(ConsoleColor, ColorSettings)
   nameWithType.vb: Color.New(ConsoleColor, ColorSettings)
+- uid: Terminaux.Colors.Color.#ctor(System.Drawing.Color)
+  name: Color(Color)
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color__ctor_System_Drawing_Color_
+  commentId: M:Terminaux.Colors.Color.#ctor(System.Drawing.Color)
+  name.vb: New(Color)
+  fullName: Terminaux.Colors.Color.Color(System.Drawing.Color)
+  fullName.vb: Terminaux.Colors.Color.New(System.Drawing.Color)
+  nameWithType: Color.Color(Color)
+  nameWithType.vb: Color.New(Color)
 - uid: Terminaux.Colors.Color.#ctor(System.Int32)
   name: Color(int)
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color__ctor_System_Int32_
@@ -2441,6 +2450,15 @@ references:
   fullName.vb: Terminaux.Colors.Color.CType(System.ConsoleColor)
   nameWithType: Color.implicit operator Color(ConsoleColor)
   nameWithType.vb: Color.CType(ConsoleColor)
+- uid: Terminaux.Colors.Color.op_Implicit(System.Drawing.Color)~Terminaux.Colors.Color
+  name: implicit operator Color(Color)
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_op_Implicit_System_Drawing_Color__Terminaux_Colors_Color
+  commentId: M:Terminaux.Colors.Color.op_Implicit(System.Drawing.Color)~Terminaux.Colors.Color
+  name.vb: CType(Color)
+  fullName: Terminaux.Colors.Color.implicit operator Terminaux.Colors.Color(System.Drawing.Color)
+  fullName.vb: Terminaux.Colors.Color.CType(System.Drawing.Color)
+  nameWithType: Color.implicit operator Color(Color)
+  nameWithType.vb: Color.CType(Color)
 - uid: Terminaux.Colors.Color.op_Implicit(System.Int32)~Terminaux.Colors.Color
   name: implicit operator Color(int)
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_op_Implicit_System_Int32__Terminaux_Colors_Color
