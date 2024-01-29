@@ -55,6 +55,7 @@ namespace Terminaux.Reader.Bindings
             new InsertMode(),
             new RefreshClear(),
             new CutHorizontalLine(),
+            new SubstituteChars(),
 
 #if DEBUG
             new DebugPos()
