@@ -53,6 +53,7 @@ namespace Terminaux.Reader.Bindings
             new ShowSuggestions(),
             new Refresh(),
             new InsertMode(),
+            new RefreshClear(),
 
 #if DEBUG
             new DebugPos()
