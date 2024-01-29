@@ -11898,6 +11898,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderState.History
   nameWithType: TermReaderState.History
+- uid: Terminaux.Reader.TermReaderState.InputPromptHeight
+  name: InputPromptHeight
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptHeight
+  commentId: P:Terminaux.Reader.TermReaderState.InputPromptHeight
+  fullName: Terminaux.Reader.TermReaderState.InputPromptHeight
+  nameWithType: TermReaderState.InputPromptHeight
+- uid: Terminaux.Reader.TermReaderState.InputPromptHeight*
+  name: InputPromptHeight
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptHeight_
+  commentId: Overload:Terminaux.Reader.TermReaderState.InputPromptHeight
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.InputPromptHeight
+  nameWithType: TermReaderState.InputPromptHeight
 - uid: Terminaux.Reader.TermReaderState.InputPromptLastLineLength
   name: InputPromptLastLineLength
   href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLastLineLength
@@ -11924,6 +11937,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderState.InputPromptLeft
   nameWithType: TermReaderState.InputPromptLeft
+- uid: Terminaux.Reader.TermReaderState.InputPromptLeftBegin
+  name: InputPromptLeftBegin
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLeftBegin
+  commentId: P:Terminaux.Reader.TermReaderState.InputPromptLeftBegin
+  fullName: Terminaux.Reader.TermReaderState.InputPromptLeftBegin
+  nameWithType: TermReaderState.InputPromptLeftBegin
+- uid: Terminaux.Reader.TermReaderState.InputPromptLeftBegin*
+  name: InputPromptLeftBegin
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLeftBegin_
+  commentId: Overload:Terminaux.Reader.TermReaderState.InputPromptLeftBegin
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.InputPromptLeftBegin
+  nameWithType: TermReaderState.InputPromptLeftBegin
 - uid: Terminaux.Reader.TermReaderState.InputPromptText
   name: InputPromptText
   href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptText
@@ -11950,6 +11976,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderState.InputPromptTop
   nameWithType: TermReaderState.InputPromptTop
+- uid: Terminaux.Reader.TermReaderState.InputPromptTopBegin
+  name: InputPromptTopBegin
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptTopBegin
+  commentId: P:Terminaux.Reader.TermReaderState.InputPromptTopBegin
+  fullName: Terminaux.Reader.TermReaderState.InputPromptTopBegin
+  nameWithType: TermReaderState.InputPromptTopBegin
+- uid: Terminaux.Reader.TermReaderState.InputPromptTopBegin*
+  name: InputPromptTopBegin
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptTopBegin_
+  commentId: Overload:Terminaux.Reader.TermReaderState.InputPromptTopBegin
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.InputPromptTopBegin
+  nameWithType: TermReaderState.InputPromptTopBegin
 - uid: Terminaux.Reader.TermReaderState.KillBuffer
   name: KillBuffer
   href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_KillBuffer
@@ -12138,6 +12177,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderTools.Interrupt
   nameWithType: TermReaderTools.Interrupt
+- uid: Terminaux.Reader.TermReaderTools.Refresh
+  name: Refresh()
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_Refresh
+  commentId: M:Terminaux.Reader.TermReaderTools.Refresh
+  fullName: Terminaux.Reader.TermReaderTools.Refresh()
+  nameWithType: TermReaderTools.Refresh()
+- uid: Terminaux.Reader.TermReaderTools.Refresh*
+  name: Refresh
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_Refresh_
+  commentId: Overload:Terminaux.Reader.TermReaderTools.Refresh
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderTools.Refresh
+  nameWithType: TermReaderTools.Refresh
 - uid: Terminaux.Reader.TermReaderTools.SetHistory(System.Collections.Generic.List{System.String})
   name: SetHistory(List<string>)
   href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_SetHistory_System_Collections_Generic_List_System_String__
