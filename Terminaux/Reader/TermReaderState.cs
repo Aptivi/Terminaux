@@ -51,6 +51,7 @@ namespace Terminaux.Reader
         internal bool canInsert = true;
         internal bool writingPrompt;
         internal bool insertIsReplace;
+        internal bool commentized;
         internal TermReaderSettings settings;
 
         // Shared
@@ -201,6 +202,11 @@ namespace Terminaux.Reader
         /// </summary>
         public bool CanInsert =>
             canInsert;
+        /// <summary>
+        /// Whether the current input character is commentized by the hashtag (<c>#</c>) character or not.
+        /// </summary>
+        public bool Commentized =>
+            commentized;
 
         // To static variables
         /// <summary>

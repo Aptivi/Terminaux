@@ -21,27 +21,22 @@ using System;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
-    internal class Return : BaseBinding, IBinding
+    internal class Commentize : BaseBinding, IBinding
     {
         /// <inheritdoc/>
         public override ConsoleKeyInfo[] BoundKeys { get; } =
         [
-            // for Windows
-            new ConsoleKeyInfo('\r', ConsoleKey.Enter, false, false, false),
-            new ConsoleKeyInfo('\n', ConsoleKey.J, false, false, true),
-
-            // for Linux
-            new ConsoleKeyInfo('\n', ConsoleKey.Enter, false, false, false),
+            new ConsoleKeyInfo('#', ConsoleKey.D3, true, true, false),
         ];
 
         /// <inheritdoc/>
-        public override bool IsExit => true;
+        public override bool IsExit => false;
 
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state)
         {
-            if (state.Commentized)
-                state.CurrentText.Clear();
+            state.commentized = !state.commentized;
+            TermReaderTools.RefreshPrompt(ref state);
         }
     }
 }

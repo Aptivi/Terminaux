@@ -22,6 +22,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -172,13 +174,17 @@ namespace Terminaux.Reader
 
         internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false, int spaces = 0)
         {
+            // Determine the foreground and the background color
+            var foreground = state.Commentized ? new Color(ConsoleColors.Green) : state.Settings.InputForegroundColor;
+            var background = state.Settings.InputBackgroundColor;
+
             // Determine if the input prompt text is either overflowing or intentionally placing
             // the newlines using the "incomplete sentences" feature, then refresh the input
             // prompt.
             int longestSentenceLength = state.LongestSentenceLengthFromLeft;
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeftBegin, state.InputPromptTopBegin);
             state.writingPrompt = true;
-            TextWriterColor.WriteForReaderColorBack(state.InputPromptText, state.Settings, false, state.Settings.InputForegroundColor, state.Settings.InputBackgroundColor);
+            TextWriterColor.WriteForReaderColorBack(state.InputPromptText, state.Settings, false, foreground, background);
             state.writingPrompt = false;
 
             // Now, render the current text
@@ -200,7 +206,7 @@ namespace Terminaux.Reader
                 incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - renderedText.Length), state.settings, false, state.Settings.InputForegroundColor, state.Settings.InputBackgroundColor);
+                TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - renderedText.Length), state.settings, false, foreground, background);
                 if (steps > 0)
                 {
                     if (backward)
@@ -217,7 +223,7 @@ namespace Terminaux.Reader
                 if (spaces > 0)
                     spacesLength = spaces;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', spacesLength), state.settings, false, state.Settings.InputForegroundColor, state.Settings.InputBackgroundColor);
+                TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', spacesLength), state.settings, false, foreground, background);
                 if (steps > 0)
                 {
                     if (backward)
