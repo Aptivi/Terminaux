@@ -7916,6 +7916,24 @@ references:
   fullName.vb: Terminaux.Inputs.InputChoiceInfo.New(String, String, String)
   nameWithType: InputChoiceInfo.InputChoiceInfo(string, string, string)
   nameWithType.vb: InputChoiceInfo.New(String, String, String)
+- uid: Terminaux.Inputs.InputChoiceInfo.#ctor(System.String,System.String,System.String,System.Boolean)
+  name: InputChoiceInfo(string, string, string, bool)
+  href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo__ctor_System_String_System_String_System_String_System_Boolean_
+  commentId: M:Terminaux.Inputs.InputChoiceInfo.#ctor(System.String,System.String,System.String,System.Boolean)
+  name.vb: New(String, String, String, Boolean)
+  fullName: Terminaux.Inputs.InputChoiceInfo.InputChoiceInfo(string, string, string, bool)
+  fullName.vb: Terminaux.Inputs.InputChoiceInfo.New(String, String, String, Boolean)
+  nameWithType: InputChoiceInfo.InputChoiceInfo(string, string, string, bool)
+  nameWithType.vb: InputChoiceInfo.New(String, String, String, Boolean)
+- uid: Terminaux.Inputs.InputChoiceInfo.#ctor(System.String,System.String,System.String,System.Boolean,System.Boolean)
+  name: InputChoiceInfo(string, string, string, bool, bool)
+  href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo__ctor_System_String_System_String_System_String_System_Boolean_System_Boolean_
+  commentId: M:Terminaux.Inputs.InputChoiceInfo.#ctor(System.String,System.String,System.String,System.Boolean,System.Boolean)
+  name.vb: New(String, String, String, Boolean, Boolean)
+  fullName: Terminaux.Inputs.InputChoiceInfo.InputChoiceInfo(string, string, string, bool, bool)
+  fullName.vb: Terminaux.Inputs.InputChoiceInfo.New(String, String, String, Boolean, Boolean)
+  nameWithType: InputChoiceInfo.InputChoiceInfo(string, string, string, bool, bool)
+  nameWithType.vb: InputChoiceInfo.New(String, String, String, Boolean, Boolean)
 - uid: Terminaux.Inputs.InputChoiceInfo.#ctor*
   name: InputChoiceInfo
   href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo__ctor_
@@ -7926,6 +7944,32 @@ references:
   fullName.vb: Terminaux.Inputs.InputChoiceInfo.New
   nameWithType: InputChoiceInfo.InputChoiceInfo
   nameWithType.vb: InputChoiceInfo.New
+- uid: Terminaux.Inputs.InputChoiceInfo.ChoiceDefault
+  name: ChoiceDefault
+  href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo_ChoiceDefault
+  commentId: P:Terminaux.Inputs.InputChoiceInfo.ChoiceDefault
+  fullName: Terminaux.Inputs.InputChoiceInfo.ChoiceDefault
+  nameWithType: InputChoiceInfo.ChoiceDefault
+- uid: Terminaux.Inputs.InputChoiceInfo.ChoiceDefault*
+  name: ChoiceDefault
+  href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo_ChoiceDefault_
+  commentId: Overload:Terminaux.Inputs.InputChoiceInfo.ChoiceDefault
+  isSpec: "True"
+  fullName: Terminaux.Inputs.InputChoiceInfo.ChoiceDefault
+  nameWithType: InputChoiceInfo.ChoiceDefault
+- uid: Terminaux.Inputs.InputChoiceInfo.ChoiceDefaultSelected
+  name: ChoiceDefaultSelected
+  href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo_ChoiceDefaultSelected
+  commentId: P:Terminaux.Inputs.InputChoiceInfo.ChoiceDefaultSelected
+  fullName: Terminaux.Inputs.InputChoiceInfo.ChoiceDefaultSelected
+  nameWithType: InputChoiceInfo.ChoiceDefaultSelected
+- uid: Terminaux.Inputs.InputChoiceInfo.ChoiceDefaultSelected*
+  name: ChoiceDefaultSelected
+  href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo_ChoiceDefaultSelected_
+  commentId: Overload:Terminaux.Inputs.InputChoiceInfo.ChoiceDefaultSelected
+  isSpec: "True"
+  fullName: Terminaux.Inputs.InputChoiceInfo.ChoiceDefaultSelected
+  nameWithType: InputChoiceInfo.ChoiceDefaultSelected
 - uid: Terminaux.Inputs.InputChoiceInfo.ChoiceDescription
   name: ChoiceDescription
   href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo_ChoiceDescription
