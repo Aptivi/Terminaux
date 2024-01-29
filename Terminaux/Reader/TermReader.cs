@@ -136,6 +136,7 @@ namespace Terminaux.Reader
 
                 // Save some variable states
                 bool ctrlCAsInput = ConsoleWrapper.TreatCtrlCAsInput;
+                bool initialVisible = ConsoleWrapper.CursorVisible;
 
                 // Handle all possible errors
                 try
@@ -159,6 +160,7 @@ namespace Terminaux.Reader
 
                     // Get input
                     cachedPos = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                    ConsoleWrapper.CursorVisible = true;
                     while (!BindingsReader.IsTerminate(struckKey))
                     {
                         // Get a key
@@ -189,7 +191,7 @@ namespace Terminaux.Reader
                     if (!readState.OneLineWrap)
                     {
                         PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
-                        ConsoleWrapper.SetCursorPosition(readState.CurrentCursorPosLeft, readState.CurrentCursorPosTop);
+                        PositioningTools.Commit(readState);
                     }
                     TextWriterColor.Write();
 
@@ -223,8 +225,9 @@ namespace Terminaux.Reader
                     TermReaderState.currentHistoryPos = TermReaderState.history.Count;
                     settings.Suggestions = (_, _, _) => Array.Empty<string>();
 
-                    // Reset the CTRL + C state
+                    // Reset the CTRL + C state and the cursor visibility state
                     ConsoleWrapper.TreatCtrlCAsInput = ctrlCAsInput;
+                    ConsoleWrapper.CursorVisible = initialVisible;
                 }
                 states.Remove(readState);
                 return input;
