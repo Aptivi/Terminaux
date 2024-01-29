@@ -357,7 +357,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 });
                 ScreenTools.SetCurrent(screen);
             }
-            ScreenTools.CurrentScreen.AddBufferedPart("Informational box", infoBoxScreenPart);
+            ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxInputColor), infoBoxScreenPart);
             try
             {
                 int rightMargin = 0;
@@ -473,7 +473,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     , false);
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box");
+                ScreenTools.CurrentScreen.RemoveBufferedPart(nameof(InfoBoxInputColor));
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

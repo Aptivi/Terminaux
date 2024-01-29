@@ -370,7 +370,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 });
                 ScreenTools.SetCurrent(screen);
             }
-            ScreenTools.CurrentScreen.AddBufferedPart("Informational box", infoBoxScreenPart);
+            ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxSelectionMultipleColor), infoBoxScreenPart);
             try
             {
                 int currentSelection = selections.Any((ici) => ici.ChoiceDefault) ? selections.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
@@ -589,7 +589,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             finally
             {
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box");
+                ScreenTools.CurrentScreen.RemoveBufferedPart(nameof(InfoBoxSelectionMultipleColor));
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

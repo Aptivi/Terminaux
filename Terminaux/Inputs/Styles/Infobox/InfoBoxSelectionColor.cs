@@ -367,7 +367,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 });
                 ScreenTools.SetCurrent(screen);
             }
-            ScreenTools.CurrentScreen.AddBufferedPart("Informational box", infoBoxScreenPart);
+            ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxSelectionColor), infoBoxScreenPart);
             try
             {
                 // Modify the current selection according to the default
@@ -590,7 +590,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     , false);
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box");
+                ScreenTools.CurrentScreen.RemoveBufferedPart(nameof(InfoBoxSelectionColor));
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }
