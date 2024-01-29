@@ -38,12 +38,12 @@ namespace Terminaux.Colors.Interop
             if (drawingColor.IsEmpty)
                 return OurColor.Empty;
 
-            // Now, get the Drawing's RGB component and convert that to Terminaux's Color. Terminaux doesn't support
-            // Alpha at the moment, so we can't use the Alpha component.
+            // Now, get the Drawing's RGB component and convert that to Terminaux's Color.
             int r = drawingColor.R;
             int g = drawingColor.G;
             int b = drawingColor.B;
-            var color = new OurColor(r, g, b);
+            int a = drawingColor.A;
+            var color = new OurColor(r, g, b, new ColorSettings() { Opacity = a });
             return color;
         }
 
@@ -58,12 +58,12 @@ namespace Terminaux.Colors.Interop
             if (ourColor is null)
                 return DrawingColor.Empty;
 
-            // Now, get our color's RGB component and convert that to Drawing's Color. Alpha is assumed to be 100%
-            // as Terminaux doesn't support "transparency" yet.
-            int r = ourColor.RGB.R;
-            int g = ourColor.RGB.G;
-            int b = ourColor.RGB.B;
-            var color = DrawingColor.FromArgb(r, g, b);
+            // Now, get our color's RGB component and convert that to Drawing's Color.
+            int r = ourColor.RGB.originalRed;
+            int g = ourColor.RGB.originalGreen;
+            int b = ourColor.RGB.originalBlue;
+            int a = ourColor.RGB.originalAlpha;
+            var color = DrawingColor.FromArgb(a, r, g, b);
             return color;
         }
     }

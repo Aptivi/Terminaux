@@ -20,7 +20,6 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using Terminaux.Colors.Data;
 
 namespace Terminaux.Colors.Models
 {
@@ -30,6 +29,11 @@ namespace Terminaux.Colors.Models
     [DebuggerDisplay("RGB = {R};{G};{B}")]
     public class RedGreenBlue : IEquatable<RedGreenBlue>
     {
+        internal int originalRed = 0;
+        internal int originalGreen = 0;
+        internal int originalBlue = 0;
+        internal int originalAlpha = 255;
+
         /// <summary>
         /// The red color value [0 -> 255]
         /// </summary>
@@ -95,9 +99,9 @@ namespace Terminaux.Colors.Models
 
         internal RedGreenBlue(int r, int g, int b)
         {
-            R = r;
-            G = g;
-            B = b;
+            R = originalRed = r;
+            G = originalGreen = g;
+            B = originalBlue = b;
         }
 
         internal void FinalizeValues(ColorSettings settings)
@@ -134,6 +138,7 @@ namespace Terminaux.Colors.Models
             R = resultR;
             G = resultG;
             B = resultB;
+            originalAlpha = alpha;
         }
         #endregion
     }

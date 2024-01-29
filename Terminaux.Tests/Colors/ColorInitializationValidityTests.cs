@@ -32,6 +32,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
+        [TestMethod]
         [DataRow("#0F0F0F", true)]
         [DataRow("#0G0G0G", false)]
         [Description("Validity")]
@@ -54,6 +55,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
+        [TestMethod]
         [DataRow(26, true)]
         [DataRow(260, false)]
         [DataRow(-26, false)]
@@ -77,6 +79,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
+        [TestMethod]
         [DataRow(4, 4, 4, true)]
         [DataRow(400, 4, 4, false)]
         [DataRow(4, 400, 4, false)]
@@ -112,6 +115,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from RGB color specifier
         /// </summary>
+        [TestMethod]
         [DataRow("4;4;4", true)]
         [DataRow("400;4;4", false)]
         [DataRow("4;400;4", false)]
@@ -147,6 +151,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to check the color specifier syntax validity from hex
         /// </summary>
+        [TestMethod]
         [DataRow("#0F0F0F", true)]
         [DataRow("#0G0G0G", true)]
         [DataRow("#FFF", true)]
@@ -161,6 +166,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to check the color specifier syntax validity from color numbers
         /// </summary>
+        [TestMethod]
         [DataRow(26, true)]
         [DataRow(260, false)]
         [DataRow(-26, false)]
@@ -174,6 +180,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to check the color specifier syntax validity from RGB
         /// </summary>
+        [TestMethod]
         [DataRow(4, 4, 4, true)]
         [DataRow(400, 4, 4, true)]
         [DataRow(4, 400, 4, true)]
@@ -199,6 +206,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to check the color specifier syntax validity from RGB color specifier
         /// </summary>
+        [TestMethod]
         [DataRow("4;4;4", true)]
         [DataRow("400;4;4", true)]
         [DataRow("4;400;4", true)]
@@ -224,6 +232,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
+        [TestMethod]
         [DataRow("#0F0F0F", true)]
         [DataRow("#0G0G0G", false)]
         [DataRow("#FFF", true)]
@@ -238,6 +247,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
+        [TestMethod]
         [DataRow(26, true)]
         [DataRow(260, false)]
         [DataRow(-26, false)]
@@ -251,6 +261,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
+        [TestMethod]
         [DataRow(4, 4, 4, true)]
         [DataRow(400, 4, 4, false)]
         [DataRow(4, 400, 4, false)]
@@ -276,6 +287,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from RGB color specifier
         /// </summary>
+        [TestMethod]
         [DataRow("4;4;4", true)]
         [DataRow("400;4;4", false)]
         [DataRow("4;400;4", false)]
@@ -301,6 +313,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
+        [TestMethod]
         [DataRow("#0F0F0F", true)]
         [DataRow("#0G0G0G", false)]
         [DataRow("#FFF", true)]
@@ -324,6 +337,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
+        [TestMethod]
         [DataRow(26, true)]
         [DataRow(260, false)]
         [DataRow(-26, false)]
@@ -346,6 +360,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
+        [TestMethod]
         [DataRow(4, 4, 4, true)]
         [DataRow(400, 4, 4, false)]
         [DataRow(4, 400, 4, false)]
@@ -380,6 +395,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from RGB color specifier
         /// </summary>
+        [TestMethod]
         [DataRow("4;4;4", true)]
         [DataRow("400;4;4", false)]
         [DataRow("4;400;4", false)]
@@ -414,6 +430,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
+        [TestMethod]
         [DataRow("#0F0F0F", true)]
         [DataRow("#0G0G0G", false)]
         [DataRow("#FFF", true)]
@@ -428,6 +445,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
+        [TestMethod]
         [DataRow(26, true)]
         [DataRow(260, false)]
         [DataRow(-26, false)]
@@ -441,6 +459,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
+        [TestMethod]
         [DataRow(4, 4, 4, true)]
         [DataRow(400, 4, 4, false)]
         [DataRow(4, 400, 4, false)]
@@ -466,6 +485,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from RGB color specifier
         /// </summary>
+        [TestMethod]
         [DataRow("4;4;4", true)]
         [DataRow("400;4;4", false)]
         [DataRow("4;400;4", false)]

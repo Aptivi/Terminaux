@@ -33,6 +33,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from hex
         /// </summary>
+        [TestMethod]
         [DataRow("#0F0F0F", true)]
         [DataRow("#0G0G0G", false)]
         [Description("Querying")]
@@ -46,6 +47,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from color numbers
         /// </summary>
+        [TestMethod]
         [DataRow(26, true)]
         [DataRow(260, false)]
         [DataRow(-26, false)]
@@ -60,6 +62,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
+        [TestMethod]
         [DataRow(4, 4, 4, true)]
         [DataRow(400, 4, 4, false)]
         [DataRow(4, 400, 4, false)]
@@ -86,6 +89,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to parse the color from RGB
         /// </summary>
+        [TestMethod]
         [DataRow("4;4;4", true)]
         [DataRow("400;4;4", false)]
         [DataRow("4;400;4", false)]
@@ -112,6 +116,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to get the contrast color (NTSC)
         /// </summary>
+        [TestMethod]
         [DataRow("#EF4444", "#FFFFFF")]
         [DataRow("#FAA31B", "#000000")]
         [DataRow("#FFF000", "#000000")]
@@ -150,6 +155,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to get the contrast color (Half)
         /// </summary>
+        [TestMethod]
         [DataRow("#EF4444", "#000000")]
         [DataRow("#FAA31B", "#000000")]
         [DataRow("#FFF000", "#000000")]
@@ -188,6 +194,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to get the contrast color (NTSC)
         /// </summary>
+        [TestMethod]
         [DataRow("#EF4444", "#FFFFFF")]
         [DataRow("#FAA31B", "#000000")]
         [DataRow("#FFF000", "#000000")]
@@ -226,6 +233,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to get the contrast color (Half)
         /// </summary>
+        [TestMethod]
         [DataRow("#EF4444", "#000000")]
         [DataRow("#FAA31B", "#000000")]
         [DataRow("#FFF000", "#000000")]
@@ -264,6 +272,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to get the contrast color (Light)
         /// </summary>
+        [TestMethod]
         [DataRow("#EF4444", "#000000")]
         [DataRow("#FAA31B", "#000000")]
         [DataRow("#FFF000", "#000000")]
@@ -303,23 +312,36 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to convert from Color to Drawing.Color
         /// </summary>
-        [DataRow("#FFFFEE", "255;255;238")]
+        [TestMethod]
+        [DataRow("#FFFFEE", 255, "255;255;238 @ 255")]
+        [DataRow("#FFFFEE", 128, "255;255;238 @ 128")]
+        [DataRow("#FFFFEE", 64, "255;255;238 @ 64")]
+        [DataRow("#FFFFEE", 32, "255;255;238 @ 32")]
+        [DataRow("#FFFFEE", 16, "255;255;238 @ 16")]
+        [DataRow("#FFFFEE", 0, "255;255;238 @ 0")]
         [Description("Querying")]
-        public void TestConvertToDrawing(string specifier, string expected)
+        public void TestConvertToDrawing(string specifier, int alpha, string expected)
         {
-            var drawing = SystemColorConverter.ToDrawingColor(specifier);
-            string result = $"{drawing.R};{drawing.G};{drawing.B}";
+            var color = new Color(specifier, new ColorSettings() { Opacity = alpha });
+            var drawing = SystemColorConverter.ToDrawingColor(color);
+            string result = $"{drawing.R};{drawing.G};{drawing.B} @ {drawing.A}";
             result.ShouldBe(expected);
         }
 
         /// <summary>
         /// Tests trying to convert from Drawing.Color to Color
         /// </summary>
-        [DataRow(255, 255, 238, "255;255;238")]
+        [TestMethod]
+        [DataRow(255, 255, 238, 255, "255;255;238")]
+        [DataRow(255, 255, 238, 128, "128;128;119")]
+        [DataRow(255, 255, 238, 64, "64;64;59")]
+        [DataRow(255, 255, 238, 32, "32;32;29")]
+        [DataRow(255, 255, 238, 16, "16;16;14")]
+        [DataRow(255, 255, 238, 0, "0;0;0")]
         [Description("Querying")]
-        public void TestConvertFromDrawing(int r, int g, int b, string expected)
+        public void TestConvertFromDrawing(int r, int g, int b, int a, string expected)
         {
-            var drawing = System.Drawing.Color.FromArgb(r, g, b);
+            var drawing = System.Drawing.Color.FromArgb(a, r, g, b);
             var our = SystemColorConverter.FromDrawingColor(drawing);
             string result = our.ToString();
             result.ShouldBe(expected);
@@ -328,6 +350,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to convert from Color to Drawing.Color (null check)
         /// </summary>
+        [TestMethod]
         [DataRow("0;0;0")]
         [Description("Querying")]
         public void TestConvertToDrawingWithNull(string expected)
@@ -340,6 +363,7 @@ namespace Terminaux.Tests.Colors
         /// <summary>
         /// Tests trying to convert from Drawing.Color to Color (null check)
         /// </summary>
+        [TestMethod]
         [DataRow("0")]
         [Description("Querying")]
         public void TestConvertFromDrawingWithNull(string expected)
