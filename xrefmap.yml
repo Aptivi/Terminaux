@@ -2979,6 +2979,28 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.ColorId
   nameWithType: ConsoleColorData.ColorId
+- uid: Terminaux.Colors.Data.ConsoleColorData.Equals(System.Object)
+  name: Equals(object)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_Equals_System_Object_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.Equals(object)
+  fullName.vb: Terminaux.Colors.Data.ConsoleColorData.Equals(Object)
+  nameWithType: ConsoleColorData.Equals(object)
+  nameWithType.vb: ConsoleColorData.Equals(Object)
+- uid: Terminaux.Colors.Data.ConsoleColorData.Equals(Terminaux.Colors.Data.ConsoleColorData)
+  name: Equals(ConsoleColorData)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_Equals_Terminaux_Colors_Data_ConsoleColorData_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.Equals(Terminaux.Colors.Data.ConsoleColorData)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.Equals(Terminaux.Colors.Data.ConsoleColorData)
+  nameWithType: ConsoleColorData.Equals(ConsoleColorData)
+- uid: Terminaux.Colors.Data.ConsoleColorData.Equals*
+  name: Equals
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_Equals_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.Equals
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorData.Equals
+  nameWithType: ConsoleColorData.Equals
 - uid: Terminaux.Colors.Data.ConsoleColorData.GetColorData
   name: GetColorData()
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetColorData
@@ -2992,6 +3014,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.GetColorData
   nameWithType: ConsoleColorData.GetColorData
+- uid: Terminaux.Colors.Data.ConsoleColorData.GetHashCode
+  name: GetHashCode()
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetHashCode
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.GetHashCode
+  fullName: Terminaux.Colors.Data.ConsoleColorData.GetHashCode()
+  nameWithType: ConsoleColorData.GetHashCode()
+- uid: Terminaux.Colors.Data.ConsoleColorData.GetHashCode*
+  name: GetHashCode
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetHashCode_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.GetHashCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorData.GetHashCode
+  nameWithType: ConsoleColorData.GetHashCode
 - uid: Terminaux.Colors.Data.ConsoleColorData.HSL
   name: HSL
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_HSL
@@ -3162,6 +3197,44 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.Rgb.R
   nameWithType: ConsoleColorData.Rgb.R
+- uid: Terminaux.Colors.Data.ConsoleColorData.op_Equality(Terminaux.Colors.Data.ConsoleColorData,Terminaux.Colors.Data.ConsoleColorData)
+  name: operator ==(ConsoleColorData, ConsoleColorData)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_op_Equality_Terminaux_Colors_Data_ConsoleColorData_Terminaux_Colors_Data_ConsoleColorData_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.op_Equality(Terminaux.Colors.Data.ConsoleColorData,Terminaux.Colors.Data.ConsoleColorData)
+  name.vb: =(ConsoleColorData, ConsoleColorData)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.operator ==(Terminaux.Colors.Data.ConsoleColorData, Terminaux.Colors.Data.ConsoleColorData)
+  fullName.vb: Terminaux.Colors.Data.ConsoleColorData.=(Terminaux.Colors.Data.ConsoleColorData, Terminaux.Colors.Data.ConsoleColorData)
+  nameWithType: ConsoleColorData.operator ==(ConsoleColorData, ConsoleColorData)
+  nameWithType.vb: ConsoleColorData.=(ConsoleColorData, ConsoleColorData)
+- uid: Terminaux.Colors.Data.ConsoleColorData.op_Equality*
+  name: operator ==
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_op_Equality_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: Terminaux.Colors.Data.ConsoleColorData.operator ==
+  fullName.vb: Terminaux.Colors.Data.ConsoleColorData.=
+  nameWithType: ConsoleColorData.operator ==
+  nameWithType.vb: ConsoleColorData.=
+- uid: Terminaux.Colors.Data.ConsoleColorData.op_Inequality(Terminaux.Colors.Data.ConsoleColorData,Terminaux.Colors.Data.ConsoleColorData)
+  name: operator !=(ConsoleColorData, ConsoleColorData)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_op_Inequality_Terminaux_Colors_Data_ConsoleColorData_Terminaux_Colors_Data_ConsoleColorData_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.op_Inequality(Terminaux.Colors.Data.ConsoleColorData,Terminaux.Colors.Data.ConsoleColorData)
+  name.vb: <>(ConsoleColorData, ConsoleColorData)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.operator !=(Terminaux.Colors.Data.ConsoleColorData, Terminaux.Colors.Data.ConsoleColorData)
+  fullName.vb: Terminaux.Colors.Data.ConsoleColorData.<>(Terminaux.Colors.Data.ConsoleColorData, Terminaux.Colors.Data.ConsoleColorData)
+  nameWithType: ConsoleColorData.operator !=(ConsoleColorData, ConsoleColorData)
+  nameWithType.vb: ConsoleColorData.<>(ConsoleColorData, ConsoleColorData)
+- uid: Terminaux.Colors.Data.ConsoleColorData.op_Inequality*
+  name: operator !=
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_op_Inequality_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: Terminaux.Colors.Data.ConsoleColorData.operator !=
+  fullName.vb: Terminaux.Colors.Data.ConsoleColorData.<>
+  nameWithType: ConsoleColorData.operator !=
+  nameWithType.vb: ConsoleColorData.<>
 - uid: Terminaux.Colors.Data.ConsoleColors
   name: ConsoleColors
   href: api/Terminaux.Colors.Data.ConsoleColors.html
