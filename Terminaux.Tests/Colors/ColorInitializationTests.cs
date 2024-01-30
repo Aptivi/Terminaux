@@ -1950,7 +1950,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
 
             // Try to get the original of the original, and it'll fail.
-            Should.Throw(() => Debug.WriteLine(ColorInstance.RGB.OriginalRgb.OriginalRgb.ToString()), typeof(TerminauxException));
+            Should.Throw(() => Console.WriteLine(ColorInstance.RGB.OriginalRgb.OriginalRgb.ToString()), typeof(TerminauxException));
         }
     }
 }
