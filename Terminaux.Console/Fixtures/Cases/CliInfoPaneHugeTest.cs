@@ -20,6 +20,7 @@
 using Terminaux.ConsoleDemo.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.Interactive;
 using Terminaux.ResizeListener;
+using Textify.Data;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
@@ -33,6 +34,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             ConsoleResizeListener.StartResizeListener();
 
             // Start the demo TUI app
+            DataInitializer.Initialize();
             InteractiveTuiTools.OpenInteractiveTui(new CliInfoPaneHugeTestData());
         }
     }

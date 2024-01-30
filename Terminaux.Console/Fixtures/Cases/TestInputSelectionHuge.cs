@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
+using Textify.Data;
 using Textify.NameGen;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -29,6 +30,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "TestInputSelectionHuge";
         public void RunFixture()
         {
+            DataInitializer.Initialize();
             var choices = new List<InputChoiceInfo>();
             var names = NameGenerator.FindFirstNames("");
             for (int i = 0; i < names.Length; i++)

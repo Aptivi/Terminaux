@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.Data;
 using Textify.NameGen;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -29,6 +30,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "TestListWriterHuge";
         public void RunFixture()
         {
+            DataInitializer.Initialize();
             var choices = new List<string>();
             var arrayChoices = new List<string[]>();
             var names = NameGenerator.FindFirstNames("");
