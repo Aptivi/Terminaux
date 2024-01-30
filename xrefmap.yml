@@ -7296,6 +7296,19 @@ references:
   commentId: T:Terminaux.Colors.Models.RedGreenBlue
   fullName: Terminaux.Colors.Models.RedGreenBlue
   nameWithType: RedGreenBlue
+- uid: Terminaux.Colors.Models.RedGreenBlue.A
+  name: A
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_A
+  commentId: P:Terminaux.Colors.Models.RedGreenBlue.A
+  fullName: Terminaux.Colors.Models.RedGreenBlue.A
+  nameWithType: RedGreenBlue.A
+- uid: Terminaux.Colors.Models.RedGreenBlue.A*
+  name: A
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_A_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.A
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.A
+  nameWithType: RedGreenBlue.A
 - uid: Terminaux.Colors.Models.RedGreenBlue.B
   name: B
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_B
@@ -7383,6 +7396,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedGreenBlue.GetHashCode
   nameWithType: RedGreenBlue.GetHashCode
+- uid: Terminaux.Colors.Models.RedGreenBlue.OriginalRgb
+  name: OriginalRgb
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_OriginalRgb
+  commentId: P:Terminaux.Colors.Models.RedGreenBlue.OriginalRgb
+  fullName: Terminaux.Colors.Models.RedGreenBlue.OriginalRgb
+  nameWithType: RedGreenBlue.OriginalRgb
+- uid: Terminaux.Colors.Models.RedGreenBlue.OriginalRgb*
+  name: OriginalRgb
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_OriginalRgb_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.OriginalRgb
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.OriginalRgb
+  nameWithType: RedGreenBlue.OriginalRgb
 - uid: Terminaux.Colors.Models.RedGreenBlue.R
   name: R
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_R
