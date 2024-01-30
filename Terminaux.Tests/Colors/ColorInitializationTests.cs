@@ -24,6 +24,8 @@ using DrawingColor = System.Drawing.Color;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
+using System.Diagnostics;
+using Terminaux.Base;
 
 namespace Terminaux.Tests.Colors
 {
@@ -1937,12 +1939,18 @@ namespace Terminaux.Tests.Colors
             ColorInstance.RGB.R.ShouldBe(47);
             ColorInstance.RGB.G.ShouldBe(0);
             ColorInstance.RGB.B.ShouldBe(31);
-            ColorInstance.RGB.originalAlpha.ShouldBe(128);
+            ColorInstance.RGB.OriginalRgb.R.ShouldBe(94);
+            ColorInstance.RGB.OriginalRgb.G.ShouldBe(0);
+            ColorInstance.RGB.OriginalRgb.B.ShouldBe(63);
+            ColorInstance.RGB.A.ShouldBe(128);
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
             ColorInstance.Hex.ShouldBe("#2F001F");
             ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
             ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+
+            // Try to get the original of the original, and it'll fail.
+            Should.Throw(() => Debug.WriteLine(ColorInstance.RGB.OriginalRgb.OriginalRgb.ToString()), typeof(TerminauxException));
         }
     }
 }

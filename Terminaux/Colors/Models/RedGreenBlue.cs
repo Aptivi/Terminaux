@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Terminaux.Base;
 
 namespace Terminaux.Colors.Models
 {
@@ -33,6 +34,7 @@ namespace Terminaux.Colors.Models
         internal int originalGreen = 0;
         internal int originalBlue = 0;
         internal int originalAlpha = 255;
+        internal RedGreenBlue originalRgb = null;
 
         /// <summary>
         /// The red color value [0 -> 255]
@@ -61,6 +63,24 @@ namespace Terminaux.Colors.Models
         /// </summary>
         public double BNormalized =>
             B / 255d;
+        /// <summary>
+        /// The original RGB values (always opaque)
+        /// </summary>
+        public RedGreenBlue OriginalRgb
+        {
+            get
+            {
+                if (R == originalRed && G == originalGreen && B == originalBlue && A == 255)
+                    throw new TerminauxException("This color is already an original color.");
+                originalRgb ??= new(originalRed, originalGreen, originalBlue);
+                return originalRgb;
+            }
+        }
+        /// <summary>
+        /// The alpha value indicating transparency applied to the <see cref="OriginalRgb"/> value.
+        /// </summary>
+        public int A =>
+            originalAlpha;
 
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
