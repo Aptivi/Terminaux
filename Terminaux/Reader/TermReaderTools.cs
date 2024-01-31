@@ -188,15 +188,18 @@ namespace Terminaux.Reader
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
             string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
-            if (incompleteSentences.Length > ConsoleWrapper.BufferHeight || renderedText.Length - 1 == GetMaximumInputLength(state))
+
+            // Check to see if we're at the end of the maximum input length
+            int maxLength = GetMaximumInputLength(state);
+            if (renderedText.Length - 1 >= maxLength)
             {
-                var intermediate = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
-                (int offset, int take) = GetRenderedStringOffsets(intermediate, state);
-                string[] intermediateSplit = intermediate.Skip(offset).Take(take).ToArray();
+                (int offset, int take) = GetRenderedStringOffsets(incompleteSentences, state);
+                string[] intermediateSplit = incompleteSentences.Skip(offset).Take(take).ToArray();
                 string intermediateText = string.Join("", intermediateSplit);
                 renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, intermediateText.Length) : intermediateText;
-                incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin);
             }
+
+            // Now, render the input.
             if (state.OneLineWrap)
             {
                 // We're in the one-line wrap mode!
@@ -215,6 +218,7 @@ namespace Terminaux.Reader
             }
             else
             {
+                // We're in the multi-line wrap mode!
                 incompleteSentences = TextTools.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
                 int spacesLength = longestSentenceLength - state.RightMargin - incompleteSentences[incompleteSentences.Length - 1].Length - (incompleteSentences.Length == 1 ? state.InputPromptLastLineLength : 0) + 1;
                 if (spacesLength < 0)
@@ -257,10 +261,7 @@ namespace Terminaux.Reader
             return finalRenderedString;
         }
 
-        internal static (int offset, int take) GetRenderedStringOffsets(string[] incompleteSentences, TermReaderState state) =>
-            GetRenderedStringOffsets(incompleteSentences, state.CurrentTextPos);
-
-        internal static (int offset, int take) GetRenderedStringOffsets(string[] incompleteSentences, int targetIndex)
+        internal static (int offset, int take) GetRenderedStringOffsets(string[] incompleteSentences, TermReaderState state)
         {
             // Deal with trying to count the characters incrementally for each incomplete sentence until we find an index
             // that we want, then give the rendered string back.
@@ -270,7 +271,7 @@ namespace Terminaux.Reader
             List<string> rendered = [];
             foreach (string sentence in incompleteSentences)
             {
-                bool incrementSkip = currentIndex < targetIndex;
+                bool incrementSkip = currentIndex < state.CurrentTextPos;
                 currentIndex += sentence.Length;
                 take++;
                 if (take > ConsoleWrapper.BufferHeight)
