@@ -20,6 +20,7 @@
 using System;
 using Terminaux.Colors;
 using Terminaux.Reader;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Terminaux.Base
@@ -487,7 +488,7 @@ namespace Terminaux.Base
             {
                 int wrapTop = top + i;
                 string textWrapped = wrapped[i];
-                Write(textWrapped);
+                TextWriterColor.WritePlain(textWrapped, false);
                 if (i + 1 < wrapped.Length)
                 {
                     WriteLine();

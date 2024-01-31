@@ -91,6 +91,15 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 try
                 {
+                    // Get the filtered positions first.
+                    int FilteredLeft = default, FilteredTop = default;
+                    if (ConsolePlatform.IsRunningFromMono())
+                    {
+                        var pos = ConsoleExtensions.GetFilteredPositions(Text, Line, vars);
+                        FilteredLeft = pos.Item1;
+                        FilteredTop = pos.Item2;
+                    }
+
                     // Actually write
                     if (Line)
                     {
@@ -123,6 +132,10 @@ namespace Terminaux.Writer.ConsoleWriters
                         else
                             ConsoleWrapper.Write(Text, settings);
                     }
+
+                    // Return to the processed position
+                    if (ConsolePlatform.IsRunningFromMono())
+                        ConsoleWrapper.SetCursorPosition(FilteredLeft, FilteredTop);
                 }
                 catch (Exception ex)
                 {
