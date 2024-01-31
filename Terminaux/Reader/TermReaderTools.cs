@@ -160,8 +160,6 @@ namespace Terminaux.Reader
             if (!state.CanInsert)
                 return;
 
-            // Check for maximum length
-
             // Get the longest sentence width and insert the character
             if (append)
                 state.CurrentText.Append(newText);
@@ -217,7 +215,8 @@ namespace Terminaux.Reader
             }
             else
             {
-                int spacesLength = longestSentenceLength - (state.inputPromptLeft + state.settings.LeftMargin) - incompleteSentences[incompleteSentences.Length - 1].Length;
+                incompleteSentences = TextTools.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
+                int spacesLength = longestSentenceLength - state.RightMargin - incompleteSentences[incompleteSentences.Length - 1].Length - (incompleteSentences.Length == 1 ? state.InputPromptLastLineLength : 0) + 1;
                 if (spacesLength < 0)
                     spacesLength = 0;
                 if (spaces > 0)

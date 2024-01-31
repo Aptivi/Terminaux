@@ -483,6 +483,7 @@ namespace Terminaux.Base
         private static void WriteNonStandalone(string text, TermReaderSettings settings)
         {
             int top = settings.state.inputPromptTop;
+            int topBegin = settings.state.inputPromptTopBegin;
             var wrapped = TextTools.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLeft - settings.state.LeftMargin);
             for (int i = 0; i < wrapped.Length; i++)
             {
@@ -497,11 +498,13 @@ namespace Terminaux.Base
                 if (wrapTop >= BufferHeight && !settings.state.writingPrompt && top > 0)
                 {
                     top--;
+                    topBegin--;
                     settings.state.currentCursorPosTop--;
                     CursorLeft = settings.LeftMargin;
                 }
             }
             settings.state.inputPromptTop = top;
+            settings.state.inputPromptTopBegin = topBegin;
         }
 
         private static void WriteNonStandalone(string text, TermReaderSettings settings, params object[] args)
