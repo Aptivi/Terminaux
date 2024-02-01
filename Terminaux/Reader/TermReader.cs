@@ -146,7 +146,7 @@ namespace Terminaux.Reader
                     readState.settings.state = readState;
                     readState.inputPromptText = inputPrompt;
                     readState.inputPromptLeftBegin = ConsoleWrapper.CursorLeft;
-                    readState.inputPromptTopBegin = ConsoleWrapper.CursorTop;
+                    readState.inputPromptTopBegin = ConsoleWrapper.CursorTop - (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1 ? readState.InputPromptHeight - 1 : 0);
                     readState.writingPrompt = true;
                     TextWriterColor.WriteForReader(inputPrompt, settings, false);
                     readState.writingPrompt = false;
