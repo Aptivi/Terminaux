@@ -219,8 +219,8 @@ namespace Terminaux.Reader
             else
             {
                 // We're in the multi-line wrap mode!
-                incompleteSentences = TextTools.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
-                int spacesLength = longestSentenceLength - state.RightMargin - incompleteSentences[incompleteSentences.Length - 1].Length - (incompleteSentences.Length == 1 ? state.InputPromptLastLineLength : 0) + 1;
+                incompleteSentences = TextTools.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
+                int spacesLength = longestSentenceLength - state.RightMargin - incompleteSentences[incompleteSentences.Length - 1].Length - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0) + 1;
                 if (spacesLength < 0)
                     spacesLength = 0;
                 if (spaces > 0)
