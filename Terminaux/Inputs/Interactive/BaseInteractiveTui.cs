@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using EnumMagic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -78,8 +79,8 @@ namespace Terminaux.Inputs.Interactive
         /// <inheritdoc/>
         public virtual void LastOnOverflow()
         {
-            int primaryCount = InteractiveTuiTools.CountElements(PrimaryDataSource);
-            int secondaryCount = InteractiveTuiTools.CountElements(SecondaryDataSource);
+            int primaryCount = PrimaryDataSource.Length();
+            int secondaryCount = SecondaryDataSource.Length();
             if (InteractiveTuiStatus.FirstPaneCurrentSelection > primaryCount)
                 InteractiveTuiStatus.FirstPaneCurrentSelection = primaryCount;
             if (InteractiveTuiStatus.SecondPaneCurrentSelection > secondaryCount)

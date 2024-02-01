@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using EnumMagic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -60,7 +61,7 @@ namespace Terminaux.Inputs.Interactive
 
                 // First, check to see if the interactive TUI has no data source
                 if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
-                    CountElements(interactiveTui.PrimaryDataSource) == 0 && CountElements(interactiveTui.SecondaryDataSource) == 0 && !interactiveTui.AcceptsEmptyData)
+                    interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0 && !interactiveTui.AcceptsEmptyData)
                 {
                     TextWriterColor.Write("The interactive TUI {0} doesn't contain any data source. This program can't continue.", interactiveTui.GetType().Name);
                     TextWriterColor.Write();
@@ -150,7 +151,7 @@ namespace Terminaux.Inputs.Interactive
             var data = InteractiveTuiStatus.CurrentPane == 2 ?
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
-            int elements = CountElements(data);
+            int elements = data.Length();
             if (pos < 1)
                 pos = 1;
             if (pos > elements)
@@ -161,70 +162,6 @@ namespace Terminaux.Inputs.Interactive
                 InteractiveTuiStatus.SecondPaneCurrentSelection = pos;
             else
                 InteractiveTuiStatus.FirstPaneCurrentSelection = pos;
-        }
-
-        internal static int CountElements(IEnumerable enumerable)
-        {
-            // First, focus on the known types
-            if (enumerable is Array arrayEnumerable)
-            {
-                // It's an array!
-                return arrayEnumerable.Length;
-            }
-            else if (enumerable is IList listEnumerable)
-            {
-                // It's a list!
-                return listEnumerable.Count;
-            }
-            else if (enumerable is IDictionary dictionaryEnumerable)
-            {
-                // It's a dictionary!
-                return dictionaryEnumerable.Count;
-            }
-            else if (enumerable is ICollection collectionEnumerable)
-            {
-                // It's a collection!
-                return collectionEnumerable.Count;
-            }
-
-            // We're in the unknown IEnumerable.
-            var generic = enumerable.OfType<object>();
-            return generic.Count();
-        }
-
-        internal static object GetElementFromIndex(IEnumerable enumerable, int index)
-        {
-            if (index < 0)
-                return null;
-
-            // First, focus on the known types
-            if (enumerable is Array arrayEnumerable)
-            {
-                // It's an array!
-                return arrayEnumerable.GetValue(index);
-            }
-            else if (enumerable is IList listEnumerable)
-            {
-                // It's a list!
-                return listEnumerable[index];
-            }
-            else if (enumerable is IDictionary dictionaryEnumerable)
-            {
-                // It's a dictionary!
-                var keys = new object[dictionaryEnumerable.Count];
-                dictionaryEnumerable.Keys.CopyTo(keys, 0);
-                var key = keys[index];
-                return dictionaryEnumerable[key];
-            }
-            else if (enumerable is ICollection collectionEnumerable)
-            {
-                var collection = collectionEnumerable.OfType<object>();
-                return collection.ElementAt(index);
-            }
-
-            // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
-            var generic = enumerable.OfType<object>();
-            return generic.ElementAt(index);
         }
 
         private static void DrawInteractiveTui(BaseInteractiveTui interactiveTui)
@@ -374,7 +311,7 @@ namespace Terminaux.Inputs.Interactive
 
             // Get how many data are there in the chosen data source
             var data = paneNum == 2 ? interactiveTui.SecondaryDataSource : interactiveTui.PrimaryDataSource;
-            int dataCount = CountElements(data);
+            int dataCount = data.Length();
 
             // Render the pane right away
             part.AddDynamicText(() =>
@@ -396,8 +333,7 @@ namespace Terminaux.Inputs.Interactive
                     object dataObject = null;
                     if (finalIndex <= dataCount - 1)
                     {
-                        // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
-                        dataObject = GetElementFromIndex(data, startIndex + i);
+                        dataObject = data.GetElementFromIndex(startIndex + i);
 
                         // Render an entry
                         var finalForeColor = finalIndex == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemForeColor : InteractiveTuiStatus.PaneItemForeColor;
@@ -459,12 +395,12 @@ namespace Terminaux.Inputs.Interactive
                 var data = InteractiveTuiStatus.CurrentPane == 2 ?
                            interactiveTui.SecondaryDataSource :
                            interactiveTui.PrimaryDataSource;
-                int dataCount = CountElements(data);
+                int dataCount = data.Length();
 
                 // Populate selected data
                 if (dataCount > 0)
                 {
-                    object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
+                    object selectedData = data.GetElementFromIndex(paneCurrentSelection - 1);
                     Debug.Assert(selectedData is not null,
                         "attempted to render info about null data");
                     finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
@@ -534,7 +470,7 @@ namespace Terminaux.Inputs.Interactive
             var data = InteractiveTuiStatus.CurrentPane == 2 ?
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
-            object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
+            object selectedData = data.GetElementFromIndex(paneCurrentSelection - 1);
             interactiveTui.RenderStatus(selectedData);
 
             // Now, write info
@@ -563,11 +499,11 @@ namespace Terminaux.Inputs.Interactive
             var data = InteractiveTuiStatus.CurrentPane == 2 ?
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
-            int dataCount = CountElements(data);
+            int dataCount = data.Length();
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
             // Populate selected data
-            object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
+            object selectedData = data.GetElementFromIndex(paneCurrentSelection - 1);
 
             // Wait for key
             ConsoleKeyInfo pressedKey;
@@ -665,9 +601,9 @@ namespace Terminaux.Inputs.Interactive
 
         private static void CheckSelectionForUnderflow(BaseInteractiveTui interactiveTui)
         {
-            if (InteractiveTuiStatus.FirstPaneCurrentSelection <= 0 && CountElements(interactiveTui.PrimaryDataSource) > 0)
+            if (InteractiveTuiStatus.FirstPaneCurrentSelection <= 0 && interactiveTui.PrimaryDataSource.Length() > 0)
                 InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
-            if (InteractiveTuiStatus.SecondPaneCurrentSelection <= 0 && CountElements(interactiveTui.SecondaryDataSource) > 0)
+            if (InteractiveTuiStatus.SecondPaneCurrentSelection <= 0 && interactiveTui.SecondaryDataSource.Length() > 0)
                 InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
         }
 
