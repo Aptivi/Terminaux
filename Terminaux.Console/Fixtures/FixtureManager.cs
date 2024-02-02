@@ -131,9 +131,10 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new TestPresentationRequired(),
             new TestPresentationKioskRequired(),
 
-            // Misc
+            // Console
             new ConsoleSizeCheck(),
             new ConsoleCheck(),
+            new TestCursorStyles(),
         ];
 
         internal static IFixture GetFixtureFromName(string name)

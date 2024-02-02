@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
@@ -60,9 +61,6 @@ namespace Terminaux.Base
         internal static Action<string> actionWriteLine1 = WriteLine;
         internal static Action<string, object[]> actionWriteLine2 = WriteLine;
         internal static Action actionWriteLine = WriteLine;
-
-        // Some default variables
-        private static bool cursorVisible = true;
 
         /// <summary>
         /// Is the console a dumb console?
@@ -406,17 +404,8 @@ namespace Terminaux.Base
 
         private static bool CursorVisible
         {
-            get => cursorVisible;
-            set
-            {
-                if (!IsDumb)
-                {
-                    // We can't call Get accessor of the primary CursorVisible since this is Windows only, so we have this decoy variable
-                    // to make it work on Linux, Android, and macOS.
-                    cursorVisible = value;
-                    Console.CursorVisible = value;
-                }
-            }
+            get => ConsoleCursor.CursorVisible;
+            set => ConsoleCursor.CursorVisible = value;
         }
 
         private static bool TreatCtrlCAsInput
