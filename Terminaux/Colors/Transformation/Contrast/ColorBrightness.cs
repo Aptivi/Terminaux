@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Colors
+namespace Terminaux.Colors.Transformation.Contrast
 {
     /// <summary>
     /// Color brightness enumeration

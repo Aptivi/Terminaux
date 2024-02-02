@@ -22,6 +22,7 @@ using Shouldly;
 using System.Diagnostics;
 using Terminaux.Colors;
 using Terminaux.Colors.Interop;
+using Terminaux.Colors.Transformation.Contrast;
 
 namespace Terminaux.Tests.Colors
 {

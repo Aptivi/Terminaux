@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 
-namespace Terminaux.Colors
+namespace Terminaux.Colors.Transformation.Contrast
 {
     /// <summary>
     /// Color contrast tools
@@ -48,7 +48,7 @@ namespace Terminaux.Colors
             int r = color.RGB.R;
             int g = color.RGB.G;
             int b = color.RGB.B;
-            double lumaInfo = ((r * (0.299d * 1000)) + (g * (0.587d * 1000)) + (b * (0.114d * 1000))) / 1000;
+            double lumaInfo = (r * (0.299d * 1000) + g * (0.587d * 1000) + b * (0.114d * 1000)) / 1000;
             return lumaInfo >= 128 ? black : white;
         }
 

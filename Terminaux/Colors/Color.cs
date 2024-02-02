@@ -27,6 +27,7 @@ using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Models.Parsing;
 using Terminaux.Colors.Interop;
+using Terminaux.Colors.Transformation.Contrast;
 
 namespace Terminaux.Colors
 {

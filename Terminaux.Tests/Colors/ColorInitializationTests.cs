@@ -26,6 +26,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Colors.Transformation;
 using System.Diagnostics;
 using Terminaux.Base;
+using Terminaux.Colors.Transformation.Contrast;
 
 namespace Terminaux.Tests.Colors
 {
