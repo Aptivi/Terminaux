@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Textify.General;
 using Textify.Sequences.Tools;
 using System.Diagnostics;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -114,7 +115,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             // Write a character individually
                             if (MessageParagraph[i] != '\n')
                             {
-                                string bufferedChar = ConsoleExtensions.BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx, out bool isVtSequence);
+                                string bufferedChar = ConsolePositioning.BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx, out bool isVtSequence);
                                 buffered.Append(bufferedChar);
                                 if (!isVtSequence)
                                     pos += bufferedChar.Length;
@@ -296,7 +297,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
 
                     // Reset the colors
-                    ConsoleExtensions.ResetColors();
+                    ColorTools.ResetColors();
                 }
                 catch (Exception ex)
                 {

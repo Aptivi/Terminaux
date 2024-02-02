@@ -354,6 +354,33 @@ namespace Terminaux.Colors
             }
         }
 
+        /// <summary>
+        /// Resets the console colors without clearing screen
+        /// </summary>
+        public static void ResetColors()
+        {
+            ResetForeground();
+            ResetBackground();
+        }
+
+        /// <summary>
+        /// Resets the foreground color without clearing screen
+        /// </summary>
+        public static void ResetForeground()
+        {
+            ConsoleWrapper.Write($"{Convert.ToChar(0x1B)}[39m");
+            currentForegroundColor = ConsoleColor.Gray;
+        }
+
+        /// <summary>
+        /// Resets the background color without clearing screen
+        /// </summary>
+        public static void ResetBackground()
+        {
+            ConsoleWrapper.Write($"{Convert.ToChar(0x1B)}[49m");
+            currentBackgroundColor = ConsoleColor.Black;
+        }
+
         internal static string GetColorIdStringFrom(ConsoleColors colorDef) =>
             GetColorIdStringFrom((int)colorDef);
 

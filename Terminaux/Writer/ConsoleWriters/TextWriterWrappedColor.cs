@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Textify.Sequences.Tools;
 using System.Diagnostics;
 using Terminaux.Inputs;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -124,7 +125,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             }
                             if (bail)
                                 break;
-                            buffered.Append(ConsoleExtensions.BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));
+                            buffered.Append(ConsolePositioning.BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));
                         }
                         if (!bail && idx < sentences.Length - 1)
                         {
@@ -177,7 +178,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     WriteWrappedPlain(Text, Line, vars);
 
                     // Reset the colors
-                    ConsoleExtensions.ResetColors();
+                    ColorTools.ResetColors();
                 }
                 catch (Exception ex)
                 {

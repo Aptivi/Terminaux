@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Textify.General;
 using Textify.Sequences.Tools;
@@ -61,7 +62,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         Thread.Sleep((int)Math.Round(MsEachLetter));
 
                         // Write a character individually
-                        ConsoleWrapper.Write(ConsoleExtensions.BufferChar(msg, sequences, ref i, ref vtSeqIdx, out _));
+                        ConsoleWrapper.Write(ConsolePositioning.BufferChar(msg, sequences, ref i, ref vtSeqIdx, out _));
                     }
 
                     // If we're writing a new line, write it
@@ -109,7 +110,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
 
                     // Reset the colors
-                    ConsoleExtensions.ResetColors();
+                    ColorTools.ResetColors();
                 }
                 catch (Exception ex)
                 {

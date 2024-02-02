@@ -26,6 +26,7 @@ using System.Diagnostics;
 using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -330,7 +331,7 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Fill the progress
                 int MaximumHeight = ConsoleWrapper.WindowHeight - FinalHeightOffset;
-                int ProgressFilled = ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
+                int ProgressFilled = ConsoleMisc.PercentRepeatTargeted((int)Math.Round(Progress), 100, MaximumHeight);
 
                 // Draw the border
                 StringBuilder progBuilder = new();

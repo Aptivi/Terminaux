@@ -25,6 +25,7 @@ using System.Diagnostics;
 using Textify.General;
 using Textify.Sequences.Builder.Types;
 using Textify.Sequences.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -369,7 +370,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             // Write a character individually
                             if (MessageParagraph[i] != '\n')
                             {
-                                string bufferedChar = ConsoleExtensions.BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx, out bool isVtSequence);
+                                string bufferedChar = ConsolePositioning.BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx, out bool isVtSequence);
                                 buffered.Append(bufferedChar);
                                 if (!isVtSequence)
                                     pos += bufferedChar.Length;

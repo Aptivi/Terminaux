@@ -20,7 +20,7 @@
 using System;
 using System.IO;
 using System.Text;
-using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -119,7 +119,7 @@ namespace Terminaux.Writer.MiscWriters
         public static void PrintLineWithHandle(string Filename, int LineNumber, int startPos, int endPos, Color color)
         {
             // Read the contents
-            Filename = ConsoleExtensions.NeutralizePath(Filename, Environment.CurrentDirectory);
+            Filename = ConsolePositioning.NeutralizePath(Filename, Environment.CurrentDirectory);
             var FileContents = File.ReadAllLines(Filename);
 
             // Do the job
@@ -222,7 +222,7 @@ namespace Terminaux.Writer.MiscWriters
         public static string RenderLineWithHandle(string Filename, int LineNumber, int startPos, int endPos, Color color)
         {
             // Read the contents
-            Filename = ConsoleExtensions.NeutralizePath(Filename, Environment.CurrentDirectory);
+            Filename = ConsolePositioning.NeutralizePath(Filename, Environment.CurrentDirectory);
             var FileContents = File.ReadAllLines(Filename);
 
             // Do the job

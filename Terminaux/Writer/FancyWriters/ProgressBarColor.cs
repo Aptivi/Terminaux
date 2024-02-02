@@ -26,6 +26,7 @@ using System.Diagnostics;
 using Terminaux.Base;
 using Textify.Sequences.Builder.Types;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -360,8 +361,8 @@ namespace Terminaux.Writer.FancyWriters
 
                 // Draw the progress bar
                 int times = Targeted ?
-                    ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
-                    ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
+                    ConsoleMisc.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
+                    ConsoleMisc.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
                 if (useColor)
                     progBuilder.Append(ProgressColor.VTSequenceBackground);

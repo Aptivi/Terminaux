@@ -25,6 +25,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
@@ -235,7 +236,7 @@ namespace Terminaux.Inputs.Styles.Selection
                             bool AltAnswer = AnswerIndex >= altAnswersFirstIdx;
 
                             // Check to see if we're out of bounds
-                            var clear = ConsoleExtensions.GetClearLineToRightSequence();
+                            var clear = ConsoleClearing.GetClearLineToRightSequence();
                             if (AnswerIndex >= AllAnswers.Count)
                             {
                                 // Write an empty entry that clears the line

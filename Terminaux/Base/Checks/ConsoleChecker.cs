@@ -23,6 +23,7 @@ using System.Reflection;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.TermInfo;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Base.Checks
 {
@@ -144,7 +145,7 @@ namespace Terminaux.Base.Checks
                 return termInfo.MaxColors >= 256;
             }
             else
-                return ConsoleExtensions.CheckForConHostSequenceSupport() == 7;
+                return ConsolePositioning.CheckForConHostSequenceSupport() == 7;
         }
 
         /// <summary>
@@ -167,8 +168,8 @@ namespace Terminaux.Base.Checks
                     // via the global configuration options, filtering the result as necessary.
                     string shellPath = "/bin/sh";
                     int exitCode = -1;
-                    ConsoleExtensions.FileExistsInPath("sh", ref shellPath);
-                    string output = ConsoleExtensions.ExecuteProcessToString(shellPath, "-c \"tmux show-options -v -g status | sed 's/on/1/g' | sed 's/off/0/g'\"", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exitCode, false);
+                    ConsolePositioning.FileExistsInPath("sh", ref shellPath);
+                    string output = ConsolePositioning.ExecuteProcessToString(shellPath, "-c \"tmux show-options -v -g status | sed 's/on/1/g' | sed 's/off/0/g'\"", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exitCode, false);
 
                     // If we couldn't get this variable, assume that the status height is 1.
                     if (exitCode == 0)

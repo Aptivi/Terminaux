@@ -20,6 +20,7 @@
 using System;
 using System.Diagnostics;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Reader;
 
@@ -95,7 +96,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     int FilteredLeft = default, FilteredTop = default;
                     if (ConsolePlatform.IsRunningFromMono())
                     {
-                        var pos = ConsoleExtensions.GetFilteredPositions(Text, Line, vars);
+                        var pos = ConsolePositioning.GetFilteredPositions(Text, Line, vars);
                         FilteredLeft = pos.Item1;
                         FilteredTop = pos.Item2;
                     }
@@ -276,7 +277,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     WritePlain(Text, settings, Line, vars);
 
                     // Reset the colors
-                    ConsoleExtensions.ResetColors();
+                    ColorTools.ResetColors();
                 }
                 catch (Exception ex)
                 {

@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
@@ -38,7 +38,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
                 TextWriterColor.WriteColor("Color {0} [{1}]", true, colorInstance, vars: [colorInstance.PlainSequence, colorInstance.PlainSequenceTrueColor]);
                 TextWriterColor.Write("Press any key to reset all.");
                 Input.DetectKeypress();
-                ConsoleExtensions.ResetAll();
+                ConsoleClearing.ResetAll();
                 TextWriterColor.Write("Congrats! You've reset the whole console!");
             }
         }

@@ -19,7 +19,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Textify.Sequences.Builder;
 
 namespace Terminaux.Tests.Base
@@ -35,7 +35,7 @@ namespace Terminaux.Tests.Base
         [TestMethod]
         [Description("Querying")]
         public void TestPercentRepeatTargeted() =>
-            ConsoleExtensions.PercentRepeatTargeted(25, 200, 100).ShouldBe(12);
+            ConsoleMisc.PercentRepeatTargeted(25, 200, 100).ShouldBe(12);
 
         /// <summary>
         /// Tests filtering the VT sequences that matches the regex
@@ -46,8 +46,8 @@ namespace Terminaux.Tests.Base
         {
             char BellChar = VtSequenceBasicChars.BellChar;
             char EscapeChar = VtSequenceBasicChars.EscapeChar;
-            ConsoleExtensions.FilterVTSequences($"Hello!{EscapeChar}[38;5;43m").ShouldBe("Hello!");
-            ConsoleExtensions.FilterVTSequences($"{EscapeChar}]0;This is the title{BellChar}Hello!").ShouldBe("Hello!");
+            ConsoleMisc.FilterVTSequences($"Hello!{EscapeChar}[38;5;43m").ShouldBe("Hello!");
+            ConsoleMisc.FilterVTSequences($"{EscapeChar}]0;This is the title{BellChar}Hello!").ShouldBe("Hello!");
         }
 
     }

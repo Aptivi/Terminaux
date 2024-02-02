@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.ConsoleDemo.Fixtures;
 using Terminaux.ResizeListener;
 using Terminaux.Writer.ConsoleWriters;
@@ -32,7 +32,7 @@ namespace Terminaux.ConsoleDemo
             ConsoleResizeListener.StartResizeListener();
 
             // Initialize sequences for Windows
-            ConsoleExtensions.InitializeSequences();
+            ConsolePositioning.InitializeSequences();
 
             // Get the fixture name from argument and run it
             string chosenFixture = args.Length == 0 ? "Prompt" : args[0];

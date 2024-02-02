@@ -26,6 +26,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
@@ -480,7 +481,7 @@ namespace Terminaux.Inputs.Interactive
                 builder.Append(InteractiveTuiStatus.ForegroundColor.VTSequenceForeground);
                 builder.Append(InteractiveTuiStatus.BackgroundColor.VTSequenceBackground);
                 builder.Append(TextWriterWhereColor.RenderWherePlain(InteractiveTuiStatus.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0));
-                builder.Append(ConsoleExtensions.GetClearLineToRightSequence());
+                builder.Append(ConsoleClearing.GetClearLineToRightSequence());
                 return builder.ToString();
             });
             interactiveTui.screen.AddBufferedPart($"Interactive TUI - Status - {interactiveTui.GetType().Name}", part);

@@ -30,14 +30,13 @@ using Terminaux.Writer.ConsoleWriters;
 using Textify.Sequences.Builder;
 using Textify.Sequences.Tools;
 using Textify.General;
-using Terminaux.Colors;
 
-namespace Terminaux.Base
+namespace Terminaux.Base.Extensions
 {
     /// <summary>
-    /// Additional routines for the console
+    /// Console positioning tools
     /// </summary>
-    public static class ConsoleExtensions
+    public static class ConsolePositioning
     {
         /// <summary>
         /// Clears the console buffer, but keeps the current cursor position
@@ -48,50 +47,6 @@ namespace Terminaux.Base
             int Top = ConsoleWrapper.CursorTop;
             ConsoleWrapper.Clear();
             ConsoleWrapper.SetCursorPosition(Left, Top);
-        }
-
-        /// <summary>
-        /// Clears the line to the right
-        /// </summary>
-        public static string GetClearLineToRightSequence() =>
-            VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiEraseInLine, 0);
-
-        /// <summary>
-        /// Clears the line to the right
-        /// </summary>
-        public static void ClearLineToRight() =>
-            ConsoleWrapper.Write(GetClearLineToRightSequence());
-
-        /// <summary>
-        /// Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
-        /// </summary>
-        /// <param name="CurrentNumber">The current number that is less than or equal to the maximum number.</param>
-        /// <param name="MaximumNumber">The maximum number.</param>
-        /// <param name="WidthOffset">The console window width offset. It's usually a multiple of 2.</param>
-        /// <returns>How many times to repeat the character</returns>
-        public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset) =>
-            (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * ((ConsoleWrapper.WindowWidth - WidthOffset) * 0.01d));
-
-        /// <summary>
-        /// Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
-        /// </summary>
-        /// <param name="CurrentNumber">The current number that is less than or equal to the maximum number.</param>
-        /// <param name="MaximumNumber">The maximum number.</param>
-        /// <param name="TargetWidth">The target width</param>
-        /// <returns>How many times to repeat the character</returns>
-        public static int PercentRepeatTargeted(int CurrentNumber, int MaximumNumber, int TargetWidth) =>
-            (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * (TargetWidth * 0.01d));
-
-        /// <summary>
-        /// Filters the VT sequences that matches the regex
-        /// </summary>
-        /// <param name="Text">The text that contains the VT sequences</param>
-        /// <returns>The text that doesn't contain the VT sequences</returns>
-        public static string FilterVTSequences(string Text)
-        {
-            // Filter all sequences
-            Text = VtSequenceTools.FilterVTSequences(Text);
-            return Text;
         }
 
         /// <summary>
@@ -111,7 +66,7 @@ namespace Terminaux.Base
                 noSeek = true;
 
             // Filter all text from the VT escape sequences
-            Text = FilterVTSequences(Text);
+            Text = ConsoleMisc.FilterVTSequences(Text);
 
             // Seek through filtered text (make it seem like it came from Linux by removing CR (\r)), return to the old position, and return the filtered positions
             Text = TextTools.FormatString(Text, Vars);
@@ -188,54 +143,6 @@ namespace Terminaux.Base
 
             // Return the filtered positions
             return (LeftSeekPosition, TopSeekPosition);
-        }
-
-        /// <summary>
-        /// Sets the console title
-        /// </summary>
-        /// <param name="Text">The text to be set</param>
-        public static void SetTitle(string Text)
-        {
-            char BellChar = Convert.ToChar(7);
-            char EscapeChar = Convert.ToChar(27);
-            string Sequence = $"{EscapeChar}]0;{Text}{BellChar}";
-            TextWriterColor.WritePlain(Sequence, false);
-        }
-
-        /// <summary>
-        /// Resets the entire console
-        /// </summary>
-        public static void ResetAll()
-        {
-            ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.EscFullReset));
-            ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSoftTerminalReset));
-        }
-
-        /// <summary>
-        /// Resets the console colors without clearing screen
-        /// </summary>
-        public static void ResetColors()
-        {
-            ResetForeground();
-            ResetBackground();
-        }
-
-        /// <summary>
-        /// Resets the foreground color without clearing screen
-        /// </summary>
-        public static void ResetForeground()
-        {
-            ConsoleWrapper.Write($"{Convert.ToChar(0x1B)}[39m");
-            ColorTools.currentForegroundColor = ConsoleColor.Gray;
-        }
-
-        /// <summary>
-        /// Resets the background color without clearing screen
-        /// </summary>
-        public static void ResetBackground()
-        {
-            ConsoleWrapper.Write($"{Convert.ToChar(0x1B)}[49m");
-            ColorTools.currentBackgroundColor = ConsoleColor.Black;
         }
 
         #region Windows-specific

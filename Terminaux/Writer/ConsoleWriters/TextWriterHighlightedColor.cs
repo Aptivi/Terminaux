@@ -19,7 +19,7 @@
 
 using System;
 using System.Diagnostics;
-using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Reader;
 
@@ -165,7 +165,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     TextWriterColor.WritePlain("", settings, Line);
 
                     // Reset the colors
-                    ConsoleExtensions.ResetColors();
+                    ColorTools.ResetColors();
                 }
                 catch (Exception ex)
                 {
