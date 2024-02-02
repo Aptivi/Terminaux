@@ -370,6 +370,10 @@
         "Terminaux - TestCursorStyles": {
             "commandName": "Project",
             "commandLineArgs": "TestCursorStyles"
+        },
+        "Terminaux - TestFormatting": {
+            "commandName": "Project",
+            "commandLineArgs": "TestFormatting"
         }
     }
 }
