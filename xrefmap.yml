@@ -2515,96 +2515,6 @@ references:
   fullName.vb: Terminaux.Colors.Color.<>
   nameWithType: Color.operator !=
   nameWithType.vb: Color.<>
-- uid: Terminaux.Colors.ColorBrightness
-  name: ColorBrightness
-  href: api/Terminaux.Colors.ColorBrightness.html
-  commentId: T:Terminaux.Colors.ColorBrightness
-  fullName: Terminaux.Colors.ColorBrightness
-  nameWithType: ColorBrightness
-- uid: Terminaux.Colors.ColorBrightness.Dark
-  name: Dark
-  href: api/Terminaux.Colors.ColorBrightness.html#Terminaux_Colors_ColorBrightness_Dark
-  commentId: F:Terminaux.Colors.ColorBrightness.Dark
-  fullName: Terminaux.Colors.ColorBrightness.Dark
-  nameWithType: ColorBrightness.Dark
-- uid: Terminaux.Colors.ColorBrightness.Light
-  name: Light
-  href: api/Terminaux.Colors.ColorBrightness.html#Terminaux_Colors_ColorBrightness_Light
-  commentId: F:Terminaux.Colors.ColorBrightness.Light
-  fullName: Terminaux.Colors.ColorBrightness.Light
-  nameWithType: ColorBrightness.Light
-- uid: Terminaux.Colors.ColorContrast
-  name: ColorContrast
-  href: api/Terminaux.Colors.ColorContrast.html
-  commentId: T:Terminaux.Colors.ColorContrast
-  fullName: Terminaux.Colors.ColorContrast
-  nameWithType: ColorContrast
-- uid: Terminaux.Colors.ColorContrast.GetContrastColorHalf(Terminaux.Colors.Color)
-  name: GetContrastColorHalf(Color)
-  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_GetContrastColorHalf_Terminaux_Colors_Color_
-  commentId: M:Terminaux.Colors.ColorContrast.GetContrastColorHalf(Terminaux.Colors.Color)
-  fullName: Terminaux.Colors.ColorContrast.GetContrastColorHalf(Terminaux.Colors.Color)
-  nameWithType: ColorContrast.GetContrastColorHalf(Color)
-- uid: Terminaux.Colors.ColorContrast.GetContrastColorHalf*
-  name: GetContrastColorHalf
-  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_GetContrastColorHalf_
-  commentId: Overload:Terminaux.Colors.ColorContrast.GetContrastColorHalf
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorContrast.GetContrastColorHalf
-  nameWithType: ColorContrast.GetContrastColorHalf
-- uid: Terminaux.Colors.ColorContrast.GetContrastColorNtsc(Terminaux.Colors.Color)
-  name: GetContrastColorNtsc(Color)
-  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_GetContrastColorNtsc_Terminaux_Colors_Color_
-  commentId: M:Terminaux.Colors.ColorContrast.GetContrastColorNtsc(Terminaux.Colors.Color)
-  fullName: Terminaux.Colors.ColorContrast.GetContrastColorNtsc(Terminaux.Colors.Color)
-  nameWithType: ColorContrast.GetContrastColorNtsc(Color)
-- uid: Terminaux.Colors.ColorContrast.GetContrastColorNtsc*
-  name: GetContrastColorNtsc
-  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_GetContrastColorNtsc_
-  commentId: Overload:Terminaux.Colors.ColorContrast.GetContrastColorNtsc
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorContrast.GetContrastColorNtsc
-  nameWithType: ColorContrast.GetContrastColorNtsc
-- uid: Terminaux.Colors.ColorContrast.IsSeeable(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32)
-  name: IsSeeable(ColorType, int, int, int, int)
-  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_IsSeeable_Terminaux_Colors_ColorType_System_Int32_System_Int32_System_Int32_System_Int32_
-  commentId: M:Terminaux.Colors.ColorContrast.IsSeeable(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32)
-  name.vb: IsSeeable(ColorType, Integer, Integer, Integer, Integer)
-  fullName: Terminaux.Colors.ColorContrast.IsSeeable(Terminaux.Colors.ColorType, int, int, int, int)
-  fullName.vb: Terminaux.Colors.ColorContrast.IsSeeable(Terminaux.Colors.ColorType, Integer, Integer, Integer, Integer)
-  nameWithType: ColorContrast.IsSeeable(ColorType, int, int, int, int)
-  nameWithType.vb: ColorContrast.IsSeeable(ColorType, Integer, Integer, Integer, Integer)
-- uid: Terminaux.Colors.ColorContrast.IsSeeable*
-  name: IsSeeable
-  href: api/Terminaux.Colors.ColorContrast.html#Terminaux_Colors_ColorContrast_IsSeeable_
-  commentId: Overload:Terminaux.Colors.ColorContrast.IsSeeable
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorContrast.IsSeeable
-  nameWithType: ColorContrast.IsSeeable
-- uid: Terminaux.Colors.ColorContrastType
-  name: ColorContrastType
-  href: api/Terminaux.Colors.ColorContrastType.html
-  commentId: T:Terminaux.Colors.ColorContrastType
-  fullName: Terminaux.Colors.ColorContrastType
-  nameWithType: ColorContrastType
-- uid: Terminaux.Colors.ColorContrastType.Half
-  name: Half
-  href: api/Terminaux.Colors.ColorContrastType.html#Terminaux_Colors_ColorContrastType_Half
-  commentId: F:Terminaux.Colors.ColorContrastType.Half
-  fullName: Terminaux.Colors.ColorContrastType.Half
-  nameWithType: ColorContrastType.Half
-- uid: Terminaux.Colors.ColorContrastType.Light
-  name: Light
-  href: api/Terminaux.Colors.ColorContrastType.html#Terminaux_Colors_ColorContrastType_Light
-  commentId: F:Terminaux.Colors.ColorContrastType.Light
-  fullName: Terminaux.Colors.ColorContrastType.Light
-  nameWithType: ColorContrastType.Light
-- uid: Terminaux.Colors.ColorContrastType.Ntsc
-  name: Ntsc
-  href: api/Terminaux.Colors.ColorContrastType.html#Terminaux_Colors_ColorContrastType_Ntsc
-  commentId: F:Terminaux.Colors.ColorContrastType.Ntsc
-  fullName: Terminaux.Colors.ColorContrastType.Ntsc
-  nameWithType: ColorContrastType.Ntsc
 - uid: Terminaux.Colors.ColorSettings
   name: ColorSettings
   href: api/Terminaux.Colors.ColorSettings.html
@@ -2734,17 +2644,17 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.CurrentForegroundColor
   nameWithType: ColorTools.CurrentForegroundColor
-- uid: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color,Terminaux.Colors.ColorContrastType)
+- uid: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color,Terminaux.Colors.Transformation.Contrast.ColorContrastType)
   name: GetGray(Color, ColorContrastType)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray_Terminaux_Colors_Color_Terminaux_Colors_ColorContrastType_
-  commentId: M:Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color,Terminaux.Colors.ColorContrastType)
-  fullName: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color, Terminaux.Colors.ColorContrastType)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray_Terminaux_Colors_Color_Terminaux_Colors_Transformation_Contrast_ColorContrastType_
+  commentId: M:Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color,Terminaux.Colors.Transformation.Contrast.ColorContrastType)
+  fullName: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Color, Terminaux.Colors.Transformation.Contrast.ColorContrastType)
   nameWithType: ColorTools.GetGray(Color, ColorContrastType)
-- uid: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.ColorContrastType)
+- uid: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Transformation.Contrast.ColorContrastType)
   name: GetGray(ColorContrastType)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray_Terminaux_Colors_ColorContrastType_
-  commentId: M:Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.ColorContrastType)
-  fullName: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.ColorContrastType)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetGray_Terminaux_Colors_Transformation_Contrast_ColorContrastType_
+  commentId: M:Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Transformation.Contrast.ColorContrastType)
+  fullName: Terminaux.Colors.ColorTools.GetGray(Terminaux.Colors.Transformation.Contrast.ColorContrastType)
   nameWithType: ColorTools.GetGray(ColorContrastType)
 - uid: Terminaux.Colors.ColorTools.GetGray*
   name: GetGray
@@ -7693,6 +7603,102 @@ references:
   commentId: N:Terminaux.Colors.Transformation
   fullName: Terminaux.Colors.Transformation
   nameWithType: Terminaux.Colors.Transformation
+- uid: Terminaux.Colors.Transformation.Contrast
+  name: Terminaux.Colors.Transformation.Contrast
+  href: api/Terminaux.Colors.Transformation.Contrast.html
+  commentId: N:Terminaux.Colors.Transformation.Contrast
+  fullName: Terminaux.Colors.Transformation.Contrast
+  nameWithType: Terminaux.Colors.Transformation.Contrast
+- uid: Terminaux.Colors.Transformation.Contrast.ColorBrightness
+  name: ColorBrightness
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorBrightness.html
+  commentId: T:Terminaux.Colors.Transformation.Contrast.ColorBrightness
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorBrightness
+  nameWithType: ColorBrightness
+- uid: Terminaux.Colors.Transformation.Contrast.ColorBrightness.Dark
+  name: Dark
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorBrightness.html#Terminaux_Colors_Transformation_Contrast_ColorBrightness_Dark
+  commentId: F:Terminaux.Colors.Transformation.Contrast.ColorBrightness.Dark
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorBrightness.Dark
+  nameWithType: ColorBrightness.Dark
+- uid: Terminaux.Colors.Transformation.Contrast.ColorBrightness.Light
+  name: Light
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorBrightness.html#Terminaux_Colors_Transformation_Contrast_ColorBrightness_Light
+  commentId: F:Terminaux.Colors.Transformation.Contrast.ColorBrightness.Light
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorBrightness.Light
+  nameWithType: ColorBrightness.Light
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrast
+  name: ColorContrast
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrast.html
+  commentId: T:Terminaux.Colors.Transformation.Contrast.ColorContrast
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrast
+  nameWithType: ColorContrast
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorHalf(Terminaux.Colors.Color)
+  name: GetContrastColorHalf(Color)
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrast.html#Terminaux_Colors_Transformation_Contrast_ColorContrast_GetContrastColorHalf_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorHalf(Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorHalf(Terminaux.Colors.Color)
+  nameWithType: ColorContrast.GetContrastColorHalf(Color)
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorHalf*
+  name: GetContrastColorHalf
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrast.html#Terminaux_Colors_Transformation_Contrast_ColorContrast_GetContrastColorHalf_
+  commentId: Overload:Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorHalf
+  isSpec: "True"
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorHalf
+  nameWithType: ColorContrast.GetContrastColorHalf
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorNtsc(Terminaux.Colors.Color)
+  name: GetContrastColorNtsc(Color)
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrast.html#Terminaux_Colors_Transformation_Contrast_ColorContrast_GetContrastColorNtsc_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorNtsc(Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorNtsc(Terminaux.Colors.Color)
+  nameWithType: ColorContrast.GetContrastColorNtsc(Color)
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorNtsc*
+  name: GetContrastColorNtsc
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrast.html#Terminaux_Colors_Transformation_Contrast_ColorContrast_GetContrastColorNtsc_
+  commentId: Overload:Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorNtsc
+  isSpec: "True"
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrast.GetContrastColorNtsc
+  nameWithType: ColorContrast.GetContrastColorNtsc
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrast.IsSeeable(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32)
+  name: IsSeeable(ColorType, int, int, int, int)
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrast.html#Terminaux_Colors_Transformation_Contrast_ColorContrast_IsSeeable_Terminaux_Colors_ColorType_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Colors.Transformation.Contrast.ColorContrast.IsSeeable(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: IsSeeable(ColorType, Integer, Integer, Integer, Integer)
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrast.IsSeeable(Terminaux.Colors.ColorType, int, int, int, int)
+  fullName.vb: Terminaux.Colors.Transformation.Contrast.ColorContrast.IsSeeable(Terminaux.Colors.ColorType, Integer, Integer, Integer, Integer)
+  nameWithType: ColorContrast.IsSeeable(ColorType, int, int, int, int)
+  nameWithType.vb: ColorContrast.IsSeeable(ColorType, Integer, Integer, Integer, Integer)
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrast.IsSeeable*
+  name: IsSeeable
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrast.html#Terminaux_Colors_Transformation_Contrast_ColorContrast_IsSeeable_
+  commentId: Overload:Terminaux.Colors.Transformation.Contrast.ColorContrast.IsSeeable
+  isSpec: "True"
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrast.IsSeeable
+  nameWithType: ColorContrast.IsSeeable
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrastType
+  name: ColorContrastType
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrastType.html
+  commentId: T:Terminaux.Colors.Transformation.Contrast.ColorContrastType
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrastType
+  nameWithType: ColorContrastType
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrastType.Half
+  name: Half
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrastType.html#Terminaux_Colors_Transformation_Contrast_ColorContrastType_Half
+  commentId: F:Terminaux.Colors.Transformation.Contrast.ColorContrastType.Half
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrastType.Half
+  nameWithType: ColorContrastType.Half
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrastType.Light
+  name: Light
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrastType.html#Terminaux_Colors_Transformation_Contrast_ColorContrastType_Light
+  commentId: F:Terminaux.Colors.Transformation.Contrast.ColorContrastType.Light
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrastType.Light
+  nameWithType: ColorContrastType.Light
+- uid: Terminaux.Colors.Transformation.Contrast.ColorContrastType.Ntsc
+  name: Ntsc
+  href: api/Terminaux.Colors.Transformation.Contrast.ColorContrastType.html#Terminaux_Colors_Transformation_Contrast_ColorContrastType_Ntsc
+  commentId: F:Terminaux.Colors.Transformation.Contrast.ColorContrastType.Ntsc
+  fullName: Terminaux.Colors.Transformation.Contrast.ColorContrastType.Ntsc
+  nameWithType: ColorContrastType.Ntsc
 - uid: Terminaux.Colors.Transformation.TransformationFormula
   name: TransformationFormula
   href: api/Terminaux.Colors.Transformation.TransformationFormula.html

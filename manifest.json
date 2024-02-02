@@ -195,36 +195,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.ColorBrightness.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.ColorBrightness.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.ColorContrast.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.ColorContrast.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.ColorContrastType.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.ColorContrastType.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.ColorSettings.yml",
       "output": {
         ".html": {
@@ -639,6 +609,46 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Selector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorBrightness.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorBrightness.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorContrast.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorContrast.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorContrastType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorContrastType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Contrast.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Contrast.html"
         }
       },
       "version": ""
