@@ -910,196 +910,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Checks.TerminalTypeGreylist.RemoveFromGreylist
   nameWithType: TerminalTypeGreylist.RemoveFromGreylist
-- uid: Terminaux.Base.ConsoleExtensions
-  name: ConsoleExtensions
-  href: api/Terminaux.Base.ConsoleExtensions.html
-  commentId: T:Terminaux.Base.ConsoleExtensions
-  fullName: Terminaux.Base.ConsoleExtensions
-  nameWithType: ConsoleExtensions
-- uid: Terminaux.Base.ConsoleExtensions.ClearKeepPosition
-  name: ClearKeepPosition()
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ClearKeepPosition
-  commentId: M:Terminaux.Base.ConsoleExtensions.ClearKeepPosition
-  fullName: Terminaux.Base.ConsoleExtensions.ClearKeepPosition()
-  nameWithType: ConsoleExtensions.ClearKeepPosition()
-- uid: Terminaux.Base.ConsoleExtensions.ClearKeepPosition*
-  name: ClearKeepPosition
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ClearKeepPosition_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.ClearKeepPosition
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.ClearKeepPosition
-  nameWithType: ConsoleExtensions.ClearKeepPosition
-- uid: Terminaux.Base.ConsoleExtensions.ClearLineToRight
-  name: ClearLineToRight()
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ClearLineToRight
-  commentId: M:Terminaux.Base.ConsoleExtensions.ClearLineToRight
-  fullName: Terminaux.Base.ConsoleExtensions.ClearLineToRight()
-  nameWithType: ConsoleExtensions.ClearLineToRight()
-- uid: Terminaux.Base.ConsoleExtensions.ClearLineToRight*
-  name: ClearLineToRight
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ClearLineToRight_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.ClearLineToRight
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.ClearLineToRight
-  nameWithType: ConsoleExtensions.ClearLineToRight
-- uid: Terminaux.Base.ConsoleExtensions.FilterVTSequences(System.String)
-  name: FilterVTSequences(string)
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_FilterVTSequences_System_String_
-  commentId: M:Terminaux.Base.ConsoleExtensions.FilterVTSequences(System.String)
-  name.vb: FilterVTSequences(String)
-  fullName: Terminaux.Base.ConsoleExtensions.FilterVTSequences(string)
-  fullName.vb: Terminaux.Base.ConsoleExtensions.FilterVTSequences(String)
-  nameWithType: ConsoleExtensions.FilterVTSequences(string)
-  nameWithType.vb: ConsoleExtensions.FilterVTSequences(String)
-- uid: Terminaux.Base.ConsoleExtensions.FilterVTSequences*
-  name: FilterVTSequences
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_FilterVTSequences_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.FilterVTSequences
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.FilterVTSequences
-  nameWithType: ConsoleExtensions.FilterVTSequences
-- uid: Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence
-  name: GetClearLineToRightSequence()
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetClearLineToRightSequence
-  commentId: M:Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence
-  fullName: Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence()
-  nameWithType: ConsoleExtensions.GetClearLineToRightSequence()
-- uid: Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence*
-  name: GetClearLineToRightSequence
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetClearLineToRightSequence_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.GetClearLineToRightSequence
-  nameWithType: ConsoleExtensions.GetClearLineToRightSequence
-- uid: Terminaux.Base.ConsoleExtensions.GetFilteredPositions(System.String,System.Boolean,System.Object[])
-  name: GetFilteredPositions(string, bool, params object[])
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetFilteredPositions_System_String_System_Boolean_System_Object___
-  commentId: M:Terminaux.Base.ConsoleExtensions.GetFilteredPositions(System.String,System.Boolean,System.Object[])
-  name.vb: GetFilteredPositions(String, Boolean, ParamArray Object())
-  fullName: Terminaux.Base.ConsoleExtensions.GetFilteredPositions(string, bool, params object[])
-  fullName.vb: Terminaux.Base.ConsoleExtensions.GetFilteredPositions(String, Boolean, ParamArray Object())
-  nameWithType: ConsoleExtensions.GetFilteredPositions(string, bool, params object[])
-  nameWithType.vb: ConsoleExtensions.GetFilteredPositions(String, Boolean, ParamArray Object())
-- uid: Terminaux.Base.ConsoleExtensions.GetFilteredPositions*
-  name: GetFilteredPositions
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_GetFilteredPositions_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.GetFilteredPositions
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.GetFilteredPositions
-  nameWithType: ConsoleExtensions.GetFilteredPositions
-- uid: Terminaux.Base.ConsoleExtensions.InitializeSequences
-  name: InitializeSequences()
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_InitializeSequences
-  commentId: M:Terminaux.Base.ConsoleExtensions.InitializeSequences
-  fullName: Terminaux.Base.ConsoleExtensions.InitializeSequences()
-  nameWithType: ConsoleExtensions.InitializeSequences()
-- uid: Terminaux.Base.ConsoleExtensions.InitializeSequences*
-  name: InitializeSequences
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_InitializeSequences_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.InitializeSequences
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.InitializeSequences
-  nameWithType: ConsoleExtensions.InitializeSequences
-- uid: Terminaux.Base.ConsoleExtensions.PercentRepeat(System.Int32,System.Int32,System.Int32)
-  name: PercentRepeat(int, int, int)
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_PercentRepeat_System_Int32_System_Int32_System_Int32_
-  commentId: M:Terminaux.Base.ConsoleExtensions.PercentRepeat(System.Int32,System.Int32,System.Int32)
-  name.vb: PercentRepeat(Integer, Integer, Integer)
-  fullName: Terminaux.Base.ConsoleExtensions.PercentRepeat(int, int, int)
-  fullName.vb: Terminaux.Base.ConsoleExtensions.PercentRepeat(Integer, Integer, Integer)
-  nameWithType: ConsoleExtensions.PercentRepeat(int, int, int)
-  nameWithType.vb: ConsoleExtensions.PercentRepeat(Integer, Integer, Integer)
-- uid: Terminaux.Base.ConsoleExtensions.PercentRepeat*
-  name: PercentRepeat
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_PercentRepeat_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.PercentRepeat
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.PercentRepeat
-  nameWithType: ConsoleExtensions.PercentRepeat
-- uid: Terminaux.Base.ConsoleExtensions.PercentRepeatTargeted(System.Int32,System.Int32,System.Int32)
-  name: PercentRepeatTargeted(int, int, int)
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_PercentRepeatTargeted_System_Int32_System_Int32_System_Int32_
-  commentId: M:Terminaux.Base.ConsoleExtensions.PercentRepeatTargeted(System.Int32,System.Int32,System.Int32)
-  name.vb: PercentRepeatTargeted(Integer, Integer, Integer)
-  fullName: Terminaux.Base.ConsoleExtensions.PercentRepeatTargeted(int, int, int)
-  fullName.vb: Terminaux.Base.ConsoleExtensions.PercentRepeatTargeted(Integer, Integer, Integer)
-  nameWithType: ConsoleExtensions.PercentRepeatTargeted(int, int, int)
-  nameWithType.vb: ConsoleExtensions.PercentRepeatTargeted(Integer, Integer, Integer)
-- uid: Terminaux.Base.ConsoleExtensions.PercentRepeatTargeted*
-  name: PercentRepeatTargeted
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_PercentRepeatTargeted_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.PercentRepeatTargeted
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.PercentRepeatTargeted
-  nameWithType: ConsoleExtensions.PercentRepeatTargeted
-- uid: Terminaux.Base.ConsoleExtensions.ResetAll
-  name: ResetAll()
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetAll
-  commentId: M:Terminaux.Base.ConsoleExtensions.ResetAll
-  fullName: Terminaux.Base.ConsoleExtensions.ResetAll()
-  nameWithType: ConsoleExtensions.ResetAll()
-- uid: Terminaux.Base.ConsoleExtensions.ResetAll*
-  name: ResetAll
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetAll_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.ResetAll
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.ResetAll
-  nameWithType: ConsoleExtensions.ResetAll
-- uid: Terminaux.Base.ConsoleExtensions.ResetBackground
-  name: ResetBackground()
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetBackground
-  commentId: M:Terminaux.Base.ConsoleExtensions.ResetBackground
-  fullName: Terminaux.Base.ConsoleExtensions.ResetBackground()
-  nameWithType: ConsoleExtensions.ResetBackground()
-- uid: Terminaux.Base.ConsoleExtensions.ResetBackground*
-  name: ResetBackground
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetBackground_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.ResetBackground
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.ResetBackground
-  nameWithType: ConsoleExtensions.ResetBackground
-- uid: Terminaux.Base.ConsoleExtensions.ResetColors
-  name: ResetColors()
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetColors
-  commentId: M:Terminaux.Base.ConsoleExtensions.ResetColors
-  fullName: Terminaux.Base.ConsoleExtensions.ResetColors()
-  nameWithType: ConsoleExtensions.ResetColors()
-- uid: Terminaux.Base.ConsoleExtensions.ResetColors*
-  name: ResetColors
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetColors_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.ResetColors
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.ResetColors
-  nameWithType: ConsoleExtensions.ResetColors
-- uid: Terminaux.Base.ConsoleExtensions.ResetForeground
-  name: ResetForeground()
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetForeground
-  commentId: M:Terminaux.Base.ConsoleExtensions.ResetForeground
-  fullName: Terminaux.Base.ConsoleExtensions.ResetForeground()
-  nameWithType: ConsoleExtensions.ResetForeground()
-- uid: Terminaux.Base.ConsoleExtensions.ResetForeground*
-  name: ResetForeground
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_ResetForeground_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.ResetForeground
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.ResetForeground
-  nameWithType: ConsoleExtensions.ResetForeground
-- uid: Terminaux.Base.ConsoleExtensions.SetTitle(System.String)
-  name: SetTitle(string)
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_SetTitle_System_String_
-  commentId: M:Terminaux.Base.ConsoleExtensions.SetTitle(System.String)
-  name.vb: SetTitle(String)
-  fullName: Terminaux.Base.ConsoleExtensions.SetTitle(string)
-  fullName.vb: Terminaux.Base.ConsoleExtensions.SetTitle(String)
-  nameWithType: ConsoleExtensions.SetTitle(string)
-  nameWithType.vb: ConsoleExtensions.SetTitle(String)
-- uid: Terminaux.Base.ConsoleExtensions.SetTitle*
-  name: SetTitle
-  href: api/Terminaux.Base.ConsoleExtensions.html#Terminaux_Base_ConsoleExtensions_SetTitle_
-  commentId: Overload:Terminaux.Base.ConsoleExtensions.SetTitle
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleExtensions.SetTitle
-  nameWithType: ConsoleExtensions.SetTitle
 - uid: Terminaux.Base.ConsolePlatform
   name: ConsolePlatform
   href: api/Terminaux.Base.ConsolePlatform.html
@@ -1957,6 +1767,175 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
   nameWithType: ConsoleWrapperTools.ActionWriteStringNonStandalone
+- uid: Terminaux.Base.Extensions
+  name: Terminaux.Base.Extensions
+  href: api/Terminaux.Base.Extensions.html
+  commentId: N:Terminaux.Base.Extensions
+  fullName: Terminaux.Base.Extensions
+  nameWithType: Terminaux.Base.Extensions
+- uid: Terminaux.Base.Extensions.ConsoleClearing
+  name: ConsoleClearing
+  href: api/Terminaux.Base.Extensions.ConsoleClearing.html
+  commentId: T:Terminaux.Base.Extensions.ConsoleClearing
+  fullName: Terminaux.Base.Extensions.ConsoleClearing
+  nameWithType: ConsoleClearing
+- uid: Terminaux.Base.Extensions.ConsoleClearing.ClearLineToRight
+  name: ClearLineToRight()
+  href: api/Terminaux.Base.Extensions.ConsoleClearing.html#Terminaux_Base_Extensions_ConsoleClearing_ClearLineToRight
+  commentId: M:Terminaux.Base.Extensions.ConsoleClearing.ClearLineToRight
+  fullName: Terminaux.Base.Extensions.ConsoleClearing.ClearLineToRight()
+  nameWithType: ConsoleClearing.ClearLineToRight()
+- uid: Terminaux.Base.Extensions.ConsoleClearing.ClearLineToRight*
+  name: ClearLineToRight
+  href: api/Terminaux.Base.Extensions.ConsoleClearing.html#Terminaux_Base_Extensions_ConsoleClearing_ClearLineToRight_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleClearing.ClearLineToRight
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleClearing.ClearLineToRight
+  nameWithType: ConsoleClearing.ClearLineToRight
+- uid: Terminaux.Base.Extensions.ConsoleClearing.GetClearLineToRightSequence
+  name: GetClearLineToRightSequence()
+  href: api/Terminaux.Base.Extensions.ConsoleClearing.html#Terminaux_Base_Extensions_ConsoleClearing_GetClearLineToRightSequence
+  commentId: M:Terminaux.Base.Extensions.ConsoleClearing.GetClearLineToRightSequence
+  fullName: Terminaux.Base.Extensions.ConsoleClearing.GetClearLineToRightSequence()
+  nameWithType: ConsoleClearing.GetClearLineToRightSequence()
+- uid: Terminaux.Base.Extensions.ConsoleClearing.GetClearLineToRightSequence*
+  name: GetClearLineToRightSequence
+  href: api/Terminaux.Base.Extensions.ConsoleClearing.html#Terminaux_Base_Extensions_ConsoleClearing_GetClearLineToRightSequence_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleClearing.GetClearLineToRightSequence
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleClearing.GetClearLineToRightSequence
+  nameWithType: ConsoleClearing.GetClearLineToRightSequence
+- uid: Terminaux.Base.Extensions.ConsoleClearing.ResetAll
+  name: ResetAll()
+  href: api/Terminaux.Base.Extensions.ConsoleClearing.html#Terminaux_Base_Extensions_ConsoleClearing_ResetAll
+  commentId: M:Terminaux.Base.Extensions.ConsoleClearing.ResetAll
+  fullName: Terminaux.Base.Extensions.ConsoleClearing.ResetAll()
+  nameWithType: ConsoleClearing.ResetAll()
+- uid: Terminaux.Base.Extensions.ConsoleClearing.ResetAll*
+  name: ResetAll
+  href: api/Terminaux.Base.Extensions.ConsoleClearing.html#Terminaux_Base_Extensions_ConsoleClearing_ResetAll_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleClearing.ResetAll
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleClearing.ResetAll
+  nameWithType: ConsoleClearing.ResetAll
+- uid: Terminaux.Base.Extensions.ConsoleMisc
+  name: ConsoleMisc
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html
+  commentId: T:Terminaux.Base.Extensions.ConsoleMisc
+  fullName: Terminaux.Base.Extensions.ConsoleMisc
+  nameWithType: ConsoleMisc
+- uid: Terminaux.Base.Extensions.ConsoleMisc.FilterVTSequences(System.String)
+  name: FilterVTSequences(string)
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_FilterVTSequences_System_String_
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.FilterVTSequences(System.String)
+  name.vb: FilterVTSequences(String)
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.FilterVTSequences(string)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleMisc.FilterVTSequences(String)
+  nameWithType: ConsoleMisc.FilterVTSequences(string)
+  nameWithType.vb: ConsoleMisc.FilterVTSequences(String)
+- uid: Terminaux.Base.Extensions.ConsoleMisc.FilterVTSequences*
+  name: FilterVTSequences
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_FilterVTSequences_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.FilterVTSequences
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.FilterVTSequences
+  nameWithType: ConsoleMisc.FilterVTSequences
+- uid: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeat(System.Int32,System.Int32,System.Int32)
+  name: PercentRepeat(int, int, int)
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_PercentRepeat_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.PercentRepeat(System.Int32,System.Int32,System.Int32)
+  name.vb: PercentRepeat(Integer, Integer, Integer)
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeat(int, int, int)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeat(Integer, Integer, Integer)
+  nameWithType: ConsoleMisc.PercentRepeat(int, int, int)
+  nameWithType.vb: ConsoleMisc.PercentRepeat(Integer, Integer, Integer)
+- uid: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeat*
+  name: PercentRepeat
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_PercentRepeat_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.PercentRepeat
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeat
+  nameWithType: ConsoleMisc.PercentRepeat
+- uid: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeatTargeted(System.Int32,System.Int32,System.Int32)
+  name: PercentRepeatTargeted(int, int, int)
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_PercentRepeatTargeted_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.PercentRepeatTargeted(System.Int32,System.Int32,System.Int32)
+  name.vb: PercentRepeatTargeted(Integer, Integer, Integer)
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeatTargeted(int, int, int)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeatTargeted(Integer, Integer, Integer)
+  nameWithType: ConsoleMisc.PercentRepeatTargeted(int, int, int)
+  nameWithType.vb: ConsoleMisc.PercentRepeatTargeted(Integer, Integer, Integer)
+- uid: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeatTargeted*
+  name: PercentRepeatTargeted
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_PercentRepeatTargeted_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.PercentRepeatTargeted
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeatTargeted
+  nameWithType: ConsoleMisc.PercentRepeatTargeted
+- uid: Terminaux.Base.Extensions.ConsoleMisc.SetTitle(System.String)
+  name: SetTitle(string)
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_SetTitle_System_String_
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.SetTitle(System.String)
+  name.vb: SetTitle(String)
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.SetTitle(string)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleMisc.SetTitle(String)
+  nameWithType: ConsoleMisc.SetTitle(string)
+  nameWithType.vb: ConsoleMisc.SetTitle(String)
+- uid: Terminaux.Base.Extensions.ConsoleMisc.SetTitle*
+  name: SetTitle
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_SetTitle_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.SetTitle
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.SetTitle
+  nameWithType: ConsoleMisc.SetTitle
+- uid: Terminaux.Base.Extensions.ConsolePositioning
+  name: ConsolePositioning
+  href: api/Terminaux.Base.Extensions.ConsolePositioning.html
+  commentId: T:Terminaux.Base.Extensions.ConsolePositioning
+  fullName: Terminaux.Base.Extensions.ConsolePositioning
+  nameWithType: ConsolePositioning
+- uid: Terminaux.Base.Extensions.ConsolePositioning.ClearKeepPosition
+  name: ClearKeepPosition()
+  href: api/Terminaux.Base.Extensions.ConsolePositioning.html#Terminaux_Base_Extensions_ConsolePositioning_ClearKeepPosition
+  commentId: M:Terminaux.Base.Extensions.ConsolePositioning.ClearKeepPosition
+  fullName: Terminaux.Base.Extensions.ConsolePositioning.ClearKeepPosition()
+  nameWithType: ConsolePositioning.ClearKeepPosition()
+- uid: Terminaux.Base.Extensions.ConsolePositioning.ClearKeepPosition*
+  name: ClearKeepPosition
+  href: api/Terminaux.Base.Extensions.ConsolePositioning.html#Terminaux_Base_Extensions_ConsolePositioning_ClearKeepPosition_
+  commentId: Overload:Terminaux.Base.Extensions.ConsolePositioning.ClearKeepPosition
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsolePositioning.ClearKeepPosition
+  nameWithType: ConsolePositioning.ClearKeepPosition
+- uid: Terminaux.Base.Extensions.ConsolePositioning.GetFilteredPositions(System.String,System.Boolean,System.Object[])
+  name: GetFilteredPositions(string, bool, params object[])
+  href: api/Terminaux.Base.Extensions.ConsolePositioning.html#Terminaux_Base_Extensions_ConsolePositioning_GetFilteredPositions_System_String_System_Boolean_System_Object___
+  commentId: M:Terminaux.Base.Extensions.ConsolePositioning.GetFilteredPositions(System.String,System.Boolean,System.Object[])
+  name.vb: GetFilteredPositions(String, Boolean, ParamArray Object())
+  fullName: Terminaux.Base.Extensions.ConsolePositioning.GetFilteredPositions(string, bool, params object[])
+  fullName.vb: Terminaux.Base.Extensions.ConsolePositioning.GetFilteredPositions(String, Boolean, ParamArray Object())
+  nameWithType: ConsolePositioning.GetFilteredPositions(string, bool, params object[])
+  nameWithType.vb: ConsolePositioning.GetFilteredPositions(String, Boolean, ParamArray Object())
+- uid: Terminaux.Base.Extensions.ConsolePositioning.GetFilteredPositions*
+  name: GetFilteredPositions
+  href: api/Terminaux.Base.Extensions.ConsolePositioning.html#Terminaux_Base_Extensions_ConsolePositioning_GetFilteredPositions_
+  commentId: Overload:Terminaux.Base.Extensions.ConsolePositioning.GetFilteredPositions
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsolePositioning.GetFilteredPositions
+  nameWithType: ConsolePositioning.GetFilteredPositions
+- uid: Terminaux.Base.Extensions.ConsolePositioning.InitializeSequences
+  name: InitializeSequences()
+  href: api/Terminaux.Base.Extensions.ConsolePositioning.html#Terminaux_Base_Extensions_ConsolePositioning_InitializeSequences
+  commentId: M:Terminaux.Base.Extensions.ConsolePositioning.InitializeSequences
+  fullName: Terminaux.Base.Extensions.ConsolePositioning.InitializeSequences()
+  nameWithType: ConsolePositioning.InitializeSequences()
+- uid: Terminaux.Base.Extensions.ConsolePositioning.InitializeSequences*
+  name: InitializeSequences
+  href: api/Terminaux.Base.Extensions.ConsolePositioning.html#Terminaux_Base_Extensions_ConsolePositioning_InitializeSequences_
+  commentId: Overload:Terminaux.Base.Extensions.ConsolePositioning.InitializeSequences
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsolePositioning.InitializeSequences
+  nameWithType: ConsolePositioning.InitializeSequences
 - uid: Terminaux.Base.TerminauxException
   name: TerminauxException
   href: api/Terminaux.Base.TerminauxException.html
@@ -2770,6 +2749,45 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.LoadBackDry
   nameWithType: ColorTools.LoadBackDry
+- uid: Terminaux.Colors.ColorTools.ResetBackground
+  name: ResetBackground()
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ResetBackground
+  commentId: M:Terminaux.Colors.ColorTools.ResetBackground
+  fullName: Terminaux.Colors.ColorTools.ResetBackground()
+  nameWithType: ColorTools.ResetBackground()
+- uid: Terminaux.Colors.ColorTools.ResetBackground*
+  name: ResetBackground
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ResetBackground_
+  commentId: Overload:Terminaux.Colors.ColorTools.ResetBackground
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.ResetBackground
+  nameWithType: ColorTools.ResetBackground
+- uid: Terminaux.Colors.ColorTools.ResetColors
+  name: ResetColors()
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ResetColors
+  commentId: M:Terminaux.Colors.ColorTools.ResetColors
+  fullName: Terminaux.Colors.ColorTools.ResetColors()
+  nameWithType: ColorTools.ResetColors()
+- uid: Terminaux.Colors.ColorTools.ResetColors*
+  name: ResetColors
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ResetColors_
+  commentId: Overload:Terminaux.Colors.ColorTools.ResetColors
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.ResetColors
+  nameWithType: ColorTools.ResetColors
+- uid: Terminaux.Colors.ColorTools.ResetForeground
+  name: ResetForeground()
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ResetForeground
+  commentId: M:Terminaux.Colors.ColorTools.ResetForeground
+  fullName: Terminaux.Colors.ColorTools.ResetForeground()
+  nameWithType: ColorTools.ResetForeground()
+- uid: Terminaux.Colors.ColorTools.ResetForeground*
+  name: ResetForeground
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ResetForeground_
+  commentId: Overload:Terminaux.Colors.ColorTools.ResetForeground
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.ResetForeground
+  nameWithType: ColorTools.ResetForeground
 - uid: Terminaux.Colors.ColorTools.SRGBToLinearRGB(System.Int32)
   name: SRGBToLinearRGB(int)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SRGBToLinearRGB_System_Int32_
