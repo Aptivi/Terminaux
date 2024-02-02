@@ -74,6 +74,16 @@
     "title": "Class ConsoleClearing | Terminaux API - Aptivi",
     "keywords": "Class ConsoleClearing Console clearing tools Inheritance object ConsoleClearing Namespace: Terminaux.Base.Extensions Assembly: Terminaux.dll Syntax public static class ConsoleClearing Methods | Edit this page View Source ClearLineToRight() Clears the line to the right Declaration public static void ClearLineToRight() | Edit this page View Source GetClearLineToRightSequence() Clears the line to the right Declaration public static string GetClearLineToRightSequence() Returns Type Description string | Edit this page View Source ResetAll() Resets the entire console Declaration public static void ResetAll()"
   },
+  "api/Terminaux.Base.Extensions.ConsoleCursor.html": {
+    "href": "api/Terminaux.Base.Extensions.ConsoleCursor.html",
+    "title": "Class ConsoleCursor | Terminaux API - Aptivi",
+    "keywords": "Class ConsoleCursor Console cursor tools Inheritance object ConsoleCursor Namespace: Terminaux.Base.Extensions Assembly: Terminaux.dll Syntax public static class ConsoleCursor Properties | Edit this page View Source CursorType Specifies the cursor type Declaration public static ConsoleCursorType CursorType { get; set; } Property Value Type Description ConsoleCursorType | Edit this page View Source CursorVisible Determines whether the cursor is visible or not Declaration public static bool CursorVisible { get; set; } Property Value Type Description bool"
+  },
+  "api/Terminaux.Base.Extensions.ConsoleCursorType.html": {
+    "href": "api/Terminaux.Base.Extensions.ConsoleCursorType.html",
+    "title": "Enum ConsoleCursorType | Terminaux API - Aptivi",
+    "keywords": "Enum ConsoleCursorType Console cursor type Namespace: Terminaux.Base.Extensions Assembly: Terminaux.dll Syntax public enum ConsoleCursorType Fields Name Description BarBlinking Blinking bar BarSteady Blinking steady BlockBlinking Blinking block BlockSteady Steady block UnderlineBlinking Blinking underline UnderlineSteady Steady underline User Determined by the terminal emulator"
+  },
   "api/Terminaux.Base.Extensions.ConsoleMisc.html": {
     "href": "api/Terminaux.Base.Extensions.ConsoleMisc.html",
     "title": "Class ConsoleMisc | Terminaux API - Aptivi",
@@ -87,7 +97,7 @@
   "api/Terminaux.Base.Extensions.html": {
     "href": "api/Terminaux.Base.Extensions.html",
     "title": "Namespace Terminaux.Base.Extensions | Terminaux API - Aptivi",
-    "keywords": "Namespace Terminaux.Base.Extensions Classes ConsoleClearing Console clearing tools ConsoleMisc Miscellaneous extensions for the console ConsolePositioning Console positioning tools"
+    "keywords": "Namespace Terminaux.Base.Extensions Classes ConsoleClearing Console clearing tools ConsoleCursor Console cursor tools ConsoleMisc Miscellaneous extensions for the console ConsolePositioning Console positioning tools Enums ConsoleCursorType Console cursor type"
   },
   "api/Terminaux.Base.TerminauxException.html": {
     "href": "api/Terminaux.Base.TerminauxException.html",
