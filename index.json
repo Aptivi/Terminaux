@@ -84,6 +84,16 @@
     "title": "Enum ConsoleCursorType | Terminaux API - Aptivi",
     "keywords": "Enum ConsoleCursorType Console cursor type Namespace: Terminaux.Base.Extensions Assembly: Terminaux.dll Syntax public enum ConsoleCursorType Fields Name Description BarBlinking Blinking bar BarSteady Blinking steady BlockBlinking Blinking block BlockSteady Steady block UnderlineBlinking Blinking underline UnderlineSteady Steady underline User Determined by the terminal emulator"
   },
+  "api/Terminaux.Base.Extensions.ConsoleFormatting.html": {
+    "href": "api/Terminaux.Base.Extensions.ConsoleFormatting.html",
+    "title": "Class ConsoleFormatting | Terminaux API - Aptivi",
+    "keywords": "Class ConsoleFormatting Text formatting tools for the console Inheritance object ConsoleFormatting Namespace: Terminaux.Base.Extensions Assembly: Terminaux.dll Syntax public static class ConsoleFormatting Properties | Edit this page View Source CurrentFormatting Current text formatting Declaration public static ConsoleFormattingType CurrentFormatting { get; } Property Value Type Description ConsoleFormattingType | Edit this page View Source TextFormatted Has the text been formatted? Declaration public static bool TextFormatted { get; } Property Value Type Description bool Methods | Edit this page View Source GetFormattingSequences(ConsoleFormattingType) Gets the formatting sequences for the selected formatting types Declaration public static string GetFormattingSequences(ConsoleFormattingType types) Parameters Type Name Description ConsoleFormattingType types Selected formatting types Returns Type Description string A string containing necessary VT sequences for all selected text formatting | Edit this page View Source ResetFormatting() Resets console text formatting Declaration public static void ResetFormatting() | Edit this page View Source SetFormatting(ConsoleFormattingType) Sets text formatting for future plain writes Declaration public static void SetFormatting(ConsoleFormattingType formattings) Parameters Type Name Description ConsoleFormattingType formattings All text formatting to use"
+  },
+  "api/Terminaux.Base.Extensions.ConsoleFormattingType.html": {
+    "href": "api/Terminaux.Base.Extensions.ConsoleFormattingType.html",
+    "title": "Enum ConsoleFormattingType | Terminaux API - Aptivi",
+    "keywords": "Enum ConsoleFormattingType Console formatting type Namespace: Terminaux.Base.Extensions Assembly: Terminaux.dll Syntax public enum ConsoleFormattingType Fields Name Description Conceal [8] Conceals text Default [0] Default formatting Encircled [52] Encircled Faint [2] Reduced intensity (either light or dim) text FastBlink [6] Blinks the cursor quickly Framed [51] Framed Intense [1] Intense (either bold or bright) text Italic [3] Italic text NoProportionalSpacing [50] No proportional spacing NotBlinking [25] Not blinking NotBold [21] Not bold NotFramedEncircled [54] Not framed/encircled NotIntense [22] Not intense NotItalic [23] Not italic NotOverlined [55] Not overlined NotReversed [27] Not reversed NotStruckthrough [29] Not struckthrough NotUnderlined [24] Not underlined Overlined [53] Overlined ProportionalSpacing [26] Proportional spacing Reveal [28] Reveal Reverse [7] Swaps background and foreground colors SlowBlink [5] Blinks the cursor slowly Strikethrough [9] Strikes text through Underline [4] Underlined text"
+  },
   "api/Terminaux.Base.Extensions.ConsoleMisc.html": {
     "href": "api/Terminaux.Base.Extensions.ConsoleMisc.html",
     "title": "Class ConsoleMisc | Terminaux API - Aptivi",
@@ -97,7 +107,7 @@
   "api/Terminaux.Base.Extensions.html": {
     "href": "api/Terminaux.Base.Extensions.html",
     "title": "Namespace Terminaux.Base.Extensions | Terminaux API - Aptivi",
-    "keywords": "Namespace Terminaux.Base.Extensions Classes ConsoleClearing Console clearing tools ConsoleCursor Console cursor tools ConsoleMisc Miscellaneous extensions for the console ConsolePositioning Console positioning tools Enums ConsoleCursorType Console cursor type"
+    "keywords": "Namespace Terminaux.Base.Extensions Classes ConsoleClearing Console clearing tools ConsoleCursor Console cursor tools ConsoleFormatting Text formatting tools for the console ConsoleMisc Miscellaneous extensions for the console ConsolePositioning Console positioning tools Enums ConsoleCursorType Console cursor type ConsoleFormattingType Console formatting type"
   },
   "api/Terminaux.Base.TerminauxException.html": {
     "href": "api/Terminaux.Base.TerminauxException.html",
