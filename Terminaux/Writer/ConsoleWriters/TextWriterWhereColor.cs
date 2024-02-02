@@ -261,79 +261,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="RightMargin">The right margin</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars)
-        {
-            lock (TextWriterColor.WriteLock)
-            {
-                try
-                {
-                    // Format the message as necessary
-                    if (vars.Length > 0)
-                        msg = TextTools.FormatString(msg, vars);
-
-                    // Write text in another place. By the way, we check the text for newlines and console width excess
-                    int OldLeft = ConsoleWrapper.CursorLeft;
-                    int OldTop = ConsoleWrapper.CursorTop;
-                    int width = ConsoleWrapper.WindowWidth - RightMargin;
-                    var Paragraphs = msg.SplitNewLines();
-                    if (RightMargin > 0)
-                        Paragraphs = TextTools.GetWrappedSentences(msg, width);
-                    var buffered = new StringBuilder();
-                    buffered.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1));
-                    for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
-                    {
-                        // We can now check to see if we're writing a letter past the console window width
-                        string MessageParagraph = Paragraphs[MessageParagraphIndex];
-
-                        // Grab each VT sequence from the paragraph and fetch their indexes
-                        var sequences = VtSequenceTools.MatchVTSequences(MessageParagraph);
-                        int vtSeqIdx = 0;
-
-                        // Now, parse every character
-                        int pos = OldLeft;
-                        for (int i = 0; i < MessageParagraph.Length; i++)
-                        {
-                            if (MessageParagraph[i] == '\n' || RightMargin > 0 && pos > width)
-                            {
-                                buffered.Append($"{CharManager.GetEsc()}[1B");
-                                buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
-                                pos = OldLeft;
-                            }
-
-                            // Write a character individually
-                            if (MessageParagraph[i] != '\n')
-                            {
-                                string bufferedChar = ConsoleExtensions.BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx, out bool isVtSequence);
-                                buffered.Append(bufferedChar);
-                                if (!isVtSequence)
-                                    pos += bufferedChar.Length;
-                            }
-                        }
-
-                        // We're starting with the new paragraph, so we increase the CursorTop value by 1.
-                        if (MessageParagraphIndex != Paragraphs.Length - 1)
-                        {
-                            buffered.Append($"{CharManager.GetEsc()}[1B");
-                            buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
-                            pos = OldLeft;
-                        }
-                    }
-
-                    // Return if we're told to
-                    if (Return)
-                        buffered.Append(CsiSequences.GenerateCsiCursorPosition(OldLeft + 1, OldTop + 1));
-
-                    // Write the resulting buffer
-                    return buffered.ToString();
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
-                }
-                return "";
-            }
-        }
+        public static string RenderWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars) =>
+            RenderWhere(msg, Left, Top, Return, RightMargin, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, false, vars);
 
         /// <summary>
         /// Renders the text with location support.
@@ -371,7 +300,22 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderWhere(string msg, int Left, int Top, bool Return, int RightMargin, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+        public static string RenderWhere(string msg, int Left, int Top, bool Return, int RightMargin, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
+            RenderWhere(msg, Left, Top, Return, RightMargin, ForegroundColor, BackgroundColor, true, vars);
+
+        /// <summary>
+        /// Renders the text with location support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="useColors">Whether to use colors or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        internal static string RenderWhere(string msg, int Left, int Top, bool Return, int RightMargin, Color ForegroundColor, Color BackgroundColor, bool useColors, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -389,9 +333,16 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (RightMargin > 0)
                         Paragraphs = TextTools.GetWrappedSentences(msg, width);
                     var buffered = new StringBuilder();
+
+                    // Se the colors and the positions as appropriate
+                    if (useColors)
+                    {
+                        buffered.Append(
+                            ForegroundColor.VTSequenceForeground +
+                            BackgroundColor.VTSequenceBackground
+                        );
+                    }
                     buffered.Append(
-                        ForegroundColor.VTSequenceForeground +
-                        BackgroundColor.VTSequenceBackground +
                         CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)
                     );
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
@@ -407,6 +358,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         int pos = OldLeft;
                         for (int i = 0; i < MessageParagraph.Length; i++)
                         {
+                            // If there is a new line, or if we're about to hit the maximum width, we need to go down
                             if (MessageParagraph[i] == '\n' || RightMargin > 0 && pos > width)
                             {
                                 buffered.Append($"{CharManager.GetEsc()}[1B");
@@ -438,10 +390,13 @@ namespace Terminaux.Writer.ConsoleWriters
                         buffered.Append(CsiSequences.GenerateCsiCursorPosition(OldLeft + 1, OldTop + 1));
 
                     // Write the resulting buffer
-                    buffered.Append(
-                        ColorTools.currentForegroundColor.VTSequenceForeground +
-                        ColorTools.currentBackgroundColor.VTSequenceBackground
-                    );
+                    if (useColors)
+                    {
+                        buffered.Append(
+                            ColorTools.currentForegroundColor.VTSequenceForeground +
+                            ColorTools.currentBackgroundColor.VTSequenceBackground
+                        );
+                    }
                     return buffered.ToString();
                 }
                 catch (Exception ex)
