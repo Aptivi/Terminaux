@@ -182,7 +182,7 @@ namespace Terminaux.Writer.FancyWriters
                         BackgroundColor.VTSequenceBackground
                     );
                 }
-                for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
+                for (int HeaderIndex = 0; HeaderIndex < Headers.Length; HeaderIndex++)
                 {
                     string Header = Headers[HeaderIndex];
                     int ColumnPosition = ColumnPositions[HeaderIndex];
@@ -212,16 +212,19 @@ namespace Terminaux.Writer.FancyWriters
                 line++;
 
                 // Write the rows
-                var rowBuilder = new StringBuilder();
-                for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
+                int rowValues =  Rows.GetLength(0);
+                for (int rowIndex = 0; rowIndex < rowValues; rowIndex++)
                 {
-                    for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
+                    var rowBuilder = new StringBuilder();
+                    int columnValues = Rows.GetLength(1);
+                    for (int columnIndex = 0; columnIndex < columnValues; columnIndex++)
                     {
+                        var columnBuilder = new StringBuilder();
                         var ColoredCell = false;
                         var CellColor = ColorTools.currentForegroundColor;
                         var CellBackgroundColor = ColorTools.currentBackgroundColor;
-                        string RowValue = Rows[RowIndex, RowValueIndex];
-                        int ColumnPosition = ColumnPositions[RowValueIndex];
+                        string RowValue = Rows[rowIndex, columnIndex];
+                        int ColumnPosition = ColumnPositions[columnIndex];
                         RowValue ??= "";
 
                         // Get the cell options and set them as necessary
@@ -229,7 +232,7 @@ namespace Terminaux.Writer.FancyWriters
                         {
                             foreach (CellOptions CellOption in CellOptions)
                             {
-                                if (CellOption.ColumnIndex == RowValueIndex & CellOption.RowIndex == RowIndex)
+                                if (CellOption.ColumnIndex == columnIndex & CellOption.RowIndex == rowIndex)
                                 {
                                     ColoredCell = CellOption.ColoredCell;
                                     CellColor = CellOption.CellColor;
@@ -243,30 +246,37 @@ namespace Terminaux.Writer.FancyWriters
                         if (useColor)
                         {
                             if (ColoredCell)
-                                table.Append(
+                                rowBuilder.Append(
                                     CellColor.VTSequenceForeground +
                                     CellBackgroundColor.VTSequenceBackground
                                 );
                             else
-                                table.Append(
+                                rowBuilder.Append(
                                     ValueForegroundColor.VTSequenceForeground +
                                     BackgroundColor.VTSequenceBackground
                                 );
                         }
-                        if (RowValueIndex == 0)
-                            rowBuilder.Append(new string(' ', ColumnPosition));
-                        rowBuilder.Append(FinalRowValue);
-                        if (RowValueIndex < Headers.Length - 1)
-                            rowBuilder.Append(new string(' ', ColumnPositions[RowValueIndex + 1] - rowBuilder.Length));
+                        if (columnIndex == 0)
+                            columnBuilder.Append(new string(' ', ColumnPosition));
+                        columnBuilder.Append(FinalRowValue);
+                        if (columnIndex < Headers.Length - 1)
+                            columnBuilder.Append(new string(' ', ColumnCapacity - columnBuilder.Length));
+                        rowBuilder.Append(columnBuilder.ToString());
                     }
                     table.AppendLine(rowBuilder.ToString());
-                    rowBuilder.Clear();
                     line++;
 
                     // Separate the rows optionally
                     if (SeparateRows)
                     {
                         // Write the closing minus sign.
+                        if (useColor)
+                        {
+                            table.Append(
+                                SeparatorForegroundColor.VTSequenceForeground +
+                                BackgroundColor.VTSequenceBackground
+                            );
+                        }
                         RepeatTimes = width - Margin * 2;
                         if (Margin > 0)
                             table.Append(new string(' ', Margin));
