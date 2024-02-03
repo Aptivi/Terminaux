@@ -34,6 +34,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             BorderTextColor.WriteBorder("Hello world!", 2, 1, 6, 2, new Color(ConsoleColors.Green));
             BorderTextColor.WriteBorder("Hello world!", ConsoleWrapper.WindowWidth - 10, 1, 6, 2, new Color(ConsoleColors.Black), new Color(ConsoleColors.Yellow));
             BorderTextColor.WriteBorder("Middle", "Hello world!", (ConsoleWrapper.WindowWidth / 2) - 6, 1, 12, 1, new Color(ConsoleColors.Red));
+            BorderTextColor.WriteBorder("Center", "Hello world!", new Color(ConsoleColors.Purple));
             TextWriterWhereColor.WriteWhere("If you can see these, it's a success!", 0, 7);
         }
     }
