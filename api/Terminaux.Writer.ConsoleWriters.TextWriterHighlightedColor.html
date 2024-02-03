@@ -101,10 +101,193 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Render_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Render(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L176">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Render_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Render*"></a>
+  <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Render_System_String_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Render(System.String,System.Object[])">Render(string, params object[])</h4>
+  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Render(string Text, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Text</span></td>
+        <td><p>A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_RenderColor_System_String_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.RenderColor(System.String%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L185">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_RenderColor_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.RenderColor*"></a>
+  <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_RenderColor_System_String_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.RenderColor(System.String,Terminaux.Colors.Color,System.Object[])">RenderColor(string, Color, params object[])</h4>
+  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with custom color support.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RenderColor(string Text, Color color, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Text</span></td>
+        <td><p>A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>A color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_RenderColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.RenderColorBack(System.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L195">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_RenderColorBack_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.RenderColorBack*"></a>
+  <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_RenderColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.RenderColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">RenderColorBack(string, Color, Color, params object[])</h4>
+  <div class="markdown level1 summary"><p>Outputs the text into the terminal prompt with custom color support.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RenderColorBack(string Text, Color ForegroundColor, Color BackgroundColor, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Text</span></td>
+        <td><p>A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">ForegroundColor</span></td>
+        <td><p>A foreground color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">BackgroundColor</span></td>
+        <td><p>A background color that will be changed to.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Write_System_String_System_Boolean_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(System.String%2CSystem.Boolean%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L48">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L50">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Write_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Write_System_String_System_Boolean_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(System.String,System.Boolean,System.Object[])">Write(string, bool, params object[])</h4>
@@ -150,7 +333,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Write_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L39">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L41">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Write_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_Write_System_String_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.Write(System.String,System.Object[])">Write(string, params object[])</h4>
@@ -190,7 +373,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String%2CSystem.Boolean%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L67">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L69">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])">WriteColor(string, bool, Color, params object[])</h4>
@@ -242,7 +425,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_System_String_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L57">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L59">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColor_System_String_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColor(System.String,Terminaux.Colors.Color,System.Object[])">WriteColor(string, Color, params object[])</h4>
@@ -288,7 +471,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String%2CSystem.Boolean%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L88">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L90">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteColorBack(string, bool, Color, Color, params object[])</h4>
@@ -346,7 +529,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L77">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L79">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteColorBack(string, Color, Color, params object[])</h4>
@@ -398,7 +581,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L107">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L109">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])">WriteForReader(string, TermReaderSettings, bool, params object[])</h4>
@@ -450,7 +633,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L97">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L99">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])">WriteForReader(string, TermReaderSettings, params object[])</h4>
@@ -496,7 +679,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L128">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L130">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,System.Object[])">WriteForReaderColor(string, TermReaderSettings, bool, Color, params object[])</h4>
@@ -554,7 +737,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String%2CTerminaux.Reader.TermReaderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L117">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L119">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,System.Object[])">WriteForReaderColor(string, TermReaderSettings, Color, params object[])</h4>
@@ -606,7 +789,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Boolean%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L151">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L153">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteForReaderColorBack(string, TermReaderSettings, bool, Color, Color, params object[])</h4>
@@ -670,7 +853,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String%2CTerminaux.Reader.TermReaderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L139">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L141">View Source</a>
   </span>
   <a id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack*"></a>
   <h4 id="Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteForReaderColorBack(string, TermReaderSettings, Color, Color, params object[])</h4>
@@ -735,7 +918,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor.md&amp;value=---%0Auid%3A%20Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L31" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/ConsoleWriters/TextWriterHighlightedColor.cs/#L34" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
