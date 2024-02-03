@@ -14365,6 +14365,15 @@ references:
   commentId: T:Terminaux.Writer.FancyWriters.BorderTextColor
   fullName: Terminaux.Writer.FancyWriters.BorderTextColor
   nameWithType: BorderTextColor
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name: RenderBorder(string, char, char, char, char, char, char, char, char, Color, Color)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorder_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name.vb: RenderBorder(String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(string, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  nameWithType: BorderTextColor.RenderBorder(string, char, char, char, char, char, char, char, char, Color, Color)
+  nameWithType.vb: BorderTextColor.RenderBorder(String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color)
 - uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color)
   name: RenderBorder(string, int, int, int, int, char, char, char, char, char, char, char, char, Color, Color)
   href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_
@@ -14383,6 +14392,24 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color)
   nameWithType: BorderTextColor.RenderBorder(string, int, int, int, int, Color, Color)
   nameWithType.vb: BorderTextColor.RenderBorder(String, Integer, Integer, Integer, Integer, Color, Color)
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
+  name: RenderBorder(string, string, char, char, char, char, char, char, char, char, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorder_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(string, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderTextColor.RenderBorder(string, string, char, char, char, char, char, char, char, char, Color, params object[])
+  nameWithType.vb: BorderTextColor.RenderBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderBorder(string, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorder_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(string, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderTextColor.RenderBorder(string, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  nameWithType.vb: BorderTextColor.RenderBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: RenderBorder(string, string, int, int, int, int, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorder_System_String_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -14419,6 +14446,33 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(String, String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: BorderTextColor.RenderBorder(string, string, int, int, int, int, Color, Color, params object[])
   nameWithType.vb: BorderTextColor.RenderBorder(String, String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.String,Terminaux.Colors.Color,System.Object[])
+  name: RenderBorder(string, string, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorder_System_String_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderBorder(String, String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(string, string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(String, String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderTextColor.RenderBorder(string, string, Color, params object[])
+  nameWithType.vb: BorderTextColor.RenderBorder(String, String, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderBorder(string, string, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorder_System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderBorder(String, String, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(string, string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(String, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderTextColor.RenderBorder(string, string, Color, Color, params object[])
+  nameWithType.vb: BorderTextColor.RenderBorder(String, String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name: RenderBorder(string, Color, Color)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorder_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name.vb: RenderBorder(String, Color, Color)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(string, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder(String, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  nameWithType: BorderTextColor.RenderBorder(string, Color, Color)
+  nameWithType.vb: BorderTextColor.RenderBorder(String, Color, Color)
 - uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder*
   name: RenderBorder
   href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorder_
@@ -14426,6 +14480,24 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorder
   nameWithType: BorderTextColor.RenderBorder
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(System.String)
+  name: RenderBorderPlain(string)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderPlain_System_String_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(System.String)
+  name.vb: RenderBorderPlain(String)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(string)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(String)
+  nameWithType: BorderTextColor.RenderBorderPlain(string)
+  nameWithType.vb: BorderTextColor.RenderBorderPlain(String)
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char)
+  name: RenderBorderPlain(string, char, char, char, char, char, char, char, char)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderPlain_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char)
+  name.vb: RenderBorderPlain(String, Char, Char, Char, Char, Char, Char, Char, Char)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(string, char, char, char, char, char, char, char, char)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(String, Char, Char, Char, Char, Char, Char, Char, Char)
+  nameWithType: BorderTextColor.RenderBorderPlain(string, char, char, char, char, char, char, char, char)
+  nameWithType.vb: BorderTextColor.RenderBorderPlain(String, Char, Char, Char, Char, Char, Char, Char, Char)
 - uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
   name: RenderBorderPlain(string, int, int, int, int)
   href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderPlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_
@@ -14444,6 +14516,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char)
   nameWithType: BorderTextColor.RenderBorderPlain(string, int, int, int, int, char, char, char, char, char, char, char, char)
   nameWithType.vb: BorderTextColor.RenderBorderPlain(String, Integer, Integer, Integer, Integer, Char, Char, Char, Char, Char, Char, Char, Char)
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name: RenderBorderPlain(string, string, char, char, char, char, char, char, char, char, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderPlain_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name.vb: RenderBorderPlain(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(string, string, char, char, char, char, char, char, char, char, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  nameWithType: BorderTextColor.RenderBorderPlain(string, string, char, char, char, char, char, char, char, char, params object[])
+  nameWithType.vb: BorderTextColor.RenderBorderPlain(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
   name: RenderBorderPlain(string, string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
   href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderPlain_System_String_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
@@ -14462,6 +14543,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(String, String, Integer, Integer, Integer, Integer, ParamArray Object())
   nameWithType: BorderTextColor.RenderBorderPlain(string, string, int, int, int, int, params object[])
   nameWithType.vb: BorderTextColor.RenderBorderPlain(String, String, Integer, Integer, Integer, Integer, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(System.String,System.String,System.Object[])
+  name: RenderBorderPlain(string, string, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderPlain_System_String_System_String_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(System.String,System.String,System.Object[])
+  name.vb: RenderBorderPlain(String, String, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(string, string, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain(String, String, ParamArray Object())
+  nameWithType: BorderTextColor.RenderBorderPlain(string, string, params object[])
+  nameWithType.vb: BorderTextColor.RenderBorderPlain(String, String, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain*
   name: RenderBorderPlain
   href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_RenderBorderPlain_
@@ -14469,6 +14559,42 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.BorderTextColor.RenderBorderPlain
   nameWithType: BorderTextColor.RenderBorderPlain
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String)
+  name: WriteBorder(string)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String)
+  name.vb: WriteBorder(String)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String)
+  nameWithType: BorderTextColor.WriteBorder(string)
+  nameWithType.vb: BorderTextColor.WriteBorder(String)
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char)
+  name: WriteBorder(string, char, char, char, char, char, char, char, char)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char)
+  name.vb: WriteBorder(String, Char, Char, Char, Char, Char, Char, Char, Char)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, char, char, char, char, char, char, char, char)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, Char, Char, Char, Char, Char, Char, Char, Char)
+  nameWithType: BorderTextColor.WriteBorder(string, char, char, char, char, char, char, char, char)
+  nameWithType.vb: BorderTextColor.WriteBorder(String, Char, Char, Char, Char, Char, Char, Char, Char)
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color)
+  name: WriteBorder(string, char, char, char, char, char, char, char, char, Color)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color)
+  name.vb: WriteBorder(String, Char, Char, Char, Char, Char, Char, Char, Char, Color)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, char, char, char, char, char, char, char, char, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color)
+  nameWithType: BorderTextColor.WriteBorder(string, char, char, char, char, char, char, char, char, Color)
+  nameWithType.vb: BorderTextColor.WriteBorder(String, Char, Char, Char, Char, Char, Char, Char, Char, Color)
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name: WriteBorder(string, char, char, char, char, char, char, char, char, Color, Color)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name.vb: WriteBorder(String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  nameWithType: BorderTextColor.WriteBorder(string, char, char, char, char, char, char, char, char, Color, Color)
+  nameWithType.vb: BorderTextColor.WriteBorder(String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color)
 - uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
   name: WriteBorder(string, int, int, int, int)
   href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_Int32_System_Int32_System_Int32_System_Int32_
@@ -14523,6 +14649,33 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color)
   nameWithType: BorderTextColor.WriteBorder(string, int, int, int, int, Color, Color)
   nameWithType.vb: BorderTextColor.WriteBorder(String, Integer, Integer, Integer, Integer, Color, Color)
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name: WriteBorder(string, string, char, char, char, char, char, char, char, char, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
+  name.vb: WriteBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, string, char, char, char, char, char, char, char, char, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+  nameWithType: BorderTextColor.WriteBorder(string, string, char, char, char, char, char, char, char, char, params object[])
+  nameWithType.vb: BorderTextColor.WriteBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
+  name: WriteBorder(string, string, char, char, char, char, char, char, char, char, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderTextColor.WriteBorder(string, string, char, char, char, char, char, char, char, char, Color, params object[])
+  nameWithType.vb: BorderTextColor.WriteBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteBorder(string, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, string, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderTextColor.WriteBorder(string, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
+  nameWithType.vb: BorderTextColor.WriteBorder(String, String, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
   name: WriteBorder(string, string, int, int, int, int, char, char, char, char, char, char, char, char, params object[])
   href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
@@ -14577,6 +14730,51 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, String, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: BorderTextColor.WriteBorder(string, string, int, int, int, int, Color, Color, params object[])
   nameWithType.vb: BorderTextColor.WriteBorder(String, String, Integer, Integer, Integer, Integer, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,System.Object[])
+  name: WriteBorder(string, string, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_String_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,System.Object[])
+  name.vb: WriteBorder(String, String, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, string, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, String, ParamArray Object())
+  nameWithType: BorderTextColor.WriteBorder(string, string, params object[])
+  nameWithType.vb: BorderTextColor.WriteBorder(String, String, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,Terminaux.Colors.Color,System.Object[])
+  name: WriteBorder(string, string, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBorder(String, String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderTextColor.WriteBorder(string, string, Color, params object[])
+  nameWithType.vb: BorderTextColor.WriteBorder(String, String, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteBorder(string, string, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteBorder(String, String, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: BorderTextColor.WriteBorder(string, string, Color, Color, params object[])
+  nameWithType.vb: BorderTextColor.WriteBorder(String, String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,Terminaux.Colors.Color)
+  name: WriteBorder(string, Color)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,Terminaux.Colors.Color)
+  name.vb: WriteBorder(String, Color)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, Terminaux.Colors.Color)
+  nameWithType: BorderTextColor.WriteBorder(string, Color)
+  nameWithType.vb: BorderTextColor.WriteBorder(String, Color)
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name: WriteBorder(string, Color, Color)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name.vb: WriteBorder(String, Color, Color)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(string, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder(String, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  nameWithType: BorderTextColor.WriteBorder(string, Color, Color)
+  nameWithType.vb: BorderTextColor.WriteBorder(String, Color, Color)
 - uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder*
   name: WriteBorder
   href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorder_
@@ -14584,6 +14782,24 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorder
   nameWithType: BorderTextColor.WriteBorder
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderPlain(System.String)
+  name: WriteBorderPlain(string)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderPlain_System_String_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderPlain(System.String)
+  name.vb: WriteBorderPlain(String)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderPlain(string)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderPlain(String)
+  nameWithType: BorderTextColor.WriteBorderPlain(string)
+  nameWithType.vb: BorderTextColor.WriteBorderPlain(String)
+- uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderPlain(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char)
+  name: WriteBorderPlain(string, char, char, char, char, char, char, char, char)
+  href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderPlain_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_
+  commentId: M:Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderPlain(System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char)
+  name.vb: WriteBorderPlain(String, Char, Char, Char, Char, Char, Char, Char, Char)
+  fullName: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderPlain(string, char, char, char, char, char, char, char, char)
+  fullName.vb: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderPlain(String, Char, Char, Char, Char, Char, Char, Char, Char)
+  nameWithType: BorderTextColor.WriteBorderPlain(string, char, char, char, char, char, char, char, char)
+  nameWithType.vb: BorderTextColor.WriteBorderPlain(String, Char, Char, Char, Char, Char, Char, Char, Char)
 - uid: Terminaux.Writer.FancyWriters.BorderTextColor.WriteBorderPlain(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
   name: WriteBorderPlain(string, int, int, int, int)
   href: api/Terminaux.Writer.FancyWriters.BorderTextColor.html#Terminaux_Writer_FancyWriters_BorderTextColor_WriteBorderPlain_System_String_System_Int32_System_Int32_System_Int32_System_Int32_
