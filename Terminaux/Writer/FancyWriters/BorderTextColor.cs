@@ -654,7 +654,7 @@ namespace Terminaux.Writer.FancyWriters
                         if (Top + 1 + i > Top + InteriorHeight)
                             break;
                         border.Append(
-                            TextWriterWhereColor.RenderWherePlain(sentence, Left + 1, Top + 1 + i)
+                            TextWriterWhereColor.RenderWhere(sentence, Left + 1, Top + 1 + i)
                         );
                     }
                 }

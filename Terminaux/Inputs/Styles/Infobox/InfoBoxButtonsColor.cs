@@ -495,14 +495,14 @@ namespace Terminaux.Inputs.Styles.Infobox
                         {
                             boxBuffer.Append(
                                 BorderColor.RenderBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor) +
-                                TextWriterWhereColor.RenderWhere(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor)
+                                TextWriterWhereColor.RenderWhereColorBack(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor)
                             );
                         }
                         else
                         {
                             boxBuffer.Append(
                                 BorderColor.RenderBorderPlain(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1) +
-                                TextWriterWhereColor.RenderWherePlain(buttonText, buttonTextX, buttonPanelPosY + 1)
+                                TextWriterWhereColor.RenderWhere(buttonText, buttonTextX, buttonPanelPosY + 1)
                             );
                         }
                     }

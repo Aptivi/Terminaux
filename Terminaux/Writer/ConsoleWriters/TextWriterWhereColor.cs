@@ -72,7 +72,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     // Render as necessary
-                    ConsoleWrapper.Write(RenderWherePlain(msg, Left, Top, Return, RightMargin, vars));
+                    ConsoleWrapper.Write(RenderWhere(msg, Left, Top, Return, RightMargin, vars));
                 }
                 catch (Exception ex)
                 {
@@ -169,7 +169,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    ConsoleWrapper.Write(RenderWhere(msg, Left, Top, Return, RightMargin, color, ColorTools.currentBackgroundColor, vars));
+                    ConsoleWrapper.Write(RenderWhereColorBack(msg, Left, Top, Return, RightMargin, color, ColorTools.currentBackgroundColor, vars));
                 }
                 catch (Exception ex)
                 {
@@ -222,7 +222,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     // Write text in another place. By the way, we check the text for newlines and console width excess
-                    ConsoleWrapper.Write(RenderWhere(msg, Left, Top, Return, RightMargin, ForegroundColor, BackgroundColor, vars));
+                    ConsoleWrapper.Write(RenderWhereColorBack(msg, Left, Top, Return, RightMargin, ForegroundColor, BackgroundColor, vars));
                 }
                 catch (Exception ex)
                 {
@@ -239,8 +239,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Left">Column number in console</param>
         /// <param name="Top">Row number in console</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderWherePlain(string msg, int Left, int Top, params object[] vars) =>
-            RenderWherePlain(msg, Left, Top, false, 0, vars);
+        public static string RenderWhere(string msg, int Left, int Top, params object[] vars) =>
+            RenderWhere(msg, Left, Top, false, 0, vars);
 
         /// <summary>
         /// Renders the text with location support.
@@ -250,8 +250,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Top">Row number in console</param>
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderWherePlain(string msg, int Left, int Top, bool Return, params object[] vars) =>
-            RenderWherePlain(msg, Left, Top, Return, 0, vars);
+        public static string RenderWhere(string msg, int Left, int Top, bool Return, params object[] vars) =>
+            RenderWhere(msg, Left, Top, Return, 0, vars);
 
         /// <summary>
         /// Renders the text with location support.
@@ -262,7 +262,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="RightMargin">The right margin</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars) =>
+        public static string RenderWhere(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars) =>
             RenderWhere(msg, Left, Top, Return, RightMargin, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, false, vars);
 
         /// <summary>
@@ -272,10 +272,46 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Left">Column number in console</param>
         /// <param name="Top">Row number in console</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string RenderWhereColor(string msg, int Left, int Top, Color ForegroundColor, params object[] vars) =>
+            RenderWhereColorBack(msg, Left, Top, false, 0, ForegroundColor, ColorTools.CurrentBackgroundColor, vars);
+
+        /// <summary>
+        /// Renders the text with location support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string RenderWhereColor(string msg, int Left, int Top, bool Return, Color ForegroundColor, params object[] vars) =>
+            RenderWhereColorBack(msg, Left, Top, Return, 0, ForegroundColor, ColorTools.CurrentBackgroundColor, vars);
+
+        /// <summary>
+        /// Renders the text with location support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string RenderWhereColor(string msg, int Left, int Top, bool Return, int RightMargin, Color ForegroundColor, params object[] vars) =>
+            RenderWhereColorBack(msg, Left, Top, Return, RightMargin, ForegroundColor, ColorTools.CurrentBackgroundColor, vars);
+
+        /// <summary>
+        /// Renders the text with location support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderWhere(string msg, int Left, int Top, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
-            RenderWhere(msg, Left, Top, false, 0, ForegroundColor, BackgroundColor, vars);
+        public static string RenderWhereColorBack(string msg, int Left, int Top, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
+            RenderWhereColorBack(msg, Left, Top, false, 0, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Renders the text with location support.
@@ -287,8 +323,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderWhere(string msg, int Left, int Top, bool Return, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
-            RenderWhere(msg, Left, Top, Return, 0, ForegroundColor, BackgroundColor, vars);
+        public static string RenderWhereColorBack(string msg, int Left, int Top, bool Return, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
+            RenderWhereColorBack(msg, Left, Top, Return, 0, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Renders the text with location support.
@@ -301,7 +337,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderWhere(string msg, int Left, int Top, bool Return, int RightMargin, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
+        public static string RenderWhereColorBack(string msg, int Left, int Top, bool Return, int RightMargin, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
             RenderWhere(msg, Left, Top, Return, RightMargin, ForegroundColor, BackgroundColor, true, vars);
 
         /// <summary>

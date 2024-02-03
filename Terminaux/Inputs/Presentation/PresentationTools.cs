@@ -223,7 +223,7 @@ namespace Terminaux.Inputs.Presentation
 
             // Clear the presentation screen
             for (int y = PresentationUpperInnerBorderTop; y <= PresentationLowerInnerBorderTop + 1; y++)
-                builder.Append(TextWriterWhereColor.RenderWherePlain(new string(' ', PresentationLowerInnerBorderLeft), PresentationUpperInnerBorderLeft, y));
+                builder.Append(TextWriterWhereColor.RenderWhere(new string(' ', PresentationLowerInnerBorderLeft), PresentationUpperInnerBorderLeft, y));
 
             // Seek to the first position inside the border
             builder.Append(CsiSequences.GenerateCsiCursorPosition(PresentationUpperInnerBorderLeft + 1, PresentationUpperInnerBorderTop + 1));

@@ -200,7 +200,7 @@ namespace Terminaux.Writer.FancyWriters
                     figBuilder.Append(
                         $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
                         $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
-                        TextWriterWhereColor.RenderWherePlain(Text, consoleX, consoleY, true, Vars)
+                        TextWriterWhereColor.RenderWhere(Text, consoleX, consoleY, true, Vars)
                     );
                 }
                 else
@@ -302,7 +302,7 @@ namespace Terminaux.Writer.FancyWriters
                         figBuilder.Append(
                             $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
                             $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
-                            TextWriterWhereColor.RenderWherePlain(Text, consoleX, top, true, Vars)
+                            TextWriterWhereColor.RenderWhere(Text, consoleX, top, true, Vars)
                         );
                     }
                     else

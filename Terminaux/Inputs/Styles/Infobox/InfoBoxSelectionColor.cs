@@ -472,13 +472,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                         if (useColor)
                         {
                             boxBuffer.Append(
-                                TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), leftPos, top, finalForeColor, finalBackColor)
+                                TextWriterWhereColor.RenderWhereColorBack(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), leftPos, top, finalForeColor, finalBackColor)
                             );
                         }
                         else
                         {
                             boxBuffer.Append(
-                                TextWriterWhereColor.RenderWherePlain(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), leftPos, top)
+                                TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), leftPos, top)
                             );
                         }
                     }

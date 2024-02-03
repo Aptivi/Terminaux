@@ -438,7 +438,7 @@ namespace Terminaux.Inputs.Interactive
                         string truncated = "Shift+I = more info";
                         builder.Append(ForegroundColor.VTSequenceForeground);
                         builder.Append(PaneItemBackColor.VTSequenceBackground);
-                        builder.Append(TextWriterWhereColor.RenderWherePlain(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
+                        builder.Append(TextWriterWhereColor.RenderWhere(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
                         break;
                     }
 
@@ -446,7 +446,7 @@ namespace Terminaux.Inputs.Interactive
                     string finalInfo = finalInfoStrings[infoIndex];
                     builder.Append(ForegroundColor.VTSequenceForeground);
                     builder.Append(PaneItemBackColor.VTSequenceBackground);
-                    builder.Append(TextWriterWhereColor.RenderWherePlain(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
+                    builder.Append(TextWriterWhereColor.RenderWhere(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
                 }
                 return builder.ToString();
             });
@@ -478,7 +478,7 @@ namespace Terminaux.Inputs.Interactive
                 var builder = new StringBuilder();
                 builder.Append(InteractiveTuiStatus.ForegroundColor.VTSequenceForeground);
                 builder.Append(InteractiveTuiStatus.BackgroundColor.VTSequenceBackground);
-                builder.Append(TextWriterWhereColor.RenderWherePlain(InteractiveTuiStatus.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0));
+                builder.Append(TextWriterWhereColor.RenderWhere(InteractiveTuiStatus.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0));
                 builder.Append(ConsoleClearing.GetClearLineToRightSequence());
                 return builder.ToString();
             });

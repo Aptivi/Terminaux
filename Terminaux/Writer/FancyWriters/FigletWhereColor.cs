@@ -160,7 +160,7 @@ namespace Terminaux.Writer.FancyWriters
             builder.Append(
                 $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
                 $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
-                TextWriterWhereColor.RenderWherePlain(Text, Left, Top, Return, Vars) +
+                TextWriterWhereColor.RenderWhere(Text, Left, Top, Return, Vars) +
                 $"{(useColor ? ColorTools.currentForegroundColor.VTSequenceForeground : "")}" +
                 $"{(useColor ? ColorTools.currentBackgroundColor.VTSequenceBackground : "")}"
             );
