@@ -3056,6 +3056,45 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.LoadBackDry
   nameWithType: ColorTools.LoadBackDry
+- uid: Terminaux.Colors.ColorTools.RenderResetBackground
+  name: RenderResetBackground()
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderResetBackground
+  commentId: M:Terminaux.Colors.ColorTools.RenderResetBackground
+  fullName: Terminaux.Colors.ColorTools.RenderResetBackground()
+  nameWithType: ColorTools.RenderResetBackground()
+- uid: Terminaux.Colors.ColorTools.RenderResetBackground*
+  name: RenderResetBackground
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderResetBackground_
+  commentId: Overload:Terminaux.Colors.ColorTools.RenderResetBackground
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.RenderResetBackground
+  nameWithType: ColorTools.RenderResetBackground
+- uid: Terminaux.Colors.ColorTools.RenderResetColors
+  name: RenderResetColors()
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderResetColors
+  commentId: M:Terminaux.Colors.ColorTools.RenderResetColors
+  fullName: Terminaux.Colors.ColorTools.RenderResetColors()
+  nameWithType: ColorTools.RenderResetColors()
+- uid: Terminaux.Colors.ColorTools.RenderResetColors*
+  name: RenderResetColors
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderResetColors_
+  commentId: Overload:Terminaux.Colors.ColorTools.RenderResetColors
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.RenderResetColors
+  nameWithType: ColorTools.RenderResetColors
+- uid: Terminaux.Colors.ColorTools.RenderResetForeground
+  name: RenderResetForeground()
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderResetForeground
+  commentId: M:Terminaux.Colors.ColorTools.RenderResetForeground
+  fullName: Terminaux.Colors.ColorTools.RenderResetForeground()
+  nameWithType: ColorTools.RenderResetForeground()
+- uid: Terminaux.Colors.ColorTools.RenderResetForeground*
+  name: RenderResetForeground
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderResetForeground_
+  commentId: Overload:Terminaux.Colors.ColorTools.RenderResetForeground
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.RenderResetForeground
+  nameWithType: ColorTools.RenderResetForeground
 - uid: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
   name: RenderSetConsoleColor(Color, bool, bool, bool)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderSetConsoleColor_Terminaux_Colors_Color_System_Boolean_System_Boolean_System_Boolean_
