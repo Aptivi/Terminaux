@@ -73,7 +73,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             // Write a character individually
                             if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                             {
-                                ConsoleWrapper.Write(buffered.ToString());
+                                TextWriterRaw.WritePlain(buffered.ToString(), false);
                                 buffered.Clear();
                                 var key = Input.DetectKeypress().Key;
                                 switch (key)
@@ -133,10 +133,10 @@ namespace Terminaux.Writer.ConsoleWriters
                             LinesMade++;
                         }
                     }
-                    ConsoleWrapper.Write(buffered.ToString());
+                    TextWriterRaw.WritePlain(buffered.ToString(), false);
                     buffered.Clear();
                     if (Line)
-                        ConsoleWrapper.WriteLine();
+                        TextWriterRaw.Write();
                 }
                 catch (Exception ex)
                 {
