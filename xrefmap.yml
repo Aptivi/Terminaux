@@ -13145,6 +13145,54 @@ references:
   commentId: T:Terminaux.Writer.ConsoleWriters.TextWriterColor
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor
   nameWithType: TextWriterColor
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.Render(System.String,System.Object[])
+  name: Render(string, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_Render_System_String_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.Render(System.String,System.Object[])
+  name.vb: Render(String, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.Render(string, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.Render(String, ParamArray Object())
+  nameWithType: TextWriterColor.Render(string, params object[])
+  nameWithType.vb: TextWriterColor.Render(String, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.Render*
+  name: Render
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_Render_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterColor.Render
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.Render
+  nameWithType: TextWriterColor.Render
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name: RenderColor(string, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_RenderColor_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderColor(String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColor(string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColor(String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterColor.RenderColor(string, Color, params object[])
+  nameWithType.vb: TextWriterColor.RenderColor(String, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColor*
+  name: RenderColor
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_RenderColor_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColor
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColor
+  nameWithType: TextWriterColor.RenderColor
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderColorBack(string, Color, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_RenderColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderColorBack(String, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColorBack(string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColorBack(String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterColor.RenderColorBack(string, Color, Color, params object[])
+  nameWithType.vb: TextWriterColor.RenderColorBack(String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColorBack*
+  name: RenderColorBack
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_RenderColorBack_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColorBack
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.RenderColorBack
+  nameWithType: TextWriterColor.RenderColorBack
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.Write
   name: Write()
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_Write
