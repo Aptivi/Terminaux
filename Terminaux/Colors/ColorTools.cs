@@ -247,7 +247,7 @@ namespace Terminaux.Colors
                 throw new TerminauxException("Color instance is not provided.");
 
             // Define reset background sequence
-            string resetSequence = $"{VtSequenceBasicChars.EscapeChar}[49m";
+            string resetSequence = RenderResetBackground();
 
             // Render the background being set
             var builder = new StringBuilder();
@@ -398,7 +398,7 @@ namespace Terminaux.Colors
         /// </summary>
         public static void ResetForeground()
         {
-            ConsoleWrapper.Write($"{Convert.ToChar(0x1B)}[39m");
+            TextWriterColor.WritePlain(RenderResetForeground(), false);
             currentForegroundColor = ConsoleColor.Gray;
         }
 
@@ -407,9 +407,27 @@ namespace Terminaux.Colors
         /// </summary>
         public static void ResetBackground()
         {
-            ConsoleWrapper.Write($"{Convert.ToChar(0x1B)}[49m");
+            TextWriterColor.WritePlain(RenderResetBackground(), false);
             currentBackgroundColor = ConsoleColor.Black;
         }
+
+        /// <summary>
+        /// Gets a sequence that resets the console colors without clearing screen
+        /// </summary>
+        public static string RenderResetColors() =>
+            RenderResetForeground() + RenderResetBackground();
+
+        /// <summary>
+        /// Gets a sequence that resets the foreground color without clearing screen
+        /// </summary>
+        public static string RenderResetForeground() =>
+            $"\u001b[39m";
+
+        /// <summary>
+        /// Gets a sequence that resets the background color without clearing screen
+        /// </summary>
+        public static string RenderResetBackground() =>
+            $"\u001b[49m";
 
         internal static string GetColorIdStringFrom(ConsoleColors colorDef) =>
             GetColorIdStringFrom((int)colorDef);
