@@ -3056,6 +3056,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.LoadBackDry
   nameWithType: ColorTools.LoadBackDry
+- uid: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
+  name: RenderSetConsoleColor(Color, bool, bool, bool)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderSetConsoleColor_Terminaux_Colors_Color_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
+  name.vb: RenderSetConsoleColor(Color, Boolean, Boolean, Boolean)
+  fullName: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color, bool, bool, bool)
+  fullName.vb: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color, Boolean, Boolean, Boolean)
+  nameWithType: ColorTools.RenderSetConsoleColor(Color, bool, bool, bool)
+  nameWithType.vb: ColorTools.RenderSetConsoleColor(Color, Boolean, Boolean, Boolean)
+- uid: Terminaux.Colors.ColorTools.RenderSetConsoleColor*
+  name: RenderSetConsoleColor
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderSetConsoleColor_
+  commentId: Overload:Terminaux.Colors.ColorTools.RenderSetConsoleColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.RenderSetConsoleColor
+  nameWithType: ColorTools.RenderSetConsoleColor
 - uid: Terminaux.Colors.ColorTools.ResetBackground
   name: ResetBackground()
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_ResetBackground
