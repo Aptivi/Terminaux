@@ -19,9 +19,12 @@
 
 using System;
 using System.Diagnostics;
+using System.Runtime;
+using System.Text;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Reader;
+using Textify.General;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -30,7 +33,6 @@ namespace Terminaux.Writer.ConsoleWriters
     /// </summary>
     public static class TextWriterHighlightedColor
     {
-
         /// <summary>
         /// Outputs the text into the terminal prompt.
         /// </summary>
@@ -154,18 +156,9 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 try
                 {
-                    // Try to write to console
-                    ColorTools.SetConsoleColorDry(ForegroundColor, true);
-                    ColorTools.SetConsoleColorDry(BackgroundColor);
-
                     // Write the text to console
-                    TextWriterRaw.WritePlain(Text, settings, false, vars);
-                    ColorTools.SetConsoleColorDry(ForegroundColor);
-                    ColorTools.SetConsoleColorDry(BackgroundColor, true);
-                    TextWriterRaw.WritePlain("", settings, Line);
-
-                    // Reset the colors
-                    ColorTools.ResetColors();
+                    string sequence = RenderColorBack(Text, ForegroundColor, BackgroundColor, vars);
+                    TextWriterRaw.WritePlain(sequence, settings, Line, vars);
                 }
                 catch (Exception ex)
                 {
@@ -175,5 +168,53 @@ namespace Terminaux.Writer.ConsoleWriters
             }
         }
 
+        /// <summary>
+        /// Outputs the text into the terminal prompt.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string Render(string Text, params object[] vars) =>
+            RenderColor(Text, ColorTools.currentForegroundColor, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with custom color support.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string RenderColor(string Text, Color color, params object[] vars) =>
+            RenderColorBack(Text, color, ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with custom color support.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string RenderColorBack(string Text, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+        {
+            lock (TextWriterRaw.WriteLock)
+            {
+                try
+                {
+                    var buffered = new StringBuilder();
+                    buffered.Append(
+                        ColorTools.RenderSetConsoleColor(ForegroundColor, true) +
+                        ColorTools.RenderSetConsoleColor(BackgroundColor) +
+                        TextTools.FormatString(Text, vars) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                    );
+                    return buffered.ToString();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.StackTrace);
+                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                }
+                return "";
+            }
+        }
     }
 }
