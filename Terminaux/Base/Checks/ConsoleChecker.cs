@@ -109,7 +109,7 @@ namespace Terminaux.Base.Checks
                 );
             }
             if (greylisted)
-                TextWriterColor.WritePlain($"The console type you're currently using, {TerminalType}, is greylisted: {justification2}");
+                TextWriterRaw.WritePlain($"The console type you're currently using, {TerminalType}, is greylisted: {justification2}");
 
             // Check the blacklist and the greylist for the terminal emulator
             var (emuBlacklisted, emuJustification) = TerminalEmulatorBlacklist.IsEmulatorBlacklisted();
@@ -121,11 +121,11 @@ namespace Terminaux.Base.Checks
                 );
             }
             if (emuGreylisted)
-                TextWriterColor.WritePlain($"The terminal emulator you're currently using, {TerminalEmulator}, is greylisted: {emuJustification2}");
+                TextWriterRaw.WritePlain($"The terminal emulator you're currently using, {TerminalEmulator}, is greylisted: {emuJustification2}");
 
             // Check for 256 colors
             if (!IsConsole256Colors() && ConsolePlatform.IsOnUnix())
-                TextWriterColor.WritePlain($"Terminal type {TerminalType} doesn't support 256 colors according to terminfo");
+                TextWriterRaw.WritePlain($"Terminal type {TerminalType} doesn't support 256 colors according to terminfo");
 
             // Don't check again.
             acknowledged = true;
@@ -223,11 +223,11 @@ namespace Terminaux.Base.Checks
             // Check for the minimum console window requirements (80x24)
             while (!CheckConsoleSize(minimumWidth, minimumHeight))
             {
-                TextWriterColor.WritePlain("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
+                TextWriterRaw.WritePlain("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
                     ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight,
                     Console.BufferWidth, ConsoleWrapper.BufferHeight,
                     minimumWidth, minimumHeight);
-                TextWriterColor.WritePlain("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
+                TextWriterRaw.WritePlain("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
                 Input.DetectKeypress();
             }
         }

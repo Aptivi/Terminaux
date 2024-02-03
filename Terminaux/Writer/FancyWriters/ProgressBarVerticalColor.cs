@@ -70,7 +70,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderVerticalProgressPlain(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, DrawBorder));
+                TextWriterRaw.WritePlain(RenderVerticalProgressPlain(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -188,7 +188,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, ProgressColor, FrameColor, DrawBorder));
+                TextWriterRaw.WritePlain(RenderVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, ProgressColor, FrameColor, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -240,7 +240,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, ProgressColor, FrameColor, BackgroundColor, DrawBorder));
+                TextWriterRaw.WritePlain(RenderVerticalProgress(Progress, Left, Top, TopHeightOffset, BottomHeightOffset, ProgressColor, FrameColor, BackgroundColor, DrawBorder));
             }
             catch (Exception ex)
             {

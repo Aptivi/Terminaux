@@ -115,7 +115,7 @@ namespace Terminaux.Base.Extensions
         /// <param name="formattings">All text formatting to use</param>
         public static void SetFormatting(ConsoleFormattingType formattings)
         {
-            TextWriterColor.WritePlain(GetFormattingSequences(formattings), false);
+            TextWriterRaw.WritePlain(GetFormattingSequences(formattings), false);
             formatting = formattings;
         }
 
@@ -124,7 +124,7 @@ namespace Terminaux.Base.Extensions
         /// </summary>
         public static void ResetFormatting()
         {
-            TextWriterColor.WritePlain(GetFormattingSequences(ConsoleFormattingType.Default), false);
+            TextWriterRaw.WritePlain(GetFormattingSequences(ConsoleFormattingType.Default), false);
             formatting = ConsoleFormattingType.Default;
         }
     }

@@ -42,7 +42,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderPowerLine(Segments, Line), false);
+                TextWriterRaw.WritePlain(RenderPowerLine(Segments, Line), false);
             }
             catch (Exception ex)
             {
@@ -61,7 +61,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderPowerLine(Segments, EndingColor, Line), false);
+                TextWriterRaw.WritePlain(RenderPowerLine(Segments, EndingColor, Line), false);
             }
             catch (Exception ex)
             {

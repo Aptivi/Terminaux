@@ -67,7 +67,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -114,7 +114,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhere(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -164,7 +164,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhereColor(string msg, int Left, int Top, bool Return, int RightMargin, Color color, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -217,7 +217,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhereColorBack(string msg, int Left, int Top, bool Return, int RightMargin, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -318,7 +318,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         internal static string RenderWhere(string msg, int Left, int Top, bool Return, int RightMargin, Color ForegroundColor, Color BackgroundColor, bool useColors, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {

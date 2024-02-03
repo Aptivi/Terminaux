@@ -33,7 +33,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             foreach (var type in types)
             {
                 ConsoleCursor.CursorType = (ConsoleCursorType)type;
-                TextWriterColor.WritePlain($"{type}: ", false);
+                TextWriterRaw.WritePlain($"{type}: ", false);
                 Input.DetectKeypress();
             }
             ConsoleCursor.CursorType = ConsoleCursorType.User;

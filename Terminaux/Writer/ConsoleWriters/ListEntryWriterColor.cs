@@ -38,13 +38,13 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="indent">Indentation level</param>
         public static void WriteListEntryPlain(string entry, string value, int indent = 0)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Write the list entry
                     string buffered = RenderListEntry(entry, value, indent);
-                    TextWriterColor.WritePlain(buffered);
+                    TextWriterRaw.WritePlain(buffered);
                 }
                 catch (Exception ex)
                 {
@@ -73,13 +73,13 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListValueColor">A value color.</param>
         public static void WriteListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Write the list entry
                     string buffered = RenderListEntry(entry, value, ListKeyColor, ListValueColor, indent);
-                    TextWriterColor.WritePlain(buffered);
+                    TextWriterRaw.WritePlain(buffered);
                 }
                 catch (Exception ex)
                 {

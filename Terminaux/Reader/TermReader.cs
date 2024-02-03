@@ -193,7 +193,7 @@ namespace Terminaux.Reader
                         PositioningTools.SeekTo(readState.CurrentText.Length, ref readState);
                         PositioningTools.Commit(readState);
                     }
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
 
                     // Return the input after adding it to history
                     input =

@@ -48,7 +48,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderTablePlain(Headers, Rows, Margin, SeparateRows, CellOptions));
+                TextWriterRaw.WritePlain(RenderTablePlain(Headers, Rows, Margin, SeparateRows, CellOptions));
             }
             catch (Exception ex)
             {
@@ -73,7 +73,7 @@ namespace Terminaux.Writer.FancyWriters
                 var header = new Color(ConsoleColors.White);
                 var value = new Color(ConsoleColors.DarkCyan);
                 var back = ColorTools.currentBackgroundColor;
-                TextWriterColor.WritePlain(RenderTable(Headers, Rows, Margin, sep, header, value, back, SeparateRows, CellOptions));
+                TextWriterRaw.WritePlain(RenderTable(Headers, Rows, Margin, sep, header, value, back, SeparateRows, CellOptions));
             }
             catch (Exception ex)
             {
@@ -98,7 +98,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderTable(Headers, Rows, Margin, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, SeparateRows, CellOptions));
+                TextWriterRaw.WritePlain(RenderTable(Headers, Rows, Margin, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, SeparateRows, CellOptions));
             }
             catch (Exception ex)
             {

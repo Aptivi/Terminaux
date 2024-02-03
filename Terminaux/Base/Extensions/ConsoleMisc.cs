@@ -37,7 +37,7 @@ namespace Terminaux.Base.Extensions
             char BellChar = Convert.ToChar(7);
             char EscapeChar = Convert.ToChar(27);
             string Sequence = $"{EscapeChar}]0;{Text}{BellChar}";
-            TextWriterColor.WritePlain(Sequence, false);
+            TextWriterRaw.WritePlain(Sequence, false);
         }
 
         /// <summary>

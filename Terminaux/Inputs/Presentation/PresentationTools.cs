@@ -149,7 +149,7 @@ namespace Terminaux.Inputs.Presentation
                     if (element.IsPossibleOutOfBounds() && checkOutOfBounds)
                     {
                         Input.DetectKeypress();
-                        TextWriterColor.WritePlain(ClearPresentation(), false);
+                        TextWriterRaw.WritePlain(ClearPresentation(), false);
                     }
                     checkOutOfBounds = true;
 

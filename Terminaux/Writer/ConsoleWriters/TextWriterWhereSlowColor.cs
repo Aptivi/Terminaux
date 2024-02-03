@@ -73,7 +73,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -185,7 +185,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhereSlowly(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -286,7 +286,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWhereSlowlyColorBack(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {

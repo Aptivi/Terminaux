@@ -64,8 +64,7 @@ namespace Terminaux.Inputs.Interactive
                 if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
                     interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0 && !interactiveTui.AcceptsEmptyData)
                 {
-                    TextWriterColor.Write("The interactive TUI {0} doesn't contain any data source. This program can't continue.", interactiveTui.GetType().Name);
-                    TextWriterColor.Write();
+                    TextWriterColor.Write("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n", interactiveTui.GetType().Name);
                     TextWriterColor.Write("Press any key to exit this program...");
                     Input.DetectKeypress();
                     return;
@@ -127,8 +126,7 @@ namespace Terminaux.Inputs.Interactive
                 if (notifyCrash)
                 {
                     notifyCrash = false;
-                    TextWriterColor.WriteColor(crashReason, true, ConsoleColors.Red);
-                    TextWriterColor.Write();
+                    TextWriterColor.WriteColor(crashReason + "\n", true, ConsoleColors.Red);
                     TextWriterColor.Write("Press any key to exit this program...");
                     Input.DetectKeypress();
                 }

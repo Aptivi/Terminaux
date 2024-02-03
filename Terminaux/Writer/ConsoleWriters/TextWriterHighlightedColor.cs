@@ -150,7 +150,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteForReaderColorBack(string Text, TermReaderSettings settings, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -159,10 +159,10 @@ namespace Terminaux.Writer.ConsoleWriters
                     ColorTools.SetConsoleColorDry(BackgroundColor);
 
                     // Write the text to console
-                    TextWriterColor.WritePlain(Text, settings, false, vars);
+                    TextWriterRaw.WritePlain(Text, settings, false, vars);
                     ColorTools.SetConsoleColorDry(ForegroundColor);
                     ColorTools.SetConsoleColorDry(BackgroundColor, true);
-                    TextWriterColor.WritePlain("", settings, Line);
+                    TextWriterRaw.WritePlain("", settings, Line);
 
                     // Reset the colors
                     ColorTools.ResetColors();

@@ -244,7 +244,7 @@ namespace Terminaux.Inputs.Styles.Choice
                 else
                 {
                     answer = Convert.ToString(Input.DetectKeypress().KeyChar);
-                    TextWriterColor.Write();
+                    TextWriterRaw.Write();
                 }
 
                 // Check if answer is correct.

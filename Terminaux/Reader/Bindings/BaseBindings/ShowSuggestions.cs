@@ -43,7 +43,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             if (suggestions.Length > 1)
             {
                 // Write a new line
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
 
                 // Check to see if we can display 15 characters
                 int max = suggestions.Max((suggestion) => suggestion.Length);

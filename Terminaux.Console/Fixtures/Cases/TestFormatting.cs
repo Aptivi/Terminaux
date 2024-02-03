@@ -30,16 +30,16 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "TestFormatting";
         public void RunFixture()
         {
-            TextWriterColor.WritePlain($"Most terminal emulators don't support anything other than common text formatting.");
+            TextWriterRaw.WritePlain($"Most terminal emulators don't support anything other than common text formatting.");
             var types = Enum.GetValues(typeof(ConsoleFormattingType));
             foreach (var type in types)
             {
-                TextWriterColor.WritePlain(ConsoleFormatting.GetFormattingSequences((ConsoleFormattingType)type), false);
+                TextWriterRaw.WritePlain(ConsoleFormatting.GetFormattingSequences((ConsoleFormattingType)type), false);
                 TextWriterColor.WriteColorBack($"{type} text", false, ConsoleColors.DarkGreen, ConsoleColors.DarkBlue);
                 Input.DetectKeypress();
-                TextWriterColor.Write();
+                TextWriterRaw.Write();
             }
-            TextWriterColor.WritePlain(ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default), false);
+            TextWriterRaw.WritePlain(ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default), false);
         }
     }
 }

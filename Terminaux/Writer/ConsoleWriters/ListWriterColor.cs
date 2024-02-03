@@ -47,7 +47,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteListPlain<TKey, TValue>(Dictionary<TKey, TValue> List, bool Wrap)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -56,7 +56,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterColor.WritePlain(buffered, false);
+                        TextWriterRaw.WritePlain(buffered, false);
                 }
                 catch (Exception ex)
                 {
@@ -99,7 +99,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor, bool Wrap)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -108,7 +108,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterColor.WritePlain(buffered, false);
+                        TextWriterRaw.WritePlain(buffered, false);
                 }
                 catch (Exception ex)
                 {
@@ -189,7 +189,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteListPlain<T>(IEnumerable<T> List, bool Wrap)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -198,7 +198,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterColor.WritePlain(buffered, false);
+                        TextWriterRaw.WritePlain(buffered, false);
                 }
                 catch (Exception ex)
                 {
@@ -241,7 +241,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor, bool Wrap)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
@@ -250,7 +250,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterColor.WritePlain(buffered, false);
+                        TextWriterRaw.WritePlain(buffered, false);
                 }
                 catch (Exception ex)
                 {

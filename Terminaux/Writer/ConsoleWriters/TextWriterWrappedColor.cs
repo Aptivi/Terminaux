@@ -43,7 +43,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWrappedPlain(string Text, bool Line, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 var LinesMade = 0;
                 try
@@ -166,7 +166,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteWrappedColorBack(string Text, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
-            lock (TextWriterColor.WriteLock)
+            lock (TextWriterRaw.WriteLock)
             {
                 try
                 {

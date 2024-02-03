@@ -584,7 +584,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             {
                 if (useColor)
                 {
-                    TextWriterColor.WritePlain(
+                    TextWriterRaw.WritePlain(
                         ColorTools.currentForegroundColor.VTSequenceForeground +
                         ColorTools.currentBackgroundColor.VTSequenceBackground
                     , false);

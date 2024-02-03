@@ -43,7 +43,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderCentered(top, Text, Vars), false);
+                TextWriterRaw.WritePlain(RenderCentered(top, Text, Vars), false);
             }
             catch (Exception ex)
             {
@@ -74,7 +74,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderCentered(top, Text, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterRaw.WritePlain(RenderCentered(top, Text, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex)
             {
@@ -93,7 +93,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderCenteredOneLine(top, Text, Vars), false);
+                TextWriterRaw.WritePlain(RenderCenteredOneLine(top, Text, Vars), false);
             }
             catch (Exception ex)
             {
@@ -124,7 +124,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderCenteredOneLine(top, Text, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterRaw.WritePlain(RenderCenteredOneLine(top, Text, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex)
             {
@@ -142,7 +142,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderCentered(Text, Vars), false);
+                TextWriterRaw.WritePlain(RenderCentered(Text, Vars), false);
             }
             catch (Exception ex)
             {
@@ -171,7 +171,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderCentered(Text, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterRaw.WritePlain(RenderCentered(Text, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex)
             {
@@ -189,7 +189,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderCenteredOneLine(Text, Vars), false);
+                TextWriterRaw.WritePlain(RenderCenteredOneLine(Text, Vars), false);
             }
             catch (Exception ex)
             {
@@ -218,7 +218,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterColor.WritePlain(RenderCenteredOneLine(Text, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterRaw.WritePlain(RenderCenteredOneLine(Text, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex)
             {
