@@ -200,7 +200,9 @@ namespace Terminaux.Inputs
         /// </summary>
         public static ConsoleKeyInfo DetectKeypress()
         {
+            TermReaderTools.isWaitingForInput = true;
             SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
+            TermReaderTools.isWaitingForInput = false;
             return ConsoleWrapper.ReadKey(true);
         }
 
