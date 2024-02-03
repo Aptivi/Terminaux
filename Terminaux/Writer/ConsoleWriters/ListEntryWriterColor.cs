@@ -49,7 +49,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
                 }
             }
         }
@@ -84,7 +84,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
                 }
             }
         }
