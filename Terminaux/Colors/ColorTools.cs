@@ -24,6 +24,7 @@ using Textify.Sequences.Builder;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation.Contrast;
+using System.Text;
 
 namespace Terminaux.Colors
 {
@@ -234,6 +235,35 @@ namespace Terminaux.Colors
         }
 
         /// <summary>
+        /// Gets the console color setting sequence
+        /// </summary>
+        /// <param name="ColorSequence">The color instance</param>
+        /// <param name="Background">Whether to set background or not</param>
+        /// <param name="ForceSet">Force set background even if background setting is disabled</param>
+        /// <param name="canSetBackground">Can the console set the background?</param>
+        public static string RenderSetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false, bool canSetBackground = true)
+        {
+            if (ColorSequence is null)
+                throw new TerminauxException("Color instance is not provided.");
+
+            // Define reset background sequence
+            string resetSequence = $"{VtSequenceBasicChars.EscapeChar}[49m";
+
+            // Render the background being set
+            var builder = new StringBuilder();
+            if (Background)
+            {
+                if (canSetBackground || ForceSet)
+                    builder.Append(ColorSequence.VTSequenceBackground);
+                else if (!canSetBackground)
+                    builder.Append(resetSequence);
+            }
+            else
+                builder.Append(ColorSequence.VTSequenceForeground);
+            return builder.ToString();
+        }
+
+        /// <summary>
         /// Tries parsing the color from the specifier string
         /// </summary>
         /// <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, or a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
@@ -394,29 +424,23 @@ namespace Terminaux.Colors
             if (ColorSequence is null)
                 throw new ArgumentNullException(nameof(ColorSequence));
 
-            // Define reset background sequence
-            string resetSequence = $"{VtSequenceBasicChars.EscapeChar}[49m";
+            // Get the appropriate color setting sequence
+            string sequence = RenderSetConsoleColor(ColorSequence, Background, ForceSet, canSetBackground);
 
-            // Set background
-            if (Background)
+            // Actually set the color
+            TextWriterColor.WritePlain(sequence, false);
+
+            // Set current background color
+            if (needsToSetCurrentColors)
             {
-                if (canSetBackground | ForceSet)
+                if (Background)
                 {
-                    TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
-                    if (needsToSetCurrentColors)
+                    if (canSetBackground | ForceSet)
                         currentBackgroundColor = ColorSequence;
-                }
-                else if (!canSetBackground)
-                {
-                    TextWriterColor.WritePlain(resetSequence, false);
-                    if (needsToSetCurrentColors)
+                    else if (!canSetBackground)
                         currentBackgroundColor = Color.Empty;
                 }
-            }
-            else
-            {
-                TextWriterColor.WritePlain(ColorSequence.VTSequenceForeground, false);
-                if (needsToSetCurrentColors)
+                else
                     currentForegroundColor = ColorSequence;
             }
         }
