@@ -79,6 +79,8 @@ namespace Terminaux.Reader
         {
             if (!Busy)
                 return;
+            if (TermReader.states.Count == 0)
+                return;
 
             // Get the current state
             var state = TermReader.states[TermReader.states.Count - 1];
