@@ -13669,33 +13669,33 @@ references:
   commentId: T:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor
   nameWithType: TextWriterWhereColor
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderWhere(string, int, int, bool, int, Color, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhere_System_String_System_Int32_System_Int32_System_Boolean_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderWhere(String, Integer, Integer, Boolean, Integer, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(string, int, int, bool, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(String, Integer, Integer, Boolean, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterWhereColor.RenderWhere(string, int, int, bool, int, Color, Color, params object[])
-  nameWithType.vb: TextWriterWhereColor.RenderWhere(String, Integer, Integer, Boolean, Integer, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderWhere(string, int, int, bool, Color, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhere_System_String_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderWhere(String, Integer, Integer, Boolean, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(string, int, int, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(String, Integer, Integer, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterWhereColor.RenderWhere(string, int, int, bool, Color, Color, params object[])
-  nameWithType.vb: TextWriterWhereColor.RenderWhere(String, Integer, Integer, Boolean, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderWhere(string, int, int, Color, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhere_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderWhere(String, Integer, Integer, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(string, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(String, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterWhereColor.RenderWhere(string, int, int, Color, Color, params object[])
-  nameWithType.vb: TextWriterWhereColor.RenderWhere(String, Integer, Integer, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Object[])
+  name: RenderWhere(string, int, int, bool, int, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhere_System_String_System_Int32_System_Int32_System_Boolean_System_Int32_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Object[])
+  name.vb: RenderWhere(String, Integer, Integer, Boolean, Integer, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(string, int, int, bool, int, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(String, Integer, Integer, Boolean, Integer, ParamArray Object())
+  nameWithType: TextWriterWhereColor.RenderWhere(string, int, int, bool, int, params object[])
+  nameWithType.vb: TextWriterWhereColor.RenderWhere(String, Integer, Integer, Boolean, Integer, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,System.Boolean,System.Object[])
+  name: RenderWhere(string, int, int, bool, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhere_System_String_System_Int32_System_Int32_System_Boolean_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,System.Boolean,System.Object[])
+  name.vb: RenderWhere(String, Integer, Integer, Boolean, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(string, int, int, bool, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(String, Integer, Integer, Boolean, ParamArray Object())
+  nameWithType: TextWriterWhereColor.RenderWhere(string, int, int, bool, params object[])
+  nameWithType.vb: TextWriterWhereColor.RenderWhere(String, Integer, Integer, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,System.Object[])
+  name: RenderWhere(string, int, int, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhere_System_String_System_Int32_System_Int32_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(System.String,System.Int32,System.Int32,System.Object[])
+  name.vb: RenderWhere(String, Integer, Integer, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(string, int, int, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere(String, Integer, Integer, ParamArray Object())
+  nameWithType: TextWriterWhereColor.RenderWhere(string, int, int, params object[])
+  nameWithType.vb: TextWriterWhereColor.RenderWhere(String, Integer, Integer, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere*
   name: RenderWhere
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhere_
@@ -13703,40 +13703,74 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhere
   nameWithType: TextWriterWhereColor.RenderWhere
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Object[])
-  name: RenderWherePlain(string, int, int, bool, int, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWherePlain_System_String_System_Int32_System_Int32_System_Boolean_System_Int32_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Object[])
-  name.vb: RenderWherePlain(String, Integer, Integer, Boolean, Integer, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(string, int, int, bool, int, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(String, Integer, Integer, Boolean, Integer, ParamArray Object())
-  nameWithType: TextWriterWhereColor.RenderWherePlain(string, int, int, bool, int, params object[])
-  nameWithType.vb: TextWriterWhereColor.RenderWherePlain(String, Integer, Integer, Boolean, Integer, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(System.String,System.Int32,System.Int32,System.Boolean,System.Object[])
-  name: RenderWherePlain(string, int, int, bool, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWherePlain_System_String_System_Int32_System_Int32_System_Boolean_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(System.String,System.Int32,System.Int32,System.Boolean,System.Object[])
-  name.vb: RenderWherePlain(String, Integer, Integer, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(string, int, int, bool, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(String, Integer, Integer, Boolean, ParamArray Object())
-  nameWithType: TextWriterWhereColor.RenderWherePlain(string, int, int, bool, params object[])
-  nameWithType.vb: TextWriterWhereColor.RenderWherePlain(String, Integer, Integer, Boolean, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(System.String,System.Int32,System.Int32,System.Object[])
-  name: RenderWherePlain(string, int, int, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWherePlain_System_String_System_Int32_System_Int32_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(System.String,System.Int32,System.Int32,System.Object[])
-  name.vb: RenderWherePlain(String, Integer, Integer, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(string, int, int, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain(String, Integer, Integer, ParamArray Object())
-  nameWithType: TextWriterWhereColor.RenderWherePlain(string, int, int, params object[])
-  nameWithType.vb: TextWriterWhereColor.RenderWherePlain(String, Integer, Integer, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain*
-  name: RenderWherePlain
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWherePlain_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,Terminaux.Colors.Color,System.Object[])
+  name: RenderWhereColor(string, int, int, bool, int, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhereColor_System_String_System_Int32_System_Int32_System_Boolean_System_Int32_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderWhereColor(String, Integer, Integer, Boolean, Integer, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(string, int, int, bool, int, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(String, Integer, Integer, Boolean, Integer, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterWhereColor.RenderWhereColor(string, int, int, bool, int, Color, params object[])
+  nameWithType.vb: TextWriterWhereColor.RenderWhereColor(String, Integer, Integer, Boolean, Integer, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(System.String,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  name: RenderWhereColor(string, int, int, bool, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhereColor_System_String_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(System.String,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderWhereColor(String, Integer, Integer, Boolean, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(string, int, int, bool, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(String, Integer, Integer, Boolean, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterWhereColor.RenderWhereColor(string, int, int, bool, Color, params object[])
+  nameWithType.vb: TextWriterWhereColor.RenderWhereColor(String, Integer, Integer, Boolean, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(System.String,System.Int32,System.Int32,Terminaux.Colors.Color,System.Object[])
+  name: RenderWhereColor(string, int, int, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhereColor_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(System.String,System.Int32,System.Int32,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderWhereColor(String, Integer, Integer, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(string, int, int, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor(String, Integer, Integer, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterWhereColor.RenderWhereColor(string, int, int, Color, params object[])
+  nameWithType.vb: TextWriterWhereColor.RenderWhereColor(String, Integer, Integer, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor*
+  name: RenderWhereColor
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhereColor_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor
   isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWherePlain
-  nameWithType: TextWriterWhereColor.RenderWherePlain
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColor
+  nameWithType: TextWriterWhereColor.RenderWhereColor
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderWhereColorBack(string, int, int, bool, int, Color, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhereColorBack_System_String_System_Int32_System_Int32_System_Boolean_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderWhereColorBack(String, Integer, Integer, Boolean, Integer, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(string, int, int, bool, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(String, Integer, Integer, Boolean, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterWhereColor.RenderWhereColorBack(string, int, int, bool, int, Color, Color, params object[])
+  nameWithType.vb: TextWriterWhereColor.RenderWhereColorBack(String, Integer, Integer, Boolean, Integer, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(System.String,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderWhereColorBack(string, int, int, bool, Color, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhereColorBack_System_String_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(System.String,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderWhereColorBack(String, Integer, Integer, Boolean, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(string, int, int, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(String, Integer, Integer, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterWhereColor.RenderWhereColorBack(string, int, int, bool, Color, Color, params object[])
+  nameWithType.vb: TextWriterWhereColor.RenderWhereColorBack(String, Integer, Integer, Boolean, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(System.String,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderWhereColorBack(string, int, int, Color, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhereColorBack_System_String_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(System.String,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderWhereColorBack(String, Integer, Integer, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(string, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack(String, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterWhereColor.RenderWhereColorBack(string, int, int, Color, Color, params object[])
+  nameWithType.vb: TextWriterWhereColor.RenderWhereColorBack(String, Integer, Integer, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack*
+  name: RenderWhereColorBack
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_RenderWhereColorBack_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.RenderWhereColorBack
+  nameWithType: TextWriterWhereColor.RenderWhereColorBack
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.WriteWhere(System.String,System.Int32,System.Int32,System.Boolean,System.Int32,System.Object[])
   name: WriteWhere(string, int, int, bool, int, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereColor_WriteWhere_System_String_System_Int32_System_Int32_System_Boolean_System_Int32_System_Object___
