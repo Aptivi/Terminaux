@@ -19,10 +19,12 @@
 
 using System;
 using System.Diagnostics;
+using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Reader;
+using Textify.General;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -269,21 +271,64 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 try
                 {
-                    // Try to write to console
-                    ColorTools.SetConsoleColorDry(ForegroundColor);
-                    ColorTools.SetConsoleColorDry(BackgroundColor, true);
-
                     // Write the text to console
-                    WritePlain(Text, settings, Line, vars);
-
-                    // Reset the colors
-                    ColorTools.ResetColors();
+                    string sequence = RenderColorBack(Text, ForegroundColor, BackgroundColor, vars);
+                    WritePlain(sequence, settings, Line, vars);
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.StackTrace);
                     Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Renders text and returns the sequence needed to print text to the terminal prompt.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string Render(string Text, params object[] vars) =>
+            RenderColor(Text, ColorTools.currentForegroundColor, vars);
+
+        /// <summary>
+        /// Renders text and returns the sequence needed to print text to the terminal prompt with custom color support.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="color">A color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string RenderColor(string Text, Color color, params object[] vars) =>
+            RenderColorBack(Text, color, ColorTools.currentBackgroundColor, vars);
+
+        /// <summary>
+        /// Renders text and returns the sequence needed to print text to the terminal prompt with custom color support.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static string RenderColorBack(string Text, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+        {
+            lock (WriteLock)
+            {
+                try
+                {
+                    var buffered = new StringBuilder();
+                    buffered.Append(
+                        ColorTools.RenderSetConsoleColor(ForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(BackgroundColor, true) +
+                        TextTools.FormatString(Text, vars) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                    );
+                    return buffered.ToString();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.StackTrace);
+                    Debug.WriteLine("There is a serious error when printing text. {0}", ex.Message);
+                }
+                return "";
             }
         }
 
