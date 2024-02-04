@@ -18,6 +18,7 @@
 //
 
 using System;
+using Textify.General;
 
 namespace Terminaux.Base
 {
@@ -26,11 +27,21 @@ namespace Terminaux.Base
     /// </summary>
     public class TerminauxException : Exception
     {
+        private const string generalError = "General Terminaux error!";
+
         /// <summary>
         /// Makes an empty <see cref="TerminauxException"/> exception instance with the default message
         /// </summary>
         public TerminauxException() :
-            base("General Terminaux error!")
+            base(generalError)
+        { }
+
+        /// <summary>
+        /// Makes an empty <see cref="TerminauxException"/> exception instance with the default message
+        /// </summary>
+        /// <param name="innerException">An inner exception to specify</param>
+        public TerminauxException(Exception innerException) :
+            base(generalError, innerException)
         { }
 
         /// <summary>
@@ -45,9 +56,28 @@ namespace Terminaux.Base
         /// Makes a <see cref="TerminauxException"/> exception instance
         /// </summary>
         /// <param name="message">A message to specify</param>
+        /// <param name="vars">List of variables to format the message with</param>
+        public TerminauxException(string message, params object[] vars) :
+            base(TextTools.FormatString(message, vars))
+        { }
+
+        /// <summary>
+        /// Makes a <see cref="TerminauxException"/> exception instance
+        /// </summary>
+        /// <param name="message">A message to specify</param>
         /// <param name="innerException">An inner exception to specify</param>
         public TerminauxException(string message, Exception innerException) :
             base(message, innerException)
+        { }
+
+        /// <summary>
+        /// Makes a <see cref="TerminauxException"/> exception instance
+        /// </summary>
+        /// <param name="message">A message to specify</param>
+        /// <param name="innerException">An inner exception to specify</param>
+        /// <param name="vars">List of variables to format the message with</param>
+        public TerminauxException(string message, Exception innerException, params object[] vars) :
+            base(TextTools.FormatString(message, vars), innerException)
         { }
     }
 }

@@ -103,6 +103,10 @@
             "commandName": "Project",
             "commandLineArgs": "PrintWithNulls"
         },
+        "Terminaux - PrintTemplate": {
+            "commandName": "Project",
+            "commandLineArgs": "PrintTemplate"
+        },
         "Terminaux - TestDictWriterChar": {
             "commandName": "Project",
             "commandLineArgs": "TestDictWriterChar"

@@ -28,6 +28,7 @@ using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Models.Parsing;
 using Terminaux.Colors.Interop;
 using Terminaux.Colors.Transformation.Contrast;
+using Newtonsoft.Json;
 
 namespace Terminaux.Colors
 {
@@ -35,6 +36,7 @@ namespace Terminaux.Colors
     /// Color information class
     /// </summary>
     [DebuggerDisplay("Color = {PlainSequenceEnclosed}, TrueColor = {PlainSequenceEnclosedTrueColor}")]
+    [JsonConverter(typeof(ColorSerializer))]
     public class Color : IEquatable<Color>
     {
         private readonly ColorSettings settings;

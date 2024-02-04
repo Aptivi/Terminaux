@@ -63,6 +63,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new PrintSepColorF(),
             new PrintWithNewLines(),
             new PrintWithNulls(),
+            new PrintTemplate(),
             new TestDictWriterChar(),
             new TestDictWriterInt(),
             new TestDictWriterStr(),
