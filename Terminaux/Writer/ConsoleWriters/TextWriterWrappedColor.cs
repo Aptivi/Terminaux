@@ -22,10 +22,10 @@ using Terminaux.Colors;
 using System.Text;
 using Textify.General;
 using Terminaux.Base;
-using Textify.Sequences.Tools;
 using System.Diagnostics;
 using Terminaux.Inputs;
 using Terminaux.Base.Extensions;
+using Terminaux.Sequences;
 
 namespace Terminaux.Writer.ConsoleWriters
 {

@@ -26,8 +26,8 @@ using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
-using Textify.Sequences.Builder.Types;
 
 namespace Terminaux.Colors.Selector
 {

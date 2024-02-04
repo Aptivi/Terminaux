@@ -27,10 +27,10 @@ using Terminaux.Base.Buffered;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Base;
 using System.Diagnostics;
-using Textify.Sequences.Builder.Types;
 using Textify.General;
 using Terminaux.Colors.Data;
 using System.Linq;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {

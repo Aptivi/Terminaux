@@ -23,8 +23,8 @@ using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Sequences;
 using Textify.General;
-using Textify.Sequences.Tools;
 
 namespace Terminaux.Writer.ConsoleWriters
 {

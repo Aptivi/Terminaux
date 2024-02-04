@@ -18,8 +18,8 @@
 //
 
 using System;
+using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.Sequences.Tools;
 
 namespace Terminaux.Base.Extensions
 {

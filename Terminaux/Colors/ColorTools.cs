@@ -20,7 +20,6 @@
 using System;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base;
-using Textify.Sequences.Builder;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation.Contrast;

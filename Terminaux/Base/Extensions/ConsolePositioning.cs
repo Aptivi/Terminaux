@@ -26,9 +26,6 @@ using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Text;
 using System.Threading;
-using Terminaux.Writer.ConsoleWriters;
-using Textify.Sequences.Builder;
-using Textify.Sequences.Tools;
 using Textify.General;
 
 namespace Terminaux.Base.Extensions

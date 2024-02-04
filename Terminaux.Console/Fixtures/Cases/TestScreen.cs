@@ -25,7 +25,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {

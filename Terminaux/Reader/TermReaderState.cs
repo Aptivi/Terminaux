@@ -22,8 +22,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Sequences;
 using Textify.General;
-using Textify.Sequences.Tools;
 
 namespace Terminaux.Reader
 {

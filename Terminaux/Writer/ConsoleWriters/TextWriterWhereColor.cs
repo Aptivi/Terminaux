@@ -23,9 +23,9 @@ using System.Text;
 using Terminaux.Base;
 using System.Diagnostics;
 using Textify.General;
-using Textify.Sequences.Builder.Types;
-using Textify.Sequences.Tools;
 using Terminaux.Base.Extensions;
+using Terminaux.Sequences;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.Writer.ConsoleWriters
 {

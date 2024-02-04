@@ -30,11 +30,11 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Sequences;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Textify.General;
-using Textify.Sequences.Builder.Types;
-using Textify.Sequences.Tools;
 
 namespace Terminaux.Inputs.Interactive
 {

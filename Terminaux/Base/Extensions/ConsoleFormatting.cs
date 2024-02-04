@@ -19,9 +19,8 @@
 
 using System;
 using System.Text;
-using Terminaux.Inputs;
+using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.Sequences.Builder;
 
 namespace Terminaux.Base.Extensions
 {

@@ -23,10 +23,10 @@ using Terminaux.Colors;
 using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
-using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Base.Extensions;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.Writer.FancyWriters
 {

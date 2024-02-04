@@ -26,11 +26,11 @@ using Terminaux.Reader;
 using System.Text;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Base.Buffered;
-using Textify.Sequences.Builder.Types;
 using Terminaux.Base;
 using Textify.General;
 using System.Diagnostics;
 using Terminaux.Colors.Data;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {

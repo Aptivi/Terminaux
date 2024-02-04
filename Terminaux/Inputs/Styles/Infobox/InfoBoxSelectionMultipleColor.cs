@@ -29,8 +29,8 @@ using Terminaux.Base.Buffered;
 using System.Diagnostics;
 using Terminaux.Base;
 using Textify.General;
-using Textify.Sequences.Builder.Types;
 using Terminaux.Colors.Data;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
