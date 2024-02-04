@@ -1315,6 +1315,166 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.ApcSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.ApcSequences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.C1Sequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.C1Sequences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.CsiSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.CsiSequences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.DcsSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.DcsSequences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.EscSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.EscSequences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.OscSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.OscSequences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.PmSequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.PmSequences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.Types.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.Types.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.VtSequenceBasicChars.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.VtSequenceBasicChars.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.VtSequenceBuilderTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.VtSequenceBuilderTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.VtSequenceSpecificTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.VtSequenceSpecificTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.Builder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.VtSequenceRegexes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.VtSequenceRegexes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.VtSequenceTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.VtSequenceTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.VtSequenceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.VtSequenceType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Sequences.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Sequences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.ListEntryWriterColor.yml",
       "output": {
         ".html": {
