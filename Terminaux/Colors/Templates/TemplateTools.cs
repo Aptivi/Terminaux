@@ -32,14 +32,14 @@ namespace Terminaux.Colors.Templates
     public static class TemplateTools
     {
         private static string defaultTemplate = "Default";
-        private static TemplateInfo[] baseTemplates =
+        private static readonly TemplateInfo[] baseTemplates =
         [
             new("Default", new Dictionary<string, Color>()
             {
                 { $"{PredefinedComponentType.Text}", ConsoleColors.White }
             })
         ];
-        private static List<TemplateInfo> customTemplates = [ ];
+        private static readonly List<TemplateInfo> customTemplates = [ ];
 
         /// <summary>
         /// All installed templates

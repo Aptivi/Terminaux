@@ -19,9 +19,7 @@
 
 using System;
 using System.Diagnostics;
-using System.Runtime;
 using System.Text;
-using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Reader;
 using Textify.General;
