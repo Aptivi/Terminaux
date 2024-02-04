@@ -2258,6 +2258,15 @@ references:
   fullName.vb: Terminaux.Base.TerminauxException.New()
   nameWithType: TerminauxException.TerminauxException()
   nameWithType.vb: TerminauxException.New()
+- uid: Terminaux.Base.TerminauxException.#ctor(System.Exception)
+  name: TerminauxException(Exception)
+  href: api/Terminaux.Base.TerminauxException.html#Terminaux_Base_TerminauxException__ctor_System_Exception_
+  commentId: M:Terminaux.Base.TerminauxException.#ctor(System.Exception)
+  name.vb: New(Exception)
+  fullName: Terminaux.Base.TerminauxException.TerminauxException(System.Exception)
+  fullName.vb: Terminaux.Base.TerminauxException.New(System.Exception)
+  nameWithType: TerminauxException.TerminauxException(Exception)
+  nameWithType.vb: TerminauxException.New(Exception)
 - uid: Terminaux.Base.TerminauxException.#ctor(System.String)
   name: TerminauxException(string)
   href: api/Terminaux.Base.TerminauxException.html#Terminaux_Base_TerminauxException__ctor_System_String_
@@ -2276,6 +2285,24 @@ references:
   fullName.vb: Terminaux.Base.TerminauxException.New(String, System.Exception)
   nameWithType: TerminauxException.TerminauxException(string, Exception)
   nameWithType.vb: TerminauxException.New(String, Exception)
+- uid: Terminaux.Base.TerminauxException.#ctor(System.String,System.Exception,System.Object[])
+  name: TerminauxException(string, Exception, params object[])
+  href: api/Terminaux.Base.TerminauxException.html#Terminaux_Base_TerminauxException__ctor_System_String_System_Exception_System_Object___
+  commentId: M:Terminaux.Base.TerminauxException.#ctor(System.String,System.Exception,System.Object[])
+  name.vb: New(String, Exception, ParamArray Object())
+  fullName: Terminaux.Base.TerminauxException.TerminauxException(string, System.Exception, params object[])
+  fullName.vb: Terminaux.Base.TerminauxException.New(String, System.Exception, ParamArray Object())
+  nameWithType: TerminauxException.TerminauxException(string, Exception, params object[])
+  nameWithType.vb: TerminauxException.New(String, Exception, ParamArray Object())
+- uid: Terminaux.Base.TerminauxException.#ctor(System.String,System.Object[])
+  name: TerminauxException(string, params object[])
+  href: api/Terminaux.Base.TerminauxException.html#Terminaux_Base_TerminauxException__ctor_System_String_System_Object___
+  commentId: M:Terminaux.Base.TerminauxException.#ctor(System.String,System.Object[])
+  name.vb: New(String, ParamArray Object())
+  fullName: Terminaux.Base.TerminauxException.TerminauxException(string, params object[])
+  fullName.vb: Terminaux.Base.TerminauxException.New(String, ParamArray Object())
+  nameWithType: TerminauxException.TerminauxException(string, params object[])
+  nameWithType.vb: TerminauxException.New(String, ParamArray Object())
 - uid: Terminaux.Base.TerminauxException.#ctor*
   name: TerminauxException
   href: api/Terminaux.Base.TerminauxException.html#Terminaux_Base_TerminauxException__ctor_
@@ -2801,6 +2828,57 @@ references:
   fullName.vb: Terminaux.Colors.Color.<>
   nameWithType: Color.operator !=
   nameWithType.vb: Color.<>
+- uid: Terminaux.Colors.ColorSerializer
+  name: ColorSerializer
+  href: api/Terminaux.Colors.ColorSerializer.html
+  commentId: T:Terminaux.Colors.ColorSerializer
+  fullName: Terminaux.Colors.ColorSerializer
+  nameWithType: ColorSerializer
+- uid: Terminaux.Colors.ColorSerializer.CanConvert(System.Type)
+  name: CanConvert(Type)
+  href: api/Terminaux.Colors.ColorSerializer.html#Terminaux_Colors_ColorSerializer_CanConvert_System_Type_
+  commentId: M:Terminaux.Colors.ColorSerializer.CanConvert(System.Type)
+  fullName: Terminaux.Colors.ColorSerializer.CanConvert(System.Type)
+  nameWithType: ColorSerializer.CanConvert(Type)
+- uid: Terminaux.Colors.ColorSerializer.CanConvert*
+  name: CanConvert
+  href: api/Terminaux.Colors.ColorSerializer.html#Terminaux_Colors_ColorSerializer_CanConvert_
+  commentId: Overload:Terminaux.Colors.ColorSerializer.CanConvert
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorSerializer.CanConvert
+  nameWithType: ColorSerializer.CanConvert
+- uid: Terminaux.Colors.ColorSerializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+  name: ReadJson(JsonReader, Type, object, JsonSerializer)
+  href: api/Terminaux.Colors.ColorSerializer.html#Terminaux_Colors_ColorSerializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_
+  commentId: M:Terminaux.Colors.ColorSerializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+  name.vb: ReadJson(JsonReader, Type, Object, JsonSerializer)
+  fullName: Terminaux.Colors.ColorSerializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, object, Newtonsoft.Json.JsonSerializer)
+  fullName.vb: Terminaux.Colors.ColorSerializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, Object, Newtonsoft.Json.JsonSerializer)
+  nameWithType: ColorSerializer.ReadJson(JsonReader, Type, object, JsonSerializer)
+  nameWithType.vb: ColorSerializer.ReadJson(JsonReader, Type, Object, JsonSerializer)
+- uid: Terminaux.Colors.ColorSerializer.ReadJson*
+  name: ReadJson
+  href: api/Terminaux.Colors.ColorSerializer.html#Terminaux_Colors_ColorSerializer_ReadJson_
+  commentId: Overload:Terminaux.Colors.ColorSerializer.ReadJson
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorSerializer.ReadJson
+  nameWithType: ColorSerializer.ReadJson
+- uid: Terminaux.Colors.ColorSerializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+  name: WriteJson(JsonWriter, object, JsonSerializer)
+  href: api/Terminaux.Colors.ColorSerializer.html#Terminaux_Colors_ColorSerializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_
+  commentId: M:Terminaux.Colors.ColorSerializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+  name.vb: WriteJson(JsonWriter, Object, JsonSerializer)
+  fullName: Terminaux.Colors.ColorSerializer.WriteJson(Newtonsoft.Json.JsonWriter, object, Newtonsoft.Json.JsonSerializer)
+  fullName.vb: Terminaux.Colors.ColorSerializer.WriteJson(Newtonsoft.Json.JsonWriter, Object, Newtonsoft.Json.JsonSerializer)
+  nameWithType: ColorSerializer.WriteJson(JsonWriter, object, JsonSerializer)
+  nameWithType.vb: ColorSerializer.WriteJson(JsonWriter, Object, JsonSerializer)
+- uid: Terminaux.Colors.ColorSerializer.WriteJson*
+  name: WriteJson
+  href: api/Terminaux.Colors.ColorSerializer.html#Terminaux_Colors_ColorSerializer_WriteJson_
+  commentId: Overload:Terminaux.Colors.ColorSerializer.WriteJson
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorSerializer.WriteJson
+  nameWithType: ColorSerializer.WriteJson
 - uid: Terminaux.Colors.ColorSettings
   name: ColorSettings
   href: api/Terminaux.Colors.ColorSettings.html
@@ -7977,6 +8055,262 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Selector.ColorSelector.OpenColorSelector
   nameWithType: ColorSelector.OpenColorSelector
+- uid: Terminaux.Colors.Templates
+  name: Terminaux.Colors.Templates
+  href: api/Terminaux.Colors.Templates.html
+  commentId: N:Terminaux.Colors.Templates
+  fullName: Terminaux.Colors.Templates
+  nameWithType: Terminaux.Colors.Templates
+- uid: Terminaux.Colors.Templates.PredefinedComponentType
+  name: PredefinedComponentType
+  href: api/Terminaux.Colors.Templates.PredefinedComponentType.html
+  commentId: T:Terminaux.Colors.Templates.PredefinedComponentType
+  fullName: Terminaux.Colors.Templates.PredefinedComponentType
+  nameWithType: PredefinedComponentType
+- uid: Terminaux.Colors.Templates.PredefinedComponentType.Text
+  name: Text
+  href: api/Terminaux.Colors.Templates.PredefinedComponentType.html#Terminaux_Colors_Templates_PredefinedComponentType_Text
+  commentId: F:Terminaux.Colors.Templates.PredefinedComponentType.Text
+  fullName: Terminaux.Colors.Templates.PredefinedComponentType.Text
+  nameWithType: PredefinedComponentType.Text
+- uid: Terminaux.Colors.Templates.TemplateInfo
+  name: TemplateInfo
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html
+  commentId: T:Terminaux.Colors.Templates.TemplateInfo
+  fullName: Terminaux.Colors.Templates.TemplateInfo
+  nameWithType: TemplateInfo
+- uid: Terminaux.Colors.Templates.TemplateInfo.Components
+  name: Components
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_Components
+  commentId: P:Terminaux.Colors.Templates.TemplateInfo.Components
+  fullName: Terminaux.Colors.Templates.TemplateInfo.Components
+  nameWithType: TemplateInfo.Components
+- uid: Terminaux.Colors.Templates.TemplateInfo.Components*
+  name: Components
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_Components_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateInfo.Components
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateInfo.Components
+  nameWithType: TemplateInfo.Components
+- uid: Terminaux.Colors.Templates.TemplateInfo.Name
+  name: Name
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_Name
+  commentId: P:Terminaux.Colors.Templates.TemplateInfo.Name
+  fullName: Terminaux.Colors.Templates.TemplateInfo.Name
+  nameWithType: TemplateInfo.Name
+- uid: Terminaux.Colors.Templates.TemplateInfo.Name*
+  name: Name
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_Name_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateInfo.Name
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateInfo.Name
+  nameWithType: TemplateInfo.Name
+- uid: Terminaux.Colors.Templates.TemplateTools
+  name: TemplateTools
+  href: api/Terminaux.Colors.Templates.TemplateTools.html
+  commentId: T:Terminaux.Colors.Templates.TemplateTools
+  fullName: Terminaux.Colors.Templates.TemplateTools
+  nameWithType: TemplateTools
+- uid: Terminaux.Colors.Templates.TemplateTools.Exists(System.String)
+  name: Exists(string)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_Exists_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.Exists(System.String)
+  name.vb: Exists(String)
+  fullName: Terminaux.Colors.Templates.TemplateTools.Exists(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.Exists(String)
+  nameWithType: TemplateTools.Exists(string)
+  nameWithType.vb: TemplateTools.Exists(String)
+- uid: Terminaux.Colors.Templates.TemplateTools.Exists*
+  name: Exists
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_Exists_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.Exists
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.Exists
+  nameWithType: TemplateTools.Exists
+- uid: Terminaux.Colors.Templates.TemplateTools.GetColor(System.String)
+  name: GetColor(string)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetColor_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.GetColor(System.String)
+  name.vb: GetColor(String)
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetColor(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.GetColor(String)
+  nameWithType: TemplateTools.GetColor(string)
+  nameWithType.vb: TemplateTools.GetColor(String)
+- uid: Terminaux.Colors.Templates.TemplateTools.GetColor(System.String,System.String)
+  name: GetColor(string, string)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetColor_System_String_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.GetColor(System.String,System.String)
+  name.vb: GetColor(String, String)
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetColor(string, string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.GetColor(String, String)
+  nameWithType: TemplateTools.GetColor(string, string)
+  nameWithType.vb: TemplateTools.GetColor(String, String)
+- uid: Terminaux.Colors.Templates.TemplateTools.GetColor(System.String,Terminaux.Colors.Templates.PredefinedComponentType)
+  name: GetColor(string, PredefinedComponentType)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetColor_System_String_Terminaux_Colors_Templates_PredefinedComponentType_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.GetColor(System.String,Terminaux.Colors.Templates.PredefinedComponentType)
+  name.vb: GetColor(String, PredefinedComponentType)
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetColor(string, Terminaux.Colors.Templates.PredefinedComponentType)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.GetColor(String, Terminaux.Colors.Templates.PredefinedComponentType)
+  nameWithType: TemplateTools.GetColor(string, PredefinedComponentType)
+  nameWithType.vb: TemplateTools.GetColor(String, PredefinedComponentType)
+- uid: Terminaux.Colors.Templates.TemplateTools.GetColor(Terminaux.Colors.Templates.PredefinedComponentType)
+  name: GetColor(PredefinedComponentType)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetColor_Terminaux_Colors_Templates_PredefinedComponentType_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.GetColor(Terminaux.Colors.Templates.PredefinedComponentType)
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetColor(Terminaux.Colors.Templates.PredefinedComponentType)
+  nameWithType: TemplateTools.GetColor(PredefinedComponentType)
+- uid: Terminaux.Colors.Templates.TemplateTools.GetColor*
+  name: GetColor
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetColor_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.GetColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetColor
+  nameWithType: TemplateTools.GetColor
+- uid: Terminaux.Colors.Templates.TemplateTools.GetTemplate
+  name: GetTemplate()
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetTemplate
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.GetTemplate
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetTemplate()
+  nameWithType: TemplateTools.GetTemplate()
+- uid: Terminaux.Colors.Templates.TemplateTools.GetTemplate(System.String)
+  name: GetTemplate(string)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetTemplate_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.GetTemplate(System.String)
+  name.vb: GetTemplate(String)
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetTemplate(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.GetTemplate(String)
+  nameWithType: TemplateTools.GetTemplate(string)
+  nameWithType.vb: TemplateTools.GetTemplate(String)
+- uid: Terminaux.Colors.Templates.TemplateTools.GetTemplate*
+  name: GetTemplate
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetTemplate_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.GetTemplate
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetTemplate
+  nameWithType: TemplateTools.GetTemplate
+- uid: Terminaux.Colors.Templates.TemplateTools.GetTemplateFromJson(System.String)
+  name: GetTemplateFromJson(string)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetTemplateFromJson_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.GetTemplateFromJson(System.String)
+  name.vb: GetTemplateFromJson(String)
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetTemplateFromJson(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.GetTemplateFromJson(String)
+  nameWithType: TemplateTools.GetTemplateFromJson(string)
+  nameWithType.vb: TemplateTools.GetTemplateFromJson(String)
+- uid: Terminaux.Colors.Templates.TemplateTools.GetTemplateFromJson*
+  name: GetTemplateFromJson
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetTemplateFromJson_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.GetTemplateFromJson
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetTemplateFromJson
+  nameWithType: TemplateTools.GetTemplateFromJson
+- uid: Terminaux.Colors.Templates.TemplateTools.GetTemplateToJson
+  name: GetTemplateToJson()
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetTemplateToJson
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.GetTemplateToJson
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetTemplateToJson()
+  nameWithType: TemplateTools.GetTemplateToJson()
+- uid: Terminaux.Colors.Templates.TemplateTools.GetTemplateToJson(System.String)
+  name: GetTemplateToJson(string)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetTemplateToJson_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.GetTemplateToJson(System.String)
+  name.vb: GetTemplateToJson(String)
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetTemplateToJson(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.GetTemplateToJson(String)
+  nameWithType: TemplateTools.GetTemplateToJson(string)
+  nameWithType.vb: TemplateTools.GetTemplateToJson(String)
+- uid: Terminaux.Colors.Templates.TemplateTools.GetTemplateToJson*
+  name: GetTemplateToJson
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetTemplateToJson_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.GetTemplateToJson
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.GetTemplateToJson
+  nameWithType: TemplateTools.GetTemplateToJson
+- uid: Terminaux.Colors.Templates.TemplateTools.RegisterTemplate(Terminaux.Colors.Templates.TemplateInfo)
+  name: RegisterTemplate(TemplateInfo)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_RegisterTemplate_Terminaux_Colors_Templates_TemplateInfo_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.RegisterTemplate(Terminaux.Colors.Templates.TemplateInfo)
+  fullName: Terminaux.Colors.Templates.TemplateTools.RegisterTemplate(Terminaux.Colors.Templates.TemplateInfo)
+  nameWithType: TemplateTools.RegisterTemplate(TemplateInfo)
+- uid: Terminaux.Colors.Templates.TemplateTools.RegisterTemplate*
+  name: RegisterTemplate
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_RegisterTemplate_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.RegisterTemplate
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.RegisterTemplate
+  nameWithType: TemplateTools.RegisterTemplate
+- uid: Terminaux.Colors.Templates.TemplateTools.ResetDefaultTemplate
+  name: ResetDefaultTemplate()
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_ResetDefaultTemplate
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.ResetDefaultTemplate
+  fullName: Terminaux.Colors.Templates.TemplateTools.ResetDefaultTemplate()
+  nameWithType: TemplateTools.ResetDefaultTemplate()
+- uid: Terminaux.Colors.Templates.TemplateTools.ResetDefaultTemplate*
+  name: ResetDefaultTemplate
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_ResetDefaultTemplate_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.ResetDefaultTemplate
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.ResetDefaultTemplate
+  nameWithType: TemplateTools.ResetDefaultTemplate
+- uid: Terminaux.Colors.Templates.TemplateTools.SetDefaultTemplate(System.String)
+  name: SetDefaultTemplate(string)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_SetDefaultTemplate_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.SetDefaultTemplate(System.String)
+  name.vb: SetDefaultTemplate(String)
+  fullName: Terminaux.Colors.Templates.TemplateTools.SetDefaultTemplate(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.SetDefaultTemplate(String)
+  nameWithType: TemplateTools.SetDefaultTemplate(string)
+  nameWithType.vb: TemplateTools.SetDefaultTemplate(String)
+- uid: Terminaux.Colors.Templates.TemplateTools.SetDefaultTemplate*
+  name: SetDefaultTemplate
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_SetDefaultTemplate_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.SetDefaultTemplate
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.SetDefaultTemplate
+  nameWithType: TemplateTools.SetDefaultTemplate
+- uid: Terminaux.Colors.Templates.TemplateTools.TemplateNames
+  name: TemplateNames
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_TemplateNames
+  commentId: P:Terminaux.Colors.Templates.TemplateTools.TemplateNames
+  fullName: Terminaux.Colors.Templates.TemplateTools.TemplateNames
+  nameWithType: TemplateTools.TemplateNames
+- uid: Terminaux.Colors.Templates.TemplateTools.TemplateNames*
+  name: TemplateNames
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_TemplateNames_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.TemplateNames
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.TemplateNames
+  nameWithType: TemplateTools.TemplateNames
+- uid: Terminaux.Colors.Templates.TemplateTools.Templates
+  name: Templates
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_Templates
+  commentId: P:Terminaux.Colors.Templates.TemplateTools.Templates
+  fullName: Terminaux.Colors.Templates.TemplateTools.Templates
+  nameWithType: TemplateTools.Templates
+- uid: Terminaux.Colors.Templates.TemplateTools.Templates*
+  name: Templates
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_Templates_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.Templates
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.Templates
+  nameWithType: TemplateTools.Templates
+- uid: Terminaux.Colors.Templates.TemplateTools.UnregisterTemplate(System.String)
+  name: UnregisterTemplate(string)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_UnregisterTemplate_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.UnregisterTemplate(System.String)
+  name.vb: UnregisterTemplate(String)
+  fullName: Terminaux.Colors.Templates.TemplateTools.UnregisterTemplate(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.UnregisterTemplate(String)
+  nameWithType: TemplateTools.UnregisterTemplate(string)
+  nameWithType.vb: TemplateTools.UnregisterTemplate(String)
+- uid: Terminaux.Colors.Templates.TemplateTools.UnregisterTemplate*
+  name: UnregisterTemplate
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_UnregisterTemplate_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.UnregisterTemplate
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.UnregisterTemplate
+  nameWithType: TemplateTools.UnregisterTemplate
 - uid: Terminaux.Colors.Transformation
   name: Terminaux.Colors.Transformation
   href: api/Terminaux.Colors.Transformation.html

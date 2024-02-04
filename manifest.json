@@ -265,6 +265,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.ColorSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.ColorSerializer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.ColorSettings.yml",
       "output": {
         ".html": {
@@ -679,6 +689,46 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Selector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Templates.PredefinedComponentType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Templates.PredefinedComponentType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Templates.TemplateInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Templates.TemplateInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Templates.TemplateTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Templates.TemplateTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Templates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Templates.html"
         }
       },
       "version": ""
