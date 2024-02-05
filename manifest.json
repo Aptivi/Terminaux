@@ -1235,6 +1235,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Highlighting.SyntaxHighlighting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Highlighting.SyntaxHighlighting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Highlighting.SyntaxHighlightingComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Highlighting.SyntaxHighlightingComponent.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Highlighting.SyntaxHighlightingTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Highlighting.SyntaxHighlightingTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.Highlighting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.Highlighting.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Reader.TermReader.yml",
       "output": {
         ".html": {
