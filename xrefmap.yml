@@ -13085,6 +13085,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderState.OneLineWrap
   nameWithType: TermReaderState.OneLineWrap
+- uid: Terminaux.Reader.TermReaderState.OperationWasInvalid
+  name: OperationWasInvalid
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_OperationWasInvalid
+  commentId: P:Terminaux.Reader.TermReaderState.OperationWasInvalid
+  fullName: Terminaux.Reader.TermReaderState.OperationWasInvalid
+  nameWithType: TermReaderState.OperationWasInvalid
+- uid: Terminaux.Reader.TermReaderState.OperationWasInvalid*
+  name: OperationWasInvalid
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_OperationWasInvalid_
+  commentId: Overload:Terminaux.Reader.TermReaderState.OperationWasInvalid
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.OperationWasInvalid
+  nameWithType: TermReaderState.OperationWasInvalid
 - uid: Terminaux.Reader.TermReaderState.PasswordMode
   name: PasswordMode
   href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_PasswordMode
@@ -13217,6 +13230,28 @@ references:
   commentId: N:Terminaux.Reader.Tools
   fullName: Terminaux.Reader.Tools
   nameWithType: Terminaux.Reader.Tools
+- uid: Terminaux.Reader.Tools.ConditionalTools
+  name: ConditionalTools
+  href: api/Terminaux.Reader.Tools.ConditionalTools.html
+  commentId: T:Terminaux.Reader.Tools.ConditionalTools
+  fullName: Terminaux.Reader.Tools.ConditionalTools
+  nameWithType: ConditionalTools
+- uid: Terminaux.Reader.Tools.ConditionalTools.ShouldNot(System.Boolean,Terminaux.Reader.TermReaderState)
+  name: ShouldNot(bool, TermReaderState)
+  href: api/Terminaux.Reader.Tools.ConditionalTools.html#Terminaux_Reader_Tools_ConditionalTools_ShouldNot_System_Boolean_Terminaux_Reader_TermReaderState_
+  commentId: M:Terminaux.Reader.Tools.ConditionalTools.ShouldNot(System.Boolean,Terminaux.Reader.TermReaderState)
+  name.vb: ShouldNot(Boolean, TermReaderState)
+  fullName: Terminaux.Reader.Tools.ConditionalTools.ShouldNot(bool, Terminaux.Reader.TermReaderState)
+  fullName.vb: Terminaux.Reader.Tools.ConditionalTools.ShouldNot(Boolean, Terminaux.Reader.TermReaderState)
+  nameWithType: ConditionalTools.ShouldNot(bool, TermReaderState)
+  nameWithType.vb: ConditionalTools.ShouldNot(Boolean, TermReaderState)
+- uid: Terminaux.Reader.Tools.ConditionalTools.ShouldNot*
+  name: ShouldNot
+  href: api/Terminaux.Reader.Tools.ConditionalTools.html#Terminaux_Reader_Tools_ConditionalTools_ShouldNot_
+  commentId: Overload:Terminaux.Reader.Tools.ConditionalTools.ShouldNot
+  isSpec: "True"
+  fullName: Terminaux.Reader.Tools.ConditionalTools.ShouldNot
+  nameWithType: ConditionalTools.ShouldNot
 - uid: Terminaux.Reader.Tools.PositioningTools
   name: PositioningTools
   href: api/Terminaux.Reader.Tools.PositioningTools.html
