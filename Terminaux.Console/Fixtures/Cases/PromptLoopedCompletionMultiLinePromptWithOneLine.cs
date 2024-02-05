@@ -19,7 +19,6 @@
 
 using System;
 using System.Linq;
-using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -35,7 +34,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string input = "";
             while (input != "exit")
             {
-                var settings = Input.GlobalReaderSettings;
+                var settings = TermReader.GlobalReaderSettings;
                 settings.Suggestions = GetSuggestions;
                 input = TermReader.Read("| Say something!\n->> ", "", settings, false, true, false);
                 TextWriterColor.Write("You said: " + input);

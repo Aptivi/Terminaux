@@ -455,7 +455,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     settings.InputForegroundColor = InfoBoxTitledColor;
                     settings.InputBackgroundColor = BackgroundColor;
                 }
-                string input = Input.ReadLineWrapped("", "", settings);
+                string input = TermReader.Read("", "", settings, false, true);
                 return input;
             }
             catch (Exception ex)

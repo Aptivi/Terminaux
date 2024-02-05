@@ -169,7 +169,7 @@ namespace Terminaux.Inputs.Presentation.Elements
                 ConsoleWrapper.SetCursorPosition(cursorLeft, cursorTop);
                 TextWriterColor.WriteColor("Select your choice separated by semicolons: ", false, new Color(ConsoleColors.Gray));
                 ConsoleWrapper.CursorVisible = true;
-                WrittenInput = Input.ReadLineWrapped("", "", settings);
+                WrittenInput = TermReader.Read("", "", settings, false, true);
                 selected = WrittenInput.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
                 ConsoleWrapper.CursorVisible = false;
             }

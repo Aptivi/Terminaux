@@ -23,6 +23,7 @@ using System.Linq;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Textify.General;
@@ -239,7 +240,7 @@ namespace Terminaux.Inputs.Styles.Choice
                 // Wait for an answer
                 if (PressEnter)
                 {
-                    answer = Input.ReadLine();
+                    answer = TermReader.Read();
                 }
                 else
                 {

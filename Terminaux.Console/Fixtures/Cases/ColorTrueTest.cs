@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Colors;
-using Terminaux.Inputs;
+using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -28,9 +28,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "ColorTrueTest";
         public void RunFixture()
         {
-            string TextR = Input.ReadLine("R - " + "Write a color number ranging from 1 to 255: ");
-            string TextG = Input.ReadLine("G - " + "Write a color number ranging from 1 to 255: ");
-            string TextB = Input.ReadLine("B - " + "Write a color number ranging from 1 to 255: ");
+            string TextR = TermReader.Read("R - " + "Write a color number ranging from 1 to 255: ");
+            string TextG = TermReader.Read("G - " + "Write a color number ranging from 1 to 255: ");
+            string TextB = TermReader.Read("B - " + "Write a color number ranging from 1 to 255: ");
             if (int.TryParse(TextR, out int r) && int.TryParse(TextG, out int g) && int.TryParse(TextB, out int b))
             {
                 var color = new Color(r, g, b);

@@ -18,7 +18,6 @@
 //
 
 using System;
-using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -34,7 +33,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             string input = "";
             while (input != "exit")
             {
-                var settings = Input.GlobalReaderSettings;
+                var settings = TermReader.GlobalReaderSettings;
                 settings.Suggestions = GetSuggestions;
                 settings.HistoryEnabled = true;
                 input = TermReader.Read(">> ", "", settings, false, true, false);

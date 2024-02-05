@@ -19,6 +19,7 @@
 
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Inputs.Styles
@@ -47,7 +48,7 @@ namespace Terminaux.Inputs.Styles
                 ColorTools.SetConsoleColorDry(inputColor);
 
                 // Wait for an answer
-                Answer = Input.ReadLine();
+                Answer = TermReader.Read();
                 ColorTools.SetConsoleColorDry(textColor);
 
                 return Answer;
@@ -72,7 +73,7 @@ namespace Terminaux.Inputs.Styles
                 ColorTools.SetConsoleColorDry(inputColor);
 
                 // Wait for an answer
-                Answer = Input.ReadLineNoInput();
+                Answer = TermReader.ReadPassword();
                 ColorTools.SetConsoleColorDry(textColor);
 
                 return Answer;

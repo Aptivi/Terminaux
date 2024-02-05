@@ -102,7 +102,7 @@ namespace Terminaux.Inputs.Presentation.Elements
 
             // Get the input
             ConsoleWrapper.CursorVisible = true;
-            WrittenInput = Input.ReadLineNoInput(settings);
+            WrittenInput = TermReader.ReadPassword(settings);
             ConsoleWrapper.CursorVisible = false;
         }
 

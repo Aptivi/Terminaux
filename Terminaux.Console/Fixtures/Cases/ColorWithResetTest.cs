@@ -21,6 +21,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -30,7 +31,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "ColorWithResetTest";
         public void RunFixture()
         {
-            string Text = Input.ReadLine("Write a color number ranging from 1 to 255: ");
+            string Text = TermReader.Read("Write a color number ranging from 1 to 255: ");
             if (int.TryParse(Text, out int color))
             {
                 var colorInstance = new Color(color);

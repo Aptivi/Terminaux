@@ -168,7 +168,7 @@ namespace Terminaux.Inputs.Presentation.Elements
                 ConsoleWrapper.SetCursorPosition(cursorLeft, cursorTop);
                 TextWriterColor.WriteColor("Select your choice: ", false, new Color(ConsoleColors.Gray));
                 ConsoleWrapper.CursorVisible = true;
-                WrittenInput = Input.ReadLineWrapped("", "", settings);
+                WrittenInput = TermReader.Read("", "", settings, false, true);
                 ConsoleWrapper.CursorVisible = false;
             }
         }

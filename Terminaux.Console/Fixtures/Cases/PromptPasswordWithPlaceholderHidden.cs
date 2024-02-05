@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -29,7 +28,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
 
         public void RunFixture()
         {
-            var settings = Input.GlobalReaderSettings;
+            var settings = TermReader.GlobalReaderSettings;
             settings.PasswordMaskChar = '\0';
             string input = TermReader.ReadPassword("Enter password: ", settings, false);
             TextWriterColor.Write("Password is: " + input);

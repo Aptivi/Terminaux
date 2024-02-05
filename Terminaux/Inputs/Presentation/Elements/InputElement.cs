@@ -102,7 +102,7 @@ namespace Terminaux.Inputs.Presentation.Elements
 
             // Get the input
             ConsoleWrapper.CursorVisible = true;
-            WrittenInput = Input.ReadLineWrapped("", "", settings);
+            WrittenInput = TermReader.Read("", "", settings, false, true);
             ConsoleWrapper.CursorVisible = false;
         }
 
