@@ -103,6 +103,10 @@
             "commandName": "Project",
             "commandLineArgs": "PrintWithNulls"
         },
+        "Terminaux - PrintLineHandle": {
+            "commandName": "Project",
+            "commandLineArgs": "PrintLineHandle"
+        },
         "Terminaux - PrintTemplate": {
             "commandName": "Project",
             "commandLineArgs": "PrintTemplate"

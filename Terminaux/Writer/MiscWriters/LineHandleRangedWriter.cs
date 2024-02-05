@@ -237,7 +237,19 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
         /// <param name="color">The color</param>
-        public static string RenderLineWithHandle(string[] Array, int LineNumber, int startPos, int endPos, Color color)
+        public static string RenderLineWithHandle(string[] Array, int LineNumber, int startPos, int endPos, Color color) =>
+            RenderLineHandle(Array, LineNumber, startPos, endPos, color);
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number
+        /// </summary>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="startPos">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="endPos">Column number (not index). This tells the handle where to place itself as the end. Should be bigger than the start position.</param>
+        /// <param name="color">The color</param>
+        /// <param name="ranged">Whether it's ranged or not</param>
+        internal static string RenderLineHandle(string[] Array, int LineNumber, int startPos, int endPos, Color color, bool ranged = true)
         {
             // Get the builder
             StringBuilder builder = new();
@@ -259,7 +271,8 @@ namespace Terminaux.Writer.MiscWriters
                 endPos = LineContent.Length;
 
             // Check to see if the start position is smaller than the end position
-            startPos.SwapIfSourceLarger(ref endPos);
+            if (ranged)
+                startPos.SwapIfSourceLarger(ref endPos);
 
             // Place the line and the column handle
             int RepeatBlanks = startPos - 1;

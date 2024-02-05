@@ -221,39 +221,8 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="color">The color</param>
-        public static string RenderLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, Color color)
-        {
-            // Get the builder
-            StringBuilder builder = new();
-
-            // Get the line index from number
-            if (LineNumber <= 0)
-                LineNumber = 1;
-            if (LineNumber > Array.Length)
-                LineNumber = Array.Length;
-            int LineIndex = LineNumber - 1;
-
-            // Get the line
-            string LineContent = Array[LineIndex];
-
-            // Now, check the column number
-            if (ColumnNumber < 0 || ColumnNumber > LineContent.Length)
-                ColumnNumber = LineContent.Length;
-
-            // Place the line and the column handle
-            int RepeatBlanks = ColumnNumber - 1;
-            if (RepeatBlanks < 0)
-                RepeatBlanks = 0;
-            builder.AppendLine($"{color.VTSequenceForeground}  | {LineContent}");
-            builder.AppendLine($"{color.VTSequenceForeground}  | {new string(' ', RepeatBlanks)}^");
-
-            // Write the resulting buffer
-            builder.Append(
-                ColorTools.currentForegroundColor.VTSequenceForeground +
-                ColorTools.currentBackgroundColor.VTSequenceBackground
-            );
-            return builder.ToString();
-        }
+        public static string RenderLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, Color color) =>
+            LineHandleRangedWriter.RenderLineHandle(Array, LineNumber, ColumnNumber, 0, color, false);
 
     }
 }
