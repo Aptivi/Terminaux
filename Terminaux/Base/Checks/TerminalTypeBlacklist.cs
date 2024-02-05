@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using SpecProbe.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -101,7 +102,7 @@ namespace Terminaux.Base.Checks
         /// </summary>
         /// <returns>True if blacklisted; false otherwise</returns>
         public static (bool blacklisted, string justification) IsTypeBlacklisted() =>
-            IsTypeBlacklisted(ConsolePlatform.GetTerminalType());
+            IsTypeBlacklisted(PlatformHelper.GetTerminalType());
 
         internal static (bool blacklisted, string justification) IsTypeBlacklisted(string terminalType)
         {

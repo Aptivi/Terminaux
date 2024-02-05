@@ -54,7 +54,7 @@ namespace Terminaux.ResizeListener
             ConsoleResizeHandler.usesSigWinch = PlatformHelper.IsOnUnix();
             if (ConsoleResizeHandler.usesSigWinch)
             {
-                // This is to get around the platform compatibility since we've been already guarded by ConsolePlatform.IsOnUnix().
+                // This is to get around the platform compatibility since we've been already guarded by PlatformHelper.IsOnUnix().
                 const PosixSignal winch = (PosixSignal)(-7);
                 signalHandlers.Add(PosixSignalRegistration.Create(winch, (psc) => SigWindowChange(psc, (oldX, oldY, newX, newY) => PollForResize(customHandler))));
             }

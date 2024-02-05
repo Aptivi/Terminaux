@@ -24,6 +24,7 @@ using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.TermInfo;
 using Terminaux.Base.Extensions;
+using SpecProbe.Platform;
 
 namespace Terminaux.Base.Checks
 {
@@ -47,7 +48,7 @@ namespace Terminaux.Base.Checks
                 try
                 {
                     // Get terminal type
-                    string TerminalType = ConsolePlatform.GetTerminalType();
+                    string TerminalType = PlatformHelper.GetTerminalType();
 
                     // Try to cache the value
                     if (!_dumbSet)
@@ -72,7 +73,7 @@ namespace Terminaux.Base.Checks
         {
             get
             {
-                if (ConsolePlatform.IsOnUnix())
+                if (PlatformHelper.IsOnUnix())
                     return Environment.GetEnvironmentVariable("HOME");
                 else
                     return Environment.GetEnvironmentVariable("USERPROFILE").Replace(@"\", "/");
@@ -86,8 +87,8 @@ namespace Terminaux.Base.Checks
         {
             if (acknowledged)
                 return;
-            string TerminalType = ConsolePlatform.GetTerminalType();
-            string TerminalEmulator = ConsolePlatform.GetTerminalEmulator();
+            string TerminalType = PlatformHelper.GetTerminalType();
+            string TerminalEmulator = PlatformHelper.GetTerminalEmulator();
 
             // Check if the terminal type is "dumb".
             if (IsDumb)
@@ -124,7 +125,7 @@ namespace Terminaux.Base.Checks
                 TextWriterRaw.WritePlain($"The terminal emulator you're currently using, {TerminalEmulator}, is greylisted: {emuJustification2}");
 
             // Check for 256 colors
-            if (!IsConsole256Colors() && ConsolePlatform.IsOnUnix())
+            if (!IsConsole256Colors() && PlatformHelper.IsOnUnix())
                 TextWriterRaw.WritePlain($"Terminal type {TerminalType} doesn't support 256 colors according to terminfo");
 
             // Don't check again.
@@ -136,9 +137,9 @@ namespace Terminaux.Base.Checks
         /// </summary>
         public static bool IsConsole256Colors()
         {
-            if (ConsolePlatform.IsOnUnix())
+            if (PlatformHelper.IsOnUnix())
             {
-                string TerminalType = ConsolePlatform.GetTerminalType();
+                string TerminalType = PlatformHelper.GetTerminalType();
                 var termInfo = TermInfoDesc.Load(TerminalType);
                 if (termInfo == null)
                     return true;
@@ -156,7 +157,7 @@ namespace Terminaux.Base.Checks
         public static bool CheckConsoleSize(int minimumWidth = 80, int minimumHeight = 24)
         {
             // If we're being run on TMUX, the status bar might mess up our interpretation of the window height.
-            if (ConsolePlatform.IsRunningFromTmux())
+            if (PlatformHelper.IsRunningFromTmux())
             {
                 try
                 {
@@ -191,7 +192,7 @@ namespace Terminaux.Base.Checks
                     minimumHeight--;
                 }
             }
-            else if (ConsolePlatform.IsRunningFromScreen())
+            else if (PlatformHelper.IsRunningFromScreen())
             {
                 // The status bar for GNU screen is always one row long.
                 string confPath = HomePath + "/.screenrc";

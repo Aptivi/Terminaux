@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using SpecProbe.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -104,7 +105,7 @@ namespace Terminaux.Base.Checks
         /// </summary>
         /// <returns>True if greylisted; false otherwise</returns>
         public static (bool greylisted, string justification) IsTypeGreylisted() =>
-            IsTypeGreylisted(ConsolePlatform.GetTerminalType());
+            IsTypeGreylisted(PlatformHelper.GetTerminalType());
 
         internal static (bool greylisted, string justification) IsTypeGreylisted(string terminalType)
         {

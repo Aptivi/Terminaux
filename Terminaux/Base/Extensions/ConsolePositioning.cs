@@ -27,6 +27,7 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System.Threading;
 using Textify.General;
+using SpecProbe.Platform;
 
 namespace Terminaux.Base.Extensions
 {
@@ -160,7 +161,7 @@ namespace Terminaux.Base.Extensions
         /// <returns></returns>
         public static bool InitializeSequences()
         {
-            if (!ConsolePlatform.IsOnWindows())
+            if (!PlatformHelper.IsOnWindows())
                 return true;
             IntPtr stdHandle = GetStdHandle(-11);
             int mode = CheckForConHostSequenceSupport();
@@ -188,7 +189,7 @@ namespace Terminaux.Base.Extensions
             Source = Regex.Unescape(Source.Replace(@"\", "/"));
 
             // Append current directory to path
-            if (ConsolePlatform.IsOnWindows() & !Path.Contains(":/") | ConsolePlatform.IsOnUnix() & !Path.StartsWith("/"))
+            if (PlatformHelper.IsOnWindows() & !Path.Contains(":/") | PlatformHelper.IsOnUnix() & !Path.StartsWith("/"))
                 if (!Source.EndsWith("/"))
                     Path = $"{Source}/{Path}";
                 else

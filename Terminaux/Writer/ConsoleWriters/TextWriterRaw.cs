@@ -22,6 +22,7 @@ using System;
 using Terminaux.Base.Extensions;
 using Terminaux.Base;
 using Terminaux.Reader;
+using SpecProbe.Platform;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -92,7 +93,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 {
                     // Get the filtered positions first.
                     int FilteredLeft = default, FilteredTop = default;
-                    if (ConsolePlatform.IsRunningFromMono())
+                    if (PlatformHelper.IsRunningFromMono())
                     {
                         var pos = ConsolePositioning.GetFilteredPositions(Text, Line, vars);
                         FilteredLeft = pos.Item1;
@@ -133,7 +134,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     }
 
                     // Return to the processed position
-                    if (ConsolePlatform.IsRunningFromMono())
+                    if (PlatformHelper.IsRunningFromMono())
                         ConsoleWrapper.SetCursorPosition(FilteredLeft, FilteredTop);
                 }
                 catch (Exception ex)
