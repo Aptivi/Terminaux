@@ -264,30 +264,35 @@ namespace Terminaux.Reader
 
             // Now, highlight the rendered text
             StringBuilder finalString = new(renderedText);
+            List<(Match match, Color fgColor, Color bgColor, bool fgEnabled, bool bgEnabled)> finalMatches = [];
             foreach (var component in state.Settings.SyntaxHighlighter.Components.Values)
             {
                 var match = component.ComponentMatch;
                 var fgColor = component.ComponentForegroundColor;
                 var bgColor = component.ComponentBackgroundColor;
-                bool bgEnabled = component.UseBackgroundColor;
                 bool fgEnabled = component.UseForegroundColor;
+                bool bgEnabled = component.UseBackgroundColor;
 
                 // Now, match the original string
                 Match[] matches = match.Matches(renderedText).OfType<Match>().ToArray();
-                for (int i = matches.Length - 1; i >= 0; i--)
-                {
-                    Match regexMatch = matches[i];
-                    var idx = regexMatch.Index;
-                    var endIdx = idx + regexMatch.Length;
-                    if (fgEnabled)
-                        finalString.Insert(endIdx, state.Settings.InputForegroundColor.VTSequenceForeground);
-                    if (bgEnabled)
-                        finalString.Insert(endIdx, state.Settings.InputBackgroundColor.VTSequenceBackground);
-                    if (fgEnabled)
-                        finalString.Insert(idx, fgColor.VTSequenceForeground);
-                    if (bgEnabled)
-                        finalString.Insert(idx, bgColor.VTSequenceBackground);
-                }
+                foreach (var finalMatch in matches)
+                    finalMatches.Add((finalMatch, fgColor, bgColor, fgEnabled, bgEnabled));
+            }
+
+            // Sort the matches and apply
+            finalMatches = finalMatches.OrderByDescending((match) => match.match.Index).ToList();
+            foreach (var (match, fgColor, bgColor, fgEnabled, bgEnabled) in finalMatches)
+            {
+                var idx = match.Index;
+                var endIdx = idx + match.Length;
+                if (fgEnabled)
+                    finalString.Insert(endIdx, state.Settings.InputForegroundColor.VTSequenceForeground);
+                if (bgEnabled)
+                    finalString.Insert(endIdx, state.Settings.InputBackgroundColor.VTSequenceBackground);
+                if (fgEnabled)
+                    finalString.Insert(idx, fgColor.VTSequenceForeground);
+                if (bgEnabled)
+                    finalString.Insert(idx, bgColor.VTSequenceBackground);
             }
 
             // Return the final string

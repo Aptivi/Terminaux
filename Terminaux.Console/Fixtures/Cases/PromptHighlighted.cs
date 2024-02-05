@@ -98,7 +98,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
                 SyntaxHighlighterEnabled = true,
                 SyntaxHighlighter = templateDouble,
             };
-            TermReader.Read("E >> ", settingsDoubleCustom);
+            TermReader.Read("O >> ", settingsDoubleCustom);
             SyntaxHighlightingTools.UnregisterHighlighter("custom");
         }
     }
