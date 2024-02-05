@@ -80,6 +80,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new TestListWriterLargeWrap(),
             new TestListWriterHuge(),
             new TestListWriterHugeWrap(),
+            new TestNonGenericListWriterInt(),
             new TestTable(),
             new BorderText(),
 

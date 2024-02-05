@@ -171,6 +171,10 @@
             "commandName": "Project",
             "commandLineArgs": "TestListWriterHugeWrap"
         },
+        "Terminaux - TestNonGenericListWriterInt": {
+            "commandName": "Project",
+            "commandLineArgs": "TestNonGenericListWriterInt"
+        },
         "Terminaux - TestTable": {
             "commandName": "Project",
             "commandLineArgs": "TestTable"
