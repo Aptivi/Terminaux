@@ -49,11 +49,6 @@
     "title": "Namespace Terminaux.Base.Checks | Terminaux API - Aptivi",
     "keywords": "Namespace Terminaux.Base.Checks Classes ConsoleChecker Console sanity checking module TerminalEmulatorBlacklist The blacklist module for the terminal emulator TerminalEmulatorGreylist The greylist module for the terminal emulator TerminalTypeBlacklist The blacklist module for the terminal type TerminalTypeGreylist The greylist module for the terminal type"
   },
-  "api/Terminaux.Base.ConsolePlatform.html": {
-    "href": "api/Terminaux.Base.ConsolePlatform.html",
-    "title": "Class ConsolePlatform | Terminaux API - Aptivi",
-    "keywords": "Class ConsolePlatform Console platform class Inheritance object ConsolePlatform Namespace: Terminaux.Base Assembly: Terminaux.dll Syntax public static class ConsolePlatform Methods | Edit this page View Source GetTerminalEmulator() Polls $TERM_PROGRAM to get terminal emulator Declaration public static string GetTerminalEmulator() Returns Type Description string | Edit this page View Source GetTerminalType() Polls $TERM to get terminal type (vt100, dumb, ...) Declaration public static string GetTerminalType() Returns Type Description string | Edit this page View Source IsOnMacOS() Is this system a macOS system? Declaration public static bool IsOnMacOS() Returns Type Description bool | Edit this page View Source IsOnUnix() Is this system a Unix system? True for macOS, too! Declaration public static bool IsOnUnix() Returns Type Description bool | Edit this page View Source IsOnUnixMusl() Is this system a Unix system that contains musl libc? Declaration public static bool IsOnUnixMusl() Returns Type Description bool True if running on Unix systems that use musl libc. Otherwise, false. | Edit this page View Source IsOnWindows() Is this system a Windows system? Declaration public static bool IsOnWindows() Returns Type Description bool | Edit this page View Source IsRunningFromGrilo() Is Terminaux running from GRILO? Declaration public static bool IsRunningFromGrilo() Returns Type Description bool | Edit this page View Source IsRunningFromMono() Is Terminaux running from Mono? Declaration public static bool IsRunningFromMono() Returns Type Description bool | Edit this page View Source IsRunningFromScreen() Is Terminaux running from GNU Screen? Declaration public static bool IsRunningFromScreen() Returns Type Description bool | Edit this page View Source IsRunningFromTmux() Is Terminaux running from TMUX? Declaration public static bool IsRunningFromTmux() Returns Type Description bool"
-  },
   "api/Terminaux.Base.ConsoleResizeHandler.html": {
     "href": "api/Terminaux.Base.ConsoleResizeHandler.html",
     "title": "Class ConsoleResizeHandler | Terminaux API - Aptivi",
@@ -117,7 +112,7 @@
   "api/Terminaux.Base.html": {
     "href": "api/Terminaux.Base.html",
     "title": "Namespace Terminaux.Base | Terminaux API - Aptivi",
-    "keywords": "Namespace Terminaux.Base Classes ConsolePlatform Console platform class ConsoleResizeHandler The console resize listener module ConsoleWrapper Wrapper for the Console class to ensure safety against dumb consoles. This connects to the console wrapper that Terminaux manages. ConsoleWrapperTools Wrapper for the Console class to ensure safety against dumb consoles and Windows-only features. TerminauxException Terminaux exception class"
+    "keywords": "Namespace Terminaux.Base Classes ConsoleResizeHandler The console resize listener module ConsoleWrapper Wrapper for the Console class to ensure safety against dumb consoles. This connects to the console wrapper that Terminaux manages. ConsoleWrapperTools Wrapper for the Console class to ensure safety against dumb consoles and Windows-only features. TerminauxException Terminaux exception class"
   },
   "api/Terminaux.Colors.Color.html": {
     "href": "api/Terminaux.Colors.Color.html",
