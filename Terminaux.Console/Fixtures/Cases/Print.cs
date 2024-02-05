@@ -30,6 +30,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         {
             TextWriterColor.WriteColor("Hello world!", true, new Color(ConsoleColors.Green));
             TextWriterHighlightedColor.WriteColor("Hello highlighted world!", true, new Color(ConsoleColors.Green));
+            TextWriterHighlightedColor.WriteColor(true, "Hello legacy highlighted world!", true, new Color(ConsoleColors.Green));
             TextWriterColor.Write("Hello world in gray!");
         }
     }
