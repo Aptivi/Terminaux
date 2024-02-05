@@ -52,8 +52,6 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
                             "ComponentMatch": "/(?:^|(?:[.!?]\\s))(\\w+)/",
                             "ComponentForegroundColor": "#00FF00",
                             "ComponentBackgroundColor": "#000000",
-                            "UseBackgroundColor": false,
-                            "UseForegroundColor": true,
                         }
                     }
                 }

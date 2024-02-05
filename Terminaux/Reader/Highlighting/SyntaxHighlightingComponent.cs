@@ -37,9 +37,9 @@ namespace Terminaux.Reader.Highlighting
         private readonly Color componentForegroundColor;
         [JsonProperty(nameof(ComponentBackgroundColor), Required = Required.Always)]
         private readonly Color componentBackgroundColor;
-        [JsonProperty(nameof(UseBackgroundColor), DefaultValueHandling = DefaultValueHandling.Populate)]
-        private readonly bool useBackgroundColor = true;
-        [JsonProperty(nameof(UseForegroundColor), DefaultValueHandling = DefaultValueHandling.Populate)]
+        [JsonProperty(nameof(UseBackgroundColor))]
+        private readonly bool useBackgroundColor;
+        [JsonProperty(nameof(UseForegroundColor))]
         private readonly bool useForegroundColor = true;
 
         /// <summary>
