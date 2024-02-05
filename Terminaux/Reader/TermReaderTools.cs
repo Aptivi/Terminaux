@@ -283,7 +283,7 @@ namespace Terminaux.Reader
             }
 
             // Sort the matches and apply
-            finalMatches = finalMatches.OrderByDescending((match) => match.match.Index).ToList();
+            finalMatches = [.. finalMatches.OrderByDescending((match) => match.match.Index)];
             foreach (var (match, fgColor, bgColor, fgEnabled, bgEnabled) in finalMatches)
             {
                 var idx = match.Index;

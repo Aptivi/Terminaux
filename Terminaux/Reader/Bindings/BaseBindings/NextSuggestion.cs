@@ -52,7 +52,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 string suggestion = suggestions[state.CurrentSuggestionsPos];
 
                 // If there is no suggestion, bail
-                if (string.IsNullOrEmpty(suggestion))
+                if (!ConditionalTools.ShouldNot(string.IsNullOrEmpty(suggestion), state))
                     return;
                 int maxTimes = suggestions.Max((str) => str.Length);
                 int oldLength = state.CurrentText.Length;

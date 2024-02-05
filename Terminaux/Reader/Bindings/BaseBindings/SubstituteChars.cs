@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
@@ -33,9 +34,9 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override void DoAction(TermReaderState state)
         {
             // First, check the boundaries
-            if (state.CurrentText.Length <= 1)
+            if (!ConditionalTools.ShouldNot(state.CurrentText.Length <= 1, state))
                 return;
-            if (state.CurrentTextPos >= state.CurrentText.Length - 1)
+            if (!ConditionalTools.ShouldNot(state.CurrentTextPos >= state.CurrentText.Length - 1, state))
                 return;
 
             // Then, get the two characters

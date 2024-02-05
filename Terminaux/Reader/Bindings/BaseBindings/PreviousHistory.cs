@@ -36,7 +36,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override void DoAction(TermReaderState state)
         {
             // If we're at the start of the history, bail.
-            if (state.CurrentHistoryPos == 0)
+            if (!ConditionalTools.ShouldNot(state.CurrentHistoryPos == 0, state))
                 return;
 
             // If we're in the password mode, bail.

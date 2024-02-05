@@ -51,6 +51,7 @@ namespace Terminaux.Reader
         internal bool writingPrompt;
         internal bool insertIsReplace;
         internal bool commentized;
+        internal bool operationWasInvalid;
         internal TermReaderSettings settings;
 
         // Shared
@@ -206,6 +207,11 @@ namespace Terminaux.Reader
         /// </summary>
         public bool Commentized =>
             commentized;
+        /// <summary>
+        /// Whether an invalid key was pressed, or an invalid operation was performed, or not.
+        /// </summary>
+        public bool OperationWasInvalid =>
+            operationWasInvalid;
 
         // To static variables
         /// <summary>

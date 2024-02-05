@@ -36,15 +36,15 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override void DoAction(TermReaderState state)
         {
             // If we're at the end of the history, bail.
-            if (state.CurrentHistoryPos >= state.History.Count)
+            if (!ConditionalTools.ShouldNot(state.CurrentHistoryPos >= state.History.Count, state))
                 return;
 
             // If we're in the password mode, bail.
-            if (state.PasswordMode)
+            if (!ConditionalTools.ShouldNot(state.PasswordMode, state))
                 return;
 
             // If we're in the disabled history mode, bail.
-            if (!state.settings.HistoryEnabled)
+            if (!ConditionalTools.ShouldNot(!state.settings.HistoryEnabled, state))
                 return;
 
             // Wipe everything

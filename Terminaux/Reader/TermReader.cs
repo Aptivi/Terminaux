@@ -252,6 +252,11 @@ namespace Terminaux.Reader
                         if (differed)
                             PositioningTools.Commit(readState);
 
+                        // Write the bell character if invalid
+                        if (readState.OperationWasInvalid)
+                            ConsoleWrapper.BeepSeq();
+                        readState.operationWasInvalid = false;
+
                         // Cursor is visible, but fix cursor on Linux
                         cachedPos = (readState.currentCursorPosLeft, readState.currentCursorPosTop);
                         ConsoleWrapper.CursorVisible = true;

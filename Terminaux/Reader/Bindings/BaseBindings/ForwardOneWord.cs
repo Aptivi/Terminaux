@@ -34,7 +34,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override void DoAction(TermReaderState state)
         {
             // If we're at the start of the text, bail.
-            if (state.CurrentTextPos == state.CurrentText.Length)
+            if (!ConditionalTools.ShouldNot(state.CurrentTextPos == state.CurrentText.Length, state))
                 return;
 
             // Get the length of a word

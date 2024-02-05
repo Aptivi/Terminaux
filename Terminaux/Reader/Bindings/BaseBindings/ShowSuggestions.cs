@@ -91,6 +91,8 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             }
             else if (suggestions.Length == 1)
                 new PreviousSuggestion().DoAction(state);
+            else
+                state.operationWasInvalid = true;
         }
     }
 }

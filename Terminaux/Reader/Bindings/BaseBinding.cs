@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Reader.Tools;
 using Textify.General;
 
 namespace Terminaux.Reader.Bindings
@@ -67,7 +68,7 @@ namespace Terminaux.Reader.Bindings
         public virtual void DoAction(TermReaderState state)
         {
             // Insert the character, but in the condition that it's not a control character
-            if (char.IsControl(state.pressedKey.KeyChar) && state.pressedKey.KeyChar != '\t')
+            if (!ConditionalTools.ShouldNot(char.IsControl(state.pressedKey.KeyChar) && state.pressedKey.KeyChar != '\t', state))
                 return;
 
             // Process the text and replace below characters

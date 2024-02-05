@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Reader.Tools;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {
@@ -33,7 +34,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override void DoAction(TermReaderState state)
         {
             // If we're at the end of the text, bail.
-            if (state.CurrentTextPos == state.CurrentText.Length)
+            if (!ConditionalTools.ShouldNot(state.CurrentTextPos == state.CurrentText.Length, state))
                 return;
 
             // Remove one character from the current text position

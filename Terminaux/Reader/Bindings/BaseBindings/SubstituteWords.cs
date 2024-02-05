@@ -34,11 +34,11 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override void DoAction(TermReaderState state)
         {
             // First, check the boundaries
-            if (state.CurrentText.Length <= 1)
+            if (!ConditionalTools.ShouldNot(state.CurrentText.Length <= 1, state))
                 return;
-            if (state.CurrentTextPos == state.CurrentText.Length)
+            if (!ConditionalTools.ShouldNot(state.CurrentTextPos == state.CurrentText.Length, state))
                 return;
-            if (!char.IsWhiteSpace(state.CurrentText[state.CurrentTextPos]))
+            if (!ConditionalTools.ShouldNot(!char.IsWhiteSpace(state.CurrentText[state.CurrentTextPos]), state))
                 return;
 
             // Then, get the two words
