@@ -8519,19 +8519,6 @@ references:
   commentId: T:Terminaux.Inputs.Input
   fullName: Terminaux.Inputs.Input
   nameWithType: Input
-- uid: Terminaux.Inputs.Input.CurrentMask
-  name: CurrentMask
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_CurrentMask
-  commentId: P:Terminaux.Inputs.Input.CurrentMask
-  fullName: Terminaux.Inputs.Input.CurrentMask
-  nameWithType: Input.CurrentMask
-- uid: Terminaux.Inputs.Input.CurrentMask*
-  name: CurrentMask
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_CurrentMask_
-  commentId: Overload:Terminaux.Inputs.Input.CurrentMask
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Input.CurrentMask
-  nameWithType: Input.CurrentMask
 - uid: Terminaux.Inputs.Input.DetectKeypress
   name: DetectKeypress()
   href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_DetectKeypress
@@ -8545,19 +8532,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Input.DetectKeypress
   nameWithType: Input.DetectKeypress
-- uid: Terminaux.Inputs.Input.GlobalReaderSettings
-  name: GlobalReaderSettings
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_GlobalReaderSettings
-  commentId: P:Terminaux.Inputs.Input.GlobalReaderSettings
-  fullName: Terminaux.Inputs.Input.GlobalReaderSettings
-  nameWithType: Input.GlobalReaderSettings
-- uid: Terminaux.Inputs.Input.GlobalReaderSettings*
-  name: GlobalReaderSettings
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_GlobalReaderSettings_
-  commentId: Overload:Terminaux.Inputs.Input.GlobalReaderSettings
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Input.GlobalReaderSettings
-  nameWithType: Input.GlobalReaderSettings
 - uid: Terminaux.Inputs.Input.ReadKeyTimeout(System.Boolean,System.TimeSpan)
   name: ReadKeyTimeout(bool, TimeSpan)
   href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadKeyTimeout_System_Boolean_System_TimeSpan_
@@ -8574,153 +8548,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Input.ReadKeyTimeout
   nameWithType: Input.ReadKeyTimeout
-- uid: Terminaux.Inputs.Input.ReadLine(System.Boolean)
-  name: ReadLine(bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLine_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLine(System.Boolean)
-  name.vb: ReadLine(Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLine(bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLine(Boolean)
-  nameWithType: Input.ReadLine(bool)
-  nameWithType.vb: Input.ReadLine(Boolean)
-- uid: Terminaux.Inputs.Input.ReadLine(System.String,System.Boolean)
-  name: ReadLine(string, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLine_System_String_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLine(System.String,System.Boolean)
-  name.vb: ReadLine(String, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLine(string, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLine(String, Boolean)
-  nameWithType: Input.ReadLine(string, bool)
-  nameWithType.vb: Input.ReadLine(String, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLine(System.String,System.String,System.Boolean)
-  name: ReadLine(string, string, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLine_System_String_System_String_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLine(System.String,System.String,System.Boolean)
-  name.vb: ReadLine(String, String, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLine(string, string, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLine(String, String, Boolean)
-  nameWithType: Input.ReadLine(string, string, bool)
-  nameWithType.vb: Input.ReadLine(String, String, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLine(System.String,System.String,System.Boolean,System.Boolean)
-  name: ReadLine(string, string, bool, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLine_System_String_System_String_System_Boolean_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLine(System.String,System.String,System.Boolean,System.Boolean)
-  name.vb: ReadLine(String, String, Boolean, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLine(string, string, bool, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLine(String, String, Boolean, Boolean)
-  nameWithType: Input.ReadLine(string, string, bool, bool)
-  nameWithType.vb: Input.ReadLine(String, String, Boolean, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLine(System.String,System.String,System.Boolean,Terminaux.Reader.TermReaderSettings,System.Boolean)
-  name: ReadLine(string, string, bool, TermReaderSettings, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLine_System_String_System_String_System_Boolean_Terminaux_Reader_TermReaderSettings_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLine(System.String,System.String,System.Boolean,Terminaux.Reader.TermReaderSettings,System.Boolean)
-  name.vb: ReadLine(String, String, Boolean, TermReaderSettings, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLine(string, string, bool, Terminaux.Reader.TermReaderSettings, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLine(String, String, Boolean, Terminaux.Reader.TermReaderSettings, Boolean)
-  nameWithType: Input.ReadLine(string, string, bool, TermReaderSettings, bool)
-  nameWithType.vb: Input.ReadLine(String, String, Boolean, TermReaderSettings, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLine(System.String,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)
-  name: ReadLine(string, string, TermReaderSettings, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLine_System_String_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLine(System.String,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)
-  name.vb: ReadLine(String, String, TermReaderSettings, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLine(string, string, Terminaux.Reader.TermReaderSettings, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLine(String, String, Terminaux.Reader.TermReaderSettings, Boolean)
-  nameWithType: Input.ReadLine(string, string, TermReaderSettings, bool)
-  nameWithType.vb: Input.ReadLine(String, String, TermReaderSettings, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLine*
-  name: ReadLine
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLine_
-  commentId: Overload:Terminaux.Inputs.Input.ReadLine
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Input.ReadLine
-  nameWithType: Input.ReadLine
-- uid: Terminaux.Inputs.Input.ReadLineNoInput(System.Boolean)
-  name: ReadLineNoInput(bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLineNoInput_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLineNoInput(System.Boolean)
-  name.vb: ReadLineNoInput(Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLineNoInput(bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLineNoInput(Boolean)
-  nameWithType: Input.ReadLineNoInput(bool)
-  nameWithType.vb: Input.ReadLineNoInput(Boolean)
-- uid: Terminaux.Inputs.Input.ReadLineNoInput(System.Char,System.Boolean)
-  name: ReadLineNoInput(char, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLineNoInput_System_Char_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLineNoInput(System.Char,System.Boolean)
-  name.vb: ReadLineNoInput(Char, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLineNoInput(char, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLineNoInput(Char, Boolean)
-  nameWithType: Input.ReadLineNoInput(char, bool)
-  nameWithType.vb: Input.ReadLineNoInput(Char, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLineNoInput(System.Char,Terminaux.Reader.TermReaderSettings,System.Boolean)
-  name: ReadLineNoInput(char, TermReaderSettings, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLineNoInput_System_Char_Terminaux_Reader_TermReaderSettings_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLineNoInput(System.Char,Terminaux.Reader.TermReaderSettings,System.Boolean)
-  name.vb: ReadLineNoInput(Char, TermReaderSettings, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLineNoInput(char, Terminaux.Reader.TermReaderSettings, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLineNoInput(Char, Terminaux.Reader.TermReaderSettings, Boolean)
-  nameWithType: Input.ReadLineNoInput(char, TermReaderSettings, bool)
-  nameWithType.vb: Input.ReadLineNoInput(Char, TermReaderSettings, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLineNoInput(Terminaux.Reader.TermReaderSettings,System.Boolean)
-  name: ReadLineNoInput(TermReaderSettings, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLineNoInput_Terminaux_Reader_TermReaderSettings_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLineNoInput(Terminaux.Reader.TermReaderSettings,System.Boolean)
-  name.vb: ReadLineNoInput(TermReaderSettings, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLineNoInput(Terminaux.Reader.TermReaderSettings, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLineNoInput(Terminaux.Reader.TermReaderSettings, Boolean)
-  nameWithType: Input.ReadLineNoInput(TermReaderSettings, bool)
-  nameWithType.vb: Input.ReadLineNoInput(TermReaderSettings, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLineNoInput*
-  name: ReadLineNoInput
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLineNoInput_
-  commentId: Overload:Terminaux.Inputs.Input.ReadLineNoInput
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Input.ReadLineNoInput
-  nameWithType: Input.ReadLineNoInput
-- uid: Terminaux.Inputs.Input.ReadLineWrapped(System.Boolean)
-  name: ReadLineWrapped(bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLineWrapped_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLineWrapped(System.Boolean)
-  name.vb: ReadLineWrapped(Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLineWrapped(bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLineWrapped(Boolean)
-  nameWithType: Input.ReadLineWrapped(bool)
-  nameWithType.vb: Input.ReadLineWrapped(Boolean)
-- uid: Terminaux.Inputs.Input.ReadLineWrapped(System.String,System.Boolean)
-  name: ReadLineWrapped(string, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLineWrapped_System_String_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLineWrapped(System.String,System.Boolean)
-  name.vb: ReadLineWrapped(String, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLineWrapped(string, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLineWrapped(String, Boolean)
-  nameWithType: Input.ReadLineWrapped(string, bool)
-  nameWithType.vb: Input.ReadLineWrapped(String, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLineWrapped(System.String,System.String,System.Boolean)
-  name: ReadLineWrapped(string, string, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLineWrapped_System_String_System_String_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLineWrapped(System.String,System.String,System.Boolean)
-  name.vb: ReadLineWrapped(String, String, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLineWrapped(string, string, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLineWrapped(String, String, Boolean)
-  nameWithType: Input.ReadLineWrapped(string, string, bool)
-  nameWithType.vb: Input.ReadLineWrapped(String, String, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLineWrapped(System.String,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)
-  name: ReadLineWrapped(string, string, TermReaderSettings, bool)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLineWrapped_System_String_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_
-  commentId: M:Terminaux.Inputs.Input.ReadLineWrapped(System.String,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)
-  name.vb: ReadLineWrapped(String, String, TermReaderSettings, Boolean)
-  fullName: Terminaux.Inputs.Input.ReadLineWrapped(string, string, Terminaux.Reader.TermReaderSettings, bool)
-  fullName.vb: Terminaux.Inputs.Input.ReadLineWrapped(String, String, Terminaux.Reader.TermReaderSettings, Boolean)
-  nameWithType: Input.ReadLineWrapped(string, string, TermReaderSettings, bool)
-  nameWithType.vb: Input.ReadLineWrapped(String, String, TermReaderSettings, Boolean)
-- uid: Terminaux.Inputs.Input.ReadLineWrapped*
-  name: ReadLineWrapped
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadLineWrapped_
-  commentId: Overload:Terminaux.Inputs.Input.ReadLineWrapped
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Input.ReadLineWrapped
-  nameWithType: Input.ReadLineWrapped
 - uid: Terminaux.Inputs.InputChoiceInfo
   name: InputChoiceInfo
   href: api/Terminaux.Inputs.InputChoiceInfo.html
@@ -12408,21 +12235,50 @@ references:
   commentId: T:Terminaux.Reader.TermReader
   fullName: Terminaux.Reader.TermReader
   nameWithType: TermReader
-- uid: Terminaux.Reader.TermReader.Read
-  name: Read()
-  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read
-  commentId: M:Terminaux.Reader.TermReader.Read
-  fullName: Terminaux.Reader.TermReader.Read()
-  nameWithType: TermReader.Read()
-- uid: Terminaux.Reader.TermReader.Read(System.String)
-  name: Read(string)
-  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_String_
-  commentId: M:Terminaux.Reader.TermReader.Read(System.String)
-  name.vb: Read(String)
-  fullName: Terminaux.Reader.TermReader.Read(string)
-  fullName.vb: Terminaux.Reader.TermReader.Read(String)
-  nameWithType: TermReader.Read(string)
-  nameWithType.vb: TermReader.Read(String)
+- uid: Terminaux.Reader.TermReader.CurrentMask
+  name: CurrentMask
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_CurrentMask
+  commentId: P:Terminaux.Reader.TermReader.CurrentMask
+  fullName: Terminaux.Reader.TermReader.CurrentMask
+  nameWithType: TermReader.CurrentMask
+- uid: Terminaux.Reader.TermReader.CurrentMask*
+  name: CurrentMask
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_CurrentMask_
+  commentId: Overload:Terminaux.Reader.TermReader.CurrentMask
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReader.CurrentMask
+  nameWithType: TermReader.CurrentMask
+- uid: Terminaux.Reader.TermReader.GlobalReaderSettings
+  name: GlobalReaderSettings
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_GlobalReaderSettings
+  commentId: P:Terminaux.Reader.TermReader.GlobalReaderSettings
+  fullName: Terminaux.Reader.TermReader.GlobalReaderSettings
+  nameWithType: TermReader.GlobalReaderSettings
+- uid: Terminaux.Reader.TermReader.GlobalReaderSettings*
+  name: GlobalReaderSettings
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_GlobalReaderSettings_
+  commentId: Overload:Terminaux.Reader.TermReader.GlobalReaderSettings
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReader.GlobalReaderSettings
+  nameWithType: TermReader.GlobalReaderSettings
+- uid: Terminaux.Reader.TermReader.Read(System.Boolean)
+  name: Read(bool)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.Read(System.Boolean)
+  name.vb: Read(Boolean)
+  fullName: Terminaux.Reader.TermReader.Read(bool)
+  fullName.vb: Terminaux.Reader.TermReader.Read(Boolean)
+  nameWithType: TermReader.Read(bool)
+  nameWithType.vb: TermReader.Read(Boolean)
+- uid: Terminaux.Reader.TermReader.Read(System.String,System.Boolean)
+  name: Read(string, bool)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_String_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.Read(System.String,System.Boolean)
+  name.vb: Read(String, Boolean)
+  fullName: Terminaux.Reader.TermReader.Read(string, bool)
+  fullName.vb: Terminaux.Reader.TermReader.Read(String, Boolean)
+  nameWithType: TermReader.Read(string, bool)
+  nameWithType.vb: TermReader.Read(String, Boolean)
 - uid: Terminaux.Reader.TermReader.Read(System.String,System.String,System.Boolean,System.Boolean,System.Boolean)
   name: Read(string, string, bool, bool, bool)
   href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_
@@ -12441,21 +12297,24 @@ references:
   fullName.vb: Terminaux.Reader.TermReader.Read(String, String, Terminaux.Reader.TermReaderSettings, Boolean, Boolean, Boolean)
   nameWithType: TermReader.Read(string, string, TermReaderSettings, bool, bool, bool)
   nameWithType.vb: TermReader.Read(String, String, TermReaderSettings, Boolean, Boolean, Boolean)
-- uid: Terminaux.Reader.TermReader.Read(System.String,Terminaux.Reader.TermReaderSettings)
-  name: Read(string, TermReaderSettings)
-  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_String_Terminaux_Reader_TermReaderSettings_
-  commentId: M:Terminaux.Reader.TermReader.Read(System.String,Terminaux.Reader.TermReaderSettings)
-  name.vb: Read(String, TermReaderSettings)
-  fullName: Terminaux.Reader.TermReader.Read(string, Terminaux.Reader.TermReaderSettings)
-  fullName.vb: Terminaux.Reader.TermReader.Read(String, Terminaux.Reader.TermReaderSettings)
-  nameWithType: TermReader.Read(string, TermReaderSettings)
-  nameWithType.vb: TermReader.Read(String, TermReaderSettings)
-- uid: Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings)
-  name: Read(TermReaderSettings)
-  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_Terminaux_Reader_TermReaderSettings_
-  commentId: M:Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings)
-  fullName: Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings)
-  nameWithType: TermReader.Read(TermReaderSettings)
+- uid: Terminaux.Reader.TermReader.Read(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)
+  name: Read(string, TermReaderSettings, bool)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.Read(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)
+  name.vb: Read(String, TermReaderSettings, Boolean)
+  fullName: Terminaux.Reader.TermReader.Read(string, Terminaux.Reader.TermReaderSettings, bool)
+  fullName.vb: Terminaux.Reader.TermReader.Read(String, Terminaux.Reader.TermReaderSettings, Boolean)
+  nameWithType: TermReader.Read(string, TermReaderSettings, bool)
+  nameWithType.vb: TermReader.Read(String, TermReaderSettings, Boolean)
+- uid: Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings,System.Boolean)
+  name: Read(TermReaderSettings, bool)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_Terminaux_Reader_TermReaderSettings_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings,System.Boolean)
+  name.vb: Read(TermReaderSettings, Boolean)
+  fullName: Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings, bool)
+  fullName.vb: Terminaux.Reader.TermReader.Read(Terminaux.Reader.TermReaderSettings, Boolean)
+  nameWithType: TermReader.Read(TermReaderSettings, bool)
+  nameWithType.vb: TermReader.Read(TermReaderSettings, Boolean)
 - uid: Terminaux.Reader.TermReader.Read*
   name: Read
   href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_
@@ -12472,6 +12331,42 @@ references:
   fullName.vb: Terminaux.Reader.TermReader.ReadPassword(Boolean)
   nameWithType: TermReader.ReadPassword(bool)
   nameWithType.vb: TermReader.ReadPassword(Boolean)
+- uid: Terminaux.Reader.TermReader.ReadPassword(System.Char,System.Boolean)
+  name: ReadPassword(char, bool)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_System_Char_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.ReadPassword(System.Char,System.Boolean)
+  name.vb: ReadPassword(Char, Boolean)
+  fullName: Terminaux.Reader.TermReader.ReadPassword(char, bool)
+  fullName.vb: Terminaux.Reader.TermReader.ReadPassword(Char, Boolean)
+  nameWithType: TermReader.ReadPassword(char, bool)
+  nameWithType.vb: TermReader.ReadPassword(Char, Boolean)
+- uid: Terminaux.Reader.TermReader.ReadPassword(System.Char,System.String,System.Boolean)
+  name: ReadPassword(char, string, bool)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_System_Char_System_String_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.ReadPassword(System.Char,System.String,System.Boolean)
+  name.vb: ReadPassword(Char, String, Boolean)
+  fullName: Terminaux.Reader.TermReader.ReadPassword(char, string, bool)
+  fullName.vb: Terminaux.Reader.TermReader.ReadPassword(Char, String, Boolean)
+  nameWithType: TermReader.ReadPassword(char, string, bool)
+  nameWithType.vb: TermReader.ReadPassword(Char, String, Boolean)
+- uid: Terminaux.Reader.TermReader.ReadPassword(System.Char,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)
+  name: ReadPassword(char, string, TermReaderSettings, bool)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_System_Char_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.ReadPassword(System.Char,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean)
+  name.vb: ReadPassword(Char, String, TermReaderSettings, Boolean)
+  fullName: Terminaux.Reader.TermReader.ReadPassword(char, string, Terminaux.Reader.TermReaderSettings, bool)
+  fullName.vb: Terminaux.Reader.TermReader.ReadPassword(Char, String, Terminaux.Reader.TermReaderSettings, Boolean)
+  nameWithType: TermReader.ReadPassword(char, string, TermReaderSettings, bool)
+  nameWithType.vb: TermReader.ReadPassword(Char, String, TermReaderSettings, Boolean)
+- uid: Terminaux.Reader.TermReader.ReadPassword(System.Char,Terminaux.Reader.TermReaderSettings,System.Boolean)
+  name: ReadPassword(char, TermReaderSettings, bool)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_System_Char_Terminaux_Reader_TermReaderSettings_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.ReadPassword(System.Char,Terminaux.Reader.TermReaderSettings,System.Boolean)
+  name.vb: ReadPassword(Char, TermReaderSettings, Boolean)
+  fullName: Terminaux.Reader.TermReader.ReadPassword(char, Terminaux.Reader.TermReaderSettings, bool)
+  fullName.vb: Terminaux.Reader.TermReader.ReadPassword(Char, Terminaux.Reader.TermReaderSettings, Boolean)
+  nameWithType: TermReader.ReadPassword(char, TermReaderSettings, bool)
+  nameWithType.vb: TermReader.ReadPassword(Char, TermReaderSettings, Boolean)
 - uid: Terminaux.Reader.TermReader.ReadPassword(System.String,System.Boolean)
   name: ReadPassword(string, bool)
   href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_System_String_System_Boolean_
