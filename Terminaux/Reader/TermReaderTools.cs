@@ -27,6 +27,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader.Tools;
+using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
@@ -204,6 +205,7 @@ namespace Terminaux.Reader
             }
 
             // Take highlighting into account
+            string originalText = renderedText;
             renderedText = GetHighlightedInput(renderedText, state);
 
             // Now, render the input.
@@ -214,7 +216,7 @@ namespace Terminaux.Reader
                 incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - renderedText.Length), state.settings, false, foreground, background);
+                TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - originalText.Length), state.settings, false, foreground, background);
                 if (steps > 0)
                 {
                     if (backward)
@@ -227,7 +229,8 @@ namespace Terminaux.Reader
             {
                 // We're in the multi-line wrap mode!
                 incompleteSentences = TextTools.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
-                int spacesLength = longestSentenceLength - state.RightMargin - incompleteSentences[incompleteSentences.Length - 1].Length - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0) + 1;
+                string last = VtSequenceTools.FilterVTSequences(incompleteSentences[incompleteSentences.Length - 1]);
+                int spacesLength = longestSentenceLength - state.RightMargin - last.Length - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0) + 1;
                 if (spacesLength < 0)
                     spacesLength = 0;
                 if (spaces > 0)

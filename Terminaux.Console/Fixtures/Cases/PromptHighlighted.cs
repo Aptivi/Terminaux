@@ -53,7 +53,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
                             "ComponentForegroundColor": "#00FF00",
                             "ComponentBackgroundColor": "#000000",
                             "UseBackgroundColor": false,
-                            "UseForegroundColor": false,
+                            "UseForegroundColor": true,
                         }
                     }
                 }
