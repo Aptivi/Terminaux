@@ -19453,6 +19453,30 @@ references:
   commentId: T:Terminaux.Writer.ConsoleWriters.ListWriterColor
   fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor
   nameWithType: ListWriterColor
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary)
+  name: RenderList(IDictionary)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IDictionary_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary)
+  nameWithType: ListWriterColor.RenderList(IDictionary)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name: RenderList(IDictionary, Color, Color)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IDictionary, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  nameWithType: ListWriterColor.RenderList(IDictionary, Color, Color)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable)
+  name: RenderList(IEnumerable)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IEnumerable_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable)
+  nameWithType: ListWriterColor.RenderList(IEnumerable)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name: RenderList(IEnumerable, Color, Color)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(System.Collections.IEnumerable, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  nameWithType: ListWriterColor.RenderList(IEnumerable, Color, Color)
 - uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList*
   name: RenderList
   href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_RenderList_
@@ -19496,6 +19520,66 @@ references:
   fullName.vb: Terminaux.Writer.ConsoleWriters.ListWriterColor.RenderList(Of TKey, TValue)(System.Collections.Generic.Dictionary(Of TKey, TValue), Terminaux.Colors.Color, Terminaux.Colors.Color)
   nameWithType: ListWriterColor.RenderList<TKey, TValue>(Dictionary<TKey, TValue>, Color, Color)
   nameWithType.vb: ListWriterColor.RenderList(Of TKey, TValue)(Dictionary(Of TKey, TValue), Color, Color)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary)
+  name: WriteList(IDictionary)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary)
+  nameWithType: ListWriterColor.WriteList(IDictionary)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,System.Boolean)
+  name: WriteList(IDictionary, bool)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_System_Boolean_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,System.Boolean)
+  name.vb: WriteList(IDictionary, Boolean)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary, bool)
+  fullName.vb: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary, Boolean)
+  nameWithType: ListWriterColor.WriteList(IDictionary, bool)
+  nameWithType.vb: ListWriterColor.WriteList(IDictionary, Boolean)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name: WriteList(IDictionary, Color, Color)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  nameWithType: ListWriterColor.WriteList(IDictionary, Color, Color)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name: WriteList(IDictionary, Color, Color, bool)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IDictionary_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteList(IDictionary, Color, Color, Boolean)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary, Terminaux.Colors.Color, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IDictionary, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
+  nameWithType: ListWriterColor.WriteList(IDictionary, Color, Color, bool)
+  nameWithType.vb: ListWriterColor.WriteList(IDictionary, Color, Color, Boolean)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable)
+  name: WriteList(IEnumerable)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable)
+  nameWithType: ListWriterColor.WriteList(IEnumerable)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,System.Boolean)
+  name: WriteList(IEnumerable, bool)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_System_Boolean_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,System.Boolean)
+  name.vb: WriteList(IEnumerable, Boolean)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable, bool)
+  fullName.vb: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable, Boolean)
+  nameWithType: ListWriterColor.WriteList(IEnumerable, bool)
+  nameWithType.vb: ListWriterColor.WriteList(IEnumerable, Boolean)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name: WriteList(IEnumerable, Color, Color)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  nameWithType: ListWriterColor.WriteList(IEnumerable, Color, Color)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name: WriteList(IEnumerable, Color, Color, bool)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_System_Collections_IEnumerable_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteList(IEnumerable, Color, Color, Boolean)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable, Terminaux.Colors.Color, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(System.Collections.IEnumerable, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
+  nameWithType: ListWriterColor.WriteList(IEnumerable, Color, Color, bool)
+  nameWithType.vb: ListWriterColor.WriteList(IEnumerable, Color, Color, Boolean)
 - uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList*
   name: WriteList
   href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteList_
@@ -19503,6 +19587,36 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList
   nameWithType: ListWriterColor.WriteList
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary)
+  name: WriteListPlain(IDictionary)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IDictionary_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary)
+  nameWithType: ListWriterColor.WriteListPlain(IDictionary)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary,System.Boolean)
+  name: WriteListPlain(IDictionary, bool)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IDictionary_System_Boolean_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary,System.Boolean)
+  name.vb: WriteListPlain(IDictionary, Boolean)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary, bool)
+  fullName.vb: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IDictionary, Boolean)
+  nameWithType: ListWriterColor.WriteListPlain(IDictionary, bool)
+  nameWithType.vb: ListWriterColor.WriteListPlain(IDictionary, Boolean)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable)
+  name: WriteListPlain(IEnumerable)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IEnumerable_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable)
+  nameWithType: ListWriterColor.WriteListPlain(IEnumerable)
+- uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable,System.Boolean)
+  name: WriteListPlain(IEnumerable, bool)
+  href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_System_Collections_IEnumerable_System_Boolean_
+  commentId: M:Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable,System.Boolean)
+  name.vb: WriteListPlain(IEnumerable, Boolean)
+  fullName: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable, bool)
+  fullName.vb: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain(System.Collections.IEnumerable, Boolean)
+  nameWithType: ListWriterColor.WriteListPlain(IEnumerable, bool)
+  nameWithType.vb: ListWriterColor.WriteListPlain(IEnumerable, Boolean)
 - uid: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteListPlain*
   name: WriteListPlain
   href: api/Terminaux.Writer.ConsoleWriters.ListWriterColor.html#Terminaux_Writer_ConsoleWriters_ListWriterColor_WriteListPlain_
