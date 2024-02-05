@@ -277,12 +277,13 @@ namespace Terminaux.Writer.MiscWriters
             // Place the line and the column handle
             int RepeatBlanks = startPos - 1;
             int RepeatMarkers = endPos - startPos;
+            int digits = GetDigits(LineNumber);
             if (RepeatBlanks < 0)
                 RepeatBlanks = 0;
             if (RepeatMarkers < 0)
                 RepeatMarkers = 0;
-            builder.AppendLine($"{color.VTSequenceForeground}  | {LineContent}");
-            builder.AppendLine($"{color.VTSequenceForeground}  | {new string(' ', RepeatBlanks)}^{new string('~', RepeatMarkers)}");
+            builder.AppendLine($"{color.VTSequenceForeground} {LineNumber} | {LineContent}");
+            builder.AppendLine($"{color.VTSequenceForeground} {new string(' ', digits)} | {new string(' ', RepeatBlanks)}^{new string('~', RepeatMarkers)}");
 
             // Write the resulting buffer
             builder.Append(
@@ -291,6 +292,9 @@ namespace Terminaux.Writer.MiscWriters
             );
             return builder.ToString();
         }
+
+        internal static int GetDigits(int Number) =>
+            Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
 
     }
 }
