@@ -20,6 +20,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Colors;
@@ -201,6 +203,9 @@ namespace Terminaux.Reader
                 renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, intermediateText.Length) : intermediateText;
             }
 
+            // Take highlighting into account
+            renderedText = GetHighlightedInput(renderedText, state);
+
             // Now, render the input.
             if (state.OneLineWrap)
             {
@@ -238,6 +243,55 @@ namespace Terminaux.Reader
                 }
             }
             PositioningTools.Commit(state);
+        }
+
+        internal static string GetHighlightedInput(string renderedText, TermReaderState state)
+        {
+            // Condition for highlight
+            bool highlight =
+                state.CurrentText.Length > 0 &&
+                !state.PasswordMode &&
+                !state.Commentized &&
+                state.Settings is not null &&
+                state.Settings.SyntaxHighlighterEnabled &&
+                state.Settings.SyntaxHighlighter is not null &&
+                state.Settings.SyntaxHighlighter.Components is not null &&
+                state.Settings.SyntaxHighlighter.Components.Count > 0;
+
+            // If highlight is not enabled, return the original string
+            if (!highlight)
+                return renderedText;
+
+            // Now, highlight the rendered text
+            StringBuilder finalString = new(renderedText);
+            foreach (var component in state.Settings.SyntaxHighlighter.Components.Values)
+            {
+                var match = component.ComponentMatch;
+                var fgColor = component.ComponentForegroundColor;
+                var bgColor = component.ComponentBackgroundColor;
+                bool bgEnabled = component.UseBackgroundColor;
+                bool fgEnabled = component.UseForegroundColor;
+
+                // Now, match the original string
+                Match[] matches = match.Matches(renderedText).OfType<Match>().ToArray();
+                for (int i = matches.Length - 1; i >= 0; i--)
+                {
+                    Match regexMatch = matches[i];
+                    var idx = regexMatch.Index;
+                    var endIdx = idx + regexMatch.Length;
+                    if (fgEnabled)
+                        finalString.Insert(endIdx, state.Settings.InputForegroundColor.VTSequenceForeground);
+                    if (bgEnabled)
+                        finalString.Insert(endIdx, state.Settings.InputBackgroundColor.VTSequenceBackground);
+                    if (fgEnabled)
+                        finalString.Insert(idx, fgColor.VTSequenceForeground);
+                    if (bgEnabled)
+                        finalString.Insert(idx, bgColor.VTSequenceBackground);
+                }
+            }
+
+            // Return the final string
+            return finalString.ToString();
         }
 
         internal static string GetOneLineWrappedSentenceToRender(string[] incompleteSentences, TermReaderState state) =>

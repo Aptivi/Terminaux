@@ -19,6 +19,7 @@
 
 using System;
 using Terminaux.Colors;
+using Terminaux.Reader.Highlighting;
 
 namespace Terminaux.Reader
 {
@@ -34,6 +35,8 @@ namespace Terminaux.Reader
         private int rightMargin = 0;
         private Color inputForegroundColor;
         private Color inputBackgroundColor;
+        private SyntaxHighlighting syntaxHighlighter;
+        private bool syntaxHighlighterEnabled;
         internal TermReaderState state;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
         internal char[] suggestionsDelims = [' '];
@@ -115,6 +118,24 @@ namespace Terminaux.Reader
         {
             get => treatCtrlCAsInput;
             set => treatCtrlCAsInput = value;
+        }
+
+        /// <summary>
+        /// Treat Ctrl + C as input
+        /// </summary>
+        public bool SyntaxHighlighterEnabled
+        {
+            get => syntaxHighlighterEnabled;
+            set => syntaxHighlighterEnabled = value;
+        }
+
+        /// <summary>
+        /// Treat Ctrl + C as input
+        /// </summary>
+        public SyntaxHighlighting SyntaxHighlighter
+        {
+            get => syntaxHighlighter;
+            set => syntaxHighlighter = value ?? SyntaxHighlightingTools.GetHighlighter("Command");
         }
 
         /// <summary>

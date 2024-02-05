@@ -234,6 +234,22 @@ namespace Terminaux.Reader
         public bool OneLineWrap =>
             oneLineWrap;
 
+        /// <summary>
+        /// Gets the current state
+        /// </summary>
+        public static TermReaderState CurrentState
+        {
+            get
+            {
+                if (TermReader.states.Count == 0)
+                    return null;
+
+                // Get the current state
+                var state = TermReader.states[TermReader.states.Count - 1];
+                return state;
+            }
+        }
+
         internal TermReaderState() { }
     }
 }

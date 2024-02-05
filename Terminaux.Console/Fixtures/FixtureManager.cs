@@ -47,6 +47,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new PromptLoopedCompletionMultiLinePrompt(),
             new PromptLoopedCompletionMultiLinePromptWithOneLine(),
             new PromptLoopedCtrlCAsInput(),
+            new PromptHighlighted(),
 
             // Writer
             new Print(),
