@@ -124,7 +124,10 @@ namespace Terminaux.Writer.ConsoleWriters
                                 LinesMade = 0;
                             }
                             if (bail)
+                            {
+                                ColorTools.LoadBack();
                                 break;
+                            }
                             buffered.Append(ConsolePositioning.BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));
                         }
                         if (!bail && idx < sentences.Length - 1)
