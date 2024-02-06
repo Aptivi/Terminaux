@@ -505,8 +505,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     if (useColor)
                     {
                         boxBuffer.Append(
-                            ColorTools.currentForegroundColor.VTSequenceForeground +
-                            ColorTools.currentBackgroundColor.VTSequenceBackground
+                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                         );
                     }
                     return boxBuffer.ToString();

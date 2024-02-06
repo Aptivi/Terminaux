@@ -96,7 +96,7 @@ namespace Terminaux.Colors.Selector
                 {
                     // We need to refresh the screen
                     screenPart.AddText(
-                        $"{ColorTools.currentBackgroundColor.VTSequenceBackground}" +
+                        $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)}" +
                         ConsoleClearing.GetClearWholeScreenSequence()
                     );
 
@@ -157,7 +157,7 @@ namespace Terminaux.Colors.Selector
             int transparencyRampBarY = 23;
             int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
             int boxHeight = 1;
-            var initialBackground = ColorTools.currentBackgroundColor.VTSequenceBackground;
+            var initialBackground = ColorTools.CurrentBackgroundColor;
 
             // Buffer the hue ramp
             if (ConsoleWrapper.WindowHeight - 3 > hueBarY + 2)
@@ -167,7 +167,7 @@ namespace Terminaux.Colors.Selector
                 {
                     double width = (double)i / boxWidth;
                     int hue = (int)(360 * width);
-                    hueRamp.Append($"{new Color($"hsl:{hue};100;50").VTSequenceBackgroundTrueColor} {initialBackground}");
+                    hueRamp.Append($"{new Color($"hsl:{hue};100;50").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Hue: {(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)}/360", hueBarX, hueBarY, boxWidth, boxHeight) +
@@ -184,7 +184,7 @@ namespace Terminaux.Colors.Selector
                 {
                     double width = (double)i / boxWidth;
                     int sat = (int)(100 * width);
-                    satRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};{sat};50").VTSequenceBackgroundTrueColor} {initialBackground}");
+                    satRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};{sat};50").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Saturation: {(type == ColorType.TrueColor ? trueColorSaturation : HslConversionTools.ConvertFrom(selectedColor.RGB).SaturationWhole)}/100", hueBarX, saturationBarY, boxWidth, boxHeight) +
@@ -201,7 +201,7 @@ namespace Terminaux.Colors.Selector
                 {
                     double width = (double)i / boxWidth;
                     int lig = (int)(100 * width);
-                    ligRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};100;{lig}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                    ligRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};100;{lig}").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Lightness: {(type == ColorType.TrueColor ? trueColorLightness : HslConversionTools.ConvertFrom(selectedColor.RGB).LightnessWhole)}/100", hueBarX, lightnessBarY, boxWidth, boxHeight) +
@@ -222,9 +222,9 @@ namespace Terminaux.Colors.Selector
                     int red = (int)(selectedColor.RGB.R * width);
                     int green = (int)(selectedColor.RGB.G * width);
                     int blue = (int)(selectedColor.RGB.B * width);
-                    redRamp.Append($"{new Color($"{red};0;0").VTSequenceBackgroundTrueColor} {initialBackground}");
-                    greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {initialBackground}");
-                    blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                    redRamp.Append($"{new Color($"{red};0;0").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.RGB.R};{selectedColor.RGB.G};{selectedColor.RGB.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2) +
@@ -246,7 +246,7 @@ namespace Terminaux.Colors.Selector
                 {
                     double width = (double)i / boxWidth;
                     int gray = (int)(mono.RGB.R * width);
-                    grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                    grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Gray: {mono.RGB.R}/255", hueBarX, grayRampBarY, boxWidth, boxHeight) +
@@ -264,7 +264,7 @@ namespace Terminaux.Colors.Selector
                 {
                     double width = (double)i / boxWidth;
                     int transparency = (int)(mono.RGB.originalAlpha * width);
-                    transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}").VTSequenceBackgroundTrueColor} {initialBackground}");
+                    transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Transparency: {ColorTools.GlobalSettings.Opacity}/255", hueBarX, transparencyRampBarY, boxWidth, boxHeight) +
@@ -459,7 +459,7 @@ namespace Terminaux.Colors.Selector
             builder.Append(
                 selectedColor.VTSequenceBackground +
                 BoxColor.RenderBox(boxX + 1, boxY, boxWidth, boxHeight) +
-                ColorTools.currentBackgroundColor.VTSequenceBackground
+                ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
             );
             return builder.ToString();
         }

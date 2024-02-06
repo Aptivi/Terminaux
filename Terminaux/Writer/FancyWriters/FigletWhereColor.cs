@@ -161,8 +161,8 @@ namespace Terminaux.Writer.FancyWriters
                 $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
                 $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
                 TextWriterWhereColor.RenderWhere(Text, Left, Top, Return, Vars) +
-                $"{(useColor ? ColorTools.currentForegroundColor.VTSequenceForeground : "")}" +
-                $"{(useColor ? ColorTools.currentBackgroundColor.VTSequenceBackground : "")}"
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) : "")}" +
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true) : "")}"
             );
             return builder.ToString();
         }

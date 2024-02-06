@@ -131,11 +131,11 @@ namespace Terminaux.Writer.ConsoleWriters
             // Then, write the list entry
             var listBuilder = new StringBuilder();
             listBuilder.Append(
-                $"{(useColor ? ListKeyColor.VTSequenceForeground : "")}" +
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
                 $"{spaces}- {entry}: " +
-                $"{(useColor ? ListValueColor.VTSequenceForeground : "")}" +
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
                 value +
-                $"{(useColor ? ColorTools.currentForegroundColor.VTSequenceForeground : "")}"
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) : "")}"
             );
             return listBuilder.ToString();
         }

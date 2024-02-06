@@ -287,8 +287,8 @@ namespace Terminaux.Writer.MiscWriters
 
             // Write the resulting buffer
             builder.Append(
-                ColorTools.currentForegroundColor.VTSequenceForeground +
-                ColorTools.currentBackgroundColor.VTSequenceBackground
+                ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
             );
             return builder.ToString();
         }

@@ -462,7 +462,7 @@ namespace Terminaux.Base
 
         private static void ClearLoadBack()
         {
-            Write(ColorTools.CurrentBackgroundColor.VTSequenceBackground);
+            Write(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
             Clear();
         }
 

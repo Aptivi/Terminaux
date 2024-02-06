@@ -197,7 +197,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         if (AllAnswers.Count % answersPerPage == 0)
                             pages--;
                         var selectionBuilder = new StringBuilder(
-                            $"{ColorTools.currentBackgroundColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)}" +
                             ConsoleClearing.GetClearWholeScreenSequence()
                         );
 

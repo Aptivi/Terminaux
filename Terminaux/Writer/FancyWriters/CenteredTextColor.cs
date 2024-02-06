@@ -341,8 +341,8 @@ namespace Terminaux.Writer.FancyWriters
                 if (useColor)
                 {
                     centered.Append(
-                        ColorTools.currentForegroundColor.VTSequenceForeground +
-                        ColorTools.currentBackgroundColor.VTSequenceBackground
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                     );
                 }
                 return centered.ToString();

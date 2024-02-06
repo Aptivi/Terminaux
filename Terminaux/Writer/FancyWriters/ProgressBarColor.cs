@@ -369,8 +369,8 @@ namespace Terminaux.Writer.FancyWriters
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string(useColor ? ' ' : '*', times));
                 if (useColor)
                 {
-                    progBuilder.Append(ColorTools.currentForegroundColor.VTSequenceForeground);
-                    progBuilder.Append(ColorTools.currentBackgroundColor.VTSequenceBackground);
+                    progBuilder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor));
+                    progBuilder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
                 }
                 return progBuilder.ToString();
             }

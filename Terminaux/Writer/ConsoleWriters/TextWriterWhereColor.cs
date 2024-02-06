@@ -430,8 +430,8 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (useColors)
                     {
                         buffered.Append(
-                            ColorTools.currentForegroundColor.VTSequenceForeground +
-                            ColorTools.currentBackgroundColor.VTSequenceBackground
+                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                         );
                     }
                     return buffered.ToString();

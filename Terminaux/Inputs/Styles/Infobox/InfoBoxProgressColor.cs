@@ -691,8 +691,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     if (useColor)
                     {
                         boxBuffer.Append(
-                            ColorTools.currentForegroundColor.VTSequenceForeground +
-                            ColorTools.currentBackgroundColor.VTSequenceBackground +
+                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true) +
                             ProgressBarColor.RenderProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, 0, InfoBoxTitledProgressColor, InfoBoxTitledProgressColor, BackgroundColor)
                         );
                     }
@@ -718,8 +718,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (useColor)
                 {
                     TextWriterRaw.WritePlain(
-                        ColorTools.currentForegroundColor.VTSequenceForeground +
-                        ColorTools.currentBackgroundColor.VTSequenceBackground
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                     , false);
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;

@@ -283,7 +283,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     );
             }
             if (useColor)
-                listBuilder.Append(ColorTools.currentForegroundColor.VTSequenceForeground);
+                listBuilder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor));
             return listBuilder.ToString();
         }
         #endregion
@@ -426,7 +426,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 EntryNumber += 1;
             }
             if (useColor)
-                listBuilder.Append(ColorTools.currentForegroundColor.VTSequenceForeground);
+                listBuilder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor));
             return listBuilder.ToString();
         }
         #endregion

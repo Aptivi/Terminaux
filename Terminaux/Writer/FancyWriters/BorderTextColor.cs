@@ -1643,8 +1643,8 @@ namespace Terminaux.Writer.FancyWriters
                 if (useColor)
                 {
                     border.Append(
-                        ColorTools.CurrentForegroundColor.VTSequenceForeground +
-                        ColorTools.CurrentBackgroundColor.VTSequenceBackground
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                     );
                 }
             }

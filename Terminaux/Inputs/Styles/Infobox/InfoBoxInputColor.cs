@@ -469,8 +469,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (useColor)
                 {
                     TextWriterRaw.WritePlain(
-                        ColorTools.currentForegroundColor.VTSequenceForeground +
-                        ColorTools.currentBackgroundColor.VTSequenceBackground
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                     , false);
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;

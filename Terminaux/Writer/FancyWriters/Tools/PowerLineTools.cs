@@ -90,8 +90,8 @@ namespace Terminaux.Writer.FancyWriters.Tools
 
             // Return the final string
             SegmentStringBuilder.Append(
-                ColorTools.currentForegroundColor.VTSequenceForeground +
-                ColorTools.currentBackgroundColor.VTSequenceBackground
+                ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
             );
             return SegmentStringBuilder.ToString();
         }

@@ -512,8 +512,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     if (useColor)
                     {
                         boxBuffer.Append(
-                            ColorTools.currentForegroundColor.VTSequenceForeground +
-                            ColorTools.currentBackgroundColor.VTSequenceBackground
+                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                         );
                     }
                     return boxBuffer.ToString();
@@ -569,8 +569,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (useColor)
                 {
                     TextWriterRaw.WritePlain(
-                        ColorTools.currentForegroundColor.VTSequenceForeground +
-                        ColorTools.currentBackgroundColor.VTSequenceBackground
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                     , false);
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
