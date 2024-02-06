@@ -196,11 +196,10 @@ namespace Terminaux.Writer.FancyWriters
                 if (consoleX < 0 || consoleY > ConsoleWrapper.WindowHeight)
                 {
                     // The fallback figlet also won't fit, so use smaller text
-                    consoleX = ConsoleWrapper.WindowWidth / 2 - Text.Length / 2;
                     figBuilder.Append(
                         $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
                         $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
-                        TextWriterWhereColor.RenderWhere(Text, consoleX, consoleY, true, Vars)
+                        CenteredTextColor.RenderCentered(Text, Vars)
                     );
                 }
                 else
@@ -298,11 +297,10 @@ namespace Terminaux.Writer.FancyWriters
                     if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                     {
                         // The fallback figlet also won't fit, so use smaller text
-                        consoleX = ConsoleWrapper.WindowWidth / 2 - Text.Length / 2;
                         figBuilder.Append(
                             $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
                             $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
-                            TextWriterWhereColor.RenderWhere(Text, consoleX, top, true, Vars)
+                            CenteredTextColor.RenderCentered(top, Text, Vars)
                         );
                     }
                     else
