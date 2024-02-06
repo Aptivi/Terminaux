@@ -103,9 +103,9 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
             // Get linear RGB from these three RGB values
             double[] linears =
             [
-                ColorTools.SRGBToLinearRGB(r),
-                ColorTools.SRGBToLinearRGB(g),
-                ColorTools.SRGBToLinearRGB(b)
+                TransformationTools.SRGBToLinearRGB(r),
+                TransformationTools.SRGBToLinearRGB(g),
+                TransformationTools.SRGBToLinearRGB(b)
             ];
 
             var vnt = vn.TransPlane;
@@ -125,9 +125,9 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
             }
 
             // Convert these values back to sRGB (domain is [0,255])
-            int sRGB_R = ColorTools.LinearRGBTosRGB(rgbMatrix[0]);
-            int sRGB_G = ColorTools.LinearRGBTosRGB(rgbMatrix[1]);
-            int sRGB_B = ColorTools.LinearRGBTosRGB(rgbMatrix[2]);
+            int sRGB_R = TransformationTools.LinearRGBTosRGB(rgbMatrix[0]);
+            int sRGB_G = TransformationTools.LinearRGBTosRGB(rgbMatrix[1]);
+            int sRGB_B = TransformationTools.LinearRGBTosRGB(rgbMatrix[2]);
             return (sRGB_R, sRGB_G, sRGB_B);
         }
     }

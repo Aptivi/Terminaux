@@ -36,14 +36,14 @@ namespace Terminaux.Colors.Transformation.Formulas
             // Get linear RGB from these three RGB values
             double[] linears =
             [
-                ColorTools.SRGBToLinearRGB(r),
-                ColorTools.SRGBToLinearRGB(g),
-                ColorTools.SRGBToLinearRGB(b)
+                TransformationTools.SRGBToLinearRGB(r),
+                TransformationTools.SRGBToLinearRGB(g),
+                TransformationTools.SRGBToLinearRGB(b)
             ];
 
             // Transform the color linear values by applying monochromacy
             double monochrome = 0.2126 * linears[0] + 0.7152 * linears[1] + 0.0722 * linears[2];
-            int sMono = ColorTools.LinearRGBTosRGB(monochrome);
+            int sMono = TransformationTools.LinearRGBTosRGB(monochrome);
             return (0, sMono, 0);
         }
     }

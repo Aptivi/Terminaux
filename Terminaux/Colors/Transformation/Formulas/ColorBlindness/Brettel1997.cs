@@ -157,9 +157,9 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
             // Get linear RGB from these three RGB values
             double[] linears =
             [
-                ColorTools.SRGBToLinearRGB(r),
-                ColorTools.SRGBToLinearRGB(g),
-                ColorTools.SRGBToLinearRGB(b)
+                TransformationTools.SRGBToLinearRGB(r),
+                TransformationTools.SRGBToLinearRGB(g),
+                TransformationTools.SRGBToLinearRGB(b)
             ];
 
             // Select deficiency plane as appropriate
@@ -179,9 +179,9 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
             rgbMatrix[2] = rgbMatrix[2] * severity + linears[2] * (1d - severity);
 
             // Convert these values back to sRGB
-            int sRGB_R = ColorTools.LinearRGBTosRGB(rgbMatrix[0]);
-            int sRGB_G = ColorTools.LinearRGBTosRGB(rgbMatrix[1]);
-            int sRGB_B = ColorTools.LinearRGBTosRGB(rgbMatrix[2]);
+            int sRGB_R = TransformationTools.LinearRGBTosRGB(rgbMatrix[0]);
+            int sRGB_G = TransformationTools.LinearRGBTosRGB(rgbMatrix[1]);
+            int sRGB_B = TransformationTools.LinearRGBTosRGB(rgbMatrix[2]);
             return (sRGB_R, sRGB_G, sRGB_B);
         }
     }

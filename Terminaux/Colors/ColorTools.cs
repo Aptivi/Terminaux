@@ -57,45 +57,6 @@ namespace Terminaux.Colors
             currentBackgroundColor;
 
         /// <summary>
-        /// Converts from sRGB to Linear RGB using a color number
-        /// </summary>
-        /// <param name="colorNum">Color number from 0 to 255</param>
-        /// <returns>Linear RGB number ranging from 0 to 1</returns>
-        public static double SRGBToLinearRGB(int colorNum)
-        {
-            // Check the value
-            if (colorNum < 0)
-                colorNum = 0;
-            if (colorNum > 255)
-                colorNum = 255;
-
-            // Now, convert sRGB to linear RGB (domain is [0, 1])
-            double colorNumDbl = colorNum / 255d;
-            if (colorNumDbl < 0.04045d)
-                return colorNumDbl / 12.92d;
-            return Math.Pow((colorNumDbl + 0.055d) / 1.055d, 2.4d);
-        }
-
-        /// <summary>
-        /// Converts from Linear RGB to sRGB using a linear RGB number
-        /// </summary>
-        /// <param name="linear">Linear RGB number from 0 to 1</param>
-        /// <returns>sRGB value from 0 to 255</returns>
-        public static int LinearRGBTosRGB(double linear)
-        {
-            // Check the value
-            if (linear <= 0)
-                return 0;
-            if (linear >= 1)
-                return 255;
-
-            // Now, convert linear value to RGB representation (domain is [0, 255])
-            if (linear < 0.0031308d)
-                return (int)(0.5d + (linear * 255d * 12.92));
-            return (int)(255d * (Math.Pow(linear, 1d / 2.4d) * 1.055d - 0.055d));
-        }
-
-        /// <summary>
         /// Loads the background
         /// </summary>
         public static void LoadBack() =>
