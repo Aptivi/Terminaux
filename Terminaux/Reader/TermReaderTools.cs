@@ -175,6 +175,20 @@ namespace Terminaux.Reader
             RefreshPrompt(ref state, step ? newText.Length : 0);
         }
 
+        internal static void RemoveText(ref TermReaderState state, int length, bool step = false) =>
+            RemoveText(ref state, state.CurrentTextPos, length, step);
+
+        internal static void RemoveText(ref TermReaderState state, int startIndex, int length, bool step = false)
+        {
+            // Remove this amount of characters
+            int old = state.CurrentText.Length;
+            state.CurrentText.Remove(startIndex, length);
+            state.canInsert = true;
+
+            // Refresh
+            RefreshPrompt(ref state, step ? length : 0, true, old - state.CurrentText.Length);
+        }
+
         internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false, int spaces = 0)
         {
             // Determine the foreground and the background color
@@ -230,7 +244,7 @@ namespace Terminaux.Reader
                 // We're in the multi-line wrap mode!
                 incompleteSentences = TextTools.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
                 string last = VtSequenceTools.FilterVTSequences(incompleteSentences[incompleteSentences.Length - 1]);
-                int spacesLength = longestSentenceLength - state.RightMargin - last.Length - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0) + 1;
+                int spacesLength = longestSentenceLength - state.RightMargin - last.Length - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0);
                 if (spacesLength < 0)
                     spacesLength = 0;
                 if (spaces > 0)

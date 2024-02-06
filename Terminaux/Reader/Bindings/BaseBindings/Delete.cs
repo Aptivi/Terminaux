@@ -38,9 +38,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 return;
 
             // Remove one character from the current text position
-            state.CurrentText.Remove(state.CurrentTextPos, 1);
-            state.canInsert = true;
-            TermReaderTools.RefreshPrompt(ref state);
+            TermReaderTools.RemoveText(ref state, 1);
         }
     }
 }

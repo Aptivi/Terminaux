@@ -41,9 +41,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             int times = state.CurrentTextPos;
             string killing = state.CurrentText.ToString().Substring(0, times);
             state.KillBuffer.Append(killing);
-            state.CurrentText.Remove(0, times);
-            state.canInsert = true;
-            TermReaderTools.RefreshPrompt(ref state, times, true, killing.Length);
+            TermReaderTools.RemoveText(ref state, 0, times, true);
         }
     }
 }
