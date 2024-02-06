@@ -137,7 +137,7 @@ namespace Terminaux.Writer.FancyWriters
             var builder = new StringBuilder();
             builder.Append(
                 $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
-                $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                 FigletTools.RenderFiglet(Text, FigletFont, Vars) +
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) : "")}" +
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true) : "")}"

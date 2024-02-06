@@ -220,7 +220,7 @@ namespace Terminaux.Writer.FancyWriters
                         {
                             separator.Append(
                                 ForegroundColor.VTSequenceForeground +
-                                BackgroundColor.VTSequenceBackground
+                                ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                             );
                         }
                         separator.Append("- ");
@@ -240,7 +240,7 @@ namespace Terminaux.Writer.FancyWriters
                                 {
                                     separator.Append(
                                         ForegroundColor.VTSequenceForeground +
-                                        BackgroundColor.VTSequenceBackground
+                                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                                     );
                                 }
                                 separator.Append(Text[CharIndex]);
@@ -260,7 +260,7 @@ namespace Terminaux.Writer.FancyWriters
                     {
                         separator.Append(
                             ForegroundColor.VTSequenceForeground +
-                            BackgroundColor.VTSequenceBackground
+                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
                     separator.Append(Text);
@@ -276,7 +276,7 @@ namespace Terminaux.Writer.FancyWriters
                 {
                     separator.Append(
                         ForegroundColor.VTSequenceForeground +
-                        BackgroundColor.VTSequenceBackground
+                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
                 separator.Append(new string('-', RepeatTimes));

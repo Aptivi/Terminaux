@@ -422,7 +422,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     string borderSelection = BorderColor.RenderBorderPlain(selectionBoxPosX, selectionBoxPosY - 1, maxSelectionWidth, selectionChoices, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                     boxBuffer.Append(
                         $"{(useColor ? InfoBoxTitledSelectionMultipleColor.VTSequenceForeground : "")}" +
-                        $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                         $"{border}" +
                         $"{borderSelection}"
                     );

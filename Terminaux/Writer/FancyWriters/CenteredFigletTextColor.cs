@@ -198,7 +198,7 @@ namespace Terminaux.Writer.FancyWriters
                     // The fallback figlet also won't fit, so use smaller text
                     figBuilder.Append(
                         $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
-                        $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                         CenteredTextColor.RenderCentered(Text, Vars)
                     );
                 }
@@ -207,7 +207,7 @@ namespace Terminaux.Writer.FancyWriters
                     // Write the figlet.
                     figBuilder.Append(
                         $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
-                        $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                         FigletWhereColor.RenderFigletWherePlain(Text, consoleX, consoleY, true, figFontFallback, Vars)
                     );
                 }
@@ -217,7 +217,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Write the figlet.
                 figBuilder.Append(
                     $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
-                    $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                    $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                     FigletWhereColor.RenderFigletWherePlain(Text, consoleX, consoleY, true, FigletFont, Vars)
                 );
             }
@@ -299,7 +299,7 @@ namespace Terminaux.Writer.FancyWriters
                         // The fallback figlet also won't fit, so use smaller text
                         figBuilder.Append(
                             $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
-                            $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                            $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                             CenteredTextColor.RenderCentered(top, Text, Vars)
                         );
                     }
@@ -308,7 +308,7 @@ namespace Terminaux.Writer.FancyWriters
                         // Write the figlet.
                         figBuilder.Append(
                             $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
-                            $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                            $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                             FigletWhereColor.RenderFigletWherePlain(Text, consoleX, top, true, figFontFallback, Vars)
                         );
                     }
@@ -318,7 +318,7 @@ namespace Terminaux.Writer.FancyWriters
                     // Write the figlet.
                     figBuilder.Append(
                         $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
-                        $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                         FigletWhereColor.RenderFigletWherePlain(Text, consoleX, top, true, FigletFont, Vars)
                     );
                 }

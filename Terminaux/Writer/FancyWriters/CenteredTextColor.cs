@@ -332,7 +332,7 @@ namespace Terminaux.Writer.FancyWriters
                     consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
                     centered.Append(
                         $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
-                        $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                         TextWriterWhereColor.RenderWhere(sentence, consoleInfoX, top + i, true, Vars)
                     );
                 }

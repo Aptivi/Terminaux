@@ -291,7 +291,7 @@ namespace Terminaux.Reader
                 if (fgEnabled)
                     finalString.Insert(endIdx, state.Settings.InputForegroundColor.VTSequenceForeground);
                 if (bgEnabled)
-                    finalString.Insert(endIdx, state.Settings.InputBackgroundColor.VTSequenceBackground);
+                    finalString.Insert(endIdx, ColorTools.RenderSetConsoleColor(state.Settings.InputBackgroundColor, true));
                 if (fgEnabled)
                     finalString.Insert(idx, fgColor.VTSequenceForeground);
                 if (bgEnabled)

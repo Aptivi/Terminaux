@@ -29,6 +29,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public string FixtureID => "ColorBackTest";
         public void RunFixture()
         {
+            ColorTools.AllowBackground = true;
             ColorTools.SetConsoleColor(ConsoleColors.Green, true);
             ConsoleWrapper.ClearLoadBack();
             Input.DetectKeypress();

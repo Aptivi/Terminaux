@@ -682,7 +682,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                     boxBuffer.Append(
                         $"{(useColor ? InfoBoxTitledColor.VTSequenceForeground : "")}" +
-                        $"{(useColor ? BackgroundColor.VTSequenceBackground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                         $"{border}"
                     );
                     return boxBuffer.ToString();

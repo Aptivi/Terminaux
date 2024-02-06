@@ -347,7 +347,7 @@ namespace Terminaux.Writer.FancyWriters
                     {
                         progBuilder.Append(
                             FrameColor.VTSequenceForeground +
-                            BackgroundColor.VTSequenceBackground
+                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
                     progBuilder.Append(

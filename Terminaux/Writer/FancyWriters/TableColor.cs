@@ -179,7 +179,7 @@ namespace Terminaux.Writer.FancyWriters
                 {
                     table.Append(
                         HeaderForegroundColor.VTSequenceForeground +
-                        BackgroundColor.VTSequenceBackground
+                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
                 for (int HeaderIndex = 0; HeaderIndex < Headers.Length; HeaderIndex++)
@@ -203,7 +203,7 @@ namespace Terminaux.Writer.FancyWriters
                 {
                     table.Append(
                         SeparatorForegroundColor.VTSequenceForeground +
-                        BackgroundColor.VTSequenceBackground
+                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
                 if (Margin > 0)
@@ -253,7 +253,7 @@ namespace Terminaux.Writer.FancyWriters
                             else
                                 rowBuilder.Append(
                                     ValueForegroundColor.VTSequenceForeground +
-                                    BackgroundColor.VTSequenceBackground
+                                    ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                                 );
                         }
                         if (columnIndex == 0)
@@ -274,7 +274,7 @@ namespace Terminaux.Writer.FancyWriters
                         {
                             table.Append(
                                 SeparatorForegroundColor.VTSequenceForeground +
-                                BackgroundColor.VTSequenceBackground
+                                ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                             );
                         }
                         RepeatTimes = width - Margin * 2;

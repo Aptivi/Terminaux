@@ -1622,7 +1622,7 @@ namespace Terminaux.Writer.FancyWriters
                     {
                         border.Append(
                             TextColor.VTSequenceForeground +
-                            BackgroundColor.VTSequenceBackground
+                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
 
