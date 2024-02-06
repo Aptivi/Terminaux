@@ -1669,6 +1669,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsoleClearing.GetClearLineToRightSequence
   nameWithType: ConsoleClearing.GetClearLineToRightSequence
+- uid: Terminaux.Base.Extensions.ConsoleClearing.GetClearWholeScreenSequence
+  name: GetClearWholeScreenSequence()
+  href: api/Terminaux.Base.Extensions.ConsoleClearing.html#Terminaux_Base_Extensions_ConsoleClearing_GetClearWholeScreenSequence
+  commentId: M:Terminaux.Base.Extensions.ConsoleClearing.GetClearWholeScreenSequence
+  fullName: Terminaux.Base.Extensions.ConsoleClearing.GetClearWholeScreenSequence()
+  nameWithType: ConsoleClearing.GetClearWholeScreenSequence()
+- uid: Terminaux.Base.Extensions.ConsoleClearing.GetClearWholeScreenSequence*
+  name: GetClearWholeScreenSequence
+  href: api/Terminaux.Base.Extensions.ConsoleClearing.html#Terminaux_Base_Extensions_ConsoleClearing_GetClearWholeScreenSequence_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleClearing.GetClearWholeScreenSequence
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleClearing.GetClearWholeScreenSequence
+  nameWithType: ConsoleClearing.GetClearWholeScreenSequence
 - uid: Terminaux.Base.Extensions.ConsoleClearing.ResetAll
   name: ResetAll()
   href: api/Terminaux.Base.Extensions.ConsoleClearing.html#Terminaux_Base_Extensions_ConsoleClearing_ResetAll
