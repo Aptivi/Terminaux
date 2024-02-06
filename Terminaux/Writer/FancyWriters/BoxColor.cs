@@ -122,7 +122,7 @@ namespace Terminaux.Writer.FancyWriters
             // Fill the box with spaces inside it
             StringBuilder box = new();
             box.Append(
-                $"{(useColor ? BoxColor.VTSequenceBackground : "")}" +
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(BoxColor, true) : "")}" +
                 CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2)
             );
             for (int y = 1; y <= InteriorHeight; y++)

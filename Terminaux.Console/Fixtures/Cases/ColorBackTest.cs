@@ -39,6 +39,8 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             ColorTools.SetConsoleColor(ConsoleColors.Red, true);
             ConsoleWrapper.ClearLoadBack();
             Input.DetectKeypress();
+            ColorTools.AllowBackground = false;
+            ConsoleWrapper.ClearLoadBack();
         }
     }
 }

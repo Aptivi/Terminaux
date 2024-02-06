@@ -81,7 +81,7 @@ namespace Terminaux.Colors
         {
             try
             {
-                SetConsoleColor(ColorSequence, true, Force);
+                SetConsoleColor(ColorSequence, true, Force, AllowBackground);
                 ConsoleWrapper.Clear();
             }
             catch (Exception ex)
@@ -105,7 +105,7 @@ namespace Terminaux.Colors
         {
             try
             {
-                SetConsoleColorDry(ColorSequence, true, Force);
+                SetConsoleColorDry(ColorSequence, true, Force, AllowBackground);
                 ConsoleWrapper.Clear();
             }
             catch (Exception ex)
