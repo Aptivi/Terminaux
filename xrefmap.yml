@@ -2951,22 +2951,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.GlobalSettings
   nameWithType: ColorTools.GlobalSettings
-- uid: Terminaux.Colors.ColorTools.LinearRGBTosRGB(System.Double)
-  name: LinearRGBTosRGB(double)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_LinearRGBTosRGB_System_Double_
-  commentId: M:Terminaux.Colors.ColorTools.LinearRGBTosRGB(System.Double)
-  name.vb: LinearRGBTosRGB(Double)
-  fullName: Terminaux.Colors.ColorTools.LinearRGBTosRGB(double)
-  fullName.vb: Terminaux.Colors.ColorTools.LinearRGBTosRGB(Double)
-  nameWithType: ColorTools.LinearRGBTosRGB(double)
-  nameWithType.vb: ColorTools.LinearRGBTosRGB(Double)
-- uid: Terminaux.Colors.ColorTools.LinearRGBTosRGB*
-  name: LinearRGBTosRGB
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_LinearRGBTosRGB_
-  commentId: Overload:Terminaux.Colors.ColorTools.LinearRGBTosRGB
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.LinearRGBTosRGB
-  nameWithType: ColorTools.LinearRGBTosRGB
 - uid: Terminaux.Colors.ColorTools.LoadBack
   name: LoadBack()
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_LoadBack
@@ -3105,22 +3089,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.ResetForeground
   nameWithType: ColorTools.ResetForeground
-- uid: Terminaux.Colors.ColorTools.SRGBToLinearRGB(System.Int32)
-  name: SRGBToLinearRGB(int)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SRGBToLinearRGB_System_Int32_
-  commentId: M:Terminaux.Colors.ColorTools.SRGBToLinearRGB(System.Int32)
-  name.vb: SRGBToLinearRGB(Integer)
-  fullName: Terminaux.Colors.ColorTools.SRGBToLinearRGB(int)
-  fullName.vb: Terminaux.Colors.ColorTools.SRGBToLinearRGB(Integer)
-  nameWithType: ColorTools.SRGBToLinearRGB(int)
-  nameWithType.vb: ColorTools.SRGBToLinearRGB(Integer)
-- uid: Terminaux.Colors.ColorTools.SRGBToLinearRGB*
-  name: SRGBToLinearRGB
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SRGBToLinearRGB_
-  commentId: Overload:Terminaux.Colors.ColorTools.SRGBToLinearRGB
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorTools.SRGBToLinearRGB
-  nameWithType: ColorTools.SRGBToLinearRGB
 - uid: Terminaux.Colors.ColorTools.SetConsoleColor(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
   name: SetConsoleColor(Color, bool, bool, bool)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SetConsoleColor_Terminaux_Colors_Color_System_Boolean_System_Boolean_System_Boolean_
@@ -8368,6 +8336,22 @@ references:
   commentId: T:Terminaux.Colors.Transformation.TransformationTools
   fullName: Terminaux.Colors.Transformation.TransformationTools
   nameWithType: TransformationTools
+- uid: Terminaux.Colors.Transformation.TransformationTools.LinearRGBTosRGB(System.Double)
+  name: LinearRGBTosRGB(double)
+  href: api/Terminaux.Colors.Transformation.TransformationTools.html#Terminaux_Colors_Transformation_TransformationTools_LinearRGBTosRGB_System_Double_
+  commentId: M:Terminaux.Colors.Transformation.TransformationTools.LinearRGBTosRGB(System.Double)
+  name.vb: LinearRGBTosRGB(Double)
+  fullName: Terminaux.Colors.Transformation.TransformationTools.LinearRGBTosRGB(double)
+  fullName.vb: Terminaux.Colors.Transformation.TransformationTools.LinearRGBTosRGB(Double)
+  nameWithType: TransformationTools.LinearRGBTosRGB(double)
+  nameWithType.vb: TransformationTools.LinearRGBTosRGB(Double)
+- uid: Terminaux.Colors.Transformation.TransformationTools.LinearRGBTosRGB*
+  name: LinearRGBTosRGB
+  href: api/Terminaux.Colors.Transformation.TransformationTools.html#Terminaux_Colors_Transformation_TransformationTools_LinearRGBTosRGB_
+  commentId: Overload:Terminaux.Colors.Transformation.TransformationTools.LinearRGBTosRGB
+  isSpec: "True"
+  fullName: Terminaux.Colors.Transformation.TransformationTools.LinearRGBTosRGB
+  nameWithType: TransformationTools.LinearRGBTosRGB
 - uid: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double,Terminaux.Colors.Transformation.TransformationMethod)
   name: RenderColorBlindnessAware(Color, TransformationFormula, double, TransformationMethod)
   href: api/Terminaux.Colors.Transformation.TransformationTools.html#Terminaux_Colors_Transformation_TransformationTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Transformation_TransformationFormula_System_Double_Terminaux_Colors_Transformation_TransformationMethod_
@@ -8384,6 +8368,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware
   nameWithType: TransformationTools.RenderColorBlindnessAware
+- uid: Terminaux.Colors.Transformation.TransformationTools.SRGBToLinearRGB(System.Int32)
+  name: SRGBToLinearRGB(int)
+  href: api/Terminaux.Colors.Transformation.TransformationTools.html#Terminaux_Colors_Transformation_TransformationTools_SRGBToLinearRGB_System_Int32_
+  commentId: M:Terminaux.Colors.Transformation.TransformationTools.SRGBToLinearRGB(System.Int32)
+  name.vb: SRGBToLinearRGB(Integer)
+  fullName: Terminaux.Colors.Transformation.TransformationTools.SRGBToLinearRGB(int)
+  fullName.vb: Terminaux.Colors.Transformation.TransformationTools.SRGBToLinearRGB(Integer)
+  nameWithType: TransformationTools.SRGBToLinearRGB(int)
+  nameWithType.vb: TransformationTools.SRGBToLinearRGB(Integer)
+- uid: Terminaux.Colors.Transformation.TransformationTools.SRGBToLinearRGB*
+  name: SRGBToLinearRGB
+  href: api/Terminaux.Colors.Transformation.TransformationTools.html#Terminaux_Colors_Transformation_TransformationTools_SRGBToLinearRGB_
+  commentId: Overload:Terminaux.Colors.Transformation.TransformationTools.SRGBToLinearRGB
+  isSpec: "True"
+  fullName: Terminaux.Colors.Transformation.TransformationTools.SRGBToLinearRGB
+  nameWithType: TransformationTools.SRGBToLinearRGB
 - uid: Terminaux.Inputs
   name: Terminaux.Inputs
   href: api/Terminaux.Inputs.html
