@@ -13248,6 +13248,35 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderTools.ClearHistory
   nameWithType: TermReaderTools.ClearHistory
+- uid: Terminaux.Reader.TermReaderTools.GetMaximumInputLength
+  name: GetMaximumInputLength()
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_GetMaximumInputLength
+  commentId: M:Terminaux.Reader.TermReaderTools.GetMaximumInputLength
+  fullName: Terminaux.Reader.TermReaderTools.GetMaximumInputLength()
+  nameWithType: TermReaderTools.GetMaximumInputLength()
+- uid: Terminaux.Reader.TermReaderTools.GetMaximumInputLength*
+  name: GetMaximumInputLength
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_GetMaximumInputLength_
+  commentId: Overload:Terminaux.Reader.TermReaderTools.GetMaximumInputLength
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderTools.GetMaximumInputLength
+  nameWithType: TermReaderTools.GetMaximumInputLength
+- uid: Terminaux.Reader.TermReaderTools.InsertNewText(System.String,System.Boolean,System.Boolean)
+  name: InsertNewText(string, bool, bool)
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_InsertNewText_System_String_System_Boolean_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReaderTools.InsertNewText(System.String,System.Boolean,System.Boolean)
+  name.vb: InsertNewText(String, Boolean, Boolean)
+  fullName: Terminaux.Reader.TermReaderTools.InsertNewText(string, bool, bool)
+  fullName.vb: Terminaux.Reader.TermReaderTools.InsertNewText(String, Boolean, Boolean)
+  nameWithType: TermReaderTools.InsertNewText(string, bool, bool)
+  nameWithType.vb: TermReaderTools.InsertNewText(String, Boolean, Boolean)
+- uid: Terminaux.Reader.TermReaderTools.InsertNewText*
+  name: InsertNewText
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_InsertNewText_
+  commentId: Overload:Terminaux.Reader.TermReaderTools.InsertNewText
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderTools.InsertNewText
+  nameWithType: TermReaderTools.InsertNewText
 - uid: Terminaux.Reader.TermReaderTools.Interrupt
   name: Interrupt()
   href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_Interrupt
@@ -13274,6 +13303,31 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderTools.Refresh
   nameWithType: TermReaderTools.Refresh
+- uid: Terminaux.Reader.TermReaderTools.RemoveText(System.Int32,System.Boolean)
+  name: RemoveText(int, bool)
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_RemoveText_System_Int32_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReaderTools.RemoveText(System.Int32,System.Boolean)
+  name.vb: RemoveText(Integer, Boolean)
+  fullName: Terminaux.Reader.TermReaderTools.RemoveText(int, bool)
+  fullName.vb: Terminaux.Reader.TermReaderTools.RemoveText(Integer, Boolean)
+  nameWithType: TermReaderTools.RemoveText(int, bool)
+  nameWithType.vb: TermReaderTools.RemoveText(Integer, Boolean)
+- uid: Terminaux.Reader.TermReaderTools.RemoveText(System.Int32,System.Int32,System.Boolean)
+  name: RemoveText(int, int, bool)
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_RemoveText_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReaderTools.RemoveText(System.Int32,System.Int32,System.Boolean)
+  name.vb: RemoveText(Integer, Integer, Boolean)
+  fullName: Terminaux.Reader.TermReaderTools.RemoveText(int, int, bool)
+  fullName.vb: Terminaux.Reader.TermReaderTools.RemoveText(Integer, Integer, Boolean)
+  nameWithType: TermReaderTools.RemoveText(int, int, bool)
+  nameWithType.vb: TermReaderTools.RemoveText(Integer, Integer, Boolean)
+- uid: Terminaux.Reader.TermReaderTools.RemoveText*
+  name: RemoveText
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_RemoveText_
+  commentId: Overload:Terminaux.Reader.TermReaderTools.RemoveText
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderTools.RemoveText
+  nameWithType: TermReaderTools.RemoveText
 - uid: Terminaux.Reader.TermReaderTools.SetHistory(System.Collections.Generic.List{System.String})
   name: SetHistory(List<string>)
   href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_SetHistory_System_Collections_Generic_List_System_String__
