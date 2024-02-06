@@ -213,7 +213,7 @@ namespace Terminaux.Inputs.Styles.Selection
                             pages--;
                         var selectionBuilder = new StringBuilder(
                             $"{ColorTools.currentBackgroundColor.VTSequenceBackground}" +
-                            CsiSequences.GenerateCsiEraseInDisplay(2)
+                            ConsoleClearing.GetClearWholeScreenSequence()
                         );
 
                         // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,

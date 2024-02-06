@@ -31,6 +31,7 @@ using Textify.General;
 using System.Diagnostics;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -353,7 +354,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     ColorTools.SetConsoleColorDry(ColorTools.currentBackgroundColor, true);
-                    return CsiSequences.GenerateCsiEraseInDisplay(2) + CsiSequences.GenerateCsiCursorPosition(1, 1);
+                    return ConsoleClearing.GetClearWholeScreenSequence();
                 });
                 ScreenTools.SetCurrent(screen);
             }

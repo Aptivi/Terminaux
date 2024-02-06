@@ -21,6 +21,7 @@ using System;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
@@ -96,7 +97,7 @@ namespace Terminaux.Colors.Selector
                     // We need to refresh the screen
                     screenPart.AddText(
                         $"{ColorTools.currentBackgroundColor.VTSequenceBackground}" +
-                        $"{CsiSequences.GenerateCsiEraseInDisplay(2)}"
+                        ConsoleClearing.GetClearWholeScreenSequence()
                     );
 
                     // Now, render the selector

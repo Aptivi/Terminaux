@@ -27,6 +27,7 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -112,8 +113,7 @@ namespace Terminaux.Inputs.Presentation
                     // Clear the console
                     ColorTools.SetConsoleColor(ColorTools.CurrentBackgroundColor, true);
                     builder.Append(
-                        CsiSequences.GenerateCsiEraseInDisplay(2) +
-                        CsiSequences.GenerateCsiCursorPosition(1, 1)
+                        ConsoleClearing.GetClearWholeScreenSequence()
                     );
                     ConsoleWrapper.CursorVisible = false;
 
