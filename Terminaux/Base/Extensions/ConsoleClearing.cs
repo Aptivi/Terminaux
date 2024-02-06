@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.Base.Extensions
 {
@@ -27,7 +28,14 @@ namespace Terminaux.Base.Extensions
     public static class ConsoleClearing
     {
         /// <summary>
-        /// Clears the line to the right
+        /// Gets a sequence that clears the whole screen
+        /// </summary>
+        public static string GetClearWholeScreenSequence() =>
+            $"{CsiSequences.GenerateCsiCursorPosition(1, 1)}" +
+            $"{CsiSequences.GenerateCsiEraseInDisplay(0)}";
+
+        /// <summary>
+        /// Gets a sequence that clears the line to the right
         /// </summary>
         public static string GetClearLineToRightSequence() =>
             VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiEraseInLine, 0);
