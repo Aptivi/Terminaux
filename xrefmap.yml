@@ -266,15 +266,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.ScreenPart.AddTextLine
   nameWithType: ScreenPart.AddTextLine
-- uid: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color,System.Boolean)
-  name: BackgroundColor(Color, bool)
-  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_BackgroundColor_Terminaux_Colors_Color_System_Boolean_
-  commentId: M:Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color,System.Boolean)
-  name.vb: BackgroundColor(Color, Boolean)
-  fullName: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color, bool)
-  fullName.vb: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color, Boolean)
-  nameWithType: ScreenPart.BackgroundColor(Color, bool)
-  nameWithType.vb: ScreenPart.BackgroundColor(Color, Boolean)
+- uid: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color,System.Boolean,System.Boolean)
+  name: BackgroundColor(Color, bool, bool)
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_BackgroundColor_Terminaux_Colors_Color_System_Boolean_System_Boolean_
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color,System.Boolean,System.Boolean)
+  name.vb: BackgroundColor(Color, Boolean, Boolean)
+  fullName: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color, bool, bool)
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color, Boolean, Boolean)
+  nameWithType: ScreenPart.BackgroundColor(Color, bool, bool)
+  nameWithType.vb: ScreenPart.BackgroundColor(Color, Boolean, Boolean)
 - uid: Terminaux.Base.Buffered.ScreenPart.BackgroundColor*
   name: BackgroundColor
   href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_BackgroundColor_
@@ -2859,6 +2859,19 @@ references:
   commentId: T:Terminaux.Colors.ColorTools
   fullName: Terminaux.Colors.ColorTools
   nameWithType: ColorTools
+- uid: Terminaux.Colors.ColorTools.AllowBackground
+  name: AllowBackground
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_AllowBackground
+  commentId: P:Terminaux.Colors.ColorTools.AllowBackground
+  fullName: Terminaux.Colors.ColorTools.AllowBackground
+  nameWithType: ColorTools.AllowBackground
+- uid: Terminaux.Colors.ColorTools.AllowBackground*
+  name: AllowBackground
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_AllowBackground_
+  commentId: Overload:Terminaux.Colors.ColorTools.AllowBackground
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.AllowBackground
+  nameWithType: ColorTools.AllowBackground
 - uid: Terminaux.Colors.ColorTools.CurrentBackgroundColor
   name: CurrentBackgroundColor
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CurrentBackgroundColor
@@ -3034,6 +3047,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.RenderResetForeground
   nameWithType: ColorTools.RenderResetForeground
+- uid: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color,System.Boolean)
+  name: RenderSetConsoleColor(Color, bool)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderSetConsoleColor_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color,System.Boolean)
+  name.vb: RenderSetConsoleColor(Color, Boolean)
+  fullName: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color, Boolean)
+  nameWithType: ColorTools.RenderSetConsoleColor(Color, bool)
+  nameWithType.vb: ColorTools.RenderSetConsoleColor(Color, Boolean)
 - uid: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
   name: RenderSetConsoleColor(Color, bool, bool, bool)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderSetConsoleColor_Terminaux_Colors_Color_System_Boolean_System_Boolean_System_Boolean_
@@ -3089,6 +3111,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.ResetForeground
   nameWithType: ColorTools.ResetForeground
+- uid: Terminaux.Colors.ColorTools.SetConsoleColor(Terminaux.Colors.Color,System.Boolean)
+  name: SetConsoleColor(Color, bool)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SetConsoleColor_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Colors.ColorTools.SetConsoleColor(Terminaux.Colors.Color,System.Boolean)
+  name.vb: SetConsoleColor(Color, Boolean)
+  fullName: Terminaux.Colors.ColorTools.SetConsoleColor(Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Colors.ColorTools.SetConsoleColor(Terminaux.Colors.Color, Boolean)
+  nameWithType: ColorTools.SetConsoleColor(Color, bool)
+  nameWithType.vb: ColorTools.SetConsoleColor(Color, Boolean)
 - uid: Terminaux.Colors.ColorTools.SetConsoleColor(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
   name: SetConsoleColor(Color, bool, bool, bool)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SetConsoleColor_Terminaux_Colors_Color_System_Boolean_System_Boolean_System_Boolean_
@@ -3105,6 +3136,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.SetConsoleColor
   nameWithType: ColorTools.SetConsoleColor
+- uid: Terminaux.Colors.ColorTools.SetConsoleColorDry(Terminaux.Colors.Color,System.Boolean)
+  name: SetConsoleColorDry(Color, bool)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SetConsoleColorDry_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Colors.ColorTools.SetConsoleColorDry(Terminaux.Colors.Color,System.Boolean)
+  name.vb: SetConsoleColorDry(Color, Boolean)
+  fullName: Terminaux.Colors.ColorTools.SetConsoleColorDry(Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Colors.ColorTools.SetConsoleColorDry(Terminaux.Colors.Color, Boolean)
+  nameWithType: ColorTools.SetConsoleColorDry(Color, bool)
+  nameWithType.vb: ColorTools.SetConsoleColorDry(Color, Boolean)
 - uid: Terminaux.Colors.ColorTools.SetConsoleColorDry(Terminaux.Colors.Color,System.Boolean,System.Boolean,System.Boolean)
   name: SetConsoleColorDry(Color, bool, bool, bool)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_SetConsoleColorDry_Terminaux_Colors_Color_System_Boolean_System_Boolean_System_Boolean_
