@@ -34,7 +34,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         {
             // Re-write the text and set the current cursor position as appropriate
             string toYank = state.KillBuffer.ToString();
-            TermReaderTools.InsertNewText(ref state, toYank);
+            TermReaderTools.InsertNewText(toYank);
         }
     }
 }

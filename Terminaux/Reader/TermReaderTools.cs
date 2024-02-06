@@ -80,13 +80,11 @@ namespace Terminaux.Reader
         /// </summary>
         public static void Refresh()
         {
-            if (!Busy)
-                return;
             if (TermReader.states.Count == 0)
                 return;
 
             // Get the current state
-            var state = TermReader.states[TermReader.states.Count - 1];
+            var state = TermReaderState.CurrentState;
 
             // Check to see if the console has been resized before
             if (ConsoleResizeHandler.WasResized(false))
@@ -114,7 +112,68 @@ namespace Terminaux.Reader
             RefreshPrompt(ref state);
 
             // Save the state
-            TermReader.states[TermReader.states.Count - 1] = state;
+            TermReaderState.SaveState(state);
+        }
+
+        /// <summary>
+        /// Gets the maximum input length for the current reader session
+        /// </summary>
+        /// <returns>The maximum input length of an input. -1 if there is no reader.</returns>
+        public static int GetMaximumInputLength()
+        {
+            if (TermReader.states.Count == 0)
+                return -1;
+
+            // Get the current state
+            var state = TermReaderState.CurrentState;
+            return GetMaximumInputLength(state);
+        }
+
+        /// <summary>
+        /// Inserts new text to the current reader
+        /// </summary>
+        /// <param name="newText">New text to insert or append</param>
+        /// <param name="append">Whether to append the new text to the end of the input or to insert text to the current position</param>
+        /// <param name="step">Whether to move the cursor forward after inserting or not</param>
+        public static void InsertNewText(string newText, bool append = false, bool step = true)
+        {
+            if (TermReader.states.Count == 0)
+                return;
+
+            // Get the current state
+            var state = TermReaderState.CurrentState;
+            InsertNewText(ref state, newText, append, step);
+            TermReaderState.SaveState(state);
+        }
+
+        /// <summary>
+        /// Removes text from the current position
+        /// </summary>
+        /// <param name="length">Length of characters to remove</param>
+        /// <param name="step">Whether to step backwards after removing characters</param>
+        public static void RemoveText(int length, bool step = false)
+        {
+            if (TermReader.states.Count == 0)
+                return;
+
+            RemoveText(TermReaderState.CurrentState.CurrentTextPos, length, step);
+        }
+
+        /// <summary>
+        /// Removes text from the current position
+        /// </summary>
+        /// <param name="startIndex">Zero-based index of where to start removing <paramref name="length"/> characters</param>
+        /// <param name="length">Length of characters to remove</param>
+        /// <param name="step">Whether to step backwards after removing characters</param>
+        public static void RemoveText(int startIndex, int length, bool step = false)
+        {
+            if (TermReader.states.Count == 0)
+                return;
+
+            // Get the current state
+            var state = TermReaderState.CurrentState;
+            RemoveText(ref state, startIndex, length, step);
+            TermReaderState.SaveState(state);
         }
 
         internal static ConsoleKeyInfo GetInput(bool interruptible)

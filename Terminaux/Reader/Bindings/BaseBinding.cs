@@ -86,7 +86,7 @@ namespace Terminaux.Reader.Bindings
             if (state.insertIsReplace)
             {
                 if (state.CurrentTextPos == state.CurrentText.Length)
-                    TermReaderTools.InsertNewText(ref state, text);
+                    TermReaderTools.InsertNewText(text);
                 else
                 {
                     state.CurrentText.Remove(state.CurrentTextPos, 1);
@@ -95,7 +95,7 @@ namespace Terminaux.Reader.Bindings
                 }
             }
             else
-                TermReaderTools.InsertNewText(ref state, text);
+                TermReaderTools.InsertNewText(text);
         }
     }
 }

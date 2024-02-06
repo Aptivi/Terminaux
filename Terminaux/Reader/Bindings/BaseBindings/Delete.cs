@@ -38,7 +38,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 return;
 
             // Remove one character from the current text position
-            TermReaderTools.RemoveText(ref state, 1);
+            TermReaderTools.RemoveText(1);
         }
     }
 }

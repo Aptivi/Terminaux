@@ -256,6 +256,15 @@ namespace Terminaux.Reader
             }
         }
 
+        internal static void SaveState(TermReaderState state)
+        {
+            if (!TermReaderTools.Busy)
+                return;
+            if (TermReader.states.Count == 0)
+                return;
+            TermReader.states[TermReader.states.Count - 1] = state;
+        }
+
         internal TermReaderState() { }
     }
 }

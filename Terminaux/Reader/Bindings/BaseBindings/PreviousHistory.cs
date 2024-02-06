@@ -72,7 +72,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // Now, write the history entry
             TermReaderState.currentHistoryPos--;
             string history = state.History[TermReaderState.currentHistoryPos];
-            TermReaderTools.InsertNewText(ref state, history, true);
+            TermReaderTools.InsertNewText(history, true);
         }
     }
 }

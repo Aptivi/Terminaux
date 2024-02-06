@@ -40,7 +40,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // Remove characters from the current text position to the end
             int times = state.CurrentText.Length - state.CurrentTextPos;
             state.KillBuffer.Append(state.CurrentText.ToString().Substring(state.CurrentTextPos, times));
-            TermReaderTools.RemoveText(ref state, times);
+            TermReaderTools.RemoveText(times);
         }
     }
 }

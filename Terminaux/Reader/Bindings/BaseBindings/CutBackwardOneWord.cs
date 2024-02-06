@@ -52,7 +52,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 }
             }
             state.KillBuffer.Append(state.CurrentText.ToString().Substring(state.CurrentTextPos - steps, steps));
-            TermReaderTools.RemoveText(ref state, state.CurrentTextPos - steps, steps, true);
+            TermReaderTools.RemoveText(state.CurrentTextPos - steps, steps, true);
         }
     }
 }
