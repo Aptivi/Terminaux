@@ -31,6 +31,7 @@ namespace Terminaux.Reader
         private char passwordMaskChar = '*';
         private bool historyEnabled = true;
         private bool treatCtrlCAsInput;
+        private bool limitConsoleChars = true;
         private int leftMargin = 0;
         private int rightMargin = 0;
         private Color inputForegroundColor;
@@ -121,7 +122,7 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
-        /// Treat Ctrl + C as input
+        /// Syntax highlighter is enabled
         /// </summary>
         public bool SyntaxHighlighterEnabled
         {
@@ -130,12 +131,21 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
-        /// Treat Ctrl + C as input
+        /// Syntax highlighter to use. It must be registered.
         /// </summary>
         public SyntaxHighlighting SyntaxHighlighter
         {
             get => syntaxHighlighter;
             set => syntaxHighlighter = value ?? SyntaxHighlightingTools.GetHighlighter("Command");
+        }
+
+        /// <summary>
+        /// Limit input characters to the maximum number of characters in a console window
+        /// </summary>
+        public bool LimitConsoleChars
+        {
+            get => limitConsoleChars;
+            set => limitConsoleChars = value;
         }
 
         /// <summary>

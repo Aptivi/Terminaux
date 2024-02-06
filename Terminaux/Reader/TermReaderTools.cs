@@ -165,7 +165,18 @@ namespace Terminaux.Reader
             if (!state.CanInsert)
                 return;
 
-            // Get the longest sentence width and insert the character
+            // Get the longest sentence width and crop the text appropriately
+            int longest = GetMaximumInputLength(state);
+            if (state.CurrentText.Length + newText.Length > longest && state.settings.LimitConsoleChars)
+            {
+                state.canInsert = false;
+                int len = longest - (state.CurrentText.Length + newText.Length);
+                if (len < 0)
+                    len = longest - state.CurrentText.Length;
+                newText = newText.Substring(0, len);
+            }
+
+            // Now, insert the text
             if (append)
                 state.CurrentText.Append(newText);
             else
