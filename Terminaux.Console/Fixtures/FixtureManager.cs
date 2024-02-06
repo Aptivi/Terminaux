@@ -58,6 +58,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new PrintFigletCenteredF(),
             new PrintFigletCenteredPositional(),
             new PrintFigletCenteredPositionalF(),
+            new PrintCentered(),
             new PrintSep(),
             new PrintSepF(),
             new PrintSepColor(),

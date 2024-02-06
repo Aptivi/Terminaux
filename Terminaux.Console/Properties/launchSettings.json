@@ -107,6 +107,10 @@
             "commandName": "Project",
             "commandLineArgs": "PrintWithNulls"
         },
+        "Terminaux - PrintCentered": {
+            "commandName": "Project",
+            "commandLineArgs": "PrintCentered"
+        },
         "Terminaux - PrintLineHandle": {
             "commandName": "Project",
             "commandLineArgs": "PrintLineHandle"
