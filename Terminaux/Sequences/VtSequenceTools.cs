@@ -29,6 +29,8 @@ namespace Terminaux.Sequences
     /// </summary>
     public static class VtSequenceTools
     {
+        private static readonly VtSequenceType[] typeValues = Enum.GetValues(typeof(VtSequenceType)) as VtSequenceType[];
+
         /// <summary>
         /// Filters all of the VT sequences
         /// </summary>
@@ -39,14 +41,13 @@ namespace Terminaux.Sequences
         public static string FilterVTSequences(string Text, string replace = "", VtSequenceType type = VtSequenceType.All)
         {
             // Filter all sequences according to the list of flags
-            var typeValues = Enum.GetValues(typeof(VtSequenceType));
             var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
             if (type != VtSequenceType.All)
             {
                 for (int i = 1; i < typeValues.Length - 1; i++)
                 {
                     // Check to see if there is a flag denoting a type
-                    VtSequenceType typeValueEnum = (VtSequenceType)typeValues.GetValue(i);
+                    VtSequenceType typeValueEnum = typeValues[i];
                     if (type.HasFlag(typeValueEnum))
                         Text = sequenceFilterRegex.Replace(Text, replace);
                 }
@@ -67,7 +68,6 @@ namespace Terminaux.Sequences
         public static MatchCollection[] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
             // Match all sequences according to the list of flags
-            var typeValues = Enum.GetValues(typeof(VtSequenceType));
             var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
             List<MatchCollection> matchCollections = [];
             if (type != VtSequenceType.All)
@@ -75,7 +75,7 @@ namespace Terminaux.Sequences
                 for (int i = 1; i < typeValues.Length - 1; i++)
                 {
                     // Check to see if there is a flag denoting a type
-                    VtSequenceType typeValueEnum = (VtSequenceType)typeValues.GetValue(i);
+                    VtSequenceType typeValueEnum = typeValues[i];
                     if (type.HasFlag(typeValueEnum))
                         matchCollections.Add(sequenceFilterRegex.Matches(Text));
                 }
@@ -96,7 +96,6 @@ namespace Terminaux.Sequences
         public static bool IsMatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
             // Filter all sequences according to the list of flags
-            var typeValues = Enum.GetValues(typeof(VtSequenceType));
             var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
             List<bool> results = [];
             if (type != VtSequenceType.All)
@@ -104,7 +103,7 @@ namespace Terminaux.Sequences
                 for (int i = 1; i < typeValues.Length - 1; i++)
                 {
                     // Check to see if there is a flag denoting a type
-                    VtSequenceType typeValueEnum = (VtSequenceType)typeValues.GetValue(i);
+                    VtSequenceType typeValueEnum = typeValues[i];
                     if (type.HasFlag(typeValueEnum))
                         results.Add(sequenceFilterRegex.IsMatch(Text));
                 }
@@ -125,12 +124,11 @@ namespace Terminaux.Sequences
         public static Dictionary<VtSequenceType, bool> IsMatchVTSequencesSpecific(string Text, VtSequenceType type = VtSequenceType.All)
         {
             // Filter all sequences according to the list of flags
-            var typeValues = Enum.GetValues(typeof(VtSequenceType));
             Dictionary<VtSequenceType, bool> results = [];
             for (int i = 1; i < typeValues.Length - 1; i++)
             {
                 // Check to see if there is a flag denoting a type
-                VtSequenceType typeValueEnum = (VtSequenceType)typeValues.GetValue(i);
+                VtSequenceType typeValueEnum = typeValues[i];
                 if (type.HasFlag(typeValueEnum))
                 {
                     // Go ahead and add the result to the dictionary with the tested type.
