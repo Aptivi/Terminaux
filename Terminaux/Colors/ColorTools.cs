@@ -330,14 +330,15 @@ namespace Terminaux.Colors
         public static Color GetRandomColor(ColorType type, bool selectBlack = true)
         {
             int maxColor = type != ColorType._16Color ? 255 : 15;
-            var color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255);
+            Color color = null;
+            bool firstTime = true;
             int colorLevel = 0;
-            var colorType = color.Type;
-            if (colorType != ColorType.TrueColor)
-                colorLevel = int.Parse(color.PlainSequence);
-            while (!ColorContrast.IsSeeable(colorType, colorLevel, color.RGB.R, color.RGB.G, color.RGB.B) && !selectBlack)
+            ColorType colorType = type;
+            while (firstTime || (!ColorContrast.IsSeeable(colorType, colorLevel, color.RGB.R, color.RGB.G, color.RGB.B) && !selectBlack))
             {
+                firstTime = false;
                 color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255);
+                colorType = color.Type;
                 if (colorType != ColorType.TrueColor)
                     colorLevel = int.Parse(color.PlainSequence);
 
