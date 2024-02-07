@@ -356,11 +356,19 @@ namespace Terminaux.Writer.FancyWriters
                         );
                     }
                     progBuilder.Append(
-                        BoxFrameColor.RenderBoxFrame(Left, Top, ConsoleWrapper.WindowWidth - FinalWidthOffset, 1,
+                        BorderColor.RenderBorderPlain(
+                            Left, Top, ConsoleWrapper.WindowWidth - FinalWidthOffset, 1,
                             ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
                             ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
                             ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
-                            ProgressTools.ProgressLeftFrameChar, ProgressTools.ProgressRightFrameChar)
+                            ProgressTools.ProgressLeftFrameChar, ProgressTools.ProgressRightFrameChar
+                        )
+                    );
+                }
+                else
+                {
+                    progBuilder.Append(
+                        BoxColor.RenderBox(Left + 1, Top, ConsoleWrapper.WindowWidth - FinalWidthOffset, 1, BackgroundColor, useColor)
                     );
                 }
 
