@@ -23607,6 +23607,211 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.SeparatorWriterColor.WriteSeparatorPlain
   nameWithType: SeparatorWriterColor.WriteSeparatorPlain
+- uid: Terminaux.Writer.FancyWriters.SliderColor
+  name: SliderColor
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html
+  commentId: T:Terminaux.Writer.FancyWriters.SliderColor
+  fullName: Terminaux.Writer.FancyWriters.SliderColor
+  nameWithType: SliderColor
+- uid: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)
+  name: RenderSlider(int, int, int, int, int, int, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_RenderSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)
+  name.vb: RenderSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(int, int, int, int, int, int, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(Integer, Integer, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.RenderSlider(int, int, int, int, int, int, Color, bool)
+  nameWithType.vb: SliderColor.RenderSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name: RenderSlider(int, int, int, int, int, int, Color, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_RenderSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name.vb: RenderSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(int, int, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(Integer, Integer, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.RenderSlider(int, int, int, int, int, int, Color, Color, bool)
+  nameWithType.vb: SliderColor.RenderSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name: RenderSlider(int, int, int, int, int, int, Color, Color, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_RenderSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name.vb: RenderSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Color, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(int, int, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider(Integer, Integer, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.RenderSlider(int, int, int, int, int, int, Color, Color, Color, bool)
+  nameWithType.vb: SliderColor.RenderSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Color, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider*
+  name: RenderSlider
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_RenderSlider_
+  commentId: Overload:Terminaux.Writer.FancyWriters.SliderColor.RenderSlider
+  isSpec: "True"
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.RenderSlider
+  nameWithType: SliderColor.RenderSlider
+- uid: Terminaux.Writer.FancyWriters.SliderColor.RenderSliderPlain(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name: RenderSliderPlain(int, int, int, int, int, int, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_RenderSliderPlain_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.RenderSliderPlain(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name.vb: RenderSliderPlain(Integer, Integer, Integer, Integer, Integer, Integer, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.RenderSliderPlain(int, int, int, int, int, int, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.RenderSliderPlain(Integer, Integer, Integer, Integer, Integer, Integer, Boolean)
+  nameWithType: SliderColor.RenderSliderPlain(int, int, int, int, int, int, bool)
+  nameWithType.vb: SliderColor.RenderSliderPlain(Integer, Integer, Integer, Integer, Integer, Integer, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.RenderSliderPlain*
+  name: RenderSliderPlain
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_RenderSliderPlain_
+  commentId: Overload:Terminaux.Writer.FancyWriters.SliderColor.RenderSliderPlain
+  isSpec: "True"
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.RenderSliderPlain
+  nameWithType: SliderColor.RenderSliderPlain
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name: WriteSlider(int, int, int, int, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name: WriteSlider(int, int, int, int, int, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Integer, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, int, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, int, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name: WriteSlider(int, int, int, int, int, int, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, int, int, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, int, int, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)
+  name: WriteSlider(int, int, int, int, int, int, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, int, int, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, int, int, Color, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name: WriteSlider(int, int, int, int, int, int, Color, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, int, int, Color, Color, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name: WriteSlider(int, int, int, int, int, int, Color, Color, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Color, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, int, int, Color, Color, Color, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Integer, Color, Color, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)
+  name: WriteSlider(int, int, int, int, int, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Integer, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, int, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, int, Color, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name: WriteSlider(int, int, int, int, int, Color, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Integer, Color, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, int, Color, Color, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Color, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name: WriteSlider(int, int, int, int, int, Color, Color, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Integer, Color, Color, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, int, Color, Color, Color, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Integer, Color, Color, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)
+  name: WriteSlider(int, int, int, int, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, Color, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name: WriteSlider(int, int, int, int, Color, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Color, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, Color, Color, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Color, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name: WriteSlider(int, int, int, int, Color, Color, Color, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean)
+  name.vb: WriteSlider(Integer, Integer, Integer, Integer, Color, Color, Color, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(int, int, int, int, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
+  nameWithType: SliderColor.WriteSlider(int, int, int, int, Color, Color, Color, bool)
+  nameWithType.vb: SliderColor.WriteSlider(Integer, Integer, Integer, Integer, Color, Color, Color, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider*
+  name: WriteSlider
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSlider_
+  commentId: Overload:Terminaux.Writer.FancyWriters.SliderColor.WriteSlider
+  isSpec: "True"
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSlider
+  nameWithType: SliderColor.WriteSlider
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name: WriteSliderPlain(int, int, int, int, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSliderPlain_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name.vb: WriteSliderPlain(Integer, Integer, Integer, Integer, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(int, int, int, int, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(Integer, Integer, Integer, Integer, Boolean)
+  nameWithType: SliderColor.WriteSliderPlain(int, int, int, int, bool)
+  nameWithType.vb: SliderColor.WriteSliderPlain(Integer, Integer, Integer, Integer, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name: WriteSliderPlain(int, int, int, int, int, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSliderPlain_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name.vb: WriteSliderPlain(Integer, Integer, Integer, Integer, Integer, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(int, int, int, int, int, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(Integer, Integer, Integer, Integer, Integer, Boolean)
+  nameWithType: SliderColor.WriteSliderPlain(int, int, int, int, int, bool)
+  nameWithType.vb: SliderColor.WriteSliderPlain(Integer, Integer, Integer, Integer, Integer, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name: WriteSliderPlain(int, int, int, int, int, int, bool)
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSliderPlain_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_
+  commentId: M:Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)
+  name.vb: WriteSliderPlain(Integer, Integer, Integer, Integer, Integer, Integer, Boolean)
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(int, int, int, int, int, int, bool)
+  fullName.vb: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain(Integer, Integer, Integer, Integer, Integer, Integer, Boolean)
+  nameWithType: SliderColor.WriteSliderPlain(int, int, int, int, int, int, bool)
+  nameWithType.vb: SliderColor.WriteSliderPlain(Integer, Integer, Integer, Integer, Integer, Integer, Boolean)
+- uid: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain*
+  name: WriteSliderPlain
+  href: api/Terminaux.Writer.FancyWriters.SliderColor.html#Terminaux_Writer_FancyWriters_SliderColor_WriteSliderPlain_
+  commentId: Overload:Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain
+  isSpec: "True"
+  fullName: Terminaux.Writer.FancyWriters.SliderColor.WriteSliderPlain
+  nameWithType: SliderColor.WriteSliderPlain
 - uid: Terminaux.Writer.FancyWriters.SliderVerticalColor
   name: SliderVerticalColor
   href: api/Terminaux.Writer.FancyWriters.SliderVerticalColor.html
