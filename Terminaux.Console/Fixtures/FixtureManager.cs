@@ -104,6 +104,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new TestInputInfoBoxSelectionHugeMultiple(),
             new TestInputInfoBoxInput(),
             new TestInputInfoBoxColoredInput(),
+            new TestInputInfoBoxProgress(),
             new KeyInfo(),
 
             // Color

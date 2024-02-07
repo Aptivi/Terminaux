@@ -355,6 +355,10 @@
             "commandName": "Project",
             "commandLineArgs": "TestInputInfoBoxInput"
         },
+        "Terminaux - TestInputInfoBoxProgress": {
+            "commandName": "Project",
+            "commandLineArgs": "TestInputInfoBoxProgress"
+        },
         "Terminaux - ConsoleCheck": {
             "commandName": "Project",
             "commandLineArgs": "ConsoleCheck"
