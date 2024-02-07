@@ -20457,60 +20457,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain
   nameWithType: TextWriterRaw.WritePlain
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor
-  name: TextWriterSlowColor
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html
-  commentId: T:Terminaux.Writer.ConsoleWriters.TextWriterSlowColor
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor
-  nameWithType: TextWriterSlowColor
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColor(System.String,System.Boolean,System.Double,Terminaux.Colors.Color,System.Object[])
-  name: WriteSlowlyColor(string, bool, double, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterSlowColor_WriteSlowlyColor_System_String_System_Boolean_System_Double_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColor(System.String,System.Boolean,System.Double,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteSlowlyColor(String, Boolean, Double, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColor(string, bool, double, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColor(String, Boolean, Double, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterSlowColor.WriteSlowlyColor(string, bool, double, Color, params object[])
-  nameWithType.vb: TextWriterSlowColor.WriteSlowlyColor(String, Boolean, Double, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColor*
-  name: WriteSlowlyColor
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterSlowColor_WriteSlowlyColor_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColor
-  isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColor
-  nameWithType: TextWriterSlowColor.WriteSlowlyColor
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColorBack(System.String,System.Boolean,System.Double,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteSlowlyColorBack(string, bool, double, Color, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterSlowColor_WriteSlowlyColorBack_System_String_System_Boolean_System_Double_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColorBack(System.String,System.Boolean,System.Double,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteSlowlyColorBack(String, Boolean, Double, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColorBack(string, bool, double, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColorBack(String, Boolean, Double, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterSlowColor.WriteSlowlyColorBack(string, bool, double, Color, Color, params object[])
-  nameWithType.vb: TextWriterSlowColor.WriteSlowlyColorBack(String, Boolean, Double, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColorBack*
-  name: WriteSlowlyColorBack
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterSlowColor_WriteSlowlyColorBack_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColorBack
-  isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyColorBack
-  nameWithType: TextWriterSlowColor.WriteSlowlyColorBack
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyPlain(System.String,System.Boolean,System.Double,System.Object[])
-  name: WriteSlowlyPlain(string, bool, double, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterSlowColor_WriteSlowlyPlain_System_String_System_Boolean_System_Double_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyPlain(System.String,System.Boolean,System.Double,System.Object[])
-  name.vb: WriteSlowlyPlain(String, Boolean, Double, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyPlain(string, bool, double, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyPlain(String, Boolean, Double, ParamArray Object())
-  nameWithType: TextWriterSlowColor.WriteSlowlyPlain(string, bool, double, params object[])
-  nameWithType.vb: TextWriterSlowColor.WriteSlowlyPlain(String, Boolean, Double, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyPlain*
-  name: WriteSlowlyPlain
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterSlowColor_WriteSlowlyPlain_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyPlain
-  isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.WriteSlowlyPlain
-  nameWithType: TextWriterSlowColor.WriteSlowlyPlain
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor
   name: TextWriterWhereColor
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html
@@ -20755,201 +20701,261 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.WriteWherePlain
   nameWithType: TextWriterWhereColor.WriteWherePlain
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor
+- uid: Terminaux.Writer.DynamicWriters
+  name: Terminaux.Writer.DynamicWriters
+  href: api/Terminaux.Writer.DynamicWriters.html
+  commentId: N:Terminaux.Writer.DynamicWriters
+  fullName: Terminaux.Writer.DynamicWriters
+  nameWithType: Terminaux.Writer.DynamicWriters
+- uid: Terminaux.Writer.DynamicWriters.TextWriterSlowColor
+  name: TextWriterSlowColor
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.html
+  commentId: T:Terminaux.Writer.DynamicWriters.TextWriterSlowColor
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterSlowColor
+  nameWithType: TextWriterSlowColor
+- uid: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColor(System.String,System.Boolean,System.Double,Terminaux.Colors.Color,System.Object[])
+  name: WriteSlowlyColor(string, bool, double, Color, params object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterSlowColor_WriteSlowlyColor_System_String_System_Boolean_System_Double_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColor(System.String,System.Boolean,System.Double,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteSlowlyColor(String, Boolean, Double, Color, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColor(string, bool, double, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColor(String, Boolean, Double, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterSlowColor.WriteSlowlyColor(string, bool, double, Color, params object[])
+  nameWithType.vb: TextWriterSlowColor.WriteSlowlyColor(String, Boolean, Double, Color, ParamArray Object())
+- uid: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColor*
+  name: WriteSlowlyColor
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterSlowColor_WriteSlowlyColor_
+  commentId: Overload:Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColor
+  isSpec: "True"
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColor
+  nameWithType: TextWriterSlowColor.WriteSlowlyColor
+- uid: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColorBack(System.String,System.Boolean,System.Double,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteSlowlyColorBack(string, bool, double, Color, Color, params object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterSlowColor_WriteSlowlyColorBack_System_String_System_Boolean_System_Double_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColorBack(System.String,System.Boolean,System.Double,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteSlowlyColorBack(String, Boolean, Double, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColorBack(string, bool, double, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColorBack(String, Boolean, Double, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: TextWriterSlowColor.WriteSlowlyColorBack(string, bool, double, Color, Color, params object[])
+  nameWithType.vb: TextWriterSlowColor.WriteSlowlyColorBack(String, Boolean, Double, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColorBack*
+  name: WriteSlowlyColorBack
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterSlowColor_WriteSlowlyColorBack_
+  commentId: Overload:Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColorBack
+  isSpec: "True"
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyColorBack
+  nameWithType: TextWriterSlowColor.WriteSlowlyColorBack
+- uid: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyPlain(System.String,System.Boolean,System.Double,System.Object[])
+  name: WriteSlowlyPlain(string, bool, double, params object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterSlowColor_WriteSlowlyPlain_System_String_System_Boolean_System_Double_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyPlain(System.String,System.Boolean,System.Double,System.Object[])
+  name.vb: WriteSlowlyPlain(String, Boolean, Double, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyPlain(string, bool, double, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyPlain(String, Boolean, Double, ParamArray Object())
+  nameWithType: TextWriterSlowColor.WriteSlowlyPlain(string, bool, double, params object[])
+  nameWithType.vb: TextWriterSlowColor.WriteSlowlyPlain(String, Boolean, Double, ParamArray Object())
+- uid: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyPlain*
+  name: WriteSlowlyPlain
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterSlowColor_WriteSlowlyPlain_
+  commentId: Overload:Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyPlain
+  isSpec: "True"
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterSlowColor.WriteSlowlyPlain
+  nameWithType: TextWriterSlowColor.WriteSlowlyPlain
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor
   name: TextWriterWhereSlowColor
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html
-  commentId: T:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html
+  commentId: T:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor
   nameWithType: TextWriterWhereSlowColor
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,System.Object[])
   name: WriteWhereSlowly(string, bool, int, int, double, bool, int, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,System.Object[])
   name.vb: WriteWhereSlowly(String, Boolean, Integer, Integer, Double, Boolean, Integer, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(string, bool, int, int, double, bool, int, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(String, Boolean, Integer, Integer, Double, Boolean, Integer, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(string, bool, int, int, double, bool, int, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(String, Boolean, Integer, Integer, Double, Boolean, Integer, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowly(string, bool, int, int, double, bool, int, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowly(String, Boolean, Integer, Integer, Double, Boolean, Integer, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Object[])
   name: WriteWhereSlowly(string, bool, int, int, double, bool, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Object[])
   name.vb: WriteWhereSlowly(String, Boolean, Integer, Integer, Double, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(string, bool, int, int, double, bool, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(String, Boolean, Integer, Integer, Double, Boolean, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(string, bool, int, int, double, bool, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(String, Boolean, Integer, Integer, Double, Boolean, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowly(string, bool, int, int, double, bool, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowly(String, Boolean, Integer, Integer, Double, Boolean, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Object[])
   name: WriteWhereSlowly(string, bool, int, int, double, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowly_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Object[])
   name.vb: WriteWhereSlowly(String, Boolean, Integer, Integer, Double, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(string, bool, int, int, double, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly(String, Boolean, Integer, Integer, Double, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(string, bool, int, int, double, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly(String, Boolean, Integer, Integer, Double, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowly(string, bool, int, int, double, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowly(String, Boolean, Integer, Integer, Double, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly*
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly*
   name: WriteWhereSlowly
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowly_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowly_
+  commentId: Overload:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly
   isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowly
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowly
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowly
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Color,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Color,System.Object[])
   name: WriteWhereSlowlyColor(string, bool, int, int, double, bool, int, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Color,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Boolean, Integer, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(string, bool, int, int, double, bool, int, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Boolean, Integer, Terminaux.Colors.Color, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(string, bool, int, int, double, bool, int, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Boolean, Integer, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyColor(string, bool, int, int, double, bool, int, Color, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Boolean, Integer, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Color,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name: WriteWhereSlowlyColor(string, bool, int, int, double, bool, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Boolean, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(string, bool, int, int, double, bool, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Boolean, Terminaux.Colors.Color, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(string, bool, int, int, double, bool, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Boolean, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyColor(string, bool, int, int, double, bool, Color, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Boolean, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Color,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Color,System.Object[])
   name: WriteWhereSlowlyColor(string, bool, int, int, double, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Color,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(string, bool, int, int, double, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Terminaux.Colors.Color, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(string, bool, int, int, double, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyColor(string, bool, int, int, double, Color, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowlyColor(String, Boolean, Integer, Integer, Double, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor*
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor*
   name: WriteWhereSlowlyColor
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColor_
+  commentId: Overload:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor
   isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColor
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyColor
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteWhereSlowlyColorBack(string, bool, int, int, double, bool, int, Color, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Boolean, Integer, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(string, bool, int, int, double, bool, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Boolean, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(string, bool, int, int, double, bool, int, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Boolean, Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(string, bool, int, int, double, bool, int, Color, Color, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Boolean, Integer, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteWhereSlowlyColorBack(string, bool, int, int, double, bool, Color, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Boolean, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(string, bool, int, int, double, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(string, bool, int, int, double, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(string, bool, int, int, double, bool, Color, Color, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Boolean, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteWhereSlowlyColorBack(string, bool, int, int, double, Color, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_System_String_System_Boolean_System_Int32_System_Int32_System_Double_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(System.String,System.Boolean,System.Int32,System.Int32,System.Double,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(string, bool, int, int, double, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(string, bool, int, int, double, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(string, bool, int, int, double, Color, Color, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowlyColorBack(String, Boolean, Integer, Integer, Double, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack*
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack*
   name: WriteWhereSlowlyColorBack
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyColorBack_
+  commentId: Overload:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack
   isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyColorBack
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyColorBack
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,System.Object[])
   name: WriteWhereSlowlyPlain(string, bool, int, int, double, bool, int, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Int32_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Int32,System.Object[])
   name.vb: WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, Boolean, Integer, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(string, bool, int, int, double, bool, int, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, Boolean, Integer, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(string, bool, int, int, double, bool, int, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, Boolean, Integer, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyPlain(string, bool, int, int, double, bool, int, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, Boolean, Integer, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Object[])
   name: WriteWhereSlowlyPlain(string, bool, int, int, double, bool, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Boolean_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Boolean,System.Object[])
   name.vb: WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(string, bool, int, int, double, bool, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, Boolean, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(string, bool, int, int, double, bool, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, Boolean, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyPlain(string, bool, int, int, double, bool, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, Boolean, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Object[])
   name: WriteWhereSlowlyPlain(string, bool, int, int, double, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_System_String_System_Boolean_System_Int32_System_Int32_System_Double_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(System.String,System.Boolean,System.Int32,System.Int32,System.Double,System.Object[])
   name.vb: WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(string, bool, int, int, double, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(string, bool, int, int, double, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, ParamArray Object())
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyPlain(string, bool, int, int, double, params object[])
   nameWithType.vb: TextWriterWhereSlowColor.WriteWhereSlowlyPlain(String, Boolean, Integer, Integer, Double, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain*
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain*
   name: WriteWhereSlowlyPlain
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html#Terminaux_Writer_DynamicWriters_TextWriterWhereSlowColor_WriteWhereSlowlyPlain_
+  commentId: Overload:Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain
   isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.WriteWhereSlowlyPlain
   nameWithType: TextWriterWhereSlowColor.WriteWhereSlowlyPlain
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor
   name: TextWriterWrappedColor
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.html
-  commentId: T:Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.html
+  commentId: T:Terminaux.Writer.DynamicWriters.TextWriterWrappedColor
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor
   nameWithType: TextWriterWrappedColor
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name: WriteWrappedColor(string, bool, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWrappedColor_WriteWrappedColor_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.html#Terminaux_Writer_DynamicWriters_TextWriterWrappedColor_WriteWrappedColor_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteWrappedColor(String, Boolean, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColor(string, bool, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColor(String, Boolean, Terminaux.Colors.Color, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColor(string, bool, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColor(String, Boolean, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: TextWriterWrappedColor.WriteWrappedColor(string, bool, Color, params object[])
   nameWithType.vb: TextWriterWrappedColor.WriteWrappedColor(String, Boolean, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColor*
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColor*
   name: WriteWrappedColor
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWrappedColor_WriteWrappedColor_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColor
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.html#Terminaux_Writer_DynamicWriters_TextWriterWrappedColor_WriteWrappedColor_
+  commentId: Overload:Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColor
   isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColor
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColor
   nameWithType: TextWriterWrappedColor.WriteWrappedColor
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColorBack(System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColorBack(System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteWrappedColorBack(string, bool, Color, Color, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWrappedColor_WriteWrappedColorBack_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColorBack(System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.html#Terminaux_Writer_DynamicWriters_TextWriterWrappedColor_WriteWrappedColorBack_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColorBack(System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteWrappedColorBack(String, Boolean, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColorBack(string, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColorBack(String, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColorBack(string, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColorBack(String, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: TextWriterWrappedColor.WriteWrappedColorBack(string, bool, Color, Color, params object[])
   nameWithType.vb: TextWriterWrappedColor.WriteWrappedColorBack(String, Boolean, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColorBack*
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColorBack*
   name: WriteWrappedColorBack
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWrappedColor_WriteWrappedColorBack_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColorBack
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.html#Terminaux_Writer_DynamicWriters_TextWriterWrappedColor_WriteWrappedColorBack_
+  commentId: Overload:Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColorBack
   isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedColorBack
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedColorBack
   nameWithType: TextWriterWrappedColor.WriteWrappedColorBack
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedPlain(System.String,System.Boolean,System.Object[])
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedPlain(System.String,System.Boolean,System.Object[])
   name: WriteWrappedPlain(string, bool, params object[])
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWrappedColor_WriteWrappedPlain_System_String_System_Boolean_System_Object___
-  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedPlain(System.String,System.Boolean,System.Object[])
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.html#Terminaux_Writer_DynamicWriters_TextWriterWrappedColor_WriteWrappedPlain_System_String_System_Boolean_System_Object___
+  commentId: M:Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedPlain(System.String,System.Boolean,System.Object[])
   name.vb: WriteWrappedPlain(String, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedPlain(string, bool, params object[])
-  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedPlain(String, Boolean, ParamArray Object())
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedPlain(string, bool, params object[])
+  fullName.vb: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedPlain(String, Boolean, ParamArray Object())
   nameWithType: TextWriterWrappedColor.WriteWrappedPlain(string, bool, params object[])
   nameWithType.vb: TextWriterWrappedColor.WriteWrappedPlain(String, Boolean, ParamArray Object())
-- uid: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedPlain*
+- uid: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedPlain*
   name: WriteWrappedPlain
-  href: api/Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterWrappedColor_WriteWrappedPlain_
-  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedPlain
+  href: api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.html#Terminaux_Writer_DynamicWriters_TextWriterWrappedColor_WriteWrappedPlain_
+  commentId: Overload:Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedPlain
   isSpec: "True"
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterWrappedColor.WriteWrappedPlain
+  fullName: Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.WriteWrappedPlain
   nameWithType: TextWriterWrappedColor.WriteWrappedPlain
 - uid: Terminaux.Writer.FancyWriters
   name: Terminaux.Writer.FancyWriters
