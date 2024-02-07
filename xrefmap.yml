@@ -8012,6 +8012,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Templates.TemplateTools.Exists
   nameWithType: TemplateTools.Exists
+- uid: Terminaux.Colors.Templates.TemplateTools.ExistsBuiltin(System.String)
+  name: ExistsBuiltin(string)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_ExistsBuiltin_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.ExistsBuiltin(System.String)
+  name.vb: ExistsBuiltin(String)
+  fullName: Terminaux.Colors.Templates.TemplateTools.ExistsBuiltin(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.ExistsBuiltin(String)
+  nameWithType: TemplateTools.ExistsBuiltin(string)
+  nameWithType.vb: TemplateTools.ExistsBuiltin(String)
+- uid: Terminaux.Colors.Templates.TemplateTools.ExistsBuiltin*
+  name: ExistsBuiltin
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_ExistsBuiltin_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.ExistsBuiltin
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.ExistsBuiltin
+  nameWithType: TemplateTools.ExistsBuiltin
 - uid: Terminaux.Colors.Templates.TemplateTools.GetColor(System.String)
   name: GetColor(string)
   href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_GetColor_System_String_
