@@ -266,15 +266,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.ScreenPart.AddTextLine
   nameWithType: ScreenPart.AddTextLine
-- uid: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color,System.Boolean,System.Boolean)
-  name: BackgroundColor(Color, bool, bool)
-  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_BackgroundColor_Terminaux_Colors_Color_System_Boolean_System_Boolean_
-  commentId: M:Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color,System.Boolean,System.Boolean)
-  name.vb: BackgroundColor(Color, Boolean, Boolean)
-  fullName: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color, bool, bool)
-  fullName.vb: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color, Boolean, Boolean)
-  nameWithType: ScreenPart.BackgroundColor(Color, bool, bool)
-  nameWithType.vb: ScreenPart.BackgroundColor(Color, Boolean, Boolean)
+- uid: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color,System.Boolean)
+  name: BackgroundColor(Color, bool)
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_BackgroundColor_Terminaux_Colors_Color_System_Boolean_
+  commentId: M:Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color,System.Boolean)
+  name.vb: BackgroundColor(Color, Boolean)
+  fullName: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color, bool)
+  fullName.vb: Terminaux.Base.Buffered.ScreenPart.BackgroundColor(Terminaux.Colors.Color, Boolean)
+  nameWithType: ScreenPart.BackgroundColor(Color, bool)
+  nameWithType.vb: ScreenPart.BackgroundColor(Color, Boolean)
 - uid: Terminaux.Base.Buffered.ScreenPart.BackgroundColor*
   name: BackgroundColor
   href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_BackgroundColor_
