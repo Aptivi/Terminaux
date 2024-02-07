@@ -239,6 +239,10 @@
             "commandName": "Project",
             "commandLineArgs": "TestInputSelectionHugeMultiple"
         },
+        "Terminaux - TestInputSelectionScroll": {
+            "commandName": "Project",
+            "commandLineArgs": "TestInputSelectionScroll"
+        },
         "Terminaux - CliInfoPaneTest": {
             "commandName": "Project",
             "commandLineArgs": "CliInfoPaneTest"

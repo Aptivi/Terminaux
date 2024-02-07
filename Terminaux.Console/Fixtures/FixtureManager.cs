@@ -92,6 +92,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new TestInputSelectionMultiple(),
             new TestInputSelectionLargeMultiple(),
             new TestInputSelectionHugeMultiple(),
+            new TestInputSelectionScroll(),
             new TestInputChoice(),
             new TestInputFiglet(),
             new TestInputInfoBoxButtons(),

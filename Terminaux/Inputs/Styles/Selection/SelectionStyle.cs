@@ -315,10 +315,9 @@ namespace Terminaux.Inputs.Styles.Selection
                             numberRender
                         );
 
-                        // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
-                        // we're not switching pages yet.
+                        // Render the vertical slider.
                         selectionBuilder.Append(
-                            ProgressBarVerticalColor.RenderVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition, listStartPosition + 1, 4, progressColor, progressColor, false)
+                            SliderVerticalColor.RenderVerticalSlider(HighlightedAnswer, AllAnswers.Count, ConsoleWrapper.WindowWidth - 2, listStartPosition, listStartPosition + 1, 4, progressColor, progressColor, false)
                         );
                         return selectionBuilder.ToString();
                     });
