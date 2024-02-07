@@ -26,8 +26,9 @@ using Textify.General;
 using System.Diagnostics;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
+using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.Writer.ConsoleWriters
+namespace Terminaux.Writer.DynamicWriters
 {
     /// <summary>
     /// Console text writer with color support (slow positional write)

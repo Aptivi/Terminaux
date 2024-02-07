@@ -24,9 +24,10 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Sequences;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
-namespace Terminaux.Writer.ConsoleWriters
+namespace Terminaux.Writer.DynamicWriters
 {
     /// <summary>
     /// Console text writer with color support (slow write)
