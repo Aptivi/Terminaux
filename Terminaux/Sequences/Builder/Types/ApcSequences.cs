@@ -18,7 +18,7 @@
 //
 
 using System.Text.RegularExpressions;
-using Textify.Tools;
+using Terminaux.Base;
 
 namespace Terminaux.Sequences.Builder.Types
 {
@@ -44,7 +44,7 @@ namespace Terminaux.Sequences.Builder.Types
             string result = $"{VtSequenceBasicChars.EscapeChar}_{proprietaryCommands}{VtSequenceBasicChars.StChar}";
             var regexParser = ApcApplicationProgramCommandSequenceRegex;
             if (!regexParser.IsMatch(result))
-                throw new TextifyException("We have failed to generate a working VT sequence. Make sure that you've specified values correctly.");
+                throw new TerminauxException("We have failed to generate a working VT sequence. Make sure that you've specified values correctly.");
             return result;
         }
     }

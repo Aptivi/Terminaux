@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Terminaux.Sequences.Builder.Types;
-using Textify.Tools;
+using Terminaux.Base;
 
 namespace Terminaux.Sequences.Builder
 {
@@ -385,12 +385,12 @@ namespace Terminaux.Sequences.Builder
         {
             // Check the type
             if (!Enum.IsDefined(typeof(VtSequenceSpecificTypes), specificType))
-                throw new TextifyException($"Cannot build VT sequence for nonexistent type {Convert.ToInt32(specificType)}");
+                throw new TerminauxException($"Cannot build VT sequence for nonexistent type {Convert.ToInt32(specificType)}");
 
             // Now, check the argument count
             int argCount = sequenceBuilders[specificType].argumentsRequired;
             if (argCount < arguments.Length)
-                throw new TextifyException($"Cannot build VT sequence with missing arguments. Expected {argCount} arguments, got {arguments.Length} arguments. {Convert.ToInt32(specificType)}");
+                throw new TerminauxException($"Cannot build VT sequence with missing arguments. Expected {argCount} arguments, got {arguments.Length} arguments. {Convert.ToInt32(specificType)}");
 
             // Now, get the sequence and statically give arguments for performance to try to escape from DynamicInvoke
             var sequenceRegexGenerator = sequenceBuilders[specificType].generator;
@@ -424,7 +424,7 @@ namespace Terminaux.Sequences.Builder
             }
 
             // If still not found, then throw
-            throw new TextifyException("Can't determine type from this sequence. Make sure that you've specified it correctly.");
+            throw new TerminauxException("Can't determine type from this sequence. Make sure that you've specified it correctly.");
         }
 
         private static string DeterministicExecution(Delegate generator, params object[] arguments)
