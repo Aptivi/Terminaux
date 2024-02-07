@@ -212,7 +212,7 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
                 builder.Append(finalForeColorFirstPane.VTSequenceForeground);
-                builder.Append(InteractiveTuiStatus.PaneBackgroundColor.VTSequenceBackground);
+                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
                 builder.Append(BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior));
                 return builder.ToString();
             }));
@@ -224,7 +224,7 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
                 builder.Append(finalForeColorSecondPane.VTSequenceForeground);
-                builder.Append(InteractiveTuiStatus.PaneBackgroundColor.VTSequenceBackground);
+                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
                 builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
                 return builder.ToString();
             }));
@@ -261,10 +261,10 @@ namespace Terminaux.Inputs.Interactive
                     {
                         bindingsBuilder.Append(
                             $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
                             GetBindingKeyShortcut(binding, false) +
                             $"{InteractiveTuiStatus.OptionForegroundColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.BackgroundColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
                             $" {binding.BindingName}  "
                         );
                     }
@@ -274,7 +274,7 @@ namespace Terminaux.Inputs.Interactive
                         bindingsBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
                             $"{InteractiveTuiStatus.KeyBindingOptionColor.VTSequenceForeground}" +
-                            $"{InteractiveTuiStatus.OptionBackgroundColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
                             " K "
                         );
                         break;
@@ -342,10 +342,10 @@ namespace Terminaux.Inputs.Interactive
                         string text =
                             $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, top + 1)}" +
                             $"{finalForeColor.VTSequenceForeground}" +
-                            $"{finalBackColor.VTSequenceBackground}" +
+                            $"{ColorTools.RenderSetConsoleColor(finalBackColor, true)}" +
                             finalEntry +
                             new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)) +
-                            $"{InteractiveTuiStatus.PaneItemBackColor.VTSequenceBackground}";
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneItemBackColor, true)}";
                         builder.Append(text);
                     }
                 }
@@ -424,7 +424,7 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
                 builder.Append(finalForeColorSecondPane.VTSequenceForeground);
-                builder.Append(InteractiveTuiStatus.PaneBackgroundColor.VTSequenceBackground);
+                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
                 builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
 
                 _finalInfoRendered = finalInfoRendered;
@@ -436,7 +436,7 @@ namespace Terminaux.Inputs.Interactive
                     {
                         string truncated = "Shift+I = more info";
                         builder.Append(ForegroundColor.VTSequenceForeground);
-                        builder.Append(PaneItemBackColor.VTSequenceBackground);
+                        builder.Append(ColorTools.RenderSetConsoleColor(PaneItemBackColor, true));
                         builder.Append(TextWriterWhereColor.RenderWhere(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
                         break;
                     }
@@ -444,7 +444,7 @@ namespace Terminaux.Inputs.Interactive
                     // Now, render the info
                     string finalInfo = finalInfoStrings[infoIndex];
                     builder.Append(ForegroundColor.VTSequenceForeground);
-                    builder.Append(PaneItemBackColor.VTSequenceBackground);
+                    builder.Append(ColorTools.RenderSetConsoleColor(PaneItemBackColor, true));
                     builder.Append(TextWriterWhereColor.RenderWhere(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
                 }
                 return builder.ToString();
@@ -476,7 +476,7 @@ namespace Terminaux.Inputs.Interactive
             {
                 var builder = new StringBuilder();
                 builder.Append(InteractiveTuiStatus.ForegroundColor.VTSequenceForeground);
-                builder.Append(InteractiveTuiStatus.BackgroundColor.VTSequenceBackground);
+                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true));
                 builder.Append(TextWriterWhereColor.RenderWhere(InteractiveTuiStatus.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0));
                 builder.Append(ConsoleClearing.GetClearLineToRightSequence());
                 return builder.ToString();
