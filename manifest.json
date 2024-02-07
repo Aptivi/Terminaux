@@ -1735,6 +1735,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.SliderVerticalColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.SliderVerticalColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.FancyWriters.TableColor.yml",
       "output": {
         ".html": {
