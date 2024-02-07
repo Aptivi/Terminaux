@@ -66,6 +66,18 @@ namespace Terminaux.Colors.Templates
         }
 
         /// <summary>
+        /// Checks to see if a template is a built-in or not
+        /// </summary>
+        /// <param name="template">A specific template to check</param>
+        /// <returns>True if found; false otherwise.</returns>
+        public static bool ExistsBuiltin(string template)
+        {
+            if (string.IsNullOrWhiteSpace(template))
+                throw new TerminauxException("No name of the template provided.");
+            return baseTemplates.Any((templateInfo) => templateInfo.Name == template);
+        }
+
+        /// <summary>
         /// Sets the default template
         /// </summary>
         /// <param name="template">Template name to set the default template to</param>
@@ -185,6 +197,8 @@ namespace Terminaux.Colors.Templates
             // Check to see if we have this template
             if (!Exists(template))
                 throw new TerminauxException("Can't find template {0}", template);
+            if (ExistsBuiltin(template))
+                throw new TerminauxException("Can't remove built-in template {0}", template);
 
             // Now, remove the template
             var templateInfo = GetTemplate(template);

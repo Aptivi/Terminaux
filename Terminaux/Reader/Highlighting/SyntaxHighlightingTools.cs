@@ -65,7 +65,7 @@ namespace Terminaux.Reader.Highlighting
         }
 
         /// <summary>
-        /// Checks to see if a highlighter exists or not
+        /// Checks to see if a highlighter is a built-in or not
         /// </summary>
         /// <param name="highlighter">A specific highlighter to check</param>
         /// <returns>True if found; false otherwise.</returns>
