@@ -491,13 +491,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                     if (useColor)
                     {
                         boxBuffer.Append(
-                            ProgressBarVerticalColor.RenderVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, 0, InfoBoxTitledSelectionMultipleColor, BackgroundColor, false)
+                            SliderVerticalColor.RenderVerticalSlider(currentSelection + 1, selections.Length, left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, 0, InfoBoxTitledSelectionMultipleColor, BackgroundColor, false)
                         );
                     }
                     else
                     {
                         boxBuffer.Append(
-                            ProgressBarVerticalColor.RenderVerticalProgressPlain(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, 0, false)
+                            SliderVerticalColor.RenderVerticalSliderPlain(currentSelection + 1, selections.Length, left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, 0, false)
                         );
                     }
 

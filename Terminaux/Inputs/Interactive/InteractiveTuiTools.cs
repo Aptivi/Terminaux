@@ -352,7 +352,7 @@ namespace Terminaux.Inputs.Interactive
 
                 // Render the vertical bar
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
-                builder.Append(ProgressBarVerticalColor.RenderVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor, false));
+                builder.Append(SliderVerticalColor.RenderVerticalSlider(paneCurrentSelection, dataCount, left, 1, 2, 2, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor, false));
                 return builder.ToString();
             });
 
