@@ -398,7 +398,7 @@ namespace Terminaux.Writer.FancyWriters
                 for (int i = 0; i < SliderFilled; i++)
                 {
                     int offset = maxBlanks - i;
-                    if (offset == 0)
+                    if (offset <= 0)
                         offset = 1 + i;
                     progBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + offset + 1)}");
                     progBuilder.Append(' ');
