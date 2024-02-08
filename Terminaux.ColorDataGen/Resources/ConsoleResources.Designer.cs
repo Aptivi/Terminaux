@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Terminaux.Base.Resources {
+namespace Terminaux.ColorDataGen.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Terminaux.Base.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Terminaux.Base.Resources.ConsoleResources", typeof(ConsoleResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Terminaux.ColorDataGen.Resources.ConsoleResources", typeof(ConsoleResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

@@ -19,11 +19,7 @@
 
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using Terminaux.Base.Resources;
-using Terminaux.Colors.Models;
 
 namespace Terminaux.Colors.Data
 {
@@ -31,10 +27,8 @@ namespace Terminaux.Colors.Data
     /// Console color data
     /// </summary>
     [DebuggerDisplay("{Name} [{ColorId}, {HexString}]")]
-    public class ConsoleColorData : IEquatable<ConsoleColorData>
+    public partial class ConsoleColorData : IEquatable<ConsoleColorData>
     {
-        [JsonIgnore]
-        private static ConsoleColorData[] instances = null;
         [JsonProperty(nameof(hexString))]
         private readonly string hexString = "";
         [JsonProperty(nameof(rgb))]
@@ -114,6 +108,17 @@ namespace Terminaux.Colors.Data
             [JsonIgnore]
             public int B =>
                 b;
+
+            [JsonConstructor]
+            private Rgb()
+            { }
+
+            internal Rgb(int r, int g, int b)
+            {
+                this.r = r;
+                this.g = g;
+                this.b = b;
+            }
         }
 
         /// <summary>
@@ -123,7 +128,7 @@ namespace Terminaux.Colors.Data
         public class Hsl
         {
             [JsonProperty(nameof(h))]
-            private readonly float h = 0f;
+            private readonly double h = 0f;
             [JsonProperty(nameof(s))]
             private readonly int s = 0;
             [JsonProperty(nameof(l))]
@@ -133,7 +138,7 @@ namespace Terminaux.Colors.Data
             /// The hue level
             /// </summary>
             [JsonIgnore]
-            public float H =>
+            public double H =>
                 h;
 
             /// <summary>
@@ -149,73 +154,30 @@ namespace Terminaux.Colors.Data
             [JsonIgnore]
             public int L =>
                 l;
+
+            [JsonConstructor]
+            private Hsl()
+            { }
+
+            internal Hsl(double h, int s, int l)
+            {
+                this.h = h;
+                this.s = s;
+                this.l = l;
+            }
         }
 
-        /// <summary>
-        /// Gets the console colors data
-        /// </summary>
-        /// <returns></returns>
-        public static ConsoleColorData[] GetColorData()
+        [JsonConstructor]
+        private ConsoleColorData()
+        { }
+
+        internal ConsoleColorData(string hexString, int r, int g, int b, double h, int s, int l, string name, int colorId)
         {
-            instances ??= JsonConvert.DeserializeObject<ConsoleColorData[]>(ConsoleResources.ConsoleColorsData);
-            return instances;
+            this.hexString = hexString;
+            rgb = new(r, g, b);
+            hsl = new(h, s, l);
+            this.name = name;
+            this.colorId = colorId;
         }
-
-        /// <summary>
-        /// Gets a color data instance that matches 
-        /// </summary>
-        /// <param name="color">Color to match</param>
-        /// <returns>Either an instance of <see cref="ConsoleColorData"/> if found, or <see langword="null"/> if not found</returns>
-        public static ConsoleColorData MatchColorData(Color color) =>
-            MatchColorData(color.RGB);
-
-        /// <summary>
-        /// Gets a color data instance that matches 
-        /// </summary>
-        /// <param name="rgb">Color to match</param>
-        /// <returns>Either an instance of <see cref="ConsoleColorData"/> if found, or <see langword="null"/> if not found</returns>
-        public static ConsoleColorData MatchColorData(RedGreenBlue rgb) =>
-            MatchColorData(rgb.R, rgb.G, rgb.B);
-
-        /// <summary>
-        /// Gets a color data instance that matches 
-        /// </summary>
-        /// <param name="r">Red color level to match</param>
-        /// <param name="g">Green color level to match</param>
-        /// <param name="b">Blue color level to match</param>
-        /// <returns>Either an instance of <see cref="ConsoleColorData"/> if found, or <see langword="null"/> if not found</returns>
-        public static ConsoleColorData MatchColorData(int r, int g, int b)
-        {
-            var instances = GetColorData();
-
-            // Get an instance that matches the conditions
-            var instance = instances.FirstOrDefault((data) =>
-                data.RGB.R == r &&
-                data.RGB.G == g &&
-                data.RGB.B == b
-            );
-            return instance;
-        }
-
-        /// <inheritdoc/>
-        public override bool Equals(object obj) =>
-            Equals(obj as ConsoleColorData);
-
-        /// <inheritdoc/>
-        public bool Equals(ConsoleColorData other) =>
-            other is not null &&
-            ColorId == other.ColorId;
-
-        /// <inheritdoc/>
-        public override int GetHashCode() =>
-            -1308032243 + ColorId.GetHashCode();
-
-        /// <inheritdoc/>
-        public static bool operator ==(ConsoleColorData left, ConsoleColorData right) =>
-            EqualityComparer<ConsoleColorData>.Default.Equals(left, right);
-
-        /// <inheritdoc/>
-        public static bool operator !=(ConsoleColorData left, ConsoleColorData right) =>
-            !(left == right);
     }
 }
