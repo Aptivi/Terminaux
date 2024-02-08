@@ -378,7 +378,7 @@ namespace Terminaux.Writer.FancyWriters
                     maxBlanks--;
                 int maxPosOffset = maxPos - MaximumWidth;
                 double maxPosFraction = (double)MaximumWidth / maxPosOffset;
-                int times = ConsoleMisc.PercentRepeat((int)Math.Round(maxPosFraction), 100, FinalWidthOffset);
+                int times = ConsoleMisc.PercentRepeat((int)Math.Round(maxPosFraction), maxPos, FinalWidthOffset);
                 if (times == 0)
                     times = 1;
                 int afterBlanks = MaximumWidth - maxBlanks - times;

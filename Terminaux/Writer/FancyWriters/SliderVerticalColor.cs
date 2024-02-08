@@ -357,7 +357,7 @@ namespace Terminaux.Writer.FancyWriters
                 // Fill the slider
                 int maxPosOffset = maxPos - MaximumHeight;
                 double maxPosFraction = (double)MaximumHeight / maxPosOffset;
-                int SliderFilled = ConsoleMisc.PercentRepeatTargeted((int)Math.Round(maxPosFraction), 100, MaximumHeight);
+                int SliderFilled = ConsoleMisc.PercentRepeatTargeted((int)Math.Round(maxPosFraction), maxPos, MaximumHeight);
                 if (SliderFilled == 0)
                     SliderFilled = 1;
 
