@@ -33,6 +33,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Extensions;
+using Terminaux.Reader;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -742,7 +743,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int maxHeight;
                     if (waitForInput)
                     {
-                        var keypress = Input.DetectKeypress();
+                        var keypress = TermReader.ReadKey();
                         splitFinalLines = GetFinalLines();
                         maxHeight = splitFinalLines.Length;
                         if (maxHeight >= ConsoleWrapper.WindowHeight)

@@ -38,7 +38,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
                 ColorTools.LoadBack(ConsoleColors.Blue);
                 TextWriterColor.WriteColor("Color {0} [{1}]", true, colorInstance, vars: [colorInstance.PlainSequence, colorInstance.PlainSequenceTrueColor]);
                 TextWriterColor.Write("Press any key to reset all.");
-                Input.DetectKeypress();
+                TermReader.ReadKey();
                 ConsoleClearing.ResetAll();
                 TextWriterColor.Write("Congrats! You've reset the whole console!");
             }

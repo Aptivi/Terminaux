@@ -21,6 +21,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
@@ -32,13 +33,13 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             ColorTools.AllowBackground = true;
             ColorTools.SetConsoleColorDry(ConsoleColors.Green, true);
             ConsoleWrapper.ClearLoadBack();
-            Input.DetectKeypress();
+            TermReader.ReadKey();
             ColorTools.SetConsoleColorDry(ConsoleColors.Yellow, true);
             ConsoleWrapper.Clear();
-            Input.DetectKeypress();
+            TermReader.ReadKey();
             ColorTools.SetConsoleColorDry(ConsoleColors.Red, true);
             ConsoleWrapper.ClearLoadBack();
-            Input.DetectKeypress();
+            TermReader.ReadKey();
             ColorTools.AllowBackground = false;
             ConsoleWrapper.ClearLoadBack();
         }

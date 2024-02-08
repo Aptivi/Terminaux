@@ -25,6 +25,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.TermInfo;
 using Terminaux.Base.Extensions;
 using SpecProbe.Platform;
+using Terminaux.Reader;
 
 namespace Terminaux.Base.Checks
 {
@@ -229,7 +230,7 @@ namespace Terminaux.Base.Checks
                     Console.BufferWidth, ConsoleWrapper.BufferHeight,
                     minimumWidth, minimumHeight);
                 TextWriterRaw.WritePlain("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
-                Input.DetectKeypress();
+                TermReader.ReadKey();
             }
         }
     }

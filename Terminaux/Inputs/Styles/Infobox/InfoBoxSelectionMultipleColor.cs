@@ -32,6 +32,7 @@ using Textify.General;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Extensions;
+using Terminaux.Reader;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -522,7 +523,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Handle keypress
                     var selectedInstance = selections[currentSelection];
-                    var key = Input.DetectKeypress().Key;
+                    var key = TermReader.ReadKey().Key;
                     switch (key)
                     {
                         case ConsoleKey.UpArrow:

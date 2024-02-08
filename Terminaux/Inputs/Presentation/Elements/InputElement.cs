@@ -67,7 +67,7 @@ namespace Terminaux.Inputs.Presentation.Elements
                 {
                     // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
                     TextWriterWhereColor.WriteWhereColor(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
-                    Input.DetectKeypress();
+                    TermReader.ReadKey();
                     TextWriterRaw.WritePlain(PresentationTools.ClearPresentation(), false);
                     seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
                     buffer.Clear();
@@ -86,7 +86,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             {
                 // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
                 TextWriterWhereColor.WriteWhereColor(bufferText, PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
-                Input.DetectKeypress();
+                TermReader.ReadKey();
                 TextWriterRaw.WritePlain(PresentationTools.ClearPresentation(), false);
                 seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
                 buffer.Clear();

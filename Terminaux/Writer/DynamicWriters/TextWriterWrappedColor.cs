@@ -27,6 +27,7 @@ using Terminaux.Inputs;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Reader;
 
 namespace Terminaux.Writer.DynamicWriters
 {
@@ -76,7 +77,7 @@ namespace Terminaux.Writer.DynamicWriters
                             {
                                 TextWriterRaw.WritePlain(buffered.ToString(), false);
                                 buffered.Clear();
-                                var key = Input.DetectKeypress().Key;
+                                var key = TermReader.ReadKey().Key;
                                 switch (key)
                                 {
                                     case ConsoleKey.Escape:

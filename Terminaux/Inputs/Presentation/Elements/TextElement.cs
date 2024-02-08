@@ -25,6 +25,7 @@ using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Reader;
 
 namespace Terminaux.Inputs.Presentation.Elements
 {
@@ -65,7 +66,7 @@ namespace Terminaux.Inputs.Presentation.Elements
                 {
                     // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
                     TextWriterWhereColor.WriteWhereColor(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
-                    Input.DetectKeypress();
+                    TermReader.ReadKey();
                     TextWriterRaw.WritePlain(PresentationTools.ClearPresentation(), false);
                     seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
                     buffer.Clear();

@@ -29,6 +29,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Reader;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
@@ -65,7 +66,7 @@ namespace Terminaux.Inputs.Interactive
                 {
                     TextWriterColor.Write("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n", interactiveTui.GetType().Name);
                     TextWriterColor.Write("Press any key to exit this program...");
-                    Input.DetectKeypress();
+                    TermReader.ReadKey();
                     return;
                 }
                 bool notifyCrash = false;
@@ -127,7 +128,7 @@ namespace Terminaux.Inputs.Interactive
                     notifyCrash = false;
                     TextWriterColor.WriteColor(crashReason + "\n", true, ConsoleColors.Red);
                     TextWriterColor.Write("Press any key to exit this program...");
-                    Input.DetectKeypress();
+                    TermReader.ReadKey();
                 }
 
                 // Reset some static variables
@@ -506,9 +507,9 @@ namespace Terminaux.Inputs.Interactive
             // Wait for key
             ConsoleKeyInfo pressedKey;
             if (interactiveTui.RefreshInterval == 0 || interactiveTui.SecondPaneInteractable)
-                pressedKey = Input.DetectKeypress();
+                pressedKey = TermReader.ReadKey();
             else
-                pressedKey = Input.ReadKeyTimeout(true, TimeSpan.FromMilliseconds(interactiveTui.RefreshInterval)).result;
+                pressedKey = TermReader.ReadKeyTimeout(true, TimeSpan.FromMilliseconds(interactiveTui.RefreshInterval)).result;
 
             // Handle the key
             switch (pressedKey.Key)

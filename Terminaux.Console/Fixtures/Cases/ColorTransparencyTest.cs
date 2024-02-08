@@ -21,6 +21,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -47,27 +48,27 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             // 100% opaque
             ColorTools.LoadBackDry(opaque);
             BorderTextColor.WriteBorder("100% green, 0% red", 2, 1, "100% green, 0% red".Length, 1, opaque);
-            Input.DetectKeypress();
+            TermReader.ReadKey();
 
             // 75% opaque
             ColorTools.LoadBackDry(greenQuarterTransparent);
             BorderTextColor.WriteBorder("75% green, 25% red", 2, 1, "75% green, 25% red".Length, 1, greenQuarterTransparent);
-            Input.DetectKeypress();
+            TermReader.ReadKey();
 
             // 50% opaque
             ColorTools.LoadBackDry(greenHalfTransparent);
             BorderTextColor.WriteBorder("50% green, 50% red", 2, 1, "50% green, 50% red".Length, 1, greenHalfTransparent);
-            Input.DetectKeypress();
+            TermReader.ReadKey();
 
             // 25% opaque
             ColorTools.LoadBackDry(greenThirdQuarterTransparent);
             BorderTextColor.WriteBorder("25% green, 75% red", 2, 1, "25% green, 75% red".Length, 1, greenThirdQuarterTransparent);
-            Input.DetectKeypress();
+            TermReader.ReadKey();
 
             // 0% opaque
             ColorTools.LoadBackDry(greenTransparent);
             BorderTextColor.WriteBorder("0% green, 100% red", 2, 1, "0% green, 100% red".Length, 1, greenTransparent);
-            Input.DetectKeypress();
+            TermReader.ReadKey();
 
             // Reset
             ColorTools.LoadBack();

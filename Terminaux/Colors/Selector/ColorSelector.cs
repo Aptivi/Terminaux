@@ -27,6 +27,7 @@ using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Reader;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
 
@@ -288,7 +289,7 @@ namespace Terminaux.Colors.Selector
         private static bool HandleKeypress(ref Color selectedColor, ref ColorType type)
         {
             bool bail = false;
-            var keypress = Input.DetectKeypress();
+            var keypress = TermReader.ReadKey();
             switch (keypress.Key)
             {
                 // Unified

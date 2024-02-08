@@ -28,6 +28,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Extensions;
+using Terminaux.Reader;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -148,7 +149,7 @@ namespace Terminaux.Inputs.Presentation
                     // Check for possible out-of-bounds
                     if (element.IsPossibleOutOfBounds() && checkOutOfBounds)
                     {
-                        Input.DetectKeypress();
+                        TermReader.ReadKey();
                         TextWriterRaw.WritePlain(ClearPresentation(), false);
                     }
                     checkOutOfBounds = true;
@@ -170,7 +171,7 @@ namespace Terminaux.Inputs.Presentation
                 while (!pageExit)
                 {
                     // Get the keypress
-                    var key = Input.DetectKeypress();
+                    var key = TermReader.ReadKey();
 
                     // Now, check for the key
                     switch (key.Key)

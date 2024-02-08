@@ -29,6 +29,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Reader;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
@@ -311,7 +312,7 @@ namespace Terminaux.Inputs.Styles.Selection
 
                     // Wait for an answer
                     ScreenTools.Render();
-                    Answer = Input.DetectKeypress();
+                    Answer = TermReader.ReadKey();
 
                     // Check the answer
                     switch (Answer.Key)

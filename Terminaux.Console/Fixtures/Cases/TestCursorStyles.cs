@@ -20,6 +20,7 @@
 using System;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -34,7 +35,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             {
                 ConsoleCursor.CursorType = (ConsoleCursorType)type;
                 TextWriterRaw.WritePlain($"{type}: ", false);
-                Input.DetectKeypress();
+                TermReader.ReadKey();
             }
             ConsoleCursor.CursorType = ConsoleCursorType.User;
         }

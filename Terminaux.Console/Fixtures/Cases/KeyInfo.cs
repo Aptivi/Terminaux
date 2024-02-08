@@ -21,6 +21,7 @@ using System;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -31,7 +32,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
         public void RunFixture()
         {
             TextWriterColor.Write("Enter a key or a combination of keys to display its information.");
-            var KeyPress = Input.DetectKeypress();
+            var KeyPress = TermReader.ReadKey();
 
             // Pressed key
             TextWriterColor.WriteColor("- Pressed key: ", false, new Color(ConsoleColors.Green));

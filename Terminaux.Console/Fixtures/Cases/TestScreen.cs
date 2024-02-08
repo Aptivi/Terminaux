@@ -25,6 +25,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Reader;
 using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -52,7 +53,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
                 stickScreen.AddBufferedPart("Test", stickScreenPart);
                 ScreenTools.SetCurrent(stickScreen);
                 ScreenTools.Render();
-                Input.DetectKeypress();
+                TermReader.ReadKey();
             }
             catch (Exception ex)
             {

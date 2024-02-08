@@ -32,6 +32,7 @@ using Terminaux.Colors.Data;
 using System.Linq;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Extensions;
+using Terminaux.Reader;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -528,7 +529,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Wait for keypress
                     var selectedInstance = buttons[selectedButton];
-                    var key = Input.DetectKeypress().Key;
+                    var key = TermReader.ReadKey().Key;
                     switch (key)
                     {
                         case ConsoleKey.LeftArrow:

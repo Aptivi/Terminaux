@@ -21,6 +21,7 @@ using System;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
+using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
@@ -36,7 +37,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases
             {
                 TextWriterRaw.WritePlain(ConsoleFormatting.GetFormattingSequences((ConsoleFormattingType)type), false);
                 TextWriterColor.WriteColorBack($"{type} text", false, ConsoleColors.DarkGreen, ConsoleColors.DarkBlue);
-                Input.DetectKeypress();
+                TermReader.ReadKey();
                 TextWriterRaw.Write();
             }
             TextWriterRaw.WritePlain(ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default), false);

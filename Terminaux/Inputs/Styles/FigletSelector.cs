@@ -24,6 +24,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Reader;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Inputs.Styles
@@ -96,7 +97,7 @@ namespace Terminaux.Inputs.Styles
                     ScreenTools.Render();
 
                     // Wait for input
-                    var key = Input.DetectKeypress().Key;
+                    var key = TermReader.ReadKey().Key;
                     switch (key)
                     {
                         case ConsoleKey.Enter:

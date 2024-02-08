@@ -55,6 +55,37 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
+        /// Reads the next key from the console input stream with the timeout
+        /// </summary>
+        /// <param name="Intercept">Whether to intercept an input</param>
+        /// <param name="Timeout">Timeout</param>
+        public static (ConsoleKeyInfo result, bool provided) ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
+        {
+            TermReaderTools.isWaitingForInput = true;
+            bool result = SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
+            TermReaderTools.isWaitingForInput = false;
+            return (!result ? default : ConsoleWrapper.ReadKey(Intercept), result);
+        }
+
+        /// <summary>
+        /// Reads the next key from the console input stream
+        /// </summary>
+        public static ConsoleKeyInfo ReadKey() =>
+            ReadKey(true);
+
+        /// <summary>
+        /// Reads the next key from the console input stream
+        /// </summary>
+        /// <param name="intercept">Whether to intercept the key pressed or to just show the actual key to the console</param>
+        public static ConsoleKeyInfo ReadKey(bool intercept)
+        {
+            TermReaderTools.isWaitingForInput = true;
+            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
+            TermReaderTools.isWaitingForInput = false;
+            return ConsoleWrapper.ReadKey(intercept);
+        }
+
+        /// <summary>
         /// Reads the input with password character masking
         /// </summary>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
