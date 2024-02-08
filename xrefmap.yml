@@ -11774,41 +11774,6 @@ references:
   commentId: N:Terminaux.Inputs
   fullName: Terminaux.Inputs
   nameWithType: Terminaux.Inputs
-- uid: Terminaux.Inputs.Input
-  name: Input
-  href: api/Terminaux.Inputs.Input.html
-  commentId: T:Terminaux.Inputs.Input
-  fullName: Terminaux.Inputs.Input
-  nameWithType: Input
-- uid: Terminaux.Inputs.Input.DetectKeypress
-  name: DetectKeypress()
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_DetectKeypress
-  commentId: M:Terminaux.Inputs.Input.DetectKeypress
-  fullName: Terminaux.Inputs.Input.DetectKeypress()
-  nameWithType: Input.DetectKeypress()
-- uid: Terminaux.Inputs.Input.DetectKeypress*
-  name: DetectKeypress
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_DetectKeypress_
-  commentId: Overload:Terminaux.Inputs.Input.DetectKeypress
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Input.DetectKeypress
-  nameWithType: Input.DetectKeypress
-- uid: Terminaux.Inputs.Input.ReadKeyTimeout(System.Boolean,System.TimeSpan)
-  name: ReadKeyTimeout(bool, TimeSpan)
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadKeyTimeout_System_Boolean_System_TimeSpan_
-  commentId: M:Terminaux.Inputs.Input.ReadKeyTimeout(System.Boolean,System.TimeSpan)
-  name.vb: ReadKeyTimeout(Boolean, TimeSpan)
-  fullName: Terminaux.Inputs.Input.ReadKeyTimeout(bool, System.TimeSpan)
-  fullName.vb: Terminaux.Inputs.Input.ReadKeyTimeout(Boolean, System.TimeSpan)
-  nameWithType: Input.ReadKeyTimeout(bool, TimeSpan)
-  nameWithType.vb: Input.ReadKeyTimeout(Boolean, TimeSpan)
-- uid: Terminaux.Inputs.Input.ReadKeyTimeout*
-  name: ReadKeyTimeout
-  href: api/Terminaux.Inputs.Input.html#Terminaux_Inputs_Input_ReadKeyTimeout_
-  commentId: Overload:Terminaux.Inputs.Input.ReadKeyTimeout
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Input.ReadKeyTimeout
-  nameWithType: Input.ReadKeyTimeout
 - uid: Terminaux.Inputs.InputChoiceInfo
   name: InputChoiceInfo
   href: api/Terminaux.Inputs.InputChoiceInfo.html
@@ -15904,6 +15869,44 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReader.Read
   nameWithType: TermReader.Read
+- uid: Terminaux.Reader.TermReader.ReadKey
+  name: ReadKey()
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadKey
+  commentId: M:Terminaux.Reader.TermReader.ReadKey
+  fullName: Terminaux.Reader.TermReader.ReadKey()
+  nameWithType: TermReader.ReadKey()
+- uid: Terminaux.Reader.TermReader.ReadKey(System.Boolean)
+  name: ReadKey(bool)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadKey_System_Boolean_
+  commentId: M:Terminaux.Reader.TermReader.ReadKey(System.Boolean)
+  name.vb: ReadKey(Boolean)
+  fullName: Terminaux.Reader.TermReader.ReadKey(bool)
+  fullName.vb: Terminaux.Reader.TermReader.ReadKey(Boolean)
+  nameWithType: TermReader.ReadKey(bool)
+  nameWithType.vb: TermReader.ReadKey(Boolean)
+- uid: Terminaux.Reader.TermReader.ReadKey*
+  name: ReadKey
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadKey_
+  commentId: Overload:Terminaux.Reader.TermReader.ReadKey
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReader.ReadKey
+  nameWithType: TermReader.ReadKey
+- uid: Terminaux.Reader.TermReader.ReadKeyTimeout(System.Boolean,System.TimeSpan)
+  name: ReadKeyTimeout(bool, TimeSpan)
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadKeyTimeout_System_Boolean_System_TimeSpan_
+  commentId: M:Terminaux.Reader.TermReader.ReadKeyTimeout(System.Boolean,System.TimeSpan)
+  name.vb: ReadKeyTimeout(Boolean, TimeSpan)
+  fullName: Terminaux.Reader.TermReader.ReadKeyTimeout(bool, System.TimeSpan)
+  fullName.vb: Terminaux.Reader.TermReader.ReadKeyTimeout(Boolean, System.TimeSpan)
+  nameWithType: TermReader.ReadKeyTimeout(bool, TimeSpan)
+  nameWithType.vb: TermReader.ReadKeyTimeout(Boolean, TimeSpan)
+- uid: Terminaux.Reader.TermReader.ReadKeyTimeout*
+  name: ReadKeyTimeout
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadKeyTimeout_
+  commentId: Overload:Terminaux.Reader.TermReader.ReadKeyTimeout
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReader.ReadKeyTimeout
+  nameWithType: TermReader.ReadKeyTimeout
 - uid: Terminaux.Reader.TermReader.ReadPassword(System.Boolean)
   name: ReadPassword(bool)
   href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPassword_System_Boolean_
