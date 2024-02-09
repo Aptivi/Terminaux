@@ -180,39 +180,22 @@ namespace Terminaux.Sequences
         /// Gets the sequence filter regular expression from the provided VT sequence <paramref name="type"/> (<see cref="VtSequenceType"/>)
         /// </summary>
         /// <param name="type">VT sequence type</param>
-        /// <returns>regular expression from the provided VT sequence <paramref name="type"/></returns>
+        /// <returns>Regular expression from the provided VT sequence <paramref name="type"/></returns>
         public static Regex GetSequenceFilterRegexFromType(VtSequenceType type = VtSequenceType.All)
         {
             // Check the enum to get the needed regular expression for the specific type
-            var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
-            switch (type)
+            return type switch
             {
-                case VtSequenceType.Csi:
-                    sequenceFilterRegex = VtSequenceRegexes.CSISequences;
-                    break;
-                case VtSequenceType.Osc:
-                    sequenceFilterRegex = VtSequenceRegexes.OSCSequences;
-                    break;
-                case VtSequenceType.Esc:
-                    sequenceFilterRegex = VtSequenceRegexes.ESCSequences;
-                    break;
-                case VtSequenceType.Apc:
-                    sequenceFilterRegex = VtSequenceRegexes.APCSequences;
-                    break;
-                case VtSequenceType.Dcs:
-                    sequenceFilterRegex = VtSequenceRegexes.DCSSequences;
-                    break;
-                case VtSequenceType.Pm:
-                    sequenceFilterRegex = VtSequenceRegexes.PMSequences;
-                    break;
-                case VtSequenceType.C1:
-                    sequenceFilterRegex = VtSequenceRegexes.C1Sequences;
-                    break;
-                case VtSequenceType.None:
-                    sequenceFilterRegex = new Regex(@"\b\B");
-                    break;
-            }
-            return sequenceFilterRegex;
+                VtSequenceType.None => VtSequenceRegexes.Nothing,
+                VtSequenceType.Csi  => VtSequenceRegexes.CSISequences,
+                VtSequenceType.Osc  => VtSequenceRegexes.OSCSequences,
+                VtSequenceType.Esc  => VtSequenceRegexes.ESCSequences,
+                VtSequenceType.Apc  => VtSequenceRegexes.APCSequences,
+                VtSequenceType.Dcs  => VtSequenceRegexes.DCSSequences,
+                VtSequenceType.Pm   => VtSequenceRegexes.PMSequences,
+                VtSequenceType.C1   => VtSequenceRegexes.C1Sequences,
+                _                   => VtSequenceRegexes.AllVTSequences,
+            };
         }
 
         /// <summary>

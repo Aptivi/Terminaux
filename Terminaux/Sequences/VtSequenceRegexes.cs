@@ -26,6 +26,8 @@ namespace Terminaux.Sequences
     /// </summary>
     public static class VtSequenceRegexes
     {
+        private static readonly Regex nothingRegex =
+            new(@"\b\B", RegexOptions.Compiled);
         private static readonly Regex csiRegex =
             new(@"(\x9B|\x1B\[)[0-?]*[ -\/]*[@-~]", RegexOptions.Compiled);
         private static readonly Regex oscRegex =
@@ -42,6 +44,12 @@ namespace Terminaux.Sequences
             new(@"\x1b[DEHMNOVWXYZ78]", RegexOptions.Compiled);
         private static readonly Regex allRegex =
             new(CSISequences + "|" + OSCSequences + "|" + ESCSequences + "|" + APCSequences + "|" + DCSSequences + "|" + PMSequences + "|" + C1Sequences, RegexOptions.Compiled);
+
+        /// <summary>
+        /// Match nothing
+        /// </summary>
+        public static Regex Nothing =>
+            nothingRegex;
 
         /// <summary>
         /// CSI sequences
