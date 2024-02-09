@@ -19,7 +19,14 @@
 
 using System.Linq;
 using Terminaux.Base;
-using Terminaux.ConsoleDemo.Fixtures.Cases;
+using Terminaux.ConsoleDemo.Fixtures.Cases.Colors;
+using Terminaux.ConsoleDemo.Fixtures.Cases.Consoles;
+using Terminaux.ConsoleDemo.Fixtures.Cases.Input;
+using Terminaux.ConsoleDemo.Fixtures.Cases.Presentations;
+using Terminaux.ConsoleDemo.Fixtures.Cases.Reader;
+using Terminaux.ConsoleDemo.Fixtures.Cases.Screens;
+using Terminaux.ConsoleDemo.Fixtures.Cases.Tui;
+using Terminaux.ConsoleDemo.Fixtures.Cases.Writer;
 
 namespace Terminaux.ConsoleDemo.Fixtures
 {
