@@ -11,13 +11,17 @@
             "commandName": "Project",
             "commandLineArgs": "PromptWithDefault"
         },
-        "Terminaux - Reader - PromptWithPlaceholder": {
+        "Terminaux - Reader - PromptWithPromptText": {
             "commandName": "Project",
-            "commandLineArgs": "PromptWithPlaceholder"
+            "commandLineArgs": "PromptWithPromptText"
         },
         "Terminaux - Reader - PromptWithOneLineWrap": {
             "commandName": "Project",
             "commandLineArgs": "PromptWithOneLineWrap"
+        },
+        "Terminaux - Reader - PromptWithPlaceholderText": {
+            "commandName": "Project",
+            "commandLineArgs": "PromptWithPlaceholderText"
         },
         "Terminaux - Reader - PromptPassword": {
             "commandName": "Project",
@@ -27,13 +31,13 @@
             "commandName": "Project",
             "commandLineArgs": "PromptPasswordHidden"
         },
-        "Terminaux - Reader - PromptPasswordWithPlaceholder": {
+        "Terminaux - Reader - PromptPasswordWithPromptText": {
             "commandName": "Project",
-            "commandLineArgs": "PromptPasswordWithPlaceholder"
+            "commandLineArgs": "PromptPasswordWithPromptText"
         },
-        "Terminaux - Reader - PromptPasswordWithPlaceholderHidden": {
+        "Terminaux - Reader - PromptPasswordWithPromptTextHidden": {
             "commandName": "Project",
-            "commandLineArgs": "PromptPasswordWithPlaceholderHidden"
+            "commandLineArgs": "PromptPasswordWithPromptTextHidden"
         },
         "Terminaux - Reader - PromptPasswordCustomMask": {
             "commandName": "Project",

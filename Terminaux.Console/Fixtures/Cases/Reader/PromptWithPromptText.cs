@@ -22,14 +22,14 @@ using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases.Reader
 {
-    internal class PromptPasswordWithPlaceholder : IFixture
+    internal class PromptWithPromptText : IFixture
     {
-        public string FixtureID => "PromptPasswordWithPlaceholder";
+        public string FixtureID => "PromptWithPlaceholder";
 
         public void RunFixture()
         {
-            string input = TermReader.ReadPassword("Enter password: ", false);
-            TextWriterColor.Write("Password is: " + input);
+            string input = TermReader.Read("You'll say: ", "Hello World!", false, false, false);
+            TextWriterColor.Write("You said: " + input);
         }
     }
 }

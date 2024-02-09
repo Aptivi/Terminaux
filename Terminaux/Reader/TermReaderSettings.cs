@@ -38,6 +38,7 @@ namespace Terminaux.Reader
         private Color inputBackgroundColor;
         private SyntaxHighlighting syntaxHighlighter;
         private bool syntaxHighlighterEnabled;
+        private string placeholderText;
         internal TermReaderState state;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
         internal char[] suggestionsDelims = [' '];
@@ -146,6 +147,15 @@ namespace Terminaux.Reader
         {
             get => limitConsoleChars;
             set => limitConsoleChars = value;
+        }
+
+        /// <summary>
+        /// Show placeholder hint text
+        /// </summary>
+        public string PlaceholderText
+        {
+            get => placeholderText ?? "";
+            set => placeholderText = value;
         }
 
         /// <summary>

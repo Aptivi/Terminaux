@@ -264,6 +264,14 @@ namespace Terminaux.Reader
                     ConsoleWrapper.CursorVisible = true;
                     while (!BindingsReader.IsTerminate(struckKey))
                     {
+                        // Write placeholder if needed
+                        if (readState.CurrentText.Length == 0 && settings.PlaceholderText.Length != 0)
+                        {
+                            ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
+                            TextWriterColor.WriteForReader(settings.PlaceholderText, settings, false);
+                            ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
+                        }
+
                         // Get a key
                         TermReaderTools.isWaitingForInput = true;
                         struckKey = TermReaderTools.GetInput(interruptible);
