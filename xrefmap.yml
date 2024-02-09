@@ -22629,6 +22629,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.VtSequenceRegexes.ESCSequences
   nameWithType: VtSequenceRegexes.ESCSequences
+- uid: Terminaux.Sequences.VtSequenceRegexes.Nothing
+  name: Nothing
+  href: api/Terminaux.Sequences.VtSequenceRegexes.html#Terminaux_Sequences_VtSequenceRegexes_Nothing
+  commentId: P:Terminaux.Sequences.VtSequenceRegexes.Nothing
+  fullName: Terminaux.Sequences.VtSequenceRegexes.Nothing
+  nameWithType: VtSequenceRegexes.Nothing
+- uid: Terminaux.Sequences.VtSequenceRegexes.Nothing*
+  name: Nothing
+  href: api/Terminaux.Sequences.VtSequenceRegexes.html#Terminaux_Sequences_VtSequenceRegexes_Nothing_
+  commentId: Overload:Terminaux.Sequences.VtSequenceRegexes.Nothing
+  isSpec: "True"
+  fullName: Terminaux.Sequences.VtSequenceRegexes.Nothing
+  nameWithType: VtSequenceRegexes.Nothing
 - uid: Terminaux.Sequences.VtSequenceRegexes.OSCSequences
   name: OSCSequences
   href: api/Terminaux.Sequences.VtSequenceRegexes.html#Terminaux_Sequences_VtSequenceRegexes_OSCSequences
