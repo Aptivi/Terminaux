@@ -83,6 +83,10 @@
             "commandName": "Project",
             "commandLineArgs": "PrintFigletF"
         },
+        "Terminaux - PrintFigletDefault": {
+            "commandName": "Project",
+            "commandLineArgs": "PrintFigletDefault"
+        },
         "Terminaux - PrintSep": {
             "commandName": "Project",
             "commandLineArgs": "PrintSep"

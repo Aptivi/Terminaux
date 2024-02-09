@@ -22,6 +22,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
@@ -31,7 +32,7 @@ using Terminaux.Reader;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
 
-namespace Terminaux.Colors.Selector
+namespace Terminaux.Inputs.Styles
 {
     /// <summary>
     /// Color selection application
@@ -149,9 +150,9 @@ namespace Terminaux.Colors.Selector
             selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, render the hue, saturation, and lightness bars
-            int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6;
             int boxHeight = 2;
-            int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 2;
+            int hueBarX = ConsoleWrapper.WindowWidth / 2 + 2;
             int hueBarY = 1;
             int saturationBarY = hueBarY + boxHeight + 3;
             int lightnessBarY = saturationBarY + boxHeight + 3;
@@ -428,7 +429,7 @@ namespace Terminaux.Colors.Selector
                             break;
                     }
                     break;
-                
+
                 // Only for true color
                 case ConsoleKey.UpArrow:
                     if (type != ColorType.TrueColor)

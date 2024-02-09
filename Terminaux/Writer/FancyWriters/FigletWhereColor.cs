@@ -24,6 +24,7 @@ using Figletize;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
+using Terminaux.Writer.FancyWriters.Tools;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -40,13 +41,26 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">Column number in console</param>
         /// <param name="Top">Row number in console</param>
         /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteFigletWherePlain(string Text, int Left, int Top, bool Return, params object[] Vars) =>
+            WriteFigletWherePlain(Text, Left, Top, Return, FigletTextTools.DefaultFigletFont, Vars);
+
+        /// <summary>
+        /// Writes the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteFigletWherePlain(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars), false);
+                TextWriterRaw.WritePlain(
+                    RenderFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars), false
+                );
             }
             catch (Exception ex)
             {
@@ -62,6 +76,18 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">Column number in console</param>
         /// <param name="Top">Row number in console</param>
         /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteFigletWhereColor(string Text, int Left, int Top, bool Return, Color Color, params object[] Vars) =>
+            WriteFigletWhereColor(Text, Left, Top, Return, FigletTextTools.DefaultFigletFont, Color, Vars);
+
+        /// <summary>
+        /// Writes the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
@@ -69,7 +95,9 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderFigletWhere(Text, Left, Top, Return, FigletFont, Color, Vars), false);
+                TextWriterRaw.WritePlain(
+                    RenderFigletWhere(Text, Left, Top, Return, FigletFont, Color, Vars), false
+                );
             }
             catch (Exception ex)
             {
@@ -77,6 +105,19 @@ namespace Terminaux.Writer.FancyWriters
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Writes the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteFigletWhereColorBack(string Text, int Left, int Top, bool Return, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+            WriteFigletWhereColorBack(Text, Left, Top, Return, FigletTextTools.DefaultFigletFont, ForegroundColor, BackgroundColor, Vars);
 
         /// <summary>
         /// Writes the figlet text with position support
@@ -93,7 +134,9 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderFigletWhere(Text, Left, Top, Return, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterRaw.WritePlain(
+                    RenderFigletWhere(Text, Left, Top, Return, FigletFont, ForegroundColor, BackgroundColor, Vars), false
+                );
             }
             catch (Exception ex)
             {
@@ -101,6 +144,17 @@ namespace Terminaux.Writer.FancyWriters
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Renders the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletWherePlain(string Text, int Left, int Top, bool Return, params object[] Vars) =>
+            RenderFigletWhere(Text, Left, Top, Return, FigletTextTools.DefaultFigletFont, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
 
         /// <summary>
         /// Renders the figlet text with position support
@@ -121,11 +175,36 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">Column number in console</param>
         /// <param name="Top">Row number in console</param>
         /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, Color ForegroundColor, params object[] Vars) =>
+            RenderFigletWhere(Text, Left, Top, Return, FigletTextTools.DefaultFigletFont, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
+
+        /// <summary>
+        /// Renders the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, params object[] Vars) =>
             RenderFigletWhere(Text, Left, Top, Return, FigletFont, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
+
+        /// <summary>
+        /// Renders the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+            RenderFigletWhere(Text, Left, Top, Return, FigletTextTools.DefaultFigletFont, ForegroundColor, BackgroundColor, true, Vars);
 
         /// <summary>
         /// Renders the figlet text with position support

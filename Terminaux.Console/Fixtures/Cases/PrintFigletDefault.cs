@@ -17,22 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Inputs.Styles;
-using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases
 {
-    internal class ColorSelectorNoPaletteTest : IFixture
+    internal class PrintFigletDefault : IFixture
     {
-        public string FixtureID => "ColorSelectorNoPaletteTest";
+        public string FixtureID => "PrintFigletDefault";
         public void RunFixture()
         {
-            var color = ColorSelector.OpenColorSelector(new Color(ConsoleColors.White, new ColorSettings() { UseTerminalPalette = false }));
-            ConsoleWrapper.Clear();
-            TextWriterColor.Write("Color selector returned: {0} [{1}]", color.PlainSequence, color.PlainSequenceTrueColor);
+            FigletColor.WriteFigletColor("Hello world!", new Color(ConsoleColors.Green));
         }
     }
 }
