@@ -665,26 +665,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Selector.ColorSelector.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Selector.ColorSelector.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Selector.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Selector.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Templates.PredefinedComponentType.yml",
       "output": {
         ".html": {
@@ -1039,6 +1019,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Styles.Choice.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.ColorSelector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.ColorSelector.html"
         }
       },
       "version": ""
@@ -1779,6 +1769,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.CellOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.FigletTextTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.FigletTextTools.html"
         }
       },
       "version": ""
