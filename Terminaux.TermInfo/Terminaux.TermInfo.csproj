@@ -1,7 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>A .NET library to read binary terminfo files. This library is part of the Terminaux library.</Description>
+    <Description>
+      A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.
+
+      This provides developers the terminal info functions for both .NET Framework 4.8 and .NET 8.0 applications.
+    </Description>
     <Authors>Patrik Svensson, Phil Scott, Aptivi</Authors>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Aptivi/Terminaux.TermInfo</RepositoryUrl>
@@ -9,10 +13,11 @@
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>2.6.0</Version>
+    <Version>3.0.0</Version>
     <PackageTags>console;shell;readline;gnu;cui;tui;cli;manipulation;console;vt;sequences;color;vt100;truecolor;library;csharp;reader;input;writer;styles;formatter</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <Company>Aptivi</Company>
     <Copyright>Copyright (c) 2022-2023 Aptivi.</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -57,6 +62,10 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="LICENSE.original" />
   </ItemGroup>
 
   <ItemGroup>
