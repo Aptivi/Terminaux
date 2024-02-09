@@ -1,0 +1,69 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>A .NET library to read binary terminfo files. This library is part of the Terminaux library.</Description>
+    <Authors>Patrik Svensson, Phil Scott, Aptivi</Authors>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Aptivi/Terminaux.TermInfo</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Aptivi/Terminaux.TermInfo</PackageProjectUrl>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <Version>2.6.0</Version>
+    <PackageTags>console;shell;readline;gnu;cui;tui;cli;manipulation;console;vt;sequences;color;vt100;truecolor;library;csharp;reader;input;writer;styles;formatter</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IncludeSymbols>True</IncludeSymbols>
+    <Company>Aptivi</Company>
+    <Copyright>Copyright (c) 2022-2023 Aptivi.</Copyright>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageIcon>OfficialAppIcon-Terminaux-512.png</PackageIcon>
+    <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <MinVerSkip Condition="'$(Configuration)' == 'Debug'">true</MinVerSkip>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Memory" Version="4.5.5" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="TunnelVisionLabs.ReferenceAssemblyAnnotator" Version="1.0.0-alpha.160" PrivateAssets="all" />
+    <PackageDownload Include="Microsoft.NETCore.App.Ref" Version="[$(AnnotatedReferenceAssemblyVersion)]" />
+    <PackageReference Include="Nullable" Version="1.3.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <AnnotatedReferenceAssemblyVersion>3.0.0</AnnotatedReferenceAssemblyVersion>
+    <GenerateNullableAttributes>False</GenerateNullableAttributes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="OfficialAppIcon-Terminaux-512.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -13,6 +13,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="TermInfo\Data\eterm-256color" />
+    <None Remove="TermInfo\Data\linux" />
+    <None Remove="TermInfo\Data\windows-ansi" />
+    <None Remove="TermInfo\Data\xterm+256color" />
+    <None Remove="TermInfo\Data\xterm+88color" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="TermInfo\Data\eterm-256color" />
+    <EmbeddedResource Include="TermInfo\Data\linux" />
+    <EmbeddedResource Include="TermInfo\Data\windows-ansi" />
+    <EmbeddedResource Include="TermInfo\Data\xterm+256color" />
+    <EmbeddedResource Include="TermInfo\Data\xterm+88color" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MSTest" Version="3.2.0" />
     <PackageReference Include="Shouldly" Version="4.2.1" />
   </ItemGroup>

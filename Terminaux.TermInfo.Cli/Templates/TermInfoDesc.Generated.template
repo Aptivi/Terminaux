@@ -1,0 +1,24 @@
+namespace Terminaux.TermInfo
+{
+    public sealed partial class TermInfoDesc
+    {
+        {{- for cap in capabilities.booleans }}
+        /// <summary>
+        /// {{ cap.description }}
+        /// </summary>
+        public bool? {{ cap.name }} => GetBoolean(TermInfoCaps.Boolean.{{ cap.name }});
+        {{~ end ~}}
+        {{~ for cap in capabilities.nums }}
+        /// <summary>
+        /// {{ cap.description }}
+        /// </summary>
+        public int? {{ cap.name }} => GetNum(TermInfoCaps.Num.{{ cap.name }});
+        {{~ end ~}}
+        {{~ for cap in capabilities.strings }}
+        /// <summary>
+        /// {{ cap.description }}
+        /// </summary>
+        public string {{ cap.name }} => GetString(TermInfoCaps.String.{{ cap.name }});
+        {{~ end ~}}
+    }
+}
