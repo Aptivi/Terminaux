@@ -16083,6 +16083,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderSettings.PasswordMaskChar
   nameWithType: TermReaderSettings.PasswordMaskChar
+- uid: Terminaux.Reader.TermReaderSettings.PlaceholderText
+  name: PlaceholderText
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_PlaceholderText
+  commentId: P:Terminaux.Reader.TermReaderSettings.PlaceholderText
+  fullName: Terminaux.Reader.TermReaderSettings.PlaceholderText
+  nameWithType: TermReaderSettings.PlaceholderText
+- uid: Terminaux.Reader.TermReaderSettings.PlaceholderText*
+  name: PlaceholderText
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_PlaceholderText_
+  commentId: Overload:Terminaux.Reader.TermReaderSettings.PlaceholderText
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderSettings.PlaceholderText
+  nameWithType: TermReaderSettings.PlaceholderText
 - uid: Terminaux.Reader.TermReaderSettings.RightMargin
   name: RightMargin
   href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_RightMargin
