@@ -84,7 +84,7 @@ namespace Terminaux.Inputs.Styles
 
                     // Write the selected font name and the keybindings
                     buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 4, fontName));
-                    buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 2, "[ESC] Cancel | [ENTER] Submit | [<-|->] Select | [S] Font..."));
+                    buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 2, "[ESC] Cancel | [ENTER] Submit | [<-|->] Select | [H] Help"));
                     return buffer.ToString();
                 });
 
@@ -126,6 +126,22 @@ namespace Terminaux.Inputs.Styles
                             else
                                 fontName = promptedFontName;
                             break;
+                        case ConsoleKey.C:
+                            screen.RemoveBufferedPart("Figlet selector");
+                            ShowChars(screen, fontName);
+                            screen.AddBufferedPart("Figlet selector", screenPart);
+                            break;
+                        case ConsoleKey.H:
+                            InfoBoxColor.WriteInfoBox("Available keybindings",
+                                $$"""
+                                [ENTER]              | Accept font
+                                [ESC]                | Exit
+                                [H]                  | Help page
+                                [S]                  | Write font name
+                                [C]                  | Shows the individual characters
+                                """
+                            );
+                            break;
                     }
                 }
             }
@@ -139,6 +155,76 @@ namespace Terminaux.Inputs.Styles
                 ConsoleWrapper.Clear();
             }
             return cancel ? font : fontName;
+        }
+
+        private static void ShowChars(Screen screen, string fontName)
+        {
+            try
+            {
+                // Capital letters are from range 65 to 90, small letters are from range 97 to 122, and numbers are
+                // from range 48 to 57.
+                bool bail = false;
+                int[] chars = Enumerable.Range(65, 90 - 65 + 1)
+                    .Union(Enumerable.Range(97, 122 - 97 + 1))
+                    .Union(Enumerable.Range(48, 57 - 48 + 1))
+                    .ToArray();
+                int index = 0;
+
+                // Make a buffer that represents the TUI
+                var screenPart = new ScreenPart();
+                screenPart.AddDynamicText(() =>
+                {
+                    var buffer = new StringBuilder();
+                    ConsoleWrapper.CursorVisible = false;
+                    ConsoleWrapper.Clear();
+
+                    // Write the text using the selected figlet font
+                    var figletFont = FigletTools.GetFigletFont(fontName);
+                    buffer.Append(CenteredFigletTextColor.RenderCenteredFiglet(figletFont, ((char)chars[index]).ToString()));
+
+                    // Write the selected font name and the keybindings
+                    buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 2, "[ENTER] Go back | [<-|->] Select character"));
+                    return buffer.ToString();
+                });
+
+                // Now, make the interactive TUI resizable.
+                screen.AddBufferedPart("Figlet selector - show characters", screenPart);
+                ScreenTools.SetCurrent(screen);
+                while (!bail)
+                {
+                    // Render
+                    ScreenTools.Render();
+
+                    // Wait for input
+                    var key = TermReader.ReadKey().Key;
+                    switch (key)
+                    {
+                        case ConsoleKey.Enter:
+                            bail = true;
+                            break;
+                        case ConsoleKey.LeftArrow:
+                            index--;
+                            if (index < 0)
+                                index = chars.Length - 1;
+                            break;
+                        case ConsoleKey.RightArrow:
+                            index++;
+                            if (index > chars.Length - 1)
+                                index = 0;
+                            break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                InfoBoxColor.WriteInfoBox("Figlet selector failed: " + ex.Message);
+            }
+            finally
+            {
+                if (screen.CheckBufferedPart("Figlet selector - show characters"))
+                    screen.RemoveBufferedPart("Figlet selector - show characters");
+                ConsoleWrapper.Clear();
+            }
         }
     }
 }
