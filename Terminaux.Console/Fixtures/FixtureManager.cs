@@ -76,6 +76,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new PrintWithNulls(),
             new PrintTemplate(),
             new PrintLineHandle(),
+            new PrintPowerLine(),
             new TestDictWriterChar(),
             new TestDictWriterInt(),
             new TestDictWriterStr(),

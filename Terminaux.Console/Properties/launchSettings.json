@@ -155,6 +155,10 @@
             "commandName": "Project",
             "commandLineArgs": "PrintLineHandle"
         },
+        "Terminaux - Writer - PrintPowerLine": {
+            "commandName": "Project",
+            "commandLineArgs": "PrintPowerLine"
+        },
         "Terminaux - Writer - TestDictWriterChar": {
             "commandName": "Project",
             "commandLineArgs": "TestDictWriterChar"
