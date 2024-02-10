@@ -159,7 +159,7 @@ namespace Terminaux.Inputs.Styles
             selector.Append(RenderPreviewBox(selectedColor));
 
             // Then, render the hue, saturation, and lightness bars
-            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6;
+            int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6 + (ConsoleWrapper.WindowWidth % 2 == 0 ? 0 : 1);
             int boxHeight = 2;
             int hueBarX = ConsoleWrapper.WindowWidth / 2 + 2;
             int hueBarY = 1;
