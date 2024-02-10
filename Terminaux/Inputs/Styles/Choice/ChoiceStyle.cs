@@ -148,6 +148,14 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)
         {
+            // Check for answer count
+            if (Answers.Count == 0 && AltAnswers.Count == 0)
+            {
+                TextWriterColor.Write("Can't show choice with no answers and no alternative answers.");
+                return "";
+            }
+
+            // Main loop
             while (true)
             {
                 string answer;
@@ -156,7 +164,7 @@ namespace Terminaux.Inputs.Styles.Choice
                 Color optionColor = new(ConsoleColors.DarkYellow);
                 Color altOptionColor = new(ConsoleColors.Yellow);
 
-                // First, check to see if the answers consist of single or multiple characters, and exit if the mode is not appropriate with an error message.
+                // Check to see if the answers consist of single or multiple characters, and exit if the mode is not appropriate with an error message.
                 string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
                 string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
                 if (!PressEnter && (answers.Any((answer) => answer.Length > 1) || altAnswers.Any((answer) => answer.Length > 1)))
@@ -185,33 +193,13 @@ namespace Terminaux.Inputs.Styles.Choice
                     case ChoiceOutputType.Modern:
                         {
                             TextWriterColor.WriteColor(Question + CharManager.NewLine, true, questionColor);
-                            int AnswerTitleLeft = answers.Max(x => $" {x}) ".Length);
-                            for (int AnswerIndex = 0; AnswerIndex <= Answers.Count - 1; AnswerIndex++)
+                            if (answers.Length > 0)
+                                PrintChoices(answers, Answers, optionColor);
+                            if (altAnswers.Length > 0)
                             {
-                                var AnswerInstance = Answers[AnswerIndex];
-                                string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
-                                string AnswerOption = $" {AnswerInstance.ChoiceName}) {AnswerTitle}";
-                                if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
-                                {
-                                    int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
-                                    AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
-                                }
-                                TextWriterColor.WriteColor(AnswerOption, true, optionColor);
-                            }
-                            if (AltAnswers.Count > 0)
-                                TextWriterColor.WriteColor(" ----------------", true, altOptionColor);
-                            AnswerTitleLeft = altAnswers.Max(x => $" {x}) ".Length);
-                            for (int AnswerIndex = 0; AnswerIndex <= AltAnswers.Count - 1; AnswerIndex++)
-                            {
-                                var AnswerInstance = AltAnswers[AnswerIndex];
-                                string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
-                                string AnswerOption = $" {AnswerInstance.ChoiceName}) {AnswerTitle}";
-                                if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
-                                {
-                                    int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
-                                    AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
-                                }
-                                TextWriterColor.WriteColor(AnswerOption, true, altOptionColor);
+                                if (answers.Length > 0)
+                                    TextWriterRaw.Write();
+                                PrintChoices(altAnswers, AltAnswers, altOptionColor);
                             }
                             TextWriterColor.WriteColor(CharManager.NewLine + ">> ", false, inputColor);
                             break;
@@ -254,6 +242,23 @@ namespace Terminaux.Inputs.Styles.Choice
                 {
                     return answer;
                 }
+            }
+        }
+
+        private static void PrintChoices(string[] answers, List<InputChoiceInfo> answerInfos, Color answerColor)
+        {
+            int AnswerTitleLeft = answers.Max(x => $" {x}) ".Length);
+            for (int AnswerIndex = 0; AnswerIndex <= answerInfos.Count - 1; AnswerIndex++)
+            {
+                var AnswerInstance = answerInfos[AnswerIndex];
+                string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
+                string AnswerOption = $" {AnswerInstance.ChoiceName}) {AnswerTitle}";
+                if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
+                {
+                    int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
+                    AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
+                }
+                TextWriterColor.WriteColor(AnswerOption, true, answerColor);
             }
         }
 
