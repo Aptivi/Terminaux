@@ -26,6 +26,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
+using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
@@ -241,16 +242,29 @@ namespace Terminaux.Inputs.Styles
             {
                 StringBuilder transparencyRamp = new();
                 var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
-                for (int i = 0; i < boxWidth; i++)
+                for (int i = 0; i < boxWidth - 6; i++)
                 {
                     double width = (double)i / boxWidth;
                     int transparency = (int)(mono.RGB.originalAlpha * width);
                     transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
-                    BoxFrameColor.RenderBoxFrame($"Transparency: {ColorTools.GlobalSettings.Opacity}/255", hueBarX, transparencyRampBarY, boxWidth, boxHeight - 1) +
+                    BoxFrameColor.RenderBoxFrame($"Transparency: {ColorTools.GlobalSettings.Opacity}/255", hueBarX, transparencyRampBarY, boxWidth - 6, boxHeight - 1) +
                     CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, transparencyRampBarY + 2) +
                     transparencyRamp.ToString()
+                );
+            }
+
+            // Buffer the dark/light indicator
+            if (ConsoleWrapper.WindowHeight - 3 > transparencyRampBarY + 2)
+            {
+                StringBuilder darkLightIndicator = new();
+                var indicator = selectedColor.Brightness == ColorBrightness.Light ? ConsoleColors.White : ConsoleColors.Black;
+                darkLightIndicator.Append($"{new Color(indicator).VTSequenceBackgroundTrueColor}   {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                selector.Append(
+                    BoxFrameColor.RenderBoxFrame(ConsoleWrapper.WindowWidth - 7, transparencyRampBarY, 3, 1) +
+                    CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 6 + 1, transparencyRampBarY + 2) +
+                    darkLightIndicator.ToString()
                 );
             }
 
