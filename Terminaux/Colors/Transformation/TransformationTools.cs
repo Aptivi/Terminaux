@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using Terminaux.Base;
 using Terminaux.Colors.Transformation.Formulas;
 
 namespace Terminaux.Colors.Transformation
@@ -103,12 +104,30 @@ namespace Terminaux.Colors.Transformation
             return result;
         }
 
+        internal static BaseTransformationFormula GetTransformationFormula(TransformationFormula formula)
+        {
+            if (!formulas.TryGetValue(formula, out var result))
+                throw new TerminauxException("Transformation formula {0} not found.", formula);
+            return result;
+        }
+
         internal static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput, ColorSettings settings)
         {
             if (settings.EnableColorTransformation)
             {
                 // We'll transform.
-                var transformed = formulas[settings.ColorTransformationFormula].Transform(rInput, gInput, bInput, settings);
+                var formula = GetTransformationFormula(settings.ColorTransformationFormula);
+                return GetTransformedColor(formula, rInput, gInput, bInput, settings);
+            }
+            return (rInput, gInput, bInput);
+        }
+
+        internal static (int r, int g, int b) GetTransformedColor(BaseTransformationFormula formula, int rInput, int gInput, int bInput, ColorSettings settings)
+        {
+            if (settings.EnableColorTransformation)
+            {
+                // We'll transform.
+                var transformed = formula.Transform(rInput, gInput, bInput, settings);
                 return transformed;
             }
             return (rInput, gInput, bInput);

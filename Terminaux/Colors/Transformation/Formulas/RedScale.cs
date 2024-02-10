@@ -33,17 +33,8 @@ namespace Terminaux.Colors.Transformation.Formulas
             if (b < 0 || b > 255)
                 throw new ArgumentOutOfRangeException("b");
 
-            // Get linear RGB from these three RGB values
-            double[] linears =
-            [
-                TransformationTools.SRGBToLinearRGB(r),
-                TransformationTools.SRGBToLinearRGB(g),
-                TransformationTools.SRGBToLinearRGB(b)
-            ];
-
             // Transform the color linear values by applying monochromacy
-            double monochrome = 0.2126 * linears[0] + 0.7152 * linears[1] + 0.0722 * linears[2];
-            int sMono = TransformationTools.LinearRGBTosRGB(monochrome);
+            int sMono = Monochromacy.GetMonochromeFactor(r, g, b);
             return (sMono, 0, 0);
         }
     }

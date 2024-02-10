@@ -29,6 +29,7 @@ using Terminaux.Colors.Models.Parsing;
 using Terminaux.Colors.Interop;
 using Terminaux.Colors.Transformation.Contrast;
 using Newtonsoft.Json;
+using Terminaux.Colors.Transformation.Formulas;
 
 namespace Terminaux.Colors
 {
@@ -406,7 +407,10 @@ namespace Terminaux.Colors
             return hashCode;
         }
 
-        private bool DetectDark(int r, int g, int b) =>
-            Convert.ToDouble(r) + 0.2126d + Convert.ToDouble(g) + 0.7152d + Convert.ToDouble(b) + 0.0722d < 255d / 2d;
+        private bool DetectDark(int r, int g, int b)
+        {
+            int monochromeFactor = Monochromacy.GetMonochromeFactor(r, g, b);
+            return monochromeFactor < 255d / 2d;
+        }
     }
 }
