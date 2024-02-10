@@ -255,6 +255,14 @@
             "commandName": "Project",
             "commandLineArgs": "TestInputChoice"
         },
+        "Terminaux - Input - TestInputChoiceNoAlt": {
+            "commandName": "Project",
+            "commandLineArgs": "TestInputChoiceNoAlt"
+        },
+        "Terminaux - Input - TestInputChoiceNoMain": {
+            "commandName": "Project",
+            "commandLineArgs": "TestInputChoiceNoMain"
+        },
         "Terminaux - Input - TestInputFiglet": {
             "commandName": "Project",
             "commandLineArgs": "TestInputFiglet"
