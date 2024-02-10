@@ -279,7 +279,7 @@ namespace Terminaux.Colors
         public Color(DrawingColor color)
         {
             var result = SystemColorConverter.FromDrawingColor(color);
-            this.settings = result.settings;
+            settings = result.settings;
             ColorId = result.ColorId;
             RGB = result.RGB;
         }
@@ -331,8 +331,12 @@ namespace Terminaux.Colors
             PlainSequence;
 
         /// <inheritdoc/>
-        public override bool Equals(object obj) =>
-            base.Equals(obj);
+        public override bool Equals(object obj)
+        {
+            if (obj is Color color)
+                return Equals(color);
+            return base.Equals(obj);
+        }
 
         /// <summary>
         /// Checks to see if this instance of the color is equal to another instance of the color
