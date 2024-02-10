@@ -30,7 +30,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Writer
         {
             PowerLineColor.WritePowerLinePlain([
                 new PowerLineSegment(ConsoleColors.Yellow, ConsoleColors.Grey11, "Hello"),
-                new PowerLineSegment(ConsoleColors.Green, ConsoleColors.Grey11, "world!"),
+                new PowerLineSegment(ConsoleColors.Green, ConsoleColors.Grey30, "world!"),
             ]);
         }
     }

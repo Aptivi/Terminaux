@@ -24,6 +24,7 @@ using System.Text;
 using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
+using SpecProbe.Platform;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -91,6 +92,12 @@ namespace Terminaux.Writer.FancyWriters
             if (Line)
                 segment.AppendLine();
             return segment.ToString();
+        }
+
+        static PowerLineColor()
+        {
+            if (PlatformHelper.IsOnWindows())
+                Console.OutputEncoding = Encoding.UTF8;
         }
 
     }
