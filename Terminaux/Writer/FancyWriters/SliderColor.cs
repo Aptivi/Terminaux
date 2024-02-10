@@ -344,6 +344,13 @@ namespace Terminaux.Writer.FancyWriters
                 if (maxPos <= MaximumWidth)
                     return "";
 
+                // Fill the slider
+                int maxPosOffset = maxPos - MaximumWidth;
+                double maxPosFraction = (double)MaximumWidth / maxPosOffset;
+                int times = ConsoleMisc.PercentRepeat((int)Math.Round(maxPosFraction), maxPos, FinalWidthOffset);
+                if (times == 0)
+                    times = 1;
+
                 // Draw the border
                 StringBuilder progBuilder = new();
                 if (DrawBorder)
@@ -373,16 +380,9 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Draw the slider
-                int maxBlanks = ConsoleMisc.PercentRepeatTargeted(currPos, maxPos, MaximumWidth);
-                if (maxBlanks == MaximumWidth)
+                int maxBlanks = ConsoleMisc.PercentRepeatTargeted(currPos, maxPos, MaximumWidth - times + 1);
+                if (maxBlanks == MaximumWidth - times + 1)
                     maxBlanks--;
-                int maxPosOffset = maxPos - MaximumWidth;
-                double maxPosFraction = (double)MaximumWidth / maxPosOffset;
-                int times = ConsoleMisc.PercentRepeat((int)Math.Round(maxPosFraction), maxPos, FinalWidthOffset);
-                if (times == 0)
-                    times = 1;
-                int afterBlanks = MaximumWidth - maxBlanks - times;
-                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string(' ', maxBlanks));
                 if (useColor)
                     progBuilder.Append(SliderColor.VTSequenceBackground);
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + maxBlanks + 2, Top + 2) + new string(useColor ? ' ' : '*', times));
@@ -391,7 +391,6 @@ namespace Terminaux.Writer.FancyWriters
                     progBuilder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor));
                     progBuilder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
                 }
-                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + maxBlanks + times + 2, Top + 2) + new string(' ', afterBlanks));
                 return progBuilder.ToString();
             }
             catch (Exception ex)
