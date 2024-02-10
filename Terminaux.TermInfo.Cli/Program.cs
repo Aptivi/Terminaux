@@ -17,10 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Generator.Commands;
 using Spectre.Console.Cli;
+using Terminaux.TermInfo.Cli.Commands.Generate;
+using Terminaux.TermInfo.Cli.Commands.Inspect;
 
-namespace Generator
+namespace Terminaux.TermInfo.Cli
 {
     public static class Program
     {

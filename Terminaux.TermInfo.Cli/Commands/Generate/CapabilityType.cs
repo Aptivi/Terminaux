@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Generator.Commands
+namespace Terminaux.TermInfo.Cli.Commands.Generate
 {
     public enum CapabilityType
     {

@@ -21,7 +21,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace Terminaux.TermInfo.Tests.Utilities
+namespace Terminaux.Tests.TermInfo.Utilities
 {
     public static class EmbeddedResourceReader
     {

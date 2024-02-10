@@ -19,9 +19,10 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Terminaux.TermInfo.Tests.Utilities;
+using Terminaux.TermInfo;
+using Terminaux.Tests.TermInfo.Utilities;
 
-namespace Terminaux.TermInfo.Tests
+namespace Terminaux.Tests.TermInfo
 {
     [TestClass]
     public class TermInfoDataTests

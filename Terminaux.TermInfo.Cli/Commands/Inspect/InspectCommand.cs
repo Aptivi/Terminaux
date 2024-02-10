@@ -22,7 +22,7 @@ using Spectre.Console;
 using Spectre.Console.Cli;
 using Terminaux.TermInfo;
 
-namespace Generator.Commands
+namespace Terminaux.TermInfo.Cli.Commands.Inspect
 {
     public sealed class InspectCommand : Command<InspectCommand.Settings>
     {

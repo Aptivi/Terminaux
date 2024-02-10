@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Generator.Commands
+namespace Terminaux.TermInfo.Cli.Commands.Generate
 {
     public sealed class Capabilities
     {

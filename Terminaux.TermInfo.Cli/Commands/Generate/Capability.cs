@@ -19,7 +19,7 @@
 
 using System.Diagnostics;
 
-namespace Generator.Commands
+namespace Terminaux.TermInfo.Cli.Commands.Generate
 {
     [DebuggerDisplay("{Type,nq}:{Name,nq} = {Description, nq}")]
     public sealed class Capability

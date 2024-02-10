@@ -31,7 +31,7 @@ using Spectre.IO;
 using Terminaux.TermInfo;
 using SpectreEnvironment = Spectre.IO.Environment;
 
-namespace Generator.Commands
+namespace Terminaux.TermInfo.Cli.Commands.Generate
 {
     public sealed class GenerateCommand : AsyncCommand<GenerateCommand.Settings>
     {
