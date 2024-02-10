@@ -23,7 +23,6 @@ using System.Text;
 using Textify.General;
 using Terminaux.Base;
 using System.Diagnostics;
-using Terminaux.Inputs;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;

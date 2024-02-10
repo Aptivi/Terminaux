@@ -19,7 +19,6 @@
 
 using System;
 using System.IO;
-using Terminaux.TermInfo;
 
 namespace Terminaux.TermInfo
 {

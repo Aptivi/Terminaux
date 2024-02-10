@@ -20,7 +20,6 @@
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Inputs;
 using Terminaux.Reader;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases.Colors

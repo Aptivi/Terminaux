@@ -20,7 +20,6 @@
 using System;
 using System.IO;
 using System.Reflection;
-using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.TermInfo;
 using Terminaux.Base.Extensions;

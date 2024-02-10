@@ -20,7 +20,6 @@
 using System;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 

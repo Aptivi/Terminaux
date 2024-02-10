@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Base.Extensions;
-using Terminaux.Inputs;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 

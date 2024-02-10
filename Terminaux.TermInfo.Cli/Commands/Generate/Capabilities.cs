@@ -32,11 +32,12 @@ namespace Generator.Commands
 
         public Capabilities(IEnumerable<Capability> capabilities)
         {
-            _capabilities = new Dictionary<CapabilityType, List<Capability>>();
-
-            _capabilities[CapabilityType.Bool] = capabilities.Where(x => x.Type == CapabilityType.Bool).ToList();
-            _capabilities[CapabilityType.Num] = capabilities.Where(x => x.Type == CapabilityType.Num).ToList();
-            _capabilities[CapabilityType.String] = capabilities.Where(x => x.Type == CapabilityType.String).ToList();
+            _capabilities = new Dictionary<CapabilityType, List<Capability>>
+            {
+                [CapabilityType.Bool] = capabilities.Where(x => x.Type == CapabilityType.Bool).ToList(),
+                [CapabilityType.Num] = capabilities.Where(x => x.Type == CapabilityType.Num).ToList(),
+                [CapabilityType.String] = capabilities.Where(x => x.Type == CapabilityType.String).ToList()
+            };
         }
     }
 }

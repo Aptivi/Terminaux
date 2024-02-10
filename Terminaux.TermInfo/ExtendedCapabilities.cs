@@ -40,9 +40,9 @@ namespace Terminaux.TermInfo
 
         internal ExtendedCapabilities()
         {
-            _booleans = new Dictionary<string, bool?>();
-            _nums = new Dictionary<string, int?>();
-            _strings = new Dictionary<string, string?>();
+            _booleans = [];
+            _nums = [];
+            _strings = [];
         }
 
         internal ExtendedCapabilities(
