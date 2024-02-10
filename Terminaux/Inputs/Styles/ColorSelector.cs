@@ -95,13 +95,21 @@ namespace Terminaux.Inputs.Styles
 
                 // Now, the selector main loop
                 bool bail = false;
+                bool refresh = true;
                 while (!bail)
                 {
                     // We need to refresh the screen
-                    screenPart.AddText(
-                        $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)}" +
-                        ConsoleClearing.GetClearWholeScreenSequence()
-                    );
+                    screenPart.AddDynamicText(() =>
+                    {
+                        var builder = new StringBuilder();
+                        builder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
+                        if (refresh || ConsoleResizeHandler.WasResized())
+                        {
+                            refresh = false;
+                            builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
+                        }
+                        return builder.ToString();
+                    });
 
                     // Now, render the selector
                     screenPart.AddDynamicText(() =>
@@ -115,7 +123,7 @@ namespace Terminaux.Inputs.Styles
                     // Handle input
                     bail =
                         type == ColorType.TrueColor || type == ColorType._255Color || type == ColorType._16Color ?
-                        HandleKeypress(ref selectedColor, ref type) :
+                        HandleKeypress(ref selectedColor, ref type, out refresh) :
                         throw new TerminauxException("Invalid color type in the color selector");
 
                     // Clean up after ourselves
@@ -301,18 +309,21 @@ namespace Terminaux.Inputs.Styles
             return selector.ToString();
         }
 
-        private static bool HandleKeypress(ref Color selectedColor, ref ColorType type)
+        private static bool HandleKeypress(ref Color selectedColor, ref ColorType type, out bool refresh)
         {
             bool bail = false;
+            refresh = false;
             var keypress = TermReader.ReadKey();
             switch (keypress.Key)
             {
                 // Unified
                 case ConsoleKey.I:
                     ShowColorInfo(selectedColor);
+                    refresh = true;
                     break;
                 case ConsoleKey.V:
                     ShowColorInfoVisually(selectedColor);
+                    refresh = true;
                     break;
                 case ConsoleKey.Enter:
                     bail = true;
@@ -423,6 +434,7 @@ namespace Terminaux.Inputs.Styles
                                 [V]                  | Color information (visual)
                                 """
                             );
+                            refresh = true;
                             break;
                         case ColorType._255Color:
                         case ColorType._16Color:
@@ -440,6 +452,7 @@ namespace Terminaux.Inputs.Styles
                                 [V]                  | Color information (visual)
                                 """
                             );
+                            refresh = true;
                             break;
                     }
                     break;
