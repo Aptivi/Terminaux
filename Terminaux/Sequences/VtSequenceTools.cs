@@ -41,21 +41,35 @@ namespace Terminaux.Sequences
         public static string FilterVTSequences(string Text, string replace = "", VtSequenceType type = VtSequenceType.All)
         {
             // Filter all sequences according to the list of flags
-            var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
-            if (type != VtSequenceType.All)
+            var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
+            Text = sequenceFilterRegex.Replace(Text, replace);
+            return Text;
+        }
+
+        /// <summary>
+        /// Filters all of the VT sequences
+        /// </summary>
+        /// <param name="Text">The text that contains the VT sequences</param>
+        /// <param name="replace">Replace the sequences with this text</param>
+        /// <param name="types">VT sequence types</param>
+        /// <returns>The text that doesn't contain the VT sequences</returns>
+        public static string FilterVTSequencesMultiple(string Text, string replace = "", VtSequenceType types = VtSequenceType.All)
+        {
+            // Filter all sequences according to the list of flags
+            if (types != VtSequenceType.All)
             {
                 for (int i = 1; i < typeValues.Length - 1; i++)
                 {
                     // Check to see if there is a flag denoting a type
                     VtSequenceType typeValueEnum = typeValues[i];
-                    if (type.HasFlag(typeValueEnum))
-                        Text = sequenceFilterRegex.Replace(Text, replace);
+                    if (types.HasFlag(typeValueEnum))
+                        Text = FilterVTSequences(Text, replace, typeValueEnum);
                 }
             }
             else
                 // We don't want to go through all the types just for "all sequences", because we need this for performance.
                 // We don't want to show that VtSequenceRegexes.AllVTSequences is unimportant and unnecessary.
-                Text = sequenceFilterRegex.Replace(Text, replace);
+                Text = FilterVTSequences(Text, replace);
             return Text;
         }
 
@@ -78,6 +92,34 @@ namespace Terminaux.Sequences
         }
 
         /// <summary>
+        /// Matches all of the VT sequences
+        /// </summary>
+        /// <param name="Text">The text that contains the VT sequences</param>
+        /// <param name="type">VT sequence type</param>
+        /// <returns>The array of <see cref="Match"/>es that contain the capture and group information for the found VT sequences</returns>
+        public static (VtSequenceType, Match[])[] MatchVTSequencesMultiple(string Text, VtSequenceType type = VtSequenceType.All)
+        {
+            // Match all sequences according to the list of flags
+            var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
+            List<(VtSequenceType, Match[])> matchCollections = [];
+            if (type != VtSequenceType.All)
+            {
+                for (int i = 1; i < typeValues.Length - 1; i++)
+                {
+                    // Check to see if there is a flag denoting a type
+                    VtSequenceType typeValueEnum = typeValues[i];
+                    if (type.HasFlag(typeValueEnum))
+                        matchCollections.Add((typeValueEnum, sequenceFilterRegex.Matches(Text).OfType<Match>().ToArray()));
+                }
+            }
+            else
+                // We don't want to go through all the types just for "all sequences", because we need this for performance.
+                // We don't want to show that VtSequenceRegexes.AllVTSequences is unimportant and unnecessary.
+                matchCollections.Add((type, sequenceFilterRegex.Matches(Text).OfType<Match>().ToArray()));
+            return [.. matchCollections];
+        }
+
+        /// <summary>
         /// Does the string contain all of the VT sequences or a VT sequence of any type?
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
@@ -85,8 +127,20 @@ namespace Terminaux.Sequences
         /// <returns>True if any of the provided VT types are found; otherwise, false.</returns>
         public static bool IsMatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
-            // Filter all sequences according to the list of flags
-            var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
+            // Match all VT sequences according to the type
+            var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
+            return sequenceFilterRegex.IsMatch(Text);
+        }
+
+        /// <summary>
+        /// Does the string contain all of the VT sequences or a VT sequence of any type?
+        /// </summary>
+        /// <param name="Text">The text that contains the VT sequences</param>
+        /// <param name="type">VT sequence type</param>
+        /// <returns>True if any of the provided VT types are found; otherwise, false.</returns>
+        public static bool IsMatchVTSequencesMultiple(string Text, VtSequenceType type = VtSequenceType.All)
+        {
+            // Match all VT sequences according to the type
             List<bool> results = [];
             if (type != VtSequenceType.All)
             {
@@ -95,13 +149,11 @@ namespace Terminaux.Sequences
                     // Check to see if there is a flag denoting a type
                     VtSequenceType typeValueEnum = typeValues[i];
                     if (type.HasFlag(typeValueEnum))
-                        results.Add(sequenceFilterRegex.IsMatch(Text));
+                        results.Add(IsMatchVTSequences(Text, typeValueEnum));
                 }
             }
             else
-                // We don't want to go through all the types just for "all sequences", because we need this for performance.
-                // We don't want to show that VtSequenceRegexes.AllVTSequences is unimportant and unnecessary.
-                results.Add(sequenceFilterRegex.IsMatch(Text));
+                results.Add(IsMatchVTSequences(Text));
             return results.Contains(true);
         }
 
