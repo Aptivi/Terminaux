@@ -11897,348 +11897,438 @@ references:
   commentId: N:Terminaux.Inputs.Interactive
   fullName: Terminaux.Inputs.Interactive
   nameWithType: Terminaux.Inputs.Interactive
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui
-  name: BaseInteractiveTui
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html
-  commentId: T:Terminaux.Inputs.Interactive.BaseInteractiveTui
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui
-  nameWithType: BaseInteractiveTui
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.AcceptsEmptyData
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1
+  name: BaseInteractiveTui<T>
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html
+  commentId: T:Terminaux.Inputs.Interactive.BaseInteractiveTui`1
+  name.vb: BaseInteractiveTui(Of T)
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T)
+  nameWithType: BaseInteractiveTui<T>
+  nameWithType.vb: BaseInteractiveTui(Of T)
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.AcceptsEmptyData
   name: AcceptsEmptyData
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_AcceptsEmptyData
-  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui.AcceptsEmptyData
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.AcceptsEmptyData
-  nameWithType: BaseInteractiveTui.AcceptsEmptyData
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.AcceptsEmptyData*
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_AcceptsEmptyData
+  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.AcceptsEmptyData
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.AcceptsEmptyData
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).AcceptsEmptyData
+  nameWithType: BaseInteractiveTui<T>.AcceptsEmptyData
+  nameWithType.vb: BaseInteractiveTui(Of T).AcceptsEmptyData
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.AcceptsEmptyData*
   name: AcceptsEmptyData
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_AcceptsEmptyData_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.AcceptsEmptyData
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_AcceptsEmptyData_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.AcceptsEmptyData
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.AcceptsEmptyData
-  nameWithType: BaseInteractiveTui.AcceptsEmptyData
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.Bindings
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.AcceptsEmptyData
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).AcceptsEmptyData
+  nameWithType: BaseInteractiveTui<T>.AcceptsEmptyData
+  nameWithType.vb: BaseInteractiveTui(Of T).AcceptsEmptyData
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Bindings
   name: Bindings
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_Bindings
-  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui.Bindings
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.Bindings
-  nameWithType: BaseInteractiveTui.Bindings
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.Bindings*
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_Bindings
+  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Bindings
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.Bindings
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).Bindings
+  nameWithType: BaseInteractiveTui<T>.Bindings
+  nameWithType.vb: BaseInteractiveTui(Of T).Bindings
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Bindings*
   name: Bindings
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_Bindings_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.Bindings
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_Bindings_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Bindings
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.Bindings
-  nameWithType: BaseInteractiveTui.Bindings
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.GetEntryFromItem(System.Object)
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.Bindings
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).Bindings
+  nameWithType: BaseInteractiveTui<T>.Bindings
+  nameWithType.vb: BaseInteractiveTui(Of T).Bindings
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetEntryFromItem(System.Object)
   name: GetEntryFromItem(object)
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_GetEntryFromItem_System_Object_
-  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui.GetEntryFromItem(System.Object)
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_GetEntryFromItem_System_Object_
+  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetEntryFromItem(System.Object)
   name.vb: GetEntryFromItem(Object)
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.GetEntryFromItem(object)
-  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui.GetEntryFromItem(Object)
-  nameWithType: BaseInteractiveTui.GetEntryFromItem(object)
-  nameWithType.vb: BaseInteractiveTui.GetEntryFromItem(Object)
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.GetEntryFromItem*
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.GetEntryFromItem(object)
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).GetEntryFromItem(Object)
+  nameWithType: BaseInteractiveTui<T>.GetEntryFromItem(object)
+  nameWithType.vb: BaseInteractiveTui(Of T).GetEntryFromItem(Object)
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetEntryFromItem*
   name: GetEntryFromItem
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_GetEntryFromItem_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.GetEntryFromItem
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_GetEntryFromItem_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetEntryFromItem
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.GetEntryFromItem
-  nameWithType: BaseInteractiveTui.GetEntryFromItem
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.GetInfoFromItem(System.Object)
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.GetEntryFromItem
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).GetEntryFromItem
+  nameWithType: BaseInteractiveTui<T>.GetEntryFromItem
+  nameWithType.vb: BaseInteractiveTui(Of T).GetEntryFromItem
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetInfoFromItem(System.Object)
   name: GetInfoFromItem(object)
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_GetInfoFromItem_System_Object_
-  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui.GetInfoFromItem(System.Object)
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_GetInfoFromItem_System_Object_
+  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetInfoFromItem(System.Object)
   name.vb: GetInfoFromItem(Object)
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.GetInfoFromItem(object)
-  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui.GetInfoFromItem(Object)
-  nameWithType: BaseInteractiveTui.GetInfoFromItem(object)
-  nameWithType.vb: BaseInteractiveTui.GetInfoFromItem(Object)
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.GetInfoFromItem*
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.GetInfoFromItem(object)
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).GetInfoFromItem(Object)
+  nameWithType: BaseInteractiveTui<T>.GetInfoFromItem(object)
+  nameWithType.vb: BaseInteractiveTui(Of T).GetInfoFromItem(Object)
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetInfoFromItem*
   name: GetInfoFromItem
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_GetInfoFromItem_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.GetInfoFromItem
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_GetInfoFromItem_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetInfoFromItem
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.GetInfoFromItem
-  nameWithType: BaseInteractiveTui.GetInfoFromItem
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.HandleExit
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.GetInfoFromItem
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).GetInfoFromItem
+  nameWithType: BaseInteractiveTui<T>.GetInfoFromItem
+  nameWithType.vb: BaseInteractiveTui(Of T).GetInfoFromItem
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.HandleExit
   name: HandleExit()
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_HandleExit
-  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui.HandleExit
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.HandleExit()
-  nameWithType: BaseInteractiveTui.HandleExit()
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.HandleExit*
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_HandleExit
+  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.HandleExit
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.HandleExit()
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).HandleExit()
+  nameWithType: BaseInteractiveTui<T>.HandleExit()
+  nameWithType.vb: BaseInteractiveTui(Of T).HandleExit()
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.HandleExit*
   name: HandleExit
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_HandleExit_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.HandleExit
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_HandleExit_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.HandleExit
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.HandleExit
-  nameWithType: BaseInteractiveTui.HandleExit
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.Instance
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.HandleExit
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).HandleExit
+  nameWithType: BaseInteractiveTui<T>.HandleExit
+  nameWithType.vb: BaseInteractiveTui(Of T).HandleExit
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Instance
   name: Instance
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_Instance
-  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui.Instance
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.Instance
-  nameWithType: BaseInteractiveTui.Instance
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.Instance*
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_Instance
+  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Instance
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.Instance
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).Instance
+  nameWithType: BaseInteractiveTui<T>.Instance
+  nameWithType.vb: BaseInteractiveTui(Of T).Instance
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Instance*
   name: Instance
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_Instance_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.Instance
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_Instance_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Instance
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.Instance
-  nameWithType: BaseInteractiveTui.Instance
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.LastOnOverflow
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.Instance
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).Instance
+  nameWithType: BaseInteractiveTui<T>.Instance
+  nameWithType.vb: BaseInteractiveTui(Of T).Instance
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.LastOnOverflow
   name: LastOnOverflow()
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_LastOnOverflow
-  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui.LastOnOverflow
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.LastOnOverflow()
-  nameWithType: BaseInteractiveTui.LastOnOverflow()
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.LastOnOverflow*
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_LastOnOverflow
+  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.LastOnOverflow
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.LastOnOverflow()
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).LastOnOverflow()
+  nameWithType: BaseInteractiveTui<T>.LastOnOverflow()
+  nameWithType.vb: BaseInteractiveTui(Of T).LastOnOverflow()
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.LastOnOverflow*
   name: LastOnOverflow
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_LastOnOverflow_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.LastOnOverflow
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_LastOnOverflow_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.LastOnOverflow
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.LastOnOverflow
-  nameWithType: BaseInteractiveTui.LastOnOverflow
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.PrimaryDataSource
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.LastOnOverflow
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).LastOnOverflow
+  nameWithType: BaseInteractiveTui<T>.LastOnOverflow
+  nameWithType.vb: BaseInteractiveTui(Of T).LastOnOverflow
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.PrimaryDataSource
   name: PrimaryDataSource
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_PrimaryDataSource
-  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui.PrimaryDataSource
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.PrimaryDataSource
-  nameWithType: BaseInteractiveTui.PrimaryDataSource
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.PrimaryDataSource*
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_PrimaryDataSource
+  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.PrimaryDataSource
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.PrimaryDataSource
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).PrimaryDataSource
+  nameWithType: BaseInteractiveTui<T>.PrimaryDataSource
+  nameWithType.vb: BaseInteractiveTui(Of T).PrimaryDataSource
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.PrimaryDataSource*
   name: PrimaryDataSource
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_PrimaryDataSource_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.PrimaryDataSource
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_PrimaryDataSource_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.PrimaryDataSource
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.PrimaryDataSource
-  nameWithType: BaseInteractiveTui.PrimaryDataSource
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.RefreshInterval
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.PrimaryDataSource
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).PrimaryDataSource
+  nameWithType: BaseInteractiveTui<T>.PrimaryDataSource
+  nameWithType.vb: BaseInteractiveTui(Of T).PrimaryDataSource
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RefreshInterval
   name: RefreshInterval
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_RefreshInterval
-  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui.RefreshInterval
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.RefreshInterval
-  nameWithType: BaseInteractiveTui.RefreshInterval
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.RefreshInterval*
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_RefreshInterval
+  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RefreshInterval
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.RefreshInterval
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).RefreshInterval
+  nameWithType: BaseInteractiveTui<T>.RefreshInterval
+  nameWithType.vb: BaseInteractiveTui(Of T).RefreshInterval
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RefreshInterval*
   name: RefreshInterval
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_RefreshInterval_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.RefreshInterval
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_RefreshInterval_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RefreshInterval
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.RefreshInterval
-  nameWithType: BaseInteractiveTui.RefreshInterval
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.RenderStatus(System.Object)
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.RefreshInterval
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).RefreshInterval
+  nameWithType: BaseInteractiveTui<T>.RefreshInterval
+  nameWithType.vb: BaseInteractiveTui(Of T).RefreshInterval
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RenderStatus(System.Object)
   name: RenderStatus(object)
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_RenderStatus_System_Object_
-  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui.RenderStatus(System.Object)
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_RenderStatus_System_Object_
+  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RenderStatus(System.Object)
   name.vb: RenderStatus(Object)
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.RenderStatus(object)
-  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui.RenderStatus(Object)
-  nameWithType: BaseInteractiveTui.RenderStatus(object)
-  nameWithType.vb: BaseInteractiveTui.RenderStatus(Object)
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.RenderStatus*
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.RenderStatus(object)
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).RenderStatus(Object)
+  nameWithType: BaseInteractiveTui<T>.RenderStatus(object)
+  nameWithType.vb: BaseInteractiveTui(Of T).RenderStatus(Object)
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RenderStatus*
   name: RenderStatus
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_RenderStatus_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.RenderStatus
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_RenderStatus_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RenderStatus
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.RenderStatus
-  nameWithType: BaseInteractiveTui.RenderStatus
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.RenderStatus
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).RenderStatus
+  nameWithType: BaseInteractiveTui<T>.RenderStatus
+  nameWithType.vb: BaseInteractiveTui(Of T).RenderStatus
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Screen
   name: Screen
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_Screen
-  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen
-  nameWithType: BaseInteractiveTui.Screen
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen*
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_Screen
+  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Screen
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.Screen
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).Screen
+  nameWithType: BaseInteractiveTui<T>.Screen
+  nameWithType.vb: BaseInteractiveTui(Of T).Screen
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Screen*
   name: Screen
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_Screen_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_Screen_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Screen
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.Screen
-  nameWithType: BaseInteractiveTui.Screen
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondPaneInteractable
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.Screen
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).Screen
+  nameWithType: BaseInteractiveTui<T>.Screen
+  nameWithType.vb: BaseInteractiveTui(Of T).Screen
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.SecondPaneInteractable
   name: SecondPaneInteractable
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_SecondPaneInteractable
-  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondPaneInteractable
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondPaneInteractable
-  nameWithType: BaseInteractiveTui.SecondPaneInteractable
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondPaneInteractable*
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_SecondPaneInteractable
+  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.SecondPaneInteractable
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.SecondPaneInteractable
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).SecondPaneInteractable
+  nameWithType: BaseInteractiveTui<T>.SecondPaneInteractable
+  nameWithType.vb: BaseInteractiveTui(Of T).SecondPaneInteractable
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.SecondPaneInteractable*
   name: SecondPaneInteractable
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_SecondPaneInteractable_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondPaneInteractable
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_SecondPaneInteractable_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.SecondPaneInteractable
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondPaneInteractable
-  nameWithType: BaseInteractiveTui.SecondPaneInteractable
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondaryDataSource
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.SecondPaneInteractable
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).SecondPaneInteractable
+  nameWithType: BaseInteractiveTui<T>.SecondPaneInteractable
+  nameWithType.vb: BaseInteractiveTui(Of T).SecondPaneInteractable
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.SecondaryDataSource
   name: SecondaryDataSource
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_SecondaryDataSource
-  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondaryDataSource
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondaryDataSource
-  nameWithType: BaseInteractiveTui.SecondaryDataSource
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondaryDataSource*
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_SecondaryDataSource
+  commentId: P:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.SecondaryDataSource
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.SecondaryDataSource
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).SecondaryDataSource
+  nameWithType: BaseInteractiveTui<T>.SecondaryDataSource
+  nameWithType.vb: BaseInteractiveTui(Of T).SecondaryDataSource
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.SecondaryDataSource*
   name: SecondaryDataSource
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_SecondaryDataSource_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondaryDataSource
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_SecondaryDataSource_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.SecondaryDataSource
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui.SecondaryDataSource
-  nameWithType: BaseInteractiveTui.SecondaryDataSource
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui
-  name: IInteractiveTui
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html
-  commentId: T:Terminaux.Inputs.Interactive.IInteractiveTui
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui
-  nameWithType: IInteractiveTui
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.AcceptsEmptyData
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.SecondaryDataSource
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).SecondaryDataSource
+  nameWithType: BaseInteractiveTui<T>.SecondaryDataSource
+  nameWithType.vb: BaseInteractiveTui(Of T).SecondaryDataSource
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1
+  name: IInteractiveTui<T>
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html
+  commentId: T:Terminaux.Inputs.Interactive.IInteractiveTui`1
+  name.vb: IInteractiveTui(Of T)
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T)
+  nameWithType: IInteractiveTui<T>
+  nameWithType.vb: IInteractiveTui(Of T)
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.AcceptsEmptyData
   name: AcceptsEmptyData
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_AcceptsEmptyData
-  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui.AcceptsEmptyData
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.AcceptsEmptyData
-  nameWithType: IInteractiveTui.AcceptsEmptyData
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.AcceptsEmptyData*
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_AcceptsEmptyData
+  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui`1.AcceptsEmptyData
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.AcceptsEmptyData
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).AcceptsEmptyData
+  nameWithType: IInteractiveTui<T>.AcceptsEmptyData
+  nameWithType.vb: IInteractiveTui(Of T).AcceptsEmptyData
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.AcceptsEmptyData*
   name: AcceptsEmptyData
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_AcceptsEmptyData_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.AcceptsEmptyData
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_AcceptsEmptyData_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.AcceptsEmptyData
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.AcceptsEmptyData
-  nameWithType: IInteractiveTui.AcceptsEmptyData
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.Bindings
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.AcceptsEmptyData
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).AcceptsEmptyData
+  nameWithType: IInteractiveTui<T>.AcceptsEmptyData
+  nameWithType.vb: IInteractiveTui(Of T).AcceptsEmptyData
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.Bindings
   name: Bindings
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_Bindings
-  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui.Bindings
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.Bindings
-  nameWithType: IInteractiveTui.Bindings
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.Bindings*
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_Bindings
+  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui`1.Bindings
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.Bindings
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).Bindings
+  nameWithType: IInteractiveTui<T>.Bindings
+  nameWithType.vb: IInteractiveTui(Of T).Bindings
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.Bindings*
   name: Bindings
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_Bindings_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.Bindings
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_Bindings_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.Bindings
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.Bindings
-  nameWithType: IInteractiveTui.Bindings
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.GetEntryFromItem(System.Object)
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.Bindings
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).Bindings
+  nameWithType: IInteractiveTui<T>.Bindings
+  nameWithType.vb: IInteractiveTui(Of T).Bindings
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.GetEntryFromItem(System.Object)
   name: GetEntryFromItem(object)
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_GetEntryFromItem_System_Object_
-  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui.GetEntryFromItem(System.Object)
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_GetEntryFromItem_System_Object_
+  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui`1.GetEntryFromItem(System.Object)
   name.vb: GetEntryFromItem(Object)
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.GetEntryFromItem(object)
-  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui.GetEntryFromItem(Object)
-  nameWithType: IInteractiveTui.GetEntryFromItem(object)
-  nameWithType.vb: IInteractiveTui.GetEntryFromItem(Object)
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.GetEntryFromItem*
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.GetEntryFromItem(object)
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).GetEntryFromItem(Object)
+  nameWithType: IInteractiveTui<T>.GetEntryFromItem(object)
+  nameWithType.vb: IInteractiveTui(Of T).GetEntryFromItem(Object)
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.GetEntryFromItem*
   name: GetEntryFromItem
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_GetEntryFromItem_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.GetEntryFromItem
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_GetEntryFromItem_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.GetEntryFromItem
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.GetEntryFromItem
-  nameWithType: IInteractiveTui.GetEntryFromItem
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.GetInfoFromItem(System.Object)
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.GetEntryFromItem
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).GetEntryFromItem
+  nameWithType: IInteractiveTui<T>.GetEntryFromItem
+  nameWithType.vb: IInteractiveTui(Of T).GetEntryFromItem
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.GetInfoFromItem(System.Object)
   name: GetInfoFromItem(object)
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_GetInfoFromItem_System_Object_
-  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui.GetInfoFromItem(System.Object)
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_GetInfoFromItem_System_Object_
+  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui`1.GetInfoFromItem(System.Object)
   name.vb: GetInfoFromItem(Object)
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.GetInfoFromItem(object)
-  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui.GetInfoFromItem(Object)
-  nameWithType: IInteractiveTui.GetInfoFromItem(object)
-  nameWithType.vb: IInteractiveTui.GetInfoFromItem(Object)
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.GetInfoFromItem*
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.GetInfoFromItem(object)
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).GetInfoFromItem(Object)
+  nameWithType: IInteractiveTui<T>.GetInfoFromItem(object)
+  nameWithType.vb: IInteractiveTui(Of T).GetInfoFromItem(Object)
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.GetInfoFromItem*
   name: GetInfoFromItem
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_GetInfoFromItem_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.GetInfoFromItem
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_GetInfoFromItem_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.GetInfoFromItem
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.GetInfoFromItem
-  nameWithType: IInteractiveTui.GetInfoFromItem
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.HandleExit
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.GetInfoFromItem
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).GetInfoFromItem
+  nameWithType: IInteractiveTui<T>.GetInfoFromItem
+  nameWithType.vb: IInteractiveTui(Of T).GetInfoFromItem
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.HandleExit
   name: HandleExit()
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_HandleExit
-  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui.HandleExit
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.HandleExit()
-  nameWithType: IInteractiveTui.HandleExit()
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.HandleExit*
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_HandleExit
+  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui`1.HandleExit
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.HandleExit()
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).HandleExit()
+  nameWithType: IInteractiveTui<T>.HandleExit()
+  nameWithType.vb: IInteractiveTui(Of T).HandleExit()
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.HandleExit*
   name: HandleExit
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_HandleExit_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.HandleExit
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_HandleExit_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.HandleExit
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.HandleExit
-  nameWithType: IInteractiveTui.HandleExit
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.LastOnOverflow
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.HandleExit
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).HandleExit
+  nameWithType: IInteractiveTui<T>.HandleExit
+  nameWithType.vb: IInteractiveTui(Of T).HandleExit
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.LastOnOverflow
   name: LastOnOverflow()
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_LastOnOverflow
-  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui.LastOnOverflow
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.LastOnOverflow()
-  nameWithType: IInteractiveTui.LastOnOverflow()
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.LastOnOverflow*
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_LastOnOverflow
+  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui`1.LastOnOverflow
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.LastOnOverflow()
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).LastOnOverflow()
+  nameWithType: IInteractiveTui<T>.LastOnOverflow()
+  nameWithType.vb: IInteractiveTui(Of T).LastOnOverflow()
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.LastOnOverflow*
   name: LastOnOverflow
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_LastOnOverflow_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.LastOnOverflow
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_LastOnOverflow_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.LastOnOverflow
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.LastOnOverflow
-  nameWithType: IInteractiveTui.LastOnOverflow
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.PrimaryDataSource
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.LastOnOverflow
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).LastOnOverflow
+  nameWithType: IInteractiveTui<T>.LastOnOverflow
+  nameWithType.vb: IInteractiveTui(Of T).LastOnOverflow
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.PrimaryDataSource
   name: PrimaryDataSource
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_PrimaryDataSource
-  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui.PrimaryDataSource
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.PrimaryDataSource
-  nameWithType: IInteractiveTui.PrimaryDataSource
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.PrimaryDataSource*
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_PrimaryDataSource
+  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui`1.PrimaryDataSource
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.PrimaryDataSource
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).PrimaryDataSource
+  nameWithType: IInteractiveTui<T>.PrimaryDataSource
+  nameWithType.vb: IInteractiveTui(Of T).PrimaryDataSource
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.PrimaryDataSource*
   name: PrimaryDataSource
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_PrimaryDataSource_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.PrimaryDataSource
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_PrimaryDataSource_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.PrimaryDataSource
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.PrimaryDataSource
-  nameWithType: IInteractiveTui.PrimaryDataSource
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.RefreshInterval
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.PrimaryDataSource
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).PrimaryDataSource
+  nameWithType: IInteractiveTui<T>.PrimaryDataSource
+  nameWithType.vb: IInteractiveTui(Of T).PrimaryDataSource
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.RefreshInterval
   name: RefreshInterval
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_RefreshInterval
-  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui.RefreshInterval
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.RefreshInterval
-  nameWithType: IInteractiveTui.RefreshInterval
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.RefreshInterval*
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_RefreshInterval
+  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui`1.RefreshInterval
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.RefreshInterval
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).RefreshInterval
+  nameWithType: IInteractiveTui<T>.RefreshInterval
+  nameWithType.vb: IInteractiveTui(Of T).RefreshInterval
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.RefreshInterval*
   name: RefreshInterval
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_RefreshInterval_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.RefreshInterval
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_RefreshInterval_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.RefreshInterval
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.RefreshInterval
-  nameWithType: IInteractiveTui.RefreshInterval
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.RenderStatus(System.Object)
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.RefreshInterval
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).RefreshInterval
+  nameWithType: IInteractiveTui<T>.RefreshInterval
+  nameWithType.vb: IInteractiveTui(Of T).RefreshInterval
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.RenderStatus(System.Object)
   name: RenderStatus(object)
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_RenderStatus_System_Object_
-  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui.RenderStatus(System.Object)
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_RenderStatus_System_Object_
+  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui`1.RenderStatus(System.Object)
   name.vb: RenderStatus(Object)
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.RenderStatus(object)
-  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui.RenderStatus(Object)
-  nameWithType: IInteractiveTui.RenderStatus(object)
-  nameWithType.vb: IInteractiveTui.RenderStatus(Object)
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.RenderStatus*
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.RenderStatus(object)
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).RenderStatus(Object)
+  nameWithType: IInteractiveTui<T>.RenderStatus(object)
+  nameWithType.vb: IInteractiveTui(Of T).RenderStatus(Object)
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.RenderStatus*
   name: RenderStatus
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_RenderStatus_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.RenderStatus
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_RenderStatus_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.RenderStatus
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.RenderStatus
-  nameWithType: IInteractiveTui.RenderStatus
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.SecondPaneInteractable
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.RenderStatus
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).RenderStatus
+  nameWithType: IInteractiveTui<T>.RenderStatus
+  nameWithType.vb: IInteractiveTui(Of T).RenderStatus
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.SecondPaneInteractable
   name: SecondPaneInteractable
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_SecondPaneInteractable
-  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui.SecondPaneInteractable
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.SecondPaneInteractable
-  nameWithType: IInteractiveTui.SecondPaneInteractable
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.SecondPaneInteractable*
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_SecondPaneInteractable
+  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui`1.SecondPaneInteractable
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.SecondPaneInteractable
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).SecondPaneInteractable
+  nameWithType: IInteractiveTui<T>.SecondPaneInteractable
+  nameWithType.vb: IInteractiveTui(Of T).SecondPaneInteractable
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.SecondPaneInteractable*
   name: SecondPaneInteractable
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_SecondPaneInteractable_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.SecondPaneInteractable
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_SecondPaneInteractable_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.SecondPaneInteractable
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.SecondPaneInteractable
-  nameWithType: IInteractiveTui.SecondPaneInteractable
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.SecondaryDataSource
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.SecondPaneInteractable
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).SecondPaneInteractable
+  nameWithType: IInteractiveTui<T>.SecondPaneInteractable
+  nameWithType.vb: IInteractiveTui(Of T).SecondPaneInteractable
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.SecondaryDataSource
   name: SecondaryDataSource
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_SecondaryDataSource
-  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui.SecondaryDataSource
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.SecondaryDataSource
-  nameWithType: IInteractiveTui.SecondaryDataSource
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui.SecondaryDataSource*
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_SecondaryDataSource
+  commentId: P:Terminaux.Inputs.Interactive.IInteractiveTui`1.SecondaryDataSource
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.SecondaryDataSource
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).SecondaryDataSource
+  nameWithType: IInteractiveTui<T>.SecondaryDataSource
+  nameWithType.vb: IInteractiveTui(Of T).SecondaryDataSource
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.SecondaryDataSource*
   name: SecondaryDataSource
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui.html#Terminaux_Inputs_Interactive_IInteractiveTui_SecondaryDataSource_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui.SecondaryDataSource
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_SecondaryDataSource_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.SecondaryDataSource
   isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui.SecondaryDataSource
-  nameWithType: IInteractiveTui.SecondaryDataSource
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.SecondaryDataSource
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).SecondaryDataSource
+  nameWithType: IInteractiveTui<T>.SecondaryDataSource
+  nameWithType.vb: IInteractiveTui(Of T).SecondaryDataSource
 - uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding
   name: InteractiveTuiBinding
   href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html
@@ -12571,12 +12661,6 @@ references:
   commentId: T:Terminaux.Inputs.Interactive.InteractiveTuiTools
   fullName: Terminaux.Inputs.Interactive.InteractiveTuiTools
   nameWithType: InteractiveTuiTools
-- uid: Terminaux.Inputs.Interactive.InteractiveTuiTools.OpenInteractiveTui(Terminaux.Inputs.Interactive.BaseInteractiveTui)
-  name: OpenInteractiveTui(BaseInteractiveTui)
-  href: api/Terminaux.Inputs.Interactive.InteractiveTuiTools.html#Terminaux_Inputs_Interactive_InteractiveTuiTools_OpenInteractiveTui_Terminaux_Inputs_Interactive_BaseInteractiveTui_
-  commentId: M:Terminaux.Inputs.Interactive.InteractiveTuiTools.OpenInteractiveTui(Terminaux.Inputs.Interactive.BaseInteractiveTui)
-  fullName: Terminaux.Inputs.Interactive.InteractiveTuiTools.OpenInteractiveTui(Terminaux.Inputs.Interactive.BaseInteractiveTui)
-  nameWithType: InteractiveTuiTools.OpenInteractiveTui(BaseInteractiveTui)
 - uid: Terminaux.Inputs.Interactive.InteractiveTuiTools.OpenInteractiveTui*
   name: OpenInteractiveTui
   href: api/Terminaux.Inputs.Interactive.InteractiveTuiTools.html#Terminaux_Inputs_Interactive_InteractiveTuiTools_OpenInteractiveTui_
@@ -12584,15 +12668,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Interactive.InteractiveTuiTools.OpenInteractiveTui
   nameWithType: InteractiveTuiTools.OpenInteractiveTui
-- uid: Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement(Terminaux.Inputs.Interactive.BaseInteractiveTui,System.Int32)
-  name: SelectionMovement(BaseInteractiveTui, int)
-  href: api/Terminaux.Inputs.Interactive.InteractiveTuiTools.html#Terminaux_Inputs_Interactive_InteractiveTuiTools_SelectionMovement_Terminaux_Inputs_Interactive_BaseInteractiveTui_System_Int32_
-  commentId: M:Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement(Terminaux.Inputs.Interactive.BaseInteractiveTui,System.Int32)
-  name.vb: SelectionMovement(BaseInteractiveTui, Integer)
-  fullName: Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement(Terminaux.Inputs.Interactive.BaseInteractiveTui, int)
-  fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement(Terminaux.Inputs.Interactive.BaseInteractiveTui, Integer)
-  nameWithType: InteractiveTuiTools.SelectionMovement(BaseInteractiveTui, int)
-  nameWithType.vb: InteractiveTuiTools.SelectionMovement(BaseInteractiveTui, Integer)
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiTools.OpenInteractiveTui``1(Terminaux.Inputs.Interactive.BaseInteractiveTui{``0})
+  name: OpenInteractiveTui<T>(BaseInteractiveTui<T>)
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiTools.html#Terminaux_Inputs_Interactive_InteractiveTuiTools_OpenInteractiveTui__1_Terminaux_Inputs_Interactive_BaseInteractiveTui___0__
+  commentId: M:Terminaux.Inputs.Interactive.InteractiveTuiTools.OpenInteractiveTui``1(Terminaux.Inputs.Interactive.BaseInteractiveTui{``0})
+  name.vb: OpenInteractiveTui(Of T)(BaseInteractiveTui(Of T))
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiTools.OpenInteractiveTui<T>(Terminaux.Inputs.Interactive.BaseInteractiveTui<T>)
+  fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiTools.OpenInteractiveTui(Of T)(Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T))
+  nameWithType: InteractiveTuiTools.OpenInteractiveTui<T>(BaseInteractiveTui<T>)
+  nameWithType.vb: InteractiveTuiTools.OpenInteractiveTui(Of T)(BaseInteractiveTui(Of T))
 - uid: Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement*
   name: SelectionMovement
   href: api/Terminaux.Inputs.Interactive.InteractiveTuiTools.html#Terminaux_Inputs_Interactive_InteractiveTuiTools_SelectionMovement_
@@ -12600,6 +12684,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement
   nameWithType: InteractiveTuiTools.SelectionMovement
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement``1(Terminaux.Inputs.Interactive.BaseInteractiveTui{``0},System.Int32)
+  name: SelectionMovement<T>(BaseInteractiveTui<T>, int)
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiTools.html#Terminaux_Inputs_Interactive_InteractiveTuiTools_SelectionMovement__1_Terminaux_Inputs_Interactive_BaseInteractiveTui___0__System_Int32_
+  commentId: M:Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement``1(Terminaux.Inputs.Interactive.BaseInteractiveTui{``0},System.Int32)
+  name.vb: SelectionMovement(Of T)(BaseInteractiveTui(Of T), Integer)
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement<T>(Terminaux.Inputs.Interactive.BaseInteractiveTui<T>, int)
+  fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement(Of T)(Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T), Integer)
+  nameWithType: InteractiveTuiTools.SelectionMovement<T>(BaseInteractiveTui<T>, int)
+  nameWithType.vb: InteractiveTuiTools.SelectionMovement(Of T)(BaseInteractiveTui(Of T), Integer)
 - uid: Terminaux.Inputs.Presentation
   name: Terminaux.Inputs.Presentation
   href: api/Terminaux.Inputs.Presentation.html

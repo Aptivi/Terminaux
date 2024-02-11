@@ -815,20 +815,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui.yml",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui.html"
+          "relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui.yml",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui.html"
+          "relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html"
         }
       },
       "version": ""
