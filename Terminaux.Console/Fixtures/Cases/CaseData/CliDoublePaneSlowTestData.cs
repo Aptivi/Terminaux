@@ -83,15 +83,15 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
         {
             if (InteractiveTuiStatus.CurrentPane == 2)
             {
-                if (index < strings2.Count)
-                    strings2.RemoveAt(index - 1);
+                if (index < strings2.Count && strings2.Count > 0)
+                    strings2.RemoveAt(index == 0 ? index : index - 1);
                 if (InteractiveTuiStatus.SecondPaneCurrentSelection > strings2.Count)
                     InteractiveTuiStatus.SecondPaneCurrentSelection = strings2.Count;
             }
             else
             {
-                if (index < strings.Count)
-                    strings.RemoveAt(index - 1);
+                if (index < strings.Count && strings.Count > 0)
+                    strings.RemoveAt(index == 0 ? index : index - 1);
                 if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
                     InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
             }
@@ -101,13 +101,15 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
         {
             if (InteractiveTuiStatus.CurrentPane == 2)
             {
-                strings2.RemoveAt(strings2.Count - 1);
+                if (strings2.Count > 0)
+                    strings2.RemoveAt(strings2.Count - 1);
                 if (InteractiveTuiStatus.SecondPaneCurrentSelection > strings2.Count)
                     InteractiveTuiStatus.SecondPaneCurrentSelection = strings2.Count;
             }
             else
             {
-                strings.RemoveAt(strings.Count - 1);
+                if (strings.Count > 0)
+                    strings.RemoveAt(strings.Count - 1);
                 if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
                     InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
             }

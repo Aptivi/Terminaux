@@ -72,12 +72,14 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
 
         private static void Remove(int index)
         {
-            strings.RemoveAt(index);
+            if (strings.Count > 0)
+                strings.RemoveAt(index);
         }
 
         private static void RemoveLast()
         {
-            strings.RemoveAt(strings.Count - 1);
+            if (strings.Count > 0)
+                strings.RemoveAt(strings.Count - 1);
         }
     }
 }
