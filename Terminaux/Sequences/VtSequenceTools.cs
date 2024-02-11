@@ -65,25 +65,15 @@ namespace Terminaux.Sequences
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="type">VT sequence type</param>
         /// <returns>The array of <see cref="MatchCollection"/>s that contain the capture and group information for the found VT sequences</returns>
-        public static MatchCollection[] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
+        public static Match[][] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
-            // Match all sequences according to the list of flags
+            // Cache the compiled VT sequences first
             var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
-            List<MatchCollection> matchCollections = [];
-            if (type != VtSequenceType.All)
-            {
-                for (int i = 1; i < typeValues.Length - 1; i++)
-                {
-                    // Check to see if there is a flag denoting a type
-                    VtSequenceType typeValueEnum = typeValues[i];
-                    if (type.HasFlag(typeValueEnum))
-                        matchCollections.Add(sequenceFilterRegex.Matches(Text));
-                }
-            }
-            else
-                // We don't want to go through all the types just for "all sequences", because we need this for performance.
-                // We don't want to show that VtSequenceRegexes.AllVTSequences is unimportant and unnecessary.
-                matchCollections.Add(sequenceFilterRegex.Matches(Text));
+
+            // Match all sequences according to the type
+            List<Match[]> matchCollections = [];
+            sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
+            matchCollections.Add(sequenceFilterRegex.Matches(Text).OfType<Match>().ToArray());
             return [.. matchCollections];
         }
 

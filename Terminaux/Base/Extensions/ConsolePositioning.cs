@@ -301,7 +301,7 @@ namespace Terminaux.Base.Extensions
             return commandOutputBuilder.ToString();
         }
 
-        internal static string BufferChar(string text, MatchCollection[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
+        internal static string BufferChar(string text, Match[][] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
         {
             // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
             // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
@@ -321,14 +321,14 @@ namespace Terminaux.Base.Extensions
             bool vtSeq = false;
             foreach (var sequences in sequencesCollections)
             {
-                if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+                if (sequences.Length > 0 && sequences[vtSeqIdx].Index == i)
                 {
                     // We're at an index which is the same as the captured VT sequence. Get the sequence
                     seq = sequences[vtSeqIdx].Value;
                     vtSeq = true;
 
                     // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                    if (vtSeqIdx + 1 < sequences.Count)
+                    if (vtSeqIdx + 1 < sequences.Length)
                         vtSeqIdx++;
 
                     // Raise the paragraph index by the length of the sequence
