@@ -18,13 +18,12 @@
 //
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
 {
-    internal class CliDoublePaneTestData : BaseInteractiveTui, IInteractiveTui
+    internal class CliDoublePaneTestData : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         internal static List<string> strings = [];
         internal static List<string> strings2 = [];
@@ -37,11 +36,11 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
         ];
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
+        public override IEnumerable<string> PrimaryDataSource =>
             strings;
 
         /// <inheritdoc/>
-        public override IEnumerable SecondaryDataSource =>
+        public override IEnumerable<string> SecondaryDataSource =>
             strings2;
 
         public override bool SecondPaneInteractable =>

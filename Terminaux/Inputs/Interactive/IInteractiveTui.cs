@@ -25,7 +25,7 @@ namespace Terminaux.Inputs.Interactive
     /// <summary>
     /// An interface for your interactive user interface for terminal apps
     /// </summary>
-    public interface IInteractiveTui
+    public interface IInteractiveTui<T>
     {
         /// <summary>
         /// All key bindings for your interactive user interface
@@ -47,11 +47,11 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// An array, a dictionary, a list, or an enumerable that holds data (pane one)
         /// </summary>
-        public IEnumerable PrimaryDataSource { get; }
+        public IEnumerable<T> PrimaryDataSource { get; }
         /// <summary>
         /// An array, a dictionary, a list, or an enumerable that holds data (pane two)
         /// </summary>
-        public IEnumerable SecondaryDataSource { get; }
+        public IEnumerable<T> SecondaryDataSource { get; }
 
         /// <summary>
         /// Gets an entry string from a specified item for listing

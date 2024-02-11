@@ -28,9 +28,9 @@ namespace Terminaux.Inputs.Interactive
     /// <summary>
     /// A base class for your interactive user interface for terminal apps
     /// </summary>
-    public class BaseInteractiveTui : IInteractiveTui
+    public class BaseInteractiveTui<T> : IInteractiveTui<T>
     {
-        internal static List<BaseInteractiveTui> instances = [];
+        internal static List<BaseInteractiveTui<T>> instances = [];
         internal Screen screen;
         internal bool isExiting = false;
 
@@ -44,14 +44,14 @@ namespace Terminaux.Inputs.Interactive
         public virtual bool AcceptsEmptyData => false;
 
         /// <inheritdoc/>
-        public virtual IEnumerable PrimaryDataSource => Array.Empty<string>();
+        public virtual IEnumerable<T> PrimaryDataSource => Array.Empty<T>();
         /// <inheritdoc/>
-        public virtual IEnumerable SecondaryDataSource => Array.Empty<string>();
+        public virtual IEnumerable<T> SecondaryDataSource => Array.Empty<T>();
 
         /// <summary>
         /// The interactive TUI instance
         /// </summary>
-        public static BaseInteractiveTui Instance =>
+        public static BaseInteractiveTui<T> Instance =>
             instances.Count > 0 ?
             instances[instances.Count - 1] :
             null;

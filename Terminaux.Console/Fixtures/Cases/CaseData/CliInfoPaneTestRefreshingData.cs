@@ -18,13 +18,12 @@
 //
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
 {
-    internal class CliInfoPaneTestRefreshingData : BaseInteractiveTui, IInteractiveTui
+    internal class CliInfoPaneTestRefreshingData : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         internal static List<string> strings = [];
         private static int timesRendered = 0;
@@ -41,7 +40,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
             3000;
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
+        public override IEnumerable<string> PrimaryDataSource =>
             strings;
 
         /// <inheritdoc/>

@@ -17,18 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections;
+using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
 using Textify.NameGen;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
 {
-    internal class CliInfoPaneHugeTestData : BaseInteractiveTui, IInteractiveTui
+    internal class CliInfoPaneHugeTestData : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         internal static string[] strings = [];
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource
+        public override IEnumerable<string> PrimaryDataSource
         {
             get
             {

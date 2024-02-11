@@ -18,13 +18,12 @@
 //
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
 
 namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
 {
-    internal class CliInfoPaneSlowTestData : BaseInteractiveTui, IInteractiveTui
+    internal class CliInfoPaneSlowTestData : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         internal static List<string> strings = [];
 
@@ -36,7 +35,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
         ];
 
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
+        public override IEnumerable<string> PrimaryDataSource =>
             strings;
 
         /// <inheritdoc/>

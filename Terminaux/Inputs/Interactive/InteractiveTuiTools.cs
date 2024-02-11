@@ -52,13 +52,13 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         /// <param name="interactiveTui">The inherited class instance of the interactive TUI</param>
         /// <exception cref="TerminauxException"></exception>
-        public static void OpenInteractiveTui(BaseInteractiveTui interactiveTui)
+        public static void OpenInteractiveTui<T>(BaseInteractiveTui<T> interactiveTui)
         {
             lock (_interactiveTuiLock)
             {
                 if (interactiveTui is null)
                     throw new TerminauxException("Please provide a base Interactive TUI class and try again.");
-                BaseInteractiveTui.instances.Add(interactiveTui);
+                BaseInteractiveTui<T>.instances.Add(interactiveTui);
 
                 // First, check to see if the interactive TUI has no data source
                 if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
@@ -115,7 +115,7 @@ namespace Terminaux.Inputs.Interactive
                 }
                 finally
                 {
-                    BaseInteractiveTui.instances.Remove(interactiveTui);
+                    BaseInteractiveTui<T>.instances.Remove(interactiveTui);
                 }
                 ScreenTools.UnsetCurrent(screen);
 
@@ -144,7 +144,7 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         /// <param name="interactiveTui">Interactive TUI to deal with</param>
         /// <param name="pos">Position to move the pane selection to</param>
-        public static void SelectionMovement(BaseInteractiveTui interactiveTui, int pos)
+        public static void SelectionMovement<T>(BaseInteractiveTui<T> interactiveTui, int pos)
         {
             // Check the position
             var data = InteractiveTuiStatus.CurrentPane == 2 ?
@@ -163,7 +163,7 @@ namespace Terminaux.Inputs.Interactive
                 InteractiveTuiStatus.FirstPaneCurrentSelection = pos;
         }
 
-        private static void DrawInteractiveTui(BaseInteractiveTui interactiveTui)
+        private static void DrawInteractiveTui<T>(BaseInteractiveTui<T> interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             Debug.Assert(interactiveTui is not null,
@@ -287,7 +287,7 @@ namespace Terminaux.Inputs.Interactive
             interactiveTui.screen.AddBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}", part);
         }
 
-        private static void DrawInteractiveTuiItems(BaseInteractiveTui interactiveTui, int paneNum)
+        private static void DrawInteractiveTuiItems<T>(BaseInteractiveTui<T> interactiveTui, int paneNum)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             Debug.Assert(interactiveTui is not null,
@@ -360,7 +360,7 @@ namespace Terminaux.Inputs.Interactive
             interactiveTui.screen.AddBufferedPart($"Interactive TUI - Items - {interactiveTui.GetType().Name}", part);
         }
 
-        private static void DrawInformationOnSecondPane(BaseInteractiveTui interactiveTui)
+        private static void DrawInformationOnSecondPane<T>(BaseInteractiveTui<T> interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             Debug.Assert(interactiveTui is not null,
@@ -454,7 +454,7 @@ namespace Terminaux.Inputs.Interactive
             interactiveTui.screen.AddBufferedPart($"Interactive TUI - Info (2nd pane) - {interactiveTui.GetType().Name}", part);
         }
 
-        private static void DrawStatus(BaseInteractiveTui interactiveTui)
+        private static void DrawStatus<T>(BaseInteractiveTui<T> interactiveTui)
         {
             Debug.Assert(interactiveTui.screen is not null,
                 "attempted to render TUI items on no screen");
@@ -485,7 +485,7 @@ namespace Terminaux.Inputs.Interactive
             interactiveTui.screen.AddBufferedPart($"Interactive TUI - Status - {interactiveTui.GetType().Name}", part);
         }
 
-        private static void RespondToUserInput(BaseInteractiveTui interactiveTui)
+        private static void RespondToUserInput<T>(BaseInteractiveTui<T> interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             Debug.Assert(interactiveTui is not null,
@@ -598,7 +598,7 @@ namespace Terminaux.Inputs.Interactive
             }
         }
 
-        private static void CheckSelectionForUnderflow(BaseInteractiveTui interactiveTui)
+        private static void CheckSelectionForUnderflow<T>(BaseInteractiveTui<T> interactiveTui)
         {
             if (InteractiveTuiStatus.FirstPaneCurrentSelection <= 0 && interactiveTui.PrimaryDataSource.Length() > 0)
                 InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
@@ -613,7 +613,7 @@ namespace Terminaux.Inputs.Interactive
             return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
         }
 
-        private static void SwitchSides(BaseInteractiveTui interactiveTui)
+        private static void SwitchSides<T>(BaseInteractiveTui<T> interactiveTui)
         {
             if (!interactiveTui.SecondPaneInteractable)
                 return;
