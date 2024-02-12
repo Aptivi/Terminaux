@@ -15491,6 +15491,24 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, System.Collections.Generic.List(Of Terminaux.Inputs.InputChoiceInfo), System.Collections.Generic.List(Of Terminaux.Inputs.InputChoiceInfo), Boolean)
   nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, List<InputChoiceInfo>, List<InputChoiceInfo>, bool)
   nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, List(Of InputChoiceInfo), List(Of InputChoiceInfo), Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptMultipleSelection(string, List<InputChoiceInfo>, List<InputChoiceInfo>, SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptMultipleSelection(String, List(Of InputChoiceInfo), List(Of InputChoiceInfo), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(string, System.Collections.Generic.List<Terminaux.Inputs.InputChoiceInfo>, System.Collections.Generic.List<Terminaux.Inputs.InputChoiceInfo>, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, System.Collections.Generic.List(Of Terminaux.Inputs.InputChoiceInfo), System.Collections.Generic.List(Of Terminaux.Inputs.InputChoiceInfo), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, List<InputChoiceInfo>, List<InputChoiceInfo>, SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, List(Of InputChoiceInfo), List(Of InputChoiceInfo), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptMultipleSelection(string, List<InputChoiceInfo>, SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptMultipleSelection(String, List(Of InputChoiceInfo), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(string, System.Collections.Generic.List<Terminaux.Inputs.InputChoiceInfo>, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, System.Collections.Generic.List(Of Terminaux.Inputs.InputChoiceInfo), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, List<InputChoiceInfo>, SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, List(Of InputChoiceInfo), SelectionStyleSettings, Boolean)
 - uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.Boolean)
   name: PromptMultipleSelection(string, string, bool)
   href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_Boolean_
@@ -15527,6 +15545,42 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), String, String(), Boolean)
   nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], string, string[], bool)
   nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), String, String(), Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptMultipleSelection(string, string, string[], string, string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptMultipleSelection(String, String, String(), String, String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], string, string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), String, String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], string, string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), String, String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptMultipleSelection(string, string, string[], string, SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptMultipleSelection(String, String, String(), String, SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], string, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), String, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], string, SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), String, SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptMultipleSelection(string, string, string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptMultipleSelection(String, String, String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string, string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String, String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptMultipleSelection(string, string, SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptMultipleSelection(String, String, SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(string, string, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, String, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string, SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String, SelectionStyleSettings, Boolean)
 - uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.Boolean)
   name: PromptMultipleSelection(string, string[], bool)
   href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_Boolean_
@@ -15563,6 +15617,42 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), String(), String(), Boolean)
   nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], string[], string[], bool)
   nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), String(), String(), Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptMultipleSelection(string, string[], string[], string[], string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptMultipleSelection(String, String(), String(), String(), String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], string[], string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), String(), String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], string[], string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), String(), String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptMultipleSelection(string, string[], string[], string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptMultipleSelection(String, String(), String(), String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptMultipleSelection(string, string[], string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptMultipleSelection(String, String(), String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string[], string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String(), String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptMultipleSelection(string, string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptMultipleSelection(String, String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(string, string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(String, String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionMultipleStyle.PromptMultipleSelection(string, string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionMultipleStyle.PromptMultipleSelection(String, String(), SelectionStyleSettings, Boolean)
 - uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*
   name: PromptMultipleSelection
   href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html#Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_
@@ -15594,6 +15684,24 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, System.Collections.Generic.List(Of Terminaux.Inputs.InputChoiceInfo), System.Collections.Generic.List(Of Terminaux.Inputs.InputChoiceInfo), Boolean)
   nameWithType: SelectionStyle.PromptSelection(string, List<InputChoiceInfo>, List<InputChoiceInfo>, bool)
   nameWithType.vb: SelectionStyle.PromptSelection(String, List(Of InputChoiceInfo), List(Of InputChoiceInfo), Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, List<InputChoiceInfo>, List<InputChoiceInfo>, SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, List(Of InputChoiceInfo), List(Of InputChoiceInfo), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, System.Collections.Generic.List<Terminaux.Inputs.InputChoiceInfo>, System.Collections.Generic.List<Terminaux.Inputs.InputChoiceInfo>, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, System.Collections.Generic.List(Of Terminaux.Inputs.InputChoiceInfo), System.Collections.Generic.List(Of Terminaux.Inputs.InputChoiceInfo), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, List<InputChoiceInfo>, List<InputChoiceInfo>, SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, List(Of InputChoiceInfo), List(Of InputChoiceInfo), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, List<InputChoiceInfo>, SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, List(Of InputChoiceInfo), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, System.Collections.Generic.List<Terminaux.Inputs.InputChoiceInfo>, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, System.Collections.Generic.List(Of Terminaux.Inputs.InputChoiceInfo), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, List<InputChoiceInfo>, SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, List(Of InputChoiceInfo), SelectionStyleSettings, Boolean)
 - uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String,System.Boolean)
   name: PromptSelection(string, string, bool)
   href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_String_System_Boolean_
@@ -15630,6 +15738,42 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String, String(), String, String(), Boolean)
   nameWithType: SelectionStyle.PromptSelection(string, string, string[], string, string[], bool)
   nameWithType.vb: SelectionStyle.PromptSelection(String, String, String(), String, String(), Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String,System.String[],System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, string, string[], string, string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_String_System_String___System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String,System.String[],System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, String, String(), String, String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, string, string[], string, string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String, String(), String, String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, string, string[], string, string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, String, String(), String, String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String,System.String[],System.String,Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, string, string[], string, SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_String_System_String___System_String_Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String,System.String[],System.String,Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, String, String(), String, SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, string, string[], string, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String, String(), String, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, string, string[], string, SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, String, String(), String, SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, string, string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, String, String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, string, string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String, String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, string, string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, String, String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String,Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, string, SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_String_Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String,Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, String, SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, string, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String, Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, string, SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, String, SelectionStyleSettings, Boolean)
 - uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String[],System.Boolean)
   name: PromptSelection(string, string[], bool)
   href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_String___System_Boolean_
@@ -15666,6 +15810,42 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String(), String(), String(), String(), Boolean)
   nameWithType: SelectionStyle.PromptSelection(string, string[], string[], string[], string[], bool)
   nameWithType.vb: SelectionStyle.PromptSelection(String, String(), String(), String(), String(), Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String[],System.String[],System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, string[], string[], string[], string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_String___System_String___System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String[],System.String[],System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, String(), String(), String(), String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, string[], string[], string[], string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String(), String(), String(), String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, string[], string[], string[], string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, String(), String(), String(), String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String[],System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, string[], string[], string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_String___System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String[],System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, String(), String(), String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, string[], string[], string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String(), String(), String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, string[], string[], string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, String(), String(), String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, string[], string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, String(), String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, string[], string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String(), String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, string[], string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, String(), String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, string[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, String(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, string[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, string[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, String(), SelectionStyleSettings, Boolean)
 - uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],System.Boolean)
   name: PromptSelection(string, InputChoiceInfo[], bool)
   href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_Terminaux_Inputs_InputChoiceInfo___System_Boolean_
@@ -15684,6 +15864,24 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, Terminaux.Inputs.InputChoiceInfo(), Terminaux.Inputs.InputChoiceInfo(), Boolean)
   nameWithType: SelectionStyle.PromptSelection(string, InputChoiceInfo[], InputChoiceInfo[], bool)
   nameWithType.vb: SelectionStyle.PromptSelection(String, InputChoiceInfo(), InputChoiceInfo(), Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, InputChoiceInfo[], InputChoiceInfo[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, InputChoiceInfo(), InputChoiceInfo(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, Terminaux.Inputs.InputChoiceInfo[], Terminaux.Inputs.InputChoiceInfo[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, Terminaux.Inputs.InputChoiceInfo(), Terminaux.Inputs.InputChoiceInfo(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, InputChoiceInfo[], InputChoiceInfo[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, InputChoiceInfo(), InputChoiceInfo(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name: PromptSelection(string, InputChoiceInfo[], SelectionStyleSettings, bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)
+  name.vb: PromptSelection(String, InputChoiceInfo(), SelectionStyleSettings, Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, Terminaux.Inputs.InputChoiceInfo[], Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, Terminaux.Inputs.InputChoiceInfo(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, InputChoiceInfo[], SelectionStyleSettings, bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, InputChoiceInfo(), SelectionStyleSettings, Boolean)
 - uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection*
   name: PromptSelection
   href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_
@@ -15691,6 +15889,129 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection
   nameWithType: SelectionStyle.PromptSelection
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings
+  name: SelectionStyleSettings
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html
+  commentId: T:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings
+  nameWithType: SelectionStyleSettings
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.AltOptionColor
+  name: AltOptionColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_AltOptionColor
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.AltOptionColor
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.AltOptionColor
+  nameWithType: SelectionStyleSettings.AltOptionColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.AltOptionColor*
+  name: AltOptionColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_AltOptionColor_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.AltOptionColor
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.AltOptionColor
+  nameWithType: SelectionStyleSettings.AltOptionColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.GlobalSettings
+  name: GlobalSettings
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_GlobalSettings
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.GlobalSettings
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.GlobalSettings
+  nameWithType: SelectionStyleSettings.GlobalSettings
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.GlobalSettings*
+  name: GlobalSettings
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_GlobalSettings_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.GlobalSettings
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.GlobalSettings
+  nameWithType: SelectionStyleSettings.GlobalSettings
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.InputColor
+  name: InputColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_InputColor
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.InputColor
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.InputColor
+  nameWithType: SelectionStyleSettings.InputColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.InputColor*
+  name: InputColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_InputColor_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.InputColor
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.InputColor
+  nameWithType: SelectionStyleSettings.InputColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.OptionColor
+  name: OptionColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_OptionColor
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.OptionColor
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.OptionColor
+  nameWithType: SelectionStyleSettings.OptionColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.OptionColor*
+  name: OptionColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_OptionColor_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.OptionColor
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.OptionColor
+  nameWithType: SelectionStyleSettings.OptionColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.QuestionColor
+  name: QuestionColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_QuestionColor
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.QuestionColor
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.QuestionColor
+  nameWithType: SelectionStyleSettings.QuestionColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.QuestionColor*
+  name: QuestionColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_QuestionColor_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.QuestionColor
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.QuestionColor
+  nameWithType: SelectionStyleSettings.QuestionColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SelectedOptionColor
+  name: SelectedOptionColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_SelectedOptionColor
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SelectedOptionColor
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SelectedOptionColor
+  nameWithType: SelectionStyleSettings.SelectedOptionColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SelectedOptionColor*
+  name: SelectedOptionColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_SelectedOptionColor_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SelectedOptionColor
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SelectedOptionColor
+  nameWithType: SelectionStyleSettings.SelectedOptionColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SeparatorColor
+  name: SeparatorColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_SeparatorColor
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SeparatorColor
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SeparatorColor
+  nameWithType: SelectionStyleSettings.SeparatorColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SeparatorColor*
+  name: SeparatorColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_SeparatorColor_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SeparatorColor
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SeparatorColor
+  nameWithType: SelectionStyleSettings.SeparatorColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SliderColor
+  name: SliderColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_SliderColor
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SliderColor
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SliderColor
+  nameWithType: SelectionStyleSettings.SliderColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SliderColor*
+  name: SliderColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_SliderColor_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SliderColor
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.SliderColor
+  nameWithType: SelectionStyleSettings.SliderColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.TextColor
+  name: TextColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_TextColor
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.TextColor
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.TextColor
+  nameWithType: SelectionStyleSettings.TextColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.TextColor*
+  name: TextColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_TextColor_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.TextColor
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.TextColor
+  nameWithType: SelectionStyleSettings.TextColor
 - uid: Terminaux.Reader
   name: Terminaux.Reader
   href: api/Terminaux.Reader.html
