@@ -50,6 +50,7 @@ namespace Terminaux.Inputs.Styles
         {
             // Some initial variables to populate figlet fonts
             string[] fonts = [.. FigletTools.GetFigletFonts().Keys];
+            var figletSelections = InputChoiceTools.GetInputChoices(Enumerable.Range(1, fonts.Length).Select((num) => $"{num}").ToArray(), fonts).ToArray();
             string fontName = fonts.Contains(font) ? font : "small";
 
             // Determine the font index
@@ -97,8 +98,8 @@ namespace Terminaux.Inputs.Styles
                     ScreenTools.Render();
 
                     // Wait for input
-                    var key = TermReader.ReadKey().Key;
-                    switch (key)
+                    var key = TermReader.ReadKey();
+                    switch (key.Key)
                     {
                         case ConsoleKey.Enter:
                             bail = true;
@@ -120,11 +121,20 @@ namespace Terminaux.Inputs.Styles
                             fontName = fonts[selectedFont];
                             break;
                         case ConsoleKey.S:
-                            string promptedFontName = InfoBoxInputColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
-                            if (!fonts.Contains(promptedFontName))
-                                InfoBoxColor.WriteInfoBox("The font doesn't exist.");
+                            bool write = key.Modifiers.HasFlag(ConsoleModifiers.Shift);
+                            if (write)
+                            {
+                                string promptedFontName = InfoBoxInputColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
+                                if (!fonts.Contains(promptedFontName))
+                                    InfoBoxColor.WriteInfoBox("The font doesn't exist.");
+                                else
+                                    fontName = promptedFontName;
+                            }
                             else
-                                fontName = promptedFontName;
+                            {
+                                selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection("Font selection", figletSelections, "Select a figlet font from the list below");
+                                fontName = fonts[selectedFont];
+                            }
                             break;
                         case ConsoleKey.C:
                             screen.RemoveBufferedPart("Figlet selector");
@@ -137,7 +147,8 @@ namespace Terminaux.Inputs.Styles
                                 [ENTER]              | Accept font
                                 [ESC]                | Exit
                                 [H]                  | Help page
-                                [S]                  | Write font name
+                                [S]                  | Select font from the selection menu
+                                [SHIFT] + [S]        | Write font name
                                 [C]                  | Shows the individual characters
                                 """
                             );
