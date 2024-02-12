@@ -453,7 +453,6 @@ namespace Terminaux.Inputs.Styles.Selection
                                 HighlightedAnswer = 1;
                             break;
                         case ConsoleKey.Home:
-                            goingUp = true;
                             HighlightedAnswer = 1;
                             break;
                         case ConsoleKey.End:

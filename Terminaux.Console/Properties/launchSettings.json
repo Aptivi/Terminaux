@@ -247,6 +247,10 @@
             "commandName": "Project",
             "commandLineArgs": "TestInputSelectionDisabled"
         },
+        "Terminaux - Input - TestInputSelectionScrollDisabled": {
+            "commandName": "Project",
+            "commandLineArgs": "TestInputSelectionScrollDisabled"
+        },
         "Terminaux - Input - TestInputSelectionMultiple": {
             "commandName": "Project",
             "commandLineArgs": "TestInputSelectionMultiple"
@@ -259,9 +263,17 @@
             "commandName": "Project",
             "commandLineArgs": "TestInputSelectionHugeMultiple"
         },
+        "Terminaux - Input - TestInputSelectionMultipleScroll": {
+            "commandName": "Project",
+            "commandLineArgs": "TestInputSelectionMultipleScroll"
+        },
         "Terminaux - Input - TestInputSelectionMultipleDisabled": {
             "commandName": "Project",
             "commandLineArgs": "TestInputSelectionMultipleDisabled"
+        },
+        "Terminaux - Input - TestInputSelectionMultipleDisabledScroll": {
+            "commandName": "Project",
+            "commandLineArgs": "TestInputSelectionMultipleDisabledScroll"
         },
         "Terminaux - Input - TestInputChoice": {
             "commandName": "Project",
