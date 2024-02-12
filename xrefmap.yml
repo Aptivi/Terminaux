@@ -180,6 +180,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.Screen.RemoveBufferedParts
   nameWithType: Screen.RemoveBufferedParts
+- uid: Terminaux.Base.Buffered.Screen.RequireRefresh
+  name: RequireRefresh()
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_RequireRefresh
+  commentId: M:Terminaux.Base.Buffered.Screen.RequireRefresh
+  fullName: Terminaux.Base.Buffered.Screen.RequireRefresh()
+  nameWithType: Screen.RequireRefresh()
+- uid: Terminaux.Base.Buffered.Screen.RequireRefresh*
+  name: RequireRefresh
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_RequireRefresh_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.RequireRefresh
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.Screen.RequireRefresh
+  nameWithType: Screen.RequireRefresh
 - uid: Terminaux.Base.Buffered.Screen.ScreenParts
   name: ScreenParts
   href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_ScreenParts
@@ -443,24 +456,18 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.ScreenTools.CurrentScreen
   nameWithType: ScreenTools.CurrentScreen
-- uid: Terminaux.Base.Buffered.ScreenTools.Render(System.Boolean)
-  name: Render(bool)
-  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_Render_System_Boolean_
-  commentId: M:Terminaux.Base.Buffered.ScreenTools.Render(System.Boolean)
-  name.vb: Render(Boolean)
-  fullName: Terminaux.Base.Buffered.ScreenTools.Render(bool)
-  fullName.vb: Terminaux.Base.Buffered.ScreenTools.Render(Boolean)
-  nameWithType: ScreenTools.Render(bool)
-  nameWithType.vb: ScreenTools.Render(Boolean)
-- uid: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen,System.Boolean)
-  name: Render(Screen, bool)
-  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_Render_Terminaux_Base_Buffered_Screen_System_Boolean_
-  commentId: M:Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen,System.Boolean)
-  name.vb: Render(Screen, Boolean)
-  fullName: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen, bool)
-  fullName.vb: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen, Boolean)
-  nameWithType: ScreenTools.Render(Screen, bool)
-  nameWithType.vb: ScreenTools.Render(Screen, Boolean)
+- uid: Terminaux.Base.Buffered.ScreenTools.Render
+  name: Render()
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_Render
+  commentId: M:Terminaux.Base.Buffered.ScreenTools.Render
+  fullName: Terminaux.Base.Buffered.ScreenTools.Render()
+  nameWithType: ScreenTools.Render()
+- uid: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen)
+  name: Render(Screen)
+  href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_Render_Terminaux_Base_Buffered_Screen_
+  commentId: M:Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen)
+  fullName: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen)
+  nameWithType: ScreenTools.Render(Screen)
 - uid: Terminaux.Base.Buffered.ScreenTools.Render*
   name: Render
   href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_Render_
