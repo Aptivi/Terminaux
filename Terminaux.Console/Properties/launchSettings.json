@@ -307,6 +307,14 @@
             "commandName": "Project",
             "commandLineArgs": "TestInputInfoBoxSelection"
         },
+        "Terminaux - Input - TestInputInfoBoxSelectionDisabled": {
+            "commandName": "Project",
+            "commandLineArgs": "TestInputInfoBoxSelectionDisabled"
+        },
+        "Terminaux - Input - TestInputInfoBoxSelectionDisabledMultiple": {
+            "commandName": "Project",
+            "commandLineArgs": "TestInputInfoBoxSelectionDisabledMultiple"
+        },
         "Terminaux - Input - TestInputInfoBoxSelectionLarge": {
             "commandName": "Project",
             "commandLineArgs": "TestInputInfoBoxSelectionLarge"

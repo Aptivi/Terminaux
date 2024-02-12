@@ -454,13 +454,14 @@ namespace Terminaux.Inputs.Styles.Infobox
                         bool selected = finalIndex == currentSelection;
                         var choice = selections[finalIndex];
                         string AnswerTitle = choice.ChoiceTitle ?? "";
+                        bool disabled = choice.ChoiceDisabled;
 
                         // Get the option
-                        string AnswerOption = $"{(selected ? ">" : " ")} {choice}) {AnswerTitle}";
+                        string AnswerOption = $"{(selected ? ">" : disabled ? "X" : " ")} {choice}) {AnswerTitle}";
                         int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
                         if (AnswerTitleLeft < answerTitleMaxLeft)
                         {
-                            string renderedChoice = $"{(selected ? ">" : " ")} {choice.ChoiceName}) ";
+                            string renderedChoice = $"{(selected ? ">" : disabled ? "X" : " ")} {choice.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
                             AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
                         }
@@ -522,17 +523,19 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Handle keypress
                     var selectedInstance = selections[currentSelection];
                     var key = TermReader.ReadKey().Key;
+                    bool goingUp = false;
                     switch (key)
                     {
                         case ConsoleKey.UpArrow:
+                            goingUp = true;
                             currentSelection--;
                             if (currentSelection < 0)
-                                currentSelection = 0;
+                                currentSelection = selections.Length - 1;
                             break;
                         case ConsoleKey.DownArrow:
                             currentSelection++;
                             if (currentSelection > selections.Length - 1)
-                                currentSelection = selections.Length - 1;
+                                currentSelection = 0;
                             break;
                         case ConsoleKey.Home:
                             currentSelection = 0;
@@ -541,6 +544,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             currentSelection = selections.Length - 1;
                             break;
                         case ConsoleKey.PageUp:
+                            goingUp = true;
                             {
                                 int currentPageMove = (currentSelection - 1) / selectionChoices;
                                 int startIndexMove = selectionChoices * currentPageMove;
@@ -572,6 +576,23 @@ namespace Terminaux.Inputs.Styles.Infobox
                             bail = true;
                             cancel = true;
                             break;
+                    }
+
+                    // Verify that the current position is not a disabled choice
+                    while (selections[currentSelection].ChoiceDisabled)
+                    {
+                        if (goingUp)
+                        {
+                            currentSelection--;
+                            if (currentSelection < 0)
+                                currentSelection = selections.Length - 1;
+                        }
+                        else
+                        {
+                            currentSelection++;
+                            if (currentSelection > selections.Length - 1)
+                                currentSelection = 0;
+                        }
                     }
                 }
                 if (!cancel)
