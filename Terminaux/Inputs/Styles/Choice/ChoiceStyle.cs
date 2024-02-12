@@ -556,7 +556,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="questionColor">The question color</param>
         /// <param name="inputColor">The input color</param>
         /// <param name="optionColor">The option color</param>
-        /// <param name="altOptionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string AnswersStr, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
@@ -571,7 +571,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="questionColor">The question color</param>
         /// <param name="inputColor">The input color</param>
         /// <param name="optionColor">The option color</param>
-        /// <param name="altOptionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
@@ -587,7 +587,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="questionColor">The question color</param>
         /// <param name="inputColor">The input color</param>
         /// <param name="optionColor">The option color</param>
-        /// <param name="altOptionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
@@ -604,7 +604,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="questionColor">The question color</param>
         /// <param name="inputColor">The input color</param>
         /// <param name="optionColor">The option color</param>
-        /// <param name="altOptionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
@@ -618,7 +618,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="questionColor">The question color</param>
         /// <param name="inputColor">The input color</param>
         /// <param name="optionColor">The option color</param>
-        /// <param name="altOptionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string[] Answers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
@@ -633,7 +633,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="questionColor">The question color</param>
         /// <param name="inputColor">The input color</param>
         /// <param name="optionColor">The option color</param>
-        /// <param name="altOptionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
@@ -649,7 +649,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="questionColor">The question color</param>
         /// <param name="inputColor">The input color</param>
         /// <param name="optionColor">The option color</param>
-        /// <param name="altOptionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
@@ -666,7 +666,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="questionColor">The question color</param>
         /// <param name="inputColor">The input color</param>
         /// <param name="optionColor">The option color</param>
-        /// <param name="altOptionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
@@ -680,7 +680,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="questionColor">The question color</param>
         /// <param name="inputColor">The input color</param>
         /// <param name="optionColor">The option color</param>
-        /// <param name="altOptionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, List<InputChoiceInfo> Answers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
@@ -694,11 +694,174 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="questionColor">The question color</param>
         /// <param name="inputColor">The input color</param>
         /// <param name="optionColor">The option color</param>
-        /// <param name="altOptionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
         /// <param name="AltAnswers">Set of alternate answers.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static string PromptChoice(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)
+        public static string PromptChoice(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, Answers, AltAnswers, questionColor, inputColor, optionColor, altOptionColor, new(ConsoleColors.DarkGray), OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="questionColor">The question color</param>
+        /// <param name="inputColor">The input color</param>
+        /// <param name="optionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
+        /// <param name="disabledOptionColor">The disabled option color</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string AnswersStr, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, AnswersStr, [], questionColor, inputColor, optionColor, altOptionColor, disabledOptionColor, OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="questionColor">The question color</param>
+        /// <param name="inputColor">The input color</param>
+        /// <param name="optionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
+        /// <param name="disabledOptionColor">The disabled option color</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, AnswersStr, AnswersTitles, "", [], questionColor, inputColor, optionColor, altOptionColor, disabledOptionColor, OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
+        /// <param name="questionColor">The question color</param>
+        /// <param name="inputColor">The input color</param>
+        /// <param name="optionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
+        /// <param name="disabledOptionColor">The disabled option color</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, [], questionColor, inputColor, optionColor, altOptionColor, disabledOptionColor, OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
+        /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
+        /// <param name="questionColor">The question color</param>
+        /// <param name="inputColor">The input color</param>
+        /// <param name="optionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
+        /// <param name="disabledOptionColor">The disabled option color</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles), questionColor, inputColor, optionColor, altOptionColor, disabledOptionColor, OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="questionColor">The question color</param>
+        /// <param name="inputColor">The input color</param>
+        /// <param name="optionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
+        /// <param name="disabledOptionColor">The disabled option color</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string[] Answers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, Answers, [], questionColor, inputColor, optionColor, altOptionColor, disabledOptionColor, OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="questionColor">The question color</param>
+        /// <param name="inputColor">The input color</param>
+        /// <param name="optionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
+        /// <param name="disabledOptionColor">The disabled option color</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, Answers, AnswersTitles, [], [], questionColor, inputColor, optionColor, altOptionColor, disabledOptionColor, OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswers">Set of alternate answers.</param>
+        /// <param name="questionColor">The question color</param>
+        /// <param name="inputColor">The input color</param>
+        /// <param name="optionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
+        /// <param name="disabledOptionColor">The disabled option color</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, Answers, AnswersTitles, AlternateAnswers, [], questionColor, inputColor, optionColor, altOptionColor, disabledOptionColor, OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+        /// <param name="AlternateAnswers">Set of alternate answers.</param>
+        /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
+        /// <param name="questionColor">The question color</param>
+        /// <param name="inputColor">The input color</param>
+        /// <param name="optionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
+        /// <param name="disabledOptionColor">The disabled option color</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles), questionColor, inputColor, optionColor, altOptionColor, disabledOptionColor, OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="questionColor">The question color</param>
+        /// <param name="inputColor">The input color</param>
+        /// <param name="optionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
+        /// <param name="disabledOptionColor">The disabled option color</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, List<InputChoiceInfo> Answers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
+            PromptChoice(Question, Answers, [], questionColor, inputColor, optionColor, altOptionColor, disabledOptionColor, OutputType, PressEnter);
+
+        /// <summary>
+        /// Prompts user for choice
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AltAnswers">Set of alternate answers.</param>
+        /// <param name="questionColor">The question color</param>
+        /// <param name="inputColor">The input color</param>
+        /// <param name="optionColor">The option color</param>
+        /// <param name="altOptionColor">The alt option color</param>
+        /// <param name="disabledOptionColor">The disabled option color</param>
+        /// <param name="OutputType">Output type of choices</param>
+        /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+        public static string PromptChoice(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)
         {
             // Check for answer count
             if (Answers.Count == 0 && AltAnswers.Count == 0)
@@ -713,9 +876,11 @@ namespace Terminaux.Inputs.Styles.Choice
                 string answer;
 
                 // Check to see if the answers consist of single or multiple characters, and exit if the mode is not appropriate with an error message.
-                string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
-                string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
-                if (!PressEnter && (answers.Any((answer) => answer.Length > 1) || altAnswers.Any((answer) => answer.Length > 1)))
+                Dictionary<string, bool> answers = Answers.ToDictionary((ici) => ici.ChoiceName, (ici) => ici.ChoiceDisabled);
+                Dictionary<string, bool> altAnswers = AltAnswers.ToDictionary((ici) => ici.ChoiceName, (ici) => ici.ChoiceDisabled);
+                string[] answerNames = [.. answers.Keys];
+                string[] altAnswerNames = [.. altAnswers.Keys];
+                if (!PressEnter && (answerNames.Any((answer) => answer.Length > 1) || altAnswerNames.Any((answer) => answer.Length > 1)))
                 {
                     TextWriterColor.Write("Can't provide answers with more than one character in single-character mode.");
                     return "";
@@ -726,14 +891,14 @@ namespace Terminaux.Inputs.Styles.Choice
                 {
                     case ChoiceOutputType.OneLine:
                         {
-                            string answersPlace = altAnswers.Length > 0 ? " <{0}/{1}> " : " <{0}> ";
+                            string answersPlace = altAnswers.Count > 0 ? " <{0}/{1}> " : " <{0}> ";
                             TextWriterColor.WriteColor(Question, false, questionColor);
                             TextWriterColor.WriteColor(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
                             break;
                         }
                     case ChoiceOutputType.TwoLines:
                         {
-                            string answersPlace = altAnswers.Length > 0 ? "<{0}/{1}> " : "<{0}> ";
+                            string answersPlace = altAnswers.Count > 0 ? "<{0}/{1}> " : "<{0}> ";
                             TextWriterColor.WriteColor(Question, true, questionColor);
                             TextWriterColor.WriteColor(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
                             break;
@@ -741,13 +906,13 @@ namespace Terminaux.Inputs.Styles.Choice
                     case ChoiceOutputType.Modern:
                         {
                             TextWriterColor.WriteColor(Question + CharManager.NewLine, true, questionColor);
-                            if (answers.Length > 0)
-                                PrintChoices(answers, Answers, optionColor);
-                            if (altAnswers.Length > 0)
+                            if (answers.Count > 0)
+                                PrintChoices(answerNames, Answers, optionColor, disabledOptionColor);
+                            if (altAnswers.Count > 0)
                             {
-                                if (answers.Length > 0)
+                                if (answers.Count > 0)
                                     TextWriterRaw.Write();
-                                PrintChoices(altAnswers, AltAnswers, altOptionColor);
+                                PrintChoices(altAnswerNames, AltAnswers, altOptionColor, disabledOptionColor);
                             }
                             TextWriterColor.WriteColor(CharManager.NewLine + ">> ", false, inputColor);
                             break;
@@ -785,15 +950,12 @@ namespace Terminaux.Inputs.Styles.Choice
                 }
 
                 // Check if answer is correct.
-                if (Answers.Select((ici) => ici.ChoiceName).Contains(answer) ||
-                    AltAnswers.Select((ici) => ici.ChoiceName).Contains(answer))
-                {
+                if (answerNames.Contains(answer) && !answers[answer] || altAnswerNames.Contains(answer) && !altAnswers[answer])
                     return answer;
-                }
             }
         }
 
-        private static void PrintChoices(string[] answers, List<InputChoiceInfo> answerInfos, Color answerColor)
+        private static void PrintChoices(string[] answers, List<InputChoiceInfo> answerInfos, Color answerColor, Color disabledOptionColor)
         {
             int AnswerTitleLeft = answers.Max(x => $" {x}) ".Length);
             for (int AnswerIndex = 0; AnswerIndex <= answerInfos.Count - 1; AnswerIndex++)
@@ -806,7 +968,7 @@ namespace Terminaux.Inputs.Styles.Choice
                     int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
                     AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{AnswerTitle}";
                 }
-                TextWriterColor.WriteColor(AnswerOption, true, answerColor);
+                TextWriterColor.WriteColor(AnswerOption, true, AnswerInstance.ChoiceDisabled ? disabledOptionColor : answerColor);
             }
         }
 

@@ -111,6 +111,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new TestInputChoice(),
             new TestInputChoiceNoAlt(),
             new TestInputChoiceNoMain(),
+            new TestInputChoiceDisabled(),
             new TestInputFiglet(),
             new TestInputInfoBoxButtons(),
             new TestInputInfoBoxMultiSelection(),
