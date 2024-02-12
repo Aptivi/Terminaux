@@ -11785,6 +11785,15 @@ references:
   fullName.vb: Terminaux.Inputs.InputChoiceInfo.New(String, String, String, Boolean, Boolean)
   nameWithType: InputChoiceInfo.InputChoiceInfo(string, string, string, bool, bool)
   nameWithType.vb: InputChoiceInfo.New(String, String, String, Boolean, Boolean)
+- uid: Terminaux.Inputs.InputChoiceInfo.#ctor(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)
+  name: InputChoiceInfo(string, string, string, bool, bool, bool)
+  href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo__ctor_System_String_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_
+  commentId: M:Terminaux.Inputs.InputChoiceInfo.#ctor(System.String,System.String,System.String,System.Boolean,System.Boolean,System.Boolean)
+  name.vb: New(String, String, String, Boolean, Boolean, Boolean)
+  fullName: Terminaux.Inputs.InputChoiceInfo.InputChoiceInfo(string, string, string, bool, bool, bool)
+  fullName.vb: Terminaux.Inputs.InputChoiceInfo.New(String, String, String, Boolean, Boolean, Boolean)
+  nameWithType: InputChoiceInfo.InputChoiceInfo(string, string, string, bool, bool, bool)
+  nameWithType.vb: InputChoiceInfo.New(String, String, String, Boolean, Boolean, Boolean)
 - uid: Terminaux.Inputs.InputChoiceInfo.#ctor*
   name: InputChoiceInfo
   href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo__ctor_
@@ -11834,6 +11843,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.InputChoiceInfo.ChoiceDescription
   nameWithType: InputChoiceInfo.ChoiceDescription
+- uid: Terminaux.Inputs.InputChoiceInfo.ChoiceDisabled
+  name: ChoiceDisabled
+  href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo_ChoiceDisabled
+  commentId: P:Terminaux.Inputs.InputChoiceInfo.ChoiceDisabled
+  fullName: Terminaux.Inputs.InputChoiceInfo.ChoiceDisabled
+  nameWithType: InputChoiceInfo.ChoiceDisabled
+- uid: Terminaux.Inputs.InputChoiceInfo.ChoiceDisabled*
+  name: ChoiceDisabled
+  href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo_ChoiceDisabled_
+  commentId: Overload:Terminaux.Inputs.InputChoiceInfo.ChoiceDisabled
+  isSpec: "True"
+  fullName: Terminaux.Inputs.InputChoiceInfo.ChoiceDisabled
+  nameWithType: InputChoiceInfo.ChoiceDisabled
 - uid: Terminaux.Inputs.InputChoiceInfo.ChoiceName
   name: ChoiceName
   href: api/Terminaux.Inputs.InputChoiceInfo.html#Terminaux_Inputs_InputChoiceInfo_ChoiceName
@@ -15908,6 +15930,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.AltOptionColor
   nameWithType: SelectionStyleSettings.AltOptionColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.DisabledOptionColor
+  name: DisabledOptionColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_DisabledOptionColor
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.DisabledOptionColor
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.DisabledOptionColor
+  nameWithType: SelectionStyleSettings.DisabledOptionColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.DisabledOptionColor*
+  name: DisabledOptionColor
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_DisabledOptionColor_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.DisabledOptionColor
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.DisabledOptionColor
+  nameWithType: SelectionStyleSettings.DisabledOptionColor
 - uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.GlobalSettings
   name: GlobalSettings
   href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_GlobalSettings
