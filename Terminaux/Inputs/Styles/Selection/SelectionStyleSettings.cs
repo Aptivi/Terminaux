@@ -64,5 +64,9 @@ namespace Terminaux.Inputs.Styles.Selection
         /// Text color
         /// </summary>
         public Color TextColor { get; set; } = new(ConsoleColors.Gray);
+        /// <summary>
+        /// Disabled option color
+        /// </summary>
+        public Color DisabledOptionColor { get; set; } = new(ConsoleColors.DarkGray);
     }
 }

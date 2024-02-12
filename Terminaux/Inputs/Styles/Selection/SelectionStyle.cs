@@ -309,10 +309,16 @@ namespace Terminaux.Inputs.Styles.Selection
             Color selectedOptionColor = settings.SelectedOptionColor;
             Color separatorColor = settings.SeparatorColor;
             Color textColor = settings.TextColor;
+            Color disabledOptionColor = settings.DisabledOptionColor;
             int HighlightedAnswer = 1;
             List<InputChoiceInfo> AllAnswers = new(Answers);
             AllAnswers.AddRange(AltAnswers);
+            bool allDisabled = AllAnswers.All((ici) => ici.ChoiceDisabled);
             int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
+
+            // We need to not to run the selection style when everything is disabled
+            if (allDisabled)
+                throw new TerminauxException("The selection style requires that there is at least one choice enabled.");
 
             // Before we proceed, we need to check the highlighted answer number
             if (HighlightedAnswer > AllAnswers.Count)
@@ -385,20 +391,22 @@ namespace Terminaux.Inputs.Styles.Selection
                                 bool selected = AnswerIndex + 1 == HighlightedAnswer;
                                 var AnswerInstance = AllAnswers[AnswerIndex];
                                 string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
+                                bool disabled = AnswerInstance.ChoiceDisabled;
 
                                 // Get the option
-                                string AnswerOption = $"{(selected ? ">" : " ")} {AnswerInstance}) {AnswerTitle}";
+                                string AnswerOption = $"{(selected ? ">" : disabled ? "X" : " ")} {AnswerInstance}) {AnswerTitle}";
                                 int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
                                 if (AnswerTitleLeft < answerTitleMaxLeft)
                                 {
-                                    string renderedChoice = $"{(selected ? ">" : " ")} {AnswerInstance.ChoiceName}) ";
+                                    string renderedChoice = $"{(selected ? ">" : disabled ? "X" : " ")} {AnswerInstance.ChoiceName}) ";
                                     int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
                                     AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}" + $"{clear}";
                                 }
                                 var AnswerColor =
-                                    selected ?
-                                    selectedOptionColor :
-                                    AltAnswer ? altOptionColor : optionColor;
+                                    disabled ? disabledOptionColor :
+                                    selected ? selectedOptionColor :
+                                    AltAnswer ? altOptionColor :
+                                    optionColor;
                                 AnswerOption = $"{AnswerColor.VTSequenceForeground}{AnswerOption}";
                                 selectionBuilder.Append(AnswerOption.Truncate(answerTitleMaxLeft - 8 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) =>
                                 {
@@ -465,25 +473,29 @@ namespace Terminaux.Inputs.Styles.Selection
                     Answer = TermReader.ReadKey();
 
                     // Check the answer
+                    bool goingUp = false;
                     switch (Answer.Key)
                     {
                         case ConsoleKey.UpArrow:
-                            HighlightedAnswer -= 1;
+                            goingUp = true;
+                            HighlightedAnswer--;
                             if (HighlightedAnswer == 0)
                                 HighlightedAnswer = AllAnswers.Count;
                             break;
                         case ConsoleKey.DownArrow:
-                            HighlightedAnswer += 1;
+                            HighlightedAnswer++;
                             if (HighlightedAnswer > AllAnswers.Count)
                                 HighlightedAnswer = 1;
                             break;
                         case ConsoleKey.Home:
+                            goingUp = true;
                             HighlightedAnswer = 1;
                             break;
                         case ConsoleKey.End:
                             HighlightedAnswer = AllAnswers.Count;
                             break;
                         case ConsoleKey.PageUp:
+                            goingUp = true;
                             HighlightedAnswer = startIndex > 0 ? startIndex : 1;
                             break;
                         case ConsoleKey.PageDown:
@@ -510,6 +522,23 @@ namespace Terminaux.Inputs.Styles.Selection
                             if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
                             break;
+                    }
+
+                    // Verify that the current position is not a disabled choice
+                    while (AllAnswers[HighlightedAnswer - 1].ChoiceDisabled)
+                    {
+                        if (goingUp)
+                        {
+                            HighlightedAnswer--;
+                            if (HighlightedAnswer == 0)
+                                HighlightedAnswer = AllAnswers.Count;
+                        }
+                        else
+                        {
+                            HighlightedAnswer++;
+                            if (HighlightedAnswer > AllAnswers.Count)
+                                HighlightedAnswer = 1;
+                        }
                     }
 
                     // Reset, in case selection changed
