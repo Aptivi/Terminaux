@@ -46,6 +46,7 @@ namespace Terminaux.Inputs.Interactive
 
         private static string _finalInfoRendered = "";
         private static readonly object _interactiveTuiLock = new();
+        private static bool refresh = true;
 
         /// <summary>
         /// Opens the interactive TUI
@@ -132,6 +133,7 @@ namespace Terminaux.Inputs.Interactive
                 }
 
                 // Reset some static variables
+                refresh = true;
                 InteractiveTuiStatus.CurrentPane = 1;
                 InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
                 InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
@@ -179,8 +181,17 @@ namespace Terminaux.Inputs.Interactive
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
             // Redraw the entire TUI screen
-            part.BackgroundColor(InteractiveTuiStatus.BackgroundColor);
-            part.AddText(ConsoleClearing.GetClearWholeScreenSequence());
+            part.AddDynamicText(() =>
+            {
+                var builder = new StringBuilder();
+                builder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
+                if (refresh || ConsoleResizeHandler.WasResized())
+                {
+                    refresh = false;
+                    builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
+                }
+                return builder.ToString();
+            });
 
             // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
             // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
