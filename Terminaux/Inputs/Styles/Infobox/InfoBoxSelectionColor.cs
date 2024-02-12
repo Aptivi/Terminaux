@@ -355,6 +355,11 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (selections is null || selections.Length == 0)
                 return selectedChoice;
 
+            // We need not to run the selection style when everything is disabled
+            bool allDisabled = selections.All((ici) => ici.ChoiceDisabled);
+            if (allDisabled)
+                throw new TerminauxException("The infobox selection style requires that there is at least one choice enabled.");
+
             // Now, some logic to get the informational box ready
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
@@ -375,6 +380,15 @@ namespace Terminaux.Inputs.Styles.Infobox
                 // Modify the current selection according to the default
                 int currentSelection = selections.Any((ici) => ici.ChoiceDefault) ? selections.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx : 0;
                 int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
+
+                // Edge case: We need to check to see if the current highlight is disabled
+                while (selections[currentSelection].ChoiceDisabled)
+                {
+                    currentSelection++;
+                    if (currentSelection > selections.Length - 1)
+                        currentSelection = 0;
+                }
+
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox

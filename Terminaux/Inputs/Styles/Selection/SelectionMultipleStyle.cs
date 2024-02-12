@@ -303,6 +303,14 @@ namespace Terminaux.Inputs.Styles.Selection
             {
                 while (!bail)
                 {
+                    // Edge case: We need to check to see if the current highlight is disabled
+                    while (AllAnswers[HighlightedAnswer - 1].ChoiceDisabled)
+                    {
+                        HighlightedAnswer++;
+                        if (HighlightedAnswer > AllAnswers.Count)
+                            HighlightedAnswer = 1;
+                    }
+
                     // Make a screen part
                     var screenPart = new ScreenPart();
                     int startIndex = 0;

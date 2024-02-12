@@ -865,10 +865,12 @@ namespace Terminaux.Inputs.Styles.Choice
         {
             // Check for answer count
             if (Answers.Count == 0 && AltAnswers.Count == 0)
-            {
-                TextWriterColor.Write("Can't show choice with no answers and no alternative answers.");
-                return "";
-            }
+                throw new TerminauxException("Can't show choice with no answers and no alternative answers.");
+
+            // We need not to run the selection style when everything is disabled
+            bool allDisabled = Answers.All((ici) => ici.ChoiceDisabled) && AltAnswers.All((ici) => ici.ChoiceDisabled);
+            if (allDisabled)
+                throw new TerminauxException("The choice style requires that there is at least one choice enabled.");
 
             // Main loop
             while (true)
