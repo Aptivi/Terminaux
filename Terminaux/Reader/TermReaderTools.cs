@@ -24,6 +24,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader.Tools;
@@ -312,15 +313,25 @@ namespace Terminaux.Reader
             else
             {
                 // We're in the multi-line wrap mode!
-                incompleteSentences = TextTools.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
-                string last = VtSequenceTools.FilterVTSequences(incompleteSentences[incompleteSentences.Length - 1]);
-                int spacesLength = longestSentenceLength - state.RightMargin - last.Length - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0);
-                if (spacesLength < 0)
-                    spacesLength = 0;
-                if (spaces > 0)
-                    spacesLength = spaces;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', spacesLength), state.settings, false, foreground, background);
+                TextWriterColor.WriteForReaderColorBack(renderedText, state.settings, false, foreground, background);
+                
+                // Render appropriate amount of spaces
+                if (spaces == 0 && state.RightMargin == 0)
+                    TextWriterColor.WriteForReaderColorBack(ConsoleClearing.GetClearLineToRightSequence(), state.settings, false, foreground, background);
+                else
+                {
+                    incompleteSentences = TextTools.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
+                    string last = VtSequenceTools.FilterVTSequences(incompleteSentences[incompleteSentences.Length - 1]);
+                    int spacesLength = longestSentenceLength - state.RightMargin - last.Length - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0);
+                    if (spacesLength < 0)
+                        spacesLength = 0;
+                    if (spaces > 0)
+                        spacesLength = spaces;
+                    TextWriterColor.WriteForReaderColorBack(new string(' ', spacesLength), state.settings, false, foreground, background);
+                }
+
+                // If stepping, go either backward or forward.
                 if (steps > 0)
                 {
                     if (backward)
