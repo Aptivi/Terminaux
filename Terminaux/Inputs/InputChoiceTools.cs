@@ -43,20 +43,17 @@ namespace Terminaux.Inputs
         public static List<InputChoiceInfo> GetInputChoices(string[] Answers, string[] AnswersTitles)
         {
             // Variables
-            var finalAnswers = new List<string>();
             var finalChoices = new List<InputChoiceInfo>();
 
             // Check to see if the answer titles are the same
-            if (Answers.Length != AnswersTitles.Length)
+            if (Answers.Length > AnswersTitles.Length)
                 Array.Resize(ref AnswersTitles, Answers.Length);
-
-            // Populate answers to final list for below operation
-            foreach (var _answer in Answers)
-                finalAnswers.Add(_answer);
+            if (AnswersTitles.Length > Answers.Length)
+                Array.Resize(ref Answers, AnswersTitles.Length);
 
             // Now, populate choice information from the arrays
-            for (int i = 0; i < finalAnswers.Count; i++)
-                finalChoices.Add(new InputChoiceInfo(finalAnswers[i], AnswersTitles[i]));
+            for (int i = 0; i < Answers.Length; i++)
+                finalChoices.Add(new InputChoiceInfo(Answers[i] ?? $"[{i + 1}]", AnswersTitles[i] ?? $"[{i + 1}]"));
             return finalChoices;
         }
     }
