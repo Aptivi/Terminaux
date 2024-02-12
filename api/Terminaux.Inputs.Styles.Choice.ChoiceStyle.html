@@ -99,6 +99,109 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.Collections.Generic.List%7BTerminaux.Inputs.InputChoiceInfo%7D%2CSystem.Collections.Generic.List%7BTerminaux.Inputs.InputChoiceInfo%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Choice/ChoiceStyle.cs/#L864">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String,System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Inputs.Styles.Choice.ChoiceOutputType,System.Boolean)">PromptChoice(string, List&lt;InputChoiceInfo&gt;, List&lt;InputChoiceInfo&gt;, Color, Color, Color, Color, Color, ChoiceOutputType, bool)</h4>
+  <div class="markdown level1 summary"><p>Prompts user for choice</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PromptChoice(string Question, List&lt;InputChoiceInfo&gt; Answers, List&lt;InputChoiceInfo&gt; AltAnswers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Question</span></td>
+        <td><p>A question</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>&gt;</td>
+        <td><span class="parametername">Answers</span></td>
+        <td><p>Set of answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>&gt;</td>
+        <td><span class="parametername">AltAnswers</span></td>
+        <td><p>Set of alternate answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">questionColor</span></td>
+        <td><p>The question color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">inputColor</span></td>
+        <td><p>The input color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">optionColor</span></td>
+        <td><p>The option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">altOptionColor</span></td>
+        <td><p>The alt option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">disabledOptionColor</span></td>
+        <td><p>The disabled option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html">ChoiceOutputType</a></td>
+        <td><span class="parametername">OutputType</span></td>
+        <td><p>Output type of choices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">PressEnter</span></td>
+        <td><p>When enabled, allows the input to consist of multiple characters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.Collections.Generic.List%7BTerminaux.Inputs.InputChoiceInfo%7D%2CSystem.Collections.Generic.List%7BTerminaux.Inputs.InputChoiceInfo%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -162,7 +265,7 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">altOptionColor</span></td>
-        <td><p>The option color</p>
+        <td><p>The alt option color</p>
 </td>
       </tr>
       <tr>
@@ -524,6 +627,103 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.Collections.Generic.List%7BTerminaux.Inputs.InputChoiceInfo%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Choice/ChoiceStyle.cs/#L848">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String,System.Collections.Generic.List{Terminaux.Inputs.InputChoiceInfo},Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Inputs.Styles.Choice.ChoiceOutputType,System.Boolean)">PromptChoice(string, List&lt;InputChoiceInfo&gt;, Color, Color, Color, Color, Color, ChoiceOutputType, bool)</h4>
+  <div class="markdown level1 summary"><p>Prompts user for choice</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PromptChoice(string Question, List&lt;InputChoiceInfo&gt; Answers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Question</span></td>
+        <td><p>A question</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>&gt;</td>
+        <td><span class="parametername">Answers</span></td>
+        <td><p>Set of answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">questionColor</span></td>
+        <td><p>The question color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">inputColor</span></td>
+        <td><p>The input color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">optionColor</span></td>
+        <td><p>The option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">altOptionColor</span></td>
+        <td><p>The alt option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">disabledOptionColor</span></td>
+        <td><p>The disabled option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html">ChoiceOutputType</a></td>
+        <td><span class="parametername">OutputType</span></td>
+        <td><p>Output type of choices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">PressEnter</span></td>
+        <td><p>When enabled, allows the input to consist of multiple characters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_Collections_Generic_List_Terminaux_Inputs_InputChoiceInfo__Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.Collections.Generic.List%7BTerminaux.Inputs.InputChoiceInfo%7D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -581,7 +781,7 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">altOptionColor</span></td>
-        <td><p>The option color</p>
+        <td><p>The alt option color</p>
 </td>
       </tr>
       <tr>
@@ -919,6 +1119,121 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_System_String___System_String_System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Choice/ChoiceStyle.cs/#L767">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_System_String___System_String_System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String,System.String,System.String[],System.String,System.String[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Inputs.Styles.Choice.ChoiceOutputType,System.Boolean)">PromptChoice(string, string, string[], string, string[], Color, Color, Color, Color, Color, ChoiceOutputType, bool)</h4>
+  <div class="markdown level1 summary"><p>Prompts user for choice</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Question</span></td>
+        <td><p>A question</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">AnswersStr</span></td>
+        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">AnswersTitles</span></td>
+        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">AlternateAnswersStr</span></td>
+        <td><p>Set of alternate answers. They can be written like this: Y/N/C.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">AlternateAnswersTitles</span></td>
+        <td><p>Working titles for each alternate answer. It must be the same amount as the alternate answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">questionColor</span></td>
+        <td><p>The question color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">inputColor</span></td>
+        <td><p>The input color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">optionColor</span></td>
+        <td><p>The option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">altOptionColor</span></td>
+        <td><p>The alt option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">disabledOptionColor</span></td>
+        <td><p>The disabled option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html">ChoiceOutputType</a></td>
+        <td><span class="parametername">OutputType</span></td>
+        <td><p>Output type of choices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">PressEnter</span></td>
+        <td><p>When enabled, allows the input to consist of multiple characters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_System_String___System_String_System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -994,7 +1309,7 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">altOptionColor</span></td>
-        <td><p>The option color</p>
+        <td><p>The alt option color</p>
 </td>
       </tr>
       <tr>
@@ -1404,6 +1719,115 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_System_String___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Choice/ChoiceStyle.cs/#L749">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_System_String___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String,System.String,System.String[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Inputs.Styles.Choice.ChoiceOutputType,System.Boolean)">PromptChoice(string, string, string[], string, Color, Color, Color, Color, Color, ChoiceOutputType, bool)</h4>
+  <div class="markdown level1 summary"><p>Prompts user for choice</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Question</span></td>
+        <td><p>A question</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">AnswersStr</span></td>
+        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">AnswersTitles</span></td>
+        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">AlternateAnswersStr</span></td>
+        <td><p>Set of alternate answers. They can be written like this: Y/N/C.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">questionColor</span></td>
+        <td><p>The question color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">inputColor</span></td>
+        <td><p>The input color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">optionColor</span></td>
+        <td><p>The option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">altOptionColor</span></td>
+        <td><p>The alt option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">disabledOptionColor</span></td>
+        <td><p>The disabled option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html">ChoiceOutputType</a></td>
+        <td><span class="parametername">OutputType</span></td>
+        <td><p>Output type of choices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">PressEnter</span></td>
+        <td><p>When enabled, allows the input to consist of multiple characters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_System_String___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -1473,7 +1897,7 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">altOptionColor</span></td>
-        <td><p>The option color</p>
+        <td><p>The alt option color</p>
 </td>
       </tr>
       <tr>
@@ -1859,6 +2283,109 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Choice/ChoiceStyle.cs/#L732">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String,System.String,System.String[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Inputs.Styles.Choice.ChoiceOutputType,System.Boolean)">PromptChoice(string, string, string[], Color, Color, Color, Color, Color, ChoiceOutputType, bool)</h4>
+  <div class="markdown level1 summary"><p>Prompts user for choice</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Question</span></td>
+        <td><p>A question</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">AnswersStr</span></td>
+        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">AnswersTitles</span></td>
+        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">questionColor</span></td>
+        <td><p>The question color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">inputColor</span></td>
+        <td><p>The input color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">optionColor</span></td>
+        <td><p>The option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">altOptionColor</span></td>
+        <td><p>The alt option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">disabledOptionColor</span></td>
+        <td><p>The disabled option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html">ChoiceOutputType</a></td>
+        <td><span class="parametername">OutputType</span></td>
+        <td><p>Output type of choices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">PressEnter</span></td>
+        <td><p>When enabled, allows the input to consist of multiple characters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -1922,7 +2449,7 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">altOptionColor</span></td>
-        <td><p>The option color</p>
+        <td><p>The alt option color</p>
 </td>
       </tr>
       <tr>
@@ -2284,6 +2811,103 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Choice/ChoiceStyle.cs/#L716">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Inputs.Styles.Choice.ChoiceOutputType,System.Boolean)">PromptChoice(string, string, Color, Color, Color, Color, Color, ChoiceOutputType, bool)</h4>
+  <div class="markdown level1 summary"><p>Prompts user for choice</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PromptChoice(string Question, string AnswersStr, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Question</span></td>
+        <td><p>A question</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">AnswersStr</span></td>
+        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">questionColor</span></td>
+        <td><p>The question color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">inputColor</span></td>
+        <td><p>The input color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">optionColor</span></td>
+        <td><p>The option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">altOptionColor</span></td>
+        <td><p>The alt option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">disabledOptionColor</span></td>
+        <td><p>The disabled option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html">ChoiceOutputType</a></td>
+        <td><span class="parametername">OutputType</span></td>
+        <td><p>Output type of choices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">PressEnter</span></td>
+        <td><p>When enabled, allows the input to consist of multiple characters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -2341,7 +2965,7 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">altOptionColor</span></td>
-        <td><p>The option color</p>
+        <td><p>The alt option color</p>
 </td>
       </tr>
       <tr>
@@ -2679,6 +3303,121 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___System_String___System_String___System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Choice/ChoiceStyle.cs/#L833">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___System_String___System_String___System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String,System.String[],System.String[],System.String[],System.String[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Inputs.Styles.Choice.ChoiceOutputType,System.Boolean)">PromptChoice(string, string[], string[], string[], string[], Color, Color, Color, Color, Color, ChoiceOutputType, bool)</h4>
+  <div class="markdown level1 summary"><p>Prompts user for choice</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Question</span></td>
+        <td><p>A question</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">Answers</span></td>
+        <td><p>Set of answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">AnswersTitles</span></td>
+        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">AlternateAnswers</span></td>
+        <td><p>Set of alternate answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">AlternateAnswersTitles</span></td>
+        <td><p>Working titles for each alternate answer. It must be the same amount as the alternate answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">questionColor</span></td>
+        <td><p>The question color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">inputColor</span></td>
+        <td><p>The input color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">optionColor</span></td>
+        <td><p>The option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">altOptionColor</span></td>
+        <td><p>The alt option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">disabledOptionColor</span></td>
+        <td><p>The disabled option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html">ChoiceOutputType</a></td>
+        <td><span class="parametername">OutputType</span></td>
+        <td><p>Output type of choices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">PressEnter</span></td>
+        <td><p>When enabled, allows the input to consist of multiple characters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___System_String___System_String___System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -2754,7 +3493,7 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">altOptionColor</span></td>
-        <td><p>The option color</p>
+        <td><p>The alt option color</p>
 </td>
       </tr>
       <tr>
@@ -3164,6 +3903,115 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___System_String___System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Choice/ChoiceStyle.cs/#L815">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___System_String___System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String,System.String[],System.String[],System.String[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Inputs.Styles.Choice.ChoiceOutputType,System.Boolean)">PromptChoice(string, string[], string[], string[], Color, Color, Color, Color, Color, ChoiceOutputType, bool)</h4>
+  <div class="markdown level1 summary"><p>Prompts user for choice</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Question</span></td>
+        <td><p>A question</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">Answers</span></td>
+        <td><p>Set of answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">AnswersTitles</span></td>
+        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">AlternateAnswers</span></td>
+        <td><p>Set of alternate answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">questionColor</span></td>
+        <td><p>The question color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">inputColor</span></td>
+        <td><p>The input color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">optionColor</span></td>
+        <td><p>The option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">altOptionColor</span></td>
+        <td><p>The alt option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">disabledOptionColor</span></td>
+        <td><p>The disabled option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html">ChoiceOutputType</a></td>
+        <td><span class="parametername">OutputType</span></td>
+        <td><p>Output type of choices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">PressEnter</span></td>
+        <td><p>When enabled, allows the input to consist of multiple characters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___System_String___System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -3233,7 +4081,7 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">altOptionColor</span></td>
-        <td><p>The option color</p>
+        <td><p>The alt option color</p>
 </td>
       </tr>
       <tr>
@@ -3619,6 +4467,109 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Choice/ChoiceStyle.cs/#L798">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String,System.String[],System.String[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Inputs.Styles.Choice.ChoiceOutputType,System.Boolean)">PromptChoice(string, string[], string[], Color, Color, Color, Color, Color, ChoiceOutputType, bool)</h4>
+  <div class="markdown level1 summary"><p>Prompts user for choice</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Question</span></td>
+        <td><p>A question</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">Answers</span></td>
+        <td><p>Set of answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">AnswersTitles</span></td>
+        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">questionColor</span></td>
+        <td><p>The question color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">inputColor</span></td>
+        <td><p>The input color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">optionColor</span></td>
+        <td><p>The option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">altOptionColor</span></td>
+        <td><p>The alt option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">disabledOptionColor</span></td>
+        <td><p>The disabled option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html">ChoiceOutputType</a></td>
+        <td><span class="parametername">OutputType</span></td>
+        <td><p>Output type of choices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">PressEnter</span></td>
+        <td><p>When enabled, allows the input to consist of multiple characters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -3682,7 +4633,7 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">altOptionColor</span></td>
-        <td><p>The option color</p>
+        <td><p>The alt option color</p>
 </td>
       </tr>
       <tr>
@@ -4044,6 +4995,103 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Choice/ChoiceStyle.cs/#L782">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String,System.String[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Inputs.Styles.Choice.ChoiceOutputType,System.Boolean)">PromptChoice(string, string[], Color, Color, Color, Color, Color, ChoiceOutputType, bool)</h4>
+  <div class="markdown level1 summary"><p>Prompts user for choice</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string PromptChoice(string Question, string[] Answers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, Color disabledOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">Question</span></td>
+        <td><p>A question</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td><span class="parametername">Answers</span></td>
+        <td><p>Set of answers.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">questionColor</span></td>
+        <td><p>The question color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">inputColor</span></td>
+        <td><p>The input color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">optionColor</span></td>
+        <td><p>The option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">altOptionColor</span></td>
+        <td><p>The alt option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">disabledOptionColor</span></td>
+        <td><p>The disabled option color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.Styles.Choice.ChoiceOutputType.html">ChoiceOutputType</a></td>
+        <td><span class="parametername">OutputType</span></td>
+        <td><p>Output type of choices</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">PressEnter</span></td>
+        <td><p>When enabled, allows the input to consist of multiple characters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Choice_ChoiceStyle_PromptChoice_System_String_System_String___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Inputs_Styles_Choice_ChoiceOutputType_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Choice.ChoiceStyle.PromptChoice(System.String%2CSystem.String%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Inputs.Styles.Choice.ChoiceOutputType%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -4101,7 +5149,7 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">altOptionColor</span></td>
-        <td><p>The option color</p>
+        <td><p>The alt option color</p>
 </td>
       </tr>
       <tr>
