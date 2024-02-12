@@ -343,6 +343,14 @@
             "commandName": "Project",
             "commandLineArgs": "TestInputInfoBoxProgress"
         },
+        "Terminaux - Input - ColorSelectorTest": {
+            "commandName": "Project",
+            "commandLineArgs": "ColorSelectorTest"
+        },
+        "Terminaux - Input - ColorSelectorNoPaletteTest": {
+            "commandName": "Project",
+            "commandLineArgs": "ColorSelectorNoPaletteTest"
+        },
         "Terminaux - Input - KeyInfo": {
             "commandName": "Project",
             "commandLineArgs": "KeyInfo"
@@ -358,14 +366,6 @@
         "Terminaux - Color - ColorWithResetTest": {
             "commandName": "Project",
             "commandLineArgs": "ColorWithResetTest"
-        },
-        "Terminaux - Color - ColorSelectorTest": {
-            "commandName": "Project",
-            "commandLineArgs": "ColorSelectorTest"
-        },
-        "Terminaux - Color - ColorSelectorNoPaletteTest": {
-            "commandName": "Project",
-            "commandLineArgs": "ColorSelectorNoPaletteTest"
         },
         "Terminaux - Color - ColorRandomTest": {
             "commandName": "Project",

@@ -125,14 +125,14 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new TestInputInfoBoxInput(),
             new TestInputInfoBoxColoredInput(),
             new TestInputInfoBoxProgress(),
+            new ColorSelectorTest(),
+            new ColorSelectorNoPaletteTest(),
             new KeyInfo(),
 
             // Color
             new ColorTest(),
             new ColorTrueTest(),
             new ColorWithResetTest(),
-            new ColorSelectorTest(),
-            new ColorSelectorNoPaletteTest(),
             new ColorRandomTest(),
             new ColorRandom256Test(),
             new ColorRandom16Test(),
