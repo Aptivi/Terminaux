@@ -619,14 +619,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             var infoBoxScreenPart = new ScreenPart();
             var screen = new Screen();
             if (initialScreenIsNull)
-            {
-                infoBoxScreenPart.AddDynamicText(() =>
-                {
-                    ColorTools.SetConsoleColorDry(ColorTools.currentBackgroundColor, true);
-                    return ConsoleClearing.GetClearWholeScreenSequence();
-                });
                 ScreenTools.SetCurrent(screen);
-            }
             ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxProgressColor), infoBoxScreenPart);
             try
             {

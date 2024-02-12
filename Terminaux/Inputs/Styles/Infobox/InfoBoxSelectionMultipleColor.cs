@@ -369,14 +369,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             var infoBoxScreenPart = new ScreenPart();
             var screen = new Screen();
             if (initialScreenIsNull)
-            {
-                infoBoxScreenPart.AddDynamicText(() =>
-                {
-                    ColorTools.SetConsoleColorDry(ColorTools.currentBackgroundColor, true);
-                    return ConsoleClearing.GetClearWholeScreenSequence();
-                });
                 ScreenTools.SetCurrent(screen);
-            }
             ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxSelectionMultipleColor), infoBoxScreenPart);
             try
             {
@@ -588,7 +581,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                             string choiceTitle = selectedInstance.ChoiceTitle;
                             string choiceDesc = selectedInstance.ChoiceDescription;
                             if (!string.IsNullOrWhiteSpace(choiceDesc))
+                            {
                                 InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                ScreenTools.CurrentScreen.RequireRefresh();
+                            }
                             break;
                         case ConsoleKey.Enter:
                             bail = true;

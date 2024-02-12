@@ -111,13 +111,6 @@ namespace Terminaux.Inputs.Presentation
                 {
                     var builder = new StringBuilder();
 
-                    // Clear the console
-                    ColorTools.SetConsoleColor(ColorTools.CurrentBackgroundColor, true);
-                    builder.Append(
-                        ConsoleClearing.GetClearWholeScreenSequence()
-                    );
-                    ConsoleWrapper.CursorVisible = false;
-
                     // Make a border
                     builder.Append(
                         BoxFrameColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", PresentationUpperBorderLeft, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop, new Color(ConsoleColors.Gray), ColorTools.CurrentBackgroundColor) +
@@ -193,7 +186,7 @@ namespace Terminaux.Inputs.Presentation
 
             // Clean up after ourselves
             ScreenTools.UnsetCurrent(screen);
-            ConsoleWrapper.Clear();
+            ColorTools.LoadBack();
             ConsoleWrapper.CursorVisible = true;
         }
 

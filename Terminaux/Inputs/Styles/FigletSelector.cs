@@ -23,6 +23,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Writer.FancyWriters;
@@ -76,8 +77,6 @@ namespace Terminaux.Inputs.Styles
                 screenPart.AddDynamicText(() =>
                 {
                     var buffer = new StringBuilder();
-                    ConsoleWrapper.CursorVisible = false;
-                    ConsoleWrapper.Clear();
 
                     // Write the text using the selected figlet font
                     var figletFont = FigletTools.GetFigletFont(fontName);
@@ -113,12 +112,14 @@ namespace Terminaux.Inputs.Styles
                             if (selectedFont < 0)
                                 selectedFont = fonts.Length - 1;
                             fontName = fonts[selectedFont];
+                            screen.RequireRefresh();
                             break;
                         case ConsoleKey.RightArrow:
                             selectedFont++;
                             if (selectedFont > fonts.Length - 1)
                                 selectedFont = 0;
                             fontName = fonts[selectedFont];
+                            screen.RequireRefresh();
                             break;
                         case ConsoleKey.S:
                             bool write = key.Modifiers.HasFlag(ConsoleModifiers.Shift);
@@ -135,11 +136,14 @@ namespace Terminaux.Inputs.Styles
                                 selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection("Font selection", figletSelections, "Select a figlet font from the list below");
                                 fontName = fonts[selectedFont];
                             }
+                            screen.RequireRefresh();
                             break;
                         case ConsoleKey.C:
+                            ColorTools.LoadBack();
                             screen.RemoveBufferedPart("Figlet selector");
                             ShowChars(screen, fontName);
                             screen.AddBufferedPart("Figlet selector", screenPart);
+                            screen.RequireRefresh();
                             break;
                         case ConsoleKey.H:
                             InfoBoxColor.WriteInfoBox("Available keybindings",
@@ -152,6 +156,7 @@ namespace Terminaux.Inputs.Styles
                                 [C]                  | Shows the individual characters
                                 """
                             );
+                            screen.RequireRefresh();
                             break;
                     }
                 }
@@ -163,7 +168,7 @@ namespace Terminaux.Inputs.Styles
             finally
             {
                 ScreenTools.UnsetCurrent(screen);
-                ConsoleWrapper.Clear();
+                ColorTools.LoadBack();
             }
             return cancel ? font : fontName;
         }
@@ -186,8 +191,6 @@ namespace Terminaux.Inputs.Styles
                 screenPart.AddDynamicText(() =>
                 {
                     var buffer = new StringBuilder();
-                    ConsoleWrapper.CursorVisible = false;
-                    ConsoleWrapper.Clear();
 
                     // Write the text using the selected figlet font
                     var figletFont = FigletTools.GetFigletFont(fontName);
@@ -217,11 +220,13 @@ namespace Terminaux.Inputs.Styles
                             index--;
                             if (index < 0)
                                 index = chars.Length - 1;
+                            screen.RequireRefresh();
                             break;
                         case ConsoleKey.RightArrow:
                             index++;
                             if (index > chars.Length - 1)
                                 index = 0;
+                            screen.RequireRefresh();
                             break;
                     }
                 }
@@ -234,7 +239,6 @@ namespace Terminaux.Inputs.Styles
             {
                 if (screen.CheckBufferedPart("Figlet selector - show characters"))
                     screen.RemoveBufferedPart("Figlet selector - show characters");
-                ConsoleWrapper.Clear();
             }
         }
     }

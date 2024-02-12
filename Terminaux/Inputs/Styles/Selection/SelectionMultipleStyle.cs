@@ -326,10 +326,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         int pages = AllAnswers.Count / answersPerPage;
                         if (AllAnswers.Count % answersPerPage == 0)
                             pages--;
-                        var selectionBuilder = new StringBuilder(
-                            $"{ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)}" +
-                            ConsoleClearing.GetClearWholeScreenSequence()
-                        );
+                        var selectionBuilder = new StringBuilder();
 
                         // The reason for subtracting the highlighted answer by one is that because while the highlighted answer number is one-based, the indexes are zero-based,
                         // causing confusion. Pages, again, are one-based.
@@ -496,7 +493,10 @@ namespace Terminaux.Inputs.Styles.Selection
                             string choiceTitle = highlightedAnswer.ChoiceTitle;
                             string choiceDesc = highlightedAnswer.ChoiceDescription;
                             if (!string.IsNullOrWhiteSpace(choiceDesc))
+                            {
                                 InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                selectionScreen.RequireRefresh();
+                            }
                             break;
                     }
 
@@ -518,7 +518,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     }
 
                     // Reset, in case selection changed
-                    selectionScreen.RemoveBufferedParts();
+                    selectionScreen.RemoveBufferedPart("Selection - multiple");
                 }
             }
             catch (Exception ex)

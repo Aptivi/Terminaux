@@ -39,24 +39,18 @@ namespace Terminaux.Base.Buffered
         /// <summary>
         /// Renders the current screen one time
         /// </summary>
-        /// <param name="clearScreen">Whether to clear the screen before writing the buffer down to the console</param>
-        public static void Render(bool clearScreen = false) =>
-            Render(CurrentScreen, clearScreen);
+        public static void Render() =>
+            Render(CurrentScreen);
 
         /// <summary>
         /// Renders the screen one time
         /// </summary>
         /// <param name="screen">The screen to be rendered</param>
-        /// <param name="clearScreen">Whether to clear the screen before writing the buffer down to the console</param>
-        public static void Render(Screen screen, bool clearScreen = false)
+        public static void Render(Screen screen)
         {
             // Check the screen instance
             if (screen is null)
                 throw new TerminauxException("Screen is not specified.");
-
-            // Clear if needed
-            if (clearScreen)
-                ColorTools.LoadBack();
 
             // Now, render the screen
             string buffer = screen.GetBuffer();

@@ -97,19 +97,6 @@ namespace Terminaux.Inputs.Styles
                 bool refresh = true;
                 while (!bail)
                 {
-                    // We need to refresh the screen
-                    screenPart.AddDynamicText(() =>
-                    {
-                        var builder = new StringBuilder();
-                        builder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
-                        if (refresh || ConsoleResizeHandler.WasResized())
-                        {
-                            refresh = false;
-                            builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
-                        }
-                        return builder.ToString();
-                    });
-
                     // Now, render the selector
                     screenPart.AddDynamicText(() =>
                     {
@@ -124,10 +111,12 @@ namespace Terminaux.Inputs.Styles
                         type == ColorType.TrueColor || type == ColorType._255Color || type == ColorType._16Color ?
                         HandleKeypress(ref selectedColor, ref type, out refresh) :
                         throw new TerminauxException("Invalid color type in the color selector");
+                    if (refresh)
+                        screen.RequireRefresh();
 
                     // Clean up after ourselves
                     screenPart.Clear();
-                    screen.RemoveBufferedParts();
+                    screen.RemoveBufferedPart("Color selector");
                 }
             }
             catch (Exception ex)

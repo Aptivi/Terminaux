@@ -623,14 +623,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             var infoBoxPageScreenPart = new ScreenPart() { Order = 1 };
             var screen = new Screen();
             if (initialScreenIsNull)
-            {
-                infoBoxScreenPart.AddDynamicText(() =>
-                {
-                    ColorTools.SetConsoleColorDry(ColorTools.currentBackgroundColor, true);
-                    return ConsoleClearing.GetClearWholeScreenSequence();
-                });
                 ScreenTools.SetCurrent(screen);
-            }
             ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxColor), infoBoxScreenPart);
             ScreenTools.CurrentScreen.AddBufferedPart("Informational box - Page", infoBoxPageScreenPart);
             try

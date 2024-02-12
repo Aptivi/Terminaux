@@ -20,6 +20,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 
 namespace Terminaux.Base.Buffered
 {
@@ -28,6 +30,8 @@ namespace Terminaux.Base.Buffered
     /// </summary>
     public class Screen
     {
+        private bool needsRefresh = true;
+        private readonly ScreenPart clearPart = new();
         private readonly Dictionary<string, ScreenPart> screenParts = [];
 
         /// <summary>
@@ -188,6 +192,7 @@ namespace Terminaux.Base.Buffered
         public string GetBuffer()
         {
             var builder = new StringBuilder();
+            builder.Append(clearPart.GetBuffer());
             var sortedParts = ScreenParts.OrderBy((part) => part.Order).ToList();
             foreach (var part in sortedParts)
                 builder.Append(part.GetBuffer());
@@ -195,9 +200,33 @@ namespace Terminaux.Base.Buffered
         }
 
         /// <summary>
+        /// Tells the clear screen part that the refresh is required
+        /// </summary>
+        public void RequireRefresh() =>
+            needsRefresh = true;
+
+        /// <summary>
         /// Makes a new instance of the screen
         /// </summary>
-        public Screen()
-        { }
+        public Screen() =>
+            InitializeClearScreenManager();
+
+        internal void InitializeClearScreenManager()
+        {
+            needsRefresh = true;
+            clearPart.Clear();
+            clearPart.AddDynamicText(() =>
+            {
+                ConsoleWrapper.CursorVisible = false;
+                var builder = new StringBuilder();
+                builder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
+                if (needsRefresh || ConsoleResizeHandler.WasResized())
+                {
+                    needsRefresh = false;
+                    builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
+                }
+                return builder.ToString();
+            });
+        }
     }
 }
