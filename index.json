@@ -549,11 +549,6 @@
     "title": "Namespace Terminaux.Inputs.Styles.Infobox | Terminaux API - Aptivi",
     "keywords": "Namespace Terminaux.Inputs.Styles.Infobox Classes InfoBoxButtonsColor Info box writer with buttons and color support InfoBoxColor Info box writer with color support InfoBoxInputColor Info box writer with input and color support InfoBoxProgressColor Info box writer with progress and color support InfoBoxSelectionColor Info box writer with selection and color support InfoBoxSelectionMultipleColor Info box writer with selection and color support"
   },
-  "api/Terminaux.Inputs.Styles.InputStyle.html": {
-    "href": "api/Terminaux.Inputs.Styles.InputStyle.html",
-    "title": "Class InputStyle | Terminaux API - Aptivi",
-    "keywords": "Class InputStyle Input style module Inheritance object InputStyle Namespace: Terminaux.Inputs.Styles Assembly: Terminaux.dll Syntax public static class InputStyle Methods | Edit this page View Source PromptInput(string) Prompts user for input (answer the question with your own answers) Declaration public static string PromptInput(string Question) Parameters Type Name Description string Question Returns Type Description string | Edit this page View Source PromptInputPassword(string) Prompts user for password (answer the question with your own answers) Declaration public static string PromptInputPassword(string Question) Parameters Type Name Description string Question Returns Type Description string"
-  },
   "api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html": {
     "href": "api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html",
     "title": "Class SelectionMultipleStyle | Terminaux API - Aptivi",
@@ -572,7 +567,7 @@
   "api/Terminaux.Inputs.Styles.html": {
     "href": "api/Terminaux.Inputs.Styles.html",
     "title": "Namespace Terminaux.Inputs.Styles | Terminaux API - Aptivi",
-    "keywords": "Namespace Terminaux.Inputs.Styles Classes ColorSelector Color selection application FigletSelector Figlet selector InputStyle Input style module"
+    "keywords": "Namespace Terminaux.Inputs.Styles Classes ColorSelector Color selection application FigletSelector Figlet selector"
   },
   "api/Terminaux.Inputs.html": {
     "href": "api/Terminaux.Inputs.html",

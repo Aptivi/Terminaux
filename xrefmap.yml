@@ -15101,44 +15101,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiplePlain
   nameWithType: InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiplePlain
-- uid: Terminaux.Inputs.Styles.InputStyle
-  name: InputStyle
-  href: api/Terminaux.Inputs.Styles.InputStyle.html
-  commentId: T:Terminaux.Inputs.Styles.InputStyle
-  fullName: Terminaux.Inputs.Styles.InputStyle
-  nameWithType: InputStyle
-- uid: Terminaux.Inputs.Styles.InputStyle.PromptInput(System.String)
-  name: PromptInput(string)
-  href: api/Terminaux.Inputs.Styles.InputStyle.html#Terminaux_Inputs_Styles_InputStyle_PromptInput_System_String_
-  commentId: M:Terminaux.Inputs.Styles.InputStyle.PromptInput(System.String)
-  name.vb: PromptInput(String)
-  fullName: Terminaux.Inputs.Styles.InputStyle.PromptInput(string)
-  fullName.vb: Terminaux.Inputs.Styles.InputStyle.PromptInput(String)
-  nameWithType: InputStyle.PromptInput(string)
-  nameWithType.vb: InputStyle.PromptInput(String)
-- uid: Terminaux.Inputs.Styles.InputStyle.PromptInput*
-  name: PromptInput
-  href: api/Terminaux.Inputs.Styles.InputStyle.html#Terminaux_Inputs_Styles_InputStyle_PromptInput_
-  commentId: Overload:Terminaux.Inputs.Styles.InputStyle.PromptInput
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Styles.InputStyle.PromptInput
-  nameWithType: InputStyle.PromptInput
-- uid: Terminaux.Inputs.Styles.InputStyle.PromptInputPassword(System.String)
-  name: PromptInputPassword(string)
-  href: api/Terminaux.Inputs.Styles.InputStyle.html#Terminaux_Inputs_Styles_InputStyle_PromptInputPassword_System_String_
-  commentId: M:Terminaux.Inputs.Styles.InputStyle.PromptInputPassword(System.String)
-  name.vb: PromptInputPassword(String)
-  fullName: Terminaux.Inputs.Styles.InputStyle.PromptInputPassword(string)
-  fullName.vb: Terminaux.Inputs.Styles.InputStyle.PromptInputPassword(String)
-  nameWithType: InputStyle.PromptInputPassword(string)
-  nameWithType.vb: InputStyle.PromptInputPassword(String)
-- uid: Terminaux.Inputs.Styles.InputStyle.PromptInputPassword*
-  name: PromptInputPassword
-  href: api/Terminaux.Inputs.Styles.InputStyle.html#Terminaux_Inputs_Styles_InputStyle_PromptInputPassword_
-  commentId: Overload:Terminaux.Inputs.Styles.InputStyle.PromptInputPassword
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Styles.InputStyle.PromptInputPassword
-  nameWithType: InputStyle.PromptInputPassword
 - uid: Terminaux.Inputs.Styles.Selection
   name: Terminaux.Inputs.Styles.Selection
   href: api/Terminaux.Inputs.Styles.Selection.html
