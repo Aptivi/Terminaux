@@ -29,7 +29,11 @@ namespace Terminaux.Base.Checks
     /// </summary>
     public static class TerminalTypeBlacklist
     {
-        internal static List<(Func<string, bool>, string)> baseBlacklist = [];
+        internal static List<(Func<string, bool>, string)> baseBlacklist =
+        [
+            (new((type) => type == "dumb"), "Console type only supports basic writing."),
+            (new((type) => type == "unknown"), "Console type is of unknown nature."),
+        ];
         internal static List<(Func<string, bool>, string)> customBlacklist = [];
 
         /// <summary>
