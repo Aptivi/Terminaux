@@ -116,7 +116,7 @@
             {
                 "name": "CsiCursorPosition",
                 "regex": "(\\x9B|\\x1B\\[)[0-9]*[;][0-9]*[H]",
-                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}H",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{1}};{{0}}H",
                 "arguments": [
                     {
                         "name": "column",
@@ -459,7 +459,7 @@
             {
                 "name": "CsiLeftTopPosition",
                 "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[f]",
-                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}f",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{1}};{{0}}f",
                 "arguments": [
                     {
                         "name": "column",
