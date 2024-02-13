@@ -1,0 +1,1788 @@
+[
+    {
+        "type": "Csi",
+        "regex": "(\\x9B|\\x1B\\[)[0-?]*[ -\\/]*[@-~]",
+        "sequences": [
+            {
+                "name": "CsiInsertBlankCharacters",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[@]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}@",
+                "arguments": [
+                    {
+                        "name": "blanks",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiShiftLeftColumns",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[ ][@]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}} @",
+                "arguments": [
+                    {
+                        "name": "columns",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiMoveCursorUp",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[A]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}A",
+                "arguments": [
+                    {
+                        "name": "times",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiShiftRightColumns",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[ ][A]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}} A",
+                "arguments": [
+                    {
+                        "name": "columns",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiMoveCursorDown",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[B]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}B",
+                "arguments": [
+                    {
+                        "name": "times",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiMoveCursorRight",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[C]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}C",
+                "arguments": [
+                    {
+                        "name": "times",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiMoveCursorLeft",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[D]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}D",
+                "arguments": [
+                    {
+                        "name": "times",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiMoveCursorNextLine",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[E]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}E",
+                "arguments": [
+                    {
+                        "name": "times",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiMoveCursorPreviousLine",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[F]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}F",
+                "arguments": [
+                    {
+                        "name": "times",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiCursorCharacterAbsoluteLine",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[G]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}G",
+                "arguments": [
+                    {
+                        "name": "column",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiCursorPosition",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[;][0-9]*[H]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}H",
+                "arguments": [
+                    {
+                        "name": "column",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "row",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiCursorForwardTabulation",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[I]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}I",
+                "arguments": [
+                    {
+                        "name": "stops",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiEraseInDisplay",
+                "regex": "(\\x9B|\\x1B\\[)[0-3]*[J]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}J",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiEraseInDisplayDecsed",
+                "regex": "(\\x9B|\\x1B\\[)\\?[0-3]*[J]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}J",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiEraseInLine",
+                "regex": "(\\x9B|\\x1B\\[)[0-3]*[K]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}K",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiEraseInLineDecsel",
+                "regex": "(\\x9B|\\x1B\\[)\\?[0-3]*[K]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}K",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiInsertLine",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[L]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}L",
+                "arguments": [
+                    {
+                        "name": "lines",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiDeleteLine",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[M]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}M",
+                "arguments": [
+                    {
+                        "name": "lines",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiDeleteChars",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[P]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}P",
+                "arguments": [
+                    {
+                        "name": "chars",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiPushColorToStack",
+                "regex": "(\\x9B|\\x1B\\[)#[P]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[#P",
+                "arguments": []
+            },
+            {
+                "name": "CsiPushColorToStackWithArgs",
+                "regex": "(\\x9B|\\x1B\\[)(.+?)#[P]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}#P",
+                "arguments": [
+                    {
+                        "name": "parameters",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiPopColorFromStack",
+                "regex": "(\\x9B|\\x1B\\[)#[Q]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[#Q",
+                "arguments": []
+            },
+            {
+                "name": "CsiPopColorFromStackWithArgs",
+                "regex": "(\\x9B|\\x1B\\[)(.+?)#[Q]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}#Q",
+                "arguments": [
+                    {
+                        "name": "parameters",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiReportPaletteStack",
+                "regex": "(\\x9B|\\x1B\\[)#[R]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[#R",
+                "arguments": []
+            },
+            {
+                "name": "CsiScrollUp",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[S]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}S",
+                "arguments": [
+                    {
+                        "name": "lines",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSetGraphicsAttribute",
+                "regex": "(\\x9B|\\x1B\\[)\\?[0-9]*\\;[0-9]*\\;(.+?)*[S]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}};{{1}};{{2}}S",
+                "arguments": [
+                    {
+                        "name": "itemType",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "attributeManager",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "geometry",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiScrollDown",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[T]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}T",
+                "arguments": [
+                    {
+                        "name": "lines",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiInitiateHighlightMouseTracking",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[T]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}}T",
+                "arguments": [
+                    {
+                        "name": "func",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "startX",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "startY",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "firstRow",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "lastRow",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiResetTitleModeFeatures",
+                "regex": "(\\x9B|\\x1B\\[)\\>(.+?)[T]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}T",
+                "arguments": [
+                    {
+                        "name": "resetOptions",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiEraseCharacters",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[X]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}X",
+                "arguments": [
+                    {
+                        "name": "chars",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiCursorBackwardTabulation",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[Z]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}Z",
+                "arguments": [
+                    {
+                        "name": "stops",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiScrollDownOriginal",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[\\^]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}^",
+                "arguments": [
+                    {
+                        "name": "lines",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiCursorPositionAbsolute",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[`]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}`",
+                "arguments": [
+                    {
+                        "name": "column",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiCursorPositionRelative",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[a]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}a",
+                "arguments": [
+                    {
+                        "name": "column",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiRepeatGraphicCharacter",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[b]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}b",
+                "arguments": [
+                    {
+                        "name": "times",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSendDeviceAttributesPrimary",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[c]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}c",
+                "arguments": [
+                    {
+                        "name": "attributes",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSendDeviceAttributesSecondary",
+                "regex": "(\\x9B|\\x1B\\[)=[0-9]*[c]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[={{0}}c",
+                "arguments": [
+                    {
+                        "name": "attributes",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSendDeviceAttributesTertiary",
+                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[c]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}c",
+                "arguments": [
+                    {
+                        "name": "attributes",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiLinePositionAbsolute",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[d]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}d",
+                "arguments": [
+                    {
+                        "name": "row",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiLinePositionRelative",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[e]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}e",
+                "arguments": [
+                    {
+                        "name": "row",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiLeftTopPosition",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[f]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}f",
+                "arguments": [
+                    {
+                        "name": "column",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "row",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiTabClear",
+                "regex": "(\\x9B|\\x1B\\[)[03][g]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}g",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSetMode",
+                "regex": "(\\x9B|\\x1B\\[)(.+?)[h]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}h",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSetPrivateMode",
+                "regex": "(\\x9B|\\x1B\\[)\\?(.+?)[h]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}h",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiMediaCopy",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[i]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}i",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiMediaCopyPrivate",
+                "regex": "(\\x9B|\\x1B\\[)\\?[0-9]*[i]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}i",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiResetMode",
+                "regex": "(\\x9B|\\x1B\\[)(.+?)[l]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}l",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiResetPrivateMode",
+                "regex": "(\\x9B|\\x1B\\[)\\?(.+?)[l]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}l",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiCharacterAttributes",
+                "regex": "(\\x9B|\\x1B\\[)(.+?)[m]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}m",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSetKeyModifierOptions",
+                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*\\;[0-9]*[m]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}};{{1}}m",
+                "arguments": [
+                    {
+                        "name": "resource",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "modify",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiResetKeyModifierOptions",
+                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[m]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}m",
+                "arguments": [
+                    {
+                        "name": "resource",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiQueryKeyModifierOptions",
+                "regex": "(\\x9B|\\x1B\\[)\\?[0-9]*[m]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}m",
+                "arguments": [
+                    {
+                        "name": "resource",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiDeviceStatusReport",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[n]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}n",
+                "arguments": [
+                    {
+                        "name": "report",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiDisableKeyModifierOptions",
+                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[n]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}n",
+                "arguments": [
+                    {
+                        "name": "report",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiDeviceStatusReportDec",
+                "regex": "(\\x9B|\\x1B\\[)\\?[0-9]*[n]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}n",
+                "arguments": [
+                    {
+                        "name": "report",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSetPointerModeXterm",
+                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[p]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}p",
+                "arguments": [
+                    {
+                        "name": "hideMode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSoftTerminalReset",
+                "regex": "(\\x9B|\\x1B\\[)![p]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[!p",
+                "arguments": []
+            },
+            {
+                "name": "CsiSetConformanceLevel",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[\"\"]p",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}\\\"p",
+                "arguments": [
+                    {
+                        "name": "level",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "conformance",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiRequestAnsiMode",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[$]p",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}$p",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiRequestDecPrivateMode",
+                "regex": "(\\x9B|\\x1B\\[)\\?[0-9]*[$]p",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}$p",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiPushVideoAttributesToStack",
+                "regex": "(\\x9B|\\x1B\\[)#[p]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[#p",
+                "arguments": []
+            },
+            {
+                "name": "CsiPushVideoAttributesToStackWithArgs",
+                "regex": "(\\x9B|\\x1B\\[)(.+?)#[p]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}#p",
+                "arguments": [
+                    {
+                        "name": "args",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiReportXtermVersion",
+                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[q]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}q",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiLoadLeds",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[q]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}q",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSetCursorStyle",
+                "regex": "(\\x9B|\\x1B\\[)[0-6]* [q]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}} q",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSelectCharacterProtectionAttribute",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[\"\"]q",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}\\\"q",
+                "arguments": [
+                    {
+                        "name": "mode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiPopVideoAttributesFromStack",
+                "regex": "(\\x9B|\\x1B\\[)#[q]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[#q",
+                "arguments": []
+            },
+            {
+                "name": "CsiSetScrollingRegion",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[r]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}r",
+                "arguments": [
+                    {
+                        "name": "top",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "bottom",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiRestoreDecPrivateModeValues",
+                "regex": "(\\x9B|\\x1B\\[)\\?(.+?)[r]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}r",
+                "arguments": [
+                    {
+                        "name": "values",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiChangeAttributesInRectangularArea",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;(.+?)[$]r",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}}$r",
+                "arguments": [
+                    {
+                        "name": "pt",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pl",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pb",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pr",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "attributes",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSaveCursor",
+                "regex": "(\\x9B|\\x1B\\[)s",
+                "format": "{VtSequenceBasicChars.EscapeChar}[s",
+                "arguments": []
+            },
+            {
+                "name": "CsiSetLeftRightMargins",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[s]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}s",
+                "arguments": [
+                    {
+                        "name": "left",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "right",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSetShiftEscapeOptions",
+                "regex": "(\\x9B|\\x1B\\[)\\>[0-9]*[s]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}s",
+                "arguments": [
+                    {
+                        "name": "option",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiDecPrivateModeValues",
+                "regex": "(\\x9B|\\x1B\\[)\\?(.+?)[s]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[?{{0}}s",
+                "arguments": [
+                    {
+                        "name": "values",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiWindowManipulation",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*[t]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}}t",
+                "arguments": [
+                    {
+                        "name": "windowAction",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "windowAction2",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "windowAction3",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSetTitleModeXterm",
+                "regex": "(\\x9B|\\x1B\\[)\\>(.+?)[t]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[>{{0}}t",
+                "arguments": [
+                    {
+                        "name": "modes",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSetWarningBellVolume",
+                "regex": "(\\x9B|\\x1B\\[)[0-8]* [t]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}} t",
+                "arguments": [
+                    {
+                        "name": "level",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiReverseAttributesInRectangularArea",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;(.+?)[$]t",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}}$t",
+                "arguments": [
+                    {
+                        "name": "pt",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pl",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pb",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pr",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "attributes",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiRestoreCursor",
+                "regex": "(\\x9B|\\x1B\\[)u",
+                "format": "{VtSequenceBasicChars.EscapeChar}[u",
+                "arguments": []
+            },
+            {
+                "name": "CsiSetMarginBellVolume",
+                "regex": "(\\x9B|\\x1B\\[)[0-8] [u]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}} u",
+                "arguments": [
+                    {
+                        "name": "level",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiCopyRectangularArea",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[$]v",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}};{{5}};{{6}};{{7}}$v",
+                "arguments": [
+                    {
+                        "name": "ptSrc",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "plSrc",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pbSrc",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "prSrc",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "sourcePage",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "ptTarget",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "plTarget",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "targetPage",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiRequestPresentationStateReport",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[$]w",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}$w",
+                "arguments": [
+                    {
+                        "name": "state",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiEnableFilterRectangle",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[']w",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}}'w",
+                "arguments": [
+                    {
+                        "name": "pt",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pl",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pb",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pr",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiRequestTerminalParameters",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[x]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}x",
+                "arguments": [
+                    {
+                        "name": "parameter",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSelectAttributeChangeExtent",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[\\*]x",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}*x",
+                "arguments": [
+                    {
+                        "name": "extent",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiFillRectangularArea",
+                "regex": "(\\x9B|\\x1B\\[)\\D+\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[$]x",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}}$x",
+                "arguments": [
+                    {
+                        "name": "character",
+                        "type": "System.Char"
+                    },
+                    {
+                        "name": "pt",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pl",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pb",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pr",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSelectChecksumExtension",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[#]y",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}#y",
+                "arguments": [
+                    {
+                        "name": "modifier",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiRectangularAreaChecksum",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[\\*]y",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}};{{4}};{{5}}*y",
+                "arguments": [
+                    {
+                        "name": "requestId",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pageNumber",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pt",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pl",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pb",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pr",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiLocatorReporting",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*[']z",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}}'z",
+                "arguments": [
+                    {
+                        "name": "locatorMode",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "measurement",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiEraseRectangularArea",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[$]z",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}}$z",
+                "arguments": [
+                    {
+                        "name": "pt",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pl",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pb",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pr",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSelectLocatorEvents",
+                "regex": "(\\x9B|\\x1B\\[)(.+?)[']\\{",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}'{{",
+                "arguments": [
+                    {
+                        "name": "parameters",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiPushVideoAttributesToStackXterm",
+                "regex": "(\\x9B|\\x1B\\[)#[\\{]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[#{{",
+                "arguments": []
+            },
+            {
+                "name": "CsiPushVideoAttributesToStackXtermWithArgs",
+                "regex": "(\\x9B|\\x1B\\[)(.+?)#[\\{]",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}#{{",
+                "arguments": [
+                    {
+                        "name": "parameters",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSelectiveEraseRectangularArea",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[$]\\{",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}}${{",
+                "arguments": [
+                    {
+                        "name": "pt",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pl",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pb",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pr",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiReportGraphicsRenditionRectangularArea",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*\\;[0-9]*\\;[0-9]*\\;[0-9]*[#]\\|",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}};{{1}};{{2}};{{3}}#|",
+                "arguments": [
+                    {
+                        "name": "pt",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pl",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pb",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "pr",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSelectColumnsPerPage",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[$]\\|",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}$|",
+                "arguments": [
+                    {
+                        "name": "columnMode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiRequestLocatorPosition",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[']\\|",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}'|",
+                "arguments": [
+                    {
+                        "name": "transmit",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSelectNumberOfLinesPerScreen",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[\\*]\\|",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}*|",
+                "arguments": [
+                    {
+                        "name": "lines",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiPopVideoAttributesFromStackXterm",
+                "regex": "(\\x9B|\\x1B\\[)[#]\\}",
+                "format": "{VtSequenceBasicChars.EscapeChar}[#}}",
+                "arguments": []
+            },
+            {
+                "name": "CsiInsertColumns",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[']\\}",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}'}}",
+                "arguments": [
+                    {
+                        "name": "columns",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSelectActiveStatusDisplay",
+                "regex": "(\\x9B|\\x1B\\[)[01]*[$]\\}",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}$}}",
+                "arguments": [
+                    {
+                        "name": "displayMode",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiDeleteColumns",
+                "regex": "(\\x9B|\\x1B\\[)[0-9]*[']~",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}'~",
+                "arguments": [
+                    {
+                        "name": "columns",
+                        "type": "System.Int32"
+                    }
+                ]
+            },
+            {
+                "name": "CsiSelectStatusLineType",
+                "regex": "(\\x9B|\\x1B\\[)[0-2]*[$]~",
+                "format": "{VtSequenceBasicChars.EscapeChar}[{{0}}$~",
+                "arguments": [
+                    {
+                        "name": "type",
+                        "type": "System.Int32"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Osc",
+        "regex": "(\\x9D|\\x1B\\]).+(\\x07|\\x9c)",
+        "sequences": [
+            {
+                "name": "OscOperatingSystemCommand",
+                "regex": "(\\x9D|\\x1B\\]).+[\\x07]",
+                "format": "{VtSequenceBasicChars.EscapeChar}]{{0}}{VtSequenceBasicChars.BellChar}",
+                "arguments": [
+                    {
+                        "name": "proprietaryCommands",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "OscOperatingSystemCommandAlt",
+                "regex": "(\\x9D|\\x1B\\]).+[\\x9c]",
+                "format": "{VtSequenceBasicChars.EscapeChar}]{{0}}{VtSequenceBasicChars.StChar}",
+                "arguments": [
+                    {
+                        "name": "proprietaryCommands",
+                        "type": "System.String"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Esc",
+        "regex": "\\x1b [F-Nf-n]|\\x1b#[3-8]|\\x1b%[@Gg]|\\x1b[()*+][A-Za-z0-9=`<>]|\\x1b[()*+]\"\"[>4?]|\\x1b[()*+]%[0-6=]|\\x1b[()*+]&[4-5]|\\x1b[-.\\/][ABFHLM]|\\x1b[6-9Fcl-o=>\\|\\}~]",
+        "sequences": [
+            {
+                "name": "Esc7BitControls",
+                "regex": "\\x1b F",
+                "format": "{VtSequenceBasicChars.EscapeChar} F",
+                "arguments": []
+            },
+            {
+                "name": "Esc8BitControls",
+                "regex": "\\x1b G",
+                "format": "{VtSequenceBasicChars.EscapeChar} G",
+                "arguments": []
+            },
+            {
+                "name": "EscAnsiConformanceLevel1",
+                "regex": "\\x1b L",
+                "format": "{VtSequenceBasicChars.EscapeChar} L",
+                "arguments": []
+            },
+            {
+                "name": "EscAnsiConformanceLevel2",
+                "regex": "\\x1b M",
+                "format": "{VtSequenceBasicChars.EscapeChar} M",
+                "arguments": []
+            },
+            {
+                "name": "EscAnsiConformanceLevel3",
+                "regex": "\\x1b N",
+                "format": "{VtSequenceBasicChars.EscapeChar} N",
+                "arguments": []
+            },
+            {
+                "name": "EscDecDoubleHeightLineTopHalf",
+                "regex": "\\x1b#3",
+                "format": "{VtSequenceBasicChars.EscapeChar}#3",
+                "arguments": []
+            },
+            {
+                "name": "EscDecDoubleHeightLineBottomHalf",
+                "regex": "\\x1b#4",
+                "format": "{VtSequenceBasicChars.EscapeChar}#4",
+                "arguments": []
+            },
+            {
+                "name": "EscDecSingleWidthLine",
+                "regex": "\\x1b#5",
+                "format": "{VtSequenceBasicChars.EscapeChar}#5",
+                "arguments": []
+            },
+            {
+                "name": "EscDecDoubleWidthLine",
+                "regex": "\\x1b#6",
+                "format": "{VtSequenceBasicChars.EscapeChar}#6",
+                "arguments": []
+            },
+            {
+                "name": "EscDecScreenAlignmentTest",
+                "regex": "\\x1b#8",
+                "format": "{VtSequenceBasicChars.EscapeChar}#8",
+                "arguments": []
+            },
+            {
+                "name": "EscSelectDefaultCharacterSet",
+                "regex": "\\x1b%@",
+                "format": "{VtSequenceBasicChars.EscapeChar}%@",
+                "arguments": []
+            },
+            {
+                "name": "EscSelectUtf8CharacterSet",
+                "regex": "\\x1b%G",
+                "format": "{VtSequenceBasicChars.EscapeChar}%G",
+                "arguments": []
+            },
+            {
+                "name": "EscDesignateG0CharacterSet",
+                "regex": "\\x1b\\(.+",
+                "format": "{VtSequenceBasicChars.EscapeChar}({{0}}",
+                "arguments": [
+                    {
+                        "name": "charSet",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "EscDesignateG1CharacterSet",
+                "regex": "\\x1b\\).+",
+                "format": "{VtSequenceBasicChars.EscapeChar}){{0}}",
+                "arguments": [
+                    {
+                        "name": "charSet",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "EscDesignateG2CharacterSet",
+                "regex": "\\x1b\\*.+",
+                "format": "{VtSequenceBasicChars.EscapeChar}*{{0}}",
+                "arguments": [
+                    {
+                        "name": "charSet",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "EscDesignateG3CharacterSet",
+                "regex": "\\x1b\\+.+",
+                "format": "{VtSequenceBasicChars.EscapeChar}+{{0}}",
+                "arguments": [
+                    {
+                        "name": "charSet",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "EscDesignateG1CharacterSetAlt",
+                "regex": "\\x1b\\-.+",
+                "format": "{VtSequenceBasicChars.EscapeChar}-{{0}}",
+                "arguments": [
+                    {
+                        "name": "charSet",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "EscDesignateG2CharacterSetAlt",
+                "regex": "\\x1b,.+",
+                "format": "{VtSequenceBasicChars.EscapeChar},{{0}}",
+                "arguments": [
+                    {
+                        "name": "charSet",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "EscDesignateG3CharacterSetAlt",
+                "regex": "\\x1b/.+",
+                "format": "{VtSequenceBasicChars.EscapeChar}/{{0}}",
+                "arguments": [
+                    {
+                        "name": "charSet",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "EscBackIndex",
+                "regex": "\\x1b6",
+                "format": "{VtSequenceBasicChars.EscapeChar}6",
+                "arguments": []
+            },
+            {
+                "name": "EscSaveCursor",
+                "regex": "\\x1b7",
+                "format": "{VtSequenceBasicChars.EscapeChar}7",
+                "arguments": []
+            },
+            {
+                "name": "EscRestoreCursor",
+                "regex": "\\x1b8",
+                "format": "{VtSequenceBasicChars.EscapeChar}8",
+                "arguments": []
+            },
+            {
+                "name": "EscForwardIndex",
+                "regex": "\\x1b9",
+                "format": "{VtSequenceBasicChars.EscapeChar}9",
+                "arguments": []
+            },
+            {
+                "name": "EscApplicationKeypad",
+                "regex": "\\x1b=",
+                "format": "{VtSequenceBasicChars.EscapeChar}=",
+                "arguments": []
+            },
+            {
+                "name": "EscNormalKeypad",
+                "regex": "\\x1b\\>",
+                "format": "{VtSequenceBasicChars.EscapeChar}>",
+                "arguments": []
+            },
+            {
+                "name": "EscCursorToLowerLeftCorner",
+                "regex": "\\x1bF",
+                "format": "{VtSequenceBasicChars.EscapeChar}F",
+                "arguments": []
+            },
+            {
+                "name": "EscFullReset",
+                "regex": "\\x1bc",
+                "format": "{VtSequenceBasicChars.EscapeChar}c",
+                "arguments": []
+            },
+            {
+                "name": "EscMemoryLock",
+                "regex": "\\x1bl",
+                "format": "{VtSequenceBasicChars.EscapeChar}l",
+                "arguments": []
+            },
+            {
+                "name": "EscMemoryUnlock",
+                "regex": "\\x1bm",
+                "format": "{VtSequenceBasicChars.EscapeChar}m",
+                "arguments": []
+            },
+            {
+                "name": "EscInvokeG2CharacterSetGl",
+                "regex": "\\x1bn",
+                "format": "{VtSequenceBasicChars.EscapeChar}n",
+                "arguments": []
+            },
+            {
+                "name": "EscInvokeG3CharacterSetGl",
+                "regex": "\\x1bo",
+                "format": "{VtSequenceBasicChars.EscapeChar}o",
+                "arguments": []
+            },
+            {
+                "name": "EscInvokeG2CharacterSetGr",
+                "regex": "\\x1b\\}",
+                "format": "{VtSequenceBasicChars.EscapeChar}}}",
+                "arguments": []
+            },
+            {
+                "name": "EscInvokeG3CharacterSetGr",
+                "regex": "\\x1b\\|",
+                "format": "{VtSequenceBasicChars.EscapeChar}|",
+                "arguments": []
+            },
+            {
+                "name": "EscInvokeG1CharacterSetGr",
+                "regex": "\\x1b~",
+                "format": "{VtSequenceBasicChars.EscapeChar}~",
+                "arguments": []
+            }
+        ]
+    },
+    {
+        "type": "Apc",
+        "regex": "(\\x9f|\\x1b_).+\\x9c",
+        "sequences": [
+            {
+                "name": "ApcApplicationProgramCommand",
+                "regex": "(\\x9f|\\x1b_).+\\x9c",
+                "format": "{VtSequenceBasicChars.EscapeChar}_{{0}}{VtSequenceBasicChars.StChar}",
+                "arguments": [
+                    {
+                        "name": "proprietaryCommands",
+                        "type": "System.String"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Dcs",
+        "regex": "(\\x90|\\x1bP).+\\x9c",
+        "sequences": [
+            {
+                "name": "DcsUserDefinedKeys",
+                "regex": "(\\x90|\\x1bP)[0-9]*\\;[0-9]*\\|(.+?)\\x9c",
+                "format": "{VtSequenceBasicChars.EscapeChar}P{{0}};{{1}}|{{2}}{VtSequenceBasicChars.StChar}",
+                "arguments": [
+                    {
+                        "name": "clearUdkDefinitions",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "dontLockKeys",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "keybindings",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "DcsRequestStatusString",
+                "regex": "(\\x90|\\x1bP)\\$q(.+?)\\x9c",
+                "format": "{VtSequenceBasicChars.EscapeChar}P$q{{0}}{VtSequenceBasicChars.StChar}",
+                "arguments": [
+                    {
+                        "name": "status",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "DcsRestorePresentationStatus",
+                "regex": "(\\x90|\\x1bP)[0-9]*\\$t[0-9]*\\x9c",
+                "format": "{VtSequenceBasicChars.EscapeChar}P{{0}}$t{{1}}{VtSequenceBasicChars.StChar}",
+                "arguments": [
+                    {
+                        "name": "controlConvert",
+                        "type": "System.Int32"
+                    },
+                    {
+                        "name": "status",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "DcsRequestResourceValues",
+                "regex": "(\\x90|\\x1bP)\\+Q(.+?)\\x9c",
+                "format": "{VtSequenceBasicChars.EscapeChar}P+Q{{0}}{VtSequenceBasicChars.StChar}",
+                "arguments": [
+                    {
+                        "name": "xtermResourceNames",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "DcsSetTermInfoData",
+                "regex": "(\\x90|\\x1bP)\\+p(.+?)\\x9c",
+                "format": "{VtSequenceBasicChars.EscapeChar}P+p{{0}}{VtSequenceBasicChars.StChar}",
+                "arguments": [
+                    {
+                        "name": "termName",
+                        "type": "System.String"
+                    }
+                ]
+            },
+            {
+                "name": "DcsRequestTermInfoData",
+                "regex": "(\\x90|\\x1bP)\\+q(.+?)\\x9c",
+                "format": "{VtSequenceBasicChars.EscapeChar}P+q{{0}}{VtSequenceBasicChars.StChar}",
+                "arguments": [
+                    {
+                        "name": "termName",
+                        "type": "System.String"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "Pm",
+        "regex": "(\\x9e|\\x1b\\^).+\\x9c",
+        "sequences": [
+            {
+                "name": "PmPrivacyMessage",
+                "regex": "(\\x9e|\\x1b\\^).+\\x9c",
+                "format": "{VtSequenceBasicChars.EscapeChar}^{{0}}{VtSequenceBasicChars.StChar}",
+                "arguments": [
+                    {
+                        "name": "proprietaryCommands",
+                        "type": "System.String"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "type": "C1",
+        "regex": "\\x1b[DEHMNOVWXYZ78]",
+        "sequences": [
+            {
+                "name": "C1Index",
+                "regex": "\\x1bD",
+                "format": "{VtSequenceBasicChars.EscapeChar}D",
+                "arguments": []
+            },
+            {
+                "name": "C1NextLine",
+                "regex": "\\x1bE",
+                "format": "{VtSequenceBasicChars.EscapeChar}E",
+                "arguments": []
+            },
+            {
+                "name": "C1TabSet",
+                "regex": "\\x1bH",
+                "format": "{VtSequenceBasicChars.EscapeChar}H",
+                "arguments": []
+            },
+            {
+                "name": "C1ReverseIndex",
+                "regex": "\\x1bM",
+                "format": "{VtSequenceBasicChars.EscapeChar}M",
+                "arguments": []
+            },
+            {
+                "name": "C1SingleShiftSelectG2CharacterSet",
+                "regex": "\\x1bN",
+                "format": "{VtSequenceBasicChars.EscapeChar}N",
+                "arguments": []
+            },
+            {
+                "name": "C1SingleShiftSelectG3CharacterSet",
+                "regex": "\\x1bO",
+                "format": "{VtSequenceBasicChars.EscapeChar}O",
+                "arguments": []
+            },
+            {
+                "name": "C1DeviceControlString",
+                "regex": "\\x1bP",
+                "format": "{VtSequenceBasicChars.EscapeChar}P",
+                "arguments": []
+            },
+            {
+                "name": "C1StartOfGuardedArea",
+                "regex": "\\x1bV",
+                "format": "{VtSequenceBasicChars.EscapeChar}V",
+                "arguments": []
+            },
+            {
+                "name": "C1EndOfGuardedArea",
+                "regex": "\\x1bW",
+                "format": "{VtSequenceBasicChars.EscapeChar}W",
+                "arguments": []
+            },
+            {
+                "name": "C1StartOfString",
+                "regex": "\\x1bX",
+                "format": "{VtSequenceBasicChars.EscapeChar}X",
+                "arguments": []
+            },
+            {
+                "name": "C1ReturnTerminalId",
+                "regex": "\\x1bZ",
+                "format": "{VtSequenceBasicChars.EscapeChar}Z",
+                "arguments": []
+            },
+            {
+                "name": "C1ControlSequenceIndicator",
+                "regex": "\\x1b\\[",
+                "format": "{VtSequenceBasicChars.EscapeChar}[",
+                "arguments": []
+            },
+            {
+                "name": "C1StringTerminator",
+                "regex": "\\x1b\\\\",
+                "format": "{VtSequenceBasicChars.EscapeChar}\\\\",
+                "arguments": []
+            },
+            {
+                "name": "C1OperatingSystemCommand",
+                "regex": "\\x1b\\]",
+                "format": "{VtSequenceBasicChars.EscapeChar}]",
+                "arguments": []
+            },
+            {
+                "name": "C1PrivacyMessage",
+                "regex": "\\x1b\\^",
+                "format": "{VtSequenceBasicChars.EscapeChar}^",
+                "arguments": []
+            },
+            {
+                "name": "C1ApplicationProgramCommand",
+                "regex": "\\x1b_",
+                "format": "{VtSequenceBasicChars.EscapeChar}_",
+                "arguments": []
+            }
+        ]
+    }
+]

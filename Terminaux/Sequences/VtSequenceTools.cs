@@ -28,7 +28,7 @@ namespace Terminaux.Sequences
     /// <summary>
     /// Provides all the tools for manipulating with the VT sequences
     /// </summary>
-    public static class VtSequenceTools
+    public static partial class VtSequenceTools
     {
         private static readonly VtSequenceType[] typeValues = Enum.GetValues(typeof(VtSequenceType)) as VtSequenceType[];
 
@@ -234,26 +234,18 @@ namespace Terminaux.Sequences
         }
 
         /// <summary>
+        /// Gets the sequence filter regular expression from all the VT sequences (<see cref="VtSequenceType"/>)
+        /// </summary>
+        /// <returns>Regular expression from all the VT sequences</returns>
+        public static Regex GetSequenceFilterRegexFromType() =>
+            GetSequenceFilterRegexFromType(VtSequenceType.All);
+
+        /// <summary>
         /// Gets the sequence filter regular expression from the provided VT sequence <paramref name="type"/> (<see cref="VtSequenceType"/>)
         /// </summary>
         /// <param name="type">VT sequence type</param>
         /// <returns>Regular expression from the provided VT sequence <paramref name="type"/></returns>
-        public static Regex GetSequenceFilterRegexFromType(VtSequenceType type = VtSequenceType.All)
-        {
-            // Check the enum to get the needed regular expression for the specific type
-            return type switch
-            {
-                VtSequenceType.None => VtSequenceRegexes.Nothing,
-                VtSequenceType.Csi  => VtSequenceRegexes.CSISequences,
-                VtSequenceType.Osc  => VtSequenceRegexes.OSCSequences,
-                VtSequenceType.Esc  => VtSequenceRegexes.ESCSequences,
-                VtSequenceType.Apc  => VtSequenceRegexes.APCSequences,
-                VtSequenceType.Dcs  => VtSequenceRegexes.DCSSequences,
-                VtSequenceType.Pm   => VtSequenceRegexes.PMSequences,
-                VtSequenceType.C1   => VtSequenceRegexes.C1Sequences,
-                _                   => VtSequenceRegexes.AllVTSequences,
-            };
-        }
+        public static partial Regex GetSequenceFilterRegexFromType(VtSequenceType type);
 
         /// <summary>
         /// Gets the sequence filter regular expression from the provided VT sequence <paramref name="types"/> (<see cref="VtSequenceType"/>)

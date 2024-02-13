@@ -497,11 +497,11 @@ namespace Terminaux.Tests.Sequences
         /// </summary>
         [TestMethod]
         [DataRow("2;5")]
-        public void TestGenerateCsiPushColorToStack(string parameters)
+        public void TestGenerateCsiPushColorToStackWithArgs(string parameters)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{parameters}#P";
             string actual = "";
-            Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushColorToStack(parameters));
+            Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushColorToStackWithArgs(parameters));
             actual.ShouldBe(result);
         }
 
@@ -522,11 +522,11 @@ namespace Terminaux.Tests.Sequences
         /// </summary>
         [TestMethod]
         [DataRow("2;5")]
-        public void TestGenerateCsiPopColorFromStack(string parameters)
+        public void TestGenerateCsiPopColorFromStackWithArgs(string parameters)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{parameters}#Q";
             string actual = "";
-            Should.NotThrow(() => actual = CsiSequences.GenerateCsiPopColorFromStack(parameters));
+            Should.NotThrow(() => actual = CsiSequences.GenerateCsiPopColorFromStackWithArgs(parameters));
             actual.ShouldBe(result);
         }
 
@@ -1026,11 +1026,11 @@ namespace Terminaux.Tests.Sequences
         /// </summary>
         [TestMethod]
         [DataRow("2;5")]
-        public void TestGenerateCsiPushVideoAttributesToStack(string args)
+        public void TestGenerateCsiPushVideoAttributesToStackWithArgs(string args)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{args}#p";
             string actual = "";
-            Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushVideoAttributesToStack(args));
+            Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs(args));
             actual.ShouldBe(result);
         }
 
@@ -1128,12 +1128,12 @@ namespace Terminaux.Tests.Sequences
         /// [CSI Pt ; Pl ; Pb ; Pr ; Pm $ r] Generates an escape sequence that can be used for the console
         /// </summary>
         [TestMethod]
-        [DataRow("38;2;56;21;255", 1, 3, 3, 3)]
-        public void TestGenerateCsiChangeAttributesInRectangularArea(string attributes, int pt, int pl, int pb, int pr)
+        [DataRow(1, 3, 3, 7, "38;2;56;21;255")]
+        public void TestGenerateCsiChangeAttributesInRectangularArea(int pt, int pl, int pb, int pr, string attributes)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{pt};{pl};{pb};{pr};{attributes}$r";
             string actual = "";
-            Should.NotThrow(() => actual = CsiSequences.GenerateCsiChangeAttributesInRectangularArea(attributes, pt, pl, pb, pr));
+            Should.NotThrow(() => actual = CsiSequences.GenerateCsiChangeAttributesInRectangularArea(pt, pl, pb, pr, attributes));
             actual.ShouldBe(result);
         }
 
@@ -1231,12 +1231,12 @@ namespace Terminaux.Tests.Sequences
         /// [CSI Pt ; Pl ; Pb ; Pr ; Pm $ t] Generates an escape sequence that can be used for the console
         /// </summary>
         [TestMethod]
-        [DataRow("38;2;56;21;255", 1, 3, 3, 3)]
-        public void TestGenerateCsiReverseAttributesInRectangularArea(string attributes, int pt, int pl, int pb, int pr)
+        [DataRow(1, 3, 3, 7, "38;2;56;21;255")]
+        public void TestGenerateCsiReverseAttributesInRectangularArea(int pt, int pl, int pb, int pr, string attributes)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{pt};{pl};{pb};{pr};{attributes}$t";
             string actual = "";
-            Should.NotThrow(() => actual = CsiSequences.GenerateCsiReverseAttributesInRectangularArea(attributes, pt, pl, pb, pr));
+            Should.NotThrow(() => actual = CsiSequences.GenerateCsiReverseAttributesInRectangularArea(pt, pl, pb, pr, attributes));
             actual.ShouldBe(result);
         }
 
@@ -1269,7 +1269,7 @@ namespace Terminaux.Tests.Sequences
         /// [CSI Pt ; Pl ; Pb ; Pr ; Pp ; Pt ; Pl ; Pp $ v] Generates an escape sequence that can be used for the console
         /// </summary>
         [TestMethod]
-        [DataRow(1, 3, 3, 3, 1, 6, 6, 2)]
+        [DataRow(1, 3, 3, 7, 1, 6, 6, 2)]
         public void TestGenerateCsiCopyRectangularArea(int ptSrc, int plSrc, int pbSrc, int prSrc, int sourcePage, int ptTarget, int plTarget, int targetPage)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{ptSrc};{plSrc};{pbSrc};{prSrc};{sourcePage};{ptTarget};{plTarget};{targetPage}$v";
@@ -1295,7 +1295,7 @@ namespace Terminaux.Tests.Sequences
         /// [CSI Pt ; Pl ; Pb ; Pr ' w] Generates an escape sequence that can be used for the console
         /// </summary>
         [TestMethod]
-        [DataRow(1, 3, 3, 3)]
+        [DataRow(1, 3, 3, 7)]
         public void TestGenerateCsiEnableFilterRectangle(int pt, int pl, int pb, int pr)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{pt};{pl};{pb};{pr}'w";
@@ -1334,7 +1334,7 @@ namespace Terminaux.Tests.Sequences
         /// [CSI Pc ; Pt ; Pl ; Pb ; Pr $ x] Generates an escape sequence that can be used for the console
         /// </summary>
         [TestMethod]
-        [DataRow(' ', 1, 3, 3, 3)]
+        [DataRow(' ', 1, 3, 3, 7)]
         public void TestGenerateCsiFillRectangularArea(char character, int pt, int pl, int pb, int pr)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{character};{pt};{pl};{pb};{pr}$x";
@@ -1360,7 +1360,7 @@ namespace Terminaux.Tests.Sequences
         /// [CSI Pi ; Pg ; Pt ; Pl ; Pb ; Pr * y] Generates an escape sequence that can be used for the console
         /// </summary>
         [TestMethod]
-        [DataRow(434, 0, 1, 3, 3, 3)]
+        [DataRow(434, 0, 1, 3, 3, 7)]
         public void TestGenerateCsiRectangularAreaChecksum(int requestId, int pageNumber, int pt, int pl, int pb, int pr)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{requestId};{pageNumber};{pt};{pl};{pb};{pr}*y";
@@ -1386,7 +1386,7 @@ namespace Terminaux.Tests.Sequences
         /// [CSI Pt ; Pl ; Pb ; Pr $ z] Generates an escape sequence that can be used for the console
         /// </summary>
         [TestMethod]
-        [DataRow(1, 3, 3, 3)]
+        [DataRow(1, 3, 3, 7)]
         public void TestGenerateCsiEraseRectangularArea(int pt, int pl, int pb, int pr)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{pt};{pl};{pb};{pr}$z";
@@ -1425,11 +1425,11 @@ namespace Terminaux.Tests.Sequences
         /// </summary>
         [TestMethod]
         [DataRow("1;2")]
-        public void TestGenerateCsiPushVideoAttributesToStackXterm(string parameters)
+        public void TestGenerateCsiPushVideoAttributesToStackXtermWithArgs(string parameters)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{parameters}#{{";
             string actual = "";
-            Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushVideoAttributesToStackXterm(parameters));
+            Should.NotThrow(() => actual = CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs(parameters));
             actual.ShouldBe(result);
         }
 
@@ -1437,7 +1437,7 @@ namespace Terminaux.Tests.Sequences
         /// [CSI Pt ; Pl ; Pb ; Pr $ {] Generates an escape sequence that can be used for the console
         /// </summary>
         [TestMethod]
-        [DataRow(1, 3, 3, 3)]
+        [DataRow(1, 3, 3, 7)]
         public void TestGenerateCsiSelectiveEraseRectangularArea(int pt, int pl, int pb, int pr)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{pt};{pl};{pb};{pr}${{";
@@ -1450,7 +1450,7 @@ namespace Terminaux.Tests.Sequences
         /// [CSI Pt ; Pl ; Pb ; Pr # |] Generates an escape sequence that can be used for the console
         /// </summary>
         [TestMethod]
-        [DataRow(1, 3, 3, 3)]
+        [DataRow(1, 3, 3, 7)]
         public void TestGenerateCsiReportGraphicsRenditionRectangularArea(int pt, int pl, int pb, int pr)
         {
             string result = $"{VtSequenceBasicChars.EscapeChar}[{pt};{pl};{pb};{pr}#|";
@@ -2098,7 +2098,7 @@ namespace Terminaux.Tests.Sequences
         /// Builds VT sequence with arguments
         /// </summary>
         [TestMethod]
-        [DataRow("\x1B[1;3;3;3$z", VtSequenceSpecificTypes.CsiEraseRectangularArea, 1, 3, 3, 3)]
+        [DataRow("\x1B[1;3;3;7$z", VtSequenceSpecificTypes.CsiEraseRectangularArea, 1, 3, 3, 7)]
         [DataRow("\x1B^Kermit\x9C", VtSequenceSpecificTypes.PmPrivacyMessage, "Kermit")]
         [DataRow("\x1B]0;Hello\x07", VtSequenceSpecificTypes.OscOperatingSystemCommand, "0;Hello")]
         [DataRow("\x1B]0;Hello\x9C", VtSequenceSpecificTypes.OscOperatingSystemCommandAlt, "0;Hello")]
@@ -2157,7 +2157,7 @@ namespace Terminaux.Tests.Sequences
         {
             (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Csi, VtSequenceSpecificTypes.CsiEraseRectangularArea);
             (VtSequenceType, VtSequenceSpecificTypes) actual = default;
-            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"\x1B[1;3;3;3$z"));
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"\x1B[1;3;3;7$z"));
             actual.ShouldBe(expected);
         }
 
