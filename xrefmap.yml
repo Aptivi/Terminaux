@@ -19540,15 +19540,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Builder.Types.CsiSequences.CsiWindowManipulationSequenceRegex
   nameWithType: CsiSequences.CsiWindowManipulationSequenceRegex
-- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiChangeAttributesInRectangularArea(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
-  name: GenerateCsiChangeAttributesInRectangularArea(string, int, int, int, int)
-  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiChangeAttributesInRectangularArea_System_String_System_Int32_System_Int32_System_Int32_System_Int32_
-  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiChangeAttributesInRectangularArea(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
-  name.vb: GenerateCsiChangeAttributesInRectangularArea(String, Integer, Integer, Integer, Integer)
-  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiChangeAttributesInRectangularArea(string, int, int, int, int)
-  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiChangeAttributesInRectangularArea(String, Integer, Integer, Integer, Integer)
-  nameWithType: CsiSequences.GenerateCsiChangeAttributesInRectangularArea(string, int, int, int, int)
-  nameWithType.vb: CsiSequences.GenerateCsiChangeAttributesInRectangularArea(String, Integer, Integer, Integer, Integer)
+- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiChangeAttributesInRectangularArea(System.Int32,System.Int32,System.Int32,System.Int32,System.String)
+  name: GenerateCsiChangeAttributesInRectangularArea(int, int, int, int, string)
+  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiChangeAttributesInRectangularArea_System_Int32_System_Int32_System_Int32_System_Int32_System_String_
+  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiChangeAttributesInRectangularArea(System.Int32,System.Int32,System.Int32,System.Int32,System.String)
+  name.vb: GenerateCsiChangeAttributesInRectangularArea(Integer, Integer, Integer, Integer, String)
+  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiChangeAttributesInRectangularArea(int, int, int, int, string)
+  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiChangeAttributesInRectangularArea(Integer, Integer, Integer, Integer, String)
+  nameWithType: CsiSequences.GenerateCsiChangeAttributesInRectangularArea(int, int, int, int, string)
+  nameWithType.vb: CsiSequences.GenerateCsiChangeAttributesInRectangularArea(Integer, Integer, Integer, Integer, String)
 - uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiChangeAttributesInRectangularArea*
   name: GenerateCsiChangeAttributesInRectangularArea
   href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiChangeAttributesInRectangularArea_
@@ -20202,15 +20202,6 @@ references:
   commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStack
   fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStack()
   nameWithType: CsiSequences.GenerateCsiPopColorFromStack()
-- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStack(System.String)
-  name: GenerateCsiPopColorFromStack(string)
-  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPopColorFromStack_System_String_
-  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStack(System.String)
-  name.vb: GenerateCsiPopColorFromStack(String)
-  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStack(string)
-  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStack(String)
-  nameWithType: CsiSequences.GenerateCsiPopColorFromStack(string)
-  nameWithType.vb: CsiSequences.GenerateCsiPopColorFromStack(String)
 - uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStack*
   name: GenerateCsiPopColorFromStack
   href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPopColorFromStack_
@@ -20218,6 +20209,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStack
   nameWithType: CsiSequences.GenerateCsiPopColorFromStack
+- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStackWithArgs(System.String)
+  name: GenerateCsiPopColorFromStackWithArgs(string)
+  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPopColorFromStackWithArgs_System_String_
+  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStackWithArgs(System.String)
+  name.vb: GenerateCsiPopColorFromStackWithArgs(String)
+  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStackWithArgs(string)
+  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStackWithArgs(String)
+  nameWithType: CsiSequences.GenerateCsiPopColorFromStackWithArgs(string)
+  nameWithType.vb: CsiSequences.GenerateCsiPopColorFromStackWithArgs(String)
+- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStackWithArgs*
+  name: GenerateCsiPopColorFromStackWithArgs
+  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPopColorFromStackWithArgs_
+  commentId: Overload:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStackWithArgs
+  isSpec: "True"
+  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopColorFromStackWithArgs
+  nameWithType: CsiSequences.GenerateCsiPopColorFromStackWithArgs
 - uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPopVideoAttributesFromStack
   name: GenerateCsiPopVideoAttributesFromStack()
   href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPopVideoAttributesFromStack
@@ -20250,15 +20257,6 @@ references:
   commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStack
   fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStack()
   nameWithType: CsiSequences.GenerateCsiPushColorToStack()
-- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStack(System.String)
-  name: GenerateCsiPushColorToStack(string)
-  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushColorToStack_System_String_
-  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStack(System.String)
-  name.vb: GenerateCsiPushColorToStack(String)
-  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStack(string)
-  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStack(String)
-  nameWithType: CsiSequences.GenerateCsiPushColorToStack(string)
-  nameWithType.vb: CsiSequences.GenerateCsiPushColorToStack(String)
 - uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStack*
   name: GenerateCsiPushColorToStack
   href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushColorToStack_
@@ -20266,21 +20264,28 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStack
   nameWithType: CsiSequences.GenerateCsiPushColorToStack
+- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStackWithArgs(System.String)
+  name: GenerateCsiPushColorToStackWithArgs(string)
+  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushColorToStackWithArgs_System_String_
+  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStackWithArgs(System.String)
+  name.vb: GenerateCsiPushColorToStackWithArgs(String)
+  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStackWithArgs(string)
+  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStackWithArgs(String)
+  nameWithType: CsiSequences.GenerateCsiPushColorToStackWithArgs(string)
+  nameWithType.vb: CsiSequences.GenerateCsiPushColorToStackWithArgs(String)
+- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStackWithArgs*
+  name: GenerateCsiPushColorToStackWithArgs
+  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushColorToStackWithArgs_
+  commentId: Overload:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStackWithArgs
+  isSpec: "True"
+  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushColorToStackWithArgs
+  nameWithType: CsiSequences.GenerateCsiPushColorToStackWithArgs
 - uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStack
   name: GenerateCsiPushVideoAttributesToStack()
   href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushVideoAttributesToStack
   commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStack
   fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStack()
   nameWithType: CsiSequences.GenerateCsiPushVideoAttributesToStack()
-- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStack(System.String)
-  name: GenerateCsiPushVideoAttributesToStack(string)
-  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushVideoAttributesToStack_System_String_
-  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStack(System.String)
-  name.vb: GenerateCsiPushVideoAttributesToStack(String)
-  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStack(string)
-  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStack(String)
-  nameWithType: CsiSequences.GenerateCsiPushVideoAttributesToStack(string)
-  nameWithType.vb: CsiSequences.GenerateCsiPushVideoAttributesToStack(String)
 - uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStack*
   name: GenerateCsiPushVideoAttributesToStack
   href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushVideoAttributesToStack_
@@ -20288,21 +20293,28 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStack
   nameWithType: CsiSequences.GenerateCsiPushVideoAttributesToStack
+- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs(System.String)
+  name: GenerateCsiPushVideoAttributesToStackWithArgs(string)
+  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushVideoAttributesToStackWithArgs_System_String_
+  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs(System.String)
+  name.vb: GenerateCsiPushVideoAttributesToStackWithArgs(String)
+  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs(string)
+  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs(String)
+  nameWithType: CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs(string)
+  nameWithType.vb: CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs(String)
+- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs*
+  name: GenerateCsiPushVideoAttributesToStackWithArgs
+  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushVideoAttributesToStackWithArgs_
+  commentId: Overload:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs
+  isSpec: "True"
+  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs
+  nameWithType: CsiSequences.GenerateCsiPushVideoAttributesToStackWithArgs
 - uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXterm
   name: GenerateCsiPushVideoAttributesToStackXterm()
   href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushVideoAttributesToStackXterm
   commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXterm
   fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXterm()
   nameWithType: CsiSequences.GenerateCsiPushVideoAttributesToStackXterm()
-- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXterm(System.String)
-  name: GenerateCsiPushVideoAttributesToStackXterm(string)
-  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushVideoAttributesToStackXterm_System_String_
-  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXterm(System.String)
-  name.vb: GenerateCsiPushVideoAttributesToStackXterm(String)
-  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXterm(string)
-  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXterm(String)
-  nameWithType: CsiSequences.GenerateCsiPushVideoAttributesToStackXterm(string)
-  nameWithType.vb: CsiSequences.GenerateCsiPushVideoAttributesToStackXterm(String)
 - uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXterm*
   name: GenerateCsiPushVideoAttributesToStackXterm
   href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushVideoAttributesToStackXterm_
@@ -20310,6 +20322,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXterm
   nameWithType: CsiSequences.GenerateCsiPushVideoAttributesToStackXterm
+- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs(System.String)
+  name: GenerateCsiPushVideoAttributesToStackXtermWithArgs(string)
+  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushVideoAttributesToStackXtermWithArgs_System_String_
+  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs(System.String)
+  name.vb: GenerateCsiPushVideoAttributesToStackXtermWithArgs(String)
+  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs(string)
+  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs(String)
+  nameWithType: CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs(string)
+  nameWithType.vb: CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs(String)
+- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs*
+  name: GenerateCsiPushVideoAttributesToStackXtermWithArgs
+  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiPushVideoAttributesToStackXtermWithArgs_
+  commentId: Overload:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs
+  isSpec: "True"
+  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs
+  nameWithType: CsiSequences.GenerateCsiPushVideoAttributesToStackXtermWithArgs
 - uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiQueryKeyModifierOptions(System.Int32)
   name: GenerateCsiQueryKeyModifierOptions(int)
   href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiQueryKeyModifierOptions_System_Int32_
@@ -20576,15 +20604,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiRestoreDecPrivateModeValues
   nameWithType: CsiSequences.GenerateCsiRestoreDecPrivateModeValues
-- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiReverseAttributesInRectangularArea(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
-  name: GenerateCsiReverseAttributesInRectangularArea(string, int, int, int, int)
-  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiReverseAttributesInRectangularArea_System_String_System_Int32_System_Int32_System_Int32_System_Int32_
-  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiReverseAttributesInRectangularArea(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
-  name.vb: GenerateCsiReverseAttributesInRectangularArea(String, Integer, Integer, Integer, Integer)
-  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiReverseAttributesInRectangularArea(string, int, int, int, int)
-  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiReverseAttributesInRectangularArea(String, Integer, Integer, Integer, Integer)
-  nameWithType: CsiSequences.GenerateCsiReverseAttributesInRectangularArea(string, int, int, int, int)
-  nameWithType.vb: CsiSequences.GenerateCsiReverseAttributesInRectangularArea(String, Integer, Integer, Integer, Integer)
+- uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiReverseAttributesInRectangularArea(System.Int32,System.Int32,System.Int32,System.Int32,System.String)
+  name: GenerateCsiReverseAttributesInRectangularArea(int, int, int, int, string)
+  href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiReverseAttributesInRectangularArea_System_Int32_System_Int32_System_Int32_System_Int32_System_String_
+  commentId: M:Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiReverseAttributesInRectangularArea(System.Int32,System.Int32,System.Int32,System.Int32,System.String)
+  name.vb: GenerateCsiReverseAttributesInRectangularArea(Integer, Integer, Integer, Integer, String)
+  fullName: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiReverseAttributesInRectangularArea(int, int, int, int, string)
+  fullName.vb: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiReverseAttributesInRectangularArea(Integer, Integer, Integer, Integer, String)
+  nameWithType: CsiSequences.GenerateCsiReverseAttributesInRectangularArea(int, int, int, int, string)
+  nameWithType.vb: CsiSequences.GenerateCsiReverseAttributesInRectangularArea(Integer, Integer, Integer, Integer, String)
 - uid: Terminaux.Sequences.Builder.Types.CsiSequences.GenerateCsiReverseAttributesInRectangularArea*
   name: GenerateCsiReverseAttributesInRectangularArea
   href: api/Terminaux.Sequences.Builder.Types.CsiSequences.html#Terminaux_Sequences_Builder_Types_CsiSequences_GenerateCsiReverseAttributesInRectangularArea_
@@ -23603,6 +23631,12 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.VtSequenceTools.FilterVTSequencesMultiple
   nameWithType: VtSequenceTools.FilterVTSequencesMultiple
+- uid: Terminaux.Sequences.VtSequenceTools.GetSequenceFilterRegexFromType
+  name: GetSequenceFilterRegexFromType()
+  href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_GetSequenceFilterRegexFromType
+  commentId: M:Terminaux.Sequences.VtSequenceTools.GetSequenceFilterRegexFromType
+  fullName: Terminaux.Sequences.VtSequenceTools.GetSequenceFilterRegexFromType()
+  nameWithType: VtSequenceTools.GetSequenceFilterRegexFromType()
 - uid: Terminaux.Sequences.VtSequenceTools.GetSequenceFilterRegexFromType(Terminaux.Sequences.VtSequenceType)
   name: GetSequenceFilterRegexFromType(VtSequenceType)
   href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_GetSequenceFilterRegexFromType_Terminaux_Sequences_VtSequenceType_
