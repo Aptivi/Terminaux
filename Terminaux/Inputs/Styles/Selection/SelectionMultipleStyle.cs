@@ -133,7 +133,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false) =>
+        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, bool kiosk = false) =>
             PromptMultipleSelection(Question, Answers, [], kiosk);
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="Answers">Set of answers.</param>
         /// <param name="AltAnswers">Set of alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, bool kiosk = false) =>
+        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, bool kiosk = false) =>
             PromptMultipleSelection(Question, Answers, AltAnswers, SelectionStyleSettings.GlobalSettings, kiosk);
 
         /// <summary>
@@ -245,7 +245,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="Answers">Set of answers.</param>
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, List<InputChoiceInfo> Answers, SelectionStyleSettings settings, bool kiosk = false) =>
+        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false) =>
             PromptMultipleSelection(Question, Answers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="AltAnswers">Set of alternate answers.</param>
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, SelectionStyleSettings settings, bool kiosk = false)
+        public static int[] PromptMultipleSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false)
         {
             settings ??= SelectionStyleSettings.GlobalSettings;
 
@@ -290,7 +290,7 @@ namespace Terminaux.Inputs.Styles.Selection
             HighlightedAnswer = AllAnswers.Any((ici) => ici.ChoiceDefault) ? AllAnswers.Select((ici, idx) => (idx, ici.ChoiceDefault)).Where((tuple) => tuple.ChoiceDefault).First().idx + 1 : 1;
 
             // First alt answer index
-            int altAnswersFirstIdx = Answers.Count;
+            int altAnswersFirstIdx = Answers.Length;
             ConsoleKeyInfo Answer;
             bool initialVisible = ConsoleWrapper.CursorVisible;
             ConsoleWrapper.CursorVisible = false;

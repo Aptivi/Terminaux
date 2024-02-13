@@ -36,7 +36,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
             var names = NameGenerator.FindFirstNames("");
             for (int i = 0; i < names.Length; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", names[i]));
-            var answers = SelectionMultipleStyle.PromptMultipleSelection("Select a choice.", choices);
+            var answers = SelectionMultipleStyle.PromptMultipleSelection("Select a choice.", [.. choices]);
             TextWriterColor.Write(string.Join(", ", answers));
         }
     }

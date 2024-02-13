@@ -29,8 +29,8 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
         public void RunFixture()
         {
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history
-            var choices = new List<InputChoiceInfo>()
-            {
+            InputChoiceInfo[] choices =
+            [
                 new("dapper", "6.04 (Dapper Drake)"),
                 new("hardy", "8.04 (Hardy Heron)"),
                 new("lucid", "10.04 (Lucid Lynx)"),
@@ -41,9 +41,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
                 new("focal", "20.04 (Focal Fossa)"),
                 new("jammy", "22.04 (Jammy Jellyfish)"),
                 new("noble", "24.04 (Noble Numbat)", "", true),
-            };
-            var altChoices = new List<InputChoiceInfo>()
-            {
+            ];
+            InputChoiceInfo[] altChoices =
+            [
                 new("warty", "4.10 (Warty Warthog)"),
                 new("hoary", "5.04 (Hoary Hedgehog)"),
                 new("breezy", "5.10 (Breezy Badger)"),
@@ -74,7 +74,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
                 new("kinetic", "22.10 (Kinetic Kudu)"),
                 new("lunar", "23.04 (Lunar Lobster)"),
                 new("mantic", "23.10 (Mantic Minotaur)"),
-            };
+            ];
             SelectionStyle.PromptSelection("Which Ubuntu version would you like to run?", choices, altChoices);
         }
     }

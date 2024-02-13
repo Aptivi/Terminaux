@@ -31,7 +31,8 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"Number #{i + 1}"));
-            SelectionStyle.PromptSelection("Select a choice.", choices);
+            InputChoiceInfo[] choicesArray = [.. choices];
+            SelectionStyle.PromptSelection("Select a choice.", choicesArray, SelectionStyleSettings.GlobalSettings);
         }
     }
 }

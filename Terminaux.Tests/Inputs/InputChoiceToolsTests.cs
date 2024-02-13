@@ -30,7 +30,7 @@ namespace Terminaux.Tests.Inputs
         public void TestGetInputChoicesAnswersStr()
         {
             var choices = InputChoiceTools.GetInputChoices("Y/N/C", ["Yes", "No", "Cancel"]);
-            choices.Count.ShouldBe(3);
+            choices.Length.ShouldBe(3);
             choices[0].ChoiceName.ShouldBe("Y");
             choices[1].ChoiceName.ShouldBe("N");
             choices[2].ChoiceName.ShouldBe("C");
@@ -43,7 +43,7 @@ namespace Terminaux.Tests.Inputs
         public void TestGetInputChoicesAnswersArray()
         {
             var choices = InputChoiceTools.GetInputChoices(["Y", "N", "C"], ["Yes", "No", "Cancel"]);
-            choices.Count.ShouldBe(3);
+            choices.Length.ShouldBe(3);
             choices[0].ChoiceName.ShouldBe("Y");
             choices[1].ChoiceName.ShouldBe("N");
             choices[2].ChoiceName.ShouldBe("C");
@@ -56,7 +56,7 @@ namespace Terminaux.Tests.Inputs
         public void TestGetInputChoicesAnswersTitleNoMatch()
         {
             var choices = InputChoiceTools.GetInputChoices(["Y", "N", "C"], ["Yes", "No"]);
-            choices.Count.ShouldBe(3);
+            choices.Length.ShouldBe(3);
             choices[0].ChoiceName.ShouldBe("Y");
             choices[1].ChoiceName.ShouldBe("N");
             choices[2].ChoiceName.ShouldBe("C");
@@ -69,7 +69,7 @@ namespace Terminaux.Tests.Inputs
         public void TestGetInputChoicesAnswersAnswerNoMatch()
         {
             var choices = InputChoiceTools.GetInputChoices(["Y", "N"], ["Yes", "No", "Cancel"]);
-            choices.Count.ShouldBe(3);
+            choices.Length.ShouldBe(3);
             choices[0].ChoiceName.ShouldBe("Y");
             choices[1].ChoiceName.ShouldBe("N");
             choices[2].ChoiceName.ShouldBe("[3]");

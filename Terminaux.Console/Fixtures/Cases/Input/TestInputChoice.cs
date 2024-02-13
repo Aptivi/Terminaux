@@ -29,16 +29,16 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
         public void RunFixture()
         {
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history
-            var choices = new List<InputChoiceInfo>()
-            {
+            InputChoiceInfo[] choices =
+            [
                 new("f", "20.04 (Focal Fossa)", "Ubuntu 20.04 LTS, codenamed Focal Fossa, is a long-term support release and was released on 23 April 2020."),
                 new("j", "22.04 (Jammy Jellyfish)", "Ubuntu 22.04, codenamed Jammy Jellyfish, was released on 21 April 2022, and is a long-term support release, supported for five years, until April 2027."),
-            };
-            var altChoices = new List<InputChoiceInfo>()
-            {
+            ];
+            InputChoiceInfo[] altChoices =
+            [
                 new("k", "22.10 (Kinetic Kudu)", "Ubuntu 22.10, codenamed Kinetic Kudu, is an interim release and was made on 20 October 2022."),
                 new("l", "23.04 (Lunar Lobster)", "Ubuntu 23.04 Lunar Lobster is an interim release, scheduled 20 April 2023."),
-            };
+            ];
             ChoiceStyle.PromptChoice("Which Ubuntu version would you like to run?", choices, altChoices, ChoiceOutputType.Modern);
         }
     }

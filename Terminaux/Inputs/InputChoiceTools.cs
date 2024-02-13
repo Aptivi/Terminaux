@@ -32,7 +32,7 @@ namespace Terminaux.Inputs
         /// </summary>
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        public static List<InputChoiceInfo> GetInputChoices(string AnswersStr, string[] AnswersTitles) =>
+        public static InputChoiceInfo[] GetInputChoices(string AnswersStr, string[] AnswersTitles) =>
             GetInputChoices(AnswersStr.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries), AnswersTitles);
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Terminaux.Inputs
         /// </summary>
         /// <param name="Answers">Set of answers.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        public static List<InputChoiceInfo> GetInputChoices(string[] Answers, string[] AnswersTitles)
+        public static InputChoiceInfo[] GetInputChoices(string[] Answers, string[] AnswersTitles)
         {
             // Variables
             var finalChoices = new List<InputChoiceInfo>();
@@ -54,7 +54,7 @@ namespace Terminaux.Inputs
             // Now, populate choice information from the arrays
             for (int i = 0; i < Answers.Length; i++)
                 finalChoices.Add(new InputChoiceInfo(Answers[i] ?? $"[{i + 1}]", AnswersTitles[i] ?? $"[{i + 1}]"));
-            return finalChoices;
+            return [.. finalChoices];
         }
     }
 }

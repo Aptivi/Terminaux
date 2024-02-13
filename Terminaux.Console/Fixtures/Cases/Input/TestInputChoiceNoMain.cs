@@ -29,11 +29,11 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
         public void RunFixture()
         {
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history
-            var altChoices = new List<InputChoiceInfo>()
-            {
+            InputChoiceInfo[] altChoices =
+            [
                 new("k", "22.10 (Kinetic Kudu)", "Ubuntu 22.10, codenamed Kinetic Kudu, is an interim release and was made on 20 October 2022."),
                 new("l", "23.04 (Lunar Lobster)", "Ubuntu 23.04 Lunar Lobster is an interim release, scheduled 20 April 2023."),
-            };
+            ];
             ChoiceStyle.PromptChoice("Which Ubuntu version would you like to run?", [], altChoices, ChoiceOutputType.Modern);
         }
     }
