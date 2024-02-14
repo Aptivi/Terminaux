@@ -28,6 +28,8 @@ using System.Text;
 using System.Threading;
 using Textify.General;
 using SpecProbe.Platform;
+using Terminaux.Writer.ConsoleWriters;
+using Textify.Sequences.Builder.Types;
 
 namespace Terminaux.Base.Extensions
 {
@@ -43,8 +45,10 @@ namespace Terminaux.Base.Extensions
         {
             int Left = ConsoleWrapper.CursorLeft;
             int Top = ConsoleWrapper.CursorTop;
-            ConsoleWrapper.Clear();
-            ConsoleWrapper.SetCursorPosition(Left, Top);
+            TextWriterRaw.WritePlain(
+                ConsoleClearing.GetClearWholeScreenSequence() +
+                CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1), false
+            );
         }
 
         /// <summary>
@@ -220,7 +224,7 @@ namespace Terminaux.Base.Extensions
             Environment.GetEnvironmentVariable("PATH");
 
         internal static List<string> GetPathList() =>
-            PathsToLookup.Split(Convert.ToChar(PathLookupDelimiter)).ToList();
+            [.. PathsToLookup.Split(Convert.ToChar(PathLookupDelimiter))];
 
         internal static bool FileExistsInPath(string FilePath, ref string Result)
         {

@@ -68,7 +68,7 @@ namespace Terminaux.Reader.Bindings
         internal static List<BaseBinding> customBindings = [];
 
         internal static List<BaseBinding> AllBindings =>
-            baseBindings.Concat(customBindings).ToList();
+            [.. baseBindings, .. customBindings];
 
         internal static BaseBinding fallbackBinding = new InsertSelf();
     }
