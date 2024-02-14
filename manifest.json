@@ -215,6 +215,86 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.ExtendedCapabilities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.ExtendedCapabilities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.Boolean.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.Boolean.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.Num.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.Num.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.String.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.String.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.TermInfoCapsKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.TermInfoCapsKind.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.TermInfoDesc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.TermInfoDesc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.TerminauxException.yml",
       "output": {
         ".html": {
