@@ -597,326 +597,146 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Checks.ConsoleChecker.IsDumb
   nameWithType: ConsoleChecker.IsDumb
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist
-  name: TerminalEmulatorBlacklist
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html
-  commentId: T:Terminaux.Base.Checks.TerminalEmulatorBlacklist
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist
-  nameWithType: TerminalEmulatorBlacklist
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist.AddToBlacklist(System.Func{System.String,System.Boolean},System.String)
-  name: AddToBlacklist(Func<string, bool>, string)
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html#Terminaux_Base_Checks_TerminalEmulatorBlacklist_AddToBlacklist_System_Func_System_String_System_Boolean__System_String_
-  commentId: M:Terminaux.Base.Checks.TerminalEmulatorBlacklist.AddToBlacklist(System.Func{System.String,System.Boolean},System.String)
-  name.vb: AddToBlacklist(Func(Of String, Boolean), String)
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist.AddToBlacklist(System.Func<string, bool>, string)
-  fullName.vb: Terminaux.Base.Checks.TerminalEmulatorBlacklist.AddToBlacklist(System.Func(Of String, Boolean), String)
-  nameWithType: TerminalEmulatorBlacklist.AddToBlacklist(Func<string, bool>, string)
-  nameWithType.vb: TerminalEmulatorBlacklist.AddToBlacklist(Func(Of String, Boolean), String)
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist.AddToBlacklist*
-  name: AddToBlacklist
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html#Terminaux_Base_Checks_TerminalEmulatorBlacklist_AddToBlacklist_
-  commentId: Overload:Terminaux.Base.Checks.TerminalEmulatorBlacklist.AddToBlacklist
+- uid: Terminaux.Base.Checks.ConsoleFilter
+  name: ConsoleFilter
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html
+  commentId: T:Terminaux.Base.Checks.ConsoleFilter
+  fullName: Terminaux.Base.Checks.ConsoleFilter
+  nameWithType: ConsoleFilter
+- uid: Terminaux.Base.Checks.ConsoleFilter.AddToFilter(System.String,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String)
+  name: AddToFilter(string, ConsoleFilterType, ConsoleFilterSeverity, string)
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_AddToFilter_System_String_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_String_
+  commentId: M:Terminaux.Base.Checks.ConsoleFilter.AddToFilter(System.String,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String)
+  name.vb: AddToFilter(String, ConsoleFilterType, ConsoleFilterSeverity, String)
+  fullName: Terminaux.Base.Checks.ConsoleFilter.AddToFilter(string, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, string)
+  fullName.vb: Terminaux.Base.Checks.ConsoleFilter.AddToFilter(String, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, String)
+  nameWithType: ConsoleFilter.AddToFilter(string, ConsoleFilterType, ConsoleFilterSeverity, string)
+  nameWithType.vb: ConsoleFilter.AddToFilter(String, ConsoleFilterType, ConsoleFilterSeverity, String)
+- uid: Terminaux.Base.Checks.ConsoleFilter.AddToFilter(System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String)
+  name: AddToFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, string)
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_AddToFilter_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_String_
+  commentId: M:Terminaux.Base.Checks.ConsoleFilter.AddToFilter(System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String)
+  name.vb: AddToFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, String)
+  fullName: Terminaux.Base.Checks.ConsoleFilter.AddToFilter(System.Text.RegularExpressions.Regex, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, string)
+  fullName.vb: Terminaux.Base.Checks.ConsoleFilter.AddToFilter(System.Text.RegularExpressions.Regex, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, String)
+  nameWithType: ConsoleFilter.AddToFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, string)
+  nameWithType.vb: ConsoleFilter.AddToFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, String)
+- uid: Terminaux.Base.Checks.ConsoleFilter.AddToFilter*
+  name: AddToFilter
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_AddToFilter_
+  commentId: Overload:Terminaux.Base.Checks.ConsoleFilter.AddToFilter
   isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist.AddToBlacklist
-  nameWithType: TerminalEmulatorBlacklist.AddToBlacklist
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist.GetBlacklistedEmulators
-  name: GetBlacklistedEmulators()
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html#Terminaux_Base_Checks_TerminalEmulatorBlacklist_GetBlacklistedEmulators
-  commentId: M:Terminaux.Base.Checks.TerminalEmulatorBlacklist.GetBlacklistedEmulators
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist.GetBlacklistedEmulators()
-  nameWithType: TerminalEmulatorBlacklist.GetBlacklistedEmulators()
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist.GetBlacklistedEmulators*
-  name: GetBlacklistedEmulators
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html#Terminaux_Base_Checks_TerminalEmulatorBlacklist_GetBlacklistedEmulators_
-  commentId: Overload:Terminaux.Base.Checks.TerminalEmulatorBlacklist.GetBlacklistedEmulators
+  fullName: Terminaux.Base.Checks.ConsoleFilter.AddToFilter
+  nameWithType: ConsoleFilter.AddToFilter
+- uid: Terminaux.Base.Checks.ConsoleFilter.GetFilteredQueries
+  name: GetFilteredQueries()
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_GetFilteredQueries
+  commentId: M:Terminaux.Base.Checks.ConsoleFilter.GetFilteredQueries
+  fullName: Terminaux.Base.Checks.ConsoleFilter.GetFilteredQueries()
+  nameWithType: ConsoleFilter.GetFilteredQueries()
+- uid: Terminaux.Base.Checks.ConsoleFilter.GetFilteredQueries*
+  name: GetFilteredQueries
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_GetFilteredQueries_
+  commentId: Overload:Terminaux.Base.Checks.ConsoleFilter.GetFilteredQueries
   isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist.GetBlacklistedEmulators
-  nameWithType: TerminalEmulatorBlacklist.GetBlacklistedEmulators
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsEmulatorBlacklisted
-  name: IsEmulatorBlacklisted()
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html#Terminaux_Base_Checks_TerminalEmulatorBlacklist_IsEmulatorBlacklisted
-  commentId: M:Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsEmulatorBlacklisted
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsEmulatorBlacklisted()
-  nameWithType: TerminalEmulatorBlacklist.IsEmulatorBlacklisted()
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsEmulatorBlacklisted*
-  name: IsEmulatorBlacklisted
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html#Terminaux_Base_Checks_TerminalEmulatorBlacklist_IsEmulatorBlacklisted_
-  commentId: Overload:Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsEmulatorBlacklisted
+  fullName: Terminaux.Base.Checks.ConsoleFilter.GetFilteredQueries
+  nameWithType: ConsoleFilter.GetFilteredQueries
+- uid: Terminaux.Base.Checks.ConsoleFilter.IsConsoleFiltered(Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity)
+  name: IsConsoleFiltered(ConsoleFilterType, ConsoleFilterSeverity)
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_IsConsoleFiltered_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_
+  commentId: M:Terminaux.Base.Checks.ConsoleFilter.IsConsoleFiltered(Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity)
+  fullName: Terminaux.Base.Checks.ConsoleFilter.IsConsoleFiltered(Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity)
+  nameWithType: ConsoleFilter.IsConsoleFiltered(ConsoleFilterType, ConsoleFilterSeverity)
+- uid: Terminaux.Base.Checks.ConsoleFilter.IsConsoleFiltered*
+  name: IsConsoleFiltered
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_IsConsoleFiltered_
+  commentId: Overload:Terminaux.Base.Checks.ConsoleFilter.IsConsoleFiltered
   isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsEmulatorBlacklisted
-  nameWithType: TerminalEmulatorBlacklist.IsEmulatorBlacklisted
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsQueryBlacklisted(System.Func{System.String,System.Boolean},System.ValueTuple{System.Func{System.String,System.Boolean},System.String}@)
-  name: IsQueryBlacklisted(Func<string, bool>, out (Func<string, bool>, string))
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html#Terminaux_Base_Checks_TerminalEmulatorBlacklist_IsQueryBlacklisted_System_Func_System_String_System_Boolean__System_ValueTuple_System_Func_System_String_System_Boolean__System_String___
-  commentId: M:Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsQueryBlacklisted(System.Func{System.String,System.Boolean},System.ValueTuple{System.Func{System.String,System.Boolean},System.String}@)
-  name.vb: IsQueryBlacklisted(Func(Of String, Boolean), (Func(Of String, Boolean), String))
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsQueryBlacklisted(System.Func<string, bool>, out (System.Func<string, bool>, string))
-  fullName.vb: Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsQueryBlacklisted(System.Func(Of String, Boolean), (System.Func(Of String, Boolean), String))
-  nameWithType: TerminalEmulatorBlacklist.IsQueryBlacklisted(Func<string, bool>, out (Func<string, bool>, string))
-  nameWithType.vb: TerminalEmulatorBlacklist.IsQueryBlacklisted(Func(Of String, Boolean), (Func(Of String, Boolean), String))
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsQueryBlacklisted*
-  name: IsQueryBlacklisted
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html#Terminaux_Base_Checks_TerminalEmulatorBlacklist_IsQueryBlacklisted_
-  commentId: Overload:Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsQueryBlacklisted
+  fullName: Terminaux.Base.Checks.ConsoleFilter.IsConsoleFiltered
+  nameWithType: ConsoleFilter.IsConsoleFiltered
+- uid: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.String,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)
+  name: IsInFilter(string, ConsoleFilterType, ConsoleFilterSeverity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_IsInFilter_System_String_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_ValueTuple_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_String___
+  commentId: M:Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.String,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)
+  name.vb: IsInFilter(String, ConsoleFilterType, ConsoleFilterSeverity, (query As Regex, type As ConsoleFilterType, severity As ConsoleFilterSeverity, justification As String))
+  fullName: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(string, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, out (System.Text.RegularExpressions.Regex query, Terminaux.Base.Checks.ConsoleFilterType type, Terminaux.Base.Checks.ConsoleFilterSeverity severity, string justification))
+  fullName.vb: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(String, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, (query As System.Text.RegularExpressions.Regex, type As Terminaux.Base.Checks.ConsoleFilterType, severity As Terminaux.Base.Checks.ConsoleFilterSeverity, justification As String))
+  nameWithType: ConsoleFilter.IsInFilter(string, ConsoleFilterType, ConsoleFilterSeverity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
+  nameWithType.vb: ConsoleFilter.IsInFilter(String, ConsoleFilterType, ConsoleFilterSeverity, (query As Regex, type As ConsoleFilterType, severity As ConsoleFilterSeverity, justification As String))
+- uid: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)
+  name: IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_IsInFilter_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_ValueTuple_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_String___
+  commentId: M:Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)
+  name.vb: IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, (query As Regex, type As ConsoleFilterType, severity As ConsoleFilterSeverity, justification As String))
+  fullName: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, out (System.Text.RegularExpressions.Regex query, Terminaux.Base.Checks.ConsoleFilterType type, Terminaux.Base.Checks.ConsoleFilterSeverity severity, string justification))
+  fullName.vb: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, (query As System.Text.RegularExpressions.Regex, type As Terminaux.Base.Checks.ConsoleFilterType, severity As Terminaux.Base.Checks.ConsoleFilterSeverity, justification As String))
+  nameWithType: ConsoleFilter.IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
+  nameWithType.vb: ConsoleFilter.IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, (query As Regex, type As ConsoleFilterType, severity As ConsoleFilterSeverity, justification As String))
+- uid: Terminaux.Base.Checks.ConsoleFilter.IsInFilter*
+  name: IsInFilter
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_IsInFilter_
+  commentId: Overload:Terminaux.Base.Checks.ConsoleFilter.IsInFilter
   isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist.IsQueryBlacklisted
-  nameWithType: TerminalEmulatorBlacklist.IsQueryBlacklisted
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist.RemoveFromBlacklist(System.Func{System.String,System.Boolean})
-  name: RemoveFromBlacklist(Func<string, bool>)
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html#Terminaux_Base_Checks_TerminalEmulatorBlacklist_RemoveFromBlacklist_System_Func_System_String_System_Boolean__
-  commentId: M:Terminaux.Base.Checks.TerminalEmulatorBlacklist.RemoveFromBlacklist(System.Func{System.String,System.Boolean})
-  name.vb: RemoveFromBlacklist(Func(Of String, Boolean))
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist.RemoveFromBlacklist(System.Func<string, bool>)
-  fullName.vb: Terminaux.Base.Checks.TerminalEmulatorBlacklist.RemoveFromBlacklist(System.Func(Of String, Boolean))
-  nameWithType: TerminalEmulatorBlacklist.RemoveFromBlacklist(Func<string, bool>)
-  nameWithType.vb: TerminalEmulatorBlacklist.RemoveFromBlacklist(Func(Of String, Boolean))
-- uid: Terminaux.Base.Checks.TerminalEmulatorBlacklist.RemoveFromBlacklist*
-  name: RemoveFromBlacklist
-  href: api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html#Terminaux_Base_Checks_TerminalEmulatorBlacklist_RemoveFromBlacklist_
-  commentId: Overload:Terminaux.Base.Checks.TerminalEmulatorBlacklist.RemoveFromBlacklist
+  fullName: Terminaux.Base.Checks.ConsoleFilter.IsInFilter
+  nameWithType: ConsoleFilter.IsInFilter
+- uid: Terminaux.Base.Checks.ConsoleFilter.RemoveFromFilter(System.String,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity)
+  name: RemoveFromFilter(string, ConsoleFilterType, ConsoleFilterSeverity)
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_RemoveFromFilter_System_String_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_
+  commentId: M:Terminaux.Base.Checks.ConsoleFilter.RemoveFromFilter(System.String,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity)
+  name.vb: RemoveFromFilter(String, ConsoleFilterType, ConsoleFilterSeverity)
+  fullName: Terminaux.Base.Checks.ConsoleFilter.RemoveFromFilter(string, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity)
+  fullName.vb: Terminaux.Base.Checks.ConsoleFilter.RemoveFromFilter(String, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity)
+  nameWithType: ConsoleFilter.RemoveFromFilter(string, ConsoleFilterType, ConsoleFilterSeverity)
+  nameWithType.vb: ConsoleFilter.RemoveFromFilter(String, ConsoleFilterType, ConsoleFilterSeverity)
+- uid: Terminaux.Base.Checks.ConsoleFilter.RemoveFromFilter(System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity)
+  name: RemoveFromFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity)
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_RemoveFromFilter_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_
+  commentId: M:Terminaux.Base.Checks.ConsoleFilter.RemoveFromFilter(System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity)
+  fullName: Terminaux.Base.Checks.ConsoleFilter.RemoveFromFilter(System.Text.RegularExpressions.Regex, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity)
+  nameWithType: ConsoleFilter.RemoveFromFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity)
+- uid: Terminaux.Base.Checks.ConsoleFilter.RemoveFromFilter*
+  name: RemoveFromFilter
+  href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_RemoveFromFilter_
+  commentId: Overload:Terminaux.Base.Checks.ConsoleFilter.RemoveFromFilter
   isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalEmulatorBlacklist.RemoveFromBlacklist
-  nameWithType: TerminalEmulatorBlacklist.RemoveFromBlacklist
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist
-  name: TerminalEmulatorGreylist
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html
-  commentId: T:Terminaux.Base.Checks.TerminalEmulatorGreylist
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist
-  nameWithType: TerminalEmulatorGreylist
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist.AddToGreylist(System.Func{System.String,System.Boolean},System.String)
-  name: AddToGreylist(Func<string, bool>, string)
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html#Terminaux_Base_Checks_TerminalEmulatorGreylist_AddToGreylist_System_Func_System_String_System_Boolean__System_String_
-  commentId: M:Terminaux.Base.Checks.TerminalEmulatorGreylist.AddToGreylist(System.Func{System.String,System.Boolean},System.String)
-  name.vb: AddToGreylist(Func(Of String, Boolean), String)
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist.AddToGreylist(System.Func<string, bool>, string)
-  fullName.vb: Terminaux.Base.Checks.TerminalEmulatorGreylist.AddToGreylist(System.Func(Of String, Boolean), String)
-  nameWithType: TerminalEmulatorGreylist.AddToGreylist(Func<string, bool>, string)
-  nameWithType.vb: TerminalEmulatorGreylist.AddToGreylist(Func(Of String, Boolean), String)
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist.AddToGreylist*
-  name: AddToGreylist
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html#Terminaux_Base_Checks_TerminalEmulatorGreylist_AddToGreylist_
-  commentId: Overload:Terminaux.Base.Checks.TerminalEmulatorGreylist.AddToGreylist
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist.AddToGreylist
-  nameWithType: TerminalEmulatorGreylist.AddToGreylist
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist.GetGreylistedEmulators
-  name: GetGreylistedEmulators()
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html#Terminaux_Base_Checks_TerminalEmulatorGreylist_GetGreylistedEmulators
-  commentId: M:Terminaux.Base.Checks.TerminalEmulatorGreylist.GetGreylistedEmulators
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist.GetGreylistedEmulators()
-  nameWithType: TerminalEmulatorGreylist.GetGreylistedEmulators()
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist.GetGreylistedEmulators*
-  name: GetGreylistedEmulators
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html#Terminaux_Base_Checks_TerminalEmulatorGreylist_GetGreylistedEmulators_
-  commentId: Overload:Terminaux.Base.Checks.TerminalEmulatorGreylist.GetGreylistedEmulators
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist.GetGreylistedEmulators
-  nameWithType: TerminalEmulatorGreylist.GetGreylistedEmulators
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist.IsEmulatorGreylisted
-  name: IsEmulatorGreylisted()
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html#Terminaux_Base_Checks_TerminalEmulatorGreylist_IsEmulatorGreylisted
-  commentId: M:Terminaux.Base.Checks.TerminalEmulatorGreylist.IsEmulatorGreylisted
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist.IsEmulatorGreylisted()
-  nameWithType: TerminalEmulatorGreylist.IsEmulatorGreylisted()
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist.IsEmulatorGreylisted*
-  name: IsEmulatorGreylisted
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html#Terminaux_Base_Checks_TerminalEmulatorGreylist_IsEmulatorGreylisted_
-  commentId: Overload:Terminaux.Base.Checks.TerminalEmulatorGreylist.IsEmulatorGreylisted
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist.IsEmulatorGreylisted
-  nameWithType: TerminalEmulatorGreylist.IsEmulatorGreylisted
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist.IsQueryGreylisted(System.Func{System.String,System.Boolean},System.ValueTuple{System.Func{System.String,System.Boolean},System.String}@)
-  name: IsQueryGreylisted(Func<string, bool>, out (Func<string, bool>, string))
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html#Terminaux_Base_Checks_TerminalEmulatorGreylist_IsQueryGreylisted_System_Func_System_String_System_Boolean__System_ValueTuple_System_Func_System_String_System_Boolean__System_String___
-  commentId: M:Terminaux.Base.Checks.TerminalEmulatorGreylist.IsQueryGreylisted(System.Func{System.String,System.Boolean},System.ValueTuple{System.Func{System.String,System.Boolean},System.String}@)
-  name.vb: IsQueryGreylisted(Func(Of String, Boolean), (Func(Of String, Boolean), String))
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist.IsQueryGreylisted(System.Func<string, bool>, out (System.Func<string, bool>, string))
-  fullName.vb: Terminaux.Base.Checks.TerminalEmulatorGreylist.IsQueryGreylisted(System.Func(Of String, Boolean), (System.Func(Of String, Boolean), String))
-  nameWithType: TerminalEmulatorGreylist.IsQueryGreylisted(Func<string, bool>, out (Func<string, bool>, string))
-  nameWithType.vb: TerminalEmulatorGreylist.IsQueryGreylisted(Func(Of String, Boolean), (Func(Of String, Boolean), String))
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist.IsQueryGreylisted*
-  name: IsQueryGreylisted
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html#Terminaux_Base_Checks_TerminalEmulatorGreylist_IsQueryGreylisted_
-  commentId: Overload:Terminaux.Base.Checks.TerminalEmulatorGreylist.IsQueryGreylisted
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist.IsQueryGreylisted
-  nameWithType: TerminalEmulatorGreylist.IsQueryGreylisted
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist.RemoveFromGreylist(System.Func{System.String,System.Boolean})
-  name: RemoveFromGreylist(Func<string, bool>)
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html#Terminaux_Base_Checks_TerminalEmulatorGreylist_RemoveFromGreylist_System_Func_System_String_System_Boolean__
-  commentId: M:Terminaux.Base.Checks.TerminalEmulatorGreylist.RemoveFromGreylist(System.Func{System.String,System.Boolean})
-  name.vb: RemoveFromGreylist(Func(Of String, Boolean))
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist.RemoveFromGreylist(System.Func<string, bool>)
-  fullName.vb: Terminaux.Base.Checks.TerminalEmulatorGreylist.RemoveFromGreylist(System.Func(Of String, Boolean))
-  nameWithType: TerminalEmulatorGreylist.RemoveFromGreylist(Func<string, bool>)
-  nameWithType.vb: TerminalEmulatorGreylist.RemoveFromGreylist(Func(Of String, Boolean))
-- uid: Terminaux.Base.Checks.TerminalEmulatorGreylist.RemoveFromGreylist*
-  name: RemoveFromGreylist
-  href: api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html#Terminaux_Base_Checks_TerminalEmulatorGreylist_RemoveFromGreylist_
-  commentId: Overload:Terminaux.Base.Checks.TerminalEmulatorGreylist.RemoveFromGreylist
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalEmulatorGreylist.RemoveFromGreylist
-  nameWithType: TerminalEmulatorGreylist.RemoveFromGreylist
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist
-  name: TerminalTypeBlacklist
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html
-  commentId: T:Terminaux.Base.Checks.TerminalTypeBlacklist
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist
-  nameWithType: TerminalTypeBlacklist
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist.AddToBlacklist(System.Func{System.String,System.Boolean},System.String)
-  name: AddToBlacklist(Func<string, bool>, string)
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html#Terminaux_Base_Checks_TerminalTypeBlacklist_AddToBlacklist_System_Func_System_String_System_Boolean__System_String_
-  commentId: M:Terminaux.Base.Checks.TerminalTypeBlacklist.AddToBlacklist(System.Func{System.String,System.Boolean},System.String)
-  name.vb: AddToBlacklist(Func(Of String, Boolean), String)
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist.AddToBlacklist(System.Func<string, bool>, string)
-  fullName.vb: Terminaux.Base.Checks.TerminalTypeBlacklist.AddToBlacklist(System.Func(Of String, Boolean), String)
-  nameWithType: TerminalTypeBlacklist.AddToBlacklist(Func<string, bool>, string)
-  nameWithType.vb: TerminalTypeBlacklist.AddToBlacklist(Func(Of String, Boolean), String)
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist.AddToBlacklist*
-  name: AddToBlacklist
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html#Terminaux_Base_Checks_TerminalTypeBlacklist_AddToBlacklist_
-  commentId: Overload:Terminaux.Base.Checks.TerminalTypeBlacklist.AddToBlacklist
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist.AddToBlacklist
-  nameWithType: TerminalTypeBlacklist.AddToBlacklist
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist.GetBlacklistedTypes
-  name: GetBlacklistedTypes()
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html#Terminaux_Base_Checks_TerminalTypeBlacklist_GetBlacklistedTypes
-  commentId: M:Terminaux.Base.Checks.TerminalTypeBlacklist.GetBlacklistedTypes
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist.GetBlacklistedTypes()
-  nameWithType: TerminalTypeBlacklist.GetBlacklistedTypes()
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist.GetBlacklistedTypes*
-  name: GetBlacklistedTypes
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html#Terminaux_Base_Checks_TerminalTypeBlacklist_GetBlacklistedTypes_
-  commentId: Overload:Terminaux.Base.Checks.TerminalTypeBlacklist.GetBlacklistedTypes
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist.GetBlacklistedTypes
-  nameWithType: TerminalTypeBlacklist.GetBlacklistedTypes
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist.IsQueryBlacklisted(System.Func{System.String,System.Boolean},System.ValueTuple{System.Func{System.String,System.Boolean},System.String}@)
-  name: IsQueryBlacklisted(Func<string, bool>, out (Func<string, bool>, string))
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html#Terminaux_Base_Checks_TerminalTypeBlacklist_IsQueryBlacklisted_System_Func_System_String_System_Boolean__System_ValueTuple_System_Func_System_String_System_Boolean__System_String___
-  commentId: M:Terminaux.Base.Checks.TerminalTypeBlacklist.IsQueryBlacklisted(System.Func{System.String,System.Boolean},System.ValueTuple{System.Func{System.String,System.Boolean},System.String}@)
-  name.vb: IsQueryBlacklisted(Func(Of String, Boolean), (Func(Of String, Boolean), String))
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist.IsQueryBlacklisted(System.Func<string, bool>, out (System.Func<string, bool>, string))
-  fullName.vb: Terminaux.Base.Checks.TerminalTypeBlacklist.IsQueryBlacklisted(System.Func(Of String, Boolean), (System.Func(Of String, Boolean), String))
-  nameWithType: TerminalTypeBlacklist.IsQueryBlacklisted(Func<string, bool>, out (Func<string, bool>, string))
-  nameWithType.vb: TerminalTypeBlacklist.IsQueryBlacklisted(Func(Of String, Boolean), (Func(Of String, Boolean), String))
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist.IsQueryBlacklisted*
-  name: IsQueryBlacklisted
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html#Terminaux_Base_Checks_TerminalTypeBlacklist_IsQueryBlacklisted_
-  commentId: Overload:Terminaux.Base.Checks.TerminalTypeBlacklist.IsQueryBlacklisted
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist.IsQueryBlacklisted
-  nameWithType: TerminalTypeBlacklist.IsQueryBlacklisted
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist.IsTypeBlacklisted
-  name: IsTypeBlacklisted()
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html#Terminaux_Base_Checks_TerminalTypeBlacklist_IsTypeBlacklisted
-  commentId: M:Terminaux.Base.Checks.TerminalTypeBlacklist.IsTypeBlacklisted
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist.IsTypeBlacklisted()
-  nameWithType: TerminalTypeBlacklist.IsTypeBlacklisted()
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist.IsTypeBlacklisted*
-  name: IsTypeBlacklisted
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html#Terminaux_Base_Checks_TerminalTypeBlacklist_IsTypeBlacklisted_
-  commentId: Overload:Terminaux.Base.Checks.TerminalTypeBlacklist.IsTypeBlacklisted
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist.IsTypeBlacklisted
-  nameWithType: TerminalTypeBlacklist.IsTypeBlacklisted
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist.RemoveFromBlacklist(System.Func{System.String,System.Boolean})
-  name: RemoveFromBlacklist(Func<string, bool>)
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html#Terminaux_Base_Checks_TerminalTypeBlacklist_RemoveFromBlacklist_System_Func_System_String_System_Boolean__
-  commentId: M:Terminaux.Base.Checks.TerminalTypeBlacklist.RemoveFromBlacklist(System.Func{System.String,System.Boolean})
-  name.vb: RemoveFromBlacklist(Func(Of String, Boolean))
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist.RemoveFromBlacklist(System.Func<string, bool>)
-  fullName.vb: Terminaux.Base.Checks.TerminalTypeBlacklist.RemoveFromBlacklist(System.Func(Of String, Boolean))
-  nameWithType: TerminalTypeBlacklist.RemoveFromBlacklist(Func<string, bool>)
-  nameWithType.vb: TerminalTypeBlacklist.RemoveFromBlacklist(Func(Of String, Boolean))
-- uid: Terminaux.Base.Checks.TerminalTypeBlacklist.RemoveFromBlacklist*
-  name: RemoveFromBlacklist
-  href: api/Terminaux.Base.Checks.TerminalTypeBlacklist.html#Terminaux_Base_Checks_TerminalTypeBlacklist_RemoveFromBlacklist_
-  commentId: Overload:Terminaux.Base.Checks.TerminalTypeBlacklist.RemoveFromBlacklist
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalTypeBlacklist.RemoveFromBlacklist
-  nameWithType: TerminalTypeBlacklist.RemoveFromBlacklist
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist
-  name: TerminalTypeGreylist
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html
-  commentId: T:Terminaux.Base.Checks.TerminalTypeGreylist
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist
-  nameWithType: TerminalTypeGreylist
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist.AddToGreylist(System.Func{System.String,System.Boolean},System.String)
-  name: AddToGreylist(Func<string, bool>, string)
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html#Terminaux_Base_Checks_TerminalTypeGreylist_AddToGreylist_System_Func_System_String_System_Boolean__System_String_
-  commentId: M:Terminaux.Base.Checks.TerminalTypeGreylist.AddToGreylist(System.Func{System.String,System.Boolean},System.String)
-  name.vb: AddToGreylist(Func(Of String, Boolean), String)
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist.AddToGreylist(System.Func<string, bool>, string)
-  fullName.vb: Terminaux.Base.Checks.TerminalTypeGreylist.AddToGreylist(System.Func(Of String, Boolean), String)
-  nameWithType: TerminalTypeGreylist.AddToGreylist(Func<string, bool>, string)
-  nameWithType.vb: TerminalTypeGreylist.AddToGreylist(Func(Of String, Boolean), String)
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist.AddToGreylist*
-  name: AddToGreylist
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html#Terminaux_Base_Checks_TerminalTypeGreylist_AddToGreylist_
-  commentId: Overload:Terminaux.Base.Checks.TerminalTypeGreylist.AddToGreylist
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist.AddToGreylist
-  nameWithType: TerminalTypeGreylist.AddToGreylist
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist.GetGreylistedTypes
-  name: GetGreylistedTypes()
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html#Terminaux_Base_Checks_TerminalTypeGreylist_GetGreylistedTypes
-  commentId: M:Terminaux.Base.Checks.TerminalTypeGreylist.GetGreylistedTypes
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist.GetGreylistedTypes()
-  nameWithType: TerminalTypeGreylist.GetGreylistedTypes()
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist.GetGreylistedTypes*
-  name: GetGreylistedTypes
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html#Terminaux_Base_Checks_TerminalTypeGreylist_GetGreylistedTypes_
-  commentId: Overload:Terminaux.Base.Checks.TerminalTypeGreylist.GetGreylistedTypes
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist.GetGreylistedTypes
-  nameWithType: TerminalTypeGreylist.GetGreylistedTypes
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist.IsQueryGreylisted(System.Func{System.String,System.Boolean},System.ValueTuple{System.Func{System.String,System.Boolean},System.String}@)
-  name: IsQueryGreylisted(Func<string, bool>, out (Func<string, bool>, string))
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html#Terminaux_Base_Checks_TerminalTypeGreylist_IsQueryGreylisted_System_Func_System_String_System_Boolean__System_ValueTuple_System_Func_System_String_System_Boolean__System_String___
-  commentId: M:Terminaux.Base.Checks.TerminalTypeGreylist.IsQueryGreylisted(System.Func{System.String,System.Boolean},System.ValueTuple{System.Func{System.String,System.Boolean},System.String}@)
-  name.vb: IsQueryGreylisted(Func(Of String, Boolean), (Func(Of String, Boolean), String))
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist.IsQueryGreylisted(System.Func<string, bool>, out (System.Func<string, bool>, string))
-  fullName.vb: Terminaux.Base.Checks.TerminalTypeGreylist.IsQueryGreylisted(System.Func(Of String, Boolean), (System.Func(Of String, Boolean), String))
-  nameWithType: TerminalTypeGreylist.IsQueryGreylisted(Func<string, bool>, out (Func<string, bool>, string))
-  nameWithType.vb: TerminalTypeGreylist.IsQueryGreylisted(Func(Of String, Boolean), (Func(Of String, Boolean), String))
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist.IsQueryGreylisted*
-  name: IsQueryGreylisted
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html#Terminaux_Base_Checks_TerminalTypeGreylist_IsQueryGreylisted_
-  commentId: Overload:Terminaux.Base.Checks.TerminalTypeGreylist.IsQueryGreylisted
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist.IsQueryGreylisted
-  nameWithType: TerminalTypeGreylist.IsQueryGreylisted
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist.IsTypeGreylisted
-  name: IsTypeGreylisted()
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html#Terminaux_Base_Checks_TerminalTypeGreylist_IsTypeGreylisted
-  commentId: M:Terminaux.Base.Checks.TerminalTypeGreylist.IsTypeGreylisted
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist.IsTypeGreylisted()
-  nameWithType: TerminalTypeGreylist.IsTypeGreylisted()
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist.IsTypeGreylisted*
-  name: IsTypeGreylisted
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html#Terminaux_Base_Checks_TerminalTypeGreylist_IsTypeGreylisted_
-  commentId: Overload:Terminaux.Base.Checks.TerminalTypeGreylist.IsTypeGreylisted
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist.IsTypeGreylisted
-  nameWithType: TerminalTypeGreylist.IsTypeGreylisted
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist.RemoveFromGreylist(System.Func{System.String,System.Boolean})
-  name: RemoveFromGreylist(Func<string, bool>)
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html#Terminaux_Base_Checks_TerminalTypeGreylist_RemoveFromGreylist_System_Func_System_String_System_Boolean__
-  commentId: M:Terminaux.Base.Checks.TerminalTypeGreylist.RemoveFromGreylist(System.Func{System.String,System.Boolean})
-  name.vb: RemoveFromGreylist(Func(Of String, Boolean))
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist.RemoveFromGreylist(System.Func<string, bool>)
-  fullName.vb: Terminaux.Base.Checks.TerminalTypeGreylist.RemoveFromGreylist(System.Func(Of String, Boolean))
-  nameWithType: TerminalTypeGreylist.RemoveFromGreylist(Func<string, bool>)
-  nameWithType.vb: TerminalTypeGreylist.RemoveFromGreylist(Func(Of String, Boolean))
-- uid: Terminaux.Base.Checks.TerminalTypeGreylist.RemoveFromGreylist*
-  name: RemoveFromGreylist
-  href: api/Terminaux.Base.Checks.TerminalTypeGreylist.html#Terminaux_Base_Checks_TerminalTypeGreylist_RemoveFromGreylist_
-  commentId: Overload:Terminaux.Base.Checks.TerminalTypeGreylist.RemoveFromGreylist
-  isSpec: "True"
-  fullName: Terminaux.Base.Checks.TerminalTypeGreylist.RemoveFromGreylist
-  nameWithType: TerminalTypeGreylist.RemoveFromGreylist
+  fullName: Terminaux.Base.Checks.ConsoleFilter.RemoveFromFilter
+  nameWithType: ConsoleFilter.RemoveFromFilter
+- uid: Terminaux.Base.Checks.ConsoleFilterSeverity
+  name: ConsoleFilterSeverity
+  href: api/Terminaux.Base.Checks.ConsoleFilterSeverity.html
+  commentId: T:Terminaux.Base.Checks.ConsoleFilterSeverity
+  fullName: Terminaux.Base.Checks.ConsoleFilterSeverity
+  nameWithType: ConsoleFilterSeverity
+- uid: Terminaux.Base.Checks.ConsoleFilterSeverity.Blacklist
+  name: Blacklist
+  href: api/Terminaux.Base.Checks.ConsoleFilterSeverity.html#Terminaux_Base_Checks_ConsoleFilterSeverity_Blacklist
+  commentId: F:Terminaux.Base.Checks.ConsoleFilterSeverity.Blacklist
+  fullName: Terminaux.Base.Checks.ConsoleFilterSeverity.Blacklist
+  nameWithType: ConsoleFilterSeverity.Blacklist
+- uid: Terminaux.Base.Checks.ConsoleFilterSeverity.Graylist
+  name: Graylist
+  href: api/Terminaux.Base.Checks.ConsoleFilterSeverity.html#Terminaux_Base_Checks_ConsoleFilterSeverity_Graylist
+  commentId: F:Terminaux.Base.Checks.ConsoleFilterSeverity.Graylist
+  fullName: Terminaux.Base.Checks.ConsoleFilterSeverity.Graylist
+  nameWithType: ConsoleFilterSeverity.Graylist
+- uid: Terminaux.Base.Checks.ConsoleFilterType
+  name: ConsoleFilterType
+  href: api/Terminaux.Base.Checks.ConsoleFilterType.html
+  commentId: T:Terminaux.Base.Checks.ConsoleFilterType
+  fullName: Terminaux.Base.Checks.ConsoleFilterType
+  nameWithType: ConsoleFilterType
+- uid: Terminaux.Base.Checks.ConsoleFilterType.Emulator
+  name: Emulator
+  href: api/Terminaux.Base.Checks.ConsoleFilterType.html#Terminaux_Base_Checks_ConsoleFilterType_Emulator
+  commentId: F:Terminaux.Base.Checks.ConsoleFilterType.Emulator
+  fullName: Terminaux.Base.Checks.ConsoleFilterType.Emulator
+  nameWithType: ConsoleFilterType.Emulator
+- uid: Terminaux.Base.Checks.ConsoleFilterType.Type
+  name: Type
+  href: api/Terminaux.Base.Checks.ConsoleFilterType.html#Terminaux_Base_Checks_ConsoleFilterType_Type
+  commentId: F:Terminaux.Base.Checks.ConsoleFilterType.Type
+  fullName: Terminaux.Base.Checks.ConsoleFilterType.Type
+  nameWithType: ConsoleFilterType.Type
 - uid: Terminaux.Base.ConsoleResizeHandler
   name: ConsoleResizeHandler
   href: api/Terminaux.Base.ConsoleResizeHandler.html

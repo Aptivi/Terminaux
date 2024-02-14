@@ -65,40 +65,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.yml",
+      "source_relative_path": "api/Terminaux.Base.Checks.ConsoleFilter.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Base.Checks.TerminalEmulatorBlacklist.html"
+          "relative_path": "api/Terminaux.Base.Checks.ConsoleFilter.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.Checks.TerminalEmulatorGreylist.yml",
+      "source_relative_path": "api/Terminaux.Base.Checks.ConsoleFilterSeverity.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Base.Checks.TerminalEmulatorGreylist.html"
+          "relative_path": "api/Terminaux.Base.Checks.ConsoleFilterSeverity.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.Checks.TerminalTypeBlacklist.yml",
+      "source_relative_path": "api/Terminaux.Base.Checks.ConsoleFilterType.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Base.Checks.TerminalTypeBlacklist.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Base.Checks.TerminalTypeGreylist.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Base.Checks.TerminalTypeGreylist.html"
+          "relative_path": "api/Terminaux.Base.Checks.ConsoleFilterType.html"
         }
       },
       "version": ""
