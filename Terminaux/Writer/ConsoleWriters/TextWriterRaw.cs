@@ -53,12 +53,20 @@ namespace Terminaux.Writer.ConsoleWriters
         }
 
         /// <summary>
-        /// Outputs the text into the terminal prompt plainly.
+        /// Outputs the text into the terminal prompt plainly with a newline terminator.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WritePlain(string Text, params object[] vars) =>
             WritePlain(Text, true, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt plainly.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteRaw(string Text, params object[] vars) =>
+            WritePlain(Text, false, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt plainly.
@@ -70,13 +78,22 @@ namespace Terminaux.Writer.ConsoleWriters
             WritePlain(Text, null, Line, vars);
 
         /// <summary>
-        /// Outputs the text into the terminal prompt plainly. Use for TermReader custom bindings.
+        /// Outputs the text into the terminal prompt plainly with a newline terminator. Use for TermReader custom bindings.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WritePlain(string Text, TermReaderSettings settings, params object[] vars) =>
             WritePlain(Text, settings, true, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt plainly. Use for TermReader custom bindings.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="settings">Terminal reader settings</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteRaw(string Text, TermReaderSettings settings, params object[] vars) =>
+            WritePlain(Text, settings, false, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt plainly. Use for TermReader custom bindings.
