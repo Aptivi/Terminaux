@@ -34,12 +34,12 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Consoles
             var types = Enum.GetValues(typeof(ConsoleFormattingType));
             foreach (var type in types)
             {
-                TextWriterRaw.WritePlain(ConsoleFormatting.GetFormattingSequences((ConsoleFormattingType)type), false);
+                TextWriterRaw.WriteRaw(ConsoleFormatting.GetFormattingSequences((ConsoleFormattingType)type));
                 TextWriterColor.WriteColorBack($"{type} text", false, ConsoleColors.DarkGreen, ConsoleColors.DarkBlue);
                 TermReader.ReadKey();
                 TextWriterRaw.Write();
             }
-            TextWriterRaw.WritePlain(ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default), false);
+            TextWriterRaw.WriteRaw(ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default));
         }
     }
 }

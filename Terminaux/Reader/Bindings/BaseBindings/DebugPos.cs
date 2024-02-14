@@ -43,34 +43,34 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // state.InputPromptLeft, state.InputPromptTop
             Console.BackgroundColor = ConsoleColor.Green;
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-            TextWriterRaw.WritePlain("I", false, state.settings);
+            TextWriterRaw.WriteRaw("I", state.settings);
             Thread.Sleep(1000);
 
             // state.CurrentCursorPosLeft, state.CurrentCursorPosTop
             Console.BackgroundColor = ConsoleColor.Red;
             PositioningTools.Commit(state);
-            TextWriterRaw.WritePlain("C", false, state.settings);
+            TextWriterRaw.WriteRaw("C", state.settings);
             Thread.Sleep(1000);
 
             // state.LeftMargin, state.InputPromptTop
             // Targets: state.MaximumInputPositionLeft, state.LongestSentenceLengthFromLeft
             Console.BackgroundColor = ConsoleColor.Yellow;
             ConsoleWrapper.SetCursorPosition(state.LeftMargin, state.InputPromptTop);
-            TextWriterRaw.WritePlain("|", false, state.settings);
+            TextWriterRaw.WriteRaw("|", state.settings);
             ConsoleWrapper.SetCursorPosition(state.MaximumInputPositionLeft, state.InputPromptTop);
-            TextWriterRaw.WritePlain("M", false, state.settings);
+            TextWriterRaw.WriteRaw("M", state.settings);
             ConsoleWrapper.SetCursorPosition(state.LongestSentenceLengthFromLeft >= ConsoleWrapper.WindowWidth ? state.LongestSentenceLengthFromLeft - 1 : state.LongestSentenceLengthFromLeft, state.InputPromptTop);
-            TextWriterRaw.WritePlain("L", false, state.settings);
+            TextWriterRaw.WriteRaw("L", state.settings);
 
             // 0, state.InputPromptTop
             // Targets: state.LongestSentenceLengthFromLeftForFirstLine, state.LongestSentenceLengthFromLeftForGeneralLine
             Console.BackgroundColor = ConsoleColor.DarkYellow;
             ConsoleWrapper.SetCursorPosition(0, state.InputPromptTop);
-            TextWriterRaw.WritePlain("#", false, state.settings);
+            TextWriterRaw.WriteRaw("#", state.settings);
             ConsoleWrapper.SetCursorPosition(state.LongestSentenceLengthFromLeftForFirstLine, state.InputPromptTop);
-            TextWriterRaw.WritePlain("F", false, state.settings);
+            TextWriterRaw.WriteRaw("F", state.settings);
             ConsoleWrapper.SetCursorPosition(state.LongestSentenceLengthFromLeftForGeneralLine, state.InputPromptTop);
-            TextWriterRaw.WritePlain("G", false, state.settings);
+            TextWriterRaw.WriteRaw("G", state.settings);
             Thread.Sleep(1000);
 
             // Re-write the text and set the current cursor position as appropriate
@@ -84,28 +84,28 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             PositioningTools.SeekTo(renderedText.Length, ref state);
             Console.BackgroundColor = ConsoleColor.Blue;
             PositioningTools.Commit(state);
-            TextWriterRaw.WritePlain("S", false, state.settings);
+            TextWriterRaw.WriteRaw("S", state.settings);
             Thread.Sleep(1000);
 
             // Verify seek to 0
             PositioningTools.SeekTo(0, ref state);
             Console.BackgroundColor = ConsoleColor.DarkBlue;
             PositioningTools.Commit(state);
-            TextWriterRaw.WritePlain("Z", false, state.settings);
+            TextWriterRaw.WriteRaw("Z", state.settings);
             Thread.Sleep(1000);
 
             // Verify going forward 5 times
             PositioningTools.GoForward(5, ref state);
             Console.BackgroundColor = ConsoleColor.Magenta;
             PositioningTools.Commit(state);
-            TextWriterRaw.WritePlain("5", false, state.settings);
+            TextWriterRaw.WriteRaw("5", state.settings);
             Thread.Sleep(1000);
 
             // Verify going backward 3 times
             PositioningTools.GoBack(3, ref state);
             Console.BackgroundColor = ConsoleColor.DarkMagenta;
             PositioningTools.Commit(state);
-            TextWriterRaw.WritePlain("3", false, state.settings);
+            TextWriterRaw.WriteRaw("3", state.settings);
             Thread.Sleep(1000);
 
             // Now, reset everything

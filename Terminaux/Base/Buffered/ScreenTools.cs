@@ -57,7 +57,7 @@ namespace Terminaux.Base.Buffered
             if (string.IsNullOrEmpty(buffer))
                 return;
             ConsoleWrapper.CursorVisible = false;
-            TextWriterRaw.WritePlain(buffer, false);
+            TextWriterRaw.WriteRaw(buffer);
         }
 
         /// <summary>

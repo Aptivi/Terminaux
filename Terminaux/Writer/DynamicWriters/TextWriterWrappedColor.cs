@@ -74,7 +74,7 @@ namespace Terminaux.Writer.DynamicWriters
                             // Write a character individually
                             if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                             {
-                                TextWriterRaw.WritePlain(buffered.ToString(), false);
+                                TextWriterRaw.WriteRaw(buffered.ToString());
                                 buffered.Clear();
                                 var key = TermReader.ReadKey().Key;
                                 switch (key)
@@ -137,7 +137,7 @@ namespace Terminaux.Writer.DynamicWriters
                             LinesMade++;
                         }
                     }
-                    TextWriterRaw.WritePlain(buffered.ToString(), false);
+                    TextWriterRaw.WriteRaw(buffered.ToString());
                     buffered.Clear();
                     if (Line)
                         TextWriterRaw.Write();

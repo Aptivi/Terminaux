@@ -33,8 +33,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Consoles
             foreach (var type in types)
             {
                 ConsoleCursor.CursorType = (ConsoleCursorType)type;
-                TextWriterRaw.WritePlain($"{type}: ", false);
+                TextWriterRaw.WriteRaw($"{type}: ");
                 TermReader.ReadKey();
+                TextWriterRaw.Write();
             }
             ConsoleCursor.CursorType = ConsoleCursorType.User;
         }

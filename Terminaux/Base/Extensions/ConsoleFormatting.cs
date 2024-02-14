@@ -113,7 +113,7 @@ namespace Terminaux.Base.Extensions
         /// <param name="formattings">All text formatting to use</param>
         public static void SetFormatting(ConsoleFormattingType formattings)
         {
-            TextWriterRaw.WritePlain(GetFormattingSequences(formattings), false);
+            TextWriterRaw.WriteRaw(GetFormattingSequences(formattings));
             formatting = formattings;
         }
 
@@ -122,7 +122,7 @@ namespace Terminaux.Base.Extensions
         /// </summary>
         public static void ResetFormatting()
         {
-            TextWriterRaw.WritePlain(GetFormattingSequences(ConsoleFormattingType.Default), false);
+            TextWriterRaw.WriteRaw(GetFormattingSequences(ConsoleFormattingType.Default));
             formatting = ConsoleFormattingType.Default;
         }
     }

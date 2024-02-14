@@ -143,7 +143,7 @@ namespace Terminaux.Inputs.Presentation
                     if (element.IsPossibleOutOfBounds() && checkOutOfBounds)
                     {
                         TermReader.ReadKey();
-                        TextWriterRaw.WritePlain(ClearPresentation(), false);
+                        TextWriterRaw.WriteRaw(ClearPresentation());
                     }
                     checkOutOfBounds = true;
 

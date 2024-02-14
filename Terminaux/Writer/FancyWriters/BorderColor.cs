@@ -255,7 +255,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 // StringBuilder to put out the final rendering text
                 string rendered = RenderBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, BackgroundColor, TextColor);
-                TextWriterRaw.WritePlain(rendered, false);
+                TextWriterRaw.WriteRaw(rendered);
             }
             catch (Exception ex)
             {
@@ -696,7 +696,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 // StringBuilder to put out the final rendering text
                 string rendered = RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, BackgroundColor, TextColor, vars);
-                TextWriterRaw.WritePlain(rendered, false);
+                TextWriterRaw.WriteRaw(rendered);
             }
             catch (Exception ex)
             {

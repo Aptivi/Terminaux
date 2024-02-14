@@ -52,8 +52,8 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(
-                    RenderFigletPlain(Text, FigletFont, Vars), false
+                TextWriterRaw.WriteRaw(
+                    RenderFigletPlain(Text, FigletFont, Vars)
                 );
             }
             catch (Exception ex)
@@ -83,8 +83,8 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(
-                    RenderFiglet(Text, FigletFont, Color, ColorTools.currentBackgroundColor, Vars), false
+                TextWriterRaw.WriteRaw(
+                    RenderFiglet(Text, FigletFont, Color, ColorTools.currentBackgroundColor, Vars)
                 );
             }
             catch (Exception ex)
@@ -116,8 +116,8 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(
-                    RenderFiglet(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false
+                TextWriterRaw.WriteRaw(
+                    RenderFiglet(Text, FigletFont, ForegroundColor, BackgroundColor, Vars)
                 );
             }
             catch (Exception ex)

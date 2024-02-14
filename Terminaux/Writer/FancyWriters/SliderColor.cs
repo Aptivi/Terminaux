@@ -73,7 +73,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderSliderPlain(currPos, maxPos, Left, Top, LeftWidthOffset, RightWidthOffset, DrawBorder));
+                TextWriterRaw.WriteRaw(RenderSliderPlain(currPos, maxPos, Left, Top, LeftWidthOffset, RightWidthOffset, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -245,7 +245,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderSlider(currPos, maxPos, Left, Top, LeftWidthOffset, RightWidthOffset, SliderColor, FrameColor, BackgroundColor, DrawBorder));
+                TextWriterRaw.WriteRaw(RenderSlider(currPos, maxPos, Left, Top, LeftWidthOffset, RightWidthOffset, SliderColor, FrameColor, BackgroundColor, DrawBorder));
             }
             catch (Exception ex)
             {

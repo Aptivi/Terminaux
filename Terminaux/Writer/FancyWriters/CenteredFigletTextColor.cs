@@ -46,7 +46,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderCenteredFiglet(top, FigletFont, Text, Vars), false);
+                TextWriterRaw.WriteRaw(RenderCenteredFiglet(top, FigletFont, Text, Vars));
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderCenteredFiglet(top, FigletFont, Text, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterRaw.WriteRaw(RenderCenteredFiglet(top, FigletFont, Text, ForegroundColor, BackgroundColor, Vars));
             }
             catch (Exception ex)
             {
@@ -98,7 +98,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderCenteredFiglet(FigletFont, Text, Vars), false);
+                TextWriterRaw.WriteRaw(RenderCenteredFiglet(FigletFont, Text, Vars));
             }
             catch (Exception ex)
             {
@@ -129,7 +129,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderCenteredFiglet(FigletFont, Text, ForegroundColor, BackgroundColor, Vars), false);
+                TextWriterRaw.WriteRaw(RenderCenteredFiglet(FigletFont, Text, ForegroundColor, BackgroundColor, Vars));
             }
             catch (Exception ex)
             {

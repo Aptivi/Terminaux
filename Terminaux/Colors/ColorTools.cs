@@ -393,7 +393,7 @@ namespace Terminaux.Colors
         /// </summary>
         public static void ResetForeground()
         {
-            TextWriterRaw.WritePlain(RenderResetForeground(), false);
+            TextWriterRaw.WriteRaw(RenderResetForeground());
             currentForegroundColor = ConsoleColor.Gray;
         }
 
@@ -402,7 +402,7 @@ namespace Terminaux.Colors
         /// </summary>
         public static void ResetBackground()
         {
-            TextWriterRaw.WritePlain(RenderResetBackground(), false);
+            TextWriterRaw.WriteRaw(RenderResetBackground());
             currentBackgroundColor = ConsoleColor.Black;
         }
 
@@ -441,7 +441,7 @@ namespace Terminaux.Colors
             string sequence = RenderSetConsoleColor(ColorSequence, Background, ForceSet, canSetBackground);
 
             // Actually set the color
-            TextWriterRaw.WritePlain(sequence, false);
+            TextWriterRaw.WriteRaw(sequence);
 
             // Set current background color
             if (needsToSetCurrentColors)

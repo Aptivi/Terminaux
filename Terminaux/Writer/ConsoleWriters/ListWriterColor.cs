@@ -58,7 +58,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterRaw.WritePlain(buffered, false);
+                        TextWriterRaw.WriteRaw(buffered);
                 }
                 catch (Exception ex)
                 {
@@ -110,7 +110,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterRaw.WritePlain(buffered, false);
+                        TextWriterRaw.WriteRaw(buffered);
                 }
                 catch (Exception ex)
                 {
@@ -171,7 +171,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterRaw.WritePlain(buffered, false);
+                        TextWriterRaw.WriteRaw(buffered);
                 }
                 catch (Exception ex)
                 {
@@ -223,7 +223,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterRaw.WritePlain(buffered, false);
+                        TextWriterRaw.WriteRaw(buffered);
                 }
                 catch (Exception ex)
                 {
@@ -313,7 +313,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterRaw.WritePlain(buffered, false);
+                        TextWriterRaw.WriteRaw(buffered);
                 }
                 catch (Exception ex)
                 {
@@ -365,7 +365,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterRaw.WritePlain(buffered, false);
+                        TextWriterRaw.WriteRaw(buffered);
                 }
                 catch (Exception ex)
                 {
@@ -456,7 +456,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterRaw.WritePlain(buffered, false);
+                        TextWriterRaw.WriteRaw(buffered);
                 }
                 catch (Exception ex)
                 {
@@ -508,7 +508,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
-                        TextWriterRaw.WritePlain(buffered, false);
+                        TextWriterRaw.WriteRaw(buffered);
                 }
                 catch (Exception ex)
                 {

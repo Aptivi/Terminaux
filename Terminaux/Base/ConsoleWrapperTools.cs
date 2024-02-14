@@ -478,7 +478,7 @@ namespace Terminaux.Base
             {
                 int wrapTop = top + i;
                 string textWrapped = wrapped[i];
-                TextWriterRaw.WritePlain(textWrapped, false);
+                TextWriterRaw.WriteRaw(textWrapped);
                 if (i + 1 < wrapped.Length)
                 {
                     WriteLine();

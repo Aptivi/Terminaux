@@ -72,7 +72,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 // Render the box frame
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                TextWriterRaw.WritePlain(frame, false);
+                TextWriterRaw.WriteRaw(frame);
             }
             catch (Exception ex)
             {
@@ -258,7 +258,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 // Render the box frame
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxFrameColor, BackgroundColor, TextColor);
-                TextWriterRaw.WritePlain(frame, false);
+                TextWriterRaw.WriteRaw(frame);
             }
             catch (Exception ex)
             {
@@ -500,7 +500,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 // Render the box frame
                 string frame = RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, vars);
-                TextWriterRaw.WritePlain(frame, false);
+                TextWriterRaw.WriteRaw(frame);
             }
             catch (Exception ex)
             {
@@ -710,7 +710,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 // Render the box frame
                 string frame = RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BoxFrameColor, BackgroundColor, TextColor, vars);
-                TextWriterRaw.WritePlain(frame, false);
+                TextWriterRaw.WriteRaw(frame);
             }
             catch (Exception ex)
             {

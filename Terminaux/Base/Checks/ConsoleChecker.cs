@@ -110,7 +110,7 @@ namespace Terminaux.Base.Checks
                 );
             }
             if (graylisted)
-                TextWriterRaw.WritePlain($"The console type you're currently using, {TerminalType}, is graylisted: {justification2}");
+                TextWriterRaw.WriteRaw($"The console type you're currently using, {TerminalType}, is graylisted: {justification2}");
 
             // Check the blacklist and the graylist for the terminal emulator
             var (emuBlacklisted, emuJustification) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Emulator, ConsoleFilterSeverity.Blacklist);
@@ -122,11 +122,11 @@ namespace Terminaux.Base.Checks
                 );
             }
             if (emuGraylisted)
-                TextWriterRaw.WritePlain($"The terminal emulator you're currently using, {TerminalEmulator}, is graylisted: {emuJustification2}");
+                TextWriterRaw.WriteRaw($"The terminal emulator you're currently using, {TerminalEmulator}, is graylisted: {emuJustification2}");
 
             // Check for 256 colors
             if (!IsConsole256Colors() && PlatformHelper.IsOnUnix())
-                TextWriterRaw.WritePlain($"Terminal type {TerminalType} doesn't support 256 colors according to terminfo");
+                TextWriterRaw.WriteRaw($"Terminal type {TerminalType} doesn't support 256 colors according to terminfo");
 
             // Don't check again.
             acknowledged = true;
@@ -224,11 +224,11 @@ namespace Terminaux.Base.Checks
             // Check for the minimum console window requirements (80x24)
             while (!CheckConsoleSize(minimumWidth, minimumHeight))
             {
-                TextWriterRaw.WritePlain("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
+                TextWriterRaw.WriteRaw("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
                     ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight,
                     Console.BufferWidth, ConsoleWrapper.BufferHeight,
                     minimumWidth, minimumHeight);
-                TextWriterRaw.WritePlain("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
+                TextWriterRaw.WriteRaw("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
                 TermReader.ReadKey();
             }
         }

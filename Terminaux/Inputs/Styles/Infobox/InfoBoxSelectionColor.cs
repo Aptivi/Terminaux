@@ -617,10 +617,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             {
                 if (useColor)
                 {
-                    TextWriterRaw.WritePlain(
+                    TextWriterRaw.WriteRaw(
                         ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
                         ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
-                    , false);
+                    );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
                 ScreenTools.CurrentScreen.RemoveBufferedPart(nameof(InfoBoxSelectionColor));

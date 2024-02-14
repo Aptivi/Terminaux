@@ -73,7 +73,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderVerticalSliderPlain(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, DrawBorder));
+                TextWriterRaw.WriteRaw(RenderVerticalSliderPlain(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -200,7 +200,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, SliderColor, FrameColor, DrawBorder));
+                TextWriterRaw.WriteRaw(RenderVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, SliderColor, FrameColor, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -255,7 +255,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, SliderColor, FrameColor, BackgroundColor, DrawBorder));
+                TextWriterRaw.WriteRaw(RenderVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, SliderColor, FrameColor, BackgroundColor, DrawBorder));
             }
             catch (Exception ex)
             {

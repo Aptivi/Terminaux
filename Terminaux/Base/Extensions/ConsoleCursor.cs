@@ -62,7 +62,7 @@ namespace Terminaux.Base.Extensions
                     if (value < ConsoleCursorType.User || value > ConsoleCursorType.BarSteady)
                         value = ConsoleCursorType.User;
                     int typeInt = (int)value;
-                    TextWriterRaw.WritePlain(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSetCursorStyle, typeInt));
+                    TextWriterRaw.WriteRaw(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSetCursorStyle, typeInt));
                     cursorType = value;
                 }
             }

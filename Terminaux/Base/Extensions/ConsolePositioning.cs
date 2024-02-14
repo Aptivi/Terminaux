@@ -45,9 +45,9 @@ namespace Terminaux.Base.Extensions
         {
             int Left = ConsoleWrapper.CursorLeft;
             int Top = ConsoleWrapper.CursorTop;
-            TextWriterRaw.WritePlain(
+            TextWriterRaw.WriteRaw(
                 ConsoleClearing.GetClearWholeScreenSequence() +
-                CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1), false
+                CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)
             );
         }
 
