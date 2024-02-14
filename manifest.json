@@ -305,6 +305,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TerminauxInternalException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TerminauxInternalException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.yml",
       "output": {
         ".html": {

@@ -463,11 +463,14 @@ references:
   fullName: Terminaux.Base.Buffered.ScreenTools.Render()
   nameWithType: ScreenTools.Render()
 - uid: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen)
-  name: Render(Screen)
+  name: Render(Screen?)
   href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_Render_Terminaux_Base_Buffered_Screen_
   commentId: M:Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen)
-  fullName: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen)
-  nameWithType: ScreenTools.Render(Screen)
+  name.vb: Render(Screen)
+  fullName: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen?)
+  fullName.vb: Terminaux.Base.Buffered.ScreenTools.Render(Terminaux.Base.Buffered.Screen)
+  nameWithType: ScreenTools.Render(Screen?)
+  nameWithType.vb: ScreenTools.Render(Screen)
 - uid: Terminaux.Base.Buffered.ScreenTools.Render*
   name: Render
   href: api/Terminaux.Base.Buffered.ScreenTools.html#Terminaux_Base_Buffered_ScreenTools_Render_
@@ -655,22 +658,22 @@ references:
   fullName: Terminaux.Base.Checks.ConsoleFilter.IsConsoleFiltered
   nameWithType: ConsoleFilter.IsConsoleFiltered
 - uid: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.String,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)
-  name: IsInFilter(string, ConsoleFilterType, ConsoleFilterSeverity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
+  name: IsInFilter(string, ConsoleFilterType, ConsoleFilterSeverity, out (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
   href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_IsInFilter_System_String_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_ValueTuple_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_String___
   commentId: M:Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.String,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)
   name.vb: IsInFilter(String, ConsoleFilterType, ConsoleFilterSeverity, (query As Regex, type As ConsoleFilterType, severity As ConsoleFilterSeverity, justification As String))
-  fullName: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(string, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, out (System.Text.RegularExpressions.Regex query, Terminaux.Base.Checks.ConsoleFilterType type, Terminaux.Base.Checks.ConsoleFilterSeverity severity, string justification))
+  fullName: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(string, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, out (System.Text.RegularExpressions.Regex? query, Terminaux.Base.Checks.ConsoleFilterType type, Terminaux.Base.Checks.ConsoleFilterSeverity severity, string justification))
   fullName.vb: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(String, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, (query As System.Text.RegularExpressions.Regex, type As Terminaux.Base.Checks.ConsoleFilterType, severity As Terminaux.Base.Checks.ConsoleFilterSeverity, justification As String))
-  nameWithType: ConsoleFilter.IsInFilter(string, ConsoleFilterType, ConsoleFilterSeverity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
+  nameWithType: ConsoleFilter.IsInFilter(string, ConsoleFilterType, ConsoleFilterSeverity, out (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
   nameWithType.vb: ConsoleFilter.IsInFilter(String, ConsoleFilterType, ConsoleFilterSeverity, (query As Regex, type As ConsoleFilterType, severity As ConsoleFilterSeverity, justification As String))
 - uid: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)
-  name: IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
+  name: IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, out (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
   href: api/Terminaux.Base.Checks.ConsoleFilter.html#Terminaux_Base_Checks_ConsoleFilter_IsInFilter_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_ValueTuple_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_String___
   commentId: M:Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)
   name.vb: IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, (query As Regex, type As ConsoleFilterType, severity As ConsoleFilterSeverity, justification As String))
-  fullName: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, out (System.Text.RegularExpressions.Regex query, Terminaux.Base.Checks.ConsoleFilterType type, Terminaux.Base.Checks.ConsoleFilterSeverity severity, string justification))
+  fullName: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, out (System.Text.RegularExpressions.Regex? query, Terminaux.Base.Checks.ConsoleFilterType type, Terminaux.Base.Checks.ConsoleFilterSeverity severity, string justification))
   fullName.vb: Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex, Terminaux.Base.Checks.ConsoleFilterType, Terminaux.Base.Checks.ConsoleFilterSeverity, (query As System.Text.RegularExpressions.Regex, type As Terminaux.Base.Checks.ConsoleFilterType, severity As Terminaux.Base.Checks.ConsoleFilterSeverity, justification As String))
-  nameWithType: ConsoleFilter.IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
+  nameWithType: ConsoleFilter.IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, out (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))
   nameWithType.vb: ConsoleFilter.IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, (query As Regex, type As ConsoleFilterType, severity As ConsoleFilterSeverity, justification As String))
 - uid: Terminaux.Base.Checks.ConsoleFilter.IsInFilter*
   name: IsInFilter
@@ -11743,6 +11746,76 @@ references:
   fullName.vb: Terminaux.Base.TerminauxException.New
   nameWithType: TerminauxException.TerminauxException
   nameWithType.vb: TerminauxException.New
+- uid: Terminaux.Base.TerminauxInternalException
+  name: TerminauxInternalException
+  href: api/Terminaux.Base.TerminauxInternalException.html
+  commentId: T:Terminaux.Base.TerminauxInternalException
+  fullName: Terminaux.Base.TerminauxInternalException
+  nameWithType: TerminauxInternalException
+- uid: Terminaux.Base.TerminauxInternalException.#ctor
+  name: TerminauxInternalException()
+  href: api/Terminaux.Base.TerminauxInternalException.html#Terminaux_Base_TerminauxInternalException__ctor
+  commentId: M:Terminaux.Base.TerminauxInternalException.#ctor
+  name.vb: New()
+  fullName: Terminaux.Base.TerminauxInternalException.TerminauxInternalException()
+  fullName.vb: Terminaux.Base.TerminauxInternalException.New()
+  nameWithType: TerminauxInternalException.TerminauxInternalException()
+  nameWithType.vb: TerminauxInternalException.New()
+- uid: Terminaux.Base.TerminauxInternalException.#ctor(System.Exception)
+  name: TerminauxInternalException(Exception)
+  href: api/Terminaux.Base.TerminauxInternalException.html#Terminaux_Base_TerminauxInternalException__ctor_System_Exception_
+  commentId: M:Terminaux.Base.TerminauxInternalException.#ctor(System.Exception)
+  name.vb: New(Exception)
+  fullName: Terminaux.Base.TerminauxInternalException.TerminauxInternalException(System.Exception)
+  fullName.vb: Terminaux.Base.TerminauxInternalException.New(System.Exception)
+  nameWithType: TerminauxInternalException.TerminauxInternalException(Exception)
+  nameWithType.vb: TerminauxInternalException.New(Exception)
+- uid: Terminaux.Base.TerminauxInternalException.#ctor(System.String)
+  name: TerminauxInternalException(string)
+  href: api/Terminaux.Base.TerminauxInternalException.html#Terminaux_Base_TerminauxInternalException__ctor_System_String_
+  commentId: M:Terminaux.Base.TerminauxInternalException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Terminaux.Base.TerminauxInternalException.TerminauxInternalException(string)
+  fullName.vb: Terminaux.Base.TerminauxInternalException.New(String)
+  nameWithType: TerminauxInternalException.TerminauxInternalException(string)
+  nameWithType.vb: TerminauxInternalException.New(String)
+- uid: Terminaux.Base.TerminauxInternalException.#ctor(System.String,System.Exception)
+  name: TerminauxInternalException(string, Exception)
+  href: api/Terminaux.Base.TerminauxInternalException.html#Terminaux_Base_TerminauxInternalException__ctor_System_String_System_Exception_
+  commentId: M:Terminaux.Base.TerminauxInternalException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Terminaux.Base.TerminauxInternalException.TerminauxInternalException(string, System.Exception)
+  fullName.vb: Terminaux.Base.TerminauxInternalException.New(String, System.Exception)
+  nameWithType: TerminauxInternalException.TerminauxInternalException(string, Exception)
+  nameWithType.vb: TerminauxInternalException.New(String, Exception)
+- uid: Terminaux.Base.TerminauxInternalException.#ctor(System.String,System.Exception,System.Object[])
+  name: TerminauxInternalException(string, Exception, params object[])
+  href: api/Terminaux.Base.TerminauxInternalException.html#Terminaux_Base_TerminauxInternalException__ctor_System_String_System_Exception_System_Object___
+  commentId: M:Terminaux.Base.TerminauxInternalException.#ctor(System.String,System.Exception,System.Object[])
+  name.vb: New(String, Exception, ParamArray Object())
+  fullName: Terminaux.Base.TerminauxInternalException.TerminauxInternalException(string, System.Exception, params object[])
+  fullName.vb: Terminaux.Base.TerminauxInternalException.New(String, System.Exception, ParamArray Object())
+  nameWithType: TerminauxInternalException.TerminauxInternalException(string, Exception, params object[])
+  nameWithType.vb: TerminauxInternalException.New(String, Exception, ParamArray Object())
+- uid: Terminaux.Base.TerminauxInternalException.#ctor(System.String,System.Object[])
+  name: TerminauxInternalException(string, params object[])
+  href: api/Terminaux.Base.TerminauxInternalException.html#Terminaux_Base_TerminauxInternalException__ctor_System_String_System_Object___
+  commentId: M:Terminaux.Base.TerminauxInternalException.#ctor(System.String,System.Object[])
+  name.vb: New(String, ParamArray Object())
+  fullName: Terminaux.Base.TerminauxInternalException.TerminauxInternalException(string, params object[])
+  fullName.vb: Terminaux.Base.TerminauxInternalException.New(String, ParamArray Object())
+  nameWithType: TerminauxInternalException.TerminauxInternalException(string, params object[])
+  nameWithType.vb: TerminauxInternalException.New(String, ParamArray Object())
+- uid: Terminaux.Base.TerminauxInternalException.#ctor*
+  name: TerminauxInternalException
+  href: api/Terminaux.Base.TerminauxInternalException.html#Terminaux_Base_TerminauxInternalException__ctor_
+  commentId: Overload:Terminaux.Base.TerminauxInternalException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Terminaux.Base.TerminauxInternalException.TerminauxInternalException
+  fullName.vb: Terminaux.Base.TerminauxInternalException.New
+  nameWithType: TerminauxInternalException.TerminauxInternalException
+  nameWithType.vb: TerminauxInternalException.New
 - uid: Terminaux.Colors
   name: Terminaux.Colors
   href: api/Terminaux.Colors.html
@@ -12278,13 +12351,13 @@ references:
   fullName: Terminaux.Colors.ColorSerializer.CanConvert
   nameWithType: ColorSerializer.CanConvert
 - uid: Terminaux.Colors.ColorSerializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
-  name: ReadJson(JsonReader, Type, object, JsonSerializer)
+  name: ReadJson(JsonReader, Type, object?, JsonSerializer)
   href: api/Terminaux.Colors.ColorSerializer.html#Terminaux_Colors_ColorSerializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_
   commentId: M:Terminaux.Colors.ColorSerializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
   name.vb: ReadJson(JsonReader, Type, Object, JsonSerializer)
-  fullName: Terminaux.Colors.ColorSerializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, object, Newtonsoft.Json.JsonSerializer)
+  fullName: Terminaux.Colors.ColorSerializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, object?, Newtonsoft.Json.JsonSerializer)
   fullName.vb: Terminaux.Colors.ColorSerializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, Object, Newtonsoft.Json.JsonSerializer)
-  nameWithType: ColorSerializer.ReadJson(JsonReader, Type, object, JsonSerializer)
+  nameWithType: ColorSerializer.ReadJson(JsonReader, Type, object?, JsonSerializer)
   nameWithType.vb: ColorSerializer.ReadJson(JsonReader, Type, Object, JsonSerializer)
 - uid: Terminaux.Colors.ColorSerializer.ReadJson*
   name: ReadJson
@@ -12294,13 +12367,13 @@ references:
   fullName: Terminaux.Colors.ColorSerializer.ReadJson
   nameWithType: ColorSerializer.ReadJson
 - uid: Terminaux.Colors.ColorSerializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
-  name: WriteJson(JsonWriter, object, JsonSerializer)
+  name: WriteJson(JsonWriter, object?, JsonSerializer)
   href: api/Terminaux.Colors.ColorSerializer.html#Terminaux_Colors_ColorSerializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_
   commentId: M:Terminaux.Colors.ColorSerializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
   name.vb: WriteJson(JsonWriter, Object, JsonSerializer)
-  fullName: Terminaux.Colors.ColorSerializer.WriteJson(Newtonsoft.Json.JsonWriter, object, Newtonsoft.Json.JsonSerializer)
+  fullName: Terminaux.Colors.ColorSerializer.WriteJson(Newtonsoft.Json.JsonWriter, object?, Newtonsoft.Json.JsonSerializer)
   fullName.vb: Terminaux.Colors.ColorSerializer.WriteJson(Newtonsoft.Json.JsonWriter, Object, Newtonsoft.Json.JsonSerializer)
-  nameWithType: ColorSerializer.WriteJson(JsonWriter, object, JsonSerializer)
+  nameWithType: ColorSerializer.WriteJson(JsonWriter, object?, JsonSerializer)
   nameWithType.vb: ColorSerializer.WriteJson(JsonWriter, Object, JsonSerializer)
 - uid: Terminaux.Colors.ColorSerializer.WriteJson*
   name: WriteJson
@@ -16376,13 +16449,13 @@ references:
   fullName: Terminaux.Colors.Data.ConsoleColorData.Yellow4_87af00
   nameWithType: ConsoleColorData.Yellow4_87af00
 - uid: Terminaux.Colors.Data.ConsoleColorData.op_Equality(Terminaux.Colors.Data.ConsoleColorData,Terminaux.Colors.Data.ConsoleColorData)
-  name: operator ==(ConsoleColorData, ConsoleColorData)
+  name: operator ==(ConsoleColorData?, ConsoleColorData?)
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_op_Equality_Terminaux_Colors_Data_ConsoleColorData_Terminaux_Colors_Data_ConsoleColorData_
   commentId: M:Terminaux.Colors.Data.ConsoleColorData.op_Equality(Terminaux.Colors.Data.ConsoleColorData,Terminaux.Colors.Data.ConsoleColorData)
   name.vb: =(ConsoleColorData, ConsoleColorData)
-  fullName: Terminaux.Colors.Data.ConsoleColorData.operator ==(Terminaux.Colors.Data.ConsoleColorData, Terminaux.Colors.Data.ConsoleColorData)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.operator ==(Terminaux.Colors.Data.ConsoleColorData?, Terminaux.Colors.Data.ConsoleColorData?)
   fullName.vb: Terminaux.Colors.Data.ConsoleColorData.=(Terminaux.Colors.Data.ConsoleColorData, Terminaux.Colors.Data.ConsoleColorData)
-  nameWithType: ConsoleColorData.operator ==(ConsoleColorData, ConsoleColorData)
+  nameWithType: ConsoleColorData.operator ==(ConsoleColorData?, ConsoleColorData?)
   nameWithType.vb: ConsoleColorData.=(ConsoleColorData, ConsoleColorData)
 - uid: Terminaux.Colors.Data.ConsoleColorData.op_Equality*
   name: operator ==
@@ -16395,13 +16468,13 @@ references:
   nameWithType: ConsoleColorData.operator ==
   nameWithType.vb: ConsoleColorData.=
 - uid: Terminaux.Colors.Data.ConsoleColorData.op_Inequality(Terminaux.Colors.Data.ConsoleColorData,Terminaux.Colors.Data.ConsoleColorData)
-  name: operator !=(ConsoleColorData, ConsoleColorData)
+  name: operator !=(ConsoleColorData?, ConsoleColorData?)
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_op_Inequality_Terminaux_Colors_Data_ConsoleColorData_Terminaux_Colors_Data_ConsoleColorData_
   commentId: M:Terminaux.Colors.Data.ConsoleColorData.op_Inequality(Terminaux.Colors.Data.ConsoleColorData,Terminaux.Colors.Data.ConsoleColorData)
   name.vb: <>(ConsoleColorData, ConsoleColorData)
-  fullName: Terminaux.Colors.Data.ConsoleColorData.operator !=(Terminaux.Colors.Data.ConsoleColorData, Terminaux.Colors.Data.ConsoleColorData)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.operator !=(Terminaux.Colors.Data.ConsoleColorData?, Terminaux.Colors.Data.ConsoleColorData?)
   fullName.vb: Terminaux.Colors.Data.ConsoleColorData.<>(Terminaux.Colors.Data.ConsoleColorData, Terminaux.Colors.Data.ConsoleColorData)
-  nameWithType: ConsoleColorData.operator !=(ConsoleColorData, ConsoleColorData)
+  nameWithType: ConsoleColorData.operator !=(ConsoleColorData?, ConsoleColorData?)
   nameWithType.vb: ConsoleColorData.<>(ConsoleColorData, ConsoleColorData)
 - uid: Terminaux.Colors.Data.ConsoleColorData.op_Inequality*
   name: operator !=
@@ -19753,13 +19826,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.CmyParsingTools.ParseSpecifier
   nameWithType: CmyParsingTools.ParseSpecifier
 - uid: Terminaux.Colors.Models.Parsing.CmyParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifierToRgb(string, ColorSettings)
+  name: ParseSpecifierToRgb(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.CmyParsingTools.html#Terminaux_Colors_Models_Parsing_CmyParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.CmyParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifierToRgb(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.CmyParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.CmyParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.CmyParsingTools.ParseSpecifierToRgb(String, Terminaux.Colors.ColorSettings)
-  nameWithType: CmyParsingTools.ParseSpecifierToRgb(string, ColorSettings)
+  nameWithType: CmyParsingTools.ParseSpecifierToRgb(string, ColorSettings?)
   nameWithType.vb: CmyParsingTools.ParseSpecifierToRgb(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.CmyParsingTools.ParseSpecifierToRgb*
   name: ParseSpecifierToRgb
@@ -19823,13 +19896,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.CmykParsingTools.ParseSpecifier
   nameWithType: CmykParsingTools.ParseSpecifier
 - uid: Terminaux.Colors.Models.Parsing.CmykParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifierToRgb(string, ColorSettings)
+  name: ParseSpecifierToRgb(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.CmykParsingTools.html#Terminaux_Colors_Models_Parsing_CmykParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.CmykParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifierToRgb(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.CmykParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.CmykParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.CmykParsingTools.ParseSpecifierToRgb(String, Terminaux.Colors.ColorSettings)
-  nameWithType: CmykParsingTools.ParseSpecifierToRgb(string, ColorSettings)
+  nameWithType: CmykParsingTools.ParseSpecifierToRgb(string, ColorSettings?)
   nameWithType.vb: CmykParsingTools.ParseSpecifierToRgb(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.CmykParsingTools.ParseSpecifierToRgb*
   name: ParseSpecifierToRgb
@@ -19893,13 +19966,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.HslParsingTools.ParseSpecifier
   nameWithType: HslParsingTools.ParseSpecifier
 - uid: Terminaux.Colors.Models.Parsing.HslParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifierToRgb(string, ColorSettings)
+  name: ParseSpecifierToRgb(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.HslParsingTools.html#Terminaux_Colors_Models_Parsing_HslParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.HslParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifierToRgb(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.HslParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.HslParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.HslParsingTools.ParseSpecifierToRgb(String, Terminaux.Colors.ColorSettings)
-  nameWithType: HslParsingTools.ParseSpecifierToRgb(string, ColorSettings)
+  nameWithType: HslParsingTools.ParseSpecifierToRgb(string, ColorSettings?)
   nameWithType.vb: HslParsingTools.ParseSpecifierToRgb(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.HslParsingTools.ParseSpecifierToRgb*
   name: ParseSpecifierToRgb
@@ -19963,13 +20036,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.HsvParsingTools.ParseSpecifier
   nameWithType: HsvParsingTools.ParseSpecifier
 - uid: Terminaux.Colors.Models.Parsing.HsvParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifierToRgb(string, ColorSettings)
+  name: ParseSpecifierToRgb(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.HsvParsingTools.html#Terminaux_Colors_Models_Parsing_HsvParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.HsvParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifierToRgb(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.HsvParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.HsvParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.HsvParsingTools.ParseSpecifierToRgb(String, Terminaux.Colors.ColorSettings)
-  nameWithType: HsvParsingTools.ParseSpecifierToRgb(string, ColorSettings)
+  nameWithType: HsvParsingTools.ParseSpecifierToRgb(string, ColorSettings?)
   nameWithType.vb: HsvParsingTools.ParseSpecifierToRgb(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.HsvParsingTools.ParseSpecifierToRgb*
   name: ParseSpecifierToRgb
@@ -20065,13 +20138,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierValidRgbHash
   nameWithType: ParsingTools.IsSpecifierValidRgbHash
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifier(string, ColorSettings)
+  name: ParseSpecifier(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifier_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifier(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier(String, Terminaux.Colors.ColorSettings)
-  nameWithType: ParsingTools.ParseSpecifier(string, ColorSettings)
+  nameWithType: ParsingTools.ParseSpecifier(string, ColorSettings?)
   nameWithType.vb: ParsingTools.ParseSpecifier(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier*
   name: ParseSpecifier
@@ -20081,13 +20154,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifier
   nameWithType: ParsingTools.ParseSpecifier
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifierRgbHash(string, ColorSettings)
+  name: ParseSpecifierRgbHash(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbHash_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifierRgbHash(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(String, Terminaux.Colors.ColorSettings)
-  nameWithType: ParsingTools.ParseSpecifierRgbHash(string, ColorSettings)
+  nameWithType: ParsingTools.ParseSpecifierRgbHash(string, ColorSettings?)
   nameWithType.vb: ParsingTools.ParseSpecifierRgbHash(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash*
   name: ParseSpecifierRgbHash
@@ -20097,13 +20170,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash
   nameWithType: ParsingTools.ParseSpecifierRgbHash
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifierRgbName(string, ColorSettings)
+  name: ParseSpecifierRgbName(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbName_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifierRgbName(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(String, Terminaux.Colors.ColorSettings)
-  nameWithType: ParsingTools.ParseSpecifierRgbName(string, ColorSettings)
+  nameWithType: ParsingTools.ParseSpecifierRgbName(string, ColorSettings?)
   nameWithType.vb: ParsingTools.ParseSpecifierRgbName(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName*
   name: ParseSpecifierRgbName
@@ -20113,13 +20186,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName
   nameWithType: ParsingTools.ParseSpecifierRgbName
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(System.String,System.ValueTuple{Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Data.ConsoleColorsInfo}@)
-  name: TryParseSpecifier(string, out (RedGreenBlue rgb, ConsoleColorsInfo cci))
+  name: TryParseSpecifier(string, out (RedGreenBlue? rgb, ConsoleColorsInfo? cci))
   href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifier_System_String_System_ValueTuple_Terminaux_Colors_Models_RedGreenBlue_Terminaux_Colors_Data_ConsoleColorsInfo___
   commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(System.String,System.ValueTuple{Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Data.ConsoleColorsInfo}@)
   name.vb: TryParseSpecifier(String, (rgb As RedGreenBlue, cci As ConsoleColorsInfo))
-  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(string, out (Terminaux.Colors.Models.RedGreenBlue rgb, Terminaux.Colors.Data.ConsoleColorsInfo cci))
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(string, out (Terminaux.Colors.Models.RedGreenBlue? rgb, Terminaux.Colors.Data.ConsoleColorsInfo? cci))
   fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(String, (rgb As Terminaux.Colors.Models.RedGreenBlue, cci As Terminaux.Colors.Data.ConsoleColorsInfo))
-  nameWithType: ParsingTools.TryParseSpecifier(string, out (RedGreenBlue rgb, ConsoleColorsInfo cci))
+  nameWithType: ParsingTools.TryParseSpecifier(string, out (RedGreenBlue? rgb, ConsoleColorsInfo? cci))
   nameWithType.vb: ParsingTools.TryParseSpecifier(String, (rgb As RedGreenBlue, cci As ConsoleColorsInfo))
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier*
   name: TryParseSpecifier
@@ -20129,13 +20202,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier
   nameWithType: ParsingTools.TryParseSpecifier
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash(System.String,Terminaux.Colors.Models.RedGreenBlue@)
-  name: TryParseSpecifierRgbHash(string, out RedGreenBlue)
+  name: TryParseSpecifierRgbHash(string, out RedGreenBlue?)
   href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifierRgbHash_System_String_Terminaux_Colors_Models_RedGreenBlue__
   commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash(System.String,Terminaux.Colors.Models.RedGreenBlue@)
   name.vb: TryParseSpecifierRgbHash(String, RedGreenBlue)
-  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash(string, out Terminaux.Colors.Models.RedGreenBlue)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash(string, out Terminaux.Colors.Models.RedGreenBlue?)
   fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash(String, Terminaux.Colors.Models.RedGreenBlue)
-  nameWithType: ParsingTools.TryParseSpecifierRgbHash(string, out RedGreenBlue)
+  nameWithType: ParsingTools.TryParseSpecifierRgbHash(string, out RedGreenBlue?)
   nameWithType.vb: ParsingTools.TryParseSpecifierRgbHash(String, RedGreenBlue)
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash*
   name: TryParseSpecifierRgbHash
@@ -20145,13 +20218,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash
   nameWithType: ParsingTools.TryParseSpecifierRgbHash
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName(System.String,System.ValueTuple{Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Data.ConsoleColorsInfo}@)
-  name: TryParseSpecifierRgbName(string, out (RedGreenBlue rgb, ConsoleColorsInfo cci))
+  name: TryParseSpecifierRgbName(string, out (RedGreenBlue? rgb, ConsoleColorsInfo? cci))
   href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifierRgbName_System_String_System_ValueTuple_Terminaux_Colors_Models_RedGreenBlue_Terminaux_Colors_Data_ConsoleColorsInfo___
   commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName(System.String,System.ValueTuple{Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Data.ConsoleColorsInfo}@)
   name.vb: TryParseSpecifierRgbName(String, (rgb As RedGreenBlue, cci As ConsoleColorsInfo))
-  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName(string, out (Terminaux.Colors.Models.RedGreenBlue rgb, Terminaux.Colors.Data.ConsoleColorsInfo cci))
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName(string, out (Terminaux.Colors.Models.RedGreenBlue? rgb, Terminaux.Colors.Data.ConsoleColorsInfo? cci))
   fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName(String, (rgb As Terminaux.Colors.Models.RedGreenBlue, cci As Terminaux.Colors.Data.ConsoleColorsInfo))
-  nameWithType: ParsingTools.TryParseSpecifierRgbName(string, out (RedGreenBlue rgb, ConsoleColorsInfo cci))
+  nameWithType: ParsingTools.TryParseSpecifierRgbName(string, out (RedGreenBlue? rgb, ConsoleColorsInfo? cci))
   nameWithType.vb: ParsingTools.TryParseSpecifierRgbName(String, (rgb As RedGreenBlue, cci As ConsoleColorsInfo))
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName*
   name: TryParseSpecifierRgbName
@@ -20199,13 +20272,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.IsSpecifierValid
   nameWithType: RgbParsingTools.IsSpecifierValid
 - uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifierToRgb(string, ColorSettings)
+  name: ParseSpecifierToRgb(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html#Terminaux_Colors_Models_Parsing_RgbParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifierToRgb(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb(String, Terminaux.Colors.ColorSettings)
-  nameWithType: RgbParsingTools.ParseSpecifierToRgb(string, ColorSettings)
+  nameWithType: RgbParsingTools.ParseSpecifierToRgb(string, ColorSettings?)
   nameWithType.vb: RgbParsingTools.ParseSpecifierToRgb(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.RgbParsingTools.ParseSpecifierToRgb*
   name: ParseSpecifierToRgb
@@ -20269,13 +20342,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifier
   nameWithType: RybParsingTools.ParseSpecifier
 - uid: Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifierToRgb(string, ColorSettings)
+  name: ParseSpecifierToRgb(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.RybParsingTools.html#Terminaux_Colors_Models_Parsing_RybParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifierToRgb(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb(String, Terminaux.Colors.ColorSettings)
-  nameWithType: RybParsingTools.ParseSpecifierToRgb(string, ColorSettings)
+  nameWithType: RybParsingTools.ParseSpecifierToRgb(string, ColorSettings?)
   nameWithType.vb: RybParsingTools.ParseSpecifierToRgb(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.RybParsingTools.ParseSpecifierToRgb*
   name: ParseSpecifierToRgb
@@ -20339,13 +20412,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifier
   nameWithType: YiqParsingTools.ParseSpecifier
 - uid: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifierToRgb(string, ColorSettings)
+  name: ParseSpecifierToRgb(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html#Terminaux_Colors_Models_Parsing_YiqParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifierToRgb(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb(String, Terminaux.Colors.ColorSettings)
-  nameWithType: YiqParsingTools.ParseSpecifierToRgb(string, ColorSettings)
+  nameWithType: YiqParsingTools.ParseSpecifierToRgb(string, ColorSettings?)
   nameWithType.vb: YiqParsingTools.ParseSpecifierToRgb(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.YiqParsingTools.ParseSpecifierToRgb*
   name: ParseSpecifierToRgb
@@ -20409,13 +20482,13 @@ references:
   fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifier
   nameWithType: YuvParsingTools.ParseSpecifier
 - uid: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
-  name: ParseSpecifierToRgb(string, ColorSettings)
+  name: ParseSpecifierToRgb(string, ColorSettings?)
   href: api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html#Terminaux_Colors_Models_Parsing_YuvParsingTools_ParseSpecifierToRgb_System_String_Terminaux_Colors_ColorSettings_
   commentId: M:Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb(System.String,Terminaux.Colors.ColorSettings)
   name.vb: ParseSpecifierToRgb(String, ColorSettings)
-  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings)
+  fullName: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb(string, Terminaux.Colors.ColorSettings?)
   fullName.vb: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb(String, Terminaux.Colors.ColorSettings)
-  nameWithType: YuvParsingTools.ParseSpecifierToRgb(string, ColorSettings)
+  nameWithType: YuvParsingTools.ParseSpecifierToRgb(string, ColorSettings?)
   nameWithType.vb: YuvParsingTools.ParseSpecifierToRgb(String, ColorSettings)
 - uid: Terminaux.Colors.Models.Parsing.YuvParsingTools.ParseSpecifierToRgb*
   name: ParseSpecifierToRgb
@@ -21911,22 +21984,22 @@ references:
   fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding
   nameWithType: InteractiveTuiBinding
 - uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor(System.String,System.ConsoleKey,System.Action{System.Object,System.Int32})
-  name: InteractiveTuiBinding(string, ConsoleKey, Action<object, int>)
+  name: InteractiveTuiBinding(string, ConsoleKey, Action<object, int>?)
   href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding__ctor_System_String_System_ConsoleKey_System_Action_System_Object_System_Int32__
   commentId: M:Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor(System.String,System.ConsoleKey,System.Action{System.Object,System.Int32})
   name.vb: New(String, ConsoleKey, Action(Of Object, Integer))
-  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.InteractiveTuiBinding(string, System.ConsoleKey, System.Action<object, int>)
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.InteractiveTuiBinding(string, System.ConsoleKey, System.Action<object, int>?)
   fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiBinding.New(String, System.ConsoleKey, System.Action(Of Object, Integer))
-  nameWithType: InteractiveTuiBinding.InteractiveTuiBinding(string, ConsoleKey, Action<object, int>)
+  nameWithType: InteractiveTuiBinding.InteractiveTuiBinding(string, ConsoleKey, Action<object, int>?)
   nameWithType.vb: InteractiveTuiBinding.New(String, ConsoleKey, Action(Of Object, Integer))
 - uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor(System.String,System.ConsoleKey,System.ConsoleModifiers,System.Action{System.Object,System.Int32})
-  name: InteractiveTuiBinding(string, ConsoleKey, ConsoleModifiers, Action<object, int>)
+  name: InteractiveTuiBinding(string, ConsoleKey, ConsoleModifiers, Action<object, int>?)
   href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding__ctor_System_String_System_ConsoleKey_System_ConsoleModifiers_System_Action_System_Object_System_Int32__
   commentId: M:Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor(System.String,System.ConsoleKey,System.ConsoleModifiers,System.Action{System.Object,System.Int32})
   name.vb: New(String, ConsoleKey, ConsoleModifiers, Action(Of Object, Integer))
-  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.InteractiveTuiBinding(string, System.ConsoleKey, System.ConsoleModifiers, System.Action<object, int>)
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.InteractiveTuiBinding(string, System.ConsoleKey, System.ConsoleModifiers, System.Action<object, int>?)
   fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiBinding.New(String, System.ConsoleKey, System.ConsoleModifiers, System.Action(Of Object, Integer))
-  nameWithType: InteractiveTuiBinding.InteractiveTuiBinding(string, ConsoleKey, ConsoleModifiers, Action<object, int>)
+  nameWithType: InteractiveTuiBinding.InteractiveTuiBinding(string, ConsoleKey, ConsoleModifiers, Action<object, int>?)
   nameWithType.vb: InteractiveTuiBinding.New(String, ConsoleKey, ConsoleModifiers, Action(Of Object, Integer))
 - uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor*
   name: InteractiveTuiBinding
@@ -26012,13 +26085,13 @@ references:
   nameWithType: SyntaxHighlightingTools.GetComponent(string, string)
   nameWithType.vb: SyntaxHighlightingTools.GetComponent(String, String)
 - uid: Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetComponent(Terminaux.Reader.Highlighting.SyntaxHighlighting,System.String)
-  name: GetComponent(SyntaxHighlighting, string)
+  name: GetComponent(SyntaxHighlighting?, string)
   href: api/Terminaux.Reader.Highlighting.SyntaxHighlightingTools.html#Terminaux_Reader_Highlighting_SyntaxHighlightingTools_GetComponent_Terminaux_Reader_Highlighting_SyntaxHighlighting_System_String_
   commentId: M:Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetComponent(Terminaux.Reader.Highlighting.SyntaxHighlighting,System.String)
   name.vb: GetComponent(SyntaxHighlighting, String)
-  fullName: Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetComponent(Terminaux.Reader.Highlighting.SyntaxHighlighting, string)
+  fullName: Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetComponent(Terminaux.Reader.Highlighting.SyntaxHighlighting?, string)
   fullName.vb: Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetComponent(Terminaux.Reader.Highlighting.SyntaxHighlighting, String)
-  nameWithType: SyntaxHighlightingTools.GetComponent(SyntaxHighlighting, string)
+  nameWithType: SyntaxHighlightingTools.GetComponent(SyntaxHighlighting?, string)
   nameWithType.vb: SyntaxHighlightingTools.GetComponent(SyntaxHighlighting, String)
 - uid: Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetComponent*
   name: GetComponent
@@ -26081,11 +26154,14 @@ references:
   nameWithType: SyntaxHighlightingTools.GetHighlighterToJson(string)
   nameWithType.vb: SyntaxHighlightingTools.GetHighlighterToJson(String)
 - uid: Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetHighlighterToJson(Terminaux.Reader.Highlighting.SyntaxHighlighting)
-  name: GetHighlighterToJson(SyntaxHighlighting)
+  name: GetHighlighterToJson(SyntaxHighlighting?)
   href: api/Terminaux.Reader.Highlighting.SyntaxHighlightingTools.html#Terminaux_Reader_Highlighting_SyntaxHighlightingTools_GetHighlighterToJson_Terminaux_Reader_Highlighting_SyntaxHighlighting_
   commentId: M:Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetHighlighterToJson(Terminaux.Reader.Highlighting.SyntaxHighlighting)
-  fullName: Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetHighlighterToJson(Terminaux.Reader.Highlighting.SyntaxHighlighting)
-  nameWithType: SyntaxHighlightingTools.GetHighlighterToJson(SyntaxHighlighting)
+  name.vb: GetHighlighterToJson(SyntaxHighlighting)
+  fullName: Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetHighlighterToJson(Terminaux.Reader.Highlighting.SyntaxHighlighting?)
+  fullName.vb: Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetHighlighterToJson(Terminaux.Reader.Highlighting.SyntaxHighlighting)
+  nameWithType: SyntaxHighlightingTools.GetHighlighterToJson(SyntaxHighlighting?)
+  nameWithType.vb: SyntaxHighlightingTools.GetHighlighterToJson(SyntaxHighlighting)
 - uid: Terminaux.Reader.Highlighting.SyntaxHighlightingTools.GetHighlighterToJson*
   name: GetHighlighterToJson
   href: api/Terminaux.Reader.Highlighting.SyntaxHighlightingTools.html#Terminaux_Reader_Highlighting_SyntaxHighlightingTools_GetHighlighterToJson_
@@ -33838,22 +33914,22 @@ references:
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteColorBack
   nameWithType: TextWriterColor.WriteColorBack
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
-  name: WriteForReader(string, TermReaderSettings, bool, params object[])
+  name: WriteForReader(string, TermReaderSettings?, bool, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
   name.vb: WriteForReader(String, TermReaderSettings, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings, bool, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings?, bool, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(String, Terminaux.Reader.TermReaderSettings, Boolean, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReader(string, TermReaderSettings, bool, params object[])
+  nameWithType: TextWriterColor.WriteForReader(string, TermReaderSettings?, bool, params object[])
   nameWithType.vb: TextWriterColor.WriteForReader(String, TermReaderSettings, Boolean, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
-  name: WriteForReader(string, TermReaderSettings, params object[])
+  name: WriteForReader(string, TermReaderSettings?, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
   name.vb: WriteForReader(String, TermReaderSettings, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings?, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader(String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReader(string, TermReaderSettings, params object[])
+  nameWithType: TextWriterColor.WriteForReader(string, TermReaderSettings?, params object[])
   nameWithType.vb: TextWriterColor.WriteForReader(String, TermReaderSettings, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader*
   name: WriteForReader
@@ -33863,22 +33939,22 @@ references:
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReader
   nameWithType: TextWriterColor.WriteForReader
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColor(string, TermReaderSettings, bool, Color, params object[])
+  name: WriteForReaderColor(string, TermReaderSettings?, bool, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColor(String, TermReaderSettings, Boolean, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings, bool, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings?, bool, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(String, Terminaux.Reader.TermReaderSettings, Boolean, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReaderColor(string, TermReaderSettings, bool, Color, params object[])
+  nameWithType: TextWriterColor.WriteForReaderColor(string, TermReaderSettings?, bool, Color, params object[])
   nameWithType.vb: TextWriterColor.WriteForReaderColor(String, TermReaderSettings, Boolean, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColor(string, TermReaderSettings, Color, params object[])
+  name: WriteForReaderColor(string, TermReaderSettings?, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColor(String, TermReaderSettings, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings?, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor(String, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReaderColor(string, TermReaderSettings, Color, params object[])
+  nameWithType: TextWriterColor.WriteForReaderColor(string, TermReaderSettings?, Color, params object[])
   nameWithType.vb: TextWriterColor.WriteForReaderColor(String, TermReaderSettings, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor*
   name: WriteForReaderColor
@@ -33888,22 +33964,22 @@ references:
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColor
   nameWithType: TextWriterColor.WriteForReaderColor
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColorBack(string, TermReaderSettings, bool, Color, Color, params object[])
+  name: WriteForReaderColorBack(string, TermReaderSettings?, bool, Color, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColorBack(String, TermReaderSettings, Boolean, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings?, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(String, Terminaux.Reader.TermReaderSettings, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReaderColorBack(string, TermReaderSettings, bool, Color, Color, params object[])
+  nameWithType: TextWriterColor.WriteForReaderColorBack(string, TermReaderSettings?, bool, Color, Color, params object[])
   nameWithType.vb: TextWriterColor.WriteForReaderColorBack(String, TermReaderSettings, Boolean, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColorBack(string, TermReaderSettings, Color, Color, params object[])
+  name: WriteForReaderColorBack(string, TermReaderSettings?, Color, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterColor.html#Terminaux_Writer_ConsoleWriters_TextWriterColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColorBack(String, TermReaderSettings, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings?, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack(String, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterColor.WriteForReaderColorBack(string, TermReaderSettings, Color, Color, params object[])
+  nameWithType: TextWriterColor.WriteForReaderColorBack(string, TermReaderSettings?, Color, Color, params object[])
   nameWithType.vb: TextWriterColor.WriteForReaderColorBack(String, TermReaderSettings, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterColor.WriteForReaderColorBack*
   name: WriteForReaderColorBack
@@ -34123,40 +34199,40 @@ references:
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteColorBack
   nameWithType: TextWriterHighlightedColor.WriteColorBack
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
-  name: WriteForReader(bool, string, TermReaderSettings, bool, params object[])
+  name: WriteForReader(bool, string, TermReaderSettings?, bool, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_System_Boolean_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
   name.vb: WriteForReader(Boolean, String, TermReaderSettings, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(bool, string, Terminaux.Reader.TermReaderSettings, bool, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(bool, string, Terminaux.Reader.TermReaderSettings?, bool, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(Boolean, String, Terminaux.Reader.TermReaderSettings, Boolean, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReader(bool, string, TermReaderSettings, bool, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReader(bool, string, TermReaderSettings?, bool, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReader(Boolean, String, TermReaderSettings, Boolean, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
-  name: WriteForReader(bool, string, TermReaderSettings, params object[])
+  name: WriteForReader(bool, string, TermReaderSettings?, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_System_Boolean_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
   name.vb: WriteForReader(Boolean, String, TermReaderSettings, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(bool, string, Terminaux.Reader.TermReaderSettings, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(bool, string, Terminaux.Reader.TermReaderSettings?, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(Boolean, String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReader(bool, string, TermReaderSettings, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReader(bool, string, TermReaderSettings?, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReader(Boolean, String, TermReaderSettings, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
-  name: WriteForReader(string, TermReaderSettings, bool, params object[])
+  name: WriteForReader(string, TermReaderSettings?, bool, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
   name.vb: WriteForReader(String, TermReaderSettings, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings, bool, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings?, bool, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(String, Terminaux.Reader.TermReaderSettings, Boolean, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReader(string, TermReaderSettings, bool, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReader(string, TermReaderSettings?, bool, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReader(String, TermReaderSettings, Boolean, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
-  name: WriteForReader(string, TermReaderSettings, params object[])
+  name: WriteForReader(string, TermReaderSettings?, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReader_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
   name.vb: WriteForReader(String, TermReaderSettings, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(string, Terminaux.Reader.TermReaderSettings?, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader(String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReader(string, TermReaderSettings, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReader(string, TermReaderSettings?, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReader(String, TermReaderSettings, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader*
   name: WriteForReader
@@ -34166,40 +34242,40 @@ references:
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReader
   nameWithType: TextWriterHighlightedColor.WriteForReader
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColor(bool, string, TermReaderSettings, bool, Color, params object[])
+  name: WriteForReaderColor(bool, string, TermReaderSettings?, bool, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_Boolean_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColor(Boolean, String, TermReaderSettings, Boolean, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(bool, string, Terminaux.Reader.TermReaderSettings, bool, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(bool, string, Terminaux.Reader.TermReaderSettings?, bool, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(Boolean, String, Terminaux.Reader.TermReaderSettings, Boolean, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(bool, string, TermReaderSettings, bool, Color, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(bool, string, TermReaderSettings?, bool, Color, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColor(Boolean, String, TermReaderSettings, Boolean, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColor(bool, string, TermReaderSettings, Color, params object[])
+  name: WriteForReaderColor(bool, string, TermReaderSettings?, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_Boolean_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColor(Boolean, String, TermReaderSettings, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(bool, string, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(bool, string, Terminaux.Reader.TermReaderSettings?, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(Boolean, String, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(bool, string, TermReaderSettings, Color, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(bool, string, TermReaderSettings?, Color, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColor(Boolean, String, TermReaderSettings, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColor(string, TermReaderSettings, bool, Color, params object[])
+  name: WriteForReaderColor(string, TermReaderSettings?, bool, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColor(String, TermReaderSettings, Boolean, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings, bool, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings?, bool, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(String, Terminaux.Reader.TermReaderSettings, Boolean, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(string, TermReaderSettings, bool, Color, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(string, TermReaderSettings?, bool, Color, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColor(String, TermReaderSettings, Boolean, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColor(string, TermReaderSettings, Color, params object[])
+  name: WriteForReaderColor(string, TermReaderSettings?, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColor_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColor(String, TermReaderSettings, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(string, Terminaux.Reader.TermReaderSettings?, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor(String, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(string, TermReaderSettings, Color, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColor(string, TermReaderSettings?, Color, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColor(String, TermReaderSettings, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor*
   name: WriteForReaderColor
@@ -34209,40 +34285,40 @@ references:
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColor
   nameWithType: TextWriterHighlightedColor.WriteForReaderColor
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColorBack(bool, string, TermReaderSettings, bool, Color, Color, params object[])
+  name: WriteForReaderColorBack(bool, string, TermReaderSettings?, bool, Color, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_Boolean_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColorBack(Boolean, String, TermReaderSettings, Boolean, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(bool, string, Terminaux.Reader.TermReaderSettings, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(bool, string, Terminaux.Reader.TermReaderSettings?, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(Boolean, String, Terminaux.Reader.TermReaderSettings, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(bool, string, TermReaderSettings, bool, Color, Color, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(bool, string, TermReaderSettings?, bool, Color, Color, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColorBack(Boolean, String, TermReaderSettings, Boolean, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColorBack(bool, string, TermReaderSettings, Color, Color, params object[])
+  name: WriteForReaderColorBack(bool, string, TermReaderSettings?, Color, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_Boolean_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.Boolean,System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColorBack(Boolean, String, TermReaderSettings, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(bool, string, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(bool, string, Terminaux.Reader.TermReaderSettings?, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(Boolean, String, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(bool, string, TermReaderSettings, Color, Color, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(bool, string, TermReaderSettings?, Color, Color, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColorBack(Boolean, String, TermReaderSettings, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColorBack(string, TermReaderSettings, bool, Color, Color, params object[])
+  name: WriteForReaderColorBack(string, TermReaderSettings?, bool, Color, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColorBack(String, TermReaderSettings, Boolean, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings?, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(String, Terminaux.Reader.TermReaderSettings, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(string, TermReaderSettings, bool, Color, Color, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(string, TermReaderSettings?, bool, Color, Color, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColorBack(String, TermReaderSettings, Boolean, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteForReaderColorBack(string, TermReaderSettings, Color, Color, params object[])
+  name: WriteForReaderColorBack(string, TermReaderSettings?, Color, Color, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.html#Terminaux_Writer_ConsoleWriters_TextWriterHighlightedColor_WriteForReaderColorBack_System_String_Terminaux_Reader_TermReaderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(System.String,Terminaux.Reader.TermReaderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name.vb: WriteForReaderColorBack(String, TermReaderSettings, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(string, Terminaux.Reader.TermReaderSettings?, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack(String, Terminaux.Reader.TermReaderSettings, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(string, TermReaderSettings, Color, Color, params object[])
+  nameWithType: TextWriterHighlightedColor.WriteForReaderColorBack(string, TermReaderSettings?, Color, Color, params object[])
   nameWithType.vb: TextWriterHighlightedColor.WriteForReaderColorBack(String, TermReaderSettings, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterHighlightedColor.WriteForReaderColorBack*
   name: WriteForReaderColorBack
@@ -34289,22 +34365,22 @@ references:
   nameWithType: TextWriterRaw.WritePlain(string, params object[])
   nameWithType.vb: TextWriterRaw.WritePlain(String, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
-  name: WritePlain(string, TermReaderSettings, bool, params object[])
+  name: WritePlain(string, TermReaderSettings?, bool, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WritePlain_System_String_Terminaux_Reader_TermReaderSettings_System_Boolean_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(System.String,Terminaux.Reader.TermReaderSettings,System.Boolean,System.Object[])
   name.vb: WritePlain(String, TermReaderSettings, Boolean, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(string, Terminaux.Reader.TermReaderSettings, bool, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(string, Terminaux.Reader.TermReaderSettings?, bool, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(String, Terminaux.Reader.TermReaderSettings, Boolean, ParamArray Object())
-  nameWithType: TextWriterRaw.WritePlain(string, TermReaderSettings, bool, params object[])
+  nameWithType: TextWriterRaw.WritePlain(string, TermReaderSettings?, bool, params object[])
   nameWithType.vb: TextWriterRaw.WritePlain(String, TermReaderSettings, Boolean, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
-  name: WritePlain(string, TermReaderSettings, params object[])
+  name: WritePlain(string, TermReaderSettings?, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WritePlain_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
   name.vb: WritePlain(String, TermReaderSettings, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(string, Terminaux.Reader.TermReaderSettings, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(string, Terminaux.Reader.TermReaderSettings?, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
-  nameWithType: TextWriterRaw.WritePlain(string, TermReaderSettings, params object[])
+  nameWithType: TextWriterRaw.WritePlain(string, TermReaderSettings?, params object[])
   nameWithType.vb: TextWriterRaw.WritePlain(String, TermReaderSettings, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain*
   name: WritePlain
@@ -34323,13 +34399,13 @@ references:
   nameWithType: TextWriterRaw.WriteRaw(string, params object[])
   nameWithType.vb: TextWriterRaw.WriteRaw(String, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
-  name: WriteRaw(string, TermReaderSettings, params object[])
+  name: WriteRaw(string, TermReaderSettings?, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteRaw_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
   commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
   name.vb: WriteRaw(String, TermReaderSettings, ParamArray Object())
-  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(string, Terminaux.Reader.TermReaderSettings, params object[])
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(string, Terminaux.Reader.TermReaderSettings?, params object[])
   fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
-  nameWithType: TextWriterRaw.WriteRaw(string, TermReaderSettings, params object[])
+  nameWithType: TextWriterRaw.WriteRaw(string, TermReaderSettings?, params object[])
   nameWithType.vb: TextWriterRaw.WriteRaw(String, TermReaderSettings, ParamArray Object())
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw*
   name: WriteRaw
@@ -38019,13 +38095,13 @@ references:
   fullName: Terminaux.Writer.FancyWriters.TableColor
   nameWithType: TableColor
 - uid: Terminaux.Writer.FancyWriters.TableColor.RenderTable(System.String[],System.String[0:,0:],System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})
-  name: RenderTable(string[], string[,], int, Color, Color, Color, Color, bool, List<CellOptions>)
+  name: RenderTable(string[], string[,], int, Color, Color, Color, Color, bool, List<CellOptions>?)
   href: api/Terminaux.Writer.FancyWriters.TableColor.html#Terminaux_Writer_FancyWriters_TableColor_RenderTable_System_String___System_String_0__0___System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__
   commentId: M:Terminaux.Writer.FancyWriters.TableColor.RenderTable(System.String[],System.String[0:,0:],System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})
   name.vb: RenderTable(String(), String(,), Integer, Color, Color, Color, Color, Boolean, List(Of CellOptions))
-  fullName: Terminaux.Writer.FancyWriters.TableColor.RenderTable(string[], string[,], int, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, bool, System.Collections.Generic.List<Terminaux.Writer.FancyWriters.Tools.CellOptions>)
+  fullName: Terminaux.Writer.FancyWriters.TableColor.RenderTable(string[], string[,], int, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, bool, System.Collections.Generic.List<Terminaux.Writer.FancyWriters.Tools.CellOptions>?)
   fullName.vb: Terminaux.Writer.FancyWriters.TableColor.RenderTable(String(), String(,), Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean, System.Collections.Generic.List(Of Terminaux.Writer.FancyWriters.Tools.CellOptions))
-  nameWithType: TableColor.RenderTable(string[], string[,], int, Color, Color, Color, Color, bool, List<CellOptions>)
+  nameWithType: TableColor.RenderTable(string[], string[,], int, Color, Color, Color, Color, bool, List<CellOptions>?)
   nameWithType.vb: TableColor.RenderTable(String(), String(,), Integer, Color, Color, Color, Color, Boolean, List(Of CellOptions))
 - uid: Terminaux.Writer.FancyWriters.TableColor.RenderTable*
   name: RenderTable
@@ -38035,13 +38111,13 @@ references:
   fullName: Terminaux.Writer.FancyWriters.TableColor.RenderTable
   nameWithType: TableColor.RenderTable
 - uid: Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain(System.String[],System.String[0:,0:],System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})
-  name: RenderTablePlain(string[], string[,], int, bool, List<CellOptions>)
+  name: RenderTablePlain(string[], string[,], int, bool, List<CellOptions>?)
   href: api/Terminaux.Writer.FancyWriters.TableColor.html#Terminaux_Writer_FancyWriters_TableColor_RenderTablePlain_System_String___System_String_0__0___System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__
   commentId: M:Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain(System.String[],System.String[0:,0:],System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})
   name.vb: RenderTablePlain(String(), String(,), Integer, Boolean, List(Of CellOptions))
-  fullName: Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain(string[], string[,], int, bool, System.Collections.Generic.List<Terminaux.Writer.FancyWriters.Tools.CellOptions>)
+  fullName: Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain(string[], string[,], int, bool, System.Collections.Generic.List<Terminaux.Writer.FancyWriters.Tools.CellOptions>?)
   fullName.vb: Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain(String(), String(,), Integer, Boolean, System.Collections.Generic.List(Of Terminaux.Writer.FancyWriters.Tools.CellOptions))
-  nameWithType: TableColor.RenderTablePlain(string[], string[,], int, bool, List<CellOptions>)
+  nameWithType: TableColor.RenderTablePlain(string[], string[,], int, bool, List<CellOptions>?)
   nameWithType.vb: TableColor.RenderTablePlain(String(), String(,), Integer, Boolean, List(Of CellOptions))
 - uid: Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain*
   name: RenderTablePlain
@@ -38051,22 +38127,22 @@ references:
   fullName: Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain
   nameWithType: TableColor.RenderTablePlain
 - uid: Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String[],System.String[0:,0:],System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})
-  name: WriteTable(string[], string[,], int, bool, List<CellOptions>)
+  name: WriteTable(string[], string[,], int, bool, List<CellOptions>?)
   href: api/Terminaux.Writer.FancyWriters.TableColor.html#Terminaux_Writer_FancyWriters_TableColor_WriteTable_System_String___System_String_0__0___System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__
   commentId: M:Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String[],System.String[0:,0:],System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})
   name.vb: WriteTable(String(), String(,), Integer, Boolean, List(Of CellOptions))
-  fullName: Terminaux.Writer.FancyWriters.TableColor.WriteTable(string[], string[,], int, bool, System.Collections.Generic.List<Terminaux.Writer.FancyWriters.Tools.CellOptions>)
+  fullName: Terminaux.Writer.FancyWriters.TableColor.WriteTable(string[], string[,], int, bool, System.Collections.Generic.List<Terminaux.Writer.FancyWriters.Tools.CellOptions>?)
   fullName.vb: Terminaux.Writer.FancyWriters.TableColor.WriteTable(String(), String(,), Integer, Boolean, System.Collections.Generic.List(Of Terminaux.Writer.FancyWriters.Tools.CellOptions))
-  nameWithType: TableColor.WriteTable(string[], string[,], int, bool, List<CellOptions>)
+  nameWithType: TableColor.WriteTable(string[], string[,], int, bool, List<CellOptions>?)
   nameWithType.vb: TableColor.WriteTable(String(), String(,), Integer, Boolean, List(Of CellOptions))
 - uid: Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String[],System.String[0:,0:],System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})
-  name: WriteTable(string[], string[,], int, Color, Color, Color, Color, bool, List<CellOptions>)
+  name: WriteTable(string[], string[,], int, Color, Color, Color, Color, bool, List<CellOptions>?)
   href: api/Terminaux.Writer.FancyWriters.TableColor.html#Terminaux_Writer_FancyWriters_TableColor_WriteTable_System_String___System_String_0__0___System_Int32_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__
   commentId: M:Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String[],System.String[0:,0:],System.Int32,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})
   name.vb: WriteTable(String(), String(,), Integer, Color, Color, Color, Color, Boolean, List(Of CellOptions))
-  fullName: Terminaux.Writer.FancyWriters.TableColor.WriteTable(string[], string[,], int, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, bool, System.Collections.Generic.List<Terminaux.Writer.FancyWriters.Tools.CellOptions>)
+  fullName: Terminaux.Writer.FancyWriters.TableColor.WriteTable(string[], string[,], int, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, bool, System.Collections.Generic.List<Terminaux.Writer.FancyWriters.Tools.CellOptions>?)
   fullName.vb: Terminaux.Writer.FancyWriters.TableColor.WriteTable(String(), String(,), Integer, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean, System.Collections.Generic.List(Of Terminaux.Writer.FancyWriters.Tools.CellOptions))
-  nameWithType: TableColor.WriteTable(string[], string[,], int, Color, Color, Color, Color, bool, List<CellOptions>)
+  nameWithType: TableColor.WriteTable(string[], string[,], int, Color, Color, Color, Color, bool, List<CellOptions>?)
   nameWithType.vb: TableColor.WriteTable(String(), String(,), Integer, Color, Color, Color, Color, Boolean, List(Of CellOptions))
 - uid: Terminaux.Writer.FancyWriters.TableColor.WriteTable*
   name: WriteTable
@@ -38076,13 +38152,13 @@ references:
   fullName: Terminaux.Writer.FancyWriters.TableColor.WriteTable
   nameWithType: TableColor.WriteTable
 - uid: Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain(System.String[],System.String[0:,0:],System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})
-  name: WriteTablePlain(string[], string[,], int, bool, List<CellOptions>)
+  name: WriteTablePlain(string[], string[,], int, bool, List<CellOptions>?)
   href: api/Terminaux.Writer.FancyWriters.TableColor.html#Terminaux_Writer_FancyWriters_TableColor_WriteTablePlain_System_String___System_String_0__0___System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__
   commentId: M:Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain(System.String[],System.String[0:,0:],System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})
   name.vb: WriteTablePlain(String(), String(,), Integer, Boolean, List(Of CellOptions))
-  fullName: Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain(string[], string[,], int, bool, System.Collections.Generic.List<Terminaux.Writer.FancyWriters.Tools.CellOptions>)
+  fullName: Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain(string[], string[,], int, bool, System.Collections.Generic.List<Terminaux.Writer.FancyWriters.Tools.CellOptions>?)
   fullName.vb: Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain(String(), String(,), Integer, Boolean, System.Collections.Generic.List(Of Terminaux.Writer.FancyWriters.Tools.CellOptions))
-  nameWithType: TableColor.WriteTablePlain(string[], string[,], int, bool, List<CellOptions>)
+  nameWithType: TableColor.WriteTablePlain(string[], string[,], int, bool, List<CellOptions>?)
   nameWithType.vb: TableColor.WriteTablePlain(String(), String(,), Integer, Boolean, List(Of CellOptions))
 - uid: Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain*
   name: WriteTablePlain

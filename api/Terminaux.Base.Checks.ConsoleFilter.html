@@ -215,7 +215,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification)[] GetFilteredQueries()</code></pre>
+    <pre><code class="lang-csharp hljs">public static (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification)[] GetFilteredQueries()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
@@ -295,13 +295,13 @@
     <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Checks/ConsoleFilter.cs/#L109">View Source</a>
   </span>
   <a id="Terminaux_Base_Checks_ConsoleFilter_IsInFilter_" data-uid="Terminaux.Base.Checks.ConsoleFilter.IsInFilter*"></a>
-  <h4 id="Terminaux_Base_Checks_ConsoleFilter_IsInFilter_System_String_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_ValueTuple_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_String___" data-uid="Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.String,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)">IsInFilter(string, ConsoleFilterType, ConsoleFilterSeverity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))</h4>
+  <h4 id="Terminaux_Base_Checks_ConsoleFilter_IsInFilter_System_String_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_ValueTuple_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_String___" data-uid="Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.String,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)">IsInFilter(string, ConsoleFilterType, ConsoleFilterSeverity, out (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))</h4>
   <div class="markdown level1 summary"><p>Is the query in the filter?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsInFilter(string query, ConsoleFilterType type, ConsoleFilterSeverity severity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification) queryTuple)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsInFilter(string query, ConsoleFilterType type, ConsoleFilterSeverity severity, out (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification) queryTuple)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -378,13 +378,13 @@
     <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Checks/ConsoleFilter.cs/#L121">View Source</a>
   </span>
   <a id="Terminaux_Base_Checks_ConsoleFilter_IsInFilter_" data-uid="Terminaux.Base.Checks.ConsoleFilter.IsInFilter*"></a>
-  <h4 id="Terminaux_Base_Checks_ConsoleFilter_IsInFilter_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_ValueTuple_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_String___" data-uid="Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)">IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))</h4>
+  <h4 id="Terminaux_Base_Checks_ConsoleFilter_IsInFilter_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_ValueTuple_System_Text_RegularExpressions_Regex_Terminaux_Base_Checks_ConsoleFilterType_Terminaux_Base_Checks_ConsoleFilterSeverity_System_String___" data-uid="Terminaux.Base.Checks.ConsoleFilter.IsInFilter(System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.ValueTuple{System.Text.RegularExpressions.Regex,Terminaux.Base.Checks.ConsoleFilterType,Terminaux.Base.Checks.ConsoleFilterSeverity,System.String}@)">IsInFilter(Regex, ConsoleFilterType, ConsoleFilterSeverity, out (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification))</h4>
   <div class="markdown level1 summary"><p>Is the query in the filter?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool IsInFilter(Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, out (Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification) queryTuple)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool IsInFilter(Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, out (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification) queryTuple)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
