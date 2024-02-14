@@ -27,7 +27,6 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Base.Extensions;
 using Terminaux.Reader;
 
 namespace Terminaux.Inputs.Presentation

@@ -31,7 +31,6 @@ using Textify.General;
 using System.Diagnostics;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {

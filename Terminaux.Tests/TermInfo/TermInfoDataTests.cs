@@ -19,7 +19,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Terminaux.TermInfo;
+using Terminaux.Base.TermInfo;
 using Terminaux.Tests.TermInfo.Utilities;
 
 namespace Terminaux.Tests.TermInfo

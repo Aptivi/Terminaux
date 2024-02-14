@@ -31,7 +31,6 @@ using Textify.General;
 using Terminaux.Colors.Data;
 using System.Linq;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Base.Extensions;
 using Terminaux.Reader;
 
 namespace Terminaux.Inputs.Styles.Infobox

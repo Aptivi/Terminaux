@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Base.Buffered

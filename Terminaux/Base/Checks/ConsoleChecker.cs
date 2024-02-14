@@ -21,10 +21,10 @@ using System;
 using System.IO;
 using System.Reflection;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.TermInfo;
 using Terminaux.Base.Extensions;
 using SpecProbe.Platform;
 using Terminaux.Reader;
+using Terminaux.Base.TermInfo;
 
 namespace Terminaux.Base.Checks
 {
