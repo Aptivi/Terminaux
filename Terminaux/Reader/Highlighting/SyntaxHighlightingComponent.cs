@@ -22,6 +22,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Colors;
+using Terminaux.Misc;
 
 namespace Terminaux.Reader.Highlighting
 {
@@ -89,7 +90,7 @@ namespace Terminaux.Reader.Highlighting
         public SyntaxHighlightingComponent(string componentMatch, Color componentForegroundColor, Color componentBackgroundColor, bool useBackgroundColor, bool useForegroundColor) :
             this(new Regex(componentMatch, RegexOptions.Compiled), componentForegroundColor, componentBackgroundColor, useBackgroundColor, useForegroundColor)
         {
-            if (!IsValidRegex(componentMatch))
+            if (!RegexTools.IsValidRegex(componentMatch))
                 throw new TerminauxException("Component regular expression is invalid");
         }
 
@@ -103,19 +104,6 @@ namespace Terminaux.Reader.Highlighting
                 throw new TerminauxException("Component background color not provided");
             this.useBackgroundColor = useBackgroundColor;
             this.useForegroundColor = useForegroundColor;
-        }
-
-        private bool IsValidRegex(string pattern)
-        {
-            try
-            {
-                Regex.Match(string.Empty, pattern);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
         }
     }
 }

@@ -100,29 +100,29 @@ namespace Terminaux.Base.Checks
                 );
             }
 
-            // Check the blacklist and the greylist for the console type
-            var (blacklisted, justification) = TerminalTypeBlacklist.IsTypeBlacklisted();
-            var (greylisted, justification2) = TerminalTypeGreylist.IsTypeGreylisted();
+            // Check the blacklist and the graylist for the console type
+            var (blacklisted, justification) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist);
+            var (graylisted, justification2) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Graylist);
             if (blacklisted)
             {
                 throw new TerminauxException(
                     $"The console type you're currently using, {TerminalType}, is blacklisted: {justification}"
                 );
             }
-            if (greylisted)
-                TextWriterRaw.WritePlain($"The console type you're currently using, {TerminalType}, is greylisted: {justification2}");
+            if (graylisted)
+                TextWriterRaw.WritePlain($"The console type you're currently using, {TerminalType}, is graylisted: {justification2}");
 
-            // Check the blacklist and the greylist for the terminal emulator
-            var (emuBlacklisted, emuJustification) = TerminalEmulatorBlacklist.IsEmulatorBlacklisted();
-            var (emuGreylisted, emuJustification2) = TerminalEmulatorGreylist.IsEmulatorGreylisted();
+            // Check the blacklist and the graylist for the terminal emulator
+            var (emuBlacklisted, emuJustification) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Emulator, ConsoleFilterSeverity.Blacklist);
+            var (emuGraylisted, emuJustification2) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Emulator, ConsoleFilterSeverity.Graylist);
             if (emuBlacklisted)
             {
                 throw new TerminauxException(
                     $"The terminal emulator you're currently using, {TerminalEmulator}, is blacklisted: {emuJustification}"
                 );
             }
-            if (emuGreylisted)
-                TextWriterRaw.WritePlain($"The terminal emulator you're currently using, {TerminalEmulator}, is greylisted: {emuJustification2}");
+            if (emuGraylisted)
+                TextWriterRaw.WritePlain($"The terminal emulator you're currently using, {TerminalEmulator}, is graylisted: {emuJustification2}");
 
             // Check for 256 colors
             if (!IsConsole256Colors() && PlatformHelper.IsOnUnix())
