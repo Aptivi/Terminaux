@@ -24587,6 +24587,31 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain
   nameWithType: TextWriterRaw.WritePlain
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(System.String,System.Object[])
+  name: WriteRaw(string, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteRaw_System_String_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(System.String,System.Object[])
+  name.vb: WriteRaw(String, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(string, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(String, ParamArray Object())
+  nameWithType: TextWriterRaw.WriteRaw(string, params object[])
+  nameWithType.vb: TextWriterRaw.WriteRaw(String, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
+  name: WriteRaw(string, TermReaderSettings, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteRaw_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
+  name.vb: WriteRaw(String, TermReaderSettings, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(string, Terminaux.Reader.TermReaderSettings, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw(String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
+  nameWithType: TextWriterRaw.WriteRaw(string, TermReaderSettings, params object[])
+  nameWithType.vb: TextWriterRaw.WriteRaw(String, TermReaderSettings, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw*
+  name: WriteRaw
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteRaw_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteRaw
+  nameWithType: TextWriterRaw.WriteRaw
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterWhereColor
   name: TextWriterWhereColor
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html
