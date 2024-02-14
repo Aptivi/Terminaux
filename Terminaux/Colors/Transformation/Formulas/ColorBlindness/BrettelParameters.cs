@@ -21,8 +21,8 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
 {
     internal class BrettelParameters
     {
-        internal double[] TransPlane1;
-        internal double[] TransPlane2;
-        internal double[] SeparationPlaneNormalRGB;
+        internal double[] TransPlane1 = [];
+        internal double[] TransPlane2 = [];
+        internal double[] SeparationPlaneNormalRGB = [];
     }
 }

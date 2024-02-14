@@ -34,7 +34,7 @@ namespace Terminaux.Colors.Models
         internal int originalGreen = 0;
         internal int originalBlue = 0;
         internal int originalAlpha = 255;
-        internal RedGreenBlue originalRgb = null;
+        internal RedGreenBlue? originalRgb = null;
 
         /// <summary>
         /// The red color value [0 -> 255]
@@ -90,7 +90,7 @@ namespace Terminaux.Colors.Models
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
-            Equals(obj as RedGreenBlue);
+            Equals((RedGreenBlue)obj);
 
         /// <inheritdoc/>
         public bool Equals(RedGreenBlue other) =>
@@ -135,7 +135,7 @@ namespace Terminaux.Colors.Models
         #region Color finalizers
         private void ApplyTransparency(int alpha, Color alphaColor)
         {
-            if (alpha == 255 || alphaColor is null)
+            if (alpha == 255 || alphaColor is null || alphaColor.RGB is null)
                 return;
 
             // In order to apply "transparency," we need to get both the normalized alpha and the inverse

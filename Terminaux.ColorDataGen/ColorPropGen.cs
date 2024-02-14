@@ -70,6 +70,8 @@ namespace Terminaux.ColorDataGen
             // Read all the console color data
             var list = JsonConvert.DeserializeObject<ConsoleColorData[]>(ConsoleResources.ConsoleColorsData);
             var names = Enum.GetNames(typeof(ConsoleColors));
+            if (list is null)
+                return;
 
             // First, populate all the color data properties
             foreach (var colorData in list)
@@ -86,7 +88,7 @@ namespace Terminaux.ColorDataGen
                             /// [{{colorHex}}] Gets the console colors data for the {{propName}} color
                             /// </summary>
                             public static ConsoleColorData {{propName}} =>
-                                new("{{colorHex}}", {{colorRgb.R}}, {{colorRgb.G}}, {{colorRgb.B}}, {{colorHsl.H}}, {{colorHsl.S}}, {{colorHsl.L}}, "{{colorName}}", {{colorId}});
+                                new("{{colorHex}}", {{colorRgb?.R}}, {{colorRgb?.G}}, {{colorRgb?.B}}, {{colorHsl?.H}}, {{colorHsl?.S}}, {{colorHsl?.L}}, "{{colorName}}", {{colorId}});
                     """
                 );
             }

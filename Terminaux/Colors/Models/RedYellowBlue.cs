@@ -65,7 +65,7 @@ namespace Terminaux.Colors.Models
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
-            Equals(obj as RedYellowBlue);
+            Equals((RedYellowBlue)obj);
 
         /// <inheritdoc/>
         public bool Equals(RedYellowBlue other) =>

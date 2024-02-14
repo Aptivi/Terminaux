@@ -95,7 +95,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReader(string Text, TermReaderSettings settings, params object[] vars) =>
+        public static void WriteForReader(string Text, TermReaderSettings? settings, params object[] vars) =>
             WriteForReader(Text, settings, true, vars);
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReader(string Text, TermReaderSettings settings, bool Line, params object[] vars) =>
+        public static void WriteForReader(string Text, TermReaderSettings? settings, bool Line, params object[] vars) =>
             WriteForReaderColor(Text, settings, Line, ColorTools.currentForegroundColor, vars);
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColor(string Text, TermReaderSettings settings, Color color, params object[] vars) =>
+        public static void WriteForReaderColor(string Text, TermReaderSettings? settings, Color color, params object[] vars) =>
             WriteForReaderColor(Text, settings, true, color, vars);
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColor(string Text, TermReaderSettings settings, bool Line, Color color, params object[] vars) =>
+        public static void WriteForReaderColor(string Text, TermReaderSettings? settings, bool Line, Color color, params object[] vars) =>
             WriteForReaderColorBack(Text, settings, Line, color, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColorBack(string Text, TermReaderSettings settings, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
+        public static void WriteForReaderColorBack(string Text, TermReaderSettings? settings, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
             WriteForReaderColorBack(Text, settings, true, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
@@ -149,7 +149,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColorBack(string Text, TermReaderSettings settings, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
+        public static void WriteForReaderColorBack(string Text, TermReaderSettings? settings, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
             WriteForReaderColorBack(false, Text, settings, Line, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
@@ -222,7 +222,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReader(bool legacy, string Text, TermReaderSettings settings, params object[] vars) =>
+        public static void WriteForReader(bool legacy, string Text, TermReaderSettings? settings, params object[] vars) =>
             WriteForReader(legacy, Text, settings, true, vars);
 
         /// <summary>
@@ -233,7 +233,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReader(bool legacy, string Text, TermReaderSettings settings, bool Line, params object[] vars) =>
+        public static void WriteForReader(bool legacy, string Text, TermReaderSettings? settings, bool Line, params object[] vars) =>
             WriteForReaderColor(legacy, Text, settings, Line, ColorTools.currentForegroundColor, vars);
 
         /// <summary>
@@ -244,7 +244,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColor(bool legacy, string Text, TermReaderSettings settings, Color color, params object[] vars) =>
+        public static void WriteForReaderColor(bool legacy, string Text, TermReaderSettings? settings, Color color, params object[] vars) =>
             WriteForReaderColor(legacy, Text, settings, true, color, vars);
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColor(bool legacy, string Text, TermReaderSettings settings, bool Line, Color color, params object[] vars) =>
+        public static void WriteForReaderColor(bool legacy, string Text, TermReaderSettings? settings, bool Line, Color color, params object[] vars) =>
             WriteForReaderColorBack(legacy, Text, settings, Line, color, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
@@ -268,7 +268,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColorBack(bool legacy, string Text, TermReaderSettings settings, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
+        public static void WriteForReaderColorBack(bool legacy, string Text, TermReaderSettings? settings, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
             WriteForReaderColorBack(legacy, Text, settings, true, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
@@ -281,7 +281,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteForReaderColorBack(bool legacy, string Text, TermReaderSettings settings, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+        public static void WriteForReaderColorBack(bool legacy, string Text, TermReaderSettings? settings, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
             lock (TextWriterRaw.WriteLock)
             {

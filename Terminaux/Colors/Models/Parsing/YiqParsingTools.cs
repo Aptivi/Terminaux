@@ -104,7 +104,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings settings = null)
+        public static RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings? settings = null)
         {
             var yiq = ParseSpecifier(specifier);
             var rgb = RgbConversionTools.ConvertFrom(yiq);

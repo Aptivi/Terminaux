@@ -34,12 +34,12 @@ namespace Terminaux.Reader
         private bool limitConsoleChars = true;
         private int leftMargin = 0;
         private int rightMargin = 0;
-        private Color inputForegroundColor;
-        private Color inputBackgroundColor;
-        private SyntaxHighlighting syntaxHighlighter;
+        private Color? inputForegroundColor;
+        private Color? inputBackgroundColor;
+        private SyntaxHighlighting? syntaxHighlighter;
         private bool syntaxHighlighterEnabled;
-        private string placeholderText;
-        internal TermReaderState state;
+        private string placeholderText = "";
+        internal TermReaderState? state;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
         internal char[] suggestionsDelims = [' '];
 
@@ -134,7 +134,7 @@ namespace Terminaux.Reader
         /// <summary>
         /// Syntax highlighter to use. It must be registered.
         /// </summary>
-        public SyntaxHighlighting SyntaxHighlighter
+        public SyntaxHighlighting? SyntaxHighlighter
         {
             get => syntaxHighlighter;
             set => syntaxHighlighter = value ?? SyntaxHighlightingTools.GetHighlighter("Command");

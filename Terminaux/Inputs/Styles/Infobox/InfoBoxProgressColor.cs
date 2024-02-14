@@ -619,7 +619,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             var screen = new Screen();
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
-            ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxProgressColor), infoBoxScreenPart);
+            ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxProgressColor), infoBoxScreenPart);
             try
             {
                 infoBoxScreenPart.AddDynamicText(() =>
@@ -715,7 +715,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen.RemoveBufferedPart(nameof(InfoBoxProgressColor));
+                ScreenTools.CurrentScreen?.RemoveBufferedPart(nameof(InfoBoxProgressColor));
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

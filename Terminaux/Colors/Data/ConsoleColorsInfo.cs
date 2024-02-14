@@ -19,6 +19,7 @@
 
 using System;
 using System.Diagnostics;
+using Terminaux.Base;
 
 namespace Terminaux.Colors.Data
 {
@@ -60,6 +61,8 @@ namespace Terminaux.Colors.Data
             if (!((int)ColorValue < 0 | (int)ColorValue > 255))
             {
                 var ColorData = ConsoleColorData.GetColorData()[Convert.ToInt32(ColorValue)];
+                if (ColorData.RGB is null)
+                    throw new TerminauxInternalException("The RGB instance of the color is null.");
                 ColorID = ColorData.ColorId;
                 R = ColorData.RGB.R;
                 G = ColorData.RGB.G;

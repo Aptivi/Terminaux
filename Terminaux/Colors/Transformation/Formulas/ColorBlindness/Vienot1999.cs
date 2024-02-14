@@ -86,19 +86,13 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
                 throw new ArgumentOutOfRangeException("severity");
 
             // Select what Vienot deficiency profile to choose how to transform the three RGB values
-            VienotParameters vn = null;
-            switch (def)
+            VienotParameters? vn = def switch
             {
-                case TransformationFormula.Protan:
-                    vn = vn_protan;
-                    break;
-                case TransformationFormula.Deutan:
-                    vn = vn_deutan;
-                    break;
-                case TransformationFormula.Tritan:
-                    vn = vn_tritan;
-                    break;
-            }
+                TransformationFormula.Protan => vn_protan,
+                TransformationFormula.Deutan => vn_deutan,
+                TransformationFormula.Tritan => vn_tritan,
+                _ => throw new ArgumentOutOfRangeException("def"),
+            };
 
             // Get linear RGB from these three RGB values
             double[] linears =

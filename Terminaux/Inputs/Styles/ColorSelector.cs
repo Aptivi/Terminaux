@@ -61,6 +61,8 @@ namespace Terminaux.Inputs.Styles
         {
             // Initial color is selected
             Color selectedColor = initialColor;
+            if (selectedColor.RGB is null)
+                return selectedColor;
             ColorType type = initialColor.Type;
 
             // Color selector entry
@@ -140,6 +142,8 @@ namespace Terminaux.Inputs.Styles
 
         private static string RenderColorSelector(Color selectedColor, ColorType type)
         {
+            if (selectedColor.RGB is null)
+                throw new TerminauxInternalException("Selected color RGB instance is null.");
             var selector = new StringBuilder();
 
             // First, render the preview box
@@ -219,6 +223,8 @@ namespace Terminaux.Inputs.Styles
             {
                 StringBuilder grayRamp = new();
                 var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
+                if (mono.RGB is null)
+                    throw new TerminauxInternalException("Gray ramp RGB instance is null.");
                 for (int i = 0; i < boxWidth; i++)
                 {
                     double width = (double)i / boxWidth;
@@ -237,6 +243,8 @@ namespace Terminaux.Inputs.Styles
             {
                 StringBuilder transparencyRamp = new();
                 var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
+                if (mono.RGB is null)
+                    throw new TerminauxInternalException("Transparency ramp RGB instance is null.");
                 for (int i = 0; i < boxWidth - 6; i++)
                 {
                     double width = (double)i / boxWidth;
@@ -581,6 +589,8 @@ namespace Terminaux.Inputs.Styles
                 colorBlind ?
                 TransformationTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
                 selectedColor;
+            if (selectedColor.RGB is null)
+                throw new TerminauxInternalException("Selected color RGB instance for color infobox is null.");
             var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
             var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
             var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);

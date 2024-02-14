@@ -30,8 +30,12 @@ namespace Terminaux.Colors.Data
     public partial class ConsoleColorData : IEquatable<ConsoleColorData>
     {
         /// <inheritdoc/>
-        public override bool Equals(object obj) =>
-            Equals(obj as ConsoleColorData);
+        public override bool Equals(object obj)
+        {
+            if (obj is ConsoleColorData data)
+                return Equals(data);
+            return false;
+        }
 
         /// <inheritdoc/>
         public bool Equals(ConsoleColorData other) =>
@@ -43,11 +47,15 @@ namespace Terminaux.Colors.Data
             -1308032243 + ColorId.GetHashCode();
 
         /// <inheritdoc/>
-        public static bool operator ==(ConsoleColorData left, ConsoleColorData right) =>
-            EqualityComparer<ConsoleColorData>.Default.Equals(left, right);
+        public static bool operator ==(ConsoleColorData? left, ConsoleColorData? right)
+        {
+            if (left is null || right is null)
+                return false;
+            return EqualityComparer<ConsoleColorData>.Default.Equals(left, right);
+        }
 
         /// <inheritdoc/>
-        public static bool operator !=(ConsoleColorData left, ConsoleColorData right) =>
+        public static bool operator !=(ConsoleColorData? left, ConsoleColorData? right) =>
             !(left == right);
     }
 }

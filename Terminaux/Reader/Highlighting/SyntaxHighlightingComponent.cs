@@ -33,11 +33,11 @@ namespace Terminaux.Reader.Highlighting
     public class SyntaxHighlightingComponent
     {
         [JsonProperty(nameof(ComponentMatch), Required = Required.Always)]
-        private readonly Regex componentMatch;
+        private readonly Regex? componentMatch;
         [JsonProperty(nameof(ComponentForegroundColor), Required = Required.Always)]
-        private readonly Color componentForegroundColor;
+        private readonly Color? componentForegroundColor;
         [JsonProperty(nameof(ComponentBackgroundColor), Required = Required.Always)]
-        private readonly Color componentBackgroundColor;
+        private readonly Color? componentBackgroundColor;
         [JsonProperty(nameof(UseBackgroundColor))]
         private readonly bool useBackgroundColor;
         [JsonProperty(nameof(UseForegroundColor))]
@@ -47,19 +47,19 @@ namespace Terminaux.Reader.Highlighting
         /// Regular expression to match a component
         /// </summary>
         [JsonIgnore]
-        public Regex ComponentMatch =>
+        public Regex? ComponentMatch =>
             componentMatch;
         /// <summary>
         /// Component foreground color
         /// </summary>
         [JsonIgnore]
-        public Color ComponentForegroundColor =>
+        public Color? ComponentForegroundColor =>
             componentForegroundColor;
         /// <summary>
         /// Component background color
         /// </summary>
         [JsonIgnore]
-        public Color ComponentBackgroundColor =>
+        public Color? ComponentBackgroundColor =>
             componentBackgroundColor;
         /// <summary>
         /// Component background color

@@ -46,11 +46,11 @@ namespace Terminaux.Colors
         /// <summary>
         /// An instance of RGB
         /// </summary>
-        public RedGreenBlue RGB { get; private set; }
+        public RedGreenBlue? RGB { get; private set; }
         /// <summary>
         /// The color ID for 256- and 16-color modes.
         /// </summary>
-        public ConsoleColorData ColorId { get; private set; } = null;
+        public ConsoleColorData? ColorId { get; private set; } = null;
         /// <summary>
         /// Empty color singleton
         /// </summary>
@@ -84,7 +84,7 @@ namespace Terminaux.Colors
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; in its original form.
         /// </summary>
         public string PlainSequenceOriginal =>
-            Type == ColorType.TrueColor ? $"{RGB.R};{RGB.G};{RGB.B}" : $"{ColorId.ColorId}";
+            Type == ColorType.TrueColor ? $"{RGB?.R};{RGB?.G};{RGB?.B}" : $"{ColorId?.ColorId}";
         /// <summary>
         /// Parsable VT sequence (Foreground)
         /// </summary>
@@ -113,7 +113,7 @@ namespace Terminaux.Colors
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         /// </summary>
         public string PlainSequenceTrueColor =>
-            $"{RGB.R};{RGB.G};{RGB.B}";
+            $"{RGB?.R};{RGB?.G};{RGB?.B}";
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary
         /// </summary>
@@ -133,7 +133,7 @@ namespace Terminaux.Colors
         /// Hexadecimal representation of the color
         /// </summary>
         public string Hex =>
-            $"#{RGB.R:X2}{RGB.G:X2}{RGB.B:X2}";
+            $"#{RGB?.R:X2}{RGB?.G:X2}{RGB?.B:X2}";
         /// <summary>
         /// Color type
         /// </summary>
@@ -144,22 +144,47 @@ namespace Terminaux.Colors
         /// <summary>
         /// Determines the color brightness whether it indicates dark or light mode
         /// </summary>
-        public ColorBrightness Brightness =>
-            DetectDark(RGB.R, RGB.G, RGB.B) ? ColorBrightness.Dark : ColorBrightness.Light;
+        public ColorBrightness Brightness
+        {
+            get
+            {
+                if (RGB is null)
+                    return ColorBrightness.Light;
+                return DetectDark(RGB) ? ColorBrightness.Dark : ColorBrightness.Light;
+            }
+        }
+
         /// <summary>
         /// The color value converted to <see cref="ConsoleColors"/>. Not applicable [-1] to true color
         /// </summary>
-        public ConsoleColors ColorEnum255 =>
-            Type == ColorType._255Color || (Type == ColorType._16Color && ColorId.ColorId < 16) ?
-            (ConsoleColors)ColorId.ColorId :
-            unapplicable.unapplicable255;
+        public ConsoleColors ColorEnum255
+        {
+            get
+            {
+                if (ColorId is null)
+                    return unapplicable.unapplicable255;
+                return
+                    Type == ColorType._255Color || (Type == ColorType._16Color && ColorId.ColorId < 16) ?
+                    (ConsoleColors)ColorId.ColorId :
+                    unapplicable.unapplicable255;
+            }
+        }
+
         /// <summary>
         /// The color value converted to <see cref="ConsoleColor"/>. Not applicable [-1] to true color and 256 colors
         /// </summary>
-        public ConsoleColor ColorEnum16 =>
-            Type == ColorType._16Color || (Type == ColorType._255Color && ColorId.ColorId < 16) ?
-            (ConsoleColor)ColorId.ColorId :
-            unapplicable.unapplicable16;
+        public ConsoleColor ColorEnum16
+        {
+            get
+            {
+                if (ColorId is null)
+                    return unapplicable.unapplicable16;
+                return
+                    Type == ColorType._16Color || (Type == ColorType._255Color && ColorId.ColorId < 16) ?
+                    (ConsoleColor)ColorId.ColorId :
+                    unapplicable.unapplicable16;
+            }
+        }
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -263,7 +288,7 @@ namespace Terminaux.Colors
 
             // Now, parse the output
             var rgb = ParsingTools.ParseSpecifier(ColorSpecifier, settings);
-            if (rgb.cci is not null && !settings.EnableColorTransformation)
+            if (rgb.cci is not null && rgb.rgb is not null && !settings.EnableColorTransformation)
             {
                 // Verify that we're using the correct ID for transparency
                 var data = ConsoleColorData.MatchColorData(rgb.rgb);
@@ -389,7 +414,7 @@ namespace Terminaux.Colors
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            int hashCode = -1117772193;
+            int hashCode = -453417870;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequence);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceEnclosed);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForeground);
@@ -398,7 +423,6 @@ namespace Terminaux.Colors
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceEnclosedTrueColor);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForegroundTrueColor);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceBackgroundTrueColor);
-            hashCode = hashCode * -1521134295 + ColorId.GetHashCode();
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Hex);
             hashCode = hashCode * -1521134295 + Type.GetHashCode();
             hashCode = hashCode * -1521134295 + Brightness.GetHashCode();
@@ -407,9 +431,9 @@ namespace Terminaux.Colors
             return hashCode;
         }
 
-        private bool DetectDark(int r, int g, int b)
+        private bool DetectDark(RedGreenBlue rgb)
         {
-            int monochromeFactor = Monochromacy.GetMonochromeFactor(r, g, b);
+            int monochromeFactor = Monochromacy.GetMonochromeFactor(rgb.R, rgb.G, rgb.B);
             return monochromeFactor < 255d / 2d;
         }
     }

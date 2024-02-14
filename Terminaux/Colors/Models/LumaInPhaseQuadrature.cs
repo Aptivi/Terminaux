@@ -62,7 +62,7 @@ namespace Terminaux.Colors.Models
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
-            Equals(obj as LumaInPhaseQuadrature);
+            Equals((LumaInPhaseQuadrature)obj);
 
         /// <inheritdoc/>
         public bool Equals(LumaInPhaseQuadrature other) =>

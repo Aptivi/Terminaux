@@ -38,12 +38,12 @@ namespace Terminaux.Inputs.Presentation.Elements
         public bool IsInput => true;
 
         /// <inheritdoc/>
-        public string WrittenInput { get; set; }
+        public string? WrittenInput { get; set; }
 
         /// <summary>
         /// The first argument denotes the prompt to be written, and the rest for the parameters to be formatted
         /// </summary>
-        public object[] Arguments { get; set; }
+        public object[]? Arguments { get; set; }
 
         /// <summary>
         /// Renders the text
@@ -51,8 +51,8 @@ namespace Terminaux.Inputs.Presentation.Elements
         public void Render()
         {
             // Get the text and the arguments
-            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
-            string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
+            object[] finalArgs = Arguments is not null && Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
+            string text = TextTools.FormatString((string)(Arguments is not null && Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
 
             // Check the bounds
             string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
@@ -112,8 +112,8 @@ namespace Terminaux.Inputs.Presentation.Elements
         public bool IsPossibleOutOfBounds()
         {
             // Get the text and the arguments
-            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
-            string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
+            object[] finalArgs = Arguments is not null && Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
+            string text = TextTools.FormatString((string)(Arguments is not null && Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
 
             // Check the bounds
             string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
@@ -122,9 +122,9 @@ namespace Terminaux.Inputs.Presentation.Elements
         }
 
         /// <inheritdoc/>
-        public Action<object[]> InvokeActionInput { get; set; }
+        public Action<object[]>? InvokeActionInput { get; set; }
 
         /// <inheritdoc/>
-        public Action InvokeAction { get; }
+        public Action? InvokeAction { get; }
     }
 }

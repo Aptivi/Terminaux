@@ -40,12 +40,12 @@ namespace Terminaux.Inputs.Presentation.Elements
         public bool IsInput => true;
 
         /// <inheritdoc/>
-        public string WrittenInput { get; set; }
+        public string? WrittenInput { get; set; }
 
         /// <summary>
         /// The first argument denotes the prompt to be written, and the rest for the parameters to be formatted
         /// </summary>
-        public object[] Arguments { get; set; }
+        public object[]? Arguments { get; set; }
 
         /// <summary>
         /// Renders the element
@@ -53,8 +53,8 @@ namespace Terminaux.Inputs.Presentation.Elements
         public void Render()
         {
             // Get the text and the arguments
-            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
-            string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
+            object[] finalArgs = Arguments is not null && Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
+            string text = TextTools.FormatString((string)(Arguments is not null && Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
 
             // Check the bounds
             string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
@@ -188,7 +188,7 @@ namespace Terminaux.Inputs.Presentation.Elements
         public bool IsPossibleOutOfBounds()
         {
             // Get the text, the arguments, and the choices
-            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
+            object[] finalArgs = Arguments is not null && Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
 
             // Flatten the enumerables to their string value representations
             List<string> choices = [];
@@ -202,7 +202,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             }
 
             string[] finalChoices = [.. choices];
-            string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs) + "\n\n";
+            string text = TextTools.FormatString((string)(Arguments is not null && Arguments.Length > 0 ? Arguments[0] : ""), finalArgs) + "\n\n";
 
             // Add the choices to the text
             for (int choice = 0; choice < finalChoices.Length; choice++)
@@ -216,9 +216,9 @@ namespace Terminaux.Inputs.Presentation.Elements
         }
 
         /// <inheritdoc/>
-        public Action<object[]> InvokeActionInput { get; set; }
+        public Action<object[]>? InvokeActionInput { get; set; }
 
         /// <inheritdoc/>
-        public Action InvokeAction { get; }
+        public Action? InvokeAction { get; }
     }
 }

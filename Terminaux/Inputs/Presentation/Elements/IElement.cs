@@ -54,12 +54,12 @@ namespace Terminaux.Inputs.Presentation.Elements
         /// <summary>
         /// Written input
         /// </summary>
-        string WrittenInput { get; set; }
+        string? WrittenInput { get; set; }
 
         /// <summary>
         /// Arguments
         /// </summary>
-        object[] Arguments { get; set; }
+        object[]? Arguments { get; set; }
 
         /// <summary>
         /// Renders an element
@@ -74,11 +74,11 @@ namespace Terminaux.Inputs.Presentation.Elements
         /// <summary>
         /// Invokes the action after rendering the element (input)
         /// </summary>
-        Action<object[]> InvokeActionInput { get; }
+        Action<object[]>? InvokeActionInput { get; }
 
         /// <summary>
         /// Invokes the action after rendering the element (normal)
         /// </summary>
-        Action InvokeAction { get; }
+        Action? InvokeAction { get; }
     }
 }

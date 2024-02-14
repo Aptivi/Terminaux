@@ -236,7 +236,7 @@ namespace Terminaux.Colors.Templates
         /// <param name="json">Template JSON contents</param>
         /// <returns>A template info containing JSON representation</returns>
         /// <exception cref="TerminauxException"></exception>
-        public static TemplateInfo GetTemplateFromJson(string json) =>
+        public static TemplateInfo? GetTemplateFromJson(string json) =>
             JsonConvert.DeserializeObject<TemplateInfo>(json);
 
         private static int GetTemplateIndexFrom(string template) =>

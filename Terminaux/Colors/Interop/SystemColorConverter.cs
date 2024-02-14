@@ -55,7 +55,7 @@ namespace Terminaux.Colors.Interop
         public static DrawingColor ToDrawingColor(OurColor ourColor)
         {
             // Check to see if the Color from Drawing is null
-            if (ourColor is null)
+            if (ourColor is null || ourColor.RGB is null)
                 return DrawingColor.Empty;
 
             // Now, get our color's RGB component and convert that to Drawing's Color.

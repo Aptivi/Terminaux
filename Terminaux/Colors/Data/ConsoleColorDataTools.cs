@@ -35,8 +35,12 @@ namespace Terminaux.Colors.Data
         /// </summary>
         /// <param name="color">Color to match</param>
         /// <returns>Either an instance of <see cref="ConsoleColorData"/> if found, or <see langword="null"/> if not found</returns>
-        public static ConsoleColorData MatchColorData(Color color) =>
-            MatchColorData(color.RGB);
+        public static ConsoleColorData MatchColorData(Color color)
+        {
+            if (color.RGB is null)
+                throw new ArgumentNullException(nameof(color));
+            return MatchColorData(color.RGB);
+        }
 
         /// <summary>
         /// Gets a color data instance that matches 
@@ -59,6 +63,7 @@ namespace Terminaux.Colors.Data
 
             // Get an instance that matches the conditions
             var instance = instances.FirstOrDefault((data) =>
+                data.RGB is not null &&
                 data.RGB.R == r &&
                 data.RGB.G == g &&
                 data.RGB.B == b

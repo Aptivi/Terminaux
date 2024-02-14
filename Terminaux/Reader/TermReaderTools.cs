@@ -86,6 +86,8 @@ namespace Terminaux.Reader
 
             // Get the current state
             var state = TermReaderState.CurrentState;
+            if (state is null)
+                return;
 
             // Check to see if the console has been resized before
             if (ConsoleResizeHandler.WasResized(false))
@@ -127,6 +129,8 @@ namespace Terminaux.Reader
 
             // Get the current state
             var state = TermReaderState.CurrentState;
+            if (state is null)
+                return -1;
             return GetMaximumInputLength(state);
         }
 
@@ -143,6 +147,8 @@ namespace Terminaux.Reader
 
             // Get the current state
             var state = TermReaderState.CurrentState;
+            if (state is null)
+                return;
             InsertNewText(ref state, newText, append, step);
             TermReaderState.SaveState(state);
         }
@@ -155,6 +161,8 @@ namespace Terminaux.Reader
         public static void RemoveText(int length, bool step = false)
         {
             if (TermReader.states.Count == 0)
+                return;
+            if (TermReaderState.CurrentState is null)
                 return;
 
             RemoveText(TermReaderState.CurrentState.CurrentTextPos, length, step);
@@ -173,6 +181,8 @@ namespace Terminaux.Reader
 
             // Get the current state
             var state = TermReaderState.CurrentState;
+            if (state is null)
+                return;
             RemoveText(ref state, startIndex, length, step);
             TermReaderState.SaveState(state);
         }
@@ -345,15 +355,16 @@ namespace Terminaux.Reader
 
         internal static string GetHighlightedInput(string renderedText, TermReaderState state)
         {
+            // If any of the items is null, return the original string
+            if (state.Settings is null || state.Settings.SyntaxHighlighter is null || state.Settings.SyntaxHighlighter.Components is null)
+                return renderedText;
+
             // Condition for highlight
             bool highlight =
                 state.CurrentText.Length > 0 &&
                 !state.PasswordMode &&
                 !state.Commentized &&
-                state.Settings is not null &&
                 state.Settings.SyntaxHighlighterEnabled &&
-                state.Settings.SyntaxHighlighter is not null &&
-                state.Settings.SyntaxHighlighter.Components is not null &&
                 state.Settings.SyntaxHighlighter.Components.Count > 0;
 
             // If highlight is not enabled, return the original string
@@ -370,6 +381,8 @@ namespace Terminaux.Reader
                 var bgColor = component.ComponentBackgroundColor;
                 bool fgEnabled = component.UseForegroundColor;
                 bool bgEnabled = component.UseBackgroundColor;
+                if (match is null || fgColor is null || bgColor is null)
+                    continue;
 
                 // Now, match the original string
                 Match[] matches = match.Matches(renderedText).OfType<Match>().ToArray();
@@ -378,7 +391,7 @@ namespace Terminaux.Reader
             }
 
             // Sort the matches and apply
-            finalMatches = [.. finalMatches.OrderByDescending((match) => match.match.Index)];
+            finalMatches = [.. finalMatches.OrderByDescending((match) => match.match?.Index)];
             foreach (var (match, fgColor, bgColor, fgEnabled, bgEnabled) in finalMatches)
             {
                 var idx = match.Index;

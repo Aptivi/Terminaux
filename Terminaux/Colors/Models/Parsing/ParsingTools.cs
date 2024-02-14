@@ -122,10 +122,10 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static (RedGreenBlue rgb, ConsoleColorsInfo cci) ParseSpecifier(string specifier, ColorSettings settings = null)
+        public static (RedGreenBlue? rgb, ConsoleColorsInfo? cci) ParseSpecifier(string specifier, ColorSettings? settings = null)
         {
             // Necessary variables
-            (RedGreenBlue rgb, ConsoleColorsInfo cci) tuple = (null, null);
+            (RedGreenBlue? rgb, ConsoleColorsInfo? cci) tuple = (null, null);
             bool usesColorId = IsSpecifierConsoleColors(specifier);
 
             // Check to see if we're going to use the color ID
@@ -151,7 +151,7 @@ namespace Terminaux.Colors.Models.Parsing
                 RgbParsingTools.ParseSpecifierToRgb(specifier, settings);
 
             // Finalize the RGB values according to the settings as needed.
-            if (settings is not null)
+            if (settings is not null && rgb is not null)
                 rgb.FinalizeValues(settings);
             return (rgb, tuple.cci);
         }
@@ -163,7 +163,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="output">Output for both the RGB component and the color info for 256- and 16-color modes</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static bool TryParseSpecifier(string specifier, out (RedGreenBlue rgb, ConsoleColorsInfo cci) output)
+        public static bool TryParseSpecifier(string specifier, out (RedGreenBlue? rgb, ConsoleColorsInfo? cci) output)
         {
             try
             {
@@ -184,7 +184,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static (RedGreenBlue rgb, ConsoleColorsInfo cci) ParseSpecifierRgbName(string specifier, ColorSettings settings = null)
+        public static (RedGreenBlue rgb, ConsoleColorsInfo cci) ParseSpecifierRgbName(string specifier, ColorSettings? settings = null)
         {
             if (!IsSpecifierConsoleColors(specifier))
                 throw new TerminauxException($"Invalid color specifier \"{specifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
@@ -219,7 +219,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="output">Output for both the RGB component and the color info for 256- and 16-color modes</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static bool TryParseSpecifierRgbName(string specifier, out (RedGreenBlue rgb, ConsoleColorsInfo cci) output)
+        public static bool TryParseSpecifierRgbName(string specifier, out (RedGreenBlue? rgb, ConsoleColorsInfo? cci) output)
         {
             try
             {
@@ -240,7 +240,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static RedGreenBlue ParseSpecifierRgbHash(string specifier, ColorSettings settings = null)
+        public static RedGreenBlue ParseSpecifierRgbHash(string specifier, ColorSettings? settings = null)
         {
             if (!IsSpecifierValidRgbHash(specifier))
                 throw new TerminauxException($"Invalid color hex specifier \"{specifier}\". This specifier must start with the hash tag. Ensure that it's on the correct format: #RRGGBB");
@@ -281,7 +281,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="output">Output for the RGB component</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static bool TryParseSpecifierRgbHash(string specifier, out RedGreenBlue output)
+        public static bool TryParseSpecifierRgbHash(string specifier, out RedGreenBlue? output)
         {
             try
             {

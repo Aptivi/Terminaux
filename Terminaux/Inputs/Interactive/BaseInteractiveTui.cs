@@ -30,7 +30,7 @@ namespace Terminaux.Inputs.Interactive
     public class BaseInteractiveTui<T> : IInteractiveTui<T>
     {
         internal static List<BaseInteractiveTui<T>> instances = [];
-        internal Screen screen;
+        internal Screen? screen;
         internal bool isExiting = false;
 
         /// <inheritdoc/>
@@ -50,7 +50,7 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// The interactive TUI instance
         /// </summary>
-        public static BaseInteractiveTui<T> Instance =>
+        public static BaseInteractiveTui<T>? Instance =>
             instances.Count > 0 ?
             instances[instances.Count - 1] :
             null;
@@ -58,7 +58,7 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// The screen instance for this interactive TUI
         /// </summary>
-        public Screen Screen =>
+        public Screen? Screen =>
             screen;
 
         /// <inheritdoc/>

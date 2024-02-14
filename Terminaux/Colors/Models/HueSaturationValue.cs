@@ -70,7 +70,7 @@ namespace Terminaux.Colors.Models
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
-            Equals(obj as HueSaturationValue);
+            Equals((HueSaturationValue)obj);
 
         /// <inheritdoc/>
         public bool Equals(HueSaturationValue other) =>

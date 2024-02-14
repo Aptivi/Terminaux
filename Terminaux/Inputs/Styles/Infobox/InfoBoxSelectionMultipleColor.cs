@@ -369,7 +369,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             var screen = new Screen();
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
-            ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxSelectionMultipleColor), infoBoxScreenPart);
+            ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxSelectionMultipleColor), infoBoxScreenPart);
             try
             {
                 // Modify the current selection according to the default
@@ -582,7 +582,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             if (!string.IsNullOrWhiteSpace(choiceDesc))
                             {
                                 InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
-                                ScreenTools.CurrentScreen.RequireRefresh();
+                                ScreenTools.CurrentScreen?.RequireRefresh();
                             }
                             break;
                         case ConsoleKey.Enter:
@@ -622,7 +622,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             finally
             {
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen.RemoveBufferedPart(nameof(InfoBoxSelectionMultipleColor));
+                ScreenTools.CurrentScreen?.RemoveBufferedPart(nameof(InfoBoxSelectionMultipleColor));
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

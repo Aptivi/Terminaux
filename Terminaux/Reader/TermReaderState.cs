@@ -41,7 +41,7 @@ namespace Terminaux.Reader
         internal int currentCursorPosLeft;
         internal int currentCursorPosTop;
         internal int currentTextPos;
-        internal string inputPromptText;
+        internal string inputPromptText = "";
         internal StringBuilder currentText = new();
         internal bool passwordMode;
         internal ConsoleKeyInfo pressedKey;
@@ -52,7 +52,7 @@ namespace Terminaux.Reader
         internal bool insertIsReplace;
         internal bool commentized;
         internal bool operationWasInvalid;
-        internal TermReaderSettings settings;
+        internal TermReaderSettings settings = TermReader.GlobalReaderSettings;
 
         // Shared
         internal static List<string> history = [];
@@ -243,7 +243,7 @@ namespace Terminaux.Reader
         /// <summary>
         /// Gets the current state
         /// </summary>
-        public static TermReaderState CurrentState
+        public static TermReaderState? CurrentState
         {
             get
             {

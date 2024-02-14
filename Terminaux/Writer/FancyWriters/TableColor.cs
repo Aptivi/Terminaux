@@ -44,7 +44,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Margin">Safe threshold from left</param>
         /// <param name="SeparateRows">Separate the rows?</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        public static void WriteTablePlain(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null)
+        public static void WriteTablePlain(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions>? CellOptions = null)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Margin">Safe threshold from left</param>
         /// <param name="SeparateRows">Separate the rows?</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null)
+        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions>? CellOptions = null)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
+        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions>? CellOptions = null)
         {
             try
             {
@@ -115,7 +115,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Margin">Margin offset</param>
         /// <param name="SeparateRows">Separate the rows?</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        public static string RenderTablePlain(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions> CellOptions = null) =>
+        public static string RenderTablePlain(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions>? CellOptions = null) =>
             RenderTable(Headers, Rows, Margin, ColorTools.GetGray(), ColorTools.GetGray(), ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, SeparateRows, CellOptions);
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        public static string RenderTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null) =>
+        public static string RenderTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions>? CellOptions = null) =>
             RenderTable(Headers, Rows, Margin, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, true, SeparateRows, CellOptions);
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the colors or not</param>
-        internal static string RenderTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
+        internal static string RenderTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, bool SeparateRows = true, List<CellOptions>? CellOptions = null)
         {
             try
             {

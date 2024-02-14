@@ -366,7 +366,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             var screen = new Screen();
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
-            ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxSelectionColor), infoBoxScreenPart);
+            ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxSelectionColor), infoBoxScreenPart);
             try
             {
                 // Modify the current selection according to the default
@@ -575,7 +575,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             if (!string.IsNullOrWhiteSpace(choiceDesc))
                             {
                                 InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
-                                ScreenTools.CurrentScreen.RequireRefresh();
+                                ScreenTools.CurrentScreen?.RequireRefresh();
                             }
                             break;
                         case ConsoleKey.Enter:
@@ -622,7 +622,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen.RemoveBufferedPart(nameof(InfoBoxSelectionColor));
+                ScreenTools.CurrentScreen?.RemoveBufferedPart(nameof(InfoBoxSelectionColor));
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

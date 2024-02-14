@@ -152,7 +152,7 @@ namespace Terminaux.Inputs.Presentation
                     // Check to see if we need to invoke action
                     if (element.IsInput)
                         if (element.InvokeActionInput is not null)
-                            element.InvokeActionInput([element.WrittenInput]);
+                            element.InvokeActionInput([element.WrittenInput ?? ""]);
                         else
                         if (element.InvokeAction is not null)
                             element.InvokeAction();

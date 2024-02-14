@@ -29,7 +29,7 @@ namespace Terminaux.Colors
     {
         private double _blindnessSeverity = 0.6;
         private int _alpha = 255;
-        private Color _opacityColor = null;
+        private Color? _opacityColor = null;
 
         /// <summary>
         /// Enables the color transformation to adjust to color blindness upon making a new instance of color

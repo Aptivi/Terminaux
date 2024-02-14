@@ -32,7 +32,7 @@ namespace Terminaux.Base.Buffered
         /// <summary>
         /// Gets the currently displaying screen
         /// </summary>
-        public static Screen CurrentScreen =>
+        public static Screen? CurrentScreen =>
             screens.Count > 0 ? screens[screens.Count - 1] : null;
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Terminaux.Base.Buffered
         /// Renders the screen one time
         /// </summary>
         /// <param name="screen">The screen to be rendered</param>
-        public static void Render(Screen screen)
+        public static void Render(Screen? screen)
         {
             // Check the screen instance
             if (screen is null)

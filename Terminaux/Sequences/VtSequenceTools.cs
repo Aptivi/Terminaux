@@ -30,7 +30,7 @@ namespace Terminaux.Sequences
     /// </summary>
     public static partial class VtSequenceTools
     {
-        private static readonly VtSequenceType[] typeValues = Enum.GetValues(typeof(VtSequenceType)) as VtSequenceType[];
+        private static readonly VtSequenceType[] typeValues = (VtSequenceType[])Enum.GetValues(typeof(VtSequenceType));
 
         /// <summary>
         /// Filters all of the VT sequences

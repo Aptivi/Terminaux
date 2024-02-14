@@ -34,7 +34,7 @@ namespace Terminaux.Colors
     {
         internal static Color currentForegroundColor = new(ConsoleColors.White);
         internal static Color currentBackgroundColor = Color.Empty;
-        internal static Color _empty;
+        internal static Color? _empty;
         internal static Random rng = new();
         private static readonly ColorSettings globalSettings = new();
         private static bool allowBackground;
@@ -330,13 +330,11 @@ namespace Terminaux.Colors
         public static Color GetRandomColor(ColorType type, bool selectBlack = true)
         {
             int maxColor = type != ColorType._16Color ? 255 : 15;
-            Color color = null;
-            bool firstTime = true;
+            Color? color = null;
             int colorLevel = 0;
             ColorType colorType = type;
-            while (firstTime || (!ColorContrast.IsSeeable(colorType, colorLevel, color.RGB.R, color.RGB.G, color.RGB.B) && !selectBlack))
+            while (color is null || (color.RGB is not null && !ColorContrast.IsSeeable(colorType, colorLevel, color.RGB.R, color.RGB.G, color.RGB.B) && !selectBlack))
             {
-                firstTime = false;
                 color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255);
                 colorType = color.Type;
                 if (colorType != ColorType.TrueColor)

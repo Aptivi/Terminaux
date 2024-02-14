@@ -43,6 +43,8 @@ namespace Terminaux.Colors.Transformation.Contrast
         /// <returns>Black if the luma info is less than or equal to 128, or white if greater than 128</returns>
         public static Color GetContrastColorNtsc(this Color color)
         {
+            if (color is null || color.RGB is null)
+                throw new ArgumentNullException(nameof(color));
             var black = new Color(ConsoleColors.Black);
             var white = new Color(ConsoleColors.White);
             int r = color.RGB.R;

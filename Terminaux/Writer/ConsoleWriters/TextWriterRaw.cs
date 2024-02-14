@@ -83,7 +83,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WritePlain(string Text, TermReaderSettings settings, params object[] vars) =>
+        public static void WritePlain(string Text, TermReaderSettings? settings, params object[] vars) =>
             WritePlain(Text, settings, true, vars);
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteRaw(string Text, TermReaderSettings settings, params object[] vars) =>
+        public static void WriteRaw(string Text, TermReaderSettings? settings, params object[] vars) =>
             WritePlain(Text, settings, false, vars);
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WritePlain(string Text, TermReaderSettings settings, bool Line, params object[] vars)
+        public static void WritePlain(string Text, TermReaderSettings? settings, bool Line, params object[] vars)
         {
             lock (WriteLock)
             {

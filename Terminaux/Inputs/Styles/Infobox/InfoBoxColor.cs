@@ -623,8 +623,8 @@ namespace Terminaux.Inputs.Styles.Infobox
             var screen = new Screen();
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
-            ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxColor), infoBoxScreenPart);
-            ScreenTools.CurrentScreen.AddBufferedPart("Informational box - Page", infoBoxPageScreenPart);
+            ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxColor), infoBoxScreenPart);
+            ScreenTools.CurrentScreen?.AddBufferedPart("Informational box - Page", infoBoxPageScreenPart);
             try
             {
                 // Helper function
@@ -822,8 +822,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen.RemoveBufferedPart(nameof(InfoBoxColor));
-                ScreenTools.CurrentScreen.RemoveBufferedPart("Informational box - Page");
+                ScreenTools.CurrentScreen?.RemoveBufferedPart(nameof(InfoBoxColor));
+                ScreenTools.CurrentScreen?.RemoveBufferedPart("Informational box - Page");
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

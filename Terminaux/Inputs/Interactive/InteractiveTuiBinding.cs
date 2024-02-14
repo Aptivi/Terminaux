@@ -29,7 +29,7 @@ namespace Terminaux.Inputs.Interactive
         private readonly string _bindingName;
         private readonly ConsoleKey _bindingKeyName;
         private readonly ConsoleModifiers _bindingKeyModifiers;
-        private readonly Action<object, int> _bindingAction;
+        private readonly Action<object, int>? _bindingAction;
 
         /// <summary>
         /// Key binding name
@@ -53,7 +53,7 @@ namespace Terminaux.Inputs.Interactive
         /// The action to execute.
         /// The integer argument denotes the currently selected data
         /// </summary>
-        public Action<object, int> BindingAction =>
+        public Action<object, int>? BindingAction =>
             _bindingAction;
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Terminaux.Inputs.Interactive
         /// <param name="bindingName">Key binding name</param>
         /// <param name="bindingKeyName">Which key is bound to the action?</param>
         /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
-        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int> bindingAction) :
+        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int>? bindingAction) :
             this(bindingName, bindingKeyName, default, bindingAction)
         { }
 
@@ -73,7 +73,7 @@ namespace Terminaux.Inputs.Interactive
         /// <param name="bindingKeyName">Which key is bound to the action?</param>
         /// <param name="bindingKeyModifiers">Which modifiers of the key is bound to the action?</param>
         /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
-        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers, Action<object, int> bindingAction)
+        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers, Action<object, int>? bindingAction)
         {
             _bindingName = bindingName;
             _bindingKeyName = bindingKeyName;

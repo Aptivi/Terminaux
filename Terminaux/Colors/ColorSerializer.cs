@@ -20,6 +20,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using Terminaux.Base;
 using Textify.General;
 
 namespace Terminaux.Colors
@@ -34,7 +35,7 @@ namespace Terminaux.Colors
             objectType == typeof(Color);
 
         /// <inheritdoc/>
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
             var result = JRaw.Create(reader).ToString().ReleaseDoubleQuotes();
             var color = new Color(result);
@@ -42,9 +43,10 @@ namespace Terminaux.Colors
         }
 
         /// <inheritdoc/>
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var color = (Color)value;
+            var color = value as Color ??
+                throw new TerminauxInternalException("Can't get color.");
             serializer.Serialize(writer, color.ToString());
         }
     }

@@ -62,7 +62,7 @@ namespace Terminaux.Colors.Models
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
-            Equals(obj as LumaChromaUv);
+            Equals((LumaChromaUv)obj);
 
         /// <inheritdoc/>
         public bool Equals(LumaChromaUv other) =>

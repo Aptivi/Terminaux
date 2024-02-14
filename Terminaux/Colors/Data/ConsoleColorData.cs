@@ -32,9 +32,9 @@ namespace Terminaux.Colors.Data
         [JsonProperty(nameof(hexString))]
         private readonly string hexString = "";
         [JsonProperty(nameof(rgb))]
-        private readonly Rgb rgb = default;
+        private readonly Rgb? rgb = default;
         [JsonProperty(nameof(hsl))]
-        private readonly Hsl hsl = default;
+        private readonly Hsl? hsl = default;
         [JsonProperty(nameof(name))]
         private readonly string name = "";
         [JsonProperty(nameof(colorId))]
@@ -58,14 +58,14 @@ namespace Terminaux.Colors.Data
         /// The RGB values
         /// </summary>
         [JsonIgnore]
-        public Rgb RGB =>
+        public Rgb? RGB =>
             rgb;
 
         /// <summary>
         /// The HSL values
         /// </summary>
         [JsonIgnore]
-        public Hsl HSL =>
+        public Hsl? HSL =>
             hsl;
 
         /// <summary>

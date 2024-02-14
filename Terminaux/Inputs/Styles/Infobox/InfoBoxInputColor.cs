@@ -350,7 +350,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             var screen = new Screen();
             if (initialScreenIsNull)
                 ScreenTools.SetCurrent(screen);
-            ScreenTools.CurrentScreen.AddBufferedPart(nameof(InfoBoxInputColor), infoBoxScreenPart);
+            ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxInputColor), infoBoxScreenPart);
             try
             {
                 int rightMargin = 0;
@@ -466,7 +466,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen.RemoveBufferedPart(nameof(InfoBoxInputColor));
+                ScreenTools.CurrentScreen?.RemoveBufferedPart(nameof(InfoBoxInputColor));
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

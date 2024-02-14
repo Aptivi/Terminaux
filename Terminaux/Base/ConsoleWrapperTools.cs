@@ -471,6 +471,8 @@ namespace Terminaux.Base
 
         private static void WriteNonStandalone(string text, TermReaderSettings settings)
         {
+            if (settings.state is null)
+                throw new TerminauxInternalException(nameof(settings.state));
             int top = settings.state.inputPromptTop;
             int topBegin = settings.state.inputPromptTopBegin;
             var wrapped = TextTools.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLeft - settings.state.LeftMargin);

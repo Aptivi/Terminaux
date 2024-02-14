@@ -21,6 +21,6 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
 {
     internal class VienotParameters
     {
-        internal double[] TransPlane;
+        internal double[] TransPlane = [];
     }
 }

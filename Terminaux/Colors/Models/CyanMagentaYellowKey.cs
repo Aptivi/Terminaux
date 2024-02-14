@@ -50,7 +50,7 @@ namespace Terminaux.Colors.Models
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
-            Equals(obj as CyanMagentaYellowKey);
+            Equals((CyanMagentaYellowKey)obj);
 
         /// <inheritdoc/>
         public bool Equals(CyanMagentaYellowKey other) =>

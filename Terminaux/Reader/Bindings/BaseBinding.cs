@@ -31,7 +31,7 @@ namespace Terminaux.Reader.Bindings
         /// <summary>
         /// Key to bind to
         /// </summary>
-        public virtual ConsoleKeyInfo[] BoundKeys { get; }
+        public virtual ConsoleKeyInfo[] BoundKeys { get; } = [];
 
         /// <summary>
         /// Resets the suggestions text position

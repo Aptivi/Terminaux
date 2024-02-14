@@ -68,7 +68,7 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings settings = null)
+        public static RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings? settings = null)
         {
             if (!IsSpecifierValid(specifier))
                 throw new TerminauxException($"Invalid color specifier \"{specifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");

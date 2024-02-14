@@ -80,8 +80,8 @@ namespace Terminaux.Reader.Highlighting
         /// Gets the default highlighter for the current read. Returns <see langword="null"/> if no reader is present.
         /// </summary>
         /// <exception cref="TerminauxException"></exception>
-        public static SyntaxHighlighting GetHighlighter() =>
-            TermReaderState.CurrentState.Settings.SyntaxHighlighter;
+        public static SyntaxHighlighting? GetHighlighter() =>
+            TermReaderState.CurrentState?.Settings.SyntaxHighlighter;
 
         /// <summary>
         /// Gets the highlighter
@@ -122,7 +122,7 @@ namespace Terminaux.Reader.Highlighting
         /// <param name="highlighter">Highlighter</param>
         /// <param name="componentName">Component name</param>
         /// <exception cref="TerminauxException"></exception>
-        public static SyntaxHighlightingComponent GetComponent(SyntaxHighlighting highlighter, string componentName)
+        public static SyntaxHighlightingComponent GetComponent(SyntaxHighlighting? highlighter, string componentName)
         {
             // Check to see if we have this highlighter
             if (highlighter is null)
@@ -194,7 +194,7 @@ namespace Terminaux.Reader.Highlighting
         /// <param name="highlighter">Highlighter to save to JSON</param>
         /// <returns>A string containing the JSON representation of a highlighter</returns>
         /// <exception cref="TerminauxException"></exception>
-        public static string GetHighlighterToJson(SyntaxHighlighting highlighter)
+        public static string GetHighlighterToJson(SyntaxHighlighting? highlighter)
         {
             // Check to see if we have this highlighter
             if (highlighter is null)
@@ -210,7 +210,7 @@ namespace Terminaux.Reader.Highlighting
         /// <param name="json">Highlighter JSON contents</param>
         /// <returns>A highlighter info containing JSON representation</returns>
         /// <exception cref="TerminauxException"></exception>
-        public static SyntaxHighlighting GetHighlighterFromJson(string json) =>
+        public static SyntaxHighlighting? GetHighlighterFromJson(string json) =>
             JsonConvert.DeserializeObject<SyntaxHighlighting>(json);
 
         private static int GetHighlighterIndexFrom(string highlighter) =>

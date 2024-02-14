@@ -166,8 +166,8 @@ namespace Terminaux.Inputs.Interactive
         private static void DrawInteractiveTui<T>(BaseInteractiveTui<T> interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
-            Debug.Assert(interactiveTui is not null,
-                "attempted to render TUI items on null");
+            if (interactiveTui is null)
+                throw new TerminauxInternalException("Attempted to render TUI items on null");
 
             // Make a screen part
             var part = new ScreenPart();
@@ -280,20 +280,20 @@ namespace Terminaux.Inputs.Interactive
                 return bindingsBuilder.ToString();
             });
 
-            interactiveTui.screen.AddBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}", part);
+            interactiveTui.screen?.AddBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}", part);
         }
 
         private static void DrawInteractiveTuiItems<T>(BaseInteractiveTui<T> interactiveTui, int paneNum)
         {
             // Check to make sure that we don't get nulls on interactiveTui
-            Debug.Assert(interactiveTui is not null,
-                "attempted to render TUI items on null");
-            Debug.Assert(interactiveTui.screen is not null,
-                "attempted to render TUI items on no screen");
+            if (interactiveTui is null)
+                throw new TerminauxInternalException("Attempted to render TUI items on null");
+            if (interactiveTui.screen is null)
+                throw new TerminauxInternalException("Attempted to render TUI items on no screen");
 
             // Check to make sure that we're not rendering the second pane on the first-pane-only interactive TUI
-            Debug.Assert(!interactiveTui.SecondPaneInteractable && paneNum == 1 || interactiveTui.SecondPaneInteractable,
-                "tried to render interactive TUI items for the secondary pane on an interactive TUI that only allows interaction from one pane.");
+            if (interactiveTui.SecondPaneInteractable && paneNum > 1)
+                throw new TerminauxInternalException("Tried to render interactive TUI items for the secondary pane on an interactive TUI that only allows interaction from one pane.");
 
             // Make a screen part
             var part = new ScreenPart();
@@ -325,7 +325,7 @@ namespace Terminaux.Inputs.Interactive
                     // Populate the first pane
                     string finalEntry = "";
                     int finalIndex = i + startIndex;
-                    object dataObject = null;
+                    object? dataObject = null;
                     if (finalIndex <= dataCount - 1)
                     {
                         dataObject = data.GetElementFromIndex(startIndex + i);
@@ -359,14 +359,14 @@ namespace Terminaux.Inputs.Interactive
         private static void DrawInformationOnSecondPane<T>(BaseInteractiveTui<T> interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
-            Debug.Assert(interactiveTui is not null,
-                "attempted to render TUI items on null");
-            Debug.Assert(interactiveTui.screen is not null,
-                "attempted to render TUI items on no screen");
+            if (interactiveTui is null)
+                throw new TerminauxInternalException("Attempted to draw info on null");
+            if (interactiveTui.screen is null)
+                throw new TerminauxInternalException("Attempted to draw info on no screen");
 
             // Check to make sure that we're not rendering the information pane on the both-panes interactive TUI
-            Debug.Assert(!interactiveTui.SecondPaneInteractable,
-                "tried to render information the secondary pane on an interactive TUI that allows interaction from two panes, messing the selection rendering up there.");
+            if (interactiveTui.SecondPaneInteractable)
+                throw new TerminauxInternalException("Tried to render information the secondary pane on an interactive TUI that allows interaction from two panes, messing the selection rendering up there.");
             // Make a screen part
             var part = new ScreenPart();
 
@@ -395,9 +395,8 @@ namespace Terminaux.Inputs.Interactive
                 // Populate selected data
                 if (dataCount > 0)
                 {
-                    object selectedData = data.GetElementFromIndex(paneCurrentSelection - 1);
-                    Debug.Assert(selectedData is not null,
-                        "attempted to render info about null data");
+                    object selectedData = data.GetElementFromIndex(paneCurrentSelection - 1) ??
+                        throw new TerminauxInternalException("Attempted to render info about null data");
                     finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
                 }
                 else
@@ -452,8 +451,10 @@ namespace Terminaux.Inputs.Interactive
 
         private static void DrawStatus<T>(BaseInteractiveTui<T> interactiveTui)
         {
-            Debug.Assert(interactiveTui.screen is not null,
-                "attempted to render TUI items on no screen");
+            if (interactiveTui is null)
+                throw new TerminauxInternalException("Attempted to draw status on null");
+            if (interactiveTui.screen is null)
+                throw new TerminauxInternalException("Attempted to draw status on no screen");
 
             // Make a screen part
             var part = new ScreenPart();
@@ -484,8 +485,8 @@ namespace Terminaux.Inputs.Interactive
         private static void RespondToUserInput<T>(BaseInteractiveTui<T> interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
-            Debug.Assert(interactiveTui is not null,
-                "attempted to respond to user input on null");
+            if (interactiveTui is null)
+                throw new TerminauxInternalException("Attempted to respond to user input on null");
 
             // Populate some necessary variables
             int paneCurrentSelection = InteractiveTuiStatus.CurrentPane == 2 ?
@@ -589,7 +590,12 @@ namespace Terminaux.Inputs.Interactive
                     var implementedBindings = allBindings.Where((binding) =>
                         binding.BindingKeyName == pressedKey.Key && binding.BindingKeyModifiers == pressedKey.Modifiers);
                     foreach (var implementedBinding in implementedBindings)
-                        implementedBinding.BindingAction.Invoke(selectedData, paneCurrentSelection - 1);
+                    {
+                        var binding = implementedBinding.BindingAction;
+                        if (binding is null)
+                            continue;
+                        binding.Invoke(selectedData, paneCurrentSelection - 1);
+                    }
                     break;
             }
         }

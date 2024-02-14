@@ -140,19 +140,13 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
                 throw new ArgumentOutOfRangeException("severity");
 
             // Select what Brettel deficiency profile to choose how to transform the three RGB values
-            BrettelParameters bp = null;
-            switch (def)
+            BrettelParameters? bp = def switch
             {
-                case TransformationFormula.Protan:
-                    bp = bp_protan;
-                    break;
-                case TransformationFormula.Deutan:
-                    bp = bp_deutan;
-                    break;
-                case TransformationFormula.Tritan:
-                    bp = bp_tritan;
-                    break;
-            }
+                TransformationFormula.Protan => bp_protan,
+                TransformationFormula.Deutan => bp_deutan,
+                TransformationFormula.Tritan => bp_tritan,
+                _ => throw new ArgumentOutOfRangeException("def"),
+            };
 
             // Get linear RGB from these three RGB values
             double[] linears =
