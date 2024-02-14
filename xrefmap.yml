@@ -15749,6 +15749,15 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, String(), Terminaux.Inputs.Styles.Selection.SelectionStyleSettings, Boolean)
   nameWithType: SelectionStyle.PromptSelection(string, string[], SelectionStyleSettings, bool)
   nameWithType.vb: SelectionStyle.PromptSelection(String, String(), SelectionStyleSettings, Boolean)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],System.Boolean)
+  name: PromptSelection(string, InputChoiceInfo[], bool)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_Terminaux_Inputs_InputChoiceInfo___System_Boolean_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],System.Boolean)
+  name.vb: PromptSelection(String, InputChoiceInfo(), Boolean)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(string, Terminaux.Inputs.InputChoiceInfo[], bool)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(String, Terminaux.Inputs.InputChoiceInfo(), Boolean)
+  nameWithType: SelectionStyle.PromptSelection(string, InputChoiceInfo[], bool)
+  nameWithType.vb: SelectionStyle.PromptSelection(String, InputChoiceInfo(), Boolean)
 - uid: Terminaux.Inputs.Styles.Selection.SelectionStyle.PromptSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.InputChoiceInfo[],System.Boolean)
   name: PromptSelection(string, InputChoiceInfo[], InputChoiceInfo[], bool)
   href: api/Terminaux.Inputs.Styles.Selection.SelectionStyle.html#Terminaux_Inputs_Styles_Selection_SelectionStyle_PromptSelection_System_String_Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_InputChoiceInfo___System_Boolean_
