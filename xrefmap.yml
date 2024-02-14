@@ -24599,24 +24599,6 @@ references:
   commentId: T:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor
   fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor
   nameWithType: InfoBoxProgressColor
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name: WriteInfoBoxProgress(double, string, bool, char, char, char, char, char, char, char, char, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name.vb: WriteInfoBoxProgress(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(double, string, bool, char, char, char, char, char, char, char, char, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgress(double, string, bool, char, char, char, char, char, char, char, char, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgress(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double,System.String,System.Boolean,System.Object[])
-  name: WriteInfoBoxProgress(double, string, bool, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_Double_System_String_System_Boolean_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double,System.String,System.Boolean,System.Object[])
-  name.vb: WriteInfoBoxProgress(Double, String, Boolean, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(double, string, bool, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(Double, String, Boolean, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgress(double, string, bool, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgress(Double, String, Boolean, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
   name: WriteInfoBoxProgress(double, string, char, char, char, char, char, char, char, char, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
@@ -24635,24 +24617,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(Double, String, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgress(double, string, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgress(Double, String, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name: WriteInfoBoxProgress(string, double, string, bool, char, char, char, char, char, char, char, char, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_String_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name.vb: WriteInfoBoxProgress(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(string, double, string, bool, char, char, char, char, char, char, char, char, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgress(string, double, string, bool, char, char, char, char, char, char, char, char, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgress(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.String,System.Double,System.String,System.Boolean,System.Object[])
-  name: WriteInfoBoxProgress(string, double, string, bool, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_String_System_Double_System_String_System_Boolean_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.String,System.Double,System.String,System.Boolean,System.Object[])
-  name.vb: WriteInfoBoxProgress(String, Double, String, Boolean, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(string, double, string, bool, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(String, Double, String, Boolean, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgress(string, double, string, bool, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgress(String, Double, String, Boolean, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
   name: WriteInfoBoxProgress(string, double, string, char, char, char, char, char, char, char, char, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgress_System_String_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
@@ -24678,24 +24642,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgress
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgress
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
-  name: WriteInfoBoxProgressColor(double, string, bool, char, char, char, char, char, char, char, char, Color, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, bool, char, char, char, char, char, char, char, char, Color, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name: WriteInfoBoxProgressColor(double, string, bool, Color, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(Double, String, Boolean, Color, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, bool, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, bool, Color, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Boolean, Color, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColor(double, string, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -24714,24 +24660,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(double, string, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(Double, String, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
-  name: WriteInfoBoxProgressColor(string, double, string, bool, char, char, char, char, char, char, char, char, Color, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, bool, char, char, char, char, char, char, char, char, Color, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name: WriteInfoBoxProgressColor(string, double, string, bool, Color, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteInfoBoxProgressColor(String, Double, String, Boolean, Color, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, bool, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor(string, double, string, bool, Color, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColor(String, Double, String, Boolean, Color, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColor(string, double, string, char, char, char, char, char, char, char, char, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColor_System_String_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___
@@ -24757,24 +24685,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColor
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColor
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteInfoBoxProgressColorBack(double, string, bool, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, bool, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteInfoBoxProgressColorBack(double, string, bool, Color, Color, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(Double, String, Boolean, Color, Color, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, bool, Color, Color, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Boolean, Color, Color, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColorBack(double, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -24793,24 +24703,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(double, string, Color, Color, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(Double, String, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteInfoBoxProgressColorBack(string, double, string, bool, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_System_Boolean_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Boolean,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, bool, char, char, char, char, char, char, char, char, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, bool, char, char, char, char, char, char, char, char, Color, Color, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Char, Char, Char, Char, Char, Char, Char, Char, Color, Color, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteInfoBoxProgressColorBack(string, double, string, bool, Color, Color, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Color, Color, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, bool, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(string, double, string, bool, Color, Color, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressColorBack(String, Double, String, Boolean, Color, Color, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressColorBack(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteInfoBoxProgressColorBack(string, double, string, char, char, char, char, char, char, char, char, Color, Color, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressColorBack_System_String_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -24854,15 +24746,6 @@ references:
   fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(Double, String, ParamArray Object())
   nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressPlain(double, string, params object[])
   nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressPlain(Double, String, ParamArray Object())
-- uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name: WriteInfoBoxProgressPlain(string, double, string, char, char, char, char, char, char, char, char, params object[])
-  href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_System_String_System_Double_System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___
-  commentId: M:Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(System.String,System.Double,System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])
-  name.vb: WriteInfoBoxProgressPlain(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  fullName: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(string, double, string, char, char, char, char, char, char, char, char, params object[])
-  fullName.vb: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
-  nameWithType: InfoBoxProgressColor.WriteInfoBoxProgressPlain(string, double, string, char, char, char, char, char, char, char, char, params object[])
-  nameWithType.vb: InfoBoxProgressColor.WriteInfoBoxProgressPlain(String, Double, String, Char, Char, Char, Char, Char, Char, Char, Char, ParamArray Object())
 - uid: Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.WriteInfoBoxProgressPlain(System.String,System.Double,System.String,System.Object[])
   name: WriteInfoBoxProgressPlain(string, double, string, params object[])
   href: api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.html#Terminaux_Inputs_Styles_Infobox_InfoBoxProgressColor_WriteInfoBoxProgressPlain_System_String_System_Double_System_String_System_Object___
