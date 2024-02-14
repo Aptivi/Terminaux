@@ -132,6 +132,15 @@ namespace Terminaux.Inputs.Styles.Selection
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers.</param>
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, InputChoiceInfo[] Answers, bool kiosk = false) =>
+            PromptSelection(Question, Answers, [], SelectionStyleSettings.GlobalSettings, kiosk);
+
+        /// <summary>
+        /// Prompts user for Selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
         /// <param name="AltAnswers">Set of alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         public static int PromptSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, bool kiosk = false) =>

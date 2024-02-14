@@ -17,8 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using Terminaux.Base.Extensions;
 using Terminaux.ConsoleDemo.Fixtures;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Reader;
 using Terminaux.ResizeListener;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -26,7 +30,7 @@ namespace Terminaux.ConsoleDemo
 {
     internal class Entry
     {
-        static void Main(string[] args)
+        static void Main()
         {
             // Run the resize listener
             ConsoleResizeListener.StartResizeListener();
@@ -34,10 +38,32 @@ namespace Terminaux.ConsoleDemo
             // Initialize sequences for Windows
             ConsolePositioning.InitializeSequences();
 
-            // Get the fixture name from argument and run it
-            string chosenFixture = args.Length == 0 ? "Prompt" : args[0];
-            TextWriterColor.Write($"Fixture to be tested: {chosenFixture}\n");
-            FixtureManager.GetFixtureFromName(chosenFixture).RunFixture();
+            // Prepare the fixtures
+            var fixtureNames = FixtureManager.GetFixtureNames();
+            List<InputChoiceInfo> choices = [];
+            List<InputChoiceInfo> altChoices =
+            [
+                new($"{fixtureNames.Length + 1}", "Exit")
+            ];
+            for (int i = 0; i < fixtureNames.Length; i++)
+            {
+                string fixtureName = fixtureNames[i];
+                choices.Add(new($"{i + 1}", fixtureName));
+            }
+
+            // Prompt for fixtures
+            while (true)
+            {
+                int selected = SelectionStyle.PromptSelection("Choose a fixture", [.. choices], [.. altChoices], true);
+                if (selected == fixtureNames.Length + 1)
+                    return;
+
+                // Get the fixture name from the selection and run it
+                string chosenFixture = fixtureNames[selected - 1];
+                TextWriterColor.Write($"Fixture to be tested: {chosenFixture}\n");
+                FixtureManager.GetFixtureFromName(chosenFixture).RunFixture();
+                TermReader.ReadKey();
+            }
         }
     }
 }
