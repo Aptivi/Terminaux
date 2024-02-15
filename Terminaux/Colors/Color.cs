@@ -394,7 +394,6 @@ namespace Terminaux.Colors
                 other.PlainSequenceEnclosedTrueColor == other2.PlainSequenceEnclosedTrueColor &&
                 other.VTSequenceForegroundTrueColor == other2.VTSequenceForegroundTrueColor &&
                 other.VTSequenceBackgroundTrueColor == other2.VTSequenceBackgroundTrueColor &&
-                other.ColorId == other2.ColorId &&
                 other.Hex == other2.Hex &&
                 other.Type == other2.Type &&
                 other.Brightness == other2.Brightness &&
