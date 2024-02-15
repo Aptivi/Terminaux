@@ -398,7 +398,7 @@ namespace Terminaux.Reader
                 var idx = match.Index;
                 var endIdx = idx + match.Length;
                 if (fgEnabled)
-                    finalString.Insert(endIdx, state.Settings.InputForegroundColor.VTSequenceForeground);
+                    finalString.Insert(endIdx, ColorTools.RenderSetConsoleColor(state.Settings.InputForegroundColor));
                 if (bgEnabled)
                     finalString.Insert(endIdx, ColorTools.RenderSetConsoleColor(state.Settings.InputBackgroundColor, true));
                 if (fgEnabled)

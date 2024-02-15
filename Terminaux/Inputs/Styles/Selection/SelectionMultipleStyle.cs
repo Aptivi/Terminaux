@@ -336,7 +336,7 @@ namespace Terminaux.Inputs.Styles.Selection
 
                         // Write the question.
                         selectionBuilder.Append(
-                            $"{questionColor.VTSequenceForeground}" +
+                            $"{ColorTools.RenderSetConsoleColor(questionColor)}" +
                             $"{Question}"
                         );
 
@@ -377,7 +377,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                     selected ? selectedOptionColor :
                                     AltAnswer ? altOptionColor :
                                     optionColor;
-                                AnswerOption = $"{AnswerColor.VTSequenceForeground}{AnswerOption}";
+                                AnswerOption = $"{ColorTools.RenderSetConsoleColor(AnswerColor)}{AnswerOption}";
                                 selectionBuilder.Append(AnswerOption.Truncate(answerTitleMaxLeft - 8 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) =>
                                 {
                                     int sum = 0;
@@ -396,14 +396,14 @@ namespace Terminaux.Inputs.Styles.Selection
                         string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate(ConsoleWrapper.WindowWidth * 2 - 3) : "";
                         selectionBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(1, descSepArea + 1)}" +
-                            $"{ColorTools.GetGray().VTSequenceForeground}" +
+                            $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
                             $"{new string('=', ConsoleWrapper.WindowWidth)}" +
                             $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 1)}" +
                             $"{new string(' ', ConsoleWrapper.WindowWidth)}" +
                             $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 2)}" +
                             $"{new string(' ', ConsoleWrapper.WindowWidth)}" +
                             $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 1)}" +
-                            $"{new Color(ConsoleColors.White).VTSequenceForeground}" +
+                            $"{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.White))}" +
                             descFinal
                         );
 
@@ -423,10 +423,10 @@ namespace Terminaux.Inputs.Styles.Selection
                         int numbersLeft = ConsoleWrapper.WindowWidth - numberRender.Length - bindingsLeft;
                         selectionBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(bindingsLeft + 1, descSepArea + 1)}" +
-                            $"{ColorTools.GetGray().VTSequenceForeground}" +
+                            $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
                             bindingsRender +
                             $"{CsiSequences.GenerateCsiCursorPosition(numbersLeft + 1, descSepArea + 1)}" +
-                            $"{ColorTools.GetGray().VTSequenceForeground}" +
+                            $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
                             numberRender
                         );
 

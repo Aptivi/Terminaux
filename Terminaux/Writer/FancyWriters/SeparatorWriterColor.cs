@@ -219,7 +219,7 @@ namespace Terminaux.Writer.FancyWriters
                         if (useColor)
                         {
                             separator.Append(
-                                ForegroundColor.VTSequenceForeground +
+                                ColorTools.RenderSetConsoleColor(ForegroundColor) +
                                 ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                             );
                         }
@@ -239,7 +239,7 @@ namespace Terminaux.Writer.FancyWriters
                                 if (useColor)
                                 {
                                     separator.Append(
-                                        ForegroundColor.VTSequenceForeground +
+                                        ColorTools.RenderSetConsoleColor(ForegroundColor) +
                                         ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                                     );
                                 }
@@ -259,7 +259,7 @@ namespace Terminaux.Writer.FancyWriters
                     if (useColor)
                     {
                         separator.Append(
-                            ForegroundColor.VTSequenceForeground +
+                            ColorTools.RenderSetConsoleColor(ForegroundColor) +
                             ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
@@ -275,7 +275,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (useColor)
                 {
                     separator.Append(
-                        ForegroundColor.VTSequenceForeground +
+                        ColorTools.RenderSetConsoleColor(ForegroundColor) +
                         ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }

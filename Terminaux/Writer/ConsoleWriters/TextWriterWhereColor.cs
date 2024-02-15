@@ -375,7 +375,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     if (useColors)
                     {
                         buffered.Append(
-                            ForegroundColor.VTSequenceForeground +
+                            ColorTools.RenderSetConsoleColor(ForegroundColor) +
                             ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }

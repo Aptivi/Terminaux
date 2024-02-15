@@ -106,7 +106,7 @@ namespace Terminaux.Base.Buffered
         /// <param name="forceTrue">Forces the usage of the true color</param>
         public void ForegroundColor(Color color, bool forceTrue = false)
         {
-            string colorSeq = forceTrue ? color.VTSequenceForegroundTrueColor : color.VTSequenceForeground;
+            string colorSeq = forceTrue ? color.VTSequenceForegroundTrueColor : ColorTools.RenderSetConsoleColor(color);
             AddText(colorSeq);
         }
 

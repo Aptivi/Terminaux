@@ -331,7 +331,7 @@ namespace Terminaux.Writer.FancyWriters
                     int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
                     consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
                     centered.Append(
-                        $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                         TextWriterWhereColor.RenderWhere(sentence, consoleInfoX, top + i, true, Vars)
                     );

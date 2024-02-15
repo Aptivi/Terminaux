@@ -66,14 +66,14 @@ namespace Terminaux.Writer.FancyWriters.Tools
                     var nextBack = segment.SegmentBackground;
 
                     // Now, put transition to our string
-                    SegmentStringBuilder.Append(backAsFore.VTSequenceForeground);
+                    SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(backAsFore));
                     SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(nextBack, true));
                     SegmentStringBuilder.AppendFormat("{0}", segment.SegmentTransitionIcon != default ? segment.SegmentTransitionIcon : transitionChar);
                 }
 
                 // Now, try to append the PowerLine segment and its contents
                 bool appendIcon = segment.SegmentIcon != default;
-                SegmentStringBuilder.Append(segment.SegmentForeground.VTSequenceForeground);
+                SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(segment.SegmentForeground));
                 SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(segment.SegmentBackground, true));
                 if (appendIcon)
                     SegmentStringBuilder.AppendFormat(" {0}", segment.SegmentIcon);
@@ -82,7 +82,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
                 // If the segment is the last one, make the final transition!
                 if (segmentIdx == segments.Count - 1)
                 {
-                    SegmentStringBuilder.Append(segment.SegmentBackground.VTSequenceForeground);
+                    SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(segment.SegmentBackground));
                     SegmentStringBuilder.Append(ColorTools.RenderSetConsoleColor(EndingColor, true));
                     SegmentStringBuilder.AppendFormat("{0} ", transitionChar);
                 }

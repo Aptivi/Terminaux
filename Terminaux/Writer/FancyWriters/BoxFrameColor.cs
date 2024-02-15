@@ -974,7 +974,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (useColor)
                 {
                     frameBuilder.Append(
-                        BoxFrameColor.VTSequenceForeground +
+                        ColorTools.RenderSetConsoleColor(BoxFrameColor) +
                         ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
@@ -1004,7 +1004,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (useColor)
                 {
                     frameBuilder.Append(
-                        TextColor.VTSequenceForeground +
+                        ColorTools.RenderSetConsoleColor(TextColor) +
                         ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }

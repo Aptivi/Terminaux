@@ -178,7 +178,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (useColor)
                 {
                     table.Append(
-                        HeaderForegroundColor.VTSequenceForeground +
+                        ColorTools.RenderSetConsoleColor(HeaderForegroundColor) +
                         ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
@@ -202,7 +202,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (useColor)
                 {
                     table.Append(
-                        SeparatorForegroundColor.VTSequenceForeground +
+                        ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
                         ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                     );
                 }
@@ -247,12 +247,12 @@ namespace Terminaux.Writer.FancyWriters
                         {
                             if (ColoredCell)
                                 rowBuilder.Append(
-                                    CellColor.VTSequenceForeground +
+                                    ColorTools.RenderSetConsoleColor(CellColor) +
                                     CellBackgroundColor.VTSequenceBackground
                                 );
                             else
                                 rowBuilder.Append(
-                                    ValueForegroundColor.VTSequenceForeground +
+                                    ColorTools.RenderSetConsoleColor(ValueForegroundColor) +
                                     ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                                 );
                         }
@@ -273,7 +273,7 @@ namespace Terminaux.Writer.FancyWriters
                         if (useColor)
                         {
                             table.Append(
-                                SeparatorForegroundColor.VTSequenceForeground +
+                                ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
                                 ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                             );
                         }

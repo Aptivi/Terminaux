@@ -270,17 +270,17 @@ namespace Terminaux.Writer.ConsoleWriters
                         Values.Add(Value);
                     string valuesString = string.Join(", ", Values);
                     listBuilder.AppendLine(
-                        $"{(useColor ? ListKeyColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
                         $"- {ListEntry}: " +
-                        $"{(useColor ? ListValueColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
                         $"{valuesString}"
                     );
                 }
                 else
                     listBuilder.AppendLine(
-                        $"{(useColor ? ListKeyColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
                         $"- {ListEntry}: " +
-                        $"{(useColor ? ListValueColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
                         $"{value}"
                     );
             }
@@ -412,17 +412,17 @@ namespace Terminaux.Writer.ConsoleWriters
                         Values.Add(Value);
                     string valuesString = string.Join(", ", Values);
                     listBuilder.AppendLine(
-                        $"{(useColor ? ListKeyColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
                         $"- {EntryNumber}: " +
-                        $"{(useColor ? ListValueColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
                         $"{valuesString}"
                     );
                 }
                 else
                     listBuilder.AppendLine(
-                        $"{(useColor ? ListKeyColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
                         $"- {EntryNumber}: " +
-                        $"{(useColor ? ListValueColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
                         $"{ListEntry}"
                     );
                 EntryNumber += 1;

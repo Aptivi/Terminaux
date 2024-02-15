@@ -391,7 +391,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         BorderColor.RenderBorderPlain(title, borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar) :
                         BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                     boxBuffer.Append(
-                        $"{(useColor ? InfoBoxTitledColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(InfoBoxTitledColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                         $"{border}"
                     );
@@ -422,7 +422,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         boxBuffer.Append(
                             BorderColor.RenderBorder(inputPosX, inputPosY, maxInputWidth, 1, InfoBoxTitledColor, BackgroundColor) +
                             CsiSequences.GenerateCsiCursorPosition(inputPosX + 2, inputPosY + 2) +
-                            $"{InfoBoxTitledColor.VTSequenceForeground}" +
+                            $"{ColorTools.RenderSetConsoleColor(InfoBoxTitledColor)}" +
                             $"{ColorTools.RenderSetConsoleColor(BackgroundColor, true)}"
                         );
                     }

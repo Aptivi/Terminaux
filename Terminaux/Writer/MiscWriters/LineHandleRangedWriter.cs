@@ -282,8 +282,8 @@ namespace Terminaux.Writer.MiscWriters
                 RepeatBlanks = 0;
             if (RepeatMarkers < 0)
                 RepeatMarkers = 0;
-            builder.AppendLine($"{color.VTSequenceForeground} {LineNumber} | {LineContent}");
-            builder.AppendLine($"{color.VTSequenceForeground} {new string(' ', digits)} | {new string(' ', RepeatBlanks)}^{new string('~', RepeatMarkers)}");
+            builder.AppendLine($"{ColorTools.RenderSetConsoleColor(color)} {LineNumber} | {LineContent}");
+            builder.AppendLine($"{ColorTools.RenderSetConsoleColor(color)} {new string(' ', digits)} | {new string(' ', RepeatBlanks)}^{new string('~', RepeatMarkers)}");
 
             // Write the resulting buffer
             builder.Append(

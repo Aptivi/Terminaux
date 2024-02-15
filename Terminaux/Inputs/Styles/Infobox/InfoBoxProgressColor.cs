@@ -387,7 +387,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         BorderColor.RenderBorderPlain(title, borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar) :
                         BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                     boxBuffer.Append(
-                        $"{(useColor ? InfoBoxTitledProgressColor.VTSequenceForeground : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(InfoBoxTitledProgressColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                         $"{border}"
                     );

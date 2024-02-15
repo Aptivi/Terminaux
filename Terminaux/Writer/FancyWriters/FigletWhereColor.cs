@@ -237,7 +237,7 @@ namespace Terminaux.Writer.FancyWriters
             Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
             var builder = new StringBuilder();
             builder.Append(
-                $"{(useColor ? ForegroundColor.VTSequenceForeground : "")}" +
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                 TextWriterWhereColor.RenderWhere(Text, Left, Top, Return, Vars) +
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) : "")}" +
