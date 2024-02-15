@@ -20,6 +20,7 @@
 using System;
 using Terminaux.Reader;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Base
 {
@@ -106,6 +107,11 @@ namespace Terminaux.Base
             // Tell the reader to refresh itself
             if (TermReaderTools.Busy)
                 TermReaderTools.Refresh();
+        }
+
+        static ConsoleResizeHandler()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

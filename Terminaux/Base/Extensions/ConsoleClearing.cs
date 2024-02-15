@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base.Checks;
 using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;
 
@@ -53,6 +54,11 @@ namespace Terminaux.Base.Extensions
         {
             ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.EscFullReset));
             ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSoftTerminalReset));
+        }
+
+        static ConsoleClearing()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

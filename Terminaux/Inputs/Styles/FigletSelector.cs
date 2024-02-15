@@ -23,6 +23,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
@@ -240,6 +241,11 @@ namespace Terminaux.Inputs.Styles
                 if (screen.CheckBufferedPart("Figlet selector - show characters"))
                     screen.RemoveBufferedPart("Figlet selector - show characters");
             }
+        }
+
+        static FigletSelector()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

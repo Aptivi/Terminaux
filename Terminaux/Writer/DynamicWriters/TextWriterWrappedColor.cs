@@ -27,6 +27,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Reader;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.DynamicWriters
 {
@@ -35,7 +36,6 @@ namespace Terminaux.Writer.DynamicWriters
     /// </summary>
     public static class TextWriterWrappedColor
     {
-
         /// <summary>
         /// Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
         /// </summary>
@@ -192,5 +192,9 @@ namespace Terminaux.Writer.DynamicWriters
             }
         }
 
+        static TextWriterWrappedColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

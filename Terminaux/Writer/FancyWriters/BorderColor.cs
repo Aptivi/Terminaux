@@ -23,6 +23,7 @@ using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -899,5 +900,10 @@ namespace Terminaux.Writer.FancyWriters
                 UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
                 BorderColor, BackgroundColor, TextColor, useColor, vars
             );
+
+        static BorderColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

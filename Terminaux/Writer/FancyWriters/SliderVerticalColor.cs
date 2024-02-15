@@ -27,6 +27,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -35,7 +36,6 @@ namespace Terminaux.Writer.FancyWriters
     /// </summary>
     public static class SliderVerticalColor
     {
-
         /// <summary>
         /// Writes the vertical slider
         /// </summary>
@@ -420,5 +420,9 @@ namespace Terminaux.Writer.FancyWriters
             return "";
         }
 
+        static SliderVerticalColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

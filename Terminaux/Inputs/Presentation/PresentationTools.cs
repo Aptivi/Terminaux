@@ -28,6 +28,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -221,6 +222,11 @@ namespace Terminaux.Inputs.Presentation
             // Seek to the first position inside the border
             builder.Append(CsiSequences.GenerateCsiCursorPosition(PresentationUpperInnerBorderLeft + 1, PresentationUpperInnerBorderTop + 1));
             return builder.ToString();
+        }
+
+        static PresentationTools()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

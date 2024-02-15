@@ -23,6 +23,7 @@ using System;
 using System.Diagnostics;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -34,7 +35,6 @@ namespace Terminaux.Writer.FancyWriters
     /// </summary>
     public static class CenteredFigletTextColor
     {
-
         /// <summary>
         /// Draw a centered figlet with text
         /// </summary>
@@ -341,5 +341,9 @@ namespace Terminaux.Writer.FancyWriters
             return "";
         }
 
+        static CenteredFigletTextColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base.Checks;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -70,6 +71,11 @@ namespace Terminaux.Base.Extensions
             // Filter all sequences
             Text = VtSequenceTools.FilterVTSequences(Text);
             return Text;
+        }
+
+        static ConsoleMisc()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

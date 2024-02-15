@@ -24,6 +24,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation.Contrast;
 using System.Text;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Colors
 {
@@ -454,6 +455,11 @@ namespace Terminaux.Colors
                 else
                     currentForegroundColor = ColorSequence;
             }
+        }
+
+        static ColorTools()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

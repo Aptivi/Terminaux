@@ -26,6 +26,7 @@ using Textify.General;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -34,7 +35,6 @@ namespace Terminaux.Writer.ConsoleWriters
     /// </summary>
     public static class TextWriterWhereColor
     {
-
         /// <summary>
         /// Outputs the text into the terminal prompt with location support.
         /// </summary>
@@ -445,5 +445,9 @@ namespace Terminaux.Writer.ConsoleWriters
             }
         }
 
+        static TextWriterWhereColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

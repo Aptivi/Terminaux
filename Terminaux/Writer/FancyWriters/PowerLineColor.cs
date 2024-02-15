@@ -25,6 +25,7 @@ using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 using SpecProbe.Platform;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -33,7 +34,6 @@ namespace Terminaux.Writer.FancyWriters
     /// </summary>
     public static class PowerLineColor
     {
-
         /// <summary>
         /// Writes the PowerLine text
         /// </summary>
@@ -96,9 +96,9 @@ namespace Terminaux.Writer.FancyWriters
 
         static PowerLineColor()
         {
+            ConsoleChecker.CheckConsole();
             if (PlatformHelper.IsOnWindows())
                 Console.OutputEncoding = Encoding.UTF8;
         }
-
     }
 }

@@ -30,6 +30,7 @@ using Textify.General;
 using SpecProbe.Platform;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Sequences.Builder.Types;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Base.Extensions
 {
@@ -355,5 +356,9 @@ namespace Terminaux.Base.Extensions
         }
         #endregion
 
+        static ConsolePositioning()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

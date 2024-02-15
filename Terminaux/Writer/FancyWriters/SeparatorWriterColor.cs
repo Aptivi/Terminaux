@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -32,7 +33,6 @@ namespace Terminaux.Writer.FancyWriters
     /// </summary>
     public static class SeparatorWriterColor
     {
-
         /// <summary>
         /// Draw a separator with text plainly
         /// </summary>
@@ -297,5 +297,9 @@ namespace Terminaux.Writer.FancyWriters
             return "";
         }
 
+        static SeparatorWriterColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

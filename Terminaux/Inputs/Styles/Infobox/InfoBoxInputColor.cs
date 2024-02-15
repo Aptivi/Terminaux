@@ -31,6 +31,7 @@ using Textify.General;
 using System.Diagnostics;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -471,6 +472,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.UnsetCurrent(screen);
             }
             return "";
+        }
+
+        static InfoBoxInputColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

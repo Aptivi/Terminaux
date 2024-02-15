@@ -27,6 +27,7 @@ using System.Diagnostics;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.DynamicWriters
 {
@@ -35,7 +36,6 @@ namespace Terminaux.Writer.DynamicWriters
     /// </summary>
     public static class TextWriterWhereSlowColor
     {
-
         /// <summary>
         /// Outputs the text into the terminal prompt with location support.
         /// </summary>
@@ -308,5 +308,9 @@ namespace Terminaux.Writer.DynamicWriters
             }
         }
 
+        static TextWriterWhereSlowColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

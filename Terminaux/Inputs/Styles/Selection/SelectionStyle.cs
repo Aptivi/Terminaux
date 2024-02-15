@@ -25,6 +25,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -42,7 +43,6 @@ namespace Terminaux.Inputs.Styles.Selection
     /// </summary>
     public static class SelectionStyle
     {
-
         /// <summary>
         /// Prompts user for selection
         /// </summary>
@@ -522,5 +522,9 @@ namespace Terminaux.Inputs.Styles.Selection
             return HighlightedAnswer;
         }
 
+        static SelectionStyle()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

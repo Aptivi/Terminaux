@@ -20,6 +20,7 @@
 using System;
 using System.IO;
 using System.Text;
+using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -31,7 +32,6 @@ namespace Terminaux.Writer.MiscWriters
     /// </summary>
     public static class LineHandleRangedWriter
     {
-
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
         /// </summary>
@@ -296,5 +296,9 @@ namespace Terminaux.Writer.MiscWriters
         internal static int GetDigits(int Number) =>
             Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
 
+        static LineHandleRangedWriter()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

@@ -27,6 +27,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -35,7 +36,6 @@ namespace Terminaux.Writer.FancyWriters
     /// </summary>
     public static class ProgressBarVerticalColor
     {
-
         /// <summary>
         /// Writes the vertical progress bar
         /// </summary>
@@ -385,5 +385,9 @@ namespace Terminaux.Writer.FancyWriters
             return "";
         }
 
+        static ProgressBarVerticalColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

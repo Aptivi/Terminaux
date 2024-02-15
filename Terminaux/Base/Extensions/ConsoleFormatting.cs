@@ -18,6 +18,7 @@
 //
 
 using System.Text;
+using Terminaux.Base.Checks;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -124,6 +125,11 @@ namespace Terminaux.Base.Extensions
         {
             TextWriterRaw.WriteRaw(GetFormattingSequences(ConsoleFormattingType.Default));
             formatting = ConsoleFormattingType.Default;
+        }
+
+        static ConsoleFormatting()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

@@ -32,6 +32,7 @@ using Textify.General;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -630,6 +631,11 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Return the selected choices
             selectedChoices.Sort();
             return [.. selectedChoices];
+        }
+
+        static InfoBoxSelectionMultipleColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

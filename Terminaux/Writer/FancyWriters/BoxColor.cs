@@ -23,6 +23,7 @@ using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -133,6 +134,11 @@ namespace Terminaux.Writer.FancyWriters
             if (useColor)
                 box.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
             return box.ToString();
+        }
+
+        static BoxColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

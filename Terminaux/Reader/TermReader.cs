@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Base.Checks;
 using Terminaux.Colors.Data;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.Tools;
@@ -346,6 +347,11 @@ namespace Terminaux.Reader
                 states.Remove(readState);
                 return input;
             }
+        }
+
+        static TermReader()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

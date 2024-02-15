@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
@@ -35,7 +36,6 @@ namespace Terminaux.Writer.FancyWriters
     /// </summary>
     public static class TableColor
     {
-
         /// <summary>
         /// Draw a table with text
         /// </summary>
@@ -303,5 +303,9 @@ namespace Terminaux.Writer.FancyWriters
             return "";
         }
 
+        static TableColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

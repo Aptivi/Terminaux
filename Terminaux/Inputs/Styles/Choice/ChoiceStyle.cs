@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
+using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader;
@@ -35,7 +36,6 @@ namespace Terminaux.Inputs.Styles.Choice
     /// </summary>
     public static class ChoiceStyle
     {
-
         /// <summary>
         /// Prompts user for choice
         /// </summary>
@@ -974,5 +974,9 @@ namespace Terminaux.Inputs.Styles.Choice
             }
         }
 
+        static ChoiceStyle()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

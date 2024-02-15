@@ -32,6 +32,7 @@ using Terminaux.Colors.Data;
 using System.Linq;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -579,6 +580,11 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (cancel)
                 selectedButton = -1;
             return selectedButton;
+        }
+
+        static InfoBoxButtonsColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Sequences;
@@ -34,7 +35,6 @@ namespace Terminaux.Writer.DynamicWriters
     /// </summary>
     public static class TextWriterSlowColor
     {
-
         /// <summary>
         /// Outputs the text into the terminal prompt slowly with color support.
         /// </summary>
@@ -121,5 +121,9 @@ namespace Terminaux.Writer.DynamicWriters
             }
         }
 
+        static TextWriterSlowColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

@@ -20,6 +20,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Reader;
 using Textify.General;
@@ -213,6 +214,11 @@ namespace Terminaux.Writer.ConsoleWriters
                 }
                 return "";
             }
+        }
+
+        static TextWriterColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

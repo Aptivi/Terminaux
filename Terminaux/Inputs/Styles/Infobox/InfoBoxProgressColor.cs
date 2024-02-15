@@ -30,6 +30,7 @@ using System.Diagnostics;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -447,6 +448,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }
+        }
+
+        static InfoBoxProgressColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

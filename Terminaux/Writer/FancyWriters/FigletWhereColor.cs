@@ -25,6 +25,7 @@ using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -33,7 +34,6 @@ namespace Terminaux.Writer.FancyWriters
     /// </summary>
     public static class FigletWhereColor
     {
-
         /// <summary>
         /// Writes the figlet text with position support
         /// </summary>
@@ -246,5 +246,9 @@ namespace Terminaux.Writer.FancyWriters
             return builder.ToString();
         }
 
+        static FigletWhereColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

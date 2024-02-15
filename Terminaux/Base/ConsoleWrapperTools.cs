@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Reader;
@@ -314,33 +315,8 @@ namespace Terminaux.Base
         }
 
         // Wrapper starts here
-        private static bool _dumbSet = false;
-        private static bool _dumb = true;
-
-        private static bool IsDumb
-        {
-            get
-            {
-                try
-                {
-                    // Get terminal type
-                    string TerminalType = Environment.GetEnvironmentVariable("TERM") ?? "";
-
-                    // Try to cache the value
-                    if (!_dumbSet)
-                    {
-                        _dumbSet = true;
-                        int _ = Console.CursorLeft;
-
-                        // If it doesn't get here without throwing exceptions, assume console is dumb. Now, check to see if terminal type is dumb
-                        if (TerminalType != "dumb")
-                            _dumb = false;
-                    }
-                }
-                catch { }
-                return _dumb;
-            }
-        }
+        private static bool IsDumb =>
+            ConsoleChecker.IsDumb;
 
         private static int CursorLeft
         {

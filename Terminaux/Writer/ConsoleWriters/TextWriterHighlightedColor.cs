@@ -20,6 +20,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Reader;
@@ -392,6 +393,11 @@ namespace Terminaux.Writer.ConsoleWriters
                 }
                 return "";
             }
+        }
+
+        static TextWriterHighlightedColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

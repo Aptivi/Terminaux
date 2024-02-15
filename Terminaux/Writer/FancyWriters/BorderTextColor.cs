@@ -27,6 +27,7 @@ using Terminaux.Colors.Data;
 using Textify.General;
 using System.Linq;
 using Terminaux.Base;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -1654,6 +1655,11 @@ namespace Terminaux.Writer.FancyWriters
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
             }
             return border.ToString();
+        }
+
+        static BorderTextColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

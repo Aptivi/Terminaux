@@ -19,6 +19,7 @@
 
 using System;
 using System.IO;
+using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
@@ -30,7 +31,6 @@ namespace Terminaux.Writer.MiscWriters
     /// </summary>
     public static class LineHandleWriter
     {
-
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
         /// </summary>
@@ -223,5 +223,9 @@ namespace Terminaux.Writer.MiscWriters
         public static string RenderLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, Color color) =>
             LineHandleRangedWriter.RenderLineHandle(Array, LineNumber, ColumnNumber, 0, color, false);
 
+        static LineHandleWriter()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }

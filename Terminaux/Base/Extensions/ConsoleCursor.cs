@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base.Checks;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -66,6 +67,11 @@ namespace Terminaux.Base.Extensions
                     cursorType = value;
                 }
             }
+        }
+
+        static ConsoleCursor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

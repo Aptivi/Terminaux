@@ -33,6 +33,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -827,6 +828,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }
+        }
+
+        static InfoBoxColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

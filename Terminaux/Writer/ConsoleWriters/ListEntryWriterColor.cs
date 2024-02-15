@@ -20,6 +20,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 
@@ -138,6 +139,11 @@ namespace Terminaux.Writer.ConsoleWriters
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) : "")}"
             );
             return listBuilder.ToString();
+        }
+
+        static ListEntryWriterColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

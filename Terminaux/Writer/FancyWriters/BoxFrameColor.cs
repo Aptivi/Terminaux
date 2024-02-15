@@ -26,6 +26,7 @@ using System.Diagnostics;
 using Textify.General;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -1034,6 +1035,11 @@ namespace Terminaux.Writer.FancyWriters
                 Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
             }
             return "";
+        }
+
+        static BoxFrameColor()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

@@ -21,6 +21,7 @@ using System;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Models.Conversion;
@@ -726,6 +727,11 @@ namespace Terminaux.Inputs.Styles
                 TransformationTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
                 selectedColor;
             InfoBoxColor.WriteInfoBoxColorBack(localizedTextTitle, ColorTools.GetGray(selectedColor), selectedColor);
+        }
+
+        static ColorSelector()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

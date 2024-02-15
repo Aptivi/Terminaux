@@ -18,6 +18,7 @@
 //
 
 using System.Collections.Generic;
+using Terminaux.Base.Checks;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Base.Buffered
@@ -87,6 +88,11 @@ namespace Terminaux.Base.Buffered
 
             // Remove the screen from the list
             screens.Remove(screen);
+        }
+
+        static ScreenTools()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

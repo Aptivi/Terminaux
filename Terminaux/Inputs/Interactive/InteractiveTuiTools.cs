@@ -25,6 +25,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
+using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
@@ -622,6 +623,11 @@ namespace Terminaux.Inputs.Interactive
             InteractiveTuiStatus.CurrentPane++;
             if (InteractiveTuiStatus.CurrentPane > 2)
                 InteractiveTuiStatus.CurrentPane = 1;
+        }
+
+        static InteractiveTuiTools()
+        {
+            ConsoleChecker.CheckConsole();
         }
     }
 }

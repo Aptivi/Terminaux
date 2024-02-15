@@ -26,6 +26,7 @@ using System.Diagnostics;
 using Terminaux.Colors.Data;
 using System.Linq;
 using Terminaux.Writer.DynamicWriters;
+using Terminaux.Base.Checks;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -544,5 +545,10 @@ namespace Terminaux.Writer.ConsoleWriters
         internal static string RenderList(IEnumerable List, Color ListKeyColor, Color ListValueColor, bool useColor) =>
             RenderList(List.OfType<object>(), ListKeyColor, ListValueColor, useColor);
         #endregion
+
+        static ListWriterColor()
+        {
+            ConsoleChecker.CheckConsole();
+        }
     }
 }
