@@ -93,8 +93,8 @@ namespace Terminaux.Base.Checks
             {
                 throw new TerminauxException(
                     "This application makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + Environment.NewLine +
-                    "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\"." + Environment.NewLine +
-                    "                   We recommend using the \"vt100\" terminal emulators to get the most out of this application."
+                    "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\". " +
+                    "We recommend using the \"vt100\" terminal emulators to get the most out of this application."
                 );
             }
 
@@ -222,11 +222,11 @@ namespace Terminaux.Base.Checks
             // Check for the minimum console window requirements (80x24)
             while (!CheckConsoleSize(minimumWidth, minimumHeight))
             {
-                TextWriterRaw.WriteRaw("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
+                TextWriterRaw.WritePlain("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
                     ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight,
                     Console.BufferWidth, ConsoleWrapper.BufferHeight,
                     minimumWidth, minimumHeight);
-                TextWriterRaw.WriteRaw("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
+                TextWriterRaw.WritePlain("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
                 TermReader.ReadKey();
             }
         }
