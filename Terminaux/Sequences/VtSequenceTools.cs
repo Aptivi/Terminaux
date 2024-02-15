@@ -82,12 +82,9 @@ namespace Terminaux.Sequences
         /// <returns>The array of <see cref="MatchCollection"/>s that contain the capture and group information for the found VT sequences</returns>
         public static Match[][] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
-            // Cache the compiled VT sequences first
-            var sequenceFilterRegex = VtSequenceRegexes.AllVTSequences;
-
             // Match all sequences according to the type
             List<Match[]> matchCollections = [];
-            sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
+            var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
             matchCollections.Add(sequenceFilterRegex.Matches(Text).OfType<Match>().ToArray());
             return [.. matchCollections];
         }
