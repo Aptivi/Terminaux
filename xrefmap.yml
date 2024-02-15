@@ -12498,6 +12498,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.AllowBackground
   nameWithType: ColorTools.AllowBackground
+- uid: Terminaux.Colors.ColorTools.AllowForeground
+  name: AllowForeground
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_AllowForeground
+  commentId: P:Terminaux.Colors.ColorTools.AllowForeground
+  fullName: Terminaux.Colors.ColorTools.AllowForeground
+  nameWithType: ColorTools.AllowForeground
+- uid: Terminaux.Colors.ColorTools.AllowForeground*
+  name: AllowForeground
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_AllowForeground_
+  commentId: Overload:Terminaux.Colors.ColorTools.AllowForeground
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.AllowForeground
+  nameWithType: ColorTools.AllowForeground
 - uid: Terminaux.Colors.ColorTools.CurrentBackgroundColor
   name: CurrentBackgroundColor
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_CurrentBackgroundColor
@@ -12673,6 +12686,12 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.RenderResetForeground
   nameWithType: ColorTools.RenderResetForeground
+- uid: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color)
+  name: RenderSetConsoleColor(Color)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderSetConsoleColor_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color)
+  nameWithType: ColorTools.RenderSetConsoleColor(Color)
 - uid: Terminaux.Colors.ColorTools.RenderSetConsoleColor(Terminaux.Colors.Color,System.Boolean)
   name: RenderSetConsoleColor(Color, bool)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_RenderSetConsoleColor_Terminaux_Colors_Color_System_Boolean_
