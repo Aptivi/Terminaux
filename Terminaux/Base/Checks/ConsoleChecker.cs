@@ -47,9 +47,6 @@ namespace Terminaux.Base.Checks
             {
                 try
                 {
-                    // Get terminal type
-                    string TerminalType = PlatformHelper.GetTerminalType();
-
                     // Try to cache the value
                     if (!_dumbSet)
                     {
@@ -57,7 +54,8 @@ namespace Terminaux.Base.Checks
                         int _ = ConsoleWrapper.CursorLeft;
 
                         // If it doesn't get here without throwing exceptions, assume console is dumb. Now, check to see if terminal type is dumb
-                        if (TerminalType != "dumb" && TerminalType != "unknown")
+                        var filtered = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist);
+                        if (!filtered.filtered)
                             _dumb = false;
                     }
                 }
