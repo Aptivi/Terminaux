@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Linq;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
@@ -46,7 +45,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Reader
             text = text.Substring(0, index);
             string[] parts = text.Split(delims);
             if (parts.Length == 0)
-                return Array.Empty<string>();
+                return [];
             else
             {
                 if (parts[0] == "dotnet")
@@ -60,7 +59,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Reader
                         .Select((str) => str.Substring(parts[1].Length))
                         .ToArray();
             }
-            return Array.Empty<string>();
+            return [];
         }
     }
 }

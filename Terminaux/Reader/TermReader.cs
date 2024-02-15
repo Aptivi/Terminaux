@@ -338,7 +338,7 @@ namespace Terminaux.Reader
                     // Reset the auto complete position and suggestions
                     TermReaderState.currentSuggestionsPos = 0;
                     TermReaderState.currentHistoryPos = TermReaderState.history.Count;
-                    settings.Suggestions = (_, _, _) => Array.Empty<string>();
+                    settings.Suggestions = (_, _, _) => [];
 
                     // Reset the CTRL + C state and the cursor visibility state
                     ConsoleWrapper.TreatCtrlCAsInput = ctrlCAsInput;

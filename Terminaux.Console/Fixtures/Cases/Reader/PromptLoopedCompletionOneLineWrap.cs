@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -45,7 +44,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Reader
         {
             string[] parts = text.Split(delims);
             if (parts.Length == 0)
-                return Array.Empty<string>();
+                return [];
             else
             {
                 if (parts[0] == "dotnet")
@@ -53,7 +52,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Reader
                 else if (parts[0] == "git")
                     return ["fetch", "pull", "push"];
             }
-            return Array.Empty<string>();
+            return [];
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Terminaux.Reader
         private bool syntaxHighlighterEnabled;
         private string placeholderText = "";
         internal TermReaderState? state;
-        internal Func<string, int, char[], string[]> suggestions = (_, _, _) => Array.Empty<string>();
+        internal Func<string, int, char[], string[]> suggestions = (_, _, _) => [];
         internal char[] suggestionsDelims = [' '];
 
         /// <summary>
@@ -102,7 +102,7 @@ namespace Terminaux.Reader
         /// </summary>
         public Func<string, int, char[], string[]> Suggestions
         {
-            set => suggestions = value ?? ((_, _, _) => Array.Empty<string>());
+            set => suggestions = value ?? ((_, _, _) => []);
         }
 
         /// <summary>
