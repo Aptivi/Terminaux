@@ -1879,6 +1879,31 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences
   nameWithType: ConsoleMisc.GetWrappedSentences
+- uid: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords(System.String,System.Int32)
+  name: GetWrappedSentencesByWords(string, int)
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_GetWrappedSentencesByWords_System_String_System_Int32_
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords(System.String,System.Int32)
+  name.vb: GetWrappedSentencesByWords(String, Integer)
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords(string, int)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords(String, Integer)
+  nameWithType: ConsoleMisc.GetWrappedSentencesByWords(string, int)
+  nameWithType.vb: ConsoleMisc.GetWrappedSentencesByWords(String, Integer)
+- uid: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords(System.String,System.Int32,System.Int32)
+  name: GetWrappedSentencesByWords(string, int, int)
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_GetWrappedSentencesByWords_System_String_System_Int32_System_Int32_
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords(System.String,System.Int32,System.Int32)
+  name.vb: GetWrappedSentencesByWords(String, Integer, Integer)
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords(string, int, int)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords(String, Integer, Integer)
+  nameWithType: ConsoleMisc.GetWrappedSentencesByWords(string, int, int)
+  nameWithType.vb: ConsoleMisc.GetWrappedSentencesByWords(String, Integer, Integer)
+- uid: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords*
+  name: GetWrappedSentencesByWords
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_GetWrappedSentencesByWords_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords
+  nameWithType: ConsoleMisc.GetWrappedSentencesByWords
 - uid: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeat(System.Int32,System.Int32,System.Int32)
   name: PercentRepeat(int, int, int)
   href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_PercentRepeat_System_Int32_System_Int32_System_Int32_
