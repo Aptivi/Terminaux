@@ -82,6 +82,45 @@ namespace Terminaux.Tests.Base
         }
 
         /// <summary>
+        /// Tests getting wrapped sentences
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetWrappedSentencesByWords()
+        {
+            var sentences = ConsoleMisc.GetWrappedSentencesByWords("Nitrocid KS kernel sim", 4);
+            sentences.ShouldNotBeNull();
+            sentences.ShouldNotBeEmpty();
+            sentences.Length.ShouldBe(6);
+            sentences[0].ShouldBe("Nitr");
+            sentences[1].ShouldBe("ocid");
+            sentences[2].ShouldBe("KS");
+            sentences[3].ShouldBe("kern");
+            sentences[4].ShouldBe("el");
+            sentences[5].ShouldBe("sim");
+        }
+
+        /// <summary>
+        /// Tests getting wrapped sentences
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetWrappedSentencesByWordsIndented()
+        {
+            var sentences = ConsoleMisc.GetWrappedSentencesByWords("Nitrocid KS kernel sim", 4, 2);
+            sentences.ShouldNotBeNull();
+            sentences.ShouldNotBeEmpty();
+            sentences.Length.ShouldBe(7);
+            sentences[0].ShouldBe("Ni");
+            sentences[1].ShouldBe("troc");
+            sentences[2].ShouldBe("id");
+            sentences[3].ShouldBe("KS");
+            sentences[4].ShouldBe("kern");
+            sentences[5].ShouldBe("el");
+            sentences[6].ShouldBe("sim");
+        }
+
+        /// <summary>
         /// Tests truncating...
         /// </summary>
         [TestMethod]

@@ -78,7 +78,7 @@ namespace Terminaux.Base.Extensions
         }
 
         /// <summary>
-        /// Gets the wrapped sentences for text wrapping for console
+        /// Gets the wrapped sentences for text wrapping for console (with character wrapping)
         /// </summary>
         /// <param name="text">Text to be wrapped</param>
         /// <param name="maximumLength">Maximum length of text before wrapping</param>
@@ -86,7 +86,7 @@ namespace Terminaux.Base.Extensions
             GetWrappedSentences(text, maximumLength, 0);
 
         /// <summary>
-        /// Gets the wrapped sentences for text wrapping for console
+        /// Gets the wrapped sentences for text wrapping for console (with character wrapping)
         /// </summary>
         /// <param name="text">Text to be wrapped</param>
         /// <param name="maximumLength">Maximum length of text before wrapping</param>
@@ -164,6 +164,128 @@ namespace Terminaux.Base.Extensions
                         }
                     }
                 }
+            }
+
+            return [.. IncompleteSentences];
+        }
+
+        /// <summary>
+        /// Gets the wrapped sentences for text wrapping for console (with word wrapping)
+        /// </summary>
+        /// <param name="text">Text to be wrapped</param>
+        /// <param name="maximumLength">Maximum length of text before wrapping</param>
+        public static string[] GetWrappedSentencesByWords(string text, int maximumLength) =>
+            GetWrappedSentencesByWords(text, maximumLength, 0);
+
+        /// <summary>
+        /// Gets the wrapped sentences for text wrapping for console (with word wrapping)
+        /// </summary>
+        /// <param name="text">Text to be wrapped</param>
+        /// <param name="maximumLength">Maximum length of text before wrapping</param>
+        /// <param name="indentLength">Indentation length</param>
+        public static string[] GetWrappedSentencesByWords(string text, int maximumLength, int indentLength)
+        {
+            if (string.IsNullOrEmpty(text))
+                return [""];
+
+            // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
+            // sizes.
+            var IncompleteSentences = new List<string>();
+            var IncompleteSentenceBuilder = new StringBuilder();
+
+            // Make the text look like it came from Linux
+            text = text.Replace(Convert.ToString(Convert.ToChar(13)), "");
+
+            // Convert tabs to four spaces
+            text = text.Replace("\t", "    ");
+
+            // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
+            // the first time and will be reverted back to zero after the incomplete sentence is formed.
+            foreach (string splitText in text.SplitNewLines())
+            {
+                int vtSeqIdx = 0;
+                int vtSeqCompensate = 0;
+                if (splitText.Length == 0)
+                {
+                    IncompleteSentences.Add(splitText);
+                    continue;
+                }
+
+                // Helper functions
+                void CompensateLengths(string text)
+                {
+                    var sequencesCollections = VtSequenceTools.MatchVTSequences(text);
+                    foreach (var sequences in sequencesCollections)
+                    {
+                        if (sequences.Length == 0)
+                            continue;
+                        var sequence = sequences[vtSeqIdx];
+                        vtSeqCompensate += sequence.Value.Length;
+                    }
+                }
+
+                // Split the text by spaces
+                var words = splitText.Split(' ');
+                for (int i = 0; i < words.Length; i++)
+                {
+                    // Check the character to see if we're at the VT sequence
+                    string word = words[i];
+                    CompensateLengths(word);
+
+                    // Compensate the \0 characters
+                    if (splitText[i] == '\0')
+                        vtSeqCompensate++;
+
+                    // Append the word into the incomplete sentence builder.
+                    int finalMaximum = maximumLength - indentLength + vtSeqCompensate;
+                    if (word.Length >= finalMaximum)
+                    {
+                        var charSplit = GetWrappedSentences(word, maximumLength, indentLength);
+                        for (int splitIdx = 0; splitIdx < charSplit.Length - 1; splitIdx++)
+                        {
+                            string charSplitText = charSplit[splitIdx];
+
+                            // We need to add character splits, except the last one.
+                            if (IncompleteSentenceBuilder.Length > 0)
+                                IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+                            IncompleteSentences.Add(charSplitText);
+
+                            // Clean everything up
+                            IncompleteSentenceBuilder.Clear();
+                            indentLength = 0;
+                            vtSeqCompensate = 0;
+                        }
+
+                        // Process the character split last text
+                        string charSplitLastText = charSplit[charSplit.Length - 1];
+                        word = charSplitLastText;
+                        CompensateLengths(charSplitLastText);
+                        finalMaximum = maximumLength - indentLength + vtSeqCompensate;
+                        IncompleteSentenceBuilder.Append(charSplitLastText);
+                    }
+                    else if (IncompleteSentenceBuilder.Length + word.Length < finalMaximum)
+                        IncompleteSentenceBuilder.Append(word);
+
+                    // Check to see if we're at the maximum length
+                    int nextWord = i + 1 >= words.Length ? 1 : words[i + 1].Length + 1;
+                    if (IncompleteSentenceBuilder.Length + nextWord >= finalMaximum)
+                    {
+                        // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
+                        IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+
+                        // Clean everything up
+                        IncompleteSentenceBuilder.Clear();
+                        indentLength = 0;
+                        vtSeqCompensate = 0;
+                    }
+                    else
+                    {
+                        IncompleteSentenceBuilder.Append(IncompleteSentenceBuilder.Length + nextWord >= finalMaximum ? "" : " ");
+                    }
+                }
+                if (IncompleteSentenceBuilder.Length > 0)
+                    IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+                IncompleteSentenceBuilder.Clear();
             }
 
             return [.. IncompleteSentences];
