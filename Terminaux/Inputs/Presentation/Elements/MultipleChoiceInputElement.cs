@@ -82,7 +82,6 @@ namespace Terminaux.Inputs.Presentation.Elements
 
             // Write the buffer text
             string bufferText = buffer.ToString();
-            string[] splitBufferText = ConsoleMisc.GetWrappedSentences(bufferText, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
             int maxHeightFinal = PresentationTools.PresentationLowerInnerBorderTop - top + 1;
             if (maxHeightFinal <= 0)
             {
@@ -90,7 +89,7 @@ namespace Terminaux.Inputs.Presentation.Elements
                 TextWriterWhereColor.WriteWhereColor(bufferText, PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
                 TermReader.ReadKey();
                 TextWriterRaw.WriteRaw(PresentationTools.ClearPresentation());
-                seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
+                top = PresentationTools.PresentationUpperInnerBorderTop;
                 buffer.Clear();
             }
             else
@@ -140,7 +139,6 @@ namespace Terminaux.Inputs.Presentation.Elements
 
             // Write the choicebuffer text
             string choiceBufferText = choiceBuffer.ToString();
-            string[] splitChoiceBufferText = ConsoleMisc.GetWrappedSentences(choiceBufferText, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
             int maxChoiceHeightFinal = PresentationTools.PresentationLowerInnerBorderTop - top + 1;
             if (maxChoiceHeightFinal <= 0)
             {
@@ -148,7 +146,6 @@ namespace Terminaux.Inputs.Presentation.Elements
                 TextWriterWhereColor.WriteWhereColor(choiceBufferText, PresentationTools.PresentationUpperInnerBorderLeft, choiceSeekTop, false, new Color(ConsoleColors.White));
                 TermReader.ReadKey();
                 TextWriterRaw.WriteRaw(PresentationTools.ClearPresentation());
-                seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
                 buffer.Clear();
             }
             else

@@ -81,7 +81,6 @@ namespace Terminaux.Inputs.Presentation.Elements
 
             // Write the buffer text
             string bufferText = buffer.ToString();
-            string[] splitBufferText = ConsoleMisc.GetWrappedSentences(bufferText, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
             int maxHeightFinal = PresentationTools.PresentationLowerInnerBorderTop - top + 1;
             if (maxHeightFinal <= 0)
             {
@@ -89,7 +88,6 @@ namespace Terminaux.Inputs.Presentation.Elements
                 TextWriterWhereColor.WriteWhereColor(bufferText, PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
                 TermReader.ReadKey();
                 TextWriterRaw.WriteRaw(PresentationTools.ClearPresentation());
-                seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
                 buffer.Clear();
             }
             else
