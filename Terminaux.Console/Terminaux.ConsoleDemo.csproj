@@ -17,4 +17,12 @@
     <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\TermInfoData\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\TermInfoData\*" />
+  </ItemGroup>
+
 </Project>

@@ -164,6 +164,7 @@ namespace Terminaux.ConsoleDemo.Fixtures
             new TestCursorStyles(),
             new TestFormatting(),
             new ClearKeepPosition(),
+            new TermInfoPane(),
         ];
 
         internal static IFixture GetFixtureFromName(string name)
