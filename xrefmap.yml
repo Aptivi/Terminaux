@@ -1854,6 +1854,31 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsoleMisc.FilterVTSequences
   nameWithType: ConsoleMisc.FilterVTSequences
+- uid: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences(System.String,System.Int32)
+  name: GetWrappedSentences(string, int)
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_GetWrappedSentences_System_String_System_Int32_
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences(System.String,System.Int32)
+  name.vb: GetWrappedSentences(String, Integer)
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences(string, int)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences(String, Integer)
+  nameWithType: ConsoleMisc.GetWrappedSentences(string, int)
+  nameWithType.vb: ConsoleMisc.GetWrappedSentences(String, Integer)
+- uid: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences(System.String,System.Int32,System.Int32)
+  name: GetWrappedSentences(string, int, int)
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_GetWrappedSentences_System_String_System_Int32_System_Int32_
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences(System.String,System.Int32,System.Int32)
+  name.vb: GetWrappedSentences(String, Integer, Integer)
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences(string, int, int)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences(String, Integer, Integer)
+  nameWithType: ConsoleMisc.GetWrappedSentences(string, int, int)
+  nameWithType.vb: ConsoleMisc.GetWrappedSentences(String, Integer, Integer)
+- uid: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences*
+  name: GetWrappedSentences
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_GetWrappedSentences_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentences
+  nameWithType: ConsoleMisc.GetWrappedSentences
 - uid: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeat(System.Int32,System.Int32,System.Int32)
   name: PercentRepeat(int, int, int)
   href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_PercentRepeat_System_Int32_System_Int32_System_Int32_
@@ -1902,6 +1927,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsoleMisc.SetTitle
   nameWithType: ConsoleMisc.SetTitle
+- uid: Terminaux.Base.Extensions.ConsoleMisc.Truncate(System.String,System.Int32)
+  name: Truncate(string, int)
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_Truncate_System_String_System_Int32_
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.Truncate(System.String,System.Int32)
+  name.vb: Truncate(String, Integer)
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.Truncate(string, int)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleMisc.Truncate(String, Integer)
+  nameWithType: ConsoleMisc.Truncate(string, int)
+  nameWithType.vb: ConsoleMisc.Truncate(String, Integer)
+- uid: Terminaux.Base.Extensions.ConsoleMisc.Truncate*
+  name: Truncate
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_Truncate_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.Truncate
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.Truncate
+  nameWithType: ConsoleMisc.Truncate
 - uid: Terminaux.Base.Extensions.ConsolePositioning
   name: ConsolePositioning
   href: api/Terminaux.Base.Extensions.ConsolePositioning.html
