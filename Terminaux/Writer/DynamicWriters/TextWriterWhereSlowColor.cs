@@ -88,7 +88,7 @@ namespace Terminaux.Writer.DynamicWriters
                     int width = ConsoleWrapper.WindowWidth - RightMargin;
                     var Paragraphs = msg.SplitNewLines();
                     if (RightMargin > 0)
-                        Paragraphs = ConsoleMisc.GetWrappedSentences(msg, width);
+                        Paragraphs = ConsoleMisc.GetWrappedSentencesByWords(msg, width);
                     var buffered = new StringBuilder();
                     ConsoleWrapper.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)

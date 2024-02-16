@@ -1629,7 +1629,7 @@ namespace Terminaux.Writer.FancyWriters
                     }
 
                     // Now, split the sentences and count them to fit the box
-                    string[] sentences = ConsoleMisc.GetWrappedSentences(text, InteriorWidth);
+                    string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, InteriorWidth);
                     for (int i = 0; i < sentences.Length; i++)
                     {
                         string sentence = sentences[i];

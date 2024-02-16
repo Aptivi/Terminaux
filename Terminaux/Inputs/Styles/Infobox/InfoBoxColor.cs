@@ -638,7 +638,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     List<string> splitFinalLines = [];
                     foreach (var line in splitLines)
                     {
-                        var lineSentences = ConsoleMisc.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                        var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
                         foreach (var lineSentence in lineSentences)
                             splitFinalLines.Add(lineSentence);
                     }

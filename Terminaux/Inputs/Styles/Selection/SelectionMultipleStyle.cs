@@ -320,7 +320,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     screenPart.AddDynamicText(() =>
                     {
                         // Make pages based on console window height
-                        int listStartPosition = ConsoleMisc.GetWrappedSentences(Question, ConsoleWrapper.WindowWidth).Length;
+                        int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                         int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
                         int answersPerPage = listEndPosition - 5;
                         int pages = AllAnswers.Count / answersPerPage;

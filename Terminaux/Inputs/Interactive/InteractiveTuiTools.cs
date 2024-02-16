@@ -367,6 +367,7 @@ namespace Terminaux.Inputs.Interactive
             // Check to make sure that we're not rendering the information pane on the both-panes interactive TUI
             if (interactiveTui.SecondPaneInteractable)
                 throw new TerminauxInternalException("Tried to render information the secondary pane on an interactive TUI that allows interaction from two panes, messing the selection rendering up there.");
+            
             // Make a screen part
             var part = new ScreenPart();
 
@@ -424,7 +425,7 @@ namespace Terminaux.Inputs.Interactive
                 builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
 
                 _finalInfoRendered = finalInfoRendered;
-                string[] finalInfoStrings = ConsoleMisc.GetWrappedSentences(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
+                string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
                 for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)
                 {
                     // Check to see if the info is overpopulated

@@ -201,7 +201,8 @@ namespace Terminaux.Base.Extensions
 
             // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
             // the first time and will be reverted back to zero after the incomplete sentence is formed.
-            foreach (string splitText in text.SplitNewLines())
+            var lines = text.SplitNewLines();
+            foreach (string splitText in lines)
             {
                 int vtSeqIdx = 0;
                 int vtSeqCompensate = 0;
@@ -279,9 +280,7 @@ namespace Terminaux.Base.Extensions
                         vtSeqCompensate = 0;
                     }
                     else
-                    {
-                        IncompleteSentenceBuilder.Append(IncompleteSentenceBuilder.Length + nextWord >= finalMaximum ? "" : " ");
-                    }
+                        IncompleteSentenceBuilder.Append(IncompleteSentenceBuilder.Length + nextWord >= finalMaximum || i + 1 >= words.Length ? "" : " ");
                 }
                 if (IncompleteSentenceBuilder.Length > 0)
                     IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());

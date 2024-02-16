@@ -58,7 +58,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             string text = TextTools.FormatString((string)(Arguments is not null && Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
 
             // Check the bounds
-            string[] splitText = ConsoleMisc.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+            string[] splitText = ConsoleMisc.GetWrappedSentencesByWords(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
             int top = ConsoleWrapper.CursorTop;
             int seekTop = ConsoleWrapper.CursorTop;
             var buffer = new StringBuilder();
@@ -116,7 +116,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             foreach (string choice in finalChoices)
             {
                 string finalChoice = $"{choiceNum}) {choice}";
-                string[] splitTextChoice = ConsoleMisc.GetWrappedSentences(finalChoice, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+                string[] splitTextChoice = ConsoleMisc.GetWrappedSentencesByWords(finalChoice, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
                 foreach (string split in splitTextChoice)
                 {
                     int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - choiceTop + 1;
@@ -208,7 +208,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             text += "\n\n";
 
             // Check the bounds
-            string[] splitText = ConsoleMisc.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
+            string[] splitText = ConsoleMisc.GetWrappedSentencesByWords(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
             int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
             return splitText.Length > maxHeight;
         }
