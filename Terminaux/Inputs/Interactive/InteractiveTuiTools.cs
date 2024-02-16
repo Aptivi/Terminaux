@@ -424,7 +424,7 @@ namespace Terminaux.Inputs.Interactive
                 builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
 
                 _finalInfoRendered = finalInfoRendered;
-                string[] finalInfoStrings = TextTools.GetWrappedSentences(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
+                string[] finalInfoStrings = ConsoleMisc.GetWrappedSentences(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
                 for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)
                 {
                     // Check to see if the info is overpopulated

@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
 using Textify.General;
 
@@ -156,7 +157,7 @@ namespace Terminaux.Reader
         {
             get
             {
-                string[] inputPromptLines = TextTools.GetWrappedSentences(InputPromptText, ConsoleWrapper.WindowWidth);
+                string[] inputPromptLines = ConsoleMisc.GetWrappedSentences(InputPromptText, ConsoleWrapper.WindowWidth);
                 return inputPromptLines.Length;
             }
         }
@@ -167,7 +168,7 @@ namespace Terminaux.Reader
         {
             get
             {
-                string[] inputPromptLines = TextTools.GetWrappedSentences(InputPromptText, ConsoleWrapper.WindowWidth);
+                string[] inputPromptLines = ConsoleMisc.GetWrappedSentences(InputPromptText, ConsoleWrapper.WindowWidth);
                 string inputPromptLastLine = VtSequenceTools.FilterVTSequences(inputPromptLines[inputPromptLines.Length - 1]);
                 return inputPromptLastLine.Length;
             }

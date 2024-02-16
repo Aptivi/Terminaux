@@ -368,7 +368,7 @@ namespace Terminaux.Writer.ConsoleWriters
                     int width = ConsoleWrapper.WindowWidth - RightMargin;
                     var Paragraphs = msg.SplitNewLines();
                     if (RightMargin > 0)
-                        Paragraphs = TextTools.GetWrappedSentences(msg, width);
+                        Paragraphs = ConsoleMisc.GetWrappedSentences(msg, width);
                     var buffered = new StringBuilder();
 
                     // Se the colors and the positions as appropriate

@@ -28,6 +28,7 @@ using Textify.General;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -1628,7 +1629,7 @@ namespace Terminaux.Writer.FancyWriters
                     }
 
                     // Now, split the sentences and count them to fit the box
-                    string[] sentences = TextTools.GetWrappedSentences(text, InteriorWidth);
+                    string[] sentences = ConsoleMisc.GetWrappedSentences(text, InteriorWidth);
                     for (int i = 0; i < sentences.Length; i++)
                     {
                         string sentence = sentences[i];

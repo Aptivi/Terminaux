@@ -22,13 +22,13 @@ using System.Text;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Buffered;
-using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
 using Terminaux.Base.Checks;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Presentation
 {

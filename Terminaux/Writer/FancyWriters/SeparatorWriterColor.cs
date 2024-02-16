@@ -22,6 +22,7 @@ using System.Diagnostics;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;

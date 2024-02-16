@@ -55,7 +55,7 @@ namespace Terminaux.Writer.DynamicWriters
                     Text = Text.Replace(Convert.ToChar(13), default);
 
                     // First, split the text to wrap
-                    string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                    string[] sentences = ConsoleMisc.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
 
                     // Iterate through sentences
                     var buffered = new StringBuilder();

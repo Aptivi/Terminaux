@@ -29,7 +29,7 @@ using System.Threading;
 using Textify.General;
 using SpecProbe.Platform;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.Sequences.Builder.Types;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 
 namespace Terminaux.Base.Extensions
@@ -81,7 +81,7 @@ namespace Terminaux.Base.Extensions
             // Really seek if we need to
             if (!noSeek)
             {
-                var texts = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth, ConsoleWrapper.CursorLeft);
+                var texts = ConsoleMisc.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth, ConsoleWrapper.CursorLeft);
                 for (int i = 0; i < texts.Length; i++)
                 {
                     string text = texts[i];

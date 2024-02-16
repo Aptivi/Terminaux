@@ -26,6 +26,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Presentation.Elements
 {
@@ -55,7 +56,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             string text = TextTools.FormatString(Arguments is not null && Arguments.Length > 0 ? ((Func<string>)Arguments[0])() : "", finalArgs);
 
             // Check the bounds
-            string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+            string[] splitText = ConsoleMisc.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
             int top = ConsoleWrapper.CursorTop;
             int seekTop = ConsoleWrapper.CursorTop;
             var buffer = new StringBuilder();
@@ -89,7 +90,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             string text = TextTools.FormatString(Arguments is not null && Arguments.Length > 0 ? ((Func<string>)Arguments[0])() : "", finalArgs);
 
             // Check the bounds
-            string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
+            string[] splitText = ConsoleMisc.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
             int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
             return splitText.Length > maxHeight;
         }

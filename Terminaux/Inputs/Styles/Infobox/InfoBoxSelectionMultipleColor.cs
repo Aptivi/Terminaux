@@ -33,6 +33,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
 using Terminaux.Base.Checks;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -393,7 +394,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     List<string> splitFinalLines = [];
                     foreach (var line in splitLines)
                     {
-                        var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                        var lineSentences = ConsoleMisc.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
                         foreach (var lineSentence in lineSentences)
                             splitFinalLines.Add(lineSentence);
                     }

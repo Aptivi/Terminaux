@@ -28,6 +28,7 @@ using Textify.General;
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Presentation.Elements
 {
@@ -57,7 +58,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             string text = TextTools.FormatString((string)(Arguments is not null && Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
 
             // Check the bounds
-            string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+            string[] splitText = ConsoleMisc.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
             int top = ConsoleWrapper.CursorTop;
             int seekTop = ConsoleWrapper.CursorTop;
             var buffer = new StringBuilder();
@@ -81,7 +82,7 @@ namespace Terminaux.Inputs.Presentation.Elements
 
             // Write the buffer text
             string bufferText = buffer.ToString();
-            string[] splitBufferText = TextTools.GetWrappedSentences(bufferText, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+            string[] splitBufferText = ConsoleMisc.GetWrappedSentences(bufferText, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
             int maxHeightFinal = PresentationTools.PresentationLowerInnerBorderTop - top + 1;
             if (maxHeightFinal <= 0)
             {
@@ -116,7 +117,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             foreach (string choice in finalChoices)
             {
                 string finalChoice = $"{choiceNum}) {choice}";
-                string[] splitTextChoice = TextTools.GetWrappedSentences(finalChoice, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+                string[] splitTextChoice = ConsoleMisc.GetWrappedSentences(finalChoice, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
                 foreach (string split in splitTextChoice)
                 {
                     int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - choiceTop + 1;
@@ -139,7 +140,7 @@ namespace Terminaux.Inputs.Presentation.Elements
 
             // Write the choicebuffer text
             string choiceBufferText = choiceBuffer.ToString();
-            string[] splitChoiceBufferText = TextTools.GetWrappedSentences(choiceBufferText, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+            string[] splitChoiceBufferText = ConsoleMisc.GetWrappedSentences(choiceBufferText, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
             int maxChoiceHeightFinal = PresentationTools.PresentationLowerInnerBorderTop - top + 1;
             if (maxChoiceHeightFinal <= 0)
             {
@@ -210,7 +211,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             text += "\n\n";
 
             // Check the bounds
-            string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
+            string[] splitText = ConsoleMisc.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
             int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
             return splitText.Length > maxHeight;
         }

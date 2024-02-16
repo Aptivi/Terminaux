@@ -288,7 +288,7 @@ namespace Terminaux.Reader
 
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
+            string[] incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
 
             // Check to see if we're at the end of the maximum input length
             int maxLength = GetMaximumInputLength(state);
@@ -309,7 +309,7 @@ namespace Terminaux.Reader
             {
                 // We're in the one-line wrap mode!
                 longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
-                incompleteSentences = TextTools.GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - originalText.Length), state.settings, false, foreground, background);
@@ -332,7 +332,7 @@ namespace Terminaux.Reader
                     TextWriterColor.WriteForReaderColorBack(ConsoleClearing.GetClearLineToRightSequence(), state.settings, false, foreground, background);
                 else
                 {
-                    incompleteSentences = TextTools.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
+                    incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
                     string last = VtSequenceTools.FilterVTSequences(incompleteSentences[incompleteSentences.Length - 1]);
                     int spacesLength = longestSentenceLength - state.RightMargin - last.Length - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0);
                     if (spacesLength < 0)

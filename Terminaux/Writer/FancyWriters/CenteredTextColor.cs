@@ -22,6 +22,7 @@ using System.Diagnostics;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -267,7 +268,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = ConsoleMisc.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
                 return RenderCentered(top, Text, ForegroundColor, BackgroundColor, useColor, Vars);
             }
@@ -324,7 +325,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 var centered = new StringBuilder();
                 Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = ConsoleMisc.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
@@ -366,7 +367,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 var centered = new StringBuilder();
                 Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = ConsoleMisc.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
                 return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
             }
@@ -389,7 +390,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = ConsoleMisc.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
                 return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, ColorTools.currentBackgroundColor);
             }
@@ -413,7 +414,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = ConsoleMisc.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
                 return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor);
             }
@@ -436,7 +437,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = ConsoleMisc.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
             }
             catch (Exception ex)
@@ -459,7 +460,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = ConsoleMisc.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, ColorTools.currentBackgroundColor);
             }
             catch (Exception ex)
@@ -483,7 +484,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                string[] sentences = ConsoleMisc.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
                 return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor);
             }
             catch (Exception ex)
