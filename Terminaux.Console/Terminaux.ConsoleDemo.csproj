@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Textify.Offline.Data" Version="1.3.2" />
+    <PackageReference Include="Textify.Offline.Data" Version="1.3.3" />
   </ItemGroup>
 
   <ItemGroup>

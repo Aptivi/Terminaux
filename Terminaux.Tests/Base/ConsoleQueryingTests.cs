@@ -50,5 +50,50 @@ namespace Terminaux.Tests.Base
             ConsoleMisc.FilterVTSequences($"{EscapeChar}]0;This is the title{BellChar}Hello!").ShouldBe("Hello!");
         }
 
+        /// <summary>
+        /// Tests getting wrapped sentences
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetWrappedSentences()
+        {
+            var sentences = ConsoleMisc.GetWrappedSentences("Nitrocid", 4);
+            sentences.ShouldNotBeNull();
+            sentences.ShouldNotBeEmpty();
+            sentences.Length.ShouldBe(2);
+            sentences[0].ShouldBe("Nitr");
+            sentences[1].ShouldBe("ocid");
+        }
+
+        /// <summary>
+        /// Tests getting wrapped sentences
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetWrappedSentencesIndented()
+        {
+            var sentences = ConsoleMisc.GetWrappedSentences("Nitrocid", 4, 2);
+            sentences.ShouldNotBeNull();
+            sentences.ShouldNotBeEmpty();
+            sentences.Length.ShouldBe(3);
+            sentences[0].ShouldBe("Ni");
+            sentences[1].ShouldBe("troc");
+            sentences[2].ShouldBe("id");
+        }
+
+        /// <summary>
+        /// Tests truncating...
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestTruncate()
+        {
+            string expected = "Nitrocid is awesome ...";
+            string Source = "Nitrocid is awesome and is great!";
+            int Target = 20;
+            Source = Source.Truncate(Target);
+            Source.ShouldBe(expected);
+        }
+
     }
 }

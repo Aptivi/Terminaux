@@ -18,9 +18,13 @@
 //
 
 using System;
+using System.Collections.Generic;
+using System.Text;
 using Terminaux.Base.Checks;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
+using Textify.Tools;
 
 namespace Terminaux.Base.Extensions
 {
@@ -71,6 +75,127 @@ namespace Terminaux.Base.Extensions
             // Filter all sequences
             Text = VtSequenceTools.FilterVTSequences(Text);
             return Text;
+        }
+
+        /// <summary>
+        /// Gets the wrapped sentences for text wrapping for console
+        /// </summary>
+        /// <param name="text">Text to be wrapped</param>
+        /// <param name="maximumLength">Maximum length of text before wrapping</param>
+        public static string[] GetWrappedSentences(string text, int maximumLength) =>
+            GetWrappedSentences(text, maximumLength, 0);
+
+        /// <summary>
+        /// Gets the wrapped sentences for text wrapping for console
+        /// </summary>
+        /// <param name="text">Text to be wrapped</param>
+        /// <param name="maximumLength">Maximum length of text before wrapping</param>
+        /// <param name="indentLength">Indentation length</param>
+        public static string[] GetWrappedSentences(string text, int maximumLength, int indentLength)
+        {
+            if (string.IsNullOrEmpty(text))
+                return [""];
+
+            // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
+            // sizes.
+            var IncompleteSentences = new List<string>();
+            var IncompleteSentenceBuilder = new StringBuilder();
+
+            // Make the text look like it came from Linux
+            text = text.Replace(Convert.ToString(Convert.ToChar(13)), "");
+
+            // Convert tabs to four spaces
+            text = text.Replace("\t", "    ");
+
+            // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
+            // the first time and will be reverted back to zero after the incomplete sentence is formed.
+            foreach (string splitText in text.SplitNewLines())
+            {
+                var sequencesCollections = VtSequenceTools.MatchVTSequences(splitText);
+                foreach (var sequences in sequencesCollections)
+                {
+                    int vtSeqIdx = 0;
+                    int vtSeqCompensate = 0;
+                    if (splitText.Length == 0)
+                        IncompleteSentences.Add(splitText);
+                    for (int i = 0; i < splitText.Length; i++)
+                    {
+                        // Check the character to see if we're at the VT sequence
+                        bool explicitNewLine = splitText[splitText.Length - 1] == '\n';
+                        char ParagraphChar = splitText[i];
+                        bool isNewLine = splitText[i] == '\n';
+                        string seq = "";
+                        if (sequences.Length > 0 && sequences[vtSeqIdx].Index == i)
+                        {
+                            // We're at an index which is the same as the captured VT sequence. Get the sequence
+                            seq = sequences[vtSeqIdx].Value;
+
+                            // Raise the index in case we have the next sequence, but only if we're sure that we have another
+                            if (vtSeqIdx + 1 < sequences.Length)
+                                vtSeqIdx++;
+
+                            // Raise the paragraph index by the length of the sequence
+                            i += seq.Length - 1;
+                            vtSeqCompensate += seq.Length;
+                        }
+
+                        // Append the character into the incomplete sentence builder.
+                        if (!isNewLine)
+                            IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
+
+                        // Also, compensate the \0 characters
+                        if (splitText[i] == '\0')
+                            vtSeqCompensate++;
+
+                        // Check to see if we're at the maximum character number or at the new line
+                        if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate |
+                            i == splitText.Length - 1 |
+                            isNewLine)
+                        {
+                            // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
+                            IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+                            if (explicitNewLine)
+                                IncompleteSentences.Add("");
+
+                            // Clean everything up
+                            IncompleteSentenceBuilder.Clear();
+                            indentLength = 0;
+                            vtSeqCompensate = 0;
+                        }
+                    }
+                }
+            }
+
+            return [.. IncompleteSentences];
+        }
+
+        /// <summary>
+        /// Truncates the string if the string is larger than the threshold, otherwise, returns an unchanged string
+        /// </summary>
+        /// <param name="target">Source string to truncate</param>
+        /// <param name="threshold">Max number of string characters</param>
+        /// <returns>Truncated string</returns>
+        public static string Truncate(this string target, int threshold)
+        {
+            if (target is null)
+                throw new TextifyException("The target may not be null");
+            if (threshold < 0)
+                threshold = 0;
+            if (threshold == 0)
+                return "";
+
+            // Try to truncate string. If the string length is bigger than the threshold, it'll be truncated to the length of
+            // the threshold, putting three dots next to it. We don't use ellipsis marks here because we're dealing with the
+            // terminal, and some terminals and some monospace fonts may not support that character, so we mimick it by putting
+            // the three dots.
+            //
+            // In case VT sequences are inserted to the target string, it can mess with the actual length returned, so only
+            // truncate the non-VT sequences.
+            int newLength = VtSequenceTools.FilterVTSequences(target).Length;
+            if (newLength > threshold)
+                return target.Substring(0, threshold) + "...";
+            else
+                return target;
         }
 
         static ConsoleMisc()
