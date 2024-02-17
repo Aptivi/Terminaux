@@ -28,9 +28,9 @@ using Textify.General;
 namespace Terminaux.Writer.ConsoleWriters
 {
     /// <summary>
-    /// Console text writer with rainbow color as foreground color
+    /// Console text writer with rainbow color as background color
     /// </summary>
-    public static class RainbowTextWriterColor
+    public static class RainbowBackTextWriterColor
     {
         /// <summary>
         /// Outputs the text into the terminal prompt with rainbow bands as foregound colors.
@@ -47,30 +47,30 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void Write(string Text, bool Line, params object[] vars) =>
-            WriteColor(Text, Line, ColorTools.currentBackgroundColor, vars);
+            WriteColor(Text, Line, ColorTools.currentForegroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="backgroundColor">A background color that will be changed to.</param>
+        /// <param name="foregroundColor">A foreground color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteColor(string Text, Color backgroundColor, params object[] vars) =>
-            WriteColor(Text, true, backgroundColor, vars);
+        public static void WriteColor(string Text, Color foregroundColor, params object[] vars) =>
+            WriteColor(Text, true, foregroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="backgroundColor">A background color that will be changed to.</param>
+        /// <param name="foregroundColor">A foreground color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteColor(string Text, bool Line, Color backgroundColor, params object[] vars)
+        public static void WriteColor(string Text, bool Line, Color foregroundColor, params object[] vars)
         {
             try
             {
                 TextWriterRaw.WriteRaw(
-                    RenderColor(Text, Line, backgroundColor, vars)
+                    RenderColor(Text, Line, foregroundColor, vars)
                 );
             }
             catch (Exception ex)
@@ -95,25 +95,25 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string Render(string Text, bool Line, params object[] vars) =>
-            RenderColor(Text, Line, ColorTools.currentBackgroundColor, vars);
+            RenderColor(Text, Line, ColorTools.currentForegroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
-        /// <param name="backgroundColor">A background color that will be changed to.</param>
+        /// <param name="foregroundColor">A foreground color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderColor(string Text, Color backgroundColor, params object[] vars) =>
-            RenderColor(Text, true, backgroundColor, vars);
+        public static string RenderColor(string Text, Color foregroundColor, params object[] vars) =>
+            RenderColor(Text, true, foregroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
-        /// <param name="backgroundColor">A background color that will be changed to.</param>
+        /// <param name="foregroundColor">A foreground color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderColor(string Text, bool Line, Color backgroundColor, params object[] vars)
+        public static string RenderColor(string Text, bool Line, Color foregroundColor, params object[] vars)
         {
             lock (TextWriterRaw.WriteLock)
             {
@@ -129,8 +129,8 @@ namespace Terminaux.Writer.ConsoleWriters
                         double width = (double)i / length;
                         int hue = (int)(360 * width);
                         buffered.Append(
-                            ColorTools.RenderSetConsoleColor(new Color($"hsl:{hue};100;50"), false, true, true) +
-                            ColorTools.RenderSetConsoleColor(backgroundColor, true) +
+                            ColorTools.RenderSetConsoleColor(foregroundColor, false, true, true) +
+                            ColorTools.RenderSetConsoleColor(new Color($"hsl:{hue};100;50"), true, true, true) +
                             $"{filteredChar}"
                         );
                     }
@@ -151,7 +151,7 @@ namespace Terminaux.Writer.ConsoleWriters
             }
         }
 
-        static RainbowTextWriterColor()
+        static RainbowBackTextWriterColor()
         {
             ConsoleChecker.CheckConsole();
         }
