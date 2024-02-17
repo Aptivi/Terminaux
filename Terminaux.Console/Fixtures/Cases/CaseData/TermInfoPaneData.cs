@@ -35,9 +35,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
             GetDescs();
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(object item)
+        public override string GetInfoFromItem(TermInfoDesc item)
         {
-            var selected = (TermInfoDesc)item;
+            var selected = item;
 
             // Check to see if we're given the test info
             if (selected is null)
@@ -70,9 +70,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(TermInfoDesc item)
         {
-            var selected = (TermInfoDesc)item;
+            var selected = item;
             return selected.Names[0];
         }
 

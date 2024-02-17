@@ -325,10 +325,12 @@ namespace Terminaux.Inputs.Interactive
                     // Populate the first pane
                     string finalEntry = "";
                     int finalIndex = i + startIndex;
-                    object? dataObject = null;
+                    T? dataObject = default;
                     if (finalIndex <= dataCount - 1)
                     {
-                        dataObject = data.GetElementFromIndex(startIndex + i);
+                        dataObject = (T?)data.GetElementFromIndex(startIndex + i);
+                        if (dataObject is null)
+                            continue;
 
                         // Render an entry
                         var finalForeColor = finalIndex == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemForeColor : InteractiveTuiStatus.PaneItemForeColor;
@@ -396,8 +398,8 @@ namespace Terminaux.Inputs.Interactive
                 // Populate selected data
                 if (dataCount > 0)
                 {
-                    object selectedData = data.GetElementFromIndex(paneCurrentSelection - 1) ??
-                        throw new TerminauxInternalException("Attempted to render info about null data");
+                    T selectedData = (T)(data.GetElementFromIndex(paneCurrentSelection - 1) ??
+                        throw new TerminauxInternalException("Attempted to render info about null data"));
                     finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
                 }
                 else
@@ -467,7 +469,7 @@ namespace Terminaux.Inputs.Interactive
             var data = InteractiveTuiStatus.CurrentPane == 2 ?
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
-            object selectedData = data.GetElementFromIndex(paneCurrentSelection - 1);
+            T selectedData = (T)data.GetElementFromIndex(paneCurrentSelection - 1);
             interactiveTui.RenderStatus(selectedData);
 
             // Now, write info

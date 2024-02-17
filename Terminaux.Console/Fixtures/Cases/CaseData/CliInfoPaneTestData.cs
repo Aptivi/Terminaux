@@ -43,9 +43,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
             true;
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(object item)
+        public override string GetInfoFromItem(string item)
         {
-            string selected = (string)item;
+            string selected = item;
 
             // Check to see if we're given the test info
             if (string.IsNullOrEmpty(selected))
@@ -58,9 +58,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(string item)
         {
-            string selected = (string)item;
+            string selected = item;
             return selected;
         }
 

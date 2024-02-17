@@ -62,18 +62,18 @@ namespace Terminaux.Inputs.Interactive
             screen;
 
         /// <inheritdoc/>
-        public virtual string GetEntryFromItem(object item) =>
+        public virtual string GetEntryFromItem(T item) =>
             item is not null ? item.ToString() : "";
 
         /// <inheritdoc/>
-        public virtual string GetInfoFromItem(object item) =>
+        public virtual string GetInfoFromItem(T item) =>
             item is not null ? "No info." : "";
 
         /// <inheritdoc/>
         public virtual void HandleExit() { }
 
         /// <inheritdoc/>
-        public virtual void RenderStatus(object item) { }
+        public virtual void RenderStatus(T item) { }
 
         /// <inheritdoc/>
         public virtual void LastOnOverflow()

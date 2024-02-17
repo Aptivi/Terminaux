@@ -48,10 +48,10 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
             true;
 
         /// <inheritdoc/>
-        public override string GetInfoFromItem(object item)
+        public override string GetInfoFromItem(string item)
         {
             // Some variables
-            string selected = (string)item;
+            string selected = item;
             timesRendered++;
 
             // Check to see if we're given the test info
@@ -65,9 +65,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
         }
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(object item)
+        public override string GetEntryFromItem(string item)
         {
-            string selected = (string)item;
+            string selected = item;
             return selected;
         }
     }

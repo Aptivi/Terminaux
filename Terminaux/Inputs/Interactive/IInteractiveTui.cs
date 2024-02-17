@@ -56,13 +56,13 @@ namespace Terminaux.Inputs.Interactive
         /// Gets an entry string from a specified item for listing
         /// </summary>
         /// <param name="item">Target item</param>
-        public string GetEntryFromItem(object item);
+        public string GetEntryFromItem(T item);
         /// <summary>
         /// Gets the info from the item
         /// </summary>
         /// <param name="item">Target item</param>
         /// <returns>The rendered info so that <see cref="InteractiveTuiTools"/> can handle its rendering</returns>
-        public string GetInfoFromItem(object item);
+        public string GetInfoFromItem(T item);
         /// <summary>
         /// Handles exiting the interactive TUI
         /// </summary>
@@ -71,7 +71,7 @@ namespace Terminaux.Inputs.Interactive
         /// Renders the status
         /// </summary>
         /// <param name="item">Target item</param>
-        public void RenderStatus(object item);
+        public void RenderStatus(T item);
         /// <summary>
         /// Goes up to the last element upon overflow (caused by remove operation, ...). This applies to the first and the second pane.
         /// </summary>
