@@ -1595,6 +1595,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.RainbowTextWriterColor.yml",
       "output": {
         ".html": {

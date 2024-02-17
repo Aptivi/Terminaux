@@ -33752,6 +33752,112 @@ references:
   fullName.vb: Terminaux.Writer.ConsoleWriters.ListWriterColor.WriteList(Of TKey, TValue)(System.Collections.Generic.Dictionary(Of TKey, TValue), Terminaux.Colors.Color, Terminaux.Colors.Color, Boolean)
   nameWithType: ListWriterColor.WriteList<TKey, TValue>(Dictionary<TKey, TValue>, Color, Color, bool)
   nameWithType.vb: ListWriterColor.WriteList(Of TKey, TValue)(Dictionary(Of TKey, TValue), Color, Color, Boolean)
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor
+  name: RainbowBackTextWriterColor
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html
+  commentId: T:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor
+  nameWithType: RainbowBackTextWriterColor
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render(System.String,System.Boolean,System.Object[])
+  name: Render(string, bool, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_Render_System_String_System_Boolean_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render(System.String,System.Boolean,System.Object[])
+  name.vb: Render(String, Boolean, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render(string, bool, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render(String, Boolean, ParamArray Object())
+  nameWithType: RainbowBackTextWriterColor.Render(string, bool, params object[])
+  nameWithType.vb: RainbowBackTextWriterColor.Render(String, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render(System.String,System.Object[])
+  name: Render(string, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_Render_System_String_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render(System.String,System.Object[])
+  name.vb: Render(String, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render(string, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render(String, ParamArray Object())
+  nameWithType: RainbowBackTextWriterColor.Render(string, params object[])
+  nameWithType.vb: RainbowBackTextWriterColor.Render(String, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render*
+  name: Render
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_Render_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Render
+  nameWithType: RainbowBackTextWriterColor.Render
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  name: RenderColor(string, bool, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_RenderColor_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderColor(String, Boolean, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor(string, bool, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor(String, Boolean, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: RainbowBackTextWriterColor.RenderColor(string, bool, Color, params object[])
+  nameWithType.vb: RainbowBackTextWriterColor.RenderColor(String, Boolean, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name: RenderColor(string, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_RenderColor_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderColor(String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor(string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor(String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: RainbowBackTextWriterColor.RenderColor(string, Color, params object[])
+  nameWithType.vb: RainbowBackTextWriterColor.RenderColor(String, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor*
+  name: RenderColor
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_RenderColor_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.RenderColor
+  nameWithType: RainbowBackTextWriterColor.RenderColor
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write(System.String,System.Boolean,System.Object[])
+  name: Write(string, bool, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_Write_System_String_System_Boolean_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write(System.String,System.Boolean,System.Object[])
+  name.vb: Write(String, Boolean, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write(string, bool, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write(String, Boolean, ParamArray Object())
+  nameWithType: RainbowBackTextWriterColor.Write(string, bool, params object[])
+  nameWithType.vb: RainbowBackTextWriterColor.Write(String, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write(System.String,System.Object[])
+  name: Write(string, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_Write_System_String_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write(System.String,System.Object[])
+  name.vb: Write(String, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write(string, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write(String, ParamArray Object())
+  nameWithType: RainbowBackTextWriterColor.Write(string, params object[])
+  nameWithType.vb: RainbowBackTextWriterColor.Write(String, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write*
+  name: Write
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_Write_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.Write
+  nameWithType: RainbowBackTextWriterColor.Write
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  name: WriteColor(string, bool, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_WriteColor_System_String_System_Boolean_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor(System.String,System.Boolean,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteColor(String, Boolean, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor(string, bool, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor(String, Boolean, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: RainbowBackTextWriterColor.WriteColor(string, bool, Color, params object[])
+  nameWithType.vb: RainbowBackTextWriterColor.WriteColor(String, Boolean, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name: WriteColor(string, Color, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_WriteColor_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor(System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteColor(String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor(string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor(String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: RainbowBackTextWriterColor.WriteColor(string, Color, params object[])
+  nameWithType.vb: RainbowBackTextWriterColor.WriteColor(String, Color, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor*
+  name: WriteColor
+  href: api/Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.html#Terminaux_Writer_ConsoleWriters_RainbowBackTextWriterColor_WriteColor_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.RainbowBackTextWriterColor.WriteColor
+  nameWithType: RainbowBackTextWriterColor.WriteColor
 - uid: Terminaux.Writer.ConsoleWriters.RainbowTextWriterColor
   name: RainbowTextWriterColor
   href: api/Terminaux.Writer.ConsoleWriters.RainbowTextWriterColor.html
