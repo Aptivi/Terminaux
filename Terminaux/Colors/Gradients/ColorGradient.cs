@@ -43,5 +43,11 @@ namespace Terminaux.Colors.Gradients
             IntermediateColor = intermediateColor ??
                 throw new TerminauxInternalException(nameof(intermediateColor));
         }
+
+        /// <summary>
+        /// Gets a color string of this gradient
+        /// </summary>
+        public override string ToString() =>
+            IntermediateColor.ToString();
     }
 }
