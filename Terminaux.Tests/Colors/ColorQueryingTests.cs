@@ -21,6 +21,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System.Diagnostics;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
+using Terminaux.Colors.Gradients;
 using Terminaux.Colors.Interop;
 using Terminaux.Colors.Transformation.Contrast;
 
@@ -372,6 +374,66 @@ namespace Terminaux.Tests.Colors
             var our = SystemColorConverter.FromDrawingColor(System.Drawing.Color.Empty);
             string result = our.ToString();
             result.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests trying to get the color gradients
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetGradients()
+        {
+            var source = new Color(ConsoleColors.Green);
+            var target = new Color(ConsoleColors.DarkGreen);
+            int steps = 10;
+            var grads = ColorGradients.GetGradients(source, target, steps);
+            grads.ShouldNotBeNull();
+            grads.ShouldNotBeEmpty();
+            grads.Count.ShouldBe(steps);
+            grads[0].ShouldNotBeNull();
+            grads[0].IntermediateColor.PlainSequenceTrueColor.ShouldBe(source.PlainSequenceTrueColor);
+            grads[grads.Count - 1].ShouldNotBeNull();
+            grads[grads.Count - 1].IntermediateColor.PlainSequenceTrueColor.ShouldBe(target.PlainSequenceTrueColor);
+        }
+
+        /// <summary>
+        /// Tests trying to get the color gradients
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetSmoothGradients()
+        {
+            var source = new Color(ConsoleColors.Green);
+            var target = new Color(ConsoleColors.DarkGreen);
+            int steps = 200;
+            var grads = ColorGradients.GetGradients(source, target, steps);
+            grads.ShouldNotBeNull();
+            grads.ShouldNotBeEmpty();
+            grads.Count.ShouldBe(steps);
+            grads[0].ShouldNotBeNull();
+            grads[0].IntermediateColor.PlainSequenceTrueColor.ShouldBe(source.PlainSequenceTrueColor);
+            grads[grads.Count - 1].ShouldNotBeNull();
+            grads[grads.Count - 1].IntermediateColor.PlainSequenceTrueColor.ShouldBe(target.PlainSequenceTrueColor);
+        }
+
+        /// <summary>
+        /// Tests trying to get the color gradients
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetOneStepGradients()
+        {
+            var source = new Color(ConsoleColors.Green);
+            var target = new Color(ConsoleColors.DarkGreen);
+            int steps = 1;
+            var grads = ColorGradients.GetGradients(source, target, steps);
+            grads.ShouldNotBeNull();
+            grads.ShouldNotBeEmpty();
+            grads.Count.ShouldBe(2);
+            grads[0].ShouldNotBeNull();
+            grads[0].IntermediateColor.PlainSequenceTrueColor.ShouldBe(source.PlainSequenceTrueColor);
+            grads[grads.Count - 1].ShouldNotBeNull();
+            grads[grads.Count - 1].IntermediateColor.PlainSequenceTrueColor.ShouldBe(target.PlainSequenceTrueColor);
         }
     }
 }
