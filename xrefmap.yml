@@ -18320,6 +18320,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Gradients.ColorGradient.Step
   nameWithType: ColorGradient.Step
+- uid: Terminaux.Colors.Gradients.ColorGradient.ToString
+  name: ToString()
+  href: api/Terminaux.Colors.Gradients.ColorGradient.html#Terminaux_Colors_Gradients_ColorGradient_ToString
+  commentId: M:Terminaux.Colors.Gradients.ColorGradient.ToString
+  fullName: Terminaux.Colors.Gradients.ColorGradient.ToString()
+  nameWithType: ColorGradient.ToString()
+- uid: Terminaux.Colors.Gradients.ColorGradient.ToString*
+  name: ToString
+  href: api/Terminaux.Colors.Gradients.ColorGradient.html#Terminaux_Colors_Gradients_ColorGradient_ToString_
+  commentId: Overload:Terminaux.Colors.Gradients.ColorGradient.ToString
+  isSpec: "True"
+  fullName: Terminaux.Colors.Gradients.ColorGradient.ToString
+  nameWithType: ColorGradient.ToString
 - uid: Terminaux.Colors.Gradients.ColorGradientEnumerator
   name: ColorGradientEnumerator
   href: api/Terminaux.Colors.Gradients.ColorGradientEnumerator.html

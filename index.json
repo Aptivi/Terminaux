@@ -212,7 +212,7 @@
   "api/Terminaux.Colors.Gradients.ColorGradient.html": {
     "href": "api/Terminaux.Colors.Gradients.ColorGradient.html",
     "title": "Class ColorGradient | Terminaux API - Aptivi",
-    "keywords": "Class ColorGradient A color gradient enumeration class Inheritance object ColorGradient Namespace: Terminaux.Colors.Gradients Assembly: Terminaux.dll Syntax public class ColorGradient Properties | Edit this page View Source IntermediateColor The intermediate color that transitions from the start to the finish Declaration public Color IntermediateColor { get; } Property Value Type Description Color | Edit this page View Source Step The step number for this intermediate color Declaration public int Step { get; } Property Value Type Description int"
+    "keywords": "Class ColorGradient A color gradient enumeration class Inheritance object ColorGradient Namespace: Terminaux.Colors.Gradients Assembly: Terminaux.dll Syntax public class ColorGradient Properties | Edit this page View Source IntermediateColor The intermediate color that transitions from the start to the finish Declaration public Color IntermediateColor { get; } Property Value Type Description Color | Edit this page View Source Step The step number for this intermediate color Declaration public int Step { get; } Property Value Type Description int Methods | Edit this page View Source ToString() Gets a color string of this gradient Declaration public override string ToString() Returns Type Description string Overrides object.ToString()"
   },
   "api/Terminaux.Colors.Gradients.ColorGradientEnumerator.html": {
     "href": "api/Terminaux.Colors.Gradients.ColorGradientEnumerator.html",
