@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -28,7 +27,7 @@ namespace Terminaux.Colors.Gradients
     /// <summary>
     /// The color gradient enumerator
     /// </summary>
-    [DebuggerDisplay("{pos} out of {gradients.Count}")]
+    [DebuggerDisplay("{pos + 1} out of {gradients.Count}")]
     public class ColorGradientEnumerator : IEnumerator<ColorGradient>
     {
         internal readonly List<ColorGradient> gradients = [];
