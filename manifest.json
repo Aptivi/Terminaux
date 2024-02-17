@@ -435,6 +435,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Gradients.ColorGradient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Gradients.ColorGradient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Gradients.ColorGradientEnumerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Gradients.ColorGradientEnumerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Gradients.ColorGradients.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Gradients.ColorGradients.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Gradients.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Gradients.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Interop.SystemColorConverter.yml",
       "output": {
         ".html": {

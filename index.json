@@ -209,6 +209,26 @@
     "title": "Namespace Terminaux.Colors.Data | Terminaux API - Aptivi",
     "keywords": "Namespace Terminaux.Colors.Data Classes ConsoleColorData Console color data ConsoleColorData.Hsl The hue, saturation, and luminance values ConsoleColorData.Rgb Decoy class for RGB ConsoleColorsInfo Information for the console colors that fit within the 256 colors Enums ConsoleColors All 255 console colors"
   },
+  "api/Terminaux.Colors.Gradients.ColorGradient.html": {
+    "href": "api/Terminaux.Colors.Gradients.ColorGradient.html",
+    "title": "Class ColorGradient | Terminaux API - Aptivi",
+    "keywords": "Class ColorGradient A color gradient enumeration class Inheritance object ColorGradient Namespace: Terminaux.Colors.Gradients Assembly: Terminaux.dll Syntax public class ColorGradient Properties | Edit this page View Source IntermediateColor The intermediate color that transitions from the start to the finish Declaration public Color IntermediateColor { get; } Property Value Type Description Color | Edit this page View Source Step The step number for this intermediate color Declaration public int Step { get; } Property Value Type Description int"
+  },
+  "api/Terminaux.Colors.Gradients.ColorGradientEnumerator.html": {
+    "href": "api/Terminaux.Colors.Gradients.ColorGradientEnumerator.html",
+    "title": "Class ColorGradientEnumerator | Terminaux API - Aptivi",
+    "keywords": "Class ColorGradientEnumerator The color gradient enumerator Inheritance object ColorGradientEnumerator Namespace: Terminaux.Colors.Gradients Assembly: Terminaux.dll Syntax public class ColorGradientEnumerator Properties | Edit this page View Source Current Declaration public ColorGradient Current { get; } Property Value Type Description ColorGradient Methods | Edit this page View Source Dispose() Declaration public void Dispose() | Edit this page View Source MoveNext() Declaration public bool MoveNext() Returns Type Description bool | Edit this page View Source Reset() Declaration public void Reset()"
+  },
+  "api/Terminaux.Colors.Gradients.ColorGradients.html": {
+    "href": "api/Terminaux.Colors.Gradients.ColorGradients.html",
+    "title": "Class ColorGradients | Terminaux API - Aptivi",
+    "keywords": "Class ColorGradients The color gradients class Inheritance object ColorGradients Namespace: Terminaux.Colors.Gradients Assembly: Terminaux.dll Syntax public class ColorGradients Properties | Edit this page View Source Count Gets the number of gradients Declaration public int Count { get; } Property Value Type Description int | Edit this page View Source this[int] Gets the gradient in the specified index Declaration public ColorGradient this[int index] { get; } Parameters Type Name Description int index Index of a gradient Property Value Type Description ColorGradient A gradient instance Methods | Edit this page View Source GetEnumerator() Declaration public IEnumerator<ColorGradient> GetEnumerator() Returns Type Description IEnumerator<ColorGradient> | Edit this page View Source GetGradients(Color, Color, int) Gets the collection of color gradients Declaration public static ColorGradients GetGradients(Color sourceColor, Color targetColor, int steps) Parameters Type Name Description Color sourceColor Source color to transtition from Color targetColor Target color to transition to int steps Number of steps to advance Returns Type Description ColorGradients An instance of ColorGradients that you can enumerate."
+  },
+  "api/Terminaux.Colors.Gradients.html": {
+    "href": "api/Terminaux.Colors.Gradients.html",
+    "title": "Namespace Terminaux.Colors.Gradients | Terminaux API - Aptivi",
+    "keywords": "Namespace Terminaux.Colors.Gradients Classes ColorGradient A color gradient enumeration class ColorGradientEnumerator The color gradient enumerator ColorGradients The color gradients class"
+  },
   "api/Terminaux.Colors.Interop.SystemColorConverter.html": {
     "href": "api/Terminaux.Colors.Interop.SystemColorConverter.html",
     "title": "Class SystemColorConverter | Terminaux API - Aptivi",
