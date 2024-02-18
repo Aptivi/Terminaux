@@ -27290,6 +27290,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderTools.SetHistory
   nameWithType: TermReaderTools.SetHistory
+- uid: Terminaux.Reader.TermReaderTools.WaitForInput
+  name: WaitForInput()
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_WaitForInput
+  commentId: M:Terminaux.Reader.TermReaderTools.WaitForInput
+  fullName: Terminaux.Reader.TermReaderTools.WaitForInput()
+  nameWithType: TermReaderTools.WaitForInput()
+- uid: Terminaux.Reader.TermReaderTools.WaitForInput*
+  name: WaitForInput
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_WaitForInput_
+  commentId: Overload:Terminaux.Reader.TermReaderTools.WaitForInput
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderTools.WaitForInput
+  nameWithType: TermReaderTools.WaitForInput
 - uid: Terminaux.Reader.Tools
   name: Terminaux.Reader.Tools
   href: api/Terminaux.Reader.Tools.html
