@@ -29,12 +29,12 @@ namespace Terminaux.Colors
         /// </summary>
         TrueColor,
         /// <summary>
-        /// Color is a 8-bit color
+        /// Color is an 8-bit color
         /// </summary>
-        _255Color,
+        EightBitColor,
         /// <summary>
         /// Color is a 4-bit color
         /// </summary>
-        _16Color
+        FourBitColor
     }
 }

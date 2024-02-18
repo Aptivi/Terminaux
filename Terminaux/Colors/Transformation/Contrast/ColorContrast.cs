@@ -81,7 +81,7 @@ namespace Terminaux.Colors.Transformation.Contrast
         public static bool IsSeeable(ColorType type, int colorLevel, int colorR, int colorG, int colorB)
         {
             // First, check the values
-            if (type < ColorType.TrueColor || type > ColorType._16Color)
+            if (type < ColorType.TrueColor || type > ColorType.FourBitColor)
                 throw new TerminauxException("Color type is invalid");
             if (!ColorTools.TryParseColor(type == ColorType.TrueColor ? $"{colorR};{colorG};{colorB}" : $"{colorLevel}"))
                 throw new TerminauxException("Color specifier for seeability is invalid");

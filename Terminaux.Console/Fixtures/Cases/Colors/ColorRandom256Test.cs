@@ -34,8 +34,8 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Colors
             {
                 if (!SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, 250))
                 {
-                    var colorInstance = ColorTools.GetRandomColor(ColorType._255Color);
-                    var colorInstanceNoBlack = ColorTools.GetRandomColor(ColorType._255Color, false);
+                    var colorInstance = ColorTools.GetRandomColor(ColorType.EightBitColor);
+                    var colorInstanceNoBlack = ColorTools.GetRandomColor(ColorType.EightBitColor, false);
                     TextWriterColor.WriteColor("WB Color {0} [{1}] ", false, colorInstance, colorInstance.PlainSequence, colorInstance.PlainSequenceTrueColor);
                     TextWriterColor.WriteColor("NB Color {0} [{1}]", true, colorInstanceNoBlack, colorInstanceNoBlack.PlainSequence, colorInstanceNoBlack.PlainSequenceTrueColor);
                 }

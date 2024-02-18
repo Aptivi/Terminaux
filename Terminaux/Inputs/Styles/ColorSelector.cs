@@ -83,10 +83,10 @@ namespace Terminaux.Inputs.Styles
                         trueColorSaturation = hsl.SaturationWhole;
                         trueColorLightness = hsl.LightnessWhole;
                         break;
-                    case ColorType._255Color:
+                    case ColorType.EightBitColor:
                         colorValue255 = selectedColor.ColorEnum255;
                         break;
-                    case ColorType._16Color:
+                    case ColorType.FourBitColor:
                         colorValue16 = selectedColor.ColorEnum16;
                         break;
                     default:
@@ -110,7 +110,7 @@ namespace Terminaux.Inputs.Styles
 
                     // Handle input
                     bail =
-                        type == ColorType.TrueColor || type == ColorType._255Color || type == ColorType._16Color ?
+                        type == ColorType.TrueColor || type == ColorType.EightBitColor || type == ColorType.FourBitColor ?
                         HandleKeypress(ref selectedColor, ref type, out refresh) :
                         throw new TerminauxException("Invalid color type in the color selector");
                     if (refresh)
@@ -333,12 +333,12 @@ namespace Terminaux.Inputs.Styles
                     {
                         type--;
                         if (type < ColorType.TrueColor)
-                            type = ColorType._16Color;
+                            type = ColorType.FourBitColor;
                     }
                     else
                     {
                         type++;
-                        if (type > ColorType._16Color)
+                        if (type > ColorType.FourBitColor)
                             type = ColorType.TrueColor;
                     }
                     break;
@@ -367,12 +367,12 @@ namespace Terminaux.Inputs.Styles
                                     trueColorHue = 360;
                             }
                             break;
-                        case ColorType._255Color:
+                        case ColorType.EightBitColor:
                             colorValue255--;
                             if (colorValue255 < ConsoleColors.Black)
                                 colorValue255 = ConsoleColors.Grey93;
                             break;
-                        case ColorType._16Color:
+                        case ColorType.FourBitColor:
                             colorValue16--;
                             if (colorValue16 < ConsoleColor.Black)
                                 colorValue16 = ConsoleColor.White;
@@ -396,12 +396,12 @@ namespace Terminaux.Inputs.Styles
                                     trueColorHue = 0;
                             }
                             break;
-                        case ColorType._255Color:
+                        case ColorType.EightBitColor:
                             colorValue255++;
                             if (colorValue255 > ConsoleColors.Grey93)
                                 colorValue255 = ConsoleColors.Black;
                             break;
-                        case ColorType._16Color:
+                        case ColorType.FourBitColor:
                             colorValue16++;
                             if (colorValue16 > ConsoleColor.White)
                                 colorValue16 = ConsoleColor.Black;
@@ -432,8 +432,8 @@ namespace Terminaux.Inputs.Styles
                             );
                             refresh = true;
                             break;
-                        case ColorType._255Color:
-                        case ColorType._16Color:
+                        case ColorType.EightBitColor:
+                        case ColorType.FourBitColor:
                             InfoBoxColor.WriteInfoBox("Available keybindings",
                                 $$"""
                                 [ENTER]              | Accept color
@@ -502,10 +502,10 @@ namespace Terminaux.Inputs.Styles
                 case ColorType.TrueColor:
                     selectedColor = new($"hsl:{trueColorHue};{trueColorSaturation};{trueColorLightness}");
                     break;
-                case ColorType._255Color:
+                case ColorType.EightBitColor:
                     selectedColor = colorValue255;
                     break;
-                case ColorType._16Color:
+                case ColorType.FourBitColor:
                     selectedColor = colorValue16;
                     break;
             }

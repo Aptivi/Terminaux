@@ -139,8 +139,8 @@ namespace Terminaux.Colors
         /// </summary>
         public ColorType Type =>
             ColorId is null ? ColorType.TrueColor :
-            ColorId.ColorId >= 16 ? ColorType._255Color :
-            ColorType._16Color;
+            ColorId.ColorId >= 16 ? ColorType.EightBitColor :
+            ColorType.FourBitColor;
         /// <summary>
         /// Determines the color brightness whether it indicates dark or light mode
         /// </summary>
@@ -164,7 +164,7 @@ namespace Terminaux.Colors
                 if (ColorId is null)
                     return unapplicable.unapplicable255;
                 return
-                    Type == ColorType._255Color || (Type == ColorType._16Color && ColorId.ColorId < 16) ?
+                    Type == ColorType.EightBitColor || (Type == ColorType.FourBitColor && ColorId.ColorId < 16) ?
                     (ConsoleColors)ColorId.ColorId :
                     unapplicable.unapplicable255;
             }
@@ -180,7 +180,7 @@ namespace Terminaux.Colors
                 if (ColorId is null)
                     return unapplicable.unapplicable16;
                 return
-                    Type == ColorType._16Color || (Type == ColorType._255Color && ColorId.ColorId < 16) ?
+                    Type == ColorType.FourBitColor || (Type == ColorType.EightBitColor && ColorId.ColorId < 16) ?
                     (ConsoleColor)ColorId.ColorId :
                     unapplicable.unapplicable16;
             }

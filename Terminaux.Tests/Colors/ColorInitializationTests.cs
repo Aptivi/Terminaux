@@ -50,7 +50,7 @@ namespace Terminaux.Tests.Colors
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("18");
-            ColorInstance.Type.ShouldBe(ColorType._255Color);
+            ColorInstance.Type.ShouldBe(ColorType.EightBitColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;18m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;18m");
             ColorInstance.RGB.R.ShouldBe(0);
@@ -81,7 +81,7 @@ namespace Terminaux.Tests.Colors
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("18");
-            ColorInstance.Type.ShouldBe(ColorType._255Color);
+            ColorInstance.Type.ShouldBe(ColorType.EightBitColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;18m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;18m");
             ColorInstance.RGB.R.ShouldBe(0);
@@ -1001,7 +1001,7 @@ namespace Terminaux.Tests.Colors
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("13");
-            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;13m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;13m");
             ColorInstance.RGB.R.ShouldBe(255);
@@ -1249,7 +1249,7 @@ namespace Terminaux.Tests.Colors
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("13");
-            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;13m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;13m");
             ColorInstance.RGB.R.ShouldBe(255);
@@ -1280,7 +1280,7 @@ namespace Terminaux.Tests.Colors
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("13");
-            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;13m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;13m");
             ColorInstance.RGB.R.ShouldBe(255);
@@ -1311,7 +1311,7 @@ namespace Terminaux.Tests.Colors
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("13");
-            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;13m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;13m");
             ColorInstance.RGB.R.ShouldBe(255);
@@ -1342,7 +1342,7 @@ namespace Terminaux.Tests.Colors
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("13");
-            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;13m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;13m");
             ColorInstance.RGB.R.ShouldBe(255);
@@ -1373,7 +1373,7 @@ namespace Terminaux.Tests.Colors
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("13");
-            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;13m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;13m");
             ColorInstance.RGB.R.ShouldBe(255);
@@ -1404,7 +1404,7 @@ namespace Terminaux.Tests.Colors
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("13");
-            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;13m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;13m");
             ColorInstance.RGB.R.ShouldBe(255);
@@ -1435,7 +1435,7 @@ namespace Terminaux.Tests.Colors
 
             // Check for property correctness
             ColorInstance.PlainSequence.ShouldBe("0");
-            ColorInstance.Type.ShouldBe(ColorType._16Color);
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
             ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;0m");
             ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;0m");
             ColorInstance.RGB.R.ShouldBe(0);

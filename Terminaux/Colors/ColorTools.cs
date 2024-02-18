@@ -354,7 +354,7 @@ namespace Terminaux.Colors
         /// <returns>A color instance</returns>
         public static Color GetRandomColor(ColorType type, bool selectBlack = true)
         {
-            int maxColor = type != ColorType._16Color ? 255 : 15;
+            int maxColor = type != ColorType.FourBitColor ? 255 : 15;
             Color? color = null;
             int colorLevel = 0;
             ColorType colorType = type;
@@ -386,10 +386,10 @@ namespace Terminaux.Colors
         {
             switch (type)
             {
-                case ColorType._16Color:
+                case ColorType.FourBitColor:
                     int colorNum = rng.Next(minColor, maxColor);
                     return new Color(colorNum);
-                case ColorType._255Color:
+                case ColorType.EightBitColor:
                     int colorNum2 = rng.Next(minColor, maxColor);
                     return new Color(colorNum2);
                 case ColorType.TrueColor:
