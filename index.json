@@ -177,7 +177,7 @@
   "api/Terminaux.Colors.ColorType.html": {
     "href": "api/Terminaux.Colors.ColorType.html",
     "title": "Enum ColorType | Terminaux API - Aptivi",
-    "keywords": "Enum ColorType Color type enumeration Namespace: Terminaux.Colors Assembly: Terminaux.dll Syntax public enum ColorType Fields Name Description TrueColor Color is a true color _16Color Color is a 4-bit color _255Color Color is a 8-bit color"
+    "keywords": "Enum ColorType Color type enumeration Namespace: Terminaux.Colors Assembly: Terminaux.dll Syntax public enum ColorType Fields Name Description EightBitColor Color is an 8-bit color FourBitColor Color is a 4-bit color TrueColor Color is a true color"
   },
   "api/Terminaux.Colors.Data.ConsoleColorData.Hsl.html": {
     "href": "api/Terminaux.Colors.Data.ConsoleColorData.Hsl.html",

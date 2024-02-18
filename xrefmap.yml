@@ -12944,24 +12944,24 @@ references:
   commentId: T:Terminaux.Colors.ColorType
   fullName: Terminaux.Colors.ColorType
   nameWithType: ColorType
+- uid: Terminaux.Colors.ColorType.EightBitColor
+  name: EightBitColor
+  href: api/Terminaux.Colors.ColorType.html#Terminaux_Colors_ColorType_EightBitColor
+  commentId: F:Terminaux.Colors.ColorType.EightBitColor
+  fullName: Terminaux.Colors.ColorType.EightBitColor
+  nameWithType: ColorType.EightBitColor
+- uid: Terminaux.Colors.ColorType.FourBitColor
+  name: FourBitColor
+  href: api/Terminaux.Colors.ColorType.html#Terminaux_Colors_ColorType_FourBitColor
+  commentId: F:Terminaux.Colors.ColorType.FourBitColor
+  fullName: Terminaux.Colors.ColorType.FourBitColor
+  nameWithType: ColorType.FourBitColor
 - uid: Terminaux.Colors.ColorType.TrueColor
   name: TrueColor
   href: api/Terminaux.Colors.ColorType.html#Terminaux_Colors_ColorType_TrueColor
   commentId: F:Terminaux.Colors.ColorType.TrueColor
   fullName: Terminaux.Colors.ColorType.TrueColor
   nameWithType: ColorType.TrueColor
-- uid: Terminaux.Colors.ColorType._16Color
-  name: _16Color
-  href: api/Terminaux.Colors.ColorType.html#Terminaux_Colors_ColorType__16Color
-  commentId: F:Terminaux.Colors.ColorType._16Color
-  fullName: Terminaux.Colors.ColorType._16Color
-  nameWithType: ColorType._16Color
-- uid: Terminaux.Colors.ColorType._255Color
-  name: _255Color
-  href: api/Terminaux.Colors.ColorType.html#Terminaux_Colors_ColorType__255Color
-  commentId: F:Terminaux.Colors.ColorType._255Color
-  fullName: Terminaux.Colors.ColorType._255Color
-  nameWithType: ColorType._255Color
 - uid: Terminaux.Colors.Data
   name: Terminaux.Colors.Data
   href: api/Terminaux.Colors.Data.html
