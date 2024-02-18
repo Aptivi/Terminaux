@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
+using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.Tools;
@@ -269,7 +270,7 @@ namespace Terminaux.Reader
                         if (readState.CurrentText.Length == 0 && settings.PlaceholderText.Length != 0)
                         {
                             ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
-                            TextWriterColor.WriteForReader(settings.PlaceholderText, settings, false);
+                            TextWriterColor.WriteForReaderColor(settings.PlaceholderText, settings, false, new Color(ConsoleColors.Grey));
                             ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
                         }
 
