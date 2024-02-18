@@ -225,7 +225,7 @@ namespace Terminaux.Reader
             lock (readLock)
             {
                 // Wait until the previous input is complete
-                SpinWait.SpinUntil(() => !TermReaderTools.Busy);
+                TermReaderTools.WaitForInput();
 
                 // Initialize everything
                 string input = defaultValue;

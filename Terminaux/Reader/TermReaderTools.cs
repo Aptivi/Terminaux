@@ -50,6 +50,12 @@ namespace Terminaux.Reader
             isWaitingForInput;
 
         /// <summary>
+        /// Waits indefinitely for an input. Returns immediately if not busy.
+        /// </summary>
+        public static void WaitForInput() =>
+            SpinWait.SpinUntil(() => !Busy);
+
+        /// <summary>
         /// Interrupts the reading process
         /// </summary>
         public static void Interrupt()
