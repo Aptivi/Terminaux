@@ -69,7 +69,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                var sep = new Color(ConsoleColors.Gray);
+                var sep = new Color(ConsoleColors.Silver);
                 var header = new Color(ConsoleColors.White);
                 var value = new Color(ConsoleColors.DarkCyan);
                 var back = ColorTools.currentBackgroundColor;

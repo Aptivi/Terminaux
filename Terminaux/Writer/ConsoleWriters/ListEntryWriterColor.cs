@@ -62,7 +62,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="value">A list value that will be listed to the terminal prompt.</param>
         /// <param name="indent">Indentation level</param>
         public static void WriteListEntry(string entry, string value, int indent = 0) =>
-            WriteListEntry(entry, value, ConsoleColors.Yellow, ConsoleColors.Gray, indent);
+            WriteListEntry(entry, value, ConsoleColors.Yellow, ConsoleColors.Silver, indent);
 
         /// <summary>
         /// Outputs a list entry and value into the terminal prompt.
@@ -98,7 +98,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="indent">Indentation level</param>
         /// <returns>A list entry without the new line at the end</returns>
         public static string RenderListEntry(string entry, string value, int indent = 0) =>
-            RenderListEntry(entry, value, ConsoleColors.Yellow, ConsoleColors.Gray, indent, false);
+            RenderListEntry(entry, value, ConsoleColors.Yellow, ConsoleColors.Silver, indent, false);
 
         /// <summary>
         /// Renders a list entry and value.

@@ -82,7 +82,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, bool Wrap) =>
-            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Gray, Wrap);
+            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -195,7 +195,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList(IDictionary List, bool Wrap) =>
-            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Gray, Wrap);
+            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -337,7 +337,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList<T>(IEnumerable<T> List, bool Wrap) =>
-            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Gray, Wrap);
+            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -480,7 +480,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList(IEnumerable List, bool Wrap) =>
-            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Gray, Wrap);
+            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.

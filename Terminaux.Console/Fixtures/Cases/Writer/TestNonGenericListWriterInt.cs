@@ -30,7 +30,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Writer
         public void RunFixture()
         {
             var enumerable = Regex.Matches("test test", "test") as IEnumerable;
-            ListWriterColor.WriteList(enumerable, ConsoleColors.Gray, ConsoleColors.DarkGray, false);
+            ListWriterColor.WriteList(enumerable, ConsoleColors.Silver, ConsoleColors.Grey, false);
         }
     }
 }

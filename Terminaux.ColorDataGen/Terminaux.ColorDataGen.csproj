@@ -10,7 +10,6 @@
   <ItemGroup>
     <Compile Include="..\Terminaux\Colors\Data\ConsoleColorData.cs" Link="Essentials\ConsoleColorData.cs" />
     <Compile Include="..\Terminaux\Colors\Data\ConsoleColorDataEquality.cs" Link="Essentials\ConsoleColorDataEquality.cs" />
-    <Compile Include="..\Terminaux\Colors\Data\ConsoleColors.cs" Link="Essentials\ConsoleColors.cs" />
   </ItemGroup>
 
   <ItemGroup>

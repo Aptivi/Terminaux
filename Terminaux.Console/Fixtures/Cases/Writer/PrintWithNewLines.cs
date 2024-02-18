@@ -30,7 +30,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Writer
         public void RunFixture()
         {
             TextWriterColor.WriteColor("Hello world!\nHow's your day going?\nShould be directly after this:", false, new Color(ConsoleColors.Green));
-            TextWriterColor.WriteColor(" [{0}, {1}] ", true, new Color(ConsoleColors.Gray), vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
+            TextWriterColor.WriteColor(" [{0}, {1}] ", true, new Color(ConsoleColors.Silver), vars: [ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop]);
         }
     }
 }

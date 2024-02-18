@@ -97,7 +97,7 @@ namespace Terminaux.Writer.FancyWriters
                 BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                 BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                 BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                ConsoleColors.Gray);
+                ConsoleColors.Silver);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -178,7 +178,7 @@ namespace Terminaux.Writer.FancyWriters
                 Left, Top, InteriorWidth, InteriorHeight,
                 UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                ConsoleColors.Gray);
+                ConsoleColors.Silver);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -528,7 +528,7 @@ namespace Terminaux.Writer.FancyWriters
                 BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                 BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                 BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                new Color(ConsoleColors.Gray), vars);
+                new Color(ConsoleColors.Silver), vars);
 
         /// <summary>
         /// Writes the box frame plainly
@@ -621,7 +621,7 @@ namespace Terminaux.Writer.FancyWriters
                 Left, Top, InteriorWidth, InteriorHeight,
                 UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(ConsoleColors.Gray), vars);
+                new Color(ConsoleColors.Silver), vars);
 
         /// <summary>
         /// Writes the box frame plainly

@@ -42,7 +42,7 @@ namespace Terminaux.Inputs.Styles
         private static int trueColorHue = 0;
         private static int trueColorSaturation = 100;
         private static int trueColorLightness = 50;
-        private static ConsoleColors colorValue255 = ConsoleColors.Magenta;
+        private static ConsoleColors colorValue255 = ConsoleColors.Fuchsia;
         private static ConsoleColor colorValue16 = ConsoleColor.Magenta;
         private static bool save = true;
 

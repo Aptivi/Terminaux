@@ -312,7 +312,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "Blue3"
+        "name": "Blue3Alt"
     },
     {
         "colorId": 21,
@@ -372,7 +372,7 @@
             "s": 100,
             "l": 26
         },
-        "name": "DeepSkyBlue4"
+        "name": "DeepSkyBlue4Alt"
     },
     {
         "colorId": 25,
@@ -387,7 +387,7 @@
             "s": 100,
             "l": 34
         },
-        "name": "DeepSkyBlue4"
+        "name": "DeepSkyBlue4Alt2"
     },
     {
         "colorId": 26,
@@ -492,7 +492,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "DeepSkyBlue3"
+        "name": "DeepSkyBlue3Alt"
     },
     {
         "colorId": 33,
@@ -612,7 +612,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "Green3"
+        "name": "Green3Alt"
     },
     {
         "colorId": 41,
@@ -627,7 +627,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "SpringGreen3"
+        "name": "SpringGreen3Alt"
     },
     {
         "colorId": 42,
@@ -717,7 +717,7 @@
             "s": 100,
             "l": 50
         },
-        "name": "SpringGreen2"
+        "name": "SpringGreen2Alt"
     },
     {
         "colorId": 48,
@@ -837,7 +837,7 @@
             "s": 100,
             "l": 34
         },
-        "name": "Purple4"
+        "name": "Purple4Alt"
     },
     {
         "colorId": 56,
@@ -942,7 +942,7 @@
             "s": 60,
             "l": 60
         },
-        "name": "SlateBlue3"
+        "name": "SlateBlue3Alt"
     },
     {
         "colorId": 63,
@@ -1077,7 +1077,7 @@
             "s": 33,
             "l": 52
         },
-        "name": "DarkSeaGreen4"
+        "name": "DarkSeaGreen4Alt"
     },
     {
         "colorId": 72,
@@ -1107,7 +1107,7 @@
             "s": 33,
             "l": 52
         },
-        "name": "CadetBlue"
+        "name": "CadetBlueAlt"
     },
     {
         "colorId": 74,
@@ -1152,7 +1152,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "Chartreuse3"
+        "name": "Chartreuse3Alt"
     },
     {
         "colorId": 77,
@@ -1227,7 +1227,7 @@
             "s": 100,
             "l": 68
         },
-        "name": "SteelBlue1"
+        "name": "SteelBlue1Alt"
     },
     {
         "colorId": 82,
@@ -1287,7 +1287,7 @@
             "s": 100,
             "l": 68
         },
-        "name": "SeaGreen1"
+        "name": "SeaGreen1Alt"
     },
     {
         "colorId": 86,
@@ -1332,7 +1332,7 @@
             "s": 100,
             "l": 26
         },
-        "name": "DarkRed"
+        "name": "DarkRedAlt"
     },
     {
         "colorId": 89,
@@ -1347,7 +1347,7 @@
             "s": 100,
             "l": 26
         },
-        "name": "DeepPink4"
+        "name": "DeepPink4Alt"
     },
     {
         "colorId": 90,
@@ -1377,7 +1377,7 @@
             "s": 100,
             "l": 34
         },
-        "name": "DarkMagenta"
+        "name": "DarkMagentaAlt"
     },
     {
         "colorId": 92,
@@ -1407,7 +1407,7 @@
             "s": 100,
             "l": 50
         },
-        "name": "Purple"
+        "name": "PurpleAlt"
     },
     {
         "colorId": 94,
@@ -1422,7 +1422,7 @@
             "s": 100,
             "l": 26
         },
-        "name": "Orange4"
+        "name": "Orange4Alt"
     },
     {
         "colorId": 95,
@@ -1482,7 +1482,7 @@
             "s": 60,
             "l": 60
         },
-        "name": "MediumPurple3"
+        "name": "MediumPurple3Alt"
     },
     {
         "colorId": 99,
@@ -1602,7 +1602,7 @@
             "s": 100,
             "l": 34
         },
-        "name": "Yellow4"
+        "name": "Yellow4Alt"
     },
     {
         "colorId": 107,
@@ -1662,7 +1662,7 @@
             "s": 50,
             "l": 68
         },
-        "name": "LightSkyBlue3"
+        "name": "LightSkyBlue3Alt"
     },
     {
         "colorId": 111,
@@ -1692,7 +1692,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "Chartreuse2"
+        "name": "Chartreuse2Alt"
     },
     {
         "colorId": 113,
@@ -1707,7 +1707,7 @@
             "s": 60,
             "l": 60
         },
-        "name": "DarkOliveGreen3"
+        "name": "DarkOliveGreen3Alt"
     },
     {
         "colorId": 114,
@@ -1722,7 +1722,7 @@
             "s": 50,
             "l": 68
         },
-        "name": "PaleGreen3"
+        "name": "PaleGreen3Alt"
     },
     {
         "colorId": 115,
@@ -1812,7 +1812,7 @@
             "s": 100,
             "l": 76
         },
-        "name": "LightGreen"
+        "name": "LightGreenAlt"
     },
     {
         "colorId": 121,
@@ -1842,7 +1842,7 @@
             "s": 100,
             "l": 76
         },
-        "name": "Aquamarine1"
+        "name": "Aquamarine1Alt"
     },
     {
         "colorId": 123,
@@ -1887,7 +1887,7 @@
             "s": 100,
             "l": 34
         },
-        "name": "DeepPink4"
+        "name": "DeepPink4Alt2"
     },
     {
         "colorId": 126,
@@ -1932,7 +1932,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "DarkViolet"
+        "name": "DarkVioletAlt"
     },
     {
         "colorId": 129,
@@ -1947,7 +1947,7 @@
             "s": 100,
             "l": 50
         },
-        "name": "Purple"
+        "name": "PurpleAlt2"
     },
     {
         "colorId": 130,
@@ -2112,7 +2112,7 @@
             "s": 50,
             "l": 68
         },
-        "name": "MediumPurple2"
+        "name": "MediumPurple2Alt"
     },
     {
         "colorId": 141,
@@ -2247,7 +2247,7 @@
             "s": 60,
             "l": 60
         },
-        "name": "DarkOliveGreen3"
+        "name": "DarkOliveGreen3Alt2"
     },
     {
         "colorId": 150,
@@ -2262,7 +2262,7 @@
             "s": 50,
             "l": 68
         },
-        "name": "DarkSeaGreen3"
+        "name": "DarkSeaGreen3Alt"
     },
     {
         "colorId": 151,
@@ -2352,7 +2352,7 @@
             "s": 100,
             "l": 76
         },
-        "name": "PaleGreen1"
+        "name": "PaleGreen1Alt"
     },
     {
         "colorId": 157,
@@ -2367,7 +2367,7 @@
             "s": 100,
             "l": 84
         },
-        "name": "DarkSeaGreen2"
+        "name": "DarkSeaGreen2Alt"
     },
     {
         "colorId": 158,
@@ -2412,7 +2412,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "Red3"
+        "name": "Red3Alt"
     },
     {
         "colorId": 161,
@@ -2442,7 +2442,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "DeepPink3"
+        "name": "DeepPink3Alt"
     },
     {
         "colorId": 163,
@@ -2457,7 +2457,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "Magenta3"
+        "name": "Magenta3Alt"
     },
     {
         "colorId": 164,
@@ -2472,7 +2472,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "Magenta3"
+        "name": "Magenta3Alt2"
     },
     {
         "colorId": 165,
@@ -2502,7 +2502,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "DarkOrange3"
+        "name": "DarkOrange3Alt"
     },
     {
         "colorId": 167,
@@ -2517,7 +2517,7 @@
             "s": 60,
             "l": 60
         },
-        "name": "IndianRed"
+        "name": "IndianRedAlt"
     },
     {
         "colorId": 168,
@@ -2532,7 +2532,7 @@
             "s": 60,
             "l": 60
         },
-        "name": "HotPink3"
+        "name": "HotPink3Alt"
     },
     {
         "colorId": 169,
@@ -2607,7 +2607,7 @@
             "s": 60,
             "l": 60
         },
-        "name": "LightSalmon3"
+        "name": "LightSalmon3Alt"
     },
     {
         "colorId": 174,
@@ -2682,7 +2682,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "Gold3"
+        "name": "Gold3Alt"
     },
     {
         "colorId": 179,
@@ -2772,7 +2772,7 @@
             "s": 100,
             "l": 42
         },
-        "name": "Yellow3"
+        "name": "Yellow3Alt"
     },
     {
         "colorId": 185,
@@ -2892,7 +2892,7 @@
             "s": 100,
             "l": 76
         },
-        "name": "DarkOliveGreen1"
+        "name": "DarkOliveGreen1Alt"
     },
     {
         "colorId": 193,
@@ -2907,7 +2907,7 @@
             "s": 100,
             "l": 84
         },
-        "name": "DarkSeaGreen1"
+        "name": "DarkSeaGreen1Alt"
     },
     {
         "colorId": 194,
@@ -2997,7 +2997,7 @@
             "s": 100,
             "l": 50
         },
-        "name": "DeepPink1"
+        "name": "DeepPink1Alt"
     },
     {
         "colorId": 200,
@@ -3012,7 +3012,7 @@
             "s": 100,
             "l": 50
         },
-        "name": "Magenta2"
+        "name": "Magenta2Alt"
     },
     {
         "colorId": 201,
@@ -3072,7 +3072,7 @@
             "s": 100,
             "l": 68
         },
-        "name": "IndianRed1"
+        "name": "IndianRed1Alt"
     },
     {
         "colorId": 205,
@@ -3102,7 +3102,7 @@
             "s": 100,
             "l": 68
         },
-        "name": "HotPink"
+        "name": "HotPinkAlt"
     },
     {
         "colorId": 207,
@@ -3117,7 +3117,7 @@
             "s": 100,
             "l": 68
         },
-        "name": "MediumOrchid1"
+        "name": "MediumOrchid1Alt"
     },
     {
         "colorId": 208,
@@ -3327,7 +3327,7 @@
             "s": 100,
             "l": 68
         },
-        "name": "LightGoldenrod2"
+        "name": "LightGoldenrod2Alt"
     },
     {
         "colorId": 222,
@@ -3342,7 +3342,7 @@
             "s": 100,
             "l": 76
         },
-        "name": "LightGoldenrod2"
+        "name": "LightGoldenrod2Alt2"
     },
     {
         "colorId": 223,

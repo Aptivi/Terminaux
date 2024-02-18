@@ -62,7 +62,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
                             {
                                 Arguments = [
                                     "Enjoying yet? {0}Color treat!",
-                                    new Color(ConsoleColors.Purple4_5f00af).VTSequenceForeground
+                                    new Color(ConsoleColors.Purple4Alt).VTSequenceForeground
                                 ]
                             }
                         ]

@@ -164,7 +164,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             while (!finalChoices.Contains(WrittenInput))
             {
                 ConsoleWrapper.SetCursorPosition(cursorLeft, cursorTop);
-                TextWriterColor.WriteColor("Select your choice: ", false, new Color(ConsoleColors.Gray));
+                TextWriterColor.WriteColor("Select your choice: ", false, new Color(ConsoleColors.Silver));
                 ConsoleWrapper.CursorVisible = true;
                 WrittenInput = TermReader.Read("", "", settings, false, true);
                 ConsoleWrapper.CursorVisible = false;

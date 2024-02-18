@@ -44,7 +44,7 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Screens
                 // Then, show the resizable sticks
                 var stickScreenPart = new ScreenPart();
                 stickScreenPart.Position(0, 1);
-                stickScreenPart.BackgroundColor(new Color(ConsoleColors.Gray));
+                stickScreenPart.BackgroundColor(new Color(ConsoleColors.Silver));
                 stickScreenPart.AddDynamicText(GenerateWidthStick);
                 stickScreenPart.AddDynamicText(GenerateHeightStick);
                 stickScreenPart.AddDynamicText(() => new Color(ConsoleColors.White).VTSequenceForeground);

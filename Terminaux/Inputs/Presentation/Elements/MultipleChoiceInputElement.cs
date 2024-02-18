@@ -165,7 +165,7 @@ namespace Terminaux.Inputs.Presentation.Elements
             while (selected.Length == 0 || !selected.All((selectedChoice) => finalChoices.Contains(selectedChoice)))
             {
                 ConsoleWrapper.SetCursorPosition(cursorLeft, cursorTop);
-                TextWriterColor.WriteColor("Select your choice separated by semicolons: ", false, new Color(ConsoleColors.Gray));
+                TextWriterColor.WriteColor("Select your choice separated by semicolons: ", false, new Color(ConsoleColors.Silver));
                 ConsoleWrapper.CursorVisible = true;
                 WrittenInput = TermReader.Read("", "", settings, false, true);
                 selected = WrittenInput.Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);

@@ -35,9 +35,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Writer
             for (int i = 0; i < 1000; i++)
                 arrayChoices.Add($"{i}", [$"Number #{i + 1}", $"Index #{i}"]);
             TextWriterColor.Write("Normal string list:");
-            ListWriterColor.WriteList(choices, ConsoleColors.Gray, ConsoleColors.DarkGray, true);
+            ListWriterColor.WriteList(choices, ConsoleColors.Silver, ConsoleColors.Grey, true);
             TextWriterColor.Write("Array string list:");
-            ListWriterColor.WriteList(arrayChoices, ConsoleColors.Gray, ConsoleColors.DarkGray, true);
+            ListWriterColor.WriteList(arrayChoices, ConsoleColors.Silver, ConsoleColors.Grey, true);
         }
     }
 }

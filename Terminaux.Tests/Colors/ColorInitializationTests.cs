@@ -59,7 +59,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
             ColorInstance.Hex.ShouldBe("#000087");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.DarkBlue_000087);
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.DarkBlue);
             ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
         }
 
@@ -90,7 +90,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
             ColorInstance.Hex.ShouldBe("#000087");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.DarkBlue_000087);
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.DarkBlue);
             ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
         }
 
@@ -991,7 +991,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFrom16Colors()
         {
             // Create instance
-            var ColorInstance = new Color(ConsoleColors.Magenta);
+            var ColorInstance = new Color(ConsoleColors.Fuchsia);
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
@@ -1010,7 +1010,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
             ColorInstance.Hex.ShouldBe("#FF00FF");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Magenta);
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Fuchsia);
             ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Magenta);
         }
 
@@ -1258,7 +1258,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
             ColorInstance.Hex.ShouldBe("#FF00FF");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Magenta);
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Fuchsia);
             ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Magenta);
         }
 
@@ -1289,7 +1289,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
             ColorInstance.Hex.ShouldBe("#FF00FF");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Magenta);
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Fuchsia);
             ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Magenta);
         }
 
@@ -1301,7 +1301,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFromEnum()
         {
             // Create instance
-            var ColorInstance = new Color(ConsoleColors.Magenta);
+            var ColorInstance = new Color(ConsoleColors.Fuchsia);
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
@@ -1320,7 +1320,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
             ColorInstance.Hex.ShouldBe("#FF00FF");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Magenta);
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Fuchsia);
             ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Magenta);
         }
 
@@ -1332,7 +1332,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFromEnumImplicit()
         {
             // Create instance
-            var ColorInstance = new Color(ConsoleColors.Magenta);
+            var ColorInstance = new Color(ConsoleColors.Fuchsia);
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
@@ -1351,7 +1351,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
             ColorInstance.Hex.ShouldBe("#FF00FF");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Magenta);
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Fuchsia);
             ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Magenta);
         }
 
@@ -1382,7 +1382,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
             ColorInstance.Hex.ShouldBe("#FF00FF");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Magenta);
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Fuchsia);
             ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Magenta);
         }
 
@@ -1413,7 +1413,7 @@ namespace Terminaux.Tests.Colors
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
             ColorInstance.Hex.ShouldBe("#FF00FF");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Magenta);
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Fuchsia);
             ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Magenta);
         }
 

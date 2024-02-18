@@ -150,7 +150,7 @@ namespace Terminaux.Colors
                     if (color.Brightness == ColorBrightness.Light)
                         return new Color(ConsoleColors.Black);
                     else
-                        return new Color(ConsoleColors.Gray);
+                        return new Color(ConsoleColors.Silver);
             }
         }
 

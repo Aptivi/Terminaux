@@ -31,9 +31,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Writer
             var NormalStringList = new List<string>() { "String 1", "String 2", "String 3" };
             var ArrayStringList = new List<string[]>() { { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } } };
             TextWriterColor.Write("Normal string list:");
-            ListWriterColor.WriteList(NormalStringList, ConsoleColors.Gray, ConsoleColors.DarkGray, false);
+            ListWriterColor.WriteList(NormalStringList, ConsoleColors.Silver, ConsoleColors.Grey, false);
             TextWriterColor.Write("Array string list:");
-            ListWriterColor.WriteList(ArrayStringList, ConsoleColors.Gray, ConsoleColors.DarkGray, false);
+            ListWriterColor.WriteList(ArrayStringList, ConsoleColors.Silver, ConsoleColors.Grey, false);
         }
     }
 }

@@ -403,7 +403,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, Color questionColor, Color inputColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, Answers, AltAnswers, questionColor, inputColor, new(ConsoleColors.DarkYellow), OutputType, PressEnter);
+            PromptChoice(Question, Answers, AltAnswers, questionColor, inputColor, new(ConsoleColors.Olive), OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -699,7 +699,7 @@ namespace Terminaux.Inputs.Styles.Choice
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, Color questionColor, Color inputColor, Color optionColor, Color altOptionColor, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, Answers, AltAnswers, questionColor, inputColor, optionColor, altOptionColor, new(ConsoleColors.DarkGray), OutputType, PressEnter);
+            PromptChoice(Question, Answers, AltAnswers, questionColor, inputColor, optionColor, altOptionColor, new(ConsoleColors.Grey), OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice

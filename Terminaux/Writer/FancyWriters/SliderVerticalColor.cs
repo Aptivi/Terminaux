@@ -91,7 +91,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The slider position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, 2, 0, new Color(ConsoleColors.DarkYellow), ColorTools.GetGray(), DrawBorder);
+            WriteVerticalSlider(currPos, maxPos, Left, Top, 2, 0, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -103,7 +103,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="HeightOffset">Height offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int HeightOffset, bool DrawBorder = true) =>
-             WriteVerticalSlider(currPos, maxPos, Left, Top, HeightOffset, 0, new Color(ConsoleColors.DarkYellow), ColorTools.GetGray(), DrawBorder);
+             WriteVerticalSlider(currPos, maxPos, Left, Top, HeightOffset, 0, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -116,7 +116,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BottomHeightOffset">Height offset from the bottom</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, new Color(ConsoleColors.DarkYellow), ColorTools.GetGray(), DrawBorder);
+            WriteVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the slider

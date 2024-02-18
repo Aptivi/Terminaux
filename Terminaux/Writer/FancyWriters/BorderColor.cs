@@ -93,7 +93,7 @@ namespace Terminaux.Writer.FancyWriters
                 BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                 BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                 BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                new Color(ConsoleColors.Gray));
+                new Color(ConsoleColors.Silver));
 
         /// <summary>
         /// Writes the border plainly
@@ -174,7 +174,7 @@ namespace Terminaux.Writer.FancyWriters
                 Left, Top, InteriorWidth, InteriorHeight,
                 UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                ConsoleColors.Gray);
+                ConsoleColors.Silver);
 
         /// <summary>
         /// Writes the border plainly
@@ -304,7 +304,7 @@ namespace Terminaux.Writer.FancyWriters
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
-                new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, ColorTools.GetGray(), false);
+                new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, ColorTools.GetGray(), false);
 
         /// <summary>
         /// Renders the border plainly
@@ -350,7 +350,7 @@ namespace Terminaux.Writer.FancyWriters
                 UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar,
                 LeftFrameChar, RightFrameChar,
-                new Color(ConsoleColors.Gray), ColorTools.currentBackgroundColor, ColorTools.GetGray(), false, vars);
+                new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, ColorTools.GetGray(), false, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -513,7 +513,7 @@ namespace Terminaux.Writer.FancyWriters
                 BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                 BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                 BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                new Color(ConsoleColors.Gray), vars);
+                new Color(ConsoleColors.Silver), vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -606,7 +606,7 @@ namespace Terminaux.Writer.FancyWriters
                 Left, Top, InteriorWidth, InteriorHeight,
                 UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
                 UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(ConsoleColors.Gray), vars);
+                new Color(ConsoleColors.Silver), vars);
 
         /// <summary>
         /// Writes the border plainly

@@ -31,9 +31,9 @@ namespace Terminaux.ConsoleDemo.Fixtures.Cases.Writer
             var NormalIntegerDict = new Dictionary<string, int>() { { "One", 1 }, { "Two", 2 }, { "Three", 3 } };
             var ArrayIntegerDict = new Dictionary<string, int[]>() { { "One", new int[] { 1, 2, 3 } }, { "Two", new int[] { 1, 2, 3 } }, { "Three", new int[] { 1, 2, 3 } } };
             TextWriterColor.Write("Normal integer dictionary:");
-            ListWriterColor.WriteList(NormalIntegerDict, ConsoleColors.Gray, ConsoleColors.DarkGray, false);
+            ListWriterColor.WriteList(NormalIntegerDict, ConsoleColors.Silver, ConsoleColors.Grey, false);
             TextWriterColor.Write("Array integer dictionary:");
-            ListWriterColor.WriteList(ArrayIntegerDict, ConsoleColors.Gray, ConsoleColors.DarkGray, false);
+            ListWriterColor.WriteList(ArrayIntegerDict, ConsoleColors.Silver, ConsoleColors.Grey, false);
         }
     }
 }

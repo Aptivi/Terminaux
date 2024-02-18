@@ -47,7 +47,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <summary>
         /// Option color
         /// </summary>
-        public Color OptionColor { get; set; } = new(ConsoleColors.DarkYellow);
+        public Color OptionColor { get; set; } = new(ConsoleColors.Olive);
         /// <summary>
         /// Alternative option color
         /// </summary>
@@ -55,18 +55,18 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <summary>
         /// Selected option color
         /// </summary>
-        public Color SelectedOptionColor { get; set; } = new(ConsoleColors.Cyan);
+        public Color SelectedOptionColor { get; set; } = new(ConsoleColors.Aqua);
         /// <summary>
         /// Separator color
         /// </summary>
-        public Color SeparatorColor { get; set; } = new(ConsoleColors.Gray);
+        public Color SeparatorColor { get; set; } = new(ConsoleColors.Silver);
         /// <summary>
         /// Text color
         /// </summary>
-        public Color TextColor { get; set; } = new(ConsoleColors.Gray);
+        public Color TextColor { get; set; } = new(ConsoleColors.Silver);
         /// <summary>
         /// Disabled option color
         /// </summary>
-        public Color DisabledOptionColor { get; set; } = new(ConsoleColors.DarkGray);
+        public Color DisabledOptionColor { get; set; } = new(ConsoleColors.Grey);
     }
 }

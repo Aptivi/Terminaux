@@ -91,7 +91,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The slider position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteSlider(int currPos, int maxPos, int Left, int Top, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, 10, 0, new Color(ConsoleColors.DarkYellow), ColorTools.GetGray(), DrawBorder);
+            WriteSlider(currPos, maxPos, Left, Top, 10, 0, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -103,7 +103,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="WidthOffset">Width offset</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int WidthOffset, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, WidthOffset, 0, new Color(ConsoleColors.DarkYellow), ColorTools.GetGray(), DrawBorder);
+            WriteSlider(currPos, maxPos, Left, Top, WidthOffset, 0, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -116,7 +116,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="RightWidthOffset">Width offset from the right</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteSlider(int currPos, int maxPos, int Left, int Top, int LeftWidthOffset, int RightWidthOffset, bool DrawBorder = true) =>
-            WriteSlider(currPos, maxPos, Left, Top, LeftWidthOffset, RightWidthOffset, new Color(ConsoleColors.DarkYellow), ColorTools.GetGray(), DrawBorder);
+            WriteSlider(currPos, maxPos, Left, Top, LeftWidthOffset, RightWidthOffset, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the slider
