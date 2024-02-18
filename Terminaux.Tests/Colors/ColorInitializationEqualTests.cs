@@ -336,8 +336,8 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFromNameWhetherTheyEqualUsingSymbols()
         {
             // Create instance
-            var ColorInstance = new Color("Magenta");
-            var SecondInstance = new Color("Magenta");
+            var ColorInstance = new Color("Fuchsia");
+            var SecondInstance = new Color("Fuchsia");
 
             // Check whether they equal
             (ColorInstance == SecondInstance).ShouldBeTrue();
@@ -351,7 +351,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFromNameWhetherTheyDontEqualUsingSymbols()
         {
             // Create instance
-            var ColorInstance = new Color("Magenta");
+            var ColorInstance = new Color("Fuchsia");
             var SecondInstance = new Color("Red");
 
             // Check whether they equal
@@ -366,8 +366,8 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFromNameWhetherTheyEqualUsingEquals()
         {
             // Create instance
-            var ColorInstance = new Color("Magenta");
-            var SecondInstance = new Color("Magenta");
+            var ColorInstance = new Color("Fuchsia");
+            var SecondInstance = new Color("Fuchsia");
 
             // Check whether they equal
             ColorInstance.Equals(SecondInstance).ShouldBeTrue();
@@ -381,7 +381,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFromNameWhetherTheyDontEqualUsingEquals()
         {
             // Create instance
-            var ColorInstance = new Color("Magenta");
+            var ColorInstance = new Color("Fuchsia");
             var SecondInstance = new Color("Red");
 
             // Check whether they equal

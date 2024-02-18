@@ -1239,7 +1239,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFromName()
         {
             // Create instance
-            var ColorInstance = new Color("Magenta");
+            var ColorInstance = new Color("Fuchsia");
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
@@ -1270,7 +1270,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFromNameImplicit()
         {
             // Create instance
-            Color ColorInstance = "Magenta";
+            Color ColorInstance = "Fuchsia";
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
