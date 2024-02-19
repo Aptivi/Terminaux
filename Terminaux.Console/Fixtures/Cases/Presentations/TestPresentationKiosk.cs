@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.ConsoleDemo.Fixtures.Cases.CaseData;
+using Terminaux.Console.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.Presentation;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Presentations
+namespace Terminaux.Console.Fixtures.Cases.Presentations
 {
     internal class TestPresentationKiosk : IFixture
     {

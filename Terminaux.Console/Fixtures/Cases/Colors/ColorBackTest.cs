@@ -22,7 +22,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Colors
+namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorBackTest : IFixture
     {

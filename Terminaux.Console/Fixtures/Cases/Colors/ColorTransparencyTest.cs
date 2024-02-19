@@ -23,7 +23,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Reader;
 using Terminaux.Writer.FancyWriters;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Colors
+namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorTransparencyTest : IFixture
     {

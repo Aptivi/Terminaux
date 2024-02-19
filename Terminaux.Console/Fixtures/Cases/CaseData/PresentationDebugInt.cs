@@ -26,7 +26,7 @@ using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using System;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
+namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
     internal static class PresentationDebugInt
     {

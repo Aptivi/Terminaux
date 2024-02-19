@@ -24,7 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Textify.Data;
 using Textify.NameGen;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
+namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputInfoBoxSelectionHuge : IFixture
     {

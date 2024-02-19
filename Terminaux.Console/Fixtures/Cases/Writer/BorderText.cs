@@ -23,7 +23,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Writer
+namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class BorderText : IFixture
     {

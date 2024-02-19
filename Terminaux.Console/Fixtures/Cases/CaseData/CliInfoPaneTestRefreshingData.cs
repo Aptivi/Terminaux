@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.CaseData
+namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
     internal class CliInfoPaneTestRefreshingData : BaseInteractiveTui<string>, IInteractiveTui<string>
     {

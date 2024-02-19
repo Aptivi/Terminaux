@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
+namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputSelectionLarge : IFixture
     {

@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Reader
+namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptInterruptible : IFixture
     {

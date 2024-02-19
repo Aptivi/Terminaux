@@ -19,14 +19,14 @@
 
 using System.Collections.Generic;
 using Terminaux.Base.Extensions;
-using Terminaux.ConsoleDemo.Fixtures;
+using Terminaux.Console.Fixtures;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Reader;
 using Terminaux.ResizeListener;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.ConsoleDemo
+namespace Terminaux.Console
 {
     internal class Entry
     {

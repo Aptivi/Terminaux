@@ -23,7 +23,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Textify.Data;
 using Textify.NameGen;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Writer
+namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestListWriterHugeWrap : IFixture
     {

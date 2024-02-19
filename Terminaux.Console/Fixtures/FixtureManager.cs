@@ -19,16 +19,16 @@
 
 using System.Linq;
 using Terminaux.Base;
-using Terminaux.ConsoleDemo.Fixtures.Cases.Colors;
-using Terminaux.ConsoleDemo.Fixtures.Cases.Consoles;
-using Terminaux.ConsoleDemo.Fixtures.Cases.Input;
-using Terminaux.ConsoleDemo.Fixtures.Cases.Presentations;
-using Terminaux.ConsoleDemo.Fixtures.Cases.Reader;
-using Terminaux.ConsoleDemo.Fixtures.Cases.Screens;
-using Terminaux.ConsoleDemo.Fixtures.Cases.Tui;
-using Terminaux.ConsoleDemo.Fixtures.Cases.Writer;
+using Terminaux.Console.Fixtures.Cases.Colors;
+using Terminaux.Console.Fixtures.Cases.Consoles;
+using Terminaux.Console.Fixtures.Cases.Input;
+using Terminaux.Console.Fixtures.Cases.Presentations;
+using Terminaux.Console.Fixtures.Cases.Reader;
+using Terminaux.Console.Fixtures.Cases.Screens;
+using Terminaux.Console.Fixtures.Cases.Tui;
+using Terminaux.Console.Fixtures.Cases.Writer;
 
-namespace Terminaux.ConsoleDemo.Fixtures
+namespace Terminaux.Console.Fixtures
 {
     internal static class FixtureManager
     {

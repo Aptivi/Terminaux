@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux", "Terminaux\Terminaux.csproj", "{10697319-2F9F-4A93-BA6D-8A60DA2DF2DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.ConsoleDemo", "Terminaux.Console\Terminaux.ConsoleDemo.csproj", "{50FD1BF6-E278-4341-BAE6-32C1F95F4673}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Console", "Terminaux.Console\Terminaux.Console.csproj", "{50FD1BF6-E278-4341-BAE6-32C1F95F4673}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Tests", "Terminaux.Tests\Terminaux.Tests.csproj", "{23C5263C-ACEF-4135-B684-9C38279B88AD}"
 EndProject

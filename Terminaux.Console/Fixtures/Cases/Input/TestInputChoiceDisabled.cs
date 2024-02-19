@@ -20,7 +20,7 @@
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Choice;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
+namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputChoiceDisabled : IFixture
     {

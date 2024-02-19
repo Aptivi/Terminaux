@@ -21,7 +21,7 @@ using Terminaux.Reader;
 using Terminaux.Reader.Highlighting;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Reader
+namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptHighlighted : IFixture
     {

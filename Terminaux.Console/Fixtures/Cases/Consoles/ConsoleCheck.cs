@@ -19,7 +19,7 @@
 
 using Terminaux.Base.Checks;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Consoles
+namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class ConsoleCheck : IFixture
     {

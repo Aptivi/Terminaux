@@ -23,7 +23,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
+namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class KeyInfo : IFixture
     {

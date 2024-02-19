@@ -23,7 +23,7 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Input
+namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputFiglet : IFixture
     {

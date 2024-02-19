@@ -22,7 +22,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Gradients;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Colors
+namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorGradientTest : IFixture
     {

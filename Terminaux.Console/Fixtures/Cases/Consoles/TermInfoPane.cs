@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.ConsoleDemo.Fixtures.Cases.CaseData;
+using Terminaux.Console.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.Interactive;
 using Terminaux.ResizeListener;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Tui
+namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class TermInfoPane : IFixture
     {

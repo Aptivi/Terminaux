@@ -22,7 +22,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Consoles
+namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class TestCursorStyles : IFixture
     {

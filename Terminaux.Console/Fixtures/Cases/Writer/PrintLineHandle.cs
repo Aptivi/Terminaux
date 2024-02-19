@@ -19,7 +19,7 @@
 
 using Terminaux.Writer.MiscWriters;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Writer
+namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintLineHandle : IFixture
     {

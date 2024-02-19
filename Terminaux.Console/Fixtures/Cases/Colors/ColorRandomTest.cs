@@ -22,7 +22,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Colors
+namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorRandomTest : IFixture
     {

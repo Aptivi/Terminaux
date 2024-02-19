@@ -21,7 +21,7 @@ using Terminaux.Base;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Colors
+namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorSelectorTest : IFixture
     {

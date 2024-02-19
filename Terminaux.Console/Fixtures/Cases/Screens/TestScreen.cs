@@ -27,7 +27,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Sequences.Builder.Types;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Screens
+namespace Terminaux.Console.Fixtures.Cases.Screens
 {
     internal class TestScreen : IFixture
     {

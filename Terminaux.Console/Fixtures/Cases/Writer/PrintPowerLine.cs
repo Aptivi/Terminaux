@@ -21,7 +21,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 
-namespace Terminaux.ConsoleDemo.Fixtures.Cases.Writer
+namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintPowerLine : IFixture
     {
