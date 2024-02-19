@@ -316,9 +316,26 @@ namespace Terminaux.Reader
                 // We're in the one-line wrap mode!
                 longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
                 incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText, longestSentenceLength, 0);
+
+                // We're in the multi-line wrap mode!
                 renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReaderColorBack(renderedText + new string(' ', longestSentenceLength - state.settings.LeftMargin - originalText.Length), state.settings, false, foreground, background);
+                TextWriterColor.WriteForReaderColorBack(renderedText, state.settings, false, foreground, background);
+
+                // Render appropriate amount of spaces
+                if (spaces == 0 && state.RightMargin == 0)
+                    TextWriterColor.WriteForReaderColorBack(ConsoleClearing.GetClearLineToRightSequence(), state.settings, false, foreground, background);
+                else
+                {
+                    int spacesLength = longestSentenceLength - state.settings.LeftMargin - originalText.Length;
+                    if (spacesLength < 0)
+                        spacesLength = 0;
+                    if (spaces > 0)
+                        spacesLength = spaces;
+                    TextWriterColor.WriteForReaderColorBack(new string(' ', spacesLength), state.settings, false, foreground, background);
+                }
+
+                // If stepping, go either backward or forward.
                 if (steps > 0)
                 {
                     if (backward)
