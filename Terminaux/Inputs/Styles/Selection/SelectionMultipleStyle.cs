@@ -393,7 +393,13 @@ namespace Terminaux.Inputs.Styles.Selection
                         int descSepArea = ConsoleWrapper.WindowHeight - 3;
                         int descArea = ConsoleWrapper.WindowHeight - 2;
                         var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
-                        string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate(ConsoleWrapper.WindowWidth * 2 - 3) : "";
+                        string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription : "";
+                        if (highlightedAnswer.ChoiceDescription is not null)
+                        {
+                            var wrappedDescLines = ConsoleMisc.GetWrappedSentencesByWords(descFinal, ConsoleWrapper.WindowWidth).Take(2).ToArray();
+                            wrappedDescLines[wrappedDescLines.Length - 1] = wrappedDescLines[wrappedDescLines.Length - 1].Truncate(ConsoleWrapper.WindowWidth - 3);
+                            descFinal = string.Join("\n", wrappedDescLines);
+                        }
                         selectionBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(1, descSepArea + 1)}" +
                             $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
