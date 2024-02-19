@@ -388,6 +388,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
+                    ColorTools.AllowForeground = true;
+
                     // Deal with the lines to actually fit text in the infobox
                     string finalInfoRendered = TextTools.FormatString(text, vars);
                     string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
@@ -520,6 +522,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                         );
                     }
+                    ColorTools.AllowForeground = false;
                     return boxBuffer.ToString();
                 });
 
