@@ -257,7 +257,7 @@ namespace Terminaux.Inputs.Interactive
                     if (canDraw)
                     {
                         bindingsBuilder.Append(
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor)}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor, false, true)}" +
                             $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
                             GetBindingKeyShortcut(binding, false) +
                             $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionForegroundColor)}" +
@@ -270,7 +270,7 @@ namespace Terminaux.Inputs.Interactive
                         // We can't render anymore, so just break and write a binding to show more
                         bindingsBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor)}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor, false, true)}" +
                             $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
                             " K "
                         );
@@ -340,7 +340,7 @@ namespace Terminaux.Inputs.Interactive
                         finalEntry = interactiveTui.GetEntryFromItem(dataObject).Truncate(SeparatorHalfConsoleWidthInterior - 4);
                         string text =
                             $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, top + 1)}" +
-                            $"{ColorTools.RenderSetConsoleColor(finalForeColor)}" +
+                            $"{ColorTools.RenderSetConsoleColor(finalForeColor, false, true)}" +
                             $"{ColorTools.RenderSetConsoleColor(finalBackColor, true)}" +
                             finalEntry +
                             new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)) +
