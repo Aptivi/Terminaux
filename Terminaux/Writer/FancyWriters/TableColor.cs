@@ -69,9 +69,9 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                var sep = new Color(ConsoleColors.Silver);
+                var sep = new Color(ConsoleColors.Grey);
                 var header = new Color(ConsoleColors.White);
-                var value = new Color(ConsoleColors.DarkCyan);
+                var value = new Color(ConsoleColors.Silver);
                 var back = ColorTools.currentBackgroundColor;
                 TextWriterRaw.WriteRaw(RenderTable(Headers, Rows, Margin, sep, header, value, back, SeparateRows, CellOptions));
             }
