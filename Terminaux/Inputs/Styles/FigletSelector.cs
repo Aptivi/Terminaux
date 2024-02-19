@@ -204,7 +204,6 @@ namespace Terminaux.Inputs.Styles
 
                 // Now, make the interactive TUI resizable.
                 screen.AddBufferedPart("Figlet selector - show characters", screenPart);
-                ScreenTools.SetCurrent(screen);
                 while (!bail)
                 {
                     // Render
