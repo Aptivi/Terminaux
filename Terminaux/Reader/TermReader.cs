@@ -112,7 +112,7 @@ namespace Terminaux.Reader
         /// <param name="settings">Settigns containing reader-related settings</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string ReadPassword(TermReaderSettings settings, bool interruptible = true) =>
-            ReadPassword(CurrentMask, settings, interruptible);
+            ReadPassword(settings.PasswordMaskChar, settings, interruptible);
 
         /// <summary>
         /// Reads the input with password character masking
@@ -154,7 +154,7 @@ namespace Terminaux.Reader
         /// <param name="settings">Settigns containing reader-related settings</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string ReadPassword(string inputPrompt, TermReaderSettings settings, bool interruptible = true) =>
-            ReadPassword(CurrentMask, inputPrompt, settings, interruptible);
+            ReadPassword(settings.PasswordMaskChar, inputPrompt, settings, interruptible);
 
         /// <summary>
         /// Reads the input with password character masking
