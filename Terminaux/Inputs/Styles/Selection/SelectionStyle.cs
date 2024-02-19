@@ -422,14 +422,19 @@ namespace Terminaux.Inputs.Styles.Selection
                         selectionBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(1, descSepArea + 1)}" +
                             $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
-                            $"{new string('=', ConsoleWrapper.WindowWidth)}" +
-                            $"{CsiSequences.GenerateCsiCursorPosition(bindingsLeft + 1, descSepArea + 1)}" +
-                            $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
-                            bindingsRender +
-                            $"{CsiSequences.GenerateCsiCursorPosition(numbersLeft + 1, descSepArea + 1)}" +
-                            $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
-                            numberRender
+                            $"{new string('=', ConsoleWrapper.WindowWidth)}"
                         );
+                        if (bindingsRender.Length + numberRender.Length + 6 < ConsoleWrapper.WindowWidth)
+                        {
+                            selectionBuilder.Append(
+                                $"{CsiSequences.GenerateCsiCursorPosition(bindingsLeft + 1, descSepArea + 1)}" +
+                                $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
+                                bindingsRender +
+                                $"{CsiSequences.GenerateCsiCursorPosition(numbersLeft + 1, descSepArea + 1)}" +
+                                $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
+                                numberRender
+                            );
+                        }
 
                         // Render the vertical slider.
                         selectionBuilder.Append(
