@@ -264,9 +264,9 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 var Values = new List<object>();
                 var value = List[ListEntry];
-                if (value as IEnumerable is not null & value as string is null)
+                if (value is IEnumerable enums && value is not string)
                 {
-                    foreach (var Value in (IEnumerable)value)
+                    foreach (var Value in enums)
                         Values.Add(Value);
                     string valuesString = string.Join(", ", Values);
                     listBuilder.AppendLine(
@@ -406,7 +406,7 @@ namespace Terminaux.Writer.ConsoleWriters
             foreach (T ListEntry in List)
             {
                 var Values = new List<object>();
-                if (ListEntry is IEnumerable enums)
+                if (ListEntry is IEnumerable enums && ListEntry is not string)
                 {
                     foreach (var Value in enums)
                         Values.Add(Value);
