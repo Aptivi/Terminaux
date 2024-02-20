@@ -45,7 +45,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 {
                     // Write the list entry
                     string buffered = RenderListEntry(entry, value, indent);
-                    TextWriterRaw.WriteRaw(buffered);
+                    TextWriterRaw.WritePlain(buffered);
                 }
                 catch (Exception ex)
                 {
@@ -80,7 +80,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 {
                     // Write the list entry
                     string buffered = RenderListEntry(entry, value, ListKeyColor, ListValueColor, indent);
-                    TextWriterRaw.WriteRaw(buffered);
+                    TextWriterRaw.WritePlain(buffered);
                 }
                 catch (Exception ex)
                 {
