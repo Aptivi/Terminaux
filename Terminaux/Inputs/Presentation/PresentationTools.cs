@@ -226,7 +226,8 @@ namespace Terminaux.Inputs.Presentation
 
         static PresentationTools()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

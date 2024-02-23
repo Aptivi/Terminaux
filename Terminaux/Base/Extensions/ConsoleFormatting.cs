@@ -19,6 +19,7 @@
 
 using System.Text;
 using Terminaux.Base.Checks;
+using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -129,7 +130,8 @@ namespace Terminaux.Base.Extensions
 
         static ConsoleFormatting()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

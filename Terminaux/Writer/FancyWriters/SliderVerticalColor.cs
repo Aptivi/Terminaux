@@ -422,7 +422,8 @@ namespace Terminaux.Writer.FancyWriters
 
         static SliderVerticalColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

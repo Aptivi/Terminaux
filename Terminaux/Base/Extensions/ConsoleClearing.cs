@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base.Checks;
+using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;
 
@@ -58,7 +59,8 @@ namespace Terminaux.Base.Extensions
 
         static ConsoleClearing()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

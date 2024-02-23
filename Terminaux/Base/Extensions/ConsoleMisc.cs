@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base.Checks;
+using Terminaux.Colors;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -321,7 +322,8 @@ namespace Terminaux.Base.Extensions
 
         static ConsoleMisc()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

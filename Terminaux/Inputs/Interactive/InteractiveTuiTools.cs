@@ -629,7 +629,8 @@ namespace Terminaux.Inputs.Interactive
 
         static InteractiveTuiTools()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

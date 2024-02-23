@@ -488,7 +488,8 @@ namespace Terminaux.Colors
 
         static ColorTools()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

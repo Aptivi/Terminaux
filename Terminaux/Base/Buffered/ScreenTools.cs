@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using Terminaux.Base.Checks;
+using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Base.Buffered
@@ -92,7 +93,8 @@ namespace Terminaux.Base.Buffered
 
         static ScreenTools()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

@@ -123,7 +123,8 @@ namespace Terminaux.Writer.DynamicWriters
 
         static TextWriterSlowColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

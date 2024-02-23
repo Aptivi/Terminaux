@@ -447,7 +447,8 @@ namespace Terminaux.Writer.ConsoleWriters
 
         static TextWriterWhereColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

@@ -31,6 +31,7 @@ using SpecProbe.Platform;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
+using Terminaux.Colors;
 
 namespace Terminaux.Base.Extensions
 {
@@ -358,7 +359,8 @@ namespace Terminaux.Base.Extensions
 
         static ConsolePositioning()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

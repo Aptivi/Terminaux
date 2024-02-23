@@ -1660,7 +1660,8 @@ namespace Terminaux.Writer.FancyWriters
 
         static BorderTextColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

@@ -1040,7 +1040,8 @@ namespace Terminaux.Writer.FancyWriters
 
         static BoxFrameColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

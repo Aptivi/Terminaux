@@ -244,7 +244,8 @@ namespace Terminaux.Inputs.Styles
 
         static FigletSelector()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

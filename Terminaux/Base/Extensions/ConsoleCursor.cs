@@ -19,6 +19,7 @@
 
 using System;
 using Terminaux.Base.Checks;
+using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -71,7 +72,8 @@ namespace Terminaux.Base.Extensions
 
         static ConsoleCursor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

@@ -545,7 +545,8 @@ namespace Terminaux.Inputs.Styles.Selection
 
         static SelectionMultipleStyle()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

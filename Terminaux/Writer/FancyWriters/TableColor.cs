@@ -305,7 +305,8 @@ namespace Terminaux.Writer.FancyWriters
 
         static TableColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

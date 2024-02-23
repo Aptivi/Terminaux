@@ -300,7 +300,8 @@ namespace Terminaux.Writer.FancyWriters
 
         static SeparatorWriterColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

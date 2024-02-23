@@ -976,7 +976,8 @@ namespace Terminaux.Inputs.Styles.Choice
 
         static ChoiceStyle()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

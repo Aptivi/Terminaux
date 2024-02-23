@@ -589,7 +589,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
         static InfoBoxButtonsColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

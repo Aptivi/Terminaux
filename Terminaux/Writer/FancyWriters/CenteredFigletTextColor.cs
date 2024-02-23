@@ -343,7 +343,8 @@ namespace Terminaux.Writer.FancyWriters
 
         static CenteredFigletTextColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

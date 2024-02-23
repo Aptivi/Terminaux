@@ -21,6 +21,7 @@ using System;
 using Terminaux.Reader;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
+using Terminaux.Colors;
 
 namespace Terminaux.Base
 {
@@ -111,7 +112,8 @@ namespace Terminaux.Base
 
         static ConsoleResizeHandler()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

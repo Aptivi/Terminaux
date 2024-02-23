@@ -387,7 +387,8 @@ namespace Terminaux.Writer.FancyWriters
 
         static ProgressBarVerticalColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
         }
     }
 }

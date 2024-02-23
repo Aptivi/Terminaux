@@ -96,7 +96,8 @@ namespace Terminaux.Writer.FancyWriters
 
         static PowerLineColor()
         {
-            ConsoleChecker.CheckConsole();
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
             if (PlatformHelper.IsOnWindows())
                 Console.OutputEncoding = Encoding.UTF8;
         }
