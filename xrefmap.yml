@@ -18282,6 +18282,25 @@ references:
   fullName.vb: Terminaux.Colors.Data.ConsoleColorsInfo.<>
   nameWithType: ConsoleColorsInfo.operator !=
   nameWithType.vb: ConsoleColorsInfo.<>
+- uid: Terminaux.Colors.GeneralColorTools
+  name: GeneralColorTools
+  href: api/Terminaux.Colors.GeneralColorTools.html
+  commentId: T:Terminaux.Colors.GeneralColorTools
+  fullName: Terminaux.Colors.GeneralColorTools
+  nameWithType: GeneralColorTools
+- uid: Terminaux.Colors.GeneralColorTools.CheckConsoleOnCall
+  name: CheckConsoleOnCall
+  href: api/Terminaux.Colors.GeneralColorTools.html#Terminaux_Colors_GeneralColorTools_CheckConsoleOnCall
+  commentId: P:Terminaux.Colors.GeneralColorTools.CheckConsoleOnCall
+  fullName: Terminaux.Colors.GeneralColorTools.CheckConsoleOnCall
+  nameWithType: GeneralColorTools.CheckConsoleOnCall
+- uid: Terminaux.Colors.GeneralColorTools.CheckConsoleOnCall*
+  name: CheckConsoleOnCall
+  href: api/Terminaux.Colors.GeneralColorTools.html#Terminaux_Colors_GeneralColorTools_CheckConsoleOnCall_
+  commentId: Overload:Terminaux.Colors.GeneralColorTools.CheckConsoleOnCall
+  isSpec: "True"
+  fullName: Terminaux.Colors.GeneralColorTools.CheckConsoleOnCall
+  nameWithType: GeneralColorTools.CheckConsoleOnCall
 - uid: Terminaux.Colors.Gradients
   name: Terminaux.Colors.Gradients
   href: api/Terminaux.Colors.Gradients.html

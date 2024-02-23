@@ -209,6 +209,11 @@
     "title": "Namespace Terminaux.Colors.Data | Terminaux API - Aptivi",
     "keywords": "Namespace Terminaux.Colors.Data Classes ConsoleColorData Console color data ConsoleColorData.Hsl The hue, saturation, and luminance values ConsoleColorData.Rgb Decoy class for RGB ConsoleColorsInfo Information for the console colors that fit within the 256 colors Enums ConsoleColors All 255 console colors"
   },
+  "api/Terminaux.Colors.GeneralColorTools.html": {
+    "href": "api/Terminaux.Colors.GeneralColorTools.html",
+    "title": "Class GeneralColorTools | Terminaux API - Aptivi",
+    "keywords": "Class GeneralColorTools General color tools class. It doesn't require checking the console. Inheritance object GeneralColorTools Namespace: Terminaux.Colors Assembly: Terminaux.dll Syntax public static class GeneralColorTools Properties | Edit this page View Source CheckConsoleOnCall Upon calling functions, Terminaux should check for console. Declaration public static bool CheckConsoleOnCall { get; set; } Property Value Type Description bool"
+  },
   "api/Terminaux.Colors.Gradients.ColorGradient.html": {
     "href": "api/Terminaux.Colors.Gradients.ColorGradient.html",
     "title": "Class ColorGradient | Terminaux API - Aptivi",
@@ -447,7 +452,7 @@
   "api/Terminaux.Colors.html": {
     "href": "api/Terminaux.Colors.html",
     "title": "Namespace Terminaux.Colors | Terminaux API - Aptivi",
-    "keywords": "Namespace Terminaux.Colors Classes Color Color information class ColorSerializer Color serializer ColorSettings The color settings class ColorTools Color tools and management Enums ColorType Color type enumeration"
+    "keywords": "Namespace Terminaux.Colors Classes Color Color information class ColorSerializer Color serializer ColorSettings The color settings class ColorTools Color tools and management GeneralColorTools General color tools class. It doesn't require checking the console. Enums ColorType Color type enumeration"
   },
   "api/Terminaux.Inputs.InputChoiceInfo.html": {
     "href": "api/Terminaux.Inputs.InputChoiceInfo.html",
