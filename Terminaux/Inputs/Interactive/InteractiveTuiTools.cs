@@ -292,7 +292,7 @@ namespace Terminaux.Inputs.Interactive
                 throw new TerminauxInternalException("Attempted to render TUI items on no screen");
 
             // Check to make sure that we're not rendering the second pane on the first-pane-only interactive TUI
-            if (interactiveTui.SecondPaneInteractable && paneNum > 1)
+            if (!interactiveTui.SecondPaneInteractable && paneNum > 1)
                 throw new TerminauxInternalException("Tried to render interactive TUI items for the secondary pane on an interactive TUI that only allows interaction from one pane.");
 
             // Make a screen part
