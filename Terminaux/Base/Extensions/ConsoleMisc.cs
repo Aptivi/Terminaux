@@ -205,7 +205,6 @@ namespace Terminaux.Base.Extensions
             var lines = text.SplitNewLines();
             foreach (string splitText in lines)
             {
-                int vtSeqIdx = 0;
                 int vtSeqCompensate = 0;
                 if (splitText.Length == 0)
                 {
@@ -221,8 +220,8 @@ namespace Terminaux.Base.Extensions
                     {
                         if (sequences.Length == 0)
                             continue;
-                        var sequence = sequences[vtSeqIdx];
-                        vtSeqCompensate += sequence.Value.Length;
+                        foreach (var sequence in sequences)
+                            vtSeqCompensate += sequence.Value.Length;
                     }
                 }
 
