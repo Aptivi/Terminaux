@@ -79,6 +79,7 @@ namespace Terminaux.Console.Fixtures
             new PrintPowerLine(),
             new PrintRainbow(),
             new PrintRainbowBack(),
+            new PrintWrapped(),
             new TestDictWriterChar(),
             new TestDictWriterInt(),
             new TestDictWriterStr(),
