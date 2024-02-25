@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Colors;
 using Terminaux.Colors.Templates;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -48,6 +49,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             TextWriterColor.WriteColor("[Before - {0}] Hello world!", true, TemplateTools.GetColor(PredefinedComponentType.Text), TemplateTools.Exists(name));
             TemplateTools.SetDefaultTemplate(name);
             TextWriterColor.WriteColor("[After - Text] Hello world!", true, TemplateTools.GetColor(PredefinedComponentType.Text));
+            TextWriterColor.WriteColor("[After - Component] Hello world!\n", true, TemplateTools.GetColor("Component"));
+            TemplateTools.SetColor("Component", new Color(86));
             TextWriterColor.WriteColor("[After - Component] Hello world!\n", true, TemplateTools.GetColor("Component"));
             TextWriterColor.Write(TemplateTools.GetTemplateToJson());
             TemplateTools.ResetDefaultTemplate();

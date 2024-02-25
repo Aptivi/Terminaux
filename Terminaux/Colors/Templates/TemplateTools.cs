@@ -167,6 +167,52 @@ namespace Terminaux.Colors.Templates
         }
 
         /// <summary>
+        /// Sets the default template
+        /// </summary>
+        /// <param name="componentName">Component name</param>
+        /// <param name="color">Color to set</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void SetColor(PredefinedComponentType componentName, Color color) =>
+            SetColor(defaultTemplate, componentName, color);
+
+        /// <summary>
+        /// Sets the template
+        /// </summary>
+        /// <param name="template">Template name</param>
+        /// <param name="componentName">Component name</param>
+        /// <param name="color">Color to set</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void SetColor(string template, PredefinedComponentType componentName, Color color) =>
+            SetColor(template, $"{componentName}", color);
+
+        /// <summary>
+        /// Sets the default template
+        /// </summary>
+        /// <param name="componentName">Component name</param>
+        /// <param name="color">Color to set</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void SetColor(string componentName, Color color) =>
+            SetColor(defaultTemplate, componentName, color);
+
+        /// <summary>
+        /// Sets the template
+        /// </summary>
+        /// <param name="template">Template name</param>
+        /// <param name="componentName">Component name</param>
+        /// <param name="color">Color to set</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void SetColor(string template, string componentName, Color color)
+        {
+            // Check to see if we have this template
+            if (!Exists(template))
+                throw new TerminauxException("Can't find template {0}", template);
+
+            // Now, set the template
+            var templateInfo = GetTemplate(template);
+            templateInfo.EditComponent(componentName, color);
+        }
+
+        /// <summary>
         /// Registers a template
         /// </summary>
         /// <param name="template">Template information</param>
