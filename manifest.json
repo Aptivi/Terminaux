@@ -1205,6 +1205,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputPasswordColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputPasswordColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxProgressColor.yml",
       "output": {
         ".html": {
