@@ -84,7 +84,7 @@ namespace Terminaux.Inputs.Styles
                     buffer.Append(CenteredFigletTextColor.RenderCenteredFiglet(figletFont, text));
 
                     // Write the selected font name and the keybindings
-                    buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 4, fontName));
+                    buffer.Append(CenteredTextColor.RenderCentered(1, $"{fontName} - [{selectedFont + 1}/{fonts.Length}]"));
                     buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 2, "[ESC] Cancel | [ENTER] Submit | [<-|->] Select | [H] Help"));
                     return buffer.ToString();
                 });
