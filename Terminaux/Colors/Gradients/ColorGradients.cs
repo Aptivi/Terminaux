@@ -77,7 +77,7 @@ namespace Terminaux.Colors.Gradients
             double currentColorRed = sourceColor.RGB.R;
             double currentColorGreen = sourceColor.RGB.G;
             double currentColorBlue = sourceColor.RGB.B;
-            for (int x = 0; x < steps; x++)
+            for (int x = 0; x <= steps; x++)
             {
                 // Make a new instance of Color to indicate the intermediate gradient color
                 var currentColorInstance = new Color($"{Convert.ToInt32(currentColorRed)};{Convert.ToInt32(currentColorGreen)};{Convert.ToInt32(currentColorBlue)}");
@@ -89,11 +89,6 @@ namespace Terminaux.Colors.Gradients
                 currentColorGreen -= colorGreenSteps;
                 currentColorBlue -= colorBlueSteps;
             }
-
-            // Make a new instance of Color to indicate the final gradient color
-            var finalColorInstance = new Color($"{Convert.ToInt32(currentColorRed)};{Convert.ToInt32(currentColorGreen)};{Convert.ToInt32(currentColorBlue)}");
-            var finalGradient = new ColorGradient(steps + 1, finalColorInstance);
-            gradients.enumerator.gradients[steps - 1] = finalGradient;
 
             // Return the final instance
             return gradients;

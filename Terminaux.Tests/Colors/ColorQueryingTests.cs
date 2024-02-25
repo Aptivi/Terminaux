@@ -389,7 +389,7 @@ namespace Terminaux.Tests.Colors
             var grads = ColorGradients.GetGradients(source, target, steps);
             grads.ShouldNotBeNull();
             grads.ShouldNotBeEmpty();
-            grads.Count.ShouldBe(steps);
+            grads.Count.ShouldBe(steps + 1);
             grads[0].ShouldNotBeNull();
             grads[0].IntermediateColor.PlainSequenceTrueColor.ShouldBe(source.PlainSequenceTrueColor);
             grads[grads.Count - 1].ShouldNotBeNull();
@@ -409,7 +409,7 @@ namespace Terminaux.Tests.Colors
             var grads = ColorGradients.GetGradients(source, target, steps);
             grads.ShouldNotBeNull();
             grads.ShouldNotBeEmpty();
-            grads.Count.ShouldBe(steps);
+            grads.Count.ShouldBe(steps + 1);
             grads[0].ShouldNotBeNull();
             grads[0].IntermediateColor.PlainSequenceTrueColor.ShouldBe(source.PlainSequenceTrueColor);
             grads[grads.Count - 1].ShouldNotBeNull();
