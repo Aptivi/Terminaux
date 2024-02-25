@@ -43,7 +43,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             if (selected is null)
                 InteractiveTuiStatus.Status = "No info.";
             else
-                InteractiveTuiStatus.Status = $"{selected.Names[0]}";
+                InteractiveTuiStatus.Status = $"{selected.Names[0]} - {selected.Names[1]}";
 
             // Now, populate the info
             var builder = new StringBuilder();
