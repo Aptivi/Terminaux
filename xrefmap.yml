@@ -21167,6 +21167,54 @@ references:
   commentId: T:Terminaux.Colors.Templates.TemplateInfo
   fullName: Terminaux.Colors.Templates.TemplateInfo
   nameWithType: TemplateInfo
+- uid: Terminaux.Colors.Templates.TemplateInfo.AddComponent(System.String,Terminaux.Colors.Color)
+  name: AddComponent(string, Color)
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_AddComponent_System_String_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Templates.TemplateInfo.AddComponent(System.String,Terminaux.Colors.Color)
+  name.vb: AddComponent(String, Color)
+  fullName: Terminaux.Colors.Templates.TemplateInfo.AddComponent(string, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Colors.Templates.TemplateInfo.AddComponent(String, Terminaux.Colors.Color)
+  nameWithType: TemplateInfo.AddComponent(string, Color)
+  nameWithType.vb: TemplateInfo.AddComponent(String, Color)
+- uid: Terminaux.Colors.Templates.TemplateInfo.AddComponent*
+  name: AddComponent
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_AddComponent_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateInfo.AddComponent
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateInfo.AddComponent
+  nameWithType: TemplateInfo.AddComponent
+- uid: Terminaux.Colors.Templates.TemplateInfo.ComponentExists(System.String)
+  name: ComponentExists(string)
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_ComponentExists_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateInfo.ComponentExists(System.String)
+  name.vb: ComponentExists(String)
+  fullName: Terminaux.Colors.Templates.TemplateInfo.ComponentExists(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateInfo.ComponentExists(String)
+  nameWithType: TemplateInfo.ComponentExists(string)
+  nameWithType.vb: TemplateInfo.ComponentExists(String)
+- uid: Terminaux.Colors.Templates.TemplateInfo.ComponentExists*
+  name: ComponentExists
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_ComponentExists_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateInfo.ComponentExists
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateInfo.ComponentExists
+  nameWithType: TemplateInfo.ComponentExists
+- uid: Terminaux.Colors.Templates.TemplateInfo.ComponentPredefined(System.String)
+  name: ComponentPredefined(string)
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_ComponentPredefined_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateInfo.ComponentPredefined(System.String)
+  name.vb: ComponentPredefined(String)
+  fullName: Terminaux.Colors.Templates.TemplateInfo.ComponentPredefined(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateInfo.ComponentPredefined(String)
+  nameWithType: TemplateInfo.ComponentPredefined(string)
+  nameWithType.vb: TemplateInfo.ComponentPredefined(String)
+- uid: Terminaux.Colors.Templates.TemplateInfo.ComponentPredefined*
+  name: ComponentPredefined
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_ComponentPredefined_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateInfo.ComponentPredefined
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateInfo.ComponentPredefined
+  nameWithType: TemplateInfo.ComponentPredefined
 - uid: Terminaux.Colors.Templates.TemplateInfo.Components
   name: Components
   href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_Components
@@ -21180,6 +21228,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Templates.TemplateInfo.Components
   nameWithType: TemplateInfo.Components
+- uid: Terminaux.Colors.Templates.TemplateInfo.EditComponent(System.String,Terminaux.Colors.Color)
+  name: EditComponent(string, Color)
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_EditComponent_System_String_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Templates.TemplateInfo.EditComponent(System.String,Terminaux.Colors.Color)
+  name.vb: EditComponent(String, Color)
+  fullName: Terminaux.Colors.Templates.TemplateInfo.EditComponent(string, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Colors.Templates.TemplateInfo.EditComponent(String, Terminaux.Colors.Color)
+  nameWithType: TemplateInfo.EditComponent(string, Color)
+  nameWithType.vb: TemplateInfo.EditComponent(String, Color)
+- uid: Terminaux.Colors.Templates.TemplateInfo.EditComponent*
+  name: EditComponent
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_EditComponent_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateInfo.EditComponent
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateInfo.EditComponent
+  nameWithType: TemplateInfo.EditComponent
 - uid: Terminaux.Colors.Templates.TemplateInfo.Name
   name: Name
   href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_Name
@@ -21193,6 +21257,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Templates.TemplateInfo.Name
   nameWithType: TemplateInfo.Name
+- uid: Terminaux.Colors.Templates.TemplateInfo.RemoveComponent(System.String)
+  name: RemoveComponent(string)
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_RemoveComponent_System_String_
+  commentId: M:Terminaux.Colors.Templates.TemplateInfo.RemoveComponent(System.String)
+  name.vb: RemoveComponent(String)
+  fullName: Terminaux.Colors.Templates.TemplateInfo.RemoveComponent(string)
+  fullName.vb: Terminaux.Colors.Templates.TemplateInfo.RemoveComponent(String)
+  nameWithType: TemplateInfo.RemoveComponent(string)
+  nameWithType.vb: TemplateInfo.RemoveComponent(String)
+- uid: Terminaux.Colors.Templates.TemplateInfo.RemoveComponent*
+  name: RemoveComponent
+  href: api/Terminaux.Colors.Templates.TemplateInfo.html#Terminaux_Colors_Templates_TemplateInfo_RemoveComponent_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateInfo.RemoveComponent
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateInfo.RemoveComponent
+  nameWithType: TemplateInfo.RemoveComponent
 - uid: Terminaux.Colors.Templates.TemplateTools
   name: TemplateTools
   href: api/Terminaux.Colors.Templates.TemplateTools.html
@@ -21357,6 +21437,46 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Templates.TemplateTools.ResetDefaultTemplate
   nameWithType: TemplateTools.ResetDefaultTemplate
+- uid: Terminaux.Colors.Templates.TemplateTools.SetColor(System.String,System.String,Terminaux.Colors.Color)
+  name: SetColor(string, string, Color)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_SetColor_System_String_System_String_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.SetColor(System.String,System.String,Terminaux.Colors.Color)
+  name.vb: SetColor(String, String, Color)
+  fullName: Terminaux.Colors.Templates.TemplateTools.SetColor(string, string, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.SetColor(String, String, Terminaux.Colors.Color)
+  nameWithType: TemplateTools.SetColor(string, string, Color)
+  nameWithType.vb: TemplateTools.SetColor(String, String, Color)
+- uid: Terminaux.Colors.Templates.TemplateTools.SetColor(System.String,Terminaux.Colors.Color)
+  name: SetColor(string, Color)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_SetColor_System_String_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.SetColor(System.String,Terminaux.Colors.Color)
+  name.vb: SetColor(String, Color)
+  fullName: Terminaux.Colors.Templates.TemplateTools.SetColor(string, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.SetColor(String, Terminaux.Colors.Color)
+  nameWithType: TemplateTools.SetColor(string, Color)
+  nameWithType.vb: TemplateTools.SetColor(String, Color)
+- uid: Terminaux.Colors.Templates.TemplateTools.SetColor(System.String,Terminaux.Colors.Templates.PredefinedComponentType,Terminaux.Colors.Color)
+  name: SetColor(string, PredefinedComponentType, Color)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_SetColor_System_String_Terminaux_Colors_Templates_PredefinedComponentType_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.SetColor(System.String,Terminaux.Colors.Templates.PredefinedComponentType,Terminaux.Colors.Color)
+  name.vb: SetColor(String, PredefinedComponentType, Color)
+  fullName: Terminaux.Colors.Templates.TemplateTools.SetColor(string, Terminaux.Colors.Templates.PredefinedComponentType, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Colors.Templates.TemplateTools.SetColor(String, Terminaux.Colors.Templates.PredefinedComponentType, Terminaux.Colors.Color)
+  nameWithType: TemplateTools.SetColor(string, PredefinedComponentType, Color)
+  nameWithType.vb: TemplateTools.SetColor(String, PredefinedComponentType, Color)
+- uid: Terminaux.Colors.Templates.TemplateTools.SetColor(Terminaux.Colors.Templates.PredefinedComponentType,Terminaux.Colors.Color)
+  name: SetColor(PredefinedComponentType, Color)
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_SetColor_Terminaux_Colors_Templates_PredefinedComponentType_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Templates.TemplateTools.SetColor(Terminaux.Colors.Templates.PredefinedComponentType,Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.Templates.TemplateTools.SetColor(Terminaux.Colors.Templates.PredefinedComponentType, Terminaux.Colors.Color)
+  nameWithType: TemplateTools.SetColor(PredefinedComponentType, Color)
+- uid: Terminaux.Colors.Templates.TemplateTools.SetColor*
+  name: SetColor
+  href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_SetColor_
+  commentId: Overload:Terminaux.Colors.Templates.TemplateTools.SetColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Templates.TemplateTools.SetColor
+  nameWithType: TemplateTools.SetColor
 - uid: Terminaux.Colors.Templates.TemplateTools.SetDefaultTemplate(System.String)
   name: SetDefaultTemplate(string)
   href: api/Terminaux.Colors.Templates.TemplateTools.html#Terminaux_Colors_Templates_TemplateTools_SetDefaultTemplate_System_String_
