@@ -127,6 +127,7 @@ namespace Terminaux.Console.Fixtures
             new TestInputInfoBoxSelectionHugeMultiple(),
             new TestInputInfoBoxInput(),
             new TestInputInfoBoxColoredInput(),
+            new TestInputInfoBoxInputPassword(),
             new TestInputInfoBoxProgress(),
             new ColorSelectorTest(),
             new ColorSelectorNoPaletteTest(),
