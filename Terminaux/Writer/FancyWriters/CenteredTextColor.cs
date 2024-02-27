@@ -329,7 +329,7 @@ namespace Terminaux.Writer.FancyWriters
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - ConsoleMisc.FilterVTSequences(sentence).Length / 2;
                     consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
                     centered.Append(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
