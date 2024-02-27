@@ -180,57 +180,9 @@ namespace Terminaux.Writer.FancyWriters
         internal static string RenderCenteredFiglet(FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
         {
             Text = TextTools.FormatString(Text, Vars);
-            var figBuilder = new StringBuilder();
-            var figFontFallback = FigletTools.GetFigletFont("small");
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
-            int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
-            int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback) / 2;
-            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            if (consoleX < 0 || consoleY > ConsoleWrapper.WindowHeight)
-            {
-                // The figlet won't fit, so use small text
-                consoleX = ConsoleWrapper.WindowWidth / 2 - figWidthFallback;
-                consoleY = ConsoleWrapper.WindowHeight / 2 - figHeightFallback;
-                if (consoleX < 0 || consoleY > ConsoleWrapper.WindowHeight)
-                {
-                    // The fallback figlet also won't fit, so use smaller text
-                    figBuilder.Append(
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        CenteredTextColor.RenderCentered(Text, Vars)
-                    );
-                }
-                else
-                {
-                    // Write the figlet.
-                    figBuilder.Append(
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        FigletWhereColor.RenderFigletWherePlain(Text, consoleX, consoleY, true, figFontFallback, Vars)
-                    );
-                }
-            }
-            else
-            {
-                // Write the figlet.
-                figBuilder.Append(
-                    $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                    $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                    FigletWhereColor.RenderFigletWherePlain(Text, consoleX, consoleY, true, FigletFont, Vars)
-                );
-            }
-
-            // Write the resulting buffer
-            if (useColor)
-            {
-                figBuilder.Append(
-                    ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                    ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
-                );
-            }
-            return figBuilder.ToString();
+            return RenderCenteredFiglet(consoleY, FigletFont, Text, ForegroundColor, BackgroundColor, useColor, Vars);
         }
 
         /// <summary>
