@@ -895,14 +895,14 @@ namespace Terminaux.Inputs.Styles.Choice
                         {
                             string answersPlace = altAnswers.Count > 0 ? " <{0}/{1}> " : " <{0}> ";
                             TextWriterColor.WriteColor(Question, false, questionColor);
-                            TextWriterColor.WriteColor(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
+                            TextWriterColor.WriteColor(answersPlace, false, inputColor, string.Join("/", answerNames), string.Join("/", altAnswerNames));
                             break;
                         }
                     case ChoiceOutputType.TwoLines:
                         {
                             string answersPlace = altAnswers.Count > 0 ? "<{0}/{1}> " : "<{0}> ";
                             TextWriterColor.WriteColor(Question, true, questionColor);
-                            TextWriterColor.WriteColor(answersPlace, false, inputColor, string.Join("/", answers), string.Join("/", altAnswers));
+                            TextWriterColor.WriteColor(answersPlace, false, inputColor, string.Join("/", answerNames), string.Join("/", altAnswerNames));
                             break;
                         }
                     case ChoiceOutputType.Modern:
