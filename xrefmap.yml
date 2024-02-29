@@ -193,6 +193,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.Screen.RequireRefresh
   nameWithType: Screen.RequireRefresh
+- uid: Terminaux.Base.Buffered.Screen.ResetResize
+  name: ResetResize
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_ResetResize
+  commentId: P:Terminaux.Base.Buffered.Screen.ResetResize
+  fullName: Terminaux.Base.Buffered.Screen.ResetResize
+  nameWithType: Screen.ResetResize
+- uid: Terminaux.Base.Buffered.Screen.ResetResize*
+  name: ResetResize
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_ResetResize_
+  commentId: Overload:Terminaux.Base.Buffered.Screen.ResetResize
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.Screen.ResetResize
+  nameWithType: Screen.ResetResize
 - uid: Terminaux.Base.Buffered.Screen.ScreenParts
   name: ScreenParts
   href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_ScreenParts
