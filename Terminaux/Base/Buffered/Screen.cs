@@ -31,6 +31,7 @@ namespace Terminaux.Base.Buffered
     public class Screen
     {
         private bool needsRefresh = true;
+        private bool resetResize = true;
         private readonly ScreenPart clearPart = new();
         private readonly Dictionary<string, ScreenPart> screenParts = [];
 
@@ -39,6 +40,15 @@ namespace Terminaux.Base.Buffered
         /// </summary>
         public ScreenPart[] ScreenParts =>
             [.. screenParts.Values];
+
+        /// <summary>
+        /// Whether to reset the resize state or not
+        /// </summary>
+        public bool ResetResize
+        {
+            get => resetResize;
+            set => resetResize = value;
+        }
 
         /// <summary>
         /// Adds the buffered part to the list of screen parts
@@ -220,7 +230,7 @@ namespace Terminaux.Base.Buffered
                 ConsoleWrapper.CursorVisible = false;
                 var builder = new StringBuilder();
                 builder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
-                if (needsRefresh || ConsoleResizeHandler.WasResized())
+                if (needsRefresh || ConsoleResizeHandler.WasResized(ResetResize))
                 {
                     needsRefresh = false;
                     builder.Append(ConsoleClearing.GetClearWholeScreenSequence());
