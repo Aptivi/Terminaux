@@ -4,7 +4,7 @@
     <AssemblyTitle>Terminaux</AssemblyTitle>
     <AssemblyDescription>Console Manipulation Library</AssemblyDescription>
     <Description>A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.</Description>
-    <Version>3.1.3</Version>
+    <Version>3.1.4</Version>
     <Authors>Aptivi</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <DebugType>portable</DebugType>
