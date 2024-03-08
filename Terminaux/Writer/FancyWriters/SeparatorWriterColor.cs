@@ -38,21 +38,25 @@ namespace Terminaux.Writer.FancyWriters
         /// Draw a separator with text plainly
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorPlain(string Text, params object[] Vars) =>
-            WriteSeparatorPlain(Text, true, Vars);
+        public static void WriteSeparatorPlain(string Text, bool line = true, params object[] Vars) =>
+            WriteSeparatorPlain(Text, true, line, Vars);
 
         /// <summary>
         /// Draw a separator with text plainly
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
+        /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorPlain(string Text, bool PrintSuffix, params object[] Vars)
+        public static void WriteSeparatorPlain(string Text, bool PrintSuffix, bool line = true, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderSeparator(Text, PrintSuffix, Vars) + '\n');
+                TextWriterRaw.WriteRaw(RenderSeparator(Text, PrintSuffix, Vars));
+                if (line)
+                    TextWriterRaw.WritePlain("\n");
             }
             catch (Exception ex)
             {
@@ -65,18 +69,20 @@ namespace Terminaux.Writer.FancyWriters
         /// Draw a separator with text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, params object[] Vars) =>
-            WriteSeparator(Text, true, Vars);
+        public static void WriteSeparator(string Text, bool line = true, params object[] Vars) =>
+            WriteSeparator(Text, true, line, Vars);
 
         /// <summary>
         /// Draw a separator with text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorColor(string Text, Color Color, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, true, Color, ColorTools.currentBackgroundColor, Vars);
+        public static void WriteSeparatorColor(string Text, Color Color, bool line = true, params object[] Vars) =>
+            WriteSeparatorColorBack(Text, true, Color, ColorTools.currentBackgroundColor, line, Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -84,21 +90,25 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorColorBack(string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, true, ForegroundColor, BackgroundColor, Vars);
+        public static void WriteSeparatorColorBack(string Text, Color ForegroundColor, Color BackgroundColor, bool line = true, params object[] Vars) =>
+            WriteSeparatorColorBack(Text, true, ForegroundColor, BackgroundColor, line, Vars);
 
         /// <summary>
         /// Draw a separator with text
         /// </summary>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
+        /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, params object[] Vars)
+        public static void WriteSeparator(string Text, bool PrintSuffix, bool line = true, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderSeparator(Text, PrintSuffix, Vars) + '\n');
+                TextWriterRaw.WriteRaw(RenderSeparator(Text, PrintSuffix, Vars));
+                if (line)
+                    TextWriterRaw.WritePlain("\n");
             }
             catch (Exception ex)
             {
@@ -113,9 +123,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
         /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorColor(string Text, bool PrintSuffix, Color Color, params object[] Vars) =>
-            WriteSeparatorColorBack(Text, PrintSuffix, Color, ColorTools.currentBackgroundColor, Vars);
+        public static void WriteSeparatorColor(string Text, bool PrintSuffix, Color Color, bool line = true, params object[] Vars) =>
+            WriteSeparatorColorBack(Text, PrintSuffix, Color, ColorTools.currentBackgroundColor, line, Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -124,12 +135,15 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="line">Whether to write a new line or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparatorColorBack(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteSeparatorColorBack(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, bool line = true, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WritePlain(RenderSeparator(Text, PrintSuffix, ForegroundColor, BackgroundColor, Vars) + '\n');
+                TextWriterRaw.WriteRaw(RenderSeparator(Text, PrintSuffix, ForegroundColor, BackgroundColor, Vars));
+                if (line)
+                    TextWriterRaw.WritePlain("\n");
             }
             catch (Exception ex)
             {
