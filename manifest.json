@@ -2,7 +2,7 @@
   "sitemap": {
     "baseUrl": "https://aptivi.github.io/Terminaux/"
   },
-  "source_base_path": "/github/workspace/DocGen",
+  "source_base_path": "/home/runner/work/Terminaux/Terminaux/DocGen",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
