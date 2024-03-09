@@ -19,12 +19,12 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
+      - name: Setup DocFX
+        run: dotnet tool install --global docfx --version 2.75.2
       - name: Solution Compilation
         run: dotnet build --configuration Release
-      - uses: "nunit/docfx-action@master"
-        name: Generating documentation
-        with:
-          args: DocGen/docfx.json
+      - name: Generating documentation
+        run: docfx DocGen/docfx.json
       - name: Saving changes to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
