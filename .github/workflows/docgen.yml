@@ -21,8 +21,6 @@ jobs:
           dotnet-version: '8.0.x'
       - name: Setup DocFX
         run: dotnet tool install --global docfx --version 2.75.2
-      - name: Solution Compilation
-        run: dotnet build --configuration Release
       - name: Generating documentation
         run: docfx DocGen/docfx.json
       - name: Saving changes to gh-pages
