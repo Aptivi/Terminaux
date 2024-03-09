@@ -24,7 +24,7 @@ jobs:
     - name: Solution Compilation
       run: dotnet build --configuration Debug
     - name: Testing
-      run: dotnet test --configuration Debug
+      run: dotnet test --no-build --configuration Debug
     - uses: actions/upload-artifact@v4
       if: success() || failure()
       with:
