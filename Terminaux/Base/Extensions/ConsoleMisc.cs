@@ -234,8 +234,9 @@ namespace Terminaux.Base.Extensions
                     CompensateLengths(word);
 
                     // Compensate the \0 characters
-                    if (splitText[i] == '\0')
-                        vtSeqCompensate++;
+                    for (int c = 0; c < word.Length; c++)
+                        if (splitText[c] == '\0')
+                            vtSeqCompensate++;
 
                     // Append the word into the incomplete sentence builder.
                     int finalMaximum = maximumLength - indentLength + vtSeqCompensate;

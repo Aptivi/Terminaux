@@ -121,6 +121,19 @@ namespace Terminaux.Tests.Base
         }
 
         /// <summary>
+        /// Tests getting wrapped sentences
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetWrappedSentencesByWordsEdgeCase()
+        {
+            var sentences = ConsoleMisc.GetWrappedSentencesByWords("-------------------------------------------------------------------\r\n\r\nTest text\n    \n\n  Test text 2.", 30);
+            sentences.ShouldNotBeNull();
+            sentences.ShouldNotBeEmpty();
+            sentences.Length.ShouldBe(8);
+        }
+
+        /// <summary>
         /// Tests truncating...
         /// </summary>
         [TestMethod]
