@@ -10,8 +10,10 @@ on:
     
 jobs:
   build:
-
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        runs-on: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.runs-on }}
 
     steps:
     - uses: actions/checkout@v4
@@ -25,9 +27,4 @@ jobs:
       run: dotnet build --configuration Debug
     - name: Testing
       run: dotnet test --no-build --configuration Debug
-    - uses: actions/upload-artifact@v4
-      if: success() || failure()
-      with:
-        name: build-${{ matrix.runs-on }}
-        path: "Terminaux/bin/Debug/"
         

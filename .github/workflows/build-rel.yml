@@ -10,8 +10,10 @@ on:
     
 jobs:
   build:
-
-    runs-on: windows-latest
+    strategy:
+      matrix:
+        runs-on: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.runs-on }}
 
     steps:
     - uses: actions/checkout@v4
