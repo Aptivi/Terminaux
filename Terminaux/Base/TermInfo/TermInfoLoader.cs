@@ -28,15 +28,13 @@ namespace Terminaux.Base.TermInfo
 {
     internal static class TermInfoLoader
     {
-        public static TermInfoDesc? Load(string? name = null)
+        public static TermInfoDesc? Load(string name = "")
         {
-            if (name == null)
+            if (string.IsNullOrEmpty(name))
             {
                 name = Environment.GetEnvironmentVariable("TERM");
-                if (name == null)
-                {
+                if (string.IsNullOrEmpty(name))
                     return null;
-                }
             }
 
             var directories = new List<string>();
@@ -75,9 +73,7 @@ namespace Terminaux.Base.TermInfo
             {
                 var desc = Load(directory, name);
                 if (desc != null)
-                {
                     return desc;
-                }
             }
 
             return null;
@@ -86,9 +82,7 @@ namespace Terminaux.Base.TermInfo
         public static TermInfoDesc Load(Stream stream)
         {
             if (stream is null)
-            {
                 throw new ArgumentNullException(nameof(stream));
-            }
 
             return TermInfoParser.Parse(stream);
         }
@@ -104,9 +98,7 @@ namespace Terminaux.Base.TermInfo
             foreach (var file in files)
             {
                 if (File.Exists(file))
-                {
                     return Load(File.OpenRead(file));
-                }
             }
 
             return null;

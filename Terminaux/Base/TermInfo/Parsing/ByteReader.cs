@@ -33,10 +33,8 @@ namespace Terminaux.Base.TermInfo.Parsing
             _reader = new BinaryReader(stream);
         }
 
-        public bool Eof()
-        {
-            return _reader.PeekChar() == -1;
-        }
+        public bool Eof() =>
+            _reader.PeekChar() == -1;
 
         public int ReadByte()
         {

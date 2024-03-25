@@ -54,10 +54,8 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <returns>The default terminfo description for the current terminal,
         /// or <c>null</c> if none could be resolved.</returns>
-        public static TermInfoDesc? Load()
-        {
-            return TermInfoLoader.Load();
-        }
+        public static TermInfoDesc? Load() =>
+            TermInfoLoader.Load();
 
         /// <summary>
         /// Tries to load the specified terminfo description for the current terminal.
@@ -70,10 +68,8 @@ namespace Terminaux.Base.TermInfo
         /// <returns><c>true</c> if the terminfo description was loaded successfully; otherwise, <c>false</c>.</returns>
         public static bool TryLoad(string name, out TermInfoDesc? result)
         {
-            if (name is null)
-            {
+            if (string.IsNullOrEmpty(name))
                 throw new ArgumentNullException(nameof(name));
-            }
 
             try
             {
@@ -95,10 +91,8 @@ namespace Terminaux.Base.TermInfo
         /// or <c>null</c> if none could be resolved.</returns>
         public static TermInfoDesc? Load(string name)
         {
-            if (name is null)
-            {
+            if (string.IsNullOrEmpty(name))
                 throw new ArgumentNullException(nameof(name));
-            }
 
             return TermInfoLoader.Load(name);
         }
@@ -131,9 +125,7 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <param name="stream">The stream to read from.</param>
         /// <returns>The parsed terminfo description.</returns>
-        public static TermInfoDesc Load(Stream stream)
-        {
-            return TermInfoLoader.Load(stream);
-        }
+        public static TermInfoDesc Load(Stream stream) =>
+            TermInfoLoader.Load(stream);
     }
 }

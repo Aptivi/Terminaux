@@ -27,10 +27,8 @@ namespace Terminaux.Base.TermInfo.Extensions
     internal static class EnumerableExtensions
     {
         public static IEnumerable<(TFirst First, TSecond Second)> Zip<TFirst, TSecond>(
-            this IEnumerable<TFirst> source, IEnumerable<TSecond> first)
-        {
-            return source.Zip(first, (first, second) => (first, second));
-        }
+            this IEnumerable<TFirst> source, IEnumerable<TSecond> first) =>
+            source.Zip(first, (first, second) => (first, second));
     }
 }
 #endif

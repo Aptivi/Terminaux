@@ -78,16 +78,14 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <param name="kind">The capability kind to get the names for.</param>
         /// <returns>The names for the specified capability kind.</returns>
-        public List<string> GetNames(TermInfoCapsKind kind)
-        {
-            return kind switch
+        public List<string> GetNames(TermInfoCapsKind kind) =>
+            kind switch
             {
                 TermInfoCapsKind.Boolean => new List<string>(_booleans.Keys),
                 TermInfoCapsKind.Num => new List<string>(_nums.Keys),
                 TermInfoCapsKind.String => new List<string>(_strings.Keys),
                 _ => throw new NotSupportedException($"Unknown capability type '{kind}'"),
             };
-        }
 
         /// <summary>
         /// Gets a extended boolean capability.
