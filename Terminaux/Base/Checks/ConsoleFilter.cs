@@ -35,7 +35,7 @@ namespace Terminaux.Base.Checks
             (new("dumb"), ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist, "Console type only supports basic writing."),
             (new("unknown"), ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist, "Console type is of unknown nature."),
             (new("Apple_Terminal"), ConsoleFilterType.Emulator, ConsoleFilterSeverity.Blacklist, "This application makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors."),
-            (new(@"^((?!-256col).)*$"), ConsoleFilterType.Emulator, ConsoleFilterSeverity.Blacklist, "Console type doesn't support 256 colors."),
+            (new(@"^((?!-256col).)*$"), ConsoleFilterType.Type, ConsoleFilterSeverity.Graylist, "Console type doesn't support 256 colors."),
         ];
         internal static List<(Regex?, ConsoleFilterType, ConsoleFilterSeverity, string)> customFilters = [];
 
