@@ -68,9 +68,6 @@ namespace Terminaux.Base.TermInfo
         /// <returns><c>true</c> if the terminfo description was loaded successfully; otherwise, <c>false</c>.</returns>
         public static bool TryLoad(string name, out TermInfoDesc? result)
         {
-            if (string.IsNullOrEmpty(name))
-                throw new ArgumentNullException(nameof(name));
-
             try
             {
                 result = Load(name);
@@ -89,13 +86,8 @@ namespace Terminaux.Base.TermInfo
         /// <param name="name">The name of the terminfo description to load.</param>
         /// <returns>The default terminfo description for the current terminal,
         /// or <c>null</c> if none could be resolved.</returns>
-        public static TermInfoDesc? Load(string name)
-        {
-            if (string.IsNullOrEmpty(name))
-                throw new ArgumentNullException(nameof(name));
-
-            return TermInfoLoader.Load(name);
-        }
+        public static TermInfoDesc? Load(string name) =>
+            TermInfoLoader.Load(name);
 
         /// <summary>
         /// Tries to read a terminfo description from a stream.
