@@ -17,6 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.ConsoleWriters;
+
 namespace Terminaux.Inputs.Pointer
 {
     /// <summary>
@@ -24,6 +27,33 @@ namespace Terminaux.Inputs.Pointer
     /// </summary>
     public static class PointerListener
     {
+        private static bool listening;
 
+        /// <summary>
+        /// Starts the pointer listener
+        /// </summary>
+        public static void StartListener()
+        {
+            if (listening)
+                return;
+            listening = true;
+
+            // Start the listener
+            TextWriterRaw.WriteRaw(CsiSequences.GenerateCsiLocatorReporting(1, 0));
+            TextWriterRaw.WriteRaw(CsiSequences.GenerateCsiSelectLocatorEvents("1"));
+        }
+
+        /// <summary>
+        /// Stops the pointer listener
+        /// </summary>
+        public static void StopListener()
+        {
+            if (!listening)
+                return;
+            listening = false;
+
+            // Stop the listener
+            TextWriterRaw.WriteRaw(CsiSequences.GenerateCsiLocatorReporting(0, 0));
+        }
     }
 }
