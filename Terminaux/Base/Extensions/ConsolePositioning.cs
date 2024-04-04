@@ -149,6 +149,85 @@ namespace Terminaux.Base.Extensions
             return (LeftSeekPosition, TopSeekPosition);
         }
 
+        /// <summary>
+        /// A safe way to get console dimensions
+        /// </summary>
+        /// <returns>A column and a row in a tuple</returns>
+        public static (int column, int row) GetDimensionsSafe()
+        {
+            // Return immediately on Unix.
+            if (PlatformHelper.IsOnUnix())
+                return (Console.WindowWidth, Console.WindowHeight);
+
+            // Assuming that we're on Windows, check to see if we're able to get access to the two properties.
+            try
+            {
+                return (Console.WindowWidth, Console.WindowHeight);
+            }
+            catch (IOException)
+            {
+                // We may be running on MinTTY or any other Windows console that doesn't allow calling the two
+                // above properties because of "Unhandled exception. System.IO.IOException: The handle is invalid."
+                // In this case, fall back to the VT sequence method. Interestingly, we're also not allowed to call
+                // the standard Console.CursorLeft and CursorTop due to the same error, so we need to find a way to
+                // somehow get the cursor position.
+                static unsafe (int column, int row) ReportCursorStatus()
+                {
+                    // Now, write a sequence that gives us the cursor position
+                    TextWriterRaw.WriteRaw("\u001b[6n");
+
+                    // Parse the reply
+                    bool inEscape = false;
+                    bool inRow = true;
+                    List<string> columnStrs = [];
+                    List<string> rowStrs = [];
+                    while (true)
+                    {
+                        int characterInt = Console.Read();
+                        char character = (char)characterInt;
+                        if (!inEscape)
+                        {
+                            if (character == CharManager.GetEsc())
+                                inEscape = true;
+                        }
+                        else if (character != '[')
+                        {
+                            if (character == ';')
+                                inRow = false;
+                            if (character == 'R')
+                                break;
+                            else if (char.IsNumber(character))
+                            {
+                                string charString = $"{character}";
+                                if (inRow)
+                                    rowStrs.Add(charString);
+                                else
+                                    columnStrs.Add(charString);
+                            }
+                        }
+                    }
+
+                    // We're done parsing, so calculate the column and the row
+                    string columnStr = string.Join("", columnStrs);
+                    string rowStr = string.Join("", rowStrs);
+
+                    // Return the result
+                    return (Convert.ToInt32(columnStr), Convert.ToInt32(rowStr));
+                }
+
+                // Do the job!
+                var oldStatus = ReportCursorStatus();
+                int oldColumn = oldStatus.column;
+                int oldRow = oldStatus.row;
+                TextWriterRaw.WriteRaw(CsiSequences.GenerateCsiCursorPosition(int.MaxValue, int.MaxValue));
+                var newStatus = ReportCursorStatus();
+                int width = newStatus.column;
+                int height = newStatus.row;
+                TextWriterRaw.WriteRaw(CsiSequences.GenerateCsiCursorPosition(oldColumn, oldRow));
+                return (width, height);
+            }
+        }
+
         #region Windows-specific
         private const string winKernel = "kernel32.dll";
 

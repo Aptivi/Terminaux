@@ -17,24 +17,23 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
-using Terminaux.Inputs.Pointer;
-using Terminaux.Reader;
-using Terminaux.Writer.ConsoleWriters;
+using tcflag_t = System.UInt32;
+using cc_t = System.Byte;
+using speed_t = System.UInt32;
 
-namespace Terminaux.Console.Fixtures.Cases.Input
+namespace Terminaux.Base.Termios
 {
-    internal class MouseCanvas : IFixture
+    internal unsafe struct ConsoleLibcTermios
     {
-        public string FixtureID => "MouseCanvas";
-        public void RunFixture()
-        {
-            TextWriterColor.Write("Move your mouse and/or click anywhere. Once done, press any key on your keyboard.");
-            PointerListener.StartListener();
-            TermReader.ReadKey();
-            PointerListener.StopListener();
-        }
+        internal const int NCCS = 32;
+
+        internal tcflag_t c_iflag;
+        internal tcflag_t c_oflag;
+        internal tcflag_t c_cflag;
+        internal tcflag_t c_lflag;
+        internal cc_t c_line;
+        internal fixed cc_t c_cc[NCCS];
+        internal speed_t __c_ispeed;
+        internal speed_t __c_ospeed;
     }
 }
