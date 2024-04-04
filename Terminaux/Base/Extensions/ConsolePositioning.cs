@@ -32,7 +32,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
-using Terminaux.Base.Termios;
 using System.Reflection;
 
 namespace Terminaux.Base.Extensions
@@ -162,13 +161,13 @@ namespace Terminaux.Base.Extensions
             {
                 return (Console.WindowWidth, Console.WindowHeight);
             }
-            catch (IOException)
+            catch (Exception)
             {
-                // Looks like that we failed to get the position.
+                // Looks like that we failed to get the position for some reason.
                 if (PlatformHelper.IsOnUnix())
                 {
-                    // Use Termios, which gives us enough functions to disable input blocking, to get the position.
-                    return GetPositionUsingTermios();
+                    // Use avqilable buffering functions, which give us enough functions to get the position.
+                    return GetPositionUsingBuffering();
                 }
                 else
                 {
@@ -391,17 +390,10 @@ namespace Terminaux.Base.Extensions
         #endregion
 
         #region Other internals
-        internal static (int column, int row) GetPositionUsingTermios()
+        internal static (int column, int row) GetPositionUsingBuffering()
         {
             static unsafe (int column, int row) ReportCursorStatus()
             {
-                // Get two exact copies of Termios settings
-                ConsoleLibcTermios termiosOrig, termiosMod;
-                ConsoleLibcTermiosTools.tcgetattr(0, &termiosOrig);
-                termiosMod = termiosOrig;
-                termiosMod.c_lflag &= ~(ConsoleLibcTermiosTools.ICANON | ConsoleLibcTermiosTools.ECHO);
-                ConsoleLibcTermiosTools.tcsetattr(0, ConsoleLibcTermiosTools.TCSANOW, &termiosMod);
-
                 string columnStr = "0", rowStr = "0";
                 try
                 {
@@ -413,10 +405,11 @@ namespace Terminaux.Base.Extensions
                     bool inRow = true;
                     List<string> columnStrs = [];
                     List<string> rowStrs = [];
-                    while (true)
+		    while (!Console.KeyAvailable)
+                        continue;
+                    while (Console.KeyAvailable)
                     {
-                        int characterInt = Console.Read();
-                        char character = (char)characterInt;
+                        char character = Console.ReadKey(true).KeyChar;
                         if (!inEscape)
                         {
                             if (character == CharManager.GetEsc())
@@ -446,10 +439,6 @@ namespace Terminaux.Base.Extensions
                 catch (Exception ex)
                 {
                     Debug.WriteLine($"GetPositionUsingTermios(): {ex}");
-                }
-                finally
-                {
-                    ConsoleLibcTermiosTools.tcsetattr(0, ConsoleLibcTermiosTools.TCSANOW, &termiosOrig);
                 }
 
                 // Return the result

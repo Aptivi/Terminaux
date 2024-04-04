@@ -171,7 +171,6 @@ namespace Terminaux.Console.Fixtures
             new ClearKeepPosition(),
             new TermInfoPane(),
             new ConsoleConhostCheck(),
-            new MouseCanvas(),
         ];
 
         internal static IFixture GetFixtureFromName(string name)
