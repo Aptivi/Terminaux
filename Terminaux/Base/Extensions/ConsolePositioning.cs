@@ -32,6 +32,8 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
+using Terminaux.Base.Termios;
+using System.Reflection;
 
 namespace Terminaux.Base.Extensions
 {
@@ -155,76 +157,28 @@ namespace Terminaux.Base.Extensions
         /// <returns>A column and a row in a tuple</returns>
         public static (int column, int row) GetDimensionsSafe()
         {
-            // Return immediately on Unix.
-            if (PlatformHelper.IsOnUnix())
-                return (Console.WindowWidth, Console.WindowHeight);
-
-            // Assuming that we're on Windows, check to see if we're able to get access to the two properties.
+            // Check to see if we're able to get access to the two properties.
             try
             {
                 return (Console.WindowWidth, Console.WindowHeight);
             }
             catch (IOException)
             {
-                // We may be running on MinTTY or any other Windows console that doesn't allow calling the two
-                // above properties because of "Unhandled exception. System.IO.IOException: The handle is invalid."
-                // In this case, fall back to the VT sequence method. Interestingly, we're also not allowed to call
-                // the standard Console.CursorLeft and CursorTop due to the same error, so we need to find a way to
-                // somehow get the cursor position.
-                static unsafe (int column, int row) ReportCursorStatus()
+                // Looks like that we failed to get the position.
+                if (PlatformHelper.IsOnUnix())
                 {
-                    // Now, write a sequence that gives us the cursor position
-                    TextWriterRaw.WriteRaw("\u001b[6n");
-
-                    // Parse the reply
-                    bool inEscape = false;
-                    bool inRow = true;
-                    List<string> columnStrs = [];
-                    List<string> rowStrs = [];
-                    while (true)
-                    {
-                        int characterInt = Console.Read();
-                        char character = (char)characterInt;
-                        if (!inEscape)
-                        {
-                            if (character == CharManager.GetEsc())
-                                inEscape = true;
-                        }
-                        else if (character != '[')
-                        {
-                            if (character == ';')
-                                inRow = false;
-                            if (character == 'R')
-                                break;
-                            else if (char.IsNumber(character))
-                            {
-                                string charString = $"{character}";
-                                if (inRow)
-                                    rowStrs.Add(charString);
-                                else
-                                    columnStrs.Add(charString);
-                            }
-                        }
-                    }
-
-                    // We're done parsing, so calculate the column and the row
-                    string columnStr = string.Join("", columnStrs);
-                    string rowStr = string.Join("", rowStrs);
-
-                    // Return the result
-                    return (Convert.ToInt32(columnStr), Convert.ToInt32(rowStr));
+                    // Use Termios, which gives us enough functions to disable input blocking, to get the position.
+                    return GetPositionUsingTermios();
                 }
-
-                // Do the job!
-                var oldStatus = ReportCursorStatus();
-                int oldColumn = oldStatus.column;
-                int oldRow = oldStatus.row;
-                TextWriterRaw.WriteRaw(CsiSequences.GenerateCsiCursorPosition(int.MaxValue, int.MaxValue));
-                var newStatus = ReportCursorStatus();
-                int width = newStatus.column;
-                int height = newStatus.row;
-                TextWriterRaw.WriteRaw(CsiSequences.GenerateCsiCursorPosition(oldColumn, oldRow));
-                return (width, height);
+                else
+                {
+                    // We may be running on MinTTY or any other Windows console that doesn't allow calling the two
+                    // above properties because of "Unhandled exception. System.IO.IOException: The handle is invalid."
+                    // In this case, fall back to the VT sequence method. Interestingly, we're also not allowed to call
+                    // the standard Console.CursorLeft and CursorTop due to the same error, so we need to find a way to
+                    // somehow get the cursor position.
+                    return GetPositionUsingMsysInvocation();
+                }
             }
         }
 
@@ -332,7 +286,7 @@ namespace Terminaux.Base.Extensions
                 var CommandProcess = new Process();
                 var CommandProcessStart = new ProcessStartInfo()
                 {
-                    RedirectStandardInput = true,
+                    RedirectStandardInput = false,
                     RedirectStandardOutput = true,
                     RedirectStandardError = includeStdErr,
                     FileName = File,
@@ -433,6 +387,95 @@ namespace Terminaux.Base.Extensions
                 SourceNumber = Target;
                 TargetNumber = Source;
             }
+        }
+        #endregion
+
+        #region Other internals
+        internal static (int column, int row) GetPositionUsingTermios()
+        {
+            static unsafe (int column, int row) ReportCursorStatus()
+            {
+                // Get two exact copies of Termios settings
+                ConsoleLibcTermios termiosOrig, termiosMod;
+                ConsoleLibcTermiosTools.tcgetattr(0, &termiosOrig);
+                termiosMod = termiosOrig;
+                termiosMod.c_lflag &= ~(ConsoleLibcTermiosTools.ICANON | ConsoleLibcTermiosTools.ECHO);
+                ConsoleLibcTermiosTools.tcsetattr(0, ConsoleLibcTermiosTools.TCSANOW, &termiosMod);
+
+                string columnStr = "0", rowStr = "0";
+                try
+                {
+                    // Now, write a sequence that gives us the cursor position
+                    TextWriterRaw.WriteRaw("\u001b[6n");
+
+                    // Parse the reply
+                    bool inEscape = false;
+                    bool inRow = true;
+                    List<string> columnStrs = [];
+                    List<string> rowStrs = [];
+                    while (true)
+                    {
+                        int characterInt = Console.Read();
+                        char character = (char)characterInt;
+                        if (!inEscape)
+                        {
+                            if (character == CharManager.GetEsc())
+                                inEscape = true;
+                        }
+                        else if (character != '[')
+                        {
+                            if (character == ';')
+                                inRow = false;
+                            if (character == 'R')
+                                break;
+                            else if (char.IsNumber(character))
+                            {
+                                string charString = $"{character}";
+                                if (inRow)
+                                    rowStrs.Add(charString);
+                                else
+                                    columnStrs.Add(charString);
+                            }
+                        }
+                    }
+
+                    // We're done parsing, so calculate the column and the row
+                    columnStr = string.Join("", columnStrs);
+                    rowStr = string.Join("", rowStrs);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"GetPositionUsingTermios(): {ex}");
+                }
+                finally
+                {
+                    ConsoleLibcTermiosTools.tcsetattr(0, ConsoleLibcTermiosTools.TCSANOW, &termiosOrig);
+                }
+
+                // Return the result
+                return (Convert.ToInt32(columnStr), Convert.ToInt32(rowStr));
+            }
+
+            // Do the job!
+            var oldStatus = ReportCursorStatus();
+            int oldColumn = oldStatus.column;
+            int oldRow = oldStatus.row;
+            TextWriterRaw.WriteRaw(CsiSequences.GenerateCsiCursorPosition(int.MaxValue, int.MaxValue));
+            var newStatus = ReportCursorStatus();
+            int width = newStatus.column;
+            int height = newStatus.row;
+            TextWriterRaw.WriteRaw(CsiSequences.GenerateCsiCursorPosition(oldColumn, oldRow));
+            return (width, height);
+        }
+
+        internal static (int column, int row) GetPositionUsingMsysInvocation()
+        {
+            string shellPath = "/usr/bin/bash.exe";
+            int exitCode = -1;
+            FileExistsInPath("bash.exe", ref shellPath);
+            string output = ExecuteProcessToString(shellPath, "-c \"read -sdR -p $'\\E[6n' CURPOS ; echo $\\\"${CURPOS#*[}\\\"\"", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exitCode, false);
+            string[] split = output.Split(';');
+            return (Convert.ToInt32(split[1]), Convert.ToInt32(split[0]));
         }
         #endregion
 
