@@ -59,9 +59,10 @@
     <PackageReference Include="EnumMagic" Version="0.1.0.1" />
     <PackageReference Include="Figletize" Version="0.7.0.3" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SpecProbe.Software" Version="1.4.2" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
-    <PackageReference Include="Textify.Offline" Version="1.4.0" />
+    <PackageReference Include="Textify.Offline" Version="1.5.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -30,7 +30,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         public string FixtureID => "TestDictWriterHuge";
         public void RunFixture()
         {
-            DataInitializer.Initialize();
             var choices = new Dictionary<string, string>();
             var arrayChoices = new Dictionary<string, string[]>();
             var names = NameGenerator.FindFirstNames("");

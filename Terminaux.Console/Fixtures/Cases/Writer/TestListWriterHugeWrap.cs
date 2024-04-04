@@ -30,7 +30,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         public string FixtureID => "TestListWriterHugeWrap";
         public void RunFixture()
         {
-            DataInitializer.Initialize();
             var choices = new List<string>();
             var arrayChoices = new List<string[]>();
             var names = NameGenerator.FindFirstNames("");

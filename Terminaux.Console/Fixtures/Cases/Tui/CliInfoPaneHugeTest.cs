@@ -34,7 +34,6 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
             ConsoleResizeListener.StartResizeListener();
 
             // Start the demo TUI app
-            DataInitializer.Initialize();
             InteractiveTuiTools.OpenInteractiveTui(new CliInfoPaneHugeTestData());
         }
     }

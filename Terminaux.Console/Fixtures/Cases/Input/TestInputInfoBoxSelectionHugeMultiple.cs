@@ -31,7 +31,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
         public string FixtureID => "TestInputInfoBoxSelectionHugeMultiple";
         public void RunFixture()
         {
-            DataInitializer.Initialize();
             var choices = new List<InputChoiceInfo>();
             var names = NameGenerator.FindFirstNames("");
             for (int i = 0; i < names.Length; i++)
