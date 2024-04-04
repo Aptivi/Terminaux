@@ -25,6 +25,8 @@ using Terminaux.Base.Extensions;
 using SpecProbe.Platform;
 using Terminaux.Reader;
 using Terminaux.Base.TermInfo;
+using System.Runtime.InteropServices;
+using System.Diagnostics;
 
 namespace Terminaux.Base.Checks
 {
@@ -230,5 +232,44 @@ namespace Terminaux.Base.Checks
                 TermReader.ReadKey();
             }
         }
+
+        /// <summary>
+        /// Checks whether this current application is running off ConHost or not
+        /// </summary>
+        /// <returns>True if running off ConHost; otherwise, false. Always false on Linux systems.</returns>
+        public static bool IsConHost()
+        {
+            // ConHost is not supported on non-Windows systems.
+            if (!PlatformHelper.IsOnWindows())
+                return false;
+
+            // Now, try to perform ConHost-specific operations on the current terminal.
+            bool conHost = false;
+            try
+            {
+                var consolePtr = GetConsoleWindow();
+                var result = SendMessage(consolePtr, WM_GETICON, IntPtr.Zero, IntPtr.Zero);
+                conHost = result != IntPtr.Zero;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"IsConHost(): {e}");
+            }
+
+            // Return the result
+            return conHost;
+        }
+
+        #region Windows-specific
+        private const string winKernel = "kernel32.dll";
+        private const string winUser = "user32.dll";
+        private const int WM_GETICON = 0x007F;
+
+        [DllImport(winKernel, SetLastError = true)]
+        private static extern IntPtr GetConsoleWindow();
+
+        [DllImport(winUser, SetLastError = true)]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+        #endregion
     }
 }

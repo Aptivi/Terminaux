@@ -170,6 +170,7 @@ namespace Terminaux.Console.Fixtures
             new TestFormatting(),
             new ClearKeepPosition(),
             new TermInfoPane(),
+            new ConsoleConhostCheck(),
         ];
 
         internal static IFixture GetFixtureFromName(string name)

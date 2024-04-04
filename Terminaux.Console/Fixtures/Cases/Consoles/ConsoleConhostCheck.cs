@@ -17,13 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Inputs.Pointer
-{
-    /// <summary>
-    /// Pointer (mouse) event listener
-    /// </summary>
-    public static class PointerListener
-    {
+using Terminaux.Base.Checks;
+using Terminaux.Colors;
+using Terminaux.Colors.Data;
+using Terminaux.Writer.ConsoleWriters;
 
+namespace Terminaux.Console.Fixtures.Cases.Consoles
+{
+    internal class ConsoleConhostCheck : IFixture
+    {
+        public string FixtureID => "ConsoleConhostCheck";
+        public void RunFixture()
+        {
+            if (ConsoleChecker.IsConHost())
+                TextWriterColor.WriteColor("You're running through ConHost!", true, new Color(ConsoleColors.Green));
+            else
+                TextWriterColor.WriteColor("You're not running through ConHost.", true, new Color(ConsoleColors.Red));
+        }
     }
 }
