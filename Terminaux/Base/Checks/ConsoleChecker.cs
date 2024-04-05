@@ -260,7 +260,7 @@ namespace Terminaux.Base.Checks
             {
                 TextWriterRaw.WritePlain("Your console is too small to run properly: {0}x{1} | buff: {2}x{3} | min: {4}x{5}",
                     ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight,
-                    Console.BufferWidth, ConsoleWrapper.BufferHeight,
+                    ConsoleWrapper.BufferWidth, ConsoleWrapper.BufferHeight,
                     minimumWidth, minimumHeight);
                 TextWriterRaw.WritePlain("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
                 TermReader.ReadKey();

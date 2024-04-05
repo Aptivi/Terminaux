@@ -38,6 +38,7 @@ namespace Terminaux.Base
         internal static Func<int> actionCursorTop = () => CursorTop;
         internal static Func<int> actionWindowWidth = () => WindowWidth;
         internal static Func<int> actionWindowHeight = () => WindowHeight;
+        internal static Func<int> actionBufferWidth = () => BufferWidth;
         internal static Func<int> actionBufferHeight = () => BufferHeight;
         internal static Action<bool> actionCursorVisible = (val) => CursorVisible = val;
         internal static Func<bool> actionGetCursorVisible = () => CursorVisible;
@@ -102,6 +103,14 @@ namespace Terminaux.Base
         {
             internal get => actionWindowHeight;
             set => actionWindowHeight = value ?? (() => WindowHeight);
+        }
+        /// <summary>
+        /// The console buffer width (columns)
+        /// </summary>
+        public static Func<int> ActionBufferWidth
+        {
+            internal get => actionBufferWidth;
+            set => actionBufferWidth = value ?? (() => WindowWidth);
         }
         /// <summary>
         /// The console buffer height (rows)
@@ -365,6 +374,16 @@ namespace Terminaux.Base
                 if (IsDumb)
                     return int.MaxValue;
                 return ConsoleResizeHandler.GetCurrentConsoleSize().Height;
+            }
+        }
+
+        private static int BufferWidth
+        {
+            get
+            {
+                if (IsDumb)
+                    return int.MaxValue;
+                return Console.BufferWidth;
             }
         }
 

@@ -65,6 +65,12 @@ namespace Terminaux.Base
             ConsoleWrapperTools.ActionWindowHeight();
 
         /// <summary>
+        /// The console buffer width (columns)
+        /// </summary>
+        public static int BufferWidth =>
+            ConsoleWrapperTools.ActionBufferWidth();
+
+        /// <summary>
         /// The console buffer height (rows)
         /// </summary>
         public static int BufferHeight =>
