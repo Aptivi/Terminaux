@@ -138,8 +138,12 @@ namespace Terminaux.Base.Checks
             }
             catch (IOException ex)
             {
-                TextWriterColor.WriteColor("You'll need to use winpty to be able to use this program. Can't continue.", ConsoleColors.Red);
-                Environment.FailFast("User tried to run a Terminaux program on Git Bash's MinTTY without winpty.", ex);
+                var asm = Assembly.GetEntryAssembly();
+                if (asm is not null && !asm.FullName.Contains("testhost"))
+                {
+                    TextWriterColor.WriteColor("You'll need to use winpty to be able to use this program. Can't continue.", ConsoleColors.Red);
+                    Environment.FailFast("User tried to run a Terminaux program on Git Bash's MinTTY without winpty.", ex);
+                }
             }
             catch
             {
