@@ -25,6 +25,7 @@ using Terminaux.Base.Extensions;
 using SpecProbe.Platform;
 using Terminaux.Reader;
 using Terminaux.Base.TermInfo;
+using Terminaux.Colors.Data;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
@@ -127,6 +128,21 @@ namespace Terminaux.Base.Checks
             // Check for 256 colors
             if (!IsConsole256Colors() && PlatformHelper.IsOnUnix())
                 TextWriterRaw.WritePlain($"Terminal type {TerminalType} doesn't support 256 colors according to terminfo");
+
+            // Check to see if we can call cursor info without errors
+            try
+            {
+                int _ = Console.WindowWidth;
+            }
+            catch (IOException ex)
+            {
+                TextWriterColor.WriteColor("You'll need to use winpty to be able to use this program. Can't continue.", ConsoleColors.Red);
+                Environment.FailFast("User tried to run a Terminaux program on Git Bash's MinTTY without winpty", ex);
+            }
+            catch
+            {
+                TextWriterColor.WriteColor("Console positioning is not working properly, so this application might behave erratically.", ConsoleColors.Yellow);
+            }
 
             // Don't check again.
             acknowledged = true;

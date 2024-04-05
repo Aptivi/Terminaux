@@ -21,7 +21,9 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 
 #if NET8_0_OR_GREATER
 using SpecProbe.Platform;
@@ -48,8 +50,7 @@ namespace Terminaux.ResizeListener
         /// <param name="customHandler">Specifies the custom console resize handler that will be called if resize is detected</param>
         public static void StartResizeListener(Action<int, int, int, int> customHandler = null)
         {
-            var (column, row) = ConsolePositioning.GetDimensionsSafe();
-            ConsoleResizeHandler.SetCachedWindowDimensions(column, row);
+            ConsoleResizeHandler.SetCachedWindowDimensions(Console.WindowWidth, Console.WindowHeight);
 
             // PosixSignalRegistration is not available for .NET Framework, so we need to guard accordingly
 #if NET8_0_OR_GREATER
@@ -103,5 +104,11 @@ namespace Terminaux.ResizeListener
             psc.Cancel = true;
         }
 #endif
+
+        static ConsoleResizeListener()
+        {
+            if (GeneralColorTools.CheckConsoleOnCall)
+                ConsoleChecker.CheckConsole();
+        }
     }
 }
