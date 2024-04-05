@@ -166,7 +166,7 @@ namespace Terminaux.Base.Extensions
                 // Looks like that we failed to get the position for some reason.
                 if (PlatformHelper.IsOnUnix())
                 {
-                    // Use avqilable buffering functions, which give us enough functions to get the position.
+                    // Use available buffering functions, which give us enough functions to get the position.
                     return GetPositionUsingBuffering();
                 }
                 else
@@ -397,6 +397,9 @@ namespace Terminaux.Base.Extensions
                 string columnStr = "0", rowStr = "0";
                 try
                 {
+                    Process.Start("stty", "-icanon");
+		    Process.Start("stty", "-echo");
+
                     // Now, write a sequence that gives us the cursor position
                     TextWriterRaw.WriteRaw("\u001b[6n");
 
@@ -442,6 +445,7 @@ namespace Terminaux.Base.Extensions
                 }
 
                 // Return the result
+		Process.Start("stty", "echo");
                 return (Convert.ToInt32(columnStr), Convert.ToInt32(rowStr));
             }
 
