@@ -96,8 +96,9 @@ namespace Terminaux.Base.Checks
             // Check if the terminal type is "dumb".
             if (IsDumb)
             {
-                throw new TerminauxException(
-                    "This application makes use of inputs and cursor manipulation, but the \"dumb\" terminals have no support for such tasks." + Environment.NewLine +
+                FastFail(
+                    "User tried to run a Terminaux application using a dumb terminal.",
+                    "This application makes use of extended console features provided by Terminaux that require features not supported by \"dumb\" terminals." + Environment.NewLine +
                     "Possible solution: Use an appropriate terminal emulator or consult your terminal settings to set the terminal type into something other than \"dumb\". " +
                     "We recommend using the \"vt100\" terminal emulators to get the most out of this application."
                 );
@@ -108,7 +109,8 @@ namespace Terminaux.Base.Checks
             var (graylisted, justification2) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Type, ConsoleFilterSeverity.Graylist);
             if (blacklisted)
             {
-                throw new TerminauxException(
+                FastFail(
+                    "User tried to run a Terminaux application on a blacklisted terminal type.",
                     $"The console type you're currently using, {TerminalType}, is blacklisted: {justification}"
                 );
             }
@@ -120,7 +122,8 @@ namespace Terminaux.Base.Checks
             var (emuGraylisted, emuJustification2) = ConsoleFilter.IsConsoleFiltered(ConsoleFilterType.Emulator, ConsoleFilterSeverity.Graylist);
             if (emuBlacklisted)
             {
-                throw new TerminauxException(
+                FastFail(
+                    "User tried to run a Terminaux application on a blacklisted terminal emulator.",
                     $"The terminal emulator you're currently using, {TerminalEmulator}, is blacklisted: {emuJustification}"
                 );
             }
@@ -138,12 +141,20 @@ namespace Terminaux.Base.Checks
             }
             catch (IOException ex)
             {
-                var asm = Assembly.GetEntryAssembly();
-                if (asm is not null && !asm.FullName.Contains("testhost") && !asm.FullName.Contains("Terminaux.Tests"))
+                if (PlatformHelper.IsOnWindows())
                 {
-                    TextWriterColor.WriteColor("You'll need to use winpty to be able to use this program. Can't continue.", ConsoleColors.Red);
-                    Environment.FailFast("User tried to run a Terminaux program on Git Bash's MinTTY without winpty.", ex);
+                    var asm = Assembly.GetEntryAssembly();
+                    if (asm is not null && !asm.FullName.Contains("testhost") && !asm.FullName.Contains("Terminaux.Tests"))
+                    {
+                        FastFail(
+                            "User tried to run a Terminaux application on Git Bash's MinTTY without winpty.",
+                            "You'll need to use winpty to be able to use this program. If you are sure that you're not running Git Bash, ensure that you're using a proper Windows terminal.",
+                            ex
+                        );
+                    }
                 }
+                else
+                    TextWriterColor.WriteColor("Console positioning is not working due to an I/O error, so this application might behave erratically.", ConsoleColors.Yellow);
             }
             catch
             {
@@ -281,6 +292,15 @@ namespace Terminaux.Base.Checks
 
             // Return the result
             return conHost;
+        }
+
+        internal static void FastFail(string eventMessage, string description, Exception? ex = null)
+        {
+            TextWriterColor.WriteColor($"{description} Can't continue.", ConsoleColors.Red);
+            if (ex is null)
+                Environment.FailFast(eventMessage);
+            else
+                Environment.FailFast(eventMessage, ex);
         }
 
         #region Windows-specific
