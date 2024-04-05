@@ -27,9 +27,4 @@ jobs:
       run: dotnet build --configuration Debug
     - name: Testing
       run: dotnet test --no-build --configuration Debug
-    - uses: actions/upload-artifact@v3
-      if: success() || failure()
-      with:
-        name: tr-build
-        path: "Terminaux.Tests/bin/Debug/net8.0/TestResults/Terminaux.Tests_net8.0_x64.log"
         

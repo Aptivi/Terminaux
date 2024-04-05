@@ -139,8 +139,7 @@ namespace Terminaux.Base.Checks
             catch (IOException ex)
             {
                 var asm = Assembly.GetEntryAssembly();
-		Environment.FailFast(asm.FullName);
-                if (asm is not null && !asm.FullName.Contains("testhost") && !asm.FullName.Contains("Testing"))
+                if (asm is not null && !asm.FullName.Contains("testhost") && !asm.FullName.Contains("Terminaux.Tests"))
                 {
                     TextWriterColor.WriteColor("You'll need to use winpty to be able to use this program. Can't continue.", ConsoleColors.Red);
                     Environment.FailFast("User tried to run a Terminaux program on Git Bash's MinTTY without winpty.", ex);
