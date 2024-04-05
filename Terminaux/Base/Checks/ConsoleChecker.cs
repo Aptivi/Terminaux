@@ -180,7 +180,11 @@ namespace Terminaux.Base.Checks
                 return termInfo.MaxColors >= 256;
             }
             else
-                return ConsolePositioning.CheckForConHostSequenceSupport() == 7;
+            {
+                IntPtr stdHandle = ConsolePositioning.GetStdHandle(-11);
+                uint mode = ConsolePositioning.GetMode(stdHandle);
+                return (mode & 4) == 0;
+            }
         }
 
         /// <summary>

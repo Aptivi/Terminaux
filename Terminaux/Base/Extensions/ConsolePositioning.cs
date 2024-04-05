@@ -151,16 +151,16 @@ namespace Terminaux.Base.Extensions
         }
 
         #region Windows-specific
-        private const string winKernel = "kernel32.dll";
+        internal const string winKernel = "kernel32.dll";
 
         [DllImport(winKernel, SetLastError = true)]
-        private static extern bool SetConsoleMode(IntPtr hConsoleHandle, int mode);
+        internal static extern bool SetConsoleMode(IntPtr hConsoleHandle, uint mode);
 
         [DllImport(winKernel, SetLastError = true)]
-        private static extern bool GetConsoleMode(IntPtr handle, out int mode);
+        internal static extern bool GetConsoleMode(IntPtr handle, out uint mode);
 
         [DllImport(winKernel, SetLastError = true)]
-        private static extern IntPtr GetStdHandle(int handle);
+        internal static extern IntPtr GetStdHandle(int handle);
 
         /// <summary>
         /// Initializes the VT sequence handling for Windows systems.
@@ -171,16 +171,15 @@ namespace Terminaux.Base.Extensions
             if (!PlatformHelper.IsOnWindows())
                 return true;
             IntPtr stdHandle = GetStdHandle(-11);
-            int mode = CheckForConHostSequenceSupport();
-            if (mode != 7)
+            uint mode = GetMode(stdHandle);
+            if ((mode & 4) == 0)
                 return SetConsoleMode(stdHandle, mode | 4);
             return true;
         }
 
-        internal static int CheckForConHostSequenceSupport()
+        internal static uint GetMode(IntPtr stdHandle)
         {
-            IntPtr stdHandle = GetStdHandle(-11);
-            GetConsoleMode(stdHandle, out int mode);
+            GetConsoleMode(stdHandle, out uint mode);
             return mode;
         }
         #endregion

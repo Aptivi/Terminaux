@@ -1,0 +1,53 @@
+﻿//
+// Terminaux  Copyright (C) 2023-2024  Aptivi
+//
+// This file is part of Terminaux
+//
+// Terminaux is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Terminaux is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY, without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+
+using System;
+using System.Threading;
+using Terminaux.Base;
+using Terminaux.Inputs.Pointer;
+using Terminaux.Reader;
+using Terminaux.Writer.ConsoleWriters;
+
+namespace Terminaux.Console.Fixtures.Cases.Input
+{
+    internal class MouseInfo : IFixture
+    {
+        public string FixtureID => "MouseInfo";
+        public void RunFixture()
+        {
+            bool looping = true;
+            TextWriterColor.Write("Move your mouse around here or click anywhere. Press HOME to go back.");
+            PointerListener.MouseEvent += MouseEvent;
+            PointerListener.StartListening();
+            while (looping)
+            {
+                SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
+                var key = TermReader.ReadKey();
+                if (key.Key == ConsoleKey.Home)
+                    looping = false;
+            }
+            PointerListener.StopListening();
+        }
+
+        private void MouseEvent(object sender, PointerEventContext e)
+        {
+            TextWriterColor.WriteColor($"{e.Coordinates.x}/{e.Coordinates.y}", Terminaux.Colors.Data.ConsoleColors.Green);
+        }
+    }
+}

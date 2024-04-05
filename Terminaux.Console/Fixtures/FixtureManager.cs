@@ -132,6 +132,7 @@ namespace Terminaux.Console.Fixtures
             new ColorSelectorTest(),
             new ColorSelectorNoPaletteTest(),
             new KeyInfo(),
+            new MouseInfo(),
 
             // Color
             new ColorTest(),
