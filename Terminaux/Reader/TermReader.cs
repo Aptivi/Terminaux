@@ -352,7 +352,7 @@ namespace Terminaux.Reader
 
         static TermReader()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

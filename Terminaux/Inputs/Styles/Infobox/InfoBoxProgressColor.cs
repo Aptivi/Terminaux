@@ -453,7 +453,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
         static InfoBoxProgressColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

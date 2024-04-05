@@ -322,7 +322,7 @@ namespace Terminaux.Base.Extensions
 
         static ConsoleMisc()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

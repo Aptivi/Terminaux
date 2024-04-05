@@ -360,7 +360,7 @@ namespace Terminaux.Base.Extensions
 
         static ConsolePositioning()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

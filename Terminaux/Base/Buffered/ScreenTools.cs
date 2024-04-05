@@ -93,7 +93,7 @@ namespace Terminaux.Base.Buffered
 
         static ScreenTools()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

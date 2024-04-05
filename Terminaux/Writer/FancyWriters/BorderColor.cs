@@ -903,7 +903,7 @@ namespace Terminaux.Writer.FancyWriters
 
         static BorderColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

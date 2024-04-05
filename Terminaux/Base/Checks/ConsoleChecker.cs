@@ -37,6 +37,7 @@ namespace Terminaux.Base.Checks
     public static class ConsoleChecker
     {
 
+        internal static bool busy = false;
         private static bool acknowledged = false;
         private static bool _dumbSet = false;
         private static bool _dumb = true;
@@ -88,6 +89,7 @@ namespace Terminaux.Base.Checks
         {
             if (acknowledged)
                 return;
+            busy = true;
             string TerminalType = PlatformHelper.GetTerminalType();
             string TerminalEmulator = PlatformHelper.GetTerminalEmulator();
 
@@ -132,12 +134,12 @@ namespace Terminaux.Base.Checks
             // Check to see if we can call cursor info without errors
             try
             {
-                int _ = Console.WindowWidth;
+                int _ = ConsoleWrapper.WindowWidth;
             }
             catch (IOException ex)
             {
                 TextWriterColor.WriteColor("You'll need to use winpty to be able to use this program. Can't continue.", ConsoleColors.Red);
-                Environment.FailFast("User tried to run a Terminaux program on Git Bash's MinTTY without winpty", ex);
+                Environment.FailFast("User tried to run a Terminaux program on Git Bash's MinTTY without winpty.", ex);
             }
             catch
             {
@@ -145,6 +147,7 @@ namespace Terminaux.Base.Checks
             }
 
             // Don't check again.
+            busy = false;
             acknowledged = true;
         }
 

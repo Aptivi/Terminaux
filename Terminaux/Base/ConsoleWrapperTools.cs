@@ -354,7 +354,7 @@ namespace Terminaux.Base
             {
                 if (IsDumb)
                     return int.MaxValue;
-                return Console.WindowWidth;
+                return ConsoleResizeHandler.GetCurrentConsoleSize().Width;
             }
         }
 
@@ -364,7 +364,7 @@ namespace Terminaux.Base
             {
                 if (IsDumb)
                     return int.MaxValue;
-                return Console.WindowHeight;
+                return ConsoleResizeHandler.GetCurrentConsoleSize().Height;
             }
         }
 

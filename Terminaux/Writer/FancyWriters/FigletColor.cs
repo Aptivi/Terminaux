@@ -208,7 +208,7 @@ namespace Terminaux.Writer.FancyWriters
 
         static FigletColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

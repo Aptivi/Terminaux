@@ -485,7 +485,7 @@ namespace Terminaux.Reader
 
         static TermReaderTools()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

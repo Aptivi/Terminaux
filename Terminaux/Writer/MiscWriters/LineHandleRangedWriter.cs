@@ -298,7 +298,7 @@ namespace Terminaux.Writer.MiscWriters
 
         static LineHandleRangedWriter()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

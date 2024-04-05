@@ -310,7 +310,7 @@ namespace Terminaux.Writer.DynamicWriters
 
         static TextWriterWhereSlowColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

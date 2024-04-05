@@ -194,7 +194,7 @@ namespace Terminaux.Writer.DynamicWriters
 
         static TextWriterWrappedColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

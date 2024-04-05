@@ -731,7 +731,7 @@ namespace Terminaux.Inputs.Styles
 
         static ColorSelector()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

@@ -314,7 +314,7 @@ namespace Terminaux.Writer.FancyWriters
 
         static SeparatorWriterColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall)
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }
