@@ -156,6 +156,7 @@ namespace Terminaux.Console.Fixtures
             
             // Screen
             new TestScreen(),
+            new TestScreenPrintPos(),
 
             // Presentation
             new TestPresentation(),
