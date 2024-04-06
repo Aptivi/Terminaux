@@ -20,7 +20,6 @@
 using Terminaux.Console.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.Interactive;
 using Terminaux.ResizeListener;
-using Textify.Data;
 
 namespace Terminaux.Console.Fixtures.Cases.Tui
 {

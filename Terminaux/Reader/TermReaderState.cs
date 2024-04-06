@@ -24,7 +24,6 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
-using Textify.General;
 
 namespace Terminaux.Reader
 {

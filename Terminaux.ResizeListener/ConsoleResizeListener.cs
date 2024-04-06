@@ -22,7 +22,6 @@ using System.Diagnostics;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
-using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 
 #if NET8_0_OR_GREATER

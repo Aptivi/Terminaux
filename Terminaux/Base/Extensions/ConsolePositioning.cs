@@ -32,7 +32,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
-using System.Reflection;
 
 namespace Terminaux.Base.Extensions
 {

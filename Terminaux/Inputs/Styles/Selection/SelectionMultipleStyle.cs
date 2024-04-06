@@ -34,7 +34,6 @@ using Terminaux.Reader;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
-using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Selection
 {

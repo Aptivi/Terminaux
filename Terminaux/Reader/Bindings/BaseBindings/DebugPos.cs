@@ -23,7 +23,6 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.General;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {

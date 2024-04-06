@@ -20,7 +20,6 @@
 using System.Collections.Generic;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
-using Textify.Data;
 using Textify.NameGen;
 
 namespace Terminaux.Console.Fixtures.Cases.Input
