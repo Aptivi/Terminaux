@@ -47,7 +47,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 
         private void MouseEvent(object sender, PointerEventContext e)
         {
-            TextWriterColor.WriteColor($"{e.Coordinates.x}/{e.Coordinates.y}", Terminaux.Colors.Data.ConsoleColors.Green);
+            TextWriterColor.WriteColor($"{e.Coordinates.x}/{e.Coordinates.y} [{e.Button}, {e.ButtonPress}, {e.Modifiers}]", Terminaux.Colors.Data.ConsoleColors.Green);
         }
     }
 }

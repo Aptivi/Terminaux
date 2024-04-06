@@ -106,7 +106,7 @@ namespace Terminaux.Inputs.Pointer
                     // Make a record and read the input for mouse event
                     uint numRead = 0;
                     INPUT_RECORD[] record = [new INPUT_RECORD()];
-                    ReadConsoleInput(stdHandle, record, 1, ref numRead);
+                    PeekConsoleInput(stdHandle, record, 1, ref numRead);
                     
                     // Now, filter all events except the mouse ones
                     switch (record[0].EventType)
@@ -120,6 +120,7 @@ namespace Terminaux.Inputs.Pointer
                             // Now, translate them to something Terminaux understands
                             PointerButtonPress press =
                                 @event.dwButtonState != ButtonState.None && @event.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Clicked :
+                                @event.dwButtonState != ButtonState.None && @event.dwEventFlags == EventFlags.DoubleClicked ? PointerButtonPress.Clicked :
                                 @event.dwButtonState == ButtonState.None && @event.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Released :
                                 PointerButtonPress.Moved;
                             PointerButton button =
@@ -130,15 +131,15 @@ namespace Terminaux.Inputs.Pointer
                                 (uint)@event.dwButtonState >= 7000000 ? PointerButton.WheelUp :
                                 PointerButton.None;
                             PointerModifiers mods =
-                                (@event.dwControlKeyState & ControlKeyState.RightAltPressed) == 0 ? PointerModifiers.Alt :
-                                (@event.dwControlKeyState & ControlKeyState.LeftAltPressed) == 0 ? PointerModifiers.Alt :
+                                (@event.dwControlKeyState & ControlKeyState.RightAltPressed) != 0 ? PointerModifiers.Alt :
+                                (@event.dwControlKeyState & ControlKeyState.LeftAltPressed) != 0 ? PointerModifiers.Alt :
                                 PointerModifiers.None;
                             mods |=
-                                (@event.dwControlKeyState & ControlKeyState.RightCtrlPressed) == 0 ? PointerModifiers.Ctrl :
-                                (@event.dwControlKeyState & ControlKeyState.LeftCtrlPressed) == 0 ? PointerModifiers.Ctrl :
+                                (@event.dwControlKeyState & ControlKeyState.RightCtrlPressed) != 0 ? PointerModifiers.Ctrl :
+                                (@event.dwControlKeyState & ControlKeyState.LeftCtrlPressed) != 0 ? PointerModifiers.Ctrl :
                                 PointerModifiers.None;
                             mods |=
-                                (@event.dwControlKeyState & ControlKeyState.ShiftPressed) == 0 ? PointerModifiers.Shift :
+                                (@event.dwControlKeyState & ControlKeyState.ShiftPressed) != 0 ? PointerModifiers.Shift :
                                 PointerModifiers.None;
                             var ctx = new PointerEventContext(button, press, mods, coord.X, coord.Y);
                             MouseEvent.Invoke("Terminaux", ctx);
@@ -167,7 +168,10 @@ namespace Terminaux.Inputs.Pointer
         }
 
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
-        private static extern bool ReadConsoleInput(IntPtr hConsoleInput, [Out] INPUT_RECORD[] lpBuffer, uint nLength, ref uint lpNumberOfEventsRead);
+        private static extern bool PeekConsoleInput(IntPtr hConsoleInput, [Out] INPUT_RECORD[] lpBuffer, uint nLength, ref uint lpNumberOfEventsRead);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
+        private static extern bool GetNumberOfConsoleInputEvents(IntPtr hConsoleInput, ref uint lpcNumberOfEvents);
 
         internal struct COORD
         {
