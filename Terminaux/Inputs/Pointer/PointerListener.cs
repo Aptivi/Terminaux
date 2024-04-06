@@ -145,19 +145,23 @@ namespace Terminaux.Inputs.Pointer
                     }
                     unsafe int Read(ref byte[] charRead, ref bool error)
                     {
-                        int _ = Peek(ref numRead, ref error);
-                        if (numRead != 6)
-                            return 0;
-                        byte* chars = stackalloc byte[6];
-                        int result = read(0, chars, 6);
-                        if (result == -1)
+                        int result = 0;
+                        lock (Console.In)
                         {
-                            // Some failure occurred. Stop listening.
-                            StopListening();
-                            error = true;
-                            return -1;
+                            int _ = Peek(ref numRead, ref error);
+                            if (numRead != 6)
+                                return 0;
+                            byte* chars = stackalloc byte[6];
+                            result = read(0, chars, 6);
+                            if (result == -1)
+                            {
+                                // Some failure occurred. Stop listening.
+                                StopListening();
+                                error = true;
+                                return -1;
+                            }
+                            charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
                         }
-                        charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
                         return result;
                     }
                     byte[] chars = [];
