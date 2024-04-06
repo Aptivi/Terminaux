@@ -24,6 +24,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Inputs.Pointer
 {
@@ -83,7 +84,7 @@ namespace Terminaux.Inputs.Pointer
 
             // Set DEC locator mode to standard mode
             Process.Start("stty", "-echo -icanon");
-            Console.Write("\u001b[?1003h");
+            TextWriterRaw.WriteRaw("\u001b[?1003h\u001b[?1000h");
 
             // Make a new thread for Linux listener
             pointerListener = new(() =>
@@ -185,7 +186,7 @@ namespace Terminaux.Inputs.Pointer
 
         private static void StopListenerLinux()
         {
-            Console.Write("\u001b[?1003l");
+            TextWriterRaw.WriteRaw("\u001b[?1003l\u001b[?1000l");
             Process.Start("stty", "echo");
             pointerListener = null;
         }
