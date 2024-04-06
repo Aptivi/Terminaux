@@ -19,6 +19,7 @@
 
 using System;
 using System.Text;
+using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
@@ -27,6 +28,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
 using Terminaux.Colors.Transformation.Contrast;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Sequences.Builder.Types;
@@ -309,165 +311,168 @@ namespace Terminaux.Inputs.Styles
         {
             bool bail = false;
             refresh = false;
-            var keypress = TermReader.ReadKey();
-            switch (keypress.Key)
+
+            // Wait for input
+            SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+            if (PointerListener.PointerAvailable)
             {
-                // Unified
-                case ConsoleKey.I:
-                    ShowColorInfo(selectedColor);
-                    refresh = true;
-                    break;
-                case ConsoleKey.V:
-                    ShowColorInfoVisually(selectedColor);
-                    refresh = true;
-                    break;
-                case ConsoleKey.Enter:
-                    bail = true;
-                    break;
-                case ConsoleKey.Escape:
-                    bail = true;
-                    save = false;
-                    break;
-                case ConsoleKey.Tab:
-                    if (keypress.Modifiers.HasFlag(ConsoleModifiers.Shift))
-                    {
-                        type--;
-                        if (type < ColorType.TrueColor)
-                            type = ColorType.FourBitColor;
-                    }
-                    else
-                    {
-                        type++;
-                        if (type > ColorType.FourBitColor)
-                            type = ColorType.TrueColor;
-                    }
-                    break;
-                case ConsoleKey.O:
-                    ColorTools.GlobalSettings.Opacity++;
-                    break;
-                case ConsoleKey.P:
-                    ColorTools.GlobalSettings.Opacity--;
-                    break;
+                // In case user aimed the cursor at the bars
+                int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6 + (ConsoleWrapper.WindowWidth % 2 == 0 ? 0 : 1);
+                int boxHeight = 2;
+                int hueBarX = ConsoleWrapper.WindowWidth / 2 + 2;
+                int hueBarY = 1;
+                int saturationBarY = hueBarY + boxHeight + 3;
+                int lightnessBarY = saturationBarY + boxHeight + 3;
+                int grayRampBarY = lightnessBarY + boxHeight + 3;
+                int transparencyRampBarY = grayRampBarY + boxHeight + 2;
+                int rgbRampBarY = transparencyRampBarY + boxHeight + 2;
+                int colorBoxX = 2;
+                int colorBoxY = 1;
+                int colorBoxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
+                int colorBoxHeight = ConsoleWrapper.WindowHeight - 6;
 
-                // Non-unified
-                case ConsoleKey.LeftArrow:
-                    switch (type)
-                    {
-                        case ColorType.TrueColor:
-                            if (keypress.Modifiers.HasFlag(ConsoleModifiers.Control))
-                            {
-                                trueColorLightness--;
-                                if (trueColorLightness < 0)
-                                    trueColorLightness = 100;
-                            }
-                            else
-                            {
-                                trueColorHue--;
-                                if (trueColorHue < 0)
-                                    trueColorHue = 360;
-                            }
-                            break;
-                        case ColorType.EightBitColor:
-                            colorValue255--;
-                            if (colorValue255 < ConsoleColors.Black)
-                                colorValue255 = ConsoleColors.Grey93;
-                            break;
-                        case ColorType.FourBitColor:
-                            colorValue16--;
-                            if (colorValue16 < ConsoleColor.Black)
-                                colorValue16 = ConsoleColor.White;
-                            break;
-                    }
-                    break;
-                case ConsoleKey.RightArrow:
-                    switch (type)
-                    {
-                        case ColorType.TrueColor:
-                            if (keypress.Modifiers.HasFlag(ConsoleModifiers.Control))
-                            {
-                                trueColorLightness++;
-                                if (trueColorLightness > 100)
-                                    trueColorLightness = 0;
-                            }
-                            else
-                            {
-                                trueColorHue++;
-                                if (trueColorHue > 360)
-                                    trueColorHue = 0;
-                            }
-                            break;
-                        case ColorType.EightBitColor:
-                            colorValue255++;
-                            if (colorValue255 > ConsoleColors.Grey93)
-                                colorValue255 = ConsoleColors.Black;
-                            break;
-                        case ColorType.FourBitColor:
-                            colorValue16++;
-                            if (colorValue16 > ConsoleColor.White)
-                                colorValue16 = ConsoleColor.Black;
-                            break;
-                    }
-                    break;
-                case ConsoleKey.H:
-                    switch (type)
-                    {
-                        case ColorType.TrueColor:
-                            InfoBoxColor.WriteInfoBox("Available keybindings",
-                                $$"""
-                                [ENTER]              | Accept color
-                                [ESC]                | Exit
-                                [H]                  | Help page
-                                [LEFT]               | Reduce hue
-                                [CTRL] + [LEFT]      | Reduce lightness
-                                [RIGHT]              | Increase hue
-                                [CTRL] + [RIGHT]     | Increase lightness
-                                [DOWN]               | Reduce saturation
-                                [UP]                 | Increase saturation
-                                [O]                  | Increase opaqueness
-                                [P]                  | Increase transparency
-                                [TAB]                | Change color mode
-                                [I]                  | Color information
-                                [V]                  | Color information (visual)
-                                """
-                            );
-                            refresh = true;
-                            break;
-                        case ColorType.EightBitColor:
-                        case ColorType.FourBitColor:
-                            InfoBoxColor.WriteInfoBox("Available keybindings",
-                                $$"""
-                                [ENTER]              | Accept color
-                                [ESC]                | Exit
-                                [H]                  | Help page
-                                [LEFT]               | Previous color
-                                [RIGHT]              | Next color
-                                [O]                  | Increase opaqueness
-                                [P]                  | Increase transparency
-                                [TAB]                | Change color mode
-                                [I]                  | Color information
-                                [V]                  | Color information (visual)
-                                """
-                            );
-                            refresh = true;
-                            break;
-                    }
-                    break;
+                // Mouse input received.
+                var mouse = TermReader.ReadPointer();
+                (int x, int y) = mouse.Coordinates;
 
-                // Only for true color
-                case ConsoleKey.UpArrow:
-                    if (type != ColorType.TrueColor)
+                // Detect boundaries
+                bool withinColorBoxBoundaries = x >= colorBoxX && x <= colorBoxWidth + colorBoxX && y >= colorBoxY && y <= colorBoxHeight + colorBoxY;
+                bool withinHueBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= hueBarY && y <= boxHeight + hueBarY + 1;
+                bool withinSaturationBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= saturationBarY && y <= boxHeight + saturationBarY + 1;
+                bool withinLightnessBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= lightnessBarY && y <= boxHeight + lightnessBarY + 1;
+                bool withinTransparencyBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= transparencyRampBarY && y <= boxHeight + transparencyRampBarY + 1;
+                
+                // Do action
+                switch (mouse.Button)
+                {
+                    case PointerButton.WheelUp:
+                        if (withinColorBoxBoundaries)
+                            DecrementColor(type, new(), mouse.Modifiers);
+                        else if (withinHueBarBoundaries)
+                            DecrementHue(type);
+                        else if (withinSaturationBarBoundaries)
+                            DecrementSaturation(type);
+                        else if (withinLightnessBarBoundaries)
+                            DecrementLightness(type);
+                        else if (withinTransparencyBarBoundaries)
+                            ColorTools.GlobalSettings.Opacity--;
                         break;
-                    trueColorSaturation++;
-                    if (trueColorSaturation > 100)
-                        trueColorSaturation = 0;
-                    break;
-                case ConsoleKey.DownArrow:
-                    if (type != ColorType.TrueColor)
+                    case PointerButton.WheelDown:
+                        if (withinColorBoxBoundaries)
+                            IncrementColor(type, new(), mouse.Modifiers);
+                        else if (withinHueBarBoundaries)
+                            IncrementHue(type);
+                        else if (withinSaturationBarBoundaries)
+                            IncrementSaturation(type);
+                        else if (withinLightnessBarBoundaries)
+                            IncrementLightness(type);
+                        else if (withinTransparencyBarBoundaries)
+                            ColorTools.GlobalSettings.Opacity++;
                         break;
-                    trueColorSaturation--;
-                    if (trueColorSaturation < 0)
-                        trueColorSaturation = 100;
-                    break;
+                }
+            }
+            else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+            {
+                var keypress = TermReader.ReadKey();
+                switch (keypress.Key)
+                {
+                    // Unified
+                    case ConsoleKey.I:
+                        ShowColorInfo(selectedColor);
+                        refresh = true;
+                        break;
+                    case ConsoleKey.V:
+                        ShowColorInfoVisually(selectedColor);
+                        refresh = true;
+                        break;
+                    case ConsoleKey.Enter:
+                        bail = true;
+                        break;
+                    case ConsoleKey.Escape:
+                        bail = true;
+                        save = false;
+                        break;
+                    case ConsoleKey.Tab:
+                        if (keypress.Modifiers.HasFlag(ConsoleModifiers.Shift))
+                        {
+                            type--;
+                            if (type < ColorType.TrueColor)
+                                type = ColorType.FourBitColor;
+                        }
+                        else
+                        {
+                            type++;
+                            if (type > ColorType.FourBitColor)
+                                type = ColorType.TrueColor;
+                        }
+                        break;
+                    case ConsoleKey.O:
+                        ColorTools.GlobalSettings.Opacity++;
+                        break;
+                    case ConsoleKey.P:
+                        ColorTools.GlobalSettings.Opacity--;
+                        break;
+
+                    // Non-unified
+                    case ConsoleKey.LeftArrow:
+                        DecrementColor(type, keypress, PointerModifiers.None);
+                        break;
+                    case ConsoleKey.RightArrow:
+                        IncrementColor(type, keypress, PointerModifiers.None);
+                        break;
+                    case ConsoleKey.H:
+                        switch (type)
+                        {
+                            case ColorType.TrueColor:
+                                InfoBoxColor.WriteInfoBox("Available keybindings",
+                                    $$"""
+                                    [ENTER]              | Accept color
+                                    [ESC]                | Exit
+                                    [H]                  | Help page
+                                    [LEFT]               | Reduce hue
+                                    [CTRL] + [LEFT]      | Reduce lightness
+                                    [RIGHT]              | Increase hue
+                                    [CTRL] + [RIGHT]     | Increase lightness
+                                    [DOWN]               | Reduce saturation
+                                    [UP]                 | Increase saturation
+                                    [O]                  | Increase opaqueness
+                                    [P]                  | Increase transparency
+                                    [TAB]                | Change color mode
+                                    [I]                  | Color information
+                                    [V]                  | Color information (visual)
+                                    """
+                                );
+                                refresh = true;
+                                break;
+                            case ColorType.EightBitColor:
+                            case ColorType.FourBitColor:
+                                InfoBoxColor.WriteInfoBox("Available keybindings",
+                                    $$"""
+                                    [ENTER]              | Accept color
+                                    [ESC]                | Exit
+                                    [H]                  | Help page
+                                    [LEFT]               | Previous color
+                                    [RIGHT]              | Next color
+                                    [O]                  | Increase opaqueness
+                                    [P]                  | Increase transparency
+                                    [TAB]                | Change color mode
+                                    [I]                  | Color information
+                                    [V]                  | Color information (visual)
+                                    """
+                                );
+                                refresh = true;
+                                break;
+                        }
+                        break;
+
+                    // Only for true color
+                    case ConsoleKey.UpArrow:
+                        IncrementSaturation(type);
+                        break;
+                    case ConsoleKey.DownArrow:
+                        DecrementSaturation(type);
+                        break;
+                }
             }
             UpdateColor(ref selectedColor, type);
             return bail;
@@ -727,6 +732,106 @@ namespace Terminaux.Inputs.Styles
                 TransformationTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
                 selectedColor;
             InfoBoxColor.WriteInfoBoxColorBack(localizedTextTitle, ColorTools.GetGray(selectedColor), selectedColor);
+        }
+
+        private static void DecrementColor(ColorType type, ConsoleKeyInfo keypress, PointerModifiers mods)
+        {
+            switch (type)
+            {
+                case ColorType.TrueColor:
+                    if (keypress.Modifiers.HasFlag(ConsoleModifiers.Control) || (mods & PointerModifiers.Ctrl) != 0)
+                        DecrementLightness(type);
+                    else
+                        DecrementHue(type);
+                    break;
+                case ColorType.EightBitColor:
+                    colorValue255--;
+                    if (colorValue255 < ConsoleColors.Black)
+                        colorValue255 = ConsoleColors.Grey93;
+                    break;
+                case ColorType.FourBitColor:
+                    colorValue16--;
+                    if (colorValue16 < ConsoleColor.Black)
+                        colorValue16 = ConsoleColor.White;
+                    break;
+            }
+        }
+
+        private static void IncrementColor(ColorType type, ConsoleKeyInfo keypress, PointerModifiers mods)
+        {
+            switch (type)
+            {
+                case ColorType.TrueColor:
+                    if (keypress.Modifiers.HasFlag(ConsoleModifiers.Control) || (mods & PointerModifiers.Ctrl) != 0)
+                        IncrementLightness(type);
+                    else
+                        IncrementHue(type);
+                    break;
+                case ColorType.EightBitColor:
+                    colorValue255++;
+                    if (colorValue255 > ConsoleColors.Grey93)
+                        colorValue255 = ConsoleColors.Black;
+                    break;
+                case ColorType.FourBitColor:
+                    colorValue16++;
+                    if (colorValue16 > ConsoleColor.White)
+                        colorValue16 = ConsoleColor.Black;
+                    break;
+            }
+        }
+
+        private static void DecrementHue(ColorType type)
+        {
+            if (type != ColorType.TrueColor)
+                return;
+            trueColorHue--;
+            if (trueColorHue < 0)
+                trueColorHue = 360;
+        }
+
+        private static void IncrementHue(ColorType type)
+        {
+            if (type != ColorType.TrueColor)
+                return;
+            trueColorHue++;
+            if (trueColorHue > 360)
+                trueColorHue = 0;
+        }
+
+        private static void DecrementLightness(ColorType type)
+        {
+            if (type != ColorType.TrueColor)
+                return;
+            trueColorLightness--;
+            if (trueColorLightness < 0)
+                trueColorLightness = 100;
+        }
+
+        private static void IncrementLightness(ColorType type)
+        {
+            if (type != ColorType.TrueColor)
+                return;
+            trueColorLightness++;
+            if (trueColorLightness > 100)
+                trueColorLightness = 0;
+        }
+
+        private static void DecrementSaturation(ColorType type)
+        {
+            if (type != ColorType.TrueColor)
+                return;
+            trueColorSaturation--;
+            if (trueColorSaturation < 0)
+                trueColorSaturation = 100;
+        }
+
+        private static void IncrementSaturation(ColorType type)
+        {
+            if (type != ColorType.TrueColor)
+                return;
+            trueColorSaturation++;
+            if (trueColorSaturation > 100)
+                trueColorSaturation = 0;
         }
 
         static ColorSelector()

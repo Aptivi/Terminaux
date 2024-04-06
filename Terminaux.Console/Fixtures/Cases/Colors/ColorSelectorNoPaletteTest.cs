@@ -20,6 +20,7 @@
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -30,9 +31,11 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
         public string FixtureID => "ColorSelectorNoPaletteTest";
         public void RunFixture()
         {
+            PointerListener.StartListening();
             var color = ColorSelector.OpenColorSelector(new Color(ConsoleColors.White, new ColorSettings() { UseTerminalPalette = false }));
             ConsoleWrapper.Clear();
             TextWriterColor.Write("Color selector returned: {0} [{1}]", color.PlainSequence, color.PlainSequenceTrueColor);
+            PointerListener.StopListening();
         }
     }
 }
