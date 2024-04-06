@@ -42,6 +42,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
                 if (key.Key == ConsoleKey.Home)
                     looping = false;
             }
+            PointerListener.MouseEvent -= MouseEvent;
             PointerListener.StopListening();
         }
 
