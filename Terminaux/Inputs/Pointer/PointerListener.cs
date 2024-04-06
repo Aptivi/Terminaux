@@ -38,6 +38,7 @@ namespace Terminaux.Inputs.Pointer
     {
         private static PointerEventContext? context = null;
         private static bool listening = false;
+        private static bool active = false;
         private static Thread? pointerListener;
 
         /// <summary>
@@ -52,10 +53,22 @@ namespace Terminaux.Inputs.Pointer
             listening;
 
         /// <summary>
+        /// Checks to see whether any pending mouse or keyboard events are here
+        /// </summary>
+        public static bool InputAvailable =>
+            PointerAvailable || (ConsoleWrapper.KeyAvailable && !PointerActive);
+
+        /// <summary>
         /// Checks to see whether any pending mouse events are here
         /// </summary>
         public static bool PointerAvailable =>
             Listening && context is not null;
+
+        /// <summary>
+        /// Checks to see whether the pointer is active or not
+        /// </summary>
+        public static bool PointerActive =>
+            Listening && active;
 
         /// <summary>
         /// Reads a pointer event and removes it from the context buffer
@@ -125,6 +138,7 @@ namespace Terminaux.Inputs.Pointer
             // Make a new thread for Linux listener
             pointerListener = new(() =>
             {
+                int timeout = 0;
                 while (listening)
                 {
                     uint numRead = 0;
@@ -151,6 +165,8 @@ namespace Terminaux.Inputs.Pointer
                             int _ = Peek(ref numRead, ref error);
                             if (numRead != 6)
                                 return 0;
+                            active = true;
+                            timeout = 0;
                             byte* chars = stackalloc byte[6];
                             result = read(0, chars, 6);
                             if (result == -1)
@@ -172,7 +188,19 @@ namespace Terminaux.Inputs.Pointer
                     if (error)
                         break;
                     if (readChar == 0)
+                    {
+                        timeout++;
+                        if (timeout > 1000000)
+                        {
+                            // Flush everything, as it may cause unintended consequences. This is here until we find a better
+                            // workaround to get around extra character buffering.
+                            while (ConsoleWrapper.KeyAvailable)
+                                ConsoleWrapper.ReadKey(true);
+                            active = false;
+                            timeout = 0;
+                        }
                         continue;
+                    }
                     if (chars[0] == '\u001b' || chars[0] == 91)
                     {
                         // Now, read the button, X, and Y positions

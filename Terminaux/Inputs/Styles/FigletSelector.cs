@@ -100,67 +100,93 @@ namespace Terminaux.Inputs.Styles
                     ScreenTools.Render();
 
                     // Wait for input
-                    var key = TermReader.ReadKey();
-                    switch (key.Key)
+                    SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+                    if (PointerListener.PointerAvailable)
                     {
-                        case ConsoleKey.Enter:
-                            bail = true;
-                            break;
-                        case ConsoleKey.Escape:
-                            bail = true;
-                            cancel = true;
-                            break;
-                        case ConsoleKey.LeftArrow:
-                            selectedFont--;
-                            if (selectedFont < 0)
-                                selectedFont = fonts.Length - 1;
-                            fontName = fonts[selectedFont];
-                            screen.RequireRefresh();
-                            break;
-                        case ConsoleKey.RightArrow:
-                            selectedFont++;
-                            if (selectedFont > fonts.Length - 1)
-                                selectedFont = 0;
-                            fontName = fonts[selectedFont];
-                            screen.RequireRefresh();
-                            break;
-                        case ConsoleKey.S:
-                            bool write = key.Modifiers.HasFlag(ConsoleModifiers.Shift);
-                            if (write)
-                            {
-                                string promptedFontName = InfoBoxInputColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
-                                if (!fonts.Contains(promptedFontName))
-                                    InfoBoxColor.WriteInfoBox("The font doesn't exist.");
-                                else
-                                    fontName = promptedFontName;
-                            }
-                            else
-                            {
-                                selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection("Font selection", figletSelections, "Select a figlet font from the list below");
+                        // Mouse input received.
+                        var mouse = TermReader.ReadPointer();
+                        switch (mouse.Button)
+                        {
+                            case PointerButton.WheelUp:
+                                selectedFont--;
+                                if (selectedFont < 0)
+                                    selectedFont = fonts.Length - 1;
                                 fontName = fonts[selectedFont];
-                            }
-                            screen.RequireRefresh();
-                            break;
-                        case ConsoleKey.C:
-                            ColorTools.LoadBack();
-                            screen.RemoveBufferedPart("Figlet selector");
-                            ShowChars(screen, fontName);
-                            screen.AddBufferedPart("Figlet selector", screenPart);
-                            screen.RequireRefresh();
-                            break;
-                        case ConsoleKey.H:
-                            InfoBoxColor.WriteInfoBox("Available keybindings",
-                                $$"""
-                                [ENTER]              | Accept font
-                                [ESC]                | Exit
-                                [H]                  | Help page
-                                [S]                  | Select font from the selection menu
-                                [SHIFT] + [S]        | Write font name
-                                [C]                  | Shows the individual characters
-                                """
-                            );
-                            screen.RequireRefresh();
-                            break;
+                                screen.RequireRefresh();
+                                break;
+                            case PointerButton.WheelDown:
+                                selectedFont++;
+                                if (selectedFont > fonts.Length - 1)
+                                    selectedFont = 0;
+                                fontName = fonts[selectedFont];
+                                screen.RequireRefresh();
+                                break;
+                        }
+                    }
+                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                    {
+                        var key = TermReader.ReadKey();
+                        switch (key.Key)
+                        {
+                            case ConsoleKey.Enter:
+                                bail = true;
+                                break;
+                            case ConsoleKey.Escape:
+                                bail = true;
+                                cancel = true;
+                                break;
+                            case ConsoleKey.LeftArrow:
+                                selectedFont--;
+                                if (selectedFont < 0)
+                                    selectedFont = fonts.Length - 1;
+                                fontName = fonts[selectedFont];
+                                screen.RequireRefresh();
+                                break;
+                            case ConsoleKey.RightArrow:
+                                selectedFont++;
+                                if (selectedFont > fonts.Length - 1)
+                                    selectedFont = 0;
+                                fontName = fonts[selectedFont];
+                                screen.RequireRefresh();
+                                break;
+                            case ConsoleKey.S:
+                                bool write = key.Modifiers.HasFlag(ConsoleModifiers.Shift);
+                                if (write)
+                                {
+                                    string promptedFontName = InfoBoxInputColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
+                                    if (!fonts.Contains(promptedFontName))
+                                        InfoBoxColor.WriteInfoBox("The font doesn't exist.");
+                                    else
+                                        fontName = promptedFontName;
+                                }
+                                else
+                                {
+                                    selectedFont = InfoBoxSelectionColor.WriteInfoBoxSelection("Font selection", figletSelections, "Select a figlet font from the list below");
+                                    fontName = fonts[selectedFont];
+                                }
+                                screen.RequireRefresh();
+                                break;
+                            case ConsoleKey.C:
+                                ColorTools.LoadBack();
+                                screen.RemoveBufferedPart("Figlet selector");
+                                ShowChars(screen, fontName);
+                                screen.AddBufferedPart("Figlet selector", screenPart);
+                                screen.RequireRefresh();
+                                break;
+                            case ConsoleKey.H:
+                                InfoBoxColor.WriteInfoBox("Available keybindings",
+                                    $$"""
+                                    [ENTER]              | Accept font
+                                    [ESC]                | Exit
+                                    [H]                  | Help page
+                                    [S]                  | Select font from the selection menu
+                                    [SHIFT] + [S]        | Write font name
+                                    [C]                  | Shows the individual characters
+                                    """
+                                );
+                                screen.RequireRefresh();
+                                break;
+                        }
                     }
                 }
             }
@@ -212,7 +238,7 @@ namespace Terminaux.Inputs.Styles
                     ScreenTools.Render();
 
                     // Wait for input
-                    SpinWait.SpinUntil(() => PointerListener.PointerAvailable || ConsoleWrapper.KeyAvailable);
+                    SpinWait.SpinUntil(() => PointerListener.InputAvailable);
                     if (PointerListener.PointerAvailable)
                     {
                         // Mouse input received.
@@ -233,7 +259,7 @@ namespace Terminaux.Inputs.Styles
                                 break;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable)
+                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
                     {
                         // Keyboard input received.
                         var key = TermReader.ReadKey().Key;
