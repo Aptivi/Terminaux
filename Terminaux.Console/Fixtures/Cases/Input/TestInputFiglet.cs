@@ -19,6 +19,7 @@
 
 using Figletize;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
@@ -30,10 +31,12 @@ namespace Terminaux.Console.Fixtures.Cases.Input
         public string FixtureID => "TestInputFiglet";
         public void RunFixture()
         {
+            PointerListener.StartListening();
             string font = FigletSelector.PromptForFiglet();
             var figlet = FigletTools.GetFigletFont(font);
             TextWriterColor.Write($"Got figlet font {font}!");
             FigletColor.WriteFigletColor("Hello!", figlet, ConsoleColors.Green);
+            PointerListener.StopListening();
         }
     }
 }

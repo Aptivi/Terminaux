@@ -24,6 +24,7 @@ using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
@@ -85,6 +86,18 @@ namespace Terminaux.Reader
             SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
             TermReaderTools.isWaitingForInput = false;
             return ConsoleWrapper.ReadKey(intercept);
+        }
+
+        /// <summary>
+        /// Reads a pointer (blocking)
+        /// </summary>
+        /// <returns>A <see cref="PointerEventContext"/> instance that describes the last mouse event.</returns>
+        public static PointerEventContext ReadPointer()
+        {
+            PointerEventContext? ctx = null;
+            while (ctx is null)
+                ctx = PointerListener.ReadPointerNow();
+            return ctx;
         }
 
         /// <summary>

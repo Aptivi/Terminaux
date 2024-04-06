@@ -19,6 +19,7 @@
 
 using SpecProbe.Platform;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -35,6 +36,7 @@ namespace Terminaux.Inputs.Pointer
     /// </summary>
     public static class PointerListener
     {
+        private static PointerEventContext? context = null;
         private static bool listening = false;
         private static Thread? pointerListener;
 
@@ -44,6 +46,36 @@ namespace Terminaux.Inputs.Pointer
         public static event EventHandler<PointerEventContext> MouseEvent = delegate { };
 
         /// <summary>
+        /// Checks whether the pointer listener is listening to mouse events or not
+        /// </summary>
+        public static bool Listening =>
+            listening;
+
+        /// <summary>
+        /// Checks to see whether any pending mouse events are here
+        /// </summary>
+        public static bool PointerAvailable =>
+            Listening && context is not null;
+
+        /// <summary>
+        /// Reads a pointer event and removes it from the context buffer
+        /// </summary>
+        /// <returns>A <see cref="PointerEventContext"/> instance that describes the last mouse event, or <see langword="null"/> if there are no more events to read.</returns>
+        public static PointerEventContext? ReadPointerNow()
+        {
+            if (context is null)
+                return null;
+            lock (context)
+            {
+                if (!PointerAvailable)
+                    return null;
+                var ctx = context;
+                context = null;
+                return ctx;
+            }
+        }
+
+        /// <summary>
         /// Starts listening to mouse events
         /// </summary>
         public static void StartListening()
@@ -51,6 +83,7 @@ namespace Terminaux.Inputs.Pointer
             if (listening)
                 return;
             listening = true;
+            context = null;
 
             // Now, start the listener by calling platform-specific initialization code
             if (PlatformHelper.IsOnWindows())
@@ -67,6 +100,7 @@ namespace Terminaux.Inputs.Pointer
             if (!listening)
                 return;
             listening = false;
+            context = null;
 
             // Now, stop the listener by calling platform-specific finalization code
             if (PlatformHelper.IsOnWindows())
@@ -135,12 +169,12 @@ namespace Terminaux.Inputs.Pointer
                         break;
                     if (readChar == 0)
                         continue;
-                    if (chars[0] == '\u001b')
+                    if (chars[0] == '\u001b' || chars[0] == 91)
                     {
                         // Now, read the button, X, and Y positions
-                        button = chars[3];
-                        x = (byte)(chars[4] - 32);
-                        y = (byte)(chars[5] - 32);
+                        button = chars[0] == 91 ? chars[2] : chars[3];
+                        x = chars[0] == 91 ? (byte)(chars[3] - 32) : (byte)(chars[4] - 32);
+                        y = chars[0] == 91 ? (byte)(chars[4] - 32) : (byte)(chars[5] - 32);
 
                         // Get the button states and change them as necessary
                         PosixButtonState state = (PosixButtonState)(button & 0b11);
@@ -175,6 +209,7 @@ namespace Terminaux.Inputs.Pointer
                             (modState & PosixButtonModifierState.Shift) != 0 ? PointerModifiers.Shift :
                             PointerModifiers.None;
                         var ctx = new PointerEventContext(buttonPtr, press, mods, x, y);
+                        context = ctx;
                         MouseEvent.Invoke("Terminaux", ctx);
                     }
                 }
@@ -247,6 +282,8 @@ namespace Terminaux.Inputs.Pointer
                     switch (record[0].EventType)
                     {
                         case INPUT_RECORD.MOUSE_EVENT:
+                            ReadConsoleInput(stdHandle, record, 1, ref numRead);
+
                             // Get the coordinates and event arguments
                             var @event = record[0].MouseEvent;
                             var coord = @event.dwMousePosition;
@@ -277,6 +314,7 @@ namespace Terminaux.Inputs.Pointer
                                 (@event.dwControlKeyState & ControlKeyState.ShiftPressed) != 0 ? PointerModifiers.Shift :
                                 PointerModifiers.None;
                             var ctx = new PointerEventContext(button, press, mods, coord.X, coord.Y);
+                            context = ctx;
                             MouseEvent.Invoke("Terminaux", ctx);
                             break;
                     }
@@ -301,6 +339,9 @@ namespace Terminaux.Inputs.Pointer
             ConsolePositioning.SetConsoleMode(stdHandle, mode);
             pointerListener = null;
         }
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
+        private static extern bool ReadConsoleInput(IntPtr hConsoleInput, [Out] INPUT_RECORD[] lpBuffer, uint nLength, ref uint lpNumberOfEventsRead);
 
         [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
         private static extern bool PeekConsoleInput(IntPtr hConsoleInput, [Out] INPUT_RECORD[] lpBuffer, uint nLength, ref uint lpNumberOfEventsRead);

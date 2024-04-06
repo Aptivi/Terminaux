@@ -21,10 +21,12 @@ using Figletize;
 using System;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Writer.FancyWriters;
@@ -210,24 +212,49 @@ namespace Terminaux.Inputs.Styles
                     ScreenTools.Render();
 
                     // Wait for input
-                    var key = TermReader.ReadKey().Key;
-                    switch (key)
+                    SpinWait.SpinUntil(() => PointerListener.PointerAvailable || ConsoleWrapper.KeyAvailable);
+                    if (PointerListener.PointerAvailable)
                     {
-                        case ConsoleKey.Enter:
-                            bail = true;
-                            break;
-                        case ConsoleKey.LeftArrow:
-                            index--;
-                            if (index < 0)
-                                index = chars.Length - 1;
-                            screen.RequireRefresh();
-                            break;
-                        case ConsoleKey.RightArrow:
-                            index++;
-                            if (index > chars.Length - 1)
-                                index = 0;
-                            screen.RequireRefresh();
-                            break;
+                        // Mouse input received.
+                        var mouse = TermReader.ReadPointer();
+                        switch (mouse.Button)
+                        {
+                            case PointerButton.WheelUp:
+                                index--;
+                                if (index < 0)
+                                    index = chars.Length - 1;
+                                screen.RequireRefresh();
+                                break;
+                            case PointerButton.WheelDown:
+                                index++;
+                                if (index > chars.Length - 1)
+                                    index = 0;
+                                screen.RequireRefresh();
+                                break;
+                        }
+                    }
+                    else if (ConsoleWrapper.KeyAvailable)
+                    {
+                        // Keyboard input received.
+                        var key = TermReader.ReadKey().Key;
+                        switch (key)
+                        {
+                            case ConsoleKey.Enter:
+                                bail = true;
+                                break;
+                            case ConsoleKey.LeftArrow:
+                                index--;
+                                if (index < 0)
+                                    index = chars.Length - 1;
+                                screen.RequireRefresh();
+                                break;
+                            case ConsoleKey.RightArrow:
+                                index++;
+                                if (index > chars.Length - 1)
+                                    index = 0;
+                                screen.RequireRefresh();
+                                break;
+                        }
                     }
                 }
             }
