@@ -23,7 +23,9 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Inputs.Pointer
@@ -372,5 +374,11 @@ namespace Terminaux.Inputs.Pointer
             HorizontalWheelScrolled = 0x0008,
         }
         #endregion
+
+        static PointerListener()
+        {
+            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+                ConsoleChecker.CheckConsole();
+        }
     }
 }
