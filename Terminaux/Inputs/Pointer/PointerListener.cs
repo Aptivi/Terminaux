@@ -95,6 +95,7 @@ namespace Terminaux.Inputs.Pointer
             if (listening)
                 return;
             listening = true;
+            active = false;
             context = null;
 
             // Now, start the listener by calling platform-specific initialization code
@@ -112,6 +113,7 @@ namespace Terminaux.Inputs.Pointer
             if (!listening)
                 return;
             listening = false;
+            active = false;
             context = null;
 
             // Now, stop the listener by calling platform-specific finalization code
@@ -131,13 +133,13 @@ namespace Terminaux.Inputs.Pointer
                 throw new TerminauxException("Failed to start the listener.");
 
             // Set DEC locator mode to standard mode
-            Process.Start("stty", "-echo -icanon");
-            TextWriterRaw.WriteRaw("\u001b[?1003h\u001b[?1000h");
+            Process.Start("stty", "-echo -icanon min 1 time 0");
+            TextWriterRaw.WriteRaw("\u001b[?1000h\u001b[?1003h");
 
             // Make a new thread for Linux listener
             pointerListener = new(() =>
             {
-                int timeout = 0;
+                var sw = new Stopwatch();
                 while (listening)
                 {
                     uint numRead = 0;
@@ -162,23 +164,50 @@ namespace Terminaux.Inputs.Pointer
                         lock (Console.In)
                         {
                             int _ = Peek(ref numRead, ref error);
-                            if (numRead != 6)
-                                return 0;
-                            active = true;
-                            timeout = 0;
-                            byte* chars = stackalloc byte[6];
-                            result = read(0, chars, 6);
-                            if (result == -1)
+                            if (numRead > 0 && (numRead == 6 || numRead == 4))
                             {
-                                // Some failure occurred. Stop listening.
-                                StopListening();
-                                error = true;
-                                return -1;
+                                byte* chars = stackalloc byte[(int)numRead];
+                                result = read(0, chars, numRead);
+                                if (result == -1)
+                                {
+                                    // Some failure occurred. Stop listening.
+                                    StopListening();
+                                    error = true;
+                                    return -1;
+                                }
+                                if (numRead == 6)
+                                {
+                                    if (chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M')
+                                    {
+                                        active = true;
+                                        sw.Reset();
+                                        charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
+                                    }
+                                }
+                                else if (numRead == 4)
+                                {
+                                    if (chars[0] == '\0')
+                                    {
+                                        active = true;
+                                        sw.Reset();
+                                        charRead = [chars[0], chars[1], chars[2], chars[3]];
+                                    }
+                                }
+                                while (ConsoleWrapper.KeyAvailable)
+                                    ConsoleWrapper.ReadKey(true);
                             }
-                            charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
+                            else if (active && sw.ElapsedMilliseconds > 250)
+                            {
+                                while (ConsoleWrapper.KeyAvailable)
+                                    ConsoleWrapper.ReadKey(true);
+                                sw.Reset();
+                                active = false;
+                            }
                         }
                         return result;
                     }
+
+                    // Fill the chars array
                     byte[] chars = [];
                     byte button = 0;
                     byte x = 0;
@@ -186,63 +215,61 @@ namespace Terminaux.Inputs.Pointer
                     int readChar = Read(ref chars, ref error);
                     if (error)
                         break;
-                    if (readChar == 0)
-                    {
-                        timeout++;
-                        if (timeout > 1000000)
-                        {
-                            // Flush everything, as it may cause unintended consequences. This is here until we find a better
-                            // workaround to get around extra character buffering.
-                            while (ConsoleWrapper.KeyAvailable)
-                                ConsoleWrapper.ReadKey(true);
-                            active = false;
-                            timeout = 0;
-                        }
+                    if (readChar == 0 || chars.Length == 0)
                         continue;
-                    }
                     if (chars[0] == '\u001b' || chars[0] == 91)
                     {
                         // Now, read the button, X, and Y positions
                         button = chars[0] == 91 ? chars[2] : chars[3];
                         x = chars[0] == 91 ? (byte)(chars[3] - 32) : (byte)(chars[4] - 32);
                         y = chars[0] == 91 ? (byte)(chars[4] - 32) : (byte)(chars[5] - 32);
-
-                        // Get the button states and change them as necessary
-                        PosixButtonState state = (PosixButtonState)(button & 0b11);
-                        PosixButtonModifierState modState = (PosixButtonModifierState)(button & 0b11100);
-                        if (button >= 64 && button < 96)
-                            state = PosixButtonState.Movement;
-                        if (button >= 96 && button % 2 == 0)
-                            state = PosixButtonState.WheelUp;
-                        else if (button >= 97)
-                            state = PosixButtonState.WheelDown;
-                        Debug.WriteLine($"[{button}: {state} {modState}] X={x} Y={y}");
-
-                        // Now, translate them to something Terminaux understands
-                        PointerButtonPress press =
-                            state == PosixButtonState.Left || state == PosixButtonState.Middle || state == PosixButtonState.Right ? PointerButtonPress.Clicked :
-                            state == PosixButtonState.Released ? PointerButtonPress.Released :
-                            PointerButtonPress.Moved;
-                        PointerButton buttonPtr =
-                            state == PosixButtonState.Left ? PointerButton.Left :
-                            state == PosixButtonState.Middle ? PointerButton.Middle :
-                            state == PosixButtonState.Right ? PointerButton.Right :
-                            state == PosixButtonState.WheelDown ? PointerButton.WheelDown :
-                            state == PosixButtonState.WheelUp ? PointerButton.WheelUp :
-                            PointerButton.None;
-                        PointerModifiers mods =
-                            (modState & PosixButtonModifierState.Alt) != 0 ? PointerModifiers.Alt :
-                            PointerModifiers.None;
-                        mods |=
-                            (modState & PosixButtonModifierState.Control) != 0 ? PointerModifiers.Ctrl :
-                            PointerModifiers.None;
-                        mods |=
-                            (modState & PosixButtonModifierState.Shift) != 0 ? PointerModifiers.Shift :
-                            PointerModifiers.None;
-                        var ctx = new PointerEventContext(buttonPtr, press, mods, x, y);
-                        context = ctx;
-                        MouseEvent.Invoke("Terminaux", ctx);
                     }
+                    else if (chars[0] == '\0')
+                    {
+                        // Now, read the button, X, and Y positions
+                        button = chars[1];
+                        x = (byte)(chars[2] - 32);
+                        y = (byte)(chars[3] - 32);
+                    }
+                    else
+                        continue;
+                    sw.Start();
+
+                    // Get the button states and change them as necessary
+                    PosixButtonState state = (PosixButtonState)(button & 0b11);
+                    PosixButtonModifierState modState = (PosixButtonModifierState)(button & 0b11100);
+                    if (button >= 64 && button < 96)
+                        state = PosixButtonState.Movement;
+                    if (button >= 96 && button % 2 == 0)
+                        state = PosixButtonState.WheelUp;
+                    else if (button >= 97)
+                        state = PosixButtonState.WheelDown;
+                    Debug.WriteLine($"[{button}: {state} {modState}] X={x} Y={y}");
+
+                    // Now, translate them to something Terminaux understands
+                    PointerButtonPress press =
+                        state == PosixButtonState.Left || state == PosixButtonState.Middle || state == PosixButtonState.Right ? PointerButtonPress.Clicked :
+                        state == PosixButtonState.Released ? PointerButtonPress.Released :
+                        PointerButtonPress.Moved;
+                    PointerButton buttonPtr =
+                        state == PosixButtonState.Left ? PointerButton.Left :
+                        state == PosixButtonState.Middle ? PointerButton.Middle :
+                        state == PosixButtonState.Right ? PointerButton.Right :
+                        state == PosixButtonState.WheelDown ? PointerButton.WheelDown :
+                        state == PosixButtonState.WheelUp ? PointerButton.WheelUp :
+                        PointerButton.None;
+                    PointerModifiers mods =
+                        (modState & PosixButtonModifierState.Alt) != 0 ? PointerModifiers.Alt :
+                        PointerModifiers.None;
+                    mods |=
+                        (modState & PosixButtonModifierState.Control) != 0 ? PointerModifiers.Ctrl :
+                        PointerModifiers.None;
+                    mods |=
+                        (modState & PosixButtonModifierState.Shift) != 0 ? PointerModifiers.Shift :
+                        PointerModifiers.None;
+                    var ctx = new PointerEventContext(buttonPtr, press, mods, x, y);
+                    context = ctx;
+                    MouseEvent.Invoke("Terminaux", ctx);
                 }
             })
             {
@@ -254,7 +281,7 @@ namespace Terminaux.Inputs.Pointer
 
         private static void StopListenerLinux()
         {
-            TextWriterRaw.WriteRaw("\u001b[?1003l\u001b[?1000l");
+            TextWriterRaw.WriteRaw("\u001b[?1000l\u001b[?1003l");
             Process.Start("stty", "echo");
             pointerListener = null;
         }
