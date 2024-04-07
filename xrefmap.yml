@@ -26752,6 +26752,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReader.ReadPointer
   nameWithType: TermReader.ReadPointer
+- uid: Terminaux.Reader.TermReader.ReadPointerOrKey
+  name: ReadPointerOrKey()
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPointerOrKey
+  commentId: M:Terminaux.Reader.TermReader.ReadPointerOrKey
+  fullName: Terminaux.Reader.TermReader.ReadPointerOrKey()
+  nameWithType: TermReader.ReadPointerOrKey()
+- uid: Terminaux.Reader.TermReader.ReadPointerOrKey*
+  name: ReadPointerOrKey
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_ReadPointerOrKey_
+  commentId: Overload:Terminaux.Reader.TermReader.ReadPointerOrKey
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReader.ReadPointerOrKey
+  nameWithType: TermReader.ReadPointerOrKey
 - uid: Terminaux.Reader.TermReaderSettings
   name: TermReaderSettings
   href: api/Terminaux.Reader.TermReaderSettings.html
