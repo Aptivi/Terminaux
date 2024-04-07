@@ -46,85 +46,20 @@ namespace Terminaux.Inputs.Styles.Selection
         /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
-        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string AnswersStr, bool kiosk = false) =>
-            PromptMultipleSelection(Question, AnswersStr, [], "", [], kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, bool kiosk = false) =>
-            PromptMultipleSelection(Question, AnswersStr, AnswersTitles, "", [], kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, bool kiosk = false) =>
-            PromptMultipleSelection(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, [], kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, bool kiosk = false) =>
-            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles), kiosk);
-
-        /// <summary>
-        /// Prompts user for selection
-        /// </summary>
-        /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string[] Answers, bool kiosk = false) =>
-            PromptMultipleSelection(Question, Answers, [], [], [], kiosk);
+        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, bool kiosk = false) =>
+            PromptMultipleSelection(Question, Answers, [], kiosk);
 
         /// <summary>
         /// Prompts user for Selection
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, bool kiosk = false) =>
-            PromptMultipleSelection(Question, Answers, AnswersTitles, [], [], kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, bool kiosk = false) =>
-            PromptMultipleSelection(Question, Answers, AnswersTitles, AlternateAnswers, [], kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, bool kiosk = false) =>
-            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles), kiosk);
+        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, bool kiosk = false) =>
+            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(Answers), InputChoiceTools.GetInputChoices(AlternateAnswers), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -149,93 +84,22 @@ namespace Terminaux.Inputs.Styles.Selection
         /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
-        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="settings">Selection settings</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string AnswersStr, SelectionStyleSettings settings, bool kiosk = false) =>
-            PromptMultipleSelection(Question, AnswersStr, [], "", [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        /// <param name="settings">Selection settings</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, SelectionStyleSettings settings, bool kiosk = false) =>
-            PromptMultipleSelection(Question, AnswersStr, AnswersTitles, "", [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
-        /// <param name="settings">Selection settings</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, SelectionStyleSettings settings, bool kiosk = false) =>
-            PromptMultipleSelection(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
-        /// <param name="settings">Selection settings</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, SelectionStyleSettings settings, bool kiosk = false) =>
-            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles), settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
-
-        /// <summary>
-        /// Prompts user for selection
-        /// </summary>
-        /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string[] Answers, SelectionStyleSettings settings, bool kiosk = false) =>
-            PromptMultipleSelection(Question, Answers, [], [], [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
+        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, SelectionStyleSettings settings, bool kiosk = false) =>
+            PromptMultipleSelection(Question, Answers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
 
         /// <summary>
         /// Prompts user for Selection
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        /// <param name="settings">Selection settings</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, SelectionStyleSettings settings, bool kiosk = false) =>
-            PromptMultipleSelection(Question, Answers, AnswersTitles, [], [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, SelectionStyleSettings settings, bool kiosk = false) =>
-            PromptMultipleSelection(Question, Answers, AnswersTitles, AlternateAnswers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
-
-        /// <summary>
-        /// Prompts user for Selection
-        /// </summary>
-        /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
-        /// <param name="settings">Selection settings</param>
-        /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, SelectionStyleSettings settings, bool kiosk = false) =>
-            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles), settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
+        public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, SelectionStyleSettings settings, bool kiosk = false) =>
+            PromptMultipleSelection(Question, InputChoiceTools.GetInputChoices(Answers), InputChoiceTools.GetInputChoices(AlternateAnswers), settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
 
         /// <summary>
         /// Prompts user for Selection

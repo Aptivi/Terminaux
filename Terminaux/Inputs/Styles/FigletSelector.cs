@@ -54,7 +54,7 @@ namespace Terminaux.Inputs.Styles
         {
             // Some initial variables to populate figlet fonts
             string[] fonts = [.. FigletTools.GetFigletFonts().Keys];
-            var figletSelections = InputChoiceTools.GetInputChoices(Enumerable.Range(1, fonts.Length).Select((num) => $"{num}").ToArray(), fonts).ToArray();
+            var figletSelections = InputChoiceTools.GetInputChoices(fonts.Select((font, num) => ($"{num}", font)).ToArray()).ToArray();
             string fontName = fonts.Contains(font) ? font : "small";
 
             // Determine the font index

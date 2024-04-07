@@ -30,30 +30,19 @@ namespace Terminaux.Inputs
         /// <summary>
         /// Gets the input choices
         /// </summary>
-        /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        public static InputChoiceInfo[] GetInputChoices(string AnswersStr, string[] AnswersTitles) =>
-            GetInputChoices(AnswersStr.Split(new char[] { '/' }, StringSplitOptions.RemoveEmptyEntries), AnswersTitles);
-
-        /// <summary>
-        /// Gets the input choices
-        /// </summary>
-        /// <param name="Answers">Set of answers.</param>
-        /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        public static InputChoiceInfo[] GetInputChoices(string[] Answers, string[] AnswersTitles)
+        /// <param name="Answers">Set of answers and working titles for each answer in one tuple.</param>
+        public static InputChoiceInfo[] GetInputChoices((string, string)[] Answers)
         {
             // Variables
             var finalChoices = new List<InputChoiceInfo>();
 
-            // Check to see if the answer titles are the same
-            if (Answers.Length > AnswersTitles.Length)
-                Array.Resize(ref AnswersTitles, Answers.Length);
-            if (AnswersTitles.Length > Answers.Length)
-                Array.Resize(ref Answers, AnswersTitles.Length);
-
             // Now, populate choice information from the arrays
             for (int i = 0; i < Answers.Length; i++)
-                finalChoices.Add(new InputChoiceInfo(Answers[i] ?? $"[{i + 1}]", AnswersTitles[i] ?? $"[{i + 1}]"));
+            {
+                string answer = string.IsNullOrEmpty(Answers[i].Item1) ? $"[{i + 1}]" : Answers[i].Item1;
+                string title = string.IsNullOrEmpty(Answers[i].Item2) ? $"Untitled answer #{i + 1}" : Answers[i].Item2;
+                finalChoices.Add(new InputChoiceInfo(answer, title));
+            }
             return [.. finalChoices];
         }
     }

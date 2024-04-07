@@ -27,22 +27,9 @@ namespace Terminaux.Tests.Inputs
     public class InputChoiceToolsTests
     {
         [TestMethod]
-        public void TestGetInputChoicesAnswersStr()
-        {
-            var choices = InputChoiceTools.GetInputChoices("Y/N/C", ["Yes", "No", "Cancel"]);
-            choices.Length.ShouldBe(3);
-            choices[0].ChoiceName.ShouldBe("Y");
-            choices[1].ChoiceName.ShouldBe("N");
-            choices[2].ChoiceName.ShouldBe("C");
-            choices[0].ChoiceTitle.ShouldBe("Yes");
-            choices[1].ChoiceTitle.ShouldBe("No");
-            choices[2].ChoiceTitle.ShouldBe("Cancel");
-        }
-
-        [TestMethod]
         public void TestGetInputChoicesAnswersArray()
         {
-            var choices = InputChoiceTools.GetInputChoices(["Y", "N", "C"], ["Yes", "No", "Cancel"]);
+            var choices = InputChoiceTools.GetInputChoices([("Y", "Yes"), ("N", "No"), ("C", "Cancel")]);
             choices.Length.ShouldBe(3);
             choices[0].ChoiceName.ShouldBe("Y");
             choices[1].ChoiceName.ShouldBe("N");
@@ -55,20 +42,20 @@ namespace Terminaux.Tests.Inputs
         [TestMethod]
         public void TestGetInputChoicesAnswersTitleNoMatch()
         {
-            var choices = InputChoiceTools.GetInputChoices(["Y", "N", "C"], ["Yes", "No"]);
+            var choices = InputChoiceTools.GetInputChoices([("Y", "Yes"), ("N", null), ("C", "Cancel")]);
             choices.Length.ShouldBe(3);
             choices[0].ChoiceName.ShouldBe("Y");
             choices[1].ChoiceName.ShouldBe("N");
             choices[2].ChoiceName.ShouldBe("C");
             choices[0].ChoiceTitle.ShouldBe("Yes");
-            choices[1].ChoiceTitle.ShouldBe("No");
-            choices[2].ChoiceTitle.ShouldBe("[3]");
+            choices[1].ChoiceTitle.ShouldBe("Untitled answer #2");
+            choices[2].ChoiceTitle.ShouldBe("Cancel");
         }
 
         [TestMethod]
         public void TestGetInputChoicesAnswersAnswerNoMatch()
         {
-            var choices = InputChoiceTools.GetInputChoices(["Y", "N"], ["Yes", "No", "Cancel"]);
+            var choices = InputChoiceTools.GetInputChoices([("Y", "Yes"), ("N", "No"), (null, "Cancel")]);
             choices.Length.ShouldBe(3);
             choices[0].ChoiceName.ShouldBe("Y");
             choices[1].ChoiceName.ShouldBe("N");
