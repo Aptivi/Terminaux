@@ -39,5 +39,23 @@ namespace Terminaux.Tests.Colors
                 ColorData.ColorId.ShouldBe(ColorIndex);
             }
         }
+
+        /// <summary>
+        /// Tests converting 255-color data from JSON to <see cref="Color"/>
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestConvertColorDataToColor()
+        {
+            for (int ColorIndex = 0; ColorIndex <= 255; ColorIndex++)
+            {
+                var ColorData = ConsoleColorData.GetColorData()[ColorIndex];
+                ColorData.ColorId.ShouldBe(ColorIndex);
+                var color = ColorData.Color;
+                color.RGB.R.ShouldBe(ColorData.RGB.R);
+                color.RGB.G.ShouldBe(ColorData.RGB.G);
+                color.RGB.B.ShouldBe(ColorData.RGB.B);
+            }
+        }
     }
 }
