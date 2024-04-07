@@ -12687,33 +12687,33 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.GetGray
   nameWithType: ColorTools.GetGray
-- uid: Terminaux.Colors.ColorTools.GetRandomColor(System.Boolean)
-  name: GetRandomColor(bool)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRandomColor_System_Boolean_
-  commentId: M:Terminaux.Colors.ColorTools.GetRandomColor(System.Boolean)
-  name.vb: GetRandomColor(Boolean)
-  fullName: Terminaux.Colors.ColorTools.GetRandomColor(bool)
-  fullName.vb: Terminaux.Colors.ColorTools.GetRandomColor(Boolean)
-  nameWithType: ColorTools.GetRandomColor(bool)
-  nameWithType.vb: ColorTools.GetRandomColor(Boolean)
-- uid: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType,System.Boolean)
-  name: GetRandomColor(ColorType, bool)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRandomColor_Terminaux_Colors_ColorType_System_Boolean_
-  commentId: M:Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType,System.Boolean)
-  name.vb: GetRandomColor(ColorType, Boolean)
-  fullName: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType, bool)
-  fullName.vb: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType, Boolean)
-  nameWithType: ColorTools.GetRandomColor(ColorType, bool)
-  nameWithType.vb: ColorTools.GetRandomColor(ColorType, Boolean)
-- uid: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
-  name: GetRandomColor(ColorType, int, int, int, int, int, int, int, int)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRandomColor_Terminaux_Colors_ColorType_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_
-  commentId: M:Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)
-  name.vb: GetRandomColor(ColorType, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer)
-  fullName: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType, int, int, int, int, int, int, int, int)
-  fullName.vb: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer)
-  nameWithType: ColorTools.GetRandomColor(ColorType, int, int, int, int, int, int, int, int)
-  nameWithType.vb: ColorTools.GetRandomColor(ColorType, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer)
+- uid: Terminaux.Colors.ColorTools.GetRandomColor(System.Boolean,Terminaux.Colors.ColorSettings)
+  name: GetRandomColor(bool, ColorSettings?)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRandomColor_System_Boolean_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Colors.ColorTools.GetRandomColor(System.Boolean,Terminaux.Colors.ColorSettings)
+  name.vb: GetRandomColor(Boolean, ColorSettings)
+  fullName: Terminaux.Colors.ColorTools.GetRandomColor(bool, Terminaux.Colors.ColorSettings?)
+  fullName.vb: Terminaux.Colors.ColorTools.GetRandomColor(Boolean, Terminaux.Colors.ColorSettings)
+  nameWithType: ColorTools.GetRandomColor(bool, ColorSettings?)
+  nameWithType.vb: ColorTools.GetRandomColor(Boolean, ColorSettings)
+- uid: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType,System.Boolean,Terminaux.Colors.ColorSettings)
+  name: GetRandomColor(ColorType, bool, ColorSettings?)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRandomColor_Terminaux_Colors_ColorType_System_Boolean_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType,System.Boolean,Terminaux.Colors.ColorSettings)
+  name.vb: GetRandomColor(ColorType, Boolean, ColorSettings)
+  fullName: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType, bool, Terminaux.Colors.ColorSettings?)
+  fullName.vb: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType, Boolean, Terminaux.Colors.ColorSettings)
+  nameWithType: ColorTools.GetRandomColor(ColorType, bool, ColorSettings?)
+  nameWithType.vb: ColorTools.GetRandomColor(ColorType, Boolean, ColorSettings)
+- uid: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ColorSettings)
+  name: GetRandomColor(ColorType, int, int, int, int, int, int, int, int, ColorSettings?)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRandomColor_Terminaux_Colors_ColorType_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.ColorSettings)
+  name.vb: GetRandomColor(ColorType, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer, ColorSettings)
+  fullName: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType, int, int, int, int, int, int, int, int, Terminaux.Colors.ColorSettings?)
+  fullName.vb: Terminaux.Colors.ColorTools.GetRandomColor(Terminaux.Colors.ColorType, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Terminaux.Colors.ColorSettings)
+  nameWithType: ColorTools.GetRandomColor(ColorType, int, int, int, int, int, int, int, int, ColorSettings?)
+  nameWithType.vb: ColorTools.GetRandomColor(ColorType, Integer, Integer, Integer, Integer, Integer, Integer, Integer, Integer, ColorSettings)
 - uid: Terminaux.Colors.ColorTools.GetRandomColor*
   name: GetRandomColor
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRandomColor_
@@ -12937,33 +12937,33 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.SetConsoleColorDry
   nameWithType: ColorTools.SetConsoleColorDry
-- uid: Terminaux.Colors.ColorTools.TryParseColor(System.Int32)
-  name: TryParseColor(int)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TryParseColor_System_Int32_
-  commentId: M:Terminaux.Colors.ColorTools.TryParseColor(System.Int32)
-  name.vb: TryParseColor(Integer)
-  fullName: Terminaux.Colors.ColorTools.TryParseColor(int)
-  fullName.vb: Terminaux.Colors.ColorTools.TryParseColor(Integer)
-  nameWithType: ColorTools.TryParseColor(int)
-  nameWithType.vb: ColorTools.TryParseColor(Integer)
-- uid: Terminaux.Colors.ColorTools.TryParseColor(System.Int32,System.Int32,System.Int32)
-  name: TryParseColor(int, int, int)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TryParseColor_System_Int32_System_Int32_System_Int32_
-  commentId: M:Terminaux.Colors.ColorTools.TryParseColor(System.Int32,System.Int32,System.Int32)
-  name.vb: TryParseColor(Integer, Integer, Integer)
-  fullName: Terminaux.Colors.ColorTools.TryParseColor(int, int, int)
-  fullName.vb: Terminaux.Colors.ColorTools.TryParseColor(Integer, Integer, Integer)
-  nameWithType: ColorTools.TryParseColor(int, int, int)
-  nameWithType.vb: ColorTools.TryParseColor(Integer, Integer, Integer)
-- uid: Terminaux.Colors.ColorTools.TryParseColor(System.String)
-  name: TryParseColor(string)
-  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TryParseColor_System_String_
-  commentId: M:Terminaux.Colors.ColorTools.TryParseColor(System.String)
-  name.vb: TryParseColor(String)
-  fullName: Terminaux.Colors.ColorTools.TryParseColor(string)
-  fullName.vb: Terminaux.Colors.ColorTools.TryParseColor(String)
-  nameWithType: ColorTools.TryParseColor(string)
-  nameWithType.vb: ColorTools.TryParseColor(String)
+- uid: Terminaux.Colors.ColorTools.TryParseColor(System.Int32,System.Int32,System.Int32,Terminaux.Colors.ColorSettings)
+  name: TryParseColor(int, int, int, ColorSettings?)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TryParseColor_System_Int32_System_Int32_System_Int32_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Colors.ColorTools.TryParseColor(System.Int32,System.Int32,System.Int32,Terminaux.Colors.ColorSettings)
+  name.vb: TryParseColor(Integer, Integer, Integer, ColorSettings)
+  fullName: Terminaux.Colors.ColorTools.TryParseColor(int, int, int, Terminaux.Colors.ColorSettings?)
+  fullName.vb: Terminaux.Colors.ColorTools.TryParseColor(Integer, Integer, Integer, Terminaux.Colors.ColorSettings)
+  nameWithType: ColorTools.TryParseColor(int, int, int, ColorSettings?)
+  nameWithType.vb: ColorTools.TryParseColor(Integer, Integer, Integer, ColorSettings)
+- uid: Terminaux.Colors.ColorTools.TryParseColor(System.Int32,Terminaux.Colors.ColorSettings)
+  name: TryParseColor(int, ColorSettings?)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TryParseColor_System_Int32_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Colors.ColorTools.TryParseColor(System.Int32,Terminaux.Colors.ColorSettings)
+  name.vb: TryParseColor(Integer, ColorSettings)
+  fullName: Terminaux.Colors.ColorTools.TryParseColor(int, Terminaux.Colors.ColorSettings?)
+  fullName.vb: Terminaux.Colors.ColorTools.TryParseColor(Integer, Terminaux.Colors.ColorSettings)
+  nameWithType: ColorTools.TryParseColor(int, ColorSettings?)
+  nameWithType.vb: ColorTools.TryParseColor(Integer, ColorSettings)
+- uid: Terminaux.Colors.ColorTools.TryParseColor(System.String,Terminaux.Colors.ColorSettings)
+  name: TryParseColor(string, ColorSettings?)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TryParseColor_System_String_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Colors.ColorTools.TryParseColor(System.String,Terminaux.Colors.ColorSettings)
+  name.vb: TryParseColor(String, ColorSettings)
+  fullName: Terminaux.Colors.ColorTools.TryParseColor(string, Terminaux.Colors.ColorSettings?)
+  fullName.vb: Terminaux.Colors.ColorTools.TryParseColor(String, Terminaux.Colors.ColorSettings)
+  nameWithType: ColorTools.TryParseColor(string, ColorSettings?)
+  nameWithType.vb: ColorTools.TryParseColor(String, ColorSettings)
 - uid: Terminaux.Colors.ColorTools.TryParseColor*
   name: TryParseColor
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_TryParseColor_
@@ -18453,12 +18453,15 @@ references:
   commentId: T:Terminaux.Colors.Interop.SystemColorConverter
   fullName: Terminaux.Colors.Interop.SystemColorConverter
   nameWithType: SystemColorConverter
-- uid: Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor(System.Drawing.Color)
-  name: FromDrawingColor(Color)
-  href: api/Terminaux.Colors.Interop.SystemColorConverter.html#Terminaux_Colors_Interop_SystemColorConverter_FromDrawingColor_System_Drawing_Color_
-  commentId: M:Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor(System.Drawing.Color)
-  fullName: Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor(System.Drawing.Color)
-  nameWithType: SystemColorConverter.FromDrawingColor(Color)
+- uid: Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor(System.Drawing.Color,Terminaux.Colors.ColorSettings)
+  name: FromDrawingColor(Color, ColorSettings?)
+  href: api/Terminaux.Colors.Interop.SystemColorConverter.html#Terminaux_Colors_Interop_SystemColorConverter_FromDrawingColor_System_Drawing_Color_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor(System.Drawing.Color,Terminaux.Colors.ColorSettings)
+  name.vb: FromDrawingColor(Color, ColorSettings)
+  fullName: Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor(System.Drawing.Color, Terminaux.Colors.ColorSettings?)
+  fullName.vb: Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor(System.Drawing.Color, Terminaux.Colors.ColorSettings)
+  nameWithType: SystemColorConverter.FromDrawingColor(Color, ColorSettings?)
+  nameWithType.vb: SystemColorConverter.FromDrawingColor(Color, ColorSettings)
 - uid: Terminaux.Colors.Interop.SystemColorConverter.FromDrawingColor*
   name: FromDrawingColor
   href: api/Terminaux.Colors.Interop.SystemColorConverter.html#Terminaux_Colors_Interop_SystemColorConverter_FromDrawingColor_
@@ -24197,18 +24200,24 @@ references:
   commentId: T:Terminaux.Inputs.Styles.ColorSelector
   fullName: Terminaux.Inputs.Styles.ColorSelector
   nameWithType: ColorSelector
-- uid: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector
-  name: OpenColorSelector()
-  href: api/Terminaux.Inputs.Styles.ColorSelector.html#Terminaux_Inputs_Styles_ColorSelector_OpenColorSelector
-  commentId: M:Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector
-  fullName: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector()
-  nameWithType: ColorSelector.OpenColorSelector()
-- uid: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.Color)
-  name: OpenColorSelector(Color)
-  href: api/Terminaux.Inputs.Styles.ColorSelector.html#Terminaux_Inputs_Styles_ColorSelector_OpenColorSelector_Terminaux_Colors_Color_
-  commentId: M:Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.Color)
-  fullName: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.Color)
-  nameWithType: ColorSelector.OpenColorSelector(Color)
+- uid: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.Color,Terminaux.Colors.ColorSettings)
+  name: OpenColorSelector(Color, ColorSettings?)
+  href: api/Terminaux.Inputs.Styles.ColorSelector.html#Terminaux_Inputs_Styles_ColorSelector_OpenColorSelector_Terminaux_Colors_Color_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.Color,Terminaux.Colors.ColorSettings)
+  name.vb: OpenColorSelector(Color, ColorSettings)
+  fullName: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.Color, Terminaux.Colors.ColorSettings?)
+  fullName.vb: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.Color, Terminaux.Colors.ColorSettings)
+  nameWithType: ColorSelector.OpenColorSelector(Color, ColorSettings?)
+  nameWithType.vb: ColorSelector.OpenColorSelector(Color, ColorSettings)
+- uid: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.ColorSettings)
+  name: OpenColorSelector(ColorSettings?)
+  href: api/Terminaux.Inputs.Styles.ColorSelector.html#Terminaux_Inputs_Styles_ColorSelector_OpenColorSelector_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.ColorSettings)
+  name.vb: OpenColorSelector(ColorSettings)
+  fullName: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.ColorSettings?)
+  fullName.vb: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector(Terminaux.Colors.ColorSettings)
+  nameWithType: ColorSelector.OpenColorSelector(ColorSettings?)
+  nameWithType.vb: ColorSelector.OpenColorSelector(ColorSettings)
 - uid: Terminaux.Inputs.Styles.ColorSelector.OpenColorSelector*
   name: OpenColorSelector
   href: api/Terminaux.Inputs.Styles.ColorSelector.html#Terminaux_Inputs_Styles_ColorSelector_OpenColorSelector_
