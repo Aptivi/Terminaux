@@ -101,6 +101,33 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
+        /// Reads either a pointer or a key (blocking)
+        /// </summary>
+        public static (PointerEventContext?, ConsoleKeyInfo) ReadPointerOrKey()
+        {
+            bool looping = true;
+            PointerEventContext? ctx = null;
+            ConsoleKeyInfo cki = default;
+            while (looping)
+            {
+                SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+                if (PointerListener.PointerAvailable)
+                {
+                    // Mouse input received.
+                    ctx = ReadPointer();
+                    if (ctx.ButtonPress != PointerButtonPress.Moved)
+                        looping = false;
+                }
+                else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                {
+                    cki = ReadKey();
+                    looping = false;
+                }
+            }
+            return (ctx, cki);
+        }
+
+        /// <summary>
         /// Reads the input with password character masking
         /// </summary>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>

@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Console.Fixtures.Cases.CaseData;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Presentation;
 
 namespace Terminaux.Console.Fixtures.Cases.Presentations
@@ -25,7 +26,11 @@ namespace Terminaux.Console.Fixtures.Cases.Presentations
     internal class TestPresentationKiosk : IFixture
     {
         public string FixtureID => "TestPresentationKiosk";
-        public void RunFixture() =>
+        public void RunFixture()
+        {
+            PointerListener.StartListening();
             PresentationTools.Present(PresentationDebugInt.Debug, true, false);
+            PointerListener.StopListening();
+        }
     }
 }

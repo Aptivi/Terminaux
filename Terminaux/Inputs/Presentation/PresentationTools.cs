@@ -29,6 +29,8 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using System.Threading;
+using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -142,7 +144,7 @@ namespace Terminaux.Inputs.Presentation
                     // Check for possible out-of-bounds
                     if (element.IsPossibleOutOfBounds() && checkOutOfBounds)
                     {
-                        TermReader.ReadKey();
+                        TermReader.ReadPointerOrKey();
                         TextWriterRaw.WriteRaw(ClearPresentation());
                     }
                     checkOutOfBounds = true;
@@ -163,23 +165,38 @@ namespace Terminaux.Inputs.Presentation
                 bool pageExit = false;
                 while (!pageExit)
                 {
-                    // Get the keypress
-                    var key = TermReader.ReadKey();
-
-                    // Now, check for the key
-                    switch (key.Key)
+                    // Get the keypress or mouse press
+                    SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+                    if (PointerListener.PointerAvailable)
                     {
-                        case ConsoleKey.Escape:
-                            if (required)
+                        // Mouse input received.
+                        var mouse = TermReader.ReadPointer();
+                        switch (mouse.Button)
+                        {
+                            case PointerButton.Left:
+                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                    break;
+                                pageExit = true;
                                 break;
-                            if (kiosk)
+                        }
+                    }
+                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                    {
+                        var key = TermReader.ReadKey();
+                        switch (key.Key)
+                        {
+                            case ConsoleKey.Escape:
+                                if (required)
+                                    break;
+                                if (kiosk)
+                                    break;
+                                presentExit = true;
+                                pageExit = true;
                                 break;
-                            presentExit = true;
-                            pageExit = true;
-                            break;
-                        case ConsoleKey.Enter:
-                            pageExit = true;
-                            break;
+                            case ConsoleKey.Enter:
+                                pageExit = true;
+                                break;
+                        }
                     }
                 }
             }
