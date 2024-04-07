@@ -14075,6 +14075,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.GetHashCode
   nameWithType: ConsoleColorData.GetHashCode
+- uid: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Color)
+  name: GetNearestColor(Color)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetNearestColor_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Color)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Color)
+  nameWithType: ConsoleColorData.GetNearestColor(Color)
+- uid: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor*
+  name: GetNearestColor
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetNearestColor_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.GetNearestColor
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor
+  nameWithType: ConsoleColorData.GetNearestColor
 - uid: Terminaux.Colors.Data.ConsoleColorData.GetOrderCode
   name: GetOrderCode()
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetOrderCode
@@ -15708,6 +15721,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.Orchid2
   nameWithType: ConsoleColorData.Orchid2
+- uid: Terminaux.Colors.Data.ConsoleColorData.OrderColorData(System.Boolean)
+  name: OrderColorData(bool)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_OrderColorData_System_Boolean_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.OrderColorData(System.Boolean)
+  name.vb: OrderColorData(Boolean)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.OrderColorData(bool)
+  fullName.vb: Terminaux.Colors.Data.ConsoleColorData.OrderColorData(Boolean)
+  nameWithType: ConsoleColorData.OrderColorData(bool)
+  nameWithType.vb: ConsoleColorData.OrderColorData(Boolean)
+- uid: Terminaux.Colors.Data.ConsoleColorData.OrderColorData*
+  name: OrderColorData
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_OrderColorData_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.OrderColorData
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorData.OrderColorData
+  nameWithType: ConsoleColorData.OrderColorData
 - uid: Terminaux.Colors.Data.ConsoleColorData.PaleGreen1
   name: PaleGreen1
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_PaleGreen1

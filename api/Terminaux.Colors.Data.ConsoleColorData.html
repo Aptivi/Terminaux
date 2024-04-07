@@ -6632,7 +6632,7 @@ public ConsoleColorData.Rgb? RGB { get; }</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Data_ConsoleColorData_Vector.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Data.ConsoleColorData.Vector%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Data/ConsoleColorDataTools.cs/#L78">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Data/ConsoleColorDataTools.cs/#L130">View Source</a>
   </span>
   <a id="Terminaux_Colors_Data_ConsoleColorData_Vector_" data-uid="Terminaux.Colors.Data.ConsoleColorData.Vector*"></a>
   <h4 id="Terminaux_Colors_Data_ConsoleColorData_Vector" data-uid="Terminaux.Colors.Data.ConsoleColorData.Vector">Vector</h4>
@@ -7107,6 +7107,56 @@ public ConsoleColorData.Rgb? RGB { get; }</code></pre>
   <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Data_ConsoleColorData_GetNearestColor_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Data/ConsoleColorDataTools.cs/#L95">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Data_ConsoleColorData_GetNearestColor_" data-uid="Terminaux.Colors.Data.ConsoleColorData.GetNearestColor*"></a>
+  <h4 id="Terminaux_Colors_Data_ConsoleColorData_GetNearestColor_Terminaux_Colors_Color_" data-uid="Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Color)">GetNearestColor(Color)</h4>
+  <div class="markdown level1 summary"><p>Gets the nearest color from the built-in X11 color palette</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ConsoleColorData? GetNearestColor(Color color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>True color instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Data.ConsoleColorData.html">ConsoleColorData</a></td>
+        <td><p>The nearest color for the indicated color, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if it doesn't exist</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Data_ConsoleColorData_GetOrderCode.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Data.ConsoleColorData.GetOrderCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
@@ -7146,7 +7196,7 @@ public ConsoleColorData.Rgb? RGB { get; }</code></pre>
   </span>
   <a id="Terminaux_Colors_Data_ConsoleColorData_MatchColorData_" data-uid="Terminaux.Colors.Data.ConsoleColorData.MatchColorData*"></a>
   <h4 id="Terminaux_Colors_Data_ConsoleColorData_MatchColorData_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Colors.Data.ConsoleColorData.MatchColorData(System.Int32,System.Int32,System.Int32)">MatchColorData(int, int, int)</h4>
-  <div class="markdown level1 summary"><p>Gets a color data instance that matches</p>
+  <div class="markdown level1 summary"><p>Gets a color data instance that matches the available color instances</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -7208,7 +7258,7 @@ public ConsoleColorData.Rgb? RGB { get; }</code></pre>
   </span>
   <a id="Terminaux_Colors_Data_ConsoleColorData_MatchColorData_" data-uid="Terminaux.Colors.Data.ConsoleColorData.MatchColorData*"></a>
   <h4 id="Terminaux_Colors_Data_ConsoleColorData_MatchColorData_Terminaux_Colors_Color_" data-uid="Terminaux.Colors.Data.ConsoleColorData.MatchColorData(Terminaux.Colors.Color)">MatchColorData(Color)</h4>
-  <div class="markdown level1 summary"><p>Gets a color data instance that matches</p>
+  <div class="markdown level1 summary"><p>Gets a color data instance that matches the available color instances</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -7258,7 +7308,7 @@ public ConsoleColorData.Rgb? RGB { get; }</code></pre>
   </span>
   <a id="Terminaux_Colors_Data_ConsoleColorData_MatchColorData_" data-uid="Terminaux.Colors.Data.ConsoleColorData.MatchColorData*"></a>
   <h4 id="Terminaux_Colors_Data_ConsoleColorData_MatchColorData_Terminaux_Colors_Models_RedGreenBlue_" data-uid="Terminaux.Colors.Data.ConsoleColorData.MatchColorData(Terminaux.Colors.Models.RedGreenBlue)">MatchColorData(RedGreenBlue)</h4>
-  <div class="markdown level1 summary"><p>Gets a color data instance that matches</p>
+  <div class="markdown level1 summary"><p>Gets a color data instance that matches the available color instances</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -7295,6 +7345,56 @@ public ConsoleColorData.Rgb? RGB { get; }</code></pre>
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Data.ConsoleColorData.html">ConsoleColorData</a></td>
         <td><p>Either an instance of <a class="xref" href="Terminaux.Colors.Data.ConsoleColorData.html">ConsoleColorData</a> if found, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Data_ConsoleColorData_OrderColorData_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Data.ConsoleColorData.OrderColorData(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Data/ConsoleColorDataTools.cs/#L80">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Data_ConsoleColorData_OrderColorData_" data-uid="Terminaux.Colors.Data.ConsoleColorData.OrderColorData*"></a>
+  <h4 id="Terminaux_Colors_Data_ConsoleColorData_OrderColorData_System_Boolean_" data-uid="Terminaux.Colors.Data.ConsoleColorData.OrderColorData(System.Boolean)">OrderColorData(bool)</h4>
+  <div class="markdown level1 summary"><p>Orders color data instances by their RGB code</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static ConsoleColorData[] OrderColorData(bool descending = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">descending</span></td>
+        <td><p>Descending order</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Data.ConsoleColorData.html">ConsoleColorData</a>[]</td>
+        <td><p>An array of <a class="xref" href="Terminaux.Colors.Data.ConsoleColorData.html">ConsoleColorData</a> ordered by ascending or descending RGB code that can be get by <a class="xref" href="Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetOrderCode">GetOrderCode()</a></p>
 </td>
       </tr>
     </tbody>
