@@ -20,6 +20,7 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 using Terminaux.Colors.Models;
 
 namespace Terminaux.Colors.Data
@@ -27,7 +28,7 @@ namespace Terminaux.Colors.Data
     /// <summary>
     /// Console color data
     /// </summary>
-    [DebuggerDisplay("{Name} [{ColorId}, {HexString}]")]
+    [DebuggerDisplay("{Name} [{ColorId}, {HexString}, {GetOrderCode()}]")]
     public partial class ConsoleColorData : IEquatable<ConsoleColorData>
     {
         /// <summary>
@@ -70,5 +71,11 @@ namespace Terminaux.Colors.Data
             );
             return instance;
         }
+
+        /// <summary>
+        /// Gets the three-dimension vector values from RGB color
+        /// </summary>
+        public Vector3 Vector =>
+            RGB is not null ? new(RGB.R, RGB.G, RGB.B) : default;
     }
 }

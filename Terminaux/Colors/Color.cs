@@ -30,6 +30,8 @@ using Terminaux.Colors.Interop;
 using Terminaux.Colors.Transformation.Contrast;
 using Newtonsoft.Json;
 using Terminaux.Colors.Transformation.Formulas;
+using System.Linq;
+using System.Numerics;
 
 namespace Terminaux.Colors
 {
@@ -134,6 +136,51 @@ namespace Terminaux.Colors
         /// </summary>
         public string Hex =>
             $"#{RGB?.R:X2}{RGB?.G:X2}{RGB?.B:X2}";
+
+        /// <summary>
+        /// Color name representation
+        /// </summary>
+        public string Name
+        {
+            get
+            {
+                if (Type == ColorType.TrueColor)
+                {
+                    // We need to get a color map representing RGB values and their names
+                    var data = ConsoleColorData.GetColorData();
+                    data = [.. data.OrderBy((cp) => cp.GetOrderCode())];
+
+                    // Now, using the three-dimensional vector instance, we need to calculate the nearest color
+                    // by getting the distance between our current color and the target color by calculating it
+                    // like this:
+                    //
+                    //   √((COL.RGB.R - CCD.RGB.R)^2 + (COL.RGB.G - CCD.RGB.G)^2 + (COL.RGB.B - CCD.RGB.B)^2)
+                    //
+                    // ...where COL refers to this Color instance and CCD refers to the target color data in the
+                    // loop below.
+                    float minimum = float.PositiveInfinity;
+                    Vector3 vector = RGB is not null ? new(RGB.R, RGB.G, RGB.B) : default;
+                    string name = "";
+                    for (int i = 0; i < data.Length; i++)
+                    {
+                        ConsoleColorData? color = data[i];
+
+                        // Calculate the distance using the formula above.
+                        float distance = Vector3.Distance(vector, color.Vector);
+                        if (distance < minimum)
+                        {
+                            // Keep getting distance until we find the correct color.
+                            minimum = distance;
+                            name = color.Name;
+                        }
+                    }
+                    return name;
+                }
+                else
+                    return ColorId?.Name ?? "";
+            }
+        }
+
         /// <summary>
         /// Color type
         /// </summary>
@@ -141,6 +188,7 @@ namespace Terminaux.Colors
             ColorId is null ? ColorType.TrueColor :
             ColorId.ColorId >= 16 ? ColorType.EightBitColor :
             ColorType.FourBitColor;
+
         /// <summary>
         /// Determines the color brightness whether it indicates dark or light mode
         /// </summary>

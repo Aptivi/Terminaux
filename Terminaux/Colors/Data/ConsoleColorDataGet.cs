@@ -25,7 +25,7 @@ namespace Terminaux.Colors.Data
     /// <summary>
     /// Console color data
     /// </summary>
-    [DebuggerDisplay("{Name} [{ColorId}, {HexString}]")]
+    [DebuggerDisplay("{Name} [{ColorId}, {HexString}, {GetOrderCode()}]")]
     public partial class ConsoleColorData : IEquatable<ConsoleColorData>
     {
         /// <summary>

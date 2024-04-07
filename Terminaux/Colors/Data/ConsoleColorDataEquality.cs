@@ -26,7 +26,7 @@ namespace Terminaux.Colors.Data
     /// <summary>
     /// Console color data
     /// </summary>
-    [DebuggerDisplay("{Name} [{ColorId}, {HexString}]")]
+    [DebuggerDisplay("{Name} [{ColorId}, {HexString}, {GetOrderCode()}]")]
     public partial class ConsoleColorData : IEquatable<ConsoleColorData>
     {
         /// <inheritdoc/>
@@ -45,6 +45,13 @@ namespace Terminaux.Colors.Data
         /// <inheritdoc/>
         public override int GetHashCode() =>
             -1308032243 + ColorId.GetHashCode();
+
+        /// <summary>
+        /// Gets the RGB order code
+        /// </summary>
+        /// <returns>RGB order code in decimal RRRGGGBBB format</returns>
+        public int GetOrderCode() =>
+            ((RGB?.B << 16) | (RGB?.G << 8) | RGB?.R) ?? 0;
 
         /// <inheritdoc/>
         public static bool operator ==(ConsoleColorData? left, ConsoleColorData? right)

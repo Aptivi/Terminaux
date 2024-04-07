@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Numerics;
 using Terminaux.Base;
 
 namespace Terminaux.Colors.Models
@@ -83,6 +84,12 @@ namespace Terminaux.Colors.Models
             originalAlpha;
 
         /// <summary>
+        /// Gets the three-dimension vector values from RGB color
+        /// </summary>
+        public Vector3 Vector =>
+            new(R, G, B);
+
+        /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         /// </summary>
         public override string ToString() =>
@@ -108,6 +115,13 @@ namespace Terminaux.Colors.Models
             hashCode = hashCode * -1521134295 + B.GetHashCode();
             return hashCode;
         }
+
+        /// <summary>
+        /// Gets the RGB order code
+        /// </summary>
+        /// <returns>RGB order code in decimal RRRGGGBBB format</returns>
+        public int GetOrderCode() =>
+            (B << 16) | (G << 8) | R;
 
         /// <inheritdoc/>
         public static bool operator ==(RedGreenBlue left, RedGreenBlue right) =>

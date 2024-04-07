@@ -489,7 +489,7 @@ namespace Terminaux.Inputs.Styles
             int boxHeight = ConsoleWrapper.WindowHeight - 6;
 
             // First, draw the border
-            builder.Append(BoxFrameColor.RenderBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor}{(selectedColor.ColorId is not null ? $" | {selectedColor.ColorId.Name}" : "")}]", boxX, boxY, boxWidth, boxHeight));
+            builder.Append(BoxFrameColor.RenderBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor} | {selectedColor.Name}]", boxX, boxY, boxWidth, boxHeight));
 
             // then, the box
             builder.Append(
