@@ -286,12 +286,16 @@ namespace Terminaux.Colors
         /// Tries parsing the color from the specifier string
         /// </summary>
         /// <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, or a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
+        /// <param name="settings">Settings to use</param>
         /// <returns>True if successful; False if failed</returns>
-        public static bool TryParseColor(string ColorSpecifier)
+        public static bool TryParseColor(string ColorSpecifier, ColorSettings? settings = null)
         {
+            // Select appropriate settings
+            var finalSettings = settings ?? GlobalSettings;
+
             try
             {
-                var ColorInstance = new Color(ColorSpecifier);
+                var ColorInstance = new Color(ColorSpecifier, finalSettings);
                 return true;
             }
             catch (Exception)
@@ -304,12 +308,16 @@ namespace Terminaux.Colors
         /// Tries parsing the color from the specifier string
         /// </summary>
         /// <param name="ColorNum">The color number</param>
+        /// <param name="settings">Settings to use</param>
         /// <returns>True if successful; False if failed</returns>
-        public static bool TryParseColor(int ColorNum)
+        public static bool TryParseColor(int ColorNum, ColorSettings? settings = null)
         {
+            // Select appropriate settings
+            var finalSettings = settings ?? GlobalSettings;
+
             try
             {
-                var ColorInstance = new Color(ColorNum);
+                var ColorInstance = new Color(ColorNum, finalSettings);
                 return true;
             }
             catch (Exception)
@@ -324,12 +332,16 @@ namespace Terminaux.Colors
         /// <param name="R">The red level</param>
         /// <param name="G">The green level</param>
         /// <param name="B">The blue level</param>
+        /// <param name="settings">Settings to use</param>
         /// <returns>True if successful; False if failed</returns>
-        public static bool TryParseColor(int R, int G, int B)
+        public static bool TryParseColor(int R, int G, int B, ColorSettings? settings = null)
         {
+            // Select appropriate settings
+            var finalSettings = settings ?? GlobalSettings;
+
             try
             {
-                var ColorInstance = new Color(R, G, B);
+                var ColorInstance = new Color(R, G, B, finalSettings);
                 return true;
             }
             catch (Exception)
@@ -342,29 +354,32 @@ namespace Terminaux.Colors
         /// Gets a random color instance (true color)
         /// </summary>
         /// <param name="selectBlack">Whether to select the black color or not</param>
+        /// <param name="settings">Settings to use</param>
         /// <returns>A color instance</returns>
-        public static Color GetRandomColor(bool selectBlack = true) =>
-            GetRandomColor(ColorType.TrueColor, selectBlack);
+        public static Color GetRandomColor(bool selectBlack = true, ColorSettings? settings = null) =>
+            GetRandomColor(ColorType.TrueColor, selectBlack, settings);
 
         /// <summary>
         /// Gets a random color instance
         /// </summary>
         /// <param name="type">Color type to generate</param>
         /// <param name="selectBlack">Whether to select the black color or not</param>
+        /// <param name="settings">Settings to use</param>
         /// <returns>A color instance</returns>
-        public static Color GetRandomColor(ColorType type, bool selectBlack = true)
+        public static Color GetRandomColor(ColorType type, bool selectBlack = true, ColorSettings? settings = null)
         {
+            // Select appropriate settings
+            var finalSettings = settings ?? GlobalSettings;
             int maxColor = type != ColorType.FourBitColor ? 255 : 15;
             Color? color = null;
             int colorLevel = 0;
             ColorType colorType = type;
             while (color is null || (color.RGB is not null && !ColorContrast.IsSeeable(colorType, colorLevel, color.RGB.R, color.RGB.G, color.RGB.B) && !selectBlack))
             {
-                color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255);
+                color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255, finalSettings);
                 colorType = color.Type;
                 if (colorType != ColorType.TrueColor)
                     colorLevel = int.Parse(color.PlainSequence);
-
             }
             return color;
         }
@@ -381,22 +396,25 @@ namespace Terminaux.Colors
         /// <param name="maxColorG">The maximum green color level</param>
         /// <param name="minColorB">The minimum blue color level</param>
         /// <param name="maxColorB">The maximum blue color level</param>
+        /// <param name="settings">Settings to use</param>
         /// <returns>A color instance</returns>
-        public static Color GetRandomColor(ColorType type, int minColor, int maxColor, int minColorR, int maxColorR, int minColorG, int maxColorG, int minColorB, int maxColorB)
+        public static Color GetRandomColor(ColorType type, int minColor, int maxColor, int minColorR, int maxColorR, int minColorG, int maxColorG, int minColorB, int maxColorB, ColorSettings? settings = null)
         {
+            // Select appropriate settings
+            var finalSettings = settings ?? GlobalSettings;
             switch (type)
             {
                 case ColorType.FourBitColor:
                     int colorNum = rng.Next(minColor, maxColor);
-                    return new Color(colorNum);
+                    return new Color(colorNum, finalSettings);
                 case ColorType.EightBitColor:
                     int colorNum2 = rng.Next(minColor, maxColor);
-                    return new Color(colorNum2);
+                    return new Color(colorNum2, finalSettings);
                 case ColorType.TrueColor:
                     int colorNumR = rng.Next(minColorR, maxColorR);
                     int colorNumG = rng.Next(minColorG, maxColorG);
                     int colorNumB = rng.Next(minColorB, maxColorB);
-                    return new Color(colorNumR, colorNumG, colorNumB);
+                    return new Color(colorNumR, colorNumG, colorNumB, finalSettings);
                 default:
                     return Color.Empty;
             }

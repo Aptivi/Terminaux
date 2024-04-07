@@ -31,9 +31,13 @@ namespace Terminaux.Colors.Interop
         /// Converts from <see cref="DrawingColor">System.Drawing's Color</see> to <see cref="OurColor">Terminaux's Color</see>
         /// </summary>
         /// <param name="drawingColor">System.Drawing's Color</param>
+        /// <param name="settings">Settings to use</param>
         /// <returns>Terminaux's Color</returns>
-        public static OurColor FromDrawingColor(DrawingColor drawingColor)
+        public static OurColor FromDrawingColor(DrawingColor drawingColor, ColorSettings? settings = null)
         {
+            // Select appropriate settings
+            var finalSettings = settings ?? ColorTools.GlobalSettings;
+
             // Check to see if the Color from Drawing is null
             if (drawingColor.IsEmpty)
                 return OurColor.Empty;
@@ -43,7 +47,8 @@ namespace Terminaux.Colors.Interop
             int g = drawingColor.G;
             int b = drawingColor.B;
             int a = drawingColor.A;
-            var color = new OurColor(r, g, b, new ColorSettings() { Opacity = a });
+            finalSettings.Opacity = a;
+            var color = new OurColor(r, g, b, finalSettings);
             return color;
         }
 

@@ -51,19 +51,26 @@ namespace Terminaux.Inputs.Styles
         /// <summary>
         /// Opens the color selector
         /// </summary>
+        /// <param name="settings">Settings to use</param>
         /// <returns>An instance of Color to get the resulting color</returns>
-        public static Color OpenColorSelector() =>
-            OpenColorSelector(ConsoleColors.White);
+        public static Color OpenColorSelector(ColorSettings? settings = null) =>
+            OpenColorSelector(ConsoleColors.White, settings);
 
         /// <summary>
         /// Opens the color selector
         /// </summary>
         /// <param name="initialColor">Initial color to use</param>
+        /// <param name="settings">Settings to use</param>
         /// <returns>An instance of Color to get the resulting color</returns>
-        public static Color OpenColorSelector(Color initialColor)
+        public static Color OpenColorSelector(Color initialColor, ColorSettings? settings = null)
         {
+            // Select appropriate settings
+            var finalSettings = settings ?? ColorTools.GlobalSettings;
+
             // Initial color is selected
-            Color selectedColor = initialColor;
+            if (initialColor.RGB is null)
+                return initialColor;
+            Color selectedColor = new(initialColor.RGB.R, initialColor.RGB.G, initialColor.RGB.B, finalSettings);
             if (selectedColor.RGB is null)
                 return selectedColor;
             ColorType type = initialColor.Type;
@@ -94,7 +101,7 @@ namespace Terminaux.Inputs.Styles
                     default:
                         throw new TerminauxException("Invalid color type in the color selector");
                 }
-                UpdateColor(ref selectedColor, type);
+                UpdateColor(ref selectedColor, type, finalSettings);
 
                 // Now, the selector main loop
                 bool bail = false;
@@ -105,7 +112,7 @@ namespace Terminaux.Inputs.Styles
                     screenPart.AddDynamicText(() =>
                     {
                         ConsoleWrapper.CursorVisible = false;
-                        return RenderColorSelector(selectedColor, type);
+                        return RenderColorSelector(selectedColor, type, finalSettings);
                     });
                     screen.AddBufferedPart("Color selector", screenPart);
                     ScreenTools.Render();
@@ -113,7 +120,7 @@ namespace Terminaux.Inputs.Styles
                     // Handle input
                     bail =
                         type == ColorType.TrueColor || type == ColorType.EightBitColor || type == ColorType.FourBitColor ?
-                        HandleKeypress(ref selectedColor, ref type, out refresh) :
+                        HandleKeypress(ref selectedColor, ref type, out refresh, finalSettings) :
                         throw new TerminauxException("Invalid color type in the color selector");
                     if (refresh)
                         screen.RequireRefresh();
@@ -143,7 +150,7 @@ namespace Terminaux.Inputs.Styles
             return selectedColor;
         }
 
-        private static string RenderColorSelector(Color selectedColor, ColorType type)
+        private static string RenderColorSelector(Color selectedColor, ColorType type, ColorSettings finalSettings)
         {
             if (selectedColor.RGB is null)
                 throw new TerminauxInternalException("Selected color RGB instance is null.");
@@ -173,7 +180,7 @@ namespace Terminaux.Inputs.Styles
                 {
                     double width = (double)i / boxWidth;
                     int hue = (int)(360 * width);
-                    hueRamp.Append($"{new Color($"hsl:{hue};100;50").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    hueRamp.Append($"{new Color($"hsl:{hue};100;50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Hue: {final}/360", hueBarX, hueBarY, boxWidth, boxHeight) +
@@ -192,7 +199,7 @@ namespace Terminaux.Inputs.Styles
                 {
                     double width = (double)i / boxWidth;
                     int sat = (int)(100 * width);
-                    satRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};{sat};50").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    satRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};{sat};50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Saturation: {final}/100", hueBarX, saturationBarY, boxWidth, boxHeight) +
@@ -211,7 +218,7 @@ namespace Terminaux.Inputs.Styles
                 {
                     double width = (double)i / boxWidth;
                     int lig = (int)(100 * width);
-                    ligRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};100;{lig}").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    ligRamp.Append($"{new Color($"hsl:{(type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole)};100;{lig}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Lightness: {final}/100", hueBarX, lightnessBarY, boxWidth, boxHeight) +
@@ -232,7 +239,7 @@ namespace Terminaux.Inputs.Styles
                 {
                     double width = (double)i / boxWidth;
                     int gray = (int)(mono.RGB.R * width);
-                    grayRamp.Append($"{new Color($"{gray};{gray};{gray}").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    grayRamp.Append($"{new Color($"{gray};{gray};{gray}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Gray: {mono.RGB.R}/255", hueBarX, grayRampBarY, boxWidth, boxHeight - 1) +
@@ -252,7 +259,7 @@ namespace Terminaux.Inputs.Styles
                 {
                     double width = (double)i / boxWidth;
                     int transparency = (int)(mono.RGB.originalAlpha * width);
-                    transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Transparency: {ColorTools.GlobalSettings.Opacity}/255", hueBarX, transparencyRampBarY, boxWidth - 6, boxHeight - 1) +
@@ -266,7 +273,7 @@ namespace Terminaux.Inputs.Styles
             {
                 StringBuilder darkLightIndicator = new();
                 var indicator = selectedColor.Brightness == ColorBrightness.Light ? ConsoleColors.White : ConsoleColors.Black;
-                darkLightIndicator.Append($"{new Color(indicator).VTSequenceBackgroundTrueColor}   {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                darkLightIndicator.Append($"{new Color(indicator, finalSettings).VTSequenceBackgroundTrueColor}   {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame(ConsoleWrapper.WindowWidth - 7, transparencyRampBarY, 3, 1) +
                     CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 6 + 1, transparencyRampBarY + 2) +
@@ -286,9 +293,9 @@ namespace Terminaux.Inputs.Styles
                     int red = (int)(selectedColor.RGB.R * width);
                     int green = (int)(selectedColor.RGB.G * width);
                     int blue = (int)(selectedColor.RGB.B * width);
-                    redRamp.Append($"{new Color($"{red};0;0").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                    greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
-                    blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    redRamp.Append($"{new Color($"{red};0;0", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    greenRamp.Append($"{new Color($"0;{green};0", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
+                    blueRamp.Append($"{new Color($"0;0;{blue}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
                     BoxFrameColor.RenderBoxFrame($"Red, Green, and Blue: {selectedColor.RGB.R};{selectedColor.RGB.G};{selectedColor.RGB.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 1) +
@@ -307,7 +314,7 @@ namespace Terminaux.Inputs.Styles
             return selector.ToString();
         }
 
-        private static bool HandleKeypress(ref Color selectedColor, ref ColorType type, out bool refresh)
+        private static bool HandleKeypress(ref Color selectedColor, ref ColorType type, out bool refresh, ColorSettings finalSettings)
         {
             bool bail = false;
             refresh = false;
@@ -474,7 +481,7 @@ namespace Terminaux.Inputs.Styles
                         break;
                 }
             }
-            UpdateColor(ref selectedColor, type);
+            UpdateColor(ref selectedColor, type, finalSettings);
             return bail;
         }
 
@@ -500,18 +507,18 @@ namespace Terminaux.Inputs.Styles
             return builder.ToString();
         }
 
-        private static void UpdateColor(ref Color selectedColor, ColorType newType)
+        private static void UpdateColor(ref Color selectedColor, ColorType newType, ColorSettings finalSettings)
         {
             switch (newType)
             {
                 case ColorType.TrueColor:
-                    selectedColor = new($"hsl:{trueColorHue};{trueColorSaturation};{trueColorLightness}");
+                    selectedColor = new($"hsl:{trueColorHue};{trueColorSaturation};{trueColorLightness}", finalSettings);
                     break;
                 case ColorType.EightBitColor:
-                    selectedColor = colorValue255;
+                    selectedColor = new(colorValue255, finalSettings);
                     break;
                 case ColorType.FourBitColor:
-                    selectedColor = colorValue16;
+                    selectedColor = new(colorValue16, finalSettings);
                     break;
             }
         }

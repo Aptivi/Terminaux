@@ -31,11 +31,9 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
         public void RunFixture()
         {
             PointerListener.StartListening();
-            ColorTools.GlobalSettings.UseTerminalPalette = false;
-            var color = ColorSelector.OpenColorSelector();
+            var color = ColorSelector.OpenColorSelector(new ColorSettings() { UseTerminalPalette = false });
             ConsoleWrapper.Clear();
             TextWriterColor.Write("Color selector returned: {0} [{1}]", color.PlainSequence, color.PlainSequenceTrueColor);
-            ColorTools.GlobalSettings.UseTerminalPalette = true;
             PointerListener.StopListening();
         }
     }
