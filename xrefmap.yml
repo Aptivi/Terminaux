@@ -13273,6 +13273,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.Chartreuse4
   nameWithType: ConsoleColorData.Chartreuse4
+- uid: Terminaux.Colors.Data.ConsoleColorData.Color
+  name: Color
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_Color
+  commentId: P:Terminaux.Colors.Data.ConsoleColorData.Color
+  fullName: Terminaux.Colors.Data.ConsoleColorData.Color
+  nameWithType: ConsoleColorData.Color
+- uid: Terminaux.Colors.Data.ConsoleColorData.Color*
+  name: Color
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_Color_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.Color
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorData.Color
+  nameWithType: ConsoleColorData.Color
 - uid: Terminaux.Colors.Data.ConsoleColorData.ColorId
   name: ColorId
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_ColorId
