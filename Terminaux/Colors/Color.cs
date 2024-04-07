@@ -306,16 +306,16 @@ namespace Terminaux.Colors
 
             // Now, parse the output
             var rgb = ParsingTools.ParseSpecifier(ColorSpecifier, settings);
-            if (rgb.cci is not null && rgb.rgb is not null && !settings.EnableColorTransformation)
+            if (rgb is not null && !settings.EnableColorTransformation)
             {
                 // Verify that we're using the correct ID for transparency
                 var data =
                     int.TryParse(ColorSpecifier, out int id) ?
                     ConsoleColorData.GetColorData()[id] :
-                    ConsoleColorData.MatchColorData(rgb.rgb);
+                    ConsoleColorData.MatchColorData(rgb);
                 ColorId = data;
             }
-            RGB = rgb.rgb;
+            RGB = rgb;
         }
 
         /// <summary>
