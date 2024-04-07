@@ -20,6 +20,7 @@
 using System;
 using System.Threading;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
@@ -32,7 +33,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
         public void RunFixture()
         {
             bool looping = true;
-            TextWriterColor.Write("Move your mouse around here or click anywhere. Press HOME to go back.");
+            TextWriterColor.Write("Move your mouse around here or click anywhere. Press HOME to go back or M to enable/disable movement events.");
             PointerListener.MouseEvent += MouseEvent;
             PointerListener.StartListening();
             while (looping)
@@ -41,6 +42,8 @@ namespace Terminaux.Console.Fixtures.Cases.Input
                 var key = TermReader.ReadKey();
                 if (key.Key == ConsoleKey.Home)
                     looping = false;
+                else if (key.Key == ConsoleKey.M)
+                    PointerListener.EnableMovementEvents = !PointerListener.EnableMovementEvents;
             }
             PointerListener.MouseEvent -= MouseEvent;
             PointerListener.StopListening();
@@ -48,7 +51,11 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 
         private void MouseEvent(object sender, PointerEventContext e)
         {
-            TextWriterColor.WriteColor($"{e.Coordinates.x}/{e.Coordinates.y} [{e.Button}, {e.ButtonPress}, {e.Modifiers}]", Terminaux.Colors.Data.ConsoleColors.Green);
+            TextWriterColor.WriteColor($"{e.Coordinates.x}/{e.Coordinates.y} [{e.Button}, {e.ButtonPress}, {e.Modifiers}]",
+                e.ButtonPress == PointerButtonPress.Clicked ? ConsoleColors.Green :
+                e.ButtonPress == PointerButtonPress.Released ? ConsoleColors.Purple :
+                e.ButtonPress == PointerButtonPress.Scrolled ? ConsoleColors.Red :
+                ConsoleColors.Teal);
         }
     }
 }

@@ -36,5 +36,9 @@ namespace Terminaux.Inputs.Pointer
         /// Just released the button click on the mouse
         /// </summary>
         Released,
+        /// <summary>
+        /// Just scrolled the mouse wheel
+        /// </summary>
+        Scrolled,
     }
 }

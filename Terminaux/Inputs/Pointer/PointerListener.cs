@@ -39,6 +39,7 @@ namespace Terminaux.Inputs.Pointer
         private static bool listening = false;
         private static bool active = false;
         private static Thread? pointerListener;
+        private static bool enableMovementEvents;
 
         /// <summary>
         /// Raised when console mouse event occurs
@@ -68,6 +69,20 @@ namespace Terminaux.Inputs.Pointer
         /// </summary>
         public static bool PointerActive =>
             Listening && active;
+
+        /// <summary>
+        /// Checks to see whether the movement events are enabled or not
+        /// </summary>
+        public static bool EnableMovementEvents
+        {
+            get => enableMovementEvents;
+            set
+            {
+                enableMovementEvents = value;
+                if (Listening)
+                    TextWriterRaw.WriteRaw(enableMovementEvents ? "\u001b[?1003h" : "\u001b[?1003l");
+            }
+        }
 
         /// <summary>
         /// Reads a pointer event and removes it from the context buffer
@@ -134,7 +149,7 @@ namespace Terminaux.Inputs.Pointer
 
             // Set DEC locator mode to standard mode
             Process.Start("stty", "-echo -icanon min 1 time 0");
-            TextWriterRaw.WriteRaw("\u001b[?1000h\u001b[?1003h");
+            TextWriterRaw.WriteRaw($"\u001b[?1000h{(EnableMovementEvents ? "\u001b[?1003h" : "")}");
 
             // Make a new thread for Linux listener
             pointerListener = new(() =>
@@ -250,6 +265,7 @@ namespace Terminaux.Inputs.Pointer
                     PointerButtonPress press =
                         state == PosixButtonState.Left || state == PosixButtonState.Middle || state == PosixButtonState.Right ? PointerButtonPress.Clicked :
                         state == PosixButtonState.Released ? PointerButtonPress.Released :
+                        state == PosixButtonState.WheelDown || state == PosixButtonState.WheelUp ? PointerButtonPress.Scrolled :
                         PointerButtonPress.Moved;
                     PointerButton buttonPtr =
                         state == PosixButtonState.Left ? PointerButton.Left :
@@ -281,7 +297,7 @@ namespace Terminaux.Inputs.Pointer
 
         private static void StopListenerLinux()
         {
-            TextWriterRaw.WriteRaw("\u001b[?1000l\u001b[?1003l");
+            TextWriterRaw.WriteRaw($"\u001b[?1000l{(EnableMovementEvents ? "\u001b[?1003l" : "")}");
             Process.Start("stty", "echo");
             pointerListener = null;
         }
@@ -348,11 +364,6 @@ namespace Terminaux.Inputs.Pointer
                             Debug.WriteLine($"Coord: {coord.X}, {coord.Y}, {@event.dwButtonState}, {@event.dwControlKeyState}, {@event.dwEventFlags}");
 
                             // Now, translate them to something Terminaux understands
-                            PointerButtonPress press =
-                                @event.dwButtonState != ButtonState.None && @event.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Clicked :
-                                @event.dwButtonState != ButtonState.None && @event.dwEventFlags == EventFlags.DoubleClicked ? PointerButtonPress.Clicked :
-                                @event.dwButtonState == ButtonState.None && @event.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Released :
-                                PointerButtonPress.Moved;
                             PointerButton button =
                                 @event.dwButtonState == ButtonState.Left ? PointerButton.Left :
                                 @event.dwButtonState == ButtonState.Middle ? PointerButton.Middle :
@@ -360,6 +371,12 @@ namespace Terminaux.Inputs.Pointer
                                 (uint)@event.dwButtonState >= 4000000000 ? PointerButton.WheelDown :
                                 (uint)@event.dwButtonState >= 7000000 ? PointerButton.WheelUp :
                                 PointerButton.None;
+                            PointerButtonPress press =
+                                @event.dwButtonState != ButtonState.None && @event.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Clicked :
+                                @event.dwButtonState != ButtonState.None && @event.dwEventFlags == EventFlags.DoubleClicked ? PointerButtonPress.Clicked :
+                                @event.dwButtonState == ButtonState.None && @event.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Released :
+                                button == PointerButton.WheelDown || button == PointerButton.WheelUp ? PointerButtonPress.Scrolled :
+                                PointerButtonPress.Moved;
                             PointerModifiers mods =
                                 (@event.dwControlKeyState & ControlKeyState.RightAltPressed) != 0 ? PointerModifiers.Alt :
                                 (@event.dwControlKeyState & ControlKeyState.LeftAltPressed) != 0 ? PointerModifiers.Alt :
@@ -371,6 +388,8 @@ namespace Terminaux.Inputs.Pointer
                             mods |=
                                 (@event.dwControlKeyState & ControlKeyState.ShiftPressed) != 0 ? PointerModifiers.Shift :
                                 PointerModifiers.None;
+                            if (!EnableMovementEvents && press == PointerButtonPress.Moved)
+                                break;
                             var ctx = new PointerEventContext(button, press, mods, coord.X, coord.Y);
                             context = ctx;
                             MouseEvent.Invoke("Terminaux", ctx);
