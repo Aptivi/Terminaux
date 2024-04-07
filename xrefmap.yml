@@ -12174,6 +12174,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.Hex
   nameWithType: Color.Hex
+- uid: Terminaux.Colors.Color.Name
+  name: Name
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_Name
+  commentId: P:Terminaux.Colors.Color.Name
+  fullName: Terminaux.Colors.Color.Name
+  nameWithType: Color.Name
+- uid: Terminaux.Colors.Color.Name*
+  name: Name
+  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_Name_
+  commentId: Overload:Terminaux.Colors.Color.Name
+  isSpec: "True"
+  fullName: Terminaux.Colors.Color.Name
+  nameWithType: Color.Name
 - uid: Terminaux.Colors.Color.PlainSequence
   name: PlainSequence
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequence
@@ -14062,6 +14075,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.GetHashCode
   nameWithType: ConsoleColorData.GetHashCode
+- uid: Terminaux.Colors.Data.ConsoleColorData.GetOrderCode
+  name: GetOrderCode()
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetOrderCode
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.GetOrderCode
+  fullName: Terminaux.Colors.Data.ConsoleColorData.GetOrderCode()
+  nameWithType: ConsoleColorData.GetOrderCode()
+- uid: Terminaux.Colors.Data.ConsoleColorData.GetOrderCode*
+  name: GetOrderCode
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetOrderCode_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.GetOrderCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorData.GetOrderCode
+  nameWithType: ConsoleColorData.GetOrderCode
 - uid: Terminaux.Colors.Data.ConsoleColorData.Gold1
   name: Gold1
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_Gold1
@@ -16442,6 +16468,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.Turquoise4
   nameWithType: ConsoleColorData.Turquoise4
+- uid: Terminaux.Colors.Data.ConsoleColorData.Vector
+  name: Vector
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_Vector
+  commentId: P:Terminaux.Colors.Data.ConsoleColorData.Vector
+  fullName: Terminaux.Colors.Data.ConsoleColorData.Vector
+  nameWithType: ConsoleColorData.Vector
+- uid: Terminaux.Colors.Data.ConsoleColorData.Vector*
+  name: Vector
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_Vector_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.Vector
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorData.Vector
+  nameWithType: ConsoleColorData.Vector
 - uid: Terminaux.Colors.Data.ConsoleColorData.Violet
   name: Violet
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_Violet
@@ -20935,6 +20974,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedGreenBlue.GetHashCode
   nameWithType: RedGreenBlue.GetHashCode
+- uid: Terminaux.Colors.Models.RedGreenBlue.GetOrderCode
+  name: GetOrderCode()
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_GetOrderCode
+  commentId: M:Terminaux.Colors.Models.RedGreenBlue.GetOrderCode
+  fullName: Terminaux.Colors.Models.RedGreenBlue.GetOrderCode()
+  nameWithType: RedGreenBlue.GetOrderCode()
+- uid: Terminaux.Colors.Models.RedGreenBlue.GetOrderCode*
+  name: GetOrderCode
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_GetOrderCode_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.GetOrderCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.GetOrderCode
+  nameWithType: RedGreenBlue.GetOrderCode
 - uid: Terminaux.Colors.Models.RedGreenBlue.OriginalRgb
   name: OriginalRgb
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_OriginalRgb
@@ -20987,6 +21039,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.RedGreenBlue.ToString
   nameWithType: RedGreenBlue.ToString
+- uid: Terminaux.Colors.Models.RedGreenBlue.Vector
+  name: Vector
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_Vector
+  commentId: P:Terminaux.Colors.Models.RedGreenBlue.Vector
+  fullName: Terminaux.Colors.Models.RedGreenBlue.Vector
+  nameWithType: RedGreenBlue.Vector
+- uid: Terminaux.Colors.Models.RedGreenBlue.Vector*
+  name: Vector
+  href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_Vector_
+  commentId: Overload:Terminaux.Colors.Models.RedGreenBlue.Vector
+  isSpec: "True"
+  fullName: Terminaux.Colors.Models.RedGreenBlue.Vector
+  nameWithType: RedGreenBlue.Vector
 - uid: Terminaux.Colors.Models.RedGreenBlue.op_Equality(Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Models.RedGreenBlue)
   name: operator ==(RedGreenBlue, RedGreenBlue)
   href: api/Terminaux.Colors.Models.RedGreenBlue.html#Terminaux_Colors_Models_RedGreenBlue_op_Equality_Terminaux_Colors_Models_RedGreenBlue_Terminaux_Colors_Models_RedGreenBlue_
