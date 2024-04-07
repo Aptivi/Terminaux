@@ -32,7 +32,7 @@ namespace Terminaux.Colors.Data
     public partial class ConsoleColorData : IEquatable<ConsoleColorData>
     {
         /// <summary>
-        /// Gets a color data instance that matches 
+        /// Gets a color data instance that matches the available color instances
         /// </summary>
         /// <param name="color">Color to match</param>
         /// <returns>Either an instance of <see cref="ConsoleColorData"/> if found, or <see langword="null"/> if not found</returns>
@@ -44,7 +44,7 @@ namespace Terminaux.Colors.Data
         }
 
         /// <summary>
-        /// Gets a color data instance that matches 
+        /// Gets a color data instance that matches the available color instances
         /// </summary>
         /// <param name="rgb">Color to match</param>
         /// <returns>Either an instance of <see cref="ConsoleColorData"/> if found, or <see langword="null"/> if not found</returns>
@@ -52,7 +52,7 @@ namespace Terminaux.Colors.Data
             MatchColorData(rgb.R, rgb.G, rgb.B);
 
         /// <summary>
-        /// Gets a color data instance that matches 
+        /// Gets a color data instance that matches the available color instances
         /// </summary>
         /// <param name="r">Red color level to match</param>
         /// <param name="g">Green color level to match</param>
@@ -70,6 +70,58 @@ namespace Terminaux.Colors.Data
                 data.RGB.B == b
             );
             return instance;
+        }
+
+        /// <summary>
+        /// Orders color data instances by their RGB code
+        /// </summary>
+        /// <param name="descending">Descending order</param>
+        /// <returns>An array of <see cref="ConsoleColorData"/> ordered by ascending or descending RGB code that can be get by <see cref="GetOrderCode"/></returns>
+        public static ConsoleColorData[] OrderColorData(bool descending = false)
+        {
+            var data = GetColorData();
+            if (descending)
+                data = [.. data.OrderByDescending((cp) => cp.GetOrderCode())];
+            else
+                data = [.. data.OrderBy((cp) => cp.GetOrderCode())];
+            return data;
+        }
+
+        /// <summary>
+        /// Gets the nearest color from the built-in X11 color palette
+        /// </summary>
+        /// <param name="color">True color instance</param>
+        /// <returns>The nearest color for the indicated color, or <see langword="null"/> if it doesn't exist</returns>
+        public static ConsoleColorData? GetNearestColor(Color color)
+        {
+            // We need to get a color map representing RGB values and their names
+            var data = OrderColorData();
+
+            // Now, using the three-dimensional vector instance, we need to calculate the nearest color
+            // by getting the distance between our current color and the target color by calculating it
+            // like this:
+            //
+            //   √((COL.RGB.R - CCD.RGB.R)^2 + (COL.RGB.G - CCD.RGB.G)^2 + (COL.RGB.B - CCD.RGB.B)^2)
+            //
+            // ...where COL refers to this Color instance and CCD refers to the target color data in the
+            // loop below.
+            float minimum = float.PositiveInfinity;
+            Vector3 vector = color.RGB is not null ? new(color.RGB.R, color.RGB.G, color.RGB.B) : default;
+            ConsoleColorData? result = null;
+            for (int i = 0; i < data.Length; i++)
+            {
+                ConsoleColorData? colorData = data[i];
+
+                // Calculate the distance using the formula above.
+                float distance = Vector3.Distance(vector, colorData.Vector);
+                if (distance < minimum)
+                {
+                    // Keep getting distance until we find the correct color.
+                    minimum = distance;
+                    result = colorData;
+                }
+            }
+            return result;
         }
 
         /// <summary>
