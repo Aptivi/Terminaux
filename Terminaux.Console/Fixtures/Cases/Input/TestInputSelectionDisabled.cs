@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Inputs;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
 
 namespace Terminaux.Console.Fixtures.Cases.Input
@@ -27,6 +28,8 @@ namespace Terminaux.Console.Fixtures.Cases.Input
         public string FixtureID => "TestInputSelectionDisabled";
         public void RunFixture()
         {
+            PointerListener.StartListening();
+
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history
             InputChoiceInfo[] choices =
             [
@@ -41,6 +44,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
                 new("mantic", "23.10 (Mantic Minotaur)", "Ubuntu 23.10 Mantic Minotaur is an interim release, scheduled 12 October 2023."),
             ];
             SelectionStyle.PromptSelection("Which Ubuntu version would you like to run?", choices, altChoices);
+            PointerListener.StopListening();
         }
     }
 }

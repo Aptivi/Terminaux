@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Inputs;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -28,6 +29,8 @@ namespace Terminaux.Console.Fixtures.Cases.Input
         public string FixtureID => "TestInputSelectionMultiple";
         public void RunFixture()
         {
+            PointerListener.StartListening();
+
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history
             InputChoiceInfo[] choices =
             [
@@ -42,6 +45,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
             ];
             var answers = SelectionMultipleStyle.PromptMultipleSelection("Which Ubuntu version would you like to run?", choices, altChoices);
             TextWriterColor.Write(string.Join(", ", answers));
+            PointerListener.StopListening();
         }
     }
 }

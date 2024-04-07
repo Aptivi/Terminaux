@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -29,11 +30,14 @@ namespace Terminaux.Console.Fixtures.Cases.Input
         public string FixtureID => "TestInputSelectionLargeMultiple";
         public void RunFixture()
         {
+            PointerListener.StartListening();
+
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"Number #{i + 1}"));
             var answers = SelectionMultipleStyle.PromptMultipleSelection("Select a choice.", [.. choices]);
             TextWriterColor.Write(string.Join(", ", answers));
+            PointerListener.StopListening();
         }
     }
 }

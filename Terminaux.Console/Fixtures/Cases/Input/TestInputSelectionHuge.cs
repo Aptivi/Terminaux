@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
 using Textify.NameGen;
 
@@ -29,12 +30,15 @@ namespace Terminaux.Console.Fixtures.Cases.Input
         public string FixtureID => "TestInputSelectionHuge";
         public void RunFixture()
         {
+            PointerListener.StartListening();
+
             var choices = new List<InputChoiceInfo>();
             var names = NameGenerator.FindFirstNames("");
             for (int i = 0; i < names.Length; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", names[i]));
             InputChoiceInfo[] choicesArray = [.. choices];
             SelectionStyle.PromptSelection("Select a choice.", choicesArray, SelectionStyleSettings.GlobalSettings);
+            PointerListener.StopListening();
         }
     }
 }

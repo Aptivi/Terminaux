@@ -23,12 +23,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Sequences;
@@ -150,7 +152,6 @@ namespace Terminaux.Inputs.Styles.Selection
 
             // First alt answer index
             int altAnswersFirstIdx = Answers.Length;
-            ConsoleKeyInfo Answer;
             bool initialVisible = ConsoleWrapper.CursorVisible;
             ConsoleWrapper.CursorVisible = false;
 
@@ -309,60 +310,122 @@ namespace Terminaux.Inputs.Styles.Selection
 
                     // Wait for an answer
                     ScreenTools.Render();
-                    Answer = TermReader.ReadKey();
-
-                    // Check the answer
+                    SpinWait.SpinUntil(() => PointerListener.InputAvailable);
                     bool goingUp = false;
-                    switch (Answer.Key)
+                    if (PointerListener.PointerAvailable)
                     {
-                        case ConsoleKey.UpArrow:
-                            goingUp = true;
-                            HighlightedAnswer--;
-                            if (HighlightedAnswer == 0)
-                                HighlightedAnswer = AllAnswers.Count;
-                            break;
-                        case ConsoleKey.DownArrow:
-                            HighlightedAnswer++;
-                            if (HighlightedAnswer > AllAnswers.Count)
-                                HighlightedAnswer = 1;
-                            break;
-                        case ConsoleKey.Home:
-                            HighlightedAnswer = 1;
-                            break;
-                        case ConsoleKey.End:
-                            HighlightedAnswer = AllAnswers.Count;
-                            break;
-                        case ConsoleKey.PageUp:
-                            goingUp = true;
-                            HighlightedAnswer = startIndex > 0 ? startIndex : 1;
-                            break;
-                        case ConsoleKey.PageDown:
-                            HighlightedAnswer = endIndex > AllAnswers.Count - 1 ? AllAnswers.Count : endIndex + 2;
-                            HighlightedAnswer = endIndex == AllAnswers.Count - 1 ? endIndex + 1 : HighlightedAnswer;
-                            break;
-                        case ConsoleKey.Enter:
-                            ConsoleWrapper.CursorVisible = initialVisible;
-                            ColorTools.LoadBack();
-                            bail = true;
-                            break;
-                        case ConsoleKey.Escape:
-                            if (kiosk)
+                        // Mouse input received.
+                        var mouse = TermReader.ReadPointer();
+                        switch (mouse.Button)
+                        {
+                            case PointerButton.WheelUp:
+                                goingUp = true;
+                                HighlightedAnswer--;
+                                if (HighlightedAnswer == 0)
+                                    HighlightedAnswer = AllAnswers.Count;
                                 break;
-                            ConsoleWrapper.CursorVisible = initialVisible;
-                            ColorTools.LoadBack();
-                            bail = true;
-                            HighlightedAnswer = -1;
-                            break;
-                        case ConsoleKey.Tab:
-                            string choiceName = highlightedAnswer.ChoiceName;
-                            string choiceTitle = highlightedAnswer.ChoiceTitle;
-                            string choiceDesc = highlightedAnswer.ChoiceDescription;
-                            if (!string.IsNullOrWhiteSpace(choiceDesc))
-                            {
-                                InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
-                                selectionScreen.RequireRefresh();
-                            }
-                            break;
+                            case PointerButton.WheelDown:
+                                HighlightedAnswer++;
+                                if (HighlightedAnswer > AllAnswers.Count)
+                                    HighlightedAnswer = 1;
+                                break;
+                            case PointerButton.Left:
+                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                    break;
+                                ConsoleWrapper.CursorVisible = initialVisible;
+                                ColorTools.LoadBack();
+                                bail = true;
+                                break;
+                            case PointerButton.Right:
+                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                    break;
+                                string choiceName = highlightedAnswer.ChoiceName;
+                                string choiceTitle = highlightedAnswer.ChoiceTitle;
+                                string choiceDesc = highlightedAnswer.ChoiceDescription;
+                                if (!string.IsNullOrWhiteSpace(choiceDesc))
+                                {
+                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    selectionScreen.RequireRefresh();
+                                }
+                                break;
+                            case PointerButton.None:
+                                if (mouse.ButtonPress != PointerButtonPress.Moved)
+                                    break;
+                                if (mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
+                                    break;
+
+                                // Make pages based on console window height
+                                int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
+                                int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                                int answersPerPage = listEndPosition - 5;
+                                int currentPage = (HighlightedAnswer - 1) / answersPerPage;
+                                startIndex = answersPerPage * currentPage;
+                                endIndex = answersPerPage * (currentPage + 1) - 1;
+
+                                // Now, translate coordinates to the selected index
+                                if (mouse.Coordinates.y <= listStartPosition || mouse.Coordinates.y >= listEndPosition - 3)
+                                    break;
+                                int listIndex = mouse.Coordinates.y - listStartPosition;
+                                listIndex = startIndex + listIndex;
+                                listIndex = listIndex > AllAnswers.Count ? AllAnswers.Count : listIndex;
+                                HighlightedAnswer = listIndex;
+                                break;
+                        }
+                    }
+                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                    {
+                        var key = TermReader.ReadKey();
+                        switch (key.Key)
+                        {
+                            case ConsoleKey.UpArrow:
+                                goingUp = true;
+                                HighlightedAnswer--;
+                                if (HighlightedAnswer == 0)
+                                    HighlightedAnswer = AllAnswers.Count;
+                                break;
+                            case ConsoleKey.DownArrow:
+                                HighlightedAnswer++;
+                                if (HighlightedAnswer > AllAnswers.Count)
+                                    HighlightedAnswer = 1;
+                                break;
+                            case ConsoleKey.Home:
+                                HighlightedAnswer = 1;
+                                break;
+                            case ConsoleKey.End:
+                                HighlightedAnswer = AllAnswers.Count;
+                                break;
+                            case ConsoleKey.PageUp:
+                                goingUp = true;
+                                HighlightedAnswer = startIndex > 0 ? startIndex : 1;
+                                break;
+                            case ConsoleKey.PageDown:
+                                HighlightedAnswer = endIndex > AllAnswers.Count - 1 ? AllAnswers.Count : endIndex + 2;
+                                HighlightedAnswer = endIndex == AllAnswers.Count - 1 ? endIndex + 1 : HighlightedAnswer;
+                                break;
+                            case ConsoleKey.Enter:
+                                ConsoleWrapper.CursorVisible = initialVisible;
+                                ColorTools.LoadBack();
+                                bail = true;
+                                break;
+                            case ConsoleKey.Escape:
+                                if (kiosk)
+                                    break;
+                                ConsoleWrapper.CursorVisible = initialVisible;
+                                ColorTools.LoadBack();
+                                bail = true;
+                                HighlightedAnswer = -1;
+                                break;
+                            case ConsoleKey.Tab:
+                                string choiceName = highlightedAnswer.ChoiceName;
+                                string choiceTitle = highlightedAnswer.ChoiceTitle;
+                                string choiceDesc = highlightedAnswer.ChoiceDescription;
+                                if (!string.IsNullOrWhiteSpace(choiceDesc))
+                                {
+                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    selectionScreen.RequireRefresh();
+                                }
+                                break;
+                        }
                     }
 
                     // Verify that the current position is not a disabled choice
