@@ -22850,6 +22850,12 @@ references:
   commentId: F:Terminaux.Inputs.Pointer.PointerButtonPress.Released
   fullName: Terminaux.Inputs.Pointer.PointerButtonPress.Released
   nameWithType: PointerButtonPress.Released
+- uid: Terminaux.Inputs.Pointer.PointerButtonPress.Scrolled
+  name: Scrolled
+  href: api/Terminaux.Inputs.Pointer.PointerButtonPress.html#Terminaux_Inputs_Pointer_PointerButtonPress_Scrolled
+  commentId: F:Terminaux.Inputs.Pointer.PointerButtonPress.Scrolled
+  fullName: Terminaux.Inputs.Pointer.PointerButtonPress.Scrolled
+  nameWithType: PointerButtonPress.Scrolled
 - uid: Terminaux.Inputs.Pointer.PointerEventContext
   name: PointerEventContext
   href: api/Terminaux.Inputs.Pointer.PointerEventContext.html
@@ -22914,6 +22920,19 @@ references:
   commentId: T:Terminaux.Inputs.Pointer.PointerListener
   fullName: Terminaux.Inputs.Pointer.PointerListener
   nameWithType: PointerListener
+- uid: Terminaux.Inputs.Pointer.PointerListener.EnableMovementEvents
+  name: EnableMovementEvents
+  href: api/Terminaux.Inputs.Pointer.PointerListener.html#Terminaux_Inputs_Pointer_PointerListener_EnableMovementEvents
+  commentId: P:Terminaux.Inputs.Pointer.PointerListener.EnableMovementEvents
+  fullName: Terminaux.Inputs.Pointer.PointerListener.EnableMovementEvents
+  nameWithType: PointerListener.EnableMovementEvents
+- uid: Terminaux.Inputs.Pointer.PointerListener.EnableMovementEvents*
+  name: EnableMovementEvents
+  href: api/Terminaux.Inputs.Pointer.PointerListener.html#Terminaux_Inputs_Pointer_PointerListener_EnableMovementEvents_
+  commentId: Overload:Terminaux.Inputs.Pointer.PointerListener.EnableMovementEvents
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Pointer.PointerListener.EnableMovementEvents
+  nameWithType: PointerListener.EnableMovementEvents
 - uid: Terminaux.Inputs.Pointer.PointerListener.InputAvailable
   name: InputAvailable
   href: api/Terminaux.Inputs.Pointer.PointerListener.html#Terminaux_Inputs_Pointer_PointerListener_InputAvailable
