@@ -71,19 +71,29 @@ namespace Terminaux.Colors.Transformation.Contrast
         /// <summary>
         /// Checks to see if the specified color is considered seeable
         /// </summary>
+        /// <param name="color">The color to use</param>
+        /// <returns>True if the specified color is considered "seeable." False otherwise.</returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static bool IsSeeable(Color color) =>
+            IsSeeable(color.Type, color.ColorId?.ColorId ?? 0, color.RGB?.R ?? 0, color.RGB?.G ?? 0, color.RGB?.B ?? 0);
+
+        /// <summary>
+        /// Checks to see if the specified color is considered seeable
+        /// </summary>
         /// <param name="type">The color type to use</param>
         /// <param name="colorLevel">The color level that is in the range of 0-255</param>
         /// <param name="colorR">The red color level</param>
         /// <param name="colorG">The green color level</param>
         /// <param name="colorB">The blue color level</param>
+        /// <param name="settings">Settings to use</param>
         /// <returns>True if the specified color is considered "seeable." False otherwise.</returns>
         /// <exception cref="TerminauxException"></exception>
-        public static bool IsSeeable(ColorType type, int colorLevel, int colorR, int colorG, int colorB)
+        public static bool IsSeeable(ColorType type, int colorLevel, int colorR, int colorG, int colorB, ColorSettings? settings = null)
         {
             // First, check the values
             if (type < ColorType.TrueColor || type > ColorType.FourBitColor)
                 throw new TerminauxException("Color type is invalid");
-            if (!ColorTools.TryParseColor(type == ColorType.TrueColor ? $"{colorR};{colorG};{colorB}" : $"{colorLevel}"))
+            if (!ColorTools.TryParseColor(type == ColorType.TrueColor ? $"{colorR};{colorG};{colorB}" : $"{colorLevel}", settings))
                 throw new TerminauxException("Color specifier for seeability is invalid");
 
             // Forbid setting these colors as they're considered too dark
