@@ -18246,175 +18246,6 @@ references:
   commentId: F:Terminaux.Colors.Data.ConsoleColors.Yellow4Alt
   fullName: Terminaux.Colors.Data.ConsoleColors.Yellow4Alt
   nameWithType: ConsoleColors.Yellow4Alt
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo
-  name: ConsoleColorsInfo
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html
-  commentId: T:Terminaux.Colors.Data.ConsoleColorsInfo
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo
-  nameWithType: ConsoleColorsInfo
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.#ctor(Terminaux.Colors.Data.ConsoleColors)
-  name: ConsoleColorsInfo(ConsoleColors)
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo__ctor_Terminaux_Colors_Data_ConsoleColors_
-  commentId: M:Terminaux.Colors.Data.ConsoleColorsInfo.#ctor(Terminaux.Colors.Data.ConsoleColors)
-  name.vb: New(ConsoleColors)
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.ConsoleColorsInfo(Terminaux.Colors.Data.ConsoleColors)
-  fullName.vb: Terminaux.Colors.Data.ConsoleColorsInfo.New(Terminaux.Colors.Data.ConsoleColors)
-  nameWithType: ConsoleColorsInfo.ConsoleColorsInfo(ConsoleColors)
-  nameWithType.vb: ConsoleColorsInfo.New(ConsoleColors)
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.#ctor*
-  name: ConsoleColorsInfo
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo__ctor_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorsInfo.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.ConsoleColorsInfo
-  fullName.vb: Terminaux.Colors.Data.ConsoleColorsInfo.New
-  nameWithType: ConsoleColorsInfo.ConsoleColorsInfo
-  nameWithType.vb: ConsoleColorsInfo.New
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.B
-  name: B
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_B
-  commentId: P:Terminaux.Colors.Data.ConsoleColorsInfo.B
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.B
-  nameWithType: ConsoleColorsInfo.B
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.B*
-  name: B
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_B_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorsInfo.B
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.B
-  nameWithType: ConsoleColorsInfo.B
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.Color
-  name: Color
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_Color
-  commentId: P:Terminaux.Colors.Data.ConsoleColorsInfo.Color
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.Color
-  nameWithType: ConsoleColorsInfo.Color
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.Color*
-  name: Color
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_Color_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorsInfo.Color
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.Color
-  nameWithType: ConsoleColorsInfo.Color
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.ColorID
-  name: ColorID
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_ColorID
-  commentId: P:Terminaux.Colors.Data.ConsoleColorsInfo.ColorID
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.ColorID
-  nameWithType: ConsoleColorsInfo.ColorID
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.ColorID*
-  name: ColorID
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_ColorID_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorsInfo.ColorID
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.ColorID
-  nameWithType: ConsoleColorsInfo.ColorID
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.Equals(System.Object)
-  name: Equals(object)
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_Equals_System_Object_
-  commentId: M:Terminaux.Colors.Data.ConsoleColorsInfo.Equals(System.Object)
-  name.vb: Equals(Object)
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.Equals(object)
-  fullName.vb: Terminaux.Colors.Data.ConsoleColorsInfo.Equals(Object)
-  nameWithType: ConsoleColorsInfo.Equals(object)
-  nameWithType.vb: ConsoleColorsInfo.Equals(Object)
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.Equals(Terminaux.Colors.Data.ConsoleColorsInfo)
-  name: Equals(ConsoleColorsInfo)
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_Equals_Terminaux_Colors_Data_ConsoleColorsInfo_
-  commentId: M:Terminaux.Colors.Data.ConsoleColorsInfo.Equals(Terminaux.Colors.Data.ConsoleColorsInfo)
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.Equals(Terminaux.Colors.Data.ConsoleColorsInfo)
-  nameWithType: ConsoleColorsInfo.Equals(ConsoleColorsInfo)
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.Equals(Terminaux.Colors.Data.ConsoleColorsInfo,Terminaux.Colors.Data.ConsoleColorsInfo)
-  name: Equals(ConsoleColorsInfo, ConsoleColorsInfo)
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_Equals_Terminaux_Colors_Data_ConsoleColorsInfo_Terminaux_Colors_Data_ConsoleColorsInfo_
-  commentId: M:Terminaux.Colors.Data.ConsoleColorsInfo.Equals(Terminaux.Colors.Data.ConsoleColorsInfo,Terminaux.Colors.Data.ConsoleColorsInfo)
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.Equals(Terminaux.Colors.Data.ConsoleColorsInfo, Terminaux.Colors.Data.ConsoleColorsInfo)
-  nameWithType: ConsoleColorsInfo.Equals(ConsoleColorsInfo, ConsoleColorsInfo)
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.Equals*
-  name: Equals
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_Equals_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorsInfo.Equals
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.Equals
-  nameWithType: ConsoleColorsInfo.Equals
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.G
-  name: G
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_G
-  commentId: P:Terminaux.Colors.Data.ConsoleColorsInfo.G
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.G
-  nameWithType: ConsoleColorsInfo.G
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.G*
-  name: G
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_G_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorsInfo.G
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.G
-  nameWithType: ConsoleColorsInfo.G
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.GetHashCode
-  name: GetHashCode()
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_GetHashCode
-  commentId: M:Terminaux.Colors.Data.ConsoleColorsInfo.GetHashCode
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.GetHashCode()
-  nameWithType: ConsoleColorsInfo.GetHashCode()
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.GetHashCode*
-  name: GetHashCode
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_GetHashCode_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorsInfo.GetHashCode
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.GetHashCode
-  nameWithType: ConsoleColorsInfo.GetHashCode
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.R
-  name: R
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_R
-  commentId: P:Terminaux.Colors.Data.ConsoleColorsInfo.R
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.R
-  nameWithType: ConsoleColorsInfo.R
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.R*
-  name: R
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_R_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorsInfo.R
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.R
-  nameWithType: ConsoleColorsInfo.R
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.op_Equality(Terminaux.Colors.Data.ConsoleColorsInfo,Terminaux.Colors.Data.ConsoleColorsInfo)
-  name: operator ==(ConsoleColorsInfo, ConsoleColorsInfo)
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_op_Equality_Terminaux_Colors_Data_ConsoleColorsInfo_Terminaux_Colors_Data_ConsoleColorsInfo_
-  commentId: M:Terminaux.Colors.Data.ConsoleColorsInfo.op_Equality(Terminaux.Colors.Data.ConsoleColorsInfo,Terminaux.Colors.Data.ConsoleColorsInfo)
-  name.vb: =(ConsoleColorsInfo, ConsoleColorsInfo)
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.operator ==(Terminaux.Colors.Data.ConsoleColorsInfo, Terminaux.Colors.Data.ConsoleColorsInfo)
-  fullName.vb: Terminaux.Colors.Data.ConsoleColorsInfo.=(Terminaux.Colors.Data.ConsoleColorsInfo, Terminaux.Colors.Data.ConsoleColorsInfo)
-  nameWithType: ConsoleColorsInfo.operator ==(ConsoleColorsInfo, ConsoleColorsInfo)
-  nameWithType.vb: ConsoleColorsInfo.=(ConsoleColorsInfo, ConsoleColorsInfo)
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.op_Equality*
-  name: operator ==
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_op_Equality_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorsInfo.op_Equality
-  isSpec: "True"
-  name.vb: =
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.operator ==
-  fullName.vb: Terminaux.Colors.Data.ConsoleColorsInfo.=
-  nameWithType: ConsoleColorsInfo.operator ==
-  nameWithType.vb: ConsoleColorsInfo.=
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.op_Inequality(Terminaux.Colors.Data.ConsoleColorsInfo,Terminaux.Colors.Data.ConsoleColorsInfo)
-  name: operator !=(ConsoleColorsInfo, ConsoleColorsInfo)
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_op_Inequality_Terminaux_Colors_Data_ConsoleColorsInfo_Terminaux_Colors_Data_ConsoleColorsInfo_
-  commentId: M:Terminaux.Colors.Data.ConsoleColorsInfo.op_Inequality(Terminaux.Colors.Data.ConsoleColorsInfo,Terminaux.Colors.Data.ConsoleColorsInfo)
-  name.vb: <>(ConsoleColorsInfo, ConsoleColorsInfo)
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.operator !=(Terminaux.Colors.Data.ConsoleColorsInfo, Terminaux.Colors.Data.ConsoleColorsInfo)
-  fullName.vb: Terminaux.Colors.Data.ConsoleColorsInfo.<>(Terminaux.Colors.Data.ConsoleColorsInfo, Terminaux.Colors.Data.ConsoleColorsInfo)
-  nameWithType: ConsoleColorsInfo.operator !=(ConsoleColorsInfo, ConsoleColorsInfo)
-  nameWithType.vb: ConsoleColorsInfo.<>(ConsoleColorsInfo, ConsoleColorsInfo)
-- uid: Terminaux.Colors.Data.ConsoleColorsInfo.op_Inequality*
-  name: operator !=
-  href: api/Terminaux.Colors.Data.ConsoleColorsInfo.html#Terminaux_Colors_Data_ConsoleColorsInfo_op_Inequality_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorsInfo.op_Inequality
-  isSpec: "True"
-  name.vb: <>
-  fullName: Terminaux.Colors.Data.ConsoleColorsInfo.operator !=
-  fullName.vb: Terminaux.Colors.Data.ConsoleColorsInfo.<>
-  nameWithType: ConsoleColorsInfo.operator !=
-  nameWithType.vb: ConsoleColorsInfo.<>
 - uid: Terminaux.Colors.GeneralColorTools
   name: GeneralColorTools
   href: api/Terminaux.Colors.GeneralColorTools.html
@@ -20598,15 +20429,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName
   nameWithType: ParsingTools.ParseSpecifierRgbName
-- uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(System.String,System.ValueTuple{Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Data.ConsoleColorsInfo}@)
-  name: TryParseSpecifier(string, out (RedGreenBlue? rgb, ConsoleColorsInfo? cci))
-  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifier_System_String_System_ValueTuple_Terminaux_Colors_Models_RedGreenBlue_Terminaux_Colors_Data_ConsoleColorsInfo___
-  commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(System.String,System.ValueTuple{Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Data.ConsoleColorsInfo}@)
-  name.vb: TryParseSpecifier(String, (rgb As RedGreenBlue, cci As ConsoleColorsInfo))
-  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(string, out (Terminaux.Colors.Models.RedGreenBlue? rgb, Terminaux.Colors.Data.ConsoleColorsInfo? cci))
-  fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(String, (rgb As Terminaux.Colors.Models.RedGreenBlue, cci As Terminaux.Colors.Data.ConsoleColorsInfo))
-  nameWithType: ParsingTools.TryParseSpecifier(string, out (RedGreenBlue? rgb, ConsoleColorsInfo? cci))
-  nameWithType.vb: ParsingTools.TryParseSpecifier(String, (rgb As RedGreenBlue, cci As ConsoleColorsInfo))
+- uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(System.String,Terminaux.Colors.Models.RedGreenBlue@)
+  name: TryParseSpecifier(string, out RedGreenBlue?)
+  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifier_System_String_Terminaux_Colors_Models_RedGreenBlue__
+  commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(System.String,Terminaux.Colors.Models.RedGreenBlue@)
+  name.vb: TryParseSpecifier(String, RedGreenBlue)
+  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(string, out Terminaux.Colors.Models.RedGreenBlue?)
+  fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(String, Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: ParsingTools.TryParseSpecifier(string, out RedGreenBlue?)
+  nameWithType.vb: ParsingTools.TryParseSpecifier(String, RedGreenBlue)
 - uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier*
   name: TryParseSpecifier
   href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifier_
@@ -20630,22 +20461,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash
   nameWithType: ParsingTools.TryParseSpecifierRgbHash
-- uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName(System.String,System.ValueTuple{Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Data.ConsoleColorsInfo}@)
-  name: TryParseSpecifierRgbName(string, out (RedGreenBlue? rgb, ConsoleColorsInfo? cci))
-  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifierRgbName_System_String_System_ValueTuple_Terminaux_Colors_Models_RedGreenBlue_Terminaux_Colors_Data_ConsoleColorsInfo___
-  commentId: M:Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName(System.String,System.ValueTuple{Terminaux.Colors.Models.RedGreenBlue,Terminaux.Colors.Data.ConsoleColorsInfo}@)
-  name.vb: TryParseSpecifierRgbName(String, (rgb As RedGreenBlue, cci As ConsoleColorsInfo))
-  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName(string, out (Terminaux.Colors.Models.RedGreenBlue? rgb, Terminaux.Colors.Data.ConsoleColorsInfo? cci))
-  fullName.vb: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName(String, (rgb As Terminaux.Colors.Models.RedGreenBlue, cci As Terminaux.Colors.Data.ConsoleColorsInfo))
-  nameWithType: ParsingTools.TryParseSpecifierRgbName(string, out (RedGreenBlue? rgb, ConsoleColorsInfo? cci))
-  nameWithType.vb: ParsingTools.TryParseSpecifierRgbName(String, (rgb As RedGreenBlue, cci As ConsoleColorsInfo))
-- uid: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName*
-  name: TryParseSpecifierRgbName
-  href: api/Terminaux.Colors.Models.Parsing.ParsingTools.html#Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifierRgbName_
-  commentId: Overload:Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName
-  isSpec: "True"
-  fullName: Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbName
-  nameWithType: ParsingTools.TryParseSpecifierRgbName
 - uid: Terminaux.Colors.Models.Parsing.RgbParsingTools
   name: RgbParsingTools
   href: api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html
