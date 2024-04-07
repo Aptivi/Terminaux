@@ -34,6 +34,8 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using System.Threading;
+using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -526,37 +528,116 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Wait for keypress
-                    var selectedInstance = buttons[selectedButton];
-                    var key = TermReader.ReadKey().Key;
-                    switch (key)
+                    SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+                    if (PointerListener.PointerAvailable)
                     {
-                        case ConsoleKey.LeftArrow:
-                            selectedButton++;
-                            if (selectedButton > buttons.Length - 1)
-                                selectedButton = buttons.Length - 1;
-                            break;
-                        case ConsoleKey.RightArrow:
-                            selectedButton--;
-                            if (selectedButton < 0)
-                                selectedButton = 0;
-                            break;
-                        case ConsoleKey.Tab:
-                            string choiceName = selectedInstance.ChoiceName;
-                            string choiceTitle = selectedInstance.ChoiceTitle;
-                            string choiceDesc = selectedInstance.ChoiceDescription;
-                            if (!string.IsNullOrWhiteSpace(choiceDesc))
+                        void UpdateHighlightBasedOnMouse(PointerEventContext mouse)
+                        {
+                            string finalInfoRendered = TextTools.FormatString(text, vars);
+                            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+                            List<string> splitFinalLines = [];
+                            foreach (var line in splitLines)
                             {
-                                InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
-                                ScreenTools.CurrentScreen?.RequireRefresh();
+                                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
+                                foreach (var lineSentence in lineSentences)
+                                    splitFinalLines.Add(lineSentence);
                             }
-                            break;
-                        case ConsoleKey.Enter:
-                            bail = true;
-                            break;
-                        case ConsoleKey.Escape:
-                            bail = true;
-                            cancel = true;
-                            break;
+                            for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                            {
+                                string line = splitFinalLines[i];
+                                if (!string.IsNullOrWhiteSpace(line))
+                                    break;
+                                splitFinalLines.RemoveAt(i);
+                            }
+                            int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                            int maxHeight = splitFinalLines.Count + 5;
+                            if (maxHeight >= ConsoleWrapper.WindowHeight)
+                                maxHeight = ConsoleWrapper.WindowHeight - 4;
+                            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
+                            int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
+                            int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
+                            int buttonPanelPosX = borderX + 4;
+                            int buttonPanelPosY = borderY + maxHeight - 3;
+                            if (mouse.Coordinates.y <= buttonPanelPosY || mouse.Coordinates.y >= buttonPanelPosY + 2)
+                                return;
+                            int maxButtonPanelWidth = maxWidth - 4;
+                            int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
+                            for (int i = 1; i <= buttons.Length; i++)
+                            {
+                                // Get the button position
+                                int buttonX = maxButtonPanelWidth - i * maxButtonWidth;
+                                if (mouse.Coordinates.x <= buttonX || mouse.Coordinates.x >= buttonX + maxButtonWidth)
+                                    continue;
+
+                                // Now, change the highlight
+                                selectedButton = i - 1;
+                            }
+                        }
+
+                        // Mouse input received.
+                        var mouse = TermReader.ReadPointer();
+                        switch (mouse.Button)
+                        {
+                            case PointerButton.None:
+                                if (mouse.ButtonPress != PointerButtonPress.Moved)
+                                    break;
+                                UpdateHighlightBasedOnMouse(mouse);
+                                break;
+                            case PointerButton.Left:
+                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                    break;
+                                UpdateHighlightBasedOnMouse(mouse);
+                                bail = true;
+                                break;
+                            case PointerButton.Right:
+                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                    break;
+                                var selectedInstance = buttons[selectedButton];
+                                string choiceName = selectedInstance.ChoiceName;
+                                string choiceTitle = selectedInstance.ChoiceTitle;
+                                string choiceDesc = selectedInstance.ChoiceDescription;
+                                if (!string.IsNullOrWhiteSpace(choiceDesc))
+                                {
+                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    ScreenTools.CurrentScreen?.RequireRefresh();
+                                }
+                                break;
+                        }
+                    }
+                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                    {
+                        var key = TermReader.ReadKey();
+                        switch (key.Key)
+                        {
+                            case ConsoleKey.LeftArrow:
+                                selectedButton++;
+                                if (selectedButton > buttons.Length - 1)
+                                    selectedButton = buttons.Length - 1;
+                                break;
+                            case ConsoleKey.RightArrow:
+                                selectedButton--;
+                                if (selectedButton < 0)
+                                    selectedButton = 0;
+                                break;
+                            case ConsoleKey.Tab:
+                                var selectedInstance = buttons[selectedButton];
+                                string choiceName = selectedInstance.ChoiceName;
+                                string choiceTitle = selectedInstance.ChoiceTitle;
+                                string choiceDesc = selectedInstance.ChoiceDescription;
+                                if (!string.IsNullOrWhiteSpace(choiceDesc))
+                                {
+                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    ScreenTools.CurrentScreen?.RequireRefresh();
+                                }
+                                break;
+                            case ConsoleKey.Enter:
+                                bail = true;
+                                break;
+                            case ConsoleKey.Escape:
+                                bail = true;
+                                cancel = true;
+                                break;
+                        }
                     }
                 }
             }

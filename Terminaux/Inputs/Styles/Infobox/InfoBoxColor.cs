@@ -35,6 +35,7 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -737,56 +738,80 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int maxHeight;
                     if (waitForInput)
                     {
-                        var keypress = TermReader.ReadKey();
+                        SpinWait.SpinUntil(() => PointerListener.InputAvailable);
                         splitFinalLines = GetFinalLines();
                         maxHeight = splitFinalLines.Length;
                         if (maxHeight >= ConsoleWrapper.WindowHeight)
                             maxHeight = ConsoleWrapper.WindowHeight - 4;
-                        switch (keypress.Key)
+                        if (PointerListener.PointerAvailable)
                         {
-                            case ConsoleKey.Q:
-                                exiting = true;
-                                break;
-                            case ConsoleKey.PageUp:
-                                currIdx -= maxHeight * 2 - 1;
-                                if (currIdx < 0)
+                            // Mouse input received.
+                            var mouse = TermReader.ReadPointer();
+                            switch (mouse.Button)
+                            {
+                                case PointerButton.WheelUp:
+                                    currIdx -= 3;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                    break;
+                                case PointerButton.WheelDown:
+                                    currIdx += 3;
+                                    if (currIdx > splitFinalLines.Length - maxHeight)
+                                        currIdx = splitFinalLines.Length - maxHeight;
+                                    break;
+                            }
+                            delay = false;
+                            exiting = false;
+                        }
+                        else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                        {
+                            var key = TermReader.ReadKey();
+                            switch (key.Key)
+                            {
+                                case ConsoleKey.Q:
+                                    exiting = true;
+                                    break;
+                                case ConsoleKey.PageUp:
+                                    currIdx -= maxHeight * 2 - 1;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                    delay = false;
+                                    exiting = false;
+                                    break;
+                                case ConsoleKey.PageDown:
+                                    currIdx += increment;
+                                    if (currIdx > splitFinalLines.Length - maxHeight)
+                                        currIdx = splitFinalLines.Length - maxHeight;
+                                    delay = false;
+                                    exiting = false;
+                                    break;
+                                case ConsoleKey.UpArrow:
+                                    currIdx -= 1;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                    delay = false;
+                                    exiting = false;
+                                    break;
+                                case ConsoleKey.DownArrow:
+                                    currIdx += 1;
+                                    if (currIdx > splitFinalLines.Length - maxHeight)
+                                        currIdx = splitFinalLines.Length - maxHeight;
+                                    delay = false;
+                                    exiting = false;
+                                    break;
+                                case ConsoleKey.Home:
                                     currIdx = 0;
-                                delay = false;
-                                exiting = false;
-                                break;
-                            case ConsoleKey.PageDown:
-                                currIdx += increment;
-                                if (currIdx > splitFinalLines.Length - maxHeight)
+                                    delay = false;
+                                    exiting = false;
+                                    break;
+                                case ConsoleKey.End:
                                     currIdx = splitFinalLines.Length - maxHeight;
-                                delay = false;
-                                exiting = false;
-                                break;
-                            case ConsoleKey.UpArrow:
-                                currIdx -= 1;
-                                if (currIdx < 0)
-                                    currIdx = 0;
-                                delay = false;
-                                exiting = false;
-                                break;
-                            case ConsoleKey.DownArrow:
-                                currIdx += 1;
-                                if (currIdx > splitFinalLines.Length - maxHeight)
-                                    currIdx = splitFinalLines.Length - maxHeight;
-                                delay = false;
-                                exiting = false;
-                                break;
-                            case ConsoleKey.Home:
-                                currIdx = 0;
-                                delay = false;
-                                exiting = false;
-                                break;
-                            case ConsoleKey.End:
-                                currIdx = splitFinalLines.Length - maxHeight;
-                                if (currIdx < 0)
-                                    currIdx = 0;
-                                delay = false;
-                                exiting = false;
-                                break;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                    delay = false;
+                                    exiting = false;
+                                    break;
+                            }
                         }
 
                         if (delay && !exiting)

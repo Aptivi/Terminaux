@@ -34,6 +34,8 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using System.Threading;
+using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -532,64 +534,158 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Handle keypress
-                    var selectedInstance = selections[currentSelection];
-                    var key = TermReader.ReadKey().Key;
+                    SpinWait.SpinUntil(() => PointerListener.InputAvailable);
                     bool goingUp = false;
-                    switch (key)
+                    if (PointerListener.PointerAvailable)
                     {
-                        case ConsoleKey.UpArrow:
-                            goingUp = true;
-                            currentSelection--;
-                            if (currentSelection < 0)
-                                currentSelection = selections.Length - 1;
-                            break;
-                        case ConsoleKey.DownArrow:
-                            currentSelection++;
-                            if (currentSelection > selections.Length - 1)
-                                currentSelection = 0;
-                            break;
-                        case ConsoleKey.Home:
-                            currentSelection = 0;
-                            break;
-                        case ConsoleKey.End:
-                            currentSelection = selections.Length - 1;
-                            break;
-                        case ConsoleKey.PageUp:
-                            goingUp = true;
+                        void UpdatePositionBasedOnMouse(PointerEventContext mouse)
+                        {
+                            // Make pages based on console window height
+                            int currentPage = currentSelection / selectionChoices;
+                            int startIndex = selectionChoices * currentPage;
+                            int endIndex = selectionChoices * currentPage + 10;
+                            endIndex = endIndex > selectionChoices ? endIndex : selectionChoices;
+
+                            // Now, translate coordinates to the selected index
+                            string finalInfoRendered = TextTools.FormatString(text, vars);
+                            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+                            List<string> splitFinalLines = [];
+                            foreach (var line in splitLines)
                             {
-                                int currentPageMove = (currentSelection - 1) / selectionChoices;
-                                int startIndexMove = selectionChoices * currentPageMove;
-                                currentSelection = startIndexMove;
+                                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
+                                foreach (var lineSentence in lineSentences)
+                                    splitFinalLines.Add(lineSentence);
+                            }
+                            for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                            {
+                                string line = splitFinalLines[i];
+                                if (!string.IsNullOrWhiteSpace(line))
+                                    break;
+                                splitFinalLines.RemoveAt(i);
+                            }
+                            int selectionReservedHeight = 4 + selectionChoices;
+                            int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                            int maxHeight = splitFinalLines.Count + selectionReservedHeight;
+                            if (maxHeight >= ConsoleWrapper.WindowHeight)
+                                maxHeight = ConsoleWrapper.WindowHeight - 4;
+                            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
+                            int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
+                            int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
+                            int selectionBoxPosX = borderX + 4;
+                            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
+                            int leftPos = selectionBoxPosX + 1;
+                            int maxSelectionWidth = maxWidth - selectionBoxPosX * 2 + 2;
+                            if (mouse.Coordinates.x <= leftPos || mouse.Coordinates.x >= maxSelectionWidth ||
+                                mouse.Coordinates.y <= selectionBoxPosY || mouse.Coordinates.y >= selectionBoxPosY + selectionChoices + 1)
+                                return;
+                            int listIndex = mouse.Coordinates.y - selectionBoxPosY - 1;
+                            listIndex = startIndex + listIndex;
+                            listIndex = listIndex >= selections.Length ? selections.Length - 1 : listIndex;
+                            currentSelection = listIndex;
+                        }
+
+                        // Mouse input received.
+                        var mouse = TermReader.ReadPointer();
+                        switch (mouse.Button)
+                        {
+                            case PointerButton.WheelUp:
+                                goingUp = true;
+                                currentSelection--;
                                 if (currentSelection < 0)
-                                    currentSelection = 0;
-                            }
-                            break;
-                        case ConsoleKey.PageDown:
-                            {
-                                int currentPageMove = currentSelection / selectionChoices;
-                                int startIndexMove = selectionChoices * (currentPageMove + 1);
-                                currentSelection = startIndexMove;
-                                if (currentSelection > selections.Length - 1)
                                     currentSelection = selections.Length - 1;
-                            }
-                            break;
-                        case ConsoleKey.Tab:
-                            string choiceName = selectedInstance.ChoiceName;
-                            string choiceTitle = selectedInstance.ChoiceTitle;
-                            string choiceDesc = selectedInstance.ChoiceDescription;
-                            if (!string.IsNullOrWhiteSpace(choiceDesc))
-                            {
-                                InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
-                                ScreenTools.CurrentScreen?.RequireRefresh();
-                            }
-                            break;
-                        case ConsoleKey.Enter:
-                            bail = true;
-                            break;
-                        case ConsoleKey.Escape:
-                            bail = true;
-                            cancel = true;
-                            break;
+                                break;
+                            case PointerButton.WheelDown:
+                                currentSelection++;
+                                if (currentSelection > selections.Length - 1)
+                                    currentSelection = 0;
+                                break;
+                            case PointerButton.Left:
+                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                    break;
+                                UpdatePositionBasedOnMouse(mouse);
+                                bail = true;
+                                break;
+                            case PointerButton.Right:
+                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                    break;
+                                var selectedInstance = selections[currentSelection];
+                                string choiceName = selectedInstance.ChoiceName;
+                                string choiceTitle = selectedInstance.ChoiceTitle;
+                                string choiceDesc = selectedInstance.ChoiceDescription;
+                                if (!string.IsNullOrWhiteSpace(choiceDesc))
+                                {
+                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    ScreenTools.CurrentScreen?.RequireRefresh();
+                                }
+                                break;
+                            case PointerButton.None:
+                                if (mouse.ButtonPress != PointerButtonPress.Moved)
+                                    break;
+                                UpdatePositionBasedOnMouse(mouse);
+                                break;
+                        }
+                    }
+                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                    {
+                        var key = TermReader.ReadKey();
+                        switch (key.Key)
+                        {
+                            case ConsoleKey.UpArrow:
+                                goingUp = true;
+                                currentSelection--;
+                                if (currentSelection < 0)
+                                    currentSelection = selections.Length - 1;
+                                break;
+                            case ConsoleKey.DownArrow:
+                                currentSelection++;
+                                if (currentSelection > selections.Length - 1)
+                                    currentSelection = 0;
+                                break;
+                            case ConsoleKey.Home:
+                                currentSelection = 0;
+                                break;
+                            case ConsoleKey.End:
+                                currentSelection = selections.Length - 1;
+                                break;
+                            case ConsoleKey.PageUp:
+                                goingUp = true;
+                                {
+                                    int currentPageMove = (currentSelection - 1) / selectionChoices;
+                                    int startIndexMove = selectionChoices * currentPageMove;
+                                    currentSelection = startIndexMove;
+                                    if (currentSelection < 0)
+                                        currentSelection = 0;
+                                }
+                                break;
+                            case ConsoleKey.PageDown:
+                                {
+                                    int currentPageMove = currentSelection / selectionChoices;
+                                    int startIndexMove = selectionChoices * (currentPageMove + 1);
+                                    currentSelection = startIndexMove;
+                                    if (currentSelection > selections.Length - 1)
+                                        currentSelection = selections.Length - 1;
+                                }
+                                break;
+                            case ConsoleKey.Tab:
+                                var selectedInstance = selections[currentSelection];
+                                string choiceName = selectedInstance.ChoiceName;
+                                string choiceTitle = selectedInstance.ChoiceTitle;
+                                string choiceDesc = selectedInstance.ChoiceDescription;
+                                if (!string.IsNullOrWhiteSpace(choiceDesc))
+                                {
+                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    ScreenTools.CurrentScreen?.RequireRefresh();
+                                }
+                                break;
+                            case ConsoleKey.Enter:
+                                bail = true;
+                                break;
+                            case ConsoleKey.Escape:
+                                bail = true;
+                                cancel = true;
+                                break;
+
+                        }
                     }
 
                     // Verify that the current position is not a disabled choice

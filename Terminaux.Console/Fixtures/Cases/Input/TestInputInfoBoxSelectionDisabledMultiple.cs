@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Inputs;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -28,6 +29,8 @@ namespace Terminaux.Console.Fixtures.Cases.Input
         public string FixtureID => "TestInputInfoBoxSelectionDisabledMultiple";
         public void RunFixture()
         {
+            PointerListener.StartListening();
+
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history
             var choices = new InputChoiceInfo[]
             {
@@ -38,6 +41,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
             };
             var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(FixtureID, choices, "Which Ubuntu version would you like to run?");
             TextWriterWhereColor.WriteWhere(string.Join(", ", selections), 0, 0);
+            PointerListener.StopListening();
         }
     }
 }

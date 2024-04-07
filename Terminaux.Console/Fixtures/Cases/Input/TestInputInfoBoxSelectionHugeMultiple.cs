@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.NameGen;
@@ -30,12 +31,14 @@ namespace Terminaux.Console.Fixtures.Cases.Input
         public string FixtureID => "TestInputInfoBoxSelectionHugeMultiple";
         public void RunFixture()
         {
+            PointerListener.StartListening();
             var choices = new List<InputChoiceInfo>();
             var names = NameGenerator.FindFirstNames("");
             for (int i = 0; i < names.Length; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", names[i]));
             var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(FixtureID, [.. choices], "Select a number");
             TextWriterWhereColor.WriteWhere(string.Join(", ", selections), 0, 0);
+            PointerListener.StopListening();
         }
     }
 }
