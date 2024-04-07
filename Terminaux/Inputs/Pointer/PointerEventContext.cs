@@ -48,7 +48,7 @@ namespace Terminaux.Inputs.Pointer
             mouseMods;
 
         /// <summary>
-        /// Gets the coordinates in character cells where the mouse cursor was placed
+        /// Gets the coordinates in character cells where the mouse cursor was placed <b>starting from zero</b>.
         /// </summary>
         public (int x, int y) Coordinates =>
             (x, y);

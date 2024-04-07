@@ -248,6 +248,8 @@ namespace Terminaux.Inputs.Pointer
                     }
                     else
                         continue;
+                    x -= 1;
+                    y -= 1;
                     sw.Start();
 
                     // Get the button states and change them as necessary
