@@ -309,7 +309,10 @@ namespace Terminaux.Colors
             if (rgb.cci is not null && rgb.rgb is not null && !settings.EnableColorTransformation)
             {
                 // Verify that we're using the correct ID for transparency
-                var data = ConsoleColorData.MatchColorData(rgb.rgb);
+                var data =
+                    int.TryParse(ColorSpecifier, out int id) ?
+                    ConsoleColorData.GetColorData()[id] :
+                    ConsoleColorData.MatchColorData(rgb.rgb);
                 ColorId = data;
             }
             RGB = rgb.rgb;
