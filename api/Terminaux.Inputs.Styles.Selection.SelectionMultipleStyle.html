@@ -99,19 +99,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_ValueTuple_System_String_System_String____System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.ValueTuple%7BSystem.String%2CSystem.String%7D%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L52">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L51">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.Boolean)">PromptMultipleSelection(string, string, bool)</h4>
+  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_ValueTuple_System_String_System_String____System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.ValueTuple{System.String,System.String}[],System.Boolean)">PromptMultipleSelection(string, (string, string)[], bool)</h4>
   <div class="markdown level1 summary"><p>Prompts user for selection</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string AnswersStr, bool kiosk = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, bool kiosk = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -130,591 +130,7 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AnswersStr</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L62">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.Boolean)">PromptMultipleSelection(string, string, string[], bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for Selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AnswersStr</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L73">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,System.Boolean)">PromptMultipleSelection(string, string, string[], string, bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for Selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AnswersStr</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AlternateAnswersStr</span></td>
-        <td><p>Set of alternate answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_System_String___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%2CSystem.String%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L85">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_System_String___System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,System.String[],System.Boolean)">PromptMultipleSelection(string, string, string[], string, string[], bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for Selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AnswersStr</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AlternateAnswersStr</span></td>
-        <td><p>Set of alternate answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AlternateAnswersTitles</span></td>
-        <td><p>Working titles for each alternate answer. It must be the same amount as the alternate answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%2CSystem.String%5B%5D%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L192">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, string, string[], string, string[], SelectionStyleSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for Selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, SelectionStyleSettings settings, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AnswersStr</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AlternateAnswersStr</span></td>
-        <td><p>Set of alternate answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AlternateAnswersTitles</span></td>
-        <td><p>Working titles for each alternate answer. It must be the same amount as the alternate answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html">SelectionStyleSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Selection settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%2CSystem.String%5B%5D%2CSystem.String%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L179">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___System_String_Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],System.String,Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, string, string[], string, SelectionStyleSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for Selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, SelectionStyleSettings settings, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AnswersStr</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AlternateAnswersStr</span></td>
-        <td><p>Set of alternate answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html">SelectionStyleSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Selection settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%2CSystem.String%5B%5D%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L167">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, string, string[], SelectionStyleSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for Selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string AnswersStr, string[] AnswersTitles, SelectionStyleSettings settings, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AnswersStr</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html">SelectionStyleSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Selection settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L156">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String_Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String,Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, string, SelectionStyleSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string AnswersStr, SelectionStyleSettings settings, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">AnswersStr</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html">SelectionStyleSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Selection settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L94">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.Boolean)">PromptMultipleSelection(string, string[], bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string[] Answers, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>)[]</td>
         <td><span class="parametername">Answers</span></td>
         <td><p>Set of answers. They can be written like this: Y/N/C.</p>
 </td>
@@ -744,19 +160,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_ValueTuple_System_String_System_String____System_ValueTuple_System_String_System_String____System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.ValueTuple%7BSystem.String%2CSystem.String%7D%5B%5D%2CSystem.ValueTuple%7BSystem.String%2CSystem.String%7D%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L104">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L61">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.Boolean)">PromptMultipleSelection(string, string[], string[], bool)</h4>
+  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_ValueTuple_System_String_System_String____System_ValueTuple_System_String_System_String____System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.ValueTuple{System.String,System.String}[],System.ValueTuple{System.String,System.String}[],System.Boolean)">PromptMultipleSelection(string, (string, string)[], (string, string)[], bool)</h4>
   <div class="markdown level1 summary"><p>Prompts user for Selection</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, bool kiosk = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, bool kiosk = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -775,86 +191,13 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>)[]</td>
         <td><span class="parametername">Answers</span></td>
         <td><p>Set of answers. They can be written like this: Y/N/C.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L115">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],System.Boolean)">PromptMultipleSelection(string, string[], string[], string[], bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for Selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">Answers</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>)[]</td>
         <td><span class="parametername">AlternateAnswers</span></td>
         <td><p>Set of alternate answers. They can be written like this: Y/N/C.</p>
 </td>
@@ -884,19 +227,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___System_String___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_ValueTuple_System_String_System_String____System_ValueTuple_System_String_System_String____Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.ValueTuple%7BSystem.String%2CSystem.String%7D%5B%5D%2CSystem.ValueTuple%7BSystem.String%2CSystem.String%7D%5B%5D%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L127">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L101">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___System_String___System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],System.String[],System.Boolean)">PromptMultipleSelection(string, string[], string[], string[], string[], bool)</h4>
+  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_ValueTuple_System_String_System_String____System_ValueTuple_System_String_System_String____Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.ValueTuple{System.String,System.String}[],System.ValueTuple{System.String,System.String}[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, (string, string)[], (string, string)[], SelectionStyleSettings, bool)</h4>
   <div class="markdown level1 summary"><p>Prompts user for Selection</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, bool kiosk = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, SelectionStyleSettings settings, bool kiosk = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -915,183 +258,13 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>)[]</td>
         <td><span class="parametername">Answers</span></td>
         <td><p>Set of answers. They can be written like this: Y/N/C.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AlternateAnswers</span></td>
-        <td><p>Set of alternate answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AlternateAnswersTitles</span></td>
-        <td><p>Working titles for each alternate answer. It must be the same amount as the alternate answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L238">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, string[], string[], string[], string[], SelectionStyleSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for Selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, SelectionStyleSettings settings, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">Answers</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AlternateAnswers</span></td>
-        <td><p>Set of alternate answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AlternateAnswersTitles</span></td>
-        <td><p>Working titles for each alternate answer. It must be the same amount as the alternate answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html">SelectionStyleSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Selection settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L225">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, string[], string[], string[], SelectionStyleSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for Selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, SelectionStyleSettings settings, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">Answers</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>)[]</td>
         <td><span class="parametername">AlternateAnswers</span></td>
         <td><p>Set of alternate answers. They can be written like this: Y/N/C.</p>
 </td>
@@ -1127,92 +300,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%5B%5D%2CSystem.String%5B%5D%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_ValueTuple_System_String_System_String____Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.ValueTuple%7BSystem.String%2CSystem.String%7D%5B%5D%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L213">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L90">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, string[], string[], SelectionStyleSettings, bool)</h4>
-  <div class="markdown level1 summary"><p>Prompts user for Selection</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string[] Answers, string[] AnswersTitles, SelectionStyleSettings settings, bool kiosk = false)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">Question</span></td>
-        <td><p>A question</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">Answers</span></td>
-        <td><p>Set of answers. They can be written like this: Y/N/C.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
-        <td><span class="parametername">AnswersTitles</span></td>
-        <td><p>Working titles for each answer. It must be the same amount as the answers.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html">SelectionStyleSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Selection settings</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">kiosk</span></td>
-        <td><p>Whether to prevent exiting or not</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CSystem.String%5B%5D%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L202">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_String___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.String[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, string[], SelectionStyleSettings, bool)</h4>
+  <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_System_ValueTuple_System_String_System_String____Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,System.ValueTuple{System.String,System.String}[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, (string, string)[], SelectionStyleSettings, bool)</h4>
   <div class="markdown level1 summary"><p>Prompts user for selection</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, string[] Answers, SelectionStyleSettings settings, bool kiosk = false)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int[] PromptMultipleSelection(string Question, (string, string)[] Answers, SelectionStyleSettings settings, bool kiosk = false)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1231,7 +331,7 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>[]</td>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>)[]</td>
         <td><span class="parametername">Answers</span></td>
         <td><p>Set of answers. They can be written like this: Y/N/C.</p>
 </td>
@@ -1270,7 +370,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_Terminaux_Inputs_InputChoiceInfo___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L136">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L70">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
   <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_Terminaux_Inputs_InputChoiceInfo___System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],System.Boolean)">PromptMultipleSelection(string, InputChoiceInfo[], bool)</h4>
@@ -1331,7 +431,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_InputChoiceInfo___System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L146">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L80">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
   <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_InputChoiceInfo___System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.InputChoiceInfo[],System.Boolean)">PromptMultipleSelection(string, InputChoiceInfo[], InputChoiceInfo[], bool)</h4>
@@ -1398,7 +498,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L259">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L122">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
   <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, InputChoiceInfo[], InputChoiceInfo[], SelectionStyleSettings, bool)</h4>
@@ -1471,7 +571,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CTerminaux.Inputs.Styles.Selection.SelectionStyleSettings%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L248">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L111">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection*"></a>
   <h4 id="Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle_PromptMultipleSelection_System_String_Terminaux_Inputs_InputChoiceInfo___Terminaux_Inputs_Styles_Selection_SelectionStyleSettings_System_Boolean_" data-uid="Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.PromptMultipleSelection(System.String,Terminaux.Inputs.InputChoiceInfo[],Terminaux.Inputs.Styles.Selection.SelectionStyleSettings,System.Boolean)">PromptMultipleSelection(string, InputChoiceInfo[], SelectionStyleSettings, bool)</h4>
@@ -1545,7 +645,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Selection_SelectionMultipleStyle.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L44" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Selection/SelectionMultipleStyle.cs/#L43" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -1005,6 +1005,66 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Pointer.PointerButton.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerButtonPress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Pointer.PointerButtonPress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerEventContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Pointer.PointerEventContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Pointer.PointerListener.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerModifiers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Pointer.PointerModifiers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Pointer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Pointer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.ChoiceInputElement.yml",
       "output": {
         ".html": {
@@ -2027,11 +2087,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "api/toc.html"
-        },
         ".json": {
           "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
         }
       },
       "version": ""
@@ -2050,11 +2110,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
