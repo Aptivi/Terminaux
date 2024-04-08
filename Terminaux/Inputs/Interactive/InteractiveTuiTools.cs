@@ -20,14 +20,17 @@
 using EnumMagic;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Sequences;
@@ -499,107 +502,196 @@ namespace Terminaux.Inputs.Interactive
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
             int dataCount = data.Length();
-            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
             // Populate selected data
             object selectedData = data.GetElementFromIndex(paneCurrentSelection - 1);
 
             // Wait for key
-            ConsoleKeyInfo pressedKey;
-            if (interactiveTui.RefreshInterval == 0 || interactiveTui.SecondPaneInteractable)
-                pressedKey = TermReader.ReadKey();
-            else
-                pressedKey = TermReader.ReadKeyTimeout(true, TimeSpan.FromMilliseconds(interactiveTui.RefreshInterval)).result;
-
-            // Handle the key
-            switch (pressedKey.Key)
+            bool loopBail = false;
+            Stopwatch sw = new();
+            if (interactiveTui.RefreshInterval > 0 && !interactiveTui.SecondPaneInteractable)
+                sw.Start();
+            while (!loopBail)
             {
-                case ConsoleKey.UpArrow:
-                    if (InteractiveTuiStatus.CurrentPane == 2)
-                        SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
-                    else
-                        SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
-                    break;
-                case ConsoleKey.DownArrow:
-                    if (InteractiveTuiStatus.CurrentPane == 2)
-                        SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
-                    else
-                        SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
-                    break;
-                case ConsoleKey.Home:
-                    SelectionMovement(interactiveTui, 1);
-                    break;
-                case ConsoleKey.End:
-                    SelectionMovement(interactiveTui, dataCount);
-                    break;
-                case ConsoleKey.PageUp:
+                SpinWait.SpinUntil(() => PointerListener.InputAvailable || sw.ElapsedMilliseconds >= interactiveTui.RefreshInterval);
+                bool timedOut = sw.ElapsedMilliseconds >= interactiveTui.RefreshInterval;
+                if (timedOut)
+                {
+                    sw.Restart();
+                    loopBail = true;
+                    continue;
+                }
+                if (PointerListener.PointerAvailable)
+                {
+                    // Mouse input received.
+                    var mouse = TermReader.ReadPointer();
+                    switch (mouse.Button)
                     {
-                        int answersPerPage = SeparatorMaximumHeightInterior;
-                        int currentPage = (paneCurrentSelection - 1) / answersPerPage;
-                        int startIndex = answersPerPage * currentPage;
-                        SelectionMovement(interactiveTui, startIndex);
-                    }
-                    break;
-                case ConsoleKey.PageDown:
-                    {
-                        int answersPerPage = SeparatorMaximumHeightInterior;
-                        int currentPage = (paneCurrentSelection - 1) / answersPerPage;
-                        int startIndex = answersPerPage * (currentPage + 1) + 1;
-                        SelectionMovement(interactiveTui, startIndex);
-                    }
-                    break;
-                case ConsoleKey.I:
-                    if (pressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) && !string.IsNullOrEmpty(_finalInfoRendered))
-                    {
-                        // User needs more information in the infobox
-                        InfoBoxColor.WriteInfoBoxColorBack(_finalInfoRendered, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
-                    }
-                    break;
-                case ConsoleKey.K:
-                    // First, check the bindings length
-                    var bindings = interactiveTui.Bindings;
-                    if (bindings is null || bindings.Count == 0)
-                        break;
+                        case PointerButton.WheelUp:
+                            loopBail = true;
+                            if (InteractiveTuiStatus.CurrentPane == 2)
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
+                            else
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                            break;
+                        case PointerButton.WheelDown:
+                            loopBail = true;
+                            if (InteractiveTuiStatus.CurrentPane == 2)
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
+                            else
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
+                            break;
+                        case PointerButton.Left:
+                            if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                break;
 
-                    // User needs an infobox that shows all available keys
-                    string section = "Available keys";
-                    int maxBindingLength = bindings
-                        .Max((itb) => GetBindingKeyShortcut(itb).Length);
-                    string[] bindingRepresentations = bindings
-                        .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - GetBindingKeyShortcut(itb).Length) + $" | {itb.BindingName}"}")
-                        .ToArray();
-                    InfoBoxColor.WriteInfoBoxColorBack(
-                        $"{section}{CharManager.NewLine}" +
-                        $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
-                        $"{string.Join("\n", bindingRepresentations)}"
-                    , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
-                    break;
-                case ConsoleKey.Escape:
-                    // User needs to exit
-                    interactiveTui.HandleExit();
-                    interactiveTui.isExiting = true;
-                    break;
-                case ConsoleKey.Tab:
-                    // User needs to switch sides
-                    SwitchSides(interactiveTui);
-                    break;
-                default:
-                    // First, check the bindings
-                    var allBindings = interactiveTui.Bindings;
-                    if (allBindings is null || allBindings.Count == 0)
-                        break;
+                            // First, check the bindings
+                            var allBindings = interactiveTui.Bindings;
+                            if (allBindings is null || allBindings.Count == 0)
+                                break;
 
-                    // Now, get the implemented bindings from the pressed key
-                    var implementedBindings = allBindings.Where((binding) =>
-                        binding.BindingKeyName == pressedKey.Key && binding.BindingKeyModifiers == pressedKey.Modifiers);
-                    foreach (var implementedBinding in implementedBindings)
-                    {
-                        var binding = implementedBinding.BindingAction;
-                        if (binding is null)
-                            continue;
-                        binding.Invoke(selectedData, paneCurrentSelection - 1);
+                            // Now, get the implemented bindings from the pressed key
+                            var implementedBindings = allBindings.Where((binding) =>
+                                binding.BindingKeyName == ConsoleKey.Enter);
+                            if (implementedBindings.Any())
+                                loopBail = true;
+                            foreach (var implementedBinding in implementedBindings)
+                            {
+                                var binding = implementedBinding.BindingAction;
+                                if (binding is null)
+                                    continue;
+                                binding.Invoke(selectedData, paneCurrentSelection - 1);
+                            }
+                            break;
+                        case PointerButton.None:
+                            if (mouse.ButtonPress != PointerButtonPress.Moved)
+                                break;
+                            if (!interactiveTui.SecondPaneInteractable)
+                                break;
+
+                            int SeparatorMinimumHeight = 1;
+                            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                            if (mouse.Coordinates.y < SeparatorMinimumHeight || mouse.Coordinates.y > SeparatorMaximumHeightInterior + 2)
+                                break;
+                            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+                            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                            if (mouse.Coordinates.x >= 0 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior + 1)
+                            {
+                                if (InteractiveTuiStatus.CurrentPane == 1)
+                                    break;
+                                InteractiveTuiStatus.CurrentPane = 1;
+                                interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}");
+                                DrawInteractiveTui(interactiveTui);
+                                ScreenTools.Render();
+                            }
+                            else if (mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1 && mouse.Coordinates.x >= SeparatorHalfConsoleWidth)
+                            {
+                                if (InteractiveTuiStatus.CurrentPane == 2)
+                                    break;
+                                InteractiveTuiStatus.CurrentPane = 2;
+                                interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}");
+                                DrawInteractiveTui(interactiveTui);
+                                ScreenTools.Render();
+                            }
+                            break;
                     }
-                    break;
+                }
+                else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                {
+                    var key = TermReader.ReadKey();
+                    loopBail = true;
+                    switch (key.Key)
+                    {
+                        case ConsoleKey.UpArrow:
+                            if (InteractiveTuiStatus.CurrentPane == 2)
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
+                            else
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                            break;
+                        case ConsoleKey.DownArrow:
+                            if (InteractiveTuiStatus.CurrentPane == 2)
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
+                            else
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
+                            break;
+                        case ConsoleKey.Home:
+                            SelectionMovement(interactiveTui, 1);
+                            break;
+                        case ConsoleKey.End:
+                            SelectionMovement(interactiveTui, dataCount);
+                            break;
+                        case ConsoleKey.PageUp:
+                            {
+                                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                                int answersPerPage = SeparatorMaximumHeightInterior;
+                                int currentPage = (paneCurrentSelection - 1) / answersPerPage;
+                                int startIndex = answersPerPage * currentPage;
+                                SelectionMovement(interactiveTui, startIndex);
+                            }
+                            break;
+                        case ConsoleKey.PageDown:
+                            {
+                                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                                int answersPerPage = SeparatorMaximumHeightInterior;
+                                int currentPage = (paneCurrentSelection - 1) / answersPerPage;
+                                int startIndex = answersPerPage * (currentPage + 1) + 1;
+                                SelectionMovement(interactiveTui, startIndex);
+                            }
+                            break;
+                        case ConsoleKey.I:
+                            if (key.Modifiers.HasFlag(ConsoleModifiers.Shift) && !string.IsNullOrEmpty(_finalInfoRendered))
+                            {
+                                // User needs more information in the infobox
+                                InfoBoxColor.WriteInfoBoxColorBack(_finalInfoRendered, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                            }
+                            break;
+                        case ConsoleKey.K:
+                            // First, check the bindings length
+                            var bindings = interactiveTui.Bindings;
+                            if (bindings is null || bindings.Count == 0)
+                                break;
+
+                            // User needs an infobox that shows all available keys
+                            string section = "Available keys";
+                            int maxBindingLength = bindings
+                                .Max((itb) => GetBindingKeyShortcut(itb).Length);
+                            string[] bindingRepresentations = bindings
+                                .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - GetBindingKeyShortcut(itb).Length) + $" | {itb.BindingName}"}")
+                                .ToArray();
+                            InfoBoxColor.WriteInfoBoxColorBack(
+                                $"{section}{CharManager.NewLine}" +
+                                $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
+                                $"{string.Join("\n", bindingRepresentations)}"
+                            , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                            break;
+                        case ConsoleKey.Escape:
+                            // User needs to exit
+                            interactiveTui.HandleExit();
+                            interactiveTui.isExiting = true;
+                            break;
+                        case ConsoleKey.Tab:
+                            // User needs to switch sides
+                            SwitchSides(interactiveTui);
+                            break;
+                        default:
+                            // First, check the bindings
+                            var allBindings = interactiveTui.Bindings;
+                            if (allBindings is null || allBindings.Count == 0)
+                                break;
+
+                            // Now, get the implemented bindings from the pressed key
+                            var implementedBindings = allBindings.Where((binding) =>
+                                binding.BindingKeyName == key.Key && binding.BindingKeyModifiers == key.Modifiers);
+                            foreach (var implementedBinding in implementedBindings)
+                            {
+                                var binding = implementedBinding.BindingAction;
+                                if (binding is null)
+                                    continue;
+                                binding.Invoke(selectedData, paneCurrentSelection - 1);
+                            }
+                            break;
+                    }
+                }
             }
         }
 

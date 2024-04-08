@@ -19,6 +19,7 @@
 
 using Terminaux.Console.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Pointer;
 using Terminaux.ResizeListener;
 
 namespace Terminaux.Console.Fixtures.Cases.Tui
@@ -29,11 +30,14 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
             "CliDoublePaneTest";
         public void RunFixture()
         {
+            PointerListener.StartListening();
+
             // Run the resize listener
             ConsoleResizeListener.StartResizeListener();
 
             // Start the demo TUI app
             InteractiveTuiTools.OpenInteractiveTui(new CliDoublePaneTestData());
+            PointerListener.StopListening();
         }
     }
 }
