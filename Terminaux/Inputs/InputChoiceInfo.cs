@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Diagnostics;
+
 namespace Terminaux.Inputs
 {
     /// <summary>
     /// Choice information for input
     /// </summary>
+    [DebuggerDisplay("{ChoiceName} - {ChoiceTitle} - D:{ChoiceDefault} S:{ChoiceDefaultSelected} X:{ChoiceDisabled}")]
     public class InputChoiceInfo
     {
         /// <summary>
