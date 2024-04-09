@@ -22866,6 +22866,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Pointer.PointerEventContext.Coordinates
   nameWithType: PointerEventContext.Coordinates
+- uid: Terminaux.Inputs.Pointer.PointerEventContext.Dragging
+  name: Dragging
+  href: api/Terminaux.Inputs.Pointer.PointerEventContext.html#Terminaux_Inputs_Pointer_PointerEventContext_Dragging
+  commentId: P:Terminaux.Inputs.Pointer.PointerEventContext.Dragging
+  fullName: Terminaux.Inputs.Pointer.PointerEventContext.Dragging
+  nameWithType: PointerEventContext.Dragging
+- uid: Terminaux.Inputs.Pointer.PointerEventContext.Dragging*
+  name: Dragging
+  href: api/Terminaux.Inputs.Pointer.PointerEventContext.html#Terminaux_Inputs_Pointer_PointerEventContext_Dragging_
+  commentId: Overload:Terminaux.Inputs.Pointer.PointerEventContext.Dragging
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Pointer.PointerEventContext.Dragging
+  nameWithType: PointerEventContext.Dragging
 - uid: Terminaux.Inputs.Pointer.PointerEventContext.Modifiers
   name: Modifiers
   href: api/Terminaux.Inputs.Pointer.PointerEventContext.html#Terminaux_Inputs_Pointer_PointerEventContext_Modifiers
