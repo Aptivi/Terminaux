@@ -21962,6 +21962,23 @@ references:
   fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).Bindings
   nameWithType: BaseInteractiveTui<T>.Bindings
   nameWithType.vb: BaseInteractiveTui(Of T).Bindings
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.FirstOnUnderflow
+  name: FirstOnUnderflow()
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_FirstOnUnderflow
+  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.FirstOnUnderflow
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.FirstOnUnderflow()
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).FirstOnUnderflow()
+  nameWithType: BaseInteractiveTui<T>.FirstOnUnderflow()
+  nameWithType.vb: BaseInteractiveTui(Of T).FirstOnUnderflow()
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.FirstOnUnderflow*
+  name: FirstOnUnderflow
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_FirstOnUnderflow_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.FirstOnUnderflow
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.FirstOnUnderflow
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).FirstOnUnderflow
+  nameWithType: BaseInteractiveTui<T>.FirstOnUnderflow
+  nameWithType.vb: BaseInteractiveTui(Of T).FirstOnUnderflow
 - uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetEntryFromItem(`0)
   name: GetEntryFromItem(T)
   href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_GetEntryFromItem__0_
@@ -22192,6 +22209,23 @@ references:
   fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).Bindings
   nameWithType: IInteractiveTui<T>.Bindings
   nameWithType.vb: IInteractiveTui(Of T).Bindings
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.FirstOnUnderflow
+  name: FirstOnUnderflow()
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_FirstOnUnderflow
+  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui`1.FirstOnUnderflow
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.FirstOnUnderflow()
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).FirstOnUnderflow()
+  nameWithType: IInteractiveTui<T>.FirstOnUnderflow()
+  nameWithType.vb: IInteractiveTui(Of T).FirstOnUnderflow()
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.FirstOnUnderflow*
+  name: FirstOnUnderflow
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_FirstOnUnderflow_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.FirstOnUnderflow
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.FirstOnUnderflow
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).FirstOnUnderflow
+  nameWithType: IInteractiveTui<T>.FirstOnUnderflow
+  nameWithType.vb: IInteractiveTui(Of T).FirstOnUnderflow
 - uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.GetEntryFromItem(`0)
   name: GetEntryFromItem(T)
   href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_GetEntryFromItem__0_
