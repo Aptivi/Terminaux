@@ -85,5 +85,16 @@ namespace Terminaux.Inputs.Interactive
             if (InteractiveTuiStatus.SecondPaneCurrentSelection > secondaryCount)
                 InteractiveTuiStatus.SecondPaneCurrentSelection = secondaryCount;
         }
+
+        /// <inheritdoc/>
+        public virtual void FirstOnUnderflow()
+        {
+            int primaryCount = PrimaryDataSource.Length();
+            int secondaryCount = SecondaryDataSource.Length();
+            if (InteractiveTuiStatus.FirstPaneCurrentSelection <= 0 && primaryCount > 0)
+                InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
+            if (InteractiveTuiStatus.SecondPaneCurrentSelection <= 0 && secondaryCount > 0)
+                InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
+        }
     }
 }

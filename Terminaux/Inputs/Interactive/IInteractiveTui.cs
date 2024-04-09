@@ -73,8 +73,12 @@ namespace Terminaux.Inputs.Interactive
         /// <param name="item">Target item</param>
         public void RenderStatus(T item);
         /// <summary>
-        /// Goes up to the last element upon overflow (caused by remove operation, ...). This applies to the first and the second pane.
+        /// Goes down to the last element upon overflow (caused by remove operation, ...). This applies to the first and the second pane.
         /// </summary>
         public void LastOnOverflow();
+        /// <summary>
+        /// Goes up to the first element upon underflow (caused by remove operation, ...). This applies to the first and the second pane.
+        /// </summary>
+        public void FirstOnUnderflow();
     }
 }

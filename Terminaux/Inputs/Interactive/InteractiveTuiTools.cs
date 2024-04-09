@@ -88,7 +88,7 @@ namespace Terminaux.Inputs.Interactive
                     {
                         // Check the selection
                         interactiveTui.LastOnOverflow();
-                        CheckSelectionForUnderflow(interactiveTui);
+                        interactiveTui.FirstOnUnderflow();
 
                         // Draw the boxes
                         DrawInteractiveTui(interactiveTui);
@@ -106,9 +106,6 @@ namespace Terminaux.Inputs.Interactive
                         // Wait for user input
                         ScreenTools.Render(screen);
                         RespondToUserInput(interactiveTui);
-
-                        // Reset, in case selection changed
-                        screen.RemoveBufferedParts();
                     }
                 }
                 catch (Exception ex)
@@ -723,14 +720,6 @@ namespace Terminaux.Inputs.Interactive
                     }
                 }
             }
-        }
-
-        private static void CheckSelectionForUnderflow<T>(BaseInteractiveTui<T> interactiveTui)
-        {
-            if (InteractiveTuiStatus.FirstPaneCurrentSelection <= 0 && interactiveTui.PrimaryDataSource.Length() > 0)
-                InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
-            if (InteractiveTuiStatus.SecondPaneCurrentSelection <= 0 && interactiveTui.SecondaryDataSource.Length() > 0)
-                InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
         }
 
         private static string GetBindingKeyShortcut(InteractiveTuiBinding bind, bool mark = true)
