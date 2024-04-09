@@ -42,36 +42,43 @@ namespace Terminaux.Inputs.Presentation
         /// <summary>
         /// The upper left corner of the exterior border (the left position)
         /// </summary>
+        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
         public static int PresentationUpperBorderLeft =>
             2;
         /// <summary>
         /// The upper left corner of the exterior border (the top position)
         /// </summary>
+        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
         public static int PresentationUpperBorderTop =>
             1;
         /// <summary>
         /// The upper left corner of the inner border (the left position)
         /// </summary>
+        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
         public static int PresentationUpperInnerBorderLeft =>
             PresentationUpperBorderLeft + 1;
         /// <summary>
         /// The upper left corner of the inner border (the top position)
         /// </summary>
+        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
         public static int PresentationUpperInnerBorderTop =>
             PresentationUpperBorderTop + 1;
         /// <summary>
         /// The lower right corner of the inner border (the left position)
         /// </summary>
+        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
         public static int PresentationLowerInnerBorderLeft =>
             ConsoleWrapper.WindowWidth - PresentationUpperInnerBorderLeft * 2;
         /// <summary>
         /// The lower right corner of the inner border (the top position)
         /// </summary>
+        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
         public static int PresentationLowerInnerBorderTop =>
             ConsoleWrapper.WindowHeight - PresentationUpperBorderTop * 2 - 4;
         /// <summary>
         /// The informational top position
         /// </summary>
+        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
         public static int PresentationInformationalTop =>
             ConsoleWrapper.WindowHeight - 2;
 
@@ -113,15 +120,24 @@ namespace Terminaux.Inputs.Presentation
                 {
                     var builder = new StringBuilder();
 
+                    // Populate some variables
+                    int presentationUpperBorderLeft = 2;
+                    int presentationUpperBorderTop = 1;
+                    int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
+                    int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
+                    int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
+                    int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+                    int presentationInformationalTop = ConsoleWrapper.WindowHeight - 2;
+
                     // Make a border
                     builder.Append(
-                        BoxFrameColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", PresentationUpperBorderLeft, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor) +
-                        BoxColor.RenderBox(PresentationUpperBorderLeft + 1, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop)
+                        BoxFrameColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", presentationUpperBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor) +
+                        BoxColor.RenderBox(presentationUpperInnerBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop)
                     );
 
                     // Write the bindings
                     builder.Append(
-                        CenteredTextColor.RenderCentered(PresentationInformationalTop, $"[ENTER] {"Advance"}{(!kiosk && !required ? $" - [ESC] {"Exit"}" : "")}".Truncate(PresentationLowerInnerBorderLeft + 1), new Color(ConsoleColors.White), ColorTools.CurrentBackgroundColor)
+                        CenteredTextColor.RenderCentered(presentationInformationalTop, $"[ENTER] {"Advance"}{(!kiosk && !required ? $" - [ESC] {"Exit"}" : "")}".Truncate(presentationLowerInnerBorderLeft + 1), new Color(ConsoleColors.White), ColorTools.CurrentBackgroundColor)
                     );
 
                     // Clear the presentation screen
@@ -232,12 +248,20 @@ namespace Terminaux.Inputs.Presentation
         {
             var builder = new StringBuilder();
 
+            // Populate some variables
+            int presentationUpperBorderLeft = 2;
+            int presentationUpperBorderTop = 1;
+            int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
+            int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
+            int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
+            int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+
             // Clear the presentation screen
-            for (int y = PresentationUpperInnerBorderTop; y <= PresentationLowerInnerBorderTop + 1; y++)
-                builder.Append(TextWriterWhereColor.RenderWhere(new string(' ', PresentationLowerInnerBorderLeft), PresentationUpperInnerBorderLeft, y));
+            for (int y = presentationUpperInnerBorderTop; y <= presentationLowerInnerBorderTop + 1; y++)
+                builder.Append(TextWriterWhereColor.RenderWhere(new string(' ', presentationLowerInnerBorderLeft), presentationUpperInnerBorderLeft, y));
 
             // Seek to the first position inside the border
-            builder.Append(CsiSequences.GenerateCsiCursorPosition(PresentationUpperInnerBorderLeft + 1, PresentationUpperInnerBorderTop + 1));
+            builder.Append(CsiSequences.GenerateCsiCursorPosition(presentationUpperInnerBorderLeft + 1, presentationUpperInnerBorderTop + 1));
             return builder.ToString();
         }
 

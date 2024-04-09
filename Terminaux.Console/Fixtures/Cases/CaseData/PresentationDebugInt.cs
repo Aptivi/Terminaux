@@ -102,7 +102,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                     new Color(ConsoleColors.Green1).VTSequenceForeground
                                 ],
                                 InvokeActionInput =
-                                    (objs) => TextWriterWhereColor.WriteWhere($"You said \"{objs[0]}\".", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
+                                    (objs) => TextWriterWhereColor.WriteWhere($"You said \"{objs[0]}\".", 3, ConsoleWrapper.CursorTop)
                             }
                         ]
                     ),
@@ -205,7 +205,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                     data1
                                 ],
                                 InvokeActionInput =
-                                    (objs) => TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a {((string)objs[0] == "Sarah" ? "girl" : "boy")}.", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
+                                    (objs) => TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a {((string)objs[0] == "Sarah" ? "girl" : "boy")}.", 3, ConsoleWrapper.CursorTop)
                             },
                             new ChoiceInputElement()
                             {
@@ -244,7 +244,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                     TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a " +
                                         $"{((string)objs[0] is "Sarah" or "Bella" or "Debbie" or "Ella" or "Elizabeth" or "Jasmine" or "Sofia" or "Thalia"
                                     ? "girl" : "boy")}.",
-                                    PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
+                                    3, ConsoleWrapper.CursorTop)
                             }
                         ]
                     ),
@@ -270,7 +270,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                     (objs) =>
                                     {
                                         string[] names = objs[0].ToString().Split(';');
-                                        TextWriterWhereColor.WriteWhere($"You chose {names.Length} persons, {names.Count((name) => name == "Sarah")} of which are girls.", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop);
+                                        TextWriterWhereColor.WriteWhere($"You chose {names.Length} persons, {names.Count((name) => name == "Sarah")} of which are girls.", 3, ConsoleWrapper.CursorTop);
                                     }
                             },
                             new MultipleChoiceInputElement()
@@ -312,7 +312,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                         TextWriterWhereColor.WriteWhere($"You chose {names.Length} persons, " +
                                             $"{names.Count((name) =>
                                                name is "Sarah" or "Bella" or "Debbie" or "Ella" or "Elizabeth" or "Jasmine" or "Sofia" or "Thalia")}" +
-                                            $" of which are girls.", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop);
+                                            $" of which are girls.", 3, ConsoleWrapper.CursorTop);
                                     }
                             }
                         ]

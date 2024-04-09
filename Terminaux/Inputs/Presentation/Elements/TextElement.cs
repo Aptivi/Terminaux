@@ -51,25 +51,33 @@ namespace Terminaux.Inputs.Presentation.Elements
         /// </summary>
         public void Render()
         {
+            // Populate some variables
+            int presentationUpperBorderLeft = 2;
+            int presentationUpperBorderTop = 1;
+            int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
+            int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
+            int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
+            int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+
             // Get the text and the arguments
             object[] finalArgs = Arguments is not null && Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
             string text = TextTools.FormatString((string)(Arguments is not null && Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
 
             // Check the bounds
-            string[] splitText = ConsoleMisc.GetWrappedSentencesByWords(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+            string[] splitText = ConsoleMisc.GetWrappedSentencesByWords(text, presentationLowerInnerBorderLeft - presentationUpperBorderLeft + 2);
             int top = ConsoleWrapper.CursorTop;
             int seekTop = ConsoleWrapper.CursorTop;
             var buffer = new StringBuilder();
             foreach (string split in splitText)
             {
-                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - top + 1;
+                int maxHeight = presentationLowerInnerBorderTop - top + 1;
                 if (maxHeight < 0)
                 {
                     // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
-                    TextWriterWhereColor.WriteWhereColor(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
+                    TextWriterWhereColor.WriteWhereColor(buffer.ToString(), presentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
                     TermReader.ReadPointerOrKey();
                     TextWriterRaw.WriteRaw(PresentationTools.ClearPresentation());
-                    seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
+                    seekTop = top = presentationUpperInnerBorderTop;
                     buffer.Clear();
                 }
 
@@ -77,7 +85,7 @@ namespace Terminaux.Inputs.Presentation.Elements
                 buffer.Append(split + "\n");
                 top++;
             }
-            TextWriterWhereColor.WriteWhereColor(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
+            TextWriterWhereColor.WriteWhereColor(buffer.ToString(), presentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
         }
 
         /// <summary>
@@ -85,13 +93,20 @@ namespace Terminaux.Inputs.Presentation.Elements
         /// </summary>
         public bool IsPossibleOutOfBounds()
         {
+            // Populate some variables
+            int presentationUpperBorderLeft = 2;
+            int presentationUpperBorderTop = 1;
+            int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
+            int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
+            int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+
             // Get the text and the arguments
             object[] finalArgs = Arguments is not null && Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
             string text = TextTools.FormatString((string)(Arguments is not null && Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
 
             // Check the bounds
-            string[] splitText = ConsoleMisc.GetWrappedSentencesByWords(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
-            int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
+            string[] splitText = ConsoleMisc.GetWrappedSentencesByWords(text, presentationLowerInnerBorderLeft - presentationUpperInnerBorderLeft);
+            int maxHeight = presentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
             return splitText.Length > maxHeight;
         }
 
