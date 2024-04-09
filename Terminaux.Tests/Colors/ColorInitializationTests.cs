@@ -1108,6 +1108,37 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests initializing color instance from true color order code
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorOrderCode()
+        {
+            // Create instance
+            var ColorInstance = new Color(4128862);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("94;0;63");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;94;0;63m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;94;0;63m");
+            ColorInstance.RGB.R.ShouldBe(94);
+            ColorInstance.RGB.G.ShouldBe(0);
+            ColorInstance.RGB.B.ShouldBe(63);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#5E003F");
+            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
         /// Tests initializing color instance from true color
         /// </summary>
         [TestMethod]
