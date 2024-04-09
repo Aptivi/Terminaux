@@ -356,6 +356,8 @@ namespace Terminaux.Inputs.Interactive
                             $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneItemBackColor, true)}";
                         builder.Append(text);
                     }
+                    else
+                        break;
                 }
 
                 // Render the vertical bar
