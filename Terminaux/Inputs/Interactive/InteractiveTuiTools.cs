@@ -567,33 +567,62 @@ namespace Terminaux.Inputs.Interactive
                         case PointerButton.None:
                             if (mouse.ButtonPress != PointerButtonPress.Moved)
                                 break;
-                            if (!interactiveTui.SecondPaneInteractable)
-                                break;
 
+                            // First, check to see if the cursor has moved to the other side or not
                             int SeparatorMinimumHeight = 1;
                             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                             if (mouse.Coordinates.y < SeparatorMinimumHeight || mouse.Coordinates.y > SeparatorMaximumHeightInterior + 2)
                                 break;
                             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
                             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-                            if (mouse.Coordinates.x >= 0 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior + 1)
+                            bool refresh = false;
+                            if (interactiveTui.SecondPaneInteractable)
                             {
-                                if (InteractiveTuiStatus.CurrentPane == 1)
-                                    break;
-                                InteractiveTuiStatus.CurrentPane = 1;
+                                if (mouse.Coordinates.x >= 0 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior + 1)
+                                {
+                                    if (InteractiveTuiStatus.CurrentPane != 1)
+                                    {
+                                        InteractiveTuiStatus.CurrentPane = 1;
+                                        refresh = true;
+                                    }
+                                }
+                                else if (mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1 && mouse.Coordinates.x >= SeparatorHalfConsoleWidth)
+                                {
+                                    if (InteractiveTuiStatus.CurrentPane != 2)
+                                    {
+                                        InteractiveTuiStatus.CurrentPane = 2;
+                                        refresh = true;
+                                    }
+                                }
+                            }
+                            if (refresh)
+                            {
+                                data =
+                                    InteractiveTuiStatus.CurrentPane == 2 ?
+                                    interactiveTui.SecondaryDataSource :
+                                    interactiveTui.PrimaryDataSource;
+                                dataCount = data.Length();
                                 interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}");
                                 DrawInteractiveTui(interactiveTui);
                                 ScreenTools.Render();
                             }
-                            else if (mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1 && mouse.Coordinates.x >= SeparatorHalfConsoleWidth)
-                            {
-                                if (InteractiveTuiStatus.CurrentPane == 2)
-                                    break;
-                                InteractiveTuiStatus.CurrentPane = 2;
-                                interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}");
-                                DrawInteractiveTui(interactiveTui);
-                                ScreenTools.Render();
-                            }
+
+                            // Now, update the selection relative to the mouse pointer location
+                            int SeparatorMinimumHeightInterior = 2;
+                            int answersPerPage = SeparatorMaximumHeightInterior;
+                            paneCurrentSelection = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.SecondPaneCurrentSelection : InteractiveTuiStatus.FirstPaneCurrentSelection;
+                            int currentPage = (paneCurrentSelection - 1) / answersPerPage;
+                            int startIndex = answersPerPage * currentPage;
+                            int endIndex = answersPerPage * (currentPage + 1) - 1;
+                            if (mouse.Coordinates.y < SeparatorMinimumHeightInterior || mouse.Coordinates.y >= SeparatorMaximumHeightInterior + 2)
+                                break;
+                            int listIndex = mouse.Coordinates.y - SeparatorMinimumHeightInterior;
+                            listIndex = startIndex + listIndex;
+                            listIndex = listIndex > dataCount ? dataCount : listIndex;
+                            SelectionMovement(interactiveTui, listIndex + 1);
+                            interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Items - {interactiveTui.GetType().Name}");
+                            DrawInteractiveTuiItems(interactiveTui, InteractiveTuiStatus.CurrentPane);
+                            ScreenTools.Render();
                             break;
                     }
                 }
