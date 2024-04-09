@@ -12519,6 +12519,34 @@ references:
   commentId: T:Terminaux.Colors.ColorSettings
   fullName: Terminaux.Colors.ColorSettings
   nameWithType: ColorSettings
+- uid: Terminaux.Colors.ColorSettings.#ctor
+  name: ColorSettings()
+  href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings__ctor
+  commentId: M:Terminaux.Colors.ColorSettings.#ctor
+  name.vb: New()
+  fullName: Terminaux.Colors.ColorSettings.ColorSettings()
+  fullName.vb: Terminaux.Colors.ColorSettings.New()
+  nameWithType: ColorSettings.ColorSettings()
+  nameWithType.vb: ColorSettings.New()
+- uid: Terminaux.Colors.ColorSettings.#ctor(Terminaux.Colors.ColorSettings)
+  name: ColorSettings(ColorSettings)
+  href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings__ctor_Terminaux_Colors_ColorSettings_
+  commentId: M:Terminaux.Colors.ColorSettings.#ctor(Terminaux.Colors.ColorSettings)
+  name.vb: New(ColorSettings)
+  fullName: Terminaux.Colors.ColorSettings.ColorSettings(Terminaux.Colors.ColorSettings)
+  fullName.vb: Terminaux.Colors.ColorSettings.New(Terminaux.Colors.ColorSettings)
+  nameWithType: ColorSettings.ColorSettings(ColorSettings)
+  nameWithType.vb: ColorSettings.New(ColorSettings)
+- uid: Terminaux.Colors.ColorSettings.#ctor*
+  name: ColorSettings
+  href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings__ctor_
+  commentId: Overload:Terminaux.Colors.ColorSettings.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Terminaux.Colors.ColorSettings.ColorSettings
+  fullName.vb: Terminaux.Colors.ColorSettings.New
+  nameWithType: ColorSettings.ColorSettings
+  nameWithType.vb: ColorSettings.New
 - uid: Terminaux.Colors.ColorSettings.ColorBlindnessSeverity
   name: ColorBlindnessSeverity
   href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings_ColorBlindnessSeverity
