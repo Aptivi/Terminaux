@@ -21,4 +21,8 @@
     <EmbeddedResource Include="Assets\TermInfoData\*" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Textify.Offline.Data.Analysis" Version="1.6.0" />
+  </ItemGroup>
+
 </Project>

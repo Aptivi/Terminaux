@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.NameGen;
+using Textify.Data.Analysis.NameGen;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
