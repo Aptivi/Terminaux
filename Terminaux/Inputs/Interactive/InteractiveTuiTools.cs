@@ -508,13 +508,14 @@ namespace Terminaux.Inputs.Interactive
 
             // Wait for key
             bool loopBail = false;
+            bool timed = interactiveTui.RefreshInterval > 0 && !interactiveTui.SecondPaneInteractable;
             Stopwatch sw = new();
-            if (interactiveTui.RefreshInterval > 0 && !interactiveTui.SecondPaneInteractable)
+            if (timed)
                 sw.Start();
             while (!loopBail)
             {
-                SpinWait.SpinUntil(() => PointerListener.InputAvailable || sw.ElapsedMilliseconds >= interactiveTui.RefreshInterval);
-                bool timedOut = sw.ElapsedMilliseconds >= interactiveTui.RefreshInterval;
+                SpinWait.SpinUntil(() => PointerListener.InputAvailable || (timed && sw.ElapsedMilliseconds >= interactiveTui.RefreshInterval));
+                bool timedOut = timed && sw.ElapsedMilliseconds >= interactiveTui.RefreshInterval;
                 if (timedOut)
                 {
                     sw.Restart();
