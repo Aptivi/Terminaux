@@ -169,6 +169,10 @@ namespace Terminaux.Inputs.Interactive
             if (interactiveTui is null)
                 throw new TerminauxInternalException("Attempted to render TUI items on null");
 
+            // Remove the old screen part
+            if (interactiveTui.screen?.CheckBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}") ?? false)
+                interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}");
+
             // Make a screen part
             var part = new ScreenPart();
 
@@ -280,6 +284,7 @@ namespace Terminaux.Inputs.Interactive
                 return bindingsBuilder.ToString();
             });
 
+            // We've added the necessary buffer. Now, add that to the buffered part list
             interactiveTui.screen?.AddBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}", part);
         }
 
@@ -294,6 +299,10 @@ namespace Terminaux.Inputs.Interactive
             // Check to make sure that we're not rendering the second pane on the first-pane-only interactive TUI
             if (!interactiveTui.SecondPaneInteractable && paneNum > 1)
                 throw new TerminauxInternalException("Tried to render interactive TUI items for the secondary pane on an interactive TUI that only allows interaction from one pane.");
+
+            // Remove the old screen part
+            if (interactiveTui.screen?.CheckBufferedPart($"Interactive TUI - Items [{paneNum}] - {interactiveTui.GetType().Name}") ?? false)
+                interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Items [{paneNum}] - {interactiveTui.GetType().Name}");
 
             // Make a screen part
             var part = new ScreenPart();
@@ -355,7 +364,7 @@ namespace Terminaux.Inputs.Interactive
                 return builder.ToString();
             });
 
-            interactiveTui.screen.AddBufferedPart($"Interactive TUI - Items - {interactiveTui.GetType().Name}", part);
+            interactiveTui.screen?.AddBufferedPart($"Interactive TUI - Items [{paneNum}] - {interactiveTui.GetType().Name}", part);
         }
 
         private static void DrawInformationOnSecondPane<T>(BaseInteractiveTui<T> interactiveTui)
@@ -369,7 +378,11 @@ namespace Terminaux.Inputs.Interactive
             // Check to make sure that we're not rendering the information pane on the both-panes interactive TUI
             if (interactiveTui.SecondPaneInteractable)
                 throw new TerminauxInternalException("Tried to render information the secondary pane on an interactive TUI that allows interaction from two panes, messing the selection rendering up there.");
-            
+
+            // Remove the old screen part
+            if (interactiveTui.screen?.CheckBufferedPart($"Interactive TUI - Info (2nd pane) - {interactiveTui.GetType().Name}") ?? false)
+                interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Info (2nd pane) - {interactiveTui.GetType().Name}");
+
             // Make a screen part
             var part = new ScreenPart();
 
@@ -449,7 +462,7 @@ namespace Terminaux.Inputs.Interactive
                 return builder.ToString();
             });
 
-            interactiveTui.screen.AddBufferedPart($"Interactive TUI - Info (2nd pane) - {interactiveTui.GetType().Name}", part);
+            interactiveTui.screen?.AddBufferedPart($"Interactive TUI - Info (2nd pane) - {interactiveTui.GetType().Name}", part);
         }
 
         private static void DrawStatus<T>(BaseInteractiveTui<T> interactiveTui)
@@ -458,6 +471,10 @@ namespace Terminaux.Inputs.Interactive
                 throw new TerminauxInternalException("Attempted to draw status on null");
             if (interactiveTui.screen is null)
                 throw new TerminauxInternalException("Attempted to draw status on no screen");
+
+            // Remove the old screen part
+            if (interactiveTui.screen?.CheckBufferedPart($"Interactive TUI - Status - {interactiveTui.GetType().Name}") ?? false)
+                interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Status - {interactiveTui.GetType().Name}");
 
             // Make a screen part
             var part = new ScreenPart();
@@ -482,7 +499,8 @@ namespace Terminaux.Inputs.Interactive
                 builder.Append(ConsoleClearing.GetClearLineToRightSequence());
                 return builder.ToString();
             });
-            interactiveTui.screen.AddBufferedPart($"Interactive TUI - Status - {interactiveTui.GetType().Name}", part);
+
+            interactiveTui.screen?.AddBufferedPart($"Interactive TUI - Status - {interactiveTui.GetType().Name}", part);
         }
 
         private static void RespondToUserInput<T>(BaseInteractiveTui<T> interactiveTui)
@@ -573,6 +591,7 @@ namespace Terminaux.Inputs.Interactive
                             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
                             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
                             bool refresh = false;
+                            int oldPane = InteractiveTuiStatus.CurrentPane;
                             if (interactiveTui.SecondPaneInteractable)
                             {
                                 if (mouse.Coordinates.x >= 0 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior + 1)
@@ -599,9 +618,6 @@ namespace Terminaux.Inputs.Interactive
                                     interactiveTui.SecondaryDataSource :
                                     interactiveTui.PrimaryDataSource;
                                 dataCount = data.Length();
-                                interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Main - {interactiveTui.GetType().Name}");
-                                DrawInteractiveTui(interactiveTui);
-                                ScreenTools.Render();
                             }
 
                             // Now, update the selection relative to the mouse pointer location
@@ -616,10 +632,12 @@ namespace Terminaux.Inputs.Interactive
                             int listIndex = mouse.Coordinates.y - SeparatorMinimumHeightInterior;
                             listIndex = startIndex + listIndex;
                             listIndex = listIndex > dataCount ? dataCount : listIndex;
-                            SelectionMovement(interactiveTui, listIndex + 1);
-                            interactiveTui.screen?.RemoveBufferedPart($"Interactive TUI - Items - {interactiveTui.GetType().Name}");
-                            DrawInteractiveTuiItems(interactiveTui, InteractiveTuiStatus.CurrentPane);
-                            ScreenTools.Render();
+                            if (listIndex + 1 != paneCurrentSelection || InteractiveTuiStatus.CurrentPane != oldPane)
+                            {
+                                if (listIndex + 1 != paneCurrentSelection)
+                                    SelectionMovement(interactiveTui, listIndex + 1);
+                                loopBail = true;
+                            }
                             break;
                     }
                 }
