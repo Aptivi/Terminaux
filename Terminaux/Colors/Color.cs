@@ -268,20 +268,20 @@ namespace Terminaux.Colors
         /// <summary>
         /// Makes a new instance of color class from specifier.
         /// </summary>
-        /// <param name="ColorNum">The color number</param>
+        /// <param name="ColorNum">The color number or a decimal number that specifies the RGB values up to 16777215</param>
         /// <exception cref="TerminauxException"></exception>
         public Color(int ColorNum)
-            : this(ColorTools.GetColorIdStringFrom(ColorNum))
+            : this(ColorNum > 255 ? $"{(ColorNum) & 0xff};{(ColorNum >> 8) & 0xff};{(ColorNum >> 16) & 0xff}" : ColorTools.GetColorIdStringFrom(ColorNum))
         { }
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
         /// </summary>
-        /// <param name="ColorNum">The color number</param>
+        /// <param name="ColorNum">The color number or a decimal number that specifies the RGB values up to 16777215</param>
         /// <param name="settings">Color settings to use while building the color</param>
         /// <exception cref="TerminauxException"></exception>
         public Color(int ColorNum, ColorSettings settings)
-            : this(ColorTools.GetColorIdStringFrom(ColorNum), settings)
+            : this(ColorNum > 255 ? $"{(ColorNum) & 0xff};{(ColorNum >> 8) & 0xff};{(ColorNum >> 16) & 0xff}" : ColorTools.GetColorIdStringFrom(ColorNum), settings)
         { }
 
         /// <summary>
