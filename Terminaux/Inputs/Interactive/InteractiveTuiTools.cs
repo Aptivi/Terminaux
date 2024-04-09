@@ -594,7 +594,7 @@ namespace Terminaux.Inputs.Interactive
                             int oldPane = InteractiveTuiStatus.CurrentPane;
                             if (interactiveTui.SecondPaneInteractable)
                             {
-                                if (mouse.Coordinates.x >= 0 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior + 1)
+                                if (mouse.Coordinates.x >= 2 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior - 1)
                                 {
                                     if (InteractiveTuiStatus.CurrentPane != 1)
                                     {
@@ -602,7 +602,7 @@ namespace Terminaux.Inputs.Interactive
                                         refresh = true;
                                     }
                                 }
-                                else if (mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1 && mouse.Coordinates.x >= SeparatorHalfConsoleWidth)
+                                else if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth + 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior - 1)
                                 {
                                     if (InteractiveTuiStatus.CurrentPane != 2)
                                     {
@@ -610,6 +610,15 @@ namespace Terminaux.Inputs.Interactive
                                         refresh = true;
                                     }
                                 }
+                                else
+                                    break;
+                            }
+                            else
+                            {
+                                if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth - 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
+                                    break;
+                                if (mouse.Coordinates.x <= 1)
+                                    break;
                             }
                             if (refresh)
                             {
@@ -631,6 +640,8 @@ namespace Terminaux.Inputs.Interactive
                                 break;
                             int listIndex = mouse.Coordinates.y - SeparatorMinimumHeightInterior;
                             listIndex = startIndex + listIndex;
+                            if (listIndex + 1 > dataCount)
+                                break;
                             listIndex = listIndex > dataCount ? dataCount : listIndex;
                             if (listIndex + 1 != paneCurrentSelection || InteractiveTuiStatus.CurrentPane != oldPane)
                             {
