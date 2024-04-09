@@ -27,6 +27,7 @@ namespace Terminaux.Inputs.Pointer
         private readonly PointerButton mouseButton;
         private readonly PointerButtonPress mouseButtonPress;
         private readonly PointerModifiers mouseMods;
+        private readonly bool dragging;
         private readonly int x, y;
 
         /// <summary>
@@ -48,16 +49,23 @@ namespace Terminaux.Inputs.Pointer
             mouseMods;
 
         /// <summary>
+        /// Whether the pointer is being dragged or not
+        /// </summary>
+        public bool Dragging =>
+            dragging;
+
+        /// <summary>
         /// Gets the coordinates in character cells where the mouse cursor was placed <b>starting from zero</b>.
         /// </summary>
         public (int x, int y) Coordinates =>
             (x, y);
 
-        internal PointerEventContext(PointerButton mouseButton, PointerButtonPress mouseButtonPress, PointerModifiers mouseMods, int x, int y)
+        internal PointerEventContext(PointerButton mouseButton, PointerButtonPress mouseButtonPress, PointerModifiers mouseMods, bool dragging, int x, int y)
         {
             this.mouseButton = mouseButton;
             this.mouseButtonPress = mouseButtonPress;
             this.mouseMods = mouseMods;
+            this.dragging = dragging;
             this.x = x;
             this.y = y;
         }

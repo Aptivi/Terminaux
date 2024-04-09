@@ -38,6 +38,7 @@ namespace Terminaux.Inputs.Pointer
         private static PointerEventContext? context = null;
         private static bool listening = false;
         private static bool active = false;
+        private static PointerButton draggingButton = PointerButton.None;
         private static Thread? pointerListener;
         private static bool enableMovementEvents;
 
@@ -285,7 +286,12 @@ namespace Terminaux.Inputs.Pointer
                     mods |=
                         (modState & PosixButtonModifierState.Shift) != 0 ? PointerModifiers.Shift :
                         PointerModifiers.None;
-                    var ctx = new PointerEventContext(buttonPtr, press, mods, x, y);
+                    bool dragging = false;
+                    if (!EnableMovementEvents && press == PointerButtonPress.Moved)
+                        break;
+                    else
+                        ProcessDragging(ref press, ref buttonPtr, out dragging);
+                    var ctx = new PointerEventContext(buttonPtr, press, mods, dragging, x, y);
                     context = ctx;
                     MouseEvent.Invoke("Terminaux", ctx);
                 }
@@ -390,9 +396,12 @@ namespace Terminaux.Inputs.Pointer
                             mods |=
                                 (@event.dwControlKeyState & ControlKeyState.ShiftPressed) != 0 ? PointerModifiers.Shift :
                                 PointerModifiers.None;
+                            bool dragging = false;
                             if (!EnableMovementEvents && press == PointerButtonPress.Moved)
                                 break;
-                            var ctx = new PointerEventContext(button, press, mods, coord.X, coord.Y);
+                            else
+                                ProcessDragging(ref press, ref button, out dragging);
+                            var ctx = new PointerEventContext(button, press, mods, dragging, coord.X, coord.Y);
                             context = ctx;
                             MouseEvent.Invoke("Terminaux", ctx);
                             break;
@@ -492,6 +501,39 @@ namespace Terminaux.Inputs.Pointer
             DoubleClicked = 0x0002,
             WheelScrolled = 0x0004,
             HorizontalWheelScrolled = 0x0008,
+        }
+        #endregion
+
+        #region Private functions
+        private static void ProcessDragging(ref PointerButtonPress press, ref PointerButton button, out bool dragging)
+        {
+            bool resultDragging = false;
+            if (EnableMovementEvents)
+            {
+                if (press == PointerButtonPress.Clicked)
+                    draggingButton = button;
+                else if (press == PointerButtonPress.Moved && draggingButton != PointerButton.None)
+                {
+                    button = draggingButton;
+                    resultDragging = true;
+                }
+                else if (press == PointerButtonPress.Released)
+                {
+                    button = draggingButton;
+                    draggingButton = PointerButton.None;
+                }
+            }
+            else
+            {
+                if (press == PointerButtonPress.Clicked)
+                    draggingButton = button;
+                else if (press == PointerButtonPress.Released)
+                {
+                    button = draggingButton;
+                    draggingButton = PointerButton.None;
+                }
+            }
+            dragging = resultDragging;
         }
         #endregion
 
