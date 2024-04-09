@@ -65,7 +65,7 @@ namespace Terminaux.Inputs.Styles
         public static Color OpenColorSelector(Color initialColor, ColorSettings? settings = null)
         {
             // Select appropriate settings
-            var finalSettings = settings ?? ColorTools.GlobalSettings;
+            var finalSettings = settings ?? new(ColorTools.GlobalSettings);
 
             // Initial color is selected
             if (initialColor.RGB is null)
@@ -262,7 +262,7 @@ namespace Terminaux.Inputs.Styles
                     transparencyRamp.Append($"{new Color($"{transparency};{transparency};{transparency}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
-                    BoxFrameColor.RenderBoxFrame($"Transparency: {ColorTools.GlobalSettings.Opacity}/255", hueBarX, transparencyRampBarY, boxWidth - 6, boxHeight - 1) +
+                    BoxFrameColor.RenderBoxFrame($"Transparency: {finalSettings.Opacity}/255", hueBarX, transparencyRampBarY, boxWidth - 6, boxHeight - 1) +
                     CsiSequences.GenerateCsiCursorPosition(hueBarX + 2, transparencyRampBarY + 2) +
                     transparencyRamp.ToString()
                 );
@@ -362,7 +362,7 @@ namespace Terminaux.Inputs.Styles
                         else if (withinLightnessBarBoundaries)
                             DecrementLightness(type);
                         else if (withinTransparencyBarBoundaries)
-                            ColorTools.GlobalSettings.Opacity--;
+                            finalSettings.Opacity--;
                         break;
                     case PointerButton.WheelDown:
                         if (withinColorBoxBoundaries)
@@ -374,7 +374,7 @@ namespace Terminaux.Inputs.Styles
                         else if (withinLightnessBarBoundaries)
                             IncrementLightness(type);
                         else if (withinTransparencyBarBoundaries)
-                            ColorTools.GlobalSettings.Opacity++;
+                            finalSettings.Opacity++;
                         break;
                 }
             }
@@ -414,10 +414,10 @@ namespace Terminaux.Inputs.Styles
                         }
                         break;
                     case ConsoleKey.O:
-                        ColorTools.GlobalSettings.Opacity++;
+                        finalSettings.Opacity++;
                         break;
                     case ConsoleKey.P:
-                        ColorTools.GlobalSettings.Opacity--;
+                        finalSettings.Opacity--;
                         break;
 
                     // Non-unified

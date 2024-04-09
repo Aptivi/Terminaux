@@ -116,7 +116,7 @@ namespace Terminaux.Colors.Models.Parsing
             int b = rgb.B;
 
             // Now, transform
-            settings = settings is null ? ColorTools.GlobalSettings : settings;
+            settings ??= new(ColorTools.GlobalSettings);
             var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
 
             // Make a new RGB class

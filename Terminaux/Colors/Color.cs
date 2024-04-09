@@ -71,10 +71,10 @@ namespace Terminaux.Colors
         }
 
         /// <summary>
-        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the usage of the terminal palette.
+        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the settings.
         /// </summary>
         public string PlainSequence =>
-            settings.UseTerminalPalette ?
+            settings.UseTerminalPalette && settings.Opacity == 255 && !settings.EnableColorTransformation ?
             PlainSequenceOriginal :
             PlainSequenceTrueColor;
         /// <summary>
@@ -91,7 +91,7 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Foreground)
         /// </summary>
         public string VTSequenceForeground =>
-            settings.UseTerminalPalette ?
+            settings.UseTerminalPalette && settings.Opacity == 255 && !settings.EnableColorTransformation ?
             VTSequenceForegroundOriginal :
             VTSequenceForegroundTrueColor;
         /// <summary>
@@ -103,7 +103,7 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Background)
         /// </summary>
         public string VTSequenceBackground =>
-            settings.UseTerminalPalette ?
+            settings.UseTerminalPalette && settings.Opacity == 255 && !settings.EnableColorTransformation ?
             VTSequenceBackgroundOriginal :
             VTSequenceBackgroundTrueColor;
         /// <summary>
@@ -156,6 +156,7 @@ namespace Terminaux.Colors
         /// </summary>
         public ColorType Type =>
             ColorId is null ? ColorType.TrueColor :
+            !settings.UseTerminalPalette || settings.Opacity < 255 || settings.EnableColorTransformation ? ColorType.TrueColor :
             ColorId.ColorId >= 16 ? ColorType.EightBitColor :
             ColorType.FourBitColor;
 

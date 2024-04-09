@@ -113,5 +113,29 @@ namespace Terminaux.Colors
             get => _opacityColor ?? ColorTools.CurrentBackgroundColor;
             set => _opacityColor = value ?? ColorTools.CurrentBackgroundColor;
         }
+
+        /// <summary>
+        /// Makes a new instance of color settings
+        /// </summary>
+        public ColorSettings()
+        { }
+
+        /// <summary>
+        /// Makes a new instance of color settings
+        /// </summary>
+        /// <param name="settings">Settings instance to copy the color configuration from</param>
+        public ColorSettings(ColorSettings settings)
+        {
+            if (settings is null)
+                return;
+
+            EnableColorTransformation = settings.EnableColorTransformation;
+            UseTerminalPalette = settings.UseTerminalPalette;
+            ColorTransformationFormula = settings.ColorTransformationFormula;
+            ColorTransformationMethod = settings.ColorTransformationMethod;
+            ColorBlindnessSeverity = settings.ColorBlindnessSeverity;
+            Opacity = settings.Opacity;
+            OpacityColor = settings.OpacityColor;
+        }
     }
 }

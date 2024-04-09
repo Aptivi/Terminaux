@@ -57,7 +57,7 @@ namespace Terminaux.Tests.Colors
         /// </summary>
         [TestMethod]
         [DataRow(26, true)]
-        [DataRow(260, false)]
+        [DataRow(260, true)]
         [DataRow(-26, false)]
         [Description("Validity")]
         public void TestTryParseColorFromColorNum(int TargetColorNum, bool expected)

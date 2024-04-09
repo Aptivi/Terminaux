@@ -1186,18 +1186,18 @@ namespace Terminaux.Tests.Colors
             ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("255;255;255");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;255;255;255m");
-            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;255;255;255m");
+            ColorInstance.PlainSequence.ShouldBe("15");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;15m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;15m");
             ColorInstance.RGB.R.ShouldBe(255);
             ColorInstance.RGB.G.ShouldBe(255);
             ColorInstance.RGB.B.ShouldBe(255);
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
             ColorInstance.Hex.ShouldBe("#FFFFFF");
-            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.White);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.White);
         }
 
         /// <summary>
@@ -1217,18 +1217,18 @@ namespace Terminaux.Tests.Colors
             ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
 
             // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("255;255;255");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;255;255;255m");
-            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;255;255;255m");
+            ColorInstance.PlainSequence.ShouldBe("15");
+            ColorInstance.Type.ShouldBe(ColorType.FourBitColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;5;15m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;5;15m");
             ColorInstance.RGB.R.ShouldBe(255);
             ColorInstance.RGB.G.ShouldBe(255);
             ColorInstance.RGB.B.ShouldBe(255);
             ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
             ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
             ColorInstance.Hex.ShouldBe("#FFFFFF");
-            ColorInstance.ColorEnum255.ShouldBe((ConsoleColors)(-1));
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.White);
+            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.White);
         }
 
         /// <summary>

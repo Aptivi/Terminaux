@@ -34,7 +34,7 @@ namespace Terminaux.Colors.Transformation.Formulas
             if (b < 0 || b > 255)
                 throw new ArgumentOutOfRangeException("b");
 
-            settings = settings is null ? ColorTools.GlobalSettings : settings;
+            settings ??= new(ColorTools.GlobalSettings);
             var transformed = settings.ColorTransformationMethod switch
             {
                 TransformationMethod.Vienot1999 =>

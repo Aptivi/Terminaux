@@ -207,7 +207,7 @@ namespace Terminaux.Colors.Models.Parsing
                 throw new TerminauxException($"The blue color level is out of range (0 -> 255). {b}");
 
             // Now, transform
-            settings = settings is null ? ColorTools.GlobalSettings : settings;
+            settings ??= new(ColorTools.GlobalSettings);
             var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
 
             // Make a new RGB class
@@ -248,7 +248,7 @@ namespace Terminaux.Colors.Models.Parsing
             int b = (byte)(ColorDecimal & 0xFF);
 
             // Now, transform
-            settings = settings is null ? ColorTools.GlobalSettings : settings;
+            settings ??= new(ColorTools.GlobalSettings);
             var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
 
             // Make a new RGB class

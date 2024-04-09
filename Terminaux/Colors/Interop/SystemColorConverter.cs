@@ -36,7 +36,7 @@ namespace Terminaux.Colors.Interop
         public static OurColor FromDrawingColor(DrawingColor drawingColor, ColorSettings? settings = null)
         {
             // Select appropriate settings
-            var finalSettings = settings ?? ColorTools.GlobalSettings;
+            var finalSettings = settings ?? new(ColorTools.GlobalSettings);
 
             // Check to see if the Color from Drawing is null
             if (drawingColor.IsEmpty)
