@@ -630,7 +630,7 @@ namespace Terminaux.Inputs.Interactive
                                 SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
                             break;
                         case PointerButton.Left:
-                            if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                            if (mouse.ButtonPress != PointerButtonPress.Released)
                                 break;
                             UpdateSelectionBasedOnMouse(mouse);
 

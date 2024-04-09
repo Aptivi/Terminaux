@@ -603,14 +603,14 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     currentSelection = 0;
                                 break;
                             case PointerButton.Left:
-                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
                                 UpdatePositionBasedOnMouse(mouse);
                                 if (!selectedChoices.Remove(currentSelection))
                                     selectedChoices.Add(currentSelection);
                                 break;
                             case PointerButton.Right:
-                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
                                 var selectedInstance = selections[currentSelection];
                                 string choiceName = selectedInstance.ChoiceName;

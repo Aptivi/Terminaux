@@ -330,14 +330,14 @@ namespace Terminaux.Inputs.Styles.Selection
                                     HighlightedAnswer = 1;
                                 break;
                             case PointerButton.Left:
-                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
                                 ConsoleWrapper.CursorVisible = initialVisible;
                                 ColorTools.LoadBack();
                                 bail = true;
                                 break;
                             case PointerButton.Right:
-                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
                                 string choiceName = highlightedAnswer.ChoiceName;
                                 string choiceTitle = highlightedAnswer.ChoiceTitle;

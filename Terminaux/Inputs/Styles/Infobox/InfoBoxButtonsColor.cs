@@ -584,13 +584,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 UpdateHighlightBasedOnMouse(mouse);
                                 break;
                             case PointerButton.Left:
-                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
                                 UpdateHighlightBasedOnMouse(mouse);
                                 bail = true;
                                 break;
                             case PointerButton.Right:
-                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
                                 var selectedInstance = buttons[selectedButton];
                                 string choiceName = selectedInstance.ChoiceName;

@@ -357,14 +357,14 @@ namespace Terminaux.Inputs.Styles.Selection
                                     HighlightedAnswer = 1;
                                 break;
                             case PointerButton.Left:
-                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
                                 UpdateSelectedIndexWithMousePos(mouse);
                                 if (!SelectedAnswers.Remove(HighlightedAnswer))
                                     SelectedAnswers.Add(HighlightedAnswer);
                                 break;
                             case PointerButton.Right:
-                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
                                 string choiceName = highlightedAnswer.ChoiceName;
                                 string choiceTitle = highlightedAnswer.ChoiceTitle;

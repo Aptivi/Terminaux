@@ -190,7 +190,7 @@ namespace Terminaux.Inputs.Presentation
                         switch (mouse.Button)
                         {
                             case PointerButton.Left:
-                                if (mouse.ButtonPress != PointerButtonPress.Clicked)
+                                if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
                                 pageExit = true;
                                 break;
