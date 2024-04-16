@@ -37,7 +37,7 @@ namespace Terminaux.Colors
         /// <inheritdoc/>
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var result = JRaw.Create(reader).ToString().ReleaseDoubleQuotes();
+            var result = reader.Value is string value ? value : "";
             var color = new Color(result);
             return color;
         }
