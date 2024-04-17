@@ -12749,6 +12749,38 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.GetRandomColor
   nameWithType: ColorTools.GetRandomColor
+- uid: Terminaux.Colors.ColorTools.GetRgbFromColorCode(System.Int32)
+  name: GetRgbFromColorCode(int)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRgbFromColorCode_System_Int32_
+  commentId: M:Terminaux.Colors.ColorTools.GetRgbFromColorCode(System.Int32)
+  name.vb: GetRgbFromColorCode(Integer)
+  fullName: Terminaux.Colors.ColorTools.GetRgbFromColorCode(int)
+  fullName.vb: Terminaux.Colors.ColorTools.GetRgbFromColorCode(Integer)
+  nameWithType: ColorTools.GetRgbFromColorCode(int)
+  nameWithType.vb: ColorTools.GetRgbFromColorCode(Integer)
+- uid: Terminaux.Colors.ColorTools.GetRgbFromColorCode*
+  name: GetRgbFromColorCode
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRgbFromColorCode_
+  commentId: Overload:Terminaux.Colors.ColorTools.GetRgbFromColorCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.GetRgbFromColorCode
+  nameWithType: ColorTools.GetRgbFromColorCode
+- uid: Terminaux.Colors.ColorTools.GetRgbSpecifierFromColorCode(System.Int32)
+  name: GetRgbSpecifierFromColorCode(int)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRgbSpecifierFromColorCode_System_Int32_
+  commentId: M:Terminaux.Colors.ColorTools.GetRgbSpecifierFromColorCode(System.Int32)
+  name.vb: GetRgbSpecifierFromColorCode(Integer)
+  fullName: Terminaux.Colors.ColorTools.GetRgbSpecifierFromColorCode(int)
+  fullName.vb: Terminaux.Colors.ColorTools.GetRgbSpecifierFromColorCode(Integer)
+  nameWithType: ColorTools.GetRgbSpecifierFromColorCode(int)
+  nameWithType.vb: ColorTools.GetRgbSpecifierFromColorCode(Integer)
+- uid: Terminaux.Colors.ColorTools.GetRgbSpecifierFromColorCode*
+  name: GetRgbSpecifierFromColorCode
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRgbSpecifierFromColorCode_
+  commentId: Overload:Terminaux.Colors.ColorTools.GetRgbSpecifierFromColorCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.GetRgbSpecifierFromColorCode
+  nameWithType: ColorTools.GetRgbSpecifierFromColorCode
 - uid: Terminaux.Colors.ColorTools.GlobalSettings
   name: GlobalSettings
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GlobalSettings
@@ -14116,12 +14148,27 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.GetHashCode
   nameWithType: ConsoleColorData.GetHashCode
+- uid: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(System.Int32,System.Int32,System.Int32)
+  name: GetNearestColor(int, int, int)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetNearestColor_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(System.Int32,System.Int32,System.Int32)
+  name.vb: GetNearestColor(Integer, Integer, Integer)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(int, int, int)
+  fullName.vb: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Integer, Integer, Integer)
+  nameWithType: ConsoleColorData.GetNearestColor(int, int, int)
+  nameWithType.vb: ConsoleColorData.GetNearestColor(Integer, Integer, Integer)
 - uid: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Color)
   name: GetNearestColor(Color)
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetNearestColor_Terminaux_Colors_Color_
   commentId: M:Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Color)
   fullName: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Color)
   nameWithType: ConsoleColorData.GetNearestColor(Color)
+- uid: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Models.RedGreenBlue)
+  name: GetNearestColor(RedGreenBlue)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetNearestColor_Terminaux_Colors_Models_RedGreenBlue_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Models.RedGreenBlue)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor(Terminaux.Colors.Models.RedGreenBlue)
+  nameWithType: ConsoleColorData.GetNearestColor(RedGreenBlue)
 - uid: Terminaux.Colors.Data.ConsoleColorData.GetNearestColor*
   name: GetNearestColor
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetNearestColor_

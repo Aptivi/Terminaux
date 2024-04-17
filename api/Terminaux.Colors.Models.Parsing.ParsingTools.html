@@ -206,7 +206,7 @@
   </span>
   <a id="Terminaux_Colors_Models_Parsing_ParsingTools_IsSpecifierConsoleColors_" data-uid="Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierConsoleColors*"></a>
   <h4 id="Terminaux_Colors_Models_Parsing_ParsingTools_IsSpecifierConsoleColors_System_String_" data-uid="Terminaux.Colors.Models.Parsing.ParsingTools.IsSpecifierConsoleColors(System.String)">IsSpecifierConsoleColors(string)</h4>
-  <div class="markdown level1 summary"><p>Does the string specifier represent either a color name taken from <a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a> or a color number from 0 to 255?</p>
+  <div class="markdown level1 summary"><p>Does the string specifier represent either a color name taken from <a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a>, a color number from 0 to 255, or a color code?</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -226,7 +226,7 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">specifier</span></td>
-        <td><p>Specifier that represents either a color name taken from <a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a> or a color number from 0 to 255</p>
+        <td><p>Specifier that represents either a color name taken from <a class="xref" href="Terminaux.Colors.Data.ConsoleColors.html">ConsoleColors</a>, a color number from 0 to 255, or a color code</p>
 </td>
       </tr>
     </tbody>
@@ -361,7 +361,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static RedGreenBlue? ParseSpecifier(string specifier, ColorSettings? settings = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static RedGreenBlue ParseSpecifier(string specifier, ColorSettings? settings = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -423,7 +423,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbHash_System_String_Terminaux_Colors_ColorSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(System.String%2CTerminaux.Colors.ColorSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Models/Parsing/ParsingTools.cs/#L224">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Models/Parsing/ParsingTools.cs/#L228">View Source</a>
   </span>
   <a id="Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbHash_" data-uid="Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash*"></a>
   <h4 id="Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbHash_System_String_Terminaux_Colors_ColorSettings_" data-uid="Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbHash(System.String,Terminaux.Colors.ColorSettings)">ParseSpecifierRgbHash(string, ColorSettings?)</h4>
@@ -494,7 +494,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbName_System_String_Terminaux_Colors_ColorSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(System.String%2CTerminaux.Colors.ColorSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Models/Parsing/ParsingTools.cs/#L187">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Models/Parsing/ParsingTools.cs/#L182">View Source</a>
   </span>
   <a id="Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbName_" data-uid="Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName*"></a>
   <h4 id="Terminaux_Colors_Models_Parsing_ParsingTools_ParseSpecifierRgbName_System_String_Terminaux_Colors_ColorSettings_" data-uid="Terminaux.Colors.Models.Parsing.ParsingTools.ParseSpecifierRgbName(System.String,Terminaux.Colors.ColorSettings)">ParseSpecifierRgbName(string, ColorSettings?)</h4>
@@ -565,7 +565,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifier_System_String_Terminaux_Colors_Models_RedGreenBlue__.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(System.String%2CTerminaux.Colors.Models.RedGreenBlue%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Models/Parsing/ParsingTools.cs/#L166">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Models/Parsing/ParsingTools.cs/#L161">View Source</a>
   </span>
   <a id="Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifier_" data-uid="Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier*"></a>
   <h4 id="Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifier_System_String_Terminaux_Colors_Models_RedGreenBlue__" data-uid="Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifier(System.String,Terminaux.Colors.Models.RedGreenBlue@)">TryParseSpecifier(string, out RedGreenBlue?)</h4>
@@ -636,7 +636,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifierRgbHash_System_String_Terminaux_Colors_Models_RedGreenBlue__.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash(System.String%2CTerminaux.Colors.Models.RedGreenBlue%40)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Models/Parsing/ParsingTools.cs/#L265">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Models/Parsing/ParsingTools.cs/#L269">View Source</a>
   </span>
   <a id="Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifierRgbHash_" data-uid="Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash*"></a>
   <h4 id="Terminaux_Colors_Models_Parsing_ParsingTools_TryParseSpecifierRgbHash_System_String_Terminaux_Colors_Models_RedGreenBlue__" data-uid="Terminaux.Colors.Models.Parsing.ParsingTools.TryParseSpecifierRgbHash(System.String,Terminaux.Colors.Models.RedGreenBlue@)">TryParseSpecifierRgbHash(string, out RedGreenBlue?)</h4>
