@@ -48,11 +48,11 @@ namespace Terminaux.Colors
         /// <summary>
         /// An instance of RGB
         /// </summary>
-        public RedGreenBlue? RGB { get; private set; }
+        public RedGreenBlue RGB { get; private set; }
         /// <summary>
         /// The color ID for 256- and 16-color modes.
         /// </summary>
-        public ConsoleColorData? ColorId { get; private set; } = null;
+        public ConsoleColorData ColorId { get; private set; }
         /// <summary>
         /// Empty color singleton
         /// </summary>
@@ -272,7 +272,7 @@ namespace Terminaux.Colors
         /// <param name="ColorNum">The color number or a decimal number that specifies the RGB values up to 16777215</param>
         /// <exception cref="TerminauxException"></exception>
         public Color(int ColorNum)
-            : this(ColorNum > 255 ? $"{(ColorNum) & 0xff};{(ColorNum >> 8) & 0xff};{(ColorNum >> 16) & 0xff}" : ColorTools.GetColorIdStringFrom(ColorNum))
+            : this(ColorNum > 255 ? ColorTools.GetRgbSpecifierFromColorCode(ColorNum) : ColorTools.GetColorIdStringFrom(ColorNum))
         { }
 
         /// <summary>
@@ -282,7 +282,7 @@ namespace Terminaux.Colors
         /// <param name="settings">Color settings to use while building the color</param>
         /// <exception cref="TerminauxException"></exception>
         public Color(int ColorNum, ColorSettings settings)
-            : this(ColorNum > 255 ? $"{(ColorNum) & 0xff};{(ColorNum >> 8) & 0xff};{(ColorNum >> 16) & 0xff}" : ColorTools.GetColorIdStringFrom(ColorNum), settings)
+            : this(ColorNum > 255 ? ColorTools.GetRgbSpecifierFromColorCode(ColorNum) : ColorTools.GetColorIdStringFrom(ColorNum), settings)
         { }
 
         /// <summary>
@@ -307,15 +307,13 @@ namespace Terminaux.Colors
 
             // Now, parse the output
             var rgb = ParsingTools.ParseSpecifier(ColorSpecifier, settings);
-            if (rgb is not null && !settings.EnableColorTransformation)
-            {
-                // Verify that we're using the correct ID for transparency
-                var data =
-                    int.TryParse(ColorSpecifier, out int id) ?
-                    ConsoleColorData.GetColorData()[id] :
-                    ConsoleColorData.MatchColorData(rgb);
-                ColorId = data;
-            }
+
+            // Match the color data according to the color specifier
+            var data =
+                int.TryParse(ColorSpecifier, out int id) && id <= 255 ?
+                ConsoleColorData.GetColorData()[id] :
+                ConsoleColorData.MatchColorData(rgb);
+            ColorId = data;
             RGB = rgb;
         }
 

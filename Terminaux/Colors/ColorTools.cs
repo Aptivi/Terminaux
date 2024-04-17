@@ -25,6 +25,7 @@ using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation.Contrast;
 using System.Text;
 using Terminaux.Base.Checks;
+using Terminaux.Colors.Models;
 
 namespace Terminaux.Colors
 {
@@ -461,6 +462,22 @@ namespace Terminaux.Colors
         /// </summary>
         public static string RenderResetBackground() =>
             $"\u001b[49m";
+
+        /// <summary>
+        /// Gets the RGB specifier from the color code
+        /// </summary>
+        /// <param name="colorCode">The color code to get the RGB specifier from</param>
+        /// <returns>The RGB specifier string</returns>
+        public static string GetRgbSpecifierFromColorCode(int colorCode) =>
+            $"{(colorCode) & 0xff};{(colorCode >> 8) & 0xff};{(colorCode >> 16) & 0xff}";
+
+        /// <summary>
+        /// Gets the RGB instance from the color code
+        /// </summary>
+        /// <param name="colorCode">The color code to get the RGB specifier from</param>
+        /// <returns>The RGB specifier string</returns>
+        public static RedGreenBlue GetRgbFromColorCode(int colorCode) =>
+            new((colorCode) & 0xff, (colorCode >> 8) & 0xff, (colorCode >> 16) & 0xff);
 
         internal static string GetColorIdStringFrom(ConsoleColors colorDef) =>
             GetColorIdStringFrom((int)colorDef);

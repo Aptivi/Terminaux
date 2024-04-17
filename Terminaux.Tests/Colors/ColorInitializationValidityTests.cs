@@ -168,7 +168,7 @@ namespace Terminaux.Tests.Colors
         /// </summary>
         [TestMethod]
         [DataRow(26, true)]
-        [DataRow(260, false)]
+        [DataRow(260, true)]
         [DataRow(-26, false)]
         [Description("Validity")]
         public void TestIsSpecifierValidFromColorNum(int TargetColorNum, bool expected)
@@ -249,7 +249,7 @@ namespace Terminaux.Tests.Colors
         /// </summary>
         [TestMethod]
         [DataRow(26, true)]
-        [DataRow(260, false)]
+        [DataRow(260, true)]
         [DataRow(-26, false)]
         [Description("Validity")]
         public void TestIsSpecifierAndValueValidFromColorNum(int TargetColorNum, bool expected)
@@ -339,7 +339,7 @@ namespace Terminaux.Tests.Colors
         /// </summary>
         [TestMethod]
         [DataRow(26, true)]
-        [DataRow(260, false)]
+        [DataRow(260, true)]
         [DataRow(-26, false)]
         [Description("Validity")]
         public void TestParseSpecifierFromColorNum(int TargetColorNum, bool expected)
@@ -447,7 +447,7 @@ namespace Terminaux.Tests.Colors
         /// </summary>
         [TestMethod]
         [DataRow(26, true)]
-        [DataRow(260, false)]
+        [DataRow(260, true)]
         [DataRow(-26, false)]
         [Description("Validity")]
         public void TestTryParseSpecifierFromColorNum(int TargetColorNum, bool expected)

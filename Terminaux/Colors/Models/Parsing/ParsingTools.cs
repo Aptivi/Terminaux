@@ -64,14 +64,14 @@ namespace Terminaux.Colors.Models.Parsing
         }
 
         /// <summary>
-        /// Does the string specifier represent either a color name taken from <see cref="ConsoleColors"/> or a color number from 0 to 255?
+        /// Does the string specifier represent either a color name taken from <see cref="ConsoleColors"/>, a color number from 0 to 255, or a color code?
         /// </summary>
-        /// <param name="specifier">Specifier that represents either a color name taken from <see cref="ConsoleColors"/> or a color number from 0 to 255</param>
+        /// <param name="specifier">Specifier that represents either a color name taken from <see cref="ConsoleColors"/>, a color number from 0 to 255, or a color code</param>
         /// <returns>True if the specifier is valid; false otherwise.</returns>
         public static bool IsSpecifierConsoleColors(string specifier)
         {
             if (double.TryParse(specifier, out double specifierNum))
-                return specifierNum >= 0 && specifierNum <= 255;
+                return specifierNum >= 0;
             return Enum.IsDefined(typeof(ConsoleColors), specifier);
         }
 
@@ -122,15 +122,10 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static RedGreenBlue? ParseSpecifier(string specifier, ColorSettings? settings = null)
+        public static RedGreenBlue ParseSpecifier(string specifier, ColorSettings? settings = null)
         {
             // Necessary variables
-            RedGreenBlue? rgb = null;
             bool usesColorId = IsSpecifierConsoleColors(specifier);
-
-            // Check to see if we're going to use the color ID
-            if (usesColorId)
-                rgb = ParseSpecifierRgbName(specifier, settings);
 
             // Get the RGB
             var finalRgb =
@@ -144,14 +139,14 @@ namespace Terminaux.Colors.Models.Parsing
                 YuvParsingTools.IsSpecifierValid(specifier) ? YuvParsingTools.ParseSpecifierToRgb(specifier, settings) :
 
                 // Colors and hash
-                usesColorId ? rgb :
+                usesColorId ? ParseSpecifierRgbName(specifier, settings) :
                 IsSpecifierValidRgbHash(specifier) ? ParseSpecifierRgbHash(specifier, settings) :
 
                 // Fallback
                 RgbParsingTools.ParseSpecifierToRgb(specifier, settings);
 
             // Finalize the RGB values according to the settings as needed.
-            if (settings is not null && finalRgb is not null)
+            if (settings is not null)
                 finalRgb.FinalizeValues(settings);
             return finalRgb;
         }
@@ -187,11 +182,20 @@ namespace Terminaux.Colors.Models.Parsing
         public static RedGreenBlue ParseSpecifierRgbName(string specifier, ColorSettings? settings = null)
         {
             if (!IsSpecifierConsoleColors(specifier))
-                throw new TerminauxException($"Invalid color specifier \"{specifier}\". Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows: <R>;<G>;<B>");
+                throw new TerminauxException($"Invalid color specifier \"{specifier}\". If you're using 256 colors, you'll need to enter a positive value from 0 to 255 or a valid color name. If you're using true color, you'll either need to write a valid color specifier, such as RRR;GGG;BBB, or a color code up to 16777215.");
 
             // Form the sequences using the information from the color details
-            var parsedEnum = (ConsoleColors)Enum.Parse(typeof(ConsoleColors), specifier);
-            var data = ConsoleColorData.GetColorData()[(int)parsedEnum];
+            ConsoleColorData data;
+            if (int.TryParse(specifier, out int colorCode) && colorCode > 255)
+            {
+                var rgb = ColorTools.GetRgbFromColorCode(colorCode);
+                data = ConsoleColorData.GetNearestColor(rgb);
+            }
+            else
+            {
+                var parsedEnum = (ConsoleColors)Enum.Parse(typeof(ConsoleColors), specifier);
+                data = ConsoleColorData.GetColorData()[(int)parsedEnum];
+            }
             if (data.RGB is null)
                 throw new TerminauxInternalException("The data RGB is null.");
 
