@@ -36,7 +36,6 @@ echo Packing binary...
 cd "../Terminaux/bin/$releaseconf/netstandard2.0/" && "$zippath" -r /tmp/$version-bin.zip . && cd -
 cd "../Terminaux.ResizeListener/bin/$releaseconf/net48/" && "$zippath" -r /tmp/$version-bin-res-48.zip . && cd -
 cd "../Terminaux.ResizeListener/bin/$releaseconf/net8.0/" && "$zippath" -r /tmp/$version-bin-res-8.zip . && cd -
-cd "../Terminaux.Console/bin/$releaseconf/net8.0/" && "$zippath" -r /tmp/$version-demo.zip . && cd -
 if [ ! $? == 0 ]; then
 	echo Packing using zip failed.
 	exit 1
@@ -46,6 +45,5 @@ fi
 mv /tmp/$version-bin.zip .
 mv /tmp/$version-bin-res-48.zip .
 mv /tmp/$version-bin-res-8.zip .
-mv /tmp/$version-demo.zip .
 echo Build and pack successful.
 exit 0

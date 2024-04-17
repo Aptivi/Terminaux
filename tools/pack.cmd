@@ -26,7 +26,6 @@ echo Packing binary...
 "%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%version%-bin.zip "..\Terminaux\bin\%releaseconfig%\netstandard2.0\*"
 "%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%version%-bin-res-48.zip "..\Terminaux.ResizeListener\bin\%releaseconfig%\net48\*"
 "%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%version%-bin-res-8.zip "..\Terminaux.ResizeListener\bin\%releaseconfig%\net8.0\*"
-"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%version%-demo.zip "..\Terminaux.Console\bin\%releaseconfig%\net8.0\*"
 if %errorlevel% == 0 goto :complete
 echo There was an error trying to pack binary (%errorlevel%).
 goto :finished
@@ -35,7 +34,6 @@ goto :finished
 move %temp%\%version%-bin.zip
 move %temp%\%version%-bin-res-48.zip
 move %temp%\%version%-bin-res-8.zip
-move %temp%\%version%-demo.zip
 
 echo Pack successful.
 :finished
