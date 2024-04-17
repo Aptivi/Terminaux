@@ -40,7 +40,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     "Name": "{{name}}",
                     "Components": {
                         "Text": "#876543",
-                        "Component": "#345678"
+                        "Component": 168555
                     }
                 }
                 """;

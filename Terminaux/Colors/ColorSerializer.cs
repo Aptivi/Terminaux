@@ -37,8 +37,13 @@ namespace Terminaux.Colors
         /// <inheritdoc/>
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var result = reader.Value is string value ? value : "";
-            var color = new Color(result);
+            Color color;
+            if (reader.Value is string colorValueString)
+                color = new Color(colorValueString);
+            else if (reader.Value is long colorValueLong)
+                color = new Color((int)colorValueLong);
+            else
+                throw new TerminauxException($"Can't determine how to convert a(n) {reader.TokenType} of {reader.ValueType?.Name ?? "an unknown type"} to a color.");
             return color;
         }
 
