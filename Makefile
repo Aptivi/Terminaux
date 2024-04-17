@@ -27,6 +27,9 @@ all: all-online
 all-online:
 	$(MAKE) -C tools invoke-build
 
+dbg:
+	$(MAKE) -C tools invoke-build ENVIRONMENT=Debug
+
 clean:
 	rm -rf $(OUTPUTS)
 

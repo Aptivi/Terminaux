@@ -16,15 +16,19 @@ jobs:
     runs-on: ${{ matrix.runs-on }}
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        ref: ${{ github.ref }}
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
-    - name: Solution Compilation
-      run: dotnet build --configuration Debug
-    - name: Testing
-      run: dotnet test --no-build --configuration Debug
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Solution Compilation (Windows)
+        if: matrix.runs-on == 'windows-latest'
+        run: cd tools ; ./build.cmd Debug ; cd ..
+      - name: Solution Compilation (Unix)
+        if: matrix.runs-on != 'windows-latest'
+        run: make dbg
+      - name: Testing
+        run: dotnet test --no-build --configuration Debug
         

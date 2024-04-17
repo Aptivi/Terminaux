@@ -8,29 +8,30 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@v4
-      with:
-        ref: ${{ github.ref }}
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
-    - name: Setup DocFX
-      run: dotnet tool install --global docfx
-    - name: Release Asset Preparation
-      run: |
-        cd tools ; ./build.cmd ; cd ..
-        cd tools ; ./pack.cmd ; cd ..
-        cd tools ; ./docgen.cmd ; cd ..
-        cd tools ; ./docgen-pack.cmd ; cd ..
-    - name: Release Draft Making
-      uses: softprops/action-gh-release@v1
-      with:
-        body: "This is a draft release. Fill this with a release snippet from the release sheet made internally."
-        draft: true
-        files: |
-          tools/*.zip
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Setup DocFX
+        run: dotnet tool install --global docfx
+      - name: Release Asset Preparation
+        run: |
+          chmod +x tools/*.sh
+          make
+          cd tools ; ./pack.sh ; cd ..
+          cd tools ; ./docgen.sh ; cd ..
+          cd tools ; ./docgen-pack.sh ; cd ..
+      - name: Release Draft Making
+        uses: softprops/action-gh-release@v1
+        with:
+          body: "This is a draft release. Fill this with a release snippet from the release sheet made internally."
+          draft: true
+          files: |
+            tools/*.zip

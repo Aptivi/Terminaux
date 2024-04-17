@@ -22,7 +22,7 @@ jobs:
       - name: Setup DocFX
         run: dotnet tool install --global docfx
       - name: Solution Compilation
-        run: dotnet build --configuration Release
+        run: make
       - name: Generating documentation
         run: docfx DocGen/docfx.json
       - name: Saving changes to gh-pages
