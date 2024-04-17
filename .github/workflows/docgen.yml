@@ -21,9 +21,7 @@ jobs:
           dotnet-version: '8.0.x'
       - name: Setup DocFX
         run: dotnet tool install --global docfx
-      - name: Solution Compilation
-        run: make
-      - name: Generating documentation
+      - name: Generating Documentation
         run: make doc
       - name: Saving changes to gh-pages
         uses: peaceiris/actions-gh-pages@v3
