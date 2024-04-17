@@ -25,3 +25,7 @@ DOTNET_HEAP_LIMIT = $(shell printf '%X\n' $$(($(DOTNET_AVPHYS_PAGES) * $(DOTNET_
 invoke-build:
 	chmod +x ./build.sh
 	./build.sh $(ENVIRONMENT) || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./build.sh $(ENVIRONMENT))
+    
+invoke-doc-build: invoke-build
+	chmod +x ./docgen.sh
+	./docgen.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./docgen.sh)
