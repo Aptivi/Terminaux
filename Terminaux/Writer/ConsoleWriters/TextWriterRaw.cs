@@ -78,6 +78,50 @@ namespace Terminaux.Writer.ConsoleWriters
             WritePlain(Text, null, Line, vars);
 
         /// <summary>
+        /// Outputs the new line into the terminal prompt (stderr).
+        /// </summary>
+        public static void WriteError()
+        {
+            lock (WriteLock)
+            {
+                try
+                {
+                    ConsoleWrapper.WriteLineError();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.StackTrace);
+                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt (stderr) plainly with a newline terminator.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteErrorPlain(string Text, params object[] vars) =>
+            WriteErrorPlain(Text, true, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt (stderr) plainly.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteErrorRaw(string Text, params object[] vars) =>
+            WriteErrorPlain(Text, false, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt (stderr) plainly.
+        /// </summary>
+        /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteErrorPlain(string Text, bool Line, params object[] vars) =>
+            WriteInternal(Text, null, Line, true, vars);
+
+        /// <summary>
         /// Outputs the text into the terminal prompt plainly with a newline terminator. Use for TermReader custom bindings.
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
@@ -102,7 +146,10 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="settings">Terminal reader settings</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WritePlain(string Text, TermReaderSettings? settings, bool Line, params object[] vars)
+        public static void WritePlain(string Text, TermReaderSettings? settings, bool Line, params object[] vars) =>
+            WriteInternal(Text, settings, Line, false, vars);
+
+        internal static void WriteInternal(string Text, TermReaderSettings? settings, bool Line, bool stdErr, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -123,14 +170,20 @@ namespace Terminaux.Writer.ConsoleWriters
                         if (vars.Length > 0)
                         {
                             if (settings is null)
-                                ConsoleWrapper.WriteLine(Text, vars);
+                                if (stdErr)
+                                    ConsoleWrapper.WriteLineError(Text, vars);
+                                else
+                                    ConsoleWrapper.WriteLine(Text, vars);
                             else
                                 ConsoleWrapper.WriteLine(Text, settings, vars);
                         }
                         else
                         {
                             if (settings is null)
-                                ConsoleWrapper.WriteLine(Text);
+                                if (stdErr)
+                                    ConsoleWrapper.WriteLineError(Text);
+                                else
+                                    ConsoleWrapper.WriteLine(Text);
                             else
                                 ConsoleWrapper.WriteLine(Text, settings);
                         }
@@ -138,14 +191,20 @@ namespace Terminaux.Writer.ConsoleWriters
                     else if (vars.Length > 0)
                     {
                         if (settings is null)
-                            ConsoleWrapper.Write(Text, vars);
+                            if (stdErr)
+                                ConsoleWrapper.WriteError(Text, vars);
+                            else
+                                ConsoleWrapper.Write(Text, vars);
                         else
                             ConsoleWrapper.Write(Text, settings, vars);
                     }
                     else
                     {
                         if (settings is null)
-                            ConsoleWrapper.Write(Text);
+                            if (stdErr)
+                                ConsoleWrapper.WriteError(Text);
+                            else
+                                ConsoleWrapper.Write(Text);
                         else
                             ConsoleWrapper.Write(Text, settings);
                     }

@@ -32,6 +32,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             TextWriterHighlightedColor.WriteColor("Hello highlighted world!", true, new Color(ConsoleColors.Green));
             TextWriterHighlightedColor.WriteColor(true, "Hello legacy highlighted world!", true, new Color(ConsoleColors.Green));
             TextWriterColor.Write("Hello world in gray!");
+            TextWriterRaw.WriteErrorPlain("Hello world in stderr!");
         }
     }
 }

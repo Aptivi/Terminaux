@@ -62,6 +62,12 @@ namespace Terminaux.Base
         internal static Action<string> actionWriteLine1 = WriteLine;
         internal static Action<string, object[]> actionWriteLine2 = WriteLine;
         internal static Action actionWriteLine = WriteLine;
+        internal static Action<char> actionWriteError = WriteError;
+        internal static Action<string> actionWriteError1 = WriteError;
+        internal static Action<string, object[]> actionWriteError2 = WriteError;
+        internal static Action<string> actionWriteErrorLine1 = WriteErrorLine;
+        internal static Action<string, object[]> actionWriteErrorLine2 = WriteErrorLine;
+        internal static Action actionWriteErrorLine = WriteErrorLine;
 
         /// <summary>
         /// Is the console a dumb console?
@@ -276,6 +282,69 @@ namespace Terminaux.Base
             set => actionWriteLine2 = value ?? WriteLine;
         }
         /// <summary>
+        /// Writes new line to console
+        /// </summary>
+        public static Action ActionWriteLine
+        {
+            internal get => actionWriteLine;
+            set => actionWriteLine = value ?? WriteLine;
+        }
+        /// <summary>
+        /// Writes a character to console<br></br><br></br>
+        /// - A character
+        /// </summary>
+        public static Action<char> ActionWriteErrorChar
+        {
+            internal get => actionWriteError;
+            set => actionWriteError = value ?? WriteError;
+        }
+        /// <summary>
+        /// Writes text to console<br></br><br></br>
+        /// - The text to write
+        /// </summary>
+        public static Action<string> ActionWriteErrorString
+        {
+            internal get => actionWriteError1;
+            set => actionWriteError1 = value ?? WriteError;
+        }
+        /// <summary>
+        /// Writes text to console<br></br><br></br>
+        /// - The text to write<br></br>
+        /// - The arguments to evaluate
+        /// </summary>
+        public static Action<string, object[]> ActionWriteErrorParameterized
+        {
+            internal get => actionWriteError2;
+            set => actionWriteError2 = value ?? WriteError;
+        }
+        /// <summary>
+        /// Writes text to console with line terminator
+        /// - The text to write
+        /// </summary>
+        public static Action<string> ActionWriteErrorLineString
+        {
+            internal get => actionWriteErrorLine1;
+            set => actionWriteErrorLine1 = value ?? WriteErrorLine;
+        }
+        /// <summary>
+        /// Writes text to console with line terminator
+        /// - The text to write<br></br>
+        /// - The arguments to evaluate
+        /// </summary>
+        public static Action<string, object[]> ActionWriteErrorLineParameterized
+        {
+            internal get => actionWriteErrorLine2;
+            set => actionWriteErrorLine2 = value ?? WriteErrorLine;
+        }
+        /// <summary>
+        /// Writes new line to console
+        /// </summary>
+        public static Action ActionWriteErrorLine
+        {
+            internal get => actionWriteErrorLine;
+            set => actionWriteErrorLine = value ?? WriteErrorLine;
+        }
+        /// <summary>
         /// Writes text to console<br></br><br></br>
         /// - The text to write
         /// </summary>
@@ -312,14 +381,6 @@ namespace Terminaux.Base
         {
             internal get => actionWriteLineNonStandalone2;
             set => actionWriteLineNonStandalone2 = value ?? WriteLineNonStandalone;
-        }
-        /// <summary>
-        /// Writes new line to console
-        /// </summary>
-        public static Action ActionWriteLine
-        {
-            internal get => actionWriteLine;
-            set => actionWriteLine = value ?? WriteLine;
         }
 
         // Wrapper starts here
@@ -536,5 +597,32 @@ namespace Terminaux.Base
 
         private static void WriteLine() =>
             Console.WriteLine();
+
+        private static void WriteError(char value) =>
+            Console.Error.Write(value);
+
+        private static void WriteError(string text) =>
+            Console.Error.Write(text);
+
+        private static void WriteError(string text, params object[] args)
+        {
+            string formatted = string.Format(text, args);
+            WriteError(formatted);
+        }
+
+        private static void WriteErrorLine(string text)
+        {
+            WriteError(text);
+            WriteErrorLine();
+        }
+
+        private static void WriteErrorLine(string text, params object[] args)
+        {
+            WriteError(text, args);
+            WriteErrorLine();
+        }
+
+        private static void WriteErrorLine() =>
+            Console.Error.WriteLine();
     }
 }
