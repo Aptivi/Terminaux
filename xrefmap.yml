@@ -1068,6 +1068,40 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapper.Write
   nameWithType: ConsoleWrapper.Write
+- uid: Terminaux.Base.ConsoleWrapper.WriteError(System.Char)
+  name: WriteError(char)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteError_System_Char_
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteError(System.Char)
+  name.vb: WriteError(Char)
+  fullName: Terminaux.Base.ConsoleWrapper.WriteError(char)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteError(Char)
+  nameWithType: ConsoleWrapper.WriteError(char)
+  nameWithType.vb: ConsoleWrapper.WriteError(Char)
+- uid: Terminaux.Base.ConsoleWrapper.WriteError(System.String)
+  name: WriteError(string)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteError_System_String_
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteError(System.String)
+  name.vb: WriteError(String)
+  fullName: Terminaux.Base.ConsoleWrapper.WriteError(string)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteError(String)
+  nameWithType: ConsoleWrapper.WriteError(string)
+  nameWithType.vb: ConsoleWrapper.WriteError(String)
+- uid: Terminaux.Base.ConsoleWrapper.WriteError(System.String,System.Object[])
+  name: WriteError(string, params object[])
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteError_System_String_System_Object___
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteError(System.String,System.Object[])
+  name.vb: WriteError(String, ParamArray Object())
+  fullName: Terminaux.Base.ConsoleWrapper.WriteError(string, params object[])
+  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteError(String, ParamArray Object())
+  nameWithType: ConsoleWrapper.WriteError(string, params object[])
+  nameWithType.vb: ConsoleWrapper.WriteError(String, ParamArray Object())
+- uid: Terminaux.Base.ConsoleWrapper.WriteError*
+  name: WriteError
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteError_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.WriteError
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.WriteError
+  nameWithType: ConsoleWrapper.WriteError
 - uid: Terminaux.Base.ConsoleWrapper.WriteLine
   name: WriteLine()
   href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLine
@@ -1092,24 +1126,6 @@ references:
   fullName.vb: Terminaux.Base.ConsoleWrapper.WriteLine(String, ParamArray Object())
   nameWithType: ConsoleWrapper.WriteLine(string, params object[])
   nameWithType.vb: ConsoleWrapper.WriteLine(String, ParamArray Object())
-- uid: Terminaux.Base.ConsoleWrapper.WriteLine(System.String,Terminaux.Reader.TermReaderSettings)
-  name: WriteLine(string, TermReaderSettings)
-  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLine_System_String_Terminaux_Reader_TermReaderSettings_
-  commentId: M:Terminaux.Base.ConsoleWrapper.WriteLine(System.String,Terminaux.Reader.TermReaderSettings)
-  name.vb: WriteLine(String, TermReaderSettings)
-  fullName: Terminaux.Base.ConsoleWrapper.WriteLine(string, Terminaux.Reader.TermReaderSettings)
-  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteLine(String, Terminaux.Reader.TermReaderSettings)
-  nameWithType: ConsoleWrapper.WriteLine(string, TermReaderSettings)
-  nameWithType.vb: ConsoleWrapper.WriteLine(String, TermReaderSettings)
-- uid: Terminaux.Base.ConsoleWrapper.WriteLine(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
-  name: WriteLine(string, TermReaderSettings, params object[])
-  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLine_System_String_Terminaux_Reader_TermReaderSettings_System_Object___
-  commentId: M:Terminaux.Base.ConsoleWrapper.WriteLine(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])
-  name.vb: WriteLine(String, TermReaderSettings, ParamArray Object())
-  fullName: Terminaux.Base.ConsoleWrapper.WriteLine(string, Terminaux.Reader.TermReaderSettings, params object[])
-  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteLine(String, Terminaux.Reader.TermReaderSettings, ParamArray Object())
-  nameWithType: ConsoleWrapper.WriteLine(string, TermReaderSettings, params object[])
-  nameWithType.vb: ConsoleWrapper.WriteLine(String, TermReaderSettings, ParamArray Object())
 - uid: Terminaux.Base.ConsoleWrapper.WriteLine*
   name: WriteLine
   href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLine_
@@ -1117,6 +1133,37 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapper.WriteLine
   nameWithType: ConsoleWrapper.WriteLine
+- uid: Terminaux.Base.ConsoleWrapper.WriteLineError
+  name: WriteLineError()
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLineError
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteLineError
+  fullName: Terminaux.Base.ConsoleWrapper.WriteLineError()
+  nameWithType: ConsoleWrapper.WriteLineError()
+- uid: Terminaux.Base.ConsoleWrapper.WriteLineError(System.String)
+  name: WriteLineError(string)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLineError_System_String_
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteLineError(System.String)
+  name.vb: WriteLineError(String)
+  fullName: Terminaux.Base.ConsoleWrapper.WriteLineError(string)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteLineError(String)
+  nameWithType: ConsoleWrapper.WriteLineError(string)
+  nameWithType.vb: ConsoleWrapper.WriteLineError(String)
+- uid: Terminaux.Base.ConsoleWrapper.WriteLineError(System.String,System.Object[])
+  name: WriteLineError(string, params object[])
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLineError_System_String_System_Object___
+  commentId: M:Terminaux.Base.ConsoleWrapper.WriteLineError(System.String,System.Object[])
+  name.vb: WriteLineError(String, ParamArray Object())
+  fullName: Terminaux.Base.ConsoleWrapper.WriteLineError(string, params object[])
+  fullName.vb: Terminaux.Base.ConsoleWrapper.WriteLineError(String, ParamArray Object())
+  nameWithType: ConsoleWrapper.WriteLineError(string, params object[])
+  nameWithType.vb: ConsoleWrapper.WriteLineError(String, ParamArray Object())
+- uid: Terminaux.Base.ConsoleWrapper.WriteLineError*
+  name: WriteLineError
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_WriteLineError_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.WriteLineError
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.WriteLineError
+  nameWithType: ConsoleWrapper.WriteLineError
 - uid: Terminaux.Base.ConsoleWrapperTools
   name: ConsoleWrapperTools
   href: api/Terminaux.Base.ConsoleWrapperTools.html
@@ -1396,6 +1443,84 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteChar
   nameWithType: ConsoleWrapperTools.ActionWriteChar
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorChar
+  name: ActionWriteErrorChar
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorChar
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorChar
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorChar
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorChar
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorChar*
+  name: ActionWriteErrorChar
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorChar_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorChar
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorChar
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorChar
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLine
+  name: ActionWriteErrorLine
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorLine
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLine
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLine
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorLine
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLine*
+  name: ActionWriteErrorLine
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorLine_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLine
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLine
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorLine
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineParameterized
+  name: ActionWriteErrorLineParameterized
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorLineParameterized
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineParameterized
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineParameterized
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorLineParameterized
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineParameterized*
+  name: ActionWriteErrorLineParameterized
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorLineParameterized_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineParameterized
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineParameterized
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorLineParameterized
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineString
+  name: ActionWriteErrorLineString
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorLineString
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineString
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineString
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorLineString
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineString*
+  name: ActionWriteErrorLineString
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorLineString_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineString
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorLineString
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorLineString
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorParameterized
+  name: ActionWriteErrorParameterized
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorParameterized
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorParameterized
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorParameterized
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorParameterized
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorParameterized*
+  name: ActionWriteErrorParameterized
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorParameterized_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorParameterized
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorParameterized
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorParameterized
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorString
+  name: ActionWriteErrorString
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorString
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorString
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorString
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorString
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorString*
+  name: ActionWriteErrorString
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteErrorString_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorString
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteErrorString
+  nameWithType: ConsoleWrapperTools.ActionWriteErrorString
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLine
   name: ActionWriteLine
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLine
@@ -34896,6 +35021,60 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.Write
   nameWithType: TextWriterRaw.Write
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteError
+  name: WriteError()
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteError
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteError
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteError()
+  nameWithType: TextWriterRaw.WriteError()
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteError*
+  name: WriteError
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteError_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteError
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteError
+  nameWithType: TextWriterRaw.WriteError
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain(System.String,System.Boolean,System.Object[])
+  name: WriteErrorPlain(string, bool, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteErrorPlain_System_String_System_Boolean_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain(System.String,System.Boolean,System.Object[])
+  name.vb: WriteErrorPlain(String, Boolean, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain(string, bool, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain(String, Boolean, ParamArray Object())
+  nameWithType: TextWriterRaw.WriteErrorPlain(string, bool, params object[])
+  nameWithType.vb: TextWriterRaw.WriteErrorPlain(String, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain(System.String,System.Object[])
+  name: WriteErrorPlain(string, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteErrorPlain_System_String_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain(System.String,System.Object[])
+  name.vb: WriteErrorPlain(String, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain(string, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain(String, ParamArray Object())
+  nameWithType: TextWriterRaw.WriteErrorPlain(string, params object[])
+  nameWithType.vb: TextWriterRaw.WriteErrorPlain(String, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain*
+  name: WriteErrorPlain
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteErrorPlain_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorPlain
+  nameWithType: TextWriterRaw.WriteErrorPlain
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorRaw(System.String,System.Object[])
+  name: WriteErrorRaw(string, params object[])
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteErrorRaw_System_String_System_Object___
+  commentId: M:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorRaw(System.String,System.Object[])
+  name.vb: WriteErrorRaw(String, ParamArray Object())
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorRaw(string, params object[])
+  fullName.vb: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorRaw(String, ParamArray Object())
+  nameWithType: TextWriterRaw.WriteErrorRaw(string, params object[])
+  nameWithType.vb: TextWriterRaw.WriteErrorRaw(String, ParamArray Object())
+- uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorRaw*
+  name: WriteErrorRaw
+  href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteErrorRaw_
+  commentId: Overload:Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorRaw
+  isSpec: "True"
+  fullName: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WriteErrorRaw
+  nameWithType: TextWriterRaw.WriteErrorRaw
 - uid: Terminaux.Writer.ConsoleWriters.TextWriterRaw.WritePlain(System.String,System.Boolean,System.Object[])
   name: WritePlain(string, bool, params object[])
   href: api/Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WritePlain_System_String_System_Boolean_System_Object___

@@ -571,7 +571,7 @@
   </span>
   <a id="Terminaux_Base_ConsoleWrapper_Write_" data-uid="Terminaux.Base.ConsoleWrapper.Write*"></a>
   <h4 id="Terminaux_Base_ConsoleWrapper_Write_System_Char_" data-uid="Terminaux.Base.ConsoleWrapper.Write(System.Char)">Write(char)</h4>
-  <div class="markdown level1 summary"><p>Writes a character to console</p>
+  <div class="markdown level1 summary"><p>Writes a character to console (stdout)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -605,7 +605,7 @@
   </span>
   <a id="Terminaux_Base_ConsoleWrapper_Write_" data-uid="Terminaux.Base.ConsoleWrapper.Write*"></a>
   <h4 id="Terminaux_Base_ConsoleWrapper_Write_System_String_" data-uid="Terminaux.Base.ConsoleWrapper.Write(System.String)">Write(string)</h4>
-  <div class="markdown level1 summary"><p>Writes text to console</p>
+  <div class="markdown level1 summary"><p>Writes text to console (stdout)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -639,12 +639,120 @@
   </span>
   <a id="Terminaux_Base_ConsoleWrapper_Write_" data-uid="Terminaux.Base.ConsoleWrapper.Write*"></a>
   <h4 id="Terminaux_Base_ConsoleWrapper_Write_System_String_System_Object___" data-uid="Terminaux.Base.ConsoleWrapper.Write(System.String,System.Object[])">Write(string, params object[])</h4>
-  <div class="markdown level1 summary"><p>Writes text to console</p>
+  <div class="markdown level1 summary"><p>Writes text to console (stdout)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static void Write(string text, params object[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The text to write</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The arguments to evaluate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_ConsoleWrapper_WriteError_System_Char_.md&amp;value=---%0Auid%3A%20Terminaux.Base.ConsoleWrapper.WriteError(System.Char)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/ConsoleWrapper.cs/#L228">View Source</a>
+  </span>
+  <a id="Terminaux_Base_ConsoleWrapper_WriteError_" data-uid="Terminaux.Base.ConsoleWrapper.WriteError*"></a>
+  <h4 id="Terminaux_Base_ConsoleWrapper_WriteError_System_Char_" data-uid="Terminaux.Base.ConsoleWrapper.WriteError(System.Char)">WriteError(char)</h4>
+  <div class="markdown level1 summary"><p>Writes a character to console (stderr)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteError(char value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>A character</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_ConsoleWrapper_WriteError_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Base.ConsoleWrapper.WriteError(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/ConsoleWrapper.cs/#L235">View Source</a>
+  </span>
+  <a id="Terminaux_Base_ConsoleWrapper_WriteError_" data-uid="Terminaux.Base.ConsoleWrapper.WriteError*"></a>
+  <h4 id="Terminaux_Base_ConsoleWrapper_WriteError_System_String_" data-uid="Terminaux.Base.ConsoleWrapper.WriteError(System.String)">WriteError(string)</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stderr)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteError(string text)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The text to write</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_ConsoleWrapper_WriteError_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Base.ConsoleWrapper.WriteError(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/ConsoleWrapper.cs/#L243">View Source</a>
+  </span>
+  <a id="Terminaux_Base_ConsoleWrapper_WriteError_" data-uid="Terminaux.Base.ConsoleWrapper.WriteError*"></a>
+  <h4 id="Terminaux_Base_ConsoleWrapper_WriteError_System_String_System_Object___" data-uid="Terminaux.Base.ConsoleWrapper.WriteError(System.String,System.Object[])">WriteError(string, params object[])</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stderr)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteError(string text, params object[] args)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -679,7 +787,7 @@
   </span>
   <a id="Terminaux_Base_ConsoleWrapper_WriteLine_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLine*"></a>
   <h4 id="Terminaux_Base_ConsoleWrapper_WriteLine" data-uid="Terminaux.Base.ConsoleWrapper.WriteLine">WriteLine()</h4>
-  <div class="markdown level1 summary"><p>Writes new line to console</p>
+  <div class="markdown level1 summary"><p>Writes new line to console (stdout)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -695,7 +803,7 @@
   </span>
   <a id="Terminaux_Base_ConsoleWrapper_WriteLine_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLine*"></a>
   <h4 id="Terminaux_Base_ConsoleWrapper_WriteLine_System_String_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLine(System.String)">WriteLine(string)</h4>
-  <div class="markdown level1 summary"><p>Writes text to console with line terminator</p>
+  <div class="markdown level1 summary"><p>Writes text to console (stdout) with line terminator</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -729,7 +837,7 @@
   </span>
   <a id="Terminaux_Base_ConsoleWrapper_WriteLine_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLine*"></a>
   <h4 id="Terminaux_Base_ConsoleWrapper_WriteLine_System_String_System_Object___" data-uid="Terminaux.Base.ConsoleWrapper.WriteLine(System.String,System.Object[])">WriteLine(string, params object[])</h4>
-  <div class="markdown level1 summary"><p>Writes text to console with line terminator</p>
+  <div class="markdown level1 summary"><p>Writes text to console (stdout) with line terminator</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -762,19 +870,35 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_ConsoleWrapper_WriteLine_System_String_Terminaux_Reader_TermReaderSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Base.ConsoleWrapper.WriteLine(System.String%2CTerminaux.Reader.TermReaderSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_ConsoleWrapper_WriteLineError.md&amp;value=---%0Auid%3A%20Terminaux.Base.ConsoleWrapper.WriteLineError%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/ConsoleWrapper.cs/#L204">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/ConsoleWrapper.cs/#L249">View Source</a>
   </span>
-  <a id="Terminaux_Base_ConsoleWrapper_WriteLine_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLine*"></a>
-  <h4 id="Terminaux_Base_ConsoleWrapper_WriteLine_System_String_Terminaux_Reader_TermReaderSettings_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLine(System.String,Terminaux.Reader.TermReaderSettings)">WriteLine(string, TermReaderSettings)</h4>
-  <div class="markdown level1 summary"><p>Writes text to console with line terminator</p>
+  <a id="Terminaux_Base_ConsoleWrapper_WriteLineError_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLineError*"></a>
+  <h4 id="Terminaux_Base_ConsoleWrapper_WriteLineError" data-uid="Terminaux.Base.ConsoleWrapper.WriteLineError">WriteLineError()</h4>
+  <div class="markdown level1 summary"><p>Writes new line to console (stderr)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteLine(string text, TermReaderSettings settings)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteLineError()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_ConsoleWrapper_WriteLineError_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Base.ConsoleWrapper.WriteLineError(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/ConsoleWrapper.cs/#L256">View Source</a>
+  </span>
+  <a id="Terminaux_Base_ConsoleWrapper_WriteLineError_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLineError*"></a>
+  <h4 id="Terminaux_Base_ConsoleWrapper_WriteLineError_System_String_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLineError(System.String)">WriteLineError(string)</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stderr) with line terminator</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void WriteLineError(string text)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -790,31 +914,25 @@
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">text</span></td>
         <td><p>The text to write</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Reader settings</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_ConsoleWrapper_WriteLine_System_String_Terminaux_Reader_TermReaderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Base.ConsoleWrapper.WriteLine(System.String%2CTerminaux.Reader.TermReaderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_ConsoleWrapper_WriteLineError_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Base.ConsoleWrapper.WriteLineError(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/ConsoleWrapper.cs/#L221">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/ConsoleWrapper.cs/#L264">View Source</a>
   </span>
-  <a id="Terminaux_Base_ConsoleWrapper_WriteLine_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLine*"></a>
-  <h4 id="Terminaux_Base_ConsoleWrapper_WriteLine_System_String_Terminaux_Reader_TermReaderSettings_System_Object___" data-uid="Terminaux.Base.ConsoleWrapper.WriteLine(System.String,Terminaux.Reader.TermReaderSettings,System.Object[])">WriteLine(string, TermReaderSettings, params object[])</h4>
-  <div class="markdown level1 summary"><p>Writes text to console with line terminator</p>
+  <a id="Terminaux_Base_ConsoleWrapper_WriteLineError_" data-uid="Terminaux.Base.ConsoleWrapper.WriteLineError*"></a>
+  <h4 id="Terminaux_Base_ConsoleWrapper_WriteLineError_System_String_System_Object___" data-uid="Terminaux.Base.ConsoleWrapper.WriteLineError(System.String,System.Object[])">WriteLineError(string, params object[])</h4>
+  <div class="markdown level1 summary"><p>Writes text to console (stderr) with line terminator</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteLine(string text, TermReaderSettings settings, params object[] args)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteLineError(string text, params object[] args)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -830,12 +948,6 @@
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">text</span></td>
         <td><p>The text to write</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Reader.TermReaderSettings.html">TermReaderSettings</a></td>
-        <td><span class="parametername">settings</span></td>
-        <td><p>Reader settings</p>
 </td>
       </tr>
       <tr>
