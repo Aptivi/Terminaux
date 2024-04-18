@@ -26636,19 +26636,6 @@ references:
   commentId: T:Terminaux.Reader.TermReader
   fullName: Terminaux.Reader.TermReader
   nameWithType: TermReader
-- uid: Terminaux.Reader.TermReader.CurrentMask
-  name: CurrentMask
-  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_CurrentMask
-  commentId: P:Terminaux.Reader.TermReader.CurrentMask
-  fullName: Terminaux.Reader.TermReader.CurrentMask
-  nameWithType: TermReader.CurrentMask
-- uid: Terminaux.Reader.TermReader.CurrentMask*
-  name: CurrentMask
-  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_CurrentMask_
-  commentId: Overload:Terminaux.Reader.TermReader.CurrentMask
-  isSpec: "True"
-  fullName: Terminaux.Reader.TermReader.CurrentMask
-  nameWithType: TermReader.CurrentMask
 - uid: Terminaux.Reader.TermReader.GlobalReaderSettings
   name: GlobalReaderSettings
   href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_GlobalReaderSettings
