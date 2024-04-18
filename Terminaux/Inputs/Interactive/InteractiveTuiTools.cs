@@ -727,6 +727,25 @@ namespace Terminaux.Inputs.Interactive
                                 $"{string.Join("\n", bindingRepresentations)}"
                             , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                             break;
+                        case ConsoleKey.F:
+                            // Search function
+                            if (!data.Any())
+                                break;
+                            var entriesString = data.Select(interactiveTui.GetEntryFromItem).ToArray();
+                            string keyword = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a search term (case insensitive)", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor).ToLower();
+                            var resultEntries = entriesString.Select((entry, idx) => ($"{idx + 1}", entry)).Where((tuple) => tuple.entry.ToLower().Contains(keyword)).ToArray();
+                            if (resultEntries.Length > 0)
+                            {
+                                var choices = InputChoiceTools.GetInputChoices(resultEntries);
+                                int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:");
+                                if (answer < 0)
+                                    break;
+                                var resultIdx = int.Parse(resultEntries[answer].Item1);
+                                SelectionMovement(interactiveTui, resultIdx);
+                            }
+                            else
+                                InfoBoxColor.WriteInfoBoxColorBack("No item found.", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                            break;
                         case ConsoleKey.Escape:
                             // User needs to exit
                             interactiveTui.HandleExit();

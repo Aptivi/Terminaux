@@ -677,6 +677,26 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;
+                            case ConsoleKey.F:
+                                // Search function
+                                if (selectionChoices <= 0)
+                                    break;
+                                var entriesString = selections.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
+                                string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (case insensitive)").ToLower();
+                                var resultEntries = entriesString.Select((entry, idx) => ($"{idx + 1}", entry)).Where((tuple) => tuple.entry.ChoiceName.ToLower().Contains(keyword) || tuple.entry.ChoiceTitle.ToLower().Contains(keyword)).Select((tuple) => (tuple.Item1, $"{tuple.entry.ChoiceName}) {tuple.entry.ChoiceTitle}")).ToArray();
+                                if (resultEntries.Length > 0)
+                                {
+                                    var choices = InputChoiceTools.GetInputChoices(resultEntries);
+                                    int answer = WriteInfoBoxSelection(choices, "Select one of the entries:");
+                                    if (answer < 0)
+                                        break;
+                                    var resultIdx = int.Parse(resultEntries[answer].Item1);
+                                    currentSelection = resultIdx;
+                                }
+                                else
+                                    InfoBoxColor.WriteInfoBox("No item found.");
+                                ScreenTools.CurrentScreen?.RequireRefresh();
+                                break;
                             case ConsoleKey.Enter:
                                 bail = true;
                                 break;

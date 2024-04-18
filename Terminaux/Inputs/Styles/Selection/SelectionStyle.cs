@@ -425,6 +425,26 @@ namespace Terminaux.Inputs.Styles.Selection
                                     selectionScreen.RequireRefresh();
                                 }
                                 break;
+                            case ConsoleKey.F:
+                                // Search function
+                                if (AllAnswers.Count <= 0)
+                                    break;
+                                var entriesString = AllAnswers.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
+                                string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (case insensitive)").ToLower();
+                                var resultEntries = entriesString.Select((entry, idx) => ($"{idx + 1}", entry)).Where((tuple) => tuple.entry.ChoiceName.ToLower().Contains(keyword) || tuple.entry.ChoiceTitle.ToLower().Contains(keyword)).Select((tuple) => (tuple.Item1, $"{tuple.entry.ChoiceName}) {tuple.entry.ChoiceTitle}")).ToArray();
+                                if (resultEntries.Length > 0)
+                                {
+                                    var choices = InputChoiceTools.GetInputChoices(resultEntries);
+                                    int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:");
+                                    if (answer < 0)
+                                        break;
+                                    var resultIdx = int.Parse(resultEntries[answer].Item1);
+                                    HighlightedAnswer = resultIdx;
+                                }
+                                else
+                                    InfoBoxColor.WriteInfoBox("No item found.");
+                                selectionScreen.RequireRefresh();
+                                break;
                         }
                     }
 
