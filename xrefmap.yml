@@ -26868,6 +26868,15 @@ references:
   fullName.vb: Terminaux.Reader.TermReaderSettings.New()
   nameWithType: TermReaderSettings.TermReaderSettings()
   nameWithType.vb: TermReaderSettings.New()
+- uid: Terminaux.Reader.TermReaderSettings.#ctor(Terminaux.Reader.TermReaderSettings)
+  name: TermReaderSettings(TermReaderSettings)
+  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings__ctor_Terminaux_Reader_TermReaderSettings_
+  commentId: M:Terminaux.Reader.TermReaderSettings.#ctor(Terminaux.Reader.TermReaderSettings)
+  name.vb: New(TermReaderSettings)
+  fullName: Terminaux.Reader.TermReaderSettings.TermReaderSettings(Terminaux.Reader.TermReaderSettings)
+  fullName.vb: Terminaux.Reader.TermReaderSettings.New(Terminaux.Reader.TermReaderSettings)
+  nameWithType: TermReaderSettings.TermReaderSettings(TermReaderSettings)
+  nameWithType.vb: TermReaderSettings.New(TermReaderSettings)
 - uid: Terminaux.Reader.TermReaderSettings.#ctor*
   name: TermReaderSettings
   href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings__ctor_
