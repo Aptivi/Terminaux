@@ -22909,6 +22909,22 @@ references:
   fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiTools.SelectionMovement(Of T)(Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T), Integer)
   nameWithType: InteractiveTuiTools.SelectionMovement<T>(BaseInteractiveTui<T>, int)
   nameWithType.vb: InteractiveTuiTools.SelectionMovement(Of T)(BaseInteractiveTui(Of T), Integer)
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiTools.SwitchSides*
+  name: SwitchSides
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiTools.html#Terminaux_Inputs_Interactive_InteractiveTuiTools_SwitchSides_
+  commentId: Overload:Terminaux.Inputs.Interactive.InteractiveTuiTools.SwitchSides
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiTools.SwitchSides
+  nameWithType: InteractiveTuiTools.SwitchSides
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiTools.SwitchSides``1(Terminaux.Inputs.Interactive.BaseInteractiveTui{``0})
+  name: SwitchSides<T>(BaseInteractiveTui<T>)
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiTools.html#Terminaux_Inputs_Interactive_InteractiveTuiTools_SwitchSides__1_Terminaux_Inputs_Interactive_BaseInteractiveTui___0__
+  commentId: M:Terminaux.Inputs.Interactive.InteractiveTuiTools.SwitchSides``1(Terminaux.Inputs.Interactive.BaseInteractiveTui{``0})
+  name.vb: SwitchSides(Of T)(BaseInteractiveTui(Of T))
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiTools.SwitchSides<T>(Terminaux.Inputs.Interactive.BaseInteractiveTui<T>)
+  fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiTools.SwitchSides(Of T)(Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T))
+  nameWithType: InteractiveTuiTools.SwitchSides<T>(BaseInteractiveTui<T>)
+  nameWithType.vb: InteractiveTuiTools.SwitchSides(Of T)(BaseInteractiveTui(Of T))
 - uid: Terminaux.Inputs.Pointer
   name: Terminaux.Inputs.Pointer
   href: api/Terminaux.Inputs.Pointer.html
