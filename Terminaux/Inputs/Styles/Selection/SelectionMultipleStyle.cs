@@ -163,6 +163,9 @@ namespace Terminaux.Inputs.Styles.Selection
             var selectionScreen = new Screen();
             bool bail = false;
             ScreenTools.SetCurrent(selectionScreen);
+
+            // Query the enabled answers
+            var enabledAnswers = AllAnswers.Select((ici, idx) => (ici, idx)).Where((ici) => !ici.ici.ChoiceDisabled).Select((tuple) => tuple.idx).ToArray();
             try
             {
                 while (!bail)
@@ -437,6 +440,19 @@ namespace Terminaux.Inputs.Styles.Selection
                                 {
                                     InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
                                     selectionScreen.RequireRefresh();
+                                }
+                                break;
+                            case ConsoleKey.A:
+                                bool unselect = SelectedAnswers.Count == enabledAnswers.Count();
+                                if (unselect)
+                                    SelectedAnswers.Clear();
+                                else if (SelectedAnswers.Count == 0)
+                                    SelectedAnswers.AddRange(enabledAnswers);
+                                else
+                                {
+                                    // We need to use Except here to avoid wasting CPU cycles, since we could be dealing with huge data.
+                                    var unselected = enabledAnswers.Except(SelectedAnswers);
+                                    SelectedAnswers.AddRange(unselected);
                                 }
                                 break;
                         }

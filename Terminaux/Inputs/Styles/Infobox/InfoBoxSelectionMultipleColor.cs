@@ -528,6 +528,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                     return boxBuffer.ToString();
                 });
 
+                // Query the enabled answers
+                var enabledAnswers = selections.Select((ici, idx) => (ici, idx)).Where((ici) => !ici.ici.ChoiceDisabled).Select((tuple) => tuple.idx).ToArray();
+
                 // Wait for input
                 bool bail = false;
                 bool cancel = false;
@@ -683,6 +686,19 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 {
                                     InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
                                     ScreenTools.CurrentScreen?.RequireRefresh();
+                                }
+                                break;
+                            case ConsoleKey.A:
+                                bool unselect = selectedChoices.Count == enabledAnswers.Count();
+                                if (unselect)
+                                    selectedChoices.Clear();
+                                else if (selectedChoices.Count == 0)
+                                    selectedChoices.AddRange(enabledAnswers);
+                                else
+                                {
+                                    // We need to use Except here to avoid wasting CPU cycles, since we could be dealing with huge data.
+                                    var unselected = enabledAnswers.Except(selectedChoices);
+                                    selectedChoices.AddRange(unselected);
                                 }
                                 break;
                             case ConsoleKey.Enter:
