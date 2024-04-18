@@ -22213,6 +22213,23 @@ references:
   fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).GetInfoFromItem
   nameWithType: BaseInteractiveTui<T>.GetInfoFromItem
   nameWithType.vb: BaseInteractiveTui(Of T).GetInfoFromItem
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetStatusFromItem(`0)
+  name: GetStatusFromItem(T)
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_GetStatusFromItem__0_
+  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetStatusFromItem(`0)
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.GetStatusFromItem(T)
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).GetStatusFromItem(T)
+  nameWithType: BaseInteractiveTui<T>.GetStatusFromItem(T)
+  nameWithType.vb: BaseInteractiveTui(Of T).GetStatusFromItem(T)
+- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetStatusFromItem*
+  name: GetStatusFromItem
+  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_GetStatusFromItem_
+  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.GetStatusFromItem
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.GetStatusFromItem
+  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).GetStatusFromItem
+  nameWithType: BaseInteractiveTui<T>.GetStatusFromItem
+  nameWithType.vb: BaseInteractiveTui(Of T).GetStatusFromItem
 - uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.HandleExit
   name: HandleExit()
   href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_HandleExit
@@ -22298,23 +22315,6 @@ references:
   fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).RefreshInterval
   nameWithType: BaseInteractiveTui<T>.RefreshInterval
   nameWithType.vb: BaseInteractiveTui(Of T).RefreshInterval
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RenderStatus(`0)
-  name: RenderStatus(T)
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_RenderStatus__0_
-  commentId: M:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RenderStatus(`0)
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.RenderStatus(T)
-  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).RenderStatus(T)
-  nameWithType: BaseInteractiveTui<T>.RenderStatus(T)
-  nameWithType.vb: BaseInteractiveTui(Of T).RenderStatus(T)
-- uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RenderStatus*
-  name: RenderStatus
-  href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_RenderStatus_
-  commentId: Overload:Terminaux.Inputs.Interactive.BaseInteractiveTui`1.RenderStatus
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.BaseInteractiveTui<T>.RenderStatus
-  fullName.vb: Terminaux.Inputs.Interactive.BaseInteractiveTui(Of T).RenderStatus
-  nameWithType: BaseInteractiveTui<T>.RenderStatus
-  nameWithType.vb: BaseInteractiveTui(Of T).RenderStatus
 - uid: Terminaux.Inputs.Interactive.BaseInteractiveTui`1.Screen
   name: Screen
   href: api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.html#Terminaux_Inputs_Interactive_BaseInteractiveTui_1_Screen
@@ -22443,6 +22443,23 @@ references:
   fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).GetInfoFromItem
   nameWithType: IInteractiveTui<T>.GetInfoFromItem
   nameWithType.vb: IInteractiveTui(Of T).GetInfoFromItem
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.GetStatusFromItem(`0)
+  name: GetStatusFromItem(T)
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_GetStatusFromItem__0_
+  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui`1.GetStatusFromItem(`0)
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.GetStatusFromItem(T)
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).GetStatusFromItem(T)
+  nameWithType: IInteractiveTui<T>.GetStatusFromItem(T)
+  nameWithType.vb: IInteractiveTui(Of T).GetStatusFromItem(T)
+- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.GetStatusFromItem*
+  name: GetStatusFromItem
+  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_GetStatusFromItem_
+  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.GetStatusFromItem
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.GetStatusFromItem
+  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).GetStatusFromItem
+  nameWithType: IInteractiveTui<T>.GetStatusFromItem
+  nameWithType.vb: IInteractiveTui(Of T).GetStatusFromItem
 - uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.HandleExit
   name: HandleExit()
   href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_HandleExit
@@ -22494,23 +22511,6 @@ references:
   fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).RefreshInterval
   nameWithType: IInteractiveTui<T>.RefreshInterval
   nameWithType.vb: IInteractiveTui(Of T).RefreshInterval
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.RenderStatus(`0)
-  name: RenderStatus(T)
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_RenderStatus__0_
-  commentId: M:Terminaux.Inputs.Interactive.IInteractiveTui`1.RenderStatus(`0)
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.RenderStatus(T)
-  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).RenderStatus(T)
-  nameWithType: IInteractiveTui<T>.RenderStatus(T)
-  nameWithType.vb: IInteractiveTui(Of T).RenderStatus(T)
-- uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.RenderStatus*
-  name: RenderStatus
-  href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_RenderStatus_
-  commentId: Overload:Terminaux.Inputs.Interactive.IInteractiveTui`1.RenderStatus
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Interactive.IInteractiveTui<T>.RenderStatus
-  fullName.vb: Terminaux.Inputs.Interactive.IInteractiveTui(Of T).RenderStatus
-  nameWithType: IInteractiveTui<T>.RenderStatus
-  nameWithType.vb: IInteractiveTui(Of T).RenderStatus
 - uid: Terminaux.Inputs.Interactive.IInteractiveTui`1.SecondPaneInteractable
   name: SecondPaneInteractable
   href: api/Terminaux.Inputs.Interactive.IInteractiveTui-1.html#Terminaux_Inputs_Interactive_IInteractiveTui_1_SecondPaneInteractable
