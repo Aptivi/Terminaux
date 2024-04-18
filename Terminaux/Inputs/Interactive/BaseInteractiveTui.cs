@@ -34,7 +34,7 @@ namespace Terminaux.Inputs.Interactive
         internal bool isExiting = false;
 
         /// <inheritdoc/>
-        public virtual List<InteractiveTuiBinding> Bindings { get; set; } = [];
+        public virtual InteractiveTuiBinding[] Bindings { get; } = [];
         /// <inheritdoc/>
         public virtual bool SecondPaneInteractable => false;
         /// <inheritdoc/>
@@ -43,9 +43,9 @@ namespace Terminaux.Inputs.Interactive
         public virtual bool AcceptsEmptyData => false;
 
         /// <inheritdoc/>
-        public virtual IEnumerable<T> PrimaryDataSource => Array.Empty<T>();
+        public virtual IEnumerable<T> PrimaryDataSource => [];
         /// <inheritdoc/>
-        public virtual IEnumerable<T> SecondaryDataSource => Array.Empty<T>();
+        public virtual IEnumerable<T> SecondaryDataSource => [];
 
         /// <summary>
         /// The interactive TUI instance
@@ -75,8 +75,10 @@ namespace Terminaux.Inputs.Interactive
         /// <inheritdoc/>
         public virtual void RenderStatus(T item) { }
 
-        /// <inheritdoc/>
-        public virtual void LastOnOverflow()
+        /// <summary>
+        /// Goes down to the last element upon overflow (caused by remove operation, ...). This applies to the first and the second pane.
+        /// </summary>
+        public void LastOnOverflow()
         {
             int primaryCount = PrimaryDataSource.Length();
             int secondaryCount = SecondaryDataSource.Length();
@@ -86,8 +88,10 @@ namespace Terminaux.Inputs.Interactive
                 InteractiveTuiStatus.SecondPaneCurrentSelection = secondaryCount;
         }
 
-        /// <inheritdoc/>
-        public virtual void FirstOnUnderflow()
+        /// <summary>
+        /// Goes up to the first element upon underflow (caused by remove operation, ...). This applies to the first and the second pane.
+        /// </summary>
+        public void FirstOnUnderflow()
         {
             int primaryCount = PrimaryDataSource.Length();
             int secondaryCount = SecondaryDataSource.Length();

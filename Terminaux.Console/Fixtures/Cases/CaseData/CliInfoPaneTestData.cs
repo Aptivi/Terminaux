@@ -27,7 +27,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
     {
         internal static List<string> strings = [];
 
-        public override List<InteractiveTuiBinding> Bindings { get; set; } =
+        public override InteractiveTuiBinding[] Bindings { get; } =
         [
             new InteractiveTuiBinding("Add",         ConsoleKey.F1, (_, index) => Add(index)),
             new InteractiveTuiBinding("Delete",      ConsoleKey.F2, (_, index) => Remove(index)),

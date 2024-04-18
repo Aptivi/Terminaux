@@ -29,7 +29,7 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// All key bindings for your interactive user interface
         /// </summary>
-        public List<InteractiveTuiBinding> Bindings { get; set; }
+        public InteractiveTuiBinding[] Bindings { get; }
         /// <summary>
         /// Whether the user can switch to the second path
         /// </summary>
@@ -72,13 +72,5 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         /// <param name="item">Target item</param>
         public void RenderStatus(T item);
-        /// <summary>
-        /// Goes down to the last element upon overflow (caused by remove operation, ...). This applies to the first and the second pane.
-        /// </summary>
-        public void LastOnOverflow();
-        /// <summary>
-        /// Goes up to the first element upon underflow (caused by remove operation, ...). This applies to the first and the second pane.
-        /// </summary>
-        public void FirstOnUnderflow();
     }
 }
