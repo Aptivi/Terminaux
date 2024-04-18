@@ -29,11 +29,11 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// Current selection for the first pane
         /// </summary>
-        public static int FirstPaneCurrentSelection { get; set; } = 1;
+        public static int FirstPaneCurrentSelection { get; internal set; } = 1;
         /// <summary>
         /// Current selection for the second pane
         /// </summary>
-        public static int SecondPaneCurrentSelection { get; set; } = 1;
+        public static int SecondPaneCurrentSelection { get; internal set; } = 1;
         /// <summary>
         /// Current status
         /// </summary>
@@ -41,7 +41,7 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// Current pane
         /// </summary>
-        public static int CurrentPane { get; set; } = 1;
+        public static int CurrentPane { get; internal set; } = 1;
 
         /// <summary>
         /// Interactive TUI background color

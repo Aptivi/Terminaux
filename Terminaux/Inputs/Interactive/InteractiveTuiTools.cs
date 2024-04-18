@@ -163,6 +163,19 @@ namespace Terminaux.Inputs.Interactive
                 InteractiveTuiStatus.FirstPaneCurrentSelection = pos;
         }
 
+        /// <summary>
+        /// Switches between two panes
+        /// </summary>
+        /// <param name="interactiveTui">Interactive TUI to deal with</param>
+        public static void SwitchSides<T>(BaseInteractiveTui<T> interactiveTui)
+        {
+            if (!interactiveTui.SecondPaneInteractable)
+                return;
+            InteractiveTuiStatus.CurrentPane++;
+            if (InteractiveTuiStatus.CurrentPane > 2)
+                InteractiveTuiStatus.CurrentPane = 1;
+        }
+
         private static void DrawInteractiveTui<T>(BaseInteractiveTui<T> interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
@@ -782,15 +795,6 @@ namespace Terminaux.Inputs.Interactive
             string markStart = mark ? "[" : " ";
             string markEnd = mark ? "]" : " ";
             return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
-        }
-
-        private static void SwitchSides<T>(BaseInteractiveTui<T> interactiveTui)
-        {
-            if (!interactiveTui.SecondPaneInteractable)
-                return;
-            InteractiveTuiStatus.CurrentPane++;
-            if (InteractiveTuiStatus.CurrentPane > 2)
-                InteractiveTuiStatus.CurrentPane = 1;
         }
 
         static InteractiveTuiTools()
