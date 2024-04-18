@@ -489,7 +489,7 @@ namespace Terminaux.Inputs.Interactive
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
             T selectedData = (T)data.GetElementFromIndex(paneCurrentSelection - 1);
-            interactiveTui.RenderStatus(selectedData);
+            InteractiveTuiStatus.Status = interactiveTui.GetStatusFromItem(selectedData);
 
             // Now, write info
             part.AddDynamicText(() =>

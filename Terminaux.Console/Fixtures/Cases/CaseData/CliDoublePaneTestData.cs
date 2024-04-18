@@ -51,23 +51,12 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             true;
 
         /// <inheritdoc/>
-        public override void RenderStatus(string item)
-        {
-            string selected = item;
-
-            // Check to see if we're given the test info
-            if (string.IsNullOrEmpty(selected))
-                InteractiveTuiStatus.Status = "No info.";
-            else
-                InteractiveTuiStatus.Status = $"{selected}";
-        }
+        public override string GetStatusFromItem(string item) =>
+            string.IsNullOrEmpty(item) ? "No info." : item;
 
         /// <inheritdoc/>
-        public override string GetEntryFromItem(string item)
-        {
-            string selected = item;
-            return selected;
-        }
+        public override string GetEntryFromItem(string item) =>
+            item;
 
         private static void Add(int index)
         {

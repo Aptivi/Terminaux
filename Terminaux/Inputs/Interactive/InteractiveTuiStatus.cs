@@ -37,7 +37,7 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// Current status
         /// </summary>
-        public static string Status { get; set; } = "";
+        public static string Status { get; internal set; } = "";
         /// <summary>
         /// Current pane
         /// </summary>

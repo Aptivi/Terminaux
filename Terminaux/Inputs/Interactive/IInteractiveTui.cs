@@ -64,13 +64,13 @@ namespace Terminaux.Inputs.Interactive
         /// <returns>The rendered info so that <see cref="InteractiveTuiTools"/> can handle its rendering</returns>
         public string GetInfoFromItem(T item);
         /// <summary>
+        /// Gets the status from the item
+        /// </summary>
+        /// <param name="item">Target item</param>
+        public string GetStatusFromItem(T item);
+        /// <summary>
         /// Handles exiting the interactive TUI
         /// </summary>
         public void HandleExit();
-        /// <summary>
-        /// Renders the status
-        /// </summary>
-        /// <param name="item">Target item</param>
-        public void RenderStatus(T item);
     }
 }

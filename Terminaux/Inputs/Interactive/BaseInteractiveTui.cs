@@ -70,10 +70,11 @@ namespace Terminaux.Inputs.Interactive
             item is not null ? "No info." : "";
 
         /// <inheritdoc/>
-        public virtual void HandleExit() { }
+        public virtual string GetStatusFromItem(T item) =>
+            !string.IsNullOrEmpty(GetEntryFromItem(item)) ? GetEntryFromItem(item) : "No status";
 
         /// <inheritdoc/>
-        public virtual void RenderStatus(T item) { }
+        public virtual void HandleExit() { }
 
         /// <summary>
         /// Goes down to the last element upon overflow (caused by remove operation, ...). This applies to the first and the second pane.
