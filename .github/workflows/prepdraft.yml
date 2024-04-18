@@ -24,9 +24,7 @@ jobs:
       - name: Release Asset Preparation
         run: |
           chmod +x tools/*.sh
-          make
-          cd tools ; ./pack.sh ; cd ..
-          cd tools ; ./docgen.sh ; cd ..
+          make doc
           cd tools ; ./docgen-pack.sh ; cd ..
       - name: Release Draft Making
         uses: softprops/action-gh-release@v1
