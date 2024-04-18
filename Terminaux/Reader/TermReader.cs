@@ -131,8 +131,10 @@ namespace Terminaux.Reader
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string ReadPassword(char mask, bool interruptible = true)
         {
-            var settings = GlobalReaderSettings;
-            settings.PasswordMaskChar = mask;
+            var settings = new TermReaderSettings(GlobalReaderSettings)
+            {
+                PasswordMaskChar = mask
+            };
             return Read("", "", settings, true, false, interruptible);
         }
 
@@ -172,8 +174,10 @@ namespace Terminaux.Reader
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string ReadPassword(char mask, string inputPrompt, bool interruptible = true)
         {
-            var settings = GlobalReaderSettings;
-            settings.PasswordMaskChar = mask;
+            var settings = new TermReaderSettings(GlobalReaderSettings)
+            {
+                PasswordMaskChar = mask
+            };
             return Read(inputPrompt, "", settings, true, false, interruptible);
         }
 

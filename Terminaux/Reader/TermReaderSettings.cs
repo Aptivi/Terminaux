@@ -159,8 +159,33 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
-        /// Initializes empty settings instance
+        /// Initializes an empty reader settings instance
         /// </summary>
-        public TermReaderSettings() { }
+        public TermReaderSettings()
+        { }
+
+        /// <summary>
+        /// Initializes a reader settings instance
+        /// </summary>
+        /// <param name="settings">Settings to copy from</param>
+        public TermReaderSettings(TermReaderSettings settings)
+        {
+            if (settings == null)
+                return;
+
+            PasswordMaskChar = settings.PasswordMaskChar;
+            HistoryEnabled = settings.HistoryEnabled;
+            LeftMargin = settings.LeftMargin;
+            RightMargin = settings.RightMargin;
+            InputForegroundColor = settings.InputForegroundColor;
+            InputBackgroundColor = settings.InputBackgroundColor;
+            Suggestions = settings.suggestions;
+            SuggestionsDelimiters = settings.suggestionsDelims;
+            TreatCtrlCAsInput = settings.TreatCtrlCAsInput;
+            SyntaxHighlighterEnabled = settings.SyntaxHighlighterEnabled;
+            SyntaxHighlighter = settings.SyntaxHighlighter;
+            LimitConsoleChars = settings.LimitConsoleChars;
+            PlaceholderText = settings.PlaceholderText;
+        }
     }
 }
