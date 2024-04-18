@@ -37,7 +37,6 @@ namespace Terminaux.Reader
     public static class TermReader
     {
         internal static TermReaderSettings globalSettings = new();
-        internal static char currentMask = '*';
         internal static (int, int) cachedPos = default;
         internal static readonly List<TermReaderState> states = [];
         private static readonly object readLock = new();
@@ -47,15 +46,6 @@ namespace Terminaux.Reader
         /// </summary>
         public static TermReaderSettings GlobalReaderSettings =>
             globalSettings;
-
-        /// <summary>
-        /// Current mask character
-        /// </summary>
-        public static char CurrentMask
-        {
-            get => currentMask;
-            set => currentMask = value;
-        }
 
         /// <summary>
         /// Reads the next key from the console input stream with the timeout
@@ -132,7 +122,7 @@ namespace Terminaux.Reader
         /// </summary>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string ReadPassword(bool interruptible = true) =>
-            ReadPassword(CurrentMask, interruptible);
+            ReadPassword(GlobalReaderSettings.PasswordMaskChar, interruptible);
 
         /// <summary>
         /// Reads the input with password character masking
@@ -172,7 +162,7 @@ namespace Terminaux.Reader
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string ReadPassword(string inputPrompt, bool interruptible = true) =>
-            ReadPassword(CurrentMask, inputPrompt, interruptible);
+            ReadPassword(GlobalReaderSettings.PasswordMaskChar, inputPrompt, interruptible);
 
         /// <summary>
         /// Reads the input with password character masking
