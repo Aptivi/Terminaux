@@ -709,19 +709,22 @@ namespace Terminaux.Inputs.Styles.Infobox
                     }
 
                     // Verify that the current position is not a disabled choice
-                    while (selections[currentSelection].ChoiceDisabled)
+                    if (currentSelection >= 0)
                     {
-                        if (goingUp)
+                        while (selections[currentSelection].ChoiceDisabled)
                         {
-                            currentSelection--;
-                            if (currentSelection < 0)
-                                currentSelection = selections.Length - 1;
-                        }
-                        else
-                        {
-                            currentSelection++;
-                            if (currentSelection > selections.Length - 1)
-                                currentSelection = 0;
+                            if (goingUp)
+                            {
+                                currentSelection--;
+                                if (currentSelection < 0)
+                                    currentSelection = selections.Length - 1;
+                            }
+                            else
+                            {
+                                currentSelection++;
+                                if (currentSelection > selections.Length - 1)
+                                    currentSelection = 0;
+                            }
                         }
                     }
                 }

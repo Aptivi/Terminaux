@@ -449,19 +449,22 @@ namespace Terminaux.Inputs.Styles.Selection
                     }
 
                     // Verify that the current position is not a disabled choice
-                    while (AllAnswers[HighlightedAnswer - 1].ChoiceDisabled)
+                    if (HighlightedAnswer > 0)
                     {
-                        if (goingUp)
+                        while (AllAnswers[HighlightedAnswer - 1].ChoiceDisabled)
                         {
-                            HighlightedAnswer--;
-                            if (HighlightedAnswer == 0)
-                                HighlightedAnswer = AllAnswers.Count;
-                        }
-                        else
-                        {
-                            HighlightedAnswer++;
-                            if (HighlightedAnswer > AllAnswers.Count)
-                                HighlightedAnswer = 1;
+                            if (goingUp)
+                            {
+                                HighlightedAnswer--;
+                                if (HighlightedAnswer == 0)
+                                    HighlightedAnswer = AllAnswers.Count;
+                            }
+                            else
+                            {
+                                HighlightedAnswer++;
+                                if (HighlightedAnswer > AllAnswers.Count)
+                                    HighlightedAnswer = 1;
+                            }
                         }
                     }
 
