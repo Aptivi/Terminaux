@@ -21,5 +21,5 @@ jobs:
         run: make
       - name: Package Publication
         run: |
-          dotnet nuget push "Terminaux/bin/Release/*.nupkg" --api-key ${{ secrets.NUGET_APIKEY }} --source "nuget.org"
-          dotnet nuget push "Terminaux.ResizeListener/bin/Release/*.nupkg" --api-key ${{ secrets.NUGET_APIKEY }} --source "nuget.org"
+          chmod +x tools/*.sh
+          cd tools ; NUGET_APIKEY=${{ secrets.NUGET_APIKEY }} ./push.sh ; cd ..
