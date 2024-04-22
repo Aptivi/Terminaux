@@ -425,16 +425,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.GeneralColorTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.GeneralColorTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Gradients.ColorGradient.yml",
       "output": {
         ".html": {
