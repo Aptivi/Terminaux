@@ -470,16 +470,30 @@ namespace Terminaux.Colors
         /// </summary>
         /// <param name="colorCode">The color code to get the RGB specifier from</param>
         /// <returns>The RGB specifier string</returns>
-        public static string GetRgbSpecifierFromColorCode(int colorCode) =>
-            $"{(colorCode) & 0xff};{(colorCode >> 8) & 0xff};{(colorCode >> 16) & 0xff}";
+        public static string GetRgbSpecifierFromColorCode(int colorCode)
+        {
+            (int r, int g, int b) = GetRgbIntFromColorCode(colorCode);
+            return $"{r};{g};{b}";
+        }
 
         /// <summary>
         /// Gets the RGB instance from the color code
         /// </summary>
         /// <param name="colorCode">The color code to get the RGB specifier from</param>
         /// <returns>The RGB specifier string</returns>
-        public static RedGreenBlue GetRgbFromColorCode(int colorCode) =>
-            new((colorCode) & 0xff, (colorCode >> 8) & 0xff, (colorCode >> 16) & 0xff);
+        public static RedGreenBlue GetRgbFromColorCode(int colorCode)
+        {
+            (int r, int g, int b) = GetRgbIntFromColorCode(colorCode);
+            return new(r, g, b);
+        }
+
+        /// <summary>
+        /// Gets the RGB numbers from the color code
+        /// </summary>
+        /// <param name="colorCode">The color code to get the RGB specifier from</param>
+        /// <returns>The RGB specifier string</returns>
+        public static (int R, int G, int B) GetRgbIntFromColorCode(int colorCode) =>
+            ((colorCode) & 0xff, (colorCode >> 8) & 0xff, (colorCode >> 16) & 0xff);
 
         internal static string GetColorIdStringFrom(ConsoleColors colorDef) =>
             GetColorIdStringFrom((int)colorDef);
