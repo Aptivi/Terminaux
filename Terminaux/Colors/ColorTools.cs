@@ -400,9 +400,11 @@ namespace Terminaux.Colors
         {
             // Select appropriate settings
             var finalSettings = settings ?? GlobalSettings;
+            maxColor = maxColor > 256 ? 256 : maxColor;
             switch (type)
             {
                 case ColorType.FourBitColor:
+                    maxColor = maxColor > 16 ? 16 : maxColor;
                     int colorNum = rng.Next(minColor, maxColor);
                     return new Color(colorNum, finalSettings);
                 case ColorType.EightBitColor:
