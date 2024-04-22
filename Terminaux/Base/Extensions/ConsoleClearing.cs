@@ -59,7 +59,7 @@ namespace Terminaux.Base.Extensions
 
         static ConsoleClearing()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

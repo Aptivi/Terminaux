@@ -297,7 +297,7 @@ namespace Terminaux.Inputs.Styles
 
         static FigletSelector()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

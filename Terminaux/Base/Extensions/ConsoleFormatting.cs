@@ -130,7 +130,7 @@ namespace Terminaux.Base.Extensions
 
         static ConsoleFormatting()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

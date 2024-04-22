@@ -138,7 +138,7 @@ namespace Terminaux.Writer.FancyWriters
 
         static BoxColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

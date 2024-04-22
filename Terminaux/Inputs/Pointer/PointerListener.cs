@@ -539,7 +539,7 @@ namespace Terminaux.Inputs.Pointer
 
         static PointerListener()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

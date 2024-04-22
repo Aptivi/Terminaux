@@ -106,7 +106,7 @@ namespace Terminaux.ResizeListener
 
         static ConsoleResizeListener()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

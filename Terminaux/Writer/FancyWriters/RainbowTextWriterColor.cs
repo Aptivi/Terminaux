@@ -153,7 +153,7 @@ namespace Terminaux.Writer.ConsoleWriters
 
         static RainbowTextWriterColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

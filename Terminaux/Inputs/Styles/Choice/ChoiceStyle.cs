@@ -460,7 +460,7 @@ namespace Terminaux.Inputs.Styles.Choice
 
         static ChoiceStyle()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

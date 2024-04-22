@@ -497,7 +497,7 @@ namespace Terminaux.Writer.FancyWriters
 
         static CenteredTextColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

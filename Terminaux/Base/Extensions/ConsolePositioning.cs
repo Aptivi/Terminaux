@@ -358,7 +358,7 @@ namespace Terminaux.Base.Extensions
 
         static ConsolePositioning()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

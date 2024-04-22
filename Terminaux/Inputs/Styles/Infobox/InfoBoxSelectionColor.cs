@@ -757,7 +757,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
         static InfoBoxSelectionColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

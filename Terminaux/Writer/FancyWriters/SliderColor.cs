@@ -403,7 +403,7 @@ namespace Terminaux.Writer.FancyWriters
 
         static SliderColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

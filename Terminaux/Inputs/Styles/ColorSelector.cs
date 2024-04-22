@@ -843,7 +843,7 @@ namespace Terminaux.Inputs.Styles
 
         static ColorSelector()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

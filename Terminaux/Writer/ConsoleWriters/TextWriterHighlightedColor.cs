@@ -397,7 +397,7 @@ namespace Terminaux.Writer.ConsoleWriters
 
         static TextWriterHighlightedColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

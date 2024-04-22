@@ -384,7 +384,7 @@ namespace Terminaux.Writer.FancyWriters
 
         static ProgressBarColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

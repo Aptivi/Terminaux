@@ -536,7 +536,7 @@ namespace Terminaux.Colors
 
         static ColorTools()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

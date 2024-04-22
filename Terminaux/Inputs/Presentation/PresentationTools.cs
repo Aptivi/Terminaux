@@ -267,7 +267,7 @@ namespace Terminaux.Inputs.Presentation
 
         static PresentationTools()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

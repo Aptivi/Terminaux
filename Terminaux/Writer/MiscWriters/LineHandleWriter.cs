@@ -225,7 +225,7 @@ namespace Terminaux.Writer.MiscWriters
 
         static LineHandleWriter()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

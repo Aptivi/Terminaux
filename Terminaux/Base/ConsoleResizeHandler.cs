@@ -112,7 +112,7 @@ namespace Terminaux.Base
 
         static ConsoleResizeHandler()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

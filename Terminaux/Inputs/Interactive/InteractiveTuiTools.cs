@@ -799,7 +799,7 @@ namespace Terminaux.Inputs.Interactive
 
         static InteractiveTuiTools()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

@@ -484,7 +484,7 @@ namespace Terminaux.Inputs.Styles.Selection
 
         static SelectionStyle()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }

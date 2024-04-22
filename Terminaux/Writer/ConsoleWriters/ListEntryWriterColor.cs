@@ -143,7 +143,7 @@ namespace Terminaux.Writer.ConsoleWriters
 
         static ListEntryWriterColor()
         {
-            if (GeneralColorTools.CheckConsoleOnCall && !ConsoleChecker.busy)
+            if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
         }
     }
