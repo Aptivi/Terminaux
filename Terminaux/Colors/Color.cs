@@ -30,8 +30,6 @@ using Terminaux.Colors.Interop;
 using Terminaux.Colors.Transformation.Contrast;
 using Newtonsoft.Json;
 using Terminaux.Colors.Transformation.Formulas;
-using System.Linq;
-using System.Numerics;
 
 namespace Terminaux.Colors
 {
@@ -43,7 +41,6 @@ namespace Terminaux.Colors
     public class Color : IEquatable<Color>
     {
         private readonly ColorSettings settings;
-        private static (ConsoleColor unapplicable16, ConsoleColors unapplicable255) unapplicable = ((ConsoleColor)(-1), (ConsoleColors)(-1));
 
         /// <summary>
         /// An instance of RGB
@@ -140,22 +137,14 @@ namespace Terminaux.Colors
         /// <summary>
         /// Color name representation
         /// </summary>
-        public string Name
-        {
-            get
-            {
-                if (Type == ColorType.TrueColor)
-                    return ConsoleColorData.GetNearestColor(this)?.Name ?? "";
-                else
-                    return ColorId?.Name ?? "";
-            }
-        }
+        public string Name =>
+            ColorId.Name;
 
         /// <summary>
         /// Color type
         /// </summary>
         public ColorType Type =>
-            ColorId is null ? ColorType.TrueColor :
+            ColorId is null || !ColorId.HexString.Equals(Hex, StringComparison.OrdinalIgnoreCase) ? ColorType.TrueColor :
             !settings.UseTerminalPalette || settings.Opacity < 255 || settings.EnableColorTransformation ? ColorType.TrueColor :
             ColorId.ColorId >= 16 ? ColorType.EightBitColor :
             ColorType.FourBitColor;
@@ -174,36 +163,16 @@ namespace Terminaux.Colors
         }
 
         /// <summary>
-        /// The color value converted to <see cref="ConsoleColors"/>. Not applicable [-1] to true color
+        /// The color value converted to <see cref="ConsoleColors"/>.
         /// </summary>
-        public ConsoleColors ColorEnum255
-        {
-            get
-            {
-                if (ColorId is null)
-                    return unapplicable.unapplicable255;
-                return
-                    Type == ColorType.EightBitColor || (Type == ColorType.FourBitColor && ColorId.ColorId < 16) ?
-                    (ConsoleColors)ColorId.ColorId :
-                    unapplicable.unapplicable255;
-            }
-        }
+        public ConsoleColors ColorEnum255 =>
+            (ConsoleColors)ColorId.ColorId;
 
         /// <summary>
-        /// The color value converted to <see cref="ConsoleColor"/>. Not applicable [-1] to true color and 256 colors
+        /// The color value converted to <see cref="ConsoleColor"/>. Not applicable [-1] to non-4-bit colors.
         /// </summary>
-        public ConsoleColor ColorEnum16
-        {
-            get
-            {
-                if (ColorId is null)
-                    return unapplicable.unapplicable16;
-                return
-                    Type == ColorType.FourBitColor || (Type == ColorType.EightBitColor && ColorId.ColorId < 16) ?
-                    (ConsoleColor)ColorId.ColorId :
-                    unapplicable.unapplicable16;
-            }
-        }
+        public ConsoleColor ColorEnum16 =>
+            ColorId.ColorId < 16 ? ConversionTools.CorrectStandardColor((ConsoleColor)ColorId.ColorId) : (ConsoleColor)(-1);
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -308,11 +277,8 @@ namespace Terminaux.Colors
             // Now, parse the output
             var rgb = ParsingTools.ParseSpecifier(ColorSpecifier, settings);
 
-            // Match the color data according to the color specifier
-            var data =
-                int.TryParse(ColorSpecifier, out int id) && id <= 255 ?
-                ConsoleColorData.GetColorData()[id] :
-                ConsoleColorData.MatchColorData(rgb);
+            // Match the color data according to the color specifier, and only get the nearest color if not found.
+            var data = ConsoleColorData.GetNearestColor(rgb);
             ColorId = data;
             RGB = rgb;
         }
