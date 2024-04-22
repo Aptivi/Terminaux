@@ -12890,6 +12890,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorTools.GetRgbFromColorCode
   nameWithType: ColorTools.GetRgbFromColorCode
+- uid: Terminaux.Colors.ColorTools.GetRgbIntFromColorCode(System.Int32)
+  name: GetRgbIntFromColorCode(int)
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRgbIntFromColorCode_System_Int32_
+  commentId: M:Terminaux.Colors.ColorTools.GetRgbIntFromColorCode(System.Int32)
+  name.vb: GetRgbIntFromColorCode(Integer)
+  fullName: Terminaux.Colors.ColorTools.GetRgbIntFromColorCode(int)
+  fullName.vb: Terminaux.Colors.ColorTools.GetRgbIntFromColorCode(Integer)
+  nameWithType: ColorTools.GetRgbIntFromColorCode(int)
+  nameWithType.vb: ColorTools.GetRgbIntFromColorCode(Integer)
+- uid: Terminaux.Colors.ColorTools.GetRgbIntFromColorCode*
+  name: GetRgbIntFromColorCode
+  href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRgbIntFromColorCode_
+  commentId: Overload:Terminaux.Colors.ColorTools.GetRgbIntFromColorCode
+  isSpec: "True"
+  fullName: Terminaux.Colors.ColorTools.GetRgbIntFromColorCode
+  nameWithType: ColorTools.GetRgbIntFromColorCode
 - uid: Terminaux.Colors.ColorTools.GetRgbSpecifierFromColorCode(System.Int32)
   name: GetRgbSpecifierFromColorCode(int)
   href: api/Terminaux.Colors.ColorTools.html#Terminaux_Colors_ColorTools_GetRgbSpecifierFromColorCode_System_Int32_
