@@ -371,12 +371,12 @@ namespace Terminaux.Colors
         {
             // Select appropriate settings
             var finalSettings = settings ?? GlobalSettings;
-            int maxColor = type != ColorType.FourBitColor ? 255 : 15;
+            int maxColor = type != ColorType.FourBitColor ? 256 : 16;
             Color color = Color.Empty;
             bool initial = true;
             while (initial || (!ColorContrast.IsSeeable(color) && !selectBlack))
             {
-                color = GetRandomColor(type, 0, maxColor, 0, 255, 0, 255, 0, 255, finalSettings);
+                color = GetRandomColor(type, 0, maxColor, 0, maxColor, 0, maxColor, 0, maxColor, finalSettings);
                 initial = false;
             }
             return color;
