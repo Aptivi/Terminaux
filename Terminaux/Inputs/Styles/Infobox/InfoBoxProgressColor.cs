@@ -445,7 +445,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen?.RemoveBufferedPart(nameof(InfoBoxProgressColor));
+                ScreenTools.CurrentScreen?.RemoveBufferedPart(infoBoxScreenPart.Id);
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

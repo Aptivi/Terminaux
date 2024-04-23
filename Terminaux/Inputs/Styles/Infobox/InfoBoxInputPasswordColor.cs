@@ -468,7 +468,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen?.RemoveBufferedPart(nameof(InfoBoxInputPasswordColor));
+                ScreenTools.CurrentScreen?.RemoveBufferedPart(infoBoxScreenPart.Id);
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

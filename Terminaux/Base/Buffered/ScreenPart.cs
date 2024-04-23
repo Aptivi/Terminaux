@@ -31,6 +31,7 @@ namespace Terminaux.Base.Buffered
     /// </summary>
     public class ScreenPart
     {
+        private Guid id = Guid.NewGuid();
         private int order = 0;
         private readonly List<Func<string>> dynamicBuffers = [];
 
@@ -47,6 +48,12 @@ namespace Terminaux.Base.Buffered
             get => order;
             set => order = value;
         }
+
+        /// <summary>
+        /// Screen part identification
+        /// </summary>
+        public Guid Id =>
+            id;
 
         /// <summary>
         /// Adds a text to the buffer

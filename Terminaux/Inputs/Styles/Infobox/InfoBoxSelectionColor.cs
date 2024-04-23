@@ -746,7 +746,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen?.RemoveBufferedPart(nameof(InfoBoxSelectionColor));
+                ScreenTools.CurrentScreen?.RemoveBufferedPart(infoBoxScreenPart.Id);
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

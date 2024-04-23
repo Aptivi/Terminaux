@@ -499,7 +499,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     }
 
                     // Reset, in case selection changed
-                    selectionScreen.RemoveBufferedPart("Selection - multiple");
+                    selectionScreen.RemoveBufferedPart(screenPart.Id);
                 }
             }
             catch (Exception ex)

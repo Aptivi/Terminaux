@@ -762,8 +762,15 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
             finally
             {
+                if (useColor)
+                {
+                    TextWriterRaw.WriteRaw(
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                    );
+                }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;
-                ScreenTools.CurrentScreen?.RemoveBufferedPart(nameof(InfoBoxSelectionMultipleColor));
+                ScreenTools.CurrentScreen?.RemoveBufferedPart(infoBoxScreenPart.Id);
                 if (initialScreenIsNull)
                     ScreenTools.UnsetCurrent(screen);
             }

@@ -127,7 +127,7 @@ namespace Terminaux.Inputs.Styles
 
                     // Clean up after ourselves
                     screenPart.Clear();
-                    screen.RemoveBufferedPart("Color selector");
+                    screen.RemoveBufferedPart(screenPart.Id);
                 }
             }
             catch (Exception ex)

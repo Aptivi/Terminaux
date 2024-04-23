@@ -469,7 +469,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     }
 
                     // Reset, in case selection changed
-                    selectionScreen.RemoveBufferedPart("Selection - single");
+                    selectionScreen.RemoveBufferedPart(screenPart.Id);
                 }
             }
             catch (Exception ex)

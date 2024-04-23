@@ -168,7 +168,7 @@ namespace Terminaux.Inputs.Styles
                                 break;
                             case ConsoleKey.C:
                                 ColorTools.LoadBack();
-                                screen.RemoveBufferedPart("Figlet selector");
+                                screen.RemoveBufferedPart(screenPart.Id);
                                 ShowChars(screen, fontName);
                                 screen.AddBufferedPart("Figlet selector", screenPart);
                                 screen.RequireRefresh();
@@ -204,6 +204,7 @@ namespace Terminaux.Inputs.Styles
 
         private static void ShowChars(Screen screen, string fontName)
         {
+            var screenPart = new ScreenPart();
             try
             {
                 // Capital letters are from range 65 to 90, small letters are from range 97 to 122, and numbers are
@@ -216,7 +217,6 @@ namespace Terminaux.Inputs.Styles
                 int index = 0;
 
                 // Make a buffer that represents the TUI
-                var screenPart = new ScreenPart();
                 screenPart.AddDynamicText(() =>
                 {
                     var buffer = new StringBuilder();
@@ -290,8 +290,8 @@ namespace Terminaux.Inputs.Styles
             }
             finally
             {
-                if (screen.CheckBufferedPart("Figlet selector - show characters"))
-                    screen.RemoveBufferedPart("Figlet selector - show characters");
+                if (screen.CheckBufferedPart(screenPart.Id))
+                    screen.RemoveBufferedPart(screenPart.Id);
             }
         }
 

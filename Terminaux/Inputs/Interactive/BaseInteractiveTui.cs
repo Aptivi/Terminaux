@@ -18,7 +18,6 @@
 //
 
 using EnumMagic;
-using System;
 using System.Collections.Generic;
 using Terminaux.Base.Buffered;
 
@@ -30,6 +29,7 @@ namespace Terminaux.Inputs.Interactive
     public class BaseInteractiveTui<T> : IInteractiveTui<T>
     {
         internal static List<BaseInteractiveTui<T>> instances = [];
+        internal Dictionary<string, ScreenPart> trackedParts = [];
         internal Screen? screen;
         internal bool isExiting = false;
 

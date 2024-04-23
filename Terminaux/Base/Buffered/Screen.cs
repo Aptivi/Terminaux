@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -70,7 +71,7 @@ namespace Terminaux.Base.Buffered
         }
 
         /// <summary>
-        /// Edits the buffered part to the list of screen parts
+        /// Edits the buffered part in the list of screen parts
         /// </summary>
         /// <param name="idx">Part index</param>
         /// <param name="part">Buffered screen part to add to the screen part list for buffering</param>
@@ -88,7 +89,7 @@ namespace Terminaux.Base.Buffered
         }
 
         /// <summary>
-        /// Edits the buffered part to the list of screen parts
+        /// Edits the buffered part in the list of screen parts
         /// </summary>
         /// <param name="name">Screen buffer part name</param>
         /// <param name="part">Buffered screen part to add to the screen part list for buffering</param>
@@ -102,6 +103,24 @@ namespace Terminaux.Base.Buffered
 
             // Now, edit the buffered part
             screenParts[name] = part;
+        }
+
+        /// <summary>
+        /// Edits the buffered part in the list of screen parts
+        /// </summary>
+        /// <param name="id">Screen buffer part GUID</param>
+        /// <param name="part">Buffered screen part to add to the screen part list for buffering</param>
+        /// <exception cref="TerminauxException"></exception>
+        public void EditBufferedPart(Guid id, ScreenPart part)
+        {
+            var partSource = screenParts.FirstOrDefault((part) => part.Value.Id == id);
+            if (partSource.Value is null)
+                throw new TerminauxException("The specified part is not found.");
+            if (part is null)
+                throw new TerminauxException("You must specify the screen part.");
+
+            // Now, edit the buffered part
+            screenParts[partSource.Key] = part;
         }
 
         /// <summary>
@@ -134,7 +153,20 @@ namespace Terminaux.Base.Buffered
         }
 
         /// <summary>
-        /// Gets the buffered part to the list of screen parts
+        /// Removes the buffered part from the list of screen parts using the GUID
+        /// </summary>
+        /// <param name="id">Screen buffer part GUID</param>
+        /// <exception cref="TerminauxException"></exception>
+        public void RemoveBufferedPart(Guid id)
+        {
+            var part = screenParts.FirstOrDefault((part) => part.Value.Id == id);
+            if (part.Value is null)
+                throw new TerminauxException("The specified part is not found.");
+            RemoveBufferedPart(part.Key);
+        }
+
+        /// <summary>
+        /// Gets the buffered part from the list of screen parts
         /// </summary>
         /// <param name="idx">Part index</param>
         /// <exception cref="TerminauxException"></exception>
@@ -149,7 +181,7 @@ namespace Terminaux.Base.Buffered
         }
 
         /// <summary>
-        /// Gets the buffered part to the list of screen parts
+        /// Gets the buffered part from the list of screen parts
         /// </summary>
         /// <param name="name">Screen buffer part name</param>
         /// <exception cref="TerminauxException"></exception>
@@ -163,7 +195,22 @@ namespace Terminaux.Base.Buffered
         }
 
         /// <summary>
-        /// Checks the buffered part to the list of screen parts
+        /// Gets the buffered part from the list of screen parts
+        /// </summary>
+        /// <param name="id">Screen buffer part GUID</param>
+        /// <exception cref="TerminauxException"></exception>
+        public ScreenPart GetBufferedPart(Guid id)
+        {
+            var part = screenParts.FirstOrDefault((part) => part.Value.Id == id);
+            if (part.Value is null)
+                throw new TerminauxException("The specified part is not found.");
+
+            // Now, get the buffered part
+            return part.Value;
+        }
+
+        /// <summary>
+        /// Checks the buffered part in the list of screen parts
         /// </summary>
         /// <param name="idx">Part index</param>
         /// <exception cref="TerminauxException"></exception>
@@ -178,13 +225,26 @@ namespace Terminaux.Base.Buffered
         }
 
         /// <summary>
-        /// Checks the buffered part to the list of screen parts
+        /// Checks the buffered part in the list of screen parts
         /// </summary>
         /// <param name="name">Screen buffer part name</param>
         /// <exception cref="TerminauxException"></exception>
         public bool CheckBufferedPart(string name)
         {
             if (!screenParts.ContainsKey(name))
+                return false;
+            return true;
+        }
+
+        /// <summary>
+        /// Checks the buffered part in the list of screen parts using the GUID
+        /// </summary>
+        /// <param name="id">Screen buffer part GUID</param>
+        /// <exception cref="TerminauxException"></exception>
+        public bool CheckBufferedPart(Guid id)
+        {
+            var part = screenParts.FirstOrDefault((part) => part.Value.Id == id);
+            if (part.Value is null)
                 return false;
             return true;
         }
