@@ -54,6 +54,12 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.Screen.AddBufferedPart
   nameWithType: Screen.AddBufferedPart
+- uid: Terminaux.Base.Buffered.Screen.CheckBufferedPart(System.Guid)
+  name: CheckBufferedPart(Guid)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_CheckBufferedPart_System_Guid_
+  commentId: M:Terminaux.Base.Buffered.Screen.CheckBufferedPart(System.Guid)
+  fullName: Terminaux.Base.Buffered.Screen.CheckBufferedPart(System.Guid)
+  nameWithType: Screen.CheckBufferedPart(Guid)
 - uid: Terminaux.Base.Buffered.Screen.CheckBufferedPart(System.Int32)
   name: CheckBufferedPart(int)
   href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_CheckBufferedPart_System_Int32_
@@ -79,6 +85,12 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.Screen.CheckBufferedPart
   nameWithType: Screen.CheckBufferedPart
+- uid: Terminaux.Base.Buffered.Screen.EditBufferedPart(System.Guid,Terminaux.Base.Buffered.ScreenPart)
+  name: EditBufferedPart(Guid, ScreenPart)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_EditBufferedPart_System_Guid_Terminaux_Base_Buffered_ScreenPart_
+  commentId: M:Terminaux.Base.Buffered.Screen.EditBufferedPart(System.Guid,Terminaux.Base.Buffered.ScreenPart)
+  fullName: Terminaux.Base.Buffered.Screen.EditBufferedPart(System.Guid, Terminaux.Base.Buffered.ScreenPart)
+  nameWithType: Screen.EditBufferedPart(Guid, ScreenPart)
 - uid: Terminaux.Base.Buffered.Screen.EditBufferedPart(System.Int32,Terminaux.Base.Buffered.ScreenPart)
   name: EditBufferedPart(int, ScreenPart)
   href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_EditBufferedPart_System_Int32_Terminaux_Base_Buffered_ScreenPart_
@@ -117,6 +129,12 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.Screen.GetBuffer
   nameWithType: Screen.GetBuffer
+- uid: Terminaux.Base.Buffered.Screen.GetBufferedPart(System.Guid)
+  name: GetBufferedPart(Guid)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_GetBufferedPart_System_Guid_
+  commentId: M:Terminaux.Base.Buffered.Screen.GetBufferedPart(System.Guid)
+  fullName: Terminaux.Base.Buffered.Screen.GetBufferedPart(System.Guid)
+  nameWithType: Screen.GetBufferedPart(Guid)
 - uid: Terminaux.Base.Buffered.Screen.GetBufferedPart(System.Int32)
   name: GetBufferedPart(int)
   href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_GetBufferedPart_System_Int32_
@@ -142,6 +160,12 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.Screen.GetBufferedPart
   nameWithType: Screen.GetBufferedPart
+- uid: Terminaux.Base.Buffered.Screen.RemoveBufferedPart(System.Guid)
+  name: RemoveBufferedPart(Guid)
+  href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_RemoveBufferedPart_System_Guid_
+  commentId: M:Terminaux.Base.Buffered.Screen.RemoveBufferedPart(System.Guid)
+  fullName: Terminaux.Base.Buffered.Screen.RemoveBufferedPart(System.Guid)
+  nameWithType: Screen.RemoveBufferedPart(Guid)
 - uid: Terminaux.Base.Buffered.Screen.RemoveBufferedPart(System.Int32)
   name: RemoveBufferedPart(int)
   href: api/Terminaux.Base.Buffered.Screen.html#Terminaux_Base_Buffered_Screen_RemoveBufferedPart_System_Int32_
@@ -350,6 +374,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Buffered.ScreenPart.GetBuffer
   nameWithType: ScreenPart.GetBuffer
+- uid: Terminaux.Base.Buffered.ScreenPart.Id
+  name: Id
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_Id
+  commentId: P:Terminaux.Base.Buffered.ScreenPart.Id
+  fullName: Terminaux.Base.Buffered.ScreenPart.Id
+  nameWithType: ScreenPart.Id
+- uid: Terminaux.Base.Buffered.ScreenPart.Id*
+  name: Id
+  href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_Id_
+  commentId: Overload:Terminaux.Base.Buffered.ScreenPart.Id
+  isSpec: "True"
+  fullName: Terminaux.Base.Buffered.ScreenPart.Id
+  nameWithType: ScreenPart.Id
 - uid: Terminaux.Base.Buffered.ScreenPart.LeftPosition(System.Int32)
   name: LeftPosition(int)
   href: api/Terminaux.Base.Buffered.ScreenPart.html#Terminaux_Base_Buffered_ScreenPart_LeftPosition_System_Int32_
