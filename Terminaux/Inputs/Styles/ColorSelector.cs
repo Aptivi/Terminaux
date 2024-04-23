@@ -77,11 +77,17 @@ namespace Terminaux.Inputs.Styles
 
             // Color selector entry
             var screen = new Screen();
+            var screenPart = new ScreenPart();
             ScreenTools.SetCurrent(screen);
             try
             {
-                // Make a screen part
-                var screenPart = new ScreenPart();
+                // Now, render the selector
+                screenPart.AddDynamicText(() =>
+                {
+                    ConsoleWrapper.CursorVisible = false;
+                    return RenderColorSelector(selectedColor, type, finalSettings);
+                });
+                screen.AddBufferedPart("Color selector", screenPart);
 
                 // Set initial colors
                 var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
@@ -108,13 +114,6 @@ namespace Terminaux.Inputs.Styles
                 bool refresh = true;
                 while (!bail)
                 {
-                    // Now, render the selector
-                    screenPart.AddDynamicText(() =>
-                    {
-                        ConsoleWrapper.CursorVisible = false;
-                        return RenderColorSelector(selectedColor, type, finalSettings);
-                    });
-                    screen.AddBufferedPart("Color selector", screenPart);
                     ScreenTools.Render();
 
                     // Handle input
@@ -124,10 +123,6 @@ namespace Terminaux.Inputs.Styles
                         throw new TerminauxException("Invalid color type in the color selector");
                     if (refresh)
                         screen.RequireRefresh();
-
-                    // Clean up after ourselves
-                    screenPart.Clear();
-                    screen.RemoveBufferedPart(screenPart.Id);
                 }
             }
             catch (Exception ex)
@@ -145,6 +140,7 @@ namespace Terminaux.Inputs.Styles
                     save = true;
                     selectedColor = initialColor;
                 }
+                screen.RemoveBufferedPart(screenPart.Id);
             }
             ScreenTools.UnsetCurrent(screen);
             return selectedColor;
