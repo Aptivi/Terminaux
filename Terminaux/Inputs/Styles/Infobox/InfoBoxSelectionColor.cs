@@ -691,7 +691,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     if (answer < 0)
                                         break;
                                     var resultIdx = int.Parse(resultEntries[answer].Item1);
-                                    currentSelection = resultIdx;
+                                    currentSelection = resultIdx - 1;
                                 }
                                 else
                                     InfoBoxColor.WriteInfoBox("No item found.");
