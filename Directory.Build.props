@@ -19,8 +19,4 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
     </ItemGroup>
-
-    <Target Name="InjectVersion" BeforeTargets="Build">
-        <WriteLinesToFile File="$(RootPath)\tools\version" Overwrite="true" WriteOnlyWhenDifferent="true" Lines="$(Version)" />
-    </Target>
 </Project>
