@@ -3,14 +3,13 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFrameworks>net8.0;net48</TargetFrameworks>
-    <LangVersion>latest</LangVersion>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Terminaux.ResizeListener\Terminaux.ResizeListener.csproj" />
     <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
+
+    <PackageReference Remove="Microsoft.SourceLink.GitHub" />
   </ItemGroup>
 
   <ItemGroup>

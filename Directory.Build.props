@@ -1,0 +1,26 @@
+<Project>
+    <PropertyGroup>
+        <Version>4.0.0</Version>
+        <Authors>Aptivi</Authors>
+        <Company>Aptivi</Company>
+        <Copyright>Copyright (c) 2022-2024 Aptivi</Copyright>
+        <LangVersion>latest</LangVersion>
+        <DebugType>portable</DebugType>
+        <SignAssembly>True</SignAssembly>
+        <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <RootPath>$(MSBuildThisFileDirectory)</RootPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    </ItemGroup>
+
+    <Target Name="InjectVersion" BeforeTargets="Build">
+        <WriteLinesToFile File="$(RootPath)\tools\version" Overwrite="true" WriteOnlyWhenDifferent="true" Lines="$(Version)" />
+    </Target>
+</Project>

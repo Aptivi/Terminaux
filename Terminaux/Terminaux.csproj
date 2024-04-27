@@ -4,10 +4,7 @@
     <AssemblyTitle>Terminaux</AssemblyTitle>
     <AssemblyDescription>Console Manipulation Library</AssemblyDescription>
     <Description>A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.</Description>
-    <Version>4.0.0</Version>
-    <Authors>Aptivi</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <DebugType>portable</DebugType>
     <AssemblyName>Terminaux</AssemblyName>
     <PackageId>Terminaux</PackageId>
     <PackageTags>console;shell;readline;gnu;cui;tui;cli;manipulation;console;vt;sequences;color;vt100;truecolor;library;csharp;reader;input;writer;styles;formatter</PackageTags>
@@ -18,17 +15,12 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <Company>Aptivi</Company>
-    <Copyright>Copyright (c) 2022-2024 Aptivi</Copyright>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageIcon>OfficialAppIcon-Terminaux-512.png</PackageIcon>
-    <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
     <CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
@@ -51,15 +43,9 @@
     <Compile Remove="$(CompilerGeneratedFilesOutputPath)/**/*.cs" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="EnumMagic" Version="0.1.0.1" />
     <PackageReference Include="Figletize" Version="0.7.0.3" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SpecProbe.Software" Version="1.4.2" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
