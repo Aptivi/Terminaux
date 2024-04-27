@@ -28,6 +28,8 @@ using Terminaux.Base.TermInfo;
 using Terminaux.Colors.Data;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
+using System.Collections.Generic;
+using Textify.General;
 
 namespace Terminaux.Base.Checks
 {
@@ -41,6 +43,8 @@ namespace Terminaux.Base.Checks
         private static bool acknowledged = false;
         private static bool _dumbSet = false;
         private static bool _dumb = true;
+        private static readonly string[] whitelist = ["testhost", "Terminaux.Tests"];
+        private static readonly List<string> customWhitelist = [];
 
         /// <summary>
         /// Is the console a dumb console?
@@ -90,6 +94,17 @@ namespace Terminaux.Base.Checks
             if (acknowledged)
                 return;
             busy = true;
+
+            // First, get the assembly for whitelist
+            var asm = Assembly.GetEntryAssembly();
+            if (asm is null || asm.FullName.ContainsAnyOf(whitelist) || asm.FullName.ContainsAnyOf([.. customWhitelist]))
+            {
+                busy = false;
+                acknowledged = true;
+                return;
+            }
+
+            // Now, check the type
             string TerminalType = PlatformHelper.GetTerminalType();
             string TerminalEmulator = PlatformHelper.GetTerminalEmulator();
 
@@ -143,15 +158,11 @@ namespace Terminaux.Base.Checks
             {
                 if (PlatformHelper.IsOnWindows())
                 {
-                    var asm = Assembly.GetEntryAssembly();
-                    if (asm is not null && !asm.FullName.Contains("testhost") && !asm.FullName.Contains("Terminaux.Tests"))
-                    {
-                        FastFail(
-                            "User tried to run a Terminaux application on Git Bash's MinTTY without winpty.",
-                            "You'll need to use winpty to be able to use this program. If you are sure that you're not running Git Bash, ensure that you're using a proper Windows terminal.",
-                            ex
-                        );
-                    }
+                    FastFail(
+                        "User tried to run a Terminaux application on Git Bash's MinTTY without winpty.",
+                        "You'll need to use winpty to be able to use this program. If you are sure that you're not running Git Bash, ensure that you're using a proper Windows terminal.",
+                        ex
+                    );
                 }
                 else
                     TextWriterColor.WriteColor("Console positioning is not working due to an I/O error, so this application might behave erratically.", ConsoleColors.Yellow);
@@ -296,6 +307,34 @@ namespace Terminaux.Base.Checks
 
             // Return the result
             return conHost;
+        }
+
+        /// <summary>
+        /// Adds the assembly to the check whitelist
+        /// </summary>
+        /// <param name="asm">Assembly to add</param>
+        public static void AddToCheckWhitelist(Assembly asm)
+        {
+            if (asm is null)
+                throw new TerminauxException("Assembly not provided.");
+
+            // Add the partial name for the assembly to the whitelist
+            if (!customWhitelist.Contains(asm.FullName))
+                customWhitelist.Add(asm.FullName);
+        }
+
+        /// <summary>
+        /// Removes the assembly from the check whitelist
+        /// </summary>
+        /// <param name="asm">Assembly to remove</param>
+        public static void RemoveFromCheckWhitelist(Assembly asm)
+        {
+            if (asm is null)
+                throw new TerminauxException("Assembly not provided.");
+
+            // Add the partial name for the assembly to the whitelist
+            if (customWhitelist.Contains(asm.FullName))
+                customWhitelist.Remove(asm.FullName);
         }
 
         internal static void FastFail(string eventMessage, string description, Exception? ex = null)
