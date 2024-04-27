@@ -566,6 +566,19 @@ references:
   commentId: T:Terminaux.Base.Checks.ConsoleChecker
   fullName: Terminaux.Base.Checks.ConsoleChecker
   nameWithType: ConsoleChecker
+- uid: Terminaux.Base.Checks.ConsoleChecker.AddToCheckWhitelist(System.Reflection.Assembly)
+  name: AddToCheckWhitelist(Assembly)
+  href: api/Terminaux.Base.Checks.ConsoleChecker.html#Terminaux_Base_Checks_ConsoleChecker_AddToCheckWhitelist_System_Reflection_Assembly_
+  commentId: M:Terminaux.Base.Checks.ConsoleChecker.AddToCheckWhitelist(System.Reflection.Assembly)
+  fullName: Terminaux.Base.Checks.ConsoleChecker.AddToCheckWhitelist(System.Reflection.Assembly)
+  nameWithType: ConsoleChecker.AddToCheckWhitelist(Assembly)
+- uid: Terminaux.Base.Checks.ConsoleChecker.AddToCheckWhitelist*
+  name: AddToCheckWhitelist
+  href: api/Terminaux.Base.Checks.ConsoleChecker.html#Terminaux_Base_Checks_ConsoleChecker_AddToCheckWhitelist_
+  commentId: Overload:Terminaux.Base.Checks.ConsoleChecker.AddToCheckWhitelist
+  isSpec: "True"
+  fullName: Terminaux.Base.Checks.ConsoleChecker.AddToCheckWhitelist
+  nameWithType: ConsoleChecker.AddToCheckWhitelist
 - uid: Terminaux.Base.Checks.ConsoleChecker.CheckConsole
   name: CheckConsole()
   href: api/Terminaux.Base.Checks.ConsoleChecker.html#Terminaux_Base_Checks_ConsoleChecker_CheckConsole
@@ -663,6 +676,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Checks.ConsoleChecker.IsDumb
   nameWithType: ConsoleChecker.IsDumb
+- uid: Terminaux.Base.Checks.ConsoleChecker.RemoveFromCheckWhitelist(System.Reflection.Assembly)
+  name: RemoveFromCheckWhitelist(Assembly)
+  href: api/Terminaux.Base.Checks.ConsoleChecker.html#Terminaux_Base_Checks_ConsoleChecker_RemoveFromCheckWhitelist_System_Reflection_Assembly_
+  commentId: M:Terminaux.Base.Checks.ConsoleChecker.RemoveFromCheckWhitelist(System.Reflection.Assembly)
+  fullName: Terminaux.Base.Checks.ConsoleChecker.RemoveFromCheckWhitelist(System.Reflection.Assembly)
+  nameWithType: ConsoleChecker.RemoveFromCheckWhitelist(Assembly)
+- uid: Terminaux.Base.Checks.ConsoleChecker.RemoveFromCheckWhitelist*
+  name: RemoveFromCheckWhitelist
+  href: api/Terminaux.Base.Checks.ConsoleChecker.html#Terminaux_Base_Checks_ConsoleChecker_RemoveFromCheckWhitelist_
+  commentId: Overload:Terminaux.Base.Checks.ConsoleChecker.RemoveFromCheckWhitelist
+  isSpec: "True"
+  fullName: Terminaux.Base.Checks.ConsoleChecker.RemoveFromCheckWhitelist
+  nameWithType: ConsoleChecker.RemoveFromCheckWhitelist
 - uid: Terminaux.Base.Checks.ConsoleFilter
   name: ConsoleFilter
   href: api/Terminaux.Base.Checks.ConsoleFilter.html
