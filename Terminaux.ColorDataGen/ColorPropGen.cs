@@ -19,9 +19,9 @@
 
 using Microsoft.CodeAnalysis;
 using Newtonsoft.Json;
+using System.IO;
 using System.Linq;
 using System.Text;
-using Terminaux.ColorDataGen.Resources;
 using Terminaux.Colors.Data;
 
 namespace Terminaux.ColorDataGen
@@ -29,8 +29,17 @@ namespace Terminaux.ColorDataGen
     [Generator]
     public class ColorPropGen : ISourceGenerator
     {
+        private string colorContent = "";
+
         public void Execute(GeneratorExecutionContext context)
         {
+            // Get the color data content
+            var asm = typeof(ColorPropGen).Assembly;
+            var stream = asm.GetManifestResourceStream($"{asm.GetName().Name}.Resources.ConsoleColorsData.json");
+            using var reader = new StreamReader(stream);
+            colorContent = reader.ReadToEnd();
+
+            // Now, populate the color enumerations and data properties
             PopulateColorEnums(context);
             PopulateColorData(context);
         }
@@ -77,7 +86,7 @@ namespace Terminaux.ColorDataGen
             var builder = new StringBuilder(header);
 
             // Read all the console color data
-            var list = JsonConvert.DeserializeObject<ConsoleColorData[]>(ConsoleResources.ConsoleColorsData);
+            var list = JsonConvert.DeserializeObject<ConsoleColorData[]>(colorContent);
             var names = list.Select((data) => data.Name).ToArray();
             if (list is null)
                 return;
@@ -176,7 +185,7 @@ namespace Terminaux.ColorDataGen
             var builder = new StringBuilder(header);
 
             // Read all the console color data
-            var list = JsonConvert.DeserializeObject<ConsoleColorData[]>(ConsoleResources.ConsoleColorsData);
+            var list = JsonConvert.DeserializeObject<ConsoleColorData[]>(colorContent);
             if (list is null)
                 return;
 

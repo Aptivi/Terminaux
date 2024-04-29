@@ -24,19 +24,7 @@
   </Target>
 
   <ItemGroup>
-    <Compile Update="Resources\SequenceResources.Designer.cs">
-      <DependentUpon>SequenceResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Resources\SequenceResources.resx">
-      <SubType>Designer</SubType>
-      <LastGenOutput>SequenceResources.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\sequences.json" />
   </ItemGroup>
 
 </Project>

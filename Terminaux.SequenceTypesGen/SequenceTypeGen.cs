@@ -20,9 +20,9 @@
 using Microsoft.CodeAnalysis;
 using Newtonsoft.Json;
 using System;
+using System.IO;
 using System.Text;
 using Terminaux.SequenceTypesGen.Decoy;
-using Terminaux.SequenceTypesGen.Resources;
 
 namespace Terminaux.SequenceTypesGen
 {
@@ -31,8 +31,14 @@ namespace Terminaux.SequenceTypesGen
     {
         public void Execute(GeneratorExecutionContext context)
         {
+            // Get the color data content
+            var asm = typeof(SequenceTypeGen).Assembly;
+            var stream = asm.GetManifestResourceStream($"{asm.GetName().Name}.Resources.sequences.json");
+            using var reader = new StreamReader(stream);
+            string content = reader.ReadToEnd();
+
             // Read all the console sequences data
-            var list = JsonConvert.DeserializeObject<SequenceTypeInfo[]>(SequenceResources.Sequences);
+            var list = JsonConvert.DeserializeObject<SequenceTypeInfo[]>(content);
             SequencesGeneralEnumGenerator(list, context);
             SequencesGeneralClassGenerator(list, context);
             SequencesEnumGenerator(list, context);

@@ -21,19 +21,24 @@ using Humanizer;
 using Microsoft.CodeAnalysis;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
-using Terminaux.TermInfoGen.Resources;
 
 namespace Terminaux.TermInfoGen
 {
     [Generator]
     public class CapabilityGenerator : ISourceGenerator
     {
-        public void Initialize(GeneratorInitializationContext context)
-        { }
+        private string capabilityContent = "";
 
         public void Execute(GeneratorExecutionContext context)
         {
+            // Get the color data content
+            var asm = typeof(CapabilityGenerator).Assembly;
+            var stream = asm.GetManifestResourceStream($"{asm.GetName().Name}.Resources.Caps");
+            using var reader = new StreamReader(stream);
+            capabilityContent = reader.ReadToEnd();
+
             // Read all the terminal capabilities
             var capabilities = ReadCapabilities();
 
@@ -41,6 +46,9 @@ namespace Terminaux.TermInfoGen
             GenerateCapabilities(capabilities, context);
             GenerateDescriptions(capabilities, context);
         }
+
+        public void Initialize(GeneratorInitializationContext context)
+        { }
 
         private void GenerateCapabilities(Capabilities capabilities, GeneratorExecutionContext context)
         {
@@ -248,7 +256,7 @@ namespace Terminaux.TermInfoGen
         {
             // Get the capabilities from NCurses
             var result = new List<Capability>();
-            var caps = TermInfoResources.Caps.Replace("\r", "");
+            var caps = capabilityContent.Replace("\r", "");
             var lines = caps.Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
             var indices = new Dictionary<CapabilityType, int>
             {

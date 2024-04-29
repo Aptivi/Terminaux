@@ -26,19 +26,7 @@
   </Target>
 
   <ItemGroup>
-    <Compile Update="Resources\TermInfoResources.Designer.cs">
-      <DependentUpon>TermInfoResources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Resources\TermInfoResources.resx">
-      <SubType>Designer</SubType>
-      <LastGenOutput>TermInfoResources.Designer.cs</LastGenOutput>
-      <Generator>ResXFileCodeGenerator</Generator>
-    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Caps" />
   </ItemGroup>
 
 </Project>
