@@ -147,5 +147,28 @@ namespace Terminaux.Tests.Base
             Source.ShouldBe(expected);
         }
 
+        /// <summary>
+        /// Tests getting the Unicode character widths
+        /// </summary>
+        [TestMethod]
+        [DataRow(null, 0)]     // NULL character
+        [DataRow('\0', 0)]     // NULL character
+        [DataRow('\b', 0)]     // BEEP character
+        [DataRow('\u001A', 0)] // SUBSTITUTE character
+        [DataRow('A', 1)]
+        [DataRow('a', 1)]
+        [DataRow('1', 1)]
+        [DataRow('?', 1)]
+        [DataRow('*', 1)]
+        [DataRow('你', 2)]
+        [DataRow('！', 2)]
+        [DataRow('\u200b', 0)] // ZERO-WIDTH SPACE character
+        [Description("Querying")]
+        public void TestUnicodeCharWidths(char c, int expected)
+        {
+            int actual = ConsoleChar.GetCharWidth(c);
+            actual.ShouldBe(expected);
+        }
+
     }
 }
