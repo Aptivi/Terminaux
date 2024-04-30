@@ -232,6 +232,9 @@ namespace Terminaux.Tests.Base
         // Arabic with formatters. The "Aldammatun (وٌ)" should not occupy any cell.
         [DataRow("Terminaux رائعٌ!", 1, 16)]
         [DataRow("\u200bTerminaux رائعٌ!", 2, 17)]
+
+        // Emoji should take two cells, as they can't be expressed by just one cell, and they are surrogate pairs.
+        [DataRow("😀", 0, 2)]
         [Description("Querying")]
         public void TestEstimateZeroWidths(string sentence, int expectedWidths, int expectedLength)
         {
@@ -266,6 +269,9 @@ namespace Terminaux.Tests.Base
         // Arabic with formatters. The "Aldammatun (وٌ)" should not occupy any cell.
         [DataRow("Terminaux رائعٌ!", 0, 16)]
         [DataRow("\u200bTerminaux رائعٌ!", 0, 17)]
+
+        // Emoji should take two cells, as they can't be expressed by just one cell, and they are surrogate pairs.
+        [DataRow("😀", 1, 2)]
         [Description("Querying")]
         public void TestEstimateFullWidths(string sentence, int expectedWidths, int expectedLength)
         {

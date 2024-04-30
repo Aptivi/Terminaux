@@ -146,10 +146,23 @@ namespace Terminaux.Base.Extensions
             // Iterate through every character inside this string to get their widths according to the Unicode
             // standards to ensure that we calculate all the zero widths.
             int zeroWidths = 0;
-            foreach (char c in sentence)
+            for (int i = 0; i < sentence.Length; i++)
             {
-                if (GetCharWidth(c) == 0)
-                    zeroWidths++;
+                char c = sentence[i];
+
+                // Emojis and other characters use surrogate pairs, so we need to check them.
+                if (!char.IsSurrogate(c))
+                {
+                    if (GetCharWidth(c) == 0)
+                        zeroWidths++;
+                }
+                else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
+                {
+                    int codePoint = char.ConvertToUtf32(c, sentence[i + 1]);
+                    if (GetCharWidth(codePoint) == 0)
+                        zeroWidths++;
+                    i++;
+                }
             }
             return zeroWidths;
         }
@@ -172,10 +185,23 @@ namespace Terminaux.Base.Extensions
             // Iterate through every character inside this string to get their widths according to the Unicode
             // standards to ensure that we calculate all the full widths.
             int fullWidths = 0;
-            foreach (char c in sentence)
+            for (int i = 0; i < sentence.Length; i++)
             {
-                if (GetCharWidth(c) == 2)
-                    fullWidths++;
+                char c = sentence[i];
+
+                // Emojis and other characters use surrogate pairs, so we need to check them.
+                if (!char.IsSurrogate(c))
+                {
+                    if (GetCharWidth(c) == 2)
+                        fullWidths++;
+                }
+                else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
+                {
+                    int codePoint = char.ConvertToUtf32(c, sentence[i + 1]);
+                    if (GetCharWidth(codePoint) == 2)
+                        fullWidths++;
+                    i++;
+                }
             }
             return fullWidths;
         }
