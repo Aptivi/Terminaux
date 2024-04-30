@@ -43,10 +43,10 @@ namespace Terminaux.Base.Extensions
         /// <summary>
         /// Gets the character width
         /// </summary>
-        /// <param name="c">A character number to parse</param>
+        /// <param name="c">A character number (codepoint) to parse</param>
         /// <returns>Either 0 for non-printing characters, 1 for half-width characters, or 2 for full-width characters</returns>
         /// <exception cref="TerminauxInternalException"></exception>
-        public static int GetCharWidth(char c)
+        public static int GetCharWidth(int c)
         {
             // Check the value
             if (c < 0 || c > 0x10FFFF)
@@ -111,8 +111,20 @@ namespace Terminaux.Base.Extensions
             // Iterate through every character inside this string to get their widths according to the Unicode
             // standards to ensure that we have the correct cell width count that the string takes up.
             int cells = 0;
-            foreach (char c in sentence)
-                cells += GetCharWidth(c);
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                char c = sentence[i];
+
+                // Emojis and other characters use surrogate pairs, so we need to check them.
+                if (!char.IsSurrogate(c))
+                    cells += GetCharWidth(c);
+                else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
+                {
+                    int codePoint = char.ConvertToUtf32(c, sentence[i + 1]);
+                    cells += GetCharWidth(codePoint);
+                    i++;
+                }
+            }
             return cells;
         }
 

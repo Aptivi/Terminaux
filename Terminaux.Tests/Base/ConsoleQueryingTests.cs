@@ -197,7 +197,7 @@ namespace Terminaux.Tests.Base
         [DataRow("\u200bTerminaux رائعٌ!", 15, 17)]
 
         // Emoji should take two cells, as they can't be expressed by just one cell, and they are surrogate pairs.
-        // [DataRow("😀", 2, 2)]
+        [DataRow("😀", 2, 2)]
         [Description("Querying")]
         public void TestEstimateWidths(string sentence, int expectedCells, int expectedLength)
         {
