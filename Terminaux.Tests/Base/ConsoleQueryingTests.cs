@@ -170,5 +170,110 @@ namespace Terminaux.Tests.Base
             actual.ShouldBe(expected);
         }
 
+        /// <summary>
+        /// Tests estimating the Unicode character widths for a sentence
+        /// </summary>
+        [TestMethod]
+        [DataRow(null, 0, 0)]
+        [DataRow("", 0, 0)]
+        [DataRow("\u200b", 0, 1)]
+        [DataRow("Hello!", 6, 6)]
+        [DataRow("H\u200bello!", 6, 7)]
+
+        // Chinese and Korean should occupy two cells.
+        [DataRow("你好！", 6, 3)]
+        [DataRow("\u200b你好！", 6, 4)]
+        [DataRow("你好!", 5, 3)]
+        [DataRow("\u200b你好!", 5, 4)]
+        [DataRow("Terminaux는 최고입니다!", 23, 17)]
+        [DataRow("\u200bTerminaux는 최고입니다!", 23, 18)]
+
+        // Arabic should only occupy one cell.
+        [DataRow("Terminaux رائع!", 15, 15)]
+        [DataRow("\u200bTerminaux رائع!", 15, 16)]
+
+        // Arabic with formatters. The "Aldammatun (وٌ)" should not occupy any cell.
+        [DataRow("Terminaux رائعٌ!", 15, 16)]
+        [DataRow("\u200bTerminaux رائعٌ!", 15, 17)]
+
+        // Emoji should take two cells, as they can't be expressed by just one cell, and they are surrogate pairs.
+        // [DataRow("😀", 2, 2)]
+        [Description("Querying")]
+        public void TestEstimateWidths(string sentence, int expectedCells, int expectedLength)
+        {
+            int actualCells = ConsoleChar.EstimateCellWidth(sentence);
+            int actualLength = string.IsNullOrEmpty(sentence) ? 0 : sentence.Length;
+            actualCells.ShouldBe(expectedCells);
+            actualLength.ShouldBe(expectedLength);
+        }
+
+        /// <summary>
+        /// Tests estimating the number of Unicode zero-width characters in a sentence
+        /// </summary>
+        [TestMethod]
+        [DataRow(null, 0, 0)]
+        [DataRow("", 0, 0)]
+        [DataRow("\u200b", 1, 1)]
+        [DataRow("Hello!", 0, 6)]
+        [DataRow("H\u200bello!", 1, 7)]
+
+        // Chinese and Korean should occupy two cells.
+        [DataRow("你好！", 0, 3)]
+        [DataRow("\u200b你好！", 1, 4)]
+        [DataRow("你好!", 0, 3)]
+        [DataRow("\u200b你好!", 1, 4)]
+        [DataRow("Terminaux는 최고입니다!", 0, 17)]
+        [DataRow("\u200bTerminaux는 최고입니다!", 1, 18)]
+
+        // Arabic should only occupy one cell.
+        [DataRow("Terminaux رائع!", 0, 15)]
+        [DataRow("\u200bTerminaux رائع!", 1, 16)]
+
+        // Arabic with formatters. The "Aldammatun (وٌ)" should not occupy any cell.
+        [DataRow("Terminaux رائعٌ!", 1, 16)]
+        [DataRow("\u200bTerminaux رائعٌ!", 2, 17)]
+        [Description("Querying")]
+        public void TestEstimateZeroWidths(string sentence, int expectedWidths, int expectedLength)
+        {
+            int actualWidths = ConsoleChar.EstimateZeroWidths(sentence);
+            int actualLength = string.IsNullOrEmpty(sentence) ? 0 : sentence.Length;
+            actualWidths.ShouldBe(expectedWidths);
+            actualLength.ShouldBe(expectedLength);
+        }
+
+        /// <summary>
+        /// Tests estimating the number of Unicode full-width characters in a sentence
+        /// </summary>
+        [TestMethod]
+        [DataRow(null, 0, 0)]
+        [DataRow("", 0, 0)]
+        [DataRow("\u200b", 0, 1)]
+        [DataRow("Hello!", 0, 6)]
+        [DataRow("H\u200bello!", 0, 7)]
+
+        // Chinese and Korean should occupy two cells.
+        [DataRow("你好！", 3, 3)]
+        [DataRow("\u200b你好！", 3, 4)]
+        [DataRow("你好!", 2, 3)]
+        [DataRow("\u200b你好!", 2, 4)]
+        [DataRow("Terminaux는 최고입니다!", 6, 17)]
+        [DataRow("\u200bTerminaux는 최고입니다!", 6, 18)]
+
+        // Arabic should only occupy one cell.
+        [DataRow("Terminaux رائع!", 0, 15)]
+        [DataRow("\u200bTerminaux رائع!", 0, 16)]
+
+        // Arabic with formatters. The "Aldammatun (وٌ)" should not occupy any cell.
+        [DataRow("Terminaux رائعٌ!", 0, 16)]
+        [DataRow("\u200bTerminaux رائعٌ!", 0, 17)]
+        [Description("Querying")]
+        public void TestEstimateFullWidths(string sentence, int expectedWidths, int expectedLength)
+        {
+            int actualWidths = ConsoleChar.EstimateFullWidths(sentence);
+            int actualLength = string.IsNullOrEmpty(sentence) ? 0 : sentence.Length;
+            actualWidths.ShouldBe(expectedWidths);
+            actualLength.ShouldBe(expectedLength);
+        }
+
     }
 }
