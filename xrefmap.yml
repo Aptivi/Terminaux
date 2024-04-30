@@ -1761,15 +1761,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsoleChar.EstimateZeroWidths
   nameWithType: ConsoleChar.EstimateZeroWidths
-- uid: Terminaux.Base.Extensions.ConsoleChar.GetCharWidth(System.Char)
-  name: GetCharWidth(char)
-  href: api/Terminaux.Base.Extensions.ConsoleChar.html#Terminaux_Base_Extensions_ConsoleChar_GetCharWidth_System_Char_
-  commentId: M:Terminaux.Base.Extensions.ConsoleChar.GetCharWidth(System.Char)
-  name.vb: GetCharWidth(Char)
-  fullName: Terminaux.Base.Extensions.ConsoleChar.GetCharWidth(char)
-  fullName.vb: Terminaux.Base.Extensions.ConsoleChar.GetCharWidth(Char)
-  nameWithType: ConsoleChar.GetCharWidth(char)
-  nameWithType.vb: ConsoleChar.GetCharWidth(Char)
+- uid: Terminaux.Base.Extensions.ConsoleChar.GetCharWidth(System.Int32)
+  name: GetCharWidth(int)
+  href: api/Terminaux.Base.Extensions.ConsoleChar.html#Terminaux_Base_Extensions_ConsoleChar_GetCharWidth_System_Int32_
+  commentId: M:Terminaux.Base.Extensions.ConsoleChar.GetCharWidth(System.Int32)
+  name.vb: GetCharWidth(Integer)
+  fullName: Terminaux.Base.Extensions.ConsoleChar.GetCharWidth(int)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleChar.GetCharWidth(Integer)
+  nameWithType: ConsoleChar.GetCharWidth(int)
+  nameWithType.vb: ConsoleChar.GetCharWidth(Integer)
 - uid: Terminaux.Base.Extensions.ConsoleChar.GetCharWidth*
   name: GetCharWidth
   href: api/Terminaux.Base.Extensions.ConsoleChar.html#Terminaux_Base_Extensions_ConsoleChar_GetCharWidth_
