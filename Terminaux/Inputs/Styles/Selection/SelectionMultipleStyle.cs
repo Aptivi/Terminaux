@@ -248,7 +248,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                 selectionBuilder.Append(AnswerOption.Truncate(answerTitleMaxLeft - 8 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) =>
                                 {
                                     int sum = 0;
-                                    foreach (Match item in mc)
+                                    foreach (Match item in mc.matches)
                                         sum += item.Length;
                                     return sum;
                                 })));

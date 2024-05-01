@@ -113,22 +113,22 @@ namespace Terminaux.Base.Extensions
             foreach (string splitText in text.SplitNewLines())
             {
                 var sequencesCollections = VtSequenceTools.MatchVTSequences(splitText);
-                foreach (var sequences in sequencesCollections)
+                int vtSeqIdx = 0;
+                int compensate = 0;
+                int take = 0;
+                if (splitText.Length == 0)
+                    IncompleteSentences.Add(splitText);
+                for (int i = 0; i < splitText.Length; i++)
                 {
-                    int vtSeqIdx = 0;
-                    int compensate = 0;
-                    int take = 0;
-                    if (splitText.Length == 0)
-                        IncompleteSentences.Add(splitText);
-                    for (int i = 0; i < splitText.Length; i++)
+                    // Check the character to see if we're at the VT sequence
+                    bool explicitNewLine = splitText[splitText.Length - 1] == '\n';
+                    char ParagraphChar = splitText[i];
+                    bool isNewLine = splitText[i] == '\n';
+                    bool wouldOverflow = false;
+                    bool overflown = false;
+                    string seq = "";
+                    foreach ((var _, var sequences) in sequencesCollections)
                     {
-                        // Check the character to see if we're at the VT sequence
-                        bool explicitNewLine = splitText[splitText.Length - 1] == '\n';
-                        char ParagraphChar = splitText[i];
-                        bool isNewLine = splitText[i] == '\n';
-                        bool wouldOverflow = false;
-                        bool overflown = false;
-                        string seq = "";
                         if (sequences.Length > 0 && sequences[vtSeqIdx].Index == i)
                         {
                             // We're at an index which is the same as the captured VT sequence. Get the sequence
@@ -142,42 +142,42 @@ namespace Terminaux.Base.Extensions
                             i += seq.Length - 1;
                             compensate += seq.Length;
                         }
+                    }
 
-                        // Append the character into the incomplete sentence builder.
-                        string sequence = !string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString();
-                        int width = ConsoleChar.EstimateCellWidth(splitText, i);
+                    // Append the character into the incomplete sentence builder.
+                    string sequence = !string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString();
+                    int width = ConsoleChar.EstimateCellWidth(splitText, i);
 
-                        // Also, compensate the zero-width characters and take the full-width ones
-                        if (width == 0)
-                            compensate++;
-                        if (width == 2)
-                            take++;
-                        if (!isNewLine)
-                        {
-                            overflown = IncompleteSentenceBuilder.Length + width == maximumLength - indentLength + compensate - take;
-                            wouldOverflow = IncompleteSentenceBuilder.Length + width > maximumLength - indentLength + compensate - take;
-                            if (!wouldOverflow)
-                                IncompleteSentenceBuilder.Append(sequence);
-                        }
+                    // Also, compensate the zero-width characters and take the full-width ones
+                    if (width == 0)
+                        compensate++;
+                    if (width == 2)
+                        take++;
+                    if (!isNewLine)
+                    {
+                        overflown = IncompleteSentenceBuilder.Length + width == maximumLength - indentLength + compensate - take;
+                        wouldOverflow = IncompleteSentenceBuilder.Length + width > maximumLength - indentLength + compensate - take;
+                        if (!wouldOverflow)
+                            IncompleteSentenceBuilder.Append(sequence);
+                    }
 
-                        // Check to see if we're at the maximum character number or at the new line
-                        if (overflown | wouldOverflow | i == splitText.Length - 1 | isNewLine)
-                        {
-                            // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                            IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
-                            if (explicitNewLine)
-                                IncompleteSentences.Add("");
+                    // Check to see if we're at the maximum character number or at the new line
+                    if (overflown | wouldOverflow | i == splitText.Length - 1 | isNewLine)
+                    {
+                        // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
+                        IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+                        if (explicitNewLine)
+                            IncompleteSentences.Add("");
 
-                            // Clean everything up
-                            IncompleteSentenceBuilder.Clear();
-                            indentLength = 0;
-                            compensate = 0;
-                            take = 0;
+                        // Clean everything up
+                        IncompleteSentenceBuilder.Clear();
+                        indentLength = 0;
+                        compensate = 0;
+                        take = 0;
 
-                            // Add the overflown string if found
-                            if (wouldOverflow)
-                                IncompleteSentenceBuilder.Append(sequence);
-                        }
+                        // Add the overflown string if found
+                        if (wouldOverflow)
+                            IncompleteSentenceBuilder.Append(sequence);
                     }
                 }
             }
@@ -232,7 +232,7 @@ namespace Terminaux.Base.Extensions
                 void CompensateLengths(string text)
                 {
                     var sequencesCollections = VtSequenceTools.MatchVTSequences(text);
-                    foreach (var sequences in sequencesCollections)
+                    foreach ((var _, var sequences) in sequencesCollections)
                     {
                         if (sequences.Length == 0)
                             continue;

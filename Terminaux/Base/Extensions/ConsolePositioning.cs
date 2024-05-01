@@ -31,7 +31,7 @@ using SpecProbe.Platform;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
-using Terminaux.Colors;
+using Terminaux.Sequences;
 
 namespace Terminaux.Base.Extensions
 {
@@ -309,7 +309,7 @@ namespace Terminaux.Base.Extensions
             return commandOutputBuilder.ToString();
         }
 
-        internal static string BufferChar(string text, Match[][] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
+        internal static string BufferChar(string text, (VtSequenceType type, Match[] sequences)[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
         {
             // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
             // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
@@ -327,7 +327,7 @@ namespace Terminaux.Base.Extensions
             char ch = text[i];
             string seq = "";
             bool vtSeq = false;
-            foreach (var sequences in sequencesCollections)
+            foreach ((var _, var sequences) in sequencesCollections)
             {
                 if (sequences.Length > 0 && sequences[vtSeqIdx].Index == i)
                 {

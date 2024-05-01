@@ -282,21 +282,47 @@ namespace Terminaux.Tests.Sequences
             string vtSequence1 = $"{EscapeChar}[38;5;43m";
             string vtSequence2 = $"{EscapeChar}_1{StringTerminator}";
             string vtSequence3 = $"{EscapeChar}]0;Hi!{BellChar}";
-            Match[][] matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}");
-            Match[][] matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence2}lo!");
-            Match[][] matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence3}Hello!");
+            var matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}");
+            var matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence2}lo!");
+            var matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence3}Hello!");
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
-            matchCollections1.ShouldHaveSingleItem();
-            matchCollections2.ShouldHaveSingleItem();
-            matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].ShouldNotBeEmpty();
-            matchCollections2[0].ShouldNotBeEmpty();
-            matchCollections3[0].ShouldNotBeEmpty();
-            matchCollections1[0].ShouldHaveSingleItem();
-            matchCollections2[0].ShouldHaveSingleItem();
-            matchCollections3[0].ShouldHaveSingleItem();
+            matchCollections1.Length.ShouldBe(7);
+            matchCollections2.Length.ShouldBe(7);
+            matchCollections3.Length.ShouldBe(7);
+            bool found1 = false;
+            bool found2 = false;
+            bool found3 = false;
+            foreach (var (type, matches) in matchCollections1)
+            {
+                if (matches.Length > 0)
+                {
+                    matches.ShouldNotBeEmpty();
+                    matches.ShouldHaveSingleItem();
+                    found1 = true;
+                }
+            }
+            foreach (var (type, matches) in matchCollections2)
+            {
+                if (matches.Length > 0)
+                {
+                    matches.ShouldNotBeEmpty();
+                    matches.ShouldHaveSingleItem();
+                    found2 = true;
+                }
+            }
+            foreach (var (type, matches) in matchCollections3)
+            {
+                if (matches.Length > 0)
+                {
+                    matches.ShouldNotBeEmpty();
+                    matches.ShouldHaveSingleItem();
+                    found3 = true;
+                }
+            }
+            bool found = found1 && found2 && found3;
+            found.ShouldBeTrue();
         }
 
         /// <summary>
@@ -309,21 +335,24 @@ namespace Terminaux.Tests.Sequences
             char EscapeChar = Convert.ToChar(0x1b);
             string vtSequence1 = $"{EscapeChar}_1{StringTerminator}";
             VtSequenceType requestedType = VtSequenceType.Apc;
-            Match[][] matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
-            Match[][] matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
-            Match[][] matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence1}Hello!", requestedType);
+            var matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
+            var matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
+            var matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence1}Hello!", requestedType);
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
             matchCollections1.ShouldHaveSingleItem();
             matchCollections2.ShouldHaveSingleItem();
             matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].ShouldNotBeEmpty();
-            matchCollections2[0].ShouldNotBeEmpty();
-            matchCollections3[0].ShouldNotBeEmpty();
-            matchCollections1[0].ShouldHaveSingleItem();
-            matchCollections2[0].ShouldHaveSingleItem();
-            matchCollections3[0].ShouldHaveSingleItem();
+            matchCollections1[0].type.ShouldBe(requestedType);
+            matchCollections2[0].type.ShouldBe(requestedType);
+            matchCollections3[0].type.ShouldBe(requestedType);
+            matchCollections1[0].matches.ShouldNotBeEmpty();
+            matchCollections2[0].matches.ShouldNotBeEmpty();
+            matchCollections3[0].matches.ShouldNotBeEmpty();
+            matchCollections1[0].matches.ShouldHaveSingleItem();
+            matchCollections2[0].matches.ShouldHaveSingleItem();
+            matchCollections3[0].matches.ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -336,21 +365,24 @@ namespace Terminaux.Tests.Sequences
             string vtSequence1 = $"{EscapeChar}8";
             string vtSequence2 = $"{EscapeChar}M";
             VtSequenceType requestedType = VtSequenceType.C1;
-            Match[][] matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
-            Match[][] matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
-            Match[][] matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence2}Hello!", requestedType);
+            var matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
+            var matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
+            var matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence2}Hello!", requestedType);
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
             matchCollections1.ShouldHaveSingleItem();
             matchCollections2.ShouldHaveSingleItem();
             matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].ShouldNotBeEmpty();
-            matchCollections2[0].ShouldNotBeEmpty();
-            matchCollections3[0].ShouldNotBeEmpty();
-            matchCollections1[0].ShouldHaveSingleItem();
-            matchCollections2[0].ShouldHaveSingleItem();
-            matchCollections3[0].ShouldHaveSingleItem();
+            matchCollections1[0].type.ShouldBe(requestedType);
+            matchCollections2[0].type.ShouldBe(requestedType);
+            matchCollections3[0].type.ShouldBe(requestedType);
+            matchCollections1[0].matches.ShouldNotBeEmpty();
+            matchCollections2[0].matches.ShouldNotBeEmpty();
+            matchCollections3[0].matches.ShouldNotBeEmpty();
+            matchCollections1[0].matches.ShouldHaveSingleItem();
+            matchCollections2[0].matches.ShouldHaveSingleItem();
+            matchCollections3[0].matches.ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -362,21 +394,24 @@ namespace Terminaux.Tests.Sequences
             char EscapeChar = Convert.ToChar(0x1b);
             string vtSequence1 = $"{EscapeChar}[37m";
             VtSequenceType requestedType = VtSequenceType.Csi;
-            Match[][] matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
-            Match[][] matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
-            Match[][] matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence1}Hello!", requestedType);
+            var matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
+            var matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
+            var matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence1}Hello!", requestedType);
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
             matchCollections1.ShouldHaveSingleItem();
             matchCollections2.ShouldHaveSingleItem();
             matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].ShouldNotBeEmpty();
-            matchCollections2[0].ShouldNotBeEmpty();
-            matchCollections3[0].ShouldNotBeEmpty();
-            matchCollections1[0].ShouldHaveSingleItem();
-            matchCollections2[0].ShouldHaveSingleItem();
-            matchCollections3[0].ShouldHaveSingleItem();
+            matchCollections1[0].type.ShouldBe(requestedType);
+            matchCollections2[0].type.ShouldBe(requestedType);
+            matchCollections3[0].type.ShouldBe(requestedType);
+            matchCollections1[0].matches.ShouldNotBeEmpty();
+            matchCollections2[0].matches.ShouldNotBeEmpty();
+            matchCollections3[0].matches.ShouldNotBeEmpty();
+            matchCollections1[0].matches.ShouldHaveSingleItem();
+            matchCollections2[0].matches.ShouldHaveSingleItem();
+            matchCollections3[0].matches.ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -389,21 +424,24 @@ namespace Terminaux.Tests.Sequences
             char EscapeChar = Convert.ToChar(0x1b);
             string vtSequence1 = $"{EscapeChar}P3{StringTerminator}";
             VtSequenceType requestedType = VtSequenceType.Dcs;
-            Match[][] matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
-            Match[][] matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
-            Match[][] matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence1}Hello!", requestedType);
+            var matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
+            var matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
+            var matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence1}Hello!", requestedType);
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
             matchCollections1.ShouldHaveSingleItem();
             matchCollections2.ShouldHaveSingleItem();
             matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].ShouldNotBeEmpty();
-            matchCollections2[0].ShouldNotBeEmpty();
-            matchCollections3[0].ShouldNotBeEmpty();
-            matchCollections1[0].ShouldHaveSingleItem();
-            matchCollections2[0].ShouldHaveSingleItem();
-            matchCollections3[0].ShouldHaveSingleItem();
+            matchCollections1[0].type.ShouldBe(requestedType);
+            matchCollections2[0].type.ShouldBe(requestedType);
+            matchCollections3[0].type.ShouldBe(requestedType);
+            matchCollections1[0].matches.ShouldNotBeEmpty();
+            matchCollections2[0].matches.ShouldNotBeEmpty();
+            matchCollections3[0].matches.ShouldNotBeEmpty();
+            matchCollections1[0].matches.ShouldHaveSingleItem();
+            matchCollections2[0].matches.ShouldHaveSingleItem();
+            matchCollections3[0].matches.ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -416,21 +454,24 @@ namespace Terminaux.Tests.Sequences
             string vtSequence1 = $"{EscapeChar}#4";
             string vtSequence2 = $"{EscapeChar}%G";
             VtSequenceType requestedType = VtSequenceType.Esc;
-            Match[][] matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
-            Match[][] matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
-            Match[][] matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence2}Hello!", requestedType);
+            var matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
+            var matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
+            var matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence2}Hello!", requestedType);
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
             matchCollections1.ShouldHaveSingleItem();
             matchCollections2.ShouldHaveSingleItem();
             matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].ShouldNotBeEmpty();
-            matchCollections2[0].ShouldNotBeEmpty();
-            matchCollections3[0].ShouldNotBeEmpty();
-            matchCollections1[0].ShouldHaveSingleItem();
-            matchCollections2[0].ShouldHaveSingleItem();
-            matchCollections3[0].ShouldHaveSingleItem();
+            matchCollections1[0].type.ShouldBe(requestedType);
+            matchCollections2[0].type.ShouldBe(requestedType);
+            matchCollections3[0].type.ShouldBe(requestedType);
+            matchCollections1[0].matches.ShouldNotBeEmpty();
+            matchCollections2[0].matches.ShouldNotBeEmpty();
+            matchCollections3[0].matches.ShouldNotBeEmpty();
+            matchCollections1[0].matches.ShouldHaveSingleItem();
+            matchCollections2[0].matches.ShouldHaveSingleItem();
+            matchCollections3[0].matches.ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -443,21 +484,24 @@ namespace Terminaux.Tests.Sequences
             char EscapeChar = Convert.ToChar(0x1b);
             string vtSequence1 = $"{EscapeChar}]0;Title{StringTerminator}";
             VtSequenceType requestedType = VtSequenceType.Osc;
-            Match[][] matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
-            Match[][] matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
-            Match[][] matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence1}Hello!", requestedType);
+            var matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
+            var matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
+            var matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence1}Hello!", requestedType);
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
             matchCollections1.ShouldHaveSingleItem();
             matchCollections2.ShouldHaveSingleItem();
             matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].ShouldNotBeEmpty();
-            matchCollections2[0].ShouldNotBeEmpty();
-            matchCollections3[0].ShouldNotBeEmpty();
-            matchCollections1[0].ShouldHaveSingleItem();
-            matchCollections2[0].ShouldHaveSingleItem();
-            matchCollections3[0].ShouldHaveSingleItem();
+            matchCollections1[0].type.ShouldBe(requestedType);
+            matchCollections2[0].type.ShouldBe(requestedType);
+            matchCollections3[0].type.ShouldBe(requestedType);
+            matchCollections1[0].matches.ShouldNotBeEmpty();
+            matchCollections2[0].matches.ShouldNotBeEmpty();
+            matchCollections3[0].matches.ShouldNotBeEmpty();
+            matchCollections1[0].matches.ShouldHaveSingleItem();
+            matchCollections2[0].matches.ShouldHaveSingleItem();
+            matchCollections3[0].matches.ShouldHaveSingleItem();
         }
 
         /// <summary>
@@ -470,21 +514,24 @@ namespace Terminaux.Tests.Sequences
             char EscapeChar = Convert.ToChar(0x1b);
             string vtSequence1 = $"{EscapeChar}^Kermit{StringTerminator}";
             VtSequenceType requestedType = VtSequenceType.Pm;
-            Match[][] matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
-            Match[][] matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
-            Match[][] matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence1}Hello!", requestedType);
+            var matchCollections1 = VtSequenceTools.MatchVTSequences($"Hello!{vtSequence1}", requestedType);
+            var matchCollections2 = VtSequenceTools.MatchVTSequences($"Hel{vtSequence1}lo!", requestedType);
+            var matchCollections3 = VtSequenceTools.MatchVTSequences($"{vtSequence1}Hello!", requestedType);
             matchCollections1.ShouldNotBeEmpty();
             matchCollections2.ShouldNotBeEmpty();
             matchCollections3.ShouldNotBeEmpty();
             matchCollections1.ShouldHaveSingleItem();
             matchCollections2.ShouldHaveSingleItem();
             matchCollections3.ShouldHaveSingleItem();
-            matchCollections1[0].ShouldNotBeEmpty();
-            matchCollections2[0].ShouldNotBeEmpty();
-            matchCollections3[0].ShouldNotBeEmpty();
-            matchCollections1[0].ShouldHaveSingleItem();
-            matchCollections2[0].ShouldHaveSingleItem();
-            matchCollections3[0].ShouldHaveSingleItem();
+            matchCollections1[0].type.ShouldBe(requestedType);
+            matchCollections2[0].type.ShouldBe(requestedType);
+            matchCollections3[0].type.ShouldBe(requestedType);
+            matchCollections1[0].matches.ShouldNotBeEmpty();
+            matchCollections2[0].matches.ShouldNotBeEmpty();
+            matchCollections3[0].matches.ShouldNotBeEmpty();
+            matchCollections1[0].matches.ShouldHaveSingleItem();
+            matchCollections2[0].matches.ShouldHaveSingleItem();
+            matchCollections3[0].matches.ShouldHaveSingleItem();
         }
 
         /// <summary>

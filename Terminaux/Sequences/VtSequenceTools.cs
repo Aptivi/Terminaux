@@ -33,29 +33,22 @@ namespace Terminaux.Sequences
         private static readonly VtSequenceType[] typeValues = (VtSequenceType[])Enum.GetValues(typeof(VtSequenceType));
 
         /// <summary>
-        /// Filters all of the VT sequences
-        /// </summary>
-        /// <param name="Text">The text that contains the VT sequences</param>
-        /// <param name="replace">Replace the sequences with this text</param>
-        /// <param name="type">VT sequence type</param>
-        /// <returns>The text that doesn't contain the VT sequences</returns>
-        public static string FilterVTSequences(string Text, string replace = "", VtSequenceType type = VtSequenceType.All)
-        {
-            // Filter all sequences according to the list of flags
-            var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
-            Text = sequenceFilterRegex.Replace(Text, replace);
-            return Text;
-        }
-
-        /// <summary>
-        /// Filters all of the VT sequences
+        /// Filters all of the VT sequences with support for multiple types
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="replace">Replace the sequences with this text</param>
         /// <param name="types">VT sequence types</param>
         /// <returns>The text that doesn't contain the VT sequences</returns>
-        public static string FilterVTSequencesMultiple(string Text, string replace = "", VtSequenceType types = VtSequenceType.All)
+        public static string FilterVTSequences(string Text, string replace = "", VtSequenceType types = VtSequenceType.All)
         {
+            static string FilterIndividual(string Text, string replace = "", VtSequenceType type = VtSequenceType.All)
+            {
+                // Filter all sequences according to the list of flags
+                var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
+                Text = sequenceFilterRegex.Replace(Text, replace);
+                return Text;
+            }
+
             // Filter all sequences according to the list of flags
             if (types != VtSequenceType.All)
             {
@@ -64,13 +57,13 @@ namespace Terminaux.Sequences
                     // Check to see if there is a flag denoting a type
                     VtSequenceType typeValueEnum = typeValues[i];
                     if (types.HasFlag(typeValueEnum))
-                        Text = FilterVTSequences(Text, replace, typeValueEnum);
+                        Text = FilterIndividual(Text, replace, typeValueEnum);
                 }
             }
             else
                 // We don't want to go through all the types just for "all sequences", because we need this for performance.
                 // We don't want to show that VtSequenceRegexes.AllVTSequences is unimportant and unnecessary.
-                Text = FilterVTSequences(Text, replace);
+                Text = FilterIndividual(Text, replace);
             return Text;
         }
 
@@ -79,41 +72,25 @@ namespace Terminaux.Sequences
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="type">VT sequence type</param>
-        /// <returns>The array of <see cref="MatchCollection"/>s that contain the capture and group information for the found VT sequences</returns>
-        public static Match[][] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
-        {
-            // Match all sequences according to the type
-            List<Match[]> matchCollections = [];
-            var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
-            matchCollections.Add(sequenceFilterRegex.Matches(Text).OfType<Match>().ToArray());
-            return [.. matchCollections];
-        }
-
-        /// <summary>
-        /// Matches all of the VT sequences
-        /// </summary>
-        /// <param name="Text">The text that contains the VT sequences</param>
-        /// <param name="type">VT sequence type</param>
         /// <returns>The array of <see cref="Match"/>es that contain the capture and group information for the found VT sequences</returns>
-        public static (VtSequenceType, Match[])[] MatchVTSequencesMultiple(string Text, VtSequenceType type = VtSequenceType.All)
+        public static (VtSequenceType type, Match[] matches)[] MatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
-            // Match all sequences according to the list of flags
-            var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
-            List<(VtSequenceType, Match[])> matchCollections = [];
-            if (type != VtSequenceType.All)
+            static Match[] MatchIndividual(string Text, VtSequenceType type = VtSequenceType.All)
             {
-                for (int i = 1; i < typeValues.Length - 1; i++)
-                {
-                    // Check to see if there is a flag denoting a type
-                    VtSequenceType typeValueEnum = typeValues[i];
-                    if (type.HasFlag(typeValueEnum))
-                        matchCollections.Add((typeValueEnum, sequenceFilterRegex.Matches(Text).OfType<Match>().ToArray()));
-                }
+                // Match all sequences according to the type
+                var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
+                return sequenceFilterRegex.Matches(Text).OfType<Match>().ToArray();
             }
-            else
-                // We don't want to go through all the types just for "all sequences", because we need this for performance.
-                // We don't want to show that VtSequenceRegexes.AllVTSequences is unimportant and unnecessary.
-                matchCollections.Add((type, sequenceFilterRegex.Matches(Text).OfType<Match>().ToArray()));
+
+            // Match all sequences according to the list of flags
+            List<(VtSequenceType, Match[])> matchCollections = [];
+            for (int i = 1; i < typeValues.Length - 1; i++)
+            {
+                // Check to see if there is a flag denoting a type
+                VtSequenceType typeValueEnum = typeValues[i];
+                if (type.HasFlag(typeValueEnum))
+                    matchCollections.Add((typeValueEnum, MatchIndividual(Text, typeValueEnum)));
+            }
             return [.. matchCollections];
         }
 
@@ -125,19 +102,13 @@ namespace Terminaux.Sequences
         /// <returns>True if any of the provided VT types are found; otherwise, false.</returns>
         public static bool IsMatchVTSequences(string Text, VtSequenceType type = VtSequenceType.All)
         {
-            // Match all VT sequences according to the type
-            var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
-            return sequenceFilterRegex.IsMatch(Text);
-        }
+            static bool IsMatchIndividual(string Text, VtSequenceType type = VtSequenceType.All)
+            {
+                // Match all VT sequences according to the type
+                var sequenceFilterRegex = GetSequenceFilterRegexFromType(type);
+                return sequenceFilterRegex.IsMatch(Text);
+            }
 
-        /// <summary>
-        /// Does the string contain all of the VT sequences or a VT sequence of any type?
-        /// </summary>
-        /// <param name="Text">The text that contains the VT sequences</param>
-        /// <param name="type">VT sequence type</param>
-        /// <returns>True if any of the provided VT types are found; otherwise, false.</returns>
-        public static bool IsMatchVTSequencesMultiple(string Text, VtSequenceType type = VtSequenceType.All)
-        {
             // Match all VT sequences according to the type
             List<bool> results = [];
             if (type != VtSequenceType.All)
@@ -147,11 +118,11 @@ namespace Terminaux.Sequences
                     // Check to see if there is a flag denoting a type
                     VtSequenceType typeValueEnum = typeValues[i];
                     if (type.HasFlag(typeValueEnum))
-                        results.Add(IsMatchVTSequences(Text, typeValueEnum));
+                        results.Add(IsMatchIndividual(Text, typeValueEnum));
                 }
             }
             else
-                results.Add(IsMatchVTSequences(Text));
+                results.Add(IsMatchIndividual(Text));
             return results.Contains(true);
         }
 
