@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -232,6 +233,10 @@ namespace Terminaux.Reader
             for (int i = 0; i < inputPromptLineTimes; i++)
                 length -= longestSentenceLength + 1;
 
+            // Compensate and take the length according to the character widths
+            length += ConsoleChar.EstimateZeroWidths(state.CurrentText.ToString());
+            length -= ConsoleChar.EstimateFullWidths(state.CurrentText.ToString());
+
             // Return the number of length available
             return length;
         }
@@ -244,13 +249,15 @@ namespace Terminaux.Reader
 
             // Get the longest sentence width and crop the text appropriately
             int longest = GetMaximumInputLength(state);
-            if (state.CurrentText.Length + newText.Length > longest && state.settings.LimitConsoleChars)
+            var strInfoNew = new StringInfo(newText);
+            var strInfoOld = new StringInfo(state.CurrentText.ToString());
+            if (strInfoOld.LengthInTextElements + strInfoNew.LengthInTextElements > longest && state.settings.LimitConsoleChars)
             {
                 state.canInsert = false;
-                int len = longest - (state.CurrentText.Length + newText.Length);
+                int len = longest - (strInfoOld.LengthInTextElements + strInfoNew.LengthInTextElements);
                 if (len < 0)
-                    len = longest - state.CurrentText.Length;
-                newText = newText.Substring(0, len);
+                    len = longest - strInfoOld.LengthInTextElements;
+                newText = strInfoNew.SubstringByTextElements(0, len);
             }
 
             // Now, insert the text
@@ -357,7 +364,8 @@ namespace Terminaux.Reader
                 {
                     incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
                     string last = VtSequenceTools.FilterVTSequences(incompleteSentences[incompleteSentences.Length - 1]);
-                    int spacesLength = longestSentenceLength - state.RightMargin - last.Length - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0);
+                    int lastCells = ConsoleChar.EstimateCellWidth(last);
+                    int spacesLength = longestSentenceLength - state.RightMargin - lastCells - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0);
                     if (spacesLength < 0)
                         spacesLength = 0;
                     if (spaces > 0)

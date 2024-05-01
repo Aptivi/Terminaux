@@ -116,7 +116,8 @@ namespace Terminaux.Base.Extensions
                 foreach (var sequences in sequencesCollections)
                 {
                     int vtSeqIdx = 0;
-                    int vtSeqCompensate = 0;
+                    int compensate = 0;
+                    int take = 0;
                     if (splitText.Length == 0)
                         IncompleteSentences.Add(splitText);
                     for (int i = 0; i < splitText.Length; i++)
@@ -137,19 +138,22 @@ namespace Terminaux.Base.Extensions
 
                             // Raise the paragraph index by the length of the sequence
                             i += seq.Length - 1;
-                            vtSeqCompensate += seq.Length;
+                            compensate += seq.Length;
                         }
 
                         // Append the character into the incomplete sentence builder.
                         if (!isNewLine)
                             IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
 
-                        // Also, compensate the \0 characters
-                        if (splitText[i] == '\0')
-                            vtSeqCompensate++;
+                        // Also, compensate the zero-width characters and take the full-width ones
+                        int width = ConsoleChar.EstimateCellWidth(splitText, i);
+                        if (width == 0)
+                            compensate++;
+                        if (width == 2)
+                            take++;
 
                         // Check to see if we're at the maximum character number or at the new line
-                        if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate |
+                        if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + compensate - take |
                             i == splitText.Length - 1 |
                             isNewLine)
                         {
@@ -161,7 +165,7 @@ namespace Terminaux.Base.Extensions
                             // Clean everything up
                             IncompleteSentenceBuilder.Clear();
                             indentLength = 0;
-                            vtSeqCompensate = 0;
+                            compensate = 0;
                         }
                     }
                 }
@@ -205,7 +209,8 @@ namespace Terminaux.Base.Extensions
             var lines = text.SplitNewLines();
             foreach (string splitText in lines)
             {
-                int vtSeqCompensate = 0;
+                int compensate = 0;
+                int take = 0;
                 if (splitText.Length == 0)
                 {
                     IncompleteSentences.Add(splitText);
@@ -221,7 +226,7 @@ namespace Terminaux.Base.Extensions
                         if (sequences.Length == 0)
                             continue;
                         foreach (var sequence in sequences)
-                            vtSeqCompensate += sequence.Value.Length;
+                            compensate += sequence.Value.Length;
                     }
                 }
 
@@ -233,13 +238,18 @@ namespace Terminaux.Base.Extensions
                     string word = words[i];
                     CompensateLengths(word);
 
-                    // Compensate the \0 characters
+                    // Compensate the zero-width characters and take the full-width ones
                     for (int c = 0; c < word.Length; c++)
-                        if (splitText[c] == '\0')
-                            vtSeqCompensate++;
+                    {
+                        int width = ConsoleChar.EstimateCellWidth(splitText, c);
+                        if (width == 0)
+                            compensate++;
+                        if (width == 2)
+                            take++;
+                    }
 
                     // Append the word into the incomplete sentence builder.
-                    int finalMaximum = maximumLength - indentLength + vtSeqCompensate;
+                    int finalMaximum = maximumLength - indentLength + compensate - take;
                     if (word.Length >= finalMaximum)
                     {
                         var charSplit = GetWrappedSentences(word, maximumLength, indentLength);
@@ -255,14 +265,14 @@ namespace Terminaux.Base.Extensions
                             // Clean everything up
                             IncompleteSentenceBuilder.Clear();
                             indentLength = 0;
-                            vtSeqCompensate = 0;
+                            compensate = 0;
                         }
 
                         // Process the character split last text
                         string charSplitLastText = charSplit[charSplit.Length - 1];
                         word = charSplitLastText;
                         CompensateLengths(charSplitLastText);
-                        finalMaximum = maximumLength - indentLength + vtSeqCompensate;
+                        finalMaximum = maximumLength - indentLength + compensate;
                         IncompleteSentenceBuilder.Append(charSplitLastText);
                     }
                     else if (IncompleteSentenceBuilder.Length + word.Length < finalMaximum)
@@ -278,7 +288,7 @@ namespace Terminaux.Base.Extensions
                         // Clean everything up
                         IncompleteSentenceBuilder.Clear();
                         indentLength = 0;
-                        vtSeqCompensate = 0;
+                        compensate = 0;
                     }
                     else
                         IncompleteSentenceBuilder.Append(IncompleteSentenceBuilder.Length + nextWord >= finalMaximum || i + 1 >= words.Length ? "" : " ");
@@ -300,7 +310,7 @@ namespace Terminaux.Base.Extensions
         public static string Truncate(this string target, int threshold)
         {
             if (target is null)
-                throw new TextifyException("The target may not be null");
+                throw new TerminauxException("The target may not be null");
             if (threshold < 0)
                 threshold = 0;
             if (threshold == 0)
@@ -313,7 +323,10 @@ namespace Terminaux.Base.Extensions
             //
             // In case VT sequences are inserted to the target string, it can mess with the actual length returned, so only
             // truncate the non-VT sequences.
-            int newLength = VtSequenceTools.FilterVTSequences(target).Length;
+            //
+            // The problem here is that we're dealing with the console, so we need to estimate the cell width and not the
+            // string length to handle characters that occupy two cells.
+            int newLength = ConsoleChar.EstimateCellWidth(VtSequenceTools.FilterVTSequences(target));
             if (newLength > threshold)
                 return target.Substring(0, threshold) + "...";
             else

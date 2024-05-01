@@ -113,17 +113,39 @@ namespace Terminaux.Base.Extensions
             int cells = 0;
             for (int i = 0; i < sentence.Length; i++)
             {
-                char c = sentence[i];
-
-                // Emojis and other characters use surrogate pairs, so we need to check them.
-                if (!char.IsSurrogate(c))
-                    cells += GetCharWidth(c);
-                else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
-                {
-                    int codePoint = char.ConvertToUtf32(c, sentence[i + 1]);
-                    cells += GetCharWidth(codePoint);
+                cells += EstimateCellWidth(sentence, i);
+                if (i + 1 < sentence.Length && char.IsSurrogatePair(sentence[i], sentence[i + 1]))
                     i++;
-                }
+            }
+            return cells;
+        }
+
+        /// <summary>
+        /// Estimates the cell width (how many cells a string takes up) of a character
+        /// </summary>
+        /// <param name="sentence">A sentence to process</param>
+        /// <param name="index">Index of a character within a sentence</param>
+        /// <returns>Length of a character by character widths (a.k.a. how many cells this sentence takes up), or -1 if empty</returns>
+        public static int EstimateCellWidth(string sentence, int index)
+        {
+            // We don't need to perform operations on null or empty strings
+            if (string.IsNullOrEmpty(sentence))
+                return -1;
+            if (index > sentence.Length - 1)
+                index = sentence.Length - 1;
+
+            // Iterate through every character inside this string to get their widths according to the Unicode
+            // standards to ensure that we have the correct cell width count that the string takes up.
+            int cells = 0;
+            char c = sentence[index];
+
+            // Emojis and other characters use surrogate pairs, so we need to check them.
+            if (!char.IsSurrogate(c))
+                cells += GetCharWidth(c);
+            else if (index + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[index + 1]))
+            {
+                int codePoint = char.ConvertToUtf32(c, sentence[index + 1]);
+                cells += GetCharWidth(codePoint);
             }
             return cells;
         }

@@ -98,7 +98,10 @@ namespace Terminaux.Base.Extensions
                         else
                         {
                             // Simulate seeking through text
-                            LeftSeekPosition += 1;
+                            int cells = ConsoleChar.EstimateCellWidth(text, j);
+                            if (i + 1 < text.Length && char.IsSurrogatePair(text[j], text[j + 1]))
+                                i++;
+                            LeftSeekPosition += cells;
                             if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
                             {
                                 // We've reached end of line
@@ -117,7 +120,7 @@ namespace Terminaux.Base.Extensions
                     {
                         // We're at the end of buffer! Decrement by one and bail.
                         TopSeekPosition -= 1;
-                        LeftSeekPosition = texts[texts.Length - 1].Length;
+                        LeftSeekPosition = ConsoleChar.EstimateCellWidth(texts[texts.Length - 1]);
                         if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
                             LeftSeekPosition = ConsoleWrapper.WindowWidth - 1;
                         break;

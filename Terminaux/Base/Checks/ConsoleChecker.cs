@@ -30,6 +30,7 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Collections.Generic;
 using Textify.General;
+using System.Text;
 
 namespace Terminaux.Base.Checks
 {
@@ -171,6 +172,10 @@ namespace Terminaux.Base.Checks
             {
                 TextWriterColor.WriteColor("Console positioning is not working properly, so this application might behave erratically.", ConsoleColors.Yellow);
             }
+
+            // Set the encoding
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
 
             // Don't check again.
             busy = false;
