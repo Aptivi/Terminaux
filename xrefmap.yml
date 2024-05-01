@@ -33794,22 +33794,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.VtSequenceTools.FilterVTSequences
   nameWithType: VtSequenceTools.FilterVTSequences
-- uid: Terminaux.Sequences.VtSequenceTools.FilterVTSequencesMultiple(System.String,System.String,Terminaux.Sequences.VtSequenceType)
-  name: FilterVTSequencesMultiple(string, string, VtSequenceType)
-  href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_FilterVTSequencesMultiple_System_String_System_String_Terminaux_Sequences_VtSequenceType_
-  commentId: M:Terminaux.Sequences.VtSequenceTools.FilterVTSequencesMultiple(System.String,System.String,Terminaux.Sequences.VtSequenceType)
-  name.vb: FilterVTSequencesMultiple(String, String, VtSequenceType)
-  fullName: Terminaux.Sequences.VtSequenceTools.FilterVTSequencesMultiple(string, string, Terminaux.Sequences.VtSequenceType)
-  fullName.vb: Terminaux.Sequences.VtSequenceTools.FilterVTSequencesMultiple(String, String, Terminaux.Sequences.VtSequenceType)
-  nameWithType: VtSequenceTools.FilterVTSequencesMultiple(string, string, VtSequenceType)
-  nameWithType.vb: VtSequenceTools.FilterVTSequencesMultiple(String, String, VtSequenceType)
-- uid: Terminaux.Sequences.VtSequenceTools.FilterVTSequencesMultiple*
-  name: FilterVTSequencesMultiple
-  href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_FilterVTSequencesMultiple_
-  commentId: Overload:Terminaux.Sequences.VtSequenceTools.FilterVTSequencesMultiple
-  isSpec: "True"
-  fullName: Terminaux.Sequences.VtSequenceTools.FilterVTSequencesMultiple
-  nameWithType: VtSequenceTools.FilterVTSequencesMultiple
 - uid: Terminaux.Sequences.VtSequenceTools.GetSequenceFilterRegexFromType
   name: GetSequenceFilterRegexFromType()
   href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_GetSequenceFilterRegexFromType
@@ -33858,22 +33842,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.VtSequenceTools.IsMatchVTSequences
   nameWithType: VtSequenceTools.IsMatchVTSequences
-- uid: Terminaux.Sequences.VtSequenceTools.IsMatchVTSequencesMultiple(System.String,Terminaux.Sequences.VtSequenceType)
-  name: IsMatchVTSequencesMultiple(string, VtSequenceType)
-  href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_IsMatchVTSequencesMultiple_System_String_Terminaux_Sequences_VtSequenceType_
-  commentId: M:Terminaux.Sequences.VtSequenceTools.IsMatchVTSequencesMultiple(System.String,Terminaux.Sequences.VtSequenceType)
-  name.vb: IsMatchVTSequencesMultiple(String, VtSequenceType)
-  fullName: Terminaux.Sequences.VtSequenceTools.IsMatchVTSequencesMultiple(string, Terminaux.Sequences.VtSequenceType)
-  fullName.vb: Terminaux.Sequences.VtSequenceTools.IsMatchVTSequencesMultiple(String, Terminaux.Sequences.VtSequenceType)
-  nameWithType: VtSequenceTools.IsMatchVTSequencesMultiple(string, VtSequenceType)
-  nameWithType.vb: VtSequenceTools.IsMatchVTSequencesMultiple(String, VtSequenceType)
-- uid: Terminaux.Sequences.VtSequenceTools.IsMatchVTSequencesMultiple*
-  name: IsMatchVTSequencesMultiple
-  href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_IsMatchVTSequencesMultiple_
-  commentId: Overload:Terminaux.Sequences.VtSequenceTools.IsMatchVTSequencesMultiple
-  isSpec: "True"
-  fullName: Terminaux.Sequences.VtSequenceTools.IsMatchVTSequencesMultiple
-  nameWithType: VtSequenceTools.IsMatchVTSequencesMultiple
 - uid: Terminaux.Sequences.VtSequenceTools.IsMatchVTSequencesSpecific(System.String,Terminaux.Sequences.VtSequenceType)
   name: IsMatchVTSequencesSpecific(string, VtSequenceType)
   href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_IsMatchVTSequencesSpecific_System_String_Terminaux_Sequences_VtSequenceType_
@@ -33906,22 +33874,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Sequences.VtSequenceTools.MatchVTSequences
   nameWithType: VtSequenceTools.MatchVTSequences
-- uid: Terminaux.Sequences.VtSequenceTools.MatchVTSequencesMultiple(System.String,Terminaux.Sequences.VtSequenceType)
-  name: MatchVTSequencesMultiple(string, VtSequenceType)
-  href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_MatchVTSequencesMultiple_System_String_Terminaux_Sequences_VtSequenceType_
-  commentId: M:Terminaux.Sequences.VtSequenceTools.MatchVTSequencesMultiple(System.String,Terminaux.Sequences.VtSequenceType)
-  name.vb: MatchVTSequencesMultiple(String, VtSequenceType)
-  fullName: Terminaux.Sequences.VtSequenceTools.MatchVTSequencesMultiple(string, Terminaux.Sequences.VtSequenceType)
-  fullName.vb: Terminaux.Sequences.VtSequenceTools.MatchVTSequencesMultiple(String, Terminaux.Sequences.VtSequenceType)
-  nameWithType: VtSequenceTools.MatchVTSequencesMultiple(string, VtSequenceType)
-  nameWithType.vb: VtSequenceTools.MatchVTSequencesMultiple(String, VtSequenceType)
-- uid: Terminaux.Sequences.VtSequenceTools.MatchVTSequencesMultiple*
-  name: MatchVTSequencesMultiple
-  href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_MatchVTSequencesMultiple_
-  commentId: Overload:Terminaux.Sequences.VtSequenceTools.MatchVTSequencesMultiple
-  isSpec: "True"
-  fullName: Terminaux.Sequences.VtSequenceTools.MatchVTSequencesMultiple
-  nameWithType: VtSequenceTools.MatchVTSequencesMultiple
 - uid: Terminaux.Sequences.VtSequenceTools.SplitVTSequences(System.String,Terminaux.Sequences.VtSequenceType)
   name: SplitVTSequences(string, VtSequenceType)
   href: api/Terminaux.Sequences.VtSequenceTools.html#Terminaux_Sequences_VtSequenceTools_SplitVTSequences_System_String_Terminaux_Sequences_VtSequenceType_
