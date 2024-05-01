@@ -34,9 +34,9 @@ namespace Terminaux.Colors
     /// </summary>
     public static class ColorTools
     {
+        internal static readonly Color _empty = new(0, new());
         internal static Color currentForegroundColor = new(ConsoleColors.White);
         internal static Color currentBackgroundColor = Color.Empty;
-        internal static Color? _empty;
         internal static Random rng = new();
         private static readonly ColorSettings globalSettings = new();
         private static bool allowBackground;

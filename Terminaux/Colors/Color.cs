@@ -55,19 +55,8 @@ namespace Terminaux.Colors
         /// <summary>
         /// Empty color singleton
         /// </summary>
-        public static Color Empty
-        {
-            get
-            {
-                // Get cached value if cached
-                if (ColorTools._empty is not null)
-                    return ColorTools._empty;
-
-                // Else, cache the empty value and return it
-                ColorTools._empty = new Color(0, new());
-                return ColorTools._empty;
-            }
-        }
+        public static Color Empty =>
+            ColorTools._empty;
 
         /// <summary>
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the settings.
