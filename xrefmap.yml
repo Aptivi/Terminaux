@@ -1722,6 +1722,15 @@ references:
   fullName.vb: Terminaux.Base.Extensions.ConsoleChar.EstimateCellWidth(String)
   nameWithType: ConsoleChar.EstimateCellWidth(string)
   nameWithType.vb: ConsoleChar.EstimateCellWidth(String)
+- uid: Terminaux.Base.Extensions.ConsoleChar.EstimateCellWidth(System.String,System.Int32)
+  name: EstimateCellWidth(string, int)
+  href: api/Terminaux.Base.Extensions.ConsoleChar.html#Terminaux_Base_Extensions_ConsoleChar_EstimateCellWidth_System_String_System_Int32_
+  commentId: M:Terminaux.Base.Extensions.ConsoleChar.EstimateCellWidth(System.String,System.Int32)
+  name.vb: EstimateCellWidth(String, Integer)
+  fullName: Terminaux.Base.Extensions.ConsoleChar.EstimateCellWidth(string, int)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleChar.EstimateCellWidth(String, Integer)
+  nameWithType: ConsoleChar.EstimateCellWidth(string, int)
+  nameWithType.vb: ConsoleChar.EstimateCellWidth(String, Integer)
 - uid: Terminaux.Base.Extensions.ConsoleChar.EstimateCellWidth*
   name: EstimateCellWidth
   href: api/Terminaux.Base.Extensions.ConsoleChar.html#Terminaux_Base_Extensions_ConsoleChar_EstimateCellWidth_
