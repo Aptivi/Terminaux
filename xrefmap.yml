@@ -12506,32 +12506,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Color.PlainSequence
   nameWithType: Color.PlainSequence
-- uid: Terminaux.Colors.Color.PlainSequenceEnclosed
-  name: PlainSequenceEnclosed
-  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequenceEnclosed
-  commentId: P:Terminaux.Colors.Color.PlainSequenceEnclosed
-  fullName: Terminaux.Colors.Color.PlainSequenceEnclosed
-  nameWithType: Color.PlainSequenceEnclosed
-- uid: Terminaux.Colors.Color.PlainSequenceEnclosed*
-  name: PlainSequenceEnclosed
-  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequenceEnclosed_
-  commentId: Overload:Terminaux.Colors.Color.PlainSequenceEnclosed
-  isSpec: "True"
-  fullName: Terminaux.Colors.Color.PlainSequenceEnclosed
-  nameWithType: Color.PlainSequenceEnclosed
-- uid: Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor
-  name: PlainSequenceEnclosedTrueColor
-  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequenceEnclosedTrueColor
-  commentId: P:Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor
-  fullName: Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor
-  nameWithType: Color.PlainSequenceEnclosedTrueColor
-- uid: Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor*
-  name: PlainSequenceEnclosedTrueColor
-  href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequenceEnclosedTrueColor_
-  commentId: Overload:Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor
-  isSpec: "True"
-  fullName: Terminaux.Colors.Color.PlainSequenceEnclosedTrueColor
-  nameWithType: Color.PlainSequenceEnclosedTrueColor
 - uid: Terminaux.Colors.Color.PlainSequenceOriginal
   name: PlainSequenceOriginal
   href: api/Terminaux.Colors.Color.html#Terminaux_Colors_Color_PlainSequenceOriginal
