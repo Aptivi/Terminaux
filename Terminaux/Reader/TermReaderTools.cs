@@ -275,13 +275,19 @@ namespace Terminaux.Reader
 
         internal static void RemoveText(ref TermReaderState state, int startIndex, int length, bool step = false)
         {
+            // Go back a selected length number
+            if (step)
+                PositioningTools.GoBack(length, ref state);
+
             // Remove this amount of characters
-            int old = state.CurrentText.Length;
+            int old = ConsoleChar.EstimateCellWidth(state.CurrentText.ToString());
+            string substr = state.CurrentText.ToString().Substring(startIndex, length);
             state.CurrentText.Remove(startIndex, length);
             state.canInsert = true;
+            length = ConsoleChar.EstimateCellWidth(substr);
 
             // Refresh
-            RefreshPrompt(ref state, step ? length : 0, true, old - state.CurrentText.Length);
+            RefreshPrompt(ref state, 0, false, old - length);
         }
 
         internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false, int spaces = 0)
@@ -489,6 +495,21 @@ namespace Terminaux.Reader
 
             // Return it!
             return (skipFirst, take);
+        }
+
+        internal static string GetLineFromCurrentPos(string[] incompleteSentences, TermReaderState state)
+        {
+            // Deal with trying to count the characters incrementally for each incomplete sentence until we find an index
+            // that we want, then give the rendered string back.
+            int currentIndex = 0;
+            foreach (string sentence in incompleteSentences)
+            {
+                currentIndex += sentence.Length;
+                bool skip = currentIndex < state.CurrentTextPos;
+                if (!skip)
+                    return sentence;
+            }
+            return "";
         }
 
         static TermReaderTools()

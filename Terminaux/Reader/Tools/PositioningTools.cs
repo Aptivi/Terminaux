@@ -144,20 +144,22 @@ namespace Terminaux.Reader.Tools
             GoBackOneLineWrapDisabled(state.currentTextPos, ref state);
         
         internal static void GoRightmostOneLineWrapDisabled(ref TermReaderState state) =>
-            GoForwardOneLineWrapDisabled(ConsoleChar.EstimateCellWidth(state.currentText.ToString()) - state.currentTextPos, ref state);
+            GoForwardOneLineWrapDisabled(state.currentText.Length - state.currentTextPos, ref state);
 
         internal static void GoForwardOneLineWrapDisabled(ref TermReaderState state) =>
             GoForwardOneLineWrapDisabled(1, ref state);
 
         internal static void GoForwardOneLineWrapDisabled(int steps, ref TermReaderState state)
         {
-            if (steps > ConsoleChar.EstimateCellWidth(state.currentText.ToString()) - state.currentTextPos)
-                steps = ConsoleChar.EstimateCellWidth(state.currentText.ToString()) - state.currentTextPos;
+            if (steps > state.currentText.Length - state.currentTextPos)
+                steps = state.currentText.Length - state.currentTextPos;
 
             int height = ConsoleWrapper.BufferHeight;
+            int width = ConsoleWrapper.WindowWidth;
+            var sentences = ConsoleMisc.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
             for (int i = 0; i < steps; i++)
             {
-                int width = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
+                int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
                 state.currentTextPos++;
                 if (state.currentTextPos + 1 < state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos], state.currentText[state.currentTextPos + 1]))
                     state.currentTextPos++;
@@ -165,9 +167,11 @@ namespace Terminaux.Reader.Tools
                 // If the character is unrenderable, continue the loop
                 if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
                     continue;
+                if (cellWidth == 0)
+                    continue;
 
-                state.currentCursorPosLeft += width;
-                if (state.CurrentCursorPosLeft > state.MaximumInputPositionLeft)
+                state.currentCursorPosLeft += cellWidth;
+                if (state.CurrentCursorPosLeft > state.MaximumInputPositionLeft || (state.CurrentCursorPosLeft >= ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(sentences, state)) && state.CurrentCursorPosLeft >= width - 1 && cellWidth == 2))
                 {
                     // Reached to the end! Wrap down!
                     state.currentCursorPosLeft = state.settings.LeftMargin;
@@ -186,6 +190,7 @@ namespace Terminaux.Reader.Tools
                 steps = state.currentTextPos;
 
             int width = ConsoleWrapper.WindowWidth;
+            var sentences = ConsoleMisc.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
             for (int i = 0; i < steps; i++)
             {
                 int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
@@ -199,12 +204,17 @@ namespace Terminaux.Reader.Tools
                 // If the character is unrenderable, continue the loop
                 if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
                     continue;
+                if (cellWidth == 0)
+                    continue;
 
                 state.currentCursorPosLeft -= cellWidth > 0 ? cellWidth : 1;
                 if (state.CurrentCursorPosLeft < state.settings.LeftMargin)
                 {
                     // Reached to the beginning! Wrap up!
-                    state.currentCursorPosLeft = width - 1 - state.settings.RightMargin;
+                    state.currentCursorPosLeft = width - cellWidth - state.settings.RightMargin;
+                    string line = TermReaderTools.GetLineFromCurrentPos(sentences, state);
+                    int lineWidth = ConsoleChar.EstimateCellWidth(line);
+                    state.currentCursorPosLeft -= width - lineWidth;
                     if (state.currentCursorPosTop > 0 && state.CurrentTextPos < TermReaderTools.GetMaximumInputLength(state))
                         state.currentCursorPosTop--;
                 }
@@ -215,15 +225,15 @@ namespace Terminaux.Reader.Tools
             GoBackOneLineWrapAware(state.currentTextPos, ref state);
 
         internal static void GoRightmostOneLineWrapAware(ref TermReaderState state) =>
-            GoForwardOneLineWrapAware(ConsoleChar.EstimateCellWidth(state.currentText.ToString()) - state.currentTextPos, ref state);
+            GoForwardOneLineWrapAware(state.currentText.Length - state.currentTextPos, ref state);
 
         internal static void GoForwardOneLineWrapAware(ref TermReaderState state) =>
             GoForwardOneLineWrapAware(1, ref state);
 
         internal static void GoForwardOneLineWrapAware(int steps, ref TermReaderState state)
         {
-            if (steps > ConsoleChar.EstimateCellWidth(state.currentText.ToString()) - state.currentTextPos)
-                steps = ConsoleChar.EstimateCellWidth(state.currentText.ToString()) - state.currentTextPos;
+            if (steps > state.currentText.Length - state.currentTextPos)
+                steps = state.currentText.Length - state.currentTextPos;
 
             int width = ConsoleWrapper.WindowWidth;
             for (int i = 0; i < steps; i++)

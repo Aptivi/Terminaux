@@ -126,6 +126,8 @@ namespace Terminaux.Base.Extensions
                         bool explicitNewLine = splitText[splitText.Length - 1] == '\n';
                         char ParagraphChar = splitText[i];
                         bool isNewLine = splitText[i] == '\n';
+                        bool wouldOverflow = false;
+                        bool overflown = false;
                         string seq = "";
                         if (sequences.Length > 0 && sequences[vtSeqIdx].Index == i)
                         {
@@ -142,20 +144,24 @@ namespace Terminaux.Base.Extensions
                         }
 
                         // Append the character into the incomplete sentence builder.
-                        if (!isNewLine)
-                            IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
+                        string sequence = !string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString();
+                        int width = ConsoleChar.EstimateCellWidth(splitText, i);
 
                         // Also, compensate the zero-width characters and take the full-width ones
-                        int width = ConsoleChar.EstimateCellWidth(splitText, i);
                         if (width == 0)
                             compensate++;
                         if (width == 2)
                             take++;
+                        if (!isNewLine)
+                        {
+                            overflown = IncompleteSentenceBuilder.Length + width == maximumLength - indentLength + compensate - take;
+                            wouldOverflow = IncompleteSentenceBuilder.Length + width > maximumLength - indentLength + compensate - take;
+                            if (!wouldOverflow)
+                                IncompleteSentenceBuilder.Append(sequence);
+                        }
 
                         // Check to see if we're at the maximum character number or at the new line
-                        if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + compensate - take |
-                            i == splitText.Length - 1 |
-                            isNewLine)
+                        if (overflown | wouldOverflow | i == splitText.Length - 1 | isNewLine)
                         {
                             // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                             IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
@@ -166,6 +172,11 @@ namespace Terminaux.Base.Extensions
                             IncompleteSentenceBuilder.Clear();
                             indentLength = 0;
                             compensate = 0;
+                            take = 0;
+
+                            // Add the overflown string if found
+                            if (wouldOverflow)
+                                IncompleteSentenceBuilder.Append(sequence);
                         }
                     }
                 }
