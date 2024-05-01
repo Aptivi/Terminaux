@@ -75,15 +75,10 @@ namespace Terminaux.Colors
             PlainSequenceOriginal :
             PlainSequenceTrueColor;
         /// <summary>
-        /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary.
-        /// </summary>
-        public string PlainSequenceEnclosed =>
-            Type == ColorType.TrueColor ? $"\"{PlainSequence}\"" : PlainSequence;
-        /// <summary>
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; in its original form.
         /// </summary>
         public string PlainSequenceOriginal =>
-            Type == ColorType.TrueColor ? $"{RGB?.R};{RGB?.G};{RGB?.B}" : $"{ColorId?.ColorId}";
+            Type == ColorType.TrueColor ? PlainSequenceTrueColor : $"{ColorId?.ColorId}";
         /// <summary>
         /// Parsable VT sequence (Foreground)
         /// </summary>
@@ -113,11 +108,6 @@ namespace Terminaux.Colors
         /// </summary>
         public string PlainSequenceTrueColor =>
             $"{RGB?.R};{RGB?.G};{RGB?.B}";
-        /// <summary>
-        /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary
-        /// </summary>
-        public string PlainSequenceEnclosedTrueColor =>
-            $"\"{PlainSequenceTrueColor}\"";
         /// <summary>
         /// Parsable VT sequence (Foreground, true color)
         /// </summary>
@@ -275,12 +265,8 @@ namespace Terminaux.Colors
             this.settings = settings;
 
             // Now, parse the output
-            var rgb = ParsingTools.ParseSpecifier(ColorSpecifier, settings);
-
-            // Match the color data according to the color specifier, and only get the nearest color if not found.
-            var data = ConsoleColorData.GetNearestColor(rgb);
-            ColorId = data;
-            RGB = rgb;
+            RGB = ParsingTools.ParseSpecifier(ColorSpecifier, settings);
+            ColorId = ConsoleColorData.GetNearestColor(RGB);
         }
 
         /// <summary>
@@ -373,11 +359,9 @@ namespace Terminaux.Colors
             // Check all the properties
             return
                 other.PlainSequence == other2.PlainSequence &&
-                other.PlainSequenceEnclosed == other2.PlainSequenceEnclosed &&
                 other.VTSequenceForeground == other2.VTSequenceForeground &&
                 other.VTSequenceBackground == other2.VTSequenceBackground &&
                 other.PlainSequenceTrueColor == other2.PlainSequenceTrueColor &&
-                other.PlainSequenceEnclosedTrueColor == other2.PlainSequenceEnclosedTrueColor &&
                 other.VTSequenceForegroundTrueColor == other2.VTSequenceForegroundTrueColor &&
                 other.VTSequenceBackgroundTrueColor == other2.VTSequenceBackgroundTrueColor &&
                 other.Hex == other2.Hex &&
@@ -399,13 +383,11 @@ namespace Terminaux.Colors
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            int hashCode = -453417870;
+            int hashCode = -636468195;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequence);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceEnclosed);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForeground);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceBackground);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceTrueColor);
-            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PlainSequenceEnclosedTrueColor);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceForegroundTrueColor);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(VTSequenceBackgroundTrueColor);
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Hex);
