@@ -36,7 +36,7 @@ namespace Terminaux.Colors
     /// <summary>
     /// Color information class
     /// </summary>
-    [DebuggerDisplay("Color = {PlainSequenceEnclosed}, TrueColor = {PlainSequenceEnclosedTrueColor}")]
+    [DebuggerDisplay("Color = {PlainSequence}, TrueColor = {PlainSequenceTrueColor}")]
     [JsonConverter(typeof(ColorSerializer))]
     public class Color : IEquatable<Color>
     {
@@ -46,10 +46,12 @@ namespace Terminaux.Colors
         /// An instance of RGB
         /// </summary>
         public RedGreenBlue RGB { get; private set; }
+
         /// <summary>
         /// The color ID for 256- and 16-color modes.
         /// </summary>
         public ConsoleColorData ColorId { get; private set; }
+
         /// <summary>
         /// Empty color singleton
         /// </summary>
@@ -71,53 +73,56 @@ namespace Terminaux.Colors
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt;, depending on the settings.
         /// </summary>
         public string PlainSequence =>
-            settings.UseTerminalPalette && settings.Opacity == 255 && !settings.EnableColorTransformation ?
-            PlainSequenceOriginal :
-            PlainSequenceTrueColor;
+            IsOriginal ? PlainSequenceOriginal : PlainSequenceTrueColor;
+
         /// <summary>
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; in its original form.
         /// </summary>
         public string PlainSequenceOriginal =>
             Type == ColorType.TrueColor ? PlainSequenceTrueColor : $"{ColorId?.ColorId}";
+
         /// <summary>
         /// Parsable VT sequence (Foreground)
         /// </summary>
         public string VTSequenceForeground =>
-            settings.UseTerminalPalette && settings.Opacity == 255 && !settings.EnableColorTransformation ?
-            VTSequenceForegroundOriginal :
-            VTSequenceForegroundTrueColor;
+            IsOriginal ? VTSequenceForegroundOriginal : VTSequenceForegroundTrueColor;
+
         /// <summary>
         /// Parsable VT sequence (Foreground, original)
         /// </summary>
         public string VTSequenceForegroundOriginal =>
             Type == ColorType.TrueColor ? $"\u001b[38;2;{PlainSequence}m" : $"\u001b[38;5;{PlainSequence}m";
+
         /// <summary>
         /// Parsable VT sequence (Background)
         /// </summary>
         public string VTSequenceBackground =>
-            settings.UseTerminalPalette && settings.Opacity == 255 && !settings.EnableColorTransformation ?
-            VTSequenceBackgroundOriginal :
-            VTSequenceBackgroundTrueColor;
+            IsOriginal ? VTSequenceBackgroundOriginal : VTSequenceBackgroundTrueColor;
+
         /// <summary>
         /// Parsable VT sequence (Background, original)
         /// </summary>
         public string VTSequenceBackgroundOriginal =>
             Type == ColorType.TrueColor ? $"\u001b[48;2;{PlainSequence}m" : $"\u001b[48;5;{PlainSequence}m";
+
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
         /// </summary>
         public string PlainSequenceTrueColor =>
             $"{RGB?.R};{RGB?.G};{RGB?.B}";
+
         /// <summary>
         /// Parsable VT sequence (Foreground, true color)
         /// </summary>
         public string VTSequenceForegroundTrueColor =>
             $"\u001b[38;2;{PlainSequenceTrueColor}m";
+
         /// <summary>
         /// Parsable VT sequence (Background, true color)
         /// </summary>
         public string VTSequenceBackgroundTrueColor =>
             $"\u001b[48;2;{PlainSequenceTrueColor}m";
+
         /// <summary>
         /// Hexadecimal representation of the color
         /// </summary>
@@ -134,10 +139,8 @@ namespace Terminaux.Colors
         /// Color type
         /// </summary>
         public ColorType Type =>
-            ColorId is null || !ColorId.HexString.Equals(Hex, StringComparison.OrdinalIgnoreCase) ? ColorType.TrueColor :
-            !settings.UseTerminalPalette || settings.Opacity < 255 || settings.EnableColorTransformation ? ColorType.TrueColor :
-            ColorId.ColorId >= 16 ? ColorType.EightBitColor :
-            ColorType.FourBitColor;
+            !ColorId.HexString.Equals(Hex, StringComparison.OrdinalIgnoreCase) || !IsOriginal ? ColorType.TrueColor :
+            ColorId.ColorId >= 16 ? ColorType.EightBitColor : ColorType.FourBitColor;
 
         /// <summary>
         /// Determines the color brightness whether it indicates dark or light mode
@@ -148,7 +151,8 @@ namespace Terminaux.Colors
             {
                 if (RGB is null)
                     return ColorBrightness.Light;
-                return DetectDark(RGB) ? ColorBrightness.Dark : ColorBrightness.Light;
+                int monochromeFactor = Monochromacy.GetMonochromeFactor(RGB.R, RGB.G, RGB.B);
+                return monochromeFactor < 255d / 2d ? ColorBrightness.Dark : ColorBrightness.Light;
             }
         }
 
@@ -163,6 +167,9 @@ namespace Terminaux.Colors
         /// </summary>
         public ConsoleColor ColorEnum16 =>
             ColorId.ColorId < 16 ? ConversionTools.CorrectStandardColor((ConsoleColor)ColorId.ColorId) : (ConsoleColor)(-1);
+
+        internal bool IsOriginal =>
+            settings.UseTerminalPalette && settings.Opacity == 255 && !settings.EnableColorTransformation;
 
         /// <summary>
         /// Makes a new instance of color class from specifier.
@@ -396,12 +403,6 @@ namespace Terminaux.Colors
             hashCode = hashCode * -1521134295 + ColorEnum255.GetHashCode();
             hashCode = hashCode * -1521134295 + ColorEnum16.GetHashCode();
             return hashCode;
-        }
-
-        private bool DetectDark(RedGreenBlue rgb)
-        {
-            int monochromeFactor = Monochromacy.GetMonochromeFactor(rgb.R, rgb.G, rgb.B);
-            return monochromeFactor < 255d / 2d;
         }
     }
 }
