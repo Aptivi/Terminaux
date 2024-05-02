@@ -27693,6 +27693,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderTools.WaitForInput
   nameWithType: TermReaderTools.WaitForInput
+- uid: Terminaux.Reader.TermReaderTools.WipeAll
+  name: WipeAll()
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_WipeAll
+  commentId: M:Terminaux.Reader.TermReaderTools.WipeAll
+  fullName: Terminaux.Reader.TermReaderTools.WipeAll()
+  nameWithType: TermReaderTools.WipeAll()
+- uid: Terminaux.Reader.TermReaderTools.WipeAll*
+  name: WipeAll
+  href: api/Terminaux.Reader.TermReaderTools.html#Terminaux_Reader_TermReaderTools_WipeAll_
+  commentId: Overload:Terminaux.Reader.TermReaderTools.WipeAll
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderTools.WipeAll
+  nameWithType: TermReaderTools.WipeAll
 - uid: Terminaux.Reader.Tools
   name: Terminaux.Reader.Tools
   href: api/Terminaux.Reader.Tools.html
