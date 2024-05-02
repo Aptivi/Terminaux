@@ -171,7 +171,10 @@ namespace Terminaux.Reader.Tools
                     continue;
 
                 state.currentCursorPosLeft += cellWidth;
-                if (state.CurrentCursorPosLeft > state.MaximumInputPositionLeft || (state.CurrentCursorPosLeft >= ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(sentences, state)) && state.CurrentCursorPosLeft >= width - 1 && cellWidth == 2))
+                int newWidth = ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(sentences, state));
+                int nextWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
+                if (state.CurrentCursorPosLeft > state.MaximumInputPositionLeft ||
+                    (state.CurrentCursorPosLeft >= newWidth && state.CurrentCursorPosLeft >= width - 1 && (cellWidth == 2 || cellWidth == 1 && nextWidth == 2)))
                 {
                     // Reached to the end! Wrap down!
                     state.currentCursorPosLeft = state.settings.LeftMargin;

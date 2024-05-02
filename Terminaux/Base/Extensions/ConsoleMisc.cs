@@ -114,8 +114,7 @@ namespace Terminaux.Base.Extensions
             {
                 var sequencesCollections = VtSequenceTools.MatchVTSequences(splitText);
                 int vtSeqIdx = 0;
-                int compensate = 0;
-                int take = 0;
+                int totalWidth = 0;
                 if (splitText.Length == 0)
                     IncompleteSentences.Add(splitText);
                 for (int i = 0; i < splitText.Length; i++)
@@ -140,23 +139,20 @@ namespace Terminaux.Base.Extensions
 
                             // Raise the paragraph index by the length of the sequence
                             i += seq.Length - 1;
-                            compensate += seq.Length;
                         }
                     }
 
                     // Append the character into the incomplete sentence builder.
                     string sequence = !string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString();
                     int width = ConsoleChar.EstimateCellWidth(splitText, i);
+                    if (string.IsNullOrEmpty(seq))
+                        totalWidth += width;
 
                     // Also, compensate the zero-width characters and take the full-width ones
-                    if (width == 0)
-                        compensate++;
-                    if (width == 2)
-                        take++;
                     if (!isNewLine)
                     {
-                        overflown = IncompleteSentenceBuilder.Length + width == maximumLength - indentLength + compensate - take;
-                        wouldOverflow = IncompleteSentenceBuilder.Length + width > maximumLength - indentLength + compensate - take;
+                        overflown = totalWidth == maximumLength - indentLength;
+                        wouldOverflow = totalWidth > maximumLength - indentLength;
                         if (!wouldOverflow)
                             IncompleteSentenceBuilder.Append(sequence);
                     }
@@ -172,12 +168,14 @@ namespace Terminaux.Base.Extensions
                         // Clean everything up
                         IncompleteSentenceBuilder.Clear();
                         indentLength = 0;
-                        compensate = 0;
-                        take = 0;
+                        totalWidth = 0;
 
                         // Add the overflown string if found
                         if (wouldOverflow)
+                        {
+                            totalWidth += width;
                             IncompleteSentenceBuilder.Append(sequence);
+                        }
                     }
                 }
             }

@@ -470,7 +470,10 @@ namespace Terminaux.Reader
             return (skipFirst, take);
         }
 
-        internal static string GetLineFromCurrentPos(string[] incompleteSentences, TermReaderState state)
+        internal static string GetLineFromCurrentPos(string[] incompleteSentences, TermReaderState state) =>
+            GetLineFromPos(incompleteSentences, state.CurrentTextPos);
+
+        internal static string GetLineFromPos(string[] incompleteSentences, int index)
         {
             // Deal with trying to count the characters incrementally for each incomplete sentence until we find an index
             // that we want, then give the rendered string back.
@@ -478,7 +481,7 @@ namespace Terminaux.Reader
             foreach (string sentence in incompleteSentences)
             {
                 currentIndex += sentence.Length;
-                bool skip = currentIndex < state.CurrentTextPos;
+                bool skip = currentIndex < index;
                 if (!skip)
                     return sentence;
             }

@@ -236,6 +236,8 @@ namespace Terminaux.Writer.ConsoleWriters
                 WriteRaw(textWrapped);
                 if (i + 1 < wrapped.Length)
                 {
+                    if (ConsoleChar.EstimateCellWidth(textWrapped) == (i == 0 ? settings.state.LongestSentenceLengthFromLeftForFirstLine : settings.state.LongestSentenceLengthFromLeftForGeneralLine))
+                        WriteRaw(" ");
                     ConsoleWrapper.WriteLine();
                     ConsoleWrapper.CursorLeft = settings.LeftMargin;
                 }
