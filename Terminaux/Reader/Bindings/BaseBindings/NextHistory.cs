@@ -19,6 +19,7 @@
 
 using System;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -48,26 +49,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                 return;
 
             // Wipe everything
-            int length = state.CurrentText.Length;
-            state.CurrentText.Clear();
-            if (state.OneLineWrap)
-            {
-                int longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
-                string renderedBlanks = new(' ', longestSentenceLength);
-                ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReader(renderedBlanks, state.settings, false);
-                PositioningTools.SeekTo(0, ref state);
-                state.currentTextPos = 0;
-                state.currentCursorPosLeft = state.InputPromptLeft;
-                state.currentCursorPosTop = state.InputPromptTop;
-            }
-            else
-            {
-                ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReader(new string(' ', length), state.settings, false);
-                PositioningTools.SeekTo(0, ref state);
-            }
-            PositioningTools.Commit(state);
+            TermReaderTools.WipeAll();
 
             // Now, write the history entry
             TermReaderState.currentHistoryPos++;

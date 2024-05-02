@@ -193,7 +193,6 @@ namespace Terminaux.Reader.Tools
                 steps = state.currentTextPos;
 
             int width = ConsoleWrapper.WindowWidth;
-            var sentences = ConsoleMisc.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
             for (int i = 0; i < steps; i++)
             {
                 int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
@@ -210,14 +209,11 @@ namespace Terminaux.Reader.Tools
                 if (cellWidth == 0)
                     continue;
 
-                state.currentCursorPosLeft -= cellWidth > 0 ? cellWidth : 1;
+                state.currentCursorPosLeft -= cellWidth > 0 ? cellWidth : ConsoleChar.EstimateCellWidth(state.currentText.ToString(), 0);
                 if (state.CurrentCursorPosLeft < state.settings.LeftMargin)
                 {
                     // Reached to the beginning! Wrap up!
                     state.currentCursorPosLeft = width - cellWidth - state.settings.RightMargin;
-                    string line = TermReaderTools.GetLineFromCurrentPos(sentences, state);
-                    int lineWidth = ConsoleChar.EstimateCellWidth(line);
-                    state.currentCursorPosLeft -= width - lineWidth;
                     if (state.currentCursorPosTop > 0 && state.CurrentTextPos < TermReaderTools.GetMaximumInputLength(state))
                         state.currentCursorPosTop--;
                 }

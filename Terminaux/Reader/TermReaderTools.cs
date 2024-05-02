@@ -195,6 +195,22 @@ namespace Terminaux.Reader
             TermReaderState.SaveState(state);
         }
 
+        /// <summary>
+        /// Wipes the entire input
+        /// </summary>
+        public static void WipeAll()
+        {
+            if (TermReader.states.Count == 0)
+                return;
+
+            // Get the current state
+            var state = TermReaderState.CurrentState;
+            if (state is null)
+                return;
+            WipeAll(ref state);
+            TermReaderState.SaveState(state);
+        }
+
         internal static ConsoleKeyInfo GetInput(bool interruptible)
         {
             if (interruptible)
@@ -287,6 +303,25 @@ namespace Terminaux.Reader
             RefreshPrompt(ref state);
         }
 
+        internal static void WipeAll(ref TermReaderState state)
+        {
+            // Wipe everything
+            int length = ConsoleChar.EstimateCellWidth(state.CurrentText.ToString());
+            string renderedBlanks = new(' ', length);
+            if (state.OneLineWrap)
+            {
+                int longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
+                renderedBlanks = new(' ', longestSentenceLength);
+            }
+            ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+            TextWriterColor.WriteForReader(renderedBlanks, state.settings, false);
+            PositioningTools.GoLeftmost(ref state);
+            state.CurrentText.Clear();
+
+            // Refresh
+            RefreshPrompt(ref state);
+        }
+
         internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false)
         {
             // Determine the foreground and the background color
@@ -351,7 +386,7 @@ namespace Terminaux.Reader
             if (state.RightMargin == 0)
                 TextWriterColor.WriteForReaderColorBack(ConsoleClearing.GetClearLineToRightSequence(), state.settings, false, foreground, background);
             else
-                TextWriterColor.WriteForReaderColorBack(new string(' ', spacesLength < 0 ? 0 : spacesLength), state.settings, false, foreground, background);
+                TextWriterColor.WriteForReaderColorBack(new string(' ', spacesLength < 0 ? 0 : spacesLength == 0 ? 1 : spacesLength), state.settings, false, foreground, background);
 
             // If stepping, go either backward or forward, and commit the positioning changes.
             if (steps > 0)
