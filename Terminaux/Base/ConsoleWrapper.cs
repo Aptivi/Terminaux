@@ -159,29 +159,12 @@ namespace Terminaux.Base
             ConsoleWrapperTools.ActionWriteString(text);
 
         /// <summary>
-        /// Writes a character to console (stdout)
-        /// </summary>
-        /// <param name="text">The text to write</param>
-        /// <param name="settings">Reader settings</param>
-        internal static void Write(string text, TermReaderSettings settings) =>
-            ConsoleWrapperTools.ActionWriteStringNonStandalone(text, settings);
-
-        /// <summary>
         /// Writes text to console (stdout)
         /// </summary>
         /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
         public static void Write(string text, params object[] args) =>
             ConsoleWrapperTools.ActionWriteParameterized(text, args);
-
-        /// <summary>
-        /// Writes a character to console (stdout)
-        /// </summary>
-        /// <param name="text">The text to write</param>
-        /// <param name="settings">Reader settings</param>
-        /// <param name="args">The arguments to evaluate</param>
-        internal static void Write(string text, TermReaderSettings settings, params object[] args) =>
-            ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone(text, settings, args);
 
         /// <summary>
         /// Writes new line to console (stdout)
@@ -200,26 +183,9 @@ namespace Terminaux.Base
         /// Writes text to console (stdout) with line terminator
         /// </summary>
         /// <param name="text">The text to write</param>
-        /// <param name="settings">Reader settings</param>
-        internal static void WriteLine(string text, TermReaderSettings settings) =>
-            ConsoleWrapperTools.ActionWriteLineStringNonStandalone(text, settings);
-
-        /// <summary>
-        /// Writes text to console (stdout) with line terminator
-        /// </summary>
-        /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
         public static void WriteLine(string text, params object[] args) =>
             ConsoleWrapperTools.ActionWriteLineParameterized(text, args);
-
-        /// <summary>
-        /// Writes text to console (stdout) with line terminator
-        /// </summary>
-        /// <param name="text">The text to write</param>
-        /// <param name="settings">Reader settings</param>
-        /// <param name="args">The arguments to evaluate</param>
-        internal static void WriteLine(string text, TermReaderSettings settings, params object[] args) =>
-            ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone(text, settings, args);
 
         /// <summary>
         /// Writes a character to console (stderr)

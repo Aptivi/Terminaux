@@ -23,6 +23,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base;
 using Terminaux.Reader;
 using SpecProbe.Platform;
+using Textify.General;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
@@ -175,7 +176,7 @@ namespace Terminaux.Writer.ConsoleWriters
                                 else
                                     ConsoleWrapper.WriteLine(Text, vars);
                             else
-                                ConsoleWrapper.WriteLine(Text, settings, vars);
+                                WriteLineNonStandalone(Text, settings, vars);
                         }
                         else
                         {
@@ -185,7 +186,7 @@ namespace Terminaux.Writer.ConsoleWriters
                                 else
                                     ConsoleWrapper.WriteLine(Text);
                             else
-                                ConsoleWrapper.WriteLine(Text, settings);
+                                WriteLineNonStandalone(Text, settings);
                         }
                     }
                     else if (vars.Length > 0)
@@ -196,7 +197,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             else
                                 ConsoleWrapper.Write(Text, vars);
                         else
-                            ConsoleWrapper.Write(Text, settings, vars);
+                            WriteNonStandalone(Text, settings, vars);
                     }
                     else
                     {
@@ -206,7 +207,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             else
                                 ConsoleWrapper.Write(Text);
                         else
-                            ConsoleWrapper.Write(Text, settings);
+                            WriteNonStandalone(Text, settings);
                     }
 
                     // Return to the processed position
@@ -219,6 +220,53 @@ namespace Terminaux.Writer.ConsoleWriters
                     Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
                 }
             }
+        }
+
+        private static void WriteNonStandalone(string text, TermReaderSettings settings)
+        {
+            if (settings.state is null)
+                throw new TerminauxInternalException(nameof(settings.state));
+            int top = settings.state.inputPromptTop;
+            int topBegin = settings.state.inputPromptTopBegin;
+            var wrapped = ConsoleMisc.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLeft - settings.state.LeftMargin);
+            for (int i = 0; i < wrapped.Length; i++)
+            {
+                int wrapTop = top + i;
+                string textWrapped = wrapped[i];
+                WriteRaw(textWrapped);
+                if (i + 1 < wrapped.Length)
+                {
+                    ConsoleWrapper.WriteLine();
+                    ConsoleWrapper.CursorLeft = settings.LeftMargin;
+                }
+                if (wrapTop >= ConsoleWrapper.BufferHeight && !settings.state.writingPrompt && top > 0)
+                {
+                    top--;
+                    topBegin--;
+                    settings.state.currentCursorPosTop--;
+                    ConsoleWrapper.CursorLeft = settings.LeftMargin;
+                }
+            }
+            settings.state.inputPromptTop = top;
+            settings.state.inputPromptTopBegin = topBegin;
+        }
+
+        private static void WriteNonStandalone(string text, TermReaderSettings settings, params object[] args)
+        {
+            string formatted = TextTools.FormatString(text, args);
+            WriteNonStandalone(formatted, settings);
+        }
+
+        private static void WriteLineNonStandalone(string text, TermReaderSettings settings)
+        {
+            WriteNonStandalone(text, settings);
+            ConsoleWrapper.WriteLine();
+        }
+
+        private static void WriteLineNonStandalone(string text, TermReaderSettings settings, params object[] args)
+        {
+            WriteNonStandalone(text, settings, args);
+            ConsoleWrapper.WriteLine();
         }
     }
 }

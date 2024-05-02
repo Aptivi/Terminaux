@@ -23,6 +23,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Terminaux.Base
 {
@@ -52,10 +53,6 @@ namespace Terminaux.Base
         internal static Action actionClear = Clear;
         internal static Action actionClearLoadBack = ClearLoadBack;
         internal static Func<bool, ConsoleKeyInfo> actionReadKey = ReadKey;
-        internal static Action<string, TermReaderSettings> actionWriteNonStandalone1 = WriteNonStandalone;
-        internal static Action<string, TermReaderSettings, object[]> actionWriteNonStandalone2 = WriteNonStandalone;
-        internal static Action<string, TermReaderSettings> actionWriteLineNonStandalone1 = WriteLineNonStandalone;
-        internal static Action<string, TermReaderSettings, object[]> actionWriteLineNonStandalone2 = WriteLineNonStandalone;
         internal static Action<char> actionWrite = Write;
         internal static Action<string> actionWrite1 = Write;
         internal static Action<string, object[]> actionWrite2 = Write;
@@ -344,44 +341,6 @@ namespace Terminaux.Base
             internal get => actionWriteErrorLine;
             set => actionWriteErrorLine = value ?? WriteErrorLine;
         }
-        /// <summary>
-        /// Writes text to console<br></br><br></br>
-        /// - The text to write
-        /// </summary>
-        public static Action<string, TermReaderSettings> ActionWriteStringNonStandalone
-        {
-            internal get => actionWriteNonStandalone1;
-            set => actionWriteNonStandalone1 = value ?? WriteNonStandalone;
-        }
-        /// <summary>
-        /// Writes text to console<br></br><br></br>
-        /// - The text to write<br></br>
-        /// - The arguments to evaluate
-        /// </summary>
-        public static Action<string, TermReaderSettings, object[]> ActionWriteParameterizedNonStandalone
-        {
-            internal get => actionWriteNonStandalone2;
-            set => actionWriteNonStandalone2 = value ?? WriteNonStandalone;
-        }
-        /// <summary>
-        /// Writes text to console with line terminator
-        /// - The text to write
-        /// </summary>
-        public static Action<string, TermReaderSettings> ActionWriteLineStringNonStandalone
-        {
-            internal get => actionWriteLineNonStandalone1;
-            set => actionWriteLineNonStandalone1 = value ?? WriteLineNonStandalone;
-        }
-        /// <summary>
-        /// Writes text to console with line terminator
-        /// - The text to write<br></br>
-        /// - The arguments to evaluate
-        /// </summary>
-        public static Action<string, TermReaderSettings, object[]> ActionWriteLineParameterizedNonStandalone
-        {
-            internal get => actionWriteLineNonStandalone2;
-            set => actionWriteLineNonStandalone2 = value ?? WriteLineNonStandalone;
-        }
 
         // Wrapper starts here
         private static bool IsDumb =>
@@ -524,53 +483,6 @@ namespace Terminaux.Base
         private static ConsoleKeyInfo ReadKey(bool intercept = false) =>
             Console.ReadKey(intercept);
 
-        private static void WriteNonStandalone(string text, TermReaderSettings settings)
-        {
-            if (settings.state is null)
-                throw new TerminauxInternalException(nameof(settings.state));
-            int top = settings.state.inputPromptTop;
-            int topBegin = settings.state.inputPromptTopBegin;
-            var wrapped = ConsoleMisc.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLeft - settings.state.LeftMargin);
-            for (int i = 0; i < wrapped.Length; i++)
-            {
-                int wrapTop = top + i;
-                string textWrapped = wrapped[i];
-                TextWriterRaw.WriteRaw(textWrapped);
-                if (i + 1 < wrapped.Length)
-                {
-                    WriteLine();
-                    CursorLeft = settings.LeftMargin;
-                }
-                if (wrapTop >= BufferHeight && !settings.state.writingPrompt && top > 0)
-                {
-                    top--;
-                    topBegin--;
-                    settings.state.currentCursorPosTop--;
-                    CursorLeft = settings.LeftMargin;
-                }
-            }
-            settings.state.inputPromptTop = top;
-            settings.state.inputPromptTopBegin = topBegin;
-        }
-
-        private static void WriteNonStandalone(string text, TermReaderSettings settings, params object[] args)
-        {
-            string formatted = string.Format(text, args);
-            WriteNonStandalone(formatted, settings);
-        }
-
-        private static void WriteLineNonStandalone(string text, TermReaderSettings settings)
-        {
-            WriteNonStandalone(text, settings);
-            WriteLine();
-        }
-
-        private static void WriteLineNonStandalone(string text, TermReaderSettings settings, params object[] args)
-        {
-            WriteNonStandalone(text, settings, args);
-            WriteLine();
-        }
-
         private static void Write(char value) =>
             Console.Write(value);
 
@@ -579,7 +491,7 @@ namespace Terminaux.Base
 
         private static void Write(string text, params object[] args)
         {
-            string formatted = string.Format(text, args);
+            string formatted = TextTools.FormatString(text, args);
             Write(formatted);
         }
 
@@ -606,7 +518,7 @@ namespace Terminaux.Base
 
         private static void WriteError(string text, params object[] args)
         {
-            string formatted = string.Format(text, args);
+            string formatted = TextTools.FormatString(text, args);
             WriteError(formatted);
         }
 
