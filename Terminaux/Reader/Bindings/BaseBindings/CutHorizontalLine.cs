@@ -37,12 +37,10 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             string afterCursor = state.CurrentText.ToString().Substring(state.CurrentTextPos);
             int whitespacesBefore = beforeCursor.Length - beforeCursor.TrimEnd().Length;
             int whitespacesAfter = afterCursor.Length - afterCursor.TrimStart().Length;
-            int orig = state.CurrentText.Length;
             state.CurrentText.Remove(state.CurrentTextPos, whitespacesAfter);
             state.CurrentText.Remove(state.CurrentTextPos - whitespacesBefore, whitespacesBefore);
             state.canInsert = true;
-            int diff = orig - state.CurrentText.Length;
-            TermReaderTools.RefreshPrompt(ref state, whitespacesBefore, true, diff);
+            TermReaderTools.RefreshPrompt(ref state, whitespacesBefore, true);
         }
     }
 }

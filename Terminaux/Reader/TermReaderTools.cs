@@ -280,17 +280,14 @@ namespace Terminaux.Reader
                 PositioningTools.GoBack(length, ref state);
 
             // Remove this amount of characters
-            int old = ConsoleChar.EstimateCellWidth(state.CurrentText.ToString());
-            string substr = state.CurrentText.ToString().Substring(startIndex, length);
             state.CurrentText.Remove(startIndex, length);
             state.canInsert = true;
-            length = ConsoleChar.EstimateCellWidth(substr);
 
             // Refresh
-            RefreshPrompt(ref state, 0, false, old - length);
+            RefreshPrompt(ref state);
         }
 
-        internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false, int spaces = 0)
+        internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false)
         {
             // Determine the foreground and the background color
             var foreground = state.Commentized ? new Color(ConsoleColors.Green) : state.Settings.InputForegroundColor;
@@ -324,69 +321,45 @@ namespace Terminaux.Reader
             renderedText = GetHighlightedInput(renderedText, state);
 
             // Now, render the input.
+            int spacesLength;
             if (state.OneLineWrap)
             {
                 // We're in the one-line wrap mode!
                 longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
                 incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText, longestSentenceLength, 0);
-
-                // We're in the multi-line wrap mode!
-                renderedText = state.OneLineWrap ? GetOneLineWrappedSentenceToRender(incompleteSentences, state) : renderedText;
+                renderedText = GetOneLineWrappedSentenceToRender(incompleteSentences, state);
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 TextWriterColor.WriteForReaderColorBack(renderedText, state.settings, false, foreground, background);
 
-                // Render appropriate amount of spaces
-                if (spaces == 0 && state.RightMargin == 0)
-                    TextWriterColor.WriteForReaderColorBack(ConsoleClearing.GetClearLineToRightSequence(), state.settings, false, foreground, background);
-                else
-                {
-                    int spacesLength = longestSentenceLength - state.settings.LeftMargin - originalText.Length;
-                    if (spacesLength < 0)
-                        spacesLength = 0;
-                    if (spaces > 0)
-                        spacesLength = spaces;
-                    TextWriterColor.WriteForReaderColorBack(new string(' ', spacesLength), state.settings, false, foreground, background);
-                }
-
-                // If stepping, go either backward or forward.
-                if (steps > 0)
-                {
-                    if (backward)
-                        PositioningTools.GoBackOneLineWrapAware(steps, ref state);
-                    else
-                        PositioningTools.GoForwardOneLineWrapAware(steps, ref state);
-                }
+                // Get the space length
+                spacesLength = longestSentenceLength - state.settings.LeftMargin - originalText.Length;
             }
             else
             {
                 // We're in the multi-line wrap mode!
                 ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
                 TextWriterColor.WriteForReaderColorBack(renderedText, state.settings, false, foreground, background);
-                
-                // Render appropriate amount of spaces
-                if (spaces == 0 && state.RightMargin == 0)
-                    TextWriterColor.WriteForReaderColorBack(ConsoleClearing.GetClearLineToRightSequence(), state.settings, false, foreground, background);
-                else
-                {
-                    incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
-                    string last = VtSequenceTools.FilterVTSequences(incompleteSentences[incompleteSentences.Length - 1]);
-                    int lastCells = ConsoleChar.EstimateCellWidth(last);
-                    int spacesLength = longestSentenceLength - state.RightMargin - lastCells - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0);
-                    if (spacesLength < 0)
-                        spacesLength = 0;
-                    if (spaces > 0)
-                        spacesLength = spaces;
-                    TextWriterColor.WriteForReaderColorBack(new string(' ', spacesLength), state.settings, false, foreground, background);
-                }
 
-                // If stepping, go either backward or forward.
-                if (steps > 0)
-                {
-                    if (backward)
-                        PositioningTools.GoBackOneLineWrapDisabled(steps, ref state);
-                    else
-                        PositioningTools.GoForwardOneLineWrapDisabled(steps, ref state);
-                }
+                // Get the space length
+                incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
+                string last = VtSequenceTools.FilterVTSequences(incompleteSentences[incompleteSentences.Length - 1]);
+                int lastCells = ConsoleChar.EstimateCellWidth(last);
+                spacesLength = longestSentenceLength - state.RightMargin - lastCells - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0);
+            }
+
+            // Use appropriate space length to clear the position post text.
+            if (state.RightMargin == 0)
+                TextWriterColor.WriteForReaderColorBack(ConsoleClearing.GetClearLineToRightSequence(), state.settings, false, foreground, background);
+            else
+                TextWriterColor.WriteForReaderColorBack(new string(' ', spacesLength < 0 ? 0 : spacesLength), state.settings, false, foreground, background);
+
+            // If stepping, go either backward or forward, and commit the positioning changes.
+            if (steps > 0)
+            {
+                if (backward)
+                    PositioningTools.GoBack(steps, ref state);
+                else
+                    PositioningTools.GoForward(steps, ref state);
             }
             PositioningTools.Commit(state);
         }

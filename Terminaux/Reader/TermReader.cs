@@ -332,7 +332,7 @@ namespace Terminaux.Reader
                             ConsoleWrapper.BeepSeq();
                         readState.operationWasInvalid = false;
 
-                        // Cursor is visible, but fix cursor on Linux
+                        // Cursor is visible
                         cachedPos = (readState.currentCursorPosLeft, readState.currentCursorPosTop);
                         ConsoleWrapper.CursorVisible = true;
                     }
