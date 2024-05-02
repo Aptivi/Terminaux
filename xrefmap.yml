@@ -1610,19 +1610,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterized
   nameWithType: ConsoleWrapperTools.ActionWriteLineParameterized
-- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
-  name: ActionWriteLineParameterizedNonStandalone
-  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineParameterizedNonStandalone
-  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
-  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
-  nameWithType: ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
-- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone*
-  name: ActionWriteLineParameterizedNonStandalone
-  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineParameterizedNonStandalone_
-  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
-  nameWithType: ConsoleWrapperTools.ActionWriteLineParameterizedNonStandalone
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineString
   name: ActionWriteLineString
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineString
@@ -1636,19 +1623,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineString
   nameWithType: ConsoleWrapperTools.ActionWriteLineString
-- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone
-  name: ActionWriteLineStringNonStandalone
-  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineStringNonStandalone
-  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone
-  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone
-  nameWithType: ConsoleWrapperTools.ActionWriteLineStringNonStandalone
-- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone*
-  name: ActionWriteLineStringNonStandalone
-  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteLineStringNonStandalone_
-  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteLineStringNonStandalone
-  nameWithType: ConsoleWrapperTools.ActionWriteLineStringNonStandalone
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterized
   name: ActionWriteParameterized
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteParameterized
@@ -1662,19 +1636,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterized
   nameWithType: ConsoleWrapperTools.ActionWriteParameterized
-- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
-  name: ActionWriteParameterizedNonStandalone
-  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteParameterizedNonStandalone
-  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
-  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
-  nameWithType: ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
-- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone*
-  name: ActionWriteParameterizedNonStandalone
-  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteParameterizedNonStandalone_
-  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
-  nameWithType: ConsoleWrapperTools.ActionWriteParameterizedNonStandalone
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteString
   name: ActionWriteString
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteString
@@ -1688,19 +1649,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteString
   nameWithType: ConsoleWrapperTools.ActionWriteString
-- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
-  name: ActionWriteStringNonStandalone
-  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteStringNonStandalone
-  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
-  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
-  nameWithType: ConsoleWrapperTools.ActionWriteStringNonStandalone
-- uid: Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone*
-  name: ActionWriteStringNonStandalone
-  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionWriteStringNonStandalone_
-  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
-  isSpec: "True"
-  fullName: Terminaux.Base.ConsoleWrapperTools.ActionWriteStringNonStandalone
-  nameWithType: ConsoleWrapperTools.ActionWriteStringNonStandalone
 - uid: Terminaux.Base.Extensions
   name: Terminaux.Base.Extensions
   href: api/Terminaux.Base.Extensions.html
