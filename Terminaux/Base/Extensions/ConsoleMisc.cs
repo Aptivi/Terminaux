@@ -175,6 +175,8 @@ namespace Terminaux.Base.Extensions
                         {
                             totalWidth += width;
                             IncompleteSentenceBuilder.Append(sequence);
+                            if (i == splitText.Length - 1)
+                                IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
                         }
                     }
                 }

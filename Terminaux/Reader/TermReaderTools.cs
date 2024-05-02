@@ -376,7 +376,7 @@ namespace Terminaux.Reader
                 TextWriterColor.WriteForReaderColorBack(renderedText, state.settings, false, foreground, background);
 
                 // Get the space length
-                incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText + " ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
+                incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText + "  ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
                 string last = VtSequenceTools.FilterVTSequences(incompleteSentences[incompleteSentences.Length - 1]);
                 int lastCells = ConsoleChar.EstimateCellWidth(last);
                 spacesLength = longestSentenceLength - state.RightMargin - lastCells - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0);
