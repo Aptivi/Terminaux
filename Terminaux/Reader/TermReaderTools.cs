@@ -283,7 +283,9 @@ namespace Terminaux.Reader
                 state.CurrentText.Insert(state.CurrentTextPos, newText);
 
             // Refresh
+            state.appending = true;
             RefreshPrompt(ref state, step ? newText.Length : 0);
+            state.appending = false;
         }
 
         internal static void RemoveText(ref TermReaderState state, int length, bool step = false) =>
@@ -293,7 +295,11 @@ namespace Terminaux.Reader
         {
             // Go back a selected length number
             if (step)
+            {
+                state.appending = true;
                 PositioningTools.GoBack(length, ref state);
+                state.appending = false;
+            }
 
             // Remove this amount of characters
             state.CurrentText.Remove(startIndex, length);

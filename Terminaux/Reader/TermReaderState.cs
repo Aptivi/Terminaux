@@ -52,6 +52,7 @@ namespace Terminaux.Reader
         internal bool insertIsReplace;
         internal bool commentized;
         internal bool operationWasInvalid;
+        internal bool appending;
         internal TermReaderSettings settings = TermReader.GlobalReaderSettings;
 
         // Shared
@@ -161,17 +162,22 @@ namespace Terminaux.Reader
             }
         }
         /// <summary>
-        /// Input prompt last line length
+        /// Input prompt last line
         /// </summary>
-        public int InputPromptLastLineLength
+        public string InputPromptLastLine
         {
             get
             {
                 string[] inputPromptLines = ConsoleMisc.GetWrappedSentences(InputPromptText, ConsoleWrapper.WindowWidth);
                 string inputPromptLastLine = VtSequenceTools.FilterVTSequences(inputPromptLines[inputPromptLines.Length - 1]);
-                return inputPromptLastLine.Length;
+                return inputPromptLastLine;
             }
         }
+        /// <summary>
+        /// Input prompt last line length
+        /// </summary>
+        public int InputPromptLastLineLength =>
+            InputPromptLastLine.Length;
         /// <summary>
         /// Current text
         /// </summary>
