@@ -27318,6 +27318,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderState.InputPromptHeight
   nameWithType: TermReaderState.InputPromptHeight
+- uid: Terminaux.Reader.TermReaderState.InputPromptLastLine
+  name: InputPromptLastLine
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLastLine
+  commentId: P:Terminaux.Reader.TermReaderState.InputPromptLastLine
+  fullName: Terminaux.Reader.TermReaderState.InputPromptLastLine
+  nameWithType: TermReaderState.InputPromptLastLine
+- uid: Terminaux.Reader.TermReaderState.InputPromptLastLine*
+  name: InputPromptLastLine
+  href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLastLine_
+  commentId: Overload:Terminaux.Reader.TermReaderState.InputPromptLastLine
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReaderState.InputPromptLastLine
+  nameWithType: TermReaderState.InputPromptLastLine
 - uid: Terminaux.Reader.TermReaderState.InputPromptLastLineLength
   name: InputPromptLastLineLength
   href: api/Terminaux.Reader.TermReaderState.html#Terminaux_Reader_TermReaderState_InputPromptLastLineLength
