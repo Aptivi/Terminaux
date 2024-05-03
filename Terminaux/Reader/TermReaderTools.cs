@@ -301,6 +301,39 @@ namespace Terminaux.Reader
                 state.appending = false;
             }
 
+            // Check for surrogate pairs in case a user tries to remove them. Surrogate pairs require two characters: high and low.
+            if (state.CurrentText.Length >= 2)
+            {
+                bool isStartIndexHigh = char.IsHighSurrogate(state.CurrentText[startIndex]);
+                bool isStartIndexLow = char.IsLowSurrogate(state.CurrentText[startIndex]);
+                if (isStartIndexHigh)
+                {
+                    // We're at the high surrogate character. Check the index, then get the low one.
+                    int lowIndex = startIndex + 1;
+                    if (lowIndex >= state.CurrentText.Length)
+                        return;
+
+                    bool isLowIndexLow = char.IsLowSurrogate(state.CurrentText[lowIndex]);
+                    if (isLowIndexLow && length == 1)
+                        length++;
+                }
+                else if (isStartIndexLow)
+                {
+                    // We're at the low surrogate character. Check the index, then get the high one.
+                    int highIndex = startIndex - 1;
+                    if (highIndex >= state.CurrentText.Length)
+                        return;
+
+                    bool isHighIndexHigh = char.IsHighSurrogate(state.CurrentText[highIndex]);
+                    if (isHighIndexHigh)
+                    {
+                        startIndex = highIndex;
+                        if (length == 1)
+                            length++;
+                    }
+                }
+            }
+
             // Remove this amount of characters
             state.CurrentText.Remove(startIndex, length);
             state.canInsert = true;

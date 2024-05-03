@@ -161,8 +161,11 @@ namespace Terminaux.Reader.Tools
                 int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
                 int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
                 state.currentTextPos++;
-                if (state.currentTextPos + 1 < state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos], state.currentText[state.currentTextPos + 1]))
+                if (state.currentTextPos + 1 <= state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
+                {
                     state.currentTextPos++;
+                    i++;
+                }
 
                 // If the character is unrenderable, continue the loop
                 if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
@@ -202,13 +205,17 @@ namespace Terminaux.Reader.Tools
             var sentences = ConsoleMisc.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
             for (int i = 0; i < steps; i++)
             {
+                if (state.currentTextPos == 0)
+                    return;
+
                 int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
                 int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
                 state.currentTextPos--;
-                if (state.currentTextPos - 1 > 0 && state.currentTextPos < state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
+                if (state.currentTextPos - 1 >= 0 && state.currentTextPos < state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
                 {
                     cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
                     state.currentTextPos--;
+                    i++;
                 }
 
                 // If the character is unrenderable, continue the loop

@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Reader.Tools;
 using Textify.General;
@@ -84,9 +85,27 @@ namespace Terminaux.Reader.Bindings
                         "    "
                     ]
                 );
-            if (!ConditionalTools.ShouldNot(ConsoleChar.EstimateCellWidth(text) == 0, state))
+            bool isHighSurrogate = char.IsHighSurrogate(state.pressedKey.KeyChar);
+            if (!ConditionalTools.ShouldNot(ConsoleChar.EstimateCellWidth(text) == 0 && !isHighSurrogate, state))
                 return;
 
+            // Check to see if this character is a surrogate (i.e. trying to insert emoji)
+            if (isHighSurrogate)
+            {
+                // Get all the input, or discard the surrogate because it's a zero width character
+                while (ConsoleWrapper.KeyAvailable)
+                {
+                    var pressed = TermReader.ReadKey();
+                    bool isNextKeySurrogate = char.IsLowSurrogate(pressed.KeyChar);
+                    if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(pressed.KeyChar) == 0 && !isNextKeySurrogate, state))
+                        return;
+
+                    // Our next key is a surrogate.
+                    text += $"{pressed.KeyChar}";
+                }
+            }
+
+            // Indicate whether we're replacing or inserting
             if (state.insertIsReplace)
             {
                 if (state.CurrentTextPos == state.CurrentText.Length)
