@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base.Extensions;
 using Terminaux.Reader.Tools;
 using Textify.General;
 
@@ -71,7 +72,7 @@ namespace Terminaux.Reader.Bindings
             if (!ConditionalTools.ShouldNot(char.IsControl(state.pressedKey.KeyChar) && state.pressedKey.KeyChar != '\t', state))
                 return;
 
-            // Process the text and replace below characters
+            // Process the text, replace below characters, and determine if this character is unprintable or not
             string text = $"{state.pressedKey.KeyChar}"
                 .ReplaceAllRange(
                     [
@@ -83,6 +84,9 @@ namespace Terminaux.Reader.Bindings
                         "    "
                     ]
                 );
+            if (!ConditionalTools.ShouldNot(ConsoleChar.EstimateCellWidth(text) == 0, state))
+                return;
+
             if (state.insertIsReplace)
             {
                 if (state.CurrentTextPos == state.CurrentText.Length)
