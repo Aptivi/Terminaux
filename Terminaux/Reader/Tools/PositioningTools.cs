@@ -264,20 +264,33 @@ namespace Terminaux.Reader.Tools
             if (steps > state.currentText.Length - state.currentTextPos)
                 steps = state.currentText.Length - state.currentTextPos;
 
-            int width = ConsoleWrapper.WindowWidth;
             for (int i = 0; i < steps; i++)
             {
+                int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
+                int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
                 state.currentTextPos++;
+                if (state.currentTextPos + 1 <= state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
+                {
+                    state.currentTextPos++;
+                    i++;
+                }
 
                 // If the character is unrenderable, continue the loop
                 if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
                     continue;
+                if (cellWidth == 0)
+                    continue;
 
-                state.currentCursorPosLeft++;
-                if (state.CurrentCursorPosLeft >= width - state.settings.RightMargin)
+                // In case CJK and other full-width characters are entered
+                int nextWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
+                state.currentCursorPosLeft +=
+                    ((prevWidth == 2 && cellWidth == 1) || (nextWidth == 2 && cellWidth == 1)) &&
+                    (prevWidth == 2 || (prevWidth == 1 && state.appending)) &&
+                    nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin ? 0 : cellWidth;
+                if (state.CurrentCursorPosLeft >= state.LongestSentenceLengthFromLeft)
                 {
                     // Reached to the end! Go back to the prompt position.
-                    state.currentCursorPosLeft = state.InputPromptLeft + 1;
+                    state.currentCursorPosLeft = state.InputPromptLeft + cellWidth;
                     TermReaderTools.RefreshPrompt(ref state);
                 }
             }
@@ -292,19 +305,45 @@ namespace Terminaux.Reader.Tools
                 steps = state.currentTextPos;
 
             int width = ConsoleWrapper.WindowWidth;
+            var sentences = ConsoleMisc.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeftForFirstLine, 0);
             for (int i = 0; i < steps; i++)
             {
+                if (state.currentTextPos == 0)
+                    return;
+
+                int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
+                int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
                 state.currentTextPos--;
+                if (state.currentTextPos - 1 >= 0 && state.currentTextPos < state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
+                {
+                    cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
+                    state.currentTextPos--;
+                    i++;
+                }
 
                 // If the character is unrenderable, continue the loop
                 if (state.PasswordMode && char.IsControl(state.settings.PasswordMaskChar))
                     continue;
+                if (cellWidth == 0)
+                    continue;
 
-                state.currentCursorPosLeft--;
-                if (state.CurrentCursorPosLeft == state.inputPromptLeft && state.CurrentTextPos != 0)
+                // In case CJK and other full-width characters are entered
+                int nextWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos + 1);
+                if (!(
+                    ((prevWidth == 2 && cellWidth == 1) || (nextWidth == 2 && cellWidth == 1)) &&
+                    (prevWidth == 2 || (prevWidth == 1 && state.appending)) &&
+                    nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin
+                   ))
+                    state.currentCursorPosLeft -= cellWidth > 0 ? cellWidth : ConsoleChar.EstimateCellWidth(state.currentText.ToString(), 0);
+
+                // Check to see if we need to wrap
+                if (state.CurrentCursorPosLeft <= state.inputPromptLeft && state.CurrentTextPos != 0)
                 {
                     // Reached to the beginning! Go back to the furthest position, plus the extra character being printed.
                     state.currentCursorPosLeft = width - state.settings.RightMargin - 1;
+                    string line = TermReaderTools.GetLineFromCurrentPos(sentences, state);
+                    int lineWidth = ConsoleChar.EstimateCellWidth(line);
+                    state.currentCursorPosLeft -= state.LongestSentenceLengthFromLeftForFirstLine - lineWidth;
                     TermReaderTools.RefreshPrompt(ref state);
                 }
             }

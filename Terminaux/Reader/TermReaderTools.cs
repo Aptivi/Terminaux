@@ -391,7 +391,6 @@ namespace Terminaux.Reader
             }
 
             // Take highlighting into account
-            string originalText = renderedText;
             renderedText = GetHighlightedInput(renderedText, state);
 
             // Now, render the input.
@@ -406,7 +405,7 @@ namespace Terminaux.Reader
                 TextWriterColor.WriteForReaderColorBack(renderedText, state.settings, false, foreground, background);
 
                 // Get the space length
-                spacesLength = longestSentenceLength - state.settings.LeftMargin - originalText.Length;
+                spacesLength = longestSentenceLength - state.settings.LeftMargin - ConsoleChar.EstimateCellWidth(renderedText);
             }
             else
             {
@@ -425,7 +424,7 @@ namespace Terminaux.Reader
             if (state.RightMargin == 0)
                 TextWriterColor.WriteForReaderColorBack(ConsoleClearing.GetClearLineToRightSequence(), state.settings, false, foreground, background);
             else
-                TextWriterColor.WriteForReaderColorBack(new string(' ', spacesLength < 0 ? 0 : spacesLength == 0 ? 1 : spacesLength), state.settings, false, foreground, background);
+                TextWriterColor.WriteForReaderColorBack(new string(' ', spacesLength < 0 ? 0 : spacesLength == 0 && !state.OneLineWrap ? 1 : spacesLength), state.settings, false, foreground, background);
 
             // If stepping, go either backward or forward, and commit the positioning changes.
             if (steps > 0)
