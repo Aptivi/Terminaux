@@ -142,9 +142,14 @@ namespace Terminaux.Base.Extensions
                         }
                     }
 
-                    // Append the character into the incomplete sentence builder.
+                    // Append the character into the incomplete sentence builder, but check the surrogate pairs first.
                     string sequence = !string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString();
                     int width = ConsoleChar.EstimateCellWidth(splitText, i);
+                    if (i + 1 < splitText.Length && char.IsSurrogatePair(ParagraphChar, splitText[i + 1]))
+                    {
+                        sequence += splitText[i + 1];
+                        i++;
+                    }
                     if (string.IsNullOrEmpty(seq))
                         totalWidth += width;
 
