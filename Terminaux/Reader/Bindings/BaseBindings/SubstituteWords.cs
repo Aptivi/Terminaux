@@ -84,13 +84,11 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             first = first.Trim();
             second = second.Trim();
             string final = second + " " + first;
-            state.CurrentText.Replace(orig, final, firstWordStart, diff);
 
-            // Finally, find the space in the trimmed result and set the position according to it.
-            int pos = firstWordStart;
-            int spaceIdx = final.IndexOf(' ');
-            pos += spaceIdx;
-            PositioningTools.SeekTo(pos, ref state);
+            // Finally, go to the start of the second word by length (not by cell length).
+            PositioningTools.GoBack(first.Length, ref state);
+            state.CurrentText.Replace(orig, final, firstWordStart, diff);
+            PositioningTools.GoForward(second.Length, ref state);
             TermReaderTools.RefreshPrompt(ref state);
         }
     }
