@@ -52,7 +52,7 @@ namespace Terminaux.Reader
         internal bool insertIsReplace;
         internal bool commentized;
         internal bool operationWasInvalid;
-        internal string oldText;
+        internal string oldText = "";
         internal TermReaderSettings settings = TermReader.GlobalReaderSettings;
 
         // Shared

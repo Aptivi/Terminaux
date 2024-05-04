@@ -233,10 +233,11 @@ namespace Terminaux.Writer.ConsoleWriters
             {
                 int wrapTop = top + i;
                 string textWrapped = wrapped[i];
+                int width = ConsoleChar.EstimateCellWidth(textWrapped);
                 WriteRaw(textWrapped);
                 if (i + 1 < wrapped.Length)
                 {
-                    if (ConsoleChar.EstimateCellWidth(textWrapped) == (i == 0 ? settings.state.LongestSentenceLengthFromLeftForFirstLine : settings.state.LongestSentenceLengthFromLeftForGeneralLine))
+                    if (width == (i == 0 ? settings.state.LongestSentenceLengthFromLeftForFirstLine : settings.state.LongestSentenceLengthFromLeftForGeneralLine))
                         WriteRaw(" ");
                     ConsoleWrapper.WriteLine();
                     ConsoleWrapper.CursorLeft = settings.LeftMargin;
@@ -247,6 +248,8 @@ namespace Terminaux.Writer.ConsoleWriters
                     topBegin--;
                     settings.state.currentCursorPosTop--;
                     ConsoleWrapper.CursorLeft = settings.LeftMargin;
+                    if (i == wrapped.Length - 1)
+                        ConsoleWrapper.CursorLeft += width;
                 }
             }
             settings.state.inputPromptTop = top;
