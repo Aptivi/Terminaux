@@ -230,7 +230,10 @@ namespace Terminaux.Reader
                 return ConsoleWrapper.ReadKey(true);
         }
 
-        internal static int GetMaximumInputLength(TermReaderState state)
+        internal static int GetMaximumInputLength(TermReaderState state) =>
+            GetMaximumInputLength(state.CurrentText.ToString(), state);
+
+        internal static int GetMaximumInputLength(string text, TermReaderState state)
         {
             // First, get the maximum width and height
             int height = ConsoleWrapper.BufferHeight;
@@ -250,8 +253,22 @@ namespace Terminaux.Reader
                 length -= longestSentenceLength + 1;
 
             // Compensate and take the length according to the character widths
-            length += ConsoleChar.EstimateZeroWidths(state.CurrentText.ToString());
-            length -= ConsoleChar.EstimateFullWidths(state.CurrentText.ToString());
+            int fullWidths = ConsoleChar.EstimateFullWidths(text);
+            bool hasFullWidths = fullWidths > 0;
+            length += ConsoleChar.EstimateZeroWidths(text);
+
+            // Take the unoccupied characters
+            if (!hasFullWidths)
+                return length;
+            length -= fullWidths;
+            var sentences = ConsoleMisc.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
+            for (int i = 0; i < sentences.Length; i++)
+            {
+                string sentence = sentences[i];
+                int width = ConsoleChar.EstimateCellWidth(sentence);
+                if (width == longestSentenceLength && i < sentences.Length - 1)
+                    length--;
+            }
 
             // Return the number of length available
             return length;
@@ -264,7 +281,7 @@ namespace Terminaux.Reader
                 return;
 
             // Get the longest sentence width and crop the text appropriately
-            int longest = GetMaximumInputLength(state);
+            int longest = GetMaximumInputLength(state.CurrentText.ToString() + newText, state);
             var strInfoNew = new StringInfo(newText);
             var strInfoOld = new StringInfo(state.CurrentText.ToString());
             if (strInfoOld.LengthInTextElements + strInfoNew.LengthInTextElements > longest && state.settings.LimitConsoleChars)
@@ -273,7 +290,7 @@ namespace Terminaux.Reader
                 int len = longest - (strInfoOld.LengthInTextElements + strInfoNew.LengthInTextElements);
                 if (len < 0)
                     len = longest - strInfoOld.LengthInTextElements;
-                newText = strInfoNew.SubstringByTextElements(0, len);
+                newText = strInfoNew.SubstringByTextElements(0, len <= 0 ? 0 : len - 1);
             }
 
             // Now, insert the text

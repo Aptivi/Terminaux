@@ -104,6 +104,19 @@ namespace Terminaux.Reader.Bindings
                     text += $"{pressed.KeyChar}";
                 }
             }
+            else
+            {
+                // Capture all the possible input, as long as that text is printable
+                while (ConsoleWrapper.KeyAvailable)
+                {
+                    var pressed = TermReader.ReadKey();
+                    if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(pressed.KeyChar) == 0, state))
+                        continue;
+
+                    // Our next key is a letter.
+                    text += $"{pressed.KeyChar}";
+                }
+            }
 
             // Indicate whether we're replacing or inserting
             if (state.insertIsReplace)
