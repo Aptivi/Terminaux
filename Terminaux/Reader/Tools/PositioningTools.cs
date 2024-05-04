@@ -156,10 +156,12 @@ namespace Terminaux.Reader.Tools
 
             int height = ConsoleWrapper.BufferHeight;
             var sentences = ConsoleMisc.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
+            var oldSentences = ConsoleMisc.GetWrappedSentences(state.oldText, state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
             for (int i = 0; i < steps; i++)
             {
                 int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
                 int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
+                int oldWidth = ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(oldSentences, state));
                 state.currentTextPos++;
                 if (state.currentTextPos + 1 <= state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
                 {
@@ -178,8 +180,7 @@ namespace Terminaux.Reader.Tools
                 int nextWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
                 state.currentCursorPosLeft +=
                     ((prevWidth == 2 && cellWidth == 1) || (nextWidth == 2 && cellWidth == 1)) &&
-                    (prevWidth == 2 || (prevWidth == 1 && state.appending)) &&
-                    nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin ? 0 : cellWidth;
+                    nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin && oldWidth == state.MaximumInputPositionLeft ? 0 : cellWidth;
 
                 // Check to see if we need to wrap
                 if (state.CurrentCursorPosLeft > state.MaximumInputPositionLeft ||
@@ -203,6 +204,7 @@ namespace Terminaux.Reader.Tools
 
             int width = ConsoleWrapper.WindowWidth;
             var sentences = ConsoleMisc.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
+            var oldSentences = ConsoleMisc.GetWrappedSentences(state.oldText, state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
             for (int i = 0; i < steps; i++)
             {
                 if (state.currentTextPos == 0)
@@ -210,6 +212,7 @@ namespace Terminaux.Reader.Tools
 
                 int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
                 int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
+                int oldWidth = ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(oldSentences, state));
                 state.currentTextPos--;
                 if (state.currentTextPos - 1 >= 0 && state.currentTextPos < state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
                 {
@@ -228,8 +231,7 @@ namespace Terminaux.Reader.Tools
                 int nextWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos + 1);
                 if (!(
                     ((prevWidth == 2 && cellWidth == 1) || (nextWidth == 2 && cellWidth == 1)) &&
-                    (prevWidth == 2 || (prevWidth == 1 && state.appending)) &&
-                    nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin
+                    nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin && oldWidth == state.MaximumInputPositionLeft
                    ))
                     state.currentCursorPosLeft -= cellWidth > 0 ? cellWidth : ConsoleChar.EstimateCellWidth(state.currentText.ToString(), 0);
                 
@@ -264,10 +266,12 @@ namespace Terminaux.Reader.Tools
             if (steps > state.currentText.Length - state.currentTextPos)
                 steps = state.currentText.Length - state.currentTextPos;
 
+            var oldSentences = ConsoleMisc.GetWrappedSentences(state.oldText, state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
             for (int i = 0; i < steps; i++)
             {
                 int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
                 int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
+                int oldWidth = ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(oldSentences, state));
                 state.currentTextPos++;
                 if (state.currentTextPos + 1 <= state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
                 {
@@ -285,8 +289,7 @@ namespace Terminaux.Reader.Tools
                 int nextWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos);
                 state.currentCursorPosLeft +=
                     ((prevWidth == 2 && cellWidth == 1) || (nextWidth == 2 && cellWidth == 1)) &&
-                    (prevWidth == 2 || (prevWidth == 1 && state.appending)) &&
-                    nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin ? 0 : cellWidth;
+                    nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin && oldWidth == state.MaximumInputPositionLeft ? 0 : cellWidth;
                 if (state.CurrentCursorPosLeft >= state.LongestSentenceLengthFromLeft)
                 {
                     // Reached to the end! Go back to the prompt position.
@@ -306,6 +309,7 @@ namespace Terminaux.Reader.Tools
 
             int width = ConsoleWrapper.WindowWidth;
             var sentences = ConsoleMisc.GetWrappedSentences(state.currentText.ToString(), state.LongestSentenceLengthFromLeftForFirstLine, 0);
+            var oldSentences = ConsoleMisc.GetWrappedSentences(state.oldText, state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
             for (int i = 0; i < steps; i++)
             {
                 if (state.currentTextPos == 0)
@@ -313,6 +317,7 @@ namespace Terminaux.Reader.Tools
 
                 int prevWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1 < 0 ? 0 : state.currentTextPos - 1);
                 int cellWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos - 1);
+                int oldWidth = ConsoleChar.EstimateCellWidth(TermReaderTools.GetLineFromCurrentPos(oldSentences, state));
                 state.currentTextPos--;
                 if (state.currentTextPos - 1 >= 0 && state.currentTextPos < state.currentText.Length && char.IsSurrogatePair(state.currentText[state.currentTextPos - 1], state.currentText[state.currentTextPos]))
                 {
@@ -331,8 +336,7 @@ namespace Terminaux.Reader.Tools
                 int nextWidth = ConsoleChar.EstimateCellWidth(state.currentText.ToString(), state.currentTextPos + 1);
                 if (!(
                     ((prevWidth == 2 && cellWidth == 1) || (nextWidth == 2 && cellWidth == 1)) &&
-                    (prevWidth == 2 || (prevWidth == 1 && state.appending)) &&
-                    nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin
+                    nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin && oldWidth == state.MaximumInputPositionLeft
                    ))
                     state.currentCursorPosLeft -= cellWidth > 0 ? cellWidth : ConsoleChar.EstimateCellWidth(state.currentText.ToString(), 0);
 

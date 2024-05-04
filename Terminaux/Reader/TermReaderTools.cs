@@ -294,15 +294,15 @@ namespace Terminaux.Reader
             }
 
             // Now, insert the text
+            state.oldText = state.CurrentText.ToString();
             if (append)
                 state.CurrentText.Append(newText);
             else
                 state.CurrentText.Insert(state.CurrentTextPos, newText);
 
             // Refresh
-            state.appending = true;
             RefreshPrompt(ref state, step ? newText.Length : 0);
-            state.appending = false;
+            state.oldText = "";
         }
 
         internal static void RemoveText(ref TermReaderState state, int length, bool step = false) =>
@@ -312,11 +312,7 @@ namespace Terminaux.Reader
         {
             // Go back a selected length number
             if (step)
-            {
-                state.appending = true;
                 PositioningTools.GoBack(length, ref state);
-                state.appending = false;
-            }
 
             // Check for surrogate pairs in case a user tries to remove them. Surrogate pairs require two characters: high and low.
             if (state.CurrentText.Length >= 2)
