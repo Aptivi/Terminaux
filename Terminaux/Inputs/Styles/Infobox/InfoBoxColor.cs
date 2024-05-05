@@ -662,7 +662,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     string[] splitFinalLines = GetFinalLines();
 
                     // Fill the info box with text inside it
-                    int maxWidth = splitFinalLines.Max((str) => str.Length);
+                    int maxWidth = splitFinalLines.Max((str) => ConsoleChar.EstimateCellWidth(str));
                     if (maxWidth >= ConsoleWrapper.WindowWidth)
                         maxWidth = ConsoleWrapper.WindowWidth - 4;
                     int maxHeight = splitFinalLines.Length;
@@ -695,7 +695,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     string[] splitFinalLines = GetFinalLines();
 
                     // Fill the info box with text inside it
-                    int maxWidth = splitFinalLines.Max((str) => str.Length);
+                    int maxWidth = splitFinalLines.Max((str) => ConsoleChar.EstimateCellWidth(str));
                     if (maxWidth >= ConsoleWrapper.WindowWidth)
                         maxWidth = ConsoleWrapper.WindowWidth - 4;
                     int maxHeight = splitFinalLines.Length;

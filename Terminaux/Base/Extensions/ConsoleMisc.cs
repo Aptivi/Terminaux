@@ -195,6 +195,7 @@ namespace Terminaux.Base.Extensions
         /// </summary>
         /// <param name="text">Text to be wrapped</param>
         /// <param name="maximumLength">Maximum length of text before wrapping</param>
+        /// <remarks>This function returns the same output as <see cref="GetWrappedSentences(string, int, int)"/> if there are any full-width characters.</remarks>
         public static string[] GetWrappedSentencesByWords(string text, int maximumLength) =>
             GetWrappedSentencesByWords(text, maximumLength, 0);
 
@@ -204,10 +205,15 @@ namespace Terminaux.Base.Extensions
         /// <param name="text">Text to be wrapped</param>
         /// <param name="maximumLength">Maximum length of text before wrapping</param>
         /// <param name="indentLength">Indentation length</param>
+        /// <remarks>This function returns the same output as <see cref="GetWrappedSentences(string, int, int)"/> if there are any full-width characters.</remarks>
         public static string[] GetWrappedSentencesByWords(string text, int maximumLength, int indentLength)
         {
             if (string.IsNullOrEmpty(text))
                 return [""];
+
+            // Check to see if we have full-width characters
+            if (ConsoleChar.EstimateFullWidths(text) > 0)
+                return GetWrappedSentences(text, maximumLength, indentLength);
 
             // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
             // sizes.
@@ -266,7 +272,9 @@ namespace Terminaux.Base.Extensions
 
                     // Append the word into the incomplete sentence builder.
                     int finalMaximum = maximumLength - indentLength + compensate - take;
-                    if (word.Length >= finalMaximum)
+                    int sentenceWidth = ConsoleChar.EstimateCellWidth(IncompleteSentenceBuilder.ToString());
+                    int wordWidth = ConsoleChar.EstimateCellWidth(word);
+                    if (wordWidth >= finalMaximum)
                     {
                         var charSplit = GetWrappedSentences(word, maximumLength, indentLength);
                         for (int splitIdx = 0; splitIdx < charSplit.Length - 1; splitIdx++)
@@ -282,6 +290,7 @@ namespace Terminaux.Base.Extensions
                             IncompleteSentenceBuilder.Clear();
                             indentLength = 0;
                             compensate = 0;
+                            take = 0;
                         }
 
                         // Process the character split last text
@@ -291,12 +300,12 @@ namespace Terminaux.Base.Extensions
                         finalMaximum = maximumLength - indentLength + compensate;
                         IncompleteSentenceBuilder.Append(charSplitLastText);
                     }
-                    else if (IncompleteSentenceBuilder.Length + word.Length < finalMaximum)
+                    else if (sentenceWidth + wordWidth < finalMaximum)
                         IncompleteSentenceBuilder.Append(word);
 
                     // Check to see if we're at the maximum length
-                    int nextWord = i + 1 >= words.Length ? 1 : words[i + 1].Length + 1;
-                    if (IncompleteSentenceBuilder.Length + nextWord >= finalMaximum)
+                    int nextWord = i + 1 >= words.Length ? 1 : ConsoleChar.EstimateCellWidth(words[i + 1]) + 1;
+                    if (sentenceWidth + nextWord >= finalMaximum)
                     {
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                         IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
@@ -305,9 +314,10 @@ namespace Terminaux.Base.Extensions
                         IncompleteSentenceBuilder.Clear();
                         indentLength = 0;
                         compensate = 0;
+                        take = 0;
                     }
                     else
-                        IncompleteSentenceBuilder.Append(IncompleteSentenceBuilder.Length + nextWord >= finalMaximum || i + 1 >= words.Length ? "" : " ");
+                        IncompleteSentenceBuilder.Append(sentenceWidth + nextWord >= finalMaximum || i + 1 >= words.Length ? "" : " ");
                 }
                 if (IncompleteSentenceBuilder.Length > 0)
                     IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());

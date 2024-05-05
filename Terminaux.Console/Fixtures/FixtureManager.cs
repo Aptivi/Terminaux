@@ -22,6 +22,7 @@ using Terminaux.Base;
 using Terminaux.Console.Fixtures.Cases.Colors;
 using Terminaux.Console.Fixtures.Cases.Consoles;
 using Terminaux.Console.Fixtures.Cases.Input;
+using Terminaux.Console.Fixtures.Cases.Input.CJK;
 using Terminaux.Console.Fixtures.Cases.Presentations;
 using Terminaux.Console.Fixtures.Cases.Reader;
 using Terminaux.Console.Fixtures.Cases.Screens;
@@ -133,6 +134,37 @@ namespace Terminaux.Console.Fixtures
             new ColorSelectorNoPaletteTest(),
             new KeyInfo(),
             new MouseInfo(),
+
+            // Input (CJK)
+            new TestInputSelectionCjk(),
+            new TestInputSelectionLargeCjk(),
+            new TestInputSelectionHugeCjk(),
+            new TestInputSelectionScrollCjk(),
+            new TestInputSelectionDisabledCjk(),
+            new TestInputSelectionScrollDisabledCjk(),
+            new TestInputSelectionMultipleCjk(),
+            new TestInputSelectionLargeMultipleCjk(),
+            new TestInputSelectionHugeMultipleCjk(),
+            new TestInputSelectionMultipleScrollCjk(),
+            new TestInputSelectionMultipleDisabledCjk(),
+            new TestInputSelectionMultipleDisabledScrollCjk(),
+            new TestInputChoiceCjk(),
+            new TestInputChoiceNoAltCjk(),
+            new TestInputChoiceNoMainCjk(),
+            new TestInputChoiceDisabledCjk(),
+            new TestInputInfoBoxButtonsCjk(),
+            new TestInputInfoBoxMultiSelectionCjk(),
+            new TestInputInfoBoxSelectionCjk(),
+            new TestInputInfoBoxSelectionDisabledCjk(),
+            new TestInputInfoBoxSelectionDisabledMultipleCjk(),
+            new TestInputInfoBoxSelectionLargeCjk(),
+            new TestInputInfoBoxSelectionLargeMultipleCjk(),
+            new TestInputInfoBoxSelectionHugeCjk(),
+            new TestInputInfoBoxSelectionHugeMultipleCjk(),
+            new TestInputInfoBoxInputCjk(),
+            new TestInputInfoBoxColoredInputCjk(),
+            new TestInputInfoBoxInputPasswordCjk(),
+            new TestInputInfoBoxProgressCjk(),
 
             // Color
             new ColorTest(),
