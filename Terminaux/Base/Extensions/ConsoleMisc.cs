@@ -211,10 +211,6 @@ namespace Terminaux.Base.Extensions
             if (string.IsNullOrEmpty(text))
                 return [""];
 
-            // Check to see if we have full-width characters
-            if (ConsoleChar.EstimateFullWidths(text) > 0)
-                return GetWrappedSentences(text, maximumLength, indentLength);
-
             // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
             // sizes.
             var IncompleteSentences = new List<string>();
@@ -299,9 +295,13 @@ namespace Terminaux.Base.Extensions
                         CompensateLengths(charSplitLastText);
                         finalMaximum = maximumLength - indentLength + compensate;
                         IncompleteSentenceBuilder.Append(charSplitLastText);
+                        sentenceWidth = ConsoleChar.EstimateCellWidth(IncompleteSentenceBuilder.ToString());
                     }
                     else if (sentenceWidth + wordWidth < finalMaximum)
+                    {
                         IncompleteSentenceBuilder.Append(word);
+                        sentenceWidth = ConsoleChar.EstimateCellWidth(IncompleteSentenceBuilder.ToString());
+                    }
 
                     // Check to see if we're at the maximum length
                     int nextWord = i + 1 >= words.Length ? 1 : ConsoleChar.EstimateCellWidth(words[i + 1]) + 1;
