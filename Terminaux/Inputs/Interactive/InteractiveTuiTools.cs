@@ -67,9 +67,7 @@ namespace Terminaux.Inputs.Interactive
                 if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
                     interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0 && !interactiveTui.AcceptsEmptyData)
                 {
-                    TextWriterColor.Write("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n", interactiveTui.GetType().Name);
-                    TextWriterColor.Write("Press any key to exit this program...");
-                    TermReader.ReadKey();
+                    InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, interactiveTui.GetType().Name);
                     return;
                 }
                 bool notifyCrash = false;
@@ -126,9 +124,7 @@ namespace Terminaux.Inputs.Interactive
                 if (notifyCrash)
                 {
                     notifyCrash = false;
-                    TextWriterColor.WriteColor(crashReason + "\n", true, ConsoleColors.Red);
-                    TextWriterColor.Write("Press any key to exit this program...");
-                    TermReader.ReadKey();
+                    InfoBoxColor.WriteInfoBoxColorBack(crashReason + "\n" + "Press any key to continue...", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                 }
 
                 // Reset some static variables
