@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using Terminaux.Base.Extensions.Data;
 using Terminaux.Sequences;
 
@@ -27,6 +28,8 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleChar
     {
+        private static readonly Dictionary<int, int> cachedWidths = [];
+
         /// <summary>
         /// Whether to use two cells for unassigned characters or only one cell
         /// </summary>
@@ -52,8 +55,13 @@ namespace Terminaux.Base.Extensions
             if (c < 0 || c > 0x10FFFF)
                 throw new TerminauxInternalException($"Invalid character number {c}.");
 
+            // Check the cached width
+            if (cachedWidths.ContainsKey(c))
+                return cachedWidths[c];
+
             // Use the character cell table defined in a separate code class to be able to determine the width
             int width = 1;
+            bool cacheable = true;
             foreach ((var range, int cells) in CharWidths.ranges)
             {
                 // Check for each range if we have a Unicode character that falls under one of the characters that take
@@ -76,20 +84,23 @@ namespace Terminaux.Base.Extensions
                         // Unassigned character. This way, we need to let users select how to handle it by giving them a property
                         // that allows them to set either one (default) or two cells to be taken.
                         width = UseTwoCellsForUnassignedChars ? 2 : 1;
+                        cacheable = false;
                         break;
                     case -2:
                         // Ambiguous character. See above.
                         width = UseTwoCellsForAmbiguousChars ? 2 : 1;
+                        cacheable = false;
                         break;
                     case -3:
                         // Private character. See above.
                         width = UseTwoCellsForPrivateChars ? 2 : 1;
+                        cacheable = false;
                         break;
                 }
-
-                // Return that width
-                return width;
+                break;
             }
+            if (cacheable)
+                cachedWidths.Add(c, width);
             return width;
         }
 
