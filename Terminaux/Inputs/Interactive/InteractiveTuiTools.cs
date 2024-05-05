@@ -252,17 +252,17 @@ namespace Terminaux.Inputs.Interactive
             if (interactiveTui.Bindings is null || interactiveTui.Bindings.Length == 0)
                 finalBindings =
                 [
-                    new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null)
+                    new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null)
                 ];
             else
                 finalBindings = new(interactiveTui.Bindings)
                 {
-                    new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null),
-                    new InteractiveTuiBinding(/* Localizable */ "Keybindings", ConsoleKey.K, null),
+                    new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null),
+                    new InteractiveTuiBinding("Keybindings", ConsoleKey.K, null),
                 };
             if (interactiveTui.SecondPaneInteractable)
                 finalBindings.Add(
-                    new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab, null)
+                    new InteractiveTuiBinding("Switch", ConsoleKey.Tab, null)
                 );
 
             // Render the key bindings
@@ -273,8 +273,9 @@ namespace Terminaux.Inputs.Interactive
                 {
                     // First, check to see if the rendered binding info is going to exceed the console window width
                     string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {binding.BindingName}  ";
-                    int actualLength = VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()).Length;
-                    bool canDraw = renderedBinding.Length + actualLength < ConsoleWrapper.WindowWidth - 3;
+                    int bindingLength = ConsoleChar.EstimateCellWidth(renderedBinding);
+                    int actualLength = ConsoleChar.EstimateCellWidth(VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()));
+                    bool canDraw = bindingLength + actualLength < ConsoleWrapper.WindowWidth - 3;
                     if (canDraw)
                     {
                         bindingsBuilder.Append(
@@ -369,12 +370,13 @@ namespace Terminaux.Inputs.Interactive
                         int leftPos = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                         int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
                         finalEntry = interactiveTui.GetEntryFromItem(dataObject).Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                        int width = ConsoleChar.EstimateCellWidth(finalEntry);
                         string text =
                             $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, top + 1)}" +
                             $"{ColorTools.RenderSetConsoleColor(finalForeColor, false, true)}" +
                             $"{ColorTools.RenderSetConsoleColor(finalBackColor, true)}" +
                             finalEntry +
-                            new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)) +
+                            new string(' ', SeparatorHalfConsoleWidthInterior - width - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)) +
                             $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneItemBackColor, true)}";
                         builder.Append(text);
                     }
@@ -476,17 +478,19 @@ namespace Terminaux.Inputs.Interactive
                     if (infoIndex >= SeparatorMaximumHeightInterior - 1)
                     {
                         string truncated = "Shift+I = more info";
+                        int truncatedWidth = ConsoleChar.EstimateCellWidth(truncated);
                         builder.Append(ColorTools.RenderSetConsoleColor(ForegroundColor));
                         builder.Append(ColorTools.RenderSetConsoleColor(PaneItemBackColor, true));
-                        builder.Append(TextWriterWhereColor.RenderWhere(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
+                        builder.Append(TextWriterWhereColor.RenderWhere(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncatedWidth), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
                         break;
                     }
 
                     // Now, render the info
                     string finalInfo = finalInfoStrings[infoIndex];
+                    int finalInfoWidth = ConsoleChar.EstimateCellWidth(finalInfo);
                     builder.Append(ColorTools.RenderSetConsoleColor(ForegroundColor));
                     builder.Append(ColorTools.RenderSetConsoleColor(PaneItemBackColor, true));
-                    builder.Append(TextWriterWhereColor.RenderWhere(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
+                    builder.Append(TextWriterWhereColor.RenderWhere(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfoWidth), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
                 }
                 return builder.ToString();
             });
@@ -750,13 +754,13 @@ namespace Terminaux.Inputs.Interactive
                             // User needs an infobox that shows all available keys
                             string section = "Available keys";
                             int maxBindingLength = bindings
-                                .Max((itb) => GetBindingKeyShortcut(itb).Length);
+                                .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb)));
                             string[] bindingRepresentations = bindings
-                                .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - GetBindingKeyShortcut(itb).Length) + $" | {itb.BindingName}"}")
+                                .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")
                                 .ToArray();
                             InfoBoxColor.WriteInfoBoxColorBack(
                                 $"{section}{CharManager.NewLine}" +
-                                $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
+                                $"{new string('=', ConsoleChar.EstimateCellWidth(section))}{CharManager.NewLine}{CharManager.NewLine}" +
                                 $"{string.Join("\n", bindingRepresentations)}"
                             , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                             break;

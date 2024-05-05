@@ -180,6 +180,8 @@ namespace Terminaux.Console.Fixtures
 
             // Interactive TUI
             new CliInfoPaneTest(),
+            new CliInfoPaneTestCjk(),
+            new CliInfoPaneTestExcess(),
             new CliInfoPaneTestRefreshing(),
             new CliInfoPaneHugeTest(),
             new CliInfoPaneSlowTest(),

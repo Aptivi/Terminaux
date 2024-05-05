@@ -211,6 +211,10 @@ namespace Terminaux.Base.Extensions
             if (string.IsNullOrEmpty(text))
                 return [""];
 
+            // Check to see if we have full-width characters
+            if (ConsoleChar.EstimateFullWidths(text) > 0)
+                return GetWrappedSentences(text, maximumLength, indentLength);
+
             // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
             // sizes.
             var IncompleteSentences = new List<string>();
