@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using Terminaux.Inputs.Presentation.Elements;
+using Terminaux.Inputs.Presentation.Inputs;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -35,17 +36,24 @@ namespace Terminaux.Inputs.Presentation
         /// <summary>
         /// Presentation page elements
         /// </summary>
-        public List<IElement> Elements { get; }
+        public IElement[] Elements { get; }
+
+        /// <summary>
+        /// Presentation page inputs
+        /// </summary>
+        public InputInfo[] Inputs { get; }
 
         /// <summary>
         /// Makes a new presentation page
         /// </summary>
         /// <param name="name">Page name</param>
         /// <param name="elements">List of elements</param>
-        public PresentationPage(string name, List<IElement> elements)
+        /// <param name="inputs">List of inputs</param>
+        public PresentationPage(string name, IElement[] elements, InputInfo[]? inputs = null)
         {
             Name = name;
             Elements = elements;
+            Inputs = inputs ?? [];
         }
     }
 }

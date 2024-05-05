@@ -17,26 +17,35 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Inputs.Presentation.Elements
+namespace Terminaux.Inputs.Presentation.Inputs
 {
     /// <summary>
-    /// A presentation element
+    /// Presentation input method element
     /// </summary>
-    public interface IElement
+    public interface IInputMethod<TInput>
     {
         /// <summary>
-        /// Arguments
+        /// Resulting input entered by the user
         /// </summary>
-        object[]? Arguments { get; set; }
+        TInput? Input { get; }
+    }
+
+    /// <summary>
+    /// Presentation input method element
+    /// </summary>
+    public interface IInputMethod : IInputMethod<object>
+    {
+        /// <summary>
+        /// Input display for input list
+        /// </summary>
+        string DisplayInput { get; }
 
         /// <summary>
-        /// Renders an element
+        /// Prompts the user to enter the input
         /// </summary>
-        void Render();
-
-        /// <summary>
-        /// Checks for possible out of bounds when rendering
-        /// </summary>
-        bool IsPossibleOutOfBounds();
+        /// <typeparam name="TChoices">Choice type to use to specify the list of choices</typeparam>
+        /// <param name="question">A question to ask the user</param>
+        /// <param name="choices">List of choices</param>
+        void PromptInput<TChoices>(string question, TChoices[]? choices = null);
     }
 }

@@ -40,49 +40,6 @@ namespace Terminaux.Inputs.Presentation
     public static class PresentationTools
     {
         /// <summary>
-        /// The upper left corner of the exterior border (the left position)
-        /// </summary>
-        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
-        public static int PresentationUpperBorderLeft =>
-            2;
-        /// <summary>
-        /// The upper left corner of the exterior border (the top position)
-        /// </summary>
-        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
-        public static int PresentationUpperBorderTop =>
-            1;
-        /// <summary>
-        /// The upper left corner of the inner border (the left position)
-        /// </summary>
-        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
-        public static int PresentationUpperInnerBorderLeft =>
-            PresentationUpperBorderLeft + 1;
-        /// <summary>
-        /// The upper left corner of the inner border (the top position)
-        /// </summary>
-        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
-        public static int PresentationUpperInnerBorderTop =>
-            PresentationUpperBorderTop + 1;
-        /// <summary>
-        /// The lower right corner of the inner border (the left position)
-        /// </summary>
-        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
-        public static int PresentationLowerInnerBorderLeft =>
-            ConsoleWrapper.WindowWidth - PresentationUpperInnerBorderLeft * 2;
-        /// <summary>
-        /// The lower right corner of the inner border (the top position)
-        /// </summary>
-        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
-        public static int PresentationLowerInnerBorderTop =>
-            ConsoleWrapper.WindowHeight - PresentationUpperBorderTop * 2 - 4;
-        /// <summary>
-        /// The informational top position
-        /// </summary>
-        [Obsolete("These were initially reserved for internal use. Also, the presentation system will be revamped in the next few releases.")]
-        public static int PresentationInformationalTop =>
-            ConsoleWrapper.WindowHeight - 2;
-
-        /// <summary>
         /// Present the presentation
         /// </summary>
         /// <param name="presentation">Presentation instance</param>
@@ -137,7 +94,7 @@ namespace Terminaux.Inputs.Presentation
 
                     // Write the bindings
                     builder.Append(
-                        CenteredTextColor.RenderCentered(presentationInformationalTop, $"[ENTER] {"Advance"}{(!kiosk && !required ? $" - [ESC] {"Exit"}" : "")}".Truncate(presentationLowerInnerBorderLeft + 1), new Color(ConsoleColors.White), ColorTools.CurrentBackgroundColor)
+                        CenteredTextColor.RenderCentered(presentationInformationalTop, $"[ENTER] Advance{(!kiosk && !required ? $" - [ESC] Exit" : "")}".Truncate(presentationLowerInnerBorderLeft + 1), new Color(ConsoleColors.White), ColorTools.CurrentBackgroundColor)
                     );
 
                     // Clear the presentation screen
@@ -167,14 +124,6 @@ namespace Terminaux.Inputs.Presentation
 
                     // Render it to the view
                     element.Render();
-
-                    // Check to see if we need to invoke action
-                    if (element.IsInput)
-                        if (element.InvokeActionInput is not null)
-                            element.InvokeActionInput([element.WrittenInput ?? ""]);
-                        else
-                        if (element.InvokeAction is not null)
-                            element.InvokeAction();
                 }
 
                 // Wait for the ENTER key to be pressed if in kiosk mode. If not in kiosk mode, handle any key
@@ -215,30 +164,26 @@ namespace Terminaux.Inputs.Presentation
                         }
                     }
                 }
+
+                // Before going ahead, check to see if this page includes inputs
+                if (page.Inputs.Length > 0 && pageExit)
+                {
+                    // Our page includes inputs! First, clear the buffer
+                    buffer.Clear();
+
+                    // Make a selection infobox that lets the user select the inputs
+                    bool inputBail = false;
+                    while (!inputBail)
+                    {
+
+                    }
+                }
             }
 
             // Clean up after ourselves
             ScreenTools.UnsetCurrent(screen);
             ColorTools.LoadBack();
             ConsoleWrapper.CursorVisible = true;
-        }
-
-        /// <summary>
-        /// Checks to see if the presentation contains input
-        /// </summary>
-        /// <param name="presentation">Target presentation</param>
-        /// <returns>True if one of the elements in a page contains input</returns>
-        public static bool PresentationContainsInput(Slideshow presentation)
-        {
-            // Check every page
-            foreach (var page in presentation.Pages)
-                foreach (var element in page.Elements)
-                    if (element.IsInput)
-                        // One of the elements contains input
-                        return true;
-
-            // If not input, then false
-            return false;
         }
 
         /// <summary>
