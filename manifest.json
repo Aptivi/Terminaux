@@ -1055,16 +1055,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.ChoiceInputElement.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.ChoiceInputElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.DynamicTextElement.yml",
       "output": {
         ".html": {
@@ -1085,36 +1075,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.InputElement.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.InputElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.MaskedInputElement.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.MaskedInputElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.MultipleChoiceInputElement.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Presentation.Elements.MultipleChoiceInputElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Presentation.Elements.TextElement.yml",
       "output": {
         ".html": {
@@ -1129,6 +1089,96 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Presentation.Elements.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.BaseInputMethod-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.BaseInputMethod-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.IInputMethod-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.IInputMethod-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.IInputMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.IInputMethod.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.InputInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.InputInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.MaskedTextInputMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.MaskedTextInputMethod.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.SelectionInputMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.SelectionInputMethod.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.SelectionMultipleInputMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.SelectionMultipleInputMethod.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.TextInputMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.TextInputMethod.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Presentation.Inputs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Presentation.Inputs.html"
         }
       },
       "version": ""
