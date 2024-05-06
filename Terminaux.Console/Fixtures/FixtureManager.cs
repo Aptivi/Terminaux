@@ -97,6 +97,7 @@ namespace Terminaux.Console.Fixtures
             new TestListWriterHugeWrap(),
             new TestNonGenericListWriterInt(),
             new TestTable(),
+            new TestTableCjk(),
             new BorderText(),
 
             // Input

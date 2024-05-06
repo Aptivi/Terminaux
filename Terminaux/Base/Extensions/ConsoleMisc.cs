@@ -322,7 +322,12 @@ namespace Terminaux.Base.Extensions
             // string length to handle characters that occupy two cells.
             int newLength = ConsoleChar.EstimateCellWidth(VtSequenceTools.FilterVTSequences(target));
             if (newLength > threshold)
-                return target.Substring(0, threshold) + "...";
+            {
+                var targetBuilder = new StringBuilder(target);
+                while (ConsoleChar.EstimateCellWidth(targetBuilder.ToString()) + 3 >= threshold)
+                    targetBuilder.Remove(targetBuilder.Length - 1, 1);
+                return $"{targetBuilder}...";
+            }
             else
                 return target;
         }

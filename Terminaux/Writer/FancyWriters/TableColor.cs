@@ -187,12 +187,13 @@ namespace Terminaux.Writer.FancyWriters
                     string Header = Headers[HeaderIndex];
                     int ColumnPosition = ColumnPositions[HeaderIndex];
                     Header ??= "";
-                    string renderedHeader = Header.Truncate(ColumnCapacity - 3 - Margin);
+                    string renderedHeader = Header.Truncate(ColumnCapacity - 2 - Margin);
                     if (HeaderIndex == 0)
                         headerBuilder.Append(new string(' ', ColumnPosition));
                     headerBuilder.Append(renderedHeader);
+                    int headerWidth = ConsoleChar.EstimateCellWidth(headerBuilder.ToString());
                     if (HeaderIndex < Headers.Length - 1)
-                        headerBuilder.Append(new string(' ', ColumnPositions[HeaderIndex + 1] - headerBuilder.Length));
+                        headerBuilder.Append(new string(' ', ColumnPositions[HeaderIndex + 1] - headerWidth < 0 ? 0 : ColumnPositions[HeaderIndex + 1] - headerWidth));
                 }
                 table.AppendLine(headerBuilder.ToString());
                 line++;
@@ -242,7 +243,7 @@ namespace Terminaux.Writer.FancyWriters
                         }
 
                         // Now, write the cell value
-                        string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
+                        string FinalRowValue = RowValue.Truncate(ColumnCapacity - 2 - Margin);
                         if (useColor)
                         {
                             if (ColoredCell)
@@ -259,8 +260,9 @@ namespace Terminaux.Writer.FancyWriters
                         if (columnIndex == 0)
                             columnBuilder.Append(new string(' ', ColumnPosition));
                         columnBuilder.Append(FinalRowValue);
+                        int columnWidth = ConsoleChar.EstimateCellWidth(columnBuilder.ToString());
                         if (columnIndex < Headers.Length - 1)
-                            columnBuilder.Append(new string(' ', ColumnCapacity - columnBuilder.Length));
+                            columnBuilder.Append(new string(' ', ColumnCapacity - columnWidth < 0 ? 0 : ColumnCapacity - columnWidth));
                         rowBuilder.Append(columnBuilder.ToString());
                     }
                     table.AppendLine(rowBuilder.ToString());
