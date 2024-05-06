@@ -23,7 +23,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintLineHandle : IFixture
     {
-        public string FixtureID => "PrintLineHandle";
         public void RunFixture()
         {
             LineHandleWriter.PrintLineWithHandle(["one", "two"], 1, 2);

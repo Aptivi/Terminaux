@@ -23,7 +23,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintSep : IFixture
     {
-        public string FixtureID => "PrintSep";
         public void RunFixture()
         {
             SeparatorWriterColor.WriteSeparator("Hello world!", true, true);

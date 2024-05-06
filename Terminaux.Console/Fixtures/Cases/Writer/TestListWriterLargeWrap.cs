@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestListWriterLargeWrap : IFixture
     {
-        public string FixtureID => "TestListWriterLargeWrap";
         public void RunFixture()
         {
             var choices = new List<string>();

@@ -29,7 +29,6 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
 {
     internal class TestScreenPrintPos : IFixture
     {
-        public string FixtureID => "TestScreenPrintPos";
         public void RunFixture()
         {
             // Show the screen measurement dimensions

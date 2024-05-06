@@ -27,7 +27,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class KeyInfo : IFixture
     {
-        public string FixtureID => "KeyInfo";
         public void RunFixture()
         {
             TextWriterColor.Write("Enter a key or a combination of keys to display its information.");

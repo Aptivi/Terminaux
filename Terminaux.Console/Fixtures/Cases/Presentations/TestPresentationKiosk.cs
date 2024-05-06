@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Presentations
 {
     internal class TestPresentationKiosk : IFixture
     {
-        public string FixtureID => "TestPresentationKiosk";
         public void RunFixture()
         {
             PointerListener.StartListening();

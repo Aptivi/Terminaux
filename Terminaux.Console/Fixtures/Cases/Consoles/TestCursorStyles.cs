@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class TestCursorStyles : IFixture
     {
-        public string FixtureID => "TestCursorStyles";
         public void RunFixture()
         {
             var types = Enum.GetValues(typeof(ConsoleCursorType));

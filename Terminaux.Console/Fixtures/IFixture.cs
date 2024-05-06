@@ -21,7 +21,6 @@ namespace Terminaux.Console.Fixtures
 {
     internal interface IFixture
     {
-        string FixtureID { get; }
         void RunFixture();
     }
 }

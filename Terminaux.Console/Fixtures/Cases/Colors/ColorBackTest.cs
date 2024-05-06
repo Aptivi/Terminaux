@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorBackTest : IFixture
     {
-        public string FixtureID => "ColorBackTest";
         public void RunFixture()
         {
             ColorTools.AllowBackground = true;

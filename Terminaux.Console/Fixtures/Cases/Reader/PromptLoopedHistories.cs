@@ -37,7 +37,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
             "git push",
         ];
 
-        public string FixtureID => "PromptLoopedHistories";
 
         public void RunFixture()
         {

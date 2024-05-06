@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptLoopedCompletion : IFixture
     {
-        public string FixtureID => "PromptLoopedCompletion";
 
         public void RunFixture()
         {

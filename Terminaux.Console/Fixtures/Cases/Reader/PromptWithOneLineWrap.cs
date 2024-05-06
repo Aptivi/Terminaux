@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptWithOneLineWrap : IFixture
     {
-        public string FixtureID => "PromptWithOneLineWrap";
 
         public void RunFixture()
         {

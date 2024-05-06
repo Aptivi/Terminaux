@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestTableCjk : IFixture
     {
-        public string FixtureID => "TestTableCjk";
         public void RunFixture()
         {
             var Headers = new string[] { "Ubuntu版本", "发布日期", "支持结束", "ESM支持结束" };

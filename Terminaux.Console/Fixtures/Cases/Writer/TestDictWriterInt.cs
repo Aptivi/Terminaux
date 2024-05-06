@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestDictWriterInt : IFixture
     {
-        public string FixtureID => "TestDictWriterInt";
         public void RunFixture()
         {
             var NormalIntegerDict = new Dictionary<string, int>() { { "One", 1 }, { "Two", 2 }, { "Three", 3 } };

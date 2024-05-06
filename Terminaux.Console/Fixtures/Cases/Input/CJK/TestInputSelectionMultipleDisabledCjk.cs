@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
 {
     internal class TestInputSelectionMultipleDisabledCjk : IFixture
     {
-        public string FixtureID => "TestInputSelectionMultipleDisabledCjk";
         public void RunFixture()
         {
             PointerListener.StartListening();

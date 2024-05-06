@@ -24,10 +24,9 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputInfoBoxInputPassword : IFixture
     {
-        public string FixtureID => "TestInputInfoBoxInputPassword";
         public void RunFixture()
         {
-            string answer = InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(FixtureID, "Write your password.");
+            string answer = InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(nameof(TestInputInfoBoxInputPassword), "Write your password.");
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

@@ -214,7 +214,7 @@ namespace Terminaux.Console.Fixtures
         {
             if (DoesFixtureExist(name))
             {
-                var detectedFixtures = fixtures.Where((fixture) => fixture.FixtureID == name).ToArray();
+                var detectedFixtures = fixtures.Where((fixture) => fixture.GetType().Name == name).ToArray();
                 return detectedFixtures[0];
             }
             else
@@ -226,11 +226,11 @@ namespace Terminaux.Console.Fixtures
 
         internal static bool DoesFixtureExist(string name)
         {
-            var detectedFixtures = fixtures.Where((fixture) => fixture.FixtureID == name);
+            var detectedFixtures = fixtures.Where((fixture) => fixture.GetType().Name == name);
             return detectedFixtures.Any();
         }
 
         internal static string[] GetFixtureNames() =>
-            fixtures.Select((fixture) => fixture.FixtureID).ToArray();
+            fixtures.Select((fixture) => fixture.GetType().Name).ToArray();
     }
 }

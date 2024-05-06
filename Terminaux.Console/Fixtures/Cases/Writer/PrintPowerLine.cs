@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintPowerLine : IFixture
     {
-        public string FixtureID => "PrintPowerLine";
         public void RunFixture()
         {
             PowerLineColor.WritePowerLinePlain([

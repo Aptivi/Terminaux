@@ -31,7 +31,6 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
 {
     internal class TestScreen : IFixture
     {
-        public string FixtureID => "TestScreen";
         public void RunFixture()
         {
             // Show the screen measurement sticks

@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputChoiceDisabled : IFixture
     {
-        public string FixtureID => "TestInputChoiceDisabled";
         public void RunFixture()
         {
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history

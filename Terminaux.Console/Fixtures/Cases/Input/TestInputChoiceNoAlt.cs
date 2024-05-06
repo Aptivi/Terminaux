@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputChoiceNoAlt : IFixture
     {
-        public string FixtureID => "TestInputChoiceNoAlt";
         public void RunFixture()
         {
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history

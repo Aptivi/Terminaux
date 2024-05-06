@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
 {
     internal class TestInputSelectionCjk : IFixture
     {
-        public string FixtureID => "TestInputSelectionCjk";
         public void RunFixture()
         {
             PointerListener.StartListening();

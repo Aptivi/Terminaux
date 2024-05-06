@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintTemplate : IFixture
     {
-        public string FixtureID => "PrintTemplate";
         public void RunFixture()
         {
             string name = "template";

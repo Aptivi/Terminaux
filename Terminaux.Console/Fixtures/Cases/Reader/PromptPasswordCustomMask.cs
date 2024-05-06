@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptPasswordCustomMask : IFixture
     {
-        public string FixtureID => "PromptPasswordCustomMask";
 
         public void RunFixture()
         {

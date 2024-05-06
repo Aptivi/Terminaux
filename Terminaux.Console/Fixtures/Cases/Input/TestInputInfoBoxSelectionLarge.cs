@@ -27,14 +27,13 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputInfoBoxSelectionLarge : IFixture
     {
-        public string FixtureID => "TestInputInfoBoxSelectionLarge";
         public void RunFixture()
         {
             PointerListener.StartListening();
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"Number #{i + 1}"));
-            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(FixtureID, [.. choices], "Select a number");
+            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(nameof(TestInputInfoBoxSelectionLarge), [.. choices], "Select a number");
             TextWriterWhereColor.WriteWhere($"{selected}", 0, 0);
             PointerListener.StopListening();
         }

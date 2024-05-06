@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
 {
     internal class TestInputInfoBoxMultiSelectionCjk : IFixture
     {
-        public string FixtureID => "TestInputInfoBoxMultiSelectionCjk";
         public void RunFixture()
         {
             PointerListener.StartListening();
@@ -38,7 +37,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
                 new("jammy", "22.04 (Jammy Jellyfish)", "Ubuntu 22.04 LTS，代号 Jammy Jellyfish，于 2022 年 4 月 21 日发布，是一个长期支持版本，支持期五年，直到 2027 年 4 月。", false, true),
                 new("noble", "24.04 (Noble Numbat)", "Ubuntu 24.04 LTS，代号Noble Numbat，计划于2024年4月发布，属于长期支持版本，支持五年，直到2029年4月。", true, true),
             };
-            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(FixtureID, choices, "您想运行哪个 Ubuntu 版本？");
+            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(nameof(TestInputInfoBoxMultiSelectionCjk), choices, "您想运行哪个 Ubuntu 版本？");
             TextWriterWhereColor.WriteWhere(string.Join(", ", selections), 0, 0);
             PointerListener.StopListening();
         }

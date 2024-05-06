@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptWithDefault : IFixture
     {
-        public string FixtureID => "PromptWithDefault";
 
         public void RunFixture()
         {

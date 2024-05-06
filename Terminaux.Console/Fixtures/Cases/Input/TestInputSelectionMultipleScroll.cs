@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputSelectionMultipleScroll : IFixture
     {
-        public string FixtureID => "TestInputSelectionMultipleScroll";
         public void RunFixture()
         {
             PointerListener.StartListening();

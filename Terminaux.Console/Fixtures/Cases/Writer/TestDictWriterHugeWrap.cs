@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestDictWriterHugeWrap : IFixture
     {
-        public string FixtureID => "TestDictWriterHugeWrap";
         public void RunFixture()
         {
             var choices = new Dictionary<string, string>();

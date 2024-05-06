@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorTest : IFixture
     {
-        public string FixtureID => "ColorTest";
         public void RunFixture()
         {
             string Text = TermReader.Read("Write a color number ranging from 1 to 255: ");

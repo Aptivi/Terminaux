@@ -28,7 +28,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputFiglet : IFixture
     {
-        public string FixtureID => "TestInputFiglet";
         public void RunFixture()
         {
             PointerListener.StartListening();

@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
 {
     internal class TestInputChoiceCjk : IFixture
     {
-        public string FixtureID => "TestInputChoiceCjk";
         public void RunFixture()
         {
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history

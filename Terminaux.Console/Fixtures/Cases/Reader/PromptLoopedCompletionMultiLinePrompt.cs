@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptLoopedCompletionMultiLinePrompt : IFixture
     {
-        public string FixtureID => "PromptLoopedCompletionMultiLinePrompt";
 
         public void RunFixture()
         {

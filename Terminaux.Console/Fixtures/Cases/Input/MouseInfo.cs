@@ -29,7 +29,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class MouseInfo : IFixture
     {
-        public string FixtureID => "MouseInfo";
         public void RunFixture()
         {
             bool looping = true;

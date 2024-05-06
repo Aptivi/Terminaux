@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintF : IFixture
     {
-        public string FixtureID => "PrintF";
         public void RunFixture()
         {
             TextWriterColor.WriteColor("Hi, {0}!", true, new Color(ConsoleColors.Green), vars: ["world"]);

@@ -27,14 +27,13 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
 {
     internal class TestInputInfoBoxSelectionLargeMultipleCjk : IFixture
     {
-        public string FixtureID => "TestInputInfoBoxSelectionLargeMultipleCjk";
         public void RunFixture()
         {
             PointerListener.StartListening();
             var choices = new List<InputChoiceInfo>();
             for (int i = 0; i < 1000; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", $"数字 #{i + 1}"));
-            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(FixtureID, [.. choices], "选择一个号码");
+            var selections = InfoBoxSelectionMultipleColor.WriteInfoBoxSelectionMultiple(nameof(TestInputInfoBoxSelectionLargeMultipleCjk), [.. choices], "选择一个号码");
             TextWriterWhereColor.WriteWhere(string.Join(", ", selections), 0, 0);
             PointerListener.StopListening();
         }

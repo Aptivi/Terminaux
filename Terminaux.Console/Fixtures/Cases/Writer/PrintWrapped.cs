@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintWrapped : IFixture
     {
-        public string FixtureID => "PrintWrapped";
         public void RunFixture()
         {
             TextWriterWrappedColor.WriteWrappedPlain($"A long text with {new Color(ConsoleColors.Green).VTSequenceForeground}{new Color(ConsoleColors.Green).VTSequenceForeground}the green foreground color {ColorTools.RenderResetForeground()}that is now reset to the {new Color(ConsoleColors.Green).VTSequenceForeground}current {ColorTools.RenderResetForeground()}foreground color as specified by the console. This is a very long text intended to test an edge-case involving the {new Color(ConsoleColors.Green).VTSequenceForeground}wrapped writer {ColorTools.RenderResetForeground()}word-wise.", true);

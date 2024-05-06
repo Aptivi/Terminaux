@@ -28,7 +28,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputInfoBoxSelectionHuge : IFixture
     {
-        public string FixtureID => "TestInputInfoBoxSelectionHuge";
         public void RunFixture()
         {
             PointerListener.StartListening();
@@ -36,7 +35,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
             var names = NameGenerator.FindFirstNames("");
             for (int i = 0; i < names.Length; i++)
                 choices.Add(new InputChoiceInfo($"{i + 1}", names[i]));
-            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(FixtureID, [.. choices], "Select a number");
+            int selected = InfoBoxSelectionColor.WriteInfoBoxSelection(nameof(TestInputInfoBoxSelectionHuge), [.. choices], "Select a number");
             TextWriterWhereColor.WriteWhere($"{selected}", 0, 0);
             PointerListener.StopListening();
         }

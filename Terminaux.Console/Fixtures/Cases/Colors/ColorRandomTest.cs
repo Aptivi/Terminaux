@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorRandomTest : IFixture
     {
-        public string FixtureID => "ColorRandomTest";
         public void RunFixture()
         {
             TextWriterColor.Write("Press any key to exit.");

@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class ConsoleConhostCheck : IFixture
     {
-        public string FixtureID => "ConsoleConhostCheck";
         public void RunFixture()
         {
             if (ConsoleChecker.IsConHost())

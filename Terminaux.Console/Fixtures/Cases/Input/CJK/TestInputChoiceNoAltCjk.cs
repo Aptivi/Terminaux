@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
 {
     internal class TestInputChoiceNoAltCjk : IFixture
     {
-        public string FixtureID => "TestInputChoiceNoAltCjk";
         public void RunFixture()
         {
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history

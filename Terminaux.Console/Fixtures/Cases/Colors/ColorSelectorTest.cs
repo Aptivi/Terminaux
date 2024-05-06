@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorSelectorTest : IFixture
     {
-        public string FixtureID => "ColorSelectorTest";
         public void RunFixture()
         {
             PointerListener.StartListening();

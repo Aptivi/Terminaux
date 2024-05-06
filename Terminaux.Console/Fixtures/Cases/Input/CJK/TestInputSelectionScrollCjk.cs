@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
 {
     internal class TestInputSelectionScrollCjk : IFixture
     {
-        public string FixtureID => "TestInputSelectionScrollCjk";
         public void RunFixture()
         {
             PointerListener.StartListening();

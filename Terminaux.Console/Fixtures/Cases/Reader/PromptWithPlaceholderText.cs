@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptWithPlaceholderText : IFixture
     {
-        public string FixtureID => "PromptWithPlaceholderText";
 
         public void RunFixture()
         {

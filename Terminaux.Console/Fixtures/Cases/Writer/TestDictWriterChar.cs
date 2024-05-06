@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestDictWriterChar : IFixture
     {
-        public string FixtureID => "TestDictWriterChar";
         public void RunFixture()
         {
             var NormalCharDict = new Dictionary<string, char>() { { "One", '1' }, { "Two", '2' }, { "Three", '3' } };

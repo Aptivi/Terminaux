@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptLoopedCtrlCAsInput : IFixture
     {
-        public string FixtureID => "PromptLoopedCtrlCAsInput";
 
         public void RunFixture()
         {

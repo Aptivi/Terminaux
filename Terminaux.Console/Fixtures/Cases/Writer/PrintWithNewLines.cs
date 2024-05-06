@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintWithNewLines : IFixture
     {
-        public string FixtureID => "PrintWithNewLines";
         public void RunFixture()
         {
             TextWriterColor.WriteColor("Hello world!\nHow's your day going?\nShould be directly after this:", false, new Color(ConsoleColors.Green));

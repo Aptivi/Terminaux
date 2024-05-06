@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputSelectionMultipleDisabled : IFixture
     {
-        public string FixtureID => "TestInputSelectionMultipleDisabled";
         public void RunFixture()
         {
             PointerListener.StartListening();

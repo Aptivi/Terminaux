@@ -24,10 +24,9 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
 {
     internal class TestInputInfoBoxInputCjk : IFixture
     {
-        public string FixtureID => "TestInputInfoBoxInputCjk";
         public void RunFixture()
         {
-            string answer = InfoBoxInputColor.WriteInfoBoxInput(FixtureID, "写下你的文字。");
+            string answer = InfoBoxInputColor.WriteInfoBoxInput(nameof(TestInputInfoBoxInputCjk), "写下你的文字。");
             TextWriterWhereColor.WriteWhere(answer, 0, 0);
         }
     }

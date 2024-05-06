@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptLoopedManualWrite : IFixture
     {
-        public string FixtureID => "PromptLoopedManualWrite";
 
         public void RunFixture()
         {

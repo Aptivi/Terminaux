@@ -27,7 +27,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputSelectionHuge : IFixture
     {
-        public string FixtureID => "TestInputSelectionHuge";
         public void RunFixture()
         {
             PointerListener.StartListening();

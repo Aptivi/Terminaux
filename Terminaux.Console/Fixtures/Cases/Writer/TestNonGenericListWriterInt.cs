@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestNonGenericListWriterInt : IFixture
     {
-        public string FixtureID => "TestNonGenericListWriterInt";
         public void RunFixture()
         {
             var enumerable = Regex.Matches("test test", "test") as IEnumerable;

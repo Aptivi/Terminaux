@@ -28,7 +28,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
 {
     internal class TestInputSelectionHugeMultipleCjk : IFixture
     {
-        public string FixtureID => "TestInputSelectionHugeMultipleCjk";
         public void RunFixture()
         {
             PointerListener.StartListening();

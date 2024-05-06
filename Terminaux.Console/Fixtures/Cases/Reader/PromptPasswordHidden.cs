@@ -24,7 +24,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptPasswordHidden : IFixture
     {
-        public string FixtureID => "PromptPasswordHidden";
 
         public void RunFixture()
         {

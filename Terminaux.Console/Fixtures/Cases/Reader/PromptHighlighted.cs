@@ -25,7 +25,6 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptHighlighted : IFixture
     {
-        public string FixtureID => "PromptHighlighted";
 
         public void RunFixture()
         {

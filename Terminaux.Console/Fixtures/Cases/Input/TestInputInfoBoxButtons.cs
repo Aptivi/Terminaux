@@ -26,7 +26,6 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 {
     internal class TestInputInfoBoxButtons : IFixture
     {
-        public string FixtureID => "TestInputInfoBoxButtons";
         public void RunFixture()
         {
             PointerListener.StartListening();
@@ -38,7 +37,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
                 new("jammy", "22.04 (Jammy Jellyfish)", "Ubuntu 22.04 LTS, codenamed Jammy Jellyfish, was released on 21 April 2022, and is a long-term support release, supported for five years, until April 2027.", false),
                 new("noble", "24.04 (Noble Numbat)", "Ubuntu 24.04 LTS, codenamed Noble Numbat, is planned to be released on April 2024, and is a long-term support release, supported for five years, until April 2029.", true),
             };
-            int selected = InfoBoxButtonsColor.WriteInfoBoxButtons(FixtureID, choices, "Which Ubuntu version would you like to run?");
+            int selected = InfoBoxButtonsColor.WriteInfoBoxButtons(nameof(TestInputInfoBoxButtons), choices, "Which Ubuntu version would you like to run?");
             TextWriterWhereColor.WriteWhere($"{selected}", 0, 0);
             PointerListener.StopListening();
         }
