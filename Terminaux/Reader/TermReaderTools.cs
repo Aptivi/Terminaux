@@ -107,7 +107,7 @@ namespace Terminaux.Reader
                 PositioningTools.GoLeftmost(ref state);
 
                 // Fix the values up
-                state.inputPromptLeft = state.InputPromptLastLineLength;
+                state.inputPromptLeft = ConsoleChar.EstimateCellWidth(state.InputPromptLastLine);
                 state.inputPromptTop = state.InputPromptTopBegin + state.InputPromptHeight - 1;
                 if (state.inputPromptTop >= ConsoleWrapper.WindowHeight)
                     state.inputPromptTop = ConsoleWrapper.WindowHeight - 1;

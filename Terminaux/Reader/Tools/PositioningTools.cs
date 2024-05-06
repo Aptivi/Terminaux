@@ -246,7 +246,7 @@ namespace Terminaux.Reader.Tools
                     // Now, check to see if we have a character that would overflow
                     string line = TermReaderTools.GetLineFromCurrentPos(sentences, state);
                     int lineWidth = ConsoleChar.EstimateCellWidth(line);
-                    if (lineWidth == state.MaximumInputPositionLeft - state.LeftMargin - (state.CurrentCursorPosTop == state.InputPromptTop ? state.InputPromptLastLineLength : 0))
+                    if (lineWidth == state.MaximumInputPositionLeft - state.LeftMargin - (state.CurrentCursorPosTop == state.InputPromptTop ? ConsoleChar.EstimateCellWidth(state.InputPromptLastLine) : 0))
                         state.currentCursorPosLeft--;
                 }
             }
