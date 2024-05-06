@@ -98,8 +98,6 @@ namespace Terminaux.Writer.FancyWriters
         {
             if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();
-            if (PlatformHelper.IsOnWindows())
-                Console.OutputEncoding = Encoding.UTF8;
         }
     }
 }
