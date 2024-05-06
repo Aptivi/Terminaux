@@ -104,9 +104,11 @@ namespace Terminaux.Inputs.Presentation
                     );
 
                     // Clear the presentation screen
-                    builder.Append(
-                        ClearPresentation()
-                    );
+                    for (int y = presentationUpperInnerBorderTop; y <= presentationLowerInnerBorderTop + 1; y++)
+                        builder.Append(TextWriterWhereColor.RenderWhere(new string(' ', presentationLowerInnerBorderLeft), presentationUpperInnerBorderLeft, y));
+
+                    // Seek to the first position inside the border
+                    builder.Append(CsiSequences.GenerateCsiCursorPosition(presentationUpperInnerBorderLeft + 1, presentationUpperInnerBorderTop + 1));
 
                     // Generate the final string
                     return builder.ToString();
@@ -280,30 +282,6 @@ namespace Terminaux.Inputs.Presentation
             ScreenTools.UnsetCurrent(screen);
             ColorTools.LoadBack();
             ConsoleWrapper.CursorVisible = true;
-        }
-
-        /// <summary>
-        /// Clears the presentation
-        /// </summary>
-        public static string ClearPresentation()
-        {
-            var builder = new StringBuilder();
-
-            // Populate some variables
-            int presentationUpperBorderLeft = 2;
-            int presentationUpperBorderTop = 1;
-            int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
-            int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
-            int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
-            int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
-
-            // Clear the presentation screen
-            for (int y = presentationUpperInnerBorderTop; y <= presentationLowerInnerBorderTop + 1; y++)
-                builder.Append(TextWriterWhereColor.RenderWhere(new string(' ', presentationLowerInnerBorderLeft), presentationUpperInnerBorderLeft, y));
-
-            // Seek to the first position inside the border
-            builder.Append(CsiSequences.GenerateCsiCursorPosition(presentationUpperInnerBorderLeft + 1, presentationUpperInnerBorderTop + 1));
-            return builder.ToString();
         }
 
         private static bool ProcessInput(PresentationPage page)
