@@ -36,16 +36,34 @@ namespace Terminaux.Inputs.Presentation.Inputs
     public interface IInputMethod : IInputMethod<object>
     {
         /// <summary>
+        /// Whether the input has been provided
+        /// </summary>
+        bool Provided { get; }
+
+        /// <summary>
         /// Input display for input list
         /// </summary>
         string DisplayInput { get; }
 
         /// <summary>
+        /// The question to ask the user
+        /// </summary>
+        string? Question { get; }
+
+        /// <summary>
+        /// The choices
+        /// </summary>
+        InputChoiceInfo[]? Choices { get; }
+
+        /// <summary>
         /// Prompts the user to enter the input
         /// </summary>
-        /// <typeparam name="TChoices">Choice type to use to specify the list of choices</typeparam>
-        /// <param name="question">A question to ask the user</param>
-        /// <param name="choices">List of choices</param>
-        void PromptInput<TChoices>(string question, TChoices[]? choices = null);
+        void PromptInput();
+
+        /// <summary>
+        /// Processes the input after prompt
+        /// </summary>
+        /// <returns>True if the input is provided and processed correctly; false otherwise</returns>
+        bool Process();
     }
 }

@@ -48,6 +48,20 @@ namespace Terminaux.Inputs.Presentation.Inputs
         public IInputMethod InputMethod { get; }
 
         /// <summary>
+        /// Input method for the resulting input (interface)
+        /// </summary>
+        /// <typeparam name="T">Target type for this input method</typeparam>
+        public IInputMethod<T> GetInputMethodInterface<T>() =>
+            (IInputMethod<T>)InputMethod;
+
+        /// <summary>
+        /// Input method for the resulting input (generic)
+        /// </summary>
+        /// <typeparam name="T">Type of the available input methods</typeparam>
+        public T GetInputMethod<T>() where T : IInputMethod =>
+            (T)InputMethod;
+
+        /// <summary>
         /// Makes a new input info instance
         /// </summary>
         /// <param name="inputName">Input name for the input list</param>

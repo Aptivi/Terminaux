@@ -25,36 +25,34 @@ namespace Terminaux.Inputs.Presentation.Inputs
     /// <summary>
     /// Masked text input method
     /// </summary>
-    public class MaskedTextInputMethod : IInputMethod<string>, IInputMethod
+    public class MaskedTextInputMethod : BaseInputMethod<string>, IInputMethod<string>, IInputMethod
     {
         private string _value = "";
 
-        /// <summary>
-        /// The input 
-        /// </summary>
-        public string Input =>
-            _value;
-
-        /// <summary>
-        /// The display name for the input 
-        /// </summary>
-        public string DisplayInput =>
+        /// <inheritdoc/>
+        public override string DisplayInput =>
             !string.IsNullOrEmpty(Input) ? "***" : "   ";
+
+        /// <inheritdoc/>
+        public override string Input =>
+            _value;
 
         object? IInputMethod<object>.Input =>
             Input;
 
-        /// <summary>
-        /// Prompts the user using the masked text input style
-        /// </summary>
-        /// <typeparam name="TChoices">Choice type to use to specify the list of choices</typeparam>
-        /// <param name="question">A question to ask the user</param>
-        /// <param name="choices">List of choices</param>
-        /// <exception cref="TerminauxException"></exception>
-        public void PromptInput<TChoices>(string question, TChoices[]? choices = null)
+        /// <inheritdoc/>
+        public override void PromptInput()
         {
+            if (Question is null || string.IsNullOrEmpty(Question))
+                throw new TerminauxException("The question has not been provided.");
+
             // Now, open the infobox
-            _value = InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(question);
+            _value = InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(Question);
+            Provided = true;
         }
+
+        /// <inheritdoc/>
+        public override bool Process() =>
+            Provided && !string.IsNullOrEmpty(Input);
     }
 }

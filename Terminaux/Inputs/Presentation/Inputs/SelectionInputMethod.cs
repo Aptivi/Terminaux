@@ -25,43 +25,40 @@ namespace Terminaux.Inputs.Presentation.Inputs
     /// <summary>
     /// Selection input method (single selection, uses informational box)
     /// </summary>
-    public class SelectionInputMethod : IInputMethod<int>, IInputMethod
+    public class SelectionInputMethod : BaseInputMethod<int>, IInputMethod<int>, IInputMethod
     {
         private int _value = -1;
 
-        /// <summary>
-        /// The input 
-        /// </summary>
-        public int Input =>
-            _value;
-
-        /// <summary>
-        /// The display name for the input 
-        /// </summary>
-        public string DisplayInput =>
+        /// <inheritdoc/>
+        public override string DisplayInput =>
             Input > -1 ? $"Selected #{Input + 1}" : "   ";
+
+        /// <inheritdoc/>
+        public override int Input =>
+            _value;
 
         object? IInputMethod<object>.Input =>
             Input;
 
-        /// <summary>
-        /// Prompts the user using the selection style
-        /// </summary>
-        /// <typeparam name="TChoices">Choice type to use to specify the list of choices</typeparam>
-        /// <param name="question">A question to ask the user</param>
-        /// <param name="choices">List of choices</param>
-        /// <exception cref="TerminauxException"></exception>
-        public void PromptInput<TChoices>(string question, TChoices[]? choices = null)
+        /// <inheritdoc/>
+        public override void PromptInput()
         {
-            if (choices is null || choices.Length == 0)
+            if (Choices is null || Choices.Length == 0)
                 throw new TerminauxException("Choices are not specified");
-            if (choices is not InputChoiceInfo[] inputChoices)
-                throw new TerminauxException("Choice list is invalid");
+            if (Question is null || string.IsNullOrEmpty(Question))
+                throw new TerminauxException("The question has not been provided.");
 
             // Now, open the infobox
-            int index = InfoBoxSelectionColor.WriteInfoBoxSelection(inputChoices, question);
-            if (index > 0)
+            int index = InfoBoxSelectionColor.WriteInfoBoxSelection(Choices, Question);
+            if (index >= 0)
+            {
+                Provided = true;
                 _value = index;
+            }
         }
+
+        /// <inheritdoc/>
+        public override bool Process() =>
+            Provided && Input > -1;
     }
 }

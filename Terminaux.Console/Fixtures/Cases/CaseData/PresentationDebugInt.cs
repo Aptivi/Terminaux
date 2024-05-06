@@ -17,14 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
 using System.Linq;
 using Terminaux.Colors;
-using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using System;
+using Terminaux.Inputs.Presentation.Inputs;
+using Terminaux.Inputs;
+using Textify.General;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
@@ -38,6 +39,84 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             "Jim",
             "Sarah"
         ];
+
+        internal static string[] data2 =
+        [
+            "Alex",
+            "Zhao",
+            "Agustin",
+            "Jim",
+            "Sarah",
+            "Akshay",
+            "Aladdin",
+            "Bella",
+            "Billy",
+            "Blake",
+            "Bobby",
+            "Chandran",
+            "Colin",
+            "Connor",
+            "Debbie",
+            "Eduard",
+            "David",
+            "Paul",
+            "Ella",
+            "Elizabeth",
+            "Fitz",
+            "Gary",
+            "Hendrick",
+            "Henry",
+            "Jared",
+            "Jasmine",
+            "Johnny",
+            "Sofia",
+            "Thalia",
+            "Vincent"
+        ];
+
+        internal static InputInfo input1 =
+            new("Test enjoyment", "Asks the user if they have enjoyed testing",
+                new TextInputMethod()
+                {
+                    Question = $"\nDid you enjoy {new Color(ConsoleColors.Green1).VTSequenceForeground}testing?"
+                }, true
+            );
+
+        internal static InputInfo input2 =
+            new("First choice", "Asks the user to select one of the names (small)",
+                new SelectionInputMethod()
+                {
+                    Question = "Ultricies mi eget mauris pharetra:",
+                    Choices = data1.Select((data) => new InputChoiceInfo(data, data)).ToArray()
+                }, true
+            );
+
+        internal static InputInfo input3 =
+            new("Second choice", "Asks the user to select one of the names (larger)",
+                new SelectionInputMethod()
+                {
+                    Question = "Ultricies mi eget mauris pharetra sapien et ligula:",
+                    Choices = data2.Select((data) => new InputChoiceInfo(data, data)).ToArray()
+                }, true
+            );
+
+        internal static InputInfo input4 =
+            new("First multiple choice", "Asks the user to select one or more of the names (small)",
+                new SelectionMultipleInputMethod()
+                {
+                    Question = "Ultricies mi eget mauris pharetra:",
+                    Choices = data1.Select((data) => new InputChoiceInfo(data, data)).ToArray()
+                }, true
+            );
+
+        internal static InputInfo input5 =
+            new("Second multiple choice", "Asks the user to select one or more of the names (larger)",
+                new SelectionMultipleInputMethod()
+                {
+                    Question = "Ultricies mi eget mauris pharetra sapien et ligula:",
+                    Choices = data2.Select((data) => new InputChoiceInfo(data, data)).ToArray()
+                }, true
+            );
 
         internal static Slideshow Debug =>
             new(
@@ -94,16 +173,10 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                     "Happy {0}hacking!",
                                     new Color(ConsoleColors.Green1).VTSequenceForeground
                                 ]
-                            },
-                            new InputElement()
-                            {
-                                Arguments = [
-                                    "\nDid you enjoy {0}testing? ",
-                                    new Color(ConsoleColors.Green1).VTSequenceForeground
-                                ],
-                                InvokeActionInput =
-                                    (objs) => TextWriterWhereColor.WriteWhere($"You said \"{objs[0]}\".", 3, ConsoleWrapper.CursorTop)
                             }
+                        ],
+                        [
+                            input1
                         ]
                     ),
                     #endregion
@@ -197,55 +270,10 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                     "Tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada proin."
                                 ]
                             },
-                            new ChoiceInputElement()
-                            {
-                                Arguments =
-                                [
-                                    "Ultricies mi eget mauris pharetra:",
-                                    data1
-                                ],
-                                InvokeActionInput =
-                                    (objs) => TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a {((string)objs[0] == "Sarah" ? "girl" : "boy")}.", 3, ConsoleWrapper.CursorTop)
-                            },
-                            new ChoiceInputElement()
-                            {
-                                Arguments =
-                                [
-                                    "Ultricies mi eget mauris pharetra sapien et ligula:",
-                                    data1,
-                                    "Akshay",
-                                    "Aladdin",
-                                    "Bella",
-                                    "Billy",
-                                    "Blake",
-                                    "Bobby",
-                                    "Chandran",
-                                    "Colin",
-                                    "Connor",
-                                    "Debbie",
-                                    "Eduard",
-                                    "David",
-                                    "Paul",
-                                    "Ella",
-                                    "Elizabeth",
-                                    "Fitz",
-                                    "Gary",
-                                    "Hendrick",
-                                    "Henry",
-                                    "Jared",
-                                    "Jasmine",
-                                    "Johnny",
-                                    "Sofia",
-                                    "Thalia",
-                                    "Vincent"
-                                ],
-                                InvokeActionInput =
-                                    (objs) =>
-                                    TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a " +
-                                        $"{((string)objs[0] is "Sarah" or "Bella" or "Debbie" or "Ella" or "Elizabeth" or "Jasmine" or "Sofia" or "Thalia"
-                                    ? "girl" : "boy")}.",
-                                    3, ConsoleWrapper.CursorTop)
-                            }
+                        ],
+                        [
+                            input2,
+                            input3,
                         ]
                     ),
                     #endregion
@@ -259,62 +287,52 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                     "Tempor orci dapibus ultrices in iaculis nunc sed augue lacus."
                                 ]
                             },
-                            new MultipleChoiceInputElement()
+                        ],
+                        [
+                            input4,
+                            input5,
+                        ]
+                    ),
+                    #endregion
+
+                    #region Seventh page - Showcasing all inputs
+                    new PresentationPage("Seventh page - Showcasing all inputs",
+                        [
+                            new DynamicTextElement()
                             {
-                                Arguments =
-                                [
-                                    "Ultricies mi eget mauris pharetra:",
-                                    data1
-                                ],
-                                InvokeActionInput =
-                                    (objs) =>
+                                Arguments = [
+                                    new Func<string>(() =>
                                     {
-                                        string[] names = objs[0].ToString().Split(';');
-                                        TextWriterWhereColor.WriteWhere($"You chose {names.Length} persons, {names.Count((name) => name == "Sarah")} of which are girls.", 3, ConsoleWrapper.CursorTop);
-                                    }
+                                        // Get the input methods
+                                        var method1 = input1.GetInputMethod<TextInputMethod>();
+                                        var method2 = input2.GetInputMethod<SelectionInputMethod>();
+                                        var method3 = input3.GetInputMethod<SelectionInputMethod>();
+                                        var method4 = input4.GetInputMethod<SelectionMultipleInputMethod>();
+                                        var method5 = input5.GetInputMethod<SelectionMultipleInputMethod>();
+
+                                        // Now, form the resulting string
+                                        string results = ("Input 1: {0}\n" +
+                                                          "Input 2: {1}\n" +
+                                                          "Input 3: {2}\n" +
+                                                          "Input 4: {3}\n" +
+                                                          "Input 5: {4}")
+                                        .FormatString
+                                        (
+                                            // Second page
+                                            method1.Input,
+
+                                            // Fifth page
+                                            method2.Choices[method2.Input].ChoiceName,
+                                            method3.Choices[method3.Input].ChoiceName,
+
+                                            // Sixth page
+                                            string.Join(", ", method4.Input.Select((idx) => method4.Choices[idx].ChoiceName)),
+                                            string.Join(", ", method5.Input.Select((idx) => method5.Choices[idx].ChoiceName))
+                                        );
+                                        return results;
+                                    })
+                                ]
                             },
-                            new MultipleChoiceInputElement()
-                            {
-                                Arguments =
-                                [
-                                    "Ultricies mi eget mauris pharetra sapien et ligula:",
-                                    data1,
-                                    "Akshay",
-                                    "Aladdin",
-                                    "Bella",
-                                    "Billy",
-                                    "Blake",
-                                    "Bobby",
-                                    "Chandran",
-                                    "Colin",
-                                    "Connor",
-                                    "Debbie",
-                                    "Eduard",
-                                    "David",
-                                    "Paul",
-                                    "Ella",
-                                    "Elizabeth",
-                                    "Fitz",
-                                    "Gary",
-                                    "Hendrick",
-                                    "Henry",
-                                    "Jared",
-                                    "Jasmine",
-                                    "Johnny",
-                                    "Sofia",
-                                    "Thalia",
-                                    "Vincent"
-                                ],
-                                InvokeActionInput =
-                                    (objs) =>
-                                    {
-                                        string[] names = objs[0].ToString().Split(';');
-                                        TextWriterWhereColor.WriteWhere($"You chose {names.Length} persons, " +
-                                            $"{names.Count((name) =>
-                                               name is "Sarah" or "Bella" or "Debbie" or "Ella" or "Elizabeth" or "Jasmine" or "Sofia" or "Thalia")}" +
-                                            $" of which are girls.", 3, ConsoleWrapper.CursorTop);
-                                    }
-                            }
                         ]
                     ),
                     #endregion
