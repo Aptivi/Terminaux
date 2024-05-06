@@ -19,6 +19,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Text;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
@@ -122,16 +123,17 @@ namespace Terminaux.Writer.ConsoleWriters
                     var buffered = new StringBuilder();
                     string formatted = TextTools.FormatString(Text, vars);
                     string filtered = VtSequenceTools.FilterVTSequences(formatted);
-                    int length = filtered.Length;
+                    var stringInfo = new StringInfo(filtered);
+                    int length = stringInfo.LengthInTextElements;
                     for (int i = 0; i < length; i++)
                     {
-                        char filteredChar = filtered[i];
+                        string filteredString = stringInfo.SubstringByTextElements(i, 1);
                         double width = (double)i / length;
                         int hue = (int)(360 * width);
                         buffered.Append(
                             ColorTools.RenderSetConsoleColor(foregroundColor, false, true, true) +
                             ColorTools.RenderSetConsoleColor(new Color($"hsl:{hue};100;50"), true, true, true) +
-                            $"{filteredChar}"
+                            $"{filteredString}"
                         );
                     }
                     buffered.Append(
