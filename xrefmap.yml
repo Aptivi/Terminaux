@@ -24083,19 +24083,6 @@ references:
   commentId: T:Terminaux.Inputs.Presentation.PresentationTools
   fullName: Terminaux.Inputs.Presentation.PresentationTools
   nameWithType: PresentationTools
-- uid: Terminaux.Inputs.Presentation.PresentationTools.ClearPresentation
-  name: ClearPresentation()
-  href: api/Terminaux.Inputs.Presentation.PresentationTools.html#Terminaux_Inputs_Presentation_PresentationTools_ClearPresentation
-  commentId: M:Terminaux.Inputs.Presentation.PresentationTools.ClearPresentation
-  fullName: Terminaux.Inputs.Presentation.PresentationTools.ClearPresentation()
-  nameWithType: PresentationTools.ClearPresentation()
-- uid: Terminaux.Inputs.Presentation.PresentationTools.ClearPresentation*
-  name: ClearPresentation
-  href: api/Terminaux.Inputs.Presentation.PresentationTools.html#Terminaux_Inputs_Presentation_PresentationTools_ClearPresentation_
-  commentId: Overload:Terminaux.Inputs.Presentation.PresentationTools.ClearPresentation
-  isSpec: "True"
-  fullName: Terminaux.Inputs.Presentation.PresentationTools.ClearPresentation
-  nameWithType: PresentationTools.ClearPresentation
 - uid: Terminaux.Inputs.Presentation.PresentationTools.Present(Terminaux.Inputs.Presentation.Slideshow)
   name: Present(Slideshow)
   href: api/Terminaux.Inputs.Presentation.PresentationTools.html#Terminaux_Inputs_Presentation_PresentationTools_Present_Terminaux_Inputs_Presentation_Slideshow_
