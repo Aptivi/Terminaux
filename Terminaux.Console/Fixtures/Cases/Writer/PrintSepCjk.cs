@@ -17,17 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
-    internal class PrintSepColor : IFixture
+    internal class PrintSepCjk : IFixture
     {
         public void RunFixture()
         {
-            SeparatorWriterColor.WriteSeparatorColor("Hello world!", new Color(ConsoleColors.Green));
+            SeparatorWriterColor.WriteSeparator("你好世界！", true, true);
         }
     }
 }

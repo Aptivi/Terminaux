@@ -27,7 +27,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
     {
         public void RunFixture()
         {
-            SeparatorWriterColor.WriteSeparatorColor("Hi, {0}!", true, new Color(ConsoleColors.Green), Vars: ["world"]);
+            SeparatorWriterColor.WriteSeparatorColor("Hi, {0}!", new Color(ConsoleColors.Green), Vars: ["world"]);
         }
     }
 }

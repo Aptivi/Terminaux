@@ -23,11 +23,11 @@ using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
-    internal class PrintSepColor : IFixture
+    internal class PrintSepColorFCjk : IFixture
     {
         public void RunFixture()
         {
-            SeparatorWriterColor.WriteSeparatorColor("Hello world!", new Color(ConsoleColors.Green));
+            SeparatorWriterColor.WriteSeparatorColor("你好, {0}!", new Color(ConsoleColors.Green), Vars: ["世界"]);
         }
     }
 }
