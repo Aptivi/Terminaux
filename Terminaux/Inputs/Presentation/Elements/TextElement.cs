@@ -35,12 +35,6 @@ namespace Terminaux.Inputs.Presentation.Elements
     /// </summary>
     public class TextElement : IElement
     {
-        /// <inheritdoc/>
-        public bool IsInput => false;
-
-        /// <inheritdoc/>
-        public string? WrittenInput { get; set; }
-
         /// <summary>
         /// The first argument denotes the text to be written, and the rest for the parameters to be formatted
         /// </summary>
@@ -49,71 +43,12 @@ namespace Terminaux.Inputs.Presentation.Elements
         /// <summary>
         /// Renders the text
         /// </summary>
-        public void Render()
+        public string RenderToString()
         {
-            // Populate some variables
-            int presentationUpperBorderLeft = 2;
-            int presentationUpperBorderTop = 1;
-            int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
-            int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
-            int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
-            int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
-
             // Get the text and the arguments
             object[] finalArgs = Arguments is not null && Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
             string text = TextTools.FormatString((string)(Arguments is not null && Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
-
-            // Check the bounds
-            string[] splitText = ConsoleMisc.GetWrappedSentencesByWords(text, presentationLowerInnerBorderLeft - presentationUpperBorderLeft + 2);
-            int top = ConsoleWrapper.CursorTop;
-            int seekTop = ConsoleWrapper.CursorTop;
-            var buffer = new StringBuilder();
-            foreach (string split in splitText)
-            {
-                int maxHeight = presentationLowerInnerBorderTop - top + 1;
-                if (maxHeight < 0)
-                {
-                    // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
-                    TextWriterWhereColor.WriteWhereColor(buffer.ToString(), presentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
-                    TermReader.ReadPointerOrKey();
-                    TextWriterRaw.WriteRaw(PresentationTools.ClearPresentation());
-                    seekTop = top = presentationUpperInnerBorderTop;
-                    buffer.Clear();
-                }
-
-                // Write the part
-                buffer.Append(split + "\n");
-                top++;
-            }
-            TextWriterWhereColor.WriteWhereColor(buffer.ToString(), presentationUpperInnerBorderLeft, seekTop, false, new Color(ConsoleColors.White));
+            return text;
         }
-
-        /// <summary>
-        /// Checks to see if the text is possibly overflowing the slideshow display
-        /// </summary>
-        public bool IsPossibleOutOfBounds()
-        {
-            // Populate some variables
-            int presentationUpperBorderLeft = 2;
-            int presentationUpperBorderTop = 1;
-            int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
-            int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
-            int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
-
-            // Get the text and the arguments
-            object[] finalArgs = Arguments is not null && Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
-            string text = TextTools.FormatString((string)(Arguments is not null && Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
-
-            // Check the bounds
-            string[] splitText = ConsoleMisc.GetWrappedSentencesByWords(text, presentationLowerInnerBorderLeft - presentationUpperInnerBorderLeft);
-            int maxHeight = presentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
-            return splitText.Length > maxHeight;
-        }
-
-        /// <inheritdoc/>
-        public Action<object[]>? InvokeActionInput { get; }
-
-        /// <inheritdoc/>
-        public Action? InvokeAction { get; set; }
     }
 }

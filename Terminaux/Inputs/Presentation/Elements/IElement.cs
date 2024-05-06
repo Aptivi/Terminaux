@@ -30,13 +30,8 @@ namespace Terminaux.Inputs.Presentation.Elements
         object[]? Arguments { get; set; }
 
         /// <summary>
-        /// Renders an element
+        /// Renders an element to the string
         /// </summary>
-        void Render();
-
-        /// <summary>
-        /// Checks for possible out of bounds when rendering
-        /// </summary>
-        bool IsPossibleOutOfBounds();
+        string RenderToString();
     }
 }

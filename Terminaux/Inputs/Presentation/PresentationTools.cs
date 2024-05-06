@@ -35,6 +35,8 @@ using Terminaux.Inputs.Styles.Infobox;
 using System.Collections.Generic;
 using Terminaux.Inputs.Presentation.Inputs;
 using System.Linq;
+using Textify.General;
+using Terminaux.Inputs.Presentation.Elements;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -62,7 +64,7 @@ namespace Terminaux.Inputs.Presentation
             var screen = new Screen();
             var buffer = new ScreenPart();
             ScreenTools.SetCurrent(screen);
-            screen.AddBufferedPart("Presentation view", buffer);
+            screen.AddBufferedPart($"Presentation view for {presentation.Name}", buffer);
 
             // Loop for each page
             var pages = presentation.Pages;
@@ -110,34 +112,87 @@ namespace Terminaux.Inputs.Presentation
                     return builder.ToString();
                 });
 
-                // We need to dynamically render all the elements, so screen ends here.
-                ScreenTools.Render();
+                // All the elements will be dynamically rendered. Make a presentation grid buffer and the final element rendered string builder.
+                var gridBuffer = new ScreenPart();
+                var renderedElements = new StringBuilder();
 
                 // Render all elements
                 var pageElements = page.Elements;
-                bool checkOutOfBounds = false;
-                foreach (var element in pageElements)
+                for (int elementIdx = 0; elementIdx < pageElements.Length; elementIdx++)
                 {
-                    // Check for possible out-of-bounds
-                    if (element.IsPossibleOutOfBounds() && checkOutOfBounds)
-                    {
-                        TermReader.ReadPointerOrKey();
-                        TextWriterRaw.WriteRaw(ClearPresentation());
-                    }
-                    checkOutOfBounds = true;
-
-                    // Render it to the view
-                    element.Render();
+                    IElement? element = pageElements[elementIdx];
+                    renderedElements.Append(element.RenderToString());
+                    if (elementIdx < pageElements.Length - 1)
+                        renderedElements.Append("\n\n");
                 }
+
+                // Helper function
+                string rendered = renderedElements.ToString();
+                string[] GetFinalLines()
+                {
+                    // Deal with the lines to actually fit text in the infobox
+                    int presentationUpperBorderLeft = 2;
+                    int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
+                    int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
+                    string[] splitLines = rendered.SplitNewLines();
+                    List<string> splitFinalLines = [];
+                    foreach (var line in splitLines)
+                    {
+                        var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, presentationLowerInnerBorderLeft);
+                        foreach (var lineSentence in lineSentences)
+                            splitFinalLines.Add(lineSentence);
+                    }
+                    return [.. splitFinalLines];
+                }
+
+                // Then, the text
+                int currIdx = 0;
+                int increment = 0;
+                gridBuffer.AddDynamicText(() =>
+                {
+                    // Deal with the lines to actually fit text in the infobox
+                    string[] splitFinalLines = GetFinalLines();
+
+                    // Populate some variables
+                    int presentationUpperBorderLeft = 2;
+                    int presentationUpperBorderTop = 1;
+                    int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
+                    int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
+                    int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
+                    int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+                    int presentationInformationalTop = ConsoleWrapper.WindowHeight - 2;
+                    var boxBuffer = new StringBuilder();
+                    int linesMade = 0;
+                    for (int i = currIdx; i < splitFinalLines.Length; i++)
+                    {
+                        var line = splitFinalLines[i];
+                        if (linesMade % presentationLowerInnerBorderTop == 0 && linesMade > 0)
+                        {
+                            // Reached the end of the box. Bail.
+                            increment = linesMade;
+                            break;
+                        }
+                        boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(presentationUpperInnerBorderLeft + 1, presentationUpperInnerBorderTop + linesMade % presentationLowerInnerBorderTop + 1)}{line}");
+                        linesMade++;
+                    }
+                    return boxBuffer.ToString();
+                });
+                screen.AddBufferedPart($"Grid view for {presentation.Name}", gridBuffer);
 
                 // Wait for the ENTER key to be pressed if in kiosk mode. If not in kiosk mode, handle any key
                 bool pageExit = false;
                 while (!pageExit)
                 {
                     // Get the keypress or mouse press
+                    ScreenTools.Render();
                     SpinWait.SpinUntil(() => PointerListener.InputAvailable);
                     if (PointerListener.PointerAvailable)
                     {
+                        string[] splitFinalLines = GetFinalLines();
+                        int presentationUpperBorderTop = 1;
+                        int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
+                        int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+
                         // Mouse input received.
                         var mouse = TermReader.ReadPointer();
                         switch (mouse.Button)
@@ -147,10 +202,28 @@ namespace Terminaux.Inputs.Presentation
                                     break;
                                 pageExit = ProcessInput(page);
                                 break;
+                            case PointerButton.WheelUp:
+                                currIdx -= 3;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                break;
+                            case PointerButton.WheelDown:
+                                currIdx += 3;
+                                if (currIdx > splitFinalLines.Length - presentationLowerInnerBorderTop)
+                                    currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                break;
                         }
                     }
                     else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
                     {
+                        string[] splitFinalLines = GetFinalLines();
+                        int presentationUpperBorderTop = 1;
+                        int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
+                        int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+
+                        // Get the key
                         var key = TermReader.ReadKey();
                         switch (key.Key)
                         {
@@ -165,9 +238,42 @@ namespace Terminaux.Inputs.Presentation
                             case ConsoleKey.Enter:
                                 pageExit = ProcessInput(page);
                                 break;
+                            case ConsoleKey.PageUp:
+                                currIdx -= presentationLowerInnerBorderTop * 2 - 1;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                break;
+                            case ConsoleKey.PageDown:
+                                currIdx += increment;
+                                if (currIdx > splitFinalLines.Length - presentationLowerInnerBorderTop)
+                                    currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                break;
+                            case ConsoleKey.UpArrow:
+                                currIdx -= 1;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                break;
+                            case ConsoleKey.DownArrow:
+                                currIdx += 1;
+                                if (currIdx > splitFinalLines.Length - presentationLowerInnerBorderTop)
+                                    currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                break;
+                            case ConsoleKey.Home:
+                                currIdx = 0;
+                                break;
+                            case ConsoleKey.End:
+                                currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                break;
                         }
                     }
                 }
+                screen.RemoveBufferedPart(gridBuffer.Id);
             }
 
             // Clean up after ourselves

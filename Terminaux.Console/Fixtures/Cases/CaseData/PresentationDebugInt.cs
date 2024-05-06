@@ -78,7 +78,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             new("Test enjoyment", "Asks the user if they have enjoyed testing",
                 new TextInputMethod()
                 {
-                    Question = $"\nDid you enjoy {new Color(ConsoleColors.Green1).VTSequenceForeground}testing?"
+                    Question = $"Did you enjoy {new Color(ConsoleColors.Green1).VTSequenceForeground}testing?"
                 }, true
             );
 
@@ -200,6 +200,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                             new TextElement()
                             {
                                 Arguments = [
+                                    "This should work like your typical modal informational box.\n\n" +
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt " +
                                     "ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit. Ac tortor vitae " +
                                     "purus faucibus. Quis eleifend quam adipiscing vitae. Enim blandit volutpat maecenas volutpat " +
