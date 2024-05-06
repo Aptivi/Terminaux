@@ -64,7 +64,6 @@ namespace Terminaux.Inputs.Presentation
             var screen = new Screen();
             var buffer = new ScreenPart();
             ScreenTools.SetCurrent(screen);
-            screen.AddBufferedPart($"Presentation view for {presentation.Name}", buffer);
 
             // Loop for each page
             var pages = presentation.Pages;
@@ -79,6 +78,7 @@ namespace Terminaux.Inputs.Presentation
                 var page = pages[i];
 
                 // Fill the buffer
+                screen.AddBufferedPart($"Presentation view for {presentation.Name}", buffer);
                 buffer.AddDynamicText(() =>
                 {
                     var builder = new StringBuilder();
@@ -202,7 +202,8 @@ namespace Terminaux.Inputs.Presentation
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                pageExit = ProcessInput(page);
+                                pageExit = ProcessInput(page, screen);
+                                screen.RequireRefresh();
                                 break;
                             case PointerButton.WheelUp:
                                 currIdx -= 3;
@@ -235,10 +236,11 @@ namespace Terminaux.Inputs.Presentation
                                 if (kiosk)
                                     break;
                                 presentExit = true;
-                                pageExit = ProcessInput(page);
+                                pageExit = true;
                                 break;
                             case ConsoleKey.Enter:
-                                pageExit = ProcessInput(page);
+                                pageExit = ProcessInput(page, screen);
+                                screen.RequireRefresh();
                                 break;
                             case ConsoleKey.PageUp:
                                 currIdx -= presentationLowerInnerBorderTop * 2 - 1;
@@ -276,6 +278,7 @@ namespace Terminaux.Inputs.Presentation
                     }
                 }
                 screen.RemoveBufferedPart(gridBuffer.Id);
+                screen.RemoveBufferedPart(buffer.Id);
             }
 
             // Clean up after ourselves
@@ -284,7 +287,7 @@ namespace Terminaux.Inputs.Presentation
             ConsoleWrapper.CursorVisible = true;
         }
 
-        private static bool ProcessInput(PresentationPage page)
+        private static bool ProcessInput(PresentationPage page, Screen screen)
         {
             if (page.Inputs.Length > 0)
             {
@@ -304,6 +307,7 @@ namespace Terminaux.Inputs.Presentation
                     choices.Add(new InputChoiceInfo($"{page.Inputs.Length + 2}", "Exit", "Goes back to this presentation"));
 
                     // Let the user select an option, then process the input
+                    screen.RequireRefresh();
                     int selected = InfoBoxSelectionColor.WriteInfoBoxSelection("Input required", [.. choices], "This presentation page requires the following inputs to be fulfilled before being able to advance to the next page. The asterisk next to each step indicates a required input that should be filled before being able to proceed.");
                     if (selected >= page.Inputs.Length)
                     {
@@ -319,10 +323,15 @@ namespace Terminaux.Inputs.Presentation
                                 var processedRequiredInputs = filledRequiredInputs.Where((ii) => ii.InputMethod.Process()).ToArray();
                                 inputBail = processedRequiredInputs.Length == filledRequiredInputs.Length;
                                 if (!inputBail)
+                                {
                                     InfoBoxColor.WriteInfoBox("Incorrect Input", $"One or more of the following inputs have not been filled correctly:\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
+                                }
                             }
                             else
+                            {
+                                screen.RequireRefresh();
                                 InfoBoxColor.WriteInfoBox("Input not provided", $"Required inputs have not been provided. You'll need to fill in the values of the following inputs:\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
+                            }
                         }
                         else
                             inputBail = true;
@@ -331,6 +340,7 @@ namespace Terminaux.Inputs.Presentation
                     {
                         // User has selected one of the inputs. In this case, fetch the input instance and display it.
                         var input = page.Inputs[selected];
+                        screen.RequireRefresh();
                         input.InputMethod.PromptInput();
                         processed = input.InputMethod.Process();
                     }
