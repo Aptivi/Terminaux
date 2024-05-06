@@ -211,10 +211,6 @@ namespace Terminaux.Base.Extensions
             if (string.IsNullOrEmpty(text))
                 return [""];
 
-            // Check to see if we have full-width characters
-            if (ConsoleChar.EstimateFullWidths(text) > 0)
-                return GetWrappedSentences(text, maximumLength, indentLength);
-
             // Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
             // sizes.
             var IncompleteSentences = new List<string>();
@@ -231,25 +227,10 @@ namespace Terminaux.Base.Extensions
             var lines = text.SplitNewLines();
             foreach (string splitText in lines)
             {
-                int compensate = 0;
-                int take = 0;
                 if (splitText.Length == 0)
                 {
                     IncompleteSentences.Add(splitText);
                     continue;
-                }
-
-                // Helper functions
-                void CompensateLengths(string text)
-                {
-                    var sequencesCollections = VtSequenceTools.MatchVTSequences(text);
-                    foreach ((var _, var sequences) in sequencesCollections)
-                    {
-                        if (sequences.Length == 0)
-                            continue;
-                        foreach (var sequence in sequences)
-                            compensate += sequence.Value.Length;
-                    }
                 }
 
                 // Split the text by spaces
@@ -258,20 +239,9 @@ namespace Terminaux.Base.Extensions
                 {
                     // Check the character to see if we're at the VT sequence
                     string word = words[i];
-                    CompensateLengths(word);
-
-                    // Compensate the zero-width characters and take the full-width ones
-                    for (int c = 0; c < word.Length; c++)
-                    {
-                        int width = ConsoleChar.EstimateCellWidth(splitText, c);
-                        if (width == 0)
-                            compensate++;
-                        if (width == 2)
-                            take++;
-                    }
 
                     // Append the word into the incomplete sentence builder.
-                    int finalMaximum = maximumLength - indentLength + compensate - take;
+                    int finalMaximum = maximumLength - indentLength;
                     int sentenceWidth = ConsoleChar.EstimateCellWidth(IncompleteSentenceBuilder.ToString());
                     int wordWidth = ConsoleChar.EstimateCellWidth(word);
                     if (wordWidth >= finalMaximum)
@@ -289,15 +259,11 @@ namespace Terminaux.Base.Extensions
                             // Clean everything up
                             IncompleteSentenceBuilder.Clear();
                             indentLength = 0;
-                            compensate = 0;
-                            take = 0;
                         }
 
                         // Process the character split last text
                         string charSplitLastText = charSplit[charSplit.Length - 1];
                         word = charSplitLastText;
-                        CompensateLengths(charSplitLastText);
-                        finalMaximum = maximumLength - indentLength + compensate;
                         IncompleteSentenceBuilder.Append(charSplitLastText);
                         sentenceWidth = ConsoleChar.EstimateCellWidth(IncompleteSentenceBuilder.ToString());
                     }
@@ -317,8 +283,6 @@ namespace Terminaux.Base.Extensions
                         // Clean everything up
                         IncompleteSentenceBuilder.Clear();
                         indentLength = 0;
-                        compensate = 0;
-                        take = 0;
                     }
                     else
                         IncompleteSentenceBuilder.Append(sentenceWidth + nextWord >= finalMaximum || i + 1 >= words.Length ? "" : " ");
