@@ -140,7 +140,7 @@ namespace Terminaux.Tests.Base
         [Description("Querying")]
         public void TestTruncate()
         {
-            string expected = "Nitrocid is awes...";
+            string expected = "Nitrocid is awesome...";
             string Source = "Nitrocid is awesome and is great!";
             int Target = 20;
             Source = Source.Truncate(Target);

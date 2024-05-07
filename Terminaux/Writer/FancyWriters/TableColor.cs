@@ -187,7 +187,7 @@ namespace Terminaux.Writer.FancyWriters
                     string Header = Headers[HeaderIndex];
                     int ColumnPosition = ColumnPositions[HeaderIndex];
                     Header ??= "";
-                    string renderedHeader = Header.Truncate(ColumnCapacity - 2 - Margin);
+                    string renderedHeader = Header.Truncate(ColumnCapacity - 3 - Margin);
                     if (HeaderIndex == 0)
                         headerBuilder.Append(new string(' ', ColumnPosition));
                     headerBuilder.Append(renderedHeader);
@@ -243,7 +243,7 @@ namespace Terminaux.Writer.FancyWriters
                         }
 
                         // Now, write the cell value
-                        string FinalRowValue = RowValue.Truncate(ColumnCapacity - 2 - Margin);
+                        string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
                         if (useColor)
                         {
                             if (ColoredCell)

@@ -324,7 +324,7 @@ namespace Terminaux.Base.Extensions
             if (newLength > threshold)
             {
                 var targetBuilder = new StringBuilder(target);
-                while (ConsoleChar.EstimateCellWidth(targetBuilder.ToString()) + 3 >= threshold)
+                while (ConsoleChar.EstimateCellWidth(targetBuilder.ToString()) >= threshold)
                     targetBuilder.Remove(targetBuilder.Length - 1, 1);
                 return $"{targetBuilder}...";
             }
