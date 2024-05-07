@@ -2242,6 +2242,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeatTargeted
   nameWithType: ConsoleMisc.PercentRepeatTargeted
+- uid: Terminaux.Base.Extensions.ConsoleMisc.ReverseRtl(System.String)
+  name: ReverseRtl(string)
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_ReverseRtl_System_String_
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.ReverseRtl(System.String)
+  name.vb: ReverseRtl(String)
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.ReverseRtl(string)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleMisc.ReverseRtl(String)
+  nameWithType: ConsoleMisc.ReverseRtl(string)
+  nameWithType.vb: ConsoleMisc.ReverseRtl(String)
+- uid: Terminaux.Base.Extensions.ConsoleMisc.ReverseRtl*
+  name: ReverseRtl
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_ReverseRtl_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.ReverseRtl
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.ReverseRtl
+  nameWithType: ConsoleMisc.ReverseRtl
 - uid: Terminaux.Base.Extensions.ConsoleMisc.SetTitle(System.String)
   name: SetTitle(string)
   href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_SetTitle_System_String_
@@ -2258,6 +2274,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsoleMisc.SetTitle
   nameWithType: ConsoleMisc.SetTitle
+- uid: Terminaux.Base.Extensions.ConsoleMisc.TerminalReversesRtlText
+  name: TerminalReversesRtlText
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_TerminalReversesRtlText
+  commentId: P:Terminaux.Base.Extensions.ConsoleMisc.TerminalReversesRtlText
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.TerminalReversesRtlText
+  nameWithType: ConsoleMisc.TerminalReversesRtlText
+- uid: Terminaux.Base.Extensions.ConsoleMisc.TerminalReversesRtlText*
+  name: TerminalReversesRtlText
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_TerminalReversesRtlText_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.TerminalReversesRtlText
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.TerminalReversesRtlText
+  nameWithType: ConsoleMisc.TerminalReversesRtlText
 - uid: Terminaux.Base.Extensions.ConsoleMisc.Truncate(System.String,System.Int32)
   name: Truncate(string, int)
   href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_Truncate_System_String_System_Int32_
