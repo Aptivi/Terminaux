@@ -348,7 +348,17 @@ namespace Terminaux.Reader
             }
 
             // Remove this amount of characters
-            state.CurrentText.Remove(startIndex, length);
+            Wipe(ref state, startIndex, length);
+        }
+
+        internal static void Wipe(ref TermReaderState state, int start, int count)
+        {
+            // Wipe everything
+            BlankOut(ref state);
+
+            // Now, remove the requested text
+            PositioningTools.GoBack(count, ref state);
+            state.CurrentText.Remove(start, count);
             state.canInsert = true;
 
             // Refresh
@@ -356,6 +366,20 @@ namespace Terminaux.Reader
         }
 
         internal static void WipeAll(ref TermReaderState state)
+        {
+            // Wipe everything
+            BlankOut(ref state);
+
+            // Now, remove everything
+            PositioningTools.GoLeftmost(ref state);
+            state.CurrentText.Clear();
+            state.canInsert = true;
+
+            // Refresh
+            RefreshPrompt(ref state);
+        }
+
+        internal static void BlankOut(ref TermReaderState state)
         {
             // Wipe everything
             int length = ConsoleChar.EstimateCellWidth(state.CurrentText.ToString());
@@ -367,11 +391,6 @@ namespace Terminaux.Reader
             }
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             TextWriterColor.WriteForReader(renderedBlanks, state.settings, false);
-            PositioningTools.GoLeftmost(ref state);
-            state.CurrentText.Clear();
-
-            // Refresh
-            RefreshPrompt(ref state);
         }
 
         internal static void RefreshPrompt(ref TermReaderState state, int steps = 0, bool backward = false)
