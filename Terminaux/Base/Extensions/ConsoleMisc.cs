@@ -19,7 +19,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Sequences;
@@ -34,6 +36,13 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleMisc
     {
+        private static Regex rtlRegex = new("[\u04c7-\u0591\u05D0-\u05EA\u05F0-\u05F4\u0600-\u06FF]+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        
+        /// <summary>
+        /// Specifies whether your terminal emulator reverses the RTL text automatically or not
+        /// </summary>
+        public static bool TerminalReversesRtlText { get; set; }
+
         /// <summary>
         /// Sets the console title
         /// </summary>
@@ -73,6 +82,9 @@ namespace Terminaux.Base.Extensions
         /// <returns>The text that doesn't contain the VT sequences</returns>
         public static string FilterVTSequences(string Text)
         {
+            if (string.IsNullOrEmpty(Text))
+                return "";
+
             // Filter all sequences
             Text = VtSequenceTools.FilterVTSequences(Text);
             return Text;
@@ -307,7 +319,7 @@ namespace Terminaux.Base.Extensions
                 throw new TerminauxException("The target may not be null");
             if (threshold < 0)
                 threshold = 0;
-            if (threshold == 0)
+            if (threshold == 0 || target.Length == 0)
                 return "";
 
             // Try to truncate string. If the string length is bigger than the threshold, it'll be truncated to the length of
@@ -330,6 +342,58 @@ namespace Terminaux.Base.Extensions
             }
             else
                 return target;
+        }
+
+        /// <summary>
+        /// Reverses the right-to-left characters in a string (for terminal printing)
+        /// </summary>
+        /// <param name="target">Target string to reverse</param>
+        /// <returns>A string containing reversed RTL characters for usage with terminal writing. Returns the original string if either the terminal emulator is reversing the order of RTL characters or if there are no RTL characters</returns>
+        public static string ReverseRtl(string target)
+        {
+            if (string.IsNullOrEmpty(target))
+                return "";
+            if (TerminalReversesRtlText)
+                return target;
+
+            // Check to see if we have any RTL character or not
+            var rtls = rtlRegex.Matches(target).OfType<Match>().ToArray();
+            if (rtls.Length == 0)
+                return target;
+
+            // Now, reverse every single RTL character
+            var resultBuilder = new StringBuilder(target);
+            for (int i = rtls.Length - 1; i >= 0; i--)
+            {
+                // Reverse the RTL text
+                var rtl = rtls[i];
+                int rtlIdx = rtl.Index;
+                string rtlText = rtl.Value;
+
+                // Some RTL languages have modifiers, such as Arabic modifiers that are found in the \u0600-\u06FF range for
+                // the whole language, but check for all of them.
+                char[] rtlTextChars = rtlText.ToCharArray();
+                var finalRtlReversed = new StringBuilder();
+                var finalRtlReversedModifiedLetter = new StringBuilder();
+                for (int c = rtlTextChars.Length - 1; c >= 0; c--)
+                {
+                    int width = ConsoleChar.GetCharWidth(rtlTextChars[c]);
+                    if (width == 0)
+                    {
+                        // Is a modifier
+                        finalRtlReversedModifiedLetter.Insert(0, rtlTextChars[c]);
+                        continue;
+                    }
+                    else
+                        finalRtlReversedModifiedLetter.Insert(0, rtlTextChars[c]);
+                    finalRtlReversed.Append(finalRtlReversedModifiedLetter.ToString());
+                    finalRtlReversedModifiedLetter.Clear();
+                }
+
+                // Save the changes
+                resultBuilder.Replace(rtl.Value, finalRtlReversed.ToString(), rtlIdx, finalRtlReversed.Length);
+            }
+            return resultBuilder.ToString();
         }
 
         static ConsoleMisc()

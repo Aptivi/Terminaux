@@ -281,5 +281,66 @@ namespace Terminaux.Tests.Base
             actualLength.ShouldBe(expectedLength);
         }
 
+        /// <summary>
+        /// Tests reversing the right-to-left characters in a string (for terminal printing)
+        /// </summary>
+        [TestMethod]
+        [DataRow(null, "")]
+        [DataRow("", "")]
+        [DataRow("\u200b", "\u200b")]
+        [DataRow("Hello!", "Hello!")]
+        [DataRow("H\u200bello!", "H\u200bello!")]
+        [DataRow(null, "", true)]
+        [DataRow("", "", true)]
+        [DataRow("\u200b", "\u200b", true)]
+        [DataRow("Hello!", "Hello!", true)]
+        [DataRow("H\u200bello!", "H\u200bello!", true)]
+
+        // Chinese and Korean should not be reversed.
+        [DataRow("你好！", "你好！")]
+        [DataRow("\u200b你好！", "\u200b你好！")]
+        [DataRow("你好!", "你好!")]
+        [DataRow("\u200b你好!", "\u200b你好!")]
+        [DataRow("Terminaux는 최고입니다!", "Terminaux는 최고입니다!")]
+        [DataRow("\u200bTerminaux는 최고입니다!", "\u200bTerminaux는 최고입니다!")]
+        [DataRow("你好！", "你好！", true)]
+        [DataRow("\u200b你好！", "\u200b你好！", true)]
+        [DataRow("你好!", "你好!", true)]
+        [DataRow("\u200b你好!", "\u200b你好!", true)]
+        [DataRow("Terminaux는 최고입니다!", "Terminaux는 최고입니다!", true)]
+        [DataRow("\u200bTerminaux는 최고입니다!", "\u200bTerminaux는 최고입니다!", true)]
+
+        // Arabic should be reversed, preserving the order of English characters.
+        [DataRow("Terminaux رائع!", "Terminaux عئار!")]
+        [DataRow("Terminaux رائع! Terminaux رائع!", "Terminaux عئار! Terminaux عئار!")]
+        [DataRow("\u200bTerminaux رائع!", "\u200bTerminaux عئار!")]
+        [DataRow("\u200bTerminaux رائع! Terminaux رائع!", "\u200bTerminaux عئار! Terminaux عئار!")]
+        [DataRow("Terminaux رائع!", "Terminaux رائع!", true)]
+        [DataRow("Terminaux رائع! Terminaux رائع!", "Terminaux رائع! Terminaux رائع!", true)]
+        [DataRow("\u200bTerminaux رائع!", "\u200bTerminaux رائع!", true)]
+        [DataRow("\u200bTerminaux رائع! Terminaux رائع!", "\u200bTerminaux رائع! Terminaux رائع!", true)]
+
+        // Arabic with formatters. The "Aldammatun (وٌ)" should not be affected.
+        [DataRow("Terminaux رائعٌ!", "Terminaux عٌئار!")]
+        [DataRow("Terminaux رائعٌ! Terminaux رائعٌ!", "Terminaux عٌئار! Terminaux عٌئار!")]
+        [DataRow("\u200bTerminaux رائعٌ!", "\u200bTerminaux عٌئار!")]
+        [DataRow("\u200bTerminaux رائعٌ! Terminaux رائعٌ!", "\u200bTerminaux عٌئار! Terminaux عٌئار!")]
+        [DataRow("Terminaux رائعٌ!", "Terminaux رائعٌ!", true)]
+        [DataRow("Terminaux رائعٌ! Terminaux رائعٌ!", "Terminaux رائعٌ! Terminaux رائعٌ!", true)]
+        [DataRow("\u200bTerminaux رائعٌ!", "\u200bTerminaux رائعٌ!", true)]
+        [DataRow("\u200bTerminaux رائعٌ! Terminaux رائعٌ!", "\u200bTerminaux رائعٌ! Terminaux رائعٌ!", true)]
+
+        // Emoji should be unaffected.
+        [DataRow("😀", "😀")]
+        [DataRow("😀", "😀", true)]
+        [Description("Querying")]
+        public void TestReverseRtl(string sentence, string expectedSentence, bool terminalReverses = false)
+        {
+            ConsoleMisc.TerminalReversesRtlText = terminalReverses;
+            string actualSentence = ConsoleMisc.ReverseRtl(sentence);
+            ConsoleMisc.TerminalReversesRtlText = false;
+            actualSentence.ShouldBe(expectedSentence);
+        }
+
     }
 }

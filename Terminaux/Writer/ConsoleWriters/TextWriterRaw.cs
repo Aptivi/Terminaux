@@ -165,6 +165,10 @@ namespace Terminaux.Writer.ConsoleWriters
                         FilteredTop = pos.Item2;
                     }
 
+                    // Reverse all the RTL characters
+                    if (settings is null)
+                        Text = ConsoleMisc.ReverseRtl(Text);
+
                     // Actually write
                     if (Line)
                     {

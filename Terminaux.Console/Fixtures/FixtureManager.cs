@@ -88,6 +88,7 @@ namespace Terminaux.Console.Fixtures
             new PrintRainbowCjk(),
             new PrintRainbowBackCjk(),
             new PrintWrapped(),
+            new PrintRtl(),
             new TestDictWriterChar(),
             new TestDictWriterInt(),
             new TestDictWriterStr(),
@@ -189,6 +190,7 @@ namespace Terminaux.Console.Fixtures
             // Interactive TUI
             new CliInfoPaneTest(),
             new CliInfoPaneTestCjk(),
+            new CliInfoPaneTestRtl(),
             new CliInfoPaneTestExcess(),
             new CliInfoPaneTestRefreshing(),
             new CliInfoPaneHugeTest(),
