@@ -310,10 +310,6 @@ namespace Terminaux.Reader
 
         internal static void RemoveText(ref TermReaderState state, int startIndex, int length, bool step = false)
         {
-            // Go back a selected length number
-            if (step)
-                PositioningTools.GoBack(length, ref state);
-
             // Check for surrogate pairs in case a user tries to remove them. Surrogate pairs require two characters: high and low.
             if (state.CurrentText.Length >= 2)
             {
@@ -348,16 +344,17 @@ namespace Terminaux.Reader
             }
 
             // Remove this amount of characters
-            Wipe(ref state, startIndex, length);
+            Wipe(ref state, startIndex, length, step);
         }
 
-        internal static void Wipe(ref TermReaderState state, int start, int count)
+        internal static void Wipe(ref TermReaderState state, int start, int count, bool step = true)
         {
             // Wipe everything
             BlankOut(ref state);
 
             // Now, remove the requested text
-            PositioningTools.GoBack(count, ref state);
+            if (step)
+                PositioningTools.GoBack(count, ref state);
             state.CurrentText.Remove(start, count);
             state.canInsert = true;
 
@@ -425,37 +422,21 @@ namespace Terminaux.Reader
             // Take highlighting into account
             renderedText = GetHighlightedInput(renderedText, state);
 
-            // Now, render the input.
-            int spacesLength;
+            // Change the rendered text according to the mode.
+            int spacesLength = 0;
             if (state.OneLineWrap)
             {
                 // We're in the one-line wrap mode!
                 longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
                 incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = GetOneLineWrappedSentenceToRender(incompleteSentences, state);
-                ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReaderColorBack(renderedText, state.settings, false, foreground, background);
-
-                // Get the space length
                 spacesLength = longestSentenceLength - state.settings.LeftMargin - ConsoleChar.EstimateCellWidth(renderedText);
             }
-            else
-            {
-                // We're in the multi-line wrap mode!
-                ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
-                TextWriterColor.WriteForReaderColorBack(renderedText, state.settings, false, foreground, background);
 
-                // Get the space length
-                incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText + "  ", longestSentenceLength - state.settings.LeftMargin, state.InputPromptLeft - state.settings.LeftMargin);
-                string last = VtSequenceTools.FilterVTSequences(incompleteSentences[incompleteSentences.Length - 1]);
-                int lastCells = ConsoleChar.EstimateCellWidth(last);
-                spacesLength = longestSentenceLength - state.RightMargin - lastCells - (incompleteSentences.Length == 1 ? state.InputPromptLeft - state.settings.LeftMargin : 0);
-            }
-
-            // Use appropriate space length to clear the position post text.
-            if (state.RightMargin == 0)
-                TextWriterColor.WriteForReaderColorBack(ConsoleClearing.GetClearLineToRightSequence(), state.settings, false, foreground, background);
-            else
+            // Now, render the text
+            ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
+            TextWriterColor.WriteForReaderColorBack(renderedText, state.settings, false, foreground, background);
+            if (state.OneLineWrap)
                 TextWriterColor.WriteForReaderColorBack(new string(' ', spacesLength < 0 ? 0 : spacesLength == 0 && !state.OneLineWrap ? 1 : spacesLength), state.settings, false, foreground, background);
 
             // If stepping, go either backward or forward, and commit the positioning changes.
