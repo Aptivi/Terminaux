@@ -31,7 +31,7 @@ namespace Terminaux.Inputs.Presentation.Inputs
 
         /// <inheritdoc/>
         public override string DisplayInput =>
-            !string.IsNullOrEmpty(Input) ? "***" : "   ";
+            !string.IsNullOrEmpty(Input) ? Input : "   ";
 
         /// <inheritdoc/>
         public override string Input =>

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
 using Terminaux.Base;
 using Terminaux.Inputs.Styles.Infobox;
 
@@ -31,7 +32,7 @@ namespace Terminaux.Inputs.Presentation.Inputs
 
         /// <inheritdoc/>
         public override string DisplayInput =>
-            $"Selected {Input.Length} options";
+            Input.Length > 0 && Choices is not null ? string.Join(", ", Choices.Select((ici) => ici.ChoiceName)) : "   ";
 
         /// <inheritdoc/>
         public override int[] Input =>

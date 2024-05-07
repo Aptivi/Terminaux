@@ -31,7 +31,7 @@ namespace Terminaux.Inputs.Presentation.Inputs
 
         /// <inheritdoc/>
         public override string DisplayInput =>
-            Input > -1 ? $"Selected #{Input + 1}" : "   ";
+            Input > -1 && Choices is not null ? Choices[Input].ChoiceName : "   ";
 
         /// <inheritdoc/>
         public override int Input =>
