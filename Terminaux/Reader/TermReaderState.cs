@@ -41,7 +41,7 @@ namespace Terminaux.Reader
         internal int currentCursorPosLeft;
         internal int currentCursorPosTop;
         internal int currentTextPos;
-        internal string inputPromptText = "";
+        internal Func<string> inputPromptText = () => "";
         internal StringBuilder currentText = new();
         internal bool passwordMode;
         internal ConsoleKeyInfo pressedKey;
@@ -149,7 +149,7 @@ namespace Terminaux.Reader
         /// Input prompt text
         /// </summary>
         public string InputPromptText =>
-            inputPromptText;
+            inputPromptText.Invoke();
         /// <summary>
         /// Input prompt text
         /// </summary>
