@@ -31,9 +31,11 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
             string input = "";
             while (input != "exit")
             {
-                var settings = TermReader.GlobalReaderSettings;
-                settings.Suggestions = GetSuggestions;
-                settings.HistoryEnabled = true;
+                var settings = new TermReaderSettings(TermReader.GlobalReaderSettings)
+                {
+                    Suggestions = GetSuggestions,
+                    HistoryEnabled = true
+                };
                 input = TermReader.Read(">> ", "", settings, false, true, false);
                 TextWriterColor.Write("You said: " + input);
             }
