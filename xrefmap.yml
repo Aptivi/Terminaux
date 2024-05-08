@@ -15021,19 +15021,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.Grey93
   nameWithType: ConsoleColorData.Grey93
-- uid: Terminaux.Colors.Data.ConsoleColorData.HSL
-  name: HSL
-  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_HSL
-  commentId: P:Terminaux.Colors.Data.ConsoleColorData.HSL
-  fullName: Terminaux.Colors.Data.ConsoleColorData.HSL
-  nameWithType: ConsoleColorData.HSL
-- uid: Terminaux.Colors.Data.ConsoleColorData.HSL*
-  name: HSL
-  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_HSL_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.HSL
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorData.HSL
-  nameWithType: ConsoleColorData.HSL
 - uid: Terminaux.Colors.Data.ConsoleColorData.HexString
   name: HexString
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_HexString
@@ -15125,51 +15112,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.HotPinkAlt
   nameWithType: ConsoleColorData.HotPinkAlt
-- uid: Terminaux.Colors.Data.ConsoleColorData.Hsl
-  name: ConsoleColorData.Hsl
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Hsl.html
-  commentId: T:Terminaux.Colors.Data.ConsoleColorData.Hsl
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Hsl
-  nameWithType: ConsoleColorData.Hsl
-- uid: Terminaux.Colors.Data.ConsoleColorData.Hsl.H
-  name: H
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Hsl.html#Terminaux_Colors_Data_ConsoleColorData_Hsl_H
-  commentId: P:Terminaux.Colors.Data.ConsoleColorData.Hsl.H
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Hsl.H
-  nameWithType: ConsoleColorData.Hsl.H
-- uid: Terminaux.Colors.Data.ConsoleColorData.Hsl.H*
-  name: H
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Hsl.html#Terminaux_Colors_Data_ConsoleColorData_Hsl_H_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.Hsl.H
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Hsl.H
-  nameWithType: ConsoleColorData.Hsl.H
-- uid: Terminaux.Colors.Data.ConsoleColorData.Hsl.L
-  name: L
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Hsl.html#Terminaux_Colors_Data_ConsoleColorData_Hsl_L
-  commentId: P:Terminaux.Colors.Data.ConsoleColorData.Hsl.L
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Hsl.L
-  nameWithType: ConsoleColorData.Hsl.L
-- uid: Terminaux.Colors.Data.ConsoleColorData.Hsl.L*
-  name: L
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Hsl.html#Terminaux_Colors_Data_ConsoleColorData_Hsl_L_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.Hsl.L
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Hsl.L
-  nameWithType: ConsoleColorData.Hsl.L
-- uid: Terminaux.Colors.Data.ConsoleColorData.Hsl.S
-  name: S
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Hsl.html#Terminaux_Colors_Data_ConsoleColorData_Hsl_S
-  commentId: P:Terminaux.Colors.Data.ConsoleColorData.Hsl.S
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Hsl.S
-  nameWithType: ConsoleColorData.Hsl.S
-- uid: Terminaux.Colors.Data.ConsoleColorData.Hsl.S*
-  name: S
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Hsl.html#Terminaux_Colors_Data_ConsoleColorData_Hsl_S_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.Hsl.S
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Hsl.S
-  nameWithType: ConsoleColorData.Hsl.S
 - uid: Terminaux.Colors.Data.ConsoleColorData.IndianRed
   name: IndianRed
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_IndianRed
@@ -16436,51 +16378,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Data.ConsoleColorData.Red3Alt
   nameWithType: ConsoleColorData.Red3Alt
-- uid: Terminaux.Colors.Data.ConsoleColorData.Rgb
-  name: ConsoleColorData.Rgb
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Rgb.html
-  commentId: T:Terminaux.Colors.Data.ConsoleColorData.Rgb
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Rgb
-  nameWithType: ConsoleColorData.Rgb
-- uid: Terminaux.Colors.Data.ConsoleColorData.Rgb.B
-  name: B
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Rgb.html#Terminaux_Colors_Data_ConsoleColorData_Rgb_B
-  commentId: P:Terminaux.Colors.Data.ConsoleColorData.Rgb.B
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Rgb.B
-  nameWithType: ConsoleColorData.Rgb.B
-- uid: Terminaux.Colors.Data.ConsoleColorData.Rgb.B*
-  name: B
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Rgb.html#Terminaux_Colors_Data_ConsoleColorData_Rgb_B_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.Rgb.B
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Rgb.B
-  nameWithType: ConsoleColorData.Rgb.B
-- uid: Terminaux.Colors.Data.ConsoleColorData.Rgb.G
-  name: G
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Rgb.html#Terminaux_Colors_Data_ConsoleColorData_Rgb_G
-  commentId: P:Terminaux.Colors.Data.ConsoleColorData.Rgb.G
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Rgb.G
-  nameWithType: ConsoleColorData.Rgb.G
-- uid: Terminaux.Colors.Data.ConsoleColorData.Rgb.G*
-  name: G
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Rgb.html#Terminaux_Colors_Data_ConsoleColorData_Rgb_G_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.Rgb.G
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Rgb.G
-  nameWithType: ConsoleColorData.Rgb.G
-- uid: Terminaux.Colors.Data.ConsoleColorData.Rgb.R
-  name: R
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Rgb.html#Terminaux_Colors_Data_ConsoleColorData_Rgb_R
-  commentId: P:Terminaux.Colors.Data.ConsoleColorData.Rgb.R
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Rgb.R
-  nameWithType: ConsoleColorData.Rgb.R
-- uid: Terminaux.Colors.Data.ConsoleColorData.Rgb.R*
-  name: R
-  href: api/Terminaux.Colors.Data.ConsoleColorData.Rgb.html#Terminaux_Colors_Data_ConsoleColorData_Rgb_R_
-  commentId: Overload:Terminaux.Colors.Data.ConsoleColorData.Rgb.R
-  isSpec: "True"
-  fullName: Terminaux.Colors.Data.ConsoleColorData.Rgb.R
-  nameWithType: ConsoleColorData.Rgb.R
 - uid: Terminaux.Colors.Data.ConsoleColorData.RosyBrown
   name: RosyBrown
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_RosyBrown
@@ -17078,6 +16975,57 @@ references:
   fullName.vb: Terminaux.Colors.Data.ConsoleColorData.<>
   nameWithType: ConsoleColorData.operator !=
   nameWithType.vb: ConsoleColorData.<>
+- uid: Terminaux.Colors.Data.ConsoleColorDataSerializer
+  name: ConsoleColorDataSerializer
+  href: api/Terminaux.Colors.Data.ConsoleColorDataSerializer.html
+  commentId: T:Terminaux.Colors.Data.ConsoleColorDataSerializer
+  fullName: Terminaux.Colors.Data.ConsoleColorDataSerializer
+  nameWithType: ConsoleColorDataSerializer
+- uid: Terminaux.Colors.Data.ConsoleColorDataSerializer.CanConvert(System.Type)
+  name: CanConvert(Type)
+  href: api/Terminaux.Colors.Data.ConsoleColorDataSerializer.html#Terminaux_Colors_Data_ConsoleColorDataSerializer_CanConvert_System_Type_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorDataSerializer.CanConvert(System.Type)
+  fullName: Terminaux.Colors.Data.ConsoleColorDataSerializer.CanConvert(System.Type)
+  nameWithType: ConsoleColorDataSerializer.CanConvert(Type)
+- uid: Terminaux.Colors.Data.ConsoleColorDataSerializer.CanConvert*
+  name: CanConvert
+  href: api/Terminaux.Colors.Data.ConsoleColorDataSerializer.html#Terminaux_Colors_Data_ConsoleColorDataSerializer_CanConvert_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorDataSerializer.CanConvert
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorDataSerializer.CanConvert
+  nameWithType: ConsoleColorDataSerializer.CanConvert
+- uid: Terminaux.Colors.Data.ConsoleColorDataSerializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+  name: ReadJson(JsonReader, Type, object?, JsonSerializer)
+  href: api/Terminaux.Colors.Data.ConsoleColorDataSerializer.html#Terminaux_Colors_Data_ConsoleColorDataSerializer_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Object_Newtonsoft_Json_JsonSerializer_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorDataSerializer.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Object,Newtonsoft.Json.JsonSerializer)
+  name.vb: ReadJson(JsonReader, Type, Object, JsonSerializer)
+  fullName: Terminaux.Colors.Data.ConsoleColorDataSerializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, object?, Newtonsoft.Json.JsonSerializer)
+  fullName.vb: Terminaux.Colors.Data.ConsoleColorDataSerializer.ReadJson(Newtonsoft.Json.JsonReader, System.Type, Object, Newtonsoft.Json.JsonSerializer)
+  nameWithType: ConsoleColorDataSerializer.ReadJson(JsonReader, Type, object?, JsonSerializer)
+  nameWithType.vb: ConsoleColorDataSerializer.ReadJson(JsonReader, Type, Object, JsonSerializer)
+- uid: Terminaux.Colors.Data.ConsoleColorDataSerializer.ReadJson*
+  name: ReadJson
+  href: api/Terminaux.Colors.Data.ConsoleColorDataSerializer.html#Terminaux_Colors_Data_ConsoleColorDataSerializer_ReadJson_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorDataSerializer.ReadJson
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorDataSerializer.ReadJson
+  nameWithType: ConsoleColorDataSerializer.ReadJson
+- uid: Terminaux.Colors.Data.ConsoleColorDataSerializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+  name: WriteJson(JsonWriter, object?, JsonSerializer)
+  href: api/Terminaux.Colors.Data.ConsoleColorDataSerializer.html#Terminaux_Colors_Data_ConsoleColorDataSerializer_WriteJson_Newtonsoft_Json_JsonWriter_System_Object_Newtonsoft_Json_JsonSerializer_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorDataSerializer.WriteJson(Newtonsoft.Json.JsonWriter,System.Object,Newtonsoft.Json.JsonSerializer)
+  name.vb: WriteJson(JsonWriter, Object, JsonSerializer)
+  fullName: Terminaux.Colors.Data.ConsoleColorDataSerializer.WriteJson(Newtonsoft.Json.JsonWriter, object?, Newtonsoft.Json.JsonSerializer)
+  fullName.vb: Terminaux.Colors.Data.ConsoleColorDataSerializer.WriteJson(Newtonsoft.Json.JsonWriter, Object, Newtonsoft.Json.JsonSerializer)
+  nameWithType: ConsoleColorDataSerializer.WriteJson(JsonWriter, object?, JsonSerializer)
+  nameWithType.vb: ConsoleColorDataSerializer.WriteJson(JsonWriter, Object, JsonSerializer)
+- uid: Terminaux.Colors.Data.ConsoleColorDataSerializer.WriteJson*
+  name: WriteJson
+  href: api/Terminaux.Colors.Data.ConsoleColorDataSerializer.html#Terminaux_Colors_Data_ConsoleColorDataSerializer_WriteJson_
+  commentId: Overload:Terminaux.Colors.Data.ConsoleColorDataSerializer.WriteJson
+  isSpec: "True"
+  fullName: Terminaux.Colors.Data.ConsoleColorDataSerializer.WriteJson
+  nameWithType: ConsoleColorDataSerializer.WriteJson
 - uid: Terminaux.Colors.Data.ConsoleColors
   name: ConsoleColors
   href: api/Terminaux.Colors.Data.ConsoleColors.html
