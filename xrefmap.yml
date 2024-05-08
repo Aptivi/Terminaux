@@ -12856,19 +12856,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.ColorSettings.ColorTransformationFormula
   nameWithType: ColorSettings.ColorTransformationFormula
-- uid: Terminaux.Colors.ColorSettings.ColorTransformationMethod
-  name: ColorTransformationMethod
-  href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings_ColorTransformationMethod
-  commentId: P:Terminaux.Colors.ColorSettings.ColorTransformationMethod
-  fullName: Terminaux.Colors.ColorSettings.ColorTransformationMethod
-  nameWithType: ColorSettings.ColorTransformationMethod
-- uid: Terminaux.Colors.ColorSettings.ColorTransformationMethod*
-  name: ColorTransformationMethod
-  href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings_ColorTransformationMethod_
-  commentId: Overload:Terminaux.Colors.ColorSettings.ColorTransformationMethod
-  isSpec: "True"
-  fullName: Terminaux.Colors.ColorSettings.ColorTransformationMethod
-  nameWithType: ColorSettings.ColorTransformationMethod
 - uid: Terminaux.Colors.ColorSettings.EnableColorTransformation
   name: EnableColorTransformation
   href: api/Terminaux.Colors.ColorSettings.html#Terminaux_Colors_ColorSettings_EnableColorTransformation
@@ -21941,6 +21928,12 @@ references:
   commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Deutan
   fullName: Terminaux.Colors.Transformation.TransformationFormula.Deutan
   nameWithType: TransformationFormula.Deutan
+- uid: Terminaux.Colors.Transformation.TransformationFormula.DeutanVienot
+  name: DeutanVienot
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_DeutanVienot
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.DeutanVienot
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.DeutanVienot
+  nameWithType: TransformationFormula.DeutanVienot
 - uid: Terminaux.Colors.Transformation.TransformationFormula.GreenScale
   name: GreenScale
   href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_GreenScale
@@ -21965,6 +21958,12 @@ references:
   commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Protan
   fullName: Terminaux.Colors.Transformation.TransformationFormula.Protan
   nameWithType: TransformationFormula.Protan
+- uid: Terminaux.Colors.Transformation.TransformationFormula.ProtanVienot
+  name: ProtanVienot
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_ProtanVienot
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.ProtanVienot
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.ProtanVienot
+  nameWithType: TransformationFormula.ProtanVienot
 - uid: Terminaux.Colors.Transformation.TransformationFormula.RedScale
   name: RedScale
   href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_RedScale
@@ -21977,24 +21976,12 @@ references:
   commentId: F:Terminaux.Colors.Transformation.TransformationFormula.Tritan
   fullName: Terminaux.Colors.Transformation.TransformationFormula.Tritan
   nameWithType: TransformationFormula.Tritan
-- uid: Terminaux.Colors.Transformation.TransformationMethod
-  name: TransformationMethod
-  href: api/Terminaux.Colors.Transformation.TransformationMethod.html
-  commentId: T:Terminaux.Colors.Transformation.TransformationMethod
-  fullName: Terminaux.Colors.Transformation.TransformationMethod
-  nameWithType: TransformationMethod
-- uid: Terminaux.Colors.Transformation.TransformationMethod.Brettel1997
-  name: Brettel1997
-  href: api/Terminaux.Colors.Transformation.TransformationMethod.html#Terminaux_Colors_Transformation_TransformationMethod_Brettel1997
-  commentId: F:Terminaux.Colors.Transformation.TransformationMethod.Brettel1997
-  fullName: Terminaux.Colors.Transformation.TransformationMethod.Brettel1997
-  nameWithType: TransformationMethod.Brettel1997
-- uid: Terminaux.Colors.Transformation.TransformationMethod.Vienot1999
-  name: Vienot1999
-  href: api/Terminaux.Colors.Transformation.TransformationMethod.html#Terminaux_Colors_Transformation_TransformationMethod_Vienot1999
-  commentId: F:Terminaux.Colors.Transformation.TransformationMethod.Vienot1999
-  fullName: Terminaux.Colors.Transformation.TransformationMethod.Vienot1999
-  nameWithType: TransformationMethod.Vienot1999
+- uid: Terminaux.Colors.Transformation.TransformationFormula.TritanVienot
+  name: TritanVienot
+  href: api/Terminaux.Colors.Transformation.TransformationFormula.html#Terminaux_Colors_Transformation_TransformationFormula_TritanVienot
+  commentId: F:Terminaux.Colors.Transformation.TransformationFormula.TritanVienot
+  fullName: Terminaux.Colors.Transformation.TransformationFormula.TritanVienot
+  nameWithType: TransformationFormula.TritanVienot
 - uid: Terminaux.Colors.Transformation.TransformationTools
   name: TransformationTools
   href: api/Terminaux.Colors.Transformation.TransformationTools.html
@@ -22017,15 +22004,15 @@ references:
   isSpec: "True"
   fullName: Terminaux.Colors.Transformation.TransformationTools.LinearRGBTosRGB
   nameWithType: TransformationTools.LinearRGBTosRGB
-- uid: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double,Terminaux.Colors.Transformation.TransformationMethod)
-  name: RenderColorBlindnessAware(Color, TransformationFormula, double, TransformationMethod)
-  href: api/Terminaux.Colors.Transformation.TransformationTools.html#Terminaux_Colors_Transformation_TransformationTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Transformation_TransformationFormula_System_Double_Terminaux_Colors_Transformation_TransformationMethod_
-  commentId: M:Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double,Terminaux.Colors.Transformation.TransformationMethod)
-  name.vb: RenderColorBlindnessAware(Color, TransformationFormula, Double, TransformationMethod)
-  fullName: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Transformation.TransformationFormula, double, Terminaux.Colors.Transformation.TransformationMethod)
-  fullName.vb: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Transformation.TransformationFormula, Double, Terminaux.Colors.Transformation.TransformationMethod)
-  nameWithType: TransformationTools.RenderColorBlindnessAware(Color, TransformationFormula, double, TransformationMethod)
-  nameWithType.vb: TransformationTools.RenderColorBlindnessAware(Color, TransformationFormula, Double, TransformationMethod)
+- uid: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double)
+  name: RenderColorBlindnessAware(Color, TransformationFormula, double)
+  href: api/Terminaux.Colors.Transformation.TransformationTools.html#Terminaux_Colors_Transformation_TransformationTools_RenderColorBlindnessAware_Terminaux_Colors_Color_Terminaux_Colors_Transformation_TransformationFormula_System_Double_
+  commentId: M:Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color,Terminaux.Colors.Transformation.TransformationFormula,System.Double)
+  name.vb: RenderColorBlindnessAware(Color, TransformationFormula, Double)
+  fullName: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Transformation.TransformationFormula, double)
+  fullName.vb: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware(Terminaux.Colors.Color, Terminaux.Colors.Transformation.TransformationFormula, Double)
+  nameWithType: TransformationTools.RenderColorBlindnessAware(Color, TransformationFormula, double)
+  nameWithType.vb: TransformationTools.RenderColorBlindnessAware(Color, TransformationFormula, Double)
 - uid: Terminaux.Colors.Transformation.TransformationTools.RenderColorBlindnessAware*
   name: RenderColorBlindnessAware
   href: api/Terminaux.Colors.Transformation.TransformationTools.html#Terminaux_Colors_Transformation_TransformationTools_RenderColorBlindnessAware_
