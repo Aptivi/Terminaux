@@ -36,5 +36,18 @@ namespace Terminaux.Reader.Tools
                 state.operationWasInvalid = true;
             return !condition;
         }
+
+        /// <summary>
+        /// Specifies that this condition should be met
+        /// </summary>
+        /// <param name="condition">Condition to evaluate</param>
+        /// <param name="state">Reader state</param>
+        /// <returns>True if the condition is met; false otherwise and a system beep.</returns>
+        public static bool Should(bool condition, TermReaderState state)
+        {
+            if (!condition)
+                state.operationWasInvalid = true;
+            return condition;
+        }
     }
 }
