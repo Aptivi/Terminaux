@@ -133,6 +133,22 @@ namespace Terminaux.Base
             ConsoleWrapperTools.ActionSetCursorPosition(left, top);
 
         /// <summary>
+        /// Sets the window dimensions
+        /// </summary>
+        /// <param name="width">The window width to be set (from 0)</param>
+        /// <param name="height">The window height to be set (from 0)</param>
+        public static void SetWindowDimensions(int width, int height) =>
+            ConsoleWrapperTools.ActionSetWindowDimensions(width, height);
+
+        /// <summary>
+        /// Sets the buffer dimensions
+        /// </summary>
+        /// <param name="width">The buffer width to be set (from 0)</param>
+        /// <param name="height">The buffer height to be set (from 0)</param>
+        public static void SetBufferDimensions(int width, int height) =>
+            ConsoleWrapperTools.ActionSetBufferDimensions(width, height);
+
+        /// <summary>
         /// Beeps the console
         /// </summary>
         public static void Beep() =>

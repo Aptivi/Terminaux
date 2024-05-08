@@ -47,6 +47,8 @@ namespace Terminaux.Base
         internal static Func<bool> actionGetTreatCtrlCAsInput = () => TreatCtrlCAsInput;
         internal static Func<bool> actionKeyAvailable = () => KeyAvailable;
         internal static Action<int, int> actionSetCursorPosition = SetCursorPosition;
+        internal static Action<int, int> actionSetWindowDimensions = SetWindowDimensions;
+        internal static Action<int, int> actionSetBufferDimensions = SetBufferDimensions;
         internal static Action<int> actionSetCursorLeft = SetCursorLeft;
         internal static Action<int> actionSetCursorTop = SetCursorTop;
         internal static Action<int> actionSetWindowWidth = SetWindowWidth;
@@ -176,6 +178,26 @@ namespace Terminaux.Base
         {
             internal get => actionSetCursorPosition;
             set => actionSetCursorPosition = value ?? SetCursorPosition;
+        }
+        /// <summary>
+        /// Sets the window dimensions<br></br><br></br>
+        /// - First integer is the window width from 0<br></br>
+        /// - Second integer is the window height from 0
+        /// </summary>
+        public static Action<int, int> ActionSetWindowDimensions
+        {
+            internal get => actionSetWindowDimensions;
+            set => actionSetWindowDimensions = value ?? SetWindowDimensions;
+        }
+        /// <summary>
+        /// Sets the buffer dimensions<br></br><br></br>
+        /// - First integer is the buffer width from 0<br></br>
+        /// - Second integer is the buffer height from 0
+        /// </summary>
+        public static Action<int, int> ActionSetBufferDimensions
+        {
+            internal get => actionSetBufferDimensions;
+            set => actionSetBufferDimensions = value ?? SetBufferDimensions;
         }
         /// <summary>
         /// Sets the cursor left position<br></br><br></br>
@@ -488,6 +510,40 @@ namespace Terminaux.Base
         {
             if (!IsDumb)
                 Console.SetCursorPosition(left, top);
+        }
+
+        private static void SetWindowDimensions(int width, int height)
+        {
+            if (!IsDumb)
+            {
+                if (PlatformHelper.IsOnWindows())
+                {
+                    Console.WindowWidth = width;
+                    Console.WindowHeight = height;
+                }
+                else
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{width}t");
+                    Thread.Sleep(35);
+                }
+            }
+        }
+
+        private static void SetBufferDimensions(int width, int height)
+        {
+            if (!IsDumb)
+            {
+                if (PlatformHelper.IsOnWindows())
+                {
+                    Console.BufferWidth = width;
+                    Console.BufferHeight = height;
+                }
+                else
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{width}t");
+                    Thread.Sleep(35);
+                }
+            }
         }
 
         private static void SetCursorLeft(int left)
