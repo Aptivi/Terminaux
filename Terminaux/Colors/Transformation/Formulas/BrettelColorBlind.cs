@@ -19,12 +19,17 @@
 
 using System;
 
-namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
+namespace Terminaux.Colors.Transformation.Formulas
 {
-    // Refer to Hans Brettel, Françoise Viénot, and John D. Mollon, "Computerized simulation of color appearance for dichromats," J. Opt. Soc. Am. A 14, 2647-2655 (1997)
-    // for more information.
-    internal static class Brettel1997
+    internal class BrettelColorBlind : BaseTransformationFormula, ITransformationFormula
     {
+        internal class BrettelParameters
+        {
+            internal double[] TransPlane1 = [];
+            internal double[] TransPlane2 = [];
+            internal double[] SeparationPlaneNormalRGB = [];
+        }
+
         static readonly BrettelParameters bp_protan = new()
         {
             TransPlane1 =
@@ -127,7 +132,22 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
             ]
         };
 
-        public static (int, int, int) Transform(int r, int g, int b, TransformationFormula def, double severity)
+        public override (int, int, int) Transform(int r, int g, int b, ColorSettings settings)
+        {
+            // Check values
+            if (r < 0 || r > 255)
+                throw new ArgumentOutOfRangeException("r");
+            if (g < 0 || g > 255)
+                throw new ArgumentOutOfRangeException("g");
+            if (b < 0 || b > 255)
+                throw new ArgumentOutOfRangeException("b");
+
+            settings ??= new(ColorTools.GlobalSettings);
+            var transformed = Transform(r, g, b, settings.ColorTransformationFormula, settings.ColorBlindnessSeverity);
+            return transformed;
+        }
+
+        private static (int, int, int) Transform(int r, int g, int b, TransformationFormula def, double severity)
         {
             // Check values
             if (r < 0 || r > 255)

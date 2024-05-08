@@ -19,12 +19,15 @@
 
 using System;
 
-namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
+namespace Terminaux.Colors.Transformation.Formulas
 {
-    // Refer to Viénot, F., Brettel, H., & Mollon, J. D. (1999). Digital video colourmaps for checking the legibility of displays by dichromats. Color Research & Application, 24(4), 243–252.
-    // for more information.
-    internal static class Vienot1999
+    internal class VienotColorBlind : BaseTransformationFormula, ITransformationFormula
     {
+        internal class VienotParameters
+        {
+            internal double[] TransPlane = [];
+        }
+
         static readonly VienotParameters vn_protan = new()
         {
             TransPlane =
@@ -73,7 +76,22 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
             ]
         };
 
-        public static (int, int, int) Transform(int r, int g, int b, TransformationFormula def, double severity)
+        public override (int, int, int) Transform(int r, int g, int b, ColorSettings settings)
+        {
+            // Check values
+            if (r < 0 || r > 255)
+                throw new ArgumentOutOfRangeException("r");
+            if (g < 0 || g > 255)
+                throw new ArgumentOutOfRangeException("g");
+            if (b < 0 || b > 255)
+                throw new ArgumentOutOfRangeException("b");
+
+            settings ??= new(ColorTools.GlobalSettings);
+            var transformed = Transform(r, g, b, settings.ColorTransformationFormula, settings.ColorBlindnessSeverity);
+            return transformed;
+        }
+
+        private static (int, int, int) Transform(int r, int g, int b, TransformationFormula def, double severity)
         {
             // Check values
             if (r < 0 || r > 255)
@@ -88,9 +106,9 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlindness
             // Select what Vienot deficiency profile to choose how to transform the three RGB values
             VienotParameters? vn = def switch
             {
-                TransformationFormula.Protan => vn_protan,
-                TransformationFormula.Deutan => vn_deutan,
-                TransformationFormula.Tritan => vn_tritan,
+                TransformationFormula.ProtanVienot => vn_protan,
+                TransformationFormula.DeutanVienot => vn_deutan,
+                TransformationFormula.TritanVienot => vn_tritan,
                 _ => throw new ArgumentOutOfRangeException("def"),
             };
 

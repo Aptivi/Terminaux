@@ -33,9 +33,12 @@ namespace Terminaux.Colors.Transformation
         {
             { TransformationFormula.Monochromacy, new Monochromacy() },
             { TransformationFormula.Inverse, new Inverse() },
-            { TransformationFormula.Protan, new ColorBlind() },
-            { TransformationFormula.Deutan, new ColorBlind() },
-            { TransformationFormula.Tritan, new ColorBlind() },
+            { TransformationFormula.Protan, new BrettelColorBlind() },
+            { TransformationFormula.Deutan, new BrettelColorBlind() },
+            { TransformationFormula.Tritan, new BrettelColorBlind() },
+            { TransformationFormula.ProtanVienot, new VienotColorBlind() },
+            { TransformationFormula.DeutanVienot, new VienotColorBlind() },
+            { TransformationFormula.TritanVienot, new VienotColorBlind() },
             { TransformationFormula.BlueScale, new BlueScale() },
             { TransformationFormula.GreenScale, new GreenScale() },
             { TransformationFormula.RedScale, new RedScale() },
@@ -86,15 +89,13 @@ namespace Terminaux.Colors.Transformation
         /// <param name="color">Color to use</param>
         /// <param name="formula">Selected formula for color blindness</param>
         /// <param name="severity">Severity of the color blindness</param>
-        /// <param name="method">Choose color blindness calculation method</param>
         /// <returns>An instance of <see cref="Color"/> with adjusted color values for color-blindness</returns>
-        public static Color RenderColorBlindnessAware(Color color, TransformationFormula formula, double severity, TransformationMethod method = TransformationMethod.Brettel1997)
+        public static Color RenderColorBlindnessAware(Color color, TransformationFormula formula, double severity)
         {
             // Get the resulting color
             var settings = new ColorSettings()
             {
                 EnableColorTransformation = true,
-                ColorTransformationMethod = method,
                 ColorBlindnessSeverity = severity,
                 ColorTransformationFormula = formula,
             };

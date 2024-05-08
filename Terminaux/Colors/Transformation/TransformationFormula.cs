@@ -37,6 +37,18 @@ namespace Terminaux.Colors.Transformation
         /// </summary>
         Tritan,
         /// <summary>
+        /// Red/green color blindness. It makes red look more green (Vienot, simple formula)
+        /// </summary>
+        ProtanVienot,
+        /// <summary>
+        /// Red/green color blindness. It makes green look more red (Vienot, simple formula)
+        /// </summary>
+        DeutanVienot,
+        /// <summary>
+        /// Blue/yellow color blindness. (Vienot, simple formula)
+        /// </summary>
+        TritanVienot,
+        /// <summary>
         /// Full color blindness, can only see grayscale.
         /// </summary>
         Monochromacy,

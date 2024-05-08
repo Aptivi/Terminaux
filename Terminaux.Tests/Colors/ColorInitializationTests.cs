@@ -327,8 +327,7 @@ namespace Terminaux.Tests.Colors
             var settings = new ColorSettings()
             {
                 EnableColorTransformation = true,
-                ColorTransformationMethod = TransformationMethod.Vienot1999,
-                ColorTransformationFormula = TransformationFormula.Protan,
+                ColorTransformationFormula = TransformationFormula.ProtanVienot,
                 ColorBlindnessSeverity = 1.0,
             };
             var ColorInstance = new Color(10, settings);
@@ -365,8 +364,7 @@ namespace Terminaux.Tests.Colors
             var settings = new ColorSettings()
             {
                 EnableColorTransformation = true,
-                ColorTransformationMethod = TransformationMethod.Vienot1999,
-                ColorTransformationFormula = TransformationFormula.Protan,
+                ColorTransformationFormula = TransformationFormula.ProtanVienot,
                 ColorBlindnessSeverity = 0.6,
             };
             var ColorInstance = new Color(10, settings);
@@ -403,8 +401,7 @@ namespace Terminaux.Tests.Colors
             var settings = new ColorSettings()
             {
                 EnableColorTransformation = true,
-                ColorTransformationMethod = TransformationMethod.Vienot1999,
-                ColorTransformationFormula = TransformationFormula.Deutan,
+                ColorTransformationFormula = TransformationFormula.DeutanVienot,
                 ColorBlindnessSeverity = 1.0,
             };
             var ColorInstance = new Color(10, settings);
@@ -441,8 +438,7 @@ namespace Terminaux.Tests.Colors
             var settings = new ColorSettings()
             {
                 EnableColorTransformation = true,
-                ColorTransformationMethod = TransformationMethod.Vienot1999,
-                ColorTransformationFormula = TransformationFormula.Deutan,
+                ColorTransformationFormula = TransformationFormula.DeutanVienot,
                 ColorBlindnessSeverity = 0.6,
             };
             var ColorInstance = new Color(10, settings);
@@ -479,8 +475,7 @@ namespace Terminaux.Tests.Colors
             var settings = new ColorSettings()
             {
                 EnableColorTransformation = true,
-                ColorTransformationMethod = TransformationMethod.Vienot1999,
-                ColorTransformationFormula = TransformationFormula.Tritan,
+                ColorTransformationFormula = TransformationFormula.TritanVienot,
                 ColorBlindnessSeverity = 1.0,
             };
             var ColorInstance = new Color(18, settings);
@@ -517,8 +512,7 @@ namespace Terminaux.Tests.Colors
             var settings = new ColorSettings()
             {
                 EnableColorTransformation = true,
-                ColorTransformationMethod = TransformationMethod.Vienot1999,
-                ColorTransformationFormula = TransformationFormula.Tritan,
+                ColorTransformationFormula = TransformationFormula.TritanVienot,
                 ColorBlindnessSeverity = 0.6,
             };
             var ColorInstance = new Color(18, settings);
@@ -774,7 +768,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFrom255ColorsProtanopiaSimpleRenderColorBlindnessAware()
         {
             // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.Protan, 1.0, TransformationMethod.Vienot1999);
+            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.ProtanVienot, 1.0);
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
@@ -805,7 +799,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFrom255ColorsProtanomalySimpleRenderColorBlindnessAware()
         {
             // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.Protan, 0.6, TransformationMethod.Vienot1999);
+            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.ProtanVienot, 0.6);
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
@@ -836,7 +830,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFrom255ColorsDeuteranopiaSimpleRenderColorBlindnessAware()
         {
             // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.Deutan, 1.0, TransformationMethod.Vienot1999);
+            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.DeutanVienot, 1.0);
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
@@ -867,7 +861,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFrom255ColorsDeuteranomalySimpleRenderColorBlindnessAware()
         {
             // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.Deutan, 0.6, TransformationMethod.Vienot1999);
+            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.DeutanVienot, 0.6);
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
@@ -898,7 +892,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFrom255ColorsTritanopiaSimpleRenderColorBlindnessAware()
         {
             // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.Tritan, 1.0, TransformationMethod.Vienot1999);
+            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.TritanVienot, 1.0);
 
             // Check for null
             ColorInstance.ShouldNotBeNull();
@@ -929,7 +923,7 @@ namespace Terminaux.Tests.Colors
         public void TestInitializeColorInstanceFrom255ColorsTritanomalySimpleRenderColorBlindnessAware()
         {
             // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.Tritan, 0.6, TransformationMethod.Vienot1999);
+            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.TritanVienot, 0.6);
 
             // Check for null
             ColorInstance.ShouldNotBeNull();

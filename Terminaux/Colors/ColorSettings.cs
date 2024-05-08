@@ -45,16 +45,15 @@ namespace Terminaux.Colors
         /// The color transformation formula to use when generating transformed colors, such as color blindness.
         /// </summary>
         public TransformationFormula ColorTransformationFormula { get; set; } = TransformationFormula.Protan;
-        /// <summary>
-        /// The color transformation method for color blindness.
-        /// </summary>
-        public TransformationMethod ColorTransformationMethod { get; set; } = TransformationMethod.Brettel1997;
 
         /// <summary>
         /// The color blindness severity (Only for color blindness formulas):<br></br>
         ///   - <see cref="TransformationFormula.Protan"/><br></br>
         ///   - <see cref="TransformationFormula.Deutan"/><br></br>
-        ///   - <see cref="TransformationFormula.Tritan"/>
+        ///   - <see cref="TransformationFormula.Tritan"/><br></br>
+        ///   - <see cref="TransformationFormula.ProtanVienot"/><br></br>
+        ///   - <see cref="TransformationFormula.DeutanVienot"/><br></br>
+        ///   - <see cref="TransformationFormula.TritanVienot"/>
         /// </summary>
         public double ColorBlindnessSeverity
         {
@@ -132,7 +131,6 @@ namespace Terminaux.Colors
             EnableColorTransformation = settings.EnableColorTransformation;
             UseTerminalPalette = settings.UseTerminalPalette;
             ColorTransformationFormula = settings.ColorTransformationFormula;
-            ColorTransformationMethod = settings.ColorTransformationMethod;
             ColorBlindnessSeverity = settings.ColorBlindnessSeverity;
             Opacity = settings.Opacity;
             OpacityColor = settings.OpacityColor;
