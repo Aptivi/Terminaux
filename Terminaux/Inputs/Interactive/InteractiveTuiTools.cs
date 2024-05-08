@@ -880,8 +880,8 @@ namespace Terminaux.Inputs.Interactive
                     new InteractiveTuiBinding("Go to the previous page", ConsoleKey.PageUp, null),
                     new InteractiveTuiBinding("Go to the next page", ConsoleKey.PageDown, null),
                     new InteractiveTuiBinding("Search for an element", ConsoleKey.F, null),
-                    new InteractiveTuiBinding("Go to the previous page", PointerButton.WheelUp, null),
-                    new InteractiveTuiBinding("Go to the next page", PointerButton.WheelDown, null),
+                    new InteractiveTuiBinding(PointerListener.InvertScrollYAxis ? "Go one element down" : "Go one element up", PointerButton.WheelUp, null),
+                    new InteractiveTuiBinding(PointerListener.InvertScrollYAxis ? "Go one element up" : "Go one element down", PointerButton.WheelDown, null),
                     new InteractiveTuiBinding("Do an action on the selected item", PointerButton.Left, PointerButtonPress.Released, null),
                 ]);
             }
