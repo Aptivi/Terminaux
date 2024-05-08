@@ -23235,6 +23235,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Pointer.PointerListener.InputAvailable
   nameWithType: PointerListener.InputAvailable
+- uid: Terminaux.Inputs.Pointer.PointerListener.InvertScrollYAxis
+  name: InvertScrollYAxis
+  href: api/Terminaux.Inputs.Pointer.PointerListener.html#Terminaux_Inputs_Pointer_PointerListener_InvertScrollYAxis
+  commentId: P:Terminaux.Inputs.Pointer.PointerListener.InvertScrollYAxis
+  fullName: Terminaux.Inputs.Pointer.PointerListener.InvertScrollYAxis
+  nameWithType: PointerListener.InvertScrollYAxis
+- uid: Terminaux.Inputs.Pointer.PointerListener.InvertScrollYAxis*
+  name: InvertScrollYAxis
+  href: api/Terminaux.Inputs.Pointer.PointerListener.html#Terminaux_Inputs_Pointer_PointerListener_InvertScrollYAxis_
+  commentId: Overload:Terminaux.Inputs.Pointer.PointerListener.InvertScrollYAxis
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Pointer.PointerListener.InvertScrollYAxis
+  nameWithType: PointerListener.InvertScrollYAxis
 - uid: Terminaux.Inputs.Pointer.PointerListener.Listening
   name: Listening
   href: api/Terminaux.Inputs.Pointer.PointerListener.html#Terminaux_Inputs_Pointer_PointerListener_Listening
