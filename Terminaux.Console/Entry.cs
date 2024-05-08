@@ -18,6 +18,7 @@
 //
 
 using System.Collections.Generic;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Console.Fixtures;
 using Terminaux.Inputs;
@@ -56,7 +57,7 @@ namespace Terminaux.Console
             {
                 int selected = SelectionStyle.PromptSelection("Choose a fixture", [.. choices], [.. altChoices], true);
                 if (selected == fixtureNames.Length + 1)
-                    return;
+                    break;
 
                 // Get the fixture name from the selection and run it
                 string chosenFixture = fixtureNames[selected - 1];
@@ -64,6 +65,8 @@ namespace Terminaux.Console
                 FixtureManager.GetFixtureFromName(chosenFixture).RunFixture();
                 TermReader.ReadKey();
             }
+            ConsoleClearing.ResetAll();
+            ConsoleWrapper.CursorVisible = true;
         }
     }
 }
