@@ -393,6 +393,46 @@ namespace Terminaux.Base.Extensions
                 // Save the changes
                 resultBuilder.Replace(rtl.Value, finalRtlReversed.ToString(), rtlIdx, finalRtlReversed.Length);
             }
+
+            // Now, reverse the word order for RTL
+            var resultRtls = rtlRegex.Matches(resultBuilder.ToString()).OfType<Match>().ToArray();
+            if (resultRtls.Length == 0)
+                return resultBuilder.ToString();
+            bool commit = true;
+            var finalRtlWords = new StringBuilder();
+            var finalRtlWordReversed = new StringBuilder();
+            for (int i = resultRtls.Length - 1; i >= 0; i--)
+            {
+                // Reverse the RTL word order
+                commit = true;
+                var rtl = resultRtls[i];
+                int rtlIdx = rtl.Index;
+                if (i > 0)
+                {
+                    var secondRtl = resultRtls[i - 1];
+                    int secondRtlIdx = secondRtl.Index;
+                    string secondRtlText = secondRtl.Value;
+                    if (rtlIdx - secondRtlText.Length - 1 == secondRtlIdx)
+                        commit = false;
+                }
+                finalRtlWords.Append($"{rtl}{(i > 0 ? " " : "")}");
+                if (commit)
+                {
+                    string[] splitWords = finalRtlWords.ToString().Split([' '], StringSplitOptions.RemoveEmptyEntries);
+                    for (int wordIdx = splitWords.Length - 1; wordIdx >= 0; wordIdx--)
+                    {
+                        string word = splitWords[wordIdx];
+                        finalRtlWordReversed.Append($"{word} ");
+                    }
+
+                    // Save the changes
+                    string finalReversedToBeReplaced = finalRtlWordReversed.ToString().Trim();
+                    string finalReversedToReplaceWith = finalRtlWords.ToString().Trim();
+                    resultBuilder.Replace(finalReversedToBeReplaced, finalReversedToReplaceWith, rtlIdx, finalReversedToReplaceWith.Length);
+                    finalRtlWords.Clear();
+                    finalRtlWordReversed.Clear();
+                }
+            }
             return resultBuilder.ToString();
         }
 
