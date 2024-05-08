@@ -1415,6 +1415,32 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionReadKey
   nameWithType: ConsoleWrapperTools.ActionReadKey
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferHeight
+  name: ActionSetBufferHeight
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetBufferHeight
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionSetBufferHeight
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferHeight
+  nameWithType: ConsoleWrapperTools.ActionSetBufferHeight
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferHeight*
+  name: ActionSetBufferHeight
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetBufferHeight_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionSetBufferHeight
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferHeight
+  nameWithType: ConsoleWrapperTools.ActionSetBufferHeight
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferWidth
+  name: ActionSetBufferWidth
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetBufferWidth
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionSetBufferWidth
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferWidth
+  nameWithType: ConsoleWrapperTools.ActionSetBufferWidth
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferWidth*
+  name: ActionSetBufferWidth
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetBufferWidth_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionSetBufferWidth
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferWidth
+  nameWithType: ConsoleWrapperTools.ActionSetBufferWidth
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorLeft
   name: ActionSetCursorLeft
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetCursorLeft
@@ -1454,6 +1480,32 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorTop
   nameWithType: ConsoleWrapperTools.ActionSetCursorTop
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowHeight
+  name: ActionSetWindowHeight
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetWindowHeight
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionSetWindowHeight
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowHeight
+  nameWithType: ConsoleWrapperTools.ActionSetWindowHeight
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowHeight*
+  name: ActionSetWindowHeight
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetWindowHeight_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionSetWindowHeight
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowHeight
+  nameWithType: ConsoleWrapperTools.ActionSetWindowHeight
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowWidth
+  name: ActionSetWindowWidth
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetWindowWidth
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionSetWindowWidth
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowWidth
+  nameWithType: ConsoleWrapperTools.ActionSetWindowWidth
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowWidth*
+  name: ActionSetWindowWidth
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetWindowWidth_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionSetWindowWidth
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowWidth
+  nameWithType: ConsoleWrapperTools.ActionSetWindowWidth
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionTreatCtrlCAsInput
   name: ActionTreatCtrlCAsInput
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionTreatCtrlCAsInput
