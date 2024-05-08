@@ -1042,6 +1042,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapper.ReadKey
   nameWithType: ConsoleWrapper.ReadKey
+- uid: Terminaux.Base.ConsoleWrapper.SetBufferDimensions(System.Int32,System.Int32)
+  name: SetBufferDimensions(int, int)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_SetBufferDimensions_System_Int32_System_Int32_
+  commentId: M:Terminaux.Base.ConsoleWrapper.SetBufferDimensions(System.Int32,System.Int32)
+  name.vb: SetBufferDimensions(Integer, Integer)
+  fullName: Terminaux.Base.ConsoleWrapper.SetBufferDimensions(int, int)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.SetBufferDimensions(Integer, Integer)
+  nameWithType: ConsoleWrapper.SetBufferDimensions(int, int)
+  nameWithType.vb: ConsoleWrapper.SetBufferDimensions(Integer, Integer)
+- uid: Terminaux.Base.ConsoleWrapper.SetBufferDimensions*
+  name: SetBufferDimensions
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_SetBufferDimensions_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.SetBufferDimensions
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.SetBufferDimensions
+  nameWithType: ConsoleWrapper.SetBufferDimensions
 - uid: Terminaux.Base.ConsoleWrapper.SetCursorPosition(System.Int32,System.Int32)
   name: SetCursorPosition(int, int)
   href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_SetCursorPosition_System_Int32_System_Int32_
@@ -1058,6 +1074,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapper.SetCursorPosition
   nameWithType: ConsoleWrapper.SetCursorPosition
+- uid: Terminaux.Base.ConsoleWrapper.SetWindowDimensions(System.Int32,System.Int32)
+  name: SetWindowDimensions(int, int)
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_SetWindowDimensions_System_Int32_System_Int32_
+  commentId: M:Terminaux.Base.ConsoleWrapper.SetWindowDimensions(System.Int32,System.Int32)
+  name.vb: SetWindowDimensions(Integer, Integer)
+  fullName: Terminaux.Base.ConsoleWrapper.SetWindowDimensions(int, int)
+  fullName.vb: Terminaux.Base.ConsoleWrapper.SetWindowDimensions(Integer, Integer)
+  nameWithType: ConsoleWrapper.SetWindowDimensions(int, int)
+  nameWithType.vb: ConsoleWrapper.SetWindowDimensions(Integer, Integer)
+- uid: Terminaux.Base.ConsoleWrapper.SetWindowDimensions*
+  name: SetWindowDimensions
+  href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_SetWindowDimensions_
+  commentId: Overload:Terminaux.Base.ConsoleWrapper.SetWindowDimensions
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapper.SetWindowDimensions
+  nameWithType: ConsoleWrapper.SetWindowDimensions
 - uid: Terminaux.Base.ConsoleWrapper.TreatCtrlCAsInput
   name: TreatCtrlCAsInput
   href: api/Terminaux.Base.ConsoleWrapper.html#Terminaux_Base_ConsoleWrapper_TreatCtrlCAsInput
@@ -1415,6 +1447,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionReadKey
   nameWithType: ConsoleWrapperTools.ActionReadKey
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferDimensions
+  name: ActionSetBufferDimensions
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetBufferDimensions
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionSetBufferDimensions
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferDimensions
+  nameWithType: ConsoleWrapperTools.ActionSetBufferDimensions
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferDimensions*
+  name: ActionSetBufferDimensions
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetBufferDimensions_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionSetBufferDimensions
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferDimensions
+  nameWithType: ConsoleWrapperTools.ActionSetBufferDimensions
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionSetBufferHeight
   name: ActionSetBufferHeight
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetBufferHeight
@@ -1480,6 +1525,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetCursorTop
   nameWithType: ConsoleWrapperTools.ActionSetCursorTop
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowDimensions
+  name: ActionSetWindowDimensions
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetWindowDimensions
+  commentId: P:Terminaux.Base.ConsoleWrapperTools.ActionSetWindowDimensions
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowDimensions
+  nameWithType: ConsoleWrapperTools.ActionSetWindowDimensions
+- uid: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowDimensions*
+  name: ActionSetWindowDimensions
+  href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetWindowDimensions_
+  commentId: Overload:Terminaux.Base.ConsoleWrapperTools.ActionSetWindowDimensions
+  isSpec: "True"
+  fullName: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowDimensions
+  nameWithType: ConsoleWrapperTools.ActionSetWindowDimensions
 - uid: Terminaux.Base.ConsoleWrapperTools.ActionSetWindowHeight
   name: ActionSetWindowHeight
   href: api/Terminaux.Base.ConsoleWrapperTools.html#Terminaux_Base_ConsoleWrapperTools_ActionSetWindowHeight
