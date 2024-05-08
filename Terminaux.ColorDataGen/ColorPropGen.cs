@@ -96,7 +96,6 @@ namespace Terminaux.ColorDataGen
             {
                 string colorHex = colorData.HexString;
                 var colorRgb = colorData.RGB;
-                var colorHsl = colorData.HSL;
                 string colorName = colorData.Name;
                 int colorId = colorData.ColorId;
                 string propName = names[colorId];
@@ -106,7 +105,7 @@ namespace Terminaux.ColorDataGen
                             /// [{{colorHex}}] Gets the console colors data for the {{propName}} color
                             /// </summary>
                             public static ConsoleColorData {{propName}} =>
-                                new("{{colorHex}}", {{colorRgb?.R}}, {{colorRgb?.G}}, {{colorRgb?.B}}, {{colorHsl?.H}}, {{colorHsl?.S}}, {{colorHsl?.L}}, "{{colorName}}", {{colorId}});
+                                new("{{colorHex}}", {{colorRgb.r}}, {{colorRgb.g}}, {{colorRgb.b}}, "{{colorName}}", {{colorId}});
                     """
                 );
             }
@@ -195,12 +194,10 @@ namespace Terminaux.ColorDataGen
                 string colorHex = colorData.HexString;
                 string colorName = colorData.Name;
                 var colorRgb = colorData.RGB;
-                if (colorRgb is null)
-                    continue;
                 builder.AppendLine(
                     $$"""
                             /// <summary>
-                            /// [{{colorHex}}] Represents the {{colorName}} color with the RGB value of {{colorRgb.R}};{{colorRgb.G}};{{colorRgb.B}}
+                            /// [{{colorHex}}] Represents the {{colorName}} color with the RGB value of {{colorRgb.r}};{{colorRgb.g}};{{colorRgb.b}}
                             /// </summary>
                             {{colorName}},
                     """

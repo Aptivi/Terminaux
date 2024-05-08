@@ -21,20 +21,23 @@ using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
 
+#if !GENERATOR
+using Terminaux.Colors.Models;
+#endif
+
 namespace Terminaux.Colors.Data
 {
     /// <summary>
     /// Console color data
     /// </summary>
+    [JsonConverter(typeof(ConsoleColorDataSerializer))]
     [DebuggerDisplay("{Name} [{ColorId}, {HexString}, {GetOrderCode()}]")]
     public partial class ConsoleColorData : IEquatable<ConsoleColorData>
     {
         [JsonProperty(nameof(hexString))]
         private readonly string hexString = "";
         [JsonProperty(nameof(rgb))]
-        private readonly Rgb? rgb = default;
-        [JsonProperty(nameof(hsl))]
-        private readonly Hsl? hsl = default;
+        private readonly (int r, int g, int b) rgb = (0, 0, 0);
         [JsonProperty(nameof(name))]
         private readonly string name = "";
         [JsonProperty(nameof(colorId))]
@@ -58,15 +61,14 @@ namespace Terminaux.Colors.Data
         /// The RGB values
         /// </summary>
         [JsonIgnore]
-        public Rgb? RGB =>
-            rgb;
-
-        /// <summary>
-        /// The HSL values
-        /// </summary>
-        [JsonIgnore]
-        public Hsl? HSL =>
-            hsl;
+        public
+#if GENERATOR
+            (int r, int g, int b) RGB =>
+                rgb;
+#else
+            RedGreenBlue RGB =>
+                new(rgb.r, rgb.g, rgb.b);
+#endif
 
         /// <summary>
         /// The color name
@@ -75,107 +77,14 @@ namespace Terminaux.Colors.Data
         public string Name =>
             name;
 
-        /// <summary>
-        /// Decoy class for RGB
-        /// </summary>
-        [DebuggerDisplay("RGB = {R}, {G}, {B}")]
-        public class Rgb
-        {
-            [JsonProperty(nameof(r))]
-            private readonly int r = 0;
-            [JsonProperty(nameof(g))]
-            private readonly int g = 0;
-            [JsonProperty(nameof(b))]
-            private readonly int b = 0;
-
-            /// <summary>
-            /// Red color level
-            /// </summary>
-            [JsonIgnore]
-            public int R =>
-                r;
-
-            /// <summary>
-            /// Green color level
-            /// </summary>
-            [JsonIgnore]
-            public int G =>
-                g;
-
-            /// <summary>
-            /// Blue color level
-            /// </summary>
-            [JsonIgnore]
-            public int B =>
-                b;
-
-            [JsonConstructor]
-            private Rgb()
-            { }
-
-            internal Rgb(int r, int g, int b)
-            {
-                this.r = r;
-                this.g = g;
-                this.b = b;
-            }
-        }
-
-        /// <summary>
-        /// The hue, saturation, and luminance values
-        /// </summary>
-        [DebuggerDisplay("HSL = {H}, {S}, {L}")]
-        public class Hsl
-        {
-            [JsonProperty(nameof(h))]
-            private readonly double h = 0f;
-            [JsonProperty(nameof(s))]
-            private readonly int s = 0;
-            [JsonProperty(nameof(l))]
-            private readonly int l = 0;
-
-            /// <summary>
-            /// The hue level
-            /// </summary>
-            [JsonIgnore]
-            public double H =>
-                h;
-
-            /// <summary>
-            /// The saturation level
-            /// </summary>
-            [JsonIgnore]
-            public int S =>
-                s;
-
-            /// <summary>
-            /// The lightness level
-            /// </summary>
-            [JsonIgnore]
-            public int L =>
-                l;
-
-            [JsonConstructor]
-            private Hsl()
-            { }
-
-            internal Hsl(double h, int s, int l)
-            {
-                this.h = h;
-                this.s = s;
-                this.l = l;
-            }
-        }
-
         [JsonConstructor]
         private ConsoleColorData()
         { }
 
-        internal ConsoleColorData(string hexString, int r, int g, int b, double h, int s, int l, string name, int colorId)
+        internal ConsoleColorData(string hexString, int r, int g, int b, string name, int colorId)
         {
             this.hexString = hexString;
-            rgb = new(r, g, b);
-            hsl = new(h, s, l);
+            rgb = (r, g, b);
             this.name = name;
             this.colorId = colorId;
         }

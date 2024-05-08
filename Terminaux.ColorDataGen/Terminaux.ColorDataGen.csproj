@@ -4,11 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
     <Nullable>enable</Nullable>
+    <DefineConstants>GENERATOR</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="..\Terminaux\Colors\Data\ConsoleColorData.cs" Link="Essentials\ConsoleColorData.cs" />
     <Compile Include="..\Terminaux\Colors\Data\ConsoleColorDataEquality.cs" Link="Essentials\ConsoleColorDataEquality.cs" />
+    <Compile Include="..\Terminaux\Colors\Data\ConsoleColorDataSerializer.cs" Link="Essentials\ConsoleColorDataSerializer.cs" />
   </ItemGroup>
 
   <ItemGroup>
