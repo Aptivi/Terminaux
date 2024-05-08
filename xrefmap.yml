@@ -27783,6 +27783,22 @@ references:
   commentId: T:Terminaux.Reader.Tools.ConditionalTools
   fullName: Terminaux.Reader.Tools.ConditionalTools
   nameWithType: ConditionalTools
+- uid: Terminaux.Reader.Tools.ConditionalTools.Should(System.Boolean,Terminaux.Reader.TermReaderState)
+  name: Should(bool, TermReaderState)
+  href: api/Terminaux.Reader.Tools.ConditionalTools.html#Terminaux_Reader_Tools_ConditionalTools_Should_System_Boolean_Terminaux_Reader_TermReaderState_
+  commentId: M:Terminaux.Reader.Tools.ConditionalTools.Should(System.Boolean,Terminaux.Reader.TermReaderState)
+  name.vb: Should(Boolean, TermReaderState)
+  fullName: Terminaux.Reader.Tools.ConditionalTools.Should(bool, Terminaux.Reader.TermReaderState)
+  fullName.vb: Terminaux.Reader.Tools.ConditionalTools.Should(Boolean, Terminaux.Reader.TermReaderState)
+  nameWithType: ConditionalTools.Should(bool, TermReaderState)
+  nameWithType.vb: ConditionalTools.Should(Boolean, TermReaderState)
+- uid: Terminaux.Reader.Tools.ConditionalTools.Should*
+  name: Should
+  href: api/Terminaux.Reader.Tools.ConditionalTools.html#Terminaux_Reader_Tools_ConditionalTools_Should_
+  commentId: Overload:Terminaux.Reader.Tools.ConditionalTools.Should
+  isSpec: "True"
+  fullName: Terminaux.Reader.Tools.ConditionalTools.Should
+  nameWithType: ConditionalTools.Should
 - uid: Terminaux.Reader.Tools.ConditionalTools.ShouldNot(System.Boolean,Terminaux.Reader.TermReaderState)
   name: ShouldNot(bool, TermReaderState)
   href: api/Terminaux.Reader.Tools.ConditionalTools.html#Terminaux_Reader_Tools_ConditionalTools_ShouldNot_System_Boolean_Terminaux_Reader_TermReaderState_
