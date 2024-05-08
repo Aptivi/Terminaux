@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
@@ -31,6 +32,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         [
             new InteractiveTuiBinding("Add",         ConsoleKey.F1, (_, index) => Add(index)),
             new InteractiveTuiBinding("Delete",      ConsoleKey.F2, (_, index) => Remove(index)),
+            new InteractiveTuiBinding("Delete",      PointerButton.Right, PointerButtonPress.Released, (_, index) => Remove(index)),
             new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _)     => RemoveLast()),
         ];
 

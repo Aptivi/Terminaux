@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Inputs.Interactive
 {
@@ -27,8 +28,12 @@ namespace Terminaux.Inputs.Interactive
     public class InteractiveTuiBinding
     {
         private readonly string _bindingName;
-        private readonly ConsoleKey _bindingKeyName;
-        private readonly ConsoleModifiers _bindingKeyModifiers;
+        private readonly bool _bindingUsesMouse;
+        private readonly ConsoleKey _bindingKeyName = (ConsoleKey)(-1);
+        private readonly ConsoleModifiers _bindingKeyModifiers = (ConsoleModifiers)(-1);
+        private readonly PointerButton _bindingPointerButton = (PointerButton)(-1);
+        private readonly PointerButtonPress _bindingPointerButtonPress = (PointerButtonPress)(-1);
+        private readonly PointerModifiers _bindingPointerModifiers = (PointerModifiers)(-1);
         private readonly Action<object, int>? _bindingAction;
 
         /// <summary>
@@ -36,6 +41,12 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         public string BindingName =>
             _bindingName;
+
+        /// <summary>
+        /// Whether the binding uses the mouse or the keyboard
+        /// </summary>
+        public bool BindingUsesMouse =>
+            _bindingUsesMouse;
 
         /// <summary>
         /// Which key is bound to the action?
@@ -48,6 +59,24 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         public ConsoleModifiers BindingKeyModifiers =>
             _bindingKeyModifiers;
+
+        /// <summary>
+        /// Which pointer button is bound to the action?
+        /// </summary>
+        public PointerButton BindingPointerButton =>
+            _bindingPointerButton;
+
+        /// <summary>
+        /// Which pointer button press mode is bound to the action?
+        /// </summary>
+        public PointerButtonPress BindingPointerButtonPress =>
+            _bindingPointerButtonPress;
+
+        /// <summary>
+        /// Which pointer modifier is bound to the action?
+        /// </summary>
+        public PointerModifiers BindingPointerModifiers =>
+            _bindingPointerModifiers;
 
         /// <summary>
         /// The action to execute.
@@ -78,6 +107,45 @@ namespace Terminaux.Inputs.Interactive
             _bindingName = bindingName;
             _bindingKeyName = bindingKeyName;
             _bindingKeyModifiers = bindingKeyModifiers;
+            _bindingAction = bindingAction;
+        }
+
+        /// <summary>
+        /// Makes a new instance of an interactive TUI mouse pointer binding
+        /// </summary>
+        /// <param name="bindingName">Key binding name</param>
+        /// <param name="bindingPointerButton">Which key is bound to the action?</param>
+        /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
+        public InteractiveTuiBinding(string bindingName, PointerButton bindingPointerButton, Action<object, int>? bindingAction) :
+            this(bindingName, bindingPointerButton, PointerButtonPress.Moved, PointerModifiers.None, bindingAction)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of an interactive TUI mouse pointer binding
+        /// </summary>
+        /// <param name="bindingName">Key binding name</param>
+        /// <param name="bindingPointerButton">Which button is bound to the action?</param>
+        /// <param name="bindingPointerButtonPress">Which press mode of the button is bound to the action?</param>
+        /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
+        public InteractiveTuiBinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress, Action<object, int>? bindingAction) :
+            this(bindingName, bindingPointerButton, bindingPointerButtonPress, PointerModifiers.None, bindingAction)
+        { }
+
+        /// <summary>
+        /// Makes a new instance of an interactive TUI mouse pointer binding
+        /// </summary>
+        /// <param name="bindingName">Key binding name</param>
+        /// <param name="bindingPointerButton">Which button is bound to the action?</param>
+        /// <param name="bindingPointerButtonPress">Which press mode of the button is bound to the action?</param>
+        /// <param name="bindingButtonModifiers">Which modifiers of the button is bound to the action?</param>
+        /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
+        public InteractiveTuiBinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress, PointerModifiers bindingButtonModifiers, Action<object, int>? bindingAction)
+        {
+            _bindingName = bindingName;
+            _bindingUsesMouse = true;
+            _bindingPointerButton = bindingPointerButton;
+            _bindingPointerButtonPress = bindingPointerButtonPress;
+            _bindingPointerModifiers = bindingButtonModifiers;
             _bindingAction = bindingAction;
         }
     }

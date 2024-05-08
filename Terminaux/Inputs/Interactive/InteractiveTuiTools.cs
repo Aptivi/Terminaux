@@ -249,6 +249,10 @@ namespace Terminaux.Inputs.Interactive
                 var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
                 foreach (InteractiveTuiBinding binding in finalBindings)
                 {
+                    // Check the binding mode
+                    if (binding.BindingUsesMouse)
+                        continue;
+
                     // First, check to see if the rendered binding info is going to exceed the console window width
                     string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {binding.BindingName}  ";
                     int bindingLength = ConsoleChar.EstimateCellWidth(renderedBinding);
@@ -628,9 +632,11 @@ namespace Terminaux.Inputs.Interactive
 
                     // Mouse input received.
                     var mouse = TermReader.ReadPointer();
+                    bool processed = false;
                     switch (mouse.Button)
                     {
                         case PointerButton.WheelUp:
+                            processed = true;
                             loopBail = true;
                             if (InteractiveTuiStatus.CurrentPane == 2)
                                 SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
@@ -638,6 +644,7 @@ namespace Terminaux.Inputs.Interactive
                                 SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
                             break;
                         case PointerButton.WheelDown:
+                            processed = true;
                             loopBail = true;
                             if (InteractiveTuiStatus.CurrentPane == 2)
                                 SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
@@ -647,6 +654,7 @@ namespace Terminaux.Inputs.Interactive
                         case PointerButton.Left:
                             if (mouse.ButtonPress != PointerButtonPress.Released)
                                 break;
+                            processed = true;
                             UpdateSelectionBasedOnMouse(mouse);
 
                             // First, check the bindings
@@ -670,8 +678,30 @@ namespace Terminaux.Inputs.Interactive
                         case PointerButton.None:
                             if (mouse.ButtonPress != PointerButtonPress.Moved)
                                 break;
+                            processed = true;
                             UpdateSelectionBasedOnMouse(mouse);
                             break;
+                    }
+                    if (!processed)
+                    {
+                        UpdateSelectionBasedOnMouse(mouse);
+
+                        // First, check the bindings
+                        var allBindings = interactiveTui.Bindings;
+                        if (allBindings is null || allBindings.Length == 0)
+                            break;
+
+                        // Now, get the implemented bindings from the pressed key
+                        var implementedBindings = allBindings.Where((binding) =>
+                            binding.BindingPointerButton == mouse.Button && binding.BindingPointerButtonPress == mouse.ButtonPress && binding.BindingPointerModifiers == mouse.Modifiers);
+                        foreach (var implementedBinding in implementedBindings)
+                        {
+                            var binding = implementedBinding.BindingAction;
+                            if (binding is null)
+                                continue;
+                            loopBail = true;
+                            binding.Invoke(selectedData, paneCurrentSelection - 1);
+                        }
                     }
                 }
                 else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
@@ -726,6 +756,7 @@ namespace Terminaux.Inputs.Interactive
                         case ConsoleKey.K:
                             // First, check the bindings length
                             var bindings = GetAllBindings(interactiveTui, true);
+                            var mouseBindings = GetAllBindings(interactiveTui, true, true);
                             if (bindings is null || bindings.Length == 0)
                                 break;
 
@@ -735,9 +766,20 @@ namespace Terminaux.Inputs.Interactive
                             string[] bindingRepresentations = bindings
                                 .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")
                                 .ToArray();
+                            string[] bindingMouseRepresentations = [];
+                            if (mouseBindings is not null && mouseBindings.Length > 0)
+                            {
+                                int maxMouseBindingLength = mouseBindings
+                                    .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb)));
+                                bindingMouseRepresentations = mouseBindings
+                                    .Select((itb) => $"{GetBindingMouseShortcut(itb) + new string(' ', maxMouseBindingLength - ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb))) + $" | {itb.BindingName}"}")
+                                    .ToArray();
+                            }
                             InfoBoxColor.WriteInfoBoxColorBack(
                                 "Available keys",
-                                $"{string.Join("\n", bindingRepresentations)}"
+                                $"{string.Join("\n", bindingRepresentations)}" +
+                                "\n\nMouse bindings:\n\n" +
+                                $"{(bindingMouseRepresentations.Length > 0 ? string.Join("\n", bindingMouseRepresentations) : "No mouse bindings")}"
                             , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                             break;
                         case ConsoleKey.F:
@@ -792,12 +834,21 @@ namespace Terminaux.Inputs.Interactive
 
         private static string GetBindingKeyShortcut(InteractiveTuiBinding bind, bool mark = true)
         {
+            if (bind.BindingUsesMouse)
+                return "";
             string markStart = mark ? "[" : " ";
             string markEnd = mark ? "]" : " ";
             return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
         }
 
-        private static InteractiveTuiBinding[] GetAllBindings<T>(BaseInteractiveTui<T> interactiveTui, bool full = false)
+        private static string GetBindingMouseShortcut(InteractiveTuiBinding bind)
+        {
+            if (!bind.BindingUsesMouse)
+                return "";
+            return $"[{(bind.BindingPointerModifiers != 0 ? $"{bind.BindingPointerModifiers} + " : "")}{bind.BindingPointerButton}{(bind.BindingPointerButtonPress != 0 ? $" {bind.BindingPointerButtonPress}" : "")}]";
+        }
+
+        private static InteractiveTuiBinding[] GetAllBindings<T>(BaseInteractiveTui<T> interactiveTui, bool full = false, bool justMouse = false)
         {
             // Populate appropriate bindings, depending on the SecondPaneInteractable value
             List<InteractiveTuiBinding> finalBindings;
@@ -829,8 +880,17 @@ namespace Terminaux.Inputs.Interactive
                     new InteractiveTuiBinding("Go to the previous page", ConsoleKey.PageUp, null),
                     new InteractiveTuiBinding("Go to the next page", ConsoleKey.PageDown, null),
                     new InteractiveTuiBinding("Search for an element", ConsoleKey.F, null),
+                    new InteractiveTuiBinding("Go to the previous page", PointerButton.WheelUp, null),
+                    new InteractiveTuiBinding("Go to the next page", PointerButton.WheelDown, null),
+                    new InteractiveTuiBinding("Do an action on the selected item", PointerButton.Left, PointerButtonPress.Released, null),
                 ]);
             }
+
+            // Filter the bindings based on the binding type
+            if (justMouse)
+                finalBindings = finalBindings.Where((itb) => itb.BindingUsesMouse).ToList();
+            else
+                finalBindings = finalBindings.Where((itb) => !itb.BindingUsesMouse).ToList();
             return [.. finalBindings];
         }
 
