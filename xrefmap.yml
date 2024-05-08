@@ -2274,6 +2274,32 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsoleMisc.SetTitle
   nameWithType: ConsoleMisc.SetTitle
+- uid: Terminaux.Base.Extensions.ConsoleMisc.ShowAltBuffer
+  name: ShowAltBuffer()
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_ShowAltBuffer
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.ShowAltBuffer
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.ShowAltBuffer()
+  nameWithType: ConsoleMisc.ShowAltBuffer()
+- uid: Terminaux.Base.Extensions.ConsoleMisc.ShowAltBuffer*
+  name: ShowAltBuffer
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_ShowAltBuffer_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.ShowAltBuffer
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.ShowAltBuffer
+  nameWithType: ConsoleMisc.ShowAltBuffer
+- uid: Terminaux.Base.Extensions.ConsoleMisc.ShowMainBuffer
+  name: ShowMainBuffer()
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_ShowMainBuffer
+  commentId: M:Terminaux.Base.Extensions.ConsoleMisc.ShowMainBuffer
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.ShowMainBuffer()
+  nameWithType: ConsoleMisc.ShowMainBuffer()
+- uid: Terminaux.Base.Extensions.ConsoleMisc.ShowMainBuffer*
+  name: ShowMainBuffer
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_ShowMainBuffer_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.ShowMainBuffer
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.ShowMainBuffer
+  nameWithType: ConsoleMisc.ShowMainBuffer
 - uid: Terminaux.Base.Extensions.ConsoleMisc.TerminalReversesRtlText
   name: TerminalReversesRtlText
   href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_TerminalReversesRtlText
