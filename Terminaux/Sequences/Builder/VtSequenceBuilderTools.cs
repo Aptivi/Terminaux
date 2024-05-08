@@ -28,8 +28,6 @@ namespace Terminaux.Sequences.Builder
     /// </summary>
     public static partial class VtSequenceBuilderTools
     {
-        private static readonly Regex getTypeRegex = new("(?<=[a-z0-9])[A-Z].*", RegexOptions.Compiled);
-
         /// <summary>
         /// Builds a VT sequence using specific types
         /// </summary>
@@ -68,13 +66,12 @@ namespace Terminaux.Sequences.Builder
             foreach (var seqType in seqTypeEnumNames)
             {
                 // Now, get the appropriate regex to check to see if there is a match.
-                var regex = sequenceBuilders[seqType].matchRegex;
+                var builder = sequenceBuilders[seqType];
+                var regex = builder.matchRegex;
+                VtSequenceType sequenceType = builder.sequenceType;
                 if (regex.IsMatch(sequence))
                 {
-                    // It's a match! Get the type and the specific type of the sequence and return them
-                    string enumName = $"{seqType}";
-                    string typeName = $"{getTypeRegex.Replace(enumName, "")}";
-                    VtSequenceType sequenceType = (VtSequenceType)Enum.Parse(typeof(VtSequenceType), typeName);
+                    // It's a match!
                     return (sequenceType, seqType);
                 }
             }

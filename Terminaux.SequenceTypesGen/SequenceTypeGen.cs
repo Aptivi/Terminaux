@@ -493,7 +493,7 @@ namespace Terminaux.SequenceTypesGen
                     /// </summary>
                     public static partial class VtSequenceBuilderTools
                     {
-                        private static readonly Dictionary<VtSequenceSpecificTypes, (Delegate generator, Regex matchRegex, int argumentsRequired)> sequenceBuilders = new()
+                        private static readonly Dictionary<VtSequenceSpecificTypes, (Delegate generator, Regex matchRegex, int argumentsRequired, VtSequenceType sequenceType)> sequenceBuilders = new()
                         {
                 
                 """;
@@ -542,7 +542,7 @@ namespace Terminaux.SequenceTypesGen
                     builder.AppendLine(
                         $$"""
                                     { VtSequenceSpecificTypes.{{seqName}},
-                                        (new Func<{{seqParamsBuilder}}string>({{typeName}}Sequences.Generate{{seqName}}), {{typeName}}Sequences.{{seqName}}SequenceRegex, {{seqParams.Length}}) },
+                                        (new Func<{{seqParamsBuilder}}string>({{typeName}}Sequences.Generate{{seqName}}), {{typeName}}Sequences.{{seqName}}SequenceRegex, {{seqParams.Length}}, VtSequenceType.{{typeName}}) },
                         """
                     );
                     if (seqIdx == seqs.Length - 1 && typeIdx < list.Length - 1)
