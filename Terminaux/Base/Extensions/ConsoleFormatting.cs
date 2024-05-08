@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base.Checks;
 using Terminaux.Sequences.Builder;
@@ -29,6 +31,35 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleFormatting
     {
+        private static readonly Dictionary<ConsoleFormattingType, int> typeSequenceNumbers = new()
+        {
+            { ConsoleFormattingType.Default,                0 },
+            { ConsoleFormattingType.Intense,                1 },
+            { ConsoleFormattingType.Faint,                  2 },
+            { ConsoleFormattingType.Italic,                 3 },
+            { ConsoleFormattingType.Underline,              4 },
+            { ConsoleFormattingType.SlowBlink,              5 },
+            { ConsoleFormattingType.FastBlink,              6 },
+            { ConsoleFormattingType.Reverse,                7 },
+            { ConsoleFormattingType.Conceal,                8 },
+            { ConsoleFormattingType.Strikethrough,          9 },
+            { ConsoleFormattingType.NotBold,                21 },
+            { ConsoleFormattingType.NotIntense,             22 },
+            { ConsoleFormattingType.NotItalic,              23 },
+            { ConsoleFormattingType.NotUnderlined,          24 },
+            { ConsoleFormattingType.NotBlinking,            25 },
+            { ConsoleFormattingType.ProportionalSpacing,    26 },
+            { ConsoleFormattingType.NotReversed,            27 },
+            { ConsoleFormattingType.Reveal,                 28 },
+            { ConsoleFormattingType.NotStruckthrough,       29 },
+            { ConsoleFormattingType.NoProportionalSpacing,  50 },
+            { ConsoleFormattingType.Framed,                 51 },
+            { ConsoleFormattingType.Encircled,              52 },
+            { ConsoleFormattingType.Overlined,              53 },
+            { ConsoleFormattingType.NotFramedEncircled,     54 },
+            { ConsoleFormattingType.NotOverlined,           55 },
+        };
+        private static readonly ConsoleFormattingType[] formattings = (ConsoleFormattingType[])Enum.GetValues(typeof(ConsoleFormattingType));
         private static ConsoleFormattingType formatting = ConsoleFormattingType.Default;
 
         /// <summary>
@@ -53,56 +84,14 @@ namespace Terminaux.Base.Extensions
             var builder = new StringBuilder();
 
             // Work on all the possible types
-            if (types.HasFlag(ConsoleFormattingType.Default))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 0));
-            if (types.HasFlag(ConsoleFormattingType.Intense))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 1));
-            if (types.HasFlag(ConsoleFormattingType.Faint))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 2));
-            if (types.HasFlag(ConsoleFormattingType.Italic))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 3));
-            if (types.HasFlag(ConsoleFormattingType.Underline))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 4));
-            if (types.HasFlag(ConsoleFormattingType.SlowBlink))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 5));
-            if (types.HasFlag(ConsoleFormattingType.FastBlink))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 6));
-            if (types.HasFlag(ConsoleFormattingType.Reverse))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 7));
-            if (types.HasFlag(ConsoleFormattingType.Conceal))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 8));
-            if (types.HasFlag(ConsoleFormattingType.Strikethrough))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 9));
-            if (types.HasFlag(ConsoleFormattingType.NotBold))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 21));
-            if (types.HasFlag(ConsoleFormattingType.NotIntense))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 22));
-            if (types.HasFlag(ConsoleFormattingType.NotItalic))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 23));
-            if (types.HasFlag(ConsoleFormattingType.NotUnderlined))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 24));
-            if (types.HasFlag(ConsoleFormattingType.NotBlinking))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 25));
-            if (types.HasFlag(ConsoleFormattingType.ProportionalSpacing))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 26));
-            if (types.HasFlag(ConsoleFormattingType.NotReversed))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 27));
-            if (types.HasFlag(ConsoleFormattingType.Reveal))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 28));
-            if (types.HasFlag(ConsoleFormattingType.NotStruckthrough))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 29));
-            if (types.HasFlag(ConsoleFormattingType.NoProportionalSpacing))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 50));
-            if (types.HasFlag(ConsoleFormattingType.Framed))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 51));
-            if (types.HasFlag(ConsoleFormattingType.Encircled))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 52));
-            if (types.HasFlag(ConsoleFormattingType.Overlined))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 53));
-            if (types.HasFlag(ConsoleFormattingType.NotFramedEncircled))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 54));
-            if (types.HasFlag(ConsoleFormattingType.NotOverlined))
-                builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, 55));
+            foreach (var type in formattings)
+            {
+                if (types.HasFlag(type))
+                {
+                    var sequence = typeSequenceNumbers[type];
+                    builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, sequence));
+                }
+            }
 
             // Return the final result
             return builder.ToString();
