@@ -22724,6 +22724,33 @@ references:
   fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiBinding.New(String, System.ConsoleKey, System.ConsoleModifiers, System.Action(Of Object, Integer))
   nameWithType: InteractiveTuiBinding.InteractiveTuiBinding(string, ConsoleKey, ConsoleModifiers, Action<object, int>?)
   nameWithType.vb: InteractiveTuiBinding.New(String, ConsoleKey, ConsoleModifiers, Action(Of Object, Integer))
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor(System.String,Terminaux.Inputs.Pointer.PointerButton,System.Action{System.Object,System.Int32})
+  name: InteractiveTuiBinding(string, PointerButton, Action<object, int>?)
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding__ctor_System_String_Terminaux_Inputs_Pointer_PointerButton_System_Action_System_Object_System_Int32__
+  commentId: M:Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor(System.String,Terminaux.Inputs.Pointer.PointerButton,System.Action{System.Object,System.Int32})
+  name.vb: New(String, PointerButton, Action(Of Object, Integer))
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.InteractiveTuiBinding(string, Terminaux.Inputs.Pointer.PointerButton, System.Action<object, int>?)
+  fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiBinding.New(String, Terminaux.Inputs.Pointer.PointerButton, System.Action(Of Object, Integer))
+  nameWithType: InteractiveTuiBinding.InteractiveTuiBinding(string, PointerButton, Action<object, int>?)
+  nameWithType.vb: InteractiveTuiBinding.New(String, PointerButton, Action(Of Object, Integer))
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor(System.String,Terminaux.Inputs.Pointer.PointerButton,Terminaux.Inputs.Pointer.PointerButtonPress,System.Action{System.Object,System.Int32})
+  name: InteractiveTuiBinding(string, PointerButton, PointerButtonPress, Action<object, int>?)
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding__ctor_System_String_Terminaux_Inputs_Pointer_PointerButton_Terminaux_Inputs_Pointer_PointerButtonPress_System_Action_System_Object_System_Int32__
+  commentId: M:Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor(System.String,Terminaux.Inputs.Pointer.PointerButton,Terminaux.Inputs.Pointer.PointerButtonPress,System.Action{System.Object,System.Int32})
+  name.vb: New(String, PointerButton, PointerButtonPress, Action(Of Object, Integer))
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.InteractiveTuiBinding(string, Terminaux.Inputs.Pointer.PointerButton, Terminaux.Inputs.Pointer.PointerButtonPress, System.Action<object, int>?)
+  fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiBinding.New(String, Terminaux.Inputs.Pointer.PointerButton, Terminaux.Inputs.Pointer.PointerButtonPress, System.Action(Of Object, Integer))
+  nameWithType: InteractiveTuiBinding.InteractiveTuiBinding(string, PointerButton, PointerButtonPress, Action<object, int>?)
+  nameWithType.vb: InteractiveTuiBinding.New(String, PointerButton, PointerButtonPress, Action(Of Object, Integer))
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor(System.String,Terminaux.Inputs.Pointer.PointerButton,Terminaux.Inputs.Pointer.PointerButtonPress,Terminaux.Inputs.Pointer.PointerModifiers,System.Action{System.Object,System.Int32})
+  name: InteractiveTuiBinding(string, PointerButton, PointerButtonPress, PointerModifiers, Action<object, int>?)
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding__ctor_System_String_Terminaux_Inputs_Pointer_PointerButton_Terminaux_Inputs_Pointer_PointerButtonPress_Terminaux_Inputs_Pointer_PointerModifiers_System_Action_System_Object_System_Int32__
+  commentId: M:Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor(System.String,Terminaux.Inputs.Pointer.PointerButton,Terminaux.Inputs.Pointer.PointerButtonPress,Terminaux.Inputs.Pointer.PointerModifiers,System.Action{System.Object,System.Int32})
+  name.vb: New(String, PointerButton, PointerButtonPress, PointerModifiers, Action(Of Object, Integer))
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.InteractiveTuiBinding(string, Terminaux.Inputs.Pointer.PointerButton, Terminaux.Inputs.Pointer.PointerButtonPress, Terminaux.Inputs.Pointer.PointerModifiers, System.Action<object, int>?)
+  fullName.vb: Terminaux.Inputs.Interactive.InteractiveTuiBinding.New(String, Terminaux.Inputs.Pointer.PointerButton, Terminaux.Inputs.Pointer.PointerButtonPress, Terminaux.Inputs.Pointer.PointerModifiers, System.Action(Of Object, Integer))
+  nameWithType: InteractiveTuiBinding.InteractiveTuiBinding(string, PointerButton, PointerButtonPress, PointerModifiers, Action<object, int>?)
+  nameWithType.vb: InteractiveTuiBinding.New(String, PointerButton, PointerButtonPress, PointerModifiers, Action(Of Object, Integer))
 - uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.#ctor*
   name: InteractiveTuiBinding
   href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding__ctor_
@@ -22786,6 +22813,58 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingName
   nameWithType: InteractiveTuiBinding.BindingName
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButton
+  name: BindingPointerButton
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding_BindingPointerButton
+  commentId: P:Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButton
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButton
+  nameWithType: InteractiveTuiBinding.BindingPointerButton
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButton*
+  name: BindingPointerButton
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding_BindingPointerButton_
+  commentId: Overload:Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButton
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButton
+  nameWithType: InteractiveTuiBinding.BindingPointerButton
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButtonPress
+  name: BindingPointerButtonPress
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding_BindingPointerButtonPress
+  commentId: P:Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButtonPress
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButtonPress
+  nameWithType: InteractiveTuiBinding.BindingPointerButtonPress
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButtonPress*
+  name: BindingPointerButtonPress
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding_BindingPointerButtonPress_
+  commentId: Overload:Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButtonPress
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerButtonPress
+  nameWithType: InteractiveTuiBinding.BindingPointerButtonPress
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerModifiers
+  name: BindingPointerModifiers
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding_BindingPointerModifiers
+  commentId: P:Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerModifiers
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerModifiers
+  nameWithType: InteractiveTuiBinding.BindingPointerModifiers
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerModifiers*
+  name: BindingPointerModifiers
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding_BindingPointerModifiers_
+  commentId: Overload:Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerModifiers
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingPointerModifiers
+  nameWithType: InteractiveTuiBinding.BindingPointerModifiers
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingUsesMouse
+  name: BindingUsesMouse
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding_BindingUsesMouse
+  commentId: P:Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingUsesMouse
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingUsesMouse
+  nameWithType: InteractiveTuiBinding.BindingUsesMouse
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingUsesMouse*
+  name: BindingUsesMouse
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html#Terminaux_Inputs_Interactive_InteractiveTuiBinding_BindingUsesMouse_
+  commentId: Overload:Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingUsesMouse
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiBinding.BindingUsesMouse
+  nameWithType: InteractiveTuiBinding.BindingUsesMouse
 - uid: Terminaux.Inputs.Interactive.InteractiveTuiStatus
   name: InteractiveTuiStatus
   href: api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.html
