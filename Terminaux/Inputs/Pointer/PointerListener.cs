@@ -85,6 +85,15 @@ namespace Terminaux.Inputs.Pointer
         }
 
         /// <summary>
+        /// Whether to invert the Y axis for scrolling or not.
+        /// </summary>
+        /// <remarks>
+        /// If this option is enabled, scrolling up emits the scroll down event, and scrolling down emits the scroll up event.
+        /// Otherwise, scrolling up emits the scroll up event, and scrolling down emits the scroll down event.
+        /// </remarks>
+        public static bool InvertScrollYAxis { get; set; }
+
+        /// <summary>
         /// Reads a pointer event and removes it from the context buffer
         /// </summary>
         /// <returns>A <see cref="PointerEventContext"/> instance that describes the last mouse event, or <see langword="null"/> if there are no more events to read.</returns>
@@ -273,8 +282,8 @@ namespace Terminaux.Inputs.Pointer
                         state == PosixButtonState.Left ? PointerButton.Left :
                         state == PosixButtonState.Middle ? PointerButton.Middle :
                         state == PosixButtonState.Right ? PointerButton.Right :
-                        state == PosixButtonState.WheelDown ? PointerButton.WheelDown :
-                        state == PosixButtonState.WheelUp ? PointerButton.WheelUp :
+                        state == PosixButtonState.WheelDown ? (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
+                        state == PosixButtonState.WheelUp ? (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp) :
                         PointerButton.None;
                     PointerModifiers mods =
                         (modState & PosixButtonModifierState.Alt) != 0 ? PointerModifiers.Alt :
@@ -375,8 +384,8 @@ namespace Terminaux.Inputs.Pointer
                                 @event.dwButtonState == ButtonState.Left ? PointerButton.Left :
                                 @event.dwButtonState == ButtonState.Middle ? PointerButton.Middle :
                                 @event.dwButtonState == ButtonState.Right ? PointerButton.Right :
-                                (uint)@event.dwButtonState >= 4000000000 ? PointerButton.WheelDown :
-                                (uint)@event.dwButtonState >= 7000000 ? PointerButton.WheelUp :
+                                (uint)@event.dwButtonState >= 4000000000 ? (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
+                                (uint)@event.dwButtonState >= 7000000 ? (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp) :
                                 PointerButton.None;
                             PointerButtonPress press =
                                 @event.dwButtonState != ButtonState.None && @event.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Clicked :

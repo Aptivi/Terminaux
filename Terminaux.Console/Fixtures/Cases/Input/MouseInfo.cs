@@ -32,7 +32,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
         public void RunFixture()
         {
             bool looping = true;
-            TextWriterColor.Write("Move your mouse around here or click anywhere. Press HOME to go back or M to enable/disable movement events.");
+            TextWriterColor.Write("Move your mouse around here or click anywhere. Press HOME to go back, M to enable/disable movement events, or I to invert the scrolling Y axis.");
             PointerListener.MouseEvent += MouseEvent;
             PointerListener.StartListening();
             while (looping)
@@ -43,6 +43,8 @@ namespace Terminaux.Console.Fixtures.Cases.Input
                     looping = false;
                 else if (key.Key == ConsoleKey.M)
                     PointerListener.EnableMovementEvents = !PointerListener.EnableMovementEvents;
+                else if (key.Key == ConsoleKey.I)
+                    PointerListener.InvertScrollYAxis = !PointerListener.InvertScrollYAxis;
             }
             PointerListener.MouseEvent -= MouseEvent;
             PointerListener.StopListening();
