@@ -46,12 +46,12 @@ namespace Terminaux.Colors.Transformation.Contrast
             if (color is null || color.RGB is null)
                 throw new ArgumentNullException(nameof(color));
             var black = new Color(ConsoleColors.Black);
-            var white = new Color(ConsoleColors.White);
+            var gray = new Color(ConsoleColors.Silver);
             int r = color.RGB.R;
             int g = color.RGB.G;
             int b = color.RGB.B;
             double lumaInfo = (r * (0.299d * 1000) + g * (0.587d * 1000) + b * (0.114d * 1000)) / 1000;
-            return lumaInfo >= 128 ? black : white;
+            return lumaInfo >= 128 ? black : gray;
         }
 
         /// <summary>
@@ -62,10 +62,10 @@ namespace Terminaux.Colors.Transformation.Contrast
         public static Color GetContrastColorHalf(this Color color)
         {
             var black = new Color(ConsoleColors.Black);
-            var white = new Color(ConsoleColors.White);
+            var gray = new Color(ConsoleColors.Silver);
             int rgbDecimal = Convert.ToInt32(color.Hex.Substring(1), 16);
             int rgbDecimalHalfWhite = 0xffffff / 2;
-            return rgbDecimal > rgbDecimalHalfWhite ? black : white;
+            return rgbDecimal > rgbDecimalHalfWhite ? black : gray;
         }
 
         /// <summary>

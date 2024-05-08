@@ -1,5 +1,4 @@
-﻿using Terminaux.Base;
-//
+﻿//
 // Terminaux  Copyright (C) 2023-2024  Aptivi
 //
 // This file is part of Terminaux
@@ -17,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
+
+using Terminaux.Base;
 
 namespace Terminaux.Inputs.Presentation.Inputs
 {
