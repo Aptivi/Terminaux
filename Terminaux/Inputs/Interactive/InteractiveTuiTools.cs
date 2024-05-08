@@ -242,25 +242,8 @@ namespace Terminaux.Inputs.Interactive
                 return builder.ToString();
             }));
 
-            // Populate appropriate bindings, depending on the SecondPaneInteractable value
-            List<InteractiveTuiBinding> finalBindings;
-            if (interactiveTui.Bindings is null || interactiveTui.Bindings.Length == 0)
-                finalBindings =
-                [
-                    new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null)
-                ];
-            else
-                finalBindings = new(interactiveTui.Bindings)
-                {
-                    new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null),
-                    new InteractiveTuiBinding("Keybindings", ConsoleKey.K, null),
-                };
-            if (interactiveTui.SecondPaneInteractable)
-                finalBindings.Add(
-                    new InteractiveTuiBinding("Switch", ConsoleKey.Tab, null)
-                );
-
-            // Render the key bindings
+            // Populate appropriate bindings, depending on the SecondPaneInteractable value, and render them
+            var finalBindings = GetAllBindings(interactiveTui);
             part.AddDynamicText(() =>
             {
                 var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
@@ -742,20 +725,18 @@ namespace Terminaux.Inputs.Interactive
                             break;
                         case ConsoleKey.K:
                             // First, check the bindings length
-                            var bindings = interactiveTui.Bindings;
+                            var bindings = GetAllBindings(interactiveTui, true);
                             if (bindings is null || bindings.Length == 0)
                                 break;
 
                             // User needs an infobox that shows all available keys
-                            string section = "Available keys";
                             int maxBindingLength = bindings
                                 .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb)));
                             string[] bindingRepresentations = bindings
                                 .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")
                                 .ToArray();
                             InfoBoxColor.WriteInfoBoxColorBack(
-                                $"{section}{CharManager.NewLine}" +
-                                $"{new string('=', ConsoleChar.EstimateCellWidth(section))}{CharManager.NewLine}{CharManager.NewLine}" +
+                                "Available keys",
                                 $"{string.Join("\n", bindingRepresentations)}"
                             , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                             break;
@@ -814,6 +795,43 @@ namespace Terminaux.Inputs.Interactive
             string markStart = mark ? "[" : " ";
             string markEnd = mark ? "]" : " ";
             return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
+        }
+
+        private static InteractiveTuiBinding[] GetAllBindings<T>(BaseInteractiveTui<T> interactiveTui, bool full = false)
+        {
+            // Populate appropriate bindings, depending on the SecondPaneInteractable value
+            List<InteractiveTuiBinding> finalBindings;
+            if (interactiveTui.Bindings is null || interactiveTui.Bindings.Length == 0)
+                finalBindings =
+                [
+                    new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null)
+                ];
+            else
+                finalBindings = new(interactiveTui.Bindings)
+                {
+                    new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null),
+                    new InteractiveTuiBinding("Keybindings", ConsoleKey.K, null),
+                };
+            if (interactiveTui.SecondPaneInteractable)
+                finalBindings.Add(
+                    new InteractiveTuiBinding("Switch", ConsoleKey.Tab, null)
+                );
+
+            // Now, check to see if we need to add additional base bindings
+            if (full)
+            {
+                finalBindings.AddRange(
+                [
+                    new InteractiveTuiBinding("Go one element up", ConsoleKey.UpArrow, null),
+                    new InteractiveTuiBinding("Go one element down", ConsoleKey.DownArrow, null),
+                    new InteractiveTuiBinding("Go to the first element", ConsoleKey.Home, null),
+                    new InteractiveTuiBinding("Go to the last element", ConsoleKey.End, null),
+                    new InteractiveTuiBinding("Go to the previous page", ConsoleKey.PageUp, null),
+                    new InteractiveTuiBinding("Go to the next page", ConsoleKey.PageDown, null),
+                    new InteractiveTuiBinding("Search for an element", ConsoleKey.F, null),
+                ]);
+            }
+            return [.. finalBindings];
         }
 
         static InteractiveTuiTools()

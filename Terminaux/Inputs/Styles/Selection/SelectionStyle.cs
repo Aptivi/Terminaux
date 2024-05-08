@@ -445,6 +445,23 @@ namespace Terminaux.Inputs.Styles.Selection
                                     InfoBoxColor.WriteInfoBox("No item found.");
                                 selectionScreen.RequireRefresh();
                                 break;
+                            case ConsoleKey.K:
+                                // Keys function
+                                InfoBoxColor.WriteInfoBox("Available keybindings",
+                                    $$"""
+                                    [UP]        | Goes one element up
+                                    [DOWN]      | Goes one element down
+                                    [HOME]      | Goes to the first element
+                                    [END]       | Goes to the last element
+                                    [PAGE UP]   | Goes to the previous page
+                                    [PAGE DOWN] | Goes to the next page
+                                    [ENTER]     | Select a choice
+                                    [ESC]       | Exits the selection
+                                    [TAB]       | Shows more info in an infobox
+                                    [F]         | Searches for an element
+                                    """
+                                );
+                                break;
                         }
                     }
 
