@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using SpecProbe.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,7 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleMisc
     {
+        private static bool isOnAltBuffer = false;
         private static Regex rtlRegex = new("[\u04c7-\u0591\u05D0-\u05EA\u05F0-\u05F4\u0600-\u06FF]+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         
         /// <summary>
@@ -392,6 +394,36 @@ namespace Terminaux.Base.Extensions
                 resultBuilder.Replace(rtl.Value, finalRtlReversed.ToString(), rtlIdx, finalRtlReversed.Length);
             }
             return resultBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Shows the main buffer
+        /// </summary>
+        public static void ShowMainBuffer()
+        {
+            if (PlatformHelper.IsOnWindows())
+                return;
+            if (!isOnAltBuffer)
+                return;
+
+            TextWriterColor.Write("\u001b[?1049l");
+            isOnAltBuffer = false;
+        }
+
+        /// <summary>
+        /// Shows the alternate buffer
+        /// </summary>
+        public static void ShowAltBuffer()
+        {
+            if (PlatformHelper.IsOnWindows())
+                return;
+            if (isOnAltBuffer)
+                return;
+
+            TextWriterColor.Write("\u001b[?1049h");
+            ConsoleWrapper.SetCursorPosition(0, 0);
+            ConsoleWrapper.CursorVisible = false;
+            isOnAltBuffer = true;
         }
 
         static ConsoleMisc()
