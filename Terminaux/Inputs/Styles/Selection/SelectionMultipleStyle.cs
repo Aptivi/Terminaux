@@ -279,14 +279,14 @@ namespace Terminaux.Inputs.Styles.Selection
 
                         // Write keybindings and page and answer number
                         bool isExtendable = !string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription);
-                        string bindingsRender = "[SPACE: (un)check]==[ENTER: select]";
-                        string numberRender = $"[{currentPage + 1}/{pages + 1}]==[{HighlightedAnswer}/{AllAnswers.Count}]";
+                        string bindingsRender = "[SPACE: (un)check]══[ENTER: select]";
+                        string numberRender = $"[{currentPage + 1}/{pages + 1}]══[{HighlightedAnswer}/{AllAnswers.Count}]";
 
                         // Add info binding if extendable
                         if (isExtendable)
-                            bindingsRender += $"{(isExtendable ? "==[TAB: info]" : "")}";
+                            bindingsRender += $"{(isExtendable ? "══[TAB: info]" : "")}";
                         if (!kiosk)
-                            bindingsRender += $"{(!kiosk ? "==[ESC: exit]" : "")}";
+                            bindingsRender += $"{(!kiosk ? "══[ESC: exit]" : "")}";
 
                         // Now, render the bindings and the page numbers
                         int bindingsLeft = 2;
@@ -294,7 +294,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         selectionBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(1, descSepArea + 1)}" +
                             $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
-                            $"{new string('=', ConsoleWrapper.WindowWidth)}"
+                            $"{new string('═', ConsoleWrapper.WindowWidth)}"
                         );
                         if (bindingsRender.Length + numberRender.Length + 6 < ConsoleWrapper.WindowWidth)
                         {
