@@ -119,7 +119,6 @@ namespace Terminaux.Writer.MiscWriters
         public static void PrintLineWithHandle(string Filename, int LineNumber, int startPos, int endPos, Color color)
         {
             // Read the contents
-            Filename = ConsolePositioning.NeutralizePath(Filename, Environment.CurrentDirectory);
             var FileContents = File.ReadAllLines(Filename);
 
             // Do the job
@@ -222,7 +221,6 @@ namespace Terminaux.Writer.MiscWriters
         public static string RenderLineWithHandle(string Filename, int LineNumber, int startPos, int endPos, Color color)
         {
             // Read the contents
-            Filename = ConsolePositioning.NeutralizePath(Filename, Environment.CurrentDirectory);
             var FileContents = File.ReadAllLines(Filename);
 
             // Do the job
@@ -295,6 +293,17 @@ namespace Terminaux.Writer.MiscWriters
 
         internal static int GetDigits(int Number) =>
             Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
+
+        internal static void SwapIfSourceLarger(this ref int SourceNumber, ref int TargetNumber)
+        {
+            int Source = SourceNumber;
+            int Target = TargetNumber;
+            if (SourceNumber > TargetNumber)
+            {
+                SourceNumber = Target;
+                TargetNumber = Source;
+            }
+        }
 
         static LineHandleRangedWriter()
         {

@@ -31,6 +31,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using Textify.General;
 using System.Text;
+using System.Threading;
 
 namespace Terminaux.Base.Checks
 {
@@ -226,8 +227,8 @@ namespace Terminaux.Base.Checks
                     // via the global configuration options, filtering the result as necessary.
                     string shellPath = "/bin/sh";
                     int exitCode = -1;
-                    ConsolePositioning.FileExistsInPath("sh", ref shellPath);
-                    string output = ConsolePositioning.ExecuteProcessToString(shellPath, "-c \"tmux show-options -v -g status | sed 's/on/1/g' | sed 's/off/0/g'\"", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exitCode, false);
+                    FileExistsInPath("sh", ref shellPath);
+                    string output = ExecuteProcessToString(shellPath, "-c \"tmux show-options -v -g status | sed 's/on/1/g' | sed 's/off/0/g'\"", Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), ref exitCode, false);
 
                     // If we couldn't get this variable, assume that the status height is 1.
                     if (exitCode == 0)
@@ -352,6 +353,94 @@ namespace Terminaux.Base.Checks
                 Environment.FailFast(eventMessage);
             else
                 Environment.FailFast(eventMessage, ex);
+        }
+
+        internal static string PathLookupDelimiter =>
+            Convert.ToString(Path.PathSeparator);
+
+        internal static string PathsToLookup =>
+            Environment.GetEnvironmentVariable("PATH");
+
+        internal static List<string> GetPathList() =>
+            [.. PathsToLookup.Split(Convert.ToChar(PathLookupDelimiter))];
+
+        internal static bool FileExistsInPath(string FilePath, ref string Result)
+        {
+            var LookupPaths = GetPathList();
+            string ResultingPath;
+            foreach (string LookupPath in LookupPaths)
+            {
+                ResultingPath = Path.Combine(FilePath, LookupPath);
+                if (File.Exists(ResultingPath))
+                {
+                    Result = ResultingPath;
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        internal static string ExecuteProcessToString(string File, string Args, string WorkingDirectory, ref int exitCode, bool includeStdErr)
+        {
+            var commandOutputBuilder = new StringBuilder();
+            try
+            {
+                bool HasProcessExited = false;
+                var CommandProcess = new Process();
+                var CommandProcessStart = new ProcessStartInfo()
+                {
+                    RedirectStandardInput = false,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = includeStdErr,
+                    FileName = File,
+                    Arguments = Args,
+                    WorkingDirectory = WorkingDirectory,
+                    CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden,
+                    UseShellExecute = false
+                };
+                CommandProcess.StartInfo = CommandProcessStart;
+
+                // Set events up
+                void DataReceivedHandler(object _, DataReceivedEventArgs data)
+                {
+                    if (data.Data is not null)
+                        commandOutputBuilder.Append(data.Data);
+                }
+                CommandProcess.EnableRaisingEvents = true;
+                CommandProcess.OutputDataReceived += DataReceivedHandler;
+                if (includeStdErr)
+                    CommandProcess.ErrorDataReceived += DataReceivedHandler;
+                CommandProcess.Exited += (sender, args) => HasProcessExited = true;
+
+                // Start the process
+                CommandProcess.Start();
+                CommandProcess.BeginOutputReadLine();
+                if (includeStdErr)
+                    CommandProcess.BeginErrorReadLine();
+
+                // Wait for process exit
+                while (!HasProcessExited)
+                {
+                    if (HasProcessExited)
+                    {
+                        CommandProcess.WaitForExit();
+                        break;
+                    }
+                }
+                exitCode = CommandProcess.ExitCode;
+            }
+            catch (ThreadInterruptedException)
+            {
+                exitCode = -1;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error trying to execute command {File}. Error {ex.GetType().FullName}: {ex.Message}");
+                Debug.WriteLine(ex.StackTrace);
+                exitCode = -1;
+            }
+            return commandOutputBuilder.ToString();
         }
 
         #region Windows-specific

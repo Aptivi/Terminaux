@@ -111,7 +111,6 @@ namespace Terminaux.Writer.MiscWriters
         public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber, Color color)
         {
             // Read the contents
-            Filename = ConsolePositioning.NeutralizePath(Filename, Environment.CurrentDirectory);
             var FileContents = File.ReadAllLines(Filename);
 
             // Do the job
@@ -206,7 +205,6 @@ namespace Terminaux.Writer.MiscWriters
         public static string RenderLineWithHandle(string Filename, int LineNumber, int ColumnNumber, Color color)
         {
             // Read the contents
-            Filename = ConsolePositioning.NeutralizePath(Filename, Environment.CurrentDirectory);
             var FileContents = File.ReadAllLines(Filename);
 
             // Do the job
