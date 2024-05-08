@@ -218,6 +218,7 @@ namespace Terminaux.Console.Fixtures
             new TermInfoPane(),
             new ConsoleConhostCheck(),
             new AlternateBuffers(),
+            new Sizes(),
         ];
 
         internal static IFixture GetFixtureFromName(string name)

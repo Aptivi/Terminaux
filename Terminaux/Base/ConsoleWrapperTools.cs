@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using SpecProbe.Platform;
 using System;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Terminaux.Base
@@ -46,6 +48,10 @@ namespace Terminaux.Base
         internal static Action<int, int> actionSetCursorPosition = SetCursorPosition;
         internal static Action<int> actionSetCursorLeft = SetCursorLeft;
         internal static Action<int> actionSetCursorTop = SetCursorTop;
+        internal static Action<int> actionSetWindowWidth = SetWindowWidth;
+        internal static Action<int> actionSetWindowHeight = SetWindowHeight;
+        internal static Action<int> actionSetBufferWidth = SetBufferWidth;
+        internal static Action<int> actionSetBufferHeight = SetBufferHeight;
         internal static Action actionBeep = Beep;
         internal static Action actionBeepSeq = BeepSeq;
         internal static Action actionClear = Clear;
@@ -110,7 +116,7 @@ namespace Terminaux.Base
         public static Func<int> ActionBufferWidth
         {
             internal get => actionBufferWidth;
-            set => actionBufferWidth = value ?? (() => WindowWidth);
+            set => actionBufferWidth = value ?? (() => BufferWidth);
         }
         /// <summary>
         /// The console buffer height (rows)
@@ -118,7 +124,7 @@ namespace Terminaux.Base
         public static Func<int> ActionBufferHeight
         {
             internal get => actionBufferHeight;
-            set => actionBufferHeight = value ?? (() => WindowHeight);
+            set => actionBufferHeight = value ?? (() => BufferHeight);
         }
         /// <summary>
         /// The cursor visibility mode
@@ -187,6 +193,38 @@ namespace Terminaux.Base
         {
             internal get => actionSetCursorTop;
             set => actionSetCursorTop = value ?? SetCursorTop;
+        }
+        /// <summary>
+        /// The console window width (columns, set)
+        /// </summary>
+        public static Action<int> ActionSetWindowWidth
+        {
+            internal get => actionSetWindowWidth;
+            set => actionSetWindowWidth = value ?? SetWindowWidth;
+        }
+        /// <summary>
+        /// The console window height (rows, set)
+        /// </summary>
+        public static Action<int> ActionSetWindowHeight
+        {
+            internal get => actionSetWindowHeight;
+            set => actionSetWindowHeight = value ?? SetWindowHeight;
+        }
+        /// <summary>
+        /// The console buffer width (columns, set)
+        /// </summary>
+        public static Action<int> ActionSetBufferWidth
+        {
+            internal get => actionSetBufferWidth;
+            set => actionSetBufferWidth = value ?? SetBufferWidth;
+        }
+        /// <summary>
+        /// The console buffer height (rows, set)
+        /// </summary>
+        public static Action<int> ActionSetBufferHeight
+        {
+            internal get => actionSetBufferHeight;
+            set => actionSetBufferHeight = value ?? SetBufferHeight;
         }
         /// <summary>
         /// Beeps the console
@@ -461,6 +499,50 @@ namespace Terminaux.Base
         {
             if (!IsDumb)
                 Console.CursorTop = top;
+        }
+
+        private static void SetWindowWidth(int width)
+        {
+            if (!IsDumb)
+            {
+                if (PlatformHelper.IsOnWindows())
+                    Console.WindowWidth = width;
+                else
+                    TextWriterRaw.WriteRaw($"\u001b[8;{Console.WindowHeight + 1};{width + 1}t");
+            }
+        }
+
+        private static void SetWindowHeight(int height)
+        {
+            if (!IsDumb)
+            {
+                if (PlatformHelper.IsOnWindows())
+                    Console.WindowHeight = height;
+                else
+                    TextWriterRaw.WriteRaw($"\u001b[8;{height + 1};{Console.WindowWidth + 1}t");
+            }
+        }
+
+        private static void SetBufferWidth(int width)
+        {
+            if (!IsDumb)
+            {
+                if (PlatformHelper.IsOnWindows())
+                    Console.BufferWidth = width;
+                else
+                    TextWriterRaw.WriteRaw($"\u001b[8;{Console.WindowHeight + 1};{width + 1}t");
+            }
+        }
+
+        private static void SetBufferHeight(int height)
+        {
+            if (!IsDumb)
+            {
+                if (PlatformHelper.IsOnWindows())
+                    Console.BufferHeight = height;
+                else
+                    TextWriterRaw.WriteRaw($"\u001b[8;{height + 1};{Console.WindowWidth + 1}t");
+            }
         }
 
         private static void Beep() =>

@@ -55,26 +55,38 @@ namespace Terminaux.Base
         /// <summary>
         /// The console window width (columns)
         /// </summary>
-        public static int WindowWidth =>
-            ConsoleWrapperTools.ActionWindowWidth();
+        public static int WindowWidth
+        {
+            get => ConsoleWrapperTools.ActionWindowWidth();
+            set => ConsoleWrapperTools.ActionSetWindowWidth(value);
+        }
 
         /// <summary>
         /// The console window height (rows)
         /// </summary>
-        public static int WindowHeight =>
-            ConsoleWrapperTools.ActionWindowHeight();
+        public static int WindowHeight
+        {
+            get => ConsoleWrapperTools.ActionWindowHeight();
+            set => ConsoleWrapperTools.ActionSetWindowHeight(value);
+        }
 
         /// <summary>
         /// The console buffer width (columns)
         /// </summary>
-        public static int BufferWidth =>
-            ConsoleWrapperTools.ActionBufferWidth();
+        public static int BufferWidth
+        {
+			get => ConsoleWrapperTools.ActionBufferWidth();
+            set => ConsoleWrapperTools.ActionSetBufferWidth(value);
+		}
 
         /// <summary>
         /// The console buffer height (rows)
         /// </summary>
-        public static int BufferHeight =>
-            ConsoleWrapperTools.ActionBufferHeight();
+        public static int BufferHeight
+        {
+			get => ConsoleWrapperTools.ActionBufferHeight();
+            set => ConsoleWrapperTools.ActionSetBufferHeight(value);
+		}
 
         /// <summary>
         /// The cursor visibility mode
