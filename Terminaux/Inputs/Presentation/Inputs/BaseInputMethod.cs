@@ -1,5 +1,4 @@
 ﻿using Terminaux.Base;
-using Terminaux.Inputs.Styles.Infobox;
 //
 // Terminaux  Copyright (C) 2023-2024  Aptivi
 //

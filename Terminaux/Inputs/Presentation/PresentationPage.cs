@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
 using Terminaux.Inputs.Presentation.Elements;
 using Terminaux.Inputs.Presentation.Inputs;
 

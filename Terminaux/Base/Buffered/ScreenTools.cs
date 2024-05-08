@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using Terminaux.Base.Checks;
-using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Base.Buffered

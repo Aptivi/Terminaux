@@ -18,10 +18,8 @@
 //
 
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using Terminaux.Base;
-using Textify.General;
 
 namespace Terminaux.Colors
 {

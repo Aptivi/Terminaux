@@ -20,7 +20,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
-using System.Text.RegularExpressions;
 using Terminaux.Sequences;
 
 namespace Terminaux.Tests.Sequences

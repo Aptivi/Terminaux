@@ -29,7 +29,6 @@ using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Colors.Data;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;

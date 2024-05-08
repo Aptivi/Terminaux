@@ -17,16 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Writer.ConsoleWriters;
-using System;
 using System.Linq;
-using System.Text;
 using Textify.General;
-using Terminaux.Base;
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
-using Terminaux.Reader;
-using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Presentation.Elements
 {

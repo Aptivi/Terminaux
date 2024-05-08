@@ -21,7 +21,6 @@ using System;
 using Terminaux.Reader;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
-using Terminaux.Colors;
 
 namespace Terminaux.Base
 {

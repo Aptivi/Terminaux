@@ -18,10 +18,7 @@
 //
 
 using System;
-using Terminaux.Base;
-using Terminaux.Base.Extensions;
 using Terminaux.Reader.Tools;
-using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Reader.Bindings.BaseBindings
 {

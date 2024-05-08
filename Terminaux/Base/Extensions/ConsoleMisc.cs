@@ -23,11 +23,9 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base.Checks;
-using Terminaux.Colors;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Textify.Tools;
 
 namespace Terminaux.Base.Extensions
 {

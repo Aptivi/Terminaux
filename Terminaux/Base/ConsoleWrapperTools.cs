@@ -21,8 +21,6 @@ using System;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Reader;
-using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Terminaux.Base
