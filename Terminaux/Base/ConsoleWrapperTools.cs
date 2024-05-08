@@ -19,6 +19,7 @@
 
 using SpecProbe.Platform;
 using System;
+using System.Threading;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
@@ -508,7 +509,10 @@ namespace Terminaux.Base
                 if (PlatformHelper.IsOnWindows())
                     Console.WindowWidth = width;
                 else
-                    TextWriterRaw.WriteRaw($"\u001b[8;{Console.WindowHeight + 1};{width + 1}t");
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{Console.WindowHeight};{width}t");
+                    Thread.Sleep(35);
+                }
             }
         }
 
@@ -519,7 +523,10 @@ namespace Terminaux.Base
                 if (PlatformHelper.IsOnWindows())
                     Console.WindowHeight = height;
                 else
-                    TextWriterRaw.WriteRaw($"\u001b[8;{height + 1};{Console.WindowWidth + 1}t");
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{Console.WindowWidth}t");
+                    Thread.Sleep(35);
+                }
             }
         }
 
@@ -530,7 +537,10 @@ namespace Terminaux.Base
                 if (PlatformHelper.IsOnWindows())
                     Console.BufferWidth = width;
                 else
-                    TextWriterRaw.WriteRaw($"\u001b[8;{Console.WindowHeight + 1};{width + 1}t");
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{Console.WindowHeight};{width}t");
+                    Thread.Sleep(35);
+                }
             }
         }
 
@@ -541,7 +551,10 @@ namespace Terminaux.Base
                 if (PlatformHelper.IsOnWindows())
                     Console.BufferHeight = height;
                 else
-                    TextWriterRaw.WriteRaw($"\u001b[8;{height + 1};{Console.WindowWidth + 1}t");
+                {
+                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{Console.WindowWidth}t");
+                    Thread.Sleep(35);
+                }
             }
         }
 

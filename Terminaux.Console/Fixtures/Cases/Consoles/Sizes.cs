@@ -34,6 +34,7 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
             TextWriterRaw.WritePlain($"{oldWidth}, {oldHeight}");
             TermReader.ReadKey();
             ConsoleWrapper.WindowWidth = 80;
+            TextWriterRaw.WritePlain($"{ConsoleWrapper.WindowWidth}, {ConsoleWrapper.WindowHeight}");
             ConsoleWrapper.WindowHeight = 24;
             TextWriterRaw.WritePlain("Should be 80x24 below:");
             TextWriterRaw.WritePlain($"{ConsoleWrapper.WindowWidth}, {ConsoleWrapper.WindowHeight}");
