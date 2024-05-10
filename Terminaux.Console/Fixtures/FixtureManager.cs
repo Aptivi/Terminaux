@@ -21,6 +21,7 @@ using System.Linq;
 using Terminaux.Base;
 using Terminaux.Console.Fixtures.Cases.Colors;
 using Terminaux.Console.Fixtures.Cases.Consoles;
+using Terminaux.Console.Fixtures.Cases.Images;
 using Terminaux.Console.Fixtures.Cases.Input;
 using Terminaux.Console.Fixtures.Cases.Input.CJK;
 using Terminaux.Console.Fixtures.Cases.Presentations;
@@ -219,6 +220,9 @@ namespace Terminaux.Console.Fixtures
             new ConsoleConhostCheck(),
             new AlternateBuffers(),
             new Sizes(),
+
+            // Image
+            new RenderImage(),
         ];
 
         internal static IFixture GetFixtureFromName(string name)

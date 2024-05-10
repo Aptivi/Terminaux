@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Terminaux.Images\Terminaux.Images.csproj" />
     <ProjectReference Include="..\Terminaux.ResizeListener\Terminaux.ResizeListener.csproj" />
     <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
 
@@ -14,10 +15,12 @@
 
   <ItemGroup>
     <None Remove="Assets\TermInfoData\*" />
+    <None Remove="Assets\pictures\*" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\TermInfoData\*" />
+    <EmbeddedResource Include="Assets\pictures\*" />
   </ItemGroup>
 
   <ItemGroup>

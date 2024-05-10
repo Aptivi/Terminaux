@@ -84,6 +84,8 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             var termInfoNames = asm.GetManifestResourceNames();
             foreach (string termInfoName in termInfoNames)
             {
+                if (!termInfoName.StartsWith("Terminaux.Console.Assets.TermInfoData."))
+                    continue;
                 var stream = asm.GetManifestResourceStream(termInfoName);
                 var desc = TermInfoDesc.Load(stream);
                 if (desc is not null)
