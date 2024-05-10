@@ -895,6 +895,56 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.IGeometricShape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.IGeometricShape.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.Shapes.Rectangle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.Shapes.Rectangle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.Shapes.Square.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.Shapes.Square.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.Shapes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.Shapes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.InputChoiceInfo.yml",
       "output": {
         ".html": {
