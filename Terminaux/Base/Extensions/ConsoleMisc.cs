@@ -36,7 +36,7 @@ namespace Terminaux.Base.Extensions
     public static class ConsoleMisc
     {
         private static bool isOnAltBuffer = false;
-        private static Regex rtlRegex = new("[\u04c7-\u0591\u05D0-\u05EA\u05F0-\u05F4\u0600-\u06FF]+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex rtlRegex = new("[\u04c7-\u0591\u05D0-\u05EA\u05F0-\u05F4\u0600-\u06FF]+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         
         /// <summary>
         /// Specifies whether your terminal emulator reverses the RTL text automatically or not
@@ -134,35 +134,19 @@ namespace Terminaux.Base.Extensions
                     // Check the character to see if we're at the VT sequence
                     bool explicitNewLine = splitText[splitText.Length - 1] == '\n';
                     char ParagraphChar = splitText[i];
-                    bool isNewLine = splitText[i] == '\n';
+                    bool isNewLine = ParagraphChar == '\n';
                     bool wouldOverflow = false;
                     bool overflown = false;
-                    string seq = "";
-                    foreach ((var _, var sequences) in sequencesCollections)
-                    {
-                        if (sequences.Length > 0 && sequences[vtSeqIdx].Index == i)
-                        {
-                            // We're at an index which is the same as the captured VT sequence. Get the sequence
-                            seq = sequences[vtSeqIdx].Value;
-
-                            // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                            if (vtSeqIdx + 1 < sequences.Length)
-                                vtSeqIdx++;
-
-                            // Raise the paragraph index by the length of the sequence
-                            i += seq.Length - 1;
-                        }
-                    }
 
                     // Append the character into the incomplete sentence builder, but check the surrogate pairs first.
-                    string sequence = !string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString();
+                    string sequence = ConsolePositioning.BufferChar(text, sequencesCollections, ref i, ref vtSeqIdx, out bool isVtSeq);
                     int width = ConsoleChar.EstimateCellWidth(splitText, i);
                     if (i + 1 < splitText.Length && char.IsSurrogatePair(ParagraphChar, splitText[i + 1]))
                     {
                         sequence += splitText[i + 1];
                         i++;
                     }
-                    if (string.IsNullOrEmpty(seq))
+                    if (!isVtSeq)
                         totalWidth += width;
 
                     // Also, compensate the zero-width characters and take the full-width ones
@@ -249,7 +233,6 @@ namespace Terminaux.Base.Extensions
                 var words = splitText.Split(' ');
                 for (int i = 0; i < words.Length; i++)
                 {
-                    // Check the character to see if we're at the VT sequence
                     string word = words[i];
 
                     // Append the word into the incomplete sentence builder.
@@ -398,13 +381,12 @@ namespace Terminaux.Base.Extensions
             var resultRtls = rtlRegex.Matches(resultBuilder.ToString()).OfType<Match>().ToArray();
             if (resultRtls.Length == 0)
                 return resultBuilder.ToString();
-            bool commit = true;
             var finalRtlWords = new StringBuilder();
             var finalRtlWordReversed = new StringBuilder();
             for (int i = resultRtls.Length - 1; i >= 0; i--)
             {
                 // Reverse the RTL word order
-                commit = true;
+                bool commit = true;
                 var rtl = resultRtls[i];
                 int rtlIdx = rtl.Index;
                 if (i > 0)

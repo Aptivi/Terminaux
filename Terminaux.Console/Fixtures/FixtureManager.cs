@@ -90,6 +90,7 @@ namespace Terminaux.Console.Fixtures
             new PrintRainbowCjk(),
             new PrintRainbowBackCjk(),
             new PrintWrapped(),
+            new PrintWrappedChar(),
             new PrintRtl(),
             new TestDictWriterChar(),
             new TestDictWriterInt(),
