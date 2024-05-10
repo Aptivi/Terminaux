@@ -215,6 +215,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.Data.CharWidthType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.Data.CharWidthType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.Extensions.yml",
       "output": {
         ".html": {

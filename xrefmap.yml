@@ -1844,6 +1844,22 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsoleChar.GetCharWidth
   nameWithType: ConsoleChar.GetCharWidth
+- uid: Terminaux.Base.Extensions.ConsoleChar.GetCharWidthType(System.Int32)
+  name: GetCharWidthType(int)
+  href: api/Terminaux.Base.Extensions.ConsoleChar.html#Terminaux_Base_Extensions_ConsoleChar_GetCharWidthType_System_Int32_
+  commentId: M:Terminaux.Base.Extensions.ConsoleChar.GetCharWidthType(System.Int32)
+  name.vb: GetCharWidthType(Integer)
+  fullName: Terminaux.Base.Extensions.ConsoleChar.GetCharWidthType(int)
+  fullName.vb: Terminaux.Base.Extensions.ConsoleChar.GetCharWidthType(Integer)
+  nameWithType: ConsoleChar.GetCharWidthType(int)
+  nameWithType.vb: ConsoleChar.GetCharWidthType(Integer)
+- uid: Terminaux.Base.Extensions.ConsoleChar.GetCharWidthType*
+  name: GetCharWidthType
+  href: api/Terminaux.Base.Extensions.ConsoleChar.html#Terminaux_Base_Extensions_ConsoleChar_GetCharWidthType_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleChar.GetCharWidthType
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleChar.GetCharWidthType
+  nameWithType: ConsoleChar.GetCharWidthType
 - uid: Terminaux.Base.Extensions.ConsoleChar.UseTwoCellsForAmbiguousChars
   name: UseTwoCellsForAmbiguousChars
   href: api/Terminaux.Base.Extensions.ConsoleChar.html#Terminaux_Base_Extensions_ConsoleChar_UseTwoCellsForAmbiguousChars
@@ -2487,6 +2503,60 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsolePositioning.InitializeSequences
   nameWithType: ConsolePositioning.InitializeSequences
+- uid: Terminaux.Base.Extensions.Data
+  name: Terminaux.Base.Extensions.Data
+  href: api/Terminaux.Base.Extensions.Data.html
+  commentId: N:Terminaux.Base.Extensions.Data
+  fullName: Terminaux.Base.Extensions.Data
+  nameWithType: Terminaux.Base.Extensions.Data
+- uid: Terminaux.Base.Extensions.Data.CharWidthType
+  name: CharWidthType
+  href: api/Terminaux.Base.Extensions.Data.CharWidthType.html
+  commentId: T:Terminaux.Base.Extensions.Data.CharWidthType
+  fullName: Terminaux.Base.Extensions.Data.CharWidthType
+  nameWithType: CharWidthType
+- uid: Terminaux.Base.Extensions.Data.CharWidthType.Ambiguous
+  name: Ambiguous
+  href: api/Terminaux.Base.Extensions.Data.CharWidthType.html#Terminaux_Base_Extensions_Data_CharWidthType_Ambiguous
+  commentId: F:Terminaux.Base.Extensions.Data.CharWidthType.Ambiguous
+  fullName: Terminaux.Base.Extensions.Data.CharWidthType.Ambiguous
+  nameWithType: CharWidthType.Ambiguous
+- uid: Terminaux.Base.Extensions.Data.CharWidthType.Combining
+  name: Combining
+  href: api/Terminaux.Base.Extensions.Data.CharWidthType.html#Terminaux_Base_Extensions_Data_CharWidthType_Combining
+  commentId: F:Terminaux.Base.Extensions.Data.CharWidthType.Combining
+  fullName: Terminaux.Base.Extensions.Data.CharWidthType.Combining
+  nameWithType: CharWidthType.Combining
+- uid: Terminaux.Base.Extensions.Data.CharWidthType.DoubleWidth
+  name: DoubleWidth
+  href: api/Terminaux.Base.Extensions.Data.CharWidthType.html#Terminaux_Base_Extensions_Data_CharWidthType_DoubleWidth
+  commentId: F:Terminaux.Base.Extensions.Data.CharWidthType.DoubleWidth
+  fullName: Terminaux.Base.Extensions.Data.CharWidthType.DoubleWidth
+  nameWithType: CharWidthType.DoubleWidth
+- uid: Terminaux.Base.Extensions.Data.CharWidthType.Emoji
+  name: Emoji
+  href: api/Terminaux.Base.Extensions.Data.CharWidthType.html#Terminaux_Base_Extensions_Data_CharWidthType_Emoji
+  commentId: F:Terminaux.Base.Extensions.Data.CharWidthType.Emoji
+  fullName: Terminaux.Base.Extensions.Data.CharWidthType.Emoji
+  nameWithType: CharWidthType.Emoji
+- uid: Terminaux.Base.Extensions.Data.CharWidthType.NonPrinting
+  name: NonPrinting
+  href: api/Terminaux.Base.Extensions.Data.CharWidthType.html#Terminaux_Base_Extensions_Data_CharWidthType_NonPrinting
+  commentId: F:Terminaux.Base.Extensions.Data.CharWidthType.NonPrinting
+  fullName: Terminaux.Base.Extensions.Data.CharWidthType.NonPrinting
+  nameWithType: CharWidthType.NonPrinting
+- uid: Terminaux.Base.Extensions.Data.CharWidthType.Private
+  name: Private
+  href: api/Terminaux.Base.Extensions.Data.CharWidthType.html#Terminaux_Base_Extensions_Data_CharWidthType_Private
+  commentId: F:Terminaux.Base.Extensions.Data.CharWidthType.Private
+  fullName: Terminaux.Base.Extensions.Data.CharWidthType.Private
+  nameWithType: CharWidthType.Private
+- uid: Terminaux.Base.Extensions.Data.CharWidthType.Unassigned
+  name: Unassigned
+  href: api/Terminaux.Base.Extensions.Data.CharWidthType.html#Terminaux_Base_Extensions_Data_CharWidthType_Unassigned
+  commentId: F:Terminaux.Base.Extensions.Data.CharWidthType.Unassigned
+  fullName: Terminaux.Base.Extensions.Data.CharWidthType.Unassigned
+  nameWithType: CharWidthType.Unassigned
 - uid: Terminaux.Base.TermInfo
   name: Terminaux.Base.TermInfo
   href: api/Terminaux.Base.TermInfo.html
