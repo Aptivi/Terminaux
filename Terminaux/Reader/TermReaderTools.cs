@@ -378,12 +378,23 @@ namespace Terminaux.Reader
         internal static void BlankOut(ref TermReaderState state)
         {
             // Wipe everything
-            int length = ConsoleChar.EstimateCellWidth(state.CurrentText.ToString());
-            string renderedBlanks = new(' ', length);
+            string renderedBlanks;
             if (state.OneLineWrap)
+                renderedBlanks = new(' ', state.LongestSentenceLengthFromLeftForFirstLine);
+            else
             {
-                int longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
-                renderedBlanks = new(' ', longestSentenceLength);
+                string[] incompleteSentences = ConsoleMisc.GetWrappedSentences(state.CurrentText.ToString(), state.LongestSentenceLengthFromLeft - state.settings.LeftMargin, state.InputPromptLastLineLength);
+                int inputWidth = ConsoleChar.EstimateCellWidth(state.InputPromptLastLine);
+                int length = 0;
+                for (int i = 0; i < incompleteSentences.Length; i++)
+                {
+                    string sentence = incompleteSentences[i];
+                    int sentenceWidth = ConsoleChar.EstimateCellWidth(sentence);
+                    length += sentenceWidth;
+                    if (sentenceWidth + (i == 0 ? inputWidth : 0) == state.MaximumInputPositionLeft && i < incompleteSentences.Length - 1)
+                        length++;
+                }
+                renderedBlanks = new(' ', length);
             }
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             TextWriterColor.WriteForReader(renderedBlanks, state.settings, false);
