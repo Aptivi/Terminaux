@@ -122,7 +122,8 @@ namespace Terminaux.Base.Extensions
 
             // This indent length count tells us how many spaces are used for indenting the paragraph. This is only set for
             // the first time and will be reverted back to zero after the incomplete sentence is formed.
-            foreach (string splitText in text.SplitNewLines())
+            var lines = text.SplitNewLines();
+            foreach (string splitText in lines)
             {
                 var sequencesCollections = VtSequenceTools.MatchVTSequences(splitText);
                 int vtSeqIdx = 0;
@@ -132,14 +133,12 @@ namespace Terminaux.Base.Extensions
                 for (int i = 0; i < splitText.Length; i++)
                 {
                     // Check the character to see if we're at the VT sequence
-                    bool explicitNewLine = splitText[splitText.Length - 1] == '\n';
                     char ParagraphChar = splitText[i];
-                    bool isNewLine = ParagraphChar == '\n';
                     bool wouldOverflow = false;
                     bool overflown = false;
 
                     // Append the character into the incomplete sentence builder, but check the surrogate pairs first.
-                    string sequence = ConsolePositioning.BufferChar(text, sequencesCollections, ref i, ref vtSeqIdx, out bool isVtSeq);
+                    string sequence = ConsolePositioning.BufferChar(splitText, sequencesCollections, ref i, ref vtSeqIdx, out bool isVtSeq);
                     int width = ConsoleChar.EstimateCellWidth(splitText, i);
                     if (i + 1 < splitText.Length && char.IsSurrogatePair(ParagraphChar, splitText[i + 1]))
                     {
@@ -150,21 +149,16 @@ namespace Terminaux.Base.Extensions
                         totalWidth += width;
 
                     // Also, compensate the zero-width characters and take the full-width ones
-                    if (!isNewLine)
-                    {
-                        overflown = totalWidth == maximumLength - indentLength;
-                        wouldOverflow = totalWidth > maximumLength - indentLength;
-                        if (!wouldOverflow)
-                            IncompleteSentenceBuilder.Append(sequence);
-                    }
+                    overflown = totalWidth == maximumLength - indentLength;
+                    wouldOverflow = totalWidth > maximumLength - indentLength;
+                    if (!wouldOverflow)
+                        IncompleteSentenceBuilder.Append(sequence);
 
                     // Check to see if we're at the maximum character number or at the new line
-                    if (overflown | wouldOverflow | i == splitText.Length - 1 | isNewLine)
+                    if (overflown | wouldOverflow | i == splitText.Length - 1)
                     {
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                         IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
-                        if (explicitNewLine)
-                            IncompleteSentences.Add("");
 
                         // Clean everything up
                         IncompleteSentenceBuilder.Clear();
