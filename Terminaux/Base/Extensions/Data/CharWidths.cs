@@ -1277,15 +1277,15 @@ namespace Terminaux.Base.Extensions.Data
             (0xffffe, 0xfffff),
         ];
 
-        internal readonly static ((int first, int last)[] range, int cells)[] ranges =
+        internal readonly static ((int first, int last)[] range, int cells, CharWidthType type)[] ranges =
         [
-            (privateChars,      -3),
-            (nonPrintChars,     0),
-            (combiningChars,    0),
-            (doubleWidthChars,  2),
-            (ambiguousChars,    -2),
-            (emojiWidthChars,   2),
-            (unassignedChars,   -1),
+            (privateChars,      -3, CharWidthType.Private),
+            (nonPrintChars,     0,  CharWidthType.NonPrinting),
+            (combiningChars,    0,  CharWidthType.Combining),
+            (doubleWidthChars,  2,  CharWidthType.DoubleWidth),
+            (ambiguousChars,    -2, CharWidthType.Ambiguous),
+            (emojiWidthChars,   2,  CharWidthType.Emoji),
+            (unassignedChars,   -1, CharWidthType.Unassigned),
         ];
     }
 }

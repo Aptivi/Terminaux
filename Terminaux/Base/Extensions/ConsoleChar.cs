@@ -28,7 +28,7 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleChar
     {
-        private static readonly Dictionary<int, int> cachedWidths = [];
+        private static readonly Dictionary<int, (int, CharWidthType)> cachedWidths = [];
 
         /// <summary>
         /// Whether to use two cells for unassigned characters or only one cell
@@ -57,12 +57,13 @@ namespace Terminaux.Base.Extensions
 
             // Check the cached width
             if (cachedWidths.ContainsKey(c))
-                return cachedWidths[c];
+                return cachedWidths[c].Item1;
 
             // Use the character cell table defined in a separate code class to be able to determine the width
             int width = 1;
+            CharWidthType widthType = (CharWidthType)(-1);
             bool cacheable = true;
-            foreach ((var range, int cells) in CharWidths.ranges)
+            foreach ((var range, int cells, CharWidthType type) in CharWidths.ranges)
             {
                 // Check for each range if we have a Unicode character that falls under one of the characters that take
                 // up either no cells or more than one cell.
@@ -70,6 +71,7 @@ namespace Terminaux.Base.Extensions
                 {
                     if (c >= first && c <= last)
                     {
+                        widthType = type;
                         width = cells;
                         break;
                     }
@@ -100,8 +102,50 @@ namespace Terminaux.Base.Extensions
                 break;
             }
             if (cacheable)
-                cachedWidths.Add(c, width);
+                cachedWidths.Add(c, (width, widthType));
             return width;
+        }
+
+        /// <summary>
+        /// Gets the character width type
+        /// </summary>
+        /// <param name="c">A character number (codepoint) to parse</param>
+        /// <returns>Character width type</returns>
+        /// <exception cref="TerminauxInternalException"></exception>
+        public static CharWidthType GetCharWidthType(int c)
+        {
+            // Check the value
+            if (c < 0 || c > 0x10FFFF)
+                throw new TerminauxInternalException($"Invalid character number {c}.");
+
+            // Check the cached width
+            if (cachedWidths.ContainsKey(c))
+                return cachedWidths[c].Item2;
+
+            // Use the character cell table defined in a separate code class to be able to determine the width type
+            int width = 1;
+            CharWidthType widthType = (CharWidthType)(-1);
+            foreach ((var range, int cells, CharWidthType type) in CharWidths.ranges)
+            {
+                // Check for each range if we have a Unicode character that falls under one of the characters that take
+                // up either no cells or more than one cell.
+                foreach ((int first, int last) in range)
+                {
+                    if (c >= first && c <= last)
+                    {
+                        widthType = type;
+                        width = cells;
+                        break;
+                    }
+                }
+                if (width == 1)
+                    continue;
+                break;
+            }
+            bool cacheable = width >= 0;
+            if (cacheable)
+                cachedWidths.Add(c, (width, widthType));
+            return widthType;
         }
 
         /// <summary>

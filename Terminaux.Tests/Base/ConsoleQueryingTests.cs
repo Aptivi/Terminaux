@@ -20,6 +20,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Extensions.Data;
 using Terminaux.Sequences.Builder;
 
 namespace Terminaux.Tests.Base
@@ -167,6 +168,29 @@ namespace Terminaux.Tests.Base
         public void TestUnicodeCharWidths(char c, int expected)
         {
             int actual = ConsoleChar.GetCharWidth(c);
+            actual.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests getting the Unicode character widths
+        /// </summary>
+        [TestMethod]
+        [DataRow(null, CharWidthType.NonPrinting)]     // NULL character
+        [DataRow('\0', CharWidthType.NonPrinting)]     // NULL character
+        [DataRow('\b', CharWidthType.NonPrinting)]     // BEEP character
+        [DataRow('\u001A', CharWidthType.NonPrinting)] // SUBSTITUTE character
+        [DataRow('A', (CharWidthType)(-1))]
+        [DataRow('a', (CharWidthType)(-1))]
+        [DataRow('1', (CharWidthType)(-1))]
+        [DataRow('?', (CharWidthType)(-1))]
+        [DataRow('*', (CharWidthType)(-1))]
+        [DataRow('你', CharWidthType.DoubleWidth)]
+        [DataRow('！', CharWidthType.DoubleWidth)]
+        [DataRow('\u200b', CharWidthType.NonPrinting)] // ZERO-WIDTH SPACE character
+        [Description("Querying")]
+        public void TestUnicodeCharWidthTypes(char c, CharWidthType expected)
+        {
+            var actual = ConsoleChar.GetCharWidthType(c);
             actual.ShouldBe(expected);
         }
 
