@@ -633,6 +633,59 @@ namespace Terminaux.Inputs.Interactive
                         }
                     }
 
+                    bool DetermineArrowPressed(PointerEventContext mouse)
+                    {
+                        int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                        if (dataCount <= SeparatorMaximumHeightInterior)
+                            return false;
+                        int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                        int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
+                        int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2);
+                        int paneArrowTop = 2;
+                        int paneArrowBottom = SeparatorMaximumHeightInterior + 1;
+                        return
+                            (mouse.Coordinates.x == leftPaneArrowLeft || mouse.Coordinates.x == rightPaneArrowLeft) &&
+                            (mouse.Coordinates.y == paneArrowTop || mouse.Coordinates.y == paneArrowBottom);
+                    }
+
+                    void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
+                    {
+                        int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                        if (dataCount <= SeparatorMaximumHeightInterior)
+                            return;
+                        int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                        int leftPaneArrowLeft = SeparatorHalfConsoleWidthInterior + 1;
+                        int rightPaneArrowLeft = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2);
+                        int paneArrowTop = 2;
+                        int paneArrowBottom = SeparatorMaximumHeightInterior + 1;
+                        if (mouse.Coordinates.y == paneArrowTop)
+                        {
+                            if (mouse.Coordinates.x == leftPaneArrowLeft)
+                            {
+                                InteractiveTuiStatus.CurrentPane = 1;
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                            }
+                            else if (mouse.Coordinates.x == rightPaneArrowLeft)
+                            {
+                                InteractiveTuiStatus.CurrentPane = 2;
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
+                            }
+                        }
+                        else if (mouse.Coordinates.y == paneArrowBottom)
+                        {
+                            if (mouse.Coordinates.x == leftPaneArrowLeft)
+                            {
+                                InteractiveTuiStatus.CurrentPane = 1;
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
+                            }
+                            else if (mouse.Coordinates.x == rightPaneArrowLeft)
+                            {
+                                InteractiveTuiStatus.CurrentPane = 2;
+                                SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
+                            }
+                        }
+                    }
+
                     // Mouse input received.
                     var mouse = TermReader.ReadPointer();
                     bool processed = false;
@@ -658,24 +711,31 @@ namespace Terminaux.Inputs.Interactive
                             if (mouse.ButtonPress != PointerButtonPress.Released)
                                 break;
                             processed = true;
-                            UpdateSelectionBasedOnMouse(mouse);
 
-                            // First, check the bindings
-                            var allBindings = interactiveTui.Bindings;
-                            if (allBindings is null || allBindings.Length == 0)
-                                break;
-
-                            // Now, get the implemented bindings from the pressed key
-                            var implementedBindings = allBindings.Where((binding) =>
-                                binding.BindingKeyName == ConsoleKey.Enter);
-                            if (implementedBindings.Any())
-                                loopBail = true;
-                            foreach (var implementedBinding in implementedBindings)
+                            // Check to see if the user pressed the up/down arrow button
+                            if (DetermineArrowPressed(mouse))
+                                UpdatePositionBasedOnArrowPress(mouse);
+                            else
                             {
-                                var binding = implementedBinding.BindingAction;
-                                if (binding is null)
-                                    continue;
-                                binding.Invoke(selectedData, paneCurrentSelection - 1);
+                                UpdateSelectionBasedOnMouse(mouse);
+
+                                // First, check the bindings
+                                var allBindings = interactiveTui.Bindings;
+                                if (allBindings is null || allBindings.Length == 0)
+                                    break;
+
+                                // Now, get the implemented bindings from the pressed key
+                                var implementedBindings = allBindings.Where((binding) =>
+                                    binding.BindingKeyName == ConsoleKey.Enter);
+                                if (implementedBindings.Any())
+                                    loopBail = true;
+                                foreach (var implementedBinding in implementedBindings)
+                                {
+                                    var binding = implementedBinding.BindingAction;
+                                    if (binding is null)
+                                        continue;
+                                    binding.Invoke(selectedData, paneCurrentSelection - 1);
+                                }
                             }
                             break;
                         case PointerButton.None:
