@@ -19,8 +19,8 @@
 
 using System;
 using Terminaux.Colors;
-using Figletize.Utilities;
-using Figletize;
+using Textify.Figlet.Utilities.Lines;
+using Textify.Figlet;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
@@ -48,7 +48,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletPlain(string Text, FigletizeFont FigletFont, params object[] Vars)
+        public static void WriteFigletPlain(string Text, FigletFont FigletFont, params object[] Vars)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletColor(string Text, FigletizeFont FigletFont, Color Color, params object[] Vars)
+        public static void WriteFigletColor(string Text, FigletFont FigletFont, Color Color, params object[] Vars)
         {
             try
             {
@@ -112,7 +112,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletColorBack(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteFigletColorBack(string Text, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             try
             {
@@ -141,7 +141,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFigletPlain(string Text, FigletizeFont FigletFont, params object[] Vars) =>
+        public static string RenderFigletPlain(string Text, FigletFont FigletFont, params object[] Vars) =>
             RenderFiglet(Text, FigletFont, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFiglet(string Text, FigletizeFont FigletFont, Color ForegroundColor, params object[] Vars) =>
+        public static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, params object[] Vars) =>
             RenderFiglet(Text, FigletFont, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
 
         /// <summary>
@@ -181,7 +181,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFiglet(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+        public static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
             RenderFiglet(Text, FigletFont, ForegroundColor, BackgroundColor, true, Vars);
 
         /// <summary>
@@ -193,7 +193,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the color or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        internal static string RenderFiglet(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
+        internal static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
         {
             var builder = new StringBuilder();
             builder.Append(

@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C6ABD1F9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generators", "Generators", "{95ACDB5C-1392-4262-9756-55715D61BF2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminaux.Images", "Terminaux.Images\Terminaux.Images.csproj", "{4F83E9A9-4F19-49F8-8FA9-285FB3B9A7B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Images", "Terminaux.Images\Terminaux.Images.csproj", "{4F83E9A9-4F19-49F8-8FA9-285FB3B9A7B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

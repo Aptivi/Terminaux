@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Figletize;
+using Textify.Figlet;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;

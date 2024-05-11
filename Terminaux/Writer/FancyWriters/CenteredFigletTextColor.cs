@@ -17,8 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Figletize;
-using Figletize.Utilities;
+using Textify.Figlet;
 using System;
 using System.Diagnostics;
 using System.Text;
@@ -27,6 +26,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
+using Textify.Figlet.Utilities.Lines;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -42,7 +42,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, params object[] Vars)
+        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, params object[] Vars)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColor(int top, FigletizeFont FigletFont, string Text, Color Color, params object[] Vars) =>
+        public static void WriteCenteredFigletColor(int top, FigletFont FigletFont, string Text, Color Color, params object[] Vars) =>
             WriteCenteredFigletColorBack(top, FigletFont, Text, Color, ColorTools.currentBackgroundColor, Vars);
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColorBack(int top, FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteCenteredFigletColorBack(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, params object[] Vars)
+        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, params object[] Vars)
         {
             try
             {
@@ -114,7 +114,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColor(FigletizeFont FigletFont, string Text, Color Color, params object[] Vars) =>
+        public static void WriteCenteredFigletColor(FigletFont FigletFont, string Text, Color Color, params object[] Vars) =>
             WriteCenteredFigletColorBack(FigletFont, Text, Color, ColorTools.currentBackgroundColor, Vars);
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColorBack(FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteCenteredFigletColorBack(FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             try
             {
@@ -144,7 +144,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(FigletizeFont FigletFont, string Text, params object[] Vars) =>
+        public static string RenderCenteredFiglet(FigletFont FigletFont, string Text, params object[] Vars) =>
             RenderCenteredFiglet(FigletFont, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(FigletizeFont FigletFont, string Text, Color ForegroundColor, params object[] Vars) =>
+        public static string RenderCenteredFiglet(FigletFont FigletFont, string Text, Color ForegroundColor, params object[] Vars) =>
             RenderCenteredFiglet(FigletFont, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+        public static string RenderCenteredFiglet(FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
             RenderCenteredFiglet(FigletFont, Text, ForegroundColor, BackgroundColor, true, Vars);
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the color or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        internal static string RenderCenteredFiglet(FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
+        internal static string RenderCenteredFiglet(FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
         {
             Text = TextTools.FormatString(Text, Vars);
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
@@ -192,7 +192,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(int top, FigletizeFont FigletFont, string Text, params object[] Vars) =>
+        public static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, params object[] Vars) =>
             RenderCenteredFiglet(top, FigletFont, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
 
         /// <summary>
@@ -203,7 +203,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(int top, FigletizeFont FigletFont, string Text, Color ForegroundColor, params object[] Vars) =>
+        public static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, Color ForegroundColor, params object[] Vars) =>
             RenderCenteredFiglet(top, FigletFont, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
 
         /// <summary>
@@ -215,7 +215,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(int top, FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+        public static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
             RenderCenteredFiglet(top, FigletFont, Text, ForegroundColor, BackgroundColor, true, Vars);
 
         /// <summary>
@@ -228,7 +228,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the color or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        internal static string RenderCenteredFiglet(int top, FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
+        internal static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
         {
             try
             {

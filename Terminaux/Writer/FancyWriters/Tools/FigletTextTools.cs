@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Figletize;
-using Figletize.Utilities;
+using Textify.Figlet;
+using Textify.Figlet.Utilities.Lines;
 
 namespace Terminaux.Writer.FancyWriters.Tools
 {
@@ -35,13 +35,13 @@ namespace Terminaux.Writer.FancyWriters.Tools
         public static string DefaultFigletFontName
         {
             get => defaultFigletFontName ?? "speed";
-            set => defaultFigletFontName = FigletizeFonts.TryGetByName(defaultFigletFontName) is not null ? value : "speed";
+            set => defaultFigletFontName = FigletFonts.TryGetByName(defaultFigletFontName) is not null ? value : "speed";
         }
 
         /// <summary>
         /// Default figlet font
         /// </summary>
-        public static FigletizeFont DefaultFigletFont =>
-            FigletizeFonts.GetByName(DefaultFigletFontName);
+        public static FigletFont DefaultFigletFont =>
+            FigletFonts.GetByName(DefaultFigletFontName);
     }
 }

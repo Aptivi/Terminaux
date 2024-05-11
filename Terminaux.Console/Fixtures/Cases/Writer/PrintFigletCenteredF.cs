@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Figletize;
+using Textify.Figlet;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
@@ -28,7 +28,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
     {
         public void RunFixture()
         {
-            CenteredFigletTextColor.WriteCenteredFigletColor(FigletizeFonts.TryGetByName("banner3"), "Hello, {0}!", new Color(ConsoleColors.Green), Vars: "Terminaux");
+            CenteredFigletTextColor.WriteCenteredFigletColor(FigletFonts.TryGetByName("banner3"), "Hello, {0}!", new Color(ConsoleColors.Green), Vars: "Terminaux");
         }
     }
 }

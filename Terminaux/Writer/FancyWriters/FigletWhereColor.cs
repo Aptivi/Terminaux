@@ -19,8 +19,8 @@
 
 using System;
 using Terminaux.Colors;
-using Figletize.Utilities;
-using Figletize;
+using Textify.Figlet.Utilities.Lines;
+using Textify.Figlet;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
@@ -54,7 +54,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWherePlain(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, params object[] Vars)
+        public static void WriteFigletWherePlain(string Text, int Left, int Top, bool Return, FigletFont FigletFont, params object[] Vars)
         {
             try
             {
@@ -91,7 +91,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhereColor(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color Color, params object[] Vars)
+        public static void WriteFigletWhereColor(string Text, int Left, int Top, bool Return, FigletFont FigletFont, Color Color, params object[] Vars)
         {
             try
             {
@@ -130,7 +130,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteFigletWhereColorBack(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteFigletWhereColorBack(string Text, int Left, int Top, bool Return, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             try
             {
@@ -165,7 +165,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Return">Whether or not to return to old position</param>
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFigletWherePlain(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, params object[] Vars) =>
+        public static string RenderFigletWherePlain(string Text, int Left, int Top, bool Return, FigletFont FigletFont, params object[] Vars) =>
             RenderFigletWhere(Text, Left, Top, Return, FigletFont, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
 
         /// <summary>
@@ -190,7 +190,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, params object[] Vars) =>
+        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, Color ForegroundColor, params object[] Vars) =>
             RenderFigletWhere(Text, Left, Top, Return, FigletFont, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+        public static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
             RenderFigletWhere(Text, Left, Top, Return, FigletFont, ForegroundColor, BackgroundColor, true, Vars);
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the color or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        internal static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
+        internal static string RenderFigletWhere(string Text, int Left, int Top, bool Return, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
         {
             Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
             var builder = new StringBuilder();
