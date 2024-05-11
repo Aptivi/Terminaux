@@ -37700,60 +37700,60 @@ references:
   commentId: T:Terminaux.Writer.FancyWriters.CenteredFigletTextColor
   fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor
   nameWithType: CenteredFigletTextColor
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont,System.String,System.Object[])
-  name: RenderCenteredFiglet(FigletizeFont, string, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_Figletize_Utilities_FigletizeFont_System_String_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont,System.String,System.Object[])
-  name.vb: RenderCenteredFiglet(FigletizeFont, String, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont, string, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont, String, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(FigletizeFont, string, params object[])
-  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(FigletizeFont, String, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,System.Object[])
-  name: RenderCenteredFiglet(FigletizeFont, string, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_Figletize_Utilities_FigletizeFont_System_String_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderCenteredFiglet(FigletizeFont, String, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont, string, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont, String, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(FigletizeFont, string, Color, params object[])
-  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(FigletizeFont, String, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderCenteredFiglet(FigletizeFont, string, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_Figletize_Utilities_FigletizeFont_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderCenteredFiglet(FigletizeFont, String, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont, string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Figletize.Utilities.FigletizeFont, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(FigletizeFont, string, Color, Color, params object[])
-  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(FigletizeFont, String, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Figletize.Utilities.FigletizeFont,System.String,System.Object[])
-  name: RenderCenteredFiglet(int, FigletizeFont, string, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_System_Int32_Figletize_Utilities_FigletizeFont_System_String_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Figletize.Utilities.FigletizeFont,System.String,System.Object[])
-  name.vb: RenderCenteredFiglet(Integer, FigletizeFont, String, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(int, Figletize.Utilities.FigletizeFont, string, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Integer, Figletize.Utilities.FigletizeFont, String, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(int, FigletizeFont, string, params object[])
-  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(Integer, FigletizeFont, String, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,System.Object[])
-  name: RenderCenteredFiglet(int, FigletizeFont, string, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_System_Int32_Figletize_Utilities_FigletizeFont_System_String_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderCenteredFiglet(Integer, FigletizeFont, String, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(int, Figletize.Utilities.FigletizeFont, string, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Integer, Figletize.Utilities.FigletizeFont, String, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(int, FigletizeFont, string, Color, params object[])
-  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(Integer, FigletizeFont, String, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderCenteredFiglet(int, FigletizeFont, string, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_System_Int32_Figletize_Utilities_FigletizeFont_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderCenteredFiglet(Integer, FigletizeFont, String, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(int, Figletize.Utilities.FigletizeFont, string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Integer, Figletize.Utilities.FigletizeFont, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(int, FigletizeFont, string, Color, Color, params object[])
-  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(Integer, FigletizeFont, String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,System.Object[])
+  name: RenderCenteredFiglet(int, FigletFont, string, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_System_Int32_Textify_Figlet_Utilities_Lines_FigletFont_System_String_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,System.Object[])
+  name.vb: RenderCenteredFiglet(Integer, FigletFont, String, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(int, Textify.Figlet.Utilities.Lines.FigletFont, string, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Integer, Textify.Figlet.Utilities.Lines.FigletFont, String, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(int, FigletFont, string, params object[])
+  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(Integer, FigletFont, String, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,System.Object[])
+  name: RenderCenteredFiglet(int, FigletFont, string, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_System_Int32_Textify_Figlet_Utilities_Lines_FigletFont_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderCenteredFiglet(Integer, FigletFont, String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(int, Textify.Figlet.Utilities.Lines.FigletFont, string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Integer, Textify.Figlet.Utilities.Lines.FigletFont, String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(int, FigletFont, string, Color, params object[])
+  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(Integer, FigletFont, String, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderCenteredFiglet(int, FigletFont, string, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_System_Int32_Textify_Figlet_Utilities_Lines_FigletFont_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderCenteredFiglet(Integer, FigletFont, String, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(int, Textify.Figlet.Utilities.Lines.FigletFont, string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Integer, Textify.Figlet.Utilities.Lines.FigletFont, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(int, FigletFont, string, Color, Color, params object[])
+  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(Integer, FigletFont, String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont,System.String,System.Object[])
+  name: RenderCenteredFiglet(FigletFont, string, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_Textify_Figlet_Utilities_Lines_FigletFont_System_String_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont,System.String,System.Object[])
+  name.vb: RenderCenteredFiglet(FigletFont, String, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont, string, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont, String, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(FigletFont, string, params object[])
+  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(FigletFont, String, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,System.Object[])
+  name: RenderCenteredFiglet(FigletFont, string, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_Textify_Figlet_Utilities_Lines_FigletFont_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderCenteredFiglet(FigletFont, String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont, string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont, String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(FigletFont, string, Color, params object[])
+  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(FigletFont, String, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderCenteredFiglet(FigletFont, string, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_Textify_Figlet_Utilities_Lines_FigletFont_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderCenteredFiglet(FigletFont, String, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont, string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.RenderCenteredFiglet(FigletFont, string, Color, Color, params object[])
+  nameWithType.vb: CenteredFigletTextColor.RenderCenteredFiglet(FigletFont, String, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet*
   name: RenderCenteredFiglet
   href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_RenderCenteredFiglet_
@@ -37761,24 +37761,24 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.RenderCenteredFiglet
   nameWithType: CenteredFigletTextColor.RenderCenteredFiglet
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(Figletize.Utilities.FigletizeFont,System.String,System.Object[])
-  name: WriteCenteredFiglet(FigletizeFont, string, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFiglet_Figletize_Utilities_FigletizeFont_System_String_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(Figletize.Utilities.FigletizeFont,System.String,System.Object[])
-  name.vb: WriteCenteredFiglet(FigletizeFont, String, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(Figletize.Utilities.FigletizeFont, string, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(Figletize.Utilities.FigletizeFont, String, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.WriteCenteredFiglet(FigletizeFont, string, params object[])
-  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFiglet(FigletizeFont, String, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(System.Int32,Figletize.Utilities.FigletizeFont,System.String,System.Object[])
-  name: WriteCenteredFiglet(int, FigletizeFont, string, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFiglet_System_Int32_Figletize_Utilities_FigletizeFont_System_String_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(System.Int32,Figletize.Utilities.FigletizeFont,System.String,System.Object[])
-  name.vb: WriteCenteredFiglet(Integer, FigletizeFont, String, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(int, Figletize.Utilities.FigletizeFont, string, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(Integer, Figletize.Utilities.FigletizeFont, String, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.WriteCenteredFiglet(int, FigletizeFont, string, params object[])
-  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFiglet(Integer, FigletizeFont, String, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,System.Object[])
+  name: WriteCenteredFiglet(int, FigletFont, string, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFiglet_System_Int32_Textify_Figlet_Utilities_Lines_FigletFont_System_String_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,System.Object[])
+  name.vb: WriteCenteredFiglet(Integer, FigletFont, String, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(int, Textify.Figlet.Utilities.Lines.FigletFont, string, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(Integer, Textify.Figlet.Utilities.Lines.FigletFont, String, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.WriteCenteredFiglet(int, FigletFont, string, params object[])
+  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFiglet(Integer, FigletFont, String, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont,System.String,System.Object[])
+  name: WriteCenteredFiglet(FigletFont, string, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFiglet_Textify_Figlet_Utilities_Lines_FigletFont_System_String_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont,System.String,System.Object[])
+  name.vb: WriteCenteredFiglet(FigletFont, String, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont, string, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet(Textify.Figlet.Utilities.Lines.FigletFont, String, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.WriteCenteredFiglet(FigletFont, string, params object[])
+  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFiglet(FigletFont, String, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet*
   name: WriteCenteredFiglet
   href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFiglet_
@@ -37786,24 +37786,24 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFiglet
   nameWithType: CenteredFigletTextColor.WriteCenteredFiglet
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,System.Object[])
-  name: WriteCenteredFigletColor(FigletizeFont, string, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFigletColor_Figletize_Utilities_FigletizeFont_System_String_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteCenteredFigletColor(FigletizeFont, String, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(Figletize.Utilities.FigletizeFont, string, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(Figletize.Utilities.FigletizeFont, String, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.WriteCenteredFigletColor(FigletizeFont, string, Color, params object[])
-  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFigletColor(FigletizeFont, String, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(System.Int32,Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,System.Object[])
-  name: WriteCenteredFigletColor(int, FigletizeFont, string, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFigletColor_System_Int32_Figletize_Utilities_FigletizeFont_System_String_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(System.Int32,Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteCenteredFigletColor(Integer, FigletizeFont, String, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(int, Figletize.Utilities.FigletizeFont, string, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(Integer, Figletize.Utilities.FigletizeFont, String, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.WriteCenteredFigletColor(int, FigletizeFont, string, Color, params object[])
-  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFigletColor(Integer, FigletizeFont, String, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,System.Object[])
+  name: WriteCenteredFigletColor(int, FigletFont, string, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFigletColor_System_Int32_Textify_Figlet_Utilities_Lines_FigletFont_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteCenteredFigletColor(Integer, FigletFont, String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(int, Textify.Figlet.Utilities.Lines.FigletFont, string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(Integer, Textify.Figlet.Utilities.Lines.FigletFont, String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.WriteCenteredFigletColor(int, FigletFont, string, Color, params object[])
+  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFigletColor(Integer, FigletFont, String, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,System.Object[])
+  name: WriteCenteredFigletColor(FigletFont, string, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFigletColor_Textify_Figlet_Utilities_Lines_FigletFont_System_String_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteCenteredFigletColor(FigletFont, String, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(Textify.Figlet.Utilities.Lines.FigletFont, string, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor(Textify.Figlet.Utilities.Lines.FigletFont, String, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.WriteCenteredFigletColor(FigletFont, string, Color, params object[])
+  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFigletColor(FigletFont, String, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor*
   name: WriteCenteredFigletColor
   href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFigletColor_
@@ -37811,24 +37811,24 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColor
   nameWithType: CenteredFigletTextColor.WriteCenteredFigletColor
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteCenteredFigletColorBack(FigletizeFont, string, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFigletColorBack_Figletize_Utilities_FigletizeFont_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteCenteredFigletColorBack(FigletizeFont, String, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(Figletize.Utilities.FigletizeFont, string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(Figletize.Utilities.FigletizeFont, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletizeFont, string, Color, Color, params object[])
-  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletizeFont, String, Color, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(System.Int32,Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteCenteredFigletColorBack(int, FigletizeFont, string, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFigletColorBack_System_Int32_Figletize_Utilities_FigletizeFont_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(System.Int32,Figletize.Utilities.FigletizeFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteCenteredFigletColorBack(Integer, FigletizeFont, String, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(int, Figletize.Utilities.FigletizeFont, string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(Integer, Figletize.Utilities.FigletizeFont, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: CenteredFigletTextColor.WriteCenteredFigletColorBack(int, FigletizeFont, string, Color, Color, params object[])
-  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFigletColorBack(Integer, FigletizeFont, String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteCenteredFigletColorBack(int, FigletFont, string, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFigletColorBack_System_Int32_Textify_Figlet_Utilities_Lines_FigletFont_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(System.Int32,Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteCenteredFigletColorBack(Integer, FigletFont, String, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(int, Textify.Figlet.Utilities.Lines.FigletFont, string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(Integer, Textify.Figlet.Utilities.Lines.FigletFont, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.WriteCenteredFigletColorBack(int, FigletFont, string, Color, Color, params object[])
+  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFigletColorBack(Integer, FigletFont, String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteCenteredFigletColorBack(FigletFont, string, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFigletColorBack_Textify_Figlet_Utilities_Lines_FigletFont_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(Textify.Figlet.Utilities.Lines.FigletFont,System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteCenteredFigletColorBack(FigletFont, String, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(Textify.Figlet.Utilities.Lines.FigletFont, string, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack(Textify.Figlet.Utilities.Lines.FigletFont, String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletFont, string, Color, Color, params object[])
+  nameWithType.vb: CenteredFigletTextColor.WriteCenteredFigletColorBack(FigletFont, String, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.CenteredFigletTextColor.WriteCenteredFigletColorBack*
   name: WriteCenteredFigletColorBack
   href: api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html#Terminaux_Writer_FancyWriters_CenteredFigletTextColor_WriteCenteredFigletColorBack_
@@ -38120,24 +38120,6 @@ references:
   commentId: T:Terminaux.Writer.FancyWriters.FigletColor
   fullName: Terminaux.Writer.FancyWriters.FigletColor
   nameWithType: FigletColor
-- uid: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(System.String,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,System.Object[])
-  name: RenderFiglet(string, FigletizeFont, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_RenderFiglet_System_String_Figletize_Utilities_FigletizeFont_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(System.String,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderFiglet(String, FigletizeFont, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(string, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(String, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: FigletColor.RenderFiglet(string, FigletizeFont, Color, params object[])
-  nameWithType.vb: FigletColor.RenderFiglet(String, FigletizeFont, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(System.String,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderFiglet(string, FigletizeFont, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_RenderFiglet_System_String_Figletize_Utilities_FigletizeFont_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(System.String,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderFiglet(String, FigletizeFont, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(string, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(String, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: FigletColor.RenderFiglet(string, FigletizeFont, Color, Color, params object[])
-  nameWithType.vb: FigletColor.RenderFiglet(String, FigletizeFont, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(System.String,Terminaux.Colors.Color,System.Object[])
   name: RenderFiglet(string, Color, params object[])
   href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_RenderFiglet_System_String_Terminaux_Colors_Color_System_Object___
@@ -38156,6 +38138,24 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: FigletColor.RenderFiglet(string, Color, Color, params object[])
   nameWithType.vb: FigletColor.RenderFiglet(String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(System.String,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,System.Object[])
+  name: RenderFiglet(string, FigletFont, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_RenderFiglet_System_String_Textify_Figlet_Utilities_Lines_FigletFont_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(System.String,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderFiglet(String, FigletFont, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(string, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(String, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: FigletColor.RenderFiglet(string, FigletFont, Color, params object[])
+  nameWithType.vb: FigletColor.RenderFiglet(String, FigletFont, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(System.String,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderFiglet(string, FigletFont, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_RenderFiglet_System_String_Textify_Figlet_Utilities_Lines_FigletFont_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(System.String,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderFiglet(String, FigletFont, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(string, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet(String, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: FigletColor.RenderFiglet(string, FigletFont, Color, Color, params object[])
+  nameWithType.vb: FigletColor.RenderFiglet(String, FigletFont, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet*
   name: RenderFiglet
   href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_RenderFiglet_
@@ -38163,15 +38163,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.FigletColor.RenderFiglet
   nameWithType: FigletColor.RenderFiglet
-- uid: Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain(System.String,Figletize.Utilities.FigletizeFont,System.Object[])
-  name: RenderFigletPlain(string, FigletizeFont, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_RenderFigletPlain_System_String_Figletize_Utilities_FigletizeFont_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain(System.String,Figletize.Utilities.FigletizeFont,System.Object[])
-  name.vb: RenderFigletPlain(String, FigletizeFont, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain(string, Figletize.Utilities.FigletizeFont, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain(String, Figletize.Utilities.FigletizeFont, ParamArray Object())
-  nameWithType: FigletColor.RenderFigletPlain(string, FigletizeFont, params object[])
-  nameWithType.vb: FigletColor.RenderFigletPlain(String, FigletizeFont, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain(System.String,System.Object[])
   name: RenderFigletPlain(string, params object[])
   href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_RenderFigletPlain_System_String_System_Object___
@@ -38181,6 +38172,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain(String, ParamArray Object())
   nameWithType: FigletColor.RenderFigletPlain(string, params object[])
   nameWithType.vb: FigletColor.RenderFigletPlain(String, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain(System.String,Textify.Figlet.Utilities.Lines.FigletFont,System.Object[])
+  name: RenderFigletPlain(string, FigletFont, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_RenderFigletPlain_System_String_Textify_Figlet_Utilities_Lines_FigletFont_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain(System.String,Textify.Figlet.Utilities.Lines.FigletFont,System.Object[])
+  name.vb: RenderFigletPlain(String, FigletFont, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain(string, Textify.Figlet.Utilities.Lines.FigletFont, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain(String, Textify.Figlet.Utilities.Lines.FigletFont, ParamArray Object())
+  nameWithType: FigletColor.RenderFigletPlain(string, FigletFont, params object[])
+  nameWithType.vb: FigletColor.RenderFigletPlain(String, FigletFont, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain*
   name: RenderFigletPlain
   href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_RenderFigletPlain_
@@ -38188,15 +38188,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.FigletColor.RenderFigletPlain
   nameWithType: FigletColor.RenderFigletPlain
-- uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor(System.String,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,System.Object[])
-  name: WriteFigletColor(string, FigletizeFont, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletColor_System_String_Figletize_Utilities_FigletizeFont_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor(System.String,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteFigletColor(String, FigletizeFont, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor(string, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor(String, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: FigletColor.WriteFigletColor(string, FigletizeFont, Color, params object[])
-  nameWithType.vb: FigletColor.WriteFigletColor(String, FigletizeFont, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor(System.String,Terminaux.Colors.Color,System.Object[])
   name: WriteFigletColor(string, Color, params object[])
   href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletColor_System_String_Terminaux_Colors_Color_System_Object___
@@ -38206,6 +38197,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor(String, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: FigletColor.WriteFigletColor(string, Color, params object[])
   nameWithType.vb: FigletColor.WriteFigletColor(String, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor(System.String,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,System.Object[])
+  name: WriteFigletColor(string, FigletFont, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletColor_System_String_Textify_Figlet_Utilities_Lines_FigletFont_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor(System.String,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteFigletColor(String, FigletFont, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor(string, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor(String, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: FigletColor.WriteFigletColor(string, FigletFont, Color, params object[])
+  nameWithType.vb: FigletColor.WriteFigletColor(String, FigletFont, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor*
   name: WriteFigletColor
   href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletColor_
@@ -38213,15 +38213,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColor
   nameWithType: FigletColor.WriteFigletColor
-- uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack(System.String,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteFigletColorBack(string, FigletizeFont, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletColorBack_System_String_Figletize_Utilities_FigletizeFont_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack(System.String,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteFigletColorBack(String, FigletizeFont, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack(string, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack(String, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: FigletColor.WriteFigletColorBack(string, FigletizeFont, Color, Color, params object[])
-  nameWithType.vb: FigletColor.WriteFigletColorBack(String, FigletizeFont, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack(System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteFigletColorBack(string, Color, Color, params object[])
   href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletColorBack_System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -38231,6 +38222,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack(String, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: FigletColor.WriteFigletColorBack(string, Color, Color, params object[])
   nameWithType.vb: FigletColor.WriteFigletColorBack(String, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack(System.String,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteFigletColorBack(string, FigletFont, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletColorBack_System_String_Textify_Figlet_Utilities_Lines_FigletFont_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack(System.String,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteFigletColorBack(String, FigletFont, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack(string, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack(String, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: FigletColor.WriteFigletColorBack(string, FigletFont, Color, Color, params object[])
+  nameWithType.vb: FigletColor.WriteFigletColorBack(String, FigletFont, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack*
   name: WriteFigletColorBack
   href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletColorBack_
@@ -38238,15 +38238,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletColorBack
   nameWithType: FigletColor.WriteFigletColorBack
-- uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain(System.String,Figletize.Utilities.FigletizeFont,System.Object[])
-  name: WriteFigletPlain(string, FigletizeFont, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletPlain_System_String_Figletize_Utilities_FigletizeFont_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain(System.String,Figletize.Utilities.FigletizeFont,System.Object[])
-  name.vb: WriteFigletPlain(String, FigletizeFont, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain(string, Figletize.Utilities.FigletizeFont, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain(String, Figletize.Utilities.FigletizeFont, ParamArray Object())
-  nameWithType: FigletColor.WriteFigletPlain(string, FigletizeFont, params object[])
-  nameWithType.vb: FigletColor.WriteFigletPlain(String, FigletizeFont, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain(System.String,System.Object[])
   name: WriteFigletPlain(string, params object[])
   href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletPlain_System_String_System_Object___
@@ -38256,6 +38247,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain(String, ParamArray Object())
   nameWithType: FigletColor.WriteFigletPlain(string, params object[])
   nameWithType.vb: FigletColor.WriteFigletPlain(String, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain(System.String,Textify.Figlet.Utilities.Lines.FigletFont,System.Object[])
+  name: WriteFigletPlain(string, FigletFont, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletPlain_System_String_Textify_Figlet_Utilities_Lines_FigletFont_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain(System.String,Textify.Figlet.Utilities.Lines.FigletFont,System.Object[])
+  name.vb: WriteFigletPlain(String, FigletFont, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain(string, Textify.Figlet.Utilities.Lines.FigletFont, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain(String, Textify.Figlet.Utilities.Lines.FigletFont, ParamArray Object())
+  nameWithType: FigletColor.WriteFigletPlain(string, FigletFont, params object[])
+  nameWithType.vb: FigletColor.WriteFigletPlain(String, FigletFont, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletColor.WriteFigletPlain*
   name: WriteFigletPlain
   href: api/Terminaux.Writer.FancyWriters.FigletColor.html#Terminaux_Writer_FancyWriters_FigletColor_WriteFigletPlain_
@@ -38269,24 +38269,6 @@ references:
   commentId: T:Terminaux.Writer.FancyWriters.FigletWhereColor
   fullName: Terminaux.Writer.FancyWriters.FigletWhereColor
   nameWithType: FigletWhereColor
-- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,System.Object[])
-  name: RenderFigletWhere(string, int, int, bool, FigletizeFont, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_RenderFigletWhere_System_String_System_Int32_System_Int32_System_Boolean_Figletize_Utilities_FigletizeFont_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderFigletWhere(String, Integer, Integer, Boolean, FigletizeFont, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(string, int, int, bool, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(String, Integer, Integer, Boolean, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: FigletWhereColor.RenderFigletWhere(string, int, int, bool, FigletizeFont, Color, params object[])
-  nameWithType.vb: FigletWhereColor.RenderFigletWhere(String, Integer, Integer, Boolean, FigletizeFont, Color, ParamArray Object())
-- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: RenderFigletWhere(string, int, int, bool, FigletizeFont, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_RenderFigletWhere_System_String_System_Int32_System_Int32_System_Boolean_Figletize_Utilities_FigletizeFont_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: RenderFigletWhere(String, Integer, Integer, Boolean, FigletizeFont, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(string, int, int, bool, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(String, Integer, Integer, Boolean, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: FigletWhereColor.RenderFigletWhere(string, int, int, bool, FigletizeFont, Color, Color, params object[])
-  nameWithType.vb: FigletWhereColor.RenderFigletWhere(String, Integer, Integer, Boolean, FigletizeFont, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(System.String,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name: RenderFigletWhere(string, int, int, bool, Color, params object[])
   href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_RenderFigletWhere_System_String_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_System_Object___
@@ -38305,6 +38287,24 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(String, Integer, Integer, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: FigletWhereColor.RenderFigletWhere(string, int, int, bool, Color, Color, params object[])
   nameWithType.vb: FigletWhereColor.RenderFigletWhere(String, Integer, Integer, Boolean, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,System.Object[])
+  name: RenderFigletWhere(string, int, int, bool, FigletFont, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_RenderFigletWhere_System_String_System_Int32_System_Int32_System_Boolean_Textify_Figlet_Utilities_Lines_FigletFont_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderFigletWhere(String, Integer, Integer, Boolean, FigletFont, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(string, int, int, bool, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(String, Integer, Integer, Boolean, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: FigletWhereColor.RenderFigletWhere(string, int, int, bool, FigletFont, Color, params object[])
+  nameWithType.vb: FigletWhereColor.RenderFigletWhere(String, Integer, Integer, Boolean, FigletFont, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: RenderFigletWhere(string, int, int, bool, FigletFont, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_RenderFigletWhere_System_String_System_Int32_System_Int32_System_Boolean_Textify_Figlet_Utilities_Lines_FigletFont_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: RenderFigletWhere(String, Integer, Integer, Boolean, FigletFont, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(string, int, int, bool, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere(String, Integer, Integer, Boolean, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: FigletWhereColor.RenderFigletWhere(string, int, int, bool, FigletFont, Color, Color, params object[])
+  nameWithType.vb: FigletWhereColor.RenderFigletWhere(String, Integer, Integer, Boolean, FigletFont, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere*
   name: RenderFigletWhere
   href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_RenderFigletWhere_
@@ -38312,15 +38312,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWhere
   nameWithType: FigletWhereColor.RenderFigletWhere
-- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,System.Object[])
-  name: RenderFigletWherePlain(string, int, int, bool, FigletizeFont, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_RenderFigletWherePlain_System_String_System_Int32_System_Int32_System_Boolean_Figletize_Utilities_FigletizeFont_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,System.Object[])
-  name.vb: RenderFigletWherePlain(String, Integer, Integer, Boolean, FigletizeFont, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain(string, int, int, bool, Figletize.Utilities.FigletizeFont, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain(String, Integer, Integer, Boolean, Figletize.Utilities.FigletizeFont, ParamArray Object())
-  nameWithType: FigletWhereColor.RenderFigletWherePlain(string, int, int, bool, FigletizeFont, params object[])
-  nameWithType.vb: FigletWhereColor.RenderFigletWherePlain(String, Integer, Integer, Boolean, FigletizeFont, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain(System.String,System.Int32,System.Int32,System.Boolean,System.Object[])
   name: RenderFigletWherePlain(string, int, int, bool, params object[])
   href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_RenderFigletWherePlain_System_String_System_Int32_System_Int32_System_Boolean_System_Object___
@@ -38330,6 +38321,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain(String, Integer, Integer, Boolean, ParamArray Object())
   nameWithType: FigletWhereColor.RenderFigletWherePlain(string, int, int, bool, params object[])
   nameWithType.vb: FigletWhereColor.RenderFigletWherePlain(String, Integer, Integer, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,System.Object[])
+  name: RenderFigletWherePlain(string, int, int, bool, FigletFont, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_RenderFigletWherePlain_System_String_System_Int32_System_Int32_System_Boolean_Textify_Figlet_Utilities_Lines_FigletFont_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,System.Object[])
+  name.vb: RenderFigletWherePlain(String, Integer, Integer, Boolean, FigletFont, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain(string, int, int, bool, Textify.Figlet.Utilities.Lines.FigletFont, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain(String, Integer, Integer, Boolean, Textify.Figlet.Utilities.Lines.FigletFont, ParamArray Object())
+  nameWithType: FigletWhereColor.RenderFigletWherePlain(string, int, int, bool, FigletFont, params object[])
+  nameWithType.vb: FigletWhereColor.RenderFigletWherePlain(String, Integer, Integer, Boolean, FigletFont, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain*
   name: RenderFigletWherePlain
   href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_RenderFigletWherePlain_
@@ -38337,15 +38337,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.RenderFigletWherePlain
   nameWithType: FigletWhereColor.RenderFigletWherePlain
-- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,System.Object[])
-  name: WriteFigletWhereColor(string, int, int, bool, FigletizeFont, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWhereColor_System_String_System_Int32_System_Int32_System_Boolean_Figletize_Utilities_FigletizeFont_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteFigletWhereColor(String, Integer, Integer, Boolean, FigletizeFont, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor(string, int, int, bool, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor(String, Integer, Integer, Boolean, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: FigletWhereColor.WriteFigletWhereColor(string, int, int, bool, FigletizeFont, Color, params object[])
-  nameWithType.vb: FigletWhereColor.WriteFigletWhereColor(String, Integer, Integer, Boolean, FigletizeFont, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor(System.String,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,System.Object[])
   name: WriteFigletWhereColor(string, int, int, bool, Color, params object[])
   href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWhereColor_System_String_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_System_Object___
@@ -38355,6 +38346,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor(String, Integer, Integer, Boolean, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: FigletWhereColor.WriteFigletWhereColor(string, int, int, bool, Color, params object[])
   nameWithType.vb: FigletWhereColor.WriteFigletWhereColor(String, Integer, Integer, Boolean, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,System.Object[])
+  name: WriteFigletWhereColor(string, int, int, bool, FigletFont, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWhereColor_System_String_System_Int32_System_Int32_System_Boolean_Textify_Figlet_Utilities_Lines_FigletFont_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteFigletWhereColor(String, Integer, Integer, Boolean, FigletFont, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor(string, int, int, bool, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor(String, Integer, Integer, Boolean, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: FigletWhereColor.WriteFigletWhereColor(string, int, int, bool, FigletFont, Color, params object[])
+  nameWithType.vb: FigletWhereColor.WriteFigletWhereColor(String, Integer, Integer, Boolean, FigletFont, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor*
   name: WriteFigletWhereColor
   href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWhereColor_
@@ -38362,15 +38362,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColor
   nameWithType: FigletWhereColor.WriteFigletWhereColor
-- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name: WriteFigletWhereColorBack(string, int, int, bool, FigletizeFont, Color, Color, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWhereColorBack_System_String_System_Int32_System_Int32_System_Boolean_Figletize_Utilities_FigletizeFont_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
-  name.vb: WriteFigletWhereColorBack(String, Integer, Integer, Boolean, FigletizeFont, Color, Color, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack(string, int, int, bool, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack(String, Integer, Integer, Boolean, Figletize.Utilities.FigletizeFont, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
-  nameWithType: FigletWhereColor.WriteFigletWhereColorBack(string, int, int, bool, FigletizeFont, Color, Color, params object[])
-  nameWithType.vb: FigletWhereColor.WriteFigletWhereColorBack(String, Integer, Integer, Boolean, FigletizeFont, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack(System.String,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
   name: WriteFigletWhereColorBack(string, int, int, bool, Color, Color, params object[])
   href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWhereColorBack_System_String_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
@@ -38380,6 +38371,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack(String, Integer, Integer, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
   nameWithType: FigletWhereColor.WriteFigletWhereColorBack(string, int, int, bool, Color, Color, params object[])
   nameWithType.vb: FigletWhereColor.WriteFigletWhereColorBack(String, Integer, Integer, Boolean, Color, Color, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name: WriteFigletWhereColorBack(string, int, int, bool, FigletFont, Color, Color, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWhereColorBack_System_String_System_Int32_System_Int32_System_Boolean_Textify_Figlet_Utilities_Lines_FigletFont_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])
+  name.vb: WriteFigletWhereColorBack(String, Integer, Integer, Boolean, FigletFont, Color, Color, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack(string, int, int, bool, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, Terminaux.Colors.Color, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack(String, Integer, Integer, Boolean, Textify.Figlet.Utilities.Lines.FigletFont, Terminaux.Colors.Color, Terminaux.Colors.Color, ParamArray Object())
+  nameWithType: FigletWhereColor.WriteFigletWhereColorBack(string, int, int, bool, FigletFont, Color, Color, params object[])
+  nameWithType.vb: FigletWhereColor.WriteFigletWhereColorBack(String, Integer, Integer, Boolean, FigletFont, Color, Color, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack*
   name: WriteFigletWhereColorBack
   href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWhereColorBack_
@@ -38387,15 +38387,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWhereColorBack
   nameWithType: FigletWhereColor.WriteFigletWhereColorBack
-- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,System.Object[])
-  name: WriteFigletWherePlain(string, int, int, bool, FigletizeFont, params object[])
-  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWherePlain_System_String_System_Int32_System_Int32_System_Boolean_Figletize_Utilities_FigletizeFont_System_Object___
-  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain(System.String,System.Int32,System.Int32,System.Boolean,Figletize.Utilities.FigletizeFont,System.Object[])
-  name.vb: WriteFigletWherePlain(String, Integer, Integer, Boolean, FigletizeFont, ParamArray Object())
-  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain(string, int, int, bool, Figletize.Utilities.FigletizeFont, params object[])
-  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain(String, Integer, Integer, Boolean, Figletize.Utilities.FigletizeFont, ParamArray Object())
-  nameWithType: FigletWhereColor.WriteFigletWherePlain(string, int, int, bool, FigletizeFont, params object[])
-  nameWithType.vb: FigletWhereColor.WriteFigletWherePlain(String, Integer, Integer, Boolean, FigletizeFont, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain(System.String,System.Int32,System.Int32,System.Boolean,System.Object[])
   name: WriteFigletWherePlain(string, int, int, bool, params object[])
   href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWherePlain_System_String_System_Int32_System_Int32_System_Boolean_System_Object___
@@ -38405,6 +38396,15 @@ references:
   fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain(String, Integer, Integer, Boolean, ParamArray Object())
   nameWithType: FigletWhereColor.WriteFigletWherePlain(string, int, int, bool, params object[])
   nameWithType.vb: FigletWhereColor.WriteFigletWherePlain(String, Integer, Integer, Boolean, ParamArray Object())
+- uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,System.Object[])
+  name: WriteFigletWherePlain(string, int, int, bool, FigletFont, params object[])
+  href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWherePlain_System_String_System_Int32_System_Int32_System_Boolean_Textify_Figlet_Utilities_Lines_FigletFont_System_Object___
+  commentId: M:Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain(System.String,System.Int32,System.Int32,System.Boolean,Textify.Figlet.Utilities.Lines.FigletFont,System.Object[])
+  name.vb: WriteFigletWherePlain(String, Integer, Integer, Boolean, FigletFont, ParamArray Object())
+  fullName: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain(string, int, int, bool, Textify.Figlet.Utilities.Lines.FigletFont, params object[])
+  fullName.vb: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain(String, Integer, Integer, Boolean, Textify.Figlet.Utilities.Lines.FigletFont, ParamArray Object())
+  nameWithType: FigletWhereColor.WriteFigletWherePlain(string, int, int, bool, FigletFont, params object[])
+  nameWithType.vb: FigletWhereColor.WriteFigletWherePlain(String, Integer, Integer, Boolean, FigletFont, ParamArray Object())
 - uid: Terminaux.Writer.FancyWriters.FigletWhereColor.WriteFigletWherePlain*
   name: WriteFigletWherePlain
   href: api/Terminaux.Writer.FancyWriters.FigletWhereColor.html#Terminaux_Writer_FancyWriters_FigletWhereColor_WriteFigletWherePlain_
