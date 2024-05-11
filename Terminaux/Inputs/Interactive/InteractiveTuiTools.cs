@@ -462,12 +462,11 @@ namespace Terminaux.Inputs.Interactive
                 for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)
                 {
                     // Check to see if the info is overpopulated
-                    if (infoIndex >= SeparatorMaximumHeightInterior - 1)
+                    if (infoIndex >= SeparatorMaximumHeightInterior)
                     {
-                        string truncated = "Shift+I = more info";
-                        builder.Append(ColorTools.RenderSetConsoleColor(ForegroundColor));
-                        builder.Append(ColorTools.RenderSetConsoleColor(PaneItemBackColor, true));
-                        builder.Append(TextWriterWhereColor.RenderWhere(truncated, SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
+                        builder.Append(ColorTools.RenderSetConsoleColor(finalForeColorSecondPane));
+                        builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
+                        builder.Append(TextWriterWhereColor.RenderWhere("[SHIFT + I]", ConsoleWrapper.WindowWidth - "[SHIFT + I]".Length - 2, SeparatorMinimumHeightInterior + infoIndex));
                         break;
                     }
 
@@ -943,6 +942,7 @@ namespace Terminaux.Inputs.Interactive
                     new InteractiveTuiBinding("Go to the previous page", ConsoleKey.PageUp, null),
                     new InteractiveTuiBinding("Go to the next page", ConsoleKey.PageDown, null),
                     new InteractiveTuiBinding("Search for an element", ConsoleKey.F, null),
+                    new InteractiveTuiBinding("Read more...", ConsoleKey.I, ConsoleModifiers.Shift, null),
                     new InteractiveTuiBinding(PointerListener.InvertScrollYAxis ? "Go one element down" : "Go one element up", PointerButton.WheelUp, null),
                     new InteractiveTuiBinding(PointerListener.InvertScrollYAxis ? "Go one element up" : "Go one element down", PointerButton.WheelDown, null),
                     new InteractiveTuiBinding("Do an action on the selected item", PointerButton.Left, PointerButtonPress.Released, null),
