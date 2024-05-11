@@ -465,19 +465,17 @@ namespace Terminaux.Inputs.Interactive
                     if (infoIndex >= SeparatorMaximumHeightInterior - 1)
                     {
                         string truncated = "Shift+I = more info";
-                        int truncatedWidth = ConsoleChar.EstimateCellWidth(truncated);
                         builder.Append(ColorTools.RenderSetConsoleColor(ForegroundColor));
                         builder.Append(ColorTools.RenderSetConsoleColor(PaneItemBackColor, true));
-                        builder.Append(TextWriterWhereColor.RenderWhere(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncatedWidth), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
+                        builder.Append(TextWriterWhereColor.RenderWhere(truncated, SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
                         break;
                     }
 
                     // Now, render the info
                     string finalInfo = finalInfoStrings[infoIndex];
-                    int finalInfoWidth = ConsoleChar.EstimateCellWidth(finalInfo);
                     builder.Append(ColorTools.RenderSetConsoleColor(ForegroundColor));
                     builder.Append(ColorTools.RenderSetConsoleColor(PaneItemBackColor, true));
-                    builder.Append(TextWriterWhereColor.RenderWhere(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfoWidth), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
+                    builder.Append(TextWriterWhereColor.RenderWhere(finalInfo, SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex));
                 }
                 return builder.ToString();
             });
