@@ -194,7 +194,7 @@ namespace Terminaux.Colors.Models.Parsing
             else
             {
                 var parsedEnum = (ConsoleColors)Enum.Parse(typeof(ConsoleColors), specifier);
-                data = ConsoleColorData.GetColorData()[(int)parsedEnum];
+                data = ConsoleColorData.GetColorData(parsedEnum);
             }
             if (data.RGB is null)
                 throw new TerminauxInternalException("The data RGB is null.");

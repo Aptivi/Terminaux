@@ -19,6 +19,7 @@
 
 using System;
 using System.Diagnostics;
+using Terminaux.Base;
 
 namespace Terminaux.Colors.Data
 {
@@ -32,5 +33,17 @@ namespace Terminaux.Colors.Data
         /// Gets the console colors data
         /// </summary>
         public static partial ConsoleColorData[] GetColorData();
+
+        /// <summary>
+        /// Gets the console color data
+        /// </summary>
+        /// <param name="colors">Console color to get the data from</param>
+        /// <returns>A console color data instance</returns>
+        public static ConsoleColorData GetColorData(ConsoleColors colors)
+        {
+            if (colors < ConsoleColors.Black || colors > ConsoleColors.Grey93)
+                throw new TerminauxException("Color is out of range.");
+            return GetColorData()[(int)colors];
+        }
     }
 }
