@@ -2336,6 +2336,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Base.Extensions.ConsoleMisc.GetWrappedSentencesByWords
   nameWithType: ConsoleMisc.GetWrappedSentencesByWords
+- uid: Terminaux.Base.Extensions.ConsoleMisc.IsOnAltBuffer
+  name: IsOnAltBuffer
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_IsOnAltBuffer
+  commentId: P:Terminaux.Base.Extensions.ConsoleMisc.IsOnAltBuffer
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.IsOnAltBuffer
+  nameWithType: ConsoleMisc.IsOnAltBuffer
+- uid: Terminaux.Base.Extensions.ConsoleMisc.IsOnAltBuffer*
+  name: IsOnAltBuffer
+  href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_IsOnAltBuffer_
+  commentId: Overload:Terminaux.Base.Extensions.ConsoleMisc.IsOnAltBuffer
+  isSpec: "True"
+  fullName: Terminaux.Base.Extensions.ConsoleMisc.IsOnAltBuffer
+  nameWithType: ConsoleMisc.IsOnAltBuffer
 - uid: Terminaux.Base.Extensions.ConsoleMisc.PercentRepeat(System.Int32,System.Int32,System.Int32)
   name: PercentRepeat(int, int, int)
   href: api/Terminaux.Base.Extensions.ConsoleMisc.html#Terminaux_Base_Extensions_ConsoleMisc_PercentRepeat_System_Int32_System_Int32_System_Int32_
