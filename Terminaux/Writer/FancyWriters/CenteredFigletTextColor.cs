@@ -236,7 +236,7 @@ namespace Terminaux.Writer.FancyWriters
                 Text = TextTools.FormatString(Text, Vars);
                 var figBuilder = new StringBuilder();
                 var figFontFallback = FigletTools.GetFigletFont("small");
-                int figWidth = FigletTools.GetFigletLines(Text, FigletFont).Max((line) => line.Length) / 2;
+                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
                 int figHeight = FigletTools.GetFigletHeight(Text, FigletFont);
                 int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
                 int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback);
