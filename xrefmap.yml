@@ -14607,6 +14607,12 @@ references:
   commentId: M:Terminaux.Colors.Data.ConsoleColorData.GetColorData
   fullName: Terminaux.Colors.Data.ConsoleColorData.GetColorData()
   nameWithType: ConsoleColorData.GetColorData()
+- uid: Terminaux.Colors.Data.ConsoleColorData.GetColorData(Terminaux.Colors.Data.ConsoleColors)
+  name: GetColorData(ConsoleColors)
+  href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetColorData_Terminaux_Colors_Data_ConsoleColors_
+  commentId: M:Terminaux.Colors.Data.ConsoleColorData.GetColorData(Terminaux.Colors.Data.ConsoleColors)
+  fullName: Terminaux.Colors.Data.ConsoleColorData.GetColorData(Terminaux.Colors.Data.ConsoleColors)
+  nameWithType: ConsoleColorData.GetColorData(ConsoleColors)
 - uid: Terminaux.Colors.Data.ConsoleColorData.GetColorData*
   name: GetColorData
   href: api/Terminaux.Colors.Data.ConsoleColorData.html#Terminaux_Colors_Data_ConsoleColorData_GetColorData_
