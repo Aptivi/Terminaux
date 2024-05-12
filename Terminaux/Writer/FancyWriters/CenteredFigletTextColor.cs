@@ -181,9 +181,36 @@ namespace Terminaux.Writer.FancyWriters
         internal static string RenderCenteredFiglet(FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
         {
             Text = TextTools.FormatString(Text, Vars);
+            var figFontFallback = FigletTools.GetFigletFont("small");
+            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
+            int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
+            int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback) / 2;
+            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            return RenderCenteredFiglet(consoleY, FigletFont, Text, ForegroundColor, BackgroundColor, useColor, Vars);
+            int consoleMaxY = consoleY + figHeight;
+            if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
+            {
+                // The figlet won't fit, so use small text
+                consoleX = ConsoleWrapper.WindowWidth / 2 - figWidthFallback;
+                consoleY = ConsoleWrapper.WindowHeight / 2 - figHeightFallback;
+                consoleMaxY = consoleY + figHeightFallback;
+                if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
+                {
+                    // The fallback figlet also won't fit, so use smaller text
+                    return CenteredTextColor.RenderCentered(Text, ForegroundColor, BackgroundColor, useColor, Vars);
+                }
+                else
+                {
+                    // Write the figlet.
+                    return RenderCenteredFiglet(consoleY, FigletFont, Text, ForegroundColor, BackgroundColor, useColor, Vars);
+                }
+            }
+            else
+            {
+                // Write the figlet.
+                return RenderCenteredFiglet(consoleY, FigletFont, Text, ForegroundColor, BackgroundColor, useColor, Vars);
+            }
         }
 
         /// <summary>
