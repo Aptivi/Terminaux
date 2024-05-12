@@ -126,7 +126,7 @@ namespace Terminaux.Inputs.Pointer
             if (PlatformHelper.IsOnWindows())
                 StartListenerWindows();
             else
-                StartListenerLinux();
+                StartListenerPosix();
         }
 
         /// <summary>
@@ -144,15 +144,31 @@ namespace Terminaux.Inputs.Pointer
             if (PlatformHelper.IsOnWindows())
                 StopListenerWindows();
             else
-                StopListenerLinux();
+                StopListenerPosix();
         }
 
-        #region Linux-specific
-        private static void StartListenerLinux()
+        #region POSIX-specific
+        private static ulong DetermineIoCtl()
+        {
+            if (PlatformHelper.IsOnMacOS())
+            {
+                // Return FreeBSD's FIONREAD ioctl according to this line, because Darwin is BSD.
+                // http://fxr.watson.org/fxr/source/sys/filio.h#L49
+                //    |  IOC_OUT  |   l   IOCPARM_MASK   |    g         |   n
+                return 0x40000000 | ((4 & 0x1fff) << 16) | (('f') << 8) | (127);
+            }
+
+            // Return Linux's FIONREAD ioctl according to this line.
+            // https://github.com/torvalds/linux/blob/cf87f46fd34d6c19283d9625a7822f20d90b64a4/include/uapi/asm-generic/ioctls.h#L46
+            return 0x541b;
+        }
+
+        private static void StartListenerPosix()
         {
             // Test ioctl
+            ulong ctl = DetermineIoCtl();
             uint numRead = 0;
-            int result = ioctl(0, 0x541b, ref numRead);
+            int result = ioctl(0, ctl, ref numRead);
             if (result == -1)
                 throw new TerminauxException("Failed to start the listener.");
 
@@ -160,7 +176,7 @@ namespace Terminaux.Inputs.Pointer
             Process.Start("stty", "-echo -icanon min 1 time 0");
             TextWriterRaw.WriteRaw($"\u001b[?1000h{(EnableMovementEvents ? "\u001b[?1003h" : "")}");
 
-            // Make a new thread for Linux listener
+            // Make a new thread for POSIX listener
             pointerListener = new(() =>
             {
                 var sw = new Stopwatch();
@@ -170,9 +186,9 @@ namespace Terminaux.Inputs.Pointer
                     bool error = false;
 
                     // Functions to help get output
-                    static int Peek(ref uint numRead, ref bool error)
+                    int Peek(ref uint numRead, ref bool error)
                     {
-                        int result = ioctl(0, 0x541b, ref numRead);
+                        int result = ioctl(0, ctl, ref numRead);
                         if (result == -1)
                         {
                             // Some failure occurred. Stop listening.
@@ -305,13 +321,13 @@ namespace Terminaux.Inputs.Pointer
                 }
             })
             {
-                Name = "Terminaux Pointer Listener for Linux",
+                Name = "Terminaux Pointer Listener for POSIX",
                 IsBackground = true,
             };
             pointerListener.Start();
         }
 
-        private static void StopListenerLinux()
+        private static void StopListenerPosix()
         {
             TextWriterRaw.WriteRaw($"\u001b[?1000l{(EnableMovementEvents ? "\u001b[?1003l" : "")}");
             Process.Start("stty", "echo");
