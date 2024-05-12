@@ -44,6 +44,12 @@ namespace Terminaux.Base.Extensions
         public static bool TerminalReversesRtlText { get; set; }
 
         /// <summary>
+        /// Checks to see whether we're in the alternative buffer or not
+        /// </summary>
+        public static bool IsOnAltBuffer =>
+            isOnAltBuffer;
+
+        /// <summary>
         /// Sets the console title
         /// </summary>
         /// <param name="Text">The text to be set</param>
