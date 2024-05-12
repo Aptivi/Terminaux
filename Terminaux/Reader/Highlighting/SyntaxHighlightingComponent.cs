@@ -22,7 +22,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Misc;
+using Textify.Tools;
 
 namespace Terminaux.Reader.Highlighting
 {

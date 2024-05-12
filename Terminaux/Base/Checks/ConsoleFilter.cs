@@ -21,7 +21,7 @@ using SpecProbe.Platform;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Terminaux.Misc;
+using Textify.Tools;
 
 namespace Terminaux.Base.Checks
 {
