@@ -681,19 +681,7 @@ namespace Terminaux.Inputs.Interactive
                                     SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
                                 }
                                 else
-                                {
-                                    if (InteractiveTuiStatus.CurrentInfoLine == 0)
-                                        return;
-
-                                    // Get the wrapped info string
-                                    string finalInfoRendered = RenderFinalInfo(interactiveTui);
-                                    string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
-
-                                    // Now, ascend
-                                    InteractiveTuiStatus.CurrentInfoLine--;
-                                    if (InteractiveTuiStatus.CurrentInfoLine < 0)
-                                        InteractiveTuiStatus.CurrentInfoLine = 0;
-                                }
+                                    InfoScrollUp();
                             }
                         }
                         else if (mouse.Coordinates.y == paneArrowBottom)
@@ -711,18 +699,7 @@ namespace Terminaux.Inputs.Interactive
                                     SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
                                 }
                                 else
-                                {
-                                    // Get the wrapped info string
-                                    string finalInfoRendered = RenderFinalInfo(interactiveTui);
-                                    string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
-                                    if (InteractiveTuiStatus.CurrentInfoLine == finalInfoStrings.Length - 1)
-                                        return;
-
-                                    // Now, descend
-                                    InteractiveTuiStatus.CurrentInfoLine++;
-                                    if (InteractiveTuiStatus.CurrentInfoLine > finalInfoStrings.Length - SeparatorMaximumHeightInterior)
-                                        InteractiveTuiStatus.CurrentInfoLine = finalInfoStrings.Length - SeparatorMaximumHeightInterior;
-                                }
+                                    InfoScrollDown(interactiveTui);
                             }
                         }
                     }
@@ -747,20 +724,7 @@ namespace Terminaux.Inputs.Interactive
                                 int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
                                 int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
                                 if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
-                                {
-                                    if (InteractiveTuiStatus.CurrentInfoLine == 0)
-                                        break;
-                                    processed = true;
-
-                                    // Get the wrapped info string
-                                    string finalInfoRendered = RenderFinalInfo(interactiveTui);
-                                    string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
-
-                                    // Now, ascend
-                                    InteractiveTuiStatus.CurrentInfoLine--;
-                                    if (InteractiveTuiStatus.CurrentInfoLine < 0)
-                                        InteractiveTuiStatus.CurrentInfoLine = 0;
-                                }
+                                    processed = InfoScrollUp();
                                 else
                                     SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
                             }
@@ -781,18 +745,7 @@ namespace Terminaux.Inputs.Interactive
                                 int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
                                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                                 if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
-                                {
-                                    string finalInfoRendered = RenderFinalInfo(interactiveTui);
-                                    string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
-                                    if (InteractiveTuiStatus.CurrentInfoLine == finalInfoStrings.Length - 1)
-                                        break;
-                                    processed = true;
-
-                                    // Now, descend
-                                    InteractiveTuiStatus.CurrentInfoLine++;
-                                    if (InteractiveTuiStatus.CurrentInfoLine > finalInfoStrings.Length - SeparatorMaximumHeightInterior)
-                                        InteractiveTuiStatus.CurrentInfoLine = finalInfoStrings.Length - SeparatorMaximumHeightInterior;
-                                }
+                                    InfoScrollDown(interactiveTui);
                                 else
                                     SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
                             }
@@ -910,38 +863,10 @@ namespace Terminaux.Inputs.Interactive
                             }
                             break;
                         case ConsoleKey.W:
-                            {
-                                if (InteractiveTuiStatus.CurrentInfoLine == 0)
-                                    break;
-                                processed = true;
-                                
-                                // Get the wrapped info string
-                                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-                                string finalInfoRendered = RenderFinalInfo(interactiveTui);
-                                string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
-
-                                // Now, ascend
-                                InteractiveTuiStatus.CurrentInfoLine--;
-                                if (InteractiveTuiStatus.CurrentInfoLine < 0)
-                                    InteractiveTuiStatus.CurrentInfoLine = 0;
-                            }
+                            processed = InfoScrollUp();
                             break;
                         case ConsoleKey.S:
-                            {
-                                // Get the wrapped info string
-                                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-                                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-                                string finalInfoRendered = RenderFinalInfo(interactiveTui);
-                                string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
-                                if (InteractiveTuiStatus.CurrentInfoLine == finalInfoStrings.Length - 1)
-                                    break;
-                                processed = true;
-
-                                // Now, descend
-                                InteractiveTuiStatus.CurrentInfoLine++;
-                                if (InteractiveTuiStatus.CurrentInfoLine > finalInfoStrings.Length - SeparatorMaximumHeightInterior)
-                                    InteractiveTuiStatus.CurrentInfoLine = finalInfoStrings.Length - SeparatorMaximumHeightInterior;
-                            }
+                            processed = InfoScrollDown(interactiveTui);
                             break;
                         case ConsoleKey.I:
                             {
@@ -1101,6 +1026,35 @@ namespace Terminaux.Inputs.Interactive
             else
                 finalBindings = finalBindings.Where((itb) => !itb.BindingUsesMouse).ToList();
             return [.. finalBindings];
+        }
+
+        private static bool InfoScrollUp()
+        {
+            if (InteractiveTuiStatus.CurrentInfoLine == 0)
+                return false;
+
+            // Now, ascend
+            InteractiveTuiStatus.CurrentInfoLine--;
+            if (InteractiveTuiStatus.CurrentInfoLine < 0)
+                InteractiveTuiStatus.CurrentInfoLine = 0;
+            return true;
+        }
+
+        private static bool InfoScrollDown<T>(BaseInteractiveTui<T> interactiveTui)
+        {
+            // Get the wrapped info string
+            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+            string finalInfoRendered = RenderFinalInfo(interactiveTui);
+            string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
+            if (InteractiveTuiStatus.CurrentInfoLine == finalInfoStrings.Length - 1)
+                return false;
+
+            // Now, descend
+            InteractiveTuiStatus.CurrentInfoLine++;
+            if (InteractiveTuiStatus.CurrentInfoLine > finalInfoStrings.Length - SeparatorMaximumHeightInterior)
+                InteractiveTuiStatus.CurrentInfoLine = finalInfoStrings.Length - SeparatorMaximumHeightInterior;
+            return true;
         }
 
         static InteractiveTuiTools()
