@@ -487,30 +487,37 @@ namespace Terminaux.Inputs.Styles.Infobox
                         if (useColor)
                         {
                             boxBuffer.Append(
-                                TextWriterWhereColor.RenderWhereColorBack(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), leftPos, top, finalForeColor, finalBackColor)
+                                TextWriterWhereColor.RenderWhereColorBack(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? -1 : 0)), leftPos, top, finalForeColor, finalBackColor)
                             );
                         }
                         else
                         {
                             boxBuffer.Append(
-                                TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? 0 : 1)), leftPos, top)
+                                TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? -1 : 0)), leftPos, top)
                             );
                         }
                     }
 
                     // Render the vertical bar
-                    int left = maxWidth - 3;
-                    if (useColor)
+                    if (selections.Length > selectionChoices)
                     {
-                        boxBuffer.Append(
-                            SliderVerticalColor.RenderVerticalSlider(currentSelection + 1, selections.Length, left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, 0, InfoBoxTitledSelectionColor, BackgroundColor, false)
-                        );
-                    }
-                    else
-                    {
-                        boxBuffer.Append(
-                            SliderVerticalColor.RenderVerticalSliderPlain(currentSelection + 1, selections.Length, left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, 0, false)
-                        );
+                        int left = maxWidth - 3;
+                        if (useColor)
+                        {
+                            boxBuffer.Append(
+                                TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, selectionBoxPosY, InfoBoxTitledSelectionColor, BackgroundColor) +
+                                TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, ConsoleWrapper.WindowHeight - selectionChoices, InfoBoxTitledSelectionColor, BackgroundColor) +
+                                SliderVerticalColor.RenderVerticalSlider(currentSelection + 1, selections.Length, left, selectionBoxPosY, ConsoleWrapper.WindowHeight - selectionChoices + 1, 1, InfoBoxTitledSelectionColor, BackgroundColor, false)
+                            );
+                        }
+                        else
+                        {
+                            boxBuffer.Append(
+                                TextWriterWhereColor.RenderWhere("↑", left + 1, selectionBoxPosY) +
+                                TextWriterWhereColor.RenderWhere("↓", left + 1, ConsoleWrapper.WindowHeight - selectionChoices) +
+                                SliderVerticalColor.RenderVerticalSliderPlain(currentSelection + 1, selections.Length, left, selectionBoxPosY, ConsoleWrapper.WindowHeight - selectionChoices + 1, 1, false)
+                            );
+                        }
                     }
 
                     // Render the final result
@@ -538,7 +545,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     bool goingUp = false;
                     if (PointerListener.PointerAvailable)
                     {
-                        void UpdatePositionBasedOnMouse(PointerEventContext mouse)
+                        bool UpdatePositionBasedOnMouse(PointerEventContext mouse)
                         {
                             // Make pages based on console window height
                             int currentPage = currentSelection / selectionChoices;
@@ -577,11 +584,115 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int maxSelectionWidth = maxWidth - selectionBoxPosX * 2 + 2;
                             if (mouse.Coordinates.x <= leftPos || mouse.Coordinates.x >= maxSelectionWidth ||
                                 mouse.Coordinates.y <= selectionBoxPosY || mouse.Coordinates.y >= selectionBoxPosY + selectionChoices + 1)
-                                return;
+                                return false;
                             int listIndex = mouse.Coordinates.y - selectionBoxPosY - 1;
                             listIndex = startIndex + listIndex;
                             listIndex = listIndex >= selections.Length ? selections.Length - 1 : listIndex;
                             currentSelection = listIndex;
+                            return true;
+                        }
+
+                        bool DetermineArrowPressed(PointerEventContext mouse)
+                        {
+                            // Make pages based on console window height
+                            int currentPage = currentSelection / selectionChoices;
+                            int startIndex = selectionChoices * currentPage;
+                            int endIndex = selectionChoices * currentPage + 10;
+                            endIndex = endIndex > selectionChoices ? endIndex : selectionChoices;
+
+                            // Now, translate coordinates to the selected index
+                            string finalInfoRendered = TextTools.FormatString(text, vars);
+                            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+                            List<string> splitFinalLines = [];
+                            foreach (var line in splitLines)
+                            {
+                                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
+                                foreach (var lineSentence in lineSentences)
+                                    splitFinalLines.Add(lineSentence);
+                            }
+                            for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                            {
+                                string line = splitFinalLines[i];
+                                if (!string.IsNullOrWhiteSpace(line))
+                                    break;
+                                splitFinalLines.RemoveAt(i);
+                            }
+                            int selectionReservedHeight = 4 + selectionChoices;
+                            int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                            int maxHeight = splitFinalLines.Count + selectionReservedHeight;
+                            if (maxHeight >= ConsoleWrapper.WindowHeight)
+                                maxHeight = ConsoleWrapper.WindowHeight - 4;
+                            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
+                            int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
+                            int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
+                            int selectionBoxPosX = borderX + 4;
+                            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
+                            int leftPos = selectionBoxPosX + 1;
+                            int maxSelectionWidth = maxWidth - selectionBoxPosX * 2 + 2;
+                            int left = maxWidth - 2;
+                            if (selections.Length <= selectionChoices)
+                                return false;
+                            return
+                                mouse.Coordinates.x == left &&
+                                (mouse.Coordinates.y == selectionBoxPosY + 1 || mouse.Coordinates.y == ConsoleWrapper.WindowHeight - selectionChoices);
+                        }
+
+                        void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
+                        {
+                            // Make pages based on console window height
+                            int currentPage = currentSelection / selectionChoices;
+                            int startIndex = selectionChoices * currentPage;
+                            int endIndex = selectionChoices * currentPage + 10;
+                            endIndex = endIndex > selectionChoices ? endIndex : selectionChoices;
+
+                            // Now, translate coordinates to the selected index
+                            string finalInfoRendered = TextTools.FormatString(text, vars);
+                            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+                            List<string> splitFinalLines = [];
+                            foreach (var line in splitLines)
+                            {
+                                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
+                                foreach (var lineSentence in lineSentences)
+                                    splitFinalLines.Add(lineSentence);
+                            }
+                            for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                            {
+                                string line = splitFinalLines[i];
+                                if (!string.IsNullOrWhiteSpace(line))
+                                    break;
+                                splitFinalLines.RemoveAt(i);
+                            }
+                            int selectionReservedHeight = 4 + selectionChoices;
+                            int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                            int maxHeight = splitFinalLines.Count + selectionReservedHeight;
+                            if (maxHeight >= ConsoleWrapper.WindowHeight)
+                                maxHeight = ConsoleWrapper.WindowHeight - 4;
+                            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
+                            int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
+                            int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
+                            int selectionBoxPosX = borderX + 4;
+                            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
+                            int leftPos = selectionBoxPosX + 1;
+                            int maxSelectionWidth = maxWidth - selectionBoxPosX * 2 + 2;
+                            int left = maxWidth - 2;
+                            if (selections.Length <= selectionChoices)
+                                return;
+                            if (mouse.Coordinates.x == left)
+                            {
+                                if (mouse.Coordinates.y == selectionBoxPosY + 1)
+                                {
+                                    goingUp = true;
+                                    currentSelection--;
+                                    if (currentSelection < 0)
+                                        currentSelection = 0;
+                                }
+                                else if (mouse.Coordinates.y == ConsoleWrapper.WindowHeight - selectionChoices)
+                                {
+                                    currentSelection++;
+                                    if (currentSelection > selections.Length)
+                                        currentSelection = selections.Length;
+                                }
+                            }
                         }
 
                         // Mouse input received.
@@ -602,8 +713,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                UpdatePositionBasedOnMouse(mouse);
-                                bail = true;
+                                if (DetermineArrowPressed(mouse))
+                                    UpdatePositionBasedOnArrowPress(mouse);
+                                else
+                                {
+                                    UpdatePositionBasedOnMouse(mouse);
+                                    bail = true;
+                                }
                                 break;
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
