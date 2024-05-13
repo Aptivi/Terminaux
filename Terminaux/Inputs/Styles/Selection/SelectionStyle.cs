@@ -203,7 +203,7 @@ namespace Terminaux.Inputs.Styles.Selection
 
                         // Populate the answers
                         selectionBuilder.Append(
-                            SelectionInputTools.RenderSelections([.. AllAnswers], 0, listStartPosition + 1, HighlightedAnswer - 1, answersPerPage, ConsoleWrapper.WindowWidth, false, optionColor)
+                            SelectionInputTools.RenderSelections([.. AllAnswers], 0, listStartPosition + 1, HighlightedAnswer - 1, answersPerPage, ConsoleWrapper.WindowWidth, false, Answers.Length - 1, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
                         );
 
                         // Write description area

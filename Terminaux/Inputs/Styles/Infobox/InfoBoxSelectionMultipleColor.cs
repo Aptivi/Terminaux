@@ -408,7 +408,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Now, render the selections
                     boxBuffer.Append(
-                        SelectionInputTools.RenderSelections(selections, selectionBoxPosX, selectionBoxPosY, currentSelection, [.. selectedChoices], selectionChoices, maxSelectionWidth, true, InfoBoxTitledSelectionMultipleColor, BackgroundColor)
+                        SelectionInputTools.RenderSelections(selections, selectionBoxPosX, selectionBoxPosY, currentSelection, [.. selectedChoices], selectionChoices, maxSelectionWidth, true, selections.Length, true, InfoBoxTitledSelectionMultipleColor, BackgroundColor, InfoBoxTitledSelectionMultipleColor, BackgroundColor)
                     );
 
                     // Return the buffer
