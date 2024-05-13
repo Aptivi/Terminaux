@@ -630,7 +630,11 @@ namespace Terminaux.Inputs.Styles.Infobox
             ScreenTools.CurrentScreen?.AddBufferedPart("Informational box - Page", infoBoxPageScreenPart);
             try
             {
-                // First, draw the border
+                // Draw the border and the text
+                int currIdx = 0;
+                int increment = 0;
+                bool exiting = false;
+                bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
@@ -648,22 +652,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                         $"{border}"
                     );
-                    return boxBuffer.ToString();
-                });
 
-                // Then, the text
-                int currIdx = 0;
-                int increment = 0;
-                bool exiting = false;
-                bool delay = false;
-                infoBoxPageScreenPart.AddDynamicText(() =>
-                {
-                    // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = GetFinalLines(text, vars);
-                    var (_, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
-
-                    // Fill the info box with text inside it
-                    var boxBuffer = new StringBuilder();
+                    // Then, render the text
                     delay = false;
                     int linesMade = 0;
                     for (int i = currIdx; i < splitFinalLines.Length; i++)
@@ -690,6 +680,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     return boxBuffer.ToString();
                 });
 
+                // Main loop
                 while (!exiting)
                 {
                     // Render the screen
