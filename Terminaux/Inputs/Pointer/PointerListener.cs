@@ -41,6 +41,7 @@ namespace Terminaux.Inputs.Pointer
         private static Thread? pointerListener;
         private static bool enableMovementEvents;
         private static int clickTier = 1;
+        private static PointerEventContext? tieredContext = null;
         private static Stopwatch clickTierStopwatch = new();
 
         /// <summary>
@@ -128,6 +129,7 @@ namespace Terminaux.Inputs.Pointer
             listening = true;
             active = false;
             context = null;
+            tieredContext = null;
             clickTierStopwatch.Reset();
 
             // Now, start the listener by calling platform-specific initialization code
@@ -147,6 +149,7 @@ namespace Terminaux.Inputs.Pointer
             listening = false;
             active = false;
             context = null;
+            tieredContext = null;
 
             // Now, stop the listener by calling platform-specific finalization code
             if (PlatformHelper.IsOnWindows())
@@ -327,17 +330,19 @@ namespace Terminaux.Inputs.Pointer
                         ProcessDragging(ref press, ref buttonPtr, out dragging);
 
                     // Process double-clicks and other tiered clicks
-                    if (context is not null && context.Button == buttonPtr && context.Modifiers == mods && press == PointerButtonPress.Released && context.Coordinates == (x, y) && clickTierStopwatch.Elapsed <= DoubleClickTimeout)
+                    if (tieredContext is not null && tieredContext.Button == buttonPtr && tieredContext.Modifiers == mods && press == PointerButtonPress.Released && tieredContext.Coordinates == (x, y) && clickTierStopwatch.Elapsed <= DoubleClickTimeout)
                     {
                         clickTier++;
                         clickTierStopwatch.Restart();
                     }
                     else if (press == PointerButtonPress.Released || clickTierStopwatch.Elapsed > DoubleClickTimeout)
                     {
+                        if (press == PointerButtonPress.Released)
+                            tieredContext = context;
                         clickTier = 1;
                         clickTierStopwatch.Reset();
                     }
-                    int finalTier = press == PointerButtonPress.Released ? (clickTier == 1 ? 1 : clickTier - 1) : 0;
+                    int finalTier = press == PointerButtonPress.Released ? clickTier : 0;
 
                     // Add the results
                     var ctx = new PointerEventContext(buttonPtr, press, mods, dragging, x, y, clickTier);
@@ -454,17 +459,19 @@ namespace Terminaux.Inputs.Pointer
                                 ProcessDragging(ref press, ref button, out dragging);
 
                             // Process double-clicks and other tiered clicks
-                            if (context is not null && context.Button == button && context.Modifiers == mods && press == PointerButtonPress.Released && context.Coordinates == (coord.X, coord.Y) && clickTierStopwatch.Elapsed <= DoubleClickTimeout)
+                            if (tieredContext is not null && tieredContext.Button == button && tieredContext.Modifiers == mods && press == PointerButtonPress.Released && tieredContext.Coordinates == (coord.X, coord.Y) && clickTierStopwatch.Elapsed <= DoubleClickTimeout)
                             {
                                 clickTier++;
                                 clickTierStopwatch.Restart();
                             }
                             else if (press == PointerButtonPress.Released || clickTierStopwatch.Elapsed > DoubleClickTimeout)
                             {
+                                if (press == PointerButtonPress.Released)
+                                    tieredContext = context;
                                 clickTier = 1;
                                 clickTierStopwatch.Reset();
                             }
-                            int finalTier = press == PointerButtonPress.Released ? (clickTier == 1 ? 1 : clickTier - 1) : 0;
+                            int finalTier = press == PointerButtonPress.Released ? clickTier : 0;
 
                             // Add the results
                             var ctx = new PointerEventContext(button, press, mods, dragging, coord.X, coord.Y, finalTier);
