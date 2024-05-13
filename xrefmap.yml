@@ -26447,6 +26447,37 @@ references:
   commentId: N:Terminaux.Inputs.Styles.Selection
   fullName: Terminaux.Inputs.Styles.Selection
   nameWithType: Terminaux.Inputs.Styles.Selection
+- uid: Terminaux.Inputs.Styles.Selection.SelectionInputTools
+  name: SelectionInputTools
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionInputTools.html
+  commentId: T:Terminaux.Inputs.Styles.Selection.SelectionInputTools
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionInputTools
+  nameWithType: SelectionInputTools
+- uid: Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections(Terminaux.Inputs.InputChoiceInfo[],System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name: RenderSelections(InputChoiceInfo[], int, int, int, int, int, bool, Color?, Color?)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionInputTools.html#Terminaux_Inputs_Styles_Selection_SelectionInputTools_RenderSelections_Terminaux_Inputs_InputChoiceInfo___System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections(Terminaux.Inputs.InputChoiceInfo[],System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name.vb: RenderSelections(InputChoiceInfo(), Integer, Integer, Integer, Integer, Integer, Boolean, Color, Color)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections(Terminaux.Inputs.InputChoiceInfo[], int, int, int, int, int, bool, Terminaux.Colors.Color?, Terminaux.Colors.Color?)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections(Terminaux.Inputs.InputChoiceInfo(), Integer, Integer, Integer, Integer, Integer, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  nameWithType: SelectionInputTools.RenderSelections(InputChoiceInfo[], int, int, int, int, int, bool, Color?, Color?)
+  nameWithType.vb: SelectionInputTools.RenderSelections(InputChoiceInfo(), Integer, Integer, Integer, Integer, Integer, Boolean, Color, Color)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections(Terminaux.Inputs.InputChoiceInfo[],System.Int32,System.Int32,System.Int32,System.Int32[],System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name: RenderSelections(InputChoiceInfo[], int, int, int, int[]?, int, int, bool, Color?, Color?)
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionInputTools.html#Terminaux_Inputs_Styles_Selection_SelectionInputTools_RenderSelections_Terminaux_Inputs_InputChoiceInfo___System_Int32_System_Int32_System_Int32_System_Int32___System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections(Terminaux.Inputs.InputChoiceInfo[],System.Int32,System.Int32,System.Int32,System.Int32[],System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color)
+  name.vb: RenderSelections(InputChoiceInfo(), Integer, Integer, Integer, Integer(), Integer, Integer, Boolean, Color, Color)
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections(Terminaux.Inputs.InputChoiceInfo[], int, int, int, int[]?, int, int, bool, Terminaux.Colors.Color?, Terminaux.Colors.Color?)
+  fullName.vb: Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections(Terminaux.Inputs.InputChoiceInfo(), Integer, Integer, Integer, Integer(), Integer, Integer, Boolean, Terminaux.Colors.Color, Terminaux.Colors.Color)
+  nameWithType: SelectionInputTools.RenderSelections(InputChoiceInfo[], int, int, int, int[]?, int, int, bool, Color?, Color?)
+  nameWithType.vb: SelectionInputTools.RenderSelections(InputChoiceInfo(), Integer, Integer, Integer, Integer(), Integer, Integer, Boolean, Color, Color)
+- uid: Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections*
+  name: RenderSelections
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionInputTools.html#Terminaux_Inputs_Styles_Selection_SelectionInputTools_RenderSelections_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionInputTools.RenderSelections
+  nameWithType: SelectionInputTools.RenderSelections
 - uid: Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle
   name: SelectionMultipleStyle
   href: api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.html

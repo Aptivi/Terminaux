@@ -1405,6 +1405,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionInputTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionInputTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionMultipleStyle.yml",
       "output": {
         ".html": {
