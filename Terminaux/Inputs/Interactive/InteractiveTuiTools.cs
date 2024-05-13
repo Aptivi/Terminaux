@@ -45,8 +45,6 @@ namespace Terminaux.Inputs.Interactive
     /// </summary>
     public static class InteractiveTuiTools
     {
-
-        private static string _finalInfoRendered = "";
         private static readonly object _interactiveTuiLock = new();
 
         /// <summary>
@@ -413,37 +411,8 @@ namespace Terminaux.Inputs.Interactive
             var ForegroundColor = InteractiveTuiStatus.ForegroundColor;
             var PaneItemBackColor = InteractiveTuiStatus.PaneItemBackColor;
 
-            // Now, do the job!
-            string finalInfoRendered;
-            try
-            {
-                // Populate data source and its count
-                int paneCurrentSelection = InteractiveTuiStatus.CurrentPane == 2 ?
-                                           InteractiveTuiStatus.SecondPaneCurrentSelection :
-                                           InteractiveTuiStatus.FirstPaneCurrentSelection;
-                var data = InteractiveTuiStatus.CurrentPane == 2 ?
-                           interactiveTui.SecondaryDataSource :
-                           interactiveTui.PrimaryDataSource;
-                int dataCount = data.Length();
-
-                // Populate selected data
-                if (dataCount > 0)
-                {
-                    T selectedData = (T)(data.GetElementFromIndex(paneCurrentSelection - 1) ??
-                        throw new TerminauxInternalException("Attempted to render info about null data"));
-                    finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
-                }
-                else
-                {
-                    finalInfoRendered = "No info.";
-                }
-            }
-            catch
-            {
-                finalInfoRendered = "Failed to get information.";
-            }
-
             // Now, write info
+            string finalInfoRendered = RenderFinalInfo(interactiveTui);
             var finalForeColorSecondPane = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
             part.AddDynamicText(() =>
             {
@@ -457,7 +426,7 @@ namespace Terminaux.Inputs.Interactive
                 builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
                 builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
 
-                _finalInfoRendered = finalInfoRendered;
+                // Split the information string
                 string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
                 for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)
                 {
@@ -524,6 +493,39 @@ namespace Terminaux.Inputs.Interactive
 
             interactiveTui.screen?.AddBufferedPart(partName, part);
             interactiveTui.trackedParts.Add(partName, part);
+        }
+
+        private static string RenderFinalInfo<T>(BaseInteractiveTui<T> interactiveTui)
+        {
+            string finalInfoRendered;
+            try
+            {
+                // Populate data source and its count
+                int paneCurrentSelection = InteractiveTuiStatus.CurrentPane == 2 ?
+                                           InteractiveTuiStatus.SecondPaneCurrentSelection :
+                                           InteractiveTuiStatus.FirstPaneCurrentSelection;
+                var data = InteractiveTuiStatus.CurrentPane == 2 ?
+                           interactiveTui.SecondaryDataSource :
+                           interactiveTui.PrimaryDataSource;
+                int dataCount = data.Length();
+
+                // Populate selected data
+                if (dataCount > 0)
+                {
+                    T selectedData = (T)(data.GetElementFromIndex(paneCurrentSelection - 1) ??
+                        throw new TerminauxInternalException("Attempted to render info about null data"));
+                    finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
+                }
+                else
+                {
+                    finalInfoRendered = "No info.";
+                }
+            }
+            catch
+            {
+                finalInfoRendered = "Failed to get information.";
+            }
+            return finalInfoRendered;
         }
 
         private static void RespondToUserInput<T>(BaseInteractiveTui<T> interactiveTui)
@@ -809,10 +811,11 @@ namespace Terminaux.Inputs.Interactive
                             }
                             break;
                         case ConsoleKey.I:
-                            if (key.Modifiers.HasFlag(ConsoleModifiers.Shift) && !string.IsNullOrEmpty(_finalInfoRendered))
+                            string finalInfoRendered = RenderFinalInfo(interactiveTui);
+                            if (key.Modifiers.HasFlag(ConsoleModifiers.Shift) && !string.IsNullOrEmpty(finalInfoRendered))
                             {
                                 // User needs more information in the infobox
-                                InfoBoxColor.WriteInfoBoxColorBack(_finalInfoRendered, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                             }
                             break;
                         case ConsoleKey.K:
