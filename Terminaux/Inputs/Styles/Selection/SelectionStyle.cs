@@ -320,6 +320,29 @@ namespace Terminaux.Inputs.Styles.Selection
                     bool goingUp = false;
                     if (PointerListener.PointerAvailable)
                     {
+                        bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse)
+                        {
+                            if (mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
+                                return false;
+
+                            // Make pages based on console window height
+                            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
+                            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                            int answersPerPage = listEndPosition - 5;
+                            int currentPage = (HighlightedAnswer - 1) / answersPerPage;
+                            startIndex = answersPerPage * currentPage;
+                            endIndex = answersPerPage * (currentPage + 1) - 1;
+
+                            // Now, translate coordinates to the selected index
+                            if (mouse.Coordinates.y <= listStartPosition || mouse.Coordinates.y >= listEndPosition - 3)
+                                return false;
+                            int listIndex = mouse.Coordinates.y - listStartPosition;
+                            listIndex = startIndex + listIndex;
+                            listIndex = listIndex > AllAnswers.Count ? AllAnswers.Count : listIndex;
+                            HighlightedAnswer = listIndex;
+                            return true;
+                        }
+
                         bool DetermineArrowPressed(PointerEventContext mouse)
                         {
                             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
@@ -379,9 +402,12 @@ namespace Terminaux.Inputs.Styles.Selection
                                     UpdatePositionBasedOnArrowPress(mouse);
                                 else
                                 {
-                                    ConsoleWrapper.CursorVisible = initialVisible;
-                                    ColorTools.LoadBack();
-                                    bail = true;
+                                    if (UpdateSelectedIndexWithMousePos(mouse))
+                                    {
+                                        ConsoleWrapper.CursorVisible = initialVisible;
+                                        ColorTools.LoadBack();
+                                        bail = true;
+                                    }
                                 }
                                 break;
                             case PointerButton.Right:
@@ -399,24 +425,7 @@ namespace Terminaux.Inputs.Styles.Selection
                             case PointerButton.None:
                                 if (mouse.ButtonPress != PointerButtonPress.Moved)
                                     break;
-                                if (mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
-                                    break;
-
-                                // Make pages based on console window height
-                                int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
-                                int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                                int answersPerPage = listEndPosition - 5;
-                                int currentPage = (HighlightedAnswer - 1) / answersPerPage;
-                                startIndex = answersPerPage * currentPage;
-                                endIndex = answersPerPage * (currentPage + 1) - 1;
-
-                                // Now, translate coordinates to the selected index
-                                if (mouse.Coordinates.y <= listStartPosition || mouse.Coordinates.y >= listEndPosition - 3)
-                                    break;
-                                int listIndex = mouse.Coordinates.y - listStartPosition;
-                                listIndex = startIndex + listIndex;
-                                listIndex = listIndex > AllAnswers.Count ? AllAnswers.Count : listIndex;
-                                HighlightedAnswer = listIndex;
+                                UpdateSelectedIndexWithMousePos(mouse);
                                 break;
                         }
                     }

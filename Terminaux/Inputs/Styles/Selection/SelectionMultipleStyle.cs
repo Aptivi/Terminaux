@@ -328,10 +328,10 @@ namespace Terminaux.Inputs.Styles.Selection
                     bool goingUp = false;
                     if (PointerListener.PointerAvailable)
                     {
-                        void UpdateSelectedIndexWithMousePos(PointerEventContext mouse)
+                        bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse)
                         {
                             if (mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
-                                return;
+                                return false;
 
                             // Make pages based on console window height
                             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
@@ -343,11 +343,12 @@ namespace Terminaux.Inputs.Styles.Selection
 
                             // Now, translate coordinates to the selected index
                             if (mouse.Coordinates.y <= listStartPosition || mouse.Coordinates.y >= listEndPosition - 3)
-                                return;
+                                return false;
                             int listIndex = mouse.Coordinates.y - listStartPosition;
                             listIndex = startIndex + listIndex;
                             listIndex = listIndex > AllAnswers.Count ? AllAnswers.Count : listIndex;
                             HighlightedAnswer = listIndex;
+                            return true;
                         }
 
                         bool DetermineArrowPressed(PointerEventContext mouse)
@@ -409,9 +410,11 @@ namespace Terminaux.Inputs.Styles.Selection
                                     UpdatePositionBasedOnArrowPress(mouse);
                                 else
                                 {
-                                    UpdateSelectedIndexWithMousePos(mouse);
-                                    if (!SelectedAnswers.Remove(HighlightedAnswer))
-                                        SelectedAnswers.Add(HighlightedAnswer);
+                                    if (UpdateSelectedIndexWithMousePos(mouse))
+                                    {
+                                        if (!SelectedAnswers.Remove(HighlightedAnswer))
+                                            SelectedAnswers.Add(HighlightedAnswer);
+                                    }
                                 }
                                 break;
                             case PointerButton.Right:
