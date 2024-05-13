@@ -52,7 +52,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
 
         private void MouseEvent(object sender, PointerEventContext e)
         {
-            TextWriterColor.WriteColor($"{e.Coordinates.x}/{e.Coordinates.y} [{e.Button}, {e.ButtonPress}, {e.Modifiers}] [Dragging: {e.Dragging}]",
+            TextWriterColor.WriteColor($"{e.Coordinates.x}/{e.Coordinates.y} [{e.Button}, {e.ButtonPress}, {e.Modifiers}] [Dragging: {e.Dragging}, Tier: {e.ClickTier}]",
                 e.ButtonPress == PointerButtonPress.Clicked ? ConsoleColors.Green :
                 e.ButtonPress == PointerButtonPress.Released ? ConsoleColors.Purple :
                 e.ButtonPress == PointerButtonPress.Scrolled ? ConsoleColors.Red :

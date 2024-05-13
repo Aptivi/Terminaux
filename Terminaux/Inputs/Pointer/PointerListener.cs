@@ -40,6 +40,8 @@ namespace Terminaux.Inputs.Pointer
         private static PointerButton draggingButton = PointerButton.None;
         private static Thread? pointerListener;
         private static bool enableMovementEvents;
+        private static int clickTier = 1;
+        private static Stopwatch clickTierStopwatch = new();
 
         /// <summary>
         /// Raised when console mouse event occurs
@@ -94,6 +96,11 @@ namespace Terminaux.Inputs.Pointer
         public static bool InvertScrollYAxis { get; set; }
 
         /// <summary>
+        /// Specifies the time in milliseconds whether the double click times out
+        /// </summary>
+        public static TimeSpan DoubleClickTimeout { get; set; } = TimeSpan.FromMilliseconds(500);
+
+        /// <summary>
         /// Reads a pointer event and removes it from the context buffer
         /// </summary>
         /// <returns>A <see cref="PointerEventContext"/> instance that describes the last mouse event, or <see langword="null"/> if there are no more events to read.</returns>
@@ -121,6 +128,7 @@ namespace Terminaux.Inputs.Pointer
             listening = true;
             active = false;
             context = null;
+            clickTierStopwatch.Reset();
 
             // Now, start the listener by calling platform-specific initialization code
             if (PlatformHelper.IsOnWindows())
@@ -310,12 +318,29 @@ namespace Terminaux.Inputs.Pointer
                     mods |=
                         (modState & PosixButtonModifierState.Shift) != 0 ? PointerModifiers.Shift :
                         PointerModifiers.None;
+
+                    // Process dragging
                     bool dragging = false;
                     if (!EnableMovementEvents && press == PointerButtonPress.Moved)
                         break;
                     else
                         ProcessDragging(ref press, ref buttonPtr, out dragging);
-                    var ctx = new PointerEventContext(buttonPtr, press, mods, dragging, x, y);
+
+                    // Process double-clicks and other tiered clicks
+                    if (context is not null && context.Button == buttonPtr && context.Modifiers == mods && press == PointerButtonPress.Released && context.Coordinates == (x, y) && clickTierStopwatch.Elapsed <= DoubleClickTimeout)
+                    {
+                        clickTier++;
+                        clickTierStopwatch.Restart();
+                    }
+                    else if (press == PointerButtonPress.Released || clickTierStopwatch.Elapsed > DoubleClickTimeout)
+                    {
+                        clickTier = 1;
+                        clickTierStopwatch.Reset();
+                    }
+                    int finalTier = press == PointerButtonPress.Released ? (clickTier == 1 ? 1 : clickTier - 1) : 0;
+
+                    // Add the results
+                    var ctx = new PointerEventContext(buttonPtr, press, mods, dragging, x, y, clickTier);
                     context = ctx;
                     MouseEvent.Invoke("Terminaux", ctx);
                 }
@@ -420,12 +445,29 @@ namespace Terminaux.Inputs.Pointer
                             mods |=
                                 (@event.dwControlKeyState & ControlKeyState.ShiftPressed) != 0 ? PointerModifiers.Shift :
                                 PointerModifiers.None;
+
+                            // Process dragging
                             bool dragging = false;
                             if (!EnableMovementEvents && press == PointerButtonPress.Moved)
                                 break;
                             else
                                 ProcessDragging(ref press, ref button, out dragging);
-                            var ctx = new PointerEventContext(button, press, mods, dragging, coord.X, coord.Y);
+
+                            // Process double-clicks and other tiered clicks
+                            if (context is not null && context.Button == button && context.Modifiers == mods && press == PointerButtonPress.Released && context.Coordinates == (coord.X, coord.Y) && clickTierStopwatch.Elapsed <= DoubleClickTimeout)
+                            {
+                                clickTier++;
+                                clickTierStopwatch.Restart();
+                            }
+                            else if (press == PointerButtonPress.Released || clickTierStopwatch.Elapsed > DoubleClickTimeout)
+                            {
+                                clickTier = 1;
+                                clickTierStopwatch.Reset();
+                            }
+                            int finalTier = press == PointerButtonPress.Released ? (clickTier == 1 ? 1 : clickTier - 1) : 0;
+
+                            // Add the results
+                            var ctx = new PointerEventContext(button, press, mods, dragging, coord.X, coord.Y, finalTier);
                             context = ctx;
                             MouseEvent.Invoke("Terminaux", ctx);
                             break;

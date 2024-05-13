@@ -29,6 +29,7 @@ namespace Terminaux.Inputs.Pointer
         private readonly PointerModifiers mouseMods;
         private readonly bool dragging;
         private readonly int x, y;
+        private readonly int clickTier;
 
         /// <summary>
         /// Gets the button or the scrolling direction
@@ -60,7 +61,13 @@ namespace Terminaux.Inputs.Pointer
         public (int x, int y) Coordinates =>
             (x, y);
 
-        internal PointerEventContext(PointerButton mouseButton, PointerButtonPress mouseButtonPress, PointerModifiers mouseMods, bool dragging, int x, int y)
+        /// <summary>
+        /// Specifies whether this is a single-click (1), double-click (2), or more. Only populated in the <see cref="PointerButtonPress.Released"/> event.
+        /// </summary>
+        public int ClickTier =>
+            clickTier;
+
+        internal PointerEventContext(PointerButton mouseButton, PointerButtonPress mouseButtonPress, PointerModifiers mouseMods, bool dragging, int x, int y, int clickTier)
         {
             this.mouseButton = mouseButton;
             this.mouseButtonPress = mouseButtonPress;
@@ -68,6 +75,7 @@ namespace Terminaux.Inputs.Pointer
             this.dragging = dragging;
             this.x = x;
             this.y = y;
+            this.clickTier = clickTier;
         }
     }
 }
