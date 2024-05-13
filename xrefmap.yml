@@ -23757,6 +23757,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Pointer.PointerEventContext.ButtonPress
   nameWithType: PointerEventContext.ButtonPress
+- uid: Terminaux.Inputs.Pointer.PointerEventContext.ClickTier
+  name: ClickTier
+  href: api/Terminaux.Inputs.Pointer.PointerEventContext.html#Terminaux_Inputs_Pointer_PointerEventContext_ClickTier
+  commentId: P:Terminaux.Inputs.Pointer.PointerEventContext.ClickTier
+  fullName: Terminaux.Inputs.Pointer.PointerEventContext.ClickTier
+  nameWithType: PointerEventContext.ClickTier
+- uid: Terminaux.Inputs.Pointer.PointerEventContext.ClickTier*
+  name: ClickTier
+  href: api/Terminaux.Inputs.Pointer.PointerEventContext.html#Terminaux_Inputs_Pointer_PointerEventContext_ClickTier_
+  commentId: Overload:Terminaux.Inputs.Pointer.PointerEventContext.ClickTier
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Pointer.PointerEventContext.ClickTier
+  nameWithType: PointerEventContext.ClickTier
 - uid: Terminaux.Inputs.Pointer.PointerEventContext.Coordinates
   name: Coordinates
   href: api/Terminaux.Inputs.Pointer.PointerEventContext.html#Terminaux_Inputs_Pointer_PointerEventContext_Coordinates
@@ -23802,6 +23815,19 @@ references:
   commentId: T:Terminaux.Inputs.Pointer.PointerListener
   fullName: Terminaux.Inputs.Pointer.PointerListener
   nameWithType: PointerListener
+- uid: Terminaux.Inputs.Pointer.PointerListener.DoubleClickTimeout
+  name: DoubleClickTimeout
+  href: api/Terminaux.Inputs.Pointer.PointerListener.html#Terminaux_Inputs_Pointer_PointerListener_DoubleClickTimeout
+  commentId: P:Terminaux.Inputs.Pointer.PointerListener.DoubleClickTimeout
+  fullName: Terminaux.Inputs.Pointer.PointerListener.DoubleClickTimeout
+  nameWithType: PointerListener.DoubleClickTimeout
+- uid: Terminaux.Inputs.Pointer.PointerListener.DoubleClickTimeout*
+  name: DoubleClickTimeout
+  href: api/Terminaux.Inputs.Pointer.PointerListener.html#Terminaux_Inputs_Pointer_PointerListener_DoubleClickTimeout_
+  commentId: Overload:Terminaux.Inputs.Pointer.PointerListener.DoubleClickTimeout
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Pointer.PointerListener.DoubleClickTimeout
+  nameWithType: PointerListener.DoubleClickTimeout
 - uid: Terminaux.Inputs.Pointer.PointerListener.EnableMovementEvents
   name: EnableMovementEvents
   href: api/Terminaux.Inputs.Pointer.PointerListener.html#Terminaux_Inputs_Pointer_PointerListener_EnableMovementEvents
