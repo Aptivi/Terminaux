@@ -592,7 +592,7 @@ namespace Terminaux.Inputs.Interactive
                                     refresh = true;
                                 }
                             }
-                            else if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth + 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior - 1)
+                            else if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
                             {
                                 if (InteractiveTuiStatus.CurrentPane != 2)
                                 {
@@ -735,18 +735,67 @@ namespace Terminaux.Inputs.Interactive
                         case PointerButton.WheelUp:
                             processed = true;
                             loopBail = true;
-                            if (InteractiveTuiStatus.CurrentPane == 2)
-                                SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
+                            if (interactiveTui.SecondPaneInteractable)
+                            {
+                                if (InteractiveTuiStatus.CurrentPane == 2)
+                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
+                                else
+                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                            }
                             else
-                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                            {
+                                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+                                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                                if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
+                                {
+                                    if (InteractiveTuiStatus.CurrentInfoLine == 0)
+                                        break;
+                                    processed = true;
+
+                                    // Get the wrapped info string
+                                    string finalInfoRendered = RenderFinalInfo(interactiveTui);
+                                    string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
+
+                                    // Now, ascend
+                                    InteractiveTuiStatus.CurrentInfoLine--;
+                                    if (InteractiveTuiStatus.CurrentInfoLine < 0)
+                                        InteractiveTuiStatus.CurrentInfoLine = 0;
+                                }
+                                else
+                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                            }
                             break;
                         case PointerButton.WheelDown:
                             processed = true;
                             loopBail = true;
-                            if (InteractiveTuiStatus.CurrentPane == 2)
-                                SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
+                            if (interactiveTui.SecondPaneInteractable)
+                            {
+                                if (InteractiveTuiStatus.CurrentPane == 2)
+                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
+                                else
+                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
+                            }
                             else
-                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
+                            {
+                                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+                                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
+                                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+                                if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
+                                {
+                                    string finalInfoRendered = RenderFinalInfo(interactiveTui);
+                                    string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
+                                    if (InteractiveTuiStatus.CurrentInfoLine == finalInfoStrings.Length - 1)
+                                        break;
+                                    processed = true;
+
+                                    // Now, descend
+                                    InteractiveTuiStatus.CurrentInfoLine++;
+                                    if (InteractiveTuiStatus.CurrentInfoLine > finalInfoStrings.Length - SeparatorMaximumHeightInterior)
+                                        InteractiveTuiStatus.CurrentInfoLine = finalInfoStrings.Length - SeparatorMaximumHeightInterior;
+                                }
+                                else
+                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
+                            }
                             break;
                         case PointerButton.Left:
                             if (mouse.ButtonPress != PointerButtonPress.Released)
