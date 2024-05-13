@@ -42,6 +42,10 @@ namespace Terminaux.Inputs.Interactive
         /// Current pane
         /// </summary>
         public static int CurrentPane { get; internal set; } = 1;
+        /// <summary>
+        /// Current info line index
+        /// </summary>
+        public static int CurrentInfoLine { get; internal set; } = 0;
 
         /// <summary>
         /// Interactive TUI background color
