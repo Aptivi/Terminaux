@@ -755,7 +755,10 @@ namespace Terminaux.Inputs.Interactive
 
                             // Check to see if the user pressed the up/down arrow button
                             if (DetermineArrowPressed(mouse))
+                            {
                                 UpdatePositionBasedOnArrowPress(mouse);
+                                loopBail = true;
+                            }
                             else
                             {
                                 UpdateSelectionBasedOnMouse(mouse);
