@@ -23385,6 +23385,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Interactive.InteractiveTuiStatus.BoxForegroundColor
   nameWithType: InteractiveTuiStatus.BoxForegroundColor
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiStatus.CurrentInfoLine
+  name: CurrentInfoLine
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.html#Terminaux_Inputs_Interactive_InteractiveTuiStatus_CurrentInfoLine
+  commentId: P:Terminaux.Inputs.Interactive.InteractiveTuiStatus.CurrentInfoLine
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiStatus.CurrentInfoLine
+  nameWithType: InteractiveTuiStatus.CurrentInfoLine
+- uid: Terminaux.Inputs.Interactive.InteractiveTuiStatus.CurrentInfoLine*
+  name: CurrentInfoLine
+  href: api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.html#Terminaux_Inputs_Interactive_InteractiveTuiStatus_CurrentInfoLine_
+  commentId: Overload:Terminaux.Inputs.Interactive.InteractiveTuiStatus.CurrentInfoLine
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Interactive.InteractiveTuiStatus.CurrentInfoLine
+  nameWithType: InteractiveTuiStatus.CurrentInfoLine
 - uid: Terminaux.Inputs.Interactive.InteractiveTuiStatus.CurrentPane
   name: CurrentPane
   href: api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.html#Terminaux_Inputs_Interactive_InteractiveTuiStatus_CurrentPane
