@@ -36,6 +36,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
+using Terminaux.Inputs.Styles.Selection;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -406,79 +407,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                     boxBuffer.Append(borderSelection);
 
                     // Now, render the selections
-                    int currentPage = currentSelection / selectionChoices;
-                    int startIndex = selectionChoices * currentPage;
-                    for (int i = 0; i <= selectionChoices - 1; i++)
-                    {
-                        // Populate the selection box
-                        int finalIndex = i + startIndex;
-                        if (finalIndex >= selections.Length)
-                            break;
-                        bool selected = finalIndex == currentSelection;
-                        var choice = selections[finalIndex];
-                        string AnswerTitle = choice.ChoiceTitle ?? "";
-                        bool disabled = choice.ChoiceDisabled;
+                    boxBuffer.Append(
+                        SelectionInputTools.RenderSelections(selections, selectionBoxPosX, selectionBoxPosY, currentSelection, [.. selectedChoices], selectionChoices, maxSelectionWidth, true, InfoBoxTitledSelectionMultipleColor, BackgroundColor)
+                    );
 
-                        // Get the option
-                        string AnswerOption = $"{(selected ? ">" : disabled ? "X" : " ")} [{(selectedChoices.Contains(finalIndex) ? "*" : " ")}] {choice}) {AnswerTitle}";
-                        int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
-                        if (AnswerTitleLeft < answerTitleMaxLeft)
-                        {
-                            string renderedChoice = $"{(selected ? ">" : disabled ? "X" : " ")} [{(selectedChoices.Contains(finalIndex) ? "*" : " ")}] {choice.ChoiceName}) ";
-                            int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
-                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
-                        }
-                        AnswerOption = AnswerOption.Truncate(maxSelectionWidth - 4);
-
-                        // Render an entry
-                        var finalForeColor = selected ? BackgroundColor : InfoBoxTitledSelectionMultipleColor;
-                        var finalBackColor = selected ? InfoBoxTitledSelectionMultipleColor : BackgroundColor;
-                        int leftPos = selectionBoxPosX + 1;
-                        int top = selectionBoxPosY + finalIndex - startIndex;
-                        if (useColor)
-                        {
-                            boxBuffer.Append(
-                                TextWriterWhereColor.RenderWhereColorBack(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? -1 : 0)), leftPos, top, finalForeColor, finalBackColor)
-                            );
-                        }
-                        else
-                        {
-                            boxBuffer.Append(
-                                TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', maxSelectionWidth - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? -1 : 0)), leftPos, top)
-                            );
-                        }
-                    }
-
-                    // Render the vertical bar
-                    if (selections.Length > selectionChoices)
-                    {
-                        int left = maxWidth - 3;
-                        if (useColor)
-                        {
-                            boxBuffer.Append(
-                                TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, selectionBoxPosY, InfoBoxTitledSelectionMultipleColor, BackgroundColor) +
-                                TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, ConsoleWrapper.WindowHeight - selectionChoices, InfoBoxTitledSelectionMultipleColor, BackgroundColor) +
-                                SliderVerticalColor.RenderVerticalSlider(currentSelection + 1, selections.Length, left, selectionBoxPosY, ConsoleWrapper.WindowHeight - selectionChoices + 1, 1, InfoBoxTitledSelectionMultipleColor, BackgroundColor, false)
-                            );
-                        }
-                        else
-                        {
-                            boxBuffer.Append(
-                                TextWriterWhereColor.RenderWhere("↑", left + 1, selectionBoxPosY) +
-                                TextWriterWhereColor.RenderWhere("↓", left + 1, ConsoleWrapper.WindowHeight - selectionChoices) +
-                                SliderVerticalColor.RenderVerticalSliderPlain(currentSelection + 1, selections.Length, left, selectionBoxPosY, ConsoleWrapper.WindowHeight - selectionChoices + 1, 1, false)
-                            );
-                        }
-                    }
-
-                    // Render the final result
-                    if (useColor)
-                    {
-                        boxBuffer.Append(
-                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
-                        );
-                    }
+                    // Return the buffer
                     ColorTools.AllowForeground = false;
                     return boxBuffer.ToString();
                 });
@@ -511,7 +444,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             if (mouse.Coordinates.x <= leftPos || mouse.Coordinates.x >= maxSelectionWidth ||
                                 mouse.Coordinates.y <= selectionBoxPosY || mouse.Coordinates.y >= selectionBoxPosY + selectionChoices + 1)
                                 return false;
-                            int listIndex = mouse.Coordinates.y - selectionBoxPosY - 1;
+                            int listIndex = mouse.Coordinates.y - selectionBoxPosY;
                             listIndex = startIndex + listIndex;
                             listIndex = listIndex >= selections.Length ? selections.Length - 1 : listIndex;
                             currentSelection = listIndex;
@@ -531,7 +464,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 return false;
                             return
                                 mouse.Coordinates.x == left &&
-                                (mouse.Coordinates.y == selectionBoxPosY + 1 || mouse.Coordinates.y == ConsoleWrapper.WindowHeight - selectionChoices);
+                                (mouse.Coordinates.y == selectionBoxPosY || mouse.Coordinates.y == ConsoleWrapper.WindowHeight - selectionChoices);
                         }
 
                         void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
@@ -547,7 +480,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 return;
                             if (mouse.Coordinates.x == left)
                             {
-                                if (mouse.Coordinates.y == selectionBoxPosY + 1)
+                                if (mouse.Coordinates.y == selectionBoxPosY)
                                 {
                                     goingUp = true;
                                     currentSelection--;

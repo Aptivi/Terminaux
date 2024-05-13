@@ -202,52 +202,9 @@ namespace Terminaux.Inputs.Styles.Selection
                         );
 
                         // Populate the answers
-                        int renderedAnswers = 1;
-                        for (int AnswerIndex = startIndex; AnswerIndex <= endIndex; AnswerIndex++)
-                        {
-                            selectionBuilder.Append(CsiSequences.GenerateCsiCursorPosition(1, listStartPosition + renderedAnswers + 1));
-                            bool AltAnswer = AnswerIndex >= altAnswersFirstIdx;
-
-                            // Check to see if we're out of bounds
-                            var clear = ConsoleClearing.GetClearLineToRightSequence();
-                            if (AnswerIndex >= AllAnswers.Count)
-                            {
-                                // Write an empty entry that clears the line
-                                selectionBuilder.Append(clear);
-                            }
-                            else
-                            {
-                                // Populate the answer
-                                bool selected = AnswerIndex + 1 == HighlightedAnswer;
-                                var AnswerInstance = AllAnswers[AnswerIndex];
-                                string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
-                                bool disabled = AnswerInstance.ChoiceDisabled;
-
-                                // Get the option
-                                string AnswerOption = $"{(selected ? ">" : disabled ? "X" : " ")} {AnswerInstance}) {AnswerTitle}";
-                                int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
-                                if (AnswerTitleLeft < answerTitleMaxLeft)
-                                {
-                                    string renderedChoice = $"{(selected ? ">" : disabled ? "X" : " ")} {AnswerInstance.ChoiceName}) ";
-                                    int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
-                                    AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}" + $"{clear}";
-                                }
-                                var AnswerColor =
-                                    disabled ? disabledOptionColor :
-                                    selected ? selectedOptionColor :
-                                    AltAnswer ? altOptionColor :
-                                    optionColor;
-                                AnswerOption = $"{ColorTools.RenderSetConsoleColor(AnswerColor)}{AnswerOption}";
-                                selectionBuilder.Append(AnswerOption.Truncate(answerTitleMaxLeft - 8 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) =>
-                                {
-                                    int sum = 0;
-                                    foreach (Match item in mc.matches)
-                                        sum += item.Length;
-                                    return sum;
-                                })));
-                            }
-                            renderedAnswers++;
-                        }
+                        selectionBuilder.Append(
+                            SelectionInputTools.RenderSelections([.. AllAnswers], 0, listStartPosition + 1, HighlightedAnswer - 1, answersPerPage, ConsoleWrapper.WindowWidth, false, optionColor)
+                        );
 
                         // Write description area
                         int descSepArea = ConsoleWrapper.WindowHeight - 3;
@@ -298,16 +255,6 @@ namespace Terminaux.Inputs.Styles.Selection
                                 $"{CsiSequences.GenerateCsiCursorPosition(numbersLeft + 1, descSepArea + 1)}" +
                                 $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
                                 numberRender
-                            );
-                        }
-
-                        // Render the vertical slider.
-                        if (AllAnswers.Count > answersPerPage)
-                        {
-                            selectionBuilder.Append(
-                                TextWriterWhereColor.RenderWhereColor("↑", ConsoleWrapper.WindowWidth - 1, listStartPosition + 1, sliderColor) +
-                                TextWriterWhereColor.RenderWhereColor("↓", ConsoleWrapper.WindowWidth - 1, listStartPosition + answersPerPage, sliderColor) +
-                                SliderVerticalColor.RenderVerticalSlider(HighlightedAnswer, AllAnswers.Count, ConsoleWrapper.WindowWidth - 2, listStartPosition + 1, listStartPosition + 2, 5, sliderColor, sliderColor, false)
                             );
                         }
                         return selectionBuilder.ToString();
