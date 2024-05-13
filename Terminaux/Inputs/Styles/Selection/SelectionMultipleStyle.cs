@@ -35,6 +35,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Inputs.Styles.Selection
@@ -309,9 +310,14 @@ namespace Terminaux.Inputs.Styles.Selection
                         }
 
                         // Render the vertical slider.
-                        selectionBuilder.Append(
-                            SliderVerticalColor.RenderVerticalSlider(HighlightedAnswer, AllAnswers.Count, ConsoleWrapper.WindowWidth - 2, listStartPosition, listStartPosition + 1, 4, sliderColor, sliderColor, false)
-                        );
+                        if (AllAnswers.Count > answersPerPage)
+                        {
+                            selectionBuilder.Append(
+                                TextWriterWhereColor.RenderWhereColor("↑", ConsoleWrapper.WindowWidth - 1, listStartPosition + 1, sliderColor) +
+                                TextWriterWhereColor.RenderWhereColor("↓", ConsoleWrapper.WindowWidth - 1, listStartPosition + answersPerPage, sliderColor) +
+                                SliderVerticalColor.RenderVerticalSlider(HighlightedAnswer, AllAnswers.Count, ConsoleWrapper.WindowWidth - 2, listStartPosition + 1, listStartPosition + 2, 5, sliderColor, sliderColor, false)
+                            );
+                        }
                         return selectionBuilder.ToString();
                     });
                     selectionScreen.AddBufferedPart("Selection - multiple", screenPart);
@@ -344,6 +350,43 @@ namespace Terminaux.Inputs.Styles.Selection
                             HighlightedAnswer = listIndex;
                         }
 
+                        bool DetermineArrowPressed(PointerEventContext mouse)
+                        {
+                            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
+                            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                            int answersPerPage = listEndPosition - 5;
+                            if (AllAnswers.Count <= answersPerPage)
+                                return false;
+                            return
+                                mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 1 &&
+                                (mouse.Coordinates.y == listStartPosition + 1 || mouse.Coordinates.y == listStartPosition + answersPerPage);
+                        }
+
+                        void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
+                        {
+                            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
+                            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                            int answersPerPage = listEndPosition - 5;
+                            if (AllAnswers.Count <= answersPerPage)
+                                return;
+                            if (mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 1)
+                            {
+                                if (mouse.Coordinates.y == listStartPosition + 1)
+                                {
+                                    goingUp = true;
+                                    HighlightedAnswer--;
+                                    if (HighlightedAnswer == 0)
+                                        HighlightedAnswer = 1;
+                                }
+                                else if (mouse.Coordinates.y == listStartPosition + answersPerPage)
+                                {
+                                    HighlightedAnswer++;
+                                    if (HighlightedAnswer > AllAnswers.Count)
+                                        HighlightedAnswer = AllAnswers.Count;
+                                }
+                            }
+                        }
+
                         // Mouse input received.
                         var mouse = TermReader.ReadPointer();
                         switch (mouse.Button)
@@ -362,9 +405,14 @@ namespace Terminaux.Inputs.Styles.Selection
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                UpdateSelectedIndexWithMousePos(mouse);
-                                if (!SelectedAnswers.Remove(HighlightedAnswer))
-                                    SelectedAnswers.Add(HighlightedAnswer);
+                                if (DetermineArrowPressed(mouse))
+                                    UpdatePositionBasedOnArrowPress(mouse);
+                                else
+                                {
+                                    UpdateSelectedIndexWithMousePos(mouse);
+                                    if (!SelectedAnswers.Remove(HighlightedAnswer))
+                                        SelectedAnswers.Add(HighlightedAnswer);
+                                }
                                 break;
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
