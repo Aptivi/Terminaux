@@ -393,69 +393,17 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ColorTools.AllowForeground = true;
 
                     // Deal with the lines to actually fit text in the infobox
-                    string finalInfoRendered = TextTools.FormatString(text, vars);
-                    string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                    List<string> splitFinalLines = [];
-                    foreach (var line in splitLines)
-                    {
-                        var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
-                        foreach (var lineSentence in lineSentences)
-                            splitFinalLines.Add(lineSentence);
-                    }
-
-                    // Trim the new lines until we reach a full line
-                    for (int i = splitFinalLines.Count - 1; i >= 0; i--)
-                    {
-                        string line = splitFinalLines[i];
-                        if (!string.IsNullOrWhiteSpace(line))
-                            break;
-                        splitFinalLines.RemoveAt(i);
-                    }
+                    string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
 
                     // Fill the info box with text inside it
-                    int selectionReservedHeight = 4 + selectionChoices;
-                    int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                    int maxHeight = splitFinalLines.Count + selectionReservedHeight;
-                    if (maxHeight >= ConsoleWrapper.WindowHeight)
-                        maxHeight = ConsoleWrapper.WindowHeight - 4;
-                    int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                    int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-                    int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-
-                    // Fill in some selection properties
-                    int selectionBoxPosX = borderX + 4;
-                    int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
-                    int maxSelectionWidth = maxWidth - selectionBoxPosX * 2 + 2;
-
-                    // Buffer the box
-                    var boxBuffer = new StringBuilder();
-                    string border =
-                        !string.IsNullOrEmpty(title) ?
-                        BorderColor.RenderBorderPlain(title, borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar) :
-                        BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                    string borderSelection = BorderColor.RenderBorderPlain(selectionBoxPosX, selectionBoxPosY - 1, maxSelectionWidth, selectionChoices, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                    boxBuffer.Append(
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(InfoBoxTitledSelectionMultipleColor) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        $"{border}" +
-                        $"{borderSelection}"
+                    var boxBuffer = new StringBuilder(
+                        InfoBoxColor.RenderTextSelection(selections, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledSelectionMultipleColor, BackgroundColor, useColor, vars)
                     );
 
-                    // Render text inside it
-                    ConsoleWrapper.CursorVisible = false;
-                    for (int i = 0; i < splitFinalLines.Count; i++)
-                    {
-                        var line = splitFinalLines[i];
-                        if (i % (maxHeight - selectionReservedHeight) == 0 && i > 0)
-                        {
-                            // Reached the end of the box. Bail, because we need to print the selection box.
-                            break;
-                        }
-                        boxBuffer.Append(
-                            $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
-                            $"{line}"
-                        );
-                    }
+                    // Buffer the selection box
+                    string borderSelection = BorderColor.RenderBorderPlain(selectionBoxPosX, selectionBoxPosY - 1, maxSelectionWidth, selectionChoices, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                    boxBuffer.Append(borderSelection);
 
                     // Now, render the selections
                     int currentPage = currentSelection / selectionChoices;
@@ -556,38 +504,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                             // Make pages based on console window height
                             int currentPage = currentSelection / selectionChoices;
                             int startIndex = selectionChoices * currentPage;
-                            int endIndex = selectionChoices * currentPage + 10;
-                            endIndex = endIndex > selectionChoices ? endIndex : selectionChoices;
 
                             // Now, translate coordinates to the selected index
-                            string finalInfoRendered = TextTools.FormatString(text, vars);
-                            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                            List<string> splitFinalLines = [];
-                            foreach (var line in splitLines)
-                            {
-                                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
-                                foreach (var lineSentence in lineSentences)
-                                    splitFinalLines.Add(lineSentence);
-                            }
-                            for (int i = splitFinalLines.Count - 1; i >= 0; i--)
-                            {
-                                string line = splitFinalLines[i];
-                                if (!string.IsNullOrWhiteSpace(line))
-                                    break;
-                                splitFinalLines.RemoveAt(i);
-                            }
-                            int selectionReservedHeight = 4 + selectionChoices;
-                            int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                            int maxHeight = splitFinalLines.Count + selectionReservedHeight;
-                            if (maxHeight >= ConsoleWrapper.WindowHeight)
-                                maxHeight = ConsoleWrapper.WindowHeight - 4;
-                            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                            int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-                            int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                            int selectionBoxPosX = borderX + 4;
-                            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
-                            int leftPos = selectionBoxPosX + 1;
-                            int maxSelectionWidth = maxWidth - selectionBoxPosX * 2 + 2;
+                            string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
+                            var (_, _, _, _, _, _, selectionBoxPosY, leftPos, maxSelectionWidth, _, _) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
                             if (mouse.Coordinates.x <= leftPos || mouse.Coordinates.x >= maxSelectionWidth ||
                                 mouse.Coordinates.y <= selectionBoxPosY || mouse.Coordinates.y >= selectionBoxPosY + selectionChoices + 1)
                                 return false;
@@ -603,39 +523,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                             // Make pages based on console window height
                             int currentPage = currentSelection / selectionChoices;
                             int startIndex = selectionChoices * currentPage;
-                            int endIndex = selectionChoices * currentPage + 10;
-                            endIndex = endIndex > selectionChoices ? endIndex : selectionChoices;
 
                             // Now, translate coordinates to the selected index
-                            string finalInfoRendered = TextTools.FormatString(text, vars);
-                            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                            List<string> splitFinalLines = [];
-                            foreach (var line in splitLines)
-                            {
-                                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
-                                foreach (var lineSentence in lineSentences)
-                                    splitFinalLines.Add(lineSentence);
-                            }
-                            for (int i = splitFinalLines.Count - 1; i >= 0; i--)
-                            {
-                                string line = splitFinalLines[i];
-                                if (!string.IsNullOrWhiteSpace(line))
-                                    break;
-                                splitFinalLines.RemoveAt(i);
-                            }
-                            int selectionReservedHeight = 4 + selectionChoices;
-                            int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                            int maxHeight = splitFinalLines.Count + selectionReservedHeight;
-                            if (maxHeight >= ConsoleWrapper.WindowHeight)
-                                maxHeight = ConsoleWrapper.WindowHeight - 4;
-                            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                            int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-                            int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                            int selectionBoxPosX = borderX + 4;
-                            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
-                            int leftPos = selectionBoxPosX + 1;
-                            int maxSelectionWidth = maxWidth - selectionBoxPosX * 2 + 2;
-                            int left = maxWidth - 2;
+                            string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
+                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
                             if (selections.Length <= selectionChoices)
                                 return false;
                             return
@@ -648,39 +539,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                             // Make pages based on console window height
                             int currentPage = currentSelection / selectionChoices;
                             int startIndex = selectionChoices * currentPage;
-                            int endIndex = selectionChoices * currentPage + 10;
-                            endIndex = endIndex > selectionChoices ? endIndex : selectionChoices;
 
                             // Now, translate coordinates to the selected index
-                            string finalInfoRendered = TextTools.FormatString(text, vars);
-                            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                            List<string> splitFinalLines = [];
-                            foreach (var line in splitLines)
-                            {
-                                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
-                                foreach (var lineSentence in lineSentences)
-                                    splitFinalLines.Add(lineSentence);
-                            }
-                            for (int i = splitFinalLines.Count - 1; i >= 0; i--)
-                            {
-                                string line = splitFinalLines[i];
-                                if (!string.IsNullOrWhiteSpace(line))
-                                    break;
-                                splitFinalLines.RemoveAt(i);
-                            }
-                            int selectionReservedHeight = 4 + selectionChoices;
-                            int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                            int maxHeight = splitFinalLines.Count + selectionReservedHeight;
-                            if (maxHeight >= ConsoleWrapper.WindowHeight)
-                                maxHeight = ConsoleWrapper.WindowHeight - 4;
-                            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                            int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-                            int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                            int selectionBoxPosX = borderX + 4;
-                            int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 2;
-                            int leftPos = selectionBoxPosX + 1;
-                            int maxSelectionWidth = maxWidth - selectionBoxPosX * 2 + 2;
-                            int left = maxWidth - 2;
+                            string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
+                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
                             if (selections.Length <= selectionChoices)
                                 return;
                             if (mouse.Coordinates.x == left)

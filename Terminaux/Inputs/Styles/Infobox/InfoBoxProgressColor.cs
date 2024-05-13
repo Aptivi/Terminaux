@@ -355,56 +355,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
-                    string finalInfoRendered = TextTools.FormatString(text, vars);
-                    string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                    List<string> splitFinalLines = [];
-                    foreach (var line in splitLines)
-                    {
-                        var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
-                        foreach (var lineSentence in lineSentences)
-                            splitFinalLines.Add(lineSentence);
-                    }
-
-                    // Trim the new lines until we reach a full line
-                    for (int i = splitFinalLines.Count - 1; i >= 0; i--)
-                    {
-                        string line = splitFinalLines[i];
-                        if (!string.IsNullOrWhiteSpace(line))
-                            break;
-                        splitFinalLines.RemoveAt(i);
-                    }
+                    string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxColor.GetDimensionsInput(splitFinalLines);
 
                     // Fill the info box with text inside it
-                    int maxWidth = ConsoleWrapper.WindowWidth - 4;
-                    int maxHeight = splitFinalLines.Count + 5;
-                    if (maxHeight >= ConsoleWrapper.WindowHeight)
-                        maxHeight = ConsoleWrapper.WindowHeight - 4;
-                    int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                    int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-                    int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                    var boxBuffer = new StringBuilder();
-                    string border =
-                        !string.IsNullOrEmpty(title) ?
-                        BorderColor.RenderBorderPlain(title, borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar) :
-                        BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                    boxBuffer.Append(
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(InfoBoxTitledProgressColor) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        $"{border}"
+                    var boxBuffer = new StringBuilder(
+                        InfoBoxColor.RenderText(5, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledProgressColor, BackgroundColor, useColor, vars)
                     );
-
-                    // Render text inside it
-                    ConsoleWrapper.CursorVisible = false;
-                    for (int i = 0; i < splitFinalLines.Count; i++)
-                    {
-                        var line = splitFinalLines[i];
-                        if (i % (maxHeight - 5) == 0 && i > 0)
-                        {
-                            // Reached the end of the box. Bail, because we need to print the progress.
-                            break;
-                        }
-                        boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
-                    }
 
                     // Render the final result and write the progress bar
                     int progressPosX = borderX + 4;
