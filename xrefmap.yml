@@ -27701,19 +27701,6 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReaderSettings.LeftMargin
   nameWithType: TermReaderSettings.LeftMargin
-- uid: Terminaux.Reader.TermReaderSettings.LimitConsoleChars
-  name: LimitConsoleChars
-  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_LimitConsoleChars
-  commentId: P:Terminaux.Reader.TermReaderSettings.LimitConsoleChars
-  fullName: Terminaux.Reader.TermReaderSettings.LimitConsoleChars
-  nameWithType: TermReaderSettings.LimitConsoleChars
-- uid: Terminaux.Reader.TermReaderSettings.LimitConsoleChars*
-  name: LimitConsoleChars
-  href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_LimitConsoleChars_
-  commentId: Overload:Terminaux.Reader.TermReaderSettings.LimitConsoleChars
-  isSpec: "True"
-  fullName: Terminaux.Reader.TermReaderSettings.LimitConsoleChars
-  nameWithType: TermReaderSettings.LimitConsoleChars
 - uid: Terminaux.Reader.TermReaderSettings.PasswordMaskChar
   name: PasswordMaskChar
   href: api/Terminaux.Reader.TermReaderSettings.html#Terminaux_Reader_TermReaderSettings_PasswordMaskChar
