@@ -31,7 +31,6 @@ namespace Terminaux.Reader
         private char passwordMaskChar = '*';
         private bool historyEnabled = true;
         private bool treatCtrlCAsInput;
-        private bool limitConsoleChars = true;
         private int leftMargin = 0;
         private int rightMargin = 0;
         private Color? inputForegroundColor;
@@ -141,15 +140,6 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
-        /// Limit input characters to the maximum number of characters in a console window
-        /// </summary>
-        public bool LimitConsoleChars
-        {
-            get => limitConsoleChars;
-            set => limitConsoleChars = value;
-        }
-
-        /// <summary>
         /// Show placeholder hint text
         /// </summary>
         public string PlaceholderText
@@ -184,7 +174,6 @@ namespace Terminaux.Reader
             TreatCtrlCAsInput = settings.TreatCtrlCAsInput;
             SyntaxHighlighterEnabled = settings.SyntaxHighlighterEnabled;
             SyntaxHighlighter = settings.SyntaxHighlighter;
-            LimitConsoleChars = settings.LimitConsoleChars;
             PlaceholderText = settings.PlaceholderText;
         }
     }

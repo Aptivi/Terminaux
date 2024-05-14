@@ -280,16 +280,19 @@ namespace Terminaux.Reader
                 return;
 
             // Get the longest sentence width and crop the text appropriately
-            int longest = GetMaximumInputLength(state.CurrentText.ToString() + newText, state);
-            var strInfoNew = new StringInfo(newText);
-            var strInfoOld = new StringInfo(state.CurrentText.ToString());
-            if (strInfoOld.LengthInTextElements + strInfoNew.LengthInTextElements > longest && state.settings.LimitConsoleChars)
+            if (!state.OneLineWrap)
             {
-                state.canInsert = false;
-                int len = longest - (strInfoOld.LengthInTextElements + strInfoNew.LengthInTextElements);
-                if (len < 0)
-                    len = longest - strInfoOld.LengthInTextElements;
-                newText = strInfoNew.SubstringByTextElements(0, len <= 0 ? 0 : len - 1);
+                int longest = GetMaximumInputLength(state.CurrentText.ToString() + newText, state);
+                var strInfoNew = new StringInfo(newText);
+                var strInfoOld = new StringInfo(state.CurrentText.ToString());
+                if (strInfoOld.LengthInTextElements + strInfoNew.LengthInTextElements > longest)
+                {
+                    state.canInsert = false;
+                    int len = longest - (strInfoOld.LengthInTextElements + strInfoNew.LengthInTextElements);
+                    if (len < 0)
+                        len = longest - strInfoOld.LengthInTextElements;
+                    newText = strInfoNew.SubstringByTextElements(0, len <= 0 ? 0 : len - 1);
+                }
             }
 
             // Now, insert the text
@@ -409,7 +412,6 @@ namespace Terminaux.Reader
             // Determine if the input prompt text is either overflowing or intentionally placing
             // the newlines using the "incomplete sentences" feature, then refresh the input
             // prompt.
-            int longestSentenceLength = state.LongestSentenceLengthFromLeft;
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeftBegin, state.InputPromptTopBegin);
             state.writingPrompt = true;
             TextWriterColor.WriteForReaderColorBack(state.InputPromptText, state.Settings, false, foreground, background);
@@ -417,17 +419,6 @@ namespace Terminaux.Reader
 
             // Now, render the current text
             string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
-            string[] incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText, longestSentenceLength - state.settings.LeftMargin, state.InputPromptLastLineLength);
-
-            // Check to see if we're at the end of the maximum input length
-            int maxLength = GetMaximumInputLength(state);
-            if (renderedText.Length - 1 >= maxLength)
-            {
-                (int offset, int take) = GetRenderedStringOffsets(incompleteSentences, state);
-                string[] intermediateSplit = incompleteSentences.Skip(offset).Take(take).ToArray();
-                string intermediateText = string.Join("", intermediateSplit);
-                renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, intermediateText.Length) : intermediateText;
-            }
 
             // Take highlighting into account
             renderedText = GetHighlightedInput(renderedText, state);
@@ -437,8 +428,8 @@ namespace Terminaux.Reader
             if (state.OneLineWrap)
             {
                 // We're in the one-line wrap mode!
-                longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
-                incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText, longestSentenceLength, 0);
+                int longestSentenceLength = state.LongestSentenceLengthFromLeftForFirstLine;
+                string[] incompleteSentences = ConsoleMisc.GetWrappedSentences(renderedText, longestSentenceLength, 0);
                 renderedText = GetOneLineWrappedSentenceToRender(incompleteSentences, state);
                 spacesLength = longestSentenceLength - state.settings.LeftMargin - ConsoleChar.EstimateCellWidth(renderedText);
             }
@@ -540,32 +531,6 @@ namespace Terminaux.Reader
 
             // Return it!
             return finalRenderedString;
-        }
-
-        internal static (int offset, int take) GetRenderedStringOffsets(string[] incompleteSentences, TermReaderState state)
-        {
-            // Deal with trying to count the characters incrementally for each incomplete sentence until we find an index
-            // that we want, then give the rendered string back.
-            int currentIndex = 0;
-            int skipFirst = 0;
-            int take = 0;
-            foreach (string sentence in incompleteSentences)
-            {
-                bool incrementSkip = currentIndex < state.CurrentTextPos;
-                currentIndex += sentence.Length;
-                take++;
-                if (take > ConsoleWrapper.BufferHeight)
-                {
-                    take--;
-                    if (incrementSkip)
-                        skipFirst++;
-                    else
-                        break;
-                }
-            }
-
-            // Return it!
-            return (skipFirst, take);
         }
 
         internal static string GetLineFromCurrentPos(string[] incompleteSentences, TermReaderState state) =>
