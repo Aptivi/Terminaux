@@ -230,6 +230,7 @@ namespace Terminaux.Console.Fixtures
             new RenderRectangle(),
             new RenderSquare(),
             new RenderTriangle(),
+            new RenderTrapezoid(),
         ];
 
         internal static IFixture GetFixtureFromName(string name)
