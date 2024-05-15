@@ -22344,6 +22344,122 @@ references:
   commentId: N:Terminaux.Graphics.Shapes
   fullName: Terminaux.Graphics.Shapes
   nameWithType: Terminaux.Graphics.Shapes
+- uid: Terminaux.Graphics.Shapes.Parallelogram
+  name: Parallelogram
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html
+  commentId: T:Terminaux.Graphics.Shapes.Parallelogram
+  fullName: Terminaux.Graphics.Shapes.Parallelogram
+  nameWithType: Parallelogram
+- uid: Terminaux.Graphics.Shapes.Parallelogram.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color)
+  name: Parallelogram(int, int, int, int, bool, Color?)
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram__ctor_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Graphics.Shapes.Parallelogram.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color)
+  name.vb: New(Integer, Integer, Integer, Integer, Boolean, Color)
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Parallelogram(int, int, int, int, bool, Terminaux.Colors.Color?)
+  fullName.vb: Terminaux.Graphics.Shapes.Parallelogram.New(Integer, Integer, Integer, Integer, Boolean, Terminaux.Colors.Color)
+  nameWithType: Parallelogram.Parallelogram(int, int, int, int, bool, Color?)
+  nameWithType.vb: Parallelogram.New(Integer, Integer, Integer, Integer, Boolean, Color)
+- uid: Terminaux.Graphics.Shapes.Parallelogram.#ctor*
+  name: Parallelogram
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram__ctor_
+  commentId: Overload:Terminaux.Graphics.Shapes.Parallelogram.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Parallelogram
+  fullName.vb: Terminaux.Graphics.Shapes.Parallelogram.New
+  nameWithType: Parallelogram.Parallelogram
+  nameWithType.vb: Parallelogram.New
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Filled
+  name: Filled
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Filled
+  commentId: P:Terminaux.Graphics.Shapes.Parallelogram.Filled
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Filled
+  nameWithType: Parallelogram.Filled
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Filled*
+  name: Filled
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Filled_
+  commentId: Overload:Terminaux.Graphics.Shapes.Parallelogram.Filled
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Filled
+  nameWithType: Parallelogram.Filled
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Height
+  name: Height
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Height
+  commentId: P:Terminaux.Graphics.Shapes.Parallelogram.Height
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Height
+  nameWithType: Parallelogram.Height
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Height*
+  name: Height
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Height_
+  commentId: Overload:Terminaux.Graphics.Shapes.Parallelogram.Height
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Height
+  nameWithType: Parallelogram.Height
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Left
+  name: Left
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Left
+  commentId: P:Terminaux.Graphics.Shapes.Parallelogram.Left
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Left
+  nameWithType: Parallelogram.Left
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Left*
+  name: Left
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Left_
+  commentId: Overload:Terminaux.Graphics.Shapes.Parallelogram.Left
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Left
+  nameWithType: Parallelogram.Left
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Render
+  name: Render()
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Render
+  commentId: M:Terminaux.Graphics.Shapes.Parallelogram.Render
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Render()
+  nameWithType: Parallelogram.Render()
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Render*
+  name: Render
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Render_
+  commentId: Overload:Terminaux.Graphics.Shapes.Parallelogram.Render
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Render
+  nameWithType: Parallelogram.Render
+- uid: Terminaux.Graphics.Shapes.Parallelogram.ShapeColor
+  name: ShapeColor
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_ShapeColor
+  commentId: P:Terminaux.Graphics.Shapes.Parallelogram.ShapeColor
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.ShapeColor
+  nameWithType: Parallelogram.ShapeColor
+- uid: Terminaux.Graphics.Shapes.Parallelogram.ShapeColor*
+  name: ShapeColor
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_ShapeColor_
+  commentId: Overload:Terminaux.Graphics.Shapes.Parallelogram.ShapeColor
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.ShapeColor
+  nameWithType: Parallelogram.ShapeColor
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Top
+  name: Top
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Top
+  commentId: P:Terminaux.Graphics.Shapes.Parallelogram.Top
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Top
+  nameWithType: Parallelogram.Top
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Top*
+  name: Top
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Top_
+  commentId: Overload:Terminaux.Graphics.Shapes.Parallelogram.Top
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Top
+  nameWithType: Parallelogram.Top
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Width
+  name: Width
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Width
+  commentId: P:Terminaux.Graphics.Shapes.Parallelogram.Width
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Width
+  nameWithType: Parallelogram.Width
+- uid: Terminaux.Graphics.Shapes.Parallelogram.Width*
+  name: Width
+  href: api/Terminaux.Graphics.Shapes.Parallelogram.html#Terminaux_Graphics_Shapes_Parallelogram_Width_
+  commentId: Overload:Terminaux.Graphics.Shapes.Parallelogram.Width
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Parallelogram.Width
+  nameWithType: Parallelogram.Width
 - uid: Terminaux.Graphics.Shapes.Rectangle
   name: Rectangle
   href: api/Terminaux.Graphics.Shapes.Rectangle.html

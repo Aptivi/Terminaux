@@ -925,6 +925,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.Shapes.Parallelogram.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.Shapes.Parallelogram.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Graphics.Shapes.Rectangle.yml",
       "output": {
         ".html": {
