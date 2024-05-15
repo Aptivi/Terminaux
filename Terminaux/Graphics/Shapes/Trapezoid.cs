@@ -76,26 +76,24 @@ namespace Terminaux.Graphics.Shapes
         public string Render()
         {
             StringBuilder buffer = new();
+            int width = Math.Max(TopWidth, BottomWidth);
             buffer.Append(ShapeColor.VTSequenceBackgroundTrueColor);
-            for (int y = 0; y < Height; y++)
+            buffer.Append(GraphicsTools.RenderLine((Left + (width / 2) - (TopWidth / 2), Top), (Left + (width / 2) - (BottomWidth / 2), Top + Height)));
+            buffer.Append(GraphicsTools.RenderLine((Left + (width / 2) + (TopWidth / 2), Top), (Left + (width / 2) + (BottomWidth / 2), Top + Height)));
+            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + (width / 2) - (TopWidth / 2) + 1, Top + 1));
+            buffer.Append(new string(' ', TopWidth));
+            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + (width / 2) - (BottomWidth / 2) + 1, Top + Height + 1));
+            buffer.Append(new string(' ', BottomWidth));
+            if (Filled)
             {
-                int widthDiff = BottomWidth - TopWidth;
-                int widthThreshold = (int)Math.Round((TopWidth + widthDiff) * (y + 1) / (double)Height);
-                int nextWidthThreshold = (int)Math.Round((TopWidth + widthDiff) * (y + 2) / (double)Height);
-                int thresholdDiff = nextWidthThreshold - widthThreshold;
-                int widthDiffByHeight = (int)(widthDiff * ((double)y / Height));
-                int lineWidth = TopWidth + widthDiffByHeight;
-                int width = Math.Max(TopWidth, BottomWidth);
-                int pos = (width / 2) - (lineWidth / 2);
-                buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + pos + 1, Top + y + 1));
-                bool isOutline = y == 0 || y == Height - 1;
-                if (isOutline || Filled)
-                    buffer.Append(new string(' ', lineWidth));
-                else
+                for (int y = 0; y < Height; y++)
                 {
-                    buffer.Append(new string(' ', thresholdDiff));
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + pos + lineWidth - thresholdDiff + 1, Top + y + 1));
-                    buffer.Append(new string(' ', thresholdDiff));
+                    int widthDiff = BottomWidth - TopWidth;
+                    int widthDiffByHeight = (int)(widthDiff * ((double)y / Height));
+                    int lineWidth = TopWidth + widthDiffByHeight;
+                    int pos = (width / 2) - (lineWidth / 2);
+                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + pos + 1, Top + y + 1));
+                    buffer.Append(new string(' ', lineWidth));
                 }
             }
             buffer.Append(ColorTools.CurrentBackgroundColor.VTSequenceBackgroundTrueColor);

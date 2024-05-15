@@ -65,21 +65,18 @@ namespace Terminaux.Graphics.Shapes
         {
             StringBuilder buffer = new();
             buffer.Append(ShapeColor.VTSequenceBackgroundTrueColor);
-            for (int y = 0; y < Height; y++)
+            buffer.Append(GraphicsTools.RenderLine((Left + (Width / 2), Top), (Left, Top + Height)));
+            buffer.Append(GraphicsTools.RenderLine((Left + (Width / 2), Top), (Left + Width, Top + Height)));
+            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + Height + 1));
+            buffer.Append(new string(' ', Width));
+            if (Filled)
             {
-                int widthThreshold = Width * (y + 1) / Height;
-                int LeftPosShift = (Width - widthThreshold) / 2;
-                int nextWidthThreshold = Width * (y + 2) / Height;
-                int thresholdDiff = nextWidthThreshold - widthThreshold;
-                buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + 1, Top + y + 1));
-                bool isOutline = y == 0 || y == Height - 1;
-                if (isOutline || Filled)
-                    buffer.Append(new string(' ', widthThreshold));
-                else
+                for (int y = 0; y < Height; y++)
                 {
-                    buffer.Append(new string(' ', thresholdDiff));
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + widthThreshold - thresholdDiff + 1, Top + y + 1));
-                    buffer.Append(new string(' ', thresholdDiff));
+                    int widthThreshold = Width * (y + 1) / Height;
+                    int LeftPosShift = (Width - widthThreshold) / 2;
+                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + 2, Top + y + 1));
+                    buffer.Append(new string(' ', widthThreshold - 1));
                 }
             }
             buffer.Append(ColorTools.CurrentBackgroundColor.VTSequenceBackgroundTrueColor);
