@@ -231,6 +231,7 @@ namespace Terminaux.Console.Fixtures
             new RenderSquare(),
             new RenderTriangle(),
             new RenderTrapezoid(),
+            new RenderParallelogram(),
         ];
 
         internal static IFixture GetFixtureFromName(string name)
