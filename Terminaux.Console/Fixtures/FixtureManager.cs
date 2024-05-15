@@ -227,6 +227,7 @@ namespace Terminaux.Console.Fixtures
             new RenderImage(),
 
             // Graphics
+            new RenderLines(),
             new RenderRectangle(),
             new RenderSquare(),
             new RenderTriangle(),
