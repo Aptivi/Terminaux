@@ -945,6 +945,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.Shapes.Triangle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.Shapes.Triangle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Graphics.Shapes.yml",
       "output": {
         ".html": {

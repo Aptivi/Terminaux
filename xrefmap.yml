@@ -22576,6 +22576,122 @@ references:
   isSpec: "True"
   fullName: Terminaux.Graphics.Shapes.Square.Width
   nameWithType: Square.Width
+- uid: Terminaux.Graphics.Shapes.Triangle
+  name: Triangle
+  href: api/Terminaux.Graphics.Shapes.Triangle.html
+  commentId: T:Terminaux.Graphics.Shapes.Triangle
+  fullName: Terminaux.Graphics.Shapes.Triangle
+  nameWithType: Triangle
+- uid: Terminaux.Graphics.Shapes.Triangle.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color)
+  name: Triangle(int, int, int, int, bool, Color?)
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle__ctor_System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Graphics.Shapes.Triangle.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color)
+  name.vb: New(Integer, Integer, Integer, Integer, Boolean, Color)
+  fullName: Terminaux.Graphics.Shapes.Triangle.Triangle(int, int, int, int, bool, Terminaux.Colors.Color?)
+  fullName.vb: Terminaux.Graphics.Shapes.Triangle.New(Integer, Integer, Integer, Integer, Boolean, Terminaux.Colors.Color)
+  nameWithType: Triangle.Triangle(int, int, int, int, bool, Color?)
+  nameWithType.vb: Triangle.New(Integer, Integer, Integer, Integer, Boolean, Color)
+- uid: Terminaux.Graphics.Shapes.Triangle.#ctor*
+  name: Triangle
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle__ctor_
+  commentId: Overload:Terminaux.Graphics.Shapes.Triangle.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Terminaux.Graphics.Shapes.Triangle.Triangle
+  fullName.vb: Terminaux.Graphics.Shapes.Triangle.New
+  nameWithType: Triangle.Triangle
+  nameWithType.vb: Triangle.New
+- uid: Terminaux.Graphics.Shapes.Triangle.Filled
+  name: Filled
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Filled
+  commentId: P:Terminaux.Graphics.Shapes.Triangle.Filled
+  fullName: Terminaux.Graphics.Shapes.Triangle.Filled
+  nameWithType: Triangle.Filled
+- uid: Terminaux.Graphics.Shapes.Triangle.Filled*
+  name: Filled
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Filled_
+  commentId: Overload:Terminaux.Graphics.Shapes.Triangle.Filled
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Triangle.Filled
+  nameWithType: Triangle.Filled
+- uid: Terminaux.Graphics.Shapes.Triangle.Height
+  name: Height
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Height
+  commentId: P:Terminaux.Graphics.Shapes.Triangle.Height
+  fullName: Terminaux.Graphics.Shapes.Triangle.Height
+  nameWithType: Triangle.Height
+- uid: Terminaux.Graphics.Shapes.Triangle.Height*
+  name: Height
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Height_
+  commentId: Overload:Terminaux.Graphics.Shapes.Triangle.Height
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Triangle.Height
+  nameWithType: Triangle.Height
+- uid: Terminaux.Graphics.Shapes.Triangle.Left
+  name: Left
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Left
+  commentId: P:Terminaux.Graphics.Shapes.Triangle.Left
+  fullName: Terminaux.Graphics.Shapes.Triangle.Left
+  nameWithType: Triangle.Left
+- uid: Terminaux.Graphics.Shapes.Triangle.Left*
+  name: Left
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Left_
+  commentId: Overload:Terminaux.Graphics.Shapes.Triangle.Left
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Triangle.Left
+  nameWithType: Triangle.Left
+- uid: Terminaux.Graphics.Shapes.Triangle.Render
+  name: Render()
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Render
+  commentId: M:Terminaux.Graphics.Shapes.Triangle.Render
+  fullName: Terminaux.Graphics.Shapes.Triangle.Render()
+  nameWithType: Triangle.Render()
+- uid: Terminaux.Graphics.Shapes.Triangle.Render*
+  name: Render
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Render_
+  commentId: Overload:Terminaux.Graphics.Shapes.Triangle.Render
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Triangle.Render
+  nameWithType: Triangle.Render
+- uid: Terminaux.Graphics.Shapes.Triangle.ShapeColor
+  name: ShapeColor
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_ShapeColor
+  commentId: P:Terminaux.Graphics.Shapes.Triangle.ShapeColor
+  fullName: Terminaux.Graphics.Shapes.Triangle.ShapeColor
+  nameWithType: Triangle.ShapeColor
+- uid: Terminaux.Graphics.Shapes.Triangle.ShapeColor*
+  name: ShapeColor
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_ShapeColor_
+  commentId: Overload:Terminaux.Graphics.Shapes.Triangle.ShapeColor
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Triangle.ShapeColor
+  nameWithType: Triangle.ShapeColor
+- uid: Terminaux.Graphics.Shapes.Triangle.Top
+  name: Top
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Top
+  commentId: P:Terminaux.Graphics.Shapes.Triangle.Top
+  fullName: Terminaux.Graphics.Shapes.Triangle.Top
+  nameWithType: Triangle.Top
+- uid: Terminaux.Graphics.Shapes.Triangle.Top*
+  name: Top
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Top_
+  commentId: Overload:Terminaux.Graphics.Shapes.Triangle.Top
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Triangle.Top
+  nameWithType: Triangle.Top
+- uid: Terminaux.Graphics.Shapes.Triangle.Width
+  name: Width
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Width
+  commentId: P:Terminaux.Graphics.Shapes.Triangle.Width
+  fullName: Terminaux.Graphics.Shapes.Triangle.Width
+  nameWithType: Triangle.Width
+- uid: Terminaux.Graphics.Shapes.Triangle.Width*
+  name: Width
+  href: api/Terminaux.Graphics.Shapes.Triangle.html#Terminaux_Graphics_Shapes_Triangle_Width_
+  commentId: Overload:Terminaux.Graphics.Shapes.Triangle.Width
+  isSpec: "True"
+  fullName: Terminaux.Graphics.Shapes.Triangle.Width
+  nameWithType: Triangle.Width
 - uid: Terminaux.Inputs
   name: Terminaux.Inputs
   href: api/Terminaux.Inputs.html
