@@ -22241,6 +22241,37 @@ references:
   commentId: N:Terminaux.Graphics
   fullName: Terminaux.Graphics
   nameWithType: Terminaux.Graphics
+- uid: Terminaux.Graphics.GraphicsTools
+  name: GraphicsTools
+  href: api/Terminaux.Graphics.GraphicsTools.html
+  commentId: T:Terminaux.Graphics.GraphicsTools
+  fullName: Terminaux.Graphics.GraphicsTools
+  nameWithType: GraphicsTools
+- uid: Terminaux.Graphics.GraphicsTools.RenderLine(System.Int32,System.Int32,System.Int32,System.Int32)
+  name: RenderLine(int, int, int, int)
+  href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLine_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Graphics.GraphicsTools.RenderLine(System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: RenderLine(Integer, Integer, Integer, Integer)
+  fullName: Terminaux.Graphics.GraphicsTools.RenderLine(int, int, int, int)
+  fullName.vb: Terminaux.Graphics.GraphicsTools.RenderLine(Integer, Integer, Integer, Integer)
+  nameWithType: GraphicsTools.RenderLine(int, int, int, int)
+  nameWithType.vb: GraphicsTools.RenderLine(Integer, Integer, Integer, Integer)
+- uid: Terminaux.Graphics.GraphicsTools.RenderLine(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32})
+  name: RenderLine((int startX, int startY), (int endX, int endY))
+  href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLine_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__
+  commentId: M:Terminaux.Graphics.GraphicsTools.RenderLine(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32})
+  name.vb: RenderLine((startX As Integer, startY As Integer), (endX As Integer, endY As Integer))
+  fullName: Terminaux.Graphics.GraphicsTools.RenderLine((int startX, int startY), (int endX, int endY))
+  fullName.vb: Terminaux.Graphics.GraphicsTools.RenderLine((startX As Integer, startY As Integer), (endX As Integer, endY As Integer))
+  nameWithType: GraphicsTools.RenderLine((int startX, int startY), (int endX, int endY))
+  nameWithType.vb: GraphicsTools.RenderLine((startX As Integer, startY As Integer), (endX As Integer, endY As Integer))
+- uid: Terminaux.Graphics.GraphicsTools.RenderLine*
+  name: RenderLine
+  href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLine_
+  commentId: Overload:Terminaux.Graphics.GraphicsTools.RenderLine
+  isSpec: "True"
+  fullName: Terminaux.Graphics.GraphicsTools.RenderLine
+  nameWithType: GraphicsTools.RenderLine
 - uid: Terminaux.Graphics.IGeometricShape
   name: IGeometricShape
   href: api/Terminaux.Graphics.IGeometricShape.html

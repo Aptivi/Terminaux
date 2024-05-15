@@ -915,6 +915,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.GraphicsTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.GraphicsTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Graphics.IGeometricShape.yml",
       "output": {
         ".html": {
