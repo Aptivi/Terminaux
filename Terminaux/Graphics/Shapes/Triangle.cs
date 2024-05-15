@@ -69,15 +69,17 @@ namespace Terminaux.Graphics.Shapes
             {
                 int widthThreshold = Width * (y + 1) / Height;
                 int LeftPosShift = (Width - widthThreshold) / 2;
+                int nextWidthThreshold = Width * (y + 2) / Height;
+                int thresholdDiff = nextWidthThreshold - widthThreshold;
                 buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + 1, Top + y + 1));
                 bool isOutline = y == 0 || y == Height - 1;
                 if (isOutline || Filled)
                     buffer.Append(new string(' ', widthThreshold));
                 else
                 {
-                    buffer.Append(" ");
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + widthThreshold, Top + y + 1));
-                    buffer.Append(" ");
+                    buffer.Append(new string(' ', thresholdDiff));
+                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + widthThreshold - thresholdDiff + 1, Top + y + 1));
+                    buffer.Append(new string(' ', thresholdDiff));
                 }
             }
             buffer.Append(ColorTools.CurrentBackgroundColor.VTSequenceBackgroundTrueColor);
