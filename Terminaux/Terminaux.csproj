@@ -44,7 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EnumMagic" Version="0.1.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SpecProbe.Software" Version="1.4.2" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
@@ -54,6 +53,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Terminaux.ColorDataGen\Terminaux.ColorDataGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\Terminaux.Extensions\Terminaux.Extensions.csproj" />
     <ProjectReference Include="..\Terminaux.SequenceTypesGen\Terminaux.SequenceTypesGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     <ProjectReference Include="..\Terminaux.TermInfoGen\Terminaux.TermInfoGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>

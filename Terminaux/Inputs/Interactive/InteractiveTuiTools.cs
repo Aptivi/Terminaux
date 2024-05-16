@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using EnumMagic;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -29,6 +28,7 @@ using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Extensions.Enumerations;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
@@ -61,8 +61,8 @@ namespace Terminaux.Inputs.Interactive
                 BaseInteractiveTui<T>.instances.Add(interactiveTui);
 
                 // First, check to see if the interactive TUI has no data source
-                if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
-                    interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0 && !interactiveTui.AcceptsEmptyData)
+                if ((interactiveTui.PrimaryDataSource is null || interactiveTui.SecondaryDataSource is null ||
+                    (interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0)) && !interactiveTui.AcceptsEmptyData)
                 {
                     InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, interactiveTui.GetType().Name);
                     return;
@@ -484,8 +484,8 @@ namespace Terminaux.Inputs.Interactive
             var data = InteractiveTuiStatus.CurrentPane == 2 ?
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
-            T selectedData = (T)data.GetElementFromIndex(paneCurrentSelection - 1);
-            InteractiveTuiStatus.Status = interactiveTui.GetStatusFromItem(selectedData);
+            T? selectedData = (T?)data.GetElementFromIndex(paneCurrentSelection - 1);
+            InteractiveTuiStatus.Status = selectedData is not null ? interactiveTui.GetStatusFromItem(selectedData) : "No status.";
 
             // Now, write info
             part.AddDynamicText(() =>
@@ -551,7 +551,7 @@ namespace Terminaux.Inputs.Interactive
             int dataCount = data.Length();
 
             // Populate selected data
-            object selectedData = data.GetElementFromIndex(paneCurrentSelection - 1);
+            object? selectedData = data.GetElementFromIndex(paneCurrentSelection - 1);
 
             // Wait for key
             bool loopBail = false;
@@ -778,7 +778,7 @@ namespace Terminaux.Inputs.Interactive
                                 foreach (var implementedBinding in implementedBindings)
                                 {
                                     var binding = implementedBinding.BindingAction;
-                                    if (binding is null)
+                                    if (binding is null || selectedData is null)
                                         continue;
                                     binding.Invoke(selectedData, paneCurrentSelection - 1);
                                 }
@@ -806,7 +806,7 @@ namespace Terminaux.Inputs.Interactive
                         foreach (var implementedBinding in implementedBindings)
                         {
                             var binding = implementedBinding.BindingAction;
-                            if (binding is null)
+                            if (binding is null || selectedData is null)
                                 continue;
                             loopBail = true;
                             binding.Invoke(selectedData, paneCurrentSelection - 1);
@@ -954,7 +954,7 @@ namespace Terminaux.Inputs.Interactive
                         foreach (var implementedBinding in implementedBindings)
                         {
                             var binding = implementedBinding.BindingAction;
-                            if (binding is null)
+                            if (binding is null || selectedData is null)
                                 continue;
                             binding.Invoke(selectedData, paneCurrentSelection - 1);
                         }

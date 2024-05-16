@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using EnumMagic;
 using System.Collections.Generic;
 using Terminaux.Base.Buffered;
+using Terminaux.Extensions.Enumerations;
 
 namespace Terminaux.Inputs.Interactive
 {
