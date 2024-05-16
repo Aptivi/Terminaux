@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
@@ -33,10 +32,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
-using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Inputs.Styles.Selection
 {

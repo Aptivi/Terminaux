@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Collections.Generic;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Colors;
@@ -28,12 +27,9 @@ using Terminaux.Writer.FancyWriters;
 using Terminaux.Base.Buffered;
 using System.Diagnostics;
 using Terminaux.Base;
-using Textify.General;
 using Terminaux.Colors.Data;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Reader;
 using Terminaux.Base.Checks;
-using Terminaux.Base.Extensions;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;

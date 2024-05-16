@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Collections.Generic;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Colors;
@@ -27,12 +26,10 @@ using System.Text;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
-using Textify.General;
 using System.Diagnostics;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
-using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {

@@ -27,7 +27,6 @@ using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Textify.Figlet.Utilities.Lines;
-using System.Linq;
 
 namespace Terminaux.Writer.FancyWriters
 {

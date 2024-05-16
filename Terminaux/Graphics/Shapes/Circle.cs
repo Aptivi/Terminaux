@@ -19,9 +19,7 @@
 
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Colors;
-using System;
 
 namespace Terminaux.Graphics.Shapes
 {

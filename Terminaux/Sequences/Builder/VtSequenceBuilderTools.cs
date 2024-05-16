@@ -18,7 +18,6 @@
 //
 
 using System;
-using System.Text.RegularExpressions;
 using Terminaux.Base;
 
 namespace Terminaux.Sequences.Builder
