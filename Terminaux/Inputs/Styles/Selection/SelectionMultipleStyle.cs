@@ -254,11 +254,16 @@ namespace Terminaux.Inputs.Styles.Selection
                             selectionBuilder.Append(
                                 $"{CsiSequences.GenerateCsiCursorPosition(bindingsLeft + 1, descSepArea + 1)}" +
                                 $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
-                                bindingsRender +
-                                $"{CsiSequences.GenerateCsiCursorPosition(numbersLeft + 1, descSepArea + 1)}" +
-                                $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
-                                numberRender
+                                bindingsRender 
                             );
+                            if (SelectionStyleSwitches.ShowPageCount)
+                            {
+                                selectionBuilder.Append(
+                                    $"{CsiSequences.GenerateCsiCursorPosition(numbersLeft + 1, descSepArea + 1)}" +
+                                    $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
+                                    numberRender
+                                );
+                            }
                         }
                         return selectionBuilder.ToString();
                     });
@@ -468,6 +473,9 @@ namespace Terminaux.Inputs.Styles.Selection
                                     InfoBoxColor.WriteInfoBox("No item found.");
                                 selectionScreen.RequireRefresh();
                                 break;
+                            case ConsoleKey.C:
+                                SelectionStyleSwitches.ShowPageCount = !SelectionStyleSwitches.ShowPageCount;
+                                break;
                             case ConsoleKey.K:
                                 // Keys function
                                 InfoBoxColor.WriteInfoBox("Available keybindings",
@@ -484,6 +492,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                     [TAB]       | Shows more info in an infobox
                                     [A]         | Selects all the elements
                                     [F]         | Searches for an element
+                                    [C]         | Shows or hides the page count
                                     """
                                 );
                                 break;
