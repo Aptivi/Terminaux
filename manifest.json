@@ -935,6 +935,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.Shapes.Circle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.Shapes.Circle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.Shapes.Ellipsis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.Shapes.Ellipsis.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Graphics.Shapes.Parallelogram.yml",
       "output": {
         ".html": {
