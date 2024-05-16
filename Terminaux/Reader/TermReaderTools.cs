@@ -115,7 +115,6 @@ namespace Terminaux.Reader
 
                 // Go to the old position
                 PositioningTools.SeekTo(textPos, ref state);
-                TermReader.cachedPos = (state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
             }
 
             // Refresh the prompt

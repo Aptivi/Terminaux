@@ -37,7 +37,6 @@ namespace Terminaux.Reader
     public static class TermReader
     {
         internal static TermReaderSettings globalSettings = new();
-        internal static (int, int) cachedPos = default;
         internal static readonly List<TermReaderState> states = [];
         private static readonly object readLock = new();
 
@@ -376,12 +375,13 @@ namespace Terminaux.Reader
                     // Save current state of input
                     readState.inputPromptLeft = ConsoleWrapper.CursorLeft;
                     readState.inputPromptTop = ConsoleWrapper.CursorTop;
+                    readState.currentCursorPosLeft = readState.inputPromptLeft;
+                    readState.currentCursorPosTop = readState.inputPromptTop;
                     readState.passwordMode = password;
                     readState.oneLineWrap = oneLineWrap;
                     ConsoleWrapper.TreatCtrlCAsInput = settings.TreatCtrlCAsInput;
 
                     // Get input
-                    cachedPos = (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
                     ConsoleWrapper.CursorVisible = true;
                     while (!BindingsReader.IsTerminate(struckKey))
                     {
@@ -400,17 +400,11 @@ namespace Terminaux.Reader
                         TermReaderTools.isWaitingForInput = false;
 
                         // Install necessary values
-                        readState.currentCursorPosLeft = cachedPos.Item1;
-                        readState.currentCursorPosTop = cachedPos.Item2;
                         readState.pressedKey = struckKey;
 
                         // Handle it
                         BindingsReader.Execute(readState);
-                        bool differed =
-                            cachedPos.Item1 != readState.currentCursorPosLeft ||
-                            cachedPos.Item2 != readState.currentCursorPosTop;
-                        if (differed)
-                            PositioningTools.Commit(readState);
+                        PositioningTools.Commit(readState);
 
                         // Write the bell character if invalid
                         if (readState.OperationWasInvalid)
@@ -418,7 +412,6 @@ namespace Terminaux.Reader
                         readState.operationWasInvalid = false;
 
                         // Cursor is visible
-                        cachedPos = (readState.currentCursorPosLeft, readState.currentCursorPosTop);
                         ConsoleWrapper.CursorVisible = true;
                     }
 

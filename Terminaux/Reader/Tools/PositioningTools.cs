@@ -27,6 +27,8 @@ namespace Terminaux.Reader.Tools
     /// </summary>
     public static class PositioningTools
     {
+        internal static bool needsCommit = false;
+
         /// <summary>
         /// Goes to the beginning of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
         /// </summary>
@@ -136,8 +138,12 @@ namespace Terminaux.Reader.Tools
         /// <remarks>
         /// You don't need to call this function most of the time, except if you want to show the cursor changes or if you want to write directly to that position.
         /// </remarks>
-        public static void Commit(TermReaderState state) =>
-            ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+        public static void Commit(TermReaderState state)
+        {
+            if (needsCommit)
+                ConsoleWrapper.SetCursorPosition(state.CurrentCursorPosLeft, state.CurrentCursorPosTop);
+            needsCommit = false;
+        }
 
         #region Actual functions
         internal static void GoLeftmostOneLineWrapDisabled(ref TermReaderState state) =>
@@ -192,6 +198,7 @@ namespace Terminaux.Reader.Tools
                         state.currentCursorPosTop++;
                 }
             }
+            needsCommit = true;
         }
 
         internal static void GoBackOneLineWrapDisabled(ref TermReaderState state) =>
@@ -250,6 +257,7 @@ namespace Terminaux.Reader.Tools
                         state.currentCursorPosLeft--;
                 }
             }
+            needsCommit = true;
         }
 
         internal static void GoLeftmostOneLineWrapAware(ref TermReaderState state) =>
@@ -297,6 +305,7 @@ namespace Terminaux.Reader.Tools
                     TermReaderTools.RefreshPrompt(ref state);
                 }
             }
+            needsCommit = true;
         }
 
         internal static void GoBackOneLineWrapAware(ref TermReaderState state) =>
@@ -351,6 +360,7 @@ namespace Terminaux.Reader.Tools
                     TermReaderTools.RefreshPrompt(ref state);
                 }
             }
+            needsCommit = true;
         }
 
         internal static void SeekToOneLineWrapDisabled(int steps, ref TermReaderState state) =>
