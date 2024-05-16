@@ -27460,6 +27460,25 @@ references:
   isSpec: "True"
   fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.TextColor
   nameWithType: SelectionStyleSettings.TextColor
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches
+  name: SelectionStyleSwitches
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.html
+  commentId: T:Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches
+  nameWithType: SelectionStyleSwitches
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.ShowPageCount
+  name: ShowPageCount
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSwitches_ShowPageCount
+  commentId: P:Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.ShowPageCount
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.ShowPageCount
+  nameWithType: SelectionStyleSwitches.ShowPageCount
+- uid: Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.ShowPageCount*
+  name: ShowPageCount
+  href: api/Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.html#Terminaux_Inputs_Styles_Selection_SelectionStyleSwitches_ShowPageCount_
+  commentId: Overload:Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.ShowPageCount
+  isSpec: "True"
+  fullName: Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.ShowPageCount
+  nameWithType: SelectionStyleSwitches.ShowPageCount
 - uid: Terminaux.Reader
   name: Terminaux.Reader
   href: api/Terminaux.Reader.html
