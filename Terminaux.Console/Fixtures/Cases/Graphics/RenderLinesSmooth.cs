@@ -27,7 +27,7 @@ using Terminaux.Reader;
 
 namespace Terminaux.Console.Fixtures.Cases.Graphics
 {
-    internal class RenderLines : IFixture
+    internal class RenderLinesSmooth : IFixture
     {
         public void RunFixture()
         {
@@ -39,8 +39,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
                 (int, int) endPoint1 = (rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
                 (int, int) startPoint2 = (rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
                 (int, int) endPoint2 = (rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
-                string line1 = GraphicsTools.RenderLine(startPoint1, endPoint1, ConsoleColors.Green);
-                string line2 = GraphicsTools.RenderLine(startPoint2, endPoint2, ConsoleColors.Green);
+                string line1 = GraphicsTools.RenderLineSmooth(startPoint1, endPoint1, ConsoleColors.Green);
+                string line2 = GraphicsTools.RenderLineSmooth(startPoint2, endPoint2, ConsoleColors.Green);
                 TextWriterRaw.WriteRaw(line1);
                 TextWriterRaw.WriteRaw(line2);
                 var cki = TermReader.ReadKey();
