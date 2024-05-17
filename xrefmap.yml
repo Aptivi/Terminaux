@@ -22256,6 +22256,15 @@ references:
   fullName.vb: Terminaux.Graphics.GraphicsTools.RenderLine(Integer, Integer, Integer, Integer)
   nameWithType: GraphicsTools.RenderLine(int, int, int, int)
   nameWithType.vb: GraphicsTools.RenderLine(Integer, Integer, Integer, Integer)
+- uid: Terminaux.Graphics.GraphicsTools.RenderLine(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: RenderLine(int, int, int, int, Color)
+  href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLine_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Graphics.GraphicsTools.RenderLine(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: RenderLine(Integer, Integer, Integer, Integer, Color)
+  fullName: Terminaux.Graphics.GraphicsTools.RenderLine(int, int, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Graphics.GraphicsTools.RenderLine(Integer, Integer, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: GraphicsTools.RenderLine(int, int, int, int, Color)
+  nameWithType.vb: GraphicsTools.RenderLine(Integer, Integer, Integer, Integer, Color)
 - uid: Terminaux.Graphics.GraphicsTools.RenderLine(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32})
   name: RenderLine((int startX, int startY), (int endX, int endY))
   href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLine_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__
@@ -22265,6 +22274,15 @@ references:
   fullName.vb: Terminaux.Graphics.GraphicsTools.RenderLine((startX As Integer, startY As Integer), (endX As Integer, endY As Integer))
   nameWithType: GraphicsTools.RenderLine((int startX, int startY), (int endX, int endY))
   nameWithType.vb: GraphicsTools.RenderLine((startX As Integer, startY As Integer), (endX As Integer, endY As Integer))
+- uid: Terminaux.Graphics.GraphicsTools.RenderLine(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32},Terminaux.Colors.Color)
+  name: RenderLine((int startX, int startY), (int endX, int endY), Color)
+  href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLine_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__Terminaux_Colors_Color_
+  commentId: M:Terminaux.Graphics.GraphicsTools.RenderLine(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32},Terminaux.Colors.Color)
+  name.vb: RenderLine((startX As Integer, startY As Integer), (endX As Integer, endY As Integer), Color)
+  fullName: Terminaux.Graphics.GraphicsTools.RenderLine((int startX, int startY), (int endX, int endY), Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Graphics.GraphicsTools.RenderLine((startX As Integer, startY As Integer), (endX As Integer, endY As Integer), Terminaux.Colors.Color)
+  nameWithType: GraphicsTools.RenderLine((int startX, int startY), (int endX, int endY), Color)
+  nameWithType.vb: GraphicsTools.RenderLine((startX As Integer, startY As Integer), (endX As Integer, endY As Integer), Color)
 - uid: Terminaux.Graphics.GraphicsTools.RenderLine*
   name: RenderLine
   href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLine_
@@ -22272,6 +22290,49 @@ references:
   isSpec: "True"
   fullName: Terminaux.Graphics.GraphicsTools.RenderLine
   nameWithType: GraphicsTools.RenderLine
+- uid: Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.Int32,System.Int32,System.Int32,System.Int32)
+  name: RenderLineSmooth(int, int, int, int)
+  href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.Int32,System.Int32,System.Int32,System.Int32)
+  name.vb: RenderLineSmooth(Integer, Integer, Integer, Integer)
+  fullName: Terminaux.Graphics.GraphicsTools.RenderLineSmooth(int, int, int, int)
+  fullName.vb: Terminaux.Graphics.GraphicsTools.RenderLineSmooth(Integer, Integer, Integer, Integer)
+  nameWithType: GraphicsTools.RenderLineSmooth(int, int, int, int)
+  nameWithType.vb: GraphicsTools.RenderLineSmooth(Integer, Integer, Integer, Integer)
+- uid: Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name: RenderLineSmooth(int, int, int, int, Color)
+  href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_
+  commentId: M:Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)
+  name.vb: RenderLineSmooth(Integer, Integer, Integer, Integer, Color)
+  fullName: Terminaux.Graphics.GraphicsTools.RenderLineSmooth(int, int, int, int, Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Graphics.GraphicsTools.RenderLineSmooth(Integer, Integer, Integer, Integer, Terminaux.Colors.Color)
+  nameWithType: GraphicsTools.RenderLineSmooth(int, int, int, int, Color)
+  nameWithType.vb: GraphicsTools.RenderLineSmooth(Integer, Integer, Integer, Integer, Color)
+- uid: Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32})
+  name: RenderLineSmooth((int startX, int startY), (int endX, int endY))
+  href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__
+  commentId: M:Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32})
+  name.vb: RenderLineSmooth((startX As Integer, startY As Integer), (endX As Integer, endY As Integer))
+  fullName: Terminaux.Graphics.GraphicsTools.RenderLineSmooth((int startX, int startY), (int endX, int endY))
+  fullName.vb: Terminaux.Graphics.GraphicsTools.RenderLineSmooth((startX As Integer, startY As Integer), (endX As Integer, endY As Integer))
+  nameWithType: GraphicsTools.RenderLineSmooth((int startX, int startY), (int endX, int endY))
+  nameWithType.vb: GraphicsTools.RenderLineSmooth((startX As Integer, startY As Integer), (endX As Integer, endY As Integer))
+- uid: Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32},Terminaux.Colors.Color)
+  name: RenderLineSmooth((int startX, int startY), (int endX, int endY), Color)
+  href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__Terminaux_Colors_Color_
+  commentId: M:Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32},Terminaux.Colors.Color)
+  name.vb: RenderLineSmooth((startX As Integer, startY As Integer), (endX As Integer, endY As Integer), Color)
+  fullName: Terminaux.Graphics.GraphicsTools.RenderLineSmooth((int startX, int startY), (int endX, int endY), Terminaux.Colors.Color)
+  fullName.vb: Terminaux.Graphics.GraphicsTools.RenderLineSmooth((startX As Integer, startY As Integer), (endX As Integer, endY As Integer), Terminaux.Colors.Color)
+  nameWithType: GraphicsTools.RenderLineSmooth((int startX, int startY), (int endX, int endY), Color)
+  nameWithType.vb: GraphicsTools.RenderLineSmooth((startX As Integer, startY As Integer), (endX As Integer, endY As Integer), Color)
+- uid: Terminaux.Graphics.GraphicsTools.RenderLineSmooth*
+  name: RenderLineSmooth
+  href: api/Terminaux.Graphics.GraphicsTools.html#Terminaux_Graphics_GraphicsTools_RenderLineSmooth_
+  commentId: Overload:Terminaux.Graphics.GraphicsTools.RenderLineSmooth
+  isSpec: "True"
+  fullName: Terminaux.Graphics.GraphicsTools.RenderLineSmooth
+  nameWithType: GraphicsTools.RenderLineSmooth
 - uid: Terminaux.Graphics.IGeometricShape
   name: IGeometricShape
   href: api/Terminaux.Graphics.IGeometricShape.html

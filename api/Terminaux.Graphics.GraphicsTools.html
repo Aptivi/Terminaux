@@ -102,7 +102,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Graphics_GraphicsTools_RenderLine_System_Int32_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Graphics.GraphicsTools.RenderLine(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L40">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L41">View Source</a>
   </span>
   <a id="Terminaux_Graphics_GraphicsTools_RenderLine_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLine*"></a>
   <h4 id="Terminaux_Graphics_GraphicsTools_RenderLine_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLine(System.Int32,System.Int32,System.Int32,System.Int32)">RenderLine(int, int, int, int)</h4>
@@ -167,10 +167,84 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Graphics_GraphicsTools_RenderLine_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Graphics.GraphicsTools.RenderLine(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L62">View Source</a>
+  </span>
+  <a id="Terminaux_Graphics_GraphicsTools_RenderLine_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLine*"></a>
+  <h4 id="Terminaux_Graphics_GraphicsTools_RenderLine_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLine(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)">RenderLine(int, int, int, int, Color)</h4>
+  <div class="markdown level1 summary"><p>Renders a line using the <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham's line algorithm</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RenderLine(int startX, int startY, int endX, int endY, Color lineColor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">startX</span></td>
+        <td><p>Line start position (zero-based X position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">startY</span></td>
+        <td><p>Line start position (zero-based Y position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">endX</span></td>
+        <td><p>Line end position (zero-based X position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">endY</span></td>
+        <td><p>Line end position (zero-based Y position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">lineColor</span></td>
+        <td><p>Line color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A rendered line that you can print with <a class="xref" href="Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteRaw_System_String_System_Object___">WriteRaw(string, params object[])</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Graphics_GraphicsTools_RenderLine_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Terminaux.Graphics.GraphicsTools.RenderLine(System.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D%2CSystem.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L49">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L50">View Source</a>
   </span>
   <a id="Terminaux_Graphics_GraphicsTools_RenderLine_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLine*"></a>
   <h4 id="Terminaux_Graphics_GraphicsTools_RenderLine_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__" data-uid="Terminaux.Graphics.GraphicsTools.RenderLine(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32})">RenderLine((int startX, int startY), (int endX, int endY))</h4>
@@ -221,6 +295,328 @@
       </tr>
     </tbody>
   </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Graphics_GraphicsTools_RenderLine_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Graphics.GraphicsTools.RenderLine(System.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D%2CSystem.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L72">View Source</a>
+  </span>
+  <a id="Terminaux_Graphics_GraphicsTools_RenderLine_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLine*"></a>
+  <h4 id="Terminaux_Graphics_GraphicsTools_RenderLine_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__Terminaux_Colors_Color_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLine(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32},Terminaux.Colors.Color)">RenderLine((int startX, int startY), (int endX, int endY), Color)</h4>
+  <div class="markdown level1 summary"><p>Renders a line using the <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham's line algorithm</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RenderLine((int startX, int startY) firstPoint, (int endX, int endY) secondPoint, Color lineColor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.width">Width</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.height">Height</a>)</td>
+        <td><span class="parametername">firstPoint</span></td>
+        <td><p>Line start positions (zero-based X and Y positions)</p>
+</td>
+      </tr>
+      <tr>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.width">Width</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.height">Height</a>)</td>
+        <td><span class="parametername">secondPoint</span></td>
+        <td><p>Line end position (zero-based X and Y positions)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">lineColor</span></td>
+        <td><p>Line color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A rendered line that you can print with <a class="xref" href="Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteRaw_System_String_System_Object___">WriteRaw(string, params object[])</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_Int32_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L133">View Source</a>
+  </span>
+  <a id="Terminaux_Graphics_GraphicsTools_RenderLineSmooth_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLineSmooth*"></a>
+  <h4 id="Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.Int32,System.Int32,System.Int32,System.Int32)">RenderLineSmooth(int, int, int, int)</h4>
+  <div class="markdown level1 summary"><p>Renders a line using the <a href="https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm">Xiaolin Wu's line algorithm</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RenderLineSmooth(int startX, int startY, int endX, int endY)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">startX</span></td>
+        <td><p>Line start position (zero-based X position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">startY</span></td>
+        <td><p>Line start position (zero-based Y position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">endX</span></td>
+        <td><p>Line end position (zero-based X position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">endY</span></td>
+        <td><p>Line end position (zero-based Y position)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A rendered line that you can print with <a class="xref" href="Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteRaw_System_String_System_Object___">WriteRaw(string, params object[])</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L154">View Source</a>
+  </span>
+  <a id="Terminaux_Graphics_GraphicsTools_RenderLineSmooth_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLineSmooth*"></a>
+  <h4 id="Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_Int32_System_Int32_System_Int32_System_Int32_Terminaux_Colors_Color_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.Int32,System.Int32,System.Int32,System.Int32,Terminaux.Colors.Color)">RenderLineSmooth(int, int, int, int, Color)</h4>
+  <div class="markdown level1 summary"><p>Renders a line using the <a href="https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm">Xiaolin Wu's line algorithm</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RenderLineSmooth(int startX, int startY, int endX, int endY, Color lineColor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">startX</span></td>
+        <td><p>Line start position (zero-based X position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">startY</span></td>
+        <td><p>Line start position (zero-based Y position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">endX</span></td>
+        <td><p>Line end position (zero-based X position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">endY</span></td>
+        <td><p>Line end position (zero-based Y position)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">lineColor</span></td>
+        <td><p>Line color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A rendered line that you can print with <a class="xref" href="Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteRaw_System_String_System_Object___">WriteRaw(string, params object[])</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__.md&amp;value=---%0Auid%3A%20Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D%2CSystem.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L142">View Source</a>
+  </span>
+  <a id="Terminaux_Graphics_GraphicsTools_RenderLineSmooth_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLineSmooth*"></a>
+  <h4 id="Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__" data-uid="Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32})">RenderLineSmooth((int startX, int startY), (int endX, int endY))</h4>
+  <div class="markdown level1 summary"><p>Renders a line using the <a href="https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm">Xiaolin Wu's line algorithm</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RenderLineSmooth((int startX, int startY) firstPoint, (int endX, int endY) secondPoint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.width">Width</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.height">Height</a>)</td>
+        <td><span class="parametername">firstPoint</span></td>
+        <td><p>Line start positions (zero-based X and Y positions)</p>
+</td>
+      </tr>
+      <tr>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.width">Width</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.height">Height</a>)</td>
+        <td><span class="parametername">secondPoint</span></td>
+        <td><p>Line end position (zero-based X and Y positions)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A rendered line that you can print with <a class="xref" href="Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteRaw_System_String_System_Object___">WriteRaw(string, params object[])</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__Terminaux_Colors_Color_.md&amp;value=---%0Auid%3A%20Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D%2CSystem.ValueTuple%7BSystem.Int32%2CSystem.Int32%7D%2CTerminaux.Colors.Color)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L164">View Source</a>
+  </span>
+  <a id="Terminaux_Graphics_GraphicsTools_RenderLineSmooth_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLineSmooth*"></a>
+  <h4 id="Terminaux_Graphics_GraphicsTools_RenderLineSmooth_System_ValueTuple_System_Int32_System_Int32__System_ValueTuple_System_Int32_System_Int32__Terminaux_Colors_Color_" data-uid="Terminaux.Graphics.GraphicsTools.RenderLineSmooth(System.ValueTuple{System.Int32,System.Int32},System.ValueTuple{System.Int32,System.Int32},Terminaux.Colors.Color)">RenderLineSmooth((int startX, int startY), (int endX, int endY), Color)</h4>
+  <div class="markdown level1 summary"><p>Renders a line using the <a href="https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm">Xiaolin Wu's line algorithm</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string RenderLineSmooth((int startX, int startY) firstPoint, (int endX, int endY) secondPoint, Color lineColor)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.width">Width</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.height">Height</a>)</td>
+        <td><span class="parametername">firstPoint</span></td>
+        <td><p>Line start positions (zero-based X and Y positions)</p>
+</td>
+      </tr>
+      <tr>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.width">Width</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.height">Height</a>)</td>
+        <td><span class="parametername">secondPoint</span></td>
+        <td><p>Line end position (zero-based X and Y positions)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">lineColor</span></td>
+        <td><p>Line color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>A rendered line that you can print with <a class="xref" href="Terminaux.Writer.ConsoleWriters.TextWriterRaw.html#Terminaux_Writer_ConsoleWriters_TextWriterRaw_WriteRaw_System_String_System_Object___">WriteRaw(string, params object[])</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 
 </article>
           </div>
@@ -233,7 +629,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Graphics_GraphicsTools.md&amp;value=---%0Auid%3A%20Terminaux.Graphics.GraphicsTools%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L30" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Graphics/GraphicsTools.cs/#L31" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
