@@ -30,4 +30,8 @@
     <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Testing.Extensions.TrxReport" Version="1.2.0" />
+  </ItemGroup>
+
 </Project>
