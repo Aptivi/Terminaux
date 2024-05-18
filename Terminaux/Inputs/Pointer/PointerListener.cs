@@ -339,13 +339,15 @@ namespace Terminaux.Inputs.Pointer
                     {
                         if (press == PointerButtonPress.Released)
                             tieredContext = context;
+                        else
+                            tieredContext = null;
                         clickTier = 1;
-                        clickTierStopwatch.Reset();
+                        clickTierStopwatch.Restart();
                     }
                     int finalTier = press == PointerButtonPress.Released ? clickTier : 0;
 
                     // Add the results
-                    var ctx = new PointerEventContext(buttonPtr, press, mods, dragging, x, y, clickTier);
+                    var ctx = new PointerEventContext(buttonPtr, press, mods, dragging, x, y, finalTier);
                     context = ctx;
                     MouseEvent.Invoke("Terminaux", ctx);
                 }
@@ -468,8 +470,10 @@ namespace Terminaux.Inputs.Pointer
                             {
                                 if (press == PointerButtonPress.Released)
                                     tieredContext = context;
+                                else
+                                    tieredContext = null;
                                 clickTier = 1;
-                                clickTierStopwatch.Reset();
+                                clickTierStopwatch.Restart();
                             }
                             int finalTier = press == PointerButtonPress.Released ? clickTier : 0;
 
