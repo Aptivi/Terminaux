@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Reader.Tools;
@@ -69,6 +70,19 @@ namespace Terminaux.Reader.Bindings
         /// <param name="state">State of the reader</param>
         public virtual void DoAction(TermReaderState state)
         {
+            static string RenderChar(char c) =>
+                $"{c}".ReplaceAllRange(
+                    // To be replaced
+                    [
+                        "\t",
+                    ],
+
+                    // Replacements
+                    [
+                        "    ",
+                    ]
+                );
+
             // Insert the character, but in the condition that it's not a control character
             if (!ConditionalTools.ShouldNot(char.IsControl(state.pressedKey.KeyChar) && state.pressedKey.KeyChar != '\t', state))
             {
@@ -77,60 +91,39 @@ namespace Terminaux.Reader.Bindings
             }
 
             // Process the text, replace below characters, and determine if this character is unprintable or not
-            string text = $"{state.pressedKey.KeyChar}"
-                .ReplaceAllRange(
-                    [
-                        // To be replaced
-                        "\t"
-                    ],
-                    [
-                        // Replacements
-                        "    "
-                    ]
-                );
-            bool isHighSurrogate = char.IsHighSurrogate(state.pressedKey.KeyChar);
-            if (!ConditionalTools.ShouldNot(ConsoleChar.EstimateCellWidth(text) == 0 && !isHighSurrogate, state))
-            {
-                TermReader.InvalidateInput();
-                return;
-            }
+            var textBuilder = new StringBuilder(RenderChar(state.pressedKey.KeyChar));
 
-            // Check to see if this character is a surrogate (i.e. trying to insert emoji)
-            if (isHighSurrogate)
+            // Capture all the possible input, as long as that text is printable
+            while (ConsoleWrapper.KeyAvailable)
             {
-                // Get all the input, or discard the surrogate because it's a zero width character
-                while (ConsoleWrapper.KeyAvailable)
+                var pressed = TermReader.ReadKey();
+                bool isHighSurrogate = char.IsHighSurrogate(state.pressedKey.KeyChar);
+                if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(state.pressedKey.KeyChar) == 0 && !isHighSurrogate, state))
                 {
-                    var pressed = TermReader.ReadKey();
+                    TermReader.InvalidateInput();
+                    return;
+                }
+
+                // Check to see if this character is a surrogate (i.e. trying to insert emoji)
+                if (isHighSurrogate)
+                {
+                    // Get all the input, or discard the surrogate because it's a zero width character
+                    textBuilder.Append(RenderChar(pressed.KeyChar));
+                    pressed = TermReader.ReadKey();
                     bool isNextKeySurrogate = char.IsLowSurrogate(pressed.KeyChar);
                     if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(pressed.KeyChar) == 0 && !isNextKeySurrogate, state))
                     {
                         TermReader.InvalidateInput();
                         return;
                     }
-
-                    // Our next key is a surrogate.
-                    text += $"{pressed.KeyChar}";
                 }
-            }
-            else
-            {
-                // Capture all the possible input, as long as that text is printable
-                while (ConsoleWrapper.KeyAvailable)
-                {
-                    var pressed = TermReader.ReadKey();
-                    if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(pressed.KeyChar) == 0, state))
-                    {
-                        TermReader.InvalidateInput();
-                        return;
-                    }
 
-                    // Our next key is a letter.
-                    text += $"{pressed.KeyChar}";
-                }
+                // Our next key is a letter.
+                textBuilder.Append(RenderChar(pressed.KeyChar));
             }
 
             // Indicate whether we're replacing or inserting
+            string text = textBuilder.ToString();
             if (state.insertIsReplace)
             {
                 if (state.CurrentTextPos == state.CurrentText.Length)
