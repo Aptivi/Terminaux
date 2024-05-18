@@ -53,9 +53,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Terminaux.ColorDataGen\Terminaux.ColorDataGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-    <ProjectReference Include="..\Terminaux.Extensions\Terminaux.Extensions.csproj" />
     <ProjectReference Include="..\Terminaux.SequenceTypesGen\Terminaux.SequenceTypesGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     <ProjectReference Include="..\Terminaux.TermInfoGen\Terminaux.TermInfoGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\Terminaux.NerdFontGen\Terminaux.NerdFontGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\Terminaux.Extensions\Terminaux.Extensions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -29,7 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generators", "Generators", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Images", "Terminaux.Images\Terminaux.Images.csproj", "{4F83E9A9-4F19-49F8-8FA9-285FB3B9A7B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminaux.Extensions", "Terminaux.Extensions\Terminaux.Extensions.csproj", "{D937E463-BD01-433B-BA38-EDD0C94A6ADE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Extensions", "Terminaux.Extensions\Terminaux.Extensions.csproj", "{D937E463-BD01-433B-BA38-EDD0C94A6ADE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminaux.NerdFontGen", "Terminaux.NerdFontGen\Terminaux.NerdFontGen.csproj", "{1690D007-56AF-4CC9-B98B-78CB953D795A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +75,10 @@ Global
 		{D937E463-BD01-433B-BA38-EDD0C94A6ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D937E463-BD01-433B-BA38-EDD0C94A6ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D937E463-BD01-433B-BA38-EDD0C94A6ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1690D007-56AF-4CC9-B98B-78CB953D795A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1690D007-56AF-4CC9-B98B-78CB953D795A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1690D007-56AF-4CC9-B98B-78CB953D795A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1690D007-56AF-4CC9-B98B-78CB953D795A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +96,7 @@ Global
 		{95ACDB5C-1392-4262-9756-55715D61BF2A} = {874FF28F-7521-4B89-AE93-1D0BC6E7EAB1}
 		{4F83E9A9-4F19-49F8-8FA9-285FB3B9A7B4} = {4EF3C357-D122-4787-96AC-C581AF0FCA6A}
 		{D937E463-BD01-433B-BA38-EDD0C94A6ADE} = {4EF3C357-D122-4787-96AC-C581AF0FCA6A}
+		{1690D007-56AF-4CC9-B98B-78CB953D795A} = {95ACDB5C-1392-4262-9756-55715D61BF2A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B37391FF-0173-461C-9E91-F9A1C920ECE8}
