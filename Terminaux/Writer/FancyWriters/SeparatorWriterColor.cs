@@ -164,7 +164,7 @@ namespace Terminaux.Writer.FancyWriters
                             ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
-                    separator.Append($"--[ {Text} ]--");
+                    separator.Append($"──╢ {Text} ╟──");
                 }
 
                 // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -185,9 +185,9 @@ namespace Terminaux.Writer.FancyWriters
                             ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
-                    separator.Append(new string('-', RepeatTimes));
+                    separator.Append(new string('─', RepeatTimes));
                 }
-                separator.Append('>');
+                separator.Append('╢');
 
                 // Return the resulting separator
                 if (useColor)
