@@ -71,7 +71,10 @@ namespace Terminaux.Reader.Bindings
         {
             // Insert the character, but in the condition that it's not a control character
             if (!ConditionalTools.ShouldNot(char.IsControl(state.pressedKey.KeyChar) && state.pressedKey.KeyChar != '\t', state))
+            {
+                TermReader.InvalidateInput();
                 return;
+            }
 
             // Process the text, replace below characters, and determine if this character is unprintable or not
             string text = $"{state.pressedKey.KeyChar}"
@@ -87,7 +90,10 @@ namespace Terminaux.Reader.Bindings
                 );
             bool isHighSurrogate = char.IsHighSurrogate(state.pressedKey.KeyChar);
             if (!ConditionalTools.ShouldNot(ConsoleChar.EstimateCellWidth(text) == 0 && !isHighSurrogate, state))
+            {
+                TermReader.InvalidateInput();
                 return;
+            }
 
             // Check to see if this character is a surrogate (i.e. trying to insert emoji)
             if (isHighSurrogate)
@@ -98,7 +104,10 @@ namespace Terminaux.Reader.Bindings
                     var pressed = TermReader.ReadKey();
                     bool isNextKeySurrogate = char.IsLowSurrogate(pressed.KeyChar);
                     if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(pressed.KeyChar) == 0 && !isNextKeySurrogate, state))
+                    {
+                        TermReader.InvalidateInput();
                         return;
+                    }
 
                     // Our next key is a surrogate.
                     text += $"{pressed.KeyChar}";
@@ -111,7 +120,10 @@ namespace Terminaux.Reader.Bindings
                 {
                     var pressed = TermReader.ReadKey();
                     if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(pressed.KeyChar) == 0, state))
-                        continue;
+                    {
+                        TermReader.InvalidateInput();
+                        return;
+                    }
 
                     // Our next key is a letter.
                     text += $"{pressed.KeyChar}";

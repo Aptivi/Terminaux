@@ -117,6 +117,15 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
+        /// Invalidates the input
+        /// </summary>
+        public static void InvalidateInput()
+        {
+            while (ConsoleWrapper.KeyAvailable)
+                ReadKey(true);
+        }
+
+        /// <summary>
         /// Reads the input with password character masking
         /// </summary>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
