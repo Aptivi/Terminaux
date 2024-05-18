@@ -28056,6 +28056,19 @@ references:
   isSpec: "True"
   fullName: Terminaux.Reader.TermReader.GlobalReaderSettings
   nameWithType: TermReader.GlobalReaderSettings
+- uid: Terminaux.Reader.TermReader.InvalidateInput
+  name: InvalidateInput()
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_InvalidateInput
+  commentId: M:Terminaux.Reader.TermReader.InvalidateInput
+  fullName: Terminaux.Reader.TermReader.InvalidateInput()
+  nameWithType: TermReader.InvalidateInput()
+- uid: Terminaux.Reader.TermReader.InvalidateInput*
+  name: InvalidateInput
+  href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_InvalidateInput_
+  commentId: Overload:Terminaux.Reader.TermReader.InvalidateInput
+  isSpec: "True"
+  fullName: Terminaux.Reader.TermReader.InvalidateInput
+  nameWithType: TermReader.InvalidateInput
 - uid: Terminaux.Reader.TermReader.Read(System.Boolean)
   name: Read(bool)
   href: api/Terminaux.Reader.TermReader.html#Terminaux_Reader_TermReader_Read_System_Boolean_
