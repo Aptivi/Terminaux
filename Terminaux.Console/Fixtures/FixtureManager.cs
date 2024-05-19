@@ -194,6 +194,7 @@ namespace Terminaux.Console.Fixtures
             new CliInfoPaneTest(),
             new CliInfoPaneTestCjk(),
             new CliInfoPaneTestRtl(),
+            new CliInfoPaneTestNf(),
             new CliInfoPaneTestExcess(),
             new CliInfoPaneTestRefreshing(),
             new CliInfoPaneHugeTest(),

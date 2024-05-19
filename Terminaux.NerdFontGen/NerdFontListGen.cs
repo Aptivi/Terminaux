@@ -170,14 +170,14 @@ namespace Terminaux.NerdFontGen
                 {
                     Icon icon = icons[i];
                     string iconName = icon.Name;
-                    string iconFriendlyName = iconName.ToUpper()[0] + iconName.Substring(1).Replace("-", "_").Replace("_", "");
+                    string iconFriendlyName = iconName.ToUpper()[0] + iconName.Substring(1).Replace("-", "_");
                     string iconUnicode = icon.Unicode;
                     builder.AppendLine(
                         $$"""
                                 /// <summary>
                                 /// Character constant of {{iconName}} Nerd Fonts icon containing unicode character U+{{iconUnicode}} in the {{name}} category ({{i + 1}} of {{icons.Length}})
                                 /// </summary>
-                                public const string {{iconFriendlyName}}Character =
+                                public const string {{iconFriendlyName}} =
                                     "\u{{iconUnicode}}";
                         """
                     );
@@ -258,12 +258,12 @@ namespace Terminaux.NerdFontGen
                 {
                     Icon icon = icons[iconIdx];
                     string iconName = icon.Name;
-                    string iconFriendlyName = iconName.ToUpper()[0] + iconName.Substring(1).Replace("-", "_").Replace("_", "");
+                    string iconFriendlyName = iconName.ToUpper()[0] + iconName.Substring(1).Replace("-", "_");
 
                     // Build the dictionary entry
                     builder.AppendLine(
                         $$"""
-                                            { "{{iconName}}", {{typeName}}Icons.{{iconFriendlyName}}Character },
+                                            { "{{iconName}}", {{typeName}}Icons.{{iconFriendlyName}} },
                         """
                     );
                     if (iconIdx == icons.Length - 1 && typeIdx < list.Length - 1)
