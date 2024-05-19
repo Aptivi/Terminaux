@@ -56,19 +56,9 @@ namespace Terminaux.Inputs.Interactive
         {
             lock (_interactiveTuiLock)
             {
-                if (interactiveTui is null)
-                    throw new TerminauxException("Please provide a base Interactive TUI class and try again.");
-                BaseInteractiveTui<T>.instances.Add(interactiveTui);
-
-                // First, check to see if the interactive TUI has no data source
-                if ((interactiveTui.PrimaryDataSource is null || interactiveTui.SecondaryDataSource is null ||
-                    (interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0)) && !interactiveTui.AcceptsEmptyData)
-                {
-                    InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, interactiveTui.GetType().Name);
+                if (!VerifyInteractiveTui(interactiveTui))
                     return;
-                }
-                bool notifyCrash = false;
-                string crashReason = "";
+                BaseInteractiveTui<T>.instances.Add(interactiveTui);
 
                 // Make the screen
                 var screen = new Screen();
@@ -76,6 +66,8 @@ namespace Terminaux.Inputs.Interactive
                 interactiveTui.screen = screen;
 
                 // Now, run the application
+                bool notifyCrash = false;
+                string crashReason = "";
                 try
                 {
                     // Loop until the user requests to exit
@@ -972,11 +964,13 @@ namespace Terminaux.Inputs.Interactive
             return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
         }
 
-        private static string GetBindingMouseShortcut(InteractiveTuiBinding bind)
+        private static string GetBindingMouseShortcut(InteractiveTuiBinding bind, bool mark = true)
         {
             if (!bind.BindingUsesMouse)
                 return "";
-            return $"[{(bind.BindingPointerModifiers != 0 ? $"{bind.BindingPointerModifiers} + " : "")}{bind.BindingPointerButton}{(bind.BindingPointerButtonPress != 0 ? $" {bind.BindingPointerButtonPress}" : "")}]";
+            string markStart = mark ? "[" : " ";
+            string markEnd = mark ? "]" : " ";
+            return $"{markStart}{(bind.BindingPointerModifiers != 0 ? $"{bind.BindingPointerModifiers} + " : "")}{bind.BindingPointerButton}{(bind.BindingPointerButtonPress != 0 ? $" {bind.BindingPointerButtonPress}" : "")}{markEnd}";
         }
 
         private static InteractiveTuiBinding[] GetAllBindings<T>(BaseInteractiveTui<T> interactiveTui, bool full = false, bool justMouse = false)
@@ -1054,6 +1048,37 @@ namespace Terminaux.Inputs.Interactive
             InteractiveTuiStatus.CurrentInfoLine++;
             if (InteractiveTuiStatus.CurrentInfoLine > finalInfoStrings.Length - SeparatorMaximumHeightInterior)
                 InteractiveTuiStatus.CurrentInfoLine = finalInfoStrings.Length - SeparatorMaximumHeightInterior;
+            return true;
+        }
+
+        private static bool VerifyInteractiveTui<T>(BaseInteractiveTui<T> interactiveTui)
+        {
+            if (interactiveTui is null)
+                throw new TerminauxException("Please provide a base Interactive TUI class and try again.");
+
+            // First, check to see if the interactive TUI has no data source
+            if ((interactiveTui.PrimaryDataSource is null || interactiveTui.SecondaryDataSource is null ||
+                (interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0)) && !interactiveTui.AcceptsEmptyData)
+            {
+                InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, interactiveTui.GetType().Name);
+                return false;
+            }
+
+            // Then, check for conflicts in the key bindings
+            var bindings = GetAllBindings(interactiveTui, true);
+            List<InteractiveTuiBinding> conflicts = [];
+            foreach (var binding in bindings)
+            {
+                var keyBindings = bindings.Where((keyBinding) => !binding.BindingUsesMouse && !keyBinding.BindingUsesMouse && keyBinding.BindingKeyName == binding.BindingKeyName && keyBinding.BindingKeyModifiers == binding.BindingKeyModifiers);
+                var mouseBindings = bindings.Where((keyBinding) => binding.BindingUsesMouse && keyBinding.BindingUsesMouse && keyBinding.BindingPointerButton == binding.BindingPointerButton && keyBinding.BindingPointerButtonPress == binding.BindingPointerButtonPress && keyBinding.BindingPointerModifiers == binding.BindingPointerModifiers);
+                if (keyBindings.Count() > 1 || mouseBindings.Count() > 1)
+                    conflicts.Add(binding);
+            }
+            if (conflicts.Count > 0)
+            {
+                InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} has conflicting keyboard or mouse bindings.\n\nThe following keybindings or mouse bindings conflict:\n  - {1}\n\nThis program can't continue.\n" + "Press any key to continue...", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
+                return false;
+            }
             return true;
         }
 
