@@ -185,7 +185,7 @@ namespace Terminaux.Inputs.Styles
                     hueRamp.Append($"{new Color($"hsl:{hue};100;50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
-                    SliderColor.RenderSlider(finalHue, 360, hslBarX, hslBarY + 1, hslBarX, ConsoleWrapper.WindowWidth - (hslBarX + boxWidth), ColorTools.GetGray(), false) +
+                    SliderColor.RenderSlider(finalHue, 360, hslBarX, hslBarY + 1, boxWidth, ColorTools.GetGray(), false) +
                     CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 2) +
                     hueRamp.ToString()
                 );
@@ -199,7 +199,7 @@ namespace Terminaux.Inputs.Styles
                     satRamp.Append($"{new Color($"hsl:{finalHue};{sat};50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
-                    SliderColor.RenderSlider(finalSaturation, 100, hslBarX, hslBarY + 3, hslBarX, ConsoleWrapper.WindowWidth - (hslBarX + boxWidth), ColorTools.GetGray(), false) +
+                    SliderColor.RenderSlider(finalSaturation, 100, hslBarX, hslBarY + 3, boxWidth, ColorTools.GetGray(), false) +
                     CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 4) +
                     satRamp.ToString()
                 );
@@ -213,7 +213,7 @@ namespace Terminaux.Inputs.Styles
                     ligRamp.Append($"{new Color($"hsl:{finalHue};100;{lig}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
                 selector.Append(
-                    SliderColor.RenderSlider(finalLightness, 100, hslBarX, hslBarY + 5, hslBarX, ConsoleWrapper.WindowWidth - (hslBarX + boxWidth), ColorTools.GetGray(), false) +
+                    SliderColor.RenderSlider(finalLightness, 100, hslBarX, hslBarY + 5, boxWidth, ColorTools.GetGray(), false) +
                     CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, hslBarY + 6) +
                     ligRamp.ToString()
                 );

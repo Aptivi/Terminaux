@@ -364,7 +364,7 @@ namespace Terminaux.Inputs.Interactive
                 {
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor));
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor));
-                    builder.Append(SliderVerticalColor.RenderVerticalSlider(paneCurrentSelection, dataCount, left, 2, 3, 3, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor, false));
+                    builder.Append(SliderVerticalColor.RenderVerticalSlider(paneCurrentSelection, dataCount, left, 2, ConsoleWrapper.WindowHeight - 6, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor, false));
                 }
                 return builder.ToString();
             });
@@ -442,7 +442,7 @@ namespace Terminaux.Inputs.Interactive
                 {
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor));
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor));
-                    builder.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)InteractiveTuiStatus.CurrentInfoLine / (finalInfoStrings.Length - SeparatorMaximumHeightInterior) * finalInfoStrings.Length), finalInfoStrings.Length, left, 2, 3, 3, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor, false));
+                    builder.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)InteractiveTuiStatus.CurrentInfoLine / (finalInfoStrings.Length - SeparatorMaximumHeightInterior) * finalInfoStrings.Length), finalInfoStrings.Length, left, 2, ConsoleWrapper.WindowHeight - 6, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor, false));
                 }
                 return builder.ToString();
             });

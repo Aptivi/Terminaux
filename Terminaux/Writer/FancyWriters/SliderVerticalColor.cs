@@ -45,7 +45,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The slider position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalSliderPlain(int currPos, int maxPos, int Left, int Top, bool DrawBorder = true) =>
-            WriteVerticalSliderPlain(currPos, maxPos, Left, Top, 2, 0, DrawBorder);
+            WriteVerticalSliderPlain(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -54,26 +54,13 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="maxPos">Maximum position</param>
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
+        /// <param name="height">Slider height</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="HeightOffset">Height offset</param>
-        public static void WriteVerticalSliderPlain(int currPos, int maxPos, int Left, int Top, int HeightOffset, bool DrawBorder = true) =>
-            WriteVerticalSliderPlain(currPos, maxPos, Left, Top, HeightOffset, 0, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
-        public static void WriteVerticalSliderPlain(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, bool DrawBorder = true)
+        public static void WriteVerticalSliderPlain(int currPos, int maxPos, int Left, int Top, int height, bool DrawBorder = true)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderVerticalSliderPlain(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, DrawBorder));
+                TextWriterRaw.WriteRaw(RenderVerticalSliderPlain(currPos, maxPos, Left, Top, height, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -91,7 +78,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The slider position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, 2, 0, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -100,23 +87,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="maxPos">Maximum position</param>
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
-        /// <param name="HeightOffset">Height offset</param>
+        /// <param name="height">Slider height</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int HeightOffset, bool DrawBorder = true) =>
-             WriteVerticalSlider(currPos, maxPos, Left, Top, HeightOffset, 0, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, height, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -128,7 +102,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="SliderColor">The slider color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, Color SliderColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, 2, 0, SliderColor, ColorTools.GetGray(), DrawBorder);
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, SliderColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -138,24 +112,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="SliderColor">The slider color</param>
-        /// <param name="HeightOffset">Height offset</param>
+        /// <param name="height">Slider height</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int HeightOffset, Color SliderColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, HeightOffset, 0, SliderColor, ColorTools.GetGray(), DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, Color SliderColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, SliderColor, ColorTools.GetGray(), DrawBorder);
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, Color SliderColor, bool DrawBorder = true) =>
+            WriteVerticalSlider(currPos, maxPos, Left, Top, height, SliderColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -168,7 +128,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FrameColor">The slider frame color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, Color SliderColor, Color FrameColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, 2, 0, SliderColor, FrameColor, DrawBorder);
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, SliderColor, FrameColor, DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -179,28 +139,13 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The slider position from the top</param>
         /// <param name="SliderColor">The slider color</param>
         /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="HeightOffset">Height offset</param>
+        /// <param name="height">Slider height</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int HeightOffset, Color SliderColor, Color FrameColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, HeightOffset, 0, SliderColor, FrameColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, Color SliderColor, Color FrameColor, bool DrawBorder = true)
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, Color SliderColor, Color FrameColor, bool DrawBorder = true)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, SliderColor, FrameColor, DrawBorder));
+                TextWriterRaw.WriteRaw(RenderVerticalSlider(currPos, maxPos, Left, Top, height, SliderColor, FrameColor, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -221,7 +166,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">The slider background color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, Color SliderColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, 2, 0, SliderColor, FrameColor, BackgroundColor, DrawBorder);
+            WriteVerticalSlider(currPos, maxPos, Left, Top, ConsoleWrapper.WindowHeight - 2, SliderColor, FrameColor, BackgroundColor, DrawBorder);
 
         /// <summary>
         /// Writes the slider
@@ -233,29 +178,13 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="SliderColor">The slider color</param>
         /// <param name="FrameColor">The slider frame color</param>
         /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="HeightOffset">Height offset</param>
+        /// <param name="height">Slider height</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int HeightOffset, Color SliderColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true) =>
-            WriteVerticalSlider(currPos, maxPos, Left, Top, HeightOffset, 0, SliderColor, FrameColor, BackgroundColor, DrawBorder);
-
-        /// <summary>
-        /// Writes the slider
-        /// </summary>
-        /// <param name="currPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="Left">The slider position from the upper left corner</param>
-        /// <param name="Top">The slider position from the top</param>
-        /// <param name="SliderColor">The slider color</param>
-        /// <param name="FrameColor">The slider frame color</param>
-        /// <param name="BackgroundColor">The slider background color</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
-        /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, Color SliderColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true)
+        public static void WriteVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, Color SliderColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, SliderColor, FrameColor, BackgroundColor, DrawBorder));
+                TextWriterRaw.WriteRaw(RenderVerticalSlider(currPos, maxPos, Left, Top, height, SliderColor, FrameColor, BackgroundColor, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -272,10 +201,9 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
-        public static string RenderVerticalSliderPlain(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, bool DrawBorder = true) =>
-            RenderVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, ColorTools.currentForegroundColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, false, DrawBorder);
+        /// <param name="height">Slider height</param>
+        public static string RenderVerticalSliderPlain(int currPos, int maxPos, int Left, int Top, int height, bool DrawBorder = true) =>
+            RenderVerticalSlider(currPos, maxPos, Left, Top, height, ColorTools.currentForegroundColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, false, DrawBorder);
 
         /// <summary>
         /// Renders the slider
@@ -285,11 +213,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
+        /// <param name="height">Slider height</param>
         /// <param name="SliderColor">The slider color</param>
-        public static string RenderVerticalSlider(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, Color SliderColor, bool DrawBorder = true) =>
-            RenderVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, SliderColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder);
+        public static string RenderVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, Color SliderColor, bool DrawBorder = true) =>
+            RenderVerticalSlider(currPos, maxPos, Left, Top, height, SliderColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder);
 
         /// <summary>
         /// Renders the slider
@@ -299,12 +226,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
+        /// <param name="height">Slider height</param>
         /// <param name="SliderColor">The slider color</param>
         /// <param name="FrameColor">The slider frame color</param>
-        public static string RenderVerticalSlider(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, Color SliderColor, Color FrameColor, bool DrawBorder = true) =>
-            RenderVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, SliderColor, FrameColor, ColorTools.currentBackgroundColor, true, DrawBorder);
+        public static string RenderVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, Color SliderColor, Color FrameColor, bool DrawBorder = true) =>
+            RenderVerticalSlider(currPos, maxPos, Left, Top, height, SliderColor, FrameColor, ColorTools.currentBackgroundColor, true, DrawBorder);
 
         /// <summary>
         /// Renders the slider
@@ -314,13 +240,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
+        /// <param name="height">Slider height</param>
         /// <param name="SliderColor">The slider color</param>
         /// <param name="FrameColor">The slider frame color</param>
         /// <param name="BackgroundColor">The slider background color</param>
-        public static string RenderVerticalSlider(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, Color SliderColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true) =>
-            RenderVerticalSlider(currPos, maxPos, Left, Top, TopHeightOffset, BottomHeightOffset, SliderColor, FrameColor, BackgroundColor, true, DrawBorder);
+        public static string RenderVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, Color SliderColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true) =>
+            RenderVerticalSlider(currPos, maxPos, Left, Top, height, SliderColor, FrameColor, BackgroundColor, true, DrawBorder);
 
         /// <summary>
         /// Renders the slider
@@ -330,19 +255,15 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">The slider position from the upper left corner</param>
         /// <param name="Top">The slider position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="TopHeightOffset">Height offset from the top</param>
-        /// <param name="BottomHeightOffset">Height offset from the bottom</param>
+        /// <param name="height">Slider height</param>
         /// <param name="SliderColor">The slider color</param>
         /// <param name="FrameColor">The slider frame color</param>
         /// <param name="BackgroundColor">The slider background color</param>
         /// <param name="useColor">Whether to use the color or not</param>
-        internal static string RenderVerticalSlider(int currPos, int maxPos, int Left, int Top, int TopHeightOffset, int BottomHeightOffset, Color SliderColor, Color FrameColor, Color BackgroundColor, bool useColor, bool DrawBorder = true)
+        internal static string RenderVerticalSlider(int currPos, int maxPos, int Left, int Top, int height, Color SliderColor, Color FrameColor, Color BackgroundColor, bool useColor, bool DrawBorder = true)
         {
             try
             {
-                // Get the final height offset
-                int FinalHeightOffset = TopHeightOffset + BottomHeightOffset;
-
                 // Check the slider value
                 if (maxPos < 0)
                     maxPos = 0;
@@ -350,14 +271,13 @@ namespace Terminaux.Writer.FancyWriters
                     currPos = maxPos;
                 if (currPos < 0)
                     currPos = 0;
-                int MaximumHeight = ConsoleWrapper.WindowHeight - FinalHeightOffset;
-                if (maxPos <= MaximumHeight)
+                if (maxPos <= height)
                     return "";
 
                 // Fill the slider
-                int maxPosOffset = maxPos - MaximumHeight;
-                double maxPosFraction = (double)MaximumHeight / maxPosOffset;
-                int SliderFilled = ConsoleMisc.PercentRepeatTargeted((int)Math.Round(maxPosFraction), maxPos, MaximumHeight);
+                int maxPosOffset = maxPos - height;
+                double maxPosFraction = (double)height / maxPosOffset;
+                int SliderFilled = ConsoleMisc.PercentRepeatTargeted((int)Math.Round(maxPosFraction), maxPos, height);
                 if (SliderFilled == 0)
                     SliderFilled = 1;
 
@@ -374,7 +294,7 @@ namespace Terminaux.Writer.FancyWriters
                     }
                     progBuilder.Append(
                         BorderColor.RenderBorderPlain(
-                            Left, Top, 1, MaximumHeight,
+                            Left, Top, 1, height,
                             ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
                             ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
                             ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
@@ -385,12 +305,12 @@ namespace Terminaux.Writer.FancyWriters
                 else
                 {
                     progBuilder.Append(
-                        BoxColor.RenderBox(Left + 1, Top, 1, MaximumHeight, BackgroundColor, useColor)
+                        BoxColor.RenderBox(Left + 1, Top, 1, height, BackgroundColor, useColor)
                     );
                 }
 
                 // Draw the slider
-                int maxBlanks = ConsoleMisc.PercentRepeatTargeted(currPos, maxPos, MaximumHeight);
+                int maxBlanks = ConsoleMisc.PercentRepeatTargeted(currPos, maxPos, height);
                 if (maxBlanks == 0)
                     maxBlanks = 1;
                 if (useColor)

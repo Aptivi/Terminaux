@@ -230,7 +230,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     buffer.Append(
                         TextWriterWhereColor.RenderWhereColorBack("↑", finalWidth, top, foregroundColor, backgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("↓", finalWidth, top + selectionChoices - 1, foregroundColor, backgroundColor) +
-                        SliderVerticalColor.RenderVerticalSlider(currentSelection + 1, selections.Length, finalWidth - 1, top, top, ConsoleWrapper.WindowHeight - top - selectionChoices + 2, foregroundColor, backgroundColor, false)
+                        SliderVerticalColor.RenderVerticalSlider(currentSelection + 1, selections.Length, finalWidth - 1, top, selectionChoices - 2, foregroundColor, backgroundColor, false)
                     );
                 }
                 else
@@ -238,7 +238,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     buffer.Append(
                         TextWriterWhereColor.RenderWhere("↑", finalWidth, top) +
                         TextWriterWhereColor.RenderWhere("↓", finalWidth, top + selectionChoices - 1) +
-                        SliderVerticalColor.RenderVerticalSliderPlain(currentSelection + 1, selections.Length, finalWidth - 1, top, top, ConsoleWrapper.WindowHeight - top - selectionChoices + 2, false)
+                        SliderVerticalColor.RenderVerticalSliderPlain(currentSelection + 1, selections.Length, finalWidth - 1, top, selectionChoices - 2, false)
                     );
                 }
             }
