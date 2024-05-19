@@ -935,6 +935,176 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.AllIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.AllIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.CodiconsIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.CodiconsIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.CustomIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.CustomIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.DeviconsIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.DeviconsIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.FontAwesomeExtensionIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.FontAwesomeExtensionIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.FontAwesomeIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.FontAwesomeIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.IecPowerIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.IecPowerIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.LogosIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.LogosIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.MaterialIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.MaterialIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.NerdFontsTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.NerdFontsTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.NerdFontsTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.NerdFontsTypes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.OcticonsIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.OcticonsIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.PomodoroIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.PomodoroIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.PowerLineExtraIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.PowerLineExtraIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.PowerLineIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.PowerLineIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.WeatherIcons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.WeatherIcons.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Graphics.NerdFonts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Graphics.NerdFonts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Graphics.Shapes.Circle.yml",
       "output": {
         ".html": {
