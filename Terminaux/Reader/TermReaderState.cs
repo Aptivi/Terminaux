@@ -264,26 +264,16 @@ namespace Terminaux.Reader
         /// <summary>
         /// Gets the current state
         /// </summary>
-        public static TermReaderState? CurrentState
-        {
-            get
-            {
-                if (TermReader.states.Count == 0)
-                    return null;
-
-                // Get the current state
-                var state = TermReader.states[TermReader.states.Count - 1];
-                return state;
-            }
-        }
+        public static TermReaderState? CurrentState =>
+            TermReader.state;
 
         internal static void SaveState(TermReaderState state)
         {
             if (!TermReaderTools.Busy)
                 return;
-            if (TermReader.states.Count == 0)
+            if (TermReader.state is null)
                 return;
-            TermReader.states[TermReader.states.Count - 1] = state;
+            TermReader.state = state;
         }
 
         internal TermReaderState() { }

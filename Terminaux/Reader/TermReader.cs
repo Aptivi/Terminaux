@@ -37,7 +37,7 @@ namespace Terminaux.Reader
     public static class TermReader
     {
         internal static TermReaderSettings globalSettings = new();
-        internal static readonly List<TermReaderState> states = [];
+        internal static TermReaderState? state = null;
         private static readonly object readLock = new();
 
         /// <summary>
@@ -362,7 +362,7 @@ namespace Terminaux.Reader
                 {
                     settings = settings
                 };
-                states.Add(readState);
+                state = readState;
 
                 // Save some variable states
                 bool ctrlCAsInput = ConsoleWrapper.TreatCtrlCAsInput;
@@ -413,7 +413,7 @@ namespace Terminaux.Reader
 
                         // Handle it
                         BindingsTools.Execute(readState);
-                        TermReaderTools.Refresh(readState);
+                        TermReaderTools.Refresh();
                         PositioningTools.Commit(readState);
 
                         // Write the bell character if invalid
@@ -467,7 +467,7 @@ namespace Terminaux.Reader
                     ConsoleWrapper.TreatCtrlCAsInput = ctrlCAsInput;
                     ConsoleWrapper.CursorVisible = initialVisible;
                 }
-                states.Remove(readState);
+                state = null;
                 return input;
             }
         }

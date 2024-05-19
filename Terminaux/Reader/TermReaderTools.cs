@@ -88,16 +88,7 @@ namespace Terminaux.Reader
         /// </summary>
         public static void Refresh()
         {
-            if (TermReader.states.Count == 0)
-                return;
-            Refresh(TermReaderState.CurrentState);
-        }
-
-        /// <summary>
-        /// Refreshes the reader prompt
-        /// </summary>
-        public static void Refresh(TermReaderState? state)
-        {
+            var state = TermReaderState.CurrentState;
             if (state is null)
                 return;
             if (!state.RefreshRequired)
@@ -138,7 +129,7 @@ namespace Terminaux.Reader
         /// <returns>The maximum input length of an input. -1 if there is no reader.</returns>
         public static int GetMaximumInputLength()
         {
-            if (TermReader.states.Count == 0)
+            if (TermReader.state is null)
                 return -1;
 
             // Get the current state
@@ -156,7 +147,7 @@ namespace Terminaux.Reader
         /// <param name="step">Whether to move the cursor forward after inserting or not</param>
         public static void InsertNewText(string newText, bool append = false, bool step = true)
         {
-            if (TermReader.states.Count == 0)
+            if (TermReader.state is null)
                 return;
 
             // Get the current state
@@ -174,7 +165,7 @@ namespace Terminaux.Reader
         /// <param name="step">Whether to step backwards after removing characters</param>
         public static void RemoveText(int length, bool step = false)
         {
-            if (TermReader.states.Count == 0)
+            if (TermReader.state is null)
                 return;
             if (TermReaderState.CurrentState is null)
                 return;
@@ -190,7 +181,7 @@ namespace Terminaux.Reader
         /// <param name="step">Whether to step backwards after removing characters</param>
         public static void RemoveText(int startIndex, int length, bool step = false)
         {
-            if (TermReader.states.Count == 0)
+            if (TermReader.state is null)
                 return;
 
             // Get the current state
@@ -206,7 +197,7 @@ namespace Terminaux.Reader
         /// </summary>
         public static void WipeAll()
         {
-            if (TermReader.states.Count == 0)
+            if (TermReader.state is null)
                 return;
 
             // Get the current state
