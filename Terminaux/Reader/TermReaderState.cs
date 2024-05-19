@@ -52,6 +52,7 @@ namespace Terminaux.Reader
         internal bool insertIsReplace;
         internal bool commentized;
         internal bool operationWasInvalid;
+        internal bool concealing;
         internal string oldText = "";
         internal TermReaderSettings settings = TermReader.GlobalReaderSettings;
 
@@ -188,6 +189,11 @@ namespace Terminaux.Reader
         /// </summary>
         public bool PasswordMode =>
             passwordMode;
+        /// <summary>
+        /// Whether the input is concealed right now
+        /// </summary>
+        public bool Concealing =>
+            concealing;
         /// <summary>
         /// Currently pressed key
         /// </summary>

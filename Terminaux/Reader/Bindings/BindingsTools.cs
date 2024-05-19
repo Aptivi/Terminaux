@@ -62,6 +62,7 @@ namespace Terminaux.Reader.Bindings
             new SubstituteChars(),
             new SubstituteWords(),
             new Commentize(),
+            new Conceal(),
 
 #if DEBUG
             new DebugPos()

@@ -417,7 +417,10 @@ namespace Terminaux.Reader
             state.writingPrompt = false;
 
             // Now, render the current text
-            string renderedText = state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) : state.currentText.ToString();
+            string renderedText =
+                state.PasswordMode ? new string(state.settings.PasswordMaskChar, state.currentText.ToString().Length) :
+                state.concealing ? new string(' ', ConsoleChar.EstimateCellWidth(state.currentText.ToString())) :
+                state.currentText.ToString();
 
             // Take highlighting into account
             renderedText = GetHighlightedInput(renderedText, state);
