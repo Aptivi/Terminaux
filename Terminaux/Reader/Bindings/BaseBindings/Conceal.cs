@@ -35,7 +35,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             if (state.PasswordMode)
                 return;
             state.concealing = !state.concealing;
-            TermReaderTools.RefreshPrompt(ref state);
+            state.RefreshRequired = true;
         }
     }
 }

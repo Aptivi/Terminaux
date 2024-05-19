@@ -41,7 +41,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             state.inputPromptTopBegin = 0;
             state.inputPromptTop -= diff;
             state.currentCursorPosTop -= diff;
-            TermReaderTools.RefreshPrompt(ref state);
+            state.RefreshRequired = true;
         }
     }
 }

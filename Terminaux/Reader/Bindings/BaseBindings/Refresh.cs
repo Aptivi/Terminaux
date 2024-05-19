@@ -34,6 +34,6 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state) =>
-            TermReaderTools.RefreshPrompt(ref state);
+            state.RefreshRequired = true;
     }
 }

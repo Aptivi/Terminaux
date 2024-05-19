@@ -45,7 +45,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Now, substitute them
             (state.CurrentText[state.CurrentTextPos], state.CurrentText[state.CurrentTextPos + 1]) = (second, first);
-            TermReaderTools.RefreshPrompt(ref state);
+            state.RefreshRequired = true;
         }
     }
 }

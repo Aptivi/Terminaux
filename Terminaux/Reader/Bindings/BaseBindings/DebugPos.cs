@@ -111,7 +111,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             // Now, reset everything
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeft, state.InputPromptTop);
             Console.ResetColor();
-            TermReaderTools.RefreshPrompt(ref state);
+            state.RefreshRequired = true;
         }
     }
 }

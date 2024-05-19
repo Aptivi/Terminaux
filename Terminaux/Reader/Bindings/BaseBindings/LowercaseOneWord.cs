@@ -48,7 +48,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                         break;
                 }
             }
-            TermReaderTools.RefreshPrompt(ref state);
+            state.RefreshRequired = true;
         }
     }
 }

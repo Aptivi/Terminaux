@@ -302,7 +302,7 @@ namespace Terminaux.Reader.Tools
                 {
                     // Reached to the end! Go back to the prompt position.
                     state.currentCursorPosLeft = state.InputPromptLeft + cellWidth;
-                    TermReaderTools.RefreshPrompt(ref state);
+                    state.RefreshRequired = true;
                 }
             }
             needsCommit = true;
@@ -357,7 +357,7 @@ namespace Terminaux.Reader.Tools
                     string line = TermReaderTools.GetLineFromCurrentPos(sentences, state);
                     int lineWidth = ConsoleChar.EstimateCellWidth(line);
                     state.currentCursorPosLeft -= state.LongestSentenceLengthFromLeftForFirstLine - lineWidth;
-                    TermReaderTools.RefreshPrompt(ref state);
+                    state.RefreshRequired = true;
                 }
             }
             needsCommit = true;

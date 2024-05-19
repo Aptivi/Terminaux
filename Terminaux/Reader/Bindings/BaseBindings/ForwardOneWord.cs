@@ -54,7 +54,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Deterministically change position
             PositioningTools.GoForward(steps, ref state);
-            TermReaderTools.RefreshPrompt(ref state);
+            state.RefreshRequired = true;
         }
     }
 }

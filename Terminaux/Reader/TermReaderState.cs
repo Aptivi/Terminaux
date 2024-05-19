@@ -53,6 +53,7 @@ namespace Terminaux.Reader
         internal bool commentized;
         internal bool operationWasInvalid;
         internal bool concealing;
+        internal bool refreshRequired;
         internal string oldText = "";
         internal TermReaderSettings settings = TermReader.GlobalReaderSettings;
 
@@ -251,6 +252,14 @@ namespace Terminaux.Reader
         /// </summary>
         public bool OneLineWrap =>
             oneLineWrap;
+        /// <summary>
+        /// Whether the refresh is required
+        /// </summary>
+        public bool RefreshRequired
+        {
+            get => refreshRequired;
+            set => refreshRequired = value;
+        }
 
         /// <summary>
         /// Gets the current state

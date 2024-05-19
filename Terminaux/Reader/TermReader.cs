@@ -413,6 +413,7 @@ namespace Terminaux.Reader
 
                         // Handle it
                         BindingsTools.Execute(readState);
+                        TermReaderTools.Refresh(readState);
                         PositioningTools.Commit(readState);
 
                         // Write the bell character if invalid

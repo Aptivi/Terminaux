@@ -89,7 +89,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             PositioningTools.GoBack(first.Length, ref state);
             state.CurrentText.Replace(orig, final, firstWordStart, diff);
             PositioningTools.GoForward(second.Length, ref state);
-            TermReaderTools.RefreshPrompt(ref state);
+            state.RefreshRequired = true;
         }
     }
 }

@@ -90,10 +90,17 @@ namespace Terminaux.Reader
         {
             if (TermReader.states.Count == 0)
                 return;
+            Refresh(TermReaderState.CurrentState);
+        }
 
-            // Get the current state
-            var state = TermReaderState.CurrentState;
+        /// <summary>
+        /// Refreshes the reader prompt
+        /// </summary>
+        public static void Refresh(TermReaderState? state)
+        {
             if (state is null)
+                return;
+            if (!state.RefreshRequired)
                 return;
 
             // Check to see if the console has been resized before
@@ -121,6 +128,7 @@ namespace Terminaux.Reader
             RefreshPrompt(ref state);
 
             // Save the state
+            state.RefreshRequired = false;
             TermReaderState.SaveState(state);
         }
 

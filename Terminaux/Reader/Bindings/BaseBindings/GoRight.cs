@@ -40,7 +40,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
             // Just set the position one character further than the input start position!
             PositioningTools.GoForward(ref state);
-            TermReaderTools.RefreshPrompt(ref state);
+            state.RefreshRequired = true;
         }
     }
 }
