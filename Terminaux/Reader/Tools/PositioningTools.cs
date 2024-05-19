@@ -30,9 +30,12 @@ namespace Terminaux.Reader.Tools
         internal static bool needsCommit = false;
 
         /// <summary>
-        /// Goes to the beginning of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// Goes to the beginning of the text.
         /// </summary>
         /// <param name="state">State of the terminal reader in its present state</param>
+        /// <remarks>
+        /// You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do.
+        /// </remarks>
         public static void GoLeftmost(ref TermReaderState state)
         {
             if (state.OneLineWrap)
@@ -42,9 +45,12 @@ namespace Terminaux.Reader.Tools
         }
 
         /// <summary>
-        /// Goes to the end of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// Goes to the end of the text.
         /// </summary>
         /// <param name="state">State of the terminal reader in its present state</param>
+        /// <remarks>
+        /// You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do.
+        /// </remarks>
         public static void GoRightmost(ref TermReaderState state)
         {
             GoLeftmost(ref state);
@@ -55,9 +61,12 @@ namespace Terminaux.Reader.Tools
         }
 
         /// <summary>
-        /// Goes one step closer to the end of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// Goes one step closer to the end of the text.
         /// </summary>
         /// <param name="state">State of the terminal reader in its present state</param>
+        /// <remarks>
+        /// You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do.
+        /// </remarks>
         public static void GoForward(ref TermReaderState state)
         {
             if (state.OneLineWrap)
@@ -67,10 +76,13 @@ namespace Terminaux.Reader.Tools
         }
 
         /// <summary>
-        /// Goes to the number of <paramref name="steps"/> closer to the end of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// Goes to the number of <paramref name="steps"/> closer to the end of the text.
         /// </summary>
         /// <param name="steps">The number of steps to go closer to the end of the text</param>
         /// <param name="state">State of the terminal reader in its present state</param>
+        /// <remarks>
+        /// You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do.
+        /// </remarks>
         public static void GoForward(int steps, ref TermReaderState state)
         {
             if (state.OneLineWrap)
@@ -80,9 +92,12 @@ namespace Terminaux.Reader.Tools
         }
 
         /// <summary>
-        /// Goes one step closer to the beginning of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// Goes one step closer to the beginning of the text.
         /// </summary>
         /// <param name="state">State of the terminal reader in its present state</param>
+        /// <remarks>
+        /// You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do.
+        /// </remarks>
         public static void GoBack(ref TermReaderState state)
         {
             if (state.OneLineWrap)
@@ -92,10 +107,13 @@ namespace Terminaux.Reader.Tools
         }
 
         /// <summary>
-        /// Goes to the number of <paramref name="steps"/> closer to the beginning of the text (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// Goes to the number of <paramref name="steps"/> closer to the beginning of the text.
         /// </summary>
         /// <param name="steps">The number of steps to go closer to the beginning of the text</param>
         /// <param name="state">State of the terminal reader in its present state</param>
+        /// <remarks>
+        /// You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do.
+        /// </remarks>
         public static void GoBack(int steps, ref TermReaderState state)
         {
             if (state.OneLineWrap)
@@ -105,10 +123,13 @@ namespace Terminaux.Reader.Tools
         }
 
         /// <summary>
-        /// Seeks to the selected text position number, <paramref name="pos"/> (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// Seeks to the selected text position number, <paramref name="pos"/>.
         /// </summary>
         /// <param name="pos">The text position number (zero-based)</param>
         /// <param name="state">State of the terminal reader in its present state</param>
+        /// <remarks>
+        /// You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do.
+        /// </remarks>
         public static void SeekTo(int pos, ref TermReaderState state)
         {
             if (state.OneLineWrap)
@@ -118,11 +139,14 @@ namespace Terminaux.Reader.Tools
         }
 
         /// <summary>
-        /// Seeks to the selected text position number, <paramref name="pos"/> (You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do)
+        /// Seeks to the selected text position number, <paramref name="pos"/>.
         /// </summary>
         /// <param name="fromPos">The text position number offset (zero-based)</param>
         /// <param name="pos">The text position number (zero-based)</param>
         /// <param name="state">State of the terminal reader in its present state</param>
+        /// <remarks>
+        /// You need to commit this change with the <see cref="Commit(TermReaderState)"/> function, except if this is the last thing to do.
+        /// </remarks>
         public static void SeekTo(int fromPos, int pos, ref TermReaderState state)
         {
             if (state.OneLineWrap)
