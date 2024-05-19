@@ -35,14 +35,19 @@ namespace Terminaux.Graphics.NerdFonts
         /// <param name="charName">Character name</param>
         /// <returns>Nerd Fonts character from <paramref name="charName"/> from the specified <paramref name="type"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static char GetNerdFontChar(NerdFontsTypes type, string charName)
+        public static string GetNerdFontChar(NerdFontsTypes type, string charName)
         {
             var nerdEntries = VerifyEntries(type);
             if (!nerdEntries.TryGetValue(charName, out string character))
                 throw new TerminauxException($"Invalid Nerd Fonts character name {charName} in type {type}");
             if (!char.TryParse(character, out char c))
+            {
+                // We may have surrogate pair based Nerd Fonts character, so we need to process it.
+                if (character.Length == 2 && char.IsSurrogatePair(character[0], character[1]))
+                    return character;
                 throw new TerminauxException($"Invalid Nerd Fonts character representation {character} from {charName} in type {type}");
-            return c;
+            }
+            return $"{c}";
         }
 
         /// <summary>

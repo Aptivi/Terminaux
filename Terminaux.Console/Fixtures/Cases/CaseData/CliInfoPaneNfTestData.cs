@@ -70,11 +70,12 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             if (!Enum.TryParse<NerdFontsTypes>(typeName, out var type))
                 throw new TerminauxException($"Type name {typeName} is invalid.");
             string charName = SecondaryDataSource.ElementAt(InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
-            string nerdFontChar = $"{NerdFontsTools.GetNerdFontChar(type, charName)}";
+            string nerdFontChar = NerdFontsTools.GetNerdFontChar(type, charName);
             InfoBoxColor.WriteInfoBox("NF Character Info",
                 $"WARNING: You must use a font that supports NF glyphs. Otherwise, you'll see the \"missing character\" symbol.\n" +
                 $"\n" +
                 $"NF character name: {charName} ({typeName})\n" +
+                $"Surrogate pair: {(nerdFontChar.Length == 2 ? "Yes" : "No")}\n" +
                 $"NF character: {nerdFontChar}");
         }
     }

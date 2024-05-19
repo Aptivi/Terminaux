@@ -178,7 +178,7 @@ namespace Terminaux.NerdFontGen
                                 /// Character constant of {{iconName}} Nerd Fonts icon containing unicode character U+{{iconUnicode}} in the {{name}} category ({{i + 1}} of {{icons.Length}})
                                 /// </summary>
                                 public const string {{iconFriendlyName}} =
-                                    "\u{{iconUnicode}}";
+                                    {{(iconUnicode.Length == 5 ? $"\"\\U000{iconUnicode}\"" : $"\"\\u{iconUnicode}\"")}};
                         """
                     );
                 }
