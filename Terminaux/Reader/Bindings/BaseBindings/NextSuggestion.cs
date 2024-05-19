@@ -91,7 +91,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             }
             else
             {
-                BindingsList.fallbackBinding.DoAction(state);
+                BindingsTools.fallbackBinding.DoAction(state);
             }
         }
     }

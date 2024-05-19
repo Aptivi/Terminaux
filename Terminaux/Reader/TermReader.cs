@@ -392,7 +392,7 @@ namespace Terminaux.Reader
 
                     // Get input
                     ConsoleWrapper.CursorVisible = true;
-                    while (!BindingsReader.IsTerminate(struckKey))
+                    while (!BindingsTools.IsTerminate(struckKey))
                     {
                         // Write placeholder if needed
                         if (readState.CurrentText.Length == 0 && settings.PlaceholderText.Length != 0)
@@ -412,7 +412,7 @@ namespace Terminaux.Reader
                         readState.pressedKey = struckKey;
 
                         // Handle it
-                        BindingsReader.Execute(readState);
+                        BindingsTools.Execute(readState);
                         PositioningTools.Commit(readState);
 
                         // Write the bell character if invalid

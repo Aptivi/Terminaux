@@ -31,6 +31,6 @@ namespace Terminaux.Reader.Bindings.BaseBindings
 
         /// <inheritdoc/>
         public override void DoAction(TermReaderState state) =>
-            BindingsList.fallbackBinding.DoAction(state);
+            BindingsTools.fallbackBinding.DoAction(state);
     }
 }
