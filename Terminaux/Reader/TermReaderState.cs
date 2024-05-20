@@ -43,6 +43,8 @@ namespace Terminaux.Reader
         internal int currentCursorPosTop;
         internal int currentTextPos;
         internal int currentHistoryPos;
+        internal int currentSuggestionsPos = -1;
+        internal int currentSuggestionsTextPos = -1;
         internal Func<string> inputPromptText = () => "";
         internal StringBuilder currentText = new();
         internal bool passwordMode;
@@ -59,56 +61,60 @@ namespace Terminaux.Reader
         internal string oldText = "";
         internal TermReaderSettings settings = TermReader.GlobalReaderSettings;
 
-        // Shared
-        internal static int currentSuggestionsPos = -1;
-        internal static int currentSuggestionsTextPos = -1;
-
-        // To instance variables
         /// <summary>
         /// Left position of the input prompt (where the first letter of the input prompt is located)
         /// </summary>
         public int InputPromptLeftBegin =>
             inputPromptLeftBegin;
+
         /// <summary>
         /// Top position of the input prompt (where the first letter of the input prompt is located)
         /// </summary>
         public int InputPromptTopBegin =>
             inputPromptTopBegin;
+
         /// <summary>
         /// Left position of the input prompt (with the left margin)
         /// </summary>
         public int InputPromptLeft =>
             inputPromptLeft;
+
         /// <summary>
         /// Top position of the input prompt
         /// </summary>
         public int InputPromptTop =>
             inputPromptTop;
+
         /// <summary>
         /// Left margin
         /// </summary>
         public int LeftMargin =>
             settings.LeftMargin;
+
         /// <summary>
         /// Right margin
         /// </summary>
         public int RightMargin =>
             settings.RightMargin;
+
         /// <summary>
         /// Current cursor left position
         /// </summary>
         public int CurrentCursorPosLeft =>
             currentCursorPosLeft;
+
         /// <summary>
         /// Current cursor top position
         /// </summary>
         public int CurrentCursorPosTop =>
             currentCursorPosTop;
+
         /// <summary>
         /// Maximum input left position
         /// </summary>
         public int MaximumInputPositionLeft =>
             LongestSentenceLengthFromLeft - 1;
+
         /// <summary>
         /// Longest sentence length (from the leftmost position, without offset created by the last line in the prompt)
         /// </summary>
@@ -120,6 +126,7 @@ namespace Terminaux.Reader
                 return width - settings.RightMargin;
             }
         }
+
         /// <summary>
         /// Longest sentence length (from the leftmost position, with the length of the last line in the prompt plus the left margin)
         /// </summary>
@@ -131,6 +138,7 @@ namespace Terminaux.Reader
                 return width - settings.RightMargin - inputPromptLeft - 1;
             }
         }
+
         /// <summary>
         /// Longest sentence length (from the leftmost position, with the left margin)
         /// </summary>
@@ -142,16 +150,19 @@ namespace Terminaux.Reader
                 return width - settings.RightMargin - settings.LeftMargin - 1;
             }
         }
+
         /// <summary>
         /// Current text character number
         /// </summary>
         public int CurrentTextPos =>
             currentTextPos;
+
         /// <summary>
         /// Input prompt text
         /// </summary>
         public string InputPromptText =>
             inputPromptText.Invoke();
+
         /// <summary>
         /// Input prompt text
         /// </summary>
@@ -163,6 +174,7 @@ namespace Terminaux.Reader
                 return inputPromptLines.Length;
             }
         }
+
         /// <summary>
         /// Input prompt last line
         /// </summary>
@@ -175,83 +187,97 @@ namespace Terminaux.Reader
                 return inputPromptLastLine;
             }
         }
+
         /// <summary>
         /// Input prompt last line length
         /// </summary>
         public int InputPromptLastLineLength =>
             InputPromptLastLine.Length;
+
         /// <summary>
         /// Current text
         /// </summary>
         public StringBuilder CurrentText =>
             currentText;
+
         /// <summary>
         /// Password Mode
         /// </summary>
         public bool PasswordMode =>
             passwordMode;
+
         /// <summary>
         /// Whether the input is concealed right now
         /// </summary>
         public bool Concealing =>
             concealing;
+
         /// <summary>
         /// Currently pressed key
         /// </summary>
         public ConsoleKeyInfo PressedKey =>
             pressedKey;
+
         /// <summary>
         /// Text to be pasted
         /// </summary>
         public StringBuilder KillBuffer =>
             killBuffer;
+
         /// <summary>
         /// Reader settings (general or overridden)
         /// </summary>
         public TermReaderSettings Settings =>
             settings;
+
         /// <summary>
         /// Can insert a new character?
         /// </summary>
         public bool CanInsert =>
             canInsert;
+
         /// <summary>
         /// Whether the current input character is commentized by the hashtag (<c>#</c>) character or not.
         /// </summary>
         public bool Commentized =>
             commentized;
+
         /// <summary>
         /// Whether an invalid key was pressed, or an invalid operation was performed, or not.
         /// </summary>
         public bool OperationWasInvalid =>
             operationWasInvalid;
 
-        // To static variables
         /// <summary>
         /// History entries
         /// </summary>
         public string[] History =>
             HistoryTools.GetHistoryEntries(Settings.HistoryName);
+
         /// <summary>
         /// Current history number
         /// </summary>
         public int CurrentHistoryPos =>
             currentHistoryPos;
+
         /// <summary>
         /// Current suggestion number
         /// </summary>
         public int CurrentSuggestionsPos =>
             currentSuggestionsPos;
+
         /// <summary>
         /// Current suggestions text position
         /// </summary>
         public int CurrentSuggestionsTextPos =>
             currentSuggestionsTextPos;
+
         /// <summary>
         /// Whether one line wrapping is enabled
         /// </summary>
         public bool OneLineWrap =>
             oneLineWrap;
+
         /// <summary>
         /// Whether the refresh is required
         /// </summary>

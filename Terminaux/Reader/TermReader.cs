@@ -457,8 +457,7 @@ namespace Terminaux.Reader
                 }
                 finally
                 {
-                    // Reset the auto complete position and suggestions
-                    TermReaderState.currentSuggestionsPos = 0;
+                    // Reset the suggestions
                     settings.Suggestions = (_, _, _) => [];
 
                     // Reset the CTRL + C state and the cursor visibility state

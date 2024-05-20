@@ -118,14 +118,14 @@ namespace Terminaux.Reader.Bindings
             {
                 chosenBinding.DoAction(state);
                 if (chosenBinding.ResetSuggestionsTextPos)
-                    TermReaderState.currentSuggestionsTextPos = -1;
+                    state.currentSuggestionsTextPos = -1;
             }
 
             // If there are no bindings, select the "print character" action
             if (!chosenBindings.Any())
             {
                 fallbackBinding.DoAction(state);
-                TermReaderState.currentSuggestionsTextPos = -1;
+                state.currentSuggestionsTextPos = -1;
             }
         }
 

@@ -40,13 +40,13 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override void DoAction(TermReaderState state)
         {
             // Get suggestions
-            bool setTextPos = TermReaderState.currentSuggestionsTextPos == -1;
-            string[] suggestions = state.settings.suggestions(state.CurrentText.ToString(), !setTextPos ? TermReaderState.currentSuggestionsTextPos : state.CurrentTextPos, state.settings.suggestionsDelims);
+            bool setTextPos = state.currentSuggestionsTextPos == -1;
+            string[] suggestions = state.settings.suggestions(state.CurrentText.ToString(), !setTextPos ? state.currentSuggestionsTextPos : state.CurrentTextPos, state.settings.suggestionsDelims);
             if (suggestions.Length > 0)
             {
-                TermReaderState.currentSuggestionsPos++;
-                if (TermReaderState.currentSuggestionsPos >= suggestions.Length)
-                    TermReaderState.currentSuggestionsPos = 0;
+                state.currentSuggestionsPos++;
+                if (state.currentSuggestionsPos >= suggestions.Length)
+                    state.currentSuggestionsPos = 0;
 
                 // Get a suggestion
                 string suggestion = suggestions[state.CurrentSuggestionsPos];
@@ -66,7 +66,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                     bool bail = false;
                     for (int j = 0; j < text.Length; j++)
                     {
-                        if (pos == state.CurrentTextPos || pos == TermReaderState.currentSuggestionsTextPos)
+                        if (pos == state.CurrentTextPos || pos == state.currentSuggestionsTextPos)
                         {
                             if (j + 1 == text.Length)
                                 splitText[i] += suggestion;
@@ -80,7 +80,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                     if (bail)
                     {
                         if (setTextPos)
-                            TermReaderState.currentSuggestionsTextPos = state.CurrentTextPos;
+                            state.currentSuggestionsTextPos = state.CurrentTextPos;
                         break;
                     }
                 }
