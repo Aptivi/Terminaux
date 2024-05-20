@@ -505,20 +505,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.CmyConversionTools.yml",
+      "source_relative_path": "api/Terminaux.Colors.Models.BaseColorModel.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Conversion.CmyConversionTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.CmykConversionTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Conversion.CmykConversionTools.html"
+          "relative_path": "api/Terminaux.Colors.Models.BaseColorModel.html"
         }
       },
       "version": ""
@@ -529,66 +519,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Models.Conversion.ConversionTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.HslConversionTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Conversion.HslConversionTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.HsvConversionTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Conversion.HsvConversionTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.RgbConversionTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Conversion.RgbConversionTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.RybConversionTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Conversion.RybConversionTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.YiqConversionTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Conversion.YiqConversionTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Conversion.YuvConversionTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Conversion.YuvConversionTools.html"
         }
       },
       "version": ""
