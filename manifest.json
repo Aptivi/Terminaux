@@ -1795,6 +1795,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.History.HistoryInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.History.HistoryInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.History.HistoryTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.History.HistoryTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Reader.History.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Reader.History.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Reader.TermReader.yml",
       "output": {
         ".html": {
