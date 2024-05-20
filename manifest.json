@@ -595,90 +595,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.CmyParsingTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Parsing.CmyParsingTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.CmykParsingTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Parsing.CmykParsingTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.HslParsingTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Parsing.HslParsingTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.HsvParsingTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Parsing.HsvParsingTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.Parsing.ParsingTools.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Models.Parsing.ParsingTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.RgbParsingTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Parsing.RgbParsingTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.RybParsingTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Parsing.RybParsingTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.YiqParsingTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Parsing.YiqParsingTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.YuvParsingTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Models.Parsing.YuvParsingTools.html"
         }
       },
       "version": ""
