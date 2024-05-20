@@ -295,7 +295,7 @@ namespace Terminaux.Reader
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="defaultValue">Default value to use if no input is provided</param>
         /// <param name="password">Whether the password mode is enabled</param>
-        /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string Read(string inputPrompt, string defaultValue, bool password = false, bool oneLineWrap = false, bool interruptible = true) =>
             Read(inputPrompt, defaultValue, GlobalReaderSettings, password, oneLineWrap, interruptible);
@@ -307,7 +307,7 @@ namespace Terminaux.Reader
         /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
         /// <param name="defaultValue">Default value to use if no input is provided</param>
         /// <param name="password">Whether the password mode is enabled</param>
-        /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string Read(string inputPrompt, string defaultValue, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true) =>
             Read(() => inputPrompt, defaultValue, settings, password, oneLineWrap, interruptible);
@@ -335,7 +335,7 @@ namespace Terminaux.Reader
         /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
         /// <param name="defaultValue">Default value to use if no input is provided</param>
         /// <param name="password">Whether the password mode is enabled</param>
-        /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string Read(Func<string> inputPrompt, string defaultValue, bool password = false, bool oneLineWrap = false, bool interruptible = true) =>
             Read(inputPrompt, defaultValue, GlobalReaderSettings, password, oneLineWrap, interruptible);
@@ -347,7 +347,7 @@ namespace Terminaux.Reader
         /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
         /// <param name="defaultValue">Default value to use if no input is provided</param>
         /// <param name="password">Whether the password mode is enabled</param>
-        /// <param name="oneLineWrap">Whether to warp overflown text as one line</param>
+        /// <param name="oneLineWrap">Whether to wrap overflown text as one line</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
         public static string Read(Func<string> inputPrompt, string defaultValue, TermReaderSettings settings, bool password = false, bool oneLineWrap = false, bool interruptible = true)
         {
