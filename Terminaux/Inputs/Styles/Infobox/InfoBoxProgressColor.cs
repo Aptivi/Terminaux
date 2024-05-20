@@ -360,21 +360,21 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
 
                     // Render the final result and write the progress bar
-                    int progressPosX = borderX + 4;
+                    int progressPosX = borderX + 3;
                     int progressPosY = borderY + maxHeight - 3;
-                    int maxProgressWidth = maxWidth - 4;
+                    int maxProgressWidth = maxWidth - 6;
                     if (useColor)
                     {
                         boxBuffer.Append(
                             ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
                             ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true) +
-                            ProgressBarColor.RenderProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, 0, InfoBoxTitledProgressColor, InfoBoxTitledProgressColor, BackgroundColor)
+                            ProgressBarColor.RenderProgress(progress, progressPosX, progressPosY, maxProgressWidth, InfoBoxTitledProgressColor, InfoBoxTitledProgressColor, BackgroundColor)
                         );
                     }
                     else
                     {
                         boxBuffer.Append(
-                            ProgressBarColor.RenderProgressPlain(progress, progressPosX, progressPosY, maxProgressWidth, 0)
+                            ProgressBarColor.RenderProgressPlain(progress, progressPosX, progressPosY, maxProgressWidth)
                         );
                     }
                     return boxBuffer.ToString();
