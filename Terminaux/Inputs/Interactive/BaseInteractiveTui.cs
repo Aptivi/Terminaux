@@ -48,6 +48,12 @@ namespace Terminaux.Inputs.Interactive
         public virtual IEnumerable<T> SecondaryDataSource => [];
 
         /// <summary>
+        /// Data source for the current pane
+        /// </summary>
+        public IEnumerable<T> DataSource =>
+            InteractiveTuiStatus.CurrentPane == 2 ? SecondaryDataSource : PrimaryDataSource;
+
+        /// <summary>
         /// The interactive TUI instance
         /// </summary>
         public static BaseInteractiveTui<T>? Instance =>

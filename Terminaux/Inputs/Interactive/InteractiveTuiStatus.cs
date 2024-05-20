@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 
 namespace Terminaux.Inputs.Interactive
 {
@@ -35,6 +36,11 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         public static int SecondPaneCurrentSelection { get; internal set; } = 1;
         /// <summary>
+        /// Current selection for the current pane
+        /// </summary>
+        public static int CurrentSelection =>
+            CurrentPane == 2 ? SecondPaneCurrentSelection : FirstPaneCurrentSelection;
+        /// <summary>
         /// Current status
         /// </summary>
         public static string Status { get; internal set; } = "";
@@ -50,70 +56,70 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// Interactive TUI background color
         /// </summary>
-        public static Color BackgroundColor { get; set; } = "0";
+        public static Color BackgroundColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI foreground color
         /// </summary>
-        public static Color ForegroundColor { get; set; } = "11";
+        public static Color ForegroundColor { get; set; } = ConsoleColors.Yellow;
         /// <summary>
         /// Interactive TUI pane background color
         /// </summary>
-        public static Color PaneBackgroundColor { get; set; } = "0";
+        public static Color PaneBackgroundColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI pane separator color
         /// </summary>
-        public static Color PaneSeparatorColor { get; set; } = "2";
+        public static Color PaneSeparatorColor { get; set; } = ConsoleColors.Green;
         /// <summary>
         /// Interactive TUI pane selected separator color
         /// </summary>
-        public static Color PaneSelectedSeparatorColor { get; set; } = "10";
+        public static Color PaneSelectedSeparatorColor { get; set; } = ConsoleColors.Lime;
         /// <summary>
         /// Interactive TUI pane selected item color (foreground)
         /// </summary>
-        public static Color PaneSelectedItemForeColor { get; set; } = "0";
+        public static Color PaneSelectedItemForeColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI pane selected item color (background)
         /// </summary>
-        public static Color PaneSelectedItemBackColor { get; set; } = "3";
+        public static Color PaneSelectedItemBackColor { get; set; } = ConsoleColors.Olive;
         /// <summary>
         /// Interactive TUI pane item color (foreground)
         /// </summary>
-        public static Color PaneItemForeColor { get; set; } = "3";
+        public static Color PaneItemForeColor { get; set; } = ConsoleColors.Olive;
         /// <summary>
         /// Interactive TUI pane item color (background)
         /// </summary>
-        public static Color PaneItemBackColor { get; set; } = "0";
+        public static Color PaneItemBackColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI option background color
         /// </summary>
-        public static Color OptionBackgroundColor { get; set; } = "3";
+        public static Color OptionBackgroundColor { get; set; } = ConsoleColors.Olive;
         /// <summary>
         /// Interactive TUI key binding in option color
         /// </summary>
-        public static Color KeyBindingOptionColor { get; set; } = "0";
+        public static Color KeyBindingOptionColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI option foreground color
         /// </summary>
-        public static Color OptionForegroundColor { get; set; } = "11";
+        public static Color OptionForegroundColor { get; set; } = ConsoleColors.Yellow;
         /// <summary>
         /// Interactive TUI built-in key binding background color
         /// </summary>
-        public static Color KeyBindingBuiltinBackgroundColor { get; set; } = "2";
+        public static Color KeyBindingBuiltinBackgroundColor { get; set; } = ConsoleColors.Green;
         /// <summary>
         /// Interactive TUI built-in key binding foreground color in the background color
         /// </summary>
-        public static Color KeyBindingBuiltinColor { get; set; } = "0";
+        public static Color KeyBindingBuiltinColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI built-in key binding foreground color outside the background color
         /// </summary>
-        public static Color KeyBindingBuiltinForegroundColor { get; set; } = "10";
+        public static Color KeyBindingBuiltinForegroundColor { get; set; } = ConsoleColors.Lime;
         /// <summary>
         /// Interactive TUI box background color
         /// </summary>
-        public static Color BoxBackgroundColor { get; set; } = "9";
+        public static Color BoxBackgroundColor { get; set; } = ConsoleColors.Red;
         /// <summary>
         /// Interactive TUI box foreground color
         /// </summary>
-        public static Color BoxForegroundColor { get; set; } = "15";
+        public static Color BoxForegroundColor { get; set; } = ConsoleColors.White;
     }
 }

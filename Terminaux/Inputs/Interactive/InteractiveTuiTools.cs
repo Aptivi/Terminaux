@@ -133,9 +133,7 @@ namespace Terminaux.Inputs.Interactive
         public static void SelectionMovement<T>(BaseInteractiveTui<T> interactiveTui, int pos)
         {
             // Check the position
-            var data = InteractiveTuiStatus.CurrentPane == 2 ?
-                       interactiveTui.SecondaryDataSource :
-                       interactiveTui.PrimaryDataSource;
+            var data = interactiveTui.DataSource;
             int elements = data.Length();
             if (pos < 1)
                 pos = 1;
@@ -182,9 +180,6 @@ namespace Terminaux.Inputs.Interactive
 
             // Prepare the console
             ConsoleWrapper.CursorVisible = false;
-            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
             // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
             // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
@@ -212,6 +207,7 @@ namespace Terminaux.Inputs.Interactive
             var finalForeColorSecondPane = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
             part.AddDynamicText(new(() =>
             {
+                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
                 int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
                 int SeparatorMinimumHeight = 1;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
@@ -219,17 +215,6 @@ namespace Terminaux.Inputs.Interactive
                 builder.Append(ColorTools.RenderSetConsoleColor(finalForeColorFirstPane));
                 builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
                 builder.Append(BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior));
-                return builder.ToString();
-            }));
-            part.AddDynamicText(new(() =>
-            {
-                int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-                int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
-                int SeparatorMinimumHeight = 1;
-                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-                var builder = new StringBuilder();
-                builder.Append(ColorTools.RenderSetConsoleColor(finalForeColorSecondPane));
-                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
                 builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
                 return builder.ToString();
             }));
@@ -311,7 +296,7 @@ namespace Terminaux.Inputs.Interactive
             if (paneNum > 2)
                 paneNum = 2;
 
-            // Get how many data are there in the chosen data source
+            // Get how many data instances are there in the chosen data source
             var data = paneNum == 2 ? interactiveTui.SecondaryDataSource : interactiveTui.PrimaryDataSource;
             int dataCount = data.Length();
 
@@ -471,12 +456,8 @@ namespace Terminaux.Inputs.Interactive
             var part = new ScreenPart();
 
             // Populate some necessary variables
-            int paneCurrentSelection = InteractiveTuiStatus.CurrentPane == 2 ?
-                                       InteractiveTuiStatus.SecondPaneCurrentSelection :
-                                       InteractiveTuiStatus.FirstPaneCurrentSelection;
-            var data = InteractiveTuiStatus.CurrentPane == 2 ?
-                       interactiveTui.SecondaryDataSource :
-                       interactiveTui.PrimaryDataSource;
+            int paneCurrentSelection = InteractiveTuiStatus.CurrentSelection;
+            var data = interactiveTui.DataSource;
             T? selectedData = (T?)data.GetElementFromIndex(paneCurrentSelection - 1);
             InteractiveTuiStatus.Status = selectedData is not null ? interactiveTui.GetStatusFromItem(selectedData) : "No status.";
 
@@ -501,12 +482,8 @@ namespace Terminaux.Inputs.Interactive
             try
             {
                 // Populate data source and its count
-                int paneCurrentSelection = InteractiveTuiStatus.CurrentPane == 2 ?
-                                           InteractiveTuiStatus.SecondPaneCurrentSelection :
-                                           InteractiveTuiStatus.FirstPaneCurrentSelection;
-                var data = InteractiveTuiStatus.CurrentPane == 2 ?
-                           interactiveTui.SecondaryDataSource :
-                           interactiveTui.PrimaryDataSource;
+                int paneCurrentSelection = InteractiveTuiStatus.CurrentSelection;
+                var data = interactiveTui.DataSource;
                 int dataCount = data.Length();
 
                 // Populate selected data
@@ -535,12 +512,8 @@ namespace Terminaux.Inputs.Interactive
                 throw new TerminauxInternalException("Attempted to respond to user input on null");
 
             // Populate some necessary variables
-            int paneCurrentSelection = InteractiveTuiStatus.CurrentPane == 2 ?
-                                       InteractiveTuiStatus.SecondPaneCurrentSelection :
-                                       InteractiveTuiStatus.FirstPaneCurrentSelection;
-            var data = InteractiveTuiStatus.CurrentPane == 2 ?
-                       interactiveTui.SecondaryDataSource :
-                       interactiveTui.PrimaryDataSource;
+            int paneCurrentSelection = InteractiveTuiStatus.CurrentSelection;
+            var data = interactiveTui.DataSource;
             int dataCount = data.Length();
 
             // Populate selected data
