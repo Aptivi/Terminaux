@@ -20,6 +20,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Terminaux.Base;
+using Terminaux.Colors.Models.Conversion;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors.Models
 {
@@ -59,6 +62,97 @@ namespace Terminaux.Colors.Models
         /// </summary>
         public override string ToString() =>
             $"yuv:{Luma};{ChromaU};{ChromaV}";
+
+        /// <summary>
+        /// Parses the specifier and returns an instance of <see cref="LumaChromaUv"/>
+        /// </summary>
+        /// <param name="specifier">Specifier of YUV</param>
+        /// <returns>An instance of <see cref="LumaChromaUv"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static LumaChromaUv ParseSpecifier(string specifier)
+        {
+            if (!IsSpecifierValid(specifier))
+                throw new TerminauxException($"Invalid YUV color specifier \"{specifier}\". Ensure that it's on the correct format: yuv:<Y>;<I>;<Q>");
+
+            // Split the VT sequence into three parts
+            var specifierArray = specifier.Substring(4).Split(';');
+            if (specifierArray.Length == 3)
+            {
+                // We got the YUV whole values! First, check to see if we need to filter the color for the color-blind
+                int y = Convert.ToInt32(specifierArray[0]);
+                if (y < 0 || y > 255)
+                    throw new TerminauxException($"The luma level is out of range (0 -> 255). {y}");
+                int u = Convert.ToInt32(specifierArray[1]);
+                if (u < 0 || u > 255)
+                    throw new TerminauxException($"The chroma (U) level is out of range (0 -> 255). {u}");
+                int v = Convert.ToInt32(specifierArray[2]);
+                if (v < 0 || v > 255)
+                    throw new TerminauxException($"The chroma (V) level is out of range (0 -> 255). {v}");
+
+                // First, we need to convert from YUV to RGB
+                var yuv = new LumaChromaUv(y, u, v);
+                return yuv;
+            }
+            else
+                throw new TerminauxException($"Invalid YUV color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: yuv:<Y>;<I>;<Q>");
+        }
+
+        /// <summary>
+        /// Does the string specifier represent a valid YUV specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid YUV specifier</param>
+        /// <param name="checkParts">Whether to check the parts count or not</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static new bool IsSpecifierValid(string specifier, bool checkParts = false) =>
+            specifier.Contains(";") &&
+            specifier.StartsWith("yuv:") &&
+            (!checkParts || (checkParts && specifier.Substring(4).Split(';').Length == 3));
+
+        /// <summary>
+        /// Does the string specifier represent a valid YUV specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid YUV specifier</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static new bool IsSpecifierAndValueValid(string specifier)
+        {
+            if (!IsSpecifierValid(specifier, true))
+                return false;
+
+            var specifierArray = specifier.Substring(4).Split(';');
+            int y = Convert.ToInt32(specifierArray[0]);
+            if (y < 0 || y > 255)
+                return false;
+            int u = Convert.ToInt32(specifierArray[1]);
+            if (u < 0 || u > 255)
+                return false;
+            int v = Convert.ToInt32(specifierArray[2]);
+            if (v < 0 || v > 255)
+                return false;
+            return true;
+        }
+
+        /// <summary>
+        /// Parses the specifier and returns an instance of <see cref="LumaChromaUv"/> converted to <see cref="RedGreenBlue"/>
+        /// </summary>
+        /// <param name="specifier">Specifier of RGB</param>
+        /// <param name="settings">Settings to use. Use null for global settings</param>
+        /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static new RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings? settings = null)
+        {
+            var yuv = ParseSpecifier(specifier);
+            var rgb = ConversionTools.ToRgb(yuv);
+            int r = rgb.R;
+            int g = rgb.G;
+            int b = rgb.B;
+
+            // Now, transform
+            settings ??= new(ColorTools.GlobalSettings);
+            var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
+
+            // Make a new RGB class
+            return new(finalRgb.r, finalRgb.g, finalRgb.b);
+        }
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>

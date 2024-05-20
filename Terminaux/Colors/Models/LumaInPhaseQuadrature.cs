@@ -20,6 +20,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Terminaux.Base;
+using Terminaux.Colors.Models.Conversion;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors.Models
 {
@@ -59,6 +62,97 @@ namespace Terminaux.Colors.Models
         /// </summary>
         public override string ToString() =>
             $"yiq:{Luma};{InPhase};{Quadrature}";
+
+        /// <summary>
+        /// Parses the specifier and returns an instance of <see cref="LumaInPhaseQuadrature"/>
+        /// </summary>
+        /// <param name="specifier">Specifier of YIQ</param>
+        /// <returns>An instance of <see cref="LumaInPhaseQuadrature"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static LumaInPhaseQuadrature ParseSpecifier(string specifier)
+        {
+            if (!IsSpecifierValid(specifier))
+                throw new TerminauxException($"Invalid YIQ color specifier \"{specifier}\". Ensure that it's on the correct format: yiq:<Y>;<I>;<Q>");
+
+            // Split the VT sequence into three parts
+            var specifierArray = specifier.Substring(4).Split(';');
+            if (specifierArray.Length == 3)
+            {
+                // We got the YIQ whole values! First, check to see if we need to filter the color for the color-blind
+                int y = Convert.ToInt32(specifierArray[0]);
+                if (y < 0 || y > 255)
+                    throw new TerminauxException($"The luma level is out of range (0 -> 255). {y}");
+                int i = Convert.ToInt32(specifierArray[1]);
+                if (i < 0 || i > 255)
+                    throw new TerminauxException($"The in-phase level is out of range (0 -> 255). {i}");
+                int q = Convert.ToInt32(specifierArray[2]);
+                if (q < 0 || q > 255)
+                    throw new TerminauxException($"The quadrature level is out of range (0 -> 255). {q}");
+
+                // First, we need to convert from YIQ to RGB
+                var yiq = new LumaInPhaseQuadrature(y, i, q);
+                return yiq;
+            }
+            else
+                throw new TerminauxException($"Invalid YIQ color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: yiq:<Y>;<I>;<Q>");
+        }
+
+        /// <summary>
+        /// Does the string specifier represent a valid YIQ specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid YIQ specifier</param>
+        /// <param name="checkParts">Whether to check the parts count or not</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static new bool IsSpecifierValid(string specifier, bool checkParts = false) =>
+            specifier.Contains(";") &&
+            specifier.StartsWith("yiq:") &&
+            (!checkParts || (checkParts && specifier.Substring(4).Split(';').Length == 3));
+
+        /// <summary>
+        /// Does the string specifier represent a valid YIQ specifier?
+        /// </summary>
+        /// <param name="specifier">Specifier that represents a valid YIQ specifier</param>
+        /// <returns>True if the specifier is valid; false otherwise.</returns>
+        public static new bool IsSpecifierAndValueValid(string specifier)
+        {
+            if (!IsSpecifierValid(specifier, true))
+                return false;
+
+            var specifierArray = specifier.Substring(4).Split(';');
+            int y = Convert.ToInt32(specifierArray[0]);
+            if (y < 0 || y > 255)
+                return false;
+            int i = Convert.ToInt32(specifierArray[1]);
+            if (i < 0 || i > 255)
+                return false;
+            int q = Convert.ToInt32(specifierArray[2]);
+            if (q < 0 || q > 255)
+                return false;
+            return true;
+        }
+
+        /// <summary>
+        /// Parses the specifier and returns an instance of <see cref="LumaInPhaseQuadrature"/> converted to <see cref="RedGreenBlue"/>
+        /// </summary>
+        /// <param name="specifier">Specifier of RGB</param>
+        /// <param name="settings">Settings to use. Use null for global settings</param>
+        /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static new RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings? settings = null)
+        {
+            var yiq = ParseSpecifier(specifier);
+            var rgb = ConversionTools.ToRgb(yiq);
+            int r = rgb.R;
+            int g = rgb.G;
+            int b = rgb.B;
+
+            // Now, transform
+            settings ??= new(ColorTools.GlobalSettings);
+            var finalRgb = TransformationTools.GetTransformedColor(r, g, b, settings);
+
+            // Make a new RGB class
+            return new(finalRgb.r, finalRgb.g, finalRgb.b);
+        }
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>

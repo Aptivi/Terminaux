@@ -36,32 +36,15 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="specifier">Specifier that represents a valid model-agnostic specifier</param>
         /// <returns>True if the specifier is valid; false otherwise.</returns>
         public static bool IsSpecifierValid(string specifier) =>
-            specifier.Contains(";");
+            BaseColorModel.IsSpecifierValid(specifier);
 
         /// <summary>
         /// Does the string specifier represent a valid model-agnostic specifier and contain valid values?
         /// </summary>
         /// <param name="specifier">Specifier that represents a valid model-agnostic specifier and contains valid values</param>
         /// <returns>True if the specifier is valid; false otherwise.</returns>
-        public static bool IsSpecifierAndValueValid(string specifier)
-        {
-            if (IsSpecifierConsoleColors(specifier))
-                return true;
-            if (IsSpecifierAndValueValidRgbHash(specifier))
-                return true;
-            if (!IsSpecifierValid(specifier))
-                return false;
-
-            return 
-                CmykParsingTools.IsSpecifierAndValueValid(specifier) ||
-                CmyParsingTools.IsSpecifierAndValueValid(specifier) ||
-                HslParsingTools.IsSpecifierAndValueValid(specifier) ||
-                HsvParsingTools.IsSpecifierAndValueValid(specifier) ||
-                RgbParsingTools.IsSpecifierAndValueValid(specifier) ||
-                RybParsingTools.IsSpecifierAndValueValid(specifier) ||
-                YiqParsingTools.IsSpecifierAndValueValid(specifier) ||
-                YuvParsingTools.IsSpecifierAndValueValid(specifier);
-        }
+        public static bool IsSpecifierAndValueValid(string specifier) =>
+            BaseColorModel.IsSpecifierAndValueValid(specifier);
 
         /// <summary>
         /// Does the string specifier represent either a color name taken from <see cref="ConsoleColors"/>, a color number from 0 to 255, or a color code?
@@ -122,34 +105,8 @@ namespace Terminaux.Colors.Models.Parsing
         /// <param name="settings">Settings to use. Use null for global settings</param>
         /// <returns>An instance of <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static RedGreenBlue ParseSpecifier(string specifier, ColorSettings? settings = null)
-        {
-            // Necessary variables
-            bool usesColorId = IsSpecifierConsoleColors(specifier);
-
-            // Get the RGB
-            var finalRgb =
-                // Color models
-                CmykParsingTools.IsSpecifierValid(specifier) ? CmykParsingTools.ParseSpecifierToRgb(specifier, settings) :
-                CmyParsingTools.IsSpecifierValid(specifier) ? CmyParsingTools.ParseSpecifierToRgb(specifier, settings) :
-                HslParsingTools.IsSpecifierValid(specifier) ? HslParsingTools.ParseSpecifierToRgb(specifier, settings) :
-                HsvParsingTools.IsSpecifierValid(specifier) ? HsvParsingTools.ParseSpecifierToRgb(specifier, settings) :
-                RybParsingTools.IsSpecifierValid(specifier) ? RybParsingTools.ParseSpecifierToRgb(specifier, settings) :
-                YiqParsingTools.IsSpecifierValid(specifier) ? YiqParsingTools.ParseSpecifierToRgb(specifier, settings) :
-                YuvParsingTools.IsSpecifierValid(specifier) ? YuvParsingTools.ParseSpecifierToRgb(specifier, settings) :
-
-                // Colors and hash
-                usesColorId ? ParseSpecifierRgbName(specifier, settings) :
-                IsSpecifierValidRgbHash(specifier) ? ParseSpecifierRgbHash(specifier, settings) :
-
-                // Fallback
-                RgbParsingTools.ParseSpecifierToRgb(specifier, settings);
-
-            // Finalize the RGB values according to the settings as needed.
-            if (settings is not null)
-                finalRgb.FinalizeValues(settings);
-            return finalRgb;
-        }
+        public static RedGreenBlue ParseSpecifier(string specifier, ColorSettings? settings = null) =>
+            BaseColorModel.ParseSpecifierToRgb(specifier, settings);
 
         /// <summary>
         /// Parses the specifier and returns an instance of <see cref="RedGreenBlue"/>
