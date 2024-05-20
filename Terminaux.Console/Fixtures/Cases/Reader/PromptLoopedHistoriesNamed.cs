@@ -17,51 +17,62 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
 using Terminaux.Reader;
 using Terminaux.Reader.History;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Reader
 {
-    internal class PromptLoopedHistories : IFixture
+    internal class PromptLoopedHistoriesNamed : IFixture
     {
-        private readonly List<string> firstHistory =
-        [
-            "dotnet new",
-            "dotnet build",
-        ];
-        private readonly List<string> secondHistory =
-        [
-            "git init",
-            "git commit",
-            "git push",
-        ];
+        private readonly string secondHistoryInfo =
+            """
+            {
+                "HistoryName": "History 2",
+                "HistoryEntries": [
+                    "git init",
+                    "git commit",
+                    "git push"
+                ]
+            }
+            """;
 
         public void RunFixture()
         {
             TextWriterColor.Write("Write \"exit\" to get out of here.");
             string input = "";
-            HistoryTools.Switch(HistoryTools.generalHistory, [.. firstHistory]);
+            HistoryInfo firstHistoryInfo = new("History 1",
+            [
+                "dotnet new",
+                "dotnet build",
+            ]);
+            HistoryTools.LoadFromInstance(firstHistoryInfo);
             while (input != "exit")
             {
-                input = TermReader.Read("[1] > ", "", false, false, false);
+                input = TermReader.Read("[4] > ", "", new TermReaderSettings() { HistoryName = "History 1" }, false, false, false);
                 TextWriterColor.Write("You said: " + input);
             }
-            HistoryTools.Switch(HistoryTools.generalHistory, [.. secondHistory]);
+            string saved = HistoryTools.SaveToString(firstHistoryInfo);
+            TextWriterColor.Write(saved);
+            HistoryTools.LoadFromJson(secondHistoryInfo);
             string input2 = "";
             while (input2 != "exit")
             {
-                input2 = TermReader.Read("[2] > ", "", false, false, false);
+                input2 = TermReader.Read("[5] > ", "", new TermReaderSettings() { HistoryName = "History 2" }, false, false, false);
                 TextWriterColor.Write("You said: " + input2);
             }
-            HistoryTools.Clear(HistoryTools.generalHistory);
+            string saved2 = HistoryTools.SaveToString("History 2");
+            TextWriterColor.Write(saved2);
             string input3 = "";
             while (input3 != "exit")
             {
-                input3 = TermReader.Read("[3] > ", "", false, false, false);
+                input3 = TermReader.Read("[6] > ", "", false, false, false);
                 TextWriterColor.Write("You said: " + input3);
             }
+            string saved3 = HistoryTools.SaveToString(HistoryTools.generalHistory);
+            TextWriterColor.Write(saved3);
+            HistoryTools.Unload(firstHistoryInfo);
+            HistoryTools.Unload("History 2");
         }
     }
 }

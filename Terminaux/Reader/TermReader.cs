@@ -26,6 +26,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Reader.Bindings;
+using Terminaux.Reader.History;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -388,6 +389,7 @@ namespace Terminaux.Reader
                     readState.currentCursorPosTop = readState.inputPromptTop;
                     readState.passwordMode = password;
                     readState.oneLineWrap = oneLineWrap;
+                    readState.currentHistoryPos = HistoryTools.GetHistoryEntries(readState.settings.HistoryName).Length;
                     ConsoleWrapper.TreatCtrlCAsInput = settings.TreatCtrlCAsInput;
 
                     // Get input
@@ -444,11 +446,8 @@ namespace Terminaux.Reader
                         // on the following conditions:
                         //
                         // - If the input is not empty
-                        // - If the last input is not the same as the currently supplied input
-                        // - Can also be added if the history is zero
-                        if (!string.IsNullOrWhiteSpace(input) &&
-                            ((TermReaderState.history.Count > 0 && TermReaderState.history[TermReaderState.history.Count - 1] != input) || TermReaderState.history.Count == 0))
-                            TermReaderState.history.Add(input);
+                        if (!string.IsNullOrWhiteSpace(input))
+                            HistoryTools.Append(state.Settings.HistoryName, input);
                     }
                 }
                 catch (Exception ex)
@@ -460,7 +459,6 @@ namespace Terminaux.Reader
                 {
                     // Reset the auto complete position and suggestions
                     TermReaderState.currentSuggestionsPos = 0;
-                    TermReaderState.currentHistoryPos = TermReaderState.history.Count;
                     settings.Suggestions = (_, _, _) => [];
 
                     // Reset the CTRL + C state and the cursor visibility state

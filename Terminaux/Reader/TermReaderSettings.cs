@@ -20,6 +20,7 @@
 using System;
 using Terminaux.Colors;
 using Terminaux.Reader.Highlighting;
+using Terminaux.Reader.History;
 
 namespace Terminaux.Reader
 {
@@ -30,6 +31,7 @@ namespace Terminaux.Reader
     {
         private char passwordMaskChar = '*';
         private bool historyEnabled = true;
+        private string historyName = HistoryTools.generalHistory;
         private bool treatCtrlCAsInput;
         private int leftMargin = 0;
         private int rightMargin = 0;
@@ -58,6 +60,21 @@ namespace Terminaux.Reader
         {
             get => historyEnabled;
             set => historyEnabled = value;
+        }
+
+        /// <summary>
+        /// Input history name
+        /// </summary>
+        public string HistoryName
+        {
+            get => historyName;
+            set
+            {
+                if (HistoryTools.IsHistoryRegistered(value))
+                    historyName = value;
+                else
+                    historyName = HistoryTools.generalHistory;
+            }
         }
 
         /// <summary>

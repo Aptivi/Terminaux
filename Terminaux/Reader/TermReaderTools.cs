@@ -29,6 +29,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Reader.History;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -62,25 +63,6 @@ namespace Terminaux.Reader
         {
             if (isWaitingForInput)
                 interrupting = true;
-        }
-
-        /// <summary>
-        /// Sets the history
-        /// </summary>
-        /// <param name="History">List of history entries</param>
-        public static void SetHistory(List<string> History)
-        {
-            TermReaderState.history = History;
-            TermReaderState.currentHistoryPos = History.Count;
-        }
-
-        /// <summary>
-        /// Clears the history
-        /// </summary>
-        public static void ClearHistory()
-        {
-            TermReaderState.history.Clear();
-            TermReaderState.currentHistoryPos = 0;
         }
 
         /// <summary>

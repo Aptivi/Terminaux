@@ -23,6 +23,7 @@ using System.Diagnostics;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Reader.History;
 using Terminaux.Sequences;
 
 namespace Terminaux.Reader
@@ -41,6 +42,7 @@ namespace Terminaux.Reader
         internal int currentCursorPosLeft;
         internal int currentCursorPosTop;
         internal int currentTextPos;
+        internal int currentHistoryPos;
         internal Func<string> inputPromptText = () => "";
         internal StringBuilder currentText = new();
         internal bool passwordMode;
@@ -58,8 +60,6 @@ namespace Terminaux.Reader
         internal TermReaderSettings settings = TermReader.GlobalReaderSettings;
 
         // Shared
-        internal static List<string> history = [];
-        internal static int currentHistoryPos;
         internal static int currentSuggestionsPos = -1;
         internal static int currentSuggestionsTextPos = -1;
 
@@ -230,8 +230,8 @@ namespace Terminaux.Reader
         /// <summary>
         /// History entries
         /// </summary>
-        public List<string> History =>
-            history;
+        public string[] History =>
+            HistoryTools.GetHistoryEntries(Settings.HistoryName);
         /// <summary>
         /// Current history number
         /// </summary>

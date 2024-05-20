@@ -52,6 +52,7 @@ namespace Terminaux.Console.Fixtures
             new PromptPasswordCustomMask(),
             new PromptLooped(),
             new PromptLoopedHistories(),
+            new PromptLoopedHistoriesNamed(),
             new PromptLoopedMargin(),
             new PromptLoopedManualWrite(),
             new PromptLoopedCompletion(),

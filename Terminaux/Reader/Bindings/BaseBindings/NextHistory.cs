@@ -34,7 +34,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
         public override void DoAction(TermReaderState state)
         {
             // If we're at the end of the history, bail.
-            if (!ConditionalTools.ShouldNot(state.CurrentHistoryPos >= state.History.Count, state))
+            if (!ConditionalTools.ShouldNot(state.CurrentHistoryPos >= state.History.Length, state))
                 return;
 
             // If we're in the password mode, bail.
@@ -49,8 +49,8 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             TermReaderTools.WipeAll();
 
             // Now, write the history entry
-            TermReaderState.currentHistoryPos++;
-            string history = state.CurrentHistoryPos == state.History.Count ? "" : state.History[TermReaderState.currentHistoryPos];
+            state.currentHistoryPos++;
+            string history = state.CurrentHistoryPos == state.History.Length ? "" : state.History[state.currentHistoryPos];
             TermReaderTools.InsertNewText(history, true);
         }
     }

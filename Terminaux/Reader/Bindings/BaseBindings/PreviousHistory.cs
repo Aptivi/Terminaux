@@ -49,8 +49,8 @@ namespace Terminaux.Reader.Bindings.BaseBindings
             TermReaderTools.WipeAll();
 
             // Now, write the history entry
-            TermReaderState.currentHistoryPos--;
-            string history = state.History[TermReaderState.currentHistoryPos];
+            state.currentHistoryPos--;
+            string history = state.History[state.currentHistoryPos];
             TermReaderTools.InsertNewText(history, true);
         }
     }
