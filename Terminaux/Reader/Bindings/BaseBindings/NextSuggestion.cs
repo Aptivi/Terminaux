@@ -84,7 +84,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                         break;
                     }
                 }
-                state.CurrentText.Clear();
+                TermReaderTools.WipeAll(ref state);
                 state.CurrentText.Append(string.Join(" ", splitText));
                 PositioningTools.GoRightmost(ref state);
                 state.RefreshRequired = true;
