@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Inputs.Interactive
@@ -25,7 +26,7 @@ namespace Terminaux.Inputs.Interactive
     /// <summary>
     /// Interactive TUI binding information class
     /// </summary>
-    public class InteractiveTuiBinding
+    public class InteractiveTuiBinding : IEquatable<InteractiveTuiBinding?>
     {
         private readonly string _bindingName;
         private readonly bool _bindingUsesMouse;
@@ -148,5 +149,45 @@ namespace Terminaux.Inputs.Interactive
             _bindingPointerModifiers = bindingButtonModifiers;
             _bindingAction = bindingAction;
         }
+
+        /// <inheritdoc/>
+        public override bool Equals(object? obj) =>
+            Equals(obj as InteractiveTuiBinding);
+
+        /// <inheritdoc/>
+        public bool Equals(InteractiveTuiBinding? other) =>
+            other is not null &&
+            BindingName == other.BindingName &&
+            BindingUsesMouse == other.BindingUsesMouse &&
+            BindingKeyName == other.BindingKeyName &&
+            BindingKeyModifiers == other.BindingKeyModifiers &&
+            BindingPointerButton == other.BindingPointerButton &&
+            BindingPointerButtonPress == other.BindingPointerButtonPress &&
+            BindingPointerModifiers == other.BindingPointerModifiers &&
+            EqualityComparer<Action<object, int>?>.Default.Equals(BindingAction, other.BindingAction);
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            int hashCode = 907651633;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(BindingName);
+            hashCode = hashCode * -1521134295 + BindingUsesMouse.GetHashCode();
+            hashCode = hashCode * -1521134295 + BindingKeyName.GetHashCode();
+            hashCode = hashCode * -1521134295 + BindingKeyModifiers.GetHashCode();
+            hashCode = hashCode * -1521134295 + BindingPointerButton.GetHashCode();
+            hashCode = hashCode * -1521134295 + BindingPointerButtonPress.GetHashCode();
+            hashCode = hashCode * -1521134295 + BindingPointerModifiers.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<Action<object, int>?>.Default.GetHashCode(BindingAction);
+            return hashCode;
+        }
+
+        /// <inheritdoc/>
+        public static bool operator ==(InteractiveTuiBinding? left, InteractiveTuiBinding? right) =>
+            left is not null && right is not null &&
+            EqualityComparer<InteractiveTuiBinding>.Default.Equals(left, right);
+
+        /// <inheritdoc/>
+        public static bool operator !=(InteractiveTuiBinding? left, InteractiveTuiBinding? right) =>
+            !(left == right);
     }
 }

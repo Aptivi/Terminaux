@@ -96,6 +96,18 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         public static Color OptionForegroundColor { get; set; } = "11";
         /// <summary>
+        /// Interactive TUI built-in key binding background color
+        /// </summary>
+        public static Color KeyBindingBuiltinBackgroundColor { get; set; } = "2";
+        /// <summary>
+        /// Interactive TUI built-in key binding foreground color in the background color
+        /// </summary>
+        public static Color KeyBindingBuiltinColor { get; set; } = "0";
+        /// <summary>
+        /// Interactive TUI built-in key binding foreground color outside the background color
+        /// </summary>
+        public static Color KeyBindingBuiltinForegroundColor { get; set; } = "10";
+        /// <summary>
         /// Interactive TUI box background color
         /// </summary>
         public static Color BoxBackgroundColor { get; set; } = "9";

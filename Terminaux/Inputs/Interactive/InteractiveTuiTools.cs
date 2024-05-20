@@ -250,13 +250,14 @@ namespace Terminaux.Inputs.Interactive
                     int bindingLength = ConsoleChar.EstimateCellWidth(renderedBinding);
                     int actualLength = ConsoleChar.EstimateCellWidth(VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()));
                     bool canDraw = bindingLength + actualLength < ConsoleWrapper.WindowWidth - 3;
+                    bool isBuiltin = !interactiveTui.Bindings.Contains(binding);
                     if (canDraw)
                     {
                         bindingsBuilder.Append(
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor, false, true)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
+                            $"{ColorTools.RenderSetConsoleColor(isBuiltin ? InteractiveTuiStatus.KeyBindingBuiltinColor : InteractiveTuiStatus.KeyBindingOptionColor, false, true)}" +
+                            $"{ColorTools.RenderSetConsoleColor(isBuiltin ? InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor : InteractiveTuiStatus.OptionBackgroundColor, true)}" +
                             GetBindingKeyShortcut(binding, false) +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionForegroundColor)}" +
+                            $"{ColorTools.RenderSetConsoleColor(isBuiltin ? InteractiveTuiStatus.KeyBindingBuiltinForegroundColor : InteractiveTuiStatus.OptionForegroundColor)}" +
                             $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
                             $" {binding.BindingName}  "
                         );
@@ -266,8 +267,8 @@ namespace Terminaux.Inputs.Interactive
                         // We can't render anymore, so just break and write a binding to show more
                         bindingsBuilder.Append(
                             $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingOptionColor, false, true)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.OptionBackgroundColor, true)}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingBuiltinColor, false, true)}" +
+                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, true)}" +
                             " K "
                         );
                         break;
@@ -983,11 +984,13 @@ namespace Terminaux.Inputs.Interactive
                     new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null)
                 ];
             else
-                finalBindings = new(interactiveTui.Bindings)
-                {
+                finalBindings =
+                [
                     new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null),
                     new InteractiveTuiBinding("Keybindings", ConsoleKey.K, null),
-                };
+                ];
+
+            // Populate switch as needed
             if (interactiveTui.SecondPaneInteractable)
                 finalBindings.Add(
                     new InteractiveTuiBinding("Switch", ConsoleKey.Tab, null)
@@ -1013,6 +1016,10 @@ namespace Terminaux.Inputs.Interactive
                     new InteractiveTuiBinding("Do an action on the selected item", PointerButton.Left, PointerButtonPress.Released, null),
                 ]);
             }
+
+            // Now, add the custom bindings
+            if (interactiveTui.Bindings is not null && interactiveTui.Bindings.Length > 0)
+                finalBindings.AddRange(interactiveTui.Bindings);
 
             // Filter the bindings based on the binding type
             if (justMouse)
