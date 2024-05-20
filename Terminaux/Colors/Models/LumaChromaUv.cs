@@ -47,18 +47,21 @@ namespace Terminaux.Colors.Models
         /// <summary>
         /// The Y component, known as luma information [0.0 -> 1.0]
         /// </summary>
-        public double LumaNormalized { get; private set; }
+        public double LumaNormalized =>
+            Luma / 255d;
         /// <summary>
         /// The U component, known as chrominance information [-0.5019 -> 0.5019]
         /// </summary>
-        public double ChromaUNormalized { get; private set; }
+        public double ChromaUNormalized =>
+            (ChromaU - 128) / 255d;
         /// <summary>
         /// The V component, known as chrominance information [-0.5019 -> 0.5019]
         /// </summary>
-        public double ChromaVNormalized { get; private set; }
+        public double ChromaVNormalized =>
+            (ChromaV - 128) / 255d;
 
         /// <summary>
-        /// yuv:&lt;Y&gt;;&lt;I&gt;;&lt;Q&gt;
+        /// yuv:&lt;Y&gt;;&lt;U&gt;;&lt;V&gt;
         /// </summary>
         public override string ToString() =>
             $"yuv:{Luma};{ChromaU};{ChromaV}";
@@ -188,9 +191,6 @@ namespace Terminaux.Colors.Models
             Luma = luma;
             ChromaU = chromaU;
             ChromaV = chromaV;
-            LumaNormalized = luma / 255d;
-            ChromaUNormalized = (chromaU - 128) / 255d;
-            ChromaVNormalized = (chromaV - 128) / 255d;
         }
     }
 }

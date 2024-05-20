@@ -47,15 +47,18 @@ namespace Terminaux.Colors.Models
         /// <summary>
         /// The cyan color value [0 -> 100]
         /// </summary>
-        public int CWhole { get; private set; }
+        public int CWhole =>
+            (int)(C * 100);
         /// <summary>
         /// The magenta color value [0 -> 100]
         /// </summary>
-        public int MWhole { get; private set; }
+        public int MWhole =>
+            (int)(M * 100);
         /// <summary>
         /// The yellow color value [0 -> 100]
         /// </summary>
-        public int YWhole { get; private set; }
+        public int YWhole =>
+            (int)(Y * 100);
 
         /// <summary>
         /// cmy:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;
@@ -191,9 +194,6 @@ namespace Terminaux.Colors.Models
             C = c;
             M = m;
             Y = y;
-            CWhole = (int)(c * 100);
-            MWhole = (int)(m * 100);
-            YWhole = (int)(y * 100);
         }
     }
 }

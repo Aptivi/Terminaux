@@ -39,7 +39,8 @@ namespace Terminaux.Colors.Models
         /// <summary>
         /// The black key color value [0 -> 100]
         /// </summary>
-        public int KWhole { get; private set; }
+        public int KWhole =>
+            (int)Math.Round(K * 100);
         /// <summary>
         /// The Cyan, Magenta, and Yellow color values
         /// </summary>
@@ -182,7 +183,6 @@ namespace Terminaux.Colors.Models
         internal CyanMagentaYellowKey(double k, CyanMagentaYellow cmy)
         {
             K = k;
-            KWhole = (int)Math.Round(k * 100);
             CMY = cmy;
         }
     }

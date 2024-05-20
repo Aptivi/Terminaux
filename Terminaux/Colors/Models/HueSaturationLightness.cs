@@ -51,19 +51,23 @@ namespace Terminaux.Colors.Models
         /// <summary>
         /// The position on the color wheel, known as the Hue [0 -> 360]
         /// </summary>
-        public int HueWhole { get; private set; }
+        public int HueWhole =>
+            (int)(Hue * 360);
         /// <summary>
         /// The saturation of the color, indicating how intense the color is [0 -> 100]
         /// </summary>
-        public int SaturationWhole { get; private set; }
+        public int SaturationWhole =>
+            (int)(Saturation * 100);
         /// <summary>
         /// The lightness of the color, indicating how light the color is [0 -> 100]
         /// </summary>
-        public int LightnessWhole { get; private set; }
+        public int LightnessWhole =>
+            (int)(Lightness * 100);
         /// <summary>
         /// The reverse hue position on the color wheel, known as the Reverse Hue [0 -> 360]
         /// </summary>
-        public double ReverseHueWhole { get; private set; }
+        public double ReverseHueWhole =>
+            (int)(ReverseHue * 360);
 
         /// <summary>
         /// hsl:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;
@@ -208,11 +212,6 @@ namespace Terminaux.Colors.Models
             ReverseHue = hue + 0.5;
             if (ReverseHue > 1)
                 ReverseHue--;
-
-            SaturationWhole = (int)(Saturation * 100);
-            LightnessWhole = (int)(Lightness * 100);
-            HueWhole = (int)(Hue * 360);
-            ReverseHueWhole = (int)(ReverseHue * 360);
         }
     }
 }
