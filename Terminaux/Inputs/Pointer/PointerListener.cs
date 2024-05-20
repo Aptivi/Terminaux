@@ -97,6 +97,18 @@ namespace Terminaux.Inputs.Pointer
         public static bool InvertScrollYAxis { get; set; }
 
         /// <summary>
+        /// Whether to invert the left and the right mouse buttons for left-handed people or not.
+        /// </summary>
+        /// <remarks>
+        /// This is suitable for left-handed people (i.e. you use your mouse in your left hand). If this option
+        /// is enabled, clicking on the left button of your mouse emits the right click event, and clicking on the
+        /// right button of your mouse emits the left click event. Otherwise, clicking on the left button of your
+        /// mouse emits the left click event, and clicking on the right button of your mouse emits the right click
+        /// event.
+        /// </remarks>
+        public static bool SwapLeftRightButtons { get; set; }
+
+        /// <summary>
         /// Specifies the time in milliseconds whether the double click times out
         /// </summary>
         public static TimeSpan DoubleClickTimeout { get; set; } = TimeSpan.FromMilliseconds(500);
@@ -306,9 +318,9 @@ namespace Terminaux.Inputs.Pointer
                         state == PosixButtonState.WheelDown || state == PosixButtonState.WheelUp ? PointerButtonPress.Scrolled :
                         PointerButtonPress.Moved;
                     PointerButton buttonPtr =
-                        state == PosixButtonState.Left ? PointerButton.Left :
+                        state == PosixButtonState.Left ? (SwapLeftRightButtons ? PointerButton.Right : PointerButton.Left) :
                         state == PosixButtonState.Middle ? PointerButton.Middle :
-                        state == PosixButtonState.Right ? PointerButton.Right :
+                        state == PosixButtonState.Right ? (SwapLeftRightButtons ? PointerButton.Left : PointerButton.Right) :
                         state == PosixButtonState.WheelDown ? (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
                         state == PosixButtonState.WheelUp ? (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp) :
                         PointerButton.None;
@@ -429,9 +441,9 @@ namespace Terminaux.Inputs.Pointer
 
                             // Now, translate them to something Terminaux understands
                             PointerButton button =
-                                @event.dwButtonState == ButtonState.Left ? PointerButton.Left :
+                                @event.dwButtonState == ButtonState.Left ? (SwapLeftRightButtons ? PointerButton.Right : PointerButton.Left) :
                                 @event.dwButtonState == ButtonState.Middle ? PointerButton.Middle :
-                                @event.dwButtonState == ButtonState.Right ? PointerButton.Right :
+                                @event.dwButtonState == ButtonState.Right ? (SwapLeftRightButtons ? PointerButton.Left : PointerButton.Right) :
                                 (uint)@event.dwButtonState >= 4000000000 ? (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
                                 (uint)@event.dwButtonState >= 7000000 ? (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp) :
                                 PointerButton.None;
