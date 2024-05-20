@@ -890,6 +890,31 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensionsInput(splitFinalLines);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, vars);
+        }
+
+        internal static string RenderTextSelection(
+            InputChoiceInfo[] choices, string title, string text,
+            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+            Color InfoBoxColor, Color BackgroundColor, bool useColor, params object[] vars
+        )
+        {
+            // Deal with the lines to actually fit text in the infobox
+            string[] splitFinalLines = GetFinalLines(text, vars);
+            var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensionsSelection(choices, splitFinalLines);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, vars);
+        }
+
+        internal static string RenderText(
+            int maxWidth, int maxHeight, int borderX, int borderY, int maxHeightOffset, string title, string text,
+            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+            Color InfoBoxColor, Color BackgroundColor, bool useColor, params object[] vars
+        )
+        {
+            // Deal with the lines to actually fit text in the infobox
+            string[] splitFinalLines = GetFinalLines(text, vars);
 
             // Fill the info box with text inside it
             var boxBuffer = new StringBuilder();
@@ -910,48 +935,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 var line = splitFinalLines[i];
                 if (i % (maxHeight - maxHeightOffset) == 0 && i > 0)
                 {
-                    // Reached the end of the box. Bail, because we need to print the progress.
-                    break;
-                }
-                boxBuffer.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
-                    $"{line}"
-                );
-            }
-            return boxBuffer.ToString();
-        }
-
-        internal static string RenderTextSelection(
-            InputChoiceInfo[] choices, string title, string text,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color InfoBoxColor, Color BackgroundColor, bool useColor, params object[] vars
-        )
-        {
-            // Deal with the lines to actually fit text in the infobox
-            string[] splitFinalLines = GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensionsSelection(choices, splitFinalLines);
-
-            // Fill the info box with text inside it
-            var boxBuffer = new StringBuilder();
-            string border =
-                !string.IsNullOrEmpty(title) ?
-                BorderColor.RenderBorderPlain(title, borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar) :
-                BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-            boxBuffer.Append(
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(InfoBoxColor) : "")}" +
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                $"{border}"
-            );
-
-            // Render text inside it
-            ConsoleWrapper.CursorVisible = false;
-            for (int i = 0; i < splitFinalLines.Length; i++)
-            {
-                var line = splitFinalLines[i];
-                if (i % (maxHeight - selectionReservedHeight) == 0 && i > 0)
-                {
-                    // Reached the end of the box. Bail, because we need to print the progress.
+                    // Reached the end of the box. Bail.
                     break;
                 }
                 boxBuffer.Append(
