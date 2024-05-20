@@ -27,7 +27,7 @@ namespace Terminaux.Colors.Models
     /// The Hue, Saturation, and Value (HSV) model
     /// </summary>
     [DebuggerDisplay("HSV = {HueWhole};{SaturationWhole};{ValueWhole}")]
-    public class HueSaturationValue : IEquatable<HueSaturationValue>
+    public class HueSaturationValue : BaseColorModel, IEquatable<HueSaturationValue>
     {
         /// <summary>
         /// The position on the color wheel, known as the Hue [0.0 -> 1.0, 0.5 being 180 degrees]

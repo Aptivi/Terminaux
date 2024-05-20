@@ -117,7 +117,7 @@ namespace Terminaux.Colors.Models.Parsing
         public static RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings? settings = null)
         {
             var cmyk = ParseSpecifier(specifier);
-            var rgb = RgbConversionTools.ConvertFrom(cmyk);
+            var rgb = ConversionTools.ToRgb(cmyk);
             int r = rgb.R;
             int g = rgb.G;
             int b = rgb.B;

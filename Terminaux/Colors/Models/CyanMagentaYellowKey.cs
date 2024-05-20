@@ -27,7 +27,7 @@ namespace Terminaux.Colors.Models
     /// The CMYK class instance
     /// </summary>
     [DebuggerDisplay("Black Key = {KWhole}, CMY = {CMY?.CWhole};{CMY?.MWhole};{CMY?.YWhole}")]
-    public class CyanMagentaYellowKey : IEquatable<CyanMagentaYellowKey>
+    public class CyanMagentaYellowKey : BaseColorModel, IEquatable<CyanMagentaYellowKey>
     {
         /// <summary>
         /// The black key color value [0.0 -> 1.0]

@@ -27,7 +27,7 @@ namespace Terminaux.Colors.Models
     /// The Luma chroma (YUV, PAL, SDTV with BT.470) model
     /// </summary>
     [DebuggerDisplay("YUV = {Luma};{ChromaU};{ChromaV}")]
-    public class LumaChromaUv : IEquatable<LumaChromaUv>
+    public class LumaChromaUv : BaseColorModel, IEquatable<LumaChromaUv>
     {
         /// <summary>
         /// The Y component, known as luma information [0 -> 255]

@@ -29,7 +29,7 @@ namespace Terminaux.Colors.Models
     /// The RGB class instance
     /// </summary>
     [DebuggerDisplay("RGB = {R};{G};{B}")]
-    public class RedGreenBlue : IEquatable<RedGreenBlue>
+    public class RedGreenBlue : BaseColorModel, IEquatable<RedGreenBlue>
     {
         internal int originalRed = 0;
         internal int originalGreen = 0;

@@ -27,7 +27,7 @@ namespace Terminaux.Colors.Models
     /// The Luma, In-phase, and Quadrature (YIQ, NTSC 1953) model
     /// </summary>
     [DebuggerDisplay("YIQ = {Luma};{InPhase};{Quadrature}")]
-    public class LumaInPhaseQuadrature : IEquatable<LumaInPhaseQuadrature>
+    public class LumaInPhaseQuadrature : BaseColorModel, IEquatable<LumaInPhaseQuadrature>
     {
         /// <summary>
         /// The Y component, known as luma information [0 -> 255]

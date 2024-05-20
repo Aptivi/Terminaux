@@ -27,7 +27,7 @@ namespace Terminaux.Colors.Models
     /// The RYB class instance
     /// </summary>
     [DebuggerDisplay("RYB = {R};{Y};{B}")]
-    public class RedYellowBlue : IEquatable<RedYellowBlue>
+    public class RedYellowBlue : BaseColorModel, IEquatable<RedYellowBlue>
     {
         /// <summary>
         /// The red color value [0 -> 255]

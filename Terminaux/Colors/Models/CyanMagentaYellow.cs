@@ -27,7 +27,7 @@ namespace Terminaux.Colors.Models
     /// The CMY class instance
     /// </summary>
     [DebuggerDisplay("CMY = {CWhole};{MWhole};{YWhole}")]
-    public class CyanMagentaYellow : IEquatable<CyanMagentaYellow>
+    public class CyanMagentaYellow : BaseColorModel, IEquatable<CyanMagentaYellow>
     {
         /// <summary>
         /// The cyan color value [0.0 -> 1.0]

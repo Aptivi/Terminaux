@@ -27,7 +27,7 @@ namespace Terminaux.Colors.Models
     /// The Hue, Saturation, and Lightness (HSL) model
     /// </summary>
     [DebuggerDisplay("HSL = {HueWhole};{SaturationWhole};{LightnessWhole}")]
-    public class HueSaturationLightness : IEquatable<HueSaturationLightness>
+    public class HueSaturationLightness : BaseColorModel, IEquatable<HueSaturationLightness>
     {
         /// <summary>
         /// The position on the color wheel, known as the Hue [0.0 -> 1.0, 0.5 being 180 degrees]

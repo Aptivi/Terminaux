@@ -90,7 +90,7 @@ namespace Terminaux.Inputs.Styles
                 screen.AddBufferedPart("Color selector", screenPart);
 
                 // Set initial colors
-                var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
+                var hsl = ConversionTools.ToHsl(selectedColor.RGB);
                 switch (type)
                 {
                     case ColorType.TrueColor:
@@ -167,9 +167,9 @@ namespace Terminaux.Inputs.Styles
             // Buffer the hue ramp
             if (ConsoleWrapper.WindowHeight - 3 > hslBarY + 2)
             {
-                int finalHue = type == ColorType.TrueColor ? trueColorHue : HslConversionTools.ConvertFrom(selectedColor.RGB).HueWhole;
-                int finalSaturation = type == ColorType.TrueColor ? trueColorSaturation : HslConversionTools.ConvertFrom(selectedColor.RGB).SaturationWhole;
-                int finalLightness = type == ColorType.TrueColor ? trueColorLightness : HslConversionTools.ConvertFrom(selectedColor.RGB).LightnessWhole;
+                int finalHue = type == ColorType.TrueColor ? trueColorHue : ConversionTools.ToHsl(selectedColor.RGB).HueWhole;
+                int finalSaturation = type == ColorType.TrueColor ? trueColorSaturation : ConversionTools.ToHsl(selectedColor.RGB).SaturationWhole;
+                int finalLightness = type == ColorType.TrueColor ? trueColorLightness : ConversionTools.ToHsl(selectedColor.RGB).LightnessWhole;
 
                 // Make a box frame for the HSL indicator
                 selector.Append(
@@ -582,13 +582,13 @@ namespace Terminaux.Inputs.Styles
                 selectedColor;
             if (selectedColor.RGB is null)
                 throw new TerminauxInternalException("Selected color RGB instance for color infobox is null.");
-            var ryb = RybConversionTools.ConvertFrom(selectedColor.RGB);
-            var hsl = HslConversionTools.ConvertFrom(selectedColor.RGB);
-            var hsv = HsvConversionTools.ConvertFrom(selectedColor.RGB);
-            var cmyk = CmykConversionTools.ConvertFrom(selectedColor.RGB);
-            var cmy = CmyConversionTools.ConvertFrom(selectedColor.RGB);
-            var yiq = YiqConversionTools.ConvertFrom(selectedColor.RGB);
-            var yuv = YuvConversionTools.ConvertFrom(selectedColor.RGB);
+            var ryb = ConversionTools.ToRyb(selectedColor.RGB);
+            var hsl = ConversionTools.ToHsl(selectedColor.RGB);
+            var hsv = ConversionTools.ToHsv(selectedColor.RGB);
+            var cmyk = ConversionTools.ToCmyk(selectedColor.RGB);
+            var cmy = ConversionTools.ToCmy(selectedColor.RGB);
+            var yiq = ConversionTools.ToYiq(selectedColor.RGB);
+            var yuv = ConversionTools.ToYuv(selectedColor.RGB);
             InfoBoxColor.WriteInfoBox(localizedTextTitle,
                 $$"""
                 RGB level:          {{selectedColor.PlainSequence}}
