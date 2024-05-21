@@ -177,6 +177,15 @@ namespace Terminaux.Inputs.Presentation
                         boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(presentationUpperInnerBorderLeft + 1, presentationUpperInnerBorderTop + linesMade % presentationLowerInnerBorderTop + 1)}{line}");
                         linesMade++;
                     }
+
+                    // Render the vertical bar
+                    int left = presentationLowerInnerBorderLeft + 3;
+                    if (splitFinalLines.Length > presentationLowerInnerBorderTop)
+                    {
+                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor));
+                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, presentationLowerInnerBorderTop + 1, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor));
+                        boxBuffer.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)currIdx / (splitFinalLines.Length - presentationLowerInnerBorderTop) * splitFinalLines.Length), splitFinalLines.Length, left - 1, 2, presentationLowerInnerBorderTop - 2, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor, false));
+                    }
                     return boxBuffer.ToString();
                 });
                 screen.AddBufferedPart($"Grid view for {presentation.Name}", gridBuffer);
