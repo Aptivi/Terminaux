@@ -169,7 +169,7 @@ namespace Terminaux.Inputs.Styles.Selection
                 {
                     buffer.Append(
                         CsiSequences.GenerateCsiCursorPosition(leftPos + 1, optionTop + 1) +
-                        new string(' ', width - (ConsoleWrapper.WindowWidth % 2 != 0 ? -1 : 0))
+                        new string(' ', width)
                     );
                     continue;
                 }
@@ -210,13 +210,13 @@ namespace Terminaux.Inputs.Styles.Selection
                 if (useColor)
                 {
                     buffer.Append(
-                        TextWriterWhereColor.RenderWhereColorBack(AnswerOption + new string(' ', width - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? -1 : 0)), leftPos, optionTop, finalForeColor, finalBackColor)
+                        TextWriterWhereColor.RenderWhereColorBack(AnswerOption + new string(' ', width - AnswerOption.Length), leftPos, optionTop, finalForeColor, finalBackColor)
                     );
                 }
                 else
                 {
                     buffer.Append(
-                        TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', width - AnswerOption.Length - (ConsoleWrapper.WindowWidth % 2 != 0 ? -1 : 0)), leftPos, optionTop)
+                        TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', width - AnswerOption.Length), leftPos, optionTop)
                     );
                 }
             }
