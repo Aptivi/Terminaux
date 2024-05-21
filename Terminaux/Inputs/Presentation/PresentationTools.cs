@@ -62,7 +62,6 @@ namespace Terminaux.Inputs.Presentation
         {
             // Make a screen instance for the presentation
             var screen = new Screen();
-            var buffer = new ScreenPart();
             ScreenTools.SetCurrent(screen);
 
             // Loop for each page
@@ -78,6 +77,7 @@ namespace Terminaux.Inputs.Presentation
                 var page = pages[i];
 
                 // Fill the buffer
+                var buffer = new ScreenPart();
                 screen.AddBufferedPart($"Presentation view for {presentation.Name}", buffer);
                 buffer.AddDynamicText(() =>
                 {
