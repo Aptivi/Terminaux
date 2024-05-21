@@ -197,12 +197,56 @@ namespace Terminaux.Inputs.Presentation
                     // Get the keypress or mouse press
                     ScreenTools.Render();
                     SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+
+                    // Get the lines and the positions
+                    string[] splitFinalLines = GetFinalLines();
+                    int presentationUpperBorderLeft = 2;
+                    int presentationUpperBorderTop = 1;
+                    int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
+                    int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
+                    int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
+                    int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+
+                    // Then, determine if the pointer or the keypress is available
                     if (PointerListener.PointerAvailable)
                     {
-                        string[] splitFinalLines = GetFinalLines();
-                        int presentationUpperBorderTop = 1;
-                        int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
-                        int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+                        bool DetermineArrowPressed(PointerEventContext mouse)
+                        {
+                            if (splitFinalLines.Length <= presentationLowerInnerBorderTop)
+                                return false;
+                            int arrowLeft = presentationLowerInnerBorderLeft + 3;
+                            int arrowTop = 2;
+                            int arrowBottom = presentationLowerInnerBorderTop + 1;
+                            return
+                                mouse.Coordinates.x == arrowLeft &&
+                                (mouse.Coordinates.y == arrowTop || mouse.Coordinates.y == arrowBottom);
+                        }
+
+                        void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
+                        {
+                            if (splitFinalLines.Length <= presentationLowerInnerBorderTop)
+                                return;
+                            int arrowLeft = presentationLowerInnerBorderLeft + 3;
+                            int arrowTop = 2;
+                            int arrowBottom = presentationLowerInnerBorderTop + 1;
+                            if (mouse.Coordinates.x == arrowLeft)
+                            {
+                                if (mouse.Coordinates.y == arrowTop)
+                                {
+                                    currIdx -= 1;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                }
+                                else if (mouse.Coordinates.y == arrowBottom)
+                                {
+                                    currIdx += 1;
+                                    if (currIdx > splitFinalLines.Length - presentationLowerInnerBorderTop)
+                                        currIdx = splitFinalLines.Length - presentationLowerInnerBorderTop;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                }
+                            }
+                        }
 
                         // Mouse input received.
                         var mouse = TermReader.ReadPointer();
@@ -211,7 +255,10 @@ namespace Terminaux.Inputs.Presentation
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                pageExit = ProcessInput(page, screen);
+                                if (DetermineArrowPressed(mouse))
+                                    UpdatePositionBasedOnArrowPress(mouse);
+                                else
+                                    pageExit = ProcessInput(page, screen);
                                 screen.RequireRefresh();
                                 break;
                             case PointerButton.WheelUp:
@@ -230,11 +277,6 @@ namespace Terminaux.Inputs.Presentation
                     }
                     else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
                     {
-                        string[] splitFinalLines = GetFinalLines();
-                        int presentationUpperBorderTop = 1;
-                        int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
-                        int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
-
                         // Get the key
                         var key = TermReader.ReadKey();
                         switch (key.Key)

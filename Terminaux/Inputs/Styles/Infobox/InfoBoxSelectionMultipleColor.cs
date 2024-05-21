@@ -404,7 +404,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
 
                     // Buffer the selection box
-                    string borderSelection = BorderColor.RenderBorderPlain(selectionBoxPosX, selectionBoxPosY - 1, maxSelectionWidth, selectionChoices, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                    string borderSelection = BorderColor.RenderBorder(selectionBoxPosX, selectionBoxPosY - 1, maxSelectionWidth, selectionChoices, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledSelectionMultipleColor);
                     boxBuffer.Append(borderSelection);
 
                     // Now, render the selections
@@ -453,7 +453,45 @@ namespace Terminaux.Inputs.Styles.Infobox
                             return true;
                         }
 
-                        bool DetermineArrowPressed(PointerEventContext mouse)
+                        bool DetermineTextArrowPressed(PointerEventContext mouse)
+                        {
+                            if (splitFinalLines.Length <= maxHeight)
+                                return false;
+                            int arrowLeft = maxWidth + borderX + 1;
+                            int arrowTop = 2;
+                            int arrowBottom = maxHeight + 1;
+                            return
+                                mouse.Coordinates.x == arrowLeft &&
+                                (mouse.Coordinates.y == arrowTop || mouse.Coordinates.y == arrowBottom);
+                        }
+
+                        void UpdatePositionBasedOnTextArrowPress(PointerEventContext mouse)
+                        {
+                            if (splitFinalLines.Length <= maxHeight)
+                                return;
+                            int arrowLeft = maxWidth + borderX + 1;
+                            int arrowTop = 2;
+                            int arrowBottom = maxHeight + 1;
+                            if (mouse.Coordinates.x == arrowLeft)
+                            {
+                                if (mouse.Coordinates.y == arrowTop)
+                                {
+                                    currIdx -= 1;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                }
+                                else if (mouse.Coordinates.y == arrowBottom)
+                                {
+                                    currIdx += 1;
+                                    if (currIdx > splitFinalLines.Length - maxHeight)
+                                        currIdx = splitFinalLines.Length - maxHeight;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                }
+                            }
+                        }
+
+                        bool DetermineSelectionArrowPressed(PointerEventContext mouse)
                         {
                             // Make pages based on console window height
                             int currentPage = currentSelection / selectionChoices;
@@ -469,7 +507,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 (mouse.Coordinates.y == selectionBoxPosY || mouse.Coordinates.y == ConsoleWrapper.WindowHeight - selectionChoices);
                         }
 
-                        void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
+                        void UpdatePositionBasedOnSelectionArrowPress(PointerEventContext mouse)
                         {
                             // Make pages based on console window height
                             int currentPage = currentSelection / selectionChoices;
@@ -534,8 +572,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                if (DetermineArrowPressed(mouse))
-                                    UpdatePositionBasedOnArrowPress(mouse);
+                                if (DetermineSelectionArrowPressed(mouse))
+                                    UpdatePositionBasedOnSelectionArrowPress(mouse);
+                                else if (DetermineTextArrowPressed(mouse))
+                                    UpdatePositionBasedOnTextArrowPress(mouse);
                                 else
                                 {
                                     if (UpdatePositionBasedOnMouse(mouse))

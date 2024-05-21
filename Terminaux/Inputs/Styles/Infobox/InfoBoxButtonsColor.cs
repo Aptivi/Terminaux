@@ -492,6 +492,44 @@ namespace Terminaux.Inputs.Styles.Infobox
                     maxHeight -= 5;
                     if (PointerListener.PointerAvailable)
                     {
+                        bool DetermineArrowPressed(PointerEventContext mouse)
+                        {
+                            if (splitFinalLines.Length <= maxHeight)
+                                return false;
+                            int arrowLeft = maxWidth + borderX + 1;
+                            int arrowTop = 2;
+                            int arrowBottom = maxHeight + 1;
+                            return
+                                mouse.Coordinates.x == arrowLeft &&
+                                (mouse.Coordinates.y == arrowTop || mouse.Coordinates.y == arrowBottom);
+                        }
+
+                        void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
+                        {
+                            if (splitFinalLines.Length <= maxHeight)
+                                return;
+                            int arrowLeft = maxWidth + borderX + 1;
+                            int arrowTop = 2;
+                            int arrowBottom = maxHeight + 1;
+                            if (mouse.Coordinates.x == arrowLeft)
+                            {
+                                if (mouse.Coordinates.y == arrowTop)
+                                {
+                                    currIdx -= 1;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                }
+                                else if (mouse.Coordinates.y == arrowBottom)
+                                {
+                                    currIdx += 1;
+                                    if (currIdx > splitFinalLines.Length - maxHeight)
+                                        currIdx = splitFinalLines.Length - maxHeight;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                }
+                            }
+                        }
+
                         void UpdateHighlightBasedOnMouse(PointerEventContext mouse)
                         {
                             int buttonPanelPosX = borderX + 4;
@@ -524,8 +562,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
-                                UpdateHighlightBasedOnMouse(mouse);
-                                bail = true;
+                                if (DetermineArrowPressed(mouse))
+                                    UpdatePositionBasedOnArrowPress(mouse);
+                                else
+                                {
+                                    UpdateHighlightBasedOnMouse(mouse);
+                                    bail = true;
+                                }
                                 break;
                             case PointerButton.Right:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)

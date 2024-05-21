@@ -648,20 +648,61 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Wait until the user presses any key to close the box
                     string[] splitFinalLines;
-                    int maxHeight;
                     if (waitForInput)
                     {
                         SpinWait.SpinUntil(() => PointerListener.InputAvailable);
                         splitFinalLines = GetFinalLines(text, vars);
-                        maxHeight = splitFinalLines.Length;
-                        if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
-                            maxHeight = ConsoleWrapper.WindowHeight - 4;
+                        var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
                         if (PointerListener.PointerAvailable)
                         {
+                            bool DetermineArrowPressed(PointerEventContext mouse)
+                            {
+                                if (splitFinalLines.Length <= maxHeight)
+                                    return false;
+                                int arrowLeft = maxWidth + borderX + 1;
+                                int arrowTop = 2;
+                                int arrowBottom = maxHeight + 1;
+                                return
+                                    mouse.Coordinates.x == arrowLeft &&
+                                    (mouse.Coordinates.y == arrowTop || mouse.Coordinates.y == arrowBottom);
+                            }
+
+                            void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
+                            {
+                                if (splitFinalLines.Length <= maxHeight)
+                                    return;
+                                int arrowLeft = maxWidth + borderX + 1;
+                                int arrowTop = 2;
+                                int arrowBottom = maxHeight + 1;
+                                if (mouse.Coordinates.x == arrowLeft)
+                                {
+                                    if (mouse.Coordinates.y == arrowTop)
+                                    {
+                                        currIdx -= 1;
+                                        if (currIdx < 0)
+                                            currIdx = 0;
+                                    }
+                                    else if (mouse.Coordinates.y == arrowBottom)
+                                    {
+                                        currIdx += 1;
+                                        if (currIdx > splitFinalLines.Length - maxHeight)
+                                            currIdx = splitFinalLines.Length - maxHeight;
+                                        if (currIdx < 0)
+                                            currIdx = 0;
+                                    }
+                                }
+                            }
+
                             // Mouse input received.
                             var mouse = TermReader.ReadPointer();
                             switch (mouse.Button)
                             {
+                                case PointerButton.Left:
+                                    if (mouse.ButtonPress != PointerButtonPress.Released)
+                                        break;
+                                    if (DetermineArrowPressed(mouse))
+                                        UpdatePositionBasedOnArrowPress(mouse);
+                                    break;
                                 case PointerButton.WheelUp:
                                     currIdx -= 3;
                                     if (currIdx < 0)
@@ -738,9 +779,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     {
                         Thread.Sleep(5000);
                         splitFinalLines = GetFinalLines(text, vars);
-                        maxHeight = splitFinalLines.Length;
-                        if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
-                            maxHeight = ConsoleWrapper.WindowHeight - 4;
+                        var (_, maxHeight, _, _, _) = GetDimensions(splitFinalLines);
                         currIdx += increment;
                         if (currIdx > splitFinalLines.Length - maxHeight)
                             currIdx = splitFinalLines.Length - maxHeight;
