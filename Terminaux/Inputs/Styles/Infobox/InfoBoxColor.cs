@@ -637,47 +637,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
-
-                    // Fill the info box with text inside it
-                    var boxBuffer = new StringBuilder();
-                    string border =
-                        !string.IsNullOrEmpty(title) ?
-                        BorderColor.RenderBorderPlain(title, borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar) :
-                        BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                    boxBuffer.Append(
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(InfoBoxTitledColor) : "")}" +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        $"{border}"
-                    );
-
-                    // Then, render the text
-                    delay = false;
-                    int linesMade = 0;
-                    for (int i = currIdx; i < splitFinalLines.Length; i++)
-                    {
-                        var line = splitFinalLines[i];
-                        if (linesMade % maxHeight == 0 && linesMade > 0)
-                        {
-                            // Reached the end of the box. Bail.
-                            increment = linesMade;
-                            delay = true;
-                            break;
-                        }
-                        if (i == splitFinalLines.Length - 1)
-                            exiting = true;
-                        else
-                            // In case resize caused us to have an extra page
-                            exiting = false;
-                        boxBuffer.Append(
-                            $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + linesMade % maxHeight + 1)}" +
-                            $"{line}"
-                        );
-                        linesMade++;
-                    }
-                    return boxBuffer.ToString();
+                    return RenderText(0, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars);
                 });
 
                 // Main loop
@@ -694,7 +654,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         SpinWait.SpinUntil(() => PointerListener.InputAvailable);
                         splitFinalLines = GetFinalLines(text, vars);
                         maxHeight = splitFinalLines.Length;
-                        if (maxHeight >= ConsoleWrapper.WindowHeight)
+                        if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
                             maxHeight = ConsoleWrapper.WindowHeight - 4;
                         if (PointerListener.PointerAvailable)
                         {
@@ -779,7 +739,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Thread.Sleep(5000);
                         splitFinalLines = GetFinalLines(text, vars);
                         maxHeight = splitFinalLines.Length;
-                        if (maxHeight >= ConsoleWrapper.WindowHeight)
+                        if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
                             maxHeight = ConsoleWrapper.WindowHeight - 4;
                         currIdx += increment;
                         if (currIdx > splitFinalLines.Length - maxHeight)
@@ -839,7 +799,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (maxWidth >= ConsoleWrapper.WindowWidth)
                 maxWidth = ConsoleWrapper.WindowWidth - 4;
             int maxHeight = splitFinalLines.Length;
-            if (maxHeight >= ConsoleWrapper.WindowHeight)
+            if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
                 maxHeight = ConsoleWrapper.WindowHeight - 4;
             int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
             int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
@@ -851,7 +811,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         {
             int maxWidth = ConsoleWrapper.WindowWidth - 4;
             int maxHeight = splitFinalLines.Length + 5;
-            if (maxHeight >= ConsoleWrapper.WindowHeight)
+            if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
                 maxHeight = ConsoleWrapper.WindowHeight - 4;
             int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
             int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
@@ -865,7 +825,7 @@ namespace Terminaux.Inputs.Styles.Infobox
             int selectionReservedHeight = 4 + selectionChoices;
             int maxWidth = ConsoleWrapper.WindowWidth - 4;
             int maxHeight = splitFinalLines.Length + selectionReservedHeight;
-            if (maxHeight >= ConsoleWrapper.WindowHeight)
+            if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
                 maxHeight = ConsoleWrapper.WindowHeight - 4;
             int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
             int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
@@ -884,33 +844,46 @@ namespace Terminaux.Inputs.Styles.Infobox
             int maxHeightOffset, string title, string text,
             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color InfoBoxColor, Color BackgroundColor, bool useColor, params object[] vars
+            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, params object[] vars
+        )
+        {
+            // Deal with the lines to actually fit text in the infobox
+            string[] splitFinalLines = GetFinalLines(text, vars);
+            var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars);
+        }
+
+        internal static string RenderTextInput(
+            int maxHeightOffset, string title, string text,
+            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensionsInput(splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars);
         }
 
         internal static string RenderTextSelection(
             InputChoiceInfo[] choices, string title, string text,
             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color InfoBoxColor, Color BackgroundColor, bool useColor, params object[] vars
+            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensionsSelection(choices, splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars);
         }
 
         internal static string RenderText(
             int maxWidth, int maxHeight, int borderX, int borderY, int maxHeightOffset, string title, string text,
             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color InfoBoxColor, Color BackgroundColor, bool useColor, params object[] vars
+            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
@@ -930,18 +903,36 @@ namespace Terminaux.Inputs.Styles.Infobox
 
             // Render text inside it
             ConsoleWrapper.CursorVisible = false;
-            for (int i = 0; i < splitFinalLines.Length; i++)
+            int linesMade = 0;
+            for (int i = currIdx; i < splitFinalLines.Length; i++)
             {
                 var line = splitFinalLines[i];
-                if (i % (maxHeight - maxHeightOffset) == 0 && i > 0)
+                if (linesMade % (maxHeight - maxHeightOffset) == 0 && linesMade > 0)
                 {
                     // Reached the end of the box. Bail.
+                    increment = linesMade;
+                    delay = true;
                     break;
                 }
+                if (i == splitFinalLines.Length - 1)
+                    exiting = true;
+                else
+                    // In case resize caused us to have an extra page
+                    exiting = false;
                 boxBuffer.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                    $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + linesMade % maxHeight + 1)}" +
                     $"{line}"
                 );
+                linesMade++;
+            }
+
+            // Render the vertical bar
+            int left = maxWidth + borderX + 1;
+            if (splitFinalLines.Length > maxHeight - maxHeightOffset)
+            {
+                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, InfoBoxColor, BackgroundColor));
+                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, maxHeight - maxHeightOffset + 1, InfoBoxColor, BackgroundColor));
+                boxBuffer.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)currIdx / (splitFinalLines.Length - (maxHeight - maxHeightOffset)) * splitFinalLines.Length), splitFinalLines.Length, left - 1, 2, maxHeight - maxHeightOffset - 2, InfoBoxColor, BackgroundColor, BackgroundColor, false));
             }
             return boxBuffer.ToString();
         }

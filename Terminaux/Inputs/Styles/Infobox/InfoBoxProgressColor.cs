@@ -348,6 +348,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxProgressColor), infoBoxScreenPart);
             try
             {
+                int currIdx = 0;
+                int increment = 0;
+                bool exiting = false;
+                bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
@@ -356,7 +360,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderText(5, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledProgressColor, BackgroundColor, useColor, vars)
+                        InfoBoxColor.RenderTextInput(5, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledProgressColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars)
                     );
 
                     // Render the final result and write the progress bar

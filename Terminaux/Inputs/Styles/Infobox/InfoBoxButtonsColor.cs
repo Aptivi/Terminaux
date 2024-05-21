@@ -412,6 +412,10 @@ namespace Terminaux.Inputs.Styles.Infobox
             try
             {
                 bool initialForeground = ColorTools.AllowForeground;
+                int currIdx = 0;
+                int increment = 0;
+                bool exiting = false;
+                bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     ColorTools.AllowForeground = true;
@@ -422,7 +426,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderText(5, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledButtonsColor, BackgroundColor, useColor, vars)
+                        InfoBoxColor.RenderTextInput(5, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars)
                     );
 
                     // Place the buttons from the right for familiarity
@@ -483,15 +487,16 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Wait for keypress
                     SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+                    string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxColor.GetDimensionsInput(splitFinalLines);
+                    maxHeight -= 5;
                     if (PointerListener.PointerAvailable)
                     {
                         void UpdateHighlightBasedOnMouse(PointerEventContext mouse)
                         {
-                            string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
-                            var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxColor.GetDimensionsInput(splitFinalLines);
                             int buttonPanelPosX = borderX + 4;
-                            int buttonPanelPosY = borderY + maxHeight - 3;
-                            if (mouse.Coordinates.y <= buttonPanelPosY || mouse.Coordinates.y >= buttonPanelPosY + 2)
+                            int buttonPanelPosY = borderY + maxHeight + 5 - 3;
+                            if (mouse.Coordinates.y < buttonPanelPosY || mouse.Coordinates.y > buttonPanelPosY + 2)
                                 return;
                             int maxButtonPanelWidth = maxWidth - 4;
                             int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
@@ -499,7 +504,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             {
                                 // Get the button position
                                 int buttonX = maxButtonPanelWidth - i * maxButtonWidth;
-                                if (mouse.Coordinates.x <= buttonX || mouse.Coordinates.x >= buttonX + maxButtonWidth)
+                                if (mouse.Coordinates.x < buttonX || mouse.Coordinates.x >= buttonX + maxButtonWidth - 1)
                                     continue;
 
                                 // Now, change the highlight
@@ -535,6 +540,34 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;
+                            case PointerButton.WheelUp:
+                                if (mouse.Modifiers == PointerModifiers.Shift)
+                                {
+                                    currIdx -= 3;
+                                    if (currIdx < 0)
+                                        currIdx = 0;
+                                }
+                                else
+                                {
+                                    selectedButton--;
+                                    if (selectedButton < 0)
+                                        selectedButton = 0;
+                                }
+                                break;
+                            case PointerButton.WheelDown:
+                                if (mouse.Modifiers == PointerModifiers.Shift)
+                                {
+                                    currIdx += 3;
+                                    if (currIdx > splitFinalLines.Length - maxHeight)
+                                        currIdx = splitFinalLines.Length - maxHeight;
+                                }
+                                else
+                                {
+                                    selectedButton++;
+                                    if (selectedButton > buttons.Length - 1)
+                                        selectedButton = buttons.Length - 1;
+                                }
+                                break;
                         }
                     }
                     else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
@@ -562,6 +595,26 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
+                                break;
+                            case ConsoleKey.E:
+                                currIdx -= maxHeight * 2 - 1;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                break;
+                            case ConsoleKey.D:
+                                currIdx += increment;
+                                if (currIdx > splitFinalLines.Length - maxHeight)
+                                    currIdx = splitFinalLines.Length - maxHeight;
+                                break;
+                            case ConsoleKey.W:
+                                currIdx -= 1;
+                                if (currIdx < 0)
+                                    currIdx = 0;
+                                break;
+                            case ConsoleKey.S:
+                                currIdx += 1;
+                                if (currIdx > splitFinalLines.Length - maxHeight)
+                                    currIdx = splitFinalLines.Length - maxHeight;
                                 break;
                             case ConsoleKey.Enter:
                                 bail = true;
