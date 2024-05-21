@@ -637,7 +637,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    return RenderText(0, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars);
+                    return RenderText(0, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, true, vars);
                 });
 
                 // Main loop
@@ -844,46 +844,46 @@ namespace Terminaux.Inputs.Styles.Infobox
             int maxHeightOffset, string title, string text,
             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, params object[] vars
+            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, vars);
         }
 
         internal static string RenderTextInput(
             int maxHeightOffset, string title, string text,
             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, params object[] vars
+            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensionsInput(splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, vars);
         }
 
         internal static string RenderTextSelection(
             InputChoiceInfo[] choices, string title, string text,
             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, params object[] vars
+            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensionsSelection(choices, splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, vars);
         }
 
         internal static string RenderText(
             int maxWidth, int maxHeight, int borderX, int borderY, int maxHeightOffset, string title, string text,
             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, params object[] vars
+            Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
@@ -928,7 +928,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
             // Render the vertical bar
             int left = maxWidth + borderX + 1;
-            if (splitFinalLines.Length > maxHeight - maxHeightOffset)
+            if (splitFinalLines.Length > maxHeight - maxHeightOffset && drawBar)
             {
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, InfoBoxColor, BackgroundColor));
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, maxHeight - maxHeightOffset + 1, InfoBoxColor, BackgroundColor));

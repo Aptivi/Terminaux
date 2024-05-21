@@ -400,7 +400,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderTextSelection(selections, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledSelectionMultipleColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, vars)
+                        InfoBoxColor.RenderTextSelection(selections, title, text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxTitledSelectionMultipleColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, true, vars)
                     );
 
                     // Buffer the selection box
