@@ -425,8 +425,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     SpinWait.SpinUntil(() => PointerListener.InputAvailable);
                     bool goingUp = false;
                     string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxColor.GetDimensionsInput(splitFinalLines);
-                    maxHeight -= 5;
+                    var (maxWidth, maxHeight, _, borderX, borderY, _, selectionBoxPosY, leftPos, maxSelectionWidth, _, selectionReservedHeight) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
+                    maxHeight -= selectionReservedHeight;
                     if (PointerListener.PointerAvailable)
                     {
                         bool UpdatePositionBasedOnMouse(PointerEventContext mouse)
@@ -436,10 +436,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int startIndex = selectionChoices * currentPage;
 
                             // Now, translate coordinates to the selected index
-                            string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
-                            var (_, _, _, _, _, _, selectionBoxPosY, leftPos, maxSelectionWidth, _, _) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
                             if (mouse.Coordinates.x <= leftPos || mouse.Coordinates.x >= maxSelectionWidth ||
-                                mouse.Coordinates.y < selectionBoxPosY || mouse.Coordinates.y >= selectionBoxPosY + selectionChoices + 1)
+                                mouse.Coordinates.y < selectionBoxPosY || mouse.Coordinates.y >= selectionBoxPosY + selectionChoices)
                                 return false;
                             int listIndex = mouse.Coordinates.y - selectionBoxPosY;
                             listIndex = startIndex + listIndex;
