@@ -210,7 +210,11 @@ namespace Terminaux.Inputs.Styles.Selection
                 if (useColor)
                 {
                     buffer.Append(
-                        TextWriterWhereColor.RenderWhereColorBack(AnswerOption + new string(' ', width - AnswerOption.Length), leftPos, optionTop, finalForeColor, finalBackColor)
+                        finalForeColor.VTSequenceForeground +
+                        finalBackColor.VTSequenceBackground +
+                        TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', width - AnswerOption.Length), leftPos, optionTop, finalForeColor, finalBackColor) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
+                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                     );
                 }
                 else

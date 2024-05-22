@@ -411,15 +411,12 @@ namespace Terminaux.Inputs.Styles.Infobox
             ScreenTools.CurrentScreen?.AddBufferedPart(nameof(InfoBoxButtonsColor), infoBoxScreenPart);
             try
             {
-                bool initialForeground = ColorTools.AllowForeground;
                 int currIdx = 0;
                 int increment = 0;
                 bool exiting = false;
                 bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    ColorTools.AllowForeground = true;
-
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
                     var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxColor.GetDimensionsInput(splitFinalLines);
@@ -474,7 +471,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                             ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
                         );
                     }
-                    ColorTools.AllowForeground = false;
                     return boxBuffer.ToString();
                 });
 

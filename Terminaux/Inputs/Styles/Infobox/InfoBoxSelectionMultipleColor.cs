@@ -392,8 +392,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    ColorTools.AllowForeground = true;
-
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
                     var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
@@ -413,7 +411,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                     );
 
                     // Return the buffer
-                    ColorTools.AllowForeground = false;
                     return boxBuffer.ToString();
                 });
 
