@@ -43,9 +43,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgressPlain(double Progress, int Left, int Top, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgressPlain(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, DrawBorder, Targeted);
+        public static void WriteProgressPlain(double Progress, int Left, int Top, bool DrawBorder = true) =>
+            WriteProgressPlain(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -55,12 +54,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="width">Progress bar width</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgressPlain(double Progress, int Left, int Top, int width, bool DrawBorder = true, bool Targeted = false)
+        public static void WriteProgressPlain(double Progress, int Left, int Top, int width, bool DrawBorder = true)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderProgressPlain(Progress, Left, Top, width, DrawBorder, Targeted));
+                TextWriterRaw.WriteRaw(RenderProgressPlain(Progress, Left, Top, width, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -76,9 +74,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Left">The progress position from the upper left corner</param>
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, bool DrawBorder = true) =>
+            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -88,9 +85,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="width">Progress bar width</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int width, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, width, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, int width, bool DrawBorder = true) =>
+            WriteProgress(Progress, Left, Top, width, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -100,9 +96,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, ColorTools.GetGray(), DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, bool DrawBorder = true) =>
+            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -113,9 +108,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="width">Progress bar width</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int width, Color ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, width, ProgressColor, ColorTools.GetGray(), DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, int width, Color ProgressColor, bool DrawBorder = true) =>
+            WriteProgress(Progress, Left, Top, width, ProgressColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -126,9 +120,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor, bool DrawBorder = true) =>
+            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -140,9 +133,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="width">Progress bar width</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int width, Color ProgressColor, Color FrameColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, width, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, int width, Color ProgressColor, Color FrameColor, bool DrawBorder = true) =>
+            WriteProgress(Progress, Left, Top, width, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -154,9 +146,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true, bool Targeted = false) =>
-            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, BackgroundColor, DrawBorder, Targeted);
+        public static void WriteProgress(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true) =>
+            WriteProgress(Progress, Left, Top, ConsoleWrapper.WindowWidth - 10, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -169,12 +160,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="width">Progress bar width</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static void WriteProgress(double Progress, int Left, int Top, int width, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true, bool Targeted = false)
+        public static void WriteProgress(double Progress, int Left, int Top, int width, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderProgress(Progress, Left, Top, width, ProgressColor, FrameColor, BackgroundColor, DrawBorder, Targeted));
+                TextWriterRaw.WriteRaw(RenderProgress(Progress, Left, Top, width, ProgressColor, FrameColor, BackgroundColor, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -191,9 +181,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="width">Progress bar width</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static string RenderProgressPlain(double Progress, int Left, int Top, int width, bool DrawBorder = true, bool Targeted = false) =>
-            RenderProgress(Progress, Left, Top, width, ColorTools.currentForegroundColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder, Targeted);
+        public static string RenderProgressPlain(double Progress, int Left, int Top, int width, bool DrawBorder = true) =>
+            RenderProgress(Progress, Left, Top, width, ColorTools.currentForegroundColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder);
 
         /// <summary>
         /// Renders the progress bar
@@ -204,9 +193,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="width">Progress bar width</param>
         /// <param name="ProgressColor">The progress bar color</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static string RenderProgress(double Progress, int Left, int Top, int width, Color ProgressColor, bool DrawBorder = true, bool Targeted = false) =>
-            RenderProgress(Progress, Left, Top, width, ProgressColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder, Targeted);
+        public static string RenderProgress(double Progress, int Left, int Top, int width, Color ProgressColor, bool DrawBorder = true) =>
+            RenderProgress(Progress, Left, Top, width, ProgressColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder);
 
         /// <summary>
         /// Renders the progress bar
@@ -218,9 +206,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="width">Progress bar width</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static string RenderProgress(double Progress, int Left, int Top, int width, Color ProgressColor, Color FrameColor, bool DrawBorder = true, bool Targeted = false) =>
-            RenderProgress(Progress, Left, Top, width, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, true, DrawBorder, Targeted);
+        public static string RenderProgress(double Progress, int Left, int Top, int width, Color ProgressColor, Color FrameColor, bool DrawBorder = true) =>
+            RenderProgress(Progress, Left, Top, width, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, true, DrawBorder);
 
         /// <summary>
         /// Renders the progress bar
@@ -233,9 +220,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="BackgroundColor">The progress bar background color</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        public static string RenderProgress(double Progress, int Left, int Top, int width, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true, bool Targeted = false) =>
-            RenderProgress(Progress, Left, Top, width, ProgressColor, FrameColor, BackgroundColor, true, DrawBorder, Targeted);
+        public static string RenderProgress(double Progress, int Left, int Top, int width, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true) =>
+            RenderProgress(Progress, Left, Top, width, ProgressColor, FrameColor, BackgroundColor, true, DrawBorder);
 
         /// <summary>
         /// Renders the progress bar
@@ -249,8 +235,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="useColor">Whether to use the color or not</param>
-        /// <param name="Targeted">Targeted percentage?</param>
-        internal static string RenderProgress(double Progress, int Left, int Top, int width, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool useColor, bool DrawBorder = true, bool Targeted = false)
+        internal static string RenderProgress(double Progress, int Left, int Top, int width, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool useColor, bool DrawBorder = true)
         {
             try
             {
@@ -281,9 +266,7 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Draw the progress bar
-                int times = Targeted ?
-                    ConsoleMisc.PercentRepeatTargeted((int)Math.Round(Progress), 100, width) :
-                    ConsoleMisc.PercentRepeat((int)Math.Round(Progress), 100, width);
+                int times = ConsoleMisc.PercentRepeatTargeted((int)Math.Round(Progress), 100, width);
                 progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', width - times));
                 if (useColor)
                     progBuilder.Append(ProgressColor.VTSequenceBackground);
