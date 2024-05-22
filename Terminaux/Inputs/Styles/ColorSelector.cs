@@ -119,7 +119,7 @@ namespace Terminaux.Inputs.Styles
                     // Handle input
                     bail =
                         type == ColorType.TrueColor || type == ColorType.EightBitColor || type == ColorType.FourBitColor ?
-                        HandleKeypress(ref selectedColor, ref type, out refresh, finalSettings) :
+                        HandleKeypress(ref selectedColor, ref type, out refresh, finalSettings, screen) :
                         throw new TerminauxException("Invalid color type in the color selector");
                     if (refresh)
                         screen.RequireRefresh();
@@ -292,7 +292,7 @@ namespace Terminaux.Inputs.Styles
             return selector.ToString();
         }
 
-        private static bool HandleKeypress(ref Color selectedColor, ref ColorType type, out bool refresh, ColorSettings finalSettings)
+        private static bool HandleKeypress(ref Color selectedColor, ref ColorType type, out bool refresh, ColorSettings finalSettings, Screen screen)
         {
             bool bail = false;
             refresh = false;
@@ -363,11 +363,11 @@ namespace Terminaux.Inputs.Styles
                 {
                     // Unified
                     case ConsoleKey.I:
-                        ShowColorInfo(selectedColor);
+                        ShowColorInfo(selectedColor, screen);
                         refresh = true;
                         break;
                     case ConsoleKey.V:
-                        ShowColorInfoVisually(selectedColor);
+                        ShowColorInfoVisually(selectedColor, screen);
                         refresh = true;
                         break;
                     case ConsoleKey.Enter:
@@ -501,13 +501,15 @@ namespace Terminaux.Inputs.Styles
             }
         }
 
-        private static void ShowColorInfo(Color selectedColor)
+        private static void ShowColorInfo(Color selectedColor, Screen screen)
         {
             bool bail = false;
             while (!bail)
             {
                 var selections = GetColorInfoChoices();
+                screen.RequireRefresh();
                 int idx = InfoBoxSelectionColor.WriteInfoBoxSelection(selections, "Select color information variant");
+                screen.RequireRefresh();
                 switch (idx)
                 {
                     case 0:
@@ -616,13 +618,15 @@ namespace Terminaux.Inputs.Styles
             );
         }
 
-        private static void ShowColorInfoVisually(Color selectedColor)
+        private static void ShowColorInfoVisually(Color selectedColor, Screen screen)
         {
             bool bail = false;
             while (!bail)
             {
                 var selections = GetColorInfoChoices();
+                screen.RequireRefresh();
                 int idx = InfoBoxSelectionColor.WriteInfoBoxSelection(selections, "Select color information variant");
+                screen.RequireRefresh();
                 switch (idx)
                 {
                     case 0:
