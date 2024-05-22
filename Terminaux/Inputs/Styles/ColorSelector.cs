@@ -503,75 +503,54 @@ namespace Terminaux.Inputs.Styles
 
         private static void ShowColorInfo(Color selectedColor)
         {
-            ShowColorInfoBox(
-                "Color info",
-                selectedColor
-            );
-            ShowColorInfoBox(
-                "Color info (Protanomaly)",
-                selectedColor,
-                true
-            );
-            ShowColorInfoBox(
-                "Color info (Protanopia)",
-                selectedColor,
-                true,
-                TransformationFormula.Protan, 1.0
-            );
-            ShowColorInfoBox(
-                "Color info (Deuteranomaly)",
-                selectedColor,
-                true,
-                TransformationFormula.Deutan
-            );
-            ShowColorInfoBox(
-                "Color info (Deuteranopia)",
-                selectedColor,
-                true,
-                TransformationFormula.Deutan, 1.0
-            );
-            ShowColorInfoBox(
-                "Color info (Tritanomaly)",
-                selectedColor,
-                true,
-                TransformationFormula.Tritan
-            );
-            ShowColorInfoBox(
-                "Color info (Tritanopia)",
-                selectedColor,
-                true,
-                TransformationFormula.Tritan, 1.0
-            );
-            ShowColorInfoBox(
-                "Color info (Monochromacy)",
-                selectedColor,
-                true,
-                TransformationFormula.Monochromacy
-            );
-            ShowColorInfoBox(
-                "Color info (Inverse)",
-                selectedColor,
-                true,
-                TransformationFormula.Inverse
-            );
-            ShowColorInfoBox(
-                "Color info (Blue Monochromacy)",
-                selectedColor,
-                true,
-                TransformationFormula.BlueScale
-            );
-            ShowColorInfoBox(
-                "Color info (Green Monochromacy)",
-                selectedColor,
-                true,
-                TransformationFormula.GreenScale
-            );
-            ShowColorInfoBox(
-                "Color info (Red Monochromacy)",
-                selectedColor,
-                true,
-                TransformationFormula.RedScale
-            );
+            bool bail = false;
+            while (!bail)
+            {
+                var selections = GetColorInfoChoices();
+                int idx = InfoBoxSelectionColor.WriteInfoBoxSelection(selections, "Select color information variant");
+                switch (idx)
+                {
+                    case 0:
+                        ShowColorInfoBox("Color info", selectedColor);
+                        break;
+                    case 1:
+                        ShowColorInfoBox("Color info (Protanomaly)", selectedColor, true);
+                        break;
+                    case 2:
+                        ShowColorInfoBox("Color info (Protanopia)", selectedColor, true, TransformationFormula.Protan, 1.0);
+                        break;
+                    case 3:
+                        ShowColorInfoBox("Color info (Deuteranomaly)", selectedColor, true, TransformationFormula.Deutan);
+                        break;
+                    case 4:
+                        ShowColorInfoBox("Color info (Deuteranopia)", selectedColor, true, TransformationFormula.Deutan, 1.0);
+                        break;
+                    case 5:
+                        ShowColorInfoBox("Color info (Tritanomaly)", selectedColor, true, TransformationFormula.Tritan);
+                        break;
+                    case 6:
+                        ShowColorInfoBox("Color info (Tritanopia)", selectedColor, true, TransformationFormula.Tritan, 1.0);
+                        break;
+                    case 7:
+                        ShowColorInfoBox("Color info (Monochromacy)", selectedColor, true, TransformationFormula.Monochromacy);
+                        break;
+                    case 8:
+                        ShowColorInfoBox("Color info (Inverse)", selectedColor, true, TransformationFormula.Inverse);
+                        break;
+                    case 9:
+                        ShowColorInfoBox("Color info (Blue Monochromacy)", selectedColor, true, TransformationFormula.BlueScale);
+                        break;
+                    case 10:
+                        ShowColorInfoBox("Color info (Green Monochromacy)", selectedColor, true, TransformationFormula.GreenScale);
+                        break;
+                    case 11:
+                        ShowColorInfoBox("Color info (Red Monochromacy)", selectedColor, true, TransformationFormula.RedScale);
+                        break;
+                    case -1:
+                        bail = true;
+                        break;
+                }
+            }
         }
 
         private static void ShowColorInfoBox(string localizedTextTitle, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
@@ -639,75 +618,54 @@ namespace Terminaux.Inputs.Styles
 
         private static void ShowColorInfoVisually(Color selectedColor)
         {
-            ShowColorUsingBackground(
-                "Color info",
-                selectedColor
-            );
-            ShowColorUsingBackground(
-                "Color info (Protanomaly)",
-                selectedColor,
-                true
-            );
-            ShowColorUsingBackground(
-                "Color info (Protanopia)",
-                selectedColor,
-                true,
-                TransformationFormula.Protan, 1.0
-            );
-            ShowColorUsingBackground(
-                "Color info (Deuteranomaly)",
-                selectedColor,
-                true,
-                TransformationFormula.Deutan
-            );
-            ShowColorUsingBackground(
-                "Color info (Deuteranopia)",
-                selectedColor,
-                true,
-                TransformationFormula.Deutan, 1.0
-            );
-            ShowColorUsingBackground(
-                "Color info (Tritanomaly)",
-                selectedColor,
-                true,
-                TransformationFormula.Tritan
-            );
-            ShowColorUsingBackground(
-                "Color info (Tritanopia)",
-                selectedColor,
-                true,
-                TransformationFormula.Tritan, 1.0
-            );
-            ShowColorUsingBackground(
-                "Color info (Monochromacy)",
-                selectedColor,
-                true,
-                TransformationFormula.Monochromacy
-            );
-            ShowColorUsingBackground(
-                "Color info (Inverse)",
-                selectedColor,
-                true,
-                TransformationFormula.Inverse
-            );
-            ShowColorUsingBackground(
-                "Color info (Blue Monochromacy)",
-                selectedColor,
-                true,
-                TransformationFormula.BlueScale
-            );
-            ShowColorUsingBackground(
-                "Color info (Green Monochromacy)",
-                selectedColor,
-                true,
-                TransformationFormula.GreenScale
-            );
-            ShowColorUsingBackground(
-                "Color info (Red Monochromacy)",
-                selectedColor,
-                true,
-                TransformationFormula.RedScale
-            );
+            bool bail = false;
+            while (!bail)
+            {
+                var selections = GetColorInfoChoices();
+                int idx = InfoBoxSelectionColor.WriteInfoBoxSelection(selections, "Select color information variant");
+                switch (idx)
+                {
+                    case 0:
+                        ShowColorUsingBackground("Color info", selectedColor);
+                        break;
+                    case 1:
+                        ShowColorUsingBackground("Color info (Protanomaly)", selectedColor, true);
+                        break;
+                    case 2:
+                        ShowColorUsingBackground("Color info (Protanopia)", selectedColor, true, TransformationFormula.Protan, 1.0);
+                        break;
+                    case 3:
+                        ShowColorUsingBackground("Color info (Deuteranomaly)", selectedColor, true, TransformationFormula.Deutan);
+                        break;
+                    case 4:
+                        ShowColorUsingBackground("Color info (Deuteranopia)", selectedColor, true, TransformationFormula.Deutan, 1.0);
+                        break;
+                    case 5:
+                        ShowColorUsingBackground("Color info (Tritanomaly)", selectedColor, true, TransformationFormula.Tritan);
+                        break;
+                    case 6:
+                        ShowColorUsingBackground("Color info (Tritanopia)", selectedColor, true, TransformationFormula.Tritan, 1.0);
+                        break;
+                    case 7:
+                        ShowColorUsingBackground("Color info (Monochromacy)", selectedColor, true, TransformationFormula.Monochromacy);
+                        break;
+                    case 8:
+                        ShowColorUsingBackground("Color info (Inverse)", selectedColor, true, TransformationFormula.Inverse);
+                        break;
+                    case 9:
+                        ShowColorUsingBackground("Color info (Blue Monochromacy)", selectedColor, true, TransformationFormula.BlueScale);
+                        break;
+                    case 10:
+                        ShowColorUsingBackground("Color info (Green Monochromacy)", selectedColor, true, TransformationFormula.GreenScale);
+                        break;
+                    case 11:
+                        ShowColorUsingBackground("Color info (Red Monochromacy)", selectedColor, true, TransformationFormula.RedScale);
+                        break;
+                    case -1:
+                        bail = true;
+                        break;
+                }
+            }
         }
 
         private static void ShowColorUsingBackground(string localizedTextTitle, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
@@ -818,6 +776,22 @@ namespace Terminaux.Inputs.Styles
             if (trueColorSaturation > 100)
                 trueColorSaturation = 0;
         }
+
+        private static InputChoiceInfo[] GetColorInfoChoices() =>
+            InputChoiceTools.GetInputChoices([
+                ("Normal", "Color information (normal)"),
+                ("Protanomaly", "Color information (Protanomaly)"),
+                ("Protanopia", "Color information (Protanopia)"),
+                ("Deuteranomaly", "Color information (Deuteranomaly)"),
+                ("Deuteranopia", "Color information (Deuteranopia)"),
+                ("Tritanomaly", "Color information (Tritanomaly)"),
+                ("Tritanopia", "Color information (Tritanopia)"),
+                ("Monochromacy", "Color information (Monochromacy)"),
+                ("Inverse", "Color information (Inverse)"),
+                ("Blue Monochromacy", "Color information (Blue Monochromacy)"),
+                ("Green Monochromacy", "Color information (Green Monochromacy)"),
+                ("Red Monochromacy", "Color information (Red Monochromacy)"),
+            ]);
 
         static ColorSelector()
         {
