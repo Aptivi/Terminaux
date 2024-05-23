@@ -58,7 +58,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="disabledBackgroundColor">Background color of the disabled item</param>
         /// <returns>A string that you can use with the raw console writer or with the screen part renderer</returns>
         /// <exception cref="TerminauxException"></exception>
-        public static string RenderSelections(InputChoiceInfo[] selections, int left, int top, int currentSelection, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = 0, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
+        public static string RenderSelections(InputChoiceInfo[] selections, int left, int top, int currentSelection, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = -1, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
         {
             // Check for values
             if (selections is null || selections.Length == 0)
@@ -74,7 +74,7 @@ namespace Terminaux.Inputs.Styles.Selection
             if (width < 0 || width > ConsoleWrapper.WindowWidth)
                 throw new TerminauxException("Selection width is out of range");
             if (altChoicePos < 0 || altChoicePos > selections.Length)
-                throw new TerminauxException("Alternative choice position is out of range");
+                altChoicePos = selections.Length;
 
             // Rely on the internal function
             return RenderSelectionsInternal(selections, left, top, currentSelection, null, selectionChoices, width, sliderInside, altChoicePos, swapSelectedColors, foregroundColor, backgroundColor, selectedForegroundColor, selectedBackgroundColor, altForegroundColor, altBackgroundColor, altSelectedForegroundColor, altSelectedBackgroundColor, disabledForegroundColor, disabledBackgroundColor);
@@ -105,7 +105,7 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="disabledBackgroundColor">Background color of the disabled item</param>
         /// <returns>A string that you can use with the raw console writer or with the screen part renderer</returns>
         /// <exception cref="TerminauxException"></exception>
-        public static string RenderSelections(InputChoiceInfo[] selections, int left, int top, int currentSelection, int[]? currentSelections, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = 0, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
+        public static string RenderSelections(InputChoiceInfo[] selections, int left, int top, int currentSelection, int[]? currentSelections, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = -1, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
         {
             // Check for values
             if (selections is null || selections.Length == 0)
@@ -123,18 +123,20 @@ namespace Terminaux.Inputs.Styles.Selection
             if (width < 0 || width > ConsoleWrapper.WindowWidth)
                 throw new TerminauxException("Selection width is out of range");
             if (altChoicePos < 0 || altChoicePos > selections.Length)
-                throw new TerminauxException("Alternative choice position is out of range");
+                altChoicePos = selections.Length;
 
             // Rely on the internal function
             return RenderSelectionsInternal(selections, left, top, currentSelection, currentSelections, selectionChoices, width, sliderInside, altChoicePos, swapSelectedColors, foregroundColor, backgroundColor, selectedForegroundColor, selectedBackgroundColor, altForegroundColor, altBackgroundColor, altSelectedForegroundColor, altSelectedBackgroundColor, disabledForegroundColor, disabledBackgroundColor);
         }
 
-        internal static string RenderSelectionsInternal(InputChoiceInfo[] selections, int left, int top, int currentSelection, int[]? currentSelections, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = 0, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
+        internal static string RenderSelectionsInternal(InputChoiceInfo[] selections, int left, int top, int currentSelection, int[]? currentSelections, int selectionChoices, int width, bool sliderInside = false, int altChoicePos = -1, bool swapSelectedColors = true, Color? foregroundColor = null, Color? backgroundColor = null, Color? selectedForegroundColor = null, Color? selectedBackgroundColor = null, Color? altForegroundColor = null, Color? altBackgroundColor = null, Color? altSelectedForegroundColor = null, Color? altSelectedBackgroundColor = null, Color? disabledForegroundColor = null, Color? disabledBackgroundColor = null)
         {
             // Determine if multiple or single
             bool isMultiple = currentSelections is not null;
             if ((currentSelection < 0 || currentSelection >= selections.Length) && !isMultiple)
                 throw new TerminauxInternalException("Can't determine if the selection input is single or multiple");
+            if (altChoicePos < 0 || altChoicePos > selections.Length)
+                altChoicePos = selections.Length;
 
             // Check for colors
             bool useColor =
