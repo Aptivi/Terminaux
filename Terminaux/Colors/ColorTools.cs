@@ -40,7 +40,7 @@ namespace Terminaux.Colors
         internal static Random rng = new();
         private static readonly ColorSettings globalSettings = new();
         private static bool allowBackground;
-        private static bool allowForeground;
+        private static bool allowForeground = true;
 
         /// <summary>
         /// Global color settings

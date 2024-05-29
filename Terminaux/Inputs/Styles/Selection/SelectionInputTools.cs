@@ -212,8 +212,8 @@ namespace Terminaux.Inputs.Styles.Selection
                 if (useColor)
                 {
                     buffer.Append(
-                        finalForeColor.VTSequenceForeground +
-                        finalBackColor.VTSequenceBackground +
+                        ColorTools.RenderSetConsoleColor(finalForeColor) +
+                        ColorTools.RenderSetConsoleColor(finalBackColor, true) +
                         TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', width - AnswerOption.Length), leftPos, optionTop, finalForeColor, finalBackColor) +
                         ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
                         ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)

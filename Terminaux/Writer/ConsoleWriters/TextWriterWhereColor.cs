@@ -371,7 +371,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         Paragraphs = ConsoleMisc.GetWrappedSentencesByWords(msg, width);
                     var buffered = new StringBuilder();
 
-                    // Se the colors and the positions as appropriate
+                    // Set the colors and the positions as appropriate
                     if (useColors)
                     {
                         buffered.Append(
