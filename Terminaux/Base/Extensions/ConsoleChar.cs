@@ -101,8 +101,17 @@ namespace Terminaux.Base.Extensions
                 }
                 break;
             }
+
+            // Add to cache if we can
             if (cacheable)
-                cachedWidths.Add(c, (width, widthType));
+            {
+                // To ensure that we don't have any race condition, lock here and check.
+                lock (cachedWidths)
+                {
+                    if (!cachedWidths.ContainsKey(c))
+                        cachedWidths.Add(c, (width, widthType));
+                }
+            }
             return width;
         }
 
@@ -142,9 +151,18 @@ namespace Terminaux.Base.Extensions
                     continue;
                 break;
             }
+
+            // Add to cache if we can
             bool cacheable = width >= 0;
             if (cacheable)
-                cachedWidths.Add(c, (width, widthType));
+            {
+                // To ensure that we don't have any race condition, lock here and check.
+                lock (cachedWidths)
+                {
+                    if (!cachedWidths.ContainsKey(c))
+                        cachedWidths.Add(c, (width, widthType));
+                }
+            }
             return widthType;
         }
 
