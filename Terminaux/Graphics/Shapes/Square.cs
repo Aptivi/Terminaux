@@ -65,7 +65,7 @@ namespace Terminaux.Graphics.Shapes
         public string Render()
         {
             StringBuilder buffer = new();
-            buffer.Append(ShapeColor.VTSequenceBackgroundTrueColor);
+            buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
             for (int y = 0; y < Height; y++)
             {
                 buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 1));
@@ -79,7 +79,7 @@ namespace Terminaux.Graphics.Shapes
                     buffer.Append("  ");
                 }
             }
-            buffer.Append(ColorTools.CurrentBackgroundColor.VTSequenceBackgroundTrueColor);
+            buffer.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
             return buffer.ToString();
         }
 

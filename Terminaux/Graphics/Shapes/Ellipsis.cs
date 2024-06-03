@@ -65,7 +65,7 @@ namespace Terminaux.Graphics.Shapes
         public string Render()
         {
             StringBuilder buffer = new();
-            buffer.Append(ShapeColor.VTSequenceBackgroundTrueColor);
+            buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
 
             // Get the center X and Y positions, since we're dealing with the upper left corner positions, so that we know
             // the radius of the circle
@@ -102,7 +102,7 @@ namespace Terminaux.Graphics.Shapes
                     buffer.Append(' ');
                 }
             }
-            buffer.Append(ColorTools.CurrentBackgroundColor.VTSequenceBackgroundTrueColor);
+            buffer.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
             return buffer.ToString();
         }
 

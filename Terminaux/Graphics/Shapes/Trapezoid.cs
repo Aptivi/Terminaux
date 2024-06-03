@@ -77,7 +77,7 @@ namespace Terminaux.Graphics.Shapes
         {
             StringBuilder buffer = new();
             int width = Math.Max(TopWidth, BottomWidth);
-            buffer.Append(ShapeColor.VTSequenceBackgroundTrueColor);
+            buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
             buffer.Append(GraphicsTools.RenderLine((Left + (width / 2) - (TopWidth / 2), Top), (Left + (width / 2) - (BottomWidth / 2), Top + Height)));
             buffer.Append(GraphicsTools.RenderLine((Left + (width / 2) + (TopWidth / 2), Top), (Left + (width / 2) + (BottomWidth / 2), Top + Height)));
             buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + (width / 2) - (TopWidth / 2) + 1, Top + 1));
@@ -96,7 +96,7 @@ namespace Terminaux.Graphics.Shapes
                     buffer.Append(new string(' ', lineWidth));
                 }
             }
-            buffer.Append(ColorTools.CurrentBackgroundColor.VTSequenceBackgroundTrueColor);
+            buffer.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
             return buffer.ToString();
         }
 

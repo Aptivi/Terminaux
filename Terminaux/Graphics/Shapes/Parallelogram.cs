@@ -64,7 +64,7 @@ namespace Terminaux.Graphics.Shapes
         public string Render()
         {
             StringBuilder buffer = new();
-            buffer.Append(ShapeColor.VTSequenceBackgroundTrueColor);
+            buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
             for (int y = 0; y < Height; y++)
             {
                 int widthThreshold = Width * (y + 1) / Height;
@@ -82,7 +82,7 @@ namespace Terminaux.Graphics.Shapes
                     buffer.Append(new string(' ', thresholdDiff));
                 }
             }
-            buffer.Append(ColorTools.CurrentBackgroundColor.VTSequenceBackgroundTrueColor);
+            buffer.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
             return buffer.ToString();
         }
 

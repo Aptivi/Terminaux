@@ -98,7 +98,7 @@ namespace Terminaux.Graphics
 
             // Now, render a line and move on
             int determine = longestLine >> 1;
-            buffer.Append(lineColor.VTSequenceBackgroundTrueColor);
+            buffer.Append(ColorTools.RenderSetConsoleColor(lineColor, true));
             for (int i = 0; i <= longestLine; i++)
             {
                 buffer.Append(CsiSequences.GenerateCsiCursorPosition(posX + 1, posY + 1));
@@ -220,22 +220,24 @@ namespace Terminaux.Graphics
             double intersection = y1;
             for (int x = xPixel1; x <= xPixel2; x++)
             {
+                var intersect1 = new Color(lineColor.RGB.R, lineColor.RGB.G, lineColor.RGB.B, new(ColorTools.GlobalSettings) { Opacity = (int)(FractionalPart(intersection) * 255) });
+                var intersect2 = new Color(lineColor.RGB.R, lineColor.RGB.G, lineColor.RGB.B, new(ColorTools.GlobalSettings) { Opacity = (int)(RFractionalPart(intersection) * 255) });
                 if (steep)
                 {
                     buffer.Append(CsiSequences.GenerateCsiCursorPosition(IntPart(intersection) + 1, x + 1));
-                    buffer.Append(new Color(lineColor.RGB.R, lineColor.RGB.G, lineColor.RGB.B, new(ColorTools.GlobalSettings) { Opacity = (int)(FractionalPart(intersection) * 255) }).VTSequenceBackgroundTrueColor);
+                    buffer.Append(ColorTools.RenderSetConsoleColor(intersect1, true));
                     buffer.Append(' ');
                     buffer.Append(CsiSequences.GenerateCsiCursorPosition(IntPart(intersection), x + 1));
-                    buffer.Append(new Color(lineColor.RGB.R, lineColor.RGB.G, lineColor.RGB.B, new(ColorTools.GlobalSettings) { Opacity = (int)(RFractionalPart(intersection) * 255) }).VTSequenceBackgroundTrueColor);
+                    buffer.Append(ColorTools.RenderSetConsoleColor(intersect2, true));
                     buffer.Append(' ');
                 }
                 else
                 {
                     buffer.Append(CsiSequences.GenerateCsiCursorPosition(x + 1, IntPart(intersection) + 1));
-                    buffer.Append(new Color(lineColor.RGB.R, lineColor.RGB.G, lineColor.RGB.B, new(ColorTools.GlobalSettings) { Opacity = (int)(FractionalPart(intersection) * 255) }).VTSequenceBackgroundTrueColor);
+                    buffer.Append(ColorTools.RenderSetConsoleColor(intersect1, true));
                     buffer.Append(' ');
                     buffer.Append(CsiSequences.GenerateCsiCursorPosition(x + 1, IntPart(intersection)));
-                    buffer.Append(new Color(lineColor.RGB.R, lineColor.RGB.G, lineColor.RGB.B, new(ColorTools.GlobalSettings) { Opacity = (int)(RFractionalPart(intersection) * 255) }).VTSequenceBackgroundTrueColor);
+                    buffer.Append(ColorTools.RenderSetConsoleColor(intersect2, true));
                     buffer.Append(' ');
                 }
                 intersection += gradient;
