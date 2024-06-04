@@ -44,7 +44,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgressPlain(double Progress, int Left, int Top, bool DrawBorder = true) =>
-            WriteVerticalProgressPlain(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, DrawBorder);
+            WriteVerticalProgressPlain(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -54,11 +54,34 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="height">Progress bar height</param>
-        public static void WriteVerticalProgressPlain(double Progress, int Left, int Top, int height, bool DrawBorder = true)
+        public static void WriteVerticalProgressPlain(double Progress, int Left, int Top, int height, bool DrawBorder = true) =>
+            WriteVerticalProgressPlain(Progress, Left, Top, height, BorderSettings.GlobalSettings, DrawBorder);
+
+        /// <summary>
+        /// Writes the vertical progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteVerticalProgressPlain(double Progress, int Left, int Top, BorderSettings settings, bool DrawBorder = true) =>
+            WriteVerticalProgressPlain(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, DrawBorder);
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="height">Progress bar height</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteVerticalProgressPlain(double Progress, int Left, int Top, int height, BorderSettings settings, bool DrawBorder = true)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderVerticalProgressPlain(Progress, Left, Top, height, DrawBorder));
+                TextWriterRaw.WriteRaw(RenderVerticalProgressPlain(Progress, Left, Top, height, settings, DrawBorder));
             }
             catch (Exception ex)
             {
@@ -75,7 +98,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -86,7 +109,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Progress bar height</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, height, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, height, BorderSettings.GlobalSettings, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -97,7 +120,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, Color ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, ProgressColor, ColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, ProgressColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -109,7 +132,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Progress bar height</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, Color ProgressColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, height, ProgressColor, ColorTools.GetGray(), DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, height, BorderSettings.GlobalSettings, ProgressColor, ColorTools.GetGray(), DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -121,7 +144,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, ProgressColor, FrameColor, DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, ProgressColor, FrameColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -133,18 +156,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="height">Progress bar height</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
-        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, Color ProgressColor, Color FrameColor, bool DrawBorder = true)
-        {
-            try
-            {
-                TextWriterRaw.WriteRaw(RenderVerticalProgress(Progress, Left, Top, height, ProgressColor, FrameColor, DrawBorder));
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
-            }
-        }
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, Color ProgressColor, Color FrameColor, bool DrawBorder = true) =>
+            WriteVerticalProgress(Progress, Left, Top, height, BorderSettings.GlobalSettings, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -157,7 +170,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         public static void WriteVerticalProgress(double Progress, int Left, int Top, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true) =>
-            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, BorderSettings.GlobalSettings, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
 
         /// <summary>
         /// Writes the progress bar
@@ -184,6 +197,120 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, BorderSettings settings, bool DrawBorder = true) =>
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="height">Progress bar height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, BorderSettings settings, bool DrawBorder = true) =>
+            WriteVerticalProgress(Progress, Left, Top, height, settings, new Color(ConsoleColors.Olive), ColorTools.GetGray(), DrawBorder);
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, BorderSettings settings, Color ProgressColor, bool DrawBorder = true) =>
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, ProgressColor, ColorTools.GetGray(), DrawBorder);
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="height">Progress bar height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, BorderSettings settings, Color ProgressColor, bool DrawBorder = true) =>
+            WriteVerticalProgress(Progress, Left, Top, height, settings, ProgressColor, ColorTools.GetGray(), DrawBorder);
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, BorderSettings settings, Color ProgressColor, Color FrameColor, bool DrawBorder = true) =>
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, ProgressColor, FrameColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="height">Progress bar height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, BorderSettings settings, Color ProgressColor, Color FrameColor, bool DrawBorder = true) =>
+            WriteVerticalProgress(Progress, Left, Top, height, settings, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="BackgroundColor">The progress bar background color</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, BorderSettings settings, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true) =>
+            WriteVerticalProgress(Progress, Left, Top, ConsoleWrapper.WindowHeight - 2, settings, ProgressColor, FrameColor, BackgroundColor, DrawBorder);
+
+        /// <summary>
+        /// Writes the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="BackgroundColor">The progress bar background color</param>
+        /// <param name="height">Progress bar height</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="settings">Border settings</param>
+        public static void WriteVerticalProgress(double Progress, int Left, int Top, int height, BorderSettings settings, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true)
+        {
+            try
+            {
+                TextWriterRaw.WriteRaw(RenderVerticalProgress(Progress, Left, Top, height, settings, ProgressColor, FrameColor, BackgroundColor, DrawBorder));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
+        }
+
+        /// <summary>
         /// Renders the progress bar
         /// </summary>
         /// <param name="Progress">The progress percentage</param>
@@ -192,7 +319,19 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="height">Progress bar height</param>
         public static string RenderVerticalProgressPlain(double Progress, int Left, int Top, int height, bool DrawBorder = true) =>
-            RenderVerticalProgress(Progress, Left, Top, height, ColorTools.currentForegroundColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, false, DrawBorder);
+            RenderVerticalProgress(Progress, Left, Top, height, BorderSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, false, DrawBorder);
+
+        /// <summary>
+        /// Renders the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="height">Progress bar height</param>
+        /// <param name="settings">Border settings</param>
+        public static string RenderVerticalProgressPlain(double Progress, int Left, int Top, int height, BorderSettings settings, bool DrawBorder = true) =>
+            RenderVerticalProgress(Progress, Left, Top, height, settings, ColorTools.currentForegroundColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, false, DrawBorder);
 
         /// <summary>
         /// Renders the progress bar
@@ -204,7 +343,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Progress bar height</param>
         /// <param name="ProgressColor">The progress bar color</param>
         public static string RenderVerticalProgress(double Progress, int Left, int Top, int height, Color ProgressColor, bool DrawBorder = true) =>
-            RenderVerticalProgress(Progress, Left, Top, height, ProgressColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder);
+            RenderVerticalProgress(Progress, Left, Top, height, BorderSettings.GlobalSettings, ProgressColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder);
 
         /// <summary>
         /// Renders the progress bar
@@ -217,7 +356,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
         public static string RenderVerticalProgress(double Progress, int Left, int Top, int height, Color ProgressColor, Color FrameColor, bool DrawBorder = true) =>
-            RenderVerticalProgress(Progress, Left, Top, height, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, true, DrawBorder);
+            RenderVerticalProgress(Progress, Left, Top, height, BorderSettings.GlobalSettings, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, true, DrawBorder);
 
         /// <summary>
         /// Renders the progress bar
@@ -231,7 +370,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="BackgroundColor">The progress bar background color</param>
         public static string RenderVerticalProgress(double Progress, int Left, int Top, int height, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true) =>
-            RenderVerticalProgress(Progress, Left, Top, height, ProgressColor, FrameColor, BackgroundColor, true, DrawBorder);
+            RenderVerticalProgress(Progress, Left, Top, height, BorderSettings.GlobalSettings, ProgressColor, FrameColor, BackgroundColor, true, DrawBorder);
 
         /// <summary>
         /// Renders the progress bar
@@ -241,11 +380,54 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">The progress position from the top</param>
         /// <param name="DrawBorder">Whether to draw the border or not</param>
         /// <param name="height">Progress bar height</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        public static string RenderVerticalProgress(double Progress, int Left, int Top, int height, BorderSettings settings, Color ProgressColor, bool DrawBorder = true) =>
+            RenderVerticalProgress(Progress, Left, Top, height, settings, ProgressColor, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, DrawBorder);
+
+        /// <summary>
+        /// Renders the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="height">Progress bar height</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        public static string RenderVerticalProgress(double Progress, int Left, int Top, int height, BorderSettings settings, Color ProgressColor, Color FrameColor, bool DrawBorder = true) =>
+            RenderVerticalProgress(Progress, Left, Top, height, settings, ProgressColor, FrameColor, ColorTools.currentBackgroundColor, true, DrawBorder);
+
+        /// <summary>
+        /// Renders the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="height">Progress bar height</param>
+        /// <param name="settings">Border settings</param>
+        /// <param name="ProgressColor">The progress bar color</param>
+        /// <param name="FrameColor">The progress bar frame color</param>
+        /// <param name="BackgroundColor">The progress bar background color</param>
+        public static string RenderVerticalProgress(double Progress, int Left, int Top, int height, BorderSettings settings, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool DrawBorder = true) =>
+            RenderVerticalProgress(Progress, Left, Top, height, settings, ProgressColor, FrameColor, BackgroundColor, true, DrawBorder);
+
+        /// <summary>
+        /// Renders the progress bar
+        /// </summary>
+        /// <param name="Progress">The progress percentage</param>
+        /// <param name="Left">The progress position from the upper left corner</param>
+        /// <param name="Top">The progress position from the top</param>
+        /// <param name="DrawBorder">Whether to draw the border or not</param>
+        /// <param name="height">Progress bar height</param>
+        /// <param name="settings">Border settings</param>
         /// <param name="ProgressColor">The progress bar color</param>
         /// <param name="FrameColor">The progress bar frame color</param>
         /// <param name="BackgroundColor">The progress bar background color</param>
         /// <param name="useColor">Whether to use the color or not</param>
-        internal static string RenderVerticalProgress(double Progress, int Left, int Top, int height, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool useColor, bool DrawBorder = true)
+        internal static string RenderVerticalProgress(double Progress, int Left, int Top, int height, BorderSettings settings, Color ProgressColor, Color FrameColor, Color BackgroundColor, bool useColor, bool DrawBorder = true)
         {
             try
             {
@@ -271,9 +453,8 @@ namespace Terminaux.Writer.FancyWriters
                         );
                     }
 
-                    // TODO: Allow individual customization of the border settings
                     progBuilder.Append(
-                        BoxFrameColor.RenderBoxFrame(Left, Top, 1, height, BorderSettings.GlobalSettings)
+                        BoxFrameColor.RenderBoxFrame(Left, Top, 1, height, settings)
                     );
                 }
 
