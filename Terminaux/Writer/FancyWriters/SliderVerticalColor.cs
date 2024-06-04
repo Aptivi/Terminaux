@@ -323,8 +323,8 @@ namespace Terminaux.Writer.FancyWriters
                 }
                 if (useColor)
                 {
-                    progBuilder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor));
-                    progBuilder.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
+                    progBuilder.Append(ColorTools.RenderRevertForeground());
+                    progBuilder.Append(ColorTools.RenderRevertBackground());
                 }
 
                 // Render to the console

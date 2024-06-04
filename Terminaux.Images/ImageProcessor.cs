@@ -151,7 +151,7 @@ namespace Terminaux.Images
                     int pixelX = (int)x;
                     int pixelY = (int)y;
                     var imageColor = imageColors[pixelX, pixelY];
-                    buffer.Append((imageColor.RGB == ColorTools.CurrentBackgroundColor.RGB ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true) : imageColor.VTSequenceBackgroundTrueColor) + " ");
+                    buffer.Append((imageColor.RGB == ColorTools.CurrentBackgroundColor.RGB ? ColorTools.RenderRevertBackground() : imageColor.VTSequenceBackgroundTrueColor) + " ");
                 }
             }
 

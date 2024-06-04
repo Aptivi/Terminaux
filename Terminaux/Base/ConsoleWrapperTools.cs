@@ -625,7 +625,7 @@ namespace Terminaux.Base
 
         private static void ClearLoadBack()
         {
-            Write(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
+            Write(ColorTools.RenderRevertBackground());
             Clear();
         }
 

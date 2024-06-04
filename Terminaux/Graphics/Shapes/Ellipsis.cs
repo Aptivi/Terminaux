@@ -102,7 +102,7 @@ namespace Terminaux.Graphics.Shapes
                     buffer.Append(' ');
                 }
             }
-            buffer.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
+            buffer.Append(ColorTools.RenderRevertBackground());
             return buffer.ToString();
         }
 

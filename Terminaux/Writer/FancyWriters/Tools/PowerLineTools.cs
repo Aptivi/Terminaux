@@ -90,8 +90,8 @@ namespace Terminaux.Writer.FancyWriters.Tools
 
             // Return the final string
             SegmentStringBuilder.Append(
-                ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                ColorTools.RenderRevertForeground() +
+                ColorTools.RenderRevertBackground()
             );
             return SegmentStringBuilder.ToString();
         }

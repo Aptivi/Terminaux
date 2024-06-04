@@ -137,8 +137,8 @@ namespace Terminaux.Writer.ConsoleWriters
                         );
                     }
                     buffered.Append(
-                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                        ColorTools.RenderRevertForeground() +
+                        ColorTools.RenderRevertBackground()
                     );
                     if (Line)
                         buffered.AppendLine();

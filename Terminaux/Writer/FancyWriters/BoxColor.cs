@@ -132,7 +132,7 @@ namespace Terminaux.Writer.FancyWriters
                     CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2)
                 );
             if (useColor)
-                box.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
+                box.Append(ColorTools.RenderRevertBackground());
             return box.ToString();
         }
 

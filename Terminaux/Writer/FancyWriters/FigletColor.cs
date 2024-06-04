@@ -200,8 +200,8 @@ namespace Terminaux.Writer.FancyWriters
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
                 FigletTools.RenderFiglet(Text, FigletFont, Vars) +
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) : "")}" +
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true) : "")}"
+                $"{(useColor ? ColorTools.RenderRevertForeground() : "")}" +
+                $"{(useColor ? ColorTools.RenderRevertBackground() : "")}"
             );
             return builder.ToString();
         }

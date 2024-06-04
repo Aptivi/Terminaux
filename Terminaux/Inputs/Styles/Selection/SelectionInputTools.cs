@@ -215,8 +215,8 @@ namespace Terminaux.Inputs.Styles.Selection
                         ColorTools.RenderSetConsoleColor(finalForeColor) +
                         ColorTools.RenderSetConsoleColor(finalBackColor, true) +
                         TextWriterWhereColor.RenderWhere(AnswerOption + new string(' ', width - AnswerOption.Length), leftPos, optionTop, finalForeColor, finalBackColor) +
-                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                        ColorTools.RenderRevertForeground() +
+                        ColorTools.RenderRevertBackground()
                     );
                 }
                 else
@@ -253,8 +253,8 @@ namespace Terminaux.Inputs.Styles.Selection
             if (useColor)
             {
                 buffer.Append(
-                    ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                    ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                    ColorTools.RenderRevertForeground() +
+                    ColorTools.RenderRevertBackground()
                 );
             }
             return buffer.ToString();

@@ -480,7 +480,7 @@ namespace Terminaux.Inputs.Styles
             builder.Append(
                 selectedColor.VTSequenceBackground +
                 BoxColor.RenderBox(boxX + 1, boxY, boxWidth, boxHeight) +
-                ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                ColorTools.RenderRevertBackground()
             );
             return builder.ToString();
         }

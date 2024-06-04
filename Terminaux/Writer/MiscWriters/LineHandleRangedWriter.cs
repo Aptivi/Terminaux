@@ -284,8 +284,8 @@ namespace Terminaux.Writer.MiscWriters
 
             // Write the resulting buffer
             builder.Append(
-                ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                ColorTools.RenderRevertForeground() +
+                ColorTools.RenderRevertBackground()
             );
             return builder.ToString();
         }

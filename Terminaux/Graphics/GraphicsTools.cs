@@ -118,7 +118,7 @@ namespace Terminaux.Graphics
                     posY += differenceY2;
                 }
             }
-            buffer.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
+            buffer.Append(ColorTools.RenderRevertBackground());
             return buffer.ToString();
         }
 
@@ -242,7 +242,7 @@ namespace Terminaux.Graphics
                 }
                 intersection += gradient;
             }
-            buffer.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
+            buffer.Append(ColorTools.RenderRevertBackground());
             return buffer.ToString();
         }
     }

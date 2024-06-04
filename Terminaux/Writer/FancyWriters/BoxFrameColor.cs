@@ -638,8 +638,8 @@ namespace Terminaux.Writer.FancyWriters
                 if (useColor)
                 {
                     frameBuilder.Append(
-                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                        ColorTools.RenderRevertForeground() +
+                        ColorTools.RenderRevertBackground()
                     );
                 }
                 return frameBuilder.ToString();

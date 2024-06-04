@@ -202,8 +202,8 @@ namespace Terminaux.Writer.ConsoleWriters
                         ColorTools.RenderSetConsoleColor(ForegroundColor) +
                         ColorTools.RenderSetConsoleColor(BackgroundColor, true) +
                         TextTools.FormatString(Text, vars) +
-                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                        ColorTools.RenderRevertForeground() +
+                        ColorTools.RenderRevertBackground()
                     );
                     return buffered.ToString();
                 }

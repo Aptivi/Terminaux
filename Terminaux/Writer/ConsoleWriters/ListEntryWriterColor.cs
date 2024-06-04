@@ -136,7 +136,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 $"{spaces}- {entry}: " +
                 $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
                 value +
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) : "")}"
+                $"{(useColor ? ColorTools.RenderRevertForeground() : "")}"
             );
             return listBuilder.ToString();
         }

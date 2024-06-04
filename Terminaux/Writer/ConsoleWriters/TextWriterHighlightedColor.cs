@@ -368,8 +368,8 @@ namespace Terminaux.Writer.ConsoleWriters
                             ColorTools.RenderSetConsoleColor(ForegroundColor, true) +
                             ColorTools.RenderSetConsoleColor(BackgroundColor) +
                             final +
-                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                            ColorTools.RenderRevertForeground() +
+                            ColorTools.RenderRevertBackground()
                         );
                     }
                     else
@@ -380,8 +380,8 @@ namespace Terminaux.Writer.ConsoleWriters
                             ColorTools.RenderSetConsoleColor(BackgroundColor, true) +
                             final +
                             ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default) +
-                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                            ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                            ColorTools.RenderRevertForeground() +
+                            ColorTools.RenderRevertBackground()
                         );
                     }
                     return buffered.ToString();

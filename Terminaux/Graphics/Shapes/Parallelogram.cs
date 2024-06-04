@@ -82,7 +82,7 @@ namespace Terminaux.Graphics.Shapes
                     buffer.Append(new string(' ', thresholdDiff));
                 }
             }
-            buffer.Append(ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true));
+            buffer.Append(ColorTools.RenderRevertBackground());
             return buffer.ToString();
         }
 

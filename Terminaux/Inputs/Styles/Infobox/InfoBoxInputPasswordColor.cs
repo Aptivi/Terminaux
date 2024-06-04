@@ -281,8 +281,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                 if (useColor)
                 {
                     TextWriterRaw.WriteRaw(
-                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentForegroundColor) +
-                        ColorTools.RenderSetConsoleColor(ColorTools.CurrentBackgroundColor, true)
+                        ColorTools.RenderRevertForeground() +
+                        ColorTools.RenderRevertBackground()
                     );
                 }
                 ConsoleWrapper.CursorVisible = initialCursorVisible;

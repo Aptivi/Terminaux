@@ -456,6 +456,45 @@ namespace Terminaux.Colors
             $"\u001b[49m";
 
         /// <summary>
+        /// Reverts the console colors without clearing screen
+        /// </summary>
+        public static void RevertColors()
+        {
+            RevertForeground();
+            RevertBackground();
+        }
+
+        /// <summary>
+        /// Reverts the foreground color without clearing screen
+        /// </summary>
+        public static void RevertForeground() =>
+            TextWriterRaw.WriteRaw(RenderRevertForeground());
+
+        /// <summary>
+        /// Reverts the background color without clearing screen
+        /// </summary>
+        public static void RevertBackground() =>
+            TextWriterRaw.WriteRaw(RenderRevertBackground());
+
+        /// <summary>
+        /// Gets a sequence that reverts the console colors without clearing screen
+        /// </summary>
+        public static string RenderRevertColors() =>
+            RenderRevertForeground() + RenderRevertBackground();
+
+        /// <summary>
+        /// Gets a sequence that reverts the foreground color without clearing screen
+        /// </summary>
+        public static string RenderRevertForeground() =>
+            RenderSetConsoleColor(currentForegroundColor);
+
+        /// <summary>
+        /// Gets a sequence that reverts the background color without clearing screen
+        /// </summary>
+        public static string RenderRevertBackground() =>
+            RenderSetConsoleColor(currentBackgroundColor, true);
+
+        /// <summary>
         /// Gets the RGB specifier from the color code
         /// </summary>
         /// <param name="colorCode">The color code to get the RGB specifier from</param>
