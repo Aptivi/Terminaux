@@ -157,6 +157,12 @@ namespace Terminaux.Colors
         public ConsoleColor ColorEnum16 =>
             ColorId.ColorId < 16 ? ConversionTools.CorrectStandardColor((ConsoleColor)ColorId.ColorId) : (ConsoleColor)(-1);
 
+        /// <summary>
+        /// Color opacity from 0 (transparent) to 255 (opaque)
+        /// </summary>
+        public int Opacity =>
+            settings.Opacity;
+
         internal bool IsOriginal =>
             settings.UseTerminalPalette && settings.Opacity == 255 && !settings.EnableColorTransformation;
 
