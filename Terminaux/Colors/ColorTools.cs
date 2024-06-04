@@ -40,7 +40,6 @@ namespace Terminaux.Colors
         internal static Random rng = new();
         private static readonly ColorSettings globalSettings = new();
         private static bool allowBackground;
-        private static bool allowForeground = true;
 
         /// <summary>
         /// Global color settings
@@ -70,15 +69,6 @@ namespace Terminaux.Colors
         }
 
         /// <summary>
-        /// Whether applications are allowed to set the current foreground color or not
-        /// </summary>
-        public static bool AllowForeground
-        {
-            get => allowForeground;
-            set => allowForeground = value;
-        }
-
-        /// <summary>
         /// Loads the background
         /// </summary>
         public static void LoadBack() =>
@@ -93,7 +83,7 @@ namespace Terminaux.Colors
         {
             try
             {
-                SetConsoleColor(CurrentForegroundColor, false, Force, AllowForeground);
+                SetConsoleColor(CurrentForegroundColor, false, Force, true);
                 SetConsoleColor(ColorSequence, true, Force, AllowBackground);
                 ConsoleWrapper.Clear();
             }
@@ -161,7 +151,7 @@ namespace Terminaux.Colors
         /// <param name="ColorSequence">The color instance</param>
         /// <param name="Background">Whether to set background or not</param>
         public static void SetConsoleColor(Color ColorSequence, bool Background) =>
-            SetConsoleColorInternal(ColorSequence, Background, ColorSequence != CurrentBackgroundColor, Background ? AllowBackground : AllowForeground, true);
+            SetConsoleColorInternal(ColorSequence, Background, ColorSequence != CurrentBackgroundColor, !Background || AllowBackground, true);
 
         /// <summary>
         /// Sets the console color
@@ -200,7 +190,7 @@ namespace Terminaux.Colors
         /// <param name="ColorSequence">The color instance</param>
         /// <param name="Background">Whether to set background or not</param>
         public static void SetConsoleColorDry(Color ColorSequence, bool Background) =>
-            SetConsoleColorInternal(ColorSequence, Background, ColorSequence != CurrentBackgroundColor, Background ? AllowBackground : AllowForeground, false);
+            SetConsoleColorInternal(ColorSequence, Background, ColorSequence != CurrentBackgroundColor, !Background || AllowBackground, false);
 
         /// <summary>
         /// Sets the console color dryly
@@ -238,7 +228,7 @@ namespace Terminaux.Colors
         /// </summary>
         /// <param name="ColorSequence">The color instance</param>
         public static string RenderSetConsoleColor(Color ColorSequence) =>
-            RenderSetConsoleColor(ColorSequence, false, ColorSequence != CurrentForegroundColor, AllowForeground);
+            RenderSetConsoleColor(ColorSequence, false, ColorSequence != CurrentForegroundColor, true);
 
         /// <summary>
         /// Gets the console color setting sequence
@@ -246,7 +236,7 @@ namespace Terminaux.Colors
         /// <param name="ColorSequence">The color instance</param>
         /// <param name="Background">Whether to set background or not</param>
         public static string RenderSetConsoleColor(Color ColorSequence, bool Background) =>
-            RenderSetConsoleColor(ColorSequence, Background, ColorSequence != CurrentBackgroundColor, Background ? AllowBackground : AllowForeground);
+            RenderSetConsoleColor(ColorSequence, Background, ColorSequence != CurrentBackgroundColor, !Background || AllowBackground);
 
         /// <summary>
         /// Gets the console color setting sequence
