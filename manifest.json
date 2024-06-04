@@ -2195,10 +2195,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.BorderTools.yml",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.BorderSettings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.BorderTools.html"
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.BorderSettings.html"
         }
       },
       "version": ""
@@ -2239,16 +2239,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.ProgressTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.ProgressTools.html"
         }
       },
       "version": ""

@@ -99,126 +99,10 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L306">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])">WriteInfoBoxButtons(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, params object[])</h4>
-  <div class="markdown level1 summary"><p>Writes the info box plainly</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtons(string title, InputChoiceInfo[] buttons, string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">title</span></td>
-        <td><p>Title to be written</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>[]</td>
-        <td><span class="parametername">buttons</span></td>
-        <td><p>Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <a class="xref" href="Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html">InfoBoxSelectionColor</a> to get an option to use more buttons as choice selections.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">text</span></td>
-        <td><p>Text to be written.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperLeftCornerChar</span></td>
-        <td><p>Upper left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerLeftCornerChar</span></td>
-        <td><p>Lower left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperRightCornerChar</span></td>
-        <td><p>Upper right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerRightCornerChar</span></td>
-        <td><p>Lower right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperFrameChar</span></td>
-        <td><p>Upper frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerFrameChar</span></td>
-        <td><p>Lower frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LeftFrameChar</span></td>
-        <td><p>Left frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">RightFrameChar</span></td>
-        <td><p>Right frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">vars</span></td>
-        <td><p>Variables to format the message before it's written.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L247">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L165">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Object[])">WriteInfoBoxButtons(string, InputChoiceInfo[], string, params object[])</h4>
@@ -283,19 +167,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L145">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L202">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])">WriteInfoBoxButtons(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Writer.FancyWriters.Tools.BorderSettings,System.Object[])">WriteInfoBoxButtons(string, InputChoiceInfo[], string, BorderSettings, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtons(InputChoiceInfo[] buttons, string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtons(string title, InputChoiceInfo[] buttons, string text, BorderSettings settings, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -307,6 +191,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">title</span></td>
+        <td><p>Title to be written</p>
+</td>
+      </tr>
       <tr>
         <td><a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>[]</td>
         <td><span class="parametername">buttons</span></td>
@@ -320,51 +210,9 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperLeftCornerChar</span></td>
-        <td><p>Upper left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerLeftCornerChar</span></td>
-        <td><p>Lower left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperRightCornerChar</span></td>
-        <td><p>Upper right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerRightCornerChar</span></td>
-        <td><p>Lower right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperFrameChar</span></td>
-        <td><p>Upper frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerFrameChar</span></td>
-        <td><p>Lower frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LeftFrameChar</span></td>
-        <td><p>Left frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">RightFrameChar</span></td>
-        <td><p>Right frame character for info box</p>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Border settings to use</p>
 </td>
       </tr>
       <tr>
@@ -396,7 +244,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_Terminaux_Inputs_InputChoiceInfo___System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L89">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L72">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_Terminaux_Inputs_InputChoiceInfo___System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Object[])">WriteInfoBoxButtons(InputChoiceInfo[], string, params object[])</h4>
@@ -455,19 +303,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L333">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L106">View Source</a>
   </span>
-  <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColor(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Color, params object[])</h4>
+  <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtons_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtons(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Writer.FancyWriters.Tools.BorderSettings,System.Object[])">WriteInfoBoxButtons(InputChoiceInfo[], string, BorderSettings, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsColor(string title, InputChoiceInfo[] buttons, string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, Color InfoBoxTitledButtonsColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtons(InputChoiceInfo[] buttons, string text, BorderSettings settings, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -479,12 +327,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">title</span></td>
-        <td><p>Title to be written</p>
-</td>
-      </tr>
       <tr>
         <td><a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>[]</td>
         <td><span class="parametername">buttons</span></td>
@@ -498,57 +340,9 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperLeftCornerChar</span></td>
-        <td><p>Upper left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerLeftCornerChar</span></td>
-        <td><p>Lower left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperRightCornerChar</span></td>
-        <td><p>Upper right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerRightCornerChar</span></td>
-        <td><p>Lower right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperFrameChar</span></td>
-        <td><p>Upper frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerFrameChar</span></td>
-        <td><p>Lower frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LeftFrameChar</span></td>
-        <td><p>Left frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">RightFrameChar</span></td>
-        <td><p>Right frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">InfoBoxTitledButtonsColor</span></td>
-        <td><p>InfoBoxTitledButtons color</p>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Border settings to use</p>
 </td>
       </tr>
       <tr>
@@ -580,7 +374,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L264">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L177">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColor(string, InputChoiceInfo[], string, Color, params object[])</h4>
@@ -651,19 +445,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L171">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L215">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColor(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Writer.FancyWriters.Tools.BorderSettings,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColor(string, InputChoiceInfo[], string, BorderSettings, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsColor(InputChoiceInfo[] buttons, string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, Color InfoBoxButtonsColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsColor(string title, InputChoiceInfo[] buttons, string text, BorderSettings settings, Color InfoBoxTitledButtonsColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -675,6 +469,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">title</span></td>
+        <td><p>Title to be written</p>
+</td>
+      </tr>
       <tr>
         <td><a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>[]</td>
         <td><span class="parametername">buttons</span></td>
@@ -688,57 +488,15 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperLeftCornerChar</span></td>
-        <td><p>Upper left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerLeftCornerChar</span></td>
-        <td><p>Lower left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperRightCornerChar</span></td>
-        <td><p>Upper right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerRightCornerChar</span></td>
-        <td><p>Lower right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperFrameChar</span></td>
-        <td><p>Upper frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerFrameChar</span></td>
-        <td><p>Lower frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LeftFrameChar</span></td>
-        <td><p>Left frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">RightFrameChar</span></td>
-        <td><p>Right frame character for info box</p>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Border settings to use</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">InfoBoxButtonsColor</span></td>
-        <td><p>InfoBoxButtons color</p>
+        <td><span class="parametername">InfoBoxTitledButtonsColor</span></td>
+        <td><p>InfoBoxTitledButtons color</p>
 </td>
       </tr>
       <tr>
@@ -770,7 +528,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L105">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L83">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColor(InputChoiceInfo[], string, Color, params object[])</h4>
@@ -835,19 +593,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L360">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L118">View Source</a>
   </span>
-  <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColorBack(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])</h4>
+  <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColor_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColor(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Writer.FancyWriters.Tools.BorderSettings,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColor(InputChoiceInfo[], string, BorderSettings, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsColorBack(string title, InputChoiceInfo[] buttons, string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, Color InfoBoxTitledButtonsColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsColor(InputChoiceInfo[] buttons, string text, BorderSettings settings, Color InfoBoxButtonsColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -859,12 +617,6 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">title</span></td>
-        <td><p>Title to be written</p>
-</td>
-      </tr>
       <tr>
         <td><a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>[]</td>
         <td><span class="parametername">buttons</span></td>
@@ -878,63 +630,15 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperLeftCornerChar</span></td>
-        <td><p>Upper left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerLeftCornerChar</span></td>
-        <td><p>Lower left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperRightCornerChar</span></td>
-        <td><p>Upper right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerRightCornerChar</span></td>
-        <td><p>Lower right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperFrameChar</span></td>
-        <td><p>Upper frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerFrameChar</span></td>
-        <td><p>Lower frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LeftFrameChar</span></td>
-        <td><p>Left frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">RightFrameChar</span></td>
-        <td><p>Right frame character for info box</p>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Border settings to use</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">InfoBoxTitledButtonsColor</span></td>
-        <td><p>InfoBoxTitledButtons color</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
-        <td><span class="parametername">BackgroundColor</span></td>
-        <td><p>InfoBoxTitledButtons background color</p>
+        <td><span class="parametername">InfoBoxButtonsColor</span></td>
+        <td><p>InfoBoxButtons color</p>
 </td>
       </tr>
       <tr>
@@ -966,7 +670,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L282">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L190">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColorBack(string, InputChoiceInfo[], string, Color, Color, params object[])</h4>
@@ -1008,13 +712,13 @@
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">InfoBoxTitledButtonsColor</span></td>
-        <td><p>InfoBoxTitledButtons color from Nitrocid KS's <a class="xref" href="Terminaux.Colors.Color.html">Color</a></p>
+        <td><p>InfoBoxTitledButtons color</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">BackgroundColor</span></td>
-        <td><p>InfoBoxTitledButtons background color from Nitrocid KS's <a class="xref" href="Terminaux.Colors.Color.html">Color</a></p>
+        <td><p>InfoBoxTitledButtons background color</p>
 </td>
       </tr>
       <tr>
@@ -1043,19 +747,105 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L194">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L230">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColorBack(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, Color, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Writer.FancyWriters.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColorBack(string, InputChoiceInfo[], string, BorderSettings, Color, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsColorBack(InputChoiceInfo[] buttons, string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, Color InfoBoxButtonsColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsColorBack(string title, InputChoiceInfo[] buttons, string text, BorderSettings settings, Color InfoBoxTitledButtonsColor, Color BackgroundColor, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">title</span></td>
+        <td><p>Title to be written</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>[]</td>
+        <td><span class="parametername">buttons</span></td>
+        <td><p>Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <a class="xref" href="Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html">InfoBoxSelectionColor</a> to get an option to use more buttons as choice selections.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>Text to be written.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Border settings to use</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">InfoBoxTitledButtonsColor</span></td>
+        <td><p>InfoBoxTitledButtons color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
+        <td><span class="parametername">BackgroundColor</span></td>
+        <td><p>InfoBoxTitledButtons background color</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L95">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColorBack(InputChoiceInfo[], string, Color, Color, params object[])</h4>
+  <div class="markdown level1 summary"><p>Writes the info box plainly</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsColorBack(InputChoiceInfo[] buttons, string text, Color InfoBoxButtonsColor, Color BackgroundColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1077,54 +867,6 @@
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">text</span></td>
         <td><p>Text to be written.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperLeftCornerChar</span></td>
-        <td><p>Upper left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerLeftCornerChar</span></td>
-        <td><p>Lower left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperRightCornerChar</span></td>
-        <td><p>Upper right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerRightCornerChar</span></td>
-        <td><p>Lower right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperFrameChar</span></td>
-        <td><p>Upper frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerFrameChar</span></td>
-        <td><p>Lower frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LeftFrameChar</span></td>
-        <td><p>Left frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">RightFrameChar</span></td>
-        <td><p>Right frame character for info box</p>
 </td>
       </tr>
       <tr>
@@ -1165,19 +907,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L122">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L131">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColorBack(InputChoiceInfo[], string, Color, Color, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsColorBack_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsColorBack(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Writer.FancyWriters.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">WriteInfoBoxButtonsColorBack(InputChoiceInfo[], string, BorderSettings, Color, Color, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsColorBack(InputChoiceInfo[] buttons, string text, Color InfoBoxButtonsColor, Color BackgroundColor, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsColorBack(InputChoiceInfo[] buttons, string text, BorderSettings settings, Color InfoBoxButtonsColor, Color BackgroundColor, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1199,134 +941,24 @@
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">text</span></td>
         <td><p>Text to be written.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Border settings to use</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">InfoBoxButtonsColor</span></td>
-        <td><p>InfoBoxButtons color from Nitrocid KS's <a class="xref" href="Terminaux.Colors.Color.html">Color</a></p>
+        <td><p>InfoBoxButtons color</p>
 </td>
       </tr>
       <tr>
         <td><a class="xref" href="Terminaux.Colors.Color.html">Color</a></td>
         <td><span class="parametername">BackgroundColor</span></td>
-        <td><p>InfoBoxButtons background color from Nitrocid KS's <a class="xref" href="Terminaux.Colors.Color.html">Color</a></p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">vars</span></td>
-        <td><p>Variables to format the message before it's written.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L231">View Source</a>
-  </span>
-  <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])">WriteInfoBoxButtonsPlain(string, InputChoiceInfo[], string, char, char, char, char, char, char, char, char, params object[])</h4>
-  <div class="markdown level1 summary"><p>Writes the info box plainly</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsPlain(string title, InputChoiceInfo[] buttons, string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">title</span></td>
-        <td><p>Title to be written</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>[]</td>
-        <td><span class="parametername">buttons</span></td>
-        <td><p>Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <a class="xref" href="Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html">InfoBoxSelectionColor</a> to get an option to use more buttons as choice selections.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">text</span></td>
-        <td><p>Text to be written.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperLeftCornerChar</span></td>
-        <td><p>Upper left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerLeftCornerChar</span></td>
-        <td><p>Lower left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperRightCornerChar</span></td>
-        <td><p>Upper right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerRightCornerChar</span></td>
-        <td><p>Lower right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperFrameChar</span></td>
-        <td><p>Upper frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerFrameChar</span></td>
-        <td><p>Lower frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LeftFrameChar</span></td>
-        <td><p>Left frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">RightFrameChar</span></td>
-        <td><p>Right frame character for info box</p>
+        <td><p>InfoBoxButtons background color</p>
 </td>
       </tr>
       <tr>
@@ -1358,7 +990,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L208">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L142">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain*"></a>
   <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,System.Object[])">WriteInfoBoxButtonsPlain(string, InputChoiceInfo[], string, params object[])</h4>
@@ -1423,19 +1055,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Char%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain(System.String%2CTerminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L73">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L154">View Source</a>
   </span>
   <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain*"></a>
-  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_Terminaux_Inputs_InputChoiceInfo___System_String_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Char_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain(Terminaux.Inputs.InputChoiceInfo[],System.String,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Char,System.Object[])">WriteInfoBoxButtonsPlain(InputChoiceInfo[], string, char, char, char, char, char, char, char, char, params object[])</h4>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_System_String_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain(System.String,Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Writer.FancyWriters.Tools.BorderSettings,System.Object[])">WriteInfoBoxButtonsPlain(string, InputChoiceInfo[], string, BorderSettings, params object[])</h4>
   <div class="markdown level1 summary"><p>Writes the info box plainly</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsPlain(InputChoiceInfo[] buttons, string text, char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar, char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)</code></pre>
+    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsPlain(string title, InputChoiceInfo[] buttons, string text, BorderSettings settings, params object[] vars)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1447,6 +1079,12 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">title</span></td>
+        <td><p>Title to be written</p>
+</td>
+      </tr>
       <tr>
         <td><a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>[]</td>
         <td><span class="parametername">buttons</span></td>
@@ -1460,51 +1098,9 @@
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperLeftCornerChar</span></td>
-        <td><p>Upper left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerLeftCornerChar</span></td>
-        <td><p>Lower left corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperRightCornerChar</span></td>
-        <td><p>Upper right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerRightCornerChar</span></td>
-        <td><p>Lower right corner character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">UpperFrameChar</span></td>
-        <td><p>Upper frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LowerFrameChar</span></td>
-        <td><p>Lower frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">LeftFrameChar</span></td>
-        <td><p>Left frame character for info box</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">RightFrameChar</span></td>
-        <td><p>Right frame character for info box</p>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Border settings to use</p>
 </td>
       </tr>
       <tr>
@@ -1567,6 +1163,74 @@
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">text</span></td>
         <td><p>Text to be written.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
+        <td><span class="parametername">vars</span></td>
+        <td><p>Variables to format the message before it's written.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain(Terminaux.Inputs.InputChoiceInfo%5B%5D%2CSystem.String%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Inputs/Styles/Infobox/InfoBoxButtonsColor.cs/#L62">View Source</a>
+  </span>
+  <a id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain*"></a>
+  <h4 id="Terminaux_Inputs_Styles_Infobox_InfoBoxButtonsColor_WriteInfoBoxButtonsPlain_Terminaux_Inputs_InputChoiceInfo___System_String_Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Inputs.Styles.Infobox.InfoBoxButtonsColor.WriteInfoBoxButtonsPlain(Terminaux.Inputs.InputChoiceInfo[],System.String,Terminaux.Writer.FancyWriters.Tools.BorderSettings,System.Object[])">WriteInfoBoxButtonsPlain(InputChoiceInfo[], string, BorderSettings, params object[])</h4>
+  <div class="markdown level1 summary"><p>Writes the info box plainly</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int WriteInfoBoxButtonsPlain(InputChoiceInfo[] buttons, string text, BorderSettings settings, params object[] vars)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Inputs.InputChoiceInfo.html">InputChoiceInfo</a>[]</td>
+        <td><span class="parametername">buttons</span></td>
+        <td><p>Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <a class="xref" href="Terminaux.Inputs.Styles.Infobox.InfoBoxSelectionColor.html">InfoBoxSelectionColor</a> to get an option to use more buttons as choice selections.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>Text to be written.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>Border settings to use</p>
 </td>
       </tr>
       <tr>
