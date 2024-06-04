@@ -256,12 +256,10 @@ namespace Terminaux.Writer.FancyWriters
                             ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
+
+                    // TODO: Allow individual customization of the border settings
                     progBuilder.Append(
-                        BoxFrameColor.RenderBoxFrame(Left, Top, width, 1,
-                            ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
-                            ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
-                            ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
-                            ProgressTools.ProgressLeftFrameChar, ProgressTools.ProgressRightFrameChar)
+                        BoxFrameColor.RenderBoxFrame(Left, Top, width, 1, BorderSettings.GlobalSettings)
                     );
                 }
 

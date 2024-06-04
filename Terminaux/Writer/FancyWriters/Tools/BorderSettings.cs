@@ -22,21 +22,28 @@ namespace Terminaux.Writer.FancyWriters.Tools
     /// <summary>
     /// All border tools here
     /// </summary>
-    public static class BorderTools
+    public class BorderSettings
     {
-        internal static char _borderUpperLeftCornerChar = '╔';
-        internal static char _borderUpperRightCornerChar = '╗';
-        internal static char _borderLowerLeftCornerChar = '╚';
-        internal static char _borderLowerRightCornerChar = '╝';
-        internal static char _borderUpperFrameChar = '═';
-        internal static char _borderLowerFrameChar = '═';
-        internal static char _borderLeftFrameChar = '║';
-        internal static char _borderRightFrameChar = '║';
+        private static readonly BorderSettings globalSettings = new();
+        internal char _borderUpperLeftCornerChar = '╔';
+        internal char _borderUpperRightCornerChar = '╗';
+        internal char _borderLowerLeftCornerChar = '╚';
+        internal char _borderLowerRightCornerChar = '╝';
+        internal char _borderUpperFrameChar = '═';
+        internal char _borderLowerFrameChar = '═';
+        internal char _borderLeftFrameChar = '║';
+        internal char _borderRightFrameChar = '║';
+
+        /// <summary>
+        /// Global border settings
+        /// </summary>
+        public static BorderSettings GlobalSettings =>
+            globalSettings;
 
         /// <summary>
         /// Upper left corner character 
         /// </summary>
-        public static char BorderUpperLeftCornerChar
+        public char BorderUpperLeftCornerChar
         {
             get => _borderUpperLeftCornerChar;
             set => _borderUpperLeftCornerChar = value;
@@ -44,7 +51,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// Upper right corner character 
         /// </summary>
-        public static char BorderUpperRightCornerChar
+        public char BorderUpperRightCornerChar
         {
             get => _borderUpperRightCornerChar;
             set => _borderUpperRightCornerChar = value;
@@ -52,7 +59,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// Lower left corner character 
         /// </summary>
-        public static char BorderLowerLeftCornerChar
+        public char BorderLowerLeftCornerChar
         {
             get => _borderLowerLeftCornerChar;
             set => _borderLowerLeftCornerChar = value;
@@ -60,7 +67,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// Lower right corner character 
         /// </summary>
-        public static char BorderLowerRightCornerChar 
+        public char BorderLowerRightCornerChar 
         {
             get => _borderLowerRightCornerChar; 
             set => _borderLowerRightCornerChar = value;
@@ -68,7 +75,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// Upper frame character 
         /// </summary>
-        public static char BorderUpperFrameChar 
+        public char BorderUpperFrameChar 
         {
             get => _borderUpperFrameChar; 
             set => _borderUpperFrameChar = value;
@@ -76,7 +83,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// Lower frame character 
         /// </summary>
-        public static char BorderLowerFrameChar 
+        public char BorderLowerFrameChar 
         {
             get => _borderLowerFrameChar; 
             set => _borderLowerFrameChar = value;
@@ -84,7 +91,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// Left frame character 
         /// </summary>
-        public static char BorderLeftFrameChar 
+        public char BorderLeftFrameChar 
         {
             get => _borderLeftFrameChar; 
             set => _borderLeftFrameChar = value;
@@ -92,10 +99,32 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// Right frame character 
         /// </summary>
-        public static char BorderRightFrameChar 
+        public char BorderRightFrameChar 
         {
             get => _borderRightFrameChar; 
             set => _borderRightFrameChar = value;
+        }
+
+        /// <summary>
+        /// Makes a new instance of the border settings
+        /// </summary>
+        public BorderSettings()
+        { }
+
+        /// <summary>
+        /// Makes a new instance of the border settings with the copied settings
+        /// </summary>
+        /// <param name="settings">Settings instance to copy settings from</param>
+        public BorderSettings(BorderSettings settings)
+        {
+            BorderUpperLeftCornerChar = settings.BorderUpperLeftCornerChar;
+            BorderUpperRightCornerChar = settings.BorderUpperRightCornerChar;
+            BorderLowerLeftCornerChar = settings.BorderLowerLeftCornerChar;
+            BorderLowerRightCornerChar = settings.BorderLowerRightCornerChar;
+            BorderUpperFrameChar = settings.BorderUpperFrameChar;
+            BorderLowerFrameChar = settings.BorderLowerFrameChar;
+            BorderLeftFrameChar = settings.BorderLeftFrameChar;
+            BorderRightFrameChar = settings.BorderRightFrameChar;
         }
     }
 }

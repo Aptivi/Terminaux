@@ -282,13 +282,11 @@ namespace Terminaux.Writer.FancyWriters
                             ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
+
+                    // TODO: Allow individual customization of the border settings
                     progBuilder.Append(
                         BorderColor.RenderBorderPlain(
-                            Left, Top, width, 1,
-                            ProgressTools.ProgressUpperLeftCornerChar, ProgressTools.ProgressLowerLeftCornerChar,
-                            ProgressTools.ProgressUpperRightCornerChar, ProgressTools.ProgressLowerRightCornerChar,
-                            ProgressTools.ProgressUpperFrameChar, ProgressTools.ProgressLowerFrameChar,
-                            ProgressTools.ProgressLeftFrameChar, ProgressTools.ProgressRightFrameChar
+                            Left, Top, width, 1, BorderSettings.GlobalSettings
                         )
                     );
                 }

@@ -270,15 +270,11 @@ namespace Terminaux.Writer.FancyWriters
                             ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                         );
                     }
-                    progBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
-                    progBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
-                    for (int i = 0; i < height; i++)
-                    {
-                        progBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
-                        progBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);
-                    }
-                    progBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + MaximumHeight + 2)}");
-                    progBuilder.Append(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar);
+
+                    // TODO: Allow individual customization of the border settings
+                    progBuilder.Append(
+                        BoxFrameColor.RenderBoxFrame(Left, Top, 1, height, BorderSettings.GlobalSettings)
+                    );
                 }
 
                 // Draw the progress bar

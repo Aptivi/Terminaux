@@ -40,12 +40,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         public static void WriteBorderPlain(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
-            WriteBorderPlain(
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar);
+            WriteBorderPlain(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings);
 
         /// <summary>
         /// Writes the border plainly
@@ -54,22 +49,13 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
-        public static void WriteBorderPlain(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar)
+        /// <param name="settings">Border settings to use</param>
+        public static void WriteBorderPlain(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings)
         {
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = RenderBorderPlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                string rendered = RenderBorderPlain(Left, Top, InteriorWidth, InteriorHeight, settings);
                 TextWriterWhereColor.WriteWhere(rendered, Left, Top);
             }
             catch (Exception ex)
@@ -87,13 +73,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
-            WriteBorder(
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                new Color(ConsoleColors.Silver));
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver));
 
         /// <summary>
         /// Writes the border plainly
@@ -103,15 +83,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color</param>
-        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor) =>
-            WriteBorder(
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, ColorTools.currentBackgroundColor);
+        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor) =>
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Writes the border plainly
@@ -122,15 +95,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color from Terminaux's <see cref="Color"/></param>
         /// <param name="BackgroundColor">Border background color from Terminaux's <see cref="Color"/></param>
-        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor, Color BackgroundColor) =>
-            WriteBorder(
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, BackgroundColor, ColorTools.GetGray());
+        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor) =>
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray());
 
         /// <summary>
         /// Writes the border plainly
@@ -142,15 +108,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color from Terminaux's <see cref="Color"/></param>
         /// <param name="BackgroundColor">Border background color from Terminaux's <see cref="Color"/></param>
         /// <param name="TextColor">Border text color from Terminaux's <see cref="Color"/></param>
-        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor, Color BackgroundColor, Color TextColor) =>
-            WriteBorder(
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, BackgroundColor, TextColor);
+        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor, Color TextColor) =>
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor);
 
         /// <summary>
         /// Writes the border plainly
@@ -159,22 +118,9 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
-        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar) =>
-            WriteBorder(
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                ConsoleColors.Silver);
+        /// <param name="settings">Border settings to use</param>
+        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings) =>
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, settings, ConsoleColors.Silver);
 
         /// <summary>
         /// Writes the border plainly
@@ -183,24 +129,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
-        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor) =>
-            WriteBorder(
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                BorderColor, ColorTools.currentBackgroundColor);
+        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor) =>
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Writes the border plainly
@@ -209,25 +141,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
-        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, Color BackgroundColor) =>
-            WriteBorder(
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                BorderColor, BackgroundColor, ColorTools.GetGray());
+        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor) =>
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, ColorTools.GetGray());
 
         /// <summary>
         /// Writes the border plainly
@@ -236,26 +154,16 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, Color BackgroundColor, Color TextColor)
+        public static void WriteBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor)
         {
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = RenderBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, BackgroundColor, TextColor);
+                string rendered = RenderBorder(Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, TextColor);
                 TextWriterRaw.WriteRaw(rendered);
             }
             catch (Exception ex)
@@ -273,12 +181,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         public static string RenderBorderPlain(int Left, int Top, int InteriorWidth, int InteriorHeight) =>
-            RenderBorderPlain(
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar);
+            RenderBorderPlain(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings);
 
         /// <summary>
         /// Renders the border plainly
@@ -287,24 +190,9 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
-        public static string RenderBorderPlain(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar) =>
-            RenderBorder("",
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar,
-                UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar,
-                LeftFrameChar, RightFrameChar,
-                new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, ColorTools.GetGray(), false);
+        /// <param name="settings">Border settings to use</param>
+        public static string RenderBorderPlain(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings) =>
+            RenderBorder("", Left, Top, InteriorWidth, InteriorHeight, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, ColorTools.GetGray(), false);
 
         /// <summary>
         /// Renders the border plainly
@@ -315,14 +203,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        public static string RenderBorderPlain(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight, params object[] vars) =>
-            RenderBorderPlain(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar, vars);
+        public static string RenderBorderPlain(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, params object[] vars) =>
+            RenderBorderPlain(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -333,24 +215,9 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
-        public static string RenderBorderPlain(string text, int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
-            RenderBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar,
-                UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar,
-                LeftFrameChar, RightFrameChar,
-                new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, ColorTools.GetGray(), false, vars);
+        /// <param name="settings">Border settings to use</param>
+        public static string RenderBorderPlain(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, params object[] vars) =>
+            RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, ColorTools.GetGray(), false, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -360,15 +227,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color</param>
-        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor) =>
-            RenderBorder(
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, ColorTools.currentBackgroundColor);
+        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor) =>
+            RenderBorder(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, ColorTools.currentBackgroundColor);
 
         /// <summary>
         /// Renders the border plainly
@@ -379,15 +239,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
-        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor, Color BackgroundColor) =>
-            RenderBorder(
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, BackgroundColor, ColorTools.GetGray());
+        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor) =>
+            RenderBorder(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray());
 
         /// <summary>
         /// Renders the border plainly
@@ -399,15 +252,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor, Color BackgroundColor, Color TextColor) =>
-            RenderBorder(
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, BackgroundColor, TextColor);
+        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor, Color TextColor) =>
+            RenderBorder(Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor);
 
         /// <summary>
         /// Renders the border plainly
@@ -416,26 +262,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
-        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor) =>
-            RenderBorder("",
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar,
-                UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar,
-                LeftFrameChar, RightFrameChar,
-                BorderColor, ColorTools.CurrentBackgroundColor);
+        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor) =>
+            RenderBorder("", Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, ColorTools.CurrentBackgroundColor);
 
         /// <summary>
         /// Renders the border plainly
@@ -444,27 +274,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
-        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, Color BackgroundColor) =>
-            RenderBorder("",
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar,
-                UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar,
-                LeftFrameChar, RightFrameChar,
-                BorderColor, BackgroundColor, ColorTools.GetGray());
+        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor) =>
+            RenderBorder("", Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, ColorTools.GetGray());
 
         /// <summary>
         /// Renders the border plainly
@@ -473,28 +287,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, Color BackgroundColor, Color TextColor) =>
-            RenderBorder("",
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar,
-                UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar,
-                LeftFrameChar, RightFrameChar,
-                BorderColor, BackgroundColor, TextColor, true);
+        public static string RenderBorder(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor) =>
+            RenderBorder("", Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, TextColor, true);
 
         /// <summary>
         /// Writes the border plainly
@@ -505,15 +303,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        public static void WriteBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight, params object[] vars) =>
-            WriteBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                new Color(ConsoleColors.Silver), vars);
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, params object[] vars) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -525,16 +316,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color</param>
-        public static void WriteBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor, params object[] vars) =>
-            WriteBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, ColorTools.currentBackgroundColor, vars);
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, params object[] vars) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -547,16 +330,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color from Terminaux's <see cref="Color"/></param>
         /// <param name="BackgroundColor">Border background color from Terminaux's <see cref="Color"/></param>
-        public static void WriteBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor, Color BackgroundColor, params object[] vars) =>
-            WriteBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor, params object[] vars) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -570,16 +345,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color from Terminaux's <see cref="Color"/></param>
         /// <param name="BackgroundColor">Border background color from Terminaux's <see cref="Color"/></param>
         /// <param name="TextColor">Border text color from Terminaux's <see cref="Color"/></param>
-        public static void WriteBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
-            WriteBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, BackgroundColor, TextColor, vars);
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor, vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -590,23 +357,9 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
-        public static void WriteBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
-            WriteBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                new Color(ConsoleColors.Silver), vars);
+        /// <param name="settings">Border settings to use</param>
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, params object[] vars) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, new Color(ConsoleColors.Silver), vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -617,25 +370,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
-        public static void WriteBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, params object[] vars) =>
-            WriteBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                BorderColor, ColorTools.currentBackgroundColor, vars);
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, params object[] vars) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -646,26 +384,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
-        public static void WriteBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, Color BackgroundColor, params object[] vars) =>
-            WriteBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, params object[] vars) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -676,27 +399,16 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static void WriteBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars)
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars)
         {
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, BackgroundColor, TextColor, vars);
+                string rendered = RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, TextColor, vars);
                 TextWriterRaw.WriteRaw(rendered);
             }
             catch (Exception ex)
@@ -716,16 +428,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color</param>
-        public static string RenderBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor, params object[] vars) =>
-            RenderBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, ColorTools.CurrentBackgroundColor, vars);
+        public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, params object[] vars) =>
+            RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -738,16 +442,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
-        public static string RenderBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor, Color BackgroundColor, params object[] vars) =>
-            RenderBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
+        public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor, params object[] vars) =>
+            RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -761,16 +457,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static string RenderBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
-            RenderBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
-                BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
-                BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                BorderColor, BackgroundColor, TextColor, vars);
+        public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
+            RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, BorderSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -781,27 +469,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
-        public static string RenderBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, params object[] vars) =>
-            RenderBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar,
-                UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar,
-                LeftFrameChar, RightFrameChar,
-                BorderColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray(), true, vars);
+        public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, params object[] vars) =>
+            RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray(), true, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -812,28 +483,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
-        public static string RenderBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, Color BackgroundColor, params object[] vars) =>
-            RenderBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar,
-                UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar,
-                LeftFrameChar, RightFrameChar,
-                BorderColor, BackgroundColor, ColorTools.GetGray(), true, vars);
+        public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, params object[] vars) =>
+            RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, ColorTools.GetGray(), true, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -844,29 +498,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static string RenderBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
-            RenderBorder(text,
-                Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar,
-                UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar,
-                LeftFrameChar, RightFrameChar,
-                BorderColor, BackgroundColor, TextColor, true, vars);
+        public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
+            RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, TextColor, true, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -877,28 +514,14 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="UpperLeftCornerChar">Upper left corner character for border</param>
-        /// <param name="LowerLeftCornerChar">Lower left corner character for border</param>
-        /// <param name="UpperRightCornerChar">Upper right corner character for border</param>
-        /// <param name="LowerRightCornerChar">Lower right corner character for border</param>
-        /// <param name="UpperFrameChar">Upper frame character for border</param>
-        /// <param name="LowerFrameChar">Lower frame character for border</param>
-        /// <param name="LeftFrameChar">Left frame character for border</param>
-        /// <param name="RightFrameChar">Right frame character for border</param>
+        /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
         /// <param name="useColor">Whether to use the color or not</param>
-        internal static string RenderBorder(string text,
-            int Left, int Top, int InteriorWidth, int InteriorHeight,
-            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
-            Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars) =>
+        internal static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars) =>
             BorderTextColor.RenderBorder(
-                text, "", Left, Top, InteriorWidth, InteriorHeight,
-                UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar,
-                UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar,
-                BorderColor, BackgroundColor, TextColor, useColor, vars
+                text, "", Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, TextColor, useColor, vars
             );
 
         static BorderColor()
