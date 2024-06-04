@@ -64,9 +64,9 @@ namespace Terminaux.Graphics.Shapes
         public string Render()
         {
             StringBuilder buffer = new();
+            buffer.Append(GraphicsTools.RenderLine((Left + (Width / 2), Top), (Left, Top + Height), ShapeColor));
+            buffer.Append(GraphicsTools.RenderLine((Left + (Width / 2), Top), (Left + Width, Top + Height), ShapeColor));
             buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
-            buffer.Append(GraphicsTools.RenderLine((Left + (Width / 2), Top), (Left, Top + Height)));
-            buffer.Append(GraphicsTools.RenderLine((Left + (Width / 2), Top), (Left + Width, Top + Height)));
             buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + Height + 1));
             buffer.Append(new string(' ', Width));
             if (Filled)
