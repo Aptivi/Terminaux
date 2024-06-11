@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="13.9.0" />
+    <PackageReference Include="Magick.NET-Q8-AnyCPU" Version="13.9.1" />
   </ItemGroup>
 
   <ItemGroup>
