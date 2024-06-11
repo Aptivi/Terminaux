@@ -30,12 +30,13 @@ namespace Terminaux.Inputs.Interactive
     {
         private readonly string _bindingName;
         private readonly bool _bindingUsesMouse;
+        private readonly bool _bindingCanRunWithoutItems;
         private readonly ConsoleKey _bindingKeyName = (ConsoleKey)(-1);
         private readonly ConsoleModifiers _bindingKeyModifiers = (ConsoleModifiers)(-1);
         private readonly PointerButton _bindingPointerButton = (PointerButton)(-1);
         private readonly PointerButtonPress _bindingPointerButtonPress = (PointerButtonPress)(-1);
         private readonly PointerModifiers _bindingPointerModifiers = (PointerModifiers)(-1);
-        private readonly Action<object, int>? _bindingAction;
+        private readonly Action<object?, int>? _bindingAction;
 
         /// <summary>
         /// Key binding name
@@ -48,6 +49,12 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         public bool BindingUsesMouse =>
             _bindingUsesMouse;
+
+        /// <summary>
+        /// Whether the binding can run without items or not
+        /// </summary>
+        public bool BindingCanRunWithoutItems =>
+            _bindingCanRunWithoutItems;
 
         /// <summary>
         /// Which key is bound to the action?
@@ -83,7 +90,7 @@ namespace Terminaux.Inputs.Interactive
         /// The action to execute.
         /// The integer argument denotes the currently selected data
         /// </summary>
-        public Action<object, int>? BindingAction =>
+        public Action<object?, int>? BindingAction =>
             _bindingAction;
 
         /// <summary>
@@ -92,8 +99,9 @@ namespace Terminaux.Inputs.Interactive
         /// <param name="bindingName">Key binding name</param>
         /// <param name="bindingKeyName">Which key is bound to the action?</param>
         /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
-        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int>? bindingAction) :
-            this(bindingName, bindingKeyName, default, bindingAction)
+        /// <param name="canRunWithoutItems">Whether the binding can run without items or not</param>
+        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object?, int>? bindingAction, bool canRunWithoutItems = false) :
+            this(bindingName, bindingKeyName, default, bindingAction, canRunWithoutItems)
         { }
 
         /// <summary>
@@ -103,12 +111,14 @@ namespace Terminaux.Inputs.Interactive
         /// <param name="bindingKeyName">Which key is bound to the action?</param>
         /// <param name="bindingKeyModifiers">Which modifiers of the key is bound to the action?</param>
         /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
-        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers, Action<object, int>? bindingAction)
+        /// <param name="canRunWithoutItems">Whether the binding can run without items or not</param>
+        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers, Action<object?, int>? bindingAction, bool canRunWithoutItems = false)
         {
             _bindingName = bindingName;
             _bindingKeyName = bindingKeyName;
             _bindingKeyModifiers = bindingKeyModifiers;
             _bindingAction = bindingAction;
+            _bindingCanRunWithoutItems = canRunWithoutItems;
         }
 
         /// <summary>
@@ -117,8 +127,9 @@ namespace Terminaux.Inputs.Interactive
         /// <param name="bindingName">Key binding name</param>
         /// <param name="bindingPointerButton">Which key is bound to the action?</param>
         /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
-        public InteractiveTuiBinding(string bindingName, PointerButton bindingPointerButton, Action<object, int>? bindingAction) :
-            this(bindingName, bindingPointerButton, PointerButtonPress.Moved, PointerModifiers.None, bindingAction)
+        /// <param name="canRunWithoutItems">Whether the binding can run without items or not</param>
+        public InteractiveTuiBinding(string bindingName, PointerButton bindingPointerButton, Action<object?, int>? bindingAction, bool canRunWithoutItems = false) :
+            this(bindingName, bindingPointerButton, PointerButtonPress.Moved, PointerModifiers.None, bindingAction, canRunWithoutItems)
         { }
 
         /// <summary>
@@ -128,8 +139,9 @@ namespace Terminaux.Inputs.Interactive
         /// <param name="bindingPointerButton">Which button is bound to the action?</param>
         /// <param name="bindingPointerButtonPress">Which press mode of the button is bound to the action?</param>
         /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
-        public InteractiveTuiBinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress, Action<object, int>? bindingAction) :
-            this(bindingName, bindingPointerButton, bindingPointerButtonPress, PointerModifiers.None, bindingAction)
+        /// <param name="canRunWithoutItems">Whether the binding can run without items or not</param>
+        public InteractiveTuiBinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress, Action<object?, int>? bindingAction, bool canRunWithoutItems = false) :
+            this(bindingName, bindingPointerButton, bindingPointerButtonPress, PointerModifiers.None, bindingAction, canRunWithoutItems)
         { }
 
         /// <summary>
@@ -140,7 +152,8 @@ namespace Terminaux.Inputs.Interactive
         /// <param name="bindingPointerButtonPress">Which press mode of the button is bound to the action?</param>
         /// <param name="bindingButtonModifiers">Which modifiers of the button is bound to the action?</param>
         /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
-        public InteractiveTuiBinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress, PointerModifiers bindingButtonModifiers, Action<object, int>? bindingAction)
+        /// <param name="canRunWithoutItems">Whether the binding can run without items or not</param>
+        public InteractiveTuiBinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress, PointerModifiers bindingButtonModifiers, Action<object?, int>? bindingAction, bool canRunWithoutItems = false)
         {
             _bindingName = bindingName;
             _bindingUsesMouse = true;
@@ -148,6 +161,7 @@ namespace Terminaux.Inputs.Interactive
             _bindingPointerButtonPress = bindingPointerButtonPress;
             _bindingPointerModifiers = bindingButtonModifiers;
             _bindingAction = bindingAction;
+            _bindingCanRunWithoutItems = canRunWithoutItems;
         }
 
         /// <inheritdoc/>
@@ -164,20 +178,22 @@ namespace Terminaux.Inputs.Interactive
             BindingPointerButton == other.BindingPointerButton &&
             BindingPointerButtonPress == other.BindingPointerButtonPress &&
             BindingPointerModifiers == other.BindingPointerModifiers &&
-            EqualityComparer<Action<object, int>?>.Default.Equals(BindingAction, other.BindingAction);
+            BindingCanRunWithoutItems == other.BindingCanRunWithoutItems &&
+            EqualityComparer<Action<object?, int>?>.Default.Equals(BindingAction, other.BindingAction);
 
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            int hashCode = 907651633;
+            int hashCode = 1588924110;
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(BindingName);
             hashCode = hashCode * -1521134295 + BindingUsesMouse.GetHashCode();
+            hashCode = hashCode * -1521134295 + BindingCanRunWithoutItems.GetHashCode();
             hashCode = hashCode * -1521134295 + BindingKeyName.GetHashCode();
             hashCode = hashCode * -1521134295 + BindingKeyModifiers.GetHashCode();
             hashCode = hashCode * -1521134295 + BindingPointerButton.GetHashCode();
             hashCode = hashCode * -1521134295 + BindingPointerButtonPress.GetHashCode();
             hashCode = hashCode * -1521134295 + BindingPointerModifiers.GetHashCode();
-            hashCode = hashCode * -1521134295 + EqualityComparer<Action<object, int>?>.Default.GetHashCode(BindingAction);
+            hashCode = hashCode * -1521134295 + EqualityComparer<Action<object?, int>?>.Default.GetHashCode(BindingAction);
             return hashCode;
         }
 

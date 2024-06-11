@@ -30,7 +30,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 
         public override InteractiveTuiBinding[] Bindings { get; } =
         [
-            new InteractiveTuiBinding("Add",         ConsoleKey.F1,  (_, index) => Add(index)),
+            new InteractiveTuiBinding("Add",         ConsoleKey.F1,  (_, index) => Add(index), true),
             new InteractiveTuiBinding("Delete",      ConsoleKey.F2,  (_, index) => Remove(index)),
             new InteractiveTuiBinding("Delete Last", ConsoleKey.F3,  (_, _)     => RemoveLast()),
         ];

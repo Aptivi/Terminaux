@@ -29,7 +29,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 
         public override InteractiveTuiBinding[] Bindings { get; } =
         [
-            new InteractiveTuiBinding("Add",         ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]")),
+            new InteractiveTuiBinding("Add",         ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]"), true),
             new InteractiveTuiBinding("Delete",      ConsoleKey.F2, (_, index) => strings.RemoveAt(index)),
             new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _)     => strings.RemoveAt(strings.Count - 1)),
         ];

@@ -920,7 +920,7 @@ namespace Terminaux.Inputs.Interactive
                         foreach (var implementedBinding in implementedBindings)
                         {
                             var binding = implementedBinding.BindingAction;
-                            if (binding is null || selectedData is null)
+                            if (binding is null || (selectedData is null && !implementedBinding.BindingCanRunWithoutItems))
                                 continue;
                             binding.Invoke(selectedData, paneCurrentSelection - 1);
                         }
