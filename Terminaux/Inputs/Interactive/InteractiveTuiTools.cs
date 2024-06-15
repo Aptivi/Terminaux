@@ -215,6 +215,8 @@ namespace Terminaux.Inputs.Interactive
                 builder.Append(ColorTools.RenderSetConsoleColor(finalForeColorFirstPane));
                 builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
                 builder.Append(BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior));
+                builder.Append(ColorTools.RenderSetConsoleColor(finalForeColorSecondPane));
+                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
                 builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
                 return builder.ToString();
             }));
@@ -345,12 +347,14 @@ namespace Terminaux.Inputs.Interactive
                 }
 
                 // Render the vertical bar
+                var finalForeColorFirstPane = InteractiveTuiStatus.CurrentPane == 1 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
+                var finalForeColorSecondPane = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2) : SeparatorHalfConsoleWidthInterior;
                 if (dataCount > SeparatorMaximumHeightInterior)
                 {
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor));
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor));
-                    builder.Append(SliderVerticalColor.RenderVerticalSlider(paneCurrentSelection, dataCount, left, 2, ConsoleWrapper.WindowHeight - 6, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor, false));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, InteractiveTuiStatus.PaneBackgroundColor));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, InteractiveTuiStatus.PaneBackgroundColor));
+                    builder.Append(SliderVerticalColor.RenderVerticalSlider(paneCurrentSelection, dataCount, left, 2, ConsoleWrapper.WindowHeight - 6, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, InteractiveTuiStatus.PaneBackgroundColor, false));
                 }
                 return builder.ToString();
             });
@@ -426,9 +430,9 @@ namespace Terminaux.Inputs.Interactive
                 int left = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2);
                 if (finalInfoStrings.Length > SeparatorMaximumHeightInterior)
                 {
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor));
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor));
-                    builder.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)InteractiveTuiStatus.CurrentInfoLine / (finalInfoStrings.Length - SeparatorMaximumHeightInterior) * finalInfoStrings.Length), finalInfoStrings.Length, left, 2, ConsoleWrapper.WindowHeight - 6, InteractiveTuiStatus.PaneSeparatorColor, InteractiveTuiStatus.PaneBackgroundColor, false));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor));
+                    builder.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)InteractiveTuiStatus.CurrentInfoLine / (finalInfoStrings.Length - SeparatorMaximumHeightInterior) * finalInfoStrings.Length), finalInfoStrings.Length, left, 2, ConsoleWrapper.WindowHeight - 6, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor, false));
                 }
                 return builder.ToString();
             });
