@@ -30,4 +30,8 @@
     <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="Microsoft.Testing.Extensions.CodeCoverage" Version="17.11.3" />
+  </ItemGroup>
+
 </Project>
