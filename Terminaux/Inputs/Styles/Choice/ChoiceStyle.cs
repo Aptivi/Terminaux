@@ -432,12 +432,14 @@ namespace Terminaux.Inputs.Styles.Choice
                 else
                 {
                     answer = Convert.ToString(TermReader.ReadKey().KeyChar);
-                    TextWriterRaw.Write();
+                    TextWriterRaw.WritePlain(answer);
                 }
 
                 // Check if answer is correct.
                 if (answerNames.Contains(answer) && !answers[answer] || altAnswerNames.Contains(answer) && !altAnswers[answer])
                     return answer;
+                else
+                    TextWriterColor.Write("Wrong answer. Please try again.");
             }
         }
 
