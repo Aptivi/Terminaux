@@ -33,6 +33,7 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Inputs.Styles.Selection
 {
@@ -186,7 +187,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         // Make pages based on console window height
                         int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                         int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                        int answersPerPage = listEndPosition - 5;
+                        int answersPerPage = listEndPosition - 7;
                         int pages = AllAnswers.Count / answersPerPage;
                         if (AllAnswers.Count % answersPerPage == 0)
                             pages--;
@@ -206,7 +207,8 @@ namespace Terminaux.Inputs.Styles.Selection
 
                         // Populate the answers
                         selectionBuilder.Append(
-                            SelectionInputTools.RenderSelections([.. AllAnswers], 0, listStartPosition + 1, HighlightedAnswer - 1, [.. SelectedAnswers], answersPerPage, ConsoleWrapper.WindowWidth, false, Answers.Length - 1, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
+                            BorderColor.RenderBorder(2, listStartPosition + 1, ConsoleWrapper.WindowWidth - 6, answersPerPage, optionColor) +
+                            SelectionInputTools.RenderSelections([.. AllAnswers], 3, listStartPosition + 2, HighlightedAnswer - 1, [.. SelectedAnswers], answersPerPage, ConsoleWrapper.WindowWidth - 6, false, Answers.Length - 1, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
                         );
 
                         // Write description area
@@ -277,21 +279,21 @@ namespace Terminaux.Inputs.Styles.Selection
                     {
                         bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse)
                         {
-                            if (mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
+                            if (mouse.Coordinates.x <= 2 || mouse.Coordinates.x >= ConsoleWrapper.WindowWidth - 1)
                                 return false;
 
                             // Make pages based on console window height
                             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                            int answersPerPage = listEndPosition - 5;
+                            int answersPerPage = listEndPosition - 7;
                             int currentPage = (HighlightedAnswer - 1) / answersPerPage;
                             startIndex = answersPerPage * currentPage;
                             endIndex = answersPerPage * (currentPage + 1) - 1;
 
                             // Now, translate coordinates to the selected index
-                            if (mouse.Coordinates.y <= listStartPosition || mouse.Coordinates.y >= listEndPosition - 3)
+                            if (mouse.Coordinates.y <= listStartPosition + 1 || mouse.Coordinates.y >= listEndPosition - 4)
                                 return false;
-                            int listIndex = mouse.Coordinates.y - listStartPosition;
+                            int listIndex = mouse.Coordinates.y - (listStartPosition + 1);
                             listIndex = startIndex + listIndex;
                             listIndex = listIndex > AllAnswers.Count ? AllAnswers.Count : listIndex;
                             HighlightedAnswer = listIndex;
@@ -302,31 +304,31 @@ namespace Terminaux.Inputs.Styles.Selection
                         {
                             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                            int answersPerPage = listEndPosition - 5;
+                            int answersPerPage = listEndPosition - 7;
                             if (AllAnswers.Count <= answersPerPage)
                                 return false;
                             return
-                                mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 1 &&
-                                (mouse.Coordinates.y == listStartPosition + 1 || mouse.Coordinates.y == listStartPosition + answersPerPage);
+                                mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 3 &&
+                                (mouse.Coordinates.y == listStartPosition + 2 || mouse.Coordinates.y == listStartPosition + 1 + answersPerPage);
                         }
 
                         void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
                         {
                             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                             int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                            int answersPerPage = listEndPosition - 5;
+                            int answersPerPage = listEndPosition - 7;
                             if (AllAnswers.Count <= answersPerPage)
                                 return;
-                            if (mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 1)
+                            if (mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 3)
                             {
-                                if (mouse.Coordinates.y == listStartPosition + 1)
+                                if (mouse.Coordinates.y == listStartPosition + 2)
                                 {
                                     goingUp = true;
                                     HighlightedAnswer--;
                                     if (HighlightedAnswer == 0)
                                         HighlightedAnswer = 1;
                                 }
-                                else if (mouse.Coordinates.y == listStartPosition + answersPerPage)
+                                else if (mouse.Coordinates.y == listStartPosition + 1 + answersPerPage)
                                 {
                                     HighlightedAnswer++;
                                     if (HighlightedAnswer > AllAnswers.Count)
