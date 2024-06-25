@@ -23,6 +23,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using Terminaux.Base.TermInfo.Extensions;
 using Terminaux.Base.TermInfo.Parsing;
+using Textify.General;
 
 namespace Terminaux.Base.TermInfo
 {
@@ -76,6 +77,18 @@ namespace Terminaux.Base.TermInfo
                     return desc;
             }
 
+            // Last resort (builtins tracked from Debian's NCurses: https://packages.debian.org/sid/all/ncurses-base/download
+            // and https://packages.debian.org/sid/all/ncurses-term/download)
+            var builtins = TermInfoDesc.GetBuiltinPaths();
+            foreach (string builtin in builtins)
+            {
+                string termNamePath = builtin.RemovePrefix("Terminaux.Resources.TermFiles.");
+                string termName = termNamePath.Substring(termNamePath.IndexOf('.') + 1);
+                if (termName.Equals(name, StringComparison.OrdinalIgnoreCase))
+                    return Load(typeof(TermInfoDesc).Assembly.GetManifestResourceStream(builtin));
+            }
+
+            // We're totally screwed
             return null;
         }
 

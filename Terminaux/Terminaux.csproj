@@ -59,4 +59,8 @@
     <ProjectReference Include="..\Terminaux.Extensions\Terminaux.Extensions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TermFiles\**\*" />
+  </ItemGroup>
+
 </Project>

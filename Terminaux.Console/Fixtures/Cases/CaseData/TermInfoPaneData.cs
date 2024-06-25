@@ -17,11 +17,15 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 using Terminaux.Base.TermInfo;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Styles.Infobox;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
@@ -29,6 +33,11 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
     {
         private static bool loaded = false;
         private static readonly List<TermInfoDesc> descs = [];
+
+        public override InteractiveTuiBinding[] Bindings =>
+        [
+            new InteractiveTuiBinding("Custom...", ConsoleKey.C, (_, _) => ShowCustomInfo())
+        ];
 
         /// <inheritdoc/>
         public override IEnumerable<TermInfoDesc> PrimaryDataSource =>
@@ -46,27 +55,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 InteractiveTuiStatus.Status = $"{selected.Names[0]} - {selected.Names[1]}";
 
             // Now, populate the info
-            var builder = new StringBuilder();
-            builder.AppendLine(
-                 $$"""
-                 Name: {{selected.Names[0]}}
-                 Description: {{selected.Names[1]}}
-
-                 Maximum colors: {{selected.MaxColors}}
-                 Extended capabilities: {{selected.Extended.Count}}
-                 """   
-            );
-            if (selected.Extended.Count > 0)
-            {
-                var namesBool = selected.Extended.GetNames(TermInfoCapsKind.Boolean);
-                var namesNum = selected.Extended.GetNames(TermInfoCapsKind.Num);
-                var namesString = selected.Extended.GetNames(TermInfoCapsKind.String);
-                builder.AppendLine();
-                builder.AppendLine($"Boolean extended capabilities: {string.Join(", ", namesBool)}");
-                builder.AppendLine($"Numeric extended capabilities: {string.Join(", ", namesNum)}");
-                builder.AppendLine($"String extended capabilities: {string.Join(", ", namesString)}");
-            }
-            return $"{builder}";
+            return ShowDesc(selected);
         }
 
         /// <inheritdoc/>
@@ -93,6 +82,47 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             }
             loaded = true;
             return [.. descs];
+        }
+
+        private void ShowCustomInfo()
+        {
+            string[] names = TermInfoDesc.GetBuiltins();
+            int idx = InfoBoxSelectionColor.WriteInfoBoxSelection("TermInfo", names.Select((name, idx) => new InputChoiceInfo($"{idx + 1}", name)).ToArray(), "Write the terminal info name");
+            if (idx < 0)
+                return;
+            string name = names[idx];
+            if (!TermInfoDesc.TryLoad(name, out TermInfoDesc desc))
+                return;
+            string descString = ShowDesc(desc);
+            InfoBoxColor.WriteInfoBox(name, descString);
+        }
+
+        private string ShowDesc(TermInfoDesc desc)
+        {
+            // Populate the info
+            var builder = new StringBuilder();
+            builder.AppendLine(
+                 $$"""
+                 Name: {{desc.Names[0]}}
+                 Description: {{desc.Names[1]}}
+
+                 Maximum colors: {{desc.MaxColors}}
+                 Extended capabilities: {{desc.Extended.Count}}
+                 """
+            );
+
+            // Detect the extended attributes
+            if (desc.Extended.Count > 0)
+            {
+                var namesBool = desc.Extended.GetNames(TermInfoCapsKind.Boolean);
+                var namesNum = desc.Extended.GetNames(TermInfoCapsKind.Num);
+                var namesString = desc.Extended.GetNames(TermInfoCapsKind.String);
+                builder.AppendLine();
+                builder.AppendLine($"Boolean extended capabilities: {string.Join(", ", namesBool)}");
+                builder.AppendLine($"Numeric extended capabilities: {string.Join(", ", namesNum)}");
+                builder.AppendLine($"String extended capabilities: {string.Join(", ", namesString)}");
+            }
+            return $"{builder}";
         }
     }
 }

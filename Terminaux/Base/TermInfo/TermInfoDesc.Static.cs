@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using System.IO;
+using Textify.General;
 
 namespace Terminaux.Base.TermInfo
 {
@@ -118,5 +120,30 @@ namespace Terminaux.Base.TermInfo
         /// <returns>The parsed terminfo description.</returns>
         public static TermInfoDesc Load(Stream stream) =>
             TermInfoLoader.Load(stream);
+
+        /// <summary>
+        /// Gets the built-in terminfo names
+        /// </summary>
+        /// <returns></returns>
+        public static string[] GetBuiltins()
+        {
+            // Builtins tracked from Debian's NCurses: https://packages.debian.org/sid/all/ncurses-base/download
+            // and https://packages.debian.org/sid/all/ncurses-term/download
+            string[] builtins = GetBuiltinPaths();
+            List<string> names = [];
+            foreach (string builtin in builtins)
+            {
+                string termNamePath = builtin.RemovePrefix("Terminaux.Resources.TermFiles.");
+                string termName = termNamePath.Substring(termNamePath.IndexOf('.') + 1);
+                names.Add(termName);
+            }
+            return [.. names];
+        }
+
+        internal static string[] GetBuiltinPaths()
+        {
+            string[] builtins = typeof(TermInfoDesc).Assembly.GetManifestResourceNames();
+            return builtins;
+        }
     }
 }
