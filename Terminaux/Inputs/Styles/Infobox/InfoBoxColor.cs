@@ -650,17 +650,17 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, true, vars);
         }
 
         internal static string RenderTextInput(
-            int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, params object[] vars
+            int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, bool writeBinding, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensionsInput(splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, writeBinding, vars);
         }
 
         internal static string RenderTextSelection(
@@ -670,11 +670,11 @@ namespace Terminaux.Inputs.Styles.Infobox
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensionsSelection(choices, splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, true, vars);
         }
 
         internal static string RenderText(
-            int maxWidth, int maxHeight, int borderX, int borderY, int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, params object[] vars
+            int maxWidth, int maxHeight, int borderX, int borderY, int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, bool writeBinding, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
@@ -725,6 +725,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, maxHeight - maxHeightOffset + 1, InfoBoxColor, BackgroundColor));
                 boxBuffer.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)currIdx / (splitFinalLines.Length - (maxHeight - maxHeightOffset)) * splitFinalLines.Length), splitFinalLines.Length, left - 1, 2, maxHeight - maxHeightOffset - 2, InfoBoxColor, BackgroundColor, BackgroundColor, false));
             }
+
+            // Render a keybinding that points to the help page
+            if (writeBinding && maxWidth >= 5)
+                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("[K]", left - 4, borderY + maxHeight + 1, InfoBoxColor, BackgroundColor));
             return boxBuffer.ToString();
         }
 

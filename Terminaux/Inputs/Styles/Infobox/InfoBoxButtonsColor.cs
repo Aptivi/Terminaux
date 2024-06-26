@@ -277,7 +277,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderTextInput(5, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, true, vars)
+                        InfoBoxColor.RenderTextInput(5, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, true, true, vars)
                     );
 
                     // Place the buttons from the right for familiarity

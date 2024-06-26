@@ -228,7 +228,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderTextInput(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, false, vars)
+                        InfoBoxColor.RenderTextInput(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, false, false, vars)
                     );
 
                     // Write the input bar and set the cursor position

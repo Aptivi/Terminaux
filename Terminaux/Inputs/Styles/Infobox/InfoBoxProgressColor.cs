@@ -231,7 +231,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderTextInput(5, title, text, settings, InfoBoxTitledProgressColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, false, vars)
+                        InfoBoxColor.RenderTextInput(5, title, text, settings, InfoBoxTitledProgressColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, false, false, vars)
                     );
 
                     // Render the final result and write the progress bar
