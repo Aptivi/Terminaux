@@ -43,183 +43,212 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// Writes the info box plainly
         /// </summary>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderPlain(int currentPos, int maxPos, string text, params object[] vars) =>
-            WriteInfoBoxSliderPlain(currentPos, maxPos, text, BorderSettings.GlobalSettings, vars);
+        public static int WriteInfoBoxSliderPlain(int currentPos, int maxPos, string text, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderPlain(currentPos, maxPos, text, BorderSettings.GlobalSettings, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderPlain(int currentPos, int maxPos, string text, BorderSettings settings, params object[] vars) =>
-            WriteInfoBoxSliderPlain("", currentPos, maxPos, text, settings, vars);
+        public static int WriteInfoBoxSliderPlain(int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderPlain("", currentPos, maxPos, text, settings, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+        public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="InfoBoxSliderColor">InfoBoxSlider color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderColor(int currentPos, int maxPos, string text, Color InfoBoxSliderColor, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxSliderColor, ColorTools.currentBackgroundColor, vars);
+        public static int WriteInfoBoxSliderColor(int currentPos, int maxPos, string text, Color InfoBoxSliderColor, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxSliderColor, ColorTools.currentBackgroundColor, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
-        /// <param name="InfoBoxSliderColor">InfoBoxSlider color</param>
-        /// <param name="BackgroundColor">InfoBoxSlider background color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderColorBack(int currentPos, int maxPos, string text, Color InfoBoxSliderColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxSliderColor, BackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="currentPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, BorderSettings settings, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="currentPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="InfoBoxSliderColor">InfoBoxSlider color</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderColor(int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxSliderColor, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, settings, InfoBoxSliderColor, ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="currentPos">Current position out of maximum position</param>
-        /// <param name="maxPos">Maximum position</param>
-        /// <param name="settings">Border settings to use</param>
         /// <param name="InfoBoxSliderColor">InfoBoxSlider color</param>
         /// <param name="BackgroundColor">InfoBoxSlider background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderColorBack(int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxSliderColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSliderColorBack("", currentPos, maxPos, text, settings, InfoBoxSliderColor, BackgroundColor, vars);
+        public static int WriteInfoBoxSliderColorBack(int currentPos, int maxPos, string text, Color InfoBoxSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxSliderColor, BackgroundColor, minPos, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static int WriteInfoBoxSlider(int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, minPos, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="InfoBoxSliderColor">InfoBoxSlider color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static int WriteInfoBoxSliderColor(int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxSliderColor, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(currentPos, maxPos, text, settings, InfoBoxSliderColor, ColorTools.currentBackgroundColor, minPos, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="InfoBoxSliderColor">InfoBoxSlider color</param>
+        /// <param name="BackgroundColor">InfoBoxSlider background color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static int WriteInfoBoxSliderColorBack(int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack("", currentPos, maxPos, text, settings, InfoBoxSliderColor, BackgroundColor, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="title">Title to be written</param>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderPlain(string title, int currentPos, int maxPos, string text, params object[] vars) =>
-            WriteInfoBoxSliderPlain(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, vars);
+        public static int WriteInfoBoxSliderPlain(string title, int currentPos, int maxPos, string text, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderPlain(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="title">Title to be written</param>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
+        /// <param name="maxPos">Maximum position</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static int WriteInfoBoxSliderPlain(string title, int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, false, minPos, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="title">Title to be written</param>
+        /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSlider(string title, int currentPos, int maxPos, string text, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+        public static int WriteInfoBoxSlider(string title, int currentPos, int maxPos, string text, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="title">Title to be written</param>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="InfoBoxTitledSliderColor">InfoBoxTitledSlider color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderColor(string title, int currentPos, int maxPos, string text, Color InfoBoxTitledSliderColor, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxTitledSliderColor, ColorTools.currentBackgroundColor, vars);
+        public static int WriteInfoBoxSliderColor(string title, int currentPos, int maxPos, string text, Color InfoBoxTitledSliderColor, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxTitledSliderColor, ColorTools.currentBackgroundColor, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="title">Title to be written</param>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="InfoBoxTitledSliderColor">InfoBoxTitledSlider color</param>
         /// <param name="BackgroundColor">InfoBoxTitledSlider background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, Color InfoBoxTitledSliderColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxTitledSliderColor, BackgroundColor, vars);
+        public static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, Color InfoBoxTitledSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, BorderSettings.GlobalSettings, InfoBoxTitledSliderColor, BackgroundColor, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="title">Title to be written</param>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="settings">Border settings to use</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSlider(string title, int currentPos, int maxPos, string text, BorderSettings settings, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+        public static int WriteInfoBoxSlider(string title, int currentPos, int maxPos, string text, BorderSettings settings, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="title">Title to be written</param>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="settings">Border settings to use</param>
         /// <param name="InfoBoxTitledSliderColor">InfoBoxTitledSlider color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderColor(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, InfoBoxTitledSliderColor, ColorTools.currentBackgroundColor, vars);
+        public static int WriteInfoBoxSliderColor(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, InfoBoxTitledSliderColor, ColorTools.currentBackgroundColor, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="title">Title to be written</param>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="settings">Border settings to use</param>
         /// <param name="InfoBoxTitledSliderColor">InfoBoxTitledSlider color</param>
         /// <param name="BackgroundColor">InfoBoxTitledSlider background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, InfoBoxTitledSliderColor, BackgroundColor, true, vars);
+        public static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, Color BackgroundColor, int minPos = 0, params object[] vars) =>
+            WriteInfoBoxSliderColorBack(title, currentPos, maxPos, text, settings, InfoBoxTitledSliderColor, BackgroundColor, true, minPos, vars);
 
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
         /// <param name="title">Title to be written</param>
         /// <param name="currentPos">Current position out of maximum position</param>
+        /// <param name="minPos">Maximum position</param>
         /// <param name="maxPos">Maximum position</param>
         /// <param name="settings">Border settings to use</param>
         /// <param name="InfoBoxTitledSliderColor">InfoBoxTitledSlider color</param>
@@ -227,7 +256,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="useColor">Whether to use color or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        internal static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, Color BackgroundColor, bool useColor, params object[] vars)
+        internal static int WriteInfoBoxSliderColorBack(string title, int currentPos, int maxPos, string text, BorderSettings settings, Color InfoBoxTitledSliderColor, Color BackgroundColor, bool useColor, int minPos = 0, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             bool initialScreenIsNull = ScreenTools.CurrentScreen is null;
@@ -263,13 +292,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                         boxBuffer.Append(
                             ColorTools.RenderRevertForeground() +
                             ColorTools.RenderRevertBackground() +
-                            SliderColor.RenderSlider((int)(maxSliderWidth * ((double)selected / maxPos)), maxSliderWidth + 1, sliderPosX, sliderPosY, maxSliderWidth, InfoBoxTitledSliderColor, InfoBoxTitledSliderColor, BackgroundColor)
+                            SliderColor.RenderSlider((int)(maxSliderWidth * ((double)(selected - minPos) / (maxPos - minPos))), maxSliderWidth + 1, sliderPosX, sliderPosY, maxSliderWidth, InfoBoxTitledSliderColor, InfoBoxTitledSliderColor, BackgroundColor)
                         );
                     }
                     else
                     {
                         boxBuffer.Append(
-                            SliderColor.RenderSliderPlain((int)(maxSliderWidth * ((double)selected / maxPos)), maxSliderWidth + 1, sliderPosX, sliderPosY, maxSliderWidth)
+                            SliderColor.RenderSliderPlain((int)(maxSliderWidth * ((double)(selected - minPos) / (maxPos - minPos))), maxSliderWidth + 1, sliderPosX, sliderPosY, maxSliderWidth)
                         );
                     }
 
@@ -321,16 +350,16 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (mouse.Coordinates.y == arrowTop)
                                 {
                                     currIdx -= 1;
-                                    if (currIdx < 0)
-                                        currIdx = 0;
+                                    if (currIdx < minPos)
+                                        currIdx = minPos;
                                 }
                                 else if (mouse.Coordinates.y == arrowBottom)
                                 {
                                     currIdx += 1;
                                     if (currIdx > splitFinalLines.Length - maxHeight)
                                         currIdx = splitFinalLines.Length - maxHeight;
-                                    if (currIdx < 0)
-                                        currIdx = 0;
+                                    if (currIdx < minPos)
+                                        currIdx = minPos;
                                 }
                             }
                         }
@@ -359,14 +388,14 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (mouse.Coordinates.x == arrowLeft)
                                 {
                                     selected--;
-                                    if (selected < 0)
+                                    if (selected < minPos)
                                         selected = maxPos;
                                 }
                                 else if (mouse.Coordinates.x == arrowRight)
                                 {
                                     selected++;
                                     if (selected > maxPos)
-                                        selected = 0;
+                                        selected = minPos;
                                 }
                             }
                         }
@@ -379,13 +408,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (mouse.Modifiers == PointerModifiers.Shift)
                                 {
                                     currIdx -= 3;
-                                    if (currIdx < 0)
-                                        currIdx = 0;
+                                    if (currIdx < minPos)
+                                        currIdx = minPos;
                                 }
                                 else
                                 {
                                     selected--;
-                                    if (selected < 0)
+                                    if (selected < minPos)
                                         selected = maxPos;
                                 }
                                 break;
@@ -400,7 +429,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 {
                                     selected++;
                                     if (selected > maxPos)
-                                        selected = 0;
+                                        selected = minPos;
                                 }
                                 break;
                             case PointerButton.Left:
@@ -420,24 +449,24 @@ namespace Terminaux.Inputs.Styles.Infobox
                         {
                             case ConsoleKey.LeftArrow:
                                 selected--;
-                                if (selected < 0)
+                                if (selected < minPos)
                                     selected = maxPos;
                                 break;
                             case ConsoleKey.RightArrow:
                                 selected++;
                                 if (selected > maxPos)
-                                    selected = 0;
+                                    selected = minPos;
                                 break;
                             case ConsoleKey.Home:
-                                selected = 0;
+                                selected = minPos;
                                 break;
                             case ConsoleKey.End:
                                 selected = maxPos;
                                 break;
                             case ConsoleKey.E:
                                 currIdx -= maxHeight * 2 - 1;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                if (currIdx < minPos)
+                                    currIdx = minPos;
                                 break;
                             case ConsoleKey.D:
                                 currIdx += increment;
@@ -446,8 +475,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                             case ConsoleKey.W:
                                 currIdx -= 1;
-                                if (currIdx < 0)
-                                    currIdx = 0;
+                                if (currIdx < minPos)
+                                    currIdx = minPos;
                                 break;
                             case ConsoleKey.S:
                                 currIdx += 1;
