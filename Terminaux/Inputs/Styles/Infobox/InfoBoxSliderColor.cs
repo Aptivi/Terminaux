@@ -292,13 +292,13 @@ namespace Terminaux.Inputs.Styles.Infobox
                         boxBuffer.Append(
                             ColorTools.RenderRevertForeground() +
                             ColorTools.RenderRevertBackground() +
-                            SliderColor.RenderSlider((int)(maxSliderWidth * ((double)(selected - minPos) / (maxPos - minPos))), maxSliderWidth + 1, sliderPosX, sliderPosY, maxSliderWidth, InfoBoxTitledSliderColor, InfoBoxTitledSliderColor, BackgroundColor)
+                            SliderColor.RenderSliderAbsolute(selected, maxPos, sliderPosX, sliderPosY, maxSliderWidth, InfoBoxTitledSliderColor, InfoBoxTitledSliderColor, BackgroundColor, minPos)
                         );
                     }
                     else
                     {
                         boxBuffer.Append(
-                            SliderColor.RenderSliderPlain((int)(maxSliderWidth * ((double)(selected - minPos) / (maxPos - minPos))), maxSliderWidth + 1, sliderPosX, sliderPosY, maxSliderWidth)
+                            SliderColor.RenderSliderPlainAbsolute(selected, maxPos, sliderPosX, sliderPosY, maxSliderWidth, minPos)
                         );
                     }
 
