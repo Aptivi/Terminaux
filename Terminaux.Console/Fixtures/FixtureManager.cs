@@ -130,6 +130,7 @@ namespace Terminaux.Console.Fixtures
             new TestInputChoiceNoMain(),
             new TestInputChoiceDisabled(),
             new TestInputFiglet(),
+            new TestInputIcon(),
             new TestInputInfoBoxButtons(),
             new TestInputInfoBoxMultiSelection(),
             new TestInputInfoBoxSelection(),

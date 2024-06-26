@@ -61,8 +61,10 @@ namespace Terminaux.Images
         public static Color[,] GetColorsFromImage(Stream imageStream)
         {
             // Open the image and get the amount of pixels to get color information
-            var settings = new MagickReadSettings();
-            settings.BackgroundColor = MagickColors.Transparent;
+            var settings = new MagickReadSettings
+            {
+                BackgroundColor = MagickColors.Transparent,
+            };
             var image = new MagickImage(imageStream, settings);
             var pixelCollection = image.GetPixels();
             Color[,] colors = new Color[image.Width, image.Height];
