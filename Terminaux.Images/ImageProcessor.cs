@@ -131,8 +131,8 @@ namespace Terminaux.Images
             // Get the image width and height in pixels and get their comparison factor
             int imageWidth = imageColors.GetLength(0);
             int imageHeight = imageColors.GetLength(1);
-            double imageWidthThreshold = imageWidth / width;
-            double imageHeightThreshold = imageHeight / height;
+            double imageWidthThreshold = (double)imageWidth / width;
+            double imageHeightThreshold = (double)imageHeight / height;
 
             // Build the buffer
             StringBuilder buffer = new();
