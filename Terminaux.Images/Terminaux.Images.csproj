@@ -48,7 +48,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="Resources/Icons/**/*" />
+    <EmbeddedResource Include="Resources/Icons/**/*" />
   </ItemGroup>
 
 </Project>
