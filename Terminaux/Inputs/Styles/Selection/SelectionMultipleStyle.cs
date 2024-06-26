@@ -232,16 +232,9 @@ namespace Terminaux.Inputs.Styles.Selection
                             descFinal
                         );
 
-                        // Write keybindings and page and answer number
-                        bool isExtendable = !string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription);
-                        string bindingsRender = "[SPACE: (un)check]══[ENTER: select]";
+                        // Render keybindings and page and answer number
+                        string bindingsRender = "[SPACE: (un)check]══[K: help]";
                         string numberRender = $"[{currentPage + 1}/{pages + 1}]══[{HighlightedAnswer}/{AllAnswers.Count}]";
-
-                        // Add info binding if extendable
-                        if (isExtendable)
-                            bindingsRender += $"{(isExtendable ? "══[TAB: info]" : "")}";
-                        if (!kiosk)
-                            bindingsRender += $"{(!kiosk ? "══[ESC: exit]" : "")}";
 
                         // Now, render the bindings and the page numbers
                         int bindingsLeft = 2;
@@ -479,9 +472,10 @@ namespace Terminaux.Inputs.Styles.Selection
                                 SelectionStyleSwitches.ShowPageCount = !SelectionStyleSwitches.ShowPageCount;
                                 break;
                             case ConsoleKey.K:
-                                // Keys function
-                                InfoBoxColor.WriteInfoBox("Available keybindings",
-                                    $$"""
+                                // Add base bindings
+                                bool isExtendable = !string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription);
+                                StringBuilder bindings = new(
+                                    """
                                     [UP]        | Goes one element up
                                     [DOWN]      | Goes one element down
                                     [HOME]      | Goes to the first element
@@ -490,13 +484,17 @@ namespace Terminaux.Inputs.Styles.Selection
                                     [PAGE DOWN] | Goes to the next page
                                     [SPACE]     | Selects or deselects a choice
                                     [ENTER]     | Confirms the selections
-                                    [ESC]       | Exits the selection
-                                    [TAB]       | Shows more info in an infobox
                                     [A]         | Selects all the elements
                                     [F]         | Searches for an element
                                     [C]         | Shows or hides the page count
-                                    """
-                                );
+                                    """);
+                                if (isExtendable)
+                                    bindings.AppendLine("[TAB]       | Shows more info in an infobox");
+                                if (!kiosk)
+                                    bindings.AppendLine("[ESC]       | Exits the selection");
+
+                                // Keys function
+                                InfoBoxColor.WriteInfoBox("Available keybindings", bindings.ToString());
                                 break;
                         }
                     }
