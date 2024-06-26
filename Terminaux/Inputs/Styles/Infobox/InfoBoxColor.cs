@@ -512,6 +512,23 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     delay = false;
                                     exiting = false;
                                     break;
+                                case ConsoleKey.K:
+                                    // Keys function
+                                    WriteInfoBox("Available keybindings",
+                                        """
+                                        [UP]        | Goes one line up
+                                        [DOWN]      | Goes one line down
+                                        [HOME]      | Goes to the first line of text
+                                        [END]       | Goes to the last line of text
+                                        [PAGE UP]   | Goes to the previous page of text
+                                        [PAGE DOWN] | Goes to the next page of text
+                                        [ENTER]     | Goes to the next page of text, or closes the modal informational box
+                                        [Q]         | Closes the modal informational box
+                                        """
+                                    );
+                                    delay = false;
+                                    exiting = false;
+                                    break;
                             }
                         }
 

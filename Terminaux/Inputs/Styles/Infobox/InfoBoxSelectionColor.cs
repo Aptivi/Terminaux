@@ -564,6 +564,29 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 bail = true;
                                 cancel = true;
                                 break;
+                            case ConsoleKey.K:
+                                // Keys function
+                                InfoBoxColor.WriteInfoBox("Available keybindings",
+                                    """
+                                    [UP]        | Goes one choice up (next choice)
+                                    [DOWN]      | Goes one choice down (previous choice)
+                                    [HOME]      | Goes to the first choice
+                                    [END]       | Goes to the last choice
+                                    [PAGE UP]   | Goes to the previous choice page
+                                    [PAGE DOWN] | Goes to the next choice page
+                                    [TAB]       | Shows more info in an infobox
+                                    [F]         | Searches for a choice
+                                    [W]         | Goes one line up
+                                    [S]         | Goes one line down
+                                    [E]         | Goes to the previous page of text
+                                    [D]         | Goes to the next page of text
+                                    [ENTER]     | Submits the value
+                                    [ESC]       | Closes without submitting the value
+                                    """
+                                );
+                                delay = false;
+                                exiting = false;
+                                break;
 
                         }
                     }

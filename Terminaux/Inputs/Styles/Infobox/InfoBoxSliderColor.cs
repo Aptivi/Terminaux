@@ -461,7 +461,25 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 bail = true;
                                 cancel = true;
                                 break;
-
+                            case ConsoleKey.K:
+                                // Keys function
+                                InfoBoxColor.WriteInfoBox("Available keybindings",
+                                    """
+                                    [LEFT ARROW]  | Decrements the current value
+                                    [RIGHT ARROW] | Increments the current value
+                                    [HOME]        | Sets the value to the minimum value
+                                    [END]         | Sets the value to the maximum value
+                                    [W]           | Goes one line up
+                                    [S]           | Goes one line down
+                                    [E]           | Goes to the previous page of text
+                                    [D]           | Goes to the next page of text
+                                    [ENTER]       | Submits the value
+                                    [ESC]         | Closes without submitting the value
+                                    """
+                                );
+                                delay = false;
+                                exiting = false;
+                                break;
                         }
                     }
                 }
