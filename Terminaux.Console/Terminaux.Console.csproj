@@ -16,11 +16,13 @@
   <ItemGroup>
     <None Remove="Assets\TermInfoData\*" />
     <None Remove="Assets\pictures\*" />
+    <None Remove="Assets\vectors\*" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\TermInfoData\*" />
     <EmbeddedResource Include="Assets\pictures\*" />
+    <EmbeddedResource Include="Assets\vectors\*" />
   </ItemGroup>
 
   <ItemGroup>

@@ -229,6 +229,7 @@ namespace Terminaux.Console.Fixtures
 
             // Image
             new RenderImage(),
+            new RenderImageSvg(),
 
             // Graphics
             new RenderLines(),
