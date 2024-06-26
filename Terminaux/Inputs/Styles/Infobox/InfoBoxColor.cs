@@ -77,7 +77,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, params object[] vars) =>
-            WriteInfoBoxColorBack(text, true, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxColorBack(text, true, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -86,7 +86,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, bool waitForInput, params object[] vars) =>
-            WriteInfoBoxColorBack(text, waitForInput, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxColorBack(text, waitForInput, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -95,7 +95,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxColor(string text, Color InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxColorBack(text, true, BorderSettings.GlobalSettings,         InfoBoxColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxColorBack(text, true, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -105,7 +105,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxColor(string text, bool waitForInput, Color InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxColorBack(text, waitForInput, BorderSettings.GlobalSettings,         InfoBoxColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxColorBack(text, waitForInput, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -115,7 +115,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxColorBack(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxColorBack(text, true, BorderSettings.GlobalSettings,         InfoBoxColor, BackgroundColor, vars);
+            WriteInfoBoxColorBack(text, true, BorderSettings.GlobalSettings, InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -126,7 +126,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxColorBack(string text, bool waitForInput, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxColorBack(text, waitForInput, BorderSettings.GlobalSettings,         InfoBoxColor, BackgroundColor, vars);
+            WriteInfoBoxColorBack(text, waitForInput, BorderSettings.GlobalSettings, InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -228,7 +228,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string title, string text, params object[] vars) =>
-            WriteInfoBoxColorBack(title, text, true, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxColorBack(title, text, true, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -238,7 +238,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string title, string text, bool waitForInput, params object[] vars) =>
-            WriteInfoBoxColorBack(title, text, waitForInput, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxColorBack(title, text, waitForInput, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -248,7 +248,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxColor(string title, string text, Color InfoBoxTitledColor, params object[] vars) =>
-            WriteInfoBoxColorBack(title, text, true, BorderSettings.GlobalSettings,         InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxColorBack(title, text, true, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -259,7 +259,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxColor(string title, string text, bool waitForInput, Color InfoBoxTitledColor, params object[] vars) =>
-            WriteInfoBoxColorBack(title, text, waitForInput, BorderSettings.GlobalSettings,         InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxColorBack(title, text, waitForInput, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -270,7 +270,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxColorBack(string title, string text, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxColorBack(title, text, true, BorderSettings.GlobalSettings,         InfoBoxTitledColor, BackgroundColor, vars);
+            WriteInfoBoxColorBack(title, text, true, BorderSettings.GlobalSettings, InfoBoxTitledColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -282,7 +282,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxColorBack(string title, string text, bool waitForInput, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxColorBack(title, text, waitForInput, BorderSettings.GlobalSettings,         InfoBoxTitledColor, BackgroundColor, vars);
+            WriteInfoBoxColorBack(title, text, waitForInput, BorderSettings.GlobalSettings, InfoBoxTitledColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly

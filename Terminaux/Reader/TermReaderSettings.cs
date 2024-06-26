@@ -47,10 +47,10 @@ namespace Terminaux.Reader
         /// <summary>
         /// Password mask character
         /// </summary>
-        public char PasswordMaskChar 
-        { 
+        public char PasswordMaskChar
+        {
             get => passwordMaskChar;
-            set => passwordMaskChar = value; 
+            set => passwordMaskChar = value;
         }
 
         /// <summary>

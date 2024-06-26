@@ -61,7 +61,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInputPassword(string text, params object[] vars) =>
-            WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -70,7 +70,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInputPasswordColor(string text, Color InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings,         InfoBoxColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -80,7 +80,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInputPasswordColorBack(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings,         InfoBoxColor, BackgroundColor, vars);
+            WriteInfoBoxInputPasswordColorBack(text, BorderSettings.GlobalSettings, InfoBoxColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -138,7 +138,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInputPassword(string title, string text, params object[] vars) =>
-            WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -148,7 +148,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInputPasswordColor(string title, string text, Color InfoBoxTitledColor, params object[] vars) =>
-            WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings,         InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -159,7 +159,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static string WriteInfoBoxInputPasswordColorBack(string title, string text, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings,         InfoBoxTitledColor, BackgroundColor, vars);
+            WriteInfoBoxInputPasswordColorBack(title, text, BorderSettings.GlobalSettings, InfoBoxTitledColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly

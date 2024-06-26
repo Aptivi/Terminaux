@@ -261,7 +261,7 @@ namespace Terminaux.Reader
         /// Reads the input
         /// </summary>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(bool interruptible = true) => 
+        public static string Read(bool interruptible = true) =>
             Read("", "", GlobalReaderSettings, false, false, interruptible);
 
         /// <summary>
@@ -269,7 +269,7 @@ namespace Terminaux.Reader
         /// </summary>
         /// <param name="settings">Settigns containing reader-related settings</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(TermReaderSettings settings, bool interruptible = true) => 
+        public static string Read(TermReaderSettings settings, bool interruptible = true) =>
             Read("", "", settings, false, false, interruptible);
 
         /// <summary>
@@ -277,7 +277,7 @@ namespace Terminaux.Reader
         /// </summary>
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(string inputPrompt, bool interruptible = true) => 
+        public static string Read(string inputPrompt, bool interruptible = true) =>
             Read(inputPrompt, "", GlobalReaderSettings, false, false, interruptible);
 
         /// <summary>
@@ -286,7 +286,7 @@ namespace Terminaux.Reader
         /// <param name="inputPrompt">The input to be read</param>
         /// <param name="settings">Settigns containing reader-related settings</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(string inputPrompt, TermReaderSettings settings, bool interruptible = true) => 
+        public static string Read(string inputPrompt, TermReaderSettings settings, bool interruptible = true) =>
             Read(inputPrompt, "", settings, false, false, interruptible);
 
         /// <summary>
@@ -317,7 +317,7 @@ namespace Terminaux.Reader
         /// </summary>
         /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(Func<string> inputPrompt, bool interruptible = true) => 
+        public static string Read(Func<string> inputPrompt, bool interruptible = true) =>
             Read(inputPrompt, "", GlobalReaderSettings, false, false, interruptible);
 
         /// <summary>
@@ -326,7 +326,7 @@ namespace Terminaux.Reader
         /// <param name="inputPrompt">The dynamic input function to prompt the user</param>
         /// <param name="settings">Settigns containing reader-related settings</param>
         /// <param name="interruptible">Whether the prompt is interruptible or not</param>
-        public static string Read(Func<string> inputPrompt, TermReaderSettings settings, bool interruptible = true) => 
+        public static string Read(Func<string> inputPrompt, TermReaderSettings settings, bool interruptible = true) =>
             Read(inputPrompt, "", settings, false, false, interruptible);
 
         /// <summary>

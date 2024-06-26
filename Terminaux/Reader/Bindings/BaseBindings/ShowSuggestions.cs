@@ -67,7 +67,7 @@ namespace Terminaux.Reader.Bindings.BaseBindings
                         line.Append(suggestions[i]);
                         int fillTimes = maxChars - (line.Length % maxChars);
                         line.Append(' ', fillTimes);
-                        
+
                         // Check to see if we've reached the limit
                         if (line.Length >= maxLineLength)
                         {

@@ -75,18 +75,18 @@ namespace Terminaux.Base
         /// </summary>
         public static int BufferWidth
         {
-			get => ConsoleWrapperTools.ActionBufferWidth();
+            get => ConsoleWrapperTools.ActionBufferWidth();
             set => ConsoleWrapperTools.ActionSetBufferWidth(value);
-		}
+        }
 
         /// <summary>
         /// The console buffer height (rows)
         /// </summary>
         public static int BufferHeight
         {
-			get => ConsoleWrapperTools.ActionBufferHeight();
+            get => ConsoleWrapperTools.ActionBufferHeight();
             set => ConsoleWrapperTools.ActionSetBufferHeight(value);
-		}
+        }
 
         /// <summary>
         /// The cursor visibility mode

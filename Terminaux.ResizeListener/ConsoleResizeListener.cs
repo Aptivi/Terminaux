@@ -62,16 +62,16 @@ namespace Terminaux.ResizeListener
             else
             {
 #endif
-                if (!ResizeListenerThread.IsAlive)
+            if (!ResizeListenerThread.IsAlive)
+            {
+                if (customHandler is not null)
                 {
-                    if (customHandler is not null)
-                    {
-                        ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
-                        ResizeListenerThread.Start(customHandler);
-                    }
-                    else
-                        ResizeListenerThread.Start(null);
+                    ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
+                    ResizeListenerThread.Start(customHandler);
                 }
+                else
+                    ResizeListenerThread.Start(null);
+            }
 #if NET8_0_OR_GREATER
             }
 #endif

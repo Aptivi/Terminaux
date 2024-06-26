@@ -37,7 +37,7 @@ namespace Terminaux.Base.Extensions
     {
         private static bool isOnAltBuffer = false;
         private static readonly Regex rtlRegex = new("[\u04c7-\u0591\u05D0-\u05EA\u05F0-\u05F4\u0600-\u06FF]+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        
+
         /// <summary>
         /// Specifies whether your terminal emulator reverses the RTL text automatically or not
         /// </summary>

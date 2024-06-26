@@ -70,7 +70,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtons(InputChoiceInfo[] buttons, string text, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(buttons, text, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxButtonsColorBack(buttons, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -81,7 +81,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColor(InputChoiceInfo[] buttons, string text, Color InfoBoxButtonsColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(buttons, text, BorderSettings.GlobalSettings,         InfoBoxButtonsColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxButtonsColorBack(buttons, text, BorderSettings.GlobalSettings, InfoBoxButtonsColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -93,7 +93,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColorBack(InputChoiceInfo[] buttons, string text, Color InfoBoxButtonsColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(buttons, text, BorderSettings.GlobalSettings,         InfoBoxButtonsColor, BackgroundColor, vars);
+            WriteInfoBoxButtonsColorBack(buttons, text, BorderSettings.GlobalSettings, InfoBoxButtonsColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -163,7 +163,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtons(string title, InputChoiceInfo[] buttons, string text, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(title, buttons, text, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxButtonsColorBack(title, buttons, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -175,7 +175,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColor(string title, InputChoiceInfo[] buttons, string text, Color InfoBoxTitledButtonsColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(title, buttons, text, BorderSettings.GlobalSettings,         InfoBoxTitledButtonsColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxButtonsColorBack(title, buttons, text, BorderSettings.GlobalSettings, InfoBoxTitledButtonsColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -188,7 +188,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColorBack(string title, InputChoiceInfo[] buttons, string text, Color InfoBoxTitledButtonsColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxButtonsColorBack(title, buttons, text, BorderSettings.GlobalSettings,         InfoBoxTitledButtonsColor, BackgroundColor, vars);
+            WriteInfoBoxButtonsColorBack(title, buttons, text, BorderSettings.GlobalSettings, InfoBoxTitledButtonsColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly

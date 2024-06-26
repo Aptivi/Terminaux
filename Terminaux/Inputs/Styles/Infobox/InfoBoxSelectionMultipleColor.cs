@@ -71,7 +71,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultiple(InputChoiceInfo[] selections, string text, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(selections, text, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxSelectionMultipleColorBack(selections, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -82,7 +82,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultipleColor(InputChoiceInfo[] selections, string text, Color InfoBoxSelectionMultipleColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(selections, text, BorderSettings.GlobalSettings,         InfoBoxSelectionMultipleColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxSelectionMultipleColorBack(selections, text, BorderSettings.GlobalSettings, InfoBoxSelectionMultipleColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -94,7 +94,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultipleColorBack(InputChoiceInfo[] selections, string text, Color InfoBoxSelectionMultipleColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(selections, text, BorderSettings.GlobalSettings,         InfoBoxSelectionMultipleColor, BackgroundColor, vars);
+            WriteInfoBoxSelectionMultipleColorBack(selections, text, BorderSettings.GlobalSettings, InfoBoxSelectionMultipleColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -154,7 +154,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultiple(string title, InputChoiceInfo[] selections, string text, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(title, selections, text, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxSelectionMultipleColorBack(title, selections, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -166,7 +166,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultipleColor(string title, InputChoiceInfo[] selections, string text, Color InfoBoxTitledSelectionMultipleColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(title, selections, text, BorderSettings.GlobalSettings,         InfoBoxTitledSelectionMultipleColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxSelectionMultipleColorBack(title, selections, text, BorderSettings.GlobalSettings, InfoBoxTitledSelectionMultipleColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -179,7 +179,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <returns>List of selected choice index (starting from zero), or an empty array if exited, selection list is empty, or an error occurred</returns>
         public static int[] WriteInfoBoxSelectionMultipleColorBack(string title, InputChoiceInfo[] selections, string text, Color InfoBoxTitledSelectionMultipleColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxSelectionMultipleColorBack(title, selections, text, BorderSettings.GlobalSettings,         InfoBoxTitledSelectionMultipleColor, BackgroundColor, vars);
+            WriteInfoBoxSelectionMultipleColorBack(title, selections, text, BorderSettings.GlobalSettings, InfoBoxTitledSelectionMultipleColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly

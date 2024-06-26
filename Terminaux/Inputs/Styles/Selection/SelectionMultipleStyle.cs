@@ -249,7 +249,7 @@ namespace Terminaux.Inputs.Styles.Selection
                             selectionBuilder.Append(
                                 $"{CsiSequences.GenerateCsiCursorPosition(bindingsLeft + 1, descSepArea + 1)}" +
                                 $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
-                                bindingsRender 
+                                bindingsRender
                             );
                             if (SelectionStyleSwitches.ShowPageCount)
                             {

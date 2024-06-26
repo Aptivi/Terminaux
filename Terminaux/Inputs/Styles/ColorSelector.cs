@@ -326,7 +326,7 @@ namespace Terminaux.Inputs.Styles
                 bool withinSaturationBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= saturationBarY && y <= boxHeight + saturationBarY + 1;
                 bool withinLightnessBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= lightnessBarY && y <= boxHeight + lightnessBarY + 1;
                 bool withinTransparencyBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= transparencyRampBarY && y <= boxHeight + transparencyRampBarY + 1;
-                
+
                 // Do action
                 switch (mouse.Button)
                 {

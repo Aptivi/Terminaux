@@ -39,7 +39,7 @@ namespace Terminaux.Colors.Templates
                 { $"{PredefinedComponentType.Text}", ConsoleColors.White }
             })
         ];
-        private static readonly List<TemplateInfo> customTemplates = [ ];
+        private static readonly List<TemplateInfo> customTemplates = [];
 
         /// <summary>
         /// All installed templates

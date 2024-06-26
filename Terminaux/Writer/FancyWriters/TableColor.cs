@@ -213,7 +213,7 @@ namespace Terminaux.Writer.FancyWriters
                 line++;
 
                 // Write the rows
-                int rowValues =  Rows.GetLength(0);
+                int rowValues = Rows.GetLength(0);
                 for (int rowIndex = 0; rowIndex < rowValues; rowIndex++)
                 {
                     var rowBuilder = new StringBuilder();

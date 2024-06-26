@@ -67,41 +67,41 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// <summary>
         /// Lower right corner character 
         /// </summary>
-        public char BorderLowerRightCornerChar 
+        public char BorderLowerRightCornerChar
         {
-            get => _borderLowerRightCornerChar; 
+            get => _borderLowerRightCornerChar;
             set => _borderLowerRightCornerChar = value;
         }
         /// <summary>
         /// Upper frame character 
         /// </summary>
-        public char BorderUpperFrameChar 
+        public char BorderUpperFrameChar
         {
-            get => _borderUpperFrameChar; 
+            get => _borderUpperFrameChar;
             set => _borderUpperFrameChar = value;
         }
         /// <summary>
         /// Lower frame character 
         /// </summary>
-        public char BorderLowerFrameChar 
+        public char BorderLowerFrameChar
         {
-            get => _borderLowerFrameChar; 
+            get => _borderLowerFrameChar;
             set => _borderLowerFrameChar = value;
         }
         /// <summary>
         /// Left frame character 
         /// </summary>
-        public char BorderLeftFrameChar 
+        public char BorderLeftFrameChar
         {
-            get => _borderLeftFrameChar; 
+            get => _borderLeftFrameChar;
             set => _borderLeftFrameChar = value;
         }
         /// <summary>
         /// Right frame character 
         /// </summary>
-        public char BorderRightFrameChar 
+        public char BorderRightFrameChar
         {
-            get => _borderRightFrameChar; 
+            get => _borderRightFrameChar;
             set => _borderRightFrameChar = value;
         }
 

@@ -172,7 +172,7 @@ namespace Terminaux.Reader.Tools
         #region Actual functions
         internal static void GoLeftmostOneLineWrapDisabled(ref TermReaderState state) =>
             GoBackOneLineWrapDisabled(state.currentTextPos, ref state);
-        
+
         internal static void GoRightmostOneLineWrapDisabled(ref TermReaderState state) =>
             GoForwardOneLineWrapDisabled(state.currentText.Length - state.currentTextPos, ref state);
 
@@ -265,7 +265,7 @@ namespace Terminaux.Reader.Tools
                     nextWidth == 2 && state.CurrentCursorPosLeft == state.LeftMargin && oldWidth == state.MaximumInputPositionLeft
                    ))
                     state.currentCursorPosLeft -= cellWidth > 0 ? cellWidth : ConsoleChar.EstimateCellWidth(state.currentText.ToString(), 0);
-                
+
                 // Check to see if we need to wrap
                 if (state.CurrentCursorPosLeft < state.settings.LeftMargin)
                 {

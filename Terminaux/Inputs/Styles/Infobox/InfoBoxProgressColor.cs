@@ -62,7 +62,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgress(double progress, string text, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxProgressColorBack(progress, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -72,7 +72,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgressColor(double progress, string text, Color InfoBoxProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, BorderSettings.GlobalSettings,         InfoBoxProgressColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxProgressColorBack(progress, text, BorderSettings.GlobalSettings, InfoBoxProgressColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -83,7 +83,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgressColorBack(double progress, string text, Color InfoBoxProgressColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(progress, text, BorderSettings.GlobalSettings,         InfoBoxProgressColor, BackgroundColor, vars);
+            WriteInfoBoxProgressColorBack(progress, text, BorderSettings.GlobalSettings, InfoBoxProgressColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -136,7 +136,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgress(string title, double progress, string text, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, BorderSettings.GlobalSettings,         new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxProgressColorBack(title, progress, text, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -147,7 +147,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgressColor(string title, double progress, string text, Color InfoBoxTitledProgressColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, BorderSettings.GlobalSettings,         InfoBoxTitledProgressColor, ColorTools.currentBackgroundColor, vars);
+            WriteInfoBoxProgressColorBack(title, progress, text, BorderSettings.GlobalSettings, InfoBoxTitledProgressColor, ColorTools.currentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -159,7 +159,7 @@ namespace Terminaux.Inputs.Styles.Infobox
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxProgressColorBack(string title, double progress, string text, Color InfoBoxTitledProgressColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBoxProgressColorBack(title, progress, text, BorderSettings.GlobalSettings,         InfoBoxTitledProgressColor, BackgroundColor, vars);
+            WriteInfoBoxProgressColorBack(title, progress, text, BorderSettings.GlobalSettings, InfoBoxTitledProgressColor, BackgroundColor, vars);
 
         /// <summary>
         /// Writes the info box plainly

@@ -427,7 +427,7 @@ namespace Terminaux.Inputs.Pointer
                     uint numRead = 0;
                     INPUT_RECORD[] record = [new INPUT_RECORD()];
                     PeekConsoleInput(stdHandle, record, 1, ref numRead);
-                    
+
                     // Now, filter all events except the mouse ones
                     switch (record[0].EventType)
                     {

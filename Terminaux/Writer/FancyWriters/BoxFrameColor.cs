@@ -197,7 +197,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
         /// <returns>The rendered frame</returns>
-        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,BorderSettings settings) =>
+        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings) =>
             RenderBoxFrame("", Left, Top, InteriorWidth, InteriorHeight, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ColorTools.GetGray(), false);
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Border settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <returns>The rendered frame</returns>
-        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,BorderSettings settings, Color BoxFrameColor) =>
+        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BoxFrameColor) =>
             RenderBoxFrame("", Left, Top, InteriorWidth, InteriorHeight, settings, BoxFrameColor, ColorTools.CurrentBackgroundColor);
 
         /// <summary>

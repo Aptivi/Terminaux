@@ -35,12 +35,12 @@ namespace Terminaux.Graphics.Shapes
         /// </summary>
         public int Width =>
             TopWidth;
-        
+
         /// <summary>
         /// Trapezoid top width
         /// </summary>
         public int TopWidth { get; }
-        
+
         /// <summary>
         /// Trapezoid bottom width
         /// </summary>
