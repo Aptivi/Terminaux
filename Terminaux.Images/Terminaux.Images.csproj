@@ -47,4 +47,8 @@
     <ProjectReference Include="..\Terminaux\Terminaux.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="Resources/Icons/**/*" />
+  </ItemGroup>
+
 </Project>
