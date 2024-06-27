@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.IO;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
@@ -30,6 +31,8 @@ namespace Terminaux.Graphics
     /// </summary>
     public static class GraphicsTools
     {
+        internal static Stream placeholderStream = typeof(GraphicsTools).Assembly.GetManifestResourceStream("Terminaux.Resources.Placeholders.aptivi-logo-transparent-ios-opaque.png");
+
         /// <summary>
         /// Renders a line using the <see href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham's line algorithm</see>
         /// </summary>

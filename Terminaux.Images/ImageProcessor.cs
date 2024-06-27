@@ -21,6 +21,7 @@ using ImageMagick;
 using System.IO;
 using System.Text;
 using Terminaux.Colors;
+using Terminaux.Graphics;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -31,6 +32,13 @@ namespace Terminaux.Images
     /// </summary>
     public static class ImageProcessor
     {
+        /// <summary>
+        /// Gets the list of colors by the number of pixels from the default image that Terminaux provides (that is, the Aptivi branding)
+        /// </summary>
+        /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
+        public static Color[,] GetColorsFromImage() =>
+            GetColorsFromImage(GraphicsTools.placeholderStream);
+
         /// <summary>
         /// Gets the list of colors by the number of pixels from the image
         /// </summary>
@@ -65,6 +73,8 @@ namespace Terminaux.Images
             {
                 BackgroundColor = MagickColors.Transparent,
             };
+            if (imageStream.CanSeek)
+                imageStream.Seek(0, SeekOrigin.Begin);
             var image = new MagickImage(imageStream, settings);
             var pixelCollection = image.GetPixels();
             Color[,] colors = new Color[image.Width, image.Height];
@@ -84,6 +94,17 @@ namespace Terminaux.Images
             // Return the array!
             return colors;
         }
+
+        /// <summary>
+        /// Renders the placeholder image (that is, the Aptivi branding) to a string that you can print to the console
+        /// </summary>
+        /// <param name="width">Width of the resulting image</param>
+        /// <param name="height">Height of the resulting image</param>
+        /// <param name="left">Zero-based console left position to start writing the image to</param>
+        /// <param name="top">Zero-based console top position to start writing the image to</param>
+        /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
+        public static string RenderImage(int width, int height, int left, int top) =>
+            RenderImage(GraphicsTools.placeholderStream, width, height, left, top);
 
         /// <summary>
         /// Renders the image to a string that you can print to the console
@@ -127,6 +148,8 @@ namespace Terminaux.Images
         public static string RenderImage(Stream imageStream, int width, int height, int left, int top)
         {
             var imageColors = GetColorsFromImage(imageStream);
+            if (imageStream.CanSeek)
+                imageStream.Seek(0, SeekOrigin.Begin);
             return RenderImage(imageColors, width, height, left, top);
         }
 
