@@ -32,5 +32,9 @@ namespace Terminaux.Images.Icons
         /// Normal quality (72x72)
         /// </summary>
         Normal,
+        /// <summary>
+        /// Scalable quality (SVG)
+        /// </summary>
+        Scalable,
     }
 }

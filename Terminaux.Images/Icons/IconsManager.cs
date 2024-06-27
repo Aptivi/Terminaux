@@ -70,8 +70,9 @@ namespace Terminaux.Images.Icons
             List<string> names = [];
             string prefix = GetPrefix(color, quality);
             string[] icons = GetIconGroup(color, quality);
+            string extension = quality == IconsQuality.Scalable ? ".svg" : ".png";
             foreach (string icon in icons)
-                names.Add(icon.RemovePrefix(prefix).RemoveSuffix(".png"));
+                names.Add(icon.RemovePrefix(prefix).RemoveSuffix(extension));
 
             // Return the emoji names
             return [.. names];
@@ -85,7 +86,8 @@ namespace Terminaux.Images.Icons
                 return iconName;
 
             // We're done here.
-            return prefix + iconName + ".png";
+            string extension = quality == IconsQuality.Scalable ? ".svg" : ".png";
+            return prefix + iconName + extension;
         }
 
         private static string GetPrefix(IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal)
@@ -94,6 +96,8 @@ namespace Terminaux.Images.Icons
             var prefixBuilder = new StringBuilder($"Terminaux.Images.Resources.Icons.{color}");
             if (quality == IconsQuality.High)
                 prefixBuilder.Append("_HQ");
+            else if (quality == IconsQuality.Scalable)
+                prefixBuilder.Append("_SVG");
 
             // We're done here.
             prefixBuilder.Append(".");

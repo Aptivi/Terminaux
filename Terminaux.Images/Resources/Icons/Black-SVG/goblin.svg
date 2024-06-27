@@ -1,0 +1,17 @@
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <g id="line">
+    <polyline fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" points="15.4997 42 15.4997 11 56.4997 11 56.4997 32.201"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="m56.4178,43.8508c-1.0227,11.2759-10.9927,19.5879-22.2687,18.5652-10.561-.9579-18.6485-9.8117-18.6489-20.416"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="m43.8127,50.5414c-5.0061-2.0554-10.6204-2.0554-15.6265,0"/>
+    <path d="m33.63,28.9252c0,1.6569-1.3431,3-3,3s-3-1.3431-3-3,1.3431-3,3-3h0c1.6565.0007,2.9993,1.3434,3,3"/>
+    <path d="m45.63,28.9252c0,1.6569-1.3431,3-3,3s-3-1.3431-3-3,1.3431-3,3-3h0c1.6566.0006,2.9994,1.3434,3,3"/>
+    <line x1="25.3127" x2="32.3127" y1="17" y2="23" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line x1="47.3127" x2="40.3127" y1="17" y2="23" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line x1="55.3715" x2="39.2539" y1="35" y2="35" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line x1="60.3127" x2="55.4303" y1="35" y2="35" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m56.5002,41h4.8125s4,0,4-3c.0345-1.6224-1.2527-2.9655-2.8751-3-.0416-.0009-.0833-.0009-.1249,0h-2"/>
+    <line x1="36.3127" x2="56.5002" y1="41" y2="41" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m36.3127,45s4-3,8,0c.7638.6155,1.6585,1.0478,2.6154,1.2638"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m35.9281,45s-4-3-8,0c-.7638.6155-1.6585,1.0478-2.6154,1.2638"/>
+  </g>
+</svg>

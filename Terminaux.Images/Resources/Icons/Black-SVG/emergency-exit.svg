@@ -1,0 +1,14 @@
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <g id="line">
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m47.8818,18.6982c-1.1715.1318-2.084,1.1268-2.084,2.334,0,1.1837.8774,2.1636,2.0161,2.3254"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m47.2033,60.1062l-1.2406-10.1898c-.1041-.8549-.6875-2.0527-1.2965-2.6617l-2.4832-2.4832c-.609-.609-1.6486-1.5584-2.3102-2.1097l-2.2918-1.9098c-.6616-.5514-1.2029-1.7071-1.2029-2.5684h0c0-.8612.3375-2.1845.7498-2.9406l3.9479-7.2377"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m45.1097,35.3333s-.203.4652-.4511,1.0337c-.2481.5686-.0728,1.6282.3896,2.3548l2.6768,4.2064"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m36.3781,38.9667l-4.5827,6.5466c-.4939.7056-1.5048,1.641-2.2466,2.0786l-5.2631,3.106c-.7417.4377-1.1724,1.3244-.9571,1.9703.2153.6459,1.0432.9066,1.8398.5792l6.6294-2.7243c.7966-.3273,1.9751-1.0633,2.6187-1.6355l5.8762-5.2233"/>
+    <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m41.0758,28.0054c1.5659-3.1318,3.4128-3.3141,4.7221-2.8053,1.2822.4985,1.8909,1.7521,1.855,3.0018"/>
+    <line x1="44.8972" x2="47.7669" y1="28.8651" y2="33.1599" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line x1="50.5553" x2="50.5553" y1="11.6015" y2="60.1236" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line x1="18.6475" x2="33.816" y1="24.1552" y2="24.1552" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line x1="30.282" x2="34.0521" y1="20.3779" y2="24.148" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <line x1="30.282" x2="34.0521" y1="27.9487" y2="24.1786" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>

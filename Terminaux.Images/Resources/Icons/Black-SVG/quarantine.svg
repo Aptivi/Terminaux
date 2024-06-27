@@ -1,0 +1,30 @@
+<svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+  <g id="line">
+    <polyline fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2237" points="13.902 14.702 35.007 17.003 35.362 61.053 39.106 61.053 38.873 13.552 13.902 11"/>
+    <g id="line-2">
+      <g id="Standing_Man">
+        <g id="line-2-2">
+          <circle cx="55.0471" cy="23.0974" r="2.075" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+          <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m58.5178,32.14l1.3279,26.5574c.0385.7688-.4018,1.3978-.9784,1.3978-.6825-.1154-1.1884-.6968-1.2084-1.3887l-1.7765-15.3975c-.09-.7639-.4746-1.3887-.859-1.3887s-.7708.6248-.8589,1.3887l-1.7745,15.397c-.02.6919-.5259,1.2733-1.2084,1.3887-.5766,0-1.0169-.629-.9784-1.3978l1.3279-26.5569"/>
+          <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m48.7355,44.7193l.5536-13.2787c.1009-1.9429,1.6946-3.4728,3.64-3.4944h4.1933"/>
+        </g>
+        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m57.0712,27.9461c1.9454.0216,3.539,1.5515,3.64,3.4944l.5535,13.2787"/>
+      </g>
+    </g>
+    <g id="line-3">
+      <g id="Standing_Man-2">
+        <g id="line-2-3">
+          <circle cx="16.6091" cy="23.1635" r="2.075" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="2"/>
+          <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m20.08,32.2056l1.3277,26.5574c.0384.7688-.4019,1.3978-.9785,1.3978-.6824-.1154-1.1883-.6968-1.2083-1.3887l-1.7766-15.397c-.09-.7639-.4745-1.3887-.8589-1.3887s-.7709.6248-.8589,1.3887l-1.7745,15.397c-.02.6919-.5259,1.2733-1.2084,1.3887-.5765,0-1.0168-.629-.9784-1.3978l1.3279-26.5574"/>
+          <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10.2975,44.7854l.5535-13.2787c.101-1.9429,1.6946-3.4727,3.64-3.4944h4.1933"/>
+        </g>
+        <path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m18.6331,28.0122c1.9454.0217,3.539,1.5515,3.64,3.4944l.5535,13.2788"/>
+      </g>
+    </g>
+    <circle cx="26.1125" cy="29.3378" r="2"/>
+    <circle cx="9.297" cy="19.0027" r="2"/>
+    <circle cx="7" cy="26.0228" r="2"/>
+    <circle cx="22.8264" cy="20" r="2"/>
+    <circle cx="28.1125" cy="23.7843" r="2"/>
+  </g>
+</svg>
