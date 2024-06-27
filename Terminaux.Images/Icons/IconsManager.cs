@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
+using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
@@ -43,8 +44,9 @@ namespace Terminaux.Images.Icons
         /// <param name="top">Zero-based console top position to start writing the icon to</param>
         /// <param name="color">Icon color</param>
         /// <param name="quality">Icon quality</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderIcon(string iconName, int width, int height, int left, int top, IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal)
+        public static string RenderIcon(string iconName, int width, int height, int left, int top, IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal, Color background = null)
         {
             // Check for icon
             string[] iconNames = GetIconNames(color, quality);
@@ -55,7 +57,7 @@ namespace Terminaux.Images.Icons
             string iconFullyQualifiedName = BuildFullyQualifiedIconName(iconName, color, quality);
             var stream = typeof(IconsManager).Assembly.GetManifestResourceStream(iconFullyQualifiedName) ??
                 throw new TerminauxException($"Icon {iconName} exists, but failed to load.");
-            return ImageProcessor.RenderImage(stream, width, height, left, top);
+            return ImageProcessor.RenderImage(stream, width, height, left, top, background);
         }
 
         /// <summary>

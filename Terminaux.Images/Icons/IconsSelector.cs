@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Textify.Figlet;
 using System;
 using System.Linq;
 using System.Text;
