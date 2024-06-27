@@ -178,11 +178,12 @@ namespace Terminaux.Images
                     int pixelX = (int)x;
                     int pixelY = (int)y;
                     var imageColor = imageColors[pixelX, pixelY];
-                    buffer.Append((imageColor.RGB == ColorTools.CurrentBackgroundColor.RGB ? ColorTools.RenderRevertBackground() : imageColor.VTSequenceBackgroundTrueColor) + " ");
+                    buffer.Append((imageColor.RGB == ColorTools.CurrentBackgroundColor.RGB && imageColor.RGB.A == 0 ? ColorTools.RenderRevertBackground() : imageColor.VTSequenceBackgroundTrueColor) + " ");
                 }
             }
 
             // Return the resulting buffer
+            buffer.Append(ColorTools.RenderRevertBackground());
             return buffer.ToString();
         }
     }
