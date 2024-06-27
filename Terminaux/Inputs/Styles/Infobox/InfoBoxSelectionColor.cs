@@ -401,6 +401,39 @@ namespace Terminaux.Inputs.Styles.Infobox
                             }
                         }
 
+                        bool DetermineButtonsPressed(PointerEventContext mouse)
+                        {
+                            string buttons = "[K][X]";
+                            int buttonsLeftMin = maxWidth + borderX - buttons.Length;
+                            int buttonsLeftMax = buttonsLeftMin + buttons.Length;
+                            int buttonsTop = borderY;
+                            return
+                                PointerTools.PointerWithinRange(mouse,
+                                    (buttonsLeftMin, buttonsTop),
+                                    (buttonsLeftMax, buttonsTop));
+                        }
+
+                        void DoActionBasedOnButtonPress(PointerEventContext mouse)
+                        {
+                            string buttons = "[K][X]";
+                            int buttonLeftHelpMin = maxWidth + borderX - buttons.Length;
+                            int buttonLeftHelpMax = buttonLeftHelpMin + 2;
+                            int buttonLeftCloseMin = buttonLeftHelpMin + 3;
+                            int buttonLeftCloseMax = buttonLeftHelpMin + buttons.Length;
+                            int buttonsTop = borderY;
+                            if (mouse.Coordinates.y == buttonsTop)
+                            {
+                                if (PointerTools.PointerWithinRange(mouse, (buttonLeftHelpMin, buttonsTop), (buttonLeftHelpMax, buttonsTop)))
+                                    ShowBindings();
+                                else if (PointerTools.PointerWithinRange(mouse, (buttonLeftCloseMin, buttonsTop), (buttonLeftCloseMax, buttonsTop)))
+                                {
+                                    exiting = true;
+                                    bail = true;
+                                    cancel = true;
+                                }
+                            }
+                        }
+
                         // Mouse input received.
                         var mouse = TermReader.ReadPointer();
                         switch (mouse.Button)
@@ -441,6 +474,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     UpdatePositionBasedOnSelectionArrowPress(mouse);
                                 else if (DetermineTextArrowPressed(mouse))
                                     UpdatePositionBasedOnTextArrowPress(mouse);
+                                else if (DetermineButtonsPressed(mouse))
+                                    DoActionBasedOnButtonPress(mouse);
                                 else
                                 {
                                     UpdatePositionBasedOnMouse(mouse);
@@ -568,24 +603,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                             case ConsoleKey.K:
                                 // Keys function
-                                InfoBoxColor.WriteInfoBox("Available keybindings",
-                                    """
-                                    [UP]        | Goes one choice up (next choice)
-                                    [DOWN]      | Goes one choice down (previous choice)
-                                    [HOME]      | Goes to the first choice
-                                    [END]       | Goes to the last choice
-                                    [PAGE UP]   | Goes to the previous choice page
-                                    [PAGE DOWN] | Goes to the next choice page
-                                    [TAB]       | Shows more info in an infobox
-                                    [F]         | Searches for a choice
-                                    [W]         | Goes one line up
-                                    [S]         | Goes one line down
-                                    [E]         | Goes to the previous page of text
-                                    [D]         | Goes to the next page of text
-                                    [ENTER]     | Submits the value
-                                    [ESC]       | Closes without submitting the value
-                                    """
-                                );
+                                ShowBindings();
                                 delay = false;
                                 exiting = false;
                                 break;
@@ -638,6 +656,28 @@ namespace Terminaux.Inputs.Styles.Infobox
 
             // Return the selected choice, or -1
             return selectedChoice;
+        }
+
+        private static void ShowBindings()
+        {
+            InfoBoxColor.WriteInfoBox("Available keybindings",
+                """
+                [UP]        | Goes one choice up (next choice)
+                [DOWN]      | Goes one choice down (previous choice)
+                [HOME]      | Goes to the first choice
+                [END]       | Goes to the last choice
+                [PAGE UP]   | Goes to the previous choice page
+                [PAGE DOWN] | Goes to the next choice page
+                [TAB]       | Shows more info in an infobox
+                [F]         | Searches for a choice
+                [W]         | Goes one line up
+                [S]         | Goes one line down
+                [E]         | Goes to the previous page of text
+                [D]         | Goes to the next page of text
+                [ENTER]     | Submits the value
+                [ESC]       | Closes without submitting the value
+                """
+            );
         }
 
         static InfoBoxSelectionColor()

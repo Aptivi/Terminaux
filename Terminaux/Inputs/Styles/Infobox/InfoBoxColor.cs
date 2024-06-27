@@ -440,30 +440,65 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     }
                                 }
                             }
+                            
+                            bool DetermineButtonsPressed(PointerEventContext mouse)
+                            {
+                                string buttons = "[K][X]";
+                                int buttonsLeftMin = maxWidth + borderX - buttons.Length;
+                                int buttonsLeftMax = buttonsLeftMin + buttons.Length;
+                                int buttonsTop = borderY;
+                                return
+                                    PointerTools.PointerWithinRange(mouse,
+                                        (buttonsLeftMin, buttonsTop),
+                                        (buttonsLeftMax, buttonsTop));
+                            }
+
+                            void DoActionBasedOnButtonPress(PointerEventContext mouse)
+                            {
+                                string buttons = "[K][X]";
+                                int buttonLeftHelpMin = maxWidth + borderX - buttons.Length;
+                                int buttonLeftHelpMax = buttonLeftHelpMin + 2;
+                                int buttonLeftCloseMin = buttonLeftHelpMin + 3;
+                                int buttonLeftCloseMax = buttonLeftHelpMin + buttons.Length;
+                                int buttonsTop = borderY;
+                                if (mouse.Coordinates.y == buttonsTop)
+                                {
+                                    if (PointerTools.PointerWithinRange(mouse, (buttonLeftHelpMin, buttonsTop), (buttonLeftHelpMax, buttonsTop)))
+                                        ShowBindings();
+                                    else if (PointerTools.PointerWithinRange(mouse, (buttonLeftCloseMin, buttonsTop), (buttonLeftCloseMax, buttonsTop)))
+                                        exiting = true;
+                                }
+                            }
 
                             // Mouse input received.
                             var mouse = TermReader.ReadPointer();
                             switch (mouse.Button)
                             {
                                 case PointerButton.Left:
+                                    delay = false;
+                                    exiting = false;
                                     if (mouse.ButtonPress != PointerButtonPress.Released)
                                         break;
                                     if (DetermineArrowPressed(mouse))
                                         UpdatePositionBasedOnArrowPress(mouse);
+                                    else if (DetermineButtonsPressed(mouse))
+                                        DoActionBasedOnButtonPress(mouse);
                                     break;
                                 case PointerButton.WheelUp:
                                     currIdx -= 3;
                                     if (currIdx < 0)
                                         currIdx = 0;
+                                    delay = false;
+                                    exiting = false;
                                     break;
                                 case PointerButton.WheelDown:
                                     currIdx += 3;
                                     if (currIdx > splitFinalLines.Length - maxHeight)
                                         currIdx = splitFinalLines.Length - maxHeight;
+                                    delay = false;
+                                    exiting = false;
                                     break;
                             }
-                            delay = false;
-                            exiting = false;
                         }
                         else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
                         {
@@ -515,18 +550,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     break;
                                 case ConsoleKey.K:
                                     // Keys function
-                                    WriteInfoBox("Available keybindings",
-                                        """
-                                        [UP]        | Goes one line up
-                                        [DOWN]      | Goes one line down
-                                        [HOME]      | Goes to the first line of text
-                                        [END]       | Goes to the last line of text
-                                        [PAGE UP]   | Goes to the previous page of text
-                                        [PAGE DOWN] | Goes to the next page of text
-                                        [ENTER]     | Goes to the next page of text, or closes the modal informational box
-                                        [Q]         | Closes the modal informational box
-                                        """
-                                    );
+                                    ShowBindings();
                                     delay = false;
                                     exiting = false;
                                     break;
@@ -728,9 +752,26 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
 
             // Render a keybinding that points to the help page
-            if (writeBinding && maxWidth >= 5)
-                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("[K]", left - 4, borderY + maxHeight + 1, InfoBoxColor, BackgroundColor));
+            string buttons = "[K][X]";
+            if (writeBinding && maxWidth >= buttons.Length + 2)
+                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(buttons, left - buttons.Length - 1, borderY, InfoBoxColor, BackgroundColor));
             return boxBuffer.ToString();
+        }
+
+        private static void ShowBindings()
+        {
+            WriteInfoBox("Available keybindings",
+                """
+                [UP]        | Goes one line up
+                [DOWN]      | Goes one line down
+                [HOME]      | Goes to the first line of text
+                [END]       | Goes to the last line of text
+                [PAGE UP]   | Goes to the previous page of text
+                [PAGE DOWN] | Goes to the next page of text
+                [ENTER]     | Goes to the next page of text, or closes the modal informational box
+                [Q]         | Closes the modal informational box
+                """
+            );
         }
 
         static InfoBoxColor()
