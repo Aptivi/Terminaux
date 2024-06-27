@@ -384,7 +384,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    return RenderText(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, true, vars);
+                    return RenderText(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, true, waitForInput, vars);
                 });
 
                 // Main loop
@@ -645,13 +645,13 @@ namespace Terminaux.Inputs.Styles.Infobox
         }
 
         internal static string RenderText(
-            int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, params object[] vars
+            int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, bool writeBinding, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, true, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, writeBinding, vars);
         }
 
         internal static string RenderTextInput(
