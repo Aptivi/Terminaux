@@ -369,7 +369,7 @@ namespace Terminaux.Writer.FancyWriters
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
-                    int consoleInfoX = (ConsoleWrapper.WindowWidth - rightMargin - leftMargin) / 2 - ConsoleMisc.FilterVTSequences(sentence).Length / 2;
+                    int consoleInfoX = (ConsoleWrapper.WindowWidth - rightMargin - leftMargin) / 2 - ConsoleChar.EstimateCellWidth(sentence) / 2;
                     consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
                     consoleInfoX += leftMargin;
                     centered.Append(
