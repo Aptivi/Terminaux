@@ -306,8 +306,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int startIndex = selectionChoices * currentPage;
 
                             // Now, translate coordinates to the selected index
-                            if (mouse.Coordinates.x <= leftPos || mouse.Coordinates.x >= maxSelectionWidth ||
-                                mouse.Coordinates.y < selectionBoxPosY || mouse.Coordinates.y >= selectionBoxPosY + selectionChoices)
+                            if (!PointerTools.PointerWithinRange(mouse,
+                                    (leftPos, selectionBoxPosY),
+                                    (maxSelectionWidth, selectionBoxPosY + selectionChoices)))
                                 return false;
                             int listIndex = mouse.Coordinates.y - selectionBoxPosY;
                             listIndex = startIndex + listIndex;
@@ -324,8 +325,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int arrowTop = 2;
                             int arrowBottom = maxHeight + 1;
                             return
-                                mouse.Coordinates.x == arrowLeft &&
-                                (mouse.Coordinates.y == arrowTop || mouse.Coordinates.y == arrowBottom);
+                                PointerTools.PointerWithinRange(mouse,
+                                    (arrowLeft, arrowTop),
+                                    (arrowLeft, arrowBottom));
                         }
 
                         void UpdatePositionBasedOnTextArrowPress(PointerEventContext mouse)

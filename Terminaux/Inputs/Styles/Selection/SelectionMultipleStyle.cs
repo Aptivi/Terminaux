@@ -301,8 +301,9 @@ namespace Terminaux.Inputs.Styles.Selection
                             if (AllAnswers.Count <= answersPerPage)
                                 return false;
                             return
-                                mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 3 &&
-                                (mouse.Coordinates.y == listStartPosition + 2 || mouse.Coordinates.y == listStartPosition + 1 + answersPerPage);
+                                PointerTools.PointerWithinRange(mouse,
+                                    (ConsoleWrapper.WindowWidth - 3, listStartPosition + 2),
+                                    (ConsoleWrapper.WindowWidth - 3, listStartPosition + 1 + answersPerPage));
                         }
 
                         void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)

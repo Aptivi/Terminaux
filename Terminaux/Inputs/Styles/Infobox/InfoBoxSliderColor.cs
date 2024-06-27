@@ -334,8 +334,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int arrowTop = 2;
                             int arrowBottom = maxHeight + 1;
                             return
-                                mouse.Coordinates.x == arrowLeft &&
-                                (mouse.Coordinates.y == arrowTop || mouse.Coordinates.y == arrowBottom);
+                                PointerTools.PointerWithinRange(mouse,
+                                    (arrowLeft, arrowTop),
+                                    (arrowLeft, arrowBottom));
                         }
 
                         void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
@@ -372,8 +373,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int arrowRight = sliderPosX + maxSliderWidth + 1;
                             int arrowTop = borderY + 4;
                             return
-                                (mouse.Coordinates.x == arrowLeft || mouse.Coordinates.x == arrowRight) &&
-                                mouse.Coordinates.y == arrowTop;
+                                PointerTools.PointerWithinRange(mouse,
+                                    (arrowLeft, arrowTop),
+                                    (arrowRight, arrowTop));
                         }
 
                         void UpdateValueBasedOnSliderPress(PointerEventContext mouse)

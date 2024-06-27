@@ -562,7 +562,7 @@ namespace Terminaux.Inputs.Interactive
                                     refresh = true;
                                 }
                             }
-                            else if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
+                            else if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth + 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior)
                             {
                                 if (InteractiveTuiStatus.CurrentPane != 2)
                                 {
@@ -575,7 +575,7 @@ namespace Terminaux.Inputs.Interactive
                         }
                         else
                         {
-                            if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth - 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
+                            if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth + 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior)
                                 return;
                             if (mouse.Coordinates.x <= 1)
                                 return;
@@ -622,8 +622,10 @@ namespace Terminaux.Inputs.Interactive
                         int paneArrowTop = 2;
                         int paneArrowBottom = SeparatorMaximumHeightInterior + 1;
                         return
-                            (mouse.Coordinates.x == leftPaneArrowLeft || mouse.Coordinates.x == rightPaneArrowLeft) &&
-                            (mouse.Coordinates.y == paneArrowTop || mouse.Coordinates.y == paneArrowBottom);
+                            PointerTools.PointerWithinPoint(mouse, (leftPaneArrowLeft, paneArrowTop)) ||
+                            PointerTools.PointerWithinPoint(mouse, (leftPaneArrowLeft, paneArrowBottom)) ||
+                            PointerTools.PointerWithinPoint(mouse, (rightPaneArrowLeft, paneArrowTop)) ||
+                            PointerTools.PointerWithinPoint(mouse, (rightPaneArrowLeft, paneArrowBottom));
                     }
 
                     void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
@@ -761,7 +763,7 @@ namespace Terminaux.Inputs.Interactive
                             UpdateSelectionBasedOnMouse(mouse);
                             break;
                     }
-                    if (!processed)
+                    if (!processed && !DetermineArrowPressed(mouse))
                     {
                         UpdateSelectionBasedOnMouse(mouse);
 

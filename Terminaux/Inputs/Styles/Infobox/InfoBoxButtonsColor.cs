@@ -350,8 +350,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int arrowTop = 2;
                             int arrowBottom = maxHeight + 1;
                             return
-                                mouse.Coordinates.x == arrowLeft &&
-                                (mouse.Coordinates.y == arrowTop || mouse.Coordinates.y == arrowBottom);
+                                PointerTools.PointerWithinRange(mouse,
+                                    (arrowLeft, arrowTop),
+                                    (arrowLeft, arrowBottom));
                         }
 
                         void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
