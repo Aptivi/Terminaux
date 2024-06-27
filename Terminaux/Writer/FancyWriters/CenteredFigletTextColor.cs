@@ -197,7 +197,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                 {
                     // The fallback figlet also won't fit, so use smaller text
-                    return CenteredTextColor.RenderCentered(Text, ForegroundColor, BackgroundColor, useColor, Vars);
+                    return CenteredTextColor.RenderCentered(Text, ForegroundColor, BackgroundColor, useColor, 0, 0, Vars);
                 }
                 else
                 {
@@ -279,7 +279,7 @@ namespace Terminaux.Writer.FancyWriters
                         figBuilder.Append(
                             $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                             $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                            CenteredTextColor.RenderCentered(top, Text, Vars)
+                            CenteredTextColor.RenderCentered(top, Text, 0, 0, Vars)
                         );
                     }
                     else

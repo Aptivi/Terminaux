@@ -73,6 +73,7 @@ namespace Terminaux.Console.Fixtures
             new PrintFigletCenteredPositional(),
             new PrintFigletCenteredPositionalF(),
             new PrintCentered(),
+            new PrintCenteredOff(),
             new PrintSep(),
             new PrintSepF(),
             new PrintSepColor(),
