@@ -498,6 +498,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     delay = false;
                                     exiting = false;
                                     break;
+                                default:
+                                    delay = false;
+                                    exiting = false;
+                                    break;
                             }
                         }
                         else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
