@@ -463,6 +463,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                     [ENTER]     | Select a choice
                                     [F]         | Searches for an element
                                     [C]         | Shows or hides the page count
+
                                     """);
                                 if (isExtendable)
                                     bindings.AppendLine("[TAB]       | Shows more info in an infobox");
