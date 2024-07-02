@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\ConsoleColorsData.json" />
+    <EmbeddedResource Include="Resources\WebSafeColors.json" />
   </ItemGroup>
 
 </Project>

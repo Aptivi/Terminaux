@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using Terminaux.Base;
@@ -25,6 +26,7 @@ using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
 using Terminaux.Colors.Transformation.Contrast;
@@ -397,6 +399,20 @@ namespace Terminaux.Inputs.Styles
                     case ConsoleKey.P:
                         finalSettings.Opacity--;
                         break;
+                    case ConsoleKey.W:
+                        var colors = WebSafeColors.GetColorList();
+                        string[] names = WebSafeColors.GetColorNames();
+                        int idx = InfoBoxSelectionColor.WriteInfoBoxSelection(names.Select((n, idx) => new InputChoiceInfo($"{idx + 1}", n)).ToArray(), "Select a web-safe color from the list below.");
+                        if (idx < 0)
+                            break;
+                        type = ColorType.TrueColor;
+                        var webSafeColor = colors[idx];
+                        var hsl = ConversionTools.ConvertFromRgb<HueSaturationLightness>(webSafeColor.RGB);
+                        trueColorHue = hsl.HueWhole;
+                        trueColorSaturation = hsl.SaturationWhole;
+                        trueColorLightness = hsl.LightnessWhole;
+                        refresh = true;
+                        break;
 
                     // Non-unified
                     case ConsoleKey.LeftArrow:
@@ -425,6 +441,7 @@ namespace Terminaux.Inputs.Styles
                                     [TAB]                | Change color mode
                                     [I]                  | Color information
                                     [V]                  | Color information (visual)
+                                    [W]                  | Select one of web colors
                                     """
                                 );
                                 refresh = true;
@@ -443,6 +460,7 @@ namespace Terminaux.Inputs.Styles
                                     [TAB]                | Change color mode
                                     [I]                  | Color information
                                     [V]                  | Color information (visual)
+                                    [W]                  | Select one of web colors
                                     """
                                 );
                                 refresh = true;
