@@ -201,7 +201,7 @@ namespace Terminaux.Images
         public static string RenderImage(string imagePath, int width, int height, int left, int top, Color background = null)
         {
             var imageColors = GetColorsFromImage(imagePath);
-            return RenderImage(imageColors, width, height, left, top, background);
+            return RenderImage(imageColors, width, height, left, top, background, true);
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Terminaux.Images
         public static string RenderImage(byte[] imageBytes, int width, int height, int left, int top, Color background = null)
         {
             var imageColors = GetColorsFromImage(imageBytes);
-            return RenderImage(imageColors, width, height, left, top, background);
+            return RenderImage(imageColors, width, height, left, top, background, true);
         }
 
         /// <summary>
@@ -235,7 +235,7 @@ namespace Terminaux.Images
             var imageColors = GetColorsFromImage(imageStream);
             if (imageStream.CanSeek)
                 imageStream.Seek(0, SeekOrigin.Begin);
-            return RenderImage(imageColors, width, height, left, top, background);
+            return RenderImage(imageColors, width, height, left, top, background, true);
         }
 
         /// <summary>
@@ -251,10 +251,78 @@ namespace Terminaux.Images
         public static string RenderImage(MagickImage image, int width, int height, int left, int top, Color background = null)
         {
             var imageColors = GetColorsFromImage(image);
-            return RenderImage(imageColors, width, height, left, top, background);
+            return RenderImage(imageColors, width, height, left, top, background, true);
         }
 
-        internal static string RenderImage(Color[,] imageColors, int width, int height, int left, int top, Color background)
+        /// <summary>
+        /// Renders the placeholder image (that is, the Aptivi branding) to a string that you can print to the console
+        /// </summary>
+        /// <param name="width">Width of the resulting image</param>
+        /// <param name="height">Height of the resulting image</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
+        /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
+        public static string RenderImage(int width, int height, Color background = null) =>
+            RenderImage(GraphicsTools.placeholderStream, width, height, background);
+
+        /// <summary>
+        /// Renders the image to a string that you can print to the console
+        /// </summary>
+        /// <param name="imagePath">Path to the image that ImageMagick can process</param>
+        /// <param name="width">Width of the resulting image</param>
+        /// <param name="height">Height of the resulting image</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
+        /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
+        public static string RenderImage(string imagePath, int width, int height, Color background = null)
+        {
+            var imageColors = GetColorsFromImage(imagePath);
+            return RenderImage(imageColors, width, height, 0, 0, background, false);
+        }
+
+        /// <summary>
+        /// Renders the image to a string that you can print to the console
+        /// </summary>
+        /// <param name="imageBytes">Array of bytes that contains the image data that ImageMagick can process</param>
+        /// <param name="width">Width of the resulting image</param>
+        /// <param name="height">Height of the resulting image</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
+        /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
+        public static string RenderImage(byte[] imageBytes, int width, int height, Color background = null)
+        {
+            var imageColors = GetColorsFromImage(imageBytes);
+            return RenderImage(imageColors, width, height, 0, 0, background, false);
+        }
+
+        /// <summary>
+        /// Renders the image to a string that you can print to the console
+        /// </summary>
+        /// <param name="imageStream">Stream that contains the image data that ImageMagick can process</param>
+        /// <param name="width">Width of the resulting image</param>
+        /// <param name="height">Height of the resulting image</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
+        /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
+        public static string RenderImage(Stream imageStream, int width, int height, Color background = null)
+        {
+            var imageColors = GetColorsFromImage(imageStream);
+            if (imageStream.CanSeek)
+                imageStream.Seek(0, SeekOrigin.Begin);
+            return RenderImage(imageColors, width, height, 0, 0, background, false);
+        }
+
+        /// <summary>
+        /// Renders the image to a string that you can print to the console
+        /// </summary>
+        /// <param name="image">Image data that ImageMagick can process</param>
+        /// <param name="width">Width of the resulting image</param>
+        /// <param name="height">Height of the resulting image</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
+        /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
+        public static string RenderImage(MagickImage image, int width, int height, Color background = null)
+        {
+            var imageColors = GetColorsFromImage(image);
+            return RenderImage(imageColors, width, height, 0, 0, background, false);
+        }
+
+        internal static string RenderImage(Color[,] imageColors, int width, int height, int left, int top, Color background, bool useLeftTop)
         {
             // Get the image width and height in pixels and get their comparison factor
             int imageWidth = imageColors.GetLength(0);
@@ -271,7 +339,8 @@ namespace Terminaux.Images
             for (double y = 0; y < imageHeight; y += imageHeightThreshold, absoluteY++)
             {
                 // Some positioning
-                buffer.Append(CsiSequences.GenerateCsiCursorPosition(left + 1, top + absoluteY + 1));
+                if (useLeftTop)
+                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(left + 1, top + absoluteY + 1));
 
                 // Determine how to process the width
                 for (double x = 0; x < imageWidth; x += imageWidthThreshold)
@@ -282,6 +351,10 @@ namespace Terminaux.Images
                     var imageColor = imageColors[pixelX, pixelY];
                     buffer.Append((imageColor.RGB == ColorTools.CurrentBackgroundColor.RGB && imageColor.RGB.A == 0 ? bgSeq : imageColor.VTSequenceBackgroundTrueColor) + " ");
                 }
+
+                // Add space if not using console positioning
+                if (!useLeftTop)
+                    buffer.AppendLine();
             }
 
             // Return the resulting buffer
