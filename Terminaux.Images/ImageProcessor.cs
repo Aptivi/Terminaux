@@ -20,6 +20,7 @@
 using ImageMagick;
 using System.IO;
 using System.Text;
+using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Graphics;
 using Terminaux.Sequences.Builder.Types;
@@ -36,6 +37,65 @@ namespace Terminaux.Images
         /// Gets the list of colors by the number of pixels from the default image that Terminaux provides (that is, the Aptivi branding)
         /// </summary>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
+        public static MagickImage OpenImage() =>
+            OpenImage(GraphicsTools.placeholderStream);
+
+        /// <summary>
+        /// Gets the list of colors by the number of pixels from the image
+        /// </summary>
+        /// <param name="imagePath">Path to the image that ImageMagick can process</param>
+        /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
+        public static MagickImage OpenImage(string imagePath)
+        {
+            // Check for null
+            if (string.IsNullOrWhiteSpace(imagePath))
+                throw new TerminauxException("Image path is not provided.");
+
+            var imageStream = File.OpenRead(imagePath);
+            return OpenImage(imageStream);
+        }
+
+        /// <summary>
+        /// Gets the list of colors by the number of pixels from the image
+        /// </summary>
+        /// <param name="imageBytes">Array of bytes that contains the image data that ImageMagick can process</param>
+        /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
+        public static MagickImage OpenImage(byte[] imageBytes)
+        {
+            // Check for null
+            if (imageBytes is null || imageBytes.Length == 0)
+                throw new TerminauxException("Image data is not provided.");
+
+            var imageStream = new MemoryStream(imageBytes);
+            return OpenImage(imageStream);
+        }
+
+        /// <summary>
+        /// Gets the list of colors by the number of pixels from the image
+        /// </summary>
+        /// <param name="imageStream">Stream that contains the image data that ImageMagick can process</param>
+        /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
+        public static MagickImage OpenImage(Stream imageStream)
+        {
+            // Check for null
+            if (imageStream is null)
+                throw new TerminauxException("Image stream is not provided.");
+
+            // Open the image
+            var settings = new MagickReadSettings
+            {
+                BackgroundColor = MagickColors.Transparent,
+            };
+            if (imageStream.CanSeek)
+                imageStream.Seek(0, SeekOrigin.Begin);
+            var image = new MagickImage(imageStream, settings);
+            return image;
+        }
+
+        /// <summary>
+        /// Gets the list of colors by the number of pixels from the default image that Terminaux provides (that is, the Aptivi branding)
+        /// </summary>
+        /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
         public static Color[,] GetColorsFromImage() =>
             GetColorsFromImage(GraphicsTools.placeholderStream);
 
@@ -46,6 +106,10 @@ namespace Terminaux.Images
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
         public static Color[,] GetColorsFromImage(string imagePath)
         {
+            // Check for null
+            if (string.IsNullOrWhiteSpace(imagePath))
+                throw new TerminauxException("Image path is not provided.");
+
             var imageStream = File.OpenRead(imagePath);
             return GetColorsFromImage(imageStream);
         }
@@ -57,6 +121,10 @@ namespace Terminaux.Images
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
         public static Color[,] GetColorsFromImage(byte[] imageBytes)
         {
+            // Check for null
+            if (imageBytes is null || imageBytes.Length == 0)
+                throw new TerminauxException("Image data is not provided.");
+
             var imageStream = new MemoryStream(imageBytes);
             return GetColorsFromImage(imageStream);
         }
@@ -68,14 +136,27 @@ namespace Terminaux.Images
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
         public static Color[,] GetColorsFromImage(Stream imageStream)
         {
-            // Open the image and get the amount of pixels to get color information
-            var settings = new MagickReadSettings
-            {
-                BackgroundColor = MagickColors.Transparent,
-            };
-            if (imageStream.CanSeek)
-                imageStream.Seek(0, SeekOrigin.Begin);
-            var image = new MagickImage(imageStream, settings);
+            // Check for null
+            if (imageStream is null)
+                throw new TerminauxException("Image stream is not provided.");
+
+            // Open the image
+            var image = OpenImage(imageStream);
+            return GetColorsFromImage(image);
+        }
+
+        /// <summary>
+        /// Gets the list of colors by the number of pixels from the image
+        /// </summary>
+        /// <param name="image">Image data that ImageMagick can process</param>
+        /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
+        public static Color[,] GetColorsFromImage(MagickImage image)
+        {
+            // Check for null
+            if (image is null)
+                throw new TerminauxException("Image is not provided.");
+
+            // Get the amount of pixels to get color information
             var pixelCollection = image.GetPixels();
             Color[,] colors = new Color[image.Width, image.Height];
 
@@ -154,6 +235,22 @@ namespace Terminaux.Images
             var imageColors = GetColorsFromImage(imageStream);
             if (imageStream.CanSeek)
                 imageStream.Seek(0, SeekOrigin.Begin);
+            return RenderImage(imageColors, width, height, left, top, background);
+        }
+
+        /// <summary>
+        /// Renders the image to a string that you can print to the console
+        /// </summary>
+        /// <param name="image">Image data that ImageMagick can process</param>
+        /// <param name="width">Width of the resulting image</param>
+        /// <param name="height">Height of the resulting image</param>
+        /// <param name="left">Zero-based console left position to start writing the image to</param>
+        /// <param name="top">Zero-based console top position to start writing the image to</param>
+        /// <param name="background">Specifies the background color, or null for default</param>
+        /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
+        public static string RenderImage(MagickImage image, int width, int height, int left, int top, Color background = null)
+        {
+            var imageColors = GetColorsFromImage(image);
             return RenderImage(imageColors, width, height, left, top, background);
         }
 
