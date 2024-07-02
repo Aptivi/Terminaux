@@ -190,6 +190,8 @@ namespace Terminaux.Colors.Models.Conversion
                     rgb = ToRgb(yiq);
                 else if (source is LumaChromaUv yuv)
                     rgb = ToRgb(yuv);
+                else if (source is Xyz xyz)
+                    rgb = ToRgb(xyz);
                 else
                     throw new TerminauxException("Can't convert to RGB.");
                 return rgb;
@@ -242,6 +244,9 @@ namespace Terminaux.Colors.Models.Conversion
                 else if (typeof(TResult) == typeof(LumaChromaUv))
                     return ToYuv(source) as TResult ??
                         throw new TerminauxException("Can't convert to YUV.");
+                else if (typeof(TResult) == typeof(Xyz))
+                    return ToXyz(source) as TResult ??
+                        throw new TerminauxException("Can't convert to XYZ.");
                 else
                     throw new TerminauxException("Can't convert from RGB.");
             }
@@ -540,6 +545,31 @@ namespace Terminaux.Colors.Models.Conversion
             // Return the resulting values
             return new(y, u, v);
         }
+
+        /// <summary>
+        /// Converts the RGB color model to XYZ
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static Xyz ToXyz(RedGreenBlue rgb)
+        {
+            if (rgb is null)
+                throw new TerminauxException("Can't convert a null RGB instance to XYZ!");
+
+            // Get the XYZ values
+            double r = rgb.RNormalized;
+            double g = rgb.GNormalized;
+            double b = rgb.BNormalized;
+            r = ((r > 0.04045d) ? Math.Pow((r + 0.055) / 1.055, 2.4) : r / 12.92d) * 100;
+            g = ((g > 0.04045d) ? Math.Pow((g + 0.055) / 1.055, 2.4) : g / 12.92d) * 100;
+            b = ((b > 0.04045d) ? Math.Pow((b + 0.055) / 1.055, 2.4) : b / 12.92d) * 100;
+            double x = r * 0.4124 + g * 0.3576 + b * 0.1805;
+            double y = r * 0.2126 + g * 0.7152 + b * 0.0722;
+            double z = r * 0.0193 + g * 0.1192 + b * 0.9505;
+
+            // Return the resulting values
+            return new(x, y, z);
+        }
         #endregion
         #region Translate to RGB from...
         /// <summary>
@@ -823,6 +853,37 @@ namespace Terminaux.Colors.Models.Conversion
 
             // Install the values
             return new(r, g, b);
+        }
+
+        /// <summary>
+        /// Converts the XYZ color model to RGB
+        /// </summary>
+        /// <param name="xyz">Instance of XYZ</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(Xyz xyz)
+        {
+            if (xyz is null)
+                throw new TerminauxException("Can't convert a null XYZ instance to RGB!");
+
+            // Get the normalized xyz values
+            double x = xyz.X / 100d;
+            double y = xyz.Y / 100d;
+            double z = xyz.Z / 100d;
+
+            // Now, convert them to RGB
+            double r = x * 3.2406d + y * -1.5372d + z * -0.4986d;
+            double g = x * -0.9689d + y * 1.8758d + z * 0.0415d;
+            double b = x * 0.0557d + y * -0.2040d + z * 1.0570d;
+            r = (r > 0.0031308) ? 1.055d * Math.Pow(r, 1 / 2.4d) - 0.055 : r * 12.92d;
+            g = (g > 0.0031308) ? 1.055d * Math.Pow(g, 1 / 2.4d) - 0.055 : g * 12.92d;
+            b = (b > 0.0031308) ? 1.055d * Math.Pow(b, 1 / 2.4d) - 0.055 : b * 12.92d;
+
+            int rWhole = (int)(r * 255);
+            int gWhole = (int)(g * 255);
+            int bWhole = (int)(b * 255);
+
+            // Install the values
+            return new(rWhole, gWhole, bWhole);
         }
 
         private static double GetRgbValueFromHue(double variable1, double variable2, double variableHue)

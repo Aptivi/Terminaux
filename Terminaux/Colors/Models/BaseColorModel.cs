@@ -62,7 +62,8 @@ namespace Terminaux.Colors.Models
                 RedGreenBlue.IsSpecifierAndValueValid(specifier) ||
                 RedYellowBlue.IsSpecifierAndValueValid(specifier) ||
                 LumaInPhaseQuadrature.IsSpecifierAndValueValid(specifier) ||
-                LumaChromaUv.IsSpecifierAndValueValid(specifier);
+                LumaChromaUv.IsSpecifierAndValueValid(specifier) ||
+                Xyz.IsSpecifierAndValueValid(specifier);
         }
 
         /// <summary>
@@ -87,6 +88,7 @@ namespace Terminaux.Colors.Models
                 RedYellowBlue.IsSpecifierValid(specifier) ? RedYellowBlue.ParseSpecifierToRgb(specifier, settings) :
                 LumaInPhaseQuadrature.IsSpecifierValid(specifier) ? LumaInPhaseQuadrature.ParseSpecifierToRgb(specifier, settings) :
                 LumaChromaUv.IsSpecifierValid(specifier) ? LumaChromaUv.ParseSpecifierToRgb(specifier, settings) :
+                Xyz.IsSpecifierValid(specifier) ? Xyz.ParseSpecifierToRgb(specifier, settings) :
 
                 // Colors and hash
                 usesColorId ? ParsingTools.ParseSpecifierRgbName(specifier, settings) :

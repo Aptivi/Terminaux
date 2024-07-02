@@ -326,6 +326,48 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to XYZ
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToXyz()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to XYZ
+            var xyz = ConversionTools.ToXyz(ColorInstance.RGB);
+
+            // Check for property correctness
+            xyz.X.ShouldBe(13.660940262318197);
+            xyz.Y.ShouldBe(11.284216455358383);
+            xyz.Z.ShouldBe(2.2171176575479863);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(xyz);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -623,6 +665,48 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to XYZ
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericConvertRgbToXyz()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to XYZ
+            var xyz = ConversionTools.ConvertFromRgb<Xyz>(ColorInstance.RGB);
+
+            // Check for property correctness
+            xyz.X.ShouldBe(13.660940262318197);
+            xyz.Y.ShouldBe(11.284216455358383);
+            xyz.Z.ShouldBe(2.2171176575479863);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ConvertToRgb(xyz);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -917,6 +1001,48 @@ namespace Terminaux.Tests.Colors
             rgb.R.ShouldBe(139);
             rgb.G.ShouldBe(80);
             rgb.B.ShouldBe(54);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to XYZ
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericBidirectionalConvertRgbToXyz()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to XYZ
+            var xyz = ConversionTools.GetConvertedColorModel<RedGreenBlue, Xyz>(ColorInstance.RGB);
+
+            // Check for property correctness
+            xyz.X.ShouldBe(13.660940262318197);
+            xyz.Y.ShouldBe(11.284216455358383);
+            xyz.Z.ShouldBe(2.2171176575479863);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.GetConvertedColorModel<Xyz, RedGreenBlue>(xyz);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
         }
     }
 }
