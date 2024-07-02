@@ -435,6 +435,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Data.WebSafeColors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Data.WebSafeColors.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Data.yml",
       "output": {
         ".html": {
