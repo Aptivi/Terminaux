@@ -42,11 +42,13 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, params object[] Vars)
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static void WriteCenteredFiglet(int top, FigletFont FigletFont, string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCenteredFiglet(top, FigletFont, Text, Vars));
+                TextWriterRaw.WriteRaw(RenderCenteredFiglet(top, FigletFont, Text, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -63,8 +65,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColor(int top, FigletFont FigletFont, string Text, Color Color, params object[] Vars) =>
-            WriteCenteredFigletColorBack(top, FigletFont, Text, Color, ColorTools.currentBackgroundColor, Vars);
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static void WriteCenteredFigletColor(int top, FigletFont FigletFont, string Text, Color Color, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            WriteCenteredFigletColorBack(top, FigletFont, Text, Color, ColorTools.currentBackgroundColor, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -75,11 +79,13 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColorBack(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static void WriteCenteredFigletColorBack(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCenteredFiglet(top, FigletFont, Text, ForegroundColor, BackgroundColor, Vars));
+                TextWriterRaw.WriteRaw(RenderCenteredFiglet(top, FigletFont, Text, ForegroundColor, BackgroundColor, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -94,11 +100,13 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, params object[] Vars)
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static void WriteCenteredFiglet(FigletFont FigletFont, string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCenteredFiglet(FigletFont, Text, Vars));
+                TextWriterRaw.WriteRaw(RenderCenteredFiglet(FigletFont, Text, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -114,8 +122,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColor(FigletFont FigletFont, string Text, Color Color, params object[] Vars) =>
-            WriteCenteredFigletColorBack(FigletFont, Text, Color, ColorTools.currentBackgroundColor, Vars);
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static void WriteCenteredFigletColor(FigletFont FigletFont, string Text, Color Color, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            WriteCenteredFigletColorBack(FigletFont, Text, Color, ColorTools.currentBackgroundColor, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -125,11 +135,13 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFigletColorBack(FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static void WriteCenteredFigletColorBack(FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCenteredFiglet(FigletFont, Text, ForegroundColor, BackgroundColor, Vars));
+                TextWriterRaw.WriteRaw(RenderCenteredFiglet(FigletFont, Text, ForegroundColor, BackgroundColor, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -144,8 +156,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(FigletFont FigletFont, string Text, params object[] Vars) =>
-            RenderCenteredFiglet(FigletFont, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static string RenderCenteredFiglet(FigletFont FigletFont, string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderCenteredFiglet(FigletFont, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders a centered figlet with text
@@ -154,8 +168,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(FigletFont FigletFont, string Text, Color ForegroundColor, params object[] Vars) =>
-            RenderCenteredFiglet(FigletFont, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static string RenderCenteredFiglet(FigletFont FigletFont, string Text, Color ForegroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderCenteredFiglet(FigletFont, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders a centered figlet with text
@@ -165,8 +181,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
-            RenderCenteredFiglet(FigletFont, Text, ForegroundColor, BackgroundColor, true, Vars);
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static string RenderCenteredFiglet(FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderCenteredFiglet(FigletFont, Text, ForegroundColor, BackgroundColor, true, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders a centered figlet with text
@@ -177,7 +195,9 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the color or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        internal static string RenderCenteredFiglet(FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        internal static string RenderCenteredFiglet(FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             Text = TextTools.FormatString(Text, Vars);
             var figFontFallback = FigletTools.GetFigletFont("small");
@@ -202,13 +222,13 @@ namespace Terminaux.Writer.FancyWriters
                 else
                 {
                     // Write the figlet.
-                    return RenderCenteredFiglet(consoleY, FigletFont, Text, ForegroundColor, BackgroundColor, useColor, Vars);
+                    return RenderCenteredFiglet(consoleY, FigletFont, Text, ForegroundColor, BackgroundColor, useColor, leftMargin, rightMargin, Vars);
                 }
             }
             else
             {
                 // Write the figlet.
-                return RenderCenteredFiglet(consoleY, FigletFont, Text, ForegroundColor, BackgroundColor, useColor, Vars);
+                return RenderCenteredFiglet(consoleY, FigletFont, Text, ForegroundColor, BackgroundColor, useColor, leftMargin, rightMargin, Vars);
             }
         }
 
@@ -219,8 +239,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, params object[] Vars) =>
-            RenderCenteredFiglet(top, FigletFont, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, Vars);
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderCenteredFiglet(top, FigletFont, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders a centered figlet with text
@@ -230,8 +252,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, Color ForegroundColor, params object[] Vars) =>
-            RenderCenteredFiglet(top, FigletFont, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, Vars);
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, Color ForegroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderCenteredFiglet(top, FigletFont, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders a centered figlet with text
@@ -242,8 +266,10 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
-            RenderCenteredFiglet(top, FigletFont, Text, ForegroundColor, BackgroundColor, true, Vars);
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        public static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderCenteredFiglet(top, FigletFont, Text, ForegroundColor, BackgroundColor, true, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders a centered figlet with text
@@ -255,7 +281,9 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the color or not</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        internal static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, params object[] Vars)
+        /// <param name="leftMargin">The left margin</param>
+        /// <param name="rightMargin">The right margin</param>
+        internal static string RenderCenteredFiglet(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
@@ -279,7 +307,7 @@ namespace Terminaux.Writer.FancyWriters
                         figBuilder.Append(
                             $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                             $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                            CenteredTextColor.RenderCentered(top, Text, 0, 0, Vars)
+                            CenteredTextColor.RenderCentered(top, Text, leftMargin, rightMargin, Vars)
                         );
                     }
                     else
@@ -288,7 +316,7 @@ namespace Terminaux.Writer.FancyWriters
                         figBuilder.Append(
                             $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                             $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                            FigletWhereColor.RenderFigletWherePlain(Text, consoleX, top, true, figFontFallback, Vars)
+                            FigletWhereColor.RenderFigletWherePlain(Text, consoleX, top, true, figFontFallback, leftMargin, rightMargin, Vars)
                         );
                     }
                 }
@@ -298,7 +326,7 @@ namespace Terminaux.Writer.FancyWriters
                     figBuilder.Append(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        FigletWhereColor.RenderFigletWherePlain(Text, consoleX, top, true, FigletFont, Vars)
+                        FigletWhereColor.RenderFigletWherePlain(Text, consoleX, top, true, FigletFont, leftMargin, rightMargin, Vars)
                     );
                 }
 
