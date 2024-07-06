@@ -56,6 +56,7 @@ namespace Terminaux.Base
         internal static Action<int> actionSetBufferWidth = SetBufferWidth;
         internal static Action<int> actionSetBufferHeight = SetBufferHeight;
         internal static Action actionBeep = Beep;
+        internal static Action<double, int, int> actionBeepCustom = BeepCustom;
         internal static Action actionBeepSeq = BeepSeq;
         internal static Action actionClear = Clear;
         internal static Action actionClearLoadBack = ClearLoadBack;
@@ -256,6 +257,14 @@ namespace Terminaux.Base
         {
             internal get => actionBeep;
             set => actionBeep = value ?? Beep;
+        }
+        /// <summary>
+        /// Beeps the console (with frequency and time)
+        /// </summary>
+        public static Action<double, int, int> ActionBeepCustom
+        {
+            internal get => actionBeepCustom;
+            set => actionBeepCustom = value ?? BeepCustom;
         }
         /// <summary>
         /// Beeps the console (VT Sequence method)
@@ -616,6 +625,14 @@ namespace Terminaux.Base
 
         private static void Beep() =>
             Console.Beep();
+
+        private static void BeepCustom(double freq, int ms, int clockTickRate)
+        {
+            if (PlatformHelper.IsOnWindows())
+                Console.Beep((int)freq, ms);
+            else
+                ConsoleMisc.CustomBeepPosix(freq, ms, clockTickRate);
+        }
 
         private static void BeepSeq() =>
             Write('\a');

@@ -21,6 +21,7 @@ using SpecProbe.Platform;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base.Checks;
@@ -447,6 +448,30 @@ namespace Terminaux.Base.Extensions
             ConsoleWrapper.CursorVisible = false;
             isOnAltBuffer = true;
         }
+
+        internal static void CustomBeepPosix(double freq, int ms, int clockTickRate)
+        {
+            // Inspired from https://github.com/johnath/beep
+            int fileDescriptor = -1;
+            string pathTty = "/dev/tty0";
+            string pathVc = "/dev/vc/0";
+            IntPtr pathTtyPtr = Marshal.StringToHGlobalAnsi(pathTty);
+            IntPtr pathVcPtr = Marshal.StringToHGlobalAnsi(pathVc);
+            if ((fileDescriptor = open(pathTtyPtr, 1)) == -1)
+                fileDescriptor = open(pathVcPtr, 1);
+            if (fileDescriptor == -1)
+                throw new TerminauxException("No more TTYs to perform custom beep.");
+
+            // Invoke the event to check to see if the console supports evdev or not by testing the
+            // _IOC(IOC.READ, 'E', 0x1a, len) ioctl
+            bool isEvdev = ioctl(fileDescriptor, );
+        }
+
+        [DllImport("libc", SetLastError = true)]
+        internal static extern int open(IntPtr pathname, int flags);
+
+        [DllImport("libc", SetLastError = true)]
+        internal static extern int ioctl(int fd, ulong request, ref uint argp);
 
         static ConsoleMisc()
         {

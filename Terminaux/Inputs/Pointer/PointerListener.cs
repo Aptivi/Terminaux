@@ -191,7 +191,7 @@ namespace Terminaux.Inputs.Pointer
             // Test ioctl
             ulong ctl = DetermineIoCtl();
             uint numRead = 0;
-            int result = ioctl(0, ctl, ref numRead);
+            int result = ConsoleMisc.ioctl(0, ctl, ref numRead);
             if (result == -1)
                 throw new TerminauxException("Failed to start the listener.");
 
@@ -211,7 +211,7 @@ namespace Terminaux.Inputs.Pointer
                     // Functions to help get output
                     int Peek(ref uint numRead, ref bool error)
                     {
-                        int result = ioctl(0, ctl, ref numRead);
+                        int result = ConsoleMisc.ioctl(0, ctl, ref numRead);
                         if (result == -1)
                         {
                             // Some failure occurred. Stop listening.
@@ -377,9 +377,6 @@ namespace Terminaux.Inputs.Pointer
             Process.Start("stty", "echo");
             pointerListener = null;
         }
-
-        [DllImport("libc", SetLastError = true)]
-        private static extern int ioctl(int fd, ulong request, ref uint argp);
 
         [DllImport("libc", SetLastError = true)]
         private static extern unsafe int read(int fd, void* buf, uint count);
