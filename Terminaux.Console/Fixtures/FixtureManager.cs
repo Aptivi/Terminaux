@@ -230,6 +230,7 @@ namespace Terminaux.Console.Fixtures
             new ConsoleConhostCheck(),
             new AlternateBuffers(),
             new Sizes(),
+            new BeepTones(),
 
             // Image
             new RenderImage(),

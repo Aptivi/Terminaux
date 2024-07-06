@@ -159,9 +159,8 @@ namespace Terminaux.Base
         /// </summary>
         /// <param name="freq">Frequency in hertz</param>
         /// <param name="ms">Duration in milliseconds</param>
-        /// <param name="clockTickRate">Clock tick rate of the timer (don't adjust unless you know what you're doing)</param>
-        public static void Beep(double freq, int ms, int clockTickRate = 1193180) =>
-            ConsoleWrapperTools.ActionBeepCustom(freq, ms, clockTickRate);
+        public static void Beep(int freq, int ms) =>
+            ConsoleWrapperTools.ActionBeepCustom(freq, ms);
 
         /// <summary>
         /// Beeps the console (VT Sequence method)
