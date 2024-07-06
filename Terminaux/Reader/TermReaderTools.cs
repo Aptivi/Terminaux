@@ -431,7 +431,7 @@ namespace Terminaux.Reader
                 else
                     PositioningTools.GoForward(steps, ref state);
             }
-            else if (!state.OneLineWrap)
+            else
                 PositioningTools.SeekTo(state.CurrentTextPos, ref state);
             PositioningTools.Commit(state);
         }
