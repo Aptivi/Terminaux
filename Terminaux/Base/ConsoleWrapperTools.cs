@@ -631,7 +631,10 @@ namespace Terminaux.Base
             if (PlatformHelper.IsOnWindows())
                 Console.Beep(freq, ms);
             else
-                ConsoleMisc.CustomBeepPosix(freq, ms);
+            {
+                Write($"\x1b[10;{freq}]\x1b[11;{ms}]\a");
+                Thread.Sleep(ms);
+            }
         }
 
         private static void BeepSeq() =>

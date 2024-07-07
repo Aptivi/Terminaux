@@ -24,6 +24,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using Terminaux.Base.Checks;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
@@ -448,80 +449,6 @@ namespace Terminaux.Base.Extensions
             ConsoleWrapper.CursorVisible = false;
             isOnAltBuffer = true;
         }
-
-        internal static unsafe void CustomBeepPosix(int freq, int ms)
-        {
-            ms = ms < 0 ? 0 : ms;
-
-            // Inspired from https://github.com/johnath/beep
-            int fileDescriptor = -1;
-            string pathEv = "/dev/input/by-path/platform-pcspkr-event-spkr";
-            string pathVc = "/dev/vc/0";
-            string pathTty = "/dev/tty0";
-            IntPtr pathEvPtr = Marshal.StringToHGlobalAnsi(pathEv);
-            IntPtr pathVcPtr = Marshal.StringToHGlobalAnsi(pathVc);
-            IntPtr pathTtyPtr = Marshal.StringToHGlobalAnsi(pathTty);
-            if ((fileDescriptor = open(pathEvPtr, 1)) == -1)
-                if ((fileDescriptor = open(pathVcPtr, 1)) == -1)
-                    fileDescriptor = open(pathTtyPtr, 1);
-            if (fileDescriptor == -1)
-                throw new TerminauxException("No more TTYs to perform custom beep. Make sure you have enough permissions.");
-
-            // Invoke the event to check to see if the console supports evdev or not by testing the
-            // _IOC(IOC.READ, 'E', 0x1a, len) ioctl
-            uint result = 0;
-            ulong eviocgSndTest = 0x40000000 | ((0 & 0x1fff) << 16) | (('E') << 8) | (0x1a);
-            bool isEvdev = ioctl(fileDescriptor, eviocgSndTest, ref result) != -1;
-
-            // Now, get the period that KIOCSOUND ioctl can understand
-            uint period = (uint)ms;
-            if (isEvdev)
-            {
-                var inputEvent = new input_event()
-                {
-                    type = 0x12, // EV_SND
-                    code = 0x02, // SND_TONE
-                    value = freq
-                };
-                IntPtr eventPtr = new();
-                Marshal.StructureToPtr(inputEvent, eventPtr, true);
-                int writeResult = write(fileDescriptor, eventPtr, sizeof(input_event));
-                if (writeResult < 0)
-                    throw new TerminauxException("Can't beep.");
-            }
-            else
-            {
-                ulong kiocSound = 0x4B2F;
-                int beepResult = ioctl(fileDescriptor, kiocSound, ref period);
-                if (beepResult < 0)
-                    throw new TerminauxException("Can't beep.");
-            }
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct timeval
-        {
-            public int tv_sec;
-            public int tv_usec;
-        }
-
-        [StructLayout(LayoutKind.Sequential)]
-        private struct input_event
-        {
-            public timeval time;
-            public byte type;
-            public byte code;
-            public int value;
-        }
-
-        [DllImport("libc", SetLastError = true)]
-        internal static extern int write(int fd, IntPtr buf, int count);
-
-        [DllImport("libc", SetLastError = true)]
-        internal static extern int open(IntPtr pathname, int flags);
-
-        [DllImport("libc", SetLastError = true)]
-        internal static extern int ioctl(int fd, ulong request, ref uint argp);
 
         static ConsoleMisc()
         {
