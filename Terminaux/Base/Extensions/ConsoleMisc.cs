@@ -455,15 +455,15 @@ namespace Terminaux.Base.Extensions
 
             // Inspired from https://github.com/johnath/beep
             int fileDescriptor = -1;
-            string pathTty = "/dev/tty0";
-            string pathVc = "/dev/vc/0";
             string pathEv = "/dev/input/by-path/platform-pcspkr-event-spkr";
-            IntPtr pathTtyPtr = Marshal.StringToHGlobalAnsi(pathTty);
-            IntPtr pathVcPtr = Marshal.StringToHGlobalAnsi(pathVc);
+            string pathVc = "/dev/vc/0";
+            string pathTty = "/dev/tty0";
             IntPtr pathEvPtr = Marshal.StringToHGlobalAnsi(pathEv);
-            if ((fileDescriptor = open(pathTtyPtr, 1)) == -1)
+            IntPtr pathVcPtr = Marshal.StringToHGlobalAnsi(pathVc);
+            IntPtr pathTtyPtr = Marshal.StringToHGlobalAnsi(pathTty);
+            if ((fileDescriptor = open(pathEvPtr, 1)) == -1)
                 if ((fileDescriptor = open(pathVcPtr, 1)) == -1)
-                    fileDescriptor = open(pathEvPtr, 1);
+                    fileDescriptor = open(pathTtyPtr, 1);
             if (fileDescriptor == -1)
                 throw new TerminauxException("No more TTYs to perform custom beep. Make sure you have enough permissions.");
 
