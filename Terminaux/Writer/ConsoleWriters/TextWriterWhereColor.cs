@@ -392,7 +392,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         int vtSeqIdx = 0;
 
                         // Now, parse every character
-                        int pos = OldLeft;
+                        int pos = Left;
                         for (int i = 0; i < MessageParagraph.Length; i++)
                         {
                             // If there is a new line, or if we're about to hit the maximum width, we need to go down
@@ -400,7 +400,7 @@ namespace Terminaux.Writer.ConsoleWriters
                             {
                                 buffered.Append($"{CharManager.GetEsc()}[1B");
                                 buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
-                                pos = OldLeft;
+                                pos = Left;
                             }
 
                             // Write a character individually
@@ -418,7 +418,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         {
                             buffered.Append($"{CharManager.GetEsc()}[1B");
                             buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
-                            pos = OldLeft;
+                            pos = Left;
                         }
                     }
 
