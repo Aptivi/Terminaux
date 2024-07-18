@@ -554,7 +554,7 @@ namespace Terminaux.Inputs.Interactive
                         int oldPane = InteractiveTuiStatus.CurrentPane;
                         if (interactiveTui.SecondPaneInteractable)
                         {
-                            if (mouse.Coordinates.x >= 2 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior - 1)
+                            if (mouse.Coordinates.x >= 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior - 1)
                             {
                                 if (InteractiveTuiStatus.CurrentPane != 1)
                                 {
@@ -575,9 +575,9 @@ namespace Terminaux.Inputs.Interactive
                         }
                         else
                         {
-                            if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth + 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior)
+                            if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth - 1)
                                 return;
-                            if (mouse.Coordinates.x <= 1)
+                            if (mouse.Coordinates.x < 1)
                                 return;
                         }
                         if (refresh)
