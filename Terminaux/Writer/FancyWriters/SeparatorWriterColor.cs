@@ -46,7 +46,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterRaw.WriteRaw(RenderSeparator(Text, Vars));
                 if (line)
-                    TextWriterRaw.WritePlain("\n");
+                    TextWriterRaw.WriteRaw("\n");
             }
             catch (Exception ex)
             {
@@ -67,7 +67,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterRaw.WriteRaw(RenderSeparator(Text, Vars));
                 if (line)
-                    TextWriterRaw.WritePlain("\n");
+                    TextWriterRaw.WriteRaw("\n");
             }
             catch (Exception ex)
             {
@@ -100,7 +100,7 @@ namespace Terminaux.Writer.FancyWriters
             {
                 TextWriterRaw.WriteRaw(RenderSeparator(Text, ForegroundColor, BackgroundColor, Vars));
                 if (line)
-                    TextWriterRaw.WritePlain("\n");
+                    TextWriterRaw.WriteRaw("\n");
             }
             catch (Exception ex)
             {
