@@ -18,6 +18,7 @@
 //
 
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Terminaux.Inputs
 {
@@ -26,6 +27,13 @@ namespace Terminaux.Inputs
     /// </summary>
     public static class InputChoiceTools
     {
+        /// <summary>
+        /// Gets the input choices
+        /// </summary>
+        /// <param name="Answers">Set of working titles.</param>
+        public static InputChoiceInfo[] GetInputChoices(string[] Answers) =>
+            GetInputChoices(Answers.Select((answer, idx) => ($"{idx + 1}", answer)).ToArray());
+
         /// <summary>
         /// Gets the input choices
         /// </summary>

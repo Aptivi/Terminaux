@@ -64,5 +64,18 @@ namespace Terminaux.Tests.Inputs
             choices[1].ChoiceTitle.ShouldBe("No");
             choices[2].ChoiceTitle.ShouldBe("Cancel");
         }
+
+        [TestMethod]
+        public void TestGetInputChoicesAnswersSingleTitle()
+        {
+            var choices = InputChoiceTools.GetInputChoices(["Yes", "No", "Cancel"]);
+            choices.Length.ShouldBe(3);
+            choices[0].ChoiceName.ShouldBe("1");
+            choices[1].ChoiceName.ShouldBe("2");
+            choices[2].ChoiceName.ShouldBe("3");
+            choices[0].ChoiceTitle.ShouldBe("Yes");
+            choices[1].ChoiceTitle.ShouldBe("No");
+            choices[2].ChoiceTitle.ShouldBe("Cancel");
+        }
     }
 }
