@@ -707,13 +707,14 @@ namespace Terminaux.Inputs.Styles.Infobox
         )
         {
             // Deal with the lines to actually fit text in the infobox
+            string buttons = "[K][X]";
             string[] splitFinalLines = GetFinalLines(text, vars);
 
             // Fill the info box with text inside it
             var boxBuffer = new StringBuilder();
             string border =
                 !string.IsNullOrEmpty(title) ?
-                BorderColor.RenderBorderPlain(title, borderX, borderY, maxWidth, maxHeight, settings) :
+                BorderColor.RenderBorderPlain(writeBinding && maxWidth >= buttons.Length + 2 ? title.Truncate(maxWidth - buttons.Length - 7) : title, borderX, borderY, maxWidth, maxHeight, settings) :
                 BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, settings);
             boxBuffer.Append(
                 $"{(useColor ? InfoBoxColor.VTSequenceForeground : "")}" +
@@ -756,7 +757,6 @@ namespace Terminaux.Inputs.Styles.Infobox
             }
 
             // Render a keybinding that points to the help page
-            string buttons = "[K][X]";
             if (writeBinding && maxWidth >= buttons.Length + 2)
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(buttons, left - buttons.Length - 1, borderY, InfoBoxColor, BackgroundColor));
             return boxBuffer.ToString();
