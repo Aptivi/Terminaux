@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Images", "Termina
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Extensions", "Terminaux.Extensions\Terminaux.Extensions.csproj", "{D937E463-BD01-433B-BA38-EDD0C94A6ADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terminaux.NerdFontGen", "Terminaux.NerdFontGen\Terminaux.NerdFontGen.csproj", "{1690D007-56AF-4CC9-B98B-78CB953D795A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.NerdFontGen", "Terminaux.NerdFontGen\Terminaux.NerdFontGen.csproj", "{1690D007-56AF-4CC9-B98B-78CB953D795A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
