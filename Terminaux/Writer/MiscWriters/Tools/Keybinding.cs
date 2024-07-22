@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Diagnostics;
 using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Writer.MiscWriters.Tools
@@ -25,6 +26,7 @@ namespace Terminaux.Writer.MiscWriters.Tools
     /// <summary>
     /// Keybinding class
     /// </summary>
+    [DebuggerDisplay("{BindingName} ({BindingUsesMouse}) [K: {BindingKeyModifiers} + {BindingKeyName}] [M: {BindingPointerModifiers} + {BindingPointerButton} {BindingPointerButtonPress}]")]
     public class Keybinding
     {
         private readonly string _bindingName;
@@ -54,7 +56,7 @@ namespace Terminaux.Writer.MiscWriters.Tools
             _bindingKeyName;
 
         /// <summary>
-        /// Which key is bound to the action?
+        /// Which key modifiers are bound to the action?
         /// </summary>
         public ConsoleModifiers BindingKeyModifiers =>
             _bindingKeyModifiers;
@@ -91,7 +93,7 @@ namespace Terminaux.Writer.MiscWriters.Tools
         /// </summary>
         /// <param name="bindingName">Key binding name</param>
         /// <param name="bindingKeyName">Which key is bound to the action?</param>
-        /// <param name="bindingKeyModifiers">Which modifiers of the key is bound to the action?</param>
+        /// <param name="bindingKeyModifiers">Which modifiers of the key are bound to the action?</param>
         public Keybinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers)
         {
             _bindingName = bindingName;
@@ -124,7 +126,7 @@ namespace Terminaux.Writer.MiscWriters.Tools
         /// <param name="bindingName">Key binding name</param>
         /// <param name="bindingPointerButton">Which button is bound to the action?</param>
         /// <param name="bindingPointerButtonPress">Which press mode of the button is bound to the action?</param>
-        /// <param name="bindingButtonModifiers">Which modifiers of the button is bound to the action?</param>
+        /// <param name="bindingButtonModifiers">Which modifiers of the button are bound to the action?</param>
         public Keybinding(string bindingName, PointerButton bindingPointerButton, PointerButtonPress bindingPointerButtonPress, PointerModifiers bindingButtonModifiers)
         {
             _bindingName = bindingName;
