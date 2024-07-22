@@ -36,6 +36,7 @@ using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.MiscWriters;
 using Textify.General;
 
 namespace Terminaux.Inputs.Interactive
@@ -223,46 +224,8 @@ namespace Terminaux.Inputs.Interactive
 
             // Populate appropriate bindings, depending on the SecondPaneInteractable value, and render them
             var finalBindings = GetAllBindings(interactiveTui);
-            part.AddDynamicText(() =>
-            {
-                var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
-                foreach (InteractiveTuiBinding binding in finalBindings)
-                {
-                    // Check the binding mode
-                    if (binding.BindingUsesMouse)
-                        continue;
-
-                    // First, check to see if the rendered binding info is going to exceed the console window width
-                    string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {binding.BindingName}  ";
-                    int bindingLength = ConsoleChar.EstimateCellWidth(renderedBinding);
-                    int actualLength = ConsoleChar.EstimateCellWidth(VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()));
-                    bool canDraw = bindingLength + actualLength < ConsoleWrapper.WindowWidth - 3;
-                    bool isBuiltin = !interactiveTui.Bindings.Contains(binding);
-                    if (canDraw)
-                    {
-                        bindingsBuilder.Append(
-                            $"{ColorTools.RenderSetConsoleColor(isBuiltin ? InteractiveTuiStatus.KeyBindingBuiltinColor : InteractiveTuiStatus.KeyBindingOptionColor, false, true)}" +
-                            $"{ColorTools.RenderSetConsoleColor(isBuiltin ? InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor : InteractiveTuiStatus.OptionBackgroundColor, true)}" +
-                            GetBindingKeyShortcut(binding, false) +
-                            $"{ColorTools.RenderSetConsoleColor(isBuiltin ? InteractiveTuiStatus.KeyBindingBuiltinForegroundColor : InteractiveTuiStatus.OptionForegroundColor)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true)}" +
-                            $" {binding.BindingName}  "
-                        );
-                    }
-                    else
-                    {
-                        // We can't render anymore, so just break and write a binding to show more
-                        bindingsBuilder.Append(
-                            $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingBuiltinColor, false, true)}" +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, true)}" +
-                            " K "
-                        );
-                        break;
-                    }
-                }
-                return bindingsBuilder.ToString();
-            });
+            var builtIns = finalBindings.Where((itb) => !interactiveTui.Bindings.Contains(itb)).ToArray();
+            part.AddDynamicText(() => KeybindingsWriter.RenderKeybindings(interactiveTui.Bindings, builtIns, InteractiveTuiStatus.KeyBindingBuiltinColor, InteractiveTuiStatus.KeyBindingBuiltinForegroundColor, InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.OptionBackgroundColor, InteractiveTuiStatus.BackgroundColor, 0, ConsoleWrapper.WindowHeight - 1, 0));
 
             // We've added the necessary buffer. Now, add that to the buffered part list
             interactiveTui.screen?.AddBufferedPart(partName, part);
@@ -852,33 +815,11 @@ namespace Terminaux.Inputs.Interactive
                             }
                             break;
                         case ConsoleKey.K:
-                            // First, check the bindings length
-                            var bindings = GetAllBindings(interactiveTui, true);
-                            var mouseBindings = GetAllBindings(interactiveTui, true, true);
-                            if (bindings is null || bindings.Length == 0)
-                                break;
                             processed = true;
-
-                            // User needs an infobox that shows all available keys
-                            int maxBindingLength = bindings
-                                .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb)));
-                            string[] bindingRepresentations = bindings
-                                .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")
-                                .ToArray();
-                            string[] bindingMouseRepresentations = [];
-                            if (mouseBindings is not null && mouseBindings.Length > 0)
-                            {
-                                int maxMouseBindingLength = mouseBindings
-                                    .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb)));
-                                bindingMouseRepresentations = mouseBindings
-                                    .Select((itb) => $"{GetBindingMouseShortcut(itb) + new string(' ', maxMouseBindingLength - ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb))) + $" | {itb.BindingName}"}")
-                                    .ToArray();
-                            }
+                            var bindings = GetAllBindings(interactiveTui, true);
                             InfoBoxColor.WriteInfoBoxColorBack(
                                 "Available keys",
-                                $"{string.Join("\n", bindingRepresentations)}" +
-                                "\n\nMouse bindings:\n\n" +
-                                $"{(bindingMouseRepresentations.Length > 0 ? string.Join("\n", bindingMouseRepresentations) : "No mouse bindings")}"
+                                KeybindingsWriter.RenderKeybindingHelpText(bindings)
                             , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
                             break;
                         case ConsoleKey.F:
@@ -953,21 +894,14 @@ namespace Terminaux.Inputs.Interactive
             return $"{markStart}{(bind.BindingPointerModifiers != 0 ? $"{bind.BindingPointerModifiers} + " : "")}{bind.BindingPointerButton}{(bind.BindingPointerButtonPress != 0 ? $" {bind.BindingPointerButtonPress}" : "")}{markEnd}";
         }
 
-        private static InteractiveTuiBinding[] GetAllBindings<T>(BaseInteractiveTui<T> interactiveTui, bool full = false, bool justMouse = false)
+        private static InteractiveTuiBinding[] GetAllBindings<T>(BaseInteractiveTui<T> interactiveTui, bool full = false)
         {
             // Populate appropriate bindings, depending on the SecondPaneInteractable value
-            List<InteractiveTuiBinding> finalBindings;
-            if (interactiveTui.Bindings is null || interactiveTui.Bindings.Length == 0)
-                finalBindings =
-                [
-                    new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null)
-                ];
-            else
-                finalBindings =
-                [
-                    new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null),
-                    new InteractiveTuiBinding("Keybindings", ConsoleKey.K, null),
-                ];
+            List<InteractiveTuiBinding> finalBindings =
+            [
+                new InteractiveTuiBinding("Keybindings", ConsoleKey.K, null),
+                new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null),
+            ];
 
             // Populate switch as needed
             if (interactiveTui.SecondPaneInteractable)
@@ -1001,10 +935,6 @@ namespace Terminaux.Inputs.Interactive
                 finalBindings.AddRange(interactiveTui.Bindings);
 
             // Filter the bindings based on the binding type
-            if (justMouse)
-                finalBindings = finalBindings.Where((itb) => itb.BindingUsesMouse).ToList();
-            else
-                finalBindings = finalBindings.Where((itb) => !itb.BindingUsesMouse).ToList();
             return [.. finalBindings];
         }
 

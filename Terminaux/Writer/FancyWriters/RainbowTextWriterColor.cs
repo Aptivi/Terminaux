@@ -24,9 +24,10 @@ using System.Text;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Sequences;
+using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
-namespace Terminaux.Writer.ConsoleWriters
+namespace Terminaux.Writer.FancyWriters
 {
     /// <summary>
     /// Console text writer with rainbow color as foreground color
@@ -121,7 +122,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 try
                 {
                     var buffered = new StringBuilder();
-                    string formatted = TextTools.FormatString(Text, vars);
+                    string formatted = Text.FormatString(vars);
                     string filtered = VtSequenceTools.FilterVTSequences(formatted);
                     var stringInfo = new StringInfo(filtered);
                     int length = stringInfo.LengthInTextElements;
