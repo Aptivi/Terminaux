@@ -18,7 +18,6 @@
 //
 
 using System.Collections.Generic;
-using System.Linq;
 using Terminaux.Base;
 
 namespace Terminaux.Graphics.NerdFonts

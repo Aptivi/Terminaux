@@ -32,7 +32,6 @@ using Terminaux.Extensions.Enumerations;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
-using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
@@ -213,12 +212,8 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMinimumHeight = 1;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
-                builder.Append(ColorTools.RenderSetConsoleColor(finalForeColorFirstPane));
-                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
-                builder.Append(BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior));
-                builder.Append(ColorTools.RenderSetConsoleColor(finalForeColorSecondPane));
-                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
-                builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
+                builder.Append(BorderColor.RenderBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane, InteractiveTuiStatus.PaneBackgroundColor));
+                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor));
                 return builder.ToString();
             }));
 
@@ -364,9 +359,7 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMinimumHeightInterior = 2;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
-                builder.Append(ColorTools.RenderSetConsoleColor(finalForeColorSecondPane));
-                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
-                builder.Append(BorderColor.RenderBorderPlain(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior));
+                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor));
 
                 // Split the information string
                 string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
@@ -376,17 +369,13 @@ namespace Terminaux.Inputs.Interactive
                     // Check to see if the info is overpopulated
                     if (top >= SeparatorMaximumHeightInterior)
                     {
-                        builder.Append(ColorTools.RenderSetConsoleColor(finalForeColorSecondPane));
-                        builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneBackgroundColor, true));
-                        builder.Append(TextWriterWhereColor.RenderWhere("[W|S|SHIFT + I]", ConsoleWrapper.WindowWidth - "[W|S|SHIFT + I]".Length - 2, SeparatorMaximumHeightInterior + 2));
+                        builder.Append(TextWriterWhereColor.RenderWhereColorBack("[W|S|SHIFT + I]", ConsoleWrapper.WindowWidth - "[W|S|SHIFT + I]".Length - 2, SeparatorMaximumHeightInterior + 2, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor));
                         break;
                     }
 
                     // Now, render the info
                     string finalInfo = finalInfoStrings[infoIndex];
-                    builder.Append(ColorTools.RenderSetConsoleColor(ForegroundColor));
-                    builder.Append(ColorTools.RenderSetConsoleColor(PaneItemBackColor, true));
-                    builder.Append(TextWriterWhereColor.RenderWhere(finalInfo, SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + top));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack(finalInfo, SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + top, ForegroundColor, PaneItemBackColor));
                 }
 
                 // Render the vertical bar
@@ -432,9 +421,7 @@ namespace Terminaux.Inputs.Interactive
             part.AddDynamicText(() =>
             {
                 var builder = new StringBuilder();
-                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.ForegroundColor));
-                builder.Append(ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.BackgroundColor, true));
-                builder.Append(TextWriterWhereColor.RenderWhere(InteractiveTuiStatus.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0));
+                builder.Append(TextWriterWhereColor.RenderWhereColorBack(InteractiveTuiStatus.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, InteractiveTuiStatus.ForegroundColor, InteractiveTuiStatus.BackgroundColor));
                 builder.Append(ConsoleClearing.GetClearLineToRightSequence());
                 return builder.ToString();
             });
