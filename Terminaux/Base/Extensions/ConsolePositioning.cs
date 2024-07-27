@@ -21,7 +21,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using Textify.General;
-using SpecProbe.Platform;
+using SpecProbe.Software.Platform;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;

@@ -22,7 +22,7 @@ using System.IO;
 using System.Reflection;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Extensions;
-using SpecProbe.Platform;
+using SpecProbe.Software.Platform;
 using Terminaux.Reader;
 using Terminaux.Base.TermInfo;
 using Terminaux.Colors.Data;

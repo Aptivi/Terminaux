@@ -22,7 +22,7 @@ using System;
 using Terminaux.Base.Extensions;
 using Terminaux.Base;
 using Terminaux.Reader;
-using SpecProbe.Platform;
+using SpecProbe.Software.Platform;
 using Textify.General;
 
 namespace Terminaux.Writer.ConsoleWriters

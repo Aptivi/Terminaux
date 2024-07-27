@@ -24,7 +24,7 @@ using Terminaux.Base;
 using Terminaux.Base.Checks;
 
 #if NET8_0_OR_GREATER
-using SpecProbe.Platform;
+using SpecProbe.Software.Platform;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 #endif
@@ -62,16 +62,16 @@ namespace Terminaux.ResizeListener
             else
             {
 #endif
-            if (!ResizeListenerThread.IsAlive)
-            {
-                if (customHandler is not null)
+                if (!ResizeListenerThread.IsAlive)
                 {
-                    ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
-                    ResizeListenerThread.Start(customHandler);
+                    if (customHandler is not null)
+                    {
+                        ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
+                        ResizeListenerThread.Start(customHandler);
+                    }
+                    else
+                        ResizeListenerThread.Start(null);
                 }
-                else
-                    ResizeListenerThread.Start(null);
-            }
 #if NET8_0_OR_GREATER
             }
 #endif
