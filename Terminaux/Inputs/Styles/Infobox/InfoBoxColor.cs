@@ -513,7 +513,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     exiting = true;
                                     break;
                                 case ConsoleKey.PageUp:
-                                    currIdx -= maxHeight * 2 - 1;
+                                    currIdx -= maxHeight;
                                     if (currIdx < 0)
                                         currIdx = 0;
                                     delay = false;

@@ -501,7 +501,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 selected = maxPos;
                                 break;
                             case ConsoleKey.E:
-                                currIdx -= maxHeight * 2 - 1;
+                                currIdx -= maxHeight;
                                 if (currIdx < minPos)
                                     currIdx = minPos;
                                 break;

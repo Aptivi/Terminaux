@@ -602,7 +602,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 ScreenTools.CurrentScreen?.RequireRefresh();
                                 break;
                             case ConsoleKey.E:
-                                currIdx -= maxHeight * 2 - 1;
+                                currIdx -= maxHeight;
                                 if (currIdx < 0)
                                     currIdx = 0;
                                 break;
