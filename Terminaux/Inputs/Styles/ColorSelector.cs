@@ -341,28 +341,24 @@ namespace Terminaux.Inputs.Styles
                 // In case user aimed the cursor at the bars
                 int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6 + (ConsoleWrapper.WindowWidth % 2 == 0 ? 0 : 1);
                 int boxHeight = 2;
-                int hueBarX = ConsoleWrapper.WindowWidth / 2 + 2;
-                int hueBarY = 1;
-                int saturationBarY = hueBarY + boxHeight + 3;
-                int lightnessBarY = saturationBarY + boxHeight + 3;
-                int grayRampBarY = lightnessBarY + boxHeight + 3;
-                int transparencyRampBarY = grayRampBarY + boxHeight + 2;
-                int rgbRampBarY = transparencyRampBarY + boxHeight + 2;
+                int hslBarX = ConsoleWrapper.WindowWidth / 2 + 2;
+                int hslBarY = 1;
+                int grayRampBarY = hslBarY + (boxHeight * 3) + 3;
+                int rgbRampBarY = grayRampBarY + boxHeight + 3;
                 int colorBoxX = 2;
                 int colorBoxY = 1;
                 int colorBoxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-                int colorBoxHeight = ConsoleWrapper.WindowHeight - 6;
+                int colorBoxHeight = ConsoleWrapper.WindowHeight - 5;
 
                 // Mouse input received.
                 var mouse = TermReader.ReadPointer();
-                (int x, int y) = mouse.Coordinates;
 
                 // Detect boundaries
-                bool withinColorBoxBoundaries = x >= colorBoxX && x <= colorBoxWidth + colorBoxX && y >= colorBoxY && y <= colorBoxHeight + colorBoxY;
-                bool withinHueBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= hueBarY && y <= boxHeight + hueBarY + 1;
-                bool withinSaturationBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= saturationBarY && y <= boxHeight + saturationBarY + 1;
-                bool withinLightnessBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= lightnessBarY && y <= boxHeight + lightnessBarY + 1;
-                bool withinTransparencyBarBoundaries = x >= hueBarX && x <= colorBoxWidth + hueBarX && y >= transparencyRampBarY && y <= boxHeight + transparencyRampBarY + 1;
+                bool withinColorBoxBoundaries = PointerTools.PointerWithinRange(mouse, (colorBoxX + 1, colorBoxY + 1), (colorBoxWidth + colorBoxX, colorBoxHeight + colorBoxY));
+                bool withinHueBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, hslBarY + 1), (hslBarX + boxWidth, hslBarY + 2));
+                bool withinSaturationBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, hslBarY + 3), (hslBarX + boxWidth, hslBarY + 4));
+                bool withinLightnessBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, hslBarY + 5), (hslBarX + boxWidth, hslBarY + 6));
+                bool withinTransparencyBarBoundaries = PointerTools.PointerWithinRange(mouse, (hslBarX + 1, grayRampBarY + 1), (hslBarX + boxWidth - 7, grayRampBarY + 2));
 
                 // Do action
                 switch (mouse.Button)
