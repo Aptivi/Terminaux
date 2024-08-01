@@ -30,6 +30,8 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Images.Icons;
+using Terminaux.Writer.MiscWriters;
+using Terminaux.Writer.MiscWriters.Tools;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -38,6 +40,20 @@ namespace Terminaux.Inputs.Styles
     /// </summary>
     public static class IconsSelector
     {
+        private readonly static Keybinding[] bindings =
+        [
+            new("Previous", ConsoleKey.LeftArrow),
+            new("Next", ConsoleKey.RightArrow),
+            new("Submit", ConsoleKey.Enter),
+            new("Cancel", ConsoleKey.Escape),
+            new("Help", ConsoleKey.H),
+        ];
+        private readonly static Keybinding[] additionalBindings =
+        [
+            new("Select", ConsoleKey.S),
+            new("Manual Select", ConsoleKey.S, ConsoleModifiers.Shift),
+        ];
+
         /// <summary>
         /// Prompts the user for an icon
         /// </summary>
@@ -88,7 +104,7 @@ namespace Terminaux.Inputs.Styles
 
                     // Write the selected icon name and the keybindings
                     buffer.Append(CenteredTextColor.RenderCentered(1, $"{iconName} - [{selectedIcon + 1}/{icons.Length}]"));
-                    buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 2, "[ESC] Cancel | [ENTER] Submit | [<-|->] Select | [H] Help"));
+                    buffer.Append(KeybindingsWriter.RenderKeybindings(bindings, 0, ConsoleWrapper.WindowHeight - 1));
                     return buffer.ToString();
                 });
 
@@ -168,15 +184,8 @@ namespace Terminaux.Inputs.Styles
                                 screen.RequireRefresh();
                                 break;
                             case ConsoleKey.H:
-                                InfoBoxColor.WriteInfoBox("Available keybindings",
-                                    $$"""
-                                    [ENTER]              | Accept icon
-                                    [ESC]                | Exit
-                                    [H]                  | Help page
-                                    [S]                  | Select icon from the selection menu
-                                    [SHIFT] + [S]        | Write icon name
-                                    """
-                                );
+                                Keybinding[] allBindings = [.. bindings, .. additionalBindings];
+                                InfoBoxColor.WriteInfoBox("Available keybindings", KeybindingsWriter.RenderKeybindingHelpText(allBindings));
                                 screen.RequireRefresh();
                                 break;
                         }
