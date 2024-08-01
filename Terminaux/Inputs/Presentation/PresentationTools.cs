@@ -37,6 +37,8 @@ using Terminaux.Inputs.Presentation.Inputs;
 using System.Linq;
 using Textify.General;
 using Terminaux.Inputs.Presentation.Elements;
+using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.MiscWriters;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -45,6 +47,16 @@ namespace Terminaux.Inputs.Presentation
     /// </summary>
     public static class PresentationTools
     {
+        private readonly static Keybinding[] bindings =
+        [
+            new("Advance", ConsoleKey.Enter)
+        ];
+        private readonly static Keybinding[] nonKioskBindings =
+        [
+            .. bindings,
+            new("Exit", ConsoleKey.Escape)
+        ];
+
         /// <summary>
         /// Present the presentation
         /// </summary>
@@ -89,7 +101,7 @@ namespace Terminaux.Inputs.Presentation
                     int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
                     int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
                     int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
-                    int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+                    int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
                     int presentationInformationalTop = ConsoleWrapper.WindowHeight - 2;
 
                     // Make a border
@@ -100,7 +112,7 @@ namespace Terminaux.Inputs.Presentation
 
                     // Write the bindings
                     builder.Append(
-                        CenteredTextColor.RenderCentered(presentationInformationalTop, $"[ENTER] Advance{(!kiosk && !required ? $" - [ESC] Exit" : "")}".Truncate(presentationLowerInnerBorderLeft + 1), new Color(ConsoleColors.White), ColorTools.CurrentBackgroundColor)
+                        KeybindingsWriter.RenderKeybindings(!kiosk && !required ? nonKioskBindings : bindings, 0, ConsoleWrapper.WindowHeight - 1)
                     );
 
                     // Clear the presentation screen
@@ -161,7 +173,7 @@ namespace Terminaux.Inputs.Presentation
                     int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
                     int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
                     int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
-                    int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+                    int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
                     int presentationInformationalTop = ConsoleWrapper.WindowHeight - 2;
                     var boxBuffer = new StringBuilder();
                     int linesMade = 0;
@@ -205,7 +217,7 @@ namespace Terminaux.Inputs.Presentation
                     int presentationUpperInnerBorderLeft = presentationUpperBorderLeft + 1;
                     int presentationUpperInnerBorderTop = presentationUpperBorderTop + 1;
                     int presentationLowerInnerBorderLeft = ConsoleWrapper.WindowWidth - presentationUpperInnerBorderLeft * 2;
-                    int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 4;
+                    int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
 
                     // Then, determine if the pointer or the keypress is available
                     if (PointerListener.PointerAvailable)
