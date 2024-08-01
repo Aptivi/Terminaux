@@ -30,6 +30,8 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.MiscWriters;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -38,6 +40,23 @@ namespace Terminaux.Inputs.Styles
     /// </summary>
     public static class FigletSelector
     {
+        private readonly static Keybinding[] bindings =
+        [
+            new("Previous", ConsoleKey.LeftArrow),
+            new("Next", ConsoleKey.RightArrow),
+            new("Submit", ConsoleKey.Enter),
+            new("Cancel", ConsoleKey.Escape),
+            new("Help", ConsoleKey.H),
+        ];
+        private readonly static Keybinding[] additionalBindings =
+        [
+            new("Select", ConsoleKey.S),
+            new("Manual Select", ConsoleKey.S, ConsoleModifiers.Shift),
+            new("Character Showcase", ConsoleKey.C),
+            new("Previous", PointerButton.WheelUp),
+            new("Next", PointerButton.WheelDown),
+        ];
+
         /// <summary>
         /// Prompts the user for a figlet font
         /// </summary>
@@ -87,7 +106,7 @@ namespace Terminaux.Inputs.Styles
 
                     // Write the selected font name and the keybindings
                     buffer.Append(CenteredTextColor.RenderCentered(1, $"{fontName} - [{selectedFont + 1}/{fonts.Length}]"));
-                    buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 2, "[ESC] Cancel | [ENTER] Submit | [<-|->] Select | [H] Help"));
+                    buffer.Append(KeybindingsWriter.RenderKeybindings([], bindings, 0, ConsoleWrapper.WindowHeight - 1));
                     return buffer.ToString();
                 });
 
@@ -174,16 +193,8 @@ namespace Terminaux.Inputs.Styles
                                 screen.RequireRefresh();
                                 break;
                             case ConsoleKey.H:
-                                InfoBoxColor.WriteInfoBox("Available keybindings",
-                                    $$"""
-                                    [ENTER]              | Accept font
-                                    [ESC]                | Exit
-                                    [H]                  | Help page
-                                    [S]                  | Select font from the selection menu
-                                    [SHIFT] + [S]        | Write font name
-                                    [C]                  | Shows the individual characters
-                                    """
-                                );
+                                Keybinding[] allBindings = [.. bindings, .. additionalBindings];
+                                InfoBoxColor.WriteInfoBox("Available keybindings", KeybindingsWriter.RenderKeybindingHelpText(allBindings));
                                 screen.RequireRefresh();
                                 break;
                         }
