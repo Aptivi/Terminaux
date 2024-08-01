@@ -32,7 +32,7 @@ namespace Terminaux.Inputs.Presentation.Inputs
 
         /// <inheritdoc/>
         public override string DisplayInput =>
-            Input.Length > 0 && Choices is not null ? string.Join(", ", Choices.Select((ici) => ici.ChoiceName)) : "   ";
+            Input.Length > 0 && Choices is not null ? string.Join(", ", Choices.Select((ici) => ici.ChoiceName).Where((_, idx) => Input.Contains(idx))) : "   ";
 
         /// <inheritdoc/>
         public override int[] Input =>
