@@ -106,7 +106,7 @@ namespace Terminaux.Inputs.Styles
 
                     // Write the selected font name and the keybindings
                     buffer.Append(CenteredTextColor.RenderCentered(1, $"{fontName} - [{selectedFont + 1}/{fonts.Length}]"));
-                    buffer.Append(KeybindingsWriter.RenderKeybindings([], bindings, 0, ConsoleWrapper.WindowHeight - 1));
+                    buffer.Append(KeybindingsWriter.RenderKeybindings(bindings, 0, ConsoleWrapper.WindowHeight - 1));
                     return buffer.ToString();
                 });
 

@@ -35,6 +35,8 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.MiscWriters;
+using Terminaux.Writer.MiscWriters.Tools;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -49,6 +51,39 @@ namespace Terminaux.Inputs.Styles
         private static ConsoleColors colorValue255 = ConsoleColors.Fuchsia;
         private static ConsoleColor colorValue16 = ConsoleColor.Magenta;
         private static bool save = true;
+        private readonly static Keybinding[] bindings =
+        [
+            new("Submit", ConsoleKey.Enter),
+            new("Cancel", ConsoleKey.Escape),
+            new("Help", ConsoleKey.H),
+        ];
+        private readonly static Keybinding[] additionalBindingsGeneral =
+        [
+            new("Color information", ConsoleKey.I),
+            new("Color information in visual mode", ConsoleKey.V),
+            new("Select web color", ConsoleKey.W),
+            new("Increase opaqueness", ConsoleKey.O),
+            new("Increase transparency", ConsoleKey.P),
+            new("Change between 4-bit, 8-bit, and 16-bit color modes", ConsoleKey.Tab),
+            new("Increase value", PointerButton.WheelDown),
+            new("Decrease value", PointerButton.WheelUp),
+        ];
+        private readonly static Keybinding[] additionalBindingsTrueColor =
+        [
+            .. additionalBindingsGeneral,
+            new("Reduce color hue", ConsoleKey.LeftArrow),
+            new("Reduce color lightness", ConsoleKey.LeftArrow, ConsoleModifiers.Control),
+            new("Reduce saturation", ConsoleKey.DownArrow),
+            new("Increase color hue", ConsoleKey.RightArrow),
+            new("Increase color lightness", ConsoleKey.RightArrow, ConsoleModifiers.Control),
+            new("Increase saturation", ConsoleKey.UpArrow),
+        ];
+        private readonly static Keybinding[] additionalBindingsNormalColor =
+        [
+            .. additionalBindingsGeneral,
+            new("Previous color", ConsoleKey.LeftArrow),
+            new("Next color", ConsoleKey.RightArrow),
+        ];
 
         /// <summary>
         /// Opens the color selector
@@ -167,7 +202,7 @@ namespace Terminaux.Inputs.Styles
             var initialBackground = ColorTools.CurrentBackgroundColor;
 
             // Buffer the hue ramp
-            if (ConsoleWrapper.WindowHeight - 3 > hslBarY + 2)
+            if (ConsoleWrapper.WindowHeight - 2 > hslBarY + 2)
             {
                 int finalHue = type == ColorType.TrueColor ? trueColorHue : ConversionTools.ToHsl(selectedColor.RGB).HueWhole;
                 int finalSaturation = type == ColorType.TrueColor ? trueColorSaturation : ConversionTools.ToHsl(selectedColor.RGB).SaturationWhole;
@@ -222,7 +257,7 @@ namespace Terminaux.Inputs.Styles
             }
 
             // Buffer the gray ramp
-            if (ConsoleWrapper.WindowHeight - 3 > grayRampBarY + 2)
+            if (ConsoleWrapper.WindowHeight - 2 > grayRampBarY + 2)
             {
                 StringBuilder grayRamp = new();
                 StringBuilder transparencyRamp = new();
@@ -247,7 +282,7 @@ namespace Terminaux.Inputs.Styles
             }
 
             // Buffer the dark/light indicator
-            if (ConsoleWrapper.WindowHeight - 3 > grayRampBarY + 2)
+            if (ConsoleWrapper.WindowHeight - 2 > grayRampBarY + 2)
             {
                 StringBuilder darkLightIndicator = new();
                 var indicator = selectedColor.Brightness == ColorBrightness.Light ? ConsoleColors.White : ConsoleColors.Black;
@@ -262,7 +297,7 @@ namespace Terminaux.Inputs.Styles
             }
 
             // Buffer the RGB ramp
-            if (ConsoleWrapper.WindowHeight - 3 > rgbRampBarY + 4)
+            if (ConsoleWrapper.WindowHeight - 2 > rgbRampBarY + 4)
             {
                 StringBuilder redRamp = new();
                 StringBuilder greenRamp = new();
@@ -289,8 +324,8 @@ namespace Terminaux.Inputs.Styles
             }
 
             // Finally, the keybindings
-            int bindingsPos = ConsoleWrapper.WindowHeight - 2;
-            selector.Append(CenteredTextColor.RenderCentered(bindingsPos, "[ENTER] Accept - [H] Help - [ESC] Exit"));
+            int bindingsPos = ConsoleWrapper.WindowHeight - 1;
+            selector.Append(KeybindingsWriter.RenderKeybindings(bindings, 0, bindingsPos));
             return selector.ToString();
         }
 
@@ -425,44 +460,18 @@ namespace Terminaux.Inputs.Styles
                         switch (type)
                         {
                             case ColorType.TrueColor:
-                                InfoBoxColor.WriteInfoBox("Available keybindings",
-                                    $$"""
-                                    [ENTER]              | Accept color
-                                    [ESC]                | Exit
-                                    [H]                  | Help page
-                                    [LEFT]               | Reduce hue
-                                    [CTRL] + [LEFT]      | Reduce lightness
-                                    [RIGHT]              | Increase hue
-                                    [CTRL] + [RIGHT]     | Increase lightness
-                                    [DOWN]               | Reduce saturation
-                                    [UP]                 | Increase saturation
-                                    [O]                  | Increase opaqueness
-                                    [P]                  | Increase transparency
-                                    [TAB]                | Change color mode
-                                    [I]                  | Color information
-                                    [V]                  | Color information (visual)
-                                    [W]                  | Select one of web colors
-                                    """
-                                );
+                                {
+                                    Keybinding[] allBindings = [.. bindings, .. additionalBindingsTrueColor];
+                                    InfoBoxColor.WriteInfoBox("Available keybindings", KeybindingsWriter.RenderKeybindingHelpText(allBindings));
+                                }
                                 refresh = true;
                                 break;
                             case ColorType.EightBitColor:
                             case ColorType.FourBitColor:
-                                InfoBoxColor.WriteInfoBox("Available keybindings",
-                                    $$"""
-                                    [ENTER]              | Accept color
-                                    [ESC]                | Exit
-                                    [H]                  | Help page
-                                    [LEFT]               | Previous color
-                                    [RIGHT]              | Next color
-                                    [O]                  | Increase opaqueness
-                                    [P]                  | Increase transparency
-                                    [TAB]                | Change color mode
-                                    [I]                  | Color information
-                                    [V]                  | Color information (visual)
-                                    [W]                  | Select one of web colors
-                                    """
-                                );
+                                {
+                                    Keybinding[] allBindings = [.. bindings, .. additionalBindingsNormalColor];
+                                    InfoBoxColor.WriteInfoBox("Available keybindings", KeybindingsWriter.RenderKeybindingHelpText(allBindings));
+                                }
                                 refresh = true;
                                 break;
                         }
@@ -489,7 +498,7 @@ namespace Terminaux.Inputs.Styles
             int boxX = 2;
             int boxY = 1;
             int boxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
-            int boxHeight = ConsoleWrapper.WindowHeight - 6;
+            int boxHeight = ConsoleWrapper.WindowHeight - 5;
 
             // First, draw the border
             builder.Append(BoxFrameColor.RenderBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor} | {selectedColor.Name}]", boxX, boxY, boxWidth, boxHeight));
