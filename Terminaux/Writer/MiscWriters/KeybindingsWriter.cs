@@ -314,6 +314,10 @@ namespace Terminaux.Writer.MiscWriters
                     break;
                 }
             }
+            bindingsBuilder.Append(
+                ColorTools.RenderRevertForeground() +
+                ColorTools.RenderRevertBackground()
+            );
             return bindingsBuilder.ToString();
         }
 
