@@ -26,6 +26,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 
@@ -39,16 +40,18 @@ namespace Terminaux.Writer.FancyWriters
         /// <summary>
         /// Draw a table with text
         /// </summary>
-        /// <param name="Headers">Headers to insert to the table.</param>
         /// <param name="Rows">Rows to insert to the table.</param>
-        /// <param name="Margin">Safe threshold from left</param>
-        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="left">Left position of the upper-left corner</param>
+        /// <param name="top">Top position of the upper-left corner</param>
+        /// <param name="width">Table interior width</param>
+        /// <param name="height">Table interior height</param>
+        /// <param name="enableHeader">Whether to enable the header or no</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        public static void WriteTablePlain(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions>? CellOptions = null)
+        public static void WriteTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List<CellOptions>? CellOptions = null)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderTablePlain(Headers, Rows, Margin, SeparateRows, CellOptions));
+                TextWriterRaw.WriteRaw(RenderTablePlain(Rows, left, top, width, height, enableHeader, CellOptions));
             }
             catch (Exception ex)
             {
@@ -60,12 +63,14 @@ namespace Terminaux.Writer.FancyWriters
         /// <summary>
         /// Draw a table with text
         /// </summary>
-        /// <param name="Headers">Headers to insert to the table.</param>
         /// <param name="Rows">Rows to insert to the table.</param>
-        /// <param name="Margin">Safe threshold from left</param>
-        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="left">Left position of the upper-left corner</param>
+        /// <param name="top">Top position of the upper-left corner</param>
+        /// <param name="width">Table interior width</param>
+        /// <param name="height">Table interior height</param>
+        /// <param name="enableHeader">Whether to enable the header or no</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions>? CellOptions = null)
+        public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List<CellOptions>? CellOptions = null)
         {
             try
             {
@@ -73,7 +78,7 @@ namespace Terminaux.Writer.FancyWriters
                 var header = new Color(ConsoleColors.White);
                 var value = new Color(ConsoleColors.Silver);
                 var back = ColorTools.currentBackgroundColor;
-                TextWriterRaw.WriteRaw(RenderTable(Headers, Rows, Margin, sep, header, value, back, SeparateRows, CellOptions));
+                TextWriterRaw.WriteRaw(RenderTable(Rows, left, top, width, height, enableHeader, sep, header, value, back, CellOptions));
             }
             catch (Exception ex)
             {
@@ -85,20 +90,22 @@ namespace Terminaux.Writer.FancyWriters
         /// <summary>
         /// Draw a table with text
         /// </summary>
-        /// <param name="Headers">Headers to insert to the table.</param>
         /// <param name="Rows">Rows to insert to the table.</param>
-        /// <param name="Margin">Margin offset</param>
-        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="left">Left position of the upper-left corner</param>
+        /// <param name="top">Top position of the upper-left corner</param>
+        /// <param name="width">Table interior width</param>
+        /// <param name="height">Table interior height</param>
+        /// <param name="enableHeader">Whether to enable the header or no</param>
         /// <param name="CellOptions">Specifies the cell options</param>
         /// <param name="SeparatorForegroundColor">A separator foreground color that will be changed to.</param>
         /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions>? CellOptions = null)
+        public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, List<CellOptions>? CellOptions = null)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderTable(Headers, Rows, Margin, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, SeparateRows, CellOptions));
+                TextWriterRaw.WriteRaw(RenderTable(Rows, left, top, width, height, enableHeader, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, CellOptions));
             }
             catch (Exception ex)
             {
@@ -110,199 +117,117 @@ namespace Terminaux.Writer.FancyWriters
         /// <summary>
         /// Renders a table with text
         /// </summary>
-        /// <param name="Headers">Headers to insert to the table.</param>
         /// <param name="Rows">Rows to insert to the table.</param>
-        /// <param name="Margin">Margin offset</param>
-        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="left">Left position of the upper-left corner</param>
+        /// <param name="top">Top position of the upper-left corner</param>
+        /// <param name="width">Table interior width</param>
+        /// <param name="height">Table interior height</param>
+        /// <param name="enableHeader">Whether to enable the header or no</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        public static string RenderTablePlain(string[] Headers, string[,] Rows, int Margin, bool SeparateRows = true, List<CellOptions>? CellOptions = null) =>
-            RenderTable(Headers, Rows, Margin, ColorTools.GetGray(), ColorTools.GetGray(), ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, SeparateRows, CellOptions);
+        public static string RenderTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List<CellOptions>? CellOptions = null) =>
+            RenderTable(Rows, left, top, width, height, enableHeader, ColorTools.GetGray(), ColorTools.GetGray(), ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, CellOptions);
 
         /// <summary>
         /// Renders a table with text
         /// </summary>
-        /// <param name="Headers">Headers to insert to the table.</param>
         /// <param name="Rows">Rows to insert to the table.</param>
-        /// <param name="Margin">Margin offset</param>
-        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="left">Left position of the upper-left corner</param>
+        /// <param name="top">Top position of the upper-left corner</param>
+        /// <param name="width">Table interior width</param>
+        /// <param name="height">Table interior height</param>
+        /// <param name="enableHeader">Whether to enable the header or no</param>
         /// <param name="CellOptions">Specifies the cell options</param>
         /// <param name="SeparatorForegroundColor">A separator foreground color that will be changed to.</param>
         /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        public static string RenderTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions>? CellOptions = null) =>
-            RenderTable(Headers, Rows, Margin, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, true, SeparateRows, CellOptions);
+        public static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, List<CellOptions>? CellOptions = null) =>
+            RenderTable(Rows, left, top, width, height, enableHeader, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, true, CellOptions);
 
         /// <summary>
         /// Renders a table with text
         /// </summary>
-        /// <param name="Headers">Headers to insert to the table.</param>
         /// <param name="Rows">Rows to insert to the table.</param>
-        /// <param name="Margin">Margin offset</param>
-        /// <param name="SeparateRows">Separate the rows?</param>
+        /// <param name="left">Left position of the upper-left corner</param>
+        /// <param name="top">Top position of the upper-left corner</param>
+        /// <param name="width">Table interior width</param>
+        /// <param name="height">Table interior height</param>
+        /// <param name="enableHeader">Whether to enable the header or no</param>
         /// <param name="CellOptions">Specifies the cell options</param>
         /// <param name="SeparatorForegroundColor">A separator foreground color that will be changed to.</param>
         /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the colors or not</param>
-        internal static string RenderTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, bool SeparateRows = true, List<CellOptions>? CellOptions = null)
+        internal static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, List<CellOptions>? CellOptions = null)
         {
-            try
+            // Create a border which the table will be drawn on
+            var tableBuilder = new StringBuilder();
+            tableBuilder.Append(
+                BorderColor.RenderBorder(left, top, width, height, SeparatorForegroundColor, BackgroundColor) +
+                ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
+                ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+            );
+
+            // Determine the positions
+            int columnsCount = Rows.GetLength(1);
+            int rowsCount = Rows.GetLength(0);
+            (int, int)[,] positions = new (int, int)[columnsCount, rowsCount];
+            int maxCellWidth = width / columnsCount;
+            for (int x = 0; x < columnsCount; x++)
             {
-                int width = ConsoleWrapper.WindowWidth;
-                var table = new StringBuilder();
-                int ColumnCapacity = (int)Math.Round(width / (double)Headers.Length);
-                var ColumnPositions = new List<int>();
-                int RepeatTimes;
-                int line = 1;
-
-                // Populate the positions
-                table.AppendLine();
-                for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= width : ColumnPosition >= width; ColumnPosition += ColumnCapacity)
+                for (int y = 0; y < rowsCount; y++)
                 {
-                    if (ColumnPosition < width)
-                    {
-                        ColumnPositions.Add(ColumnPosition);
-                        if (ColumnPositions.Count == 1)
-                            ColumnPosition = 0;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    int finalPosX = left + maxCellWidth * x + 1;
+                    int finalPosY = top + y + 1;
+                    if (enableHeader && y > 0)
+                        finalPosY++;
+                    positions[x, y] = (finalPosX, finalPosY);
                 }
-
-                // Write the headers
-                var headerBuilder = new StringBuilder();
-                if (useColor)
-                {
-                    table.Append(
-                        ColorTools.RenderSetConsoleColor(HeaderForegroundColor) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-                    );
-                }
-                for (int HeaderIndex = 0; HeaderIndex < Headers.Length; HeaderIndex++)
-                {
-                    string Header = Headers[HeaderIndex];
-                    int ColumnPosition = ColumnPositions[HeaderIndex];
-                    Header ??= "";
-                    string renderedHeader = Header.Truncate(ColumnCapacity - 3 - Margin);
-                    if (HeaderIndex == 0)
-                        headerBuilder.Append(new string(' ', ColumnPosition));
-                    headerBuilder.Append(renderedHeader);
-                    int headerWidth = ConsoleChar.EstimateCellWidth(headerBuilder.ToString());
-                    if (HeaderIndex < Headers.Length - 1)
-                        headerBuilder.Append(new string(' ', ColumnPositions[HeaderIndex + 1] - headerWidth < 0 ? 0 : ColumnPositions[HeaderIndex + 1] - headerWidth));
-                }
-                table.AppendLine(headerBuilder.ToString());
-                line++;
-
-                // Write the closing minus sign.
-                RepeatTimes = width - Margin * 2;
-                if (useColor)
-                {
-                    table.Append(
-                        ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-                    );
-                }
-                if (Margin > 0)
-                    table.Append(new string(' ', Margin));
-                table.AppendLine(new string('═', RepeatTimes));
-                line++;
-
-                // Write the rows
-                int rowValues = Rows.GetLength(0);
-                for (int rowIndex = 0; rowIndex < rowValues; rowIndex++)
-                {
-                    var rowBuilder = new StringBuilder();
-                    int columnValues = Rows.GetLength(1);
-                    for (int columnIndex = 0; columnIndex < columnValues; columnIndex++)
-                    {
-                        var columnBuilder = new StringBuilder();
-                        var ColoredCell = false;
-                        var CellColor = ColorTools.currentForegroundColor;
-                        var CellBackgroundColor = ColorTools.currentBackgroundColor;
-                        string RowValue = Rows[rowIndex, columnIndex];
-                        int ColumnPosition = ColumnPositions[columnIndex];
-                        RowValue ??= "";
-
-                        // Get the cell options and set them as necessary
-                        if (CellOptions is not null)
-                        {
-                            foreach (CellOptions CellOption in CellOptions)
-                            {
-                                if (CellOption.ColumnIndex == columnIndex & CellOption.RowIndex == rowIndex)
-                                {
-                                    ColoredCell = CellOption.ColoredCell;
-                                    CellColor = CellOption.CellColor;
-                                    CellBackgroundColor = CellOption.CellBackgroundColor;
-                                }
-                            }
-                        }
-
-                        // Now, write the cell value
-                        string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
-                        if (useColor)
-                        {
-                            if (ColoredCell)
-                                rowBuilder.Append(
-                                    ColorTools.RenderSetConsoleColor(CellColor) +
-                                    CellBackgroundColor.VTSequenceBackground
-                                );
-                            else
-                                rowBuilder.Append(
-                                    ColorTools.RenderSetConsoleColor(ValueForegroundColor) +
-                                    ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-                                );
-                        }
-                        if (columnIndex == 0)
-                            columnBuilder.Append(new string(' ', ColumnPosition));
-                        columnBuilder.Append(FinalRowValue);
-                        int columnWidth = ConsoleChar.EstimateCellWidth(columnBuilder.ToString());
-                        if (columnIndex < Headers.Length - 1)
-                            columnBuilder.Append(new string(' ', ColumnCapacity - columnWidth < 0 ? 0 : ColumnCapacity - columnWidth));
-                        rowBuilder.Append(columnBuilder.ToString());
-                    }
-                    table.AppendLine(rowBuilder.ToString());
-                    line++;
-
-                    // Separate the rows optionally
-                    if (SeparateRows)
-                    {
-                        // Write the closing minus sign.
-                        if (useColor)
-                        {
-                            table.Append(
-                                ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
-                                ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-                            );
-                        }
-                        RepeatTimes = width - Margin * 2;
-                        if (Margin > 0)
-                            table.Append(new string(' ', Margin));
-                        table.AppendLine(new string('═', RepeatTimes));
-                        line++;
-                    }
-                }
-
-                // Write the resulting buffer
-                if (useColor)
-                {
-                    table.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
-                    );
-                }
-                return table.ToString();
             }
-            catch (Exception ex)
+
+            // TODO: Make them customizable
+            // Create a header separator if we need a header
+            if (enableHeader)
             {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+                char begin = '╠';
+                char middle = '═';
+                char end = '╣';
+                int headerBorderPosX = left;
+                int headerBorderPosY = top + 2;
+                tableBuilder.Append(
+                    CsiSequences.GenerateCsiCursorPosition(headerBorderPosX + 1, headerBorderPosY + 1) +
+                    begin + new string(middle, width) + end
+                );
             }
-            return "";
+
+            // Create a row separator
+            char beginVertical = '╦';
+            char middleVertical = '║';
+            char endVertical = '╩';
+            char intersect = '╬';
+            for (int x = 1; x < columnsCount; x++)
+            {
+                // Try to get the positions for the separator
+                var positionsSeparator = ((int, int))positions.GetValue(x, 0);
+
+                // Build the separator
+                for (int y = 0; y < height + 2; y++)
+                {
+                    char finalChar =
+                        y == 0 ? beginVertical :
+                        y == height + 1 ? endVertical :
+                        y == 2 && enableHeader ? intersect :
+                        middleVertical;
+                    tableBuilder.Append(
+                        CsiSequences.GenerateCsiCursorPosition(positionsSeparator.Item1 + 1, y + top + 1) +
+                        finalChar
+                    );
+                }
+            }
+
+            // Final results are here
+            return tableBuilder.ToString();
         }
 
         static TableColor()

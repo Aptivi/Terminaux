@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
@@ -26,9 +27,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
     {
         public void RunFixture()
         {
-            var Headers = new string[] { "Ubuntu Version", "Release Date", "Support End", "ESM Support End" };
             var Rows = new string[,]
             {
+                { "Ubuntu Version", "Release Date", "Support End", "ESM Support End" },
                 { "12.04 (Precise Pangolin)", new DateTime(2012, 4, 26).ToString(), new DateTime(2017, 4, 28).ToString(), new DateTime(2019, 4, 28).ToString() },
                 { "14.04 (Trusty Tahr)", new DateTime(2014, 4, 17).ToString(), new DateTime(2019, 4, 25).ToString(), new DateTime(2024, 4, 25).ToString() },
                 { "16.04 (Xenial Xerus)", new DateTime(2016, 4, 21).ToString(), new DateTime(2021, 4, 30).ToString(), new DateTime(2026, 4, 30).ToString() },
@@ -36,7 +37,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 { "20.04 (Focal Fossa)", new DateTime(2020, 4, 23).ToString(), new DateTime(2025, 4, 25).ToString(), new DateTime(2030, 4, 25).ToString() },
                 { "22.04 (Jammy Jellyfish)", new DateTime(2022, 4, 26).ToString(), new DateTime(2027, 4, 25).ToString(), new DateTime(2032, 4, 25).ToString() }
             };
-            TableColor.WriteTable(Headers, Rows, 2);
+            TableColor.WriteTable(Rows, 4, 2, ConsoleWrapper.WindowWidth - 7, ConsoleWrapper.WindowHeight - 5, true);
         }
     }
 }

@@ -132,25 +132,6 @@ namespace Terminaux.Inputs.Styles.Choice
                             TextWriterColor.WriteColor(CharManager.NewLine + ">> ", false, settings.InputColor);
                             break;
                         }
-                    case ChoiceOutputType.Table:
-                        {
-                            var ChoiceHeader = new[] { "Possible answers", "Answer description" };
-                            var ChoiceData = new string[Answers.Length + AltAnswers.Length, 2];
-                            TextWriterColor.WriteColor(Question, true, settings.QuestionColor);
-                            for (int AnswerIndex = 0; AnswerIndex <= Answers.Length - 1; AnswerIndex++)
-                            {
-                                ChoiceData[AnswerIndex, 0] = Answers[AnswerIndex].ChoiceName;
-                                ChoiceData[AnswerIndex, 1] = Answers[AnswerIndex].ChoiceTitle ?? "";
-                            }
-                            for (int AnswerIndex = 0; AnswerIndex <= AltAnswers.Length - 1; AnswerIndex++)
-                            {
-                                ChoiceData[Answers.Length - 1 + AnswerIndex, 0] = AltAnswers[AnswerIndex].ChoiceName;
-                                ChoiceData[Answers.Length - 1 + AnswerIndex, 1] = AltAnswers[AnswerIndex].ChoiceTitle ?? "";
-                            }
-                            TableColor.WriteTable(ChoiceHeader, ChoiceData, 2);
-                            TextWriterColor.WriteColor(CharManager.NewLine + ">> ", false, settings.InputColor);
-                            break;
-                        }
                 }
 
                 // Wait for an answer
