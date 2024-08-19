@@ -32,7 +32,11 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
                 new("f", "20.04 (Focal Fossa)", "Ubuntu 20.04 LTS，代号 Focal Fossa，是一个长期支持版本，于 2020 年 4 月 23 日发布。"),
                 new("j", "22.04 (Jammy Jellyfish)", "Ubuntu 22.04，代号 Jammy Jellyfish，于 2022 年 4 月 21 日发布，是一个长期支持版本，支持五年，直到 2027 年 4 月。"),
             ];
-            ChoiceStyle.PromptChoice("您想运行哪个 Ubuntu 版本？", choices, [], ChoiceOutputType.Modern);
+            var settings = new ChoiceStyleSettings()
+            {
+                OutputType = ChoiceOutputType.Modern,
+            };
+            ChoiceStyle.PromptChoice("您想运行哪个 Ubuntu 版本？", choices, settings);
         }
     }
 }

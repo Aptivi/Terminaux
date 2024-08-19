@@ -38,7 +38,11 @@ namespace Terminaux.Console.Fixtures.Cases.Input.CJK
                 new("k", "22.10 (Kinetic Kudu)", "Ubuntu 22.10，代号 Kinetic Kudu，是一个临时版本，于 2022 年 10 月 20 日发布。"),
                 new("l", "23.04 (Lunar Lobster)", "Ubuntu 23.04 Lunar Lobster 是一个临时版本，计划于 2023 年 4 月 20 日发布。"),
             ];
-            ChoiceStyle.PromptChoice("您想运行哪个 Ubuntu 版本？", choices, altChoices, ChoiceOutputType.Modern);
+            var settings = new ChoiceStyleSettings()
+            {
+                OutputType = ChoiceOutputType.Modern,
+            };
+            ChoiceStyle.PromptChoice("您想运行哪个 Ubuntu 版本？", choices, altChoices, settings);
         }
     }
 }
