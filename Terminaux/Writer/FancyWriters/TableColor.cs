@@ -250,6 +250,7 @@ namespace Terminaux.Writer.FancyWriters
 
                     // Process them according to both the cell width and the cell options
                     text = text.Truncate(maxCellWidth - 4);
+                    text += new string(' ', maxCellWidth - ConsoleChar.EstimateCellWidth(text) - 1);
                     if (CellOptions is not null && CellOptions.Count > 0)
                     {
                         var options = CellOptions.FirstOrDefault((co) => co.ColumnIndex == x && co.RowIndex == y);
