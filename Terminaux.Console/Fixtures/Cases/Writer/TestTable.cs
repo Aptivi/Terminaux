@@ -19,7 +19,9 @@
 
 using System;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.FancyWriters.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -37,7 +39,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 { "20.04 (Focal Fossa)", new DateTime(2020, 4, 23).ToString(), new DateTime(2025, 4, 25).ToString(), new DateTime(2030, 4, 25).ToString() },
                 { "22.04 (Jammy Jellyfish)", new DateTime(2022, 4, 26).ToString(), new DateTime(2027, 4, 25).ToString(), new DateTime(2032, 4, 25).ToString() }
             };
-            TableColor.WriteTable(Rows, 4, 2, ConsoleWrapper.WindowWidth - 7, ConsoleWrapper.WindowHeight - 5, true);
+            TableColor.WriteTable(Rows, 4, 2, ConsoleWrapper.WindowWidth - 7, ConsoleWrapper.WindowHeight - 5, true, [new CellOptions(2, 2) { CellColor = ConsoleColors.Red, ColoredCell = true }]);
         }
     }
 }

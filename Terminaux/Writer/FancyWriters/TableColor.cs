@@ -20,8 +20,8 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
-using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
@@ -75,7 +75,7 @@ namespace Terminaux.Writer.FancyWriters
             try
             {
                 var sep = new Color(ConsoleColors.Grey);
-                var header = new Color(ConsoleColors.White);
+                var header = new Color(ConsoleColors.Yellow);
                 var value = new Color(ConsoleColors.Silver);
                 var back = ColorTools.currentBackgroundColor;
                 TextWriterRaw.WriteRaw(RenderTable(Rows, left, top, width, height, enableHeader, sep, header, value, back, CellOptions));
@@ -125,7 +125,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="enableHeader">Whether to enable the header or no</param>
         /// <param name="CellOptions">Specifies the cell options</param>
         public static string RenderTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List<CellOptions>? CellOptions = null) =>
-            RenderTable(Rows, left, top, width, height, enableHeader, ColorTools.GetGray(), ColorTools.GetGray(), ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, CellOptions);
+            RenderTable(Rows, left, top, width, height, enableHeader, ColorTools.GetGray(), ConsoleColors.Yellow, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, CellOptions);
 
         /// <summary>
         /// Renders a table with text
@@ -163,17 +163,26 @@ namespace Terminaux.Writer.FancyWriters
         {
             // Create a border which the table will be drawn on
             var tableBuilder = new StringBuilder();
-            tableBuilder.Append(
-                BorderColor.RenderBorder(left, top, width, height, SeparatorForegroundColor, BackgroundColor) +
-                ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
-                ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-            );
+            if (useColor)
+            {
+                tableBuilder.Append(
+                    BorderColor.RenderBorder(left, top, width, height, SeparatorForegroundColor, BackgroundColor) +
+                    ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
+                    ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                );
+            }
+            else
+            {
+                tableBuilder.Append(
+                    BorderColor.RenderBorderPlain(left, top, width, height)
+                );
+            }
 
             // Determine the positions
             int columnsCount = Rows.GetLength(1);
             int rowsCount = Rows.GetLength(0);
             (int, int)[,] positions = new (int, int)[columnsCount, rowsCount];
-            int maxCellWidth = width / columnsCount;
+            int maxCellWidth = (width + 2) / columnsCount;
             for (int x = 0; x < columnsCount; x++)
             {
                 for (int y = 0; y < rowsCount; y++)
@@ -220,9 +229,50 @@ namespace Terminaux.Writer.FancyWriters
                         y == 2 && enableHeader ? intersect :
                         middleVertical;
                     tableBuilder.Append(
-                        CsiSequences.GenerateCsiCursorPosition(positionsSeparator.Item1 + 1, y + top + 1) +
+                        CsiSequences.GenerateCsiCursorPosition(positionsSeparator.Item1, y + top + 1) +
                         finalChar
                     );
+                }
+            }
+
+            // Write values
+            for (int y = 0; y < rowsCount; y++)
+            {
+                for (int x = 0; x < columnsCount; x++)
+                {
+                    // Get the initial values
+                    var positionsValues = ((int, int))positions.GetValue(x, y);
+                    string text = (string)Rows.GetValue(y, x);
+                    Color finalColor =
+                        y == 0 && enableHeader ? HeaderForegroundColor :
+                        ValueForegroundColor;
+                    Color finalBackgroundColor = BackgroundColor;
+
+                    // Process them according to both the cell width and the cell options
+                    text = text.Truncate(maxCellWidth - 4);
+                    if (CellOptions is not null && CellOptions.Count > 0)
+                    {
+                        var options = CellOptions.FirstOrDefault((co) => co.ColumnIndex == x && co.RowIndex == y);
+                        if (options is not null && options.ColoredCell)
+                        {
+                            finalColor = options.CellColor;
+                            finalBackgroundColor = options.CellBackgroundColor;
+                        }
+                    }
+
+                    // Write them
+                    if (useColor)
+                    {
+                        tableBuilder.Append(
+                            TextWriterWhereColor.RenderWhereColorBack(text, positionsValues.Item1, positionsValues.Item2, finalColor, finalBackgroundColor)
+                        );
+                    }
+                    else
+                    {
+                        tableBuilder.Append(
+                            TextWriterWhereColor.RenderWhere(text, positionsValues.Item1, positionsValues.Item2)
+                        );
+                    }
                 }
             }
 
