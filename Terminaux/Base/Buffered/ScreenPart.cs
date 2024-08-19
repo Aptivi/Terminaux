@@ -33,7 +33,8 @@ namespace Terminaux.Base.Buffered
     {
         private Guid id = Guid.NewGuid();
         private int order = 0;
-        private readonly List<Func<string>> dynamicBuffers = [];
+        private bool visible = true;
+        private readonly List<(bool visible, Func<string> buffer)> dynamicBuffers = [];
 
         /// <summary>
         /// Order to use while buffering the screen.
@@ -47,6 +48,15 @@ namespace Terminaux.Base.Buffered
         {
             get => order;
             set => order = value;
+        }
+
+        /// <summary>
+        /// Whether this screen part is visible or not. To specify specific buffer visibility, use GetBufferVisibility() and SetBufferVisibility().
+        /// </summary>
+        public bool Visible
+        {
+            get => visible;
+            set => visible = value;
         }
 
         /// <summary>
@@ -78,7 +88,7 @@ namespace Terminaux.Base.Buffered
             if (textFunc is null)
                 return;
 
-            dynamicBuffers.Add(textFunc);
+            dynamicBuffers.Add((true, textFunc));
         }
 
         /// <summary>
@@ -161,10 +171,39 @@ namespace Terminaux.Base.Buffered
         /// <returns>The resulting buffer</returns>
         public string GetBuffer()
         {
+            if (!visible)
+                return "";
             var finalBuffer = new StringBuilder();
             foreach (var dynamicBuffer in dynamicBuffers)
-                finalBuffer.Append(dynamicBuffer());
+                if (dynamicBuffer.visible)
+                    finalBuffer.Append(dynamicBuffer.buffer());
             return finalBuffer.ToString();
+        }
+
+        /// <summary>
+        /// Gets the buffer visibility status
+        /// </summary>
+        /// <param name="buffer">Buffer index</param>
+        /// <returns>True if visible; false otherwise.</returns>
+        /// <exception cref="TerminauxException">If the buffer index is less than zero or greater than or equal to the dynamic buffer count</exception>
+        public bool GetBufferVisibility(int buffer)
+        {
+            if (buffer < 0 || buffer >= dynamicBuffers.Count)
+                throw new TerminauxException($"Buffer index may not be less than zero or greater than {dynamicBuffers.Count} buffers.");
+            return dynamicBuffers[buffer].visible;
+        }
+
+        /// <summary>
+        /// Sets the buffer visibility status
+        /// </summary>
+        /// <param name="buffer">Buffer index</param>
+        /// <param name="visible">Buffer visibility status</param>
+        /// <exception cref="TerminauxException">If the buffer index is less than zero or greater than or equal to the dynamic buffer count</exception>
+        public void SetBufferVisibility(int buffer, bool visible)
+        {
+            if (buffer < 0 || buffer >= dynamicBuffers.Count)
+                throw new TerminauxException($"Buffer index may not be less than zero or greater than {dynamicBuffers.Count} buffers.");
+            dynamicBuffers[buffer] = (visible, dynamicBuffers[buffer].buffer);
         }
 
         /// <summary>
