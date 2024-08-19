@@ -51,7 +51,7 @@ namespace Terminaux.Base.Extensions.Data
 
         private readonly static (int, int)[] combiningChars =
         [
-(0x0300, 0x036f),
+            (0x0300, 0x036f),
             (0x0483, 0x0489),
             (0x0591, 0x05bd),
             (0x05bf, 0x05bf),
