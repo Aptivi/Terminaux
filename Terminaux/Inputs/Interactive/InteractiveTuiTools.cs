@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Magico.Enumeration;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -28,7 +29,6 @@ using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Extensions.Enumerations;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Reader;
