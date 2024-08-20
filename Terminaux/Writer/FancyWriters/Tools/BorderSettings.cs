@@ -25,14 +25,14 @@ namespace Terminaux.Writer.FancyWriters.Tools
     public class BorderSettings
     {
         private static readonly BorderSettings globalSettings = new();
-        internal char _borderUpperLeftCornerChar = '╔';
-        internal char _borderUpperRightCornerChar = '╗';
-        internal char _borderLowerLeftCornerChar = '╚';
-        internal char _borderLowerRightCornerChar = '╝';
-        internal char _borderUpperFrameChar = '═';
-        internal char _borderLowerFrameChar = '═';
-        internal char _borderLeftFrameChar = '║';
-        internal char _borderRightFrameChar = '║';
+        internal char _borderUpperLeftCornerChar = '╭';
+        internal char _borderUpperRightCornerChar = '╮';
+        internal char _borderLowerLeftCornerChar = '╰';
+        internal char _borderLowerRightCornerChar = '╯';
+        internal char _borderUpperFrameChar = '─';
+        internal char _borderLowerFrameChar = '─';
+        internal char _borderLeftFrameChar = '│';
+        internal char _borderRightFrameChar = '│';
 
         /// <summary>
         /// Global border settings
