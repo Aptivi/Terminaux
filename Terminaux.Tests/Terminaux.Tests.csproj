@@ -34,4 +34,8 @@
     <PackageReference Update="Microsoft.Testing.Extensions.CodeCoverage" Version="17.11.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="17.11.0" />
+  </ItemGroup>
+
 </Project>
