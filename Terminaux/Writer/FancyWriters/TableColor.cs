@@ -163,20 +163,6 @@ namespace Terminaux.Writer.FancyWriters
         {
             // Create a border which the table will be drawn on
             var tableBuilder = new StringBuilder();
-            if (useColor)
-            {
-                tableBuilder.Append(
-                    BorderColor.RenderBorder(left, top, width, height, SeparatorForegroundColor, BackgroundColor) +
-                    ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
-                    ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-                );
-            }
-            else
-            {
-                tableBuilder.Append(
-                    BorderColor.RenderBorderPlain(left, top, width, height)
-                );
-            }
 
             // Determine the positions
             int columnsCount = Rows.GetLength(1);
@@ -195,26 +181,42 @@ namespace Terminaux.Writer.FancyWriters
                 }
             }
 
+            // Use the final width to create the actual table
+            if (useColor)
+            {
+                tableBuilder.Append(
+                    BorderColor.RenderBorder(left, top, maxCellWidth * columnsCount - 1, height, SeparatorForegroundColor, BackgroundColor) +
+                    ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
+                    ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                );
+            }
+            else
+            {
+                tableBuilder.Append(
+                    BorderColor.RenderBorderPlain(left, top, maxCellWidth * columnsCount - 1, height)
+                );
+            }
+
             // TODO: Make them customizable
             // Create a header separator if we need a header
             if (enableHeader)
             {
-                char begin = '╠';
-                char middle = '═';
-                char end = '╣';
+                char begin = '├';
+                char middle = '─';
+                char end = '┤';
                 int headerBorderPosX = left;
                 int headerBorderPosY = top + 2;
                 tableBuilder.Append(
                     CsiSequences.GenerateCsiCursorPosition(headerBorderPosX + 1, headerBorderPosY + 1) +
-                    begin + new string(middle, width) + end
+                    begin + new string(middle, maxCellWidth * columnsCount - 1) + end
                 );
             }
 
             // Create a row separator
-            char beginVertical = '╦';
-            char middleVertical = '║';
-            char endVertical = '╩';
-            char intersect = '╬';
+            char beginVertical = '┬';
+            char middleVertical = '│';
+            char endVertical = '┴';
+            char intersect = '┼';
             for (int x = 1; x < columnsCount; x++)
             {
                 // Try to get the positions for the separator
