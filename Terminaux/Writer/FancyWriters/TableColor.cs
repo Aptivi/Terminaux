@@ -244,6 +244,8 @@ namespace Terminaux.Writer.FancyWriters
                 {
                     // Get the initial values
                     var positionsValues = ((int, int))positions.GetValue(x, y);
+                    if (positionsValues.Item2 > height + top)
+                        break;
                     string text = (string)Rows.GetValue(y, x);
                     Color finalColor =
                         y == 0 && enableHeader ? HeaderForegroundColor :
