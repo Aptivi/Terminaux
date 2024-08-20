@@ -99,19 +99,19 @@
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_FancyWriters_TableColor_RenderTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.FancyWriters.TableColor.RenderTable(System.String%5B0%3A%2C0%3A%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Collections.Generic.List%7BTerminaux.Writer.FancyWriters.Tools.CellOptions%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_FancyWriters_TableColor_RenderTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__Terminaux_Writer_FancyWriters_Tools_BorderSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.FancyWriters.TableColor.RenderTable(System.String%5B0%3A%2C0%3A%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Collections.Generic.List%7BTerminaux.Writer.FancyWriters.Tools.CellOptions%7D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/FancyWriters/TableColor.cs/#L144">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/FancyWriters/TableColor.cs/#L149">View Source</a>
   </span>
   <a id="Terminaux_Writer_FancyWriters_TableColor_RenderTable_" data-uid="Terminaux.Writer.FancyWriters.TableColor.RenderTable*"></a>
-  <h4 id="Terminaux_Writer_FancyWriters_TableColor_RenderTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__" data-uid="Terminaux.Writer.FancyWriters.TableColor.RenderTable(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})">RenderTable(string[,], int, int, int, int, bool, Color, Color, Color, Color, List&lt;CellOptions&gt;?)</h4>
+  <h4 id="Terminaux_Writer_FancyWriters_TableColor_RenderTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__Terminaux_Writer_FancyWriters_Tools_BorderSettings_" data-uid="Terminaux.Writer.FancyWriters.TableColor.RenderTable(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions},Terminaux.Writer.FancyWriters.Tools.BorderSettings)">RenderTable(string[,], int, int, int, int, bool, Color, Color, Color, Color, List&lt;CellOptions&gt;?, BorderSettings?)</h4>
   <div class="markdown level1 summary"><p>Renders a table with text</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, List&lt;CellOptions&gt;? CellOptions = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, List&lt;CellOptions&gt;? CellOptions = null, BorderSettings? tableBorderSettings = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -189,6 +189,12 @@
         <td><p>Specifies the cell options</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">tableBorderSettings</span></td>
+        <td><p>Specifies the table border settings</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -208,19 +214,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_FancyWriters_TableColor_RenderTablePlain_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain(System.String%5B0%3A%2C0%3A%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Collections.Generic.List%7BTerminaux.Writer.FancyWriters.Tools.CellOptions%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_FancyWriters_TableColor_RenderTablePlain_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__Terminaux_Writer_FancyWriters_Tools_BorderSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain(System.String%5B0%3A%2C0%3A%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Collections.Generic.List%7BTerminaux.Writer.FancyWriters.Tools.CellOptions%7D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/FancyWriters/TableColor.cs/#L127">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/FancyWriters/TableColor.cs/#L131">View Source</a>
   </span>
   <a id="Terminaux_Writer_FancyWriters_TableColor_RenderTablePlain_" data-uid="Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain*"></a>
-  <h4 id="Terminaux_Writer_FancyWriters_TableColor_RenderTablePlain_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__" data-uid="Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})">RenderTablePlain(string[,], int, int, int, int, bool, List&lt;CellOptions&gt;?)</h4>
+  <h4 id="Terminaux_Writer_FancyWriters_TableColor_RenderTablePlain_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__Terminaux_Writer_FancyWriters_Tools_BorderSettings_" data-uid="Terminaux.Writer.FancyWriters.TableColor.RenderTablePlain(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions},Terminaux.Writer.FancyWriters.Tools.BorderSettings)">RenderTablePlain(string[,], int, int, int, int, bool, List&lt;CellOptions&gt;?, BorderSettings?)</h4>
   <div class="markdown level1 summary"><p>Renders a table with text</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List&lt;CellOptions&gt;? CellOptions = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List&lt;CellOptions&gt;? CellOptions = null, BorderSettings? tableBorderSettings = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -272,6 +278,12 @@
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Terminaux.Writer.FancyWriters.Tools.CellOptions.html">CellOptions</a>&gt;</td>
         <td><span class="parametername">CellOptions</span></td>
         <td><p>Specifies the cell options</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">tableBorderSettings</span></td>
+        <td><p>Specifies the table border settings</p>
 </td>
       </tr>
     </tbody>
@@ -293,19 +305,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_FancyWriters_TableColor_WriteTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String%5B0%3A%2C0%3A%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Collections.Generic.List%7BTerminaux.Writer.FancyWriters.Tools.CellOptions%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_FancyWriters_TableColor_WriteTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__Terminaux_Writer_FancyWriters_Tools_BorderSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String%5B0%3A%2C0%3A%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Collections.Generic.List%7BTerminaux.Writer.FancyWriters.Tools.CellOptions%7D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/FancyWriters/TableColor.cs/#L73">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/FancyWriters/TableColor.cs/#L75">View Source</a>
   </span>
   <a id="Terminaux_Writer_FancyWriters_TableColor_WriteTable_" data-uid="Terminaux.Writer.FancyWriters.TableColor.WriteTable*"></a>
-  <h4 id="Terminaux_Writer_FancyWriters_TableColor_WriteTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__" data-uid="Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})">WriteTable(string[,], int, int, int, int, bool, List&lt;CellOptions&gt;?)</h4>
+  <h4 id="Terminaux_Writer_FancyWriters_TableColor_WriteTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__Terminaux_Writer_FancyWriters_Tools_BorderSettings_" data-uid="Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions},Terminaux.Writer.FancyWriters.Tools.BorderSettings)">WriteTable(string[,], int, int, int, int, bool, List&lt;CellOptions&gt;?, BorderSettings?)</h4>
   <div class="markdown level1 summary"><p>Draw a table with text</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List&lt;CellOptions&gt;? CellOptions = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List&lt;CellOptions&gt;? CellOptions = null, BorderSettings? tableBorderSettings = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -359,23 +371,29 @@
         <td><p>Specifies the cell options</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">tableBorderSettings</span></td>
+        <td><p>Specifies the table border settings</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_FancyWriters_TableColor_WriteTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String%5B0%3A%2C0%3A%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Collections.Generic.List%7BTerminaux.Writer.FancyWriters.Tools.CellOptions%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_FancyWriters_TableColor_WriteTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__Terminaux_Writer_FancyWriters_Tools_BorderSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String%5B0%3A%2C0%3A%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Collections.Generic.List%7BTerminaux.Writer.FancyWriters.Tools.CellOptions%7D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/FancyWriters/TableColor.cs/#L104">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/FancyWriters/TableColor.cs/#L107">View Source</a>
   </span>
   <a id="Terminaux_Writer_FancyWriters_TableColor_WriteTable_" data-uid="Terminaux.Writer.FancyWriters.TableColor.WriteTable*"></a>
-  <h4 id="Terminaux_Writer_FancyWriters_TableColor_WriteTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__" data-uid="Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})">WriteTable(string[,], int, int, int, int, bool, Color, Color, Color, Color, List&lt;CellOptions&gt;?)</h4>
+  <h4 id="Terminaux_Writer_FancyWriters_TableColor_WriteTable_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__Terminaux_Writer_FancyWriters_Tools_BorderSettings_" data-uid="Terminaux.Writer.FancyWriters.TableColor.WriteTable(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions},Terminaux.Writer.FancyWriters.Tools.BorderSettings)">WriteTable(string[,], int, int, int, int, bool, Color, Color, Color, Color, List&lt;CellOptions&gt;?, BorderSettings?)</h4>
   <div class="markdown level1 summary"><p>Draw a table with text</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, List&lt;CellOptions&gt;? CellOptions = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, List&lt;CellOptions&gt;? CellOptions = null, BorderSettings? tableBorderSettings = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -453,23 +471,29 @@
         <td><p>Specifies the cell options</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">tableBorderSettings</span></td>
+        <td><p>Specifies the table border settings</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_FancyWriters_TableColor_WriteTablePlain_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain(System.String%5B0%3A%2C0%3A%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Collections.Generic.List%7BTerminaux.Writer.FancyWriters.Tools.CellOptions%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_FancyWriters_TableColor_WriteTablePlain_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__Terminaux_Writer_FancyWriters_Tools_BorderSettings_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain(System.String%5B0%3A%2C0%3A%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Collections.Generic.List%7BTerminaux.Writer.FancyWriters.Tools.CellOptions%7D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/FancyWriters/TableColor.cs/#L50">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/FancyWriters/TableColor.cs/#L51">View Source</a>
   </span>
   <a id="Terminaux_Writer_FancyWriters_TableColor_WriteTablePlain_" data-uid="Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain*"></a>
-  <h4 id="Terminaux_Writer_FancyWriters_TableColor_WriteTablePlain_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__" data-uid="Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions})">WriteTablePlain(string[,], int, int, int, int, bool, List&lt;CellOptions&gt;?)</h4>
+  <h4 id="Terminaux_Writer_FancyWriters_TableColor_WriteTablePlain_System_String_0__0___System_Int32_System_Int32_System_Int32_System_Int32_System_Boolean_System_Collections_Generic_List_Terminaux_Writer_FancyWriters_Tools_CellOptions__Terminaux_Writer_FancyWriters_Tools_BorderSettings_" data-uid="Terminaux.Writer.FancyWriters.TableColor.WriteTablePlain(System.String[0:,0:],System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Collections.Generic.List{Terminaux.Writer.FancyWriters.Tools.CellOptions},Terminaux.Writer.FancyWriters.Tools.BorderSettings)">WriteTablePlain(string[,], int, int, int, int, bool, List&lt;CellOptions&gt;?, BorderSettings?)</h4>
   <div class="markdown level1 summary"><p>Draw a table with text</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List&lt;CellOptions&gt;? CellOptions = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List&lt;CellOptions&gt;? CellOptions = null, BorderSettings? tableBorderSettings = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -521,6 +545,12 @@
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Terminaux.Writer.FancyWriters.Tools.CellOptions.html">CellOptions</a>&gt;</td>
         <td><span class="parametername">CellOptions</span></td>
         <td><p>Specifies the cell options</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Terminaux.Writer.FancyWriters.Tools.BorderSettings.html">BorderSettings</a></td>
+        <td><span class="parametername">tableBorderSettings</span></td>
+        <td><p>Specifies the table border settings</p>
 </td>
       </tr>
     </tbody>
