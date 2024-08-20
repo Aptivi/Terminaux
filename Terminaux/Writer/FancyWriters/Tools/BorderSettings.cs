@@ -33,6 +33,13 @@ namespace Terminaux.Writer.FancyWriters.Tools
         internal char _borderLowerFrameChar = '─';
         internal char _borderLeftFrameChar = '│';
         internal char _borderRightFrameChar = '│';
+        internal char _borderLeftHorizontalIntersectionChar = '├';
+        internal char _borderRightHorizontalIntersectionChar = '┤';
+        internal char _borderHorizontalIntersectionChar = '─';
+        internal char _borderTopVerticalIntersectionChar = '┬';
+        internal char _borderBottomVerticalIntersectionChar = '┴';
+        internal char _borderVerticalIntersectionChar = '│';
+        internal char _borderWholeIntersectionChar = '┼';
 
         /// <summary>
         /// Global border settings
@@ -104,6 +111,62 @@ namespace Terminaux.Writer.FancyWriters.Tools
             get => _borderRightFrameChar;
             set => _borderRightFrameChar = value;
         }
+        /// <summary>
+        /// Left horizontal intersection character 
+        /// </summary>
+        public char BorderLeftHorizontalIntersectionChar
+        {
+            get => _borderLeftHorizontalIntersectionChar;
+            set => _borderLeftHorizontalIntersectionChar = value;
+        }
+        /// <summary>
+        /// Right horizontal intersection character 
+        /// </summary>
+        public char BorderRightHorizontalIntersectionChar
+        {
+            get => _borderRightHorizontalIntersectionChar;
+            set => _borderRightHorizontalIntersectionChar = value;
+        }
+        /// <summary>
+        /// Horizontal intersection character 
+        /// </summary>
+        public char BorderHorizontalIntersectionChar
+        {
+            get => _borderHorizontalIntersectionChar;
+            set => _borderHorizontalIntersectionChar = value;
+        }
+        /// <summary>
+        /// Top vertical intersection character 
+        /// </summary>
+        public char BorderTopVerticalIntersectionChar
+        {
+            get => _borderTopVerticalIntersectionChar;
+            set => _borderTopVerticalIntersectionChar = value;
+        }
+        /// <summary>
+        /// Bottom vertical intersection character 
+        /// </summary>
+        public char BorderBottomVerticalIntersectionChar
+        {
+            get => _borderBottomVerticalIntersectionChar;
+            set => _borderBottomVerticalIntersectionChar = value;
+        }
+        /// <summary>
+        /// Vertical intersection character 
+        /// </summary>
+        public char BorderVerticalIntersectionChar
+        {
+            get => _borderVerticalIntersectionChar;
+            set => _borderVerticalIntersectionChar = value;
+        }
+        /// <summary>
+        /// Whole intersection character 
+        /// </summary>
+        public char BorderWholeIntersectionChar
+        {
+            get => _borderWholeIntersectionChar;
+            set => _borderWholeIntersectionChar = value;
+        }
 
         /// <summary>
         /// Makes a new instance of the border settings
@@ -125,6 +188,13 @@ namespace Terminaux.Writer.FancyWriters.Tools
             BorderLowerFrameChar = settings.BorderLowerFrameChar;
             BorderLeftFrameChar = settings.BorderLeftFrameChar;
             BorderRightFrameChar = settings.BorderRightFrameChar;
+            BorderLeftHorizontalIntersectionChar = settings.BorderLeftHorizontalIntersectionChar;
+            BorderRightHorizontalIntersectionChar = settings.BorderRightHorizontalIntersectionChar;
+            BorderHorizontalIntersectionChar = settings.BorderHorizontalIntersectionChar;
+            BorderTopVerticalIntersectionChar = settings.BorderTopVerticalIntersectionChar;
+            BorderBottomVerticalIntersectionChar = settings.BorderBottomVerticalIntersectionChar;
+            BorderVerticalIntersectionChar = settings.BorderVerticalIntersectionChar;
+            BorderWholeIntersectionChar = settings.BorderWholeIntersectionChar;
         }
     }
 }

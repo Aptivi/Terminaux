@@ -47,11 +47,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Table interior height</param>
         /// <param name="enableHeader">Whether to enable the header or no</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        public static void WriteTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List<CellOptions>? CellOptions = null)
+        /// <param name="tableBorderSettings">Specifies the table border settings</param>
+        public static void WriteTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderTablePlain(Rows, left, top, width, height, enableHeader, CellOptions));
+                TextWriterRaw.WriteRaw(RenderTablePlain(Rows, left, top, width, height, enableHeader, CellOptions, tableBorderSettings));
             }
             catch (Exception ex)
             {
@@ -70,7 +71,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Table interior height</param>
         /// <param name="enableHeader">Whether to enable the header or no</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List<CellOptions>? CellOptions = null)
+        /// <param name="tableBorderSettings">Specifies the table border settings</param>
+        public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null)
         {
             try
             {
@@ -78,7 +80,7 @@ namespace Terminaux.Writer.FancyWriters
                 var header = new Color(ConsoleColors.Yellow);
                 var value = new Color(ConsoleColors.Silver);
                 var back = ColorTools.currentBackgroundColor;
-                TextWriterRaw.WriteRaw(RenderTable(Rows, left, top, width, height, enableHeader, sep, header, value, back, CellOptions));
+                TextWriterRaw.WriteRaw(RenderTable(Rows, left, top, width, height, enableHeader, sep, header, value, back, CellOptions, tableBorderSettings));
             }
             catch (Exception ex)
             {
@@ -101,11 +103,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, List<CellOptions>? CellOptions = null)
+        /// <param name="tableBorderSettings">Specifies the table border settings</param>
+        public static void WriteTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderTable(Rows, left, top, width, height, enableHeader, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, CellOptions));
+                TextWriterRaw.WriteRaw(RenderTable(Rows, left, top, width, height, enableHeader, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, CellOptions, tableBorderSettings));
             }
             catch (Exception ex)
             {
@@ -124,8 +127,9 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Table interior height</param>
         /// <param name="enableHeader">Whether to enable the header or no</param>
         /// <param name="CellOptions">Specifies the cell options</param>
-        public static string RenderTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List<CellOptions>? CellOptions = null) =>
-            RenderTable(Rows, left, top, width, height, enableHeader, ColorTools.GetGray(), ConsoleColors.Yellow, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, CellOptions);
+        /// <param name="tableBorderSettings">Specifies the table border settings</param>
+        public static string RenderTablePlain(string[,] Rows, int left, int top, int width, int height, bool enableHeader, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null) =>
+            RenderTable(Rows, left, top, width, height, enableHeader, ColorTools.GetGray(), ConsoleColors.Yellow, ColorTools.GetGray(), ColorTools.currentBackgroundColor, true, CellOptions, tableBorderSettings);
 
         /// <summary>
         /// Renders a table with text
@@ -141,8 +145,9 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="HeaderForegroundColor">A header foreground color that will be changed to.</param>
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        public static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, List<CellOptions>? CellOptions = null) =>
-            RenderTable(Rows, left, top, width, height, enableHeader, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, true, CellOptions);
+        /// <param name="tableBorderSettings">Specifies the table border settings</param>
+        public static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null) =>
+            RenderTable(Rows, left, top, width, height, enableHeader, SeparatorForegroundColor, HeaderForegroundColor, ValueForegroundColor, BackgroundColor, true, CellOptions, tableBorderSettings);
 
         /// <summary>
         /// Renders a table with text
@@ -159,10 +164,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="ValueForegroundColor">A value foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the colors or not</param>
-        internal static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, List<CellOptions>? CellOptions = null)
+        /// <param name="tableBorderSettings">Specifies the table border settings</param>
+        internal static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null)
         {
             // Create a border which the table will be drawn on
             var tableBuilder = new StringBuilder();
+            tableBorderSettings ??= new();
 
             // Determine the positions
             int columnsCount = Rows.GetLength(1);
@@ -185,7 +192,7 @@ namespace Terminaux.Writer.FancyWriters
             if (useColor)
             {
                 tableBuilder.Append(
-                    BorderColor.RenderBorder(left, top, maxCellWidth * columnsCount - 1, height, SeparatorForegroundColor, BackgroundColor) +
+                    BorderColor.RenderBorder(left, top, maxCellWidth * columnsCount - 1, height, tableBorderSettings, SeparatorForegroundColor, BackgroundColor) +
                     ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
                     ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                 );
@@ -193,17 +200,16 @@ namespace Terminaux.Writer.FancyWriters
             else
             {
                 tableBuilder.Append(
-                    BorderColor.RenderBorderPlain(left, top, maxCellWidth * columnsCount - 1, height)
+                    BorderColor.RenderBorderPlain(left, top, maxCellWidth * columnsCount - 1, height, tableBorderSettings)
                 );
             }
 
-            // TODO: Make them customizable
             // Create a header separator if we need a header
             if (enableHeader)
             {
-                char begin = '├';
-                char middle = '─';
-                char end = '┤';
+                char begin = tableBorderSettings.BorderLeftHorizontalIntersectionChar;
+                char middle = tableBorderSettings.BorderHorizontalIntersectionChar;
+                char end = tableBorderSettings.BorderRightHorizontalIntersectionChar;
                 int headerBorderPosX = left;
                 int headerBorderPosY = top + 2;
                 tableBuilder.Append(
@@ -213,10 +219,10 @@ namespace Terminaux.Writer.FancyWriters
             }
 
             // Create a row separator
-            char beginVertical = '┬';
-            char middleVertical = '│';
-            char endVertical = '┴';
-            char intersect = '┼';
+            char beginVertical = tableBorderSettings.BorderTopVerticalIntersectionChar;
+            char middleVertical = tableBorderSettings.BorderVerticalIntersectionChar;
+            char endVertical = tableBorderSettings.BorderBottomVerticalIntersectionChar;
+            char intersect = tableBorderSettings.BorderWholeIntersectionChar;
             for (int x = 1; x < columnsCount; x++)
             {
                 // Try to get the positions for the separator
