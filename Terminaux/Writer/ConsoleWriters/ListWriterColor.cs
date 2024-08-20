@@ -40,22 +40,28 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Outputs the list entries into the terminal prompt plainly. It wraps output depending on the kernel settings.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-        public static void WriteListPlain<TKey, TValue>(Dictionary<TKey, TValue> List) =>
-            WriteListPlain(List, false);
+        /// <param name="keyStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteListPlain<TKey, TValue>(Dictionary<TKey, TValue> List, Func<TKey, string>? keyStringifier = null, Func<TValue, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteListPlain(List, false, keyStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the list entries into the terminal prompt plainly, and wraps output if needed.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteListPlain<TKey, TValue>(Dictionary<TKey, TValue> List, bool Wrap)
+        /// <param name="keyStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteListPlain<TKey, TValue>(Dictionary<TKey, TValue> List, bool Wrap, Func<TKey, string>? keyStringifier = null, Func<TValue, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Try to write list to console
-                    string buffered = RenderList(List);
+                    string buffered = RenderList(List, keyStringifier, valueStringifier, recursiveStringifier);
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
@@ -73,16 +79,22 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List) =>
-            WriteList(List, false);
+        /// <param name="keyStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, Func<TKey, string>? keyStringifier = null, Func<TValue, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, false, keyStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the list entries into the terminal prompt, and wraps output if needed.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, bool Wrap) =>
-            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap);
+        /// <param name="keyStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, bool Wrap, Func<TKey, string>? keyStringifier = null, Func<TValue, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap, keyStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -90,8 +102,11 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor) =>
-            WriteList(List, ListKeyColor, ListValueColor, false);
+        /// <param name="keyStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor, Func<TKey, string>? keyStringifier = null, Func<TValue, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, ListKeyColor, ListValueColor, false, keyStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -100,14 +115,17 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor, bool Wrap)
+        /// <param name="keyStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor, bool Wrap, Func<TKey, string>? keyStringifier = null, Func<TValue, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Try to write list to console
-                    string buffered = RenderList(List, ListKeyColor, ListValueColor);
+                    string buffered = RenderList(List, ListKeyColor, ListValueColor, keyStringifier, valueStringifier, recursiveStringifier);
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
@@ -125,8 +143,11 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Renders the list entries.
         /// </summary>
         /// <param name="List">A dictionary that will be listed.</param>
-        public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List) =>
-            RenderList(List, ColorTools.GetGray(), ColorTools.GetGray(), false);
+        /// <param name="keyStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List, Func<TKey, string>? keyStringifier = null, Func<TValue, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            RenderList(List, ColorTools.GetGray(), ColorTools.GetGray(), false, keyStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Renders the list entries.
@@ -134,8 +155,11 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor) =>
-            RenderList(List, ListKeyColor, ListValueColor, true);
+        /// <param name="keyStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor, Func<TKey, string>? keyStringifier = null, Func<TValue, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            RenderList(List, ListKeyColor, ListValueColor, true, keyStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Renders the list entries.
@@ -144,8 +168,15 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="useColor">Whether to use the colors or not</param>
-        internal static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor, bool useColor) =>
-            RenderList(List as IDictionary, ListKeyColor, ListValueColor, useColor);
+        /// <param name="keyStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        internal static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor, bool useColor, Func<TKey, string>? keyStringifier = null, Func<TValue, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null)
+        {
+            var objectKeyStringifier = keyStringifier is not null ? new Func<object, string>((obj) => keyStringifier((TKey)obj)) : null;
+            var objectValueStringifier = valueStringifier is not null ? new Func<object, string>((obj) => valueStringifier((TValue)obj)) : null;
+            return RenderList(List, ListKeyColor, ListValueColor, useColor, objectKeyStringifier, objectValueStringifier, recursiveStringifier);
+        }
         #endregion
 
         #region Dictionary (non-generic)
@@ -153,22 +184,28 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Outputs the list entries into the terminal prompt plainly. It wraps output depending on the kernel settings.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-        public static void WriteListPlain(IDictionary List) =>
-            WriteListPlain(List, false);
+        /// <param name="keyObjectStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteListPlain(IDictionary List, Func<object, string>? keyObjectStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteListPlain(List, false, keyObjectStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the list entries into the terminal prompt plainly, and wraps output if needed.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteListPlain(IDictionary List, bool Wrap)
+        /// <param name="keyObjectStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteListPlain(IDictionary List, bool Wrap, Func<object, string>? keyObjectStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Try to write list to console
-                    string buffered = RenderList(List);
+                    string buffered = RenderList(List, keyObjectStringifier, valueStringifier, recursiveStringifier);
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
@@ -186,16 +223,22 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-        public static void WriteList(IDictionary List) =>
-            WriteList(List, false);
+        /// <param name="keyObjectStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList(IDictionary List, Func<object, string>? keyObjectStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, false, keyObjectStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the list entries into the terminal prompt, and wraps output if needed.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteList(IDictionary List, bool Wrap) =>
-            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap);
+        /// <param name="keyObjectStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList(IDictionary List, bool Wrap, Func<object, string>? keyObjectStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap, keyObjectStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -203,8 +246,11 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteList(IDictionary List, Color ListKeyColor, Color ListValueColor) =>
-            WriteList(List, ListKeyColor, ListValueColor, false);
+        /// <param name="keyObjectStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList(IDictionary List, Color ListKeyColor, Color ListValueColor, Func<object, string>? keyObjectStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, ListKeyColor, ListValueColor, false, keyObjectStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -213,14 +259,17 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteList(IDictionary List, Color ListKeyColor, Color ListValueColor, bool Wrap)
+        /// <param name="keyObjectStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList(IDictionary List, Color ListKeyColor, Color ListValueColor, bool Wrap, Func<object, string>? keyObjectStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Try to write list to console
-                    string buffered = RenderList(List, ListKeyColor, ListValueColor);
+                    string buffered = RenderList(List, ListKeyColor, ListValueColor, keyObjectStringifier, valueStringifier, recursiveStringifier);
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
@@ -238,8 +287,11 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Renders the list entries.
         /// </summary>
         /// <param name="List">A dictionary that will be listed.</param>
-        public static string RenderList(IDictionary List) =>
-            RenderList(List, ColorTools.GetGray(), ColorTools.GetGray(), false);
+        /// <param name="keyObjectStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static string RenderList(IDictionary List, Func<object, string>? keyObjectStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            RenderList(List, ColorTools.GetGray(), ColorTools.GetGray(), false, keyObjectStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Renders the list entries.
@@ -247,8 +299,11 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static string RenderList(IDictionary List, Color ListKeyColor, Color ListValueColor) =>
-            RenderList(List, ListKeyColor, ListValueColor, true);
+        /// <param name="keyObjectStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static string RenderList(IDictionary List, Color ListKeyColor, Color ListValueColor, Func<object, string>? keyObjectStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            RenderList(List, ListKeyColor, ListValueColor, true, keyObjectStringifier, valueStringifier, recursiveStringifier);
 
         /// <summary>
         /// Renders the list entries.
@@ -257,21 +312,24 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="useColor">Whether to use the colors or not</param>
-        internal static string RenderList(IDictionary List, Color ListKeyColor, Color ListValueColor, bool useColor)
+        /// <param name="keyObjectStringifier">A function that stringifies a key.</param>
+        /// <param name="valueStringifier">A function that stringifies a value.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        internal static string RenderList(IDictionary List, Color ListKeyColor, Color ListValueColor, bool useColor, Func<object, string>? keyObjectStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             var listBuilder = new StringBuilder();
             foreach (var ListEntry in List.Keys)
             {
-                var Values = new List<object>();
                 var value = List[ListEntry];
                 if (value is IEnumerable enums && value is not string)
                 {
+                    var strings = new List<object>();
                     foreach (var Value in enums)
-                        Values.Add(Value);
-                    string valuesString = string.Join(", ", Values);
+                        strings.Add(recursiveStringifier is not null ? recursiveStringifier(Value) : Value);
+                    string valuesString = string.Join(", ", strings);
                     listBuilder.AppendLine(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
-                        $"- {ListEntry}: " +
+                        $"- {(keyObjectStringifier is not null ? keyObjectStringifier(ListEntry) : ListEntry)}: " +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
                         $"{valuesString}"
                     );
@@ -279,9 +337,9 @@ namespace Terminaux.Writer.ConsoleWriters
                 else
                     listBuilder.AppendLine(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
-                        $"- {ListEntry}: " +
+                        $"- {(keyObjectStringifier is not null ? keyObjectStringifier(ListEntry) : ListEntry)}: " +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
-                        $"{value}"
+                        $"{(valueStringifier is not null ? valueStringifier(value) : value)}"
                     );
             }
             if (useColor)
@@ -295,22 +353,26 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Outputs the list entries into the terminal prompt plainly. It wraps output depending on the kernel settings.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-        public static void WriteListPlain<T>(IEnumerable<T> List) =>
-            WriteListPlain(List, false);
+        /// <param name="stringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteListPlain<T>(IEnumerable<T> List, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteListPlain(List, false, stringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the list entries into the terminal prompt plainly, and wraps output if needed.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteListPlain<T>(IEnumerable<T> List, bool Wrap)
+        /// <param name="stringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteListPlain<T>(IEnumerable<T> List, bool Wrap, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Try to write list to console
-                    string buffered = RenderList(List);
+                    string buffered = RenderList(List, stringifier, recursiveStringifier);
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
@@ -328,16 +390,20 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-        public static void WriteList<T>(IEnumerable<T> List) =>
-            WriteList(List, false);
+        /// <param name="stringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList<T>(IEnumerable<T> List, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, false, stringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the list entries into the terminal prompt, and wraps output if needed.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteList<T>(IEnumerable<T> List, bool Wrap) =>
-            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap);
+        /// <param name="stringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList<T>(IEnumerable<T> List, bool Wrap, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap, stringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -345,8 +411,10 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor) =>
-            WriteList(List, ListKeyColor, ListValueColor, false);
+        /// <param name="stringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, ListKeyColor, ListValueColor, false, stringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -355,14 +423,16 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor, bool Wrap)
+        /// <param name="stringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor, bool Wrap, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Try to write list to console
-                    string buffered = RenderList(List, ListKeyColor, ListValueColor);
+                    string buffered = RenderList(List, ListKeyColor, ListValueColor, stringifier, recursiveStringifier);
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
@@ -380,8 +450,10 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Renders the list entries.
         /// </summary>
         /// <param name="List">A dictionary that will be listed.</param>
-        public static string RenderList<T>(IEnumerable<T> List) =>
-            RenderList(List, ColorTools.GetGray(), ColorTools.GetGray(), false);
+        /// <param name="stringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static string RenderList<T>(IEnumerable<T> List, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            RenderList(List, ColorTools.GetGray(), ColorTools.GetGray(), false, stringifier, recursiveStringifier);
 
         /// <summary>
         /// Renders the list entries.
@@ -389,8 +461,10 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor) =>
-            RenderList(List, ListKeyColor, ListValueColor, true);
+        /// <param name="stringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            RenderList(List, ListKeyColor, ListValueColor, true, stringifier, recursiveStringifier);
 
         /// <summary>
         /// Renders the list entries.
@@ -399,18 +473,20 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="useColor">Whether to use the colors or not</param>
-        internal static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor, bool useColor)
+        /// <param name="stringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        internal static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor, bool useColor, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             var listBuilder = new StringBuilder();
             int EntryNumber = 1;
             foreach (T ListEntry in List)
             {
-                var Values = new List<object>();
                 if (ListEntry is IEnumerable enums && ListEntry is not string)
                 {
+                    var strings = new List<object>();
                     foreach (var Value in enums)
-                        Values.Add(Value);
-                    string valuesString = string.Join(", ", Values);
+                        strings.Add(recursiveStringifier is not null ? recursiveStringifier(Value) : Value);
+                    string valuesString = string.Join(", ", strings);
                     listBuilder.AppendLine(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
                         $"- {EntryNumber}: " +
@@ -423,7 +499,7 @@ namespace Terminaux.Writer.ConsoleWriters
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
                         $"- {EntryNumber}: " +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
-                        $"{ListEntry}"
+                        $"{(stringifier is not null ? stringifier(ListEntry) : ListEntry)}"
                     );
                 EntryNumber += 1;
             }
@@ -438,22 +514,26 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Outputs the list entries into the terminal prompt plainly. It wraps output depending on the kernel settings.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-        public static void WriteListPlain(IEnumerable List) =>
-            WriteListPlain(List, false);
+        /// <param name="objectStringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteListPlain(IEnumerable List, Func<object, string>? objectStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteListPlain(List, false, objectStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the list entries into the terminal prompt plainly, and wraps output if needed.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteListPlain(IEnumerable List, bool Wrap)
+        /// <param name="objectStringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteListPlain(IEnumerable List, bool Wrap, Func<object, string>? objectStringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Try to write list to console
-                    string buffered = RenderList(List);
+                    string buffered = RenderList(List, objectStringifier, recursiveStringifier);
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
@@ -471,16 +551,20 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
-        public static void WriteList(IEnumerable List) =>
-            WriteList(List, false);
+        /// <param name="objectStringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList(IEnumerable List, Func<object, string>? objectStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, false, objectStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the list entries into the terminal prompt, and wraps output if needed.
         /// </summary>
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteList(IEnumerable List, bool Wrap) =>
-            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap);
+        /// <param name="objectStringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList(IEnumerable List, bool Wrap, Func<object, string>? objectStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, ConsoleColors.Yellow, ConsoleColors.Silver, Wrap, objectStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -488,8 +572,10 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static void WriteList(IEnumerable List, Color ListKeyColor, Color ListValueColor) =>
-            WriteList(List, ListKeyColor, ListValueColor, false);
+        /// <param name="objectStringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList(IEnumerable List, Color ListKeyColor, Color ListValueColor, Func<object, string>? objectStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            WriteList(List, ListKeyColor, ListValueColor, false, objectStringifier, recursiveStringifier);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -498,14 +584,16 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
-        public static void WriteList(IEnumerable List, Color ListKeyColor, Color ListValueColor, bool Wrap)
+        /// <param name="objectStringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static void WriteList(IEnumerable List, Color ListKeyColor, Color ListValueColor, bool Wrap, Func<object, string>? objectStringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             lock (TextWriterRaw.WriteLock)
             {
                 try
                 {
                     // Try to write list to console
-                    string buffered = RenderList(List, ListKeyColor, ListValueColor);
+                    string buffered = RenderList(List, ListKeyColor, ListValueColor, objectStringifier, recursiveStringifier);
                     if (Wrap)
                         TextWriterWrappedColor.WriteWrappedPlain(buffered, false);
                     else
@@ -523,8 +611,10 @@ namespace Terminaux.Writer.ConsoleWriters
         /// Renders the list entries.
         /// </summary>
         /// <param name="List">A dictionary that will be listed.</param>
-        public static string RenderList(IEnumerable List) =>
-            RenderList(List, ColorTools.GetGray(), ColorTools.GetGray(), false);
+        /// <param name="objectStringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static string RenderList(IEnumerable List, Func<object, string>? objectStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            RenderList(List, ColorTools.GetGray(), ColorTools.GetGray(), false, objectStringifier, recursiveStringifier);
 
         /// <summary>
         /// Renders the list entries.
@@ -532,8 +622,10 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="List">A dictionary that will be listed.</param>
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
-        public static string RenderList(IEnumerable List, Color ListKeyColor, Color ListValueColor) =>
-            RenderList(List, ListKeyColor, ListValueColor, true);
+        /// <param name="objectStringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        public static string RenderList(IEnumerable List, Color ListKeyColor, Color ListValueColor, Func<object, string>? objectStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            RenderList(List, ListKeyColor, ListValueColor, true, objectStringifier, recursiveStringifier);
 
         /// <summary>
         /// Renders the list entries.
@@ -542,8 +634,10 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListKeyColor">A key color.</param>
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="useColor">Whether to use the colors or not</param>
-        internal static string RenderList(IEnumerable List, Color ListKeyColor, Color ListValueColor, bool useColor) =>
-            RenderList(List.OfType<object>(), ListKeyColor, ListValueColor, useColor);
+        /// <param name="objectStringifier">A function that stringifies an entry.</param>
+        /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
+        internal static string RenderList(IEnumerable List, Color ListKeyColor, Color ListValueColor, bool useColor, Func<object, string>? objectStringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            RenderList(List.OfType<object>(), ListKeyColor, ListValueColor, useColor, objectStringifier, recursiveStringifier);
         #endregion
 
         static ListWriterColor()
