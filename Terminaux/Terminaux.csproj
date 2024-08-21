@@ -46,6 +46,7 @@
   <ItemGroup>
     <PackageReference Include="Magico" Version="1.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="SpecProbe.Loader" Version="3.0.0" />
     <PackageReference Include="SpecProbe.Software" Version="3.0.0" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
     <PackageReference Include="Textify.Figlet" Version="1.10.0.1" />
