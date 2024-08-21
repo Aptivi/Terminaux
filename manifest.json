@@ -1065,6 +1065,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Input.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Input.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.InputChoiceInfo.yml",
       "output": {
         ".html": {
@@ -1169,16 +1179,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Pointer.PointerEventContext.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerListener.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Pointer.PointerListener.html"
         }
       },
       "version": ""
