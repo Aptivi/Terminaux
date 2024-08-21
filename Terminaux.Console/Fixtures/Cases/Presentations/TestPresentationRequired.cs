@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Console.Fixtures.Cases.CaseData;
-using Terminaux.Inputs.Pointer;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Presentation;
 
 namespace Terminaux.Console.Fixtures.Cases.Presentations
@@ -27,9 +27,9 @@ namespace Terminaux.Console.Fixtures.Cases.Presentations
     {
         public void RunFixture()
         {
-            PointerListener.StartListening();
+            Input.EnableMouse = true;
             PresentationTools.Present(PresentationDebugInt.Debug, false, true);
-            PointerListener.StopListening();
+            Input.EnableMouse = false;
         }
     }
 }

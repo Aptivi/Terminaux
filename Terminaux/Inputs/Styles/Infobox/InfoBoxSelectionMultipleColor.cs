@@ -299,12 +299,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Handle keypress
-                    SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+                    SpinWait.SpinUntil(() => Input.InputAvailable);
                     bool goingUp = false;
                     string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
                     var (maxWidth, maxHeight, _, borderX, borderY, _, selectionBoxPosY, leftPos, maxSelectionWidth, _, selectionReservedHeight) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
                     maxHeight -= selectionReservedHeight;
-                    if (PointerListener.PointerAvailable)
+                    if (Input.MouseInputAvailable)
                     {
                         bool UpdatePositionBasedOnMouse(PointerEventContext mouse)
                         {
@@ -512,7 +512,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
                         var key = TermReader.ReadKey();
                         switch (key.Key)

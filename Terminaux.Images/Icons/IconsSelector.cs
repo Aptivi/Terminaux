@@ -117,8 +117,8 @@ namespace Terminaux.Inputs.Styles
                     ScreenTools.Render();
 
                     // Wait for input
-                    SpinWait.SpinUntil(() => PointerListener.InputAvailable);
-                    if (PointerListener.PointerAvailable)
+                    SpinWait.SpinUntil(() => Input.InputAvailable);
+                    if (Input.MouseInputAvailable)
                     {
                         // Mouse input received.
                         var mouse = TermReader.ReadPointer();
@@ -140,7 +140,7 @@ namespace Terminaux.Inputs.Styles
                                 break;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
                         var key = TermReader.ReadKey();
                         switch (key.Key)

@@ -208,7 +208,7 @@ namespace Terminaux.Inputs.Presentation
                 {
                     // Get the keypress or mouse press
                     ScreenTools.Render();
-                    SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+                    SpinWait.SpinUntil(() => Input.InputAvailable);
 
                     // Get the lines and the positions
                     string[] splitFinalLines = GetFinalLines();
@@ -220,7 +220,7 @@ namespace Terminaux.Inputs.Presentation
                     int presentationLowerInnerBorderTop = ConsoleWrapper.WindowHeight - presentationUpperBorderTop * 2 - 3;
 
                     // Then, determine if the pointer or the keypress is available
-                    if (PointerListener.PointerAvailable)
+                    if (Input.MouseInputAvailable)
                     {
                         bool DetermineArrowPressed(PointerEventContext mouse)
                         {
@@ -288,7 +288,7 @@ namespace Terminaux.Inputs.Presentation
                                 break;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
                         // Get the key
                         var key = TermReader.ReadKey();

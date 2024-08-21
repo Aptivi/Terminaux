@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Base;
-using Terminaux.Inputs.Pointer;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -28,11 +28,11 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
     {
         public void RunFixture()
         {
-            PointerListener.StartListening();
+            Input.EnableMouse = true;
             var color = ColorSelector.OpenColorSelector();
             ConsoleWrapper.Clear();
             TextWriterColor.Write("Color selector returned: {0} [{1}]", color.PlainSequence, color.PlainSequenceTrueColor);
-            PointerListener.StopListening();
+            Input.EnableMouse = false;
         }
     }
 }

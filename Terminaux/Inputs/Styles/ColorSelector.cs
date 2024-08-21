@@ -335,8 +335,8 @@ namespace Terminaux.Inputs.Styles
             refresh = false;
 
             // Wait for input
-            SpinWait.SpinUntil(() => PointerListener.InputAvailable);
-            if (PointerListener.PointerAvailable)
+            SpinWait.SpinUntil(() => Input.InputAvailable);
+            if (Input.MouseInputAvailable)
             {
                 // In case user aimed the cursor at the bars
                 int boxWidth = ConsoleWrapper.WindowWidth / 2 - 6 + (ConsoleWrapper.WindowWidth % 2 == 0 ? 0 : 1);
@@ -389,7 +389,7 @@ namespace Terminaux.Inputs.Styles
                         break;
                 }
             }
-            else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+            else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
             {
                 var keypress = TermReader.ReadKey();
                 switch (keypress.Key)

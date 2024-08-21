@@ -481,7 +481,7 @@ namespace Terminaux.Inputs.Interactive
                 sw.Start();
             while (!loopBail)
             {
-                SpinWait.SpinUntil(() => PointerListener.InputAvailable || (timed && sw.ElapsedMilliseconds >= interactiveTui.RefreshInterval));
+                SpinWait.SpinUntil(() => Input.InputAvailable || (timed && sw.ElapsedMilliseconds >= interactiveTui.RefreshInterval));
                 bool timedOut = timed && sw.ElapsedMilliseconds >= interactiveTui.RefreshInterval;
                 if (timedOut)
                 {
@@ -489,7 +489,7 @@ namespace Terminaux.Inputs.Interactive
                     loopBail = true;
                     continue;
                 }
-                if (PointerListener.PointerAvailable)
+                if (Input.MouseInputAvailable)
                 {
                     void UpdateSelectionBasedOnMouse(PointerEventContext mouse)
                     {
@@ -735,7 +735,7 @@ namespace Terminaux.Inputs.Interactive
                         }
                     }
                 }
-                else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                 {
                     var key = TermReader.ReadKey();
                     bool processed = false;
@@ -911,8 +911,8 @@ namespace Terminaux.Inputs.Interactive
                     new InteractiveTuiBinding("Go one line up (informational)", ConsoleKey.W, null),
                     new InteractiveTuiBinding("Go one line down (informational)", ConsoleKey.S, null),
                     new InteractiveTuiBinding("Read more...", ConsoleKey.I, ConsoleModifiers.Shift, null),
-                    new InteractiveTuiBinding(PointerListener.InvertScrollYAxis ? "Go one element down" : "Go one element up", PointerButton.WheelUp, null),
-                    new InteractiveTuiBinding(PointerListener.InvertScrollYAxis ? "Go one element up" : "Go one element down", PointerButton.WheelDown, null),
+                    new InteractiveTuiBinding(Input.InvertScrollYAxis ? "Go one element down" : "Go one element up", PointerButton.WheelUp, null),
+                    new InteractiveTuiBinding(Input.InvertScrollYAxis ? "Go one element up" : "Go one element down", PointerButton.WheelDown, null),
                     new InteractiveTuiBinding("Do an action on the selected item", PointerButton.Left, PointerButtonPress.Released, null),
                 ]);
             }

@@ -397,10 +397,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     string[] splitFinalLines;
                     if (waitForInput)
                     {
-                        SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+                        SpinWait.SpinUntil(() => Input.InputAvailable);
                         splitFinalLines = GetFinalLines(text, vars);
                         var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
-                        if (PointerListener.PointerAvailable)
+                        if (Input.MouseInputAvailable)
                         {
                             bool DetermineArrowPressed(PointerEventContext mouse)
                             {
@@ -504,7 +504,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     break;
                             }
                         }
-                        else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                        else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                         {
                             var key = TermReader.ReadKey();
                             switch (key.Key)

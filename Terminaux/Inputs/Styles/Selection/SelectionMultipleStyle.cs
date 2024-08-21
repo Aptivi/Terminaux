@@ -266,9 +266,9 @@ namespace Terminaux.Inputs.Styles.Selection
 
                     // Wait for an answer
                     ScreenTools.Render();
-                    SpinWait.SpinUntil(() => PointerListener.InputAvailable);
+                    SpinWait.SpinUntil(() => Input.InputAvailable);
                     bool goingUp = false;
-                    if (PointerListener.PointerAvailable)
+                    if (Input.MouseInputAvailable)
                     {
                         bool UpdateSelectedIndexWithMousePos(PointerEventContext mouse)
                         {
@@ -379,7 +379,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                 break;
                         }
                     }
-                    else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                    else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
                         var key = TermReader.ReadKey();
                         switch (key.Key)

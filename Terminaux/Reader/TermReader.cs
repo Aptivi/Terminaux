@@ -23,6 +23,7 @@ using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.History;
@@ -81,11 +82,13 @@ namespace Terminaux.Reader
         /// Reads a pointer (blocking)
         /// </summary>
         /// <returns>A <see cref="PointerEventContext"/> instance that describes the last mouse event.</returns>
-        public static PointerEventContext ReadPointer()
+        public static PointerEventContext? ReadPointer()
         {
             PointerEventContext? ctx = null;
-            while (ctx is null)
-                ctx = PointerListener.ReadPointerNow();
+            SpinWait.SpinUntil(() => Input.MouseInputAvailable);
+
+            // Mouse input received.
+            ctx = Input.ReadPointer();
             return ctx;
         }
 
@@ -99,15 +102,17 @@ namespace Terminaux.Reader
             ConsoleKeyInfo cki = default;
             while (looping)
             {
-                SpinWait.SpinUntil(() => PointerListener.InputAvailable);
-                if (PointerListener.PointerAvailable)
+                SpinWait.SpinUntil(() => Input.InputAvailable);
+                if (Input.MouseInputAvailable)
                 {
                     // Mouse input received.
                     ctx = ReadPointer();
-                    if (ctx.ButtonPress != PointerButtonPress.Moved)
+                    if (ctx is null)
+                        continue;
+                    if (ctx.ButtonPress != PointerButtonPress.Moved || (ctx.ButtonPress == PointerButtonPress.Moved && Input.EnableMovementEvents))
                         looping = false;
                 }
-                else if (ConsoleWrapper.KeyAvailable && !PointerListener.PointerActive)
+                else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                 {
                     cki = ReadKey();
                     looping = false;
