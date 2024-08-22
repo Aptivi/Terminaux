@@ -32,15 +32,15 @@ fi
 
 # Download packages
 echo Downloading packages...
-"$dotnetpath" msbuild "../Terminaux.sln" -t:restore -p:Configuration=$releaseconf
+"$dotnetpath" restore "../Terminaux.sln" --configuration $releaseconf
 if [ ! $? == 0 ]; then
 	echo Download failed.
 	exit 1
 fi
 
-# Build KS
-echo Building KS...
-"$dotnetpath" msbuild "../Terminaux.sln" -p:Configuration=$releaseconf
+# Build Terminaux
+echo Building Terminaux...
+"$dotnetpath" build "../Terminaux.sln" --configuration $releaseconf
 if [ ! $? == 0 ]; then
 	echo Build failed.
 	exit 1
