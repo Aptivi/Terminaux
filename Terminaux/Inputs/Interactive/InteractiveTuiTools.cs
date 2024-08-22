@@ -642,6 +642,8 @@ namespace Terminaux.Inputs.Interactive
 
                     // Mouse input received.
                     var mouse = Input.ReadPointer();
+                    if (mouse is null)
+                        continue;
                     bool processed = false;
                     switch (mouse.Button)
                     {

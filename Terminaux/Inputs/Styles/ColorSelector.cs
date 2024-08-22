@@ -352,6 +352,8 @@ namespace Terminaux.Inputs.Styles
 
                 // Mouse input received.
                 var mouse = Input.ReadPointer();
+                if (mouse is null)
+                    return false;
 
                 // Detect boundaries
                 bool withinColorBoxBoundaries = PointerTools.PointerWithinRange(mouse, (colorBoxX + 1, colorBoxY + 1), (colorBoxWidth + colorBoxX, colorBoxHeight + colorBoxY));

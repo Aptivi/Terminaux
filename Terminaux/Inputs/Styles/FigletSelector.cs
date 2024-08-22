@@ -124,6 +124,8 @@ namespace Terminaux.Inputs.Styles
                     {
                         // Mouse input received.
                         var mouse = Input.ReadPointer();
+                        if (mouse is null)
+                            continue;
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
@@ -254,6 +256,8 @@ namespace Terminaux.Inputs.Styles
                     {
                         // Mouse input received.
                         var mouse = Input.ReadPointer();
+                        if (mouse is null)
+                            continue;
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:

@@ -436,6 +436,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                         // Mouse input received.
                         var mouse = Input.ReadPointer();
+                        if (mouse is null)
+                            continue;
                         switch (mouse.Button)
                         {
                             case PointerButton.None:
