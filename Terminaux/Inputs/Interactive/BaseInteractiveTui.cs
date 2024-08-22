@@ -28,7 +28,6 @@ namespace Terminaux.Inputs.Interactive
     /// </summary>
     public class BaseInteractiveTui<T> : IInteractiveTui<T>
     {
-        internal static List<BaseInteractiveTui<T>> instances = [];
         internal Dictionary<string, ScreenPart> trackedParts = [];
         internal Screen? screen;
         internal bool isExiting = false;
@@ -53,20 +52,6 @@ namespace Terminaux.Inputs.Interactive
         public IEnumerable<T> DataSource =>
             InteractiveTuiStatus.CurrentPane == 2 ? SecondaryDataSource : PrimaryDataSource;
 
-        /// <summary>
-        /// The interactive TUI instance
-        /// </summary>
-        public static BaseInteractiveTui<T>? Instance =>
-            instances.Count > 0 ?
-            instances[instances.Count - 1] :
-            null;
-
-        /// <summary>
-        /// The screen instance for this interactive TUI
-        /// </summary>
-        public Screen? Screen =>
-            screen;
-
         /// <inheritdoc/>
         public virtual string GetEntryFromItem(T item) =>
             item is not null ? item.ToString() : "";
@@ -81,31 +66,5 @@ namespace Terminaux.Inputs.Interactive
 
         /// <inheritdoc/>
         public virtual void HandleExit() { }
-
-        /// <summary>
-        /// Goes down to the last element upon overflow (caused by remove operation, ...). This applies to the first and the second pane.
-        /// </summary>
-        public void LastOnOverflow()
-        {
-            int primaryCount = PrimaryDataSource.Length();
-            int secondaryCount = SecondaryDataSource.Length();
-            if (InteractiveTuiStatus.FirstPaneCurrentSelection > primaryCount)
-                InteractiveTuiStatus.FirstPaneCurrentSelection = primaryCount;
-            if (InteractiveTuiStatus.SecondPaneCurrentSelection > secondaryCount)
-                InteractiveTuiStatus.SecondPaneCurrentSelection = secondaryCount;
-        }
-
-        /// <summary>
-        /// Goes up to the first element upon underflow (caused by remove operation, ...). This applies to the first and the second pane.
-        /// </summary>
-        public void FirstOnUnderflow()
-        {
-            int primaryCount = PrimaryDataSource.Length();
-            int secondaryCount = SecondaryDataSource.Length();
-            if (InteractiveTuiStatus.FirstPaneCurrentSelection <= 0 && primaryCount > 0)
-                InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
-            if (InteractiveTuiStatus.SecondPaneCurrentSelection <= 0 && secondaryCount > 0)
-                InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
-        }
     }
 }

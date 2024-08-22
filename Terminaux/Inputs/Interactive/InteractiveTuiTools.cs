@@ -58,7 +58,6 @@ namespace Terminaux.Inputs.Interactive
             {
                 if (!VerifyInteractiveTui(interactiveTui))
                     return;
-                BaseInteractiveTui<T>.instances.Add(interactiveTui);
 
                 // Make the screen
                 var screen = new Screen();
@@ -74,8 +73,8 @@ namespace Terminaux.Inputs.Interactive
                     while (!interactiveTui.isExiting)
                     {
                         // Check the selection
-                        interactiveTui.LastOnOverflow();
-                        interactiveTui.FirstOnUnderflow();
+                        LastOnOverflow(interactiveTui);
+                        FirstOnUnderflow(interactiveTui);
 
                         // Draw the boxes
                         DrawInteractiveTui(interactiveTui);
@@ -99,10 +98,6 @@ namespace Terminaux.Inputs.Interactive
                 {
                     notifyCrash = true;
                     crashReason = TextTools.FormatString("The interactive TUI, {0}, has crashed for the following reason:", interactiveTui.GetType().Name) + $" {ex.Message}";
-                }
-                finally
-                {
-                    BaseInteractiveTui<T>.instances.Remove(interactiveTui);
                 }
                 ScreenTools.UnsetCurrent(screen);
 
@@ -159,6 +154,32 @@ namespace Terminaux.Inputs.Interactive
             InteractiveTuiStatus.CurrentPane++;
             if (InteractiveTuiStatus.CurrentPane > 2)
                 InteractiveTuiStatus.CurrentPane = 1;
+        }
+
+        /// <summary>
+        /// Goes down to the last element upon overflow (caused by remove operation, ...). This applies to the first and the second pane.
+        /// </summary>
+        public static void LastOnOverflow<T>(BaseInteractiveTui<T> interactiveTui)
+        {
+            int primaryCount = interactiveTui.PrimaryDataSource.Length();
+            int secondaryCount = interactiveTui.SecondaryDataSource.Length();
+            if (InteractiveTuiStatus.FirstPaneCurrentSelection > primaryCount)
+                InteractiveTuiStatus.FirstPaneCurrentSelection = primaryCount;
+            if (InteractiveTuiStatus.SecondPaneCurrentSelection > secondaryCount)
+                InteractiveTuiStatus.SecondPaneCurrentSelection = secondaryCount;
+        }
+
+        /// <summary>
+        /// Goes up to the first element upon underflow (caused by remove operation, ...). This applies to the first and the second pane.
+        /// </summary>
+        public static void FirstOnUnderflow<T>(BaseInteractiveTui<T> interactiveTui)
+        {
+            int primaryCount = interactiveTui.PrimaryDataSource.Length();
+            int secondaryCount = interactiveTui.SecondaryDataSource.Length();
+            if (InteractiveTuiStatus.FirstPaneCurrentSelection <= 0 && primaryCount > 0)
+                InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
+            if (InteractiveTuiStatus.SecondPaneCurrentSelection <= 0 && secondaryCount > 0)
+                InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
         }
 
         private static void DrawInteractiveTui<T>(BaseInteractiveTui<T> interactiveTui)
