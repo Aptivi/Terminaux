@@ -40,7 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SpecProbe.Loader" Version="3.0.0" />
     <PackageReference Include="SpecProbe.Software" Version="3.0.0" Condition="'$(TargetFramework)' == 'net8.0'" />
   </ItemGroup>
 
