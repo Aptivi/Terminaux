@@ -19,7 +19,7 @@
 
 using Terminaux.Console.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.Interactive;
-using Terminaux.ResizeListener;
+using Terminaux.Base;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
@@ -30,7 +30,7 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
         public void RunFixture()
         {
             // Run the resize listener
-            ConsoleResizeListener.StartResizeListener();
+            ConsoleResizeHandler.StartResizeListener();
 
             // Start the demo TUI app
             InteractiveTuiTools.OpenInteractiveTui(new TermInfoPaneData());

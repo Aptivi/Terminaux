@@ -20,7 +20,7 @@
 using Terminaux.Console.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs;
-using Terminaux.ResizeListener;
+using Terminaux.Base;
 
 namespace Terminaux.Console.Fixtures.Cases.Tui
 {
@@ -33,7 +33,7 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
             Input.EnableMouse = true;
 
             // Run the resize listener
-            ConsoleResizeListener.StartResizeListener();
+            ConsoleResizeHandler.StartResizeListener();
 
             // Start the demo TUI app
             InteractiveTuiTools.OpenInteractiveTui(new CliInfoPaneSlowTestRefreshingData());

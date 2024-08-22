@@ -23,8 +23,6 @@ using Terminaux.Base.Extensions;
 using Terminaux.Console.Fixtures;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Reader;
-using Terminaux.ResizeListener;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console
@@ -34,7 +32,7 @@ namespace Terminaux.Console
         static void Main()
         {
             // Run the resize listener
-            ConsoleResizeListener.StartResizeListener();
+            ConsoleResizeHandler.StartResizeListener();
 
             // Initialize sequences for Windows
             ConsolePositioning.InitializeSequences();

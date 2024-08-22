@@ -21,6 +21,8 @@ using System;
 using Terminaux.Reader;
 using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
+using System.Threading;
+using System.Diagnostics;
 
 namespace Terminaux.Base
 {
@@ -34,6 +36,7 @@ namespace Terminaux.Base
         internal static int CurrentWindowWidth;
         internal static int CurrentWindowHeight;
         private static bool ResizeDetected;
+        private static Thread ResizeListenerThread = new((_) => PollForResize(null)) { Name = "Console Resize Listener Thread", IsBackground = true };
 
         /// <summary>
         /// Whether to run the base console resize handler or not after running a custom action
@@ -56,6 +59,26 @@ namespace Terminaux.Base
         }
 
         /// <summary>
+        /// Starts the console resize listener
+        /// </summary>
+        /// <param name="customHandler">Specifies the custom console resize handler that will be called if resize is detected</param>
+        public static void StartResizeListener(Action<int, int, int, int>? customHandler = null)
+        {
+            SetCachedWindowDimensions(Console.WindowWidth, Console.WindowHeight);
+            if (!ResizeListenerThread.IsAlive)
+            {
+                if (customHandler is not null)
+                {
+                    ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>?)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
+                    ResizeListenerThread.Start(customHandler);
+                }
+                else
+                    ResizeListenerThread.Start(null);
+            }
+            listening = true;
+        }
+
+        /// <summary>
         /// Gets the console size from the cached window height and width position
         /// </summary>
         public static (int Width, int Height) GetCurrentConsoleSize()
@@ -73,7 +96,7 @@ namespace Terminaux.Base
             return false;
         }
 
-        internal static void HandleResize(Action<int, int, int, int> customHandler)
+        internal static void HandleResize(Action<int, int, int, int>? customHandler)
         {
             int oldX = CurrentWindowWidth;
             int oldY = CurrentWindowHeight;
@@ -107,6 +130,23 @@ namespace Terminaux.Base
             // Tell the reader to refresh itself
             if (TermReaderTools.Busy)
                 TermReaderTools.Refresh();
+        }
+
+        private static void PollForResize(Action<int, int, int, int>? customHandler)
+        {
+            try
+            {
+                while (true)
+                {
+                    SpinWait.SpinUntil(CheckResized);
+                    HandleResize(customHandler);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Failed to detect console resize: {ex.Message}");
+                Debug.WriteLine(ex.StackTrace);
+            }
         }
 
         static ConsoleResizeHandler()
