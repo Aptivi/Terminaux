@@ -29,7 +29,7 @@ using Terminaux.Inputs.Styles.Infobox;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
-    internal class TermInfoPaneData : BaseInteractiveTui<TermInfoDesc>, IInteractiveTui<TermInfoDesc>
+    internal class TermInfoPaneData : BaseInteractiveTui<TermInfoDesc>
     {
         private static bool loaded = false;
         private static readonly List<TermInfoDesc> descs = [];

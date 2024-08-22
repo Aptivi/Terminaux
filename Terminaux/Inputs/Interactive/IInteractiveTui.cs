@@ -24,7 +24,13 @@ namespace Terminaux.Inputs.Interactive
     /// <summary>
     /// An interface for your interactive user interface for terminal apps
     /// </summary>
-    public interface IInteractiveTui<T>
+    public interface IInteractiveTui<T> : IInteractiveTui<T, T>
+    { }
+
+    /// <summary>
+    /// An interface for your interactive user interface for terminal apps
+    /// </summary>
+    public interface IInteractiveTui<TPrimary, TSecondary>
     {
         /// <summary>
         /// Whether the user can switch to the second path
@@ -42,28 +48,44 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// An array, a dictionary, a list, or an enumerable that holds data (pane one)
         /// </summary>
-        public IEnumerable<T> PrimaryDataSource { get; }
+        public IEnumerable<TPrimary> PrimaryDataSource { get; }
         /// <summary>
         /// An array, a dictionary, a list, or an enumerable that holds data (pane two)
         /// </summary>
-        public IEnumerable<T> SecondaryDataSource { get; }
+        public IEnumerable<TSecondary> SecondaryDataSource { get; }
 
         /// <summary>
         /// Gets an entry string from a specified item for listing
         /// </summary>
         /// <param name="item">Target item</param>
-        public string GetEntryFromItem(T item);
+        public string GetEntryFromItem(TPrimary item);
         /// <summary>
         /// Gets the info from the item
         /// </summary>
         /// <param name="item">Target item</param>
         /// <returns>The rendered info so that <see cref="InteractiveTuiTools"/> can handle its rendering</returns>
-        public string GetInfoFromItem(T item);
+        public string GetInfoFromItem(TPrimary item);
         /// <summary>
         /// Gets the status from the item
         /// </summary>
         /// <param name="item">Target item</param>
-        public string GetStatusFromItem(T item);
+        public string GetStatusFromItem(TPrimary item);
+        /// <summary>
+        /// Gets an entry string from a specified item for listing
+        /// </summary>
+        /// <param name="item">Target item</param>
+        public string GetEntryFromItemSecondary(TSecondary item);
+        /// <summary>
+        /// Gets the info from the item
+        /// </summary>
+        /// <param name="item">Target item</param>
+        /// <returns>The rendered info so that <see cref="InteractiveTuiTools"/> can handle its rendering</returns>
+        public string GetInfoFromItemSecondary(TSecondary item);
+        /// <summary>
+        /// Gets the status from the item
+        /// </summary>
+        /// <param name="item">Target item</param>
+        public string GetStatusFromItemSecondary(TSecondary item);
         /// <summary>
         /// Handles exiting the interactive TUI
         /// </summary>

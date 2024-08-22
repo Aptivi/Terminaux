@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Magico.Enumeration;
 using System.Collections.Generic;
 using Terminaux.Base.Buffered;
 
@@ -26,7 +25,13 @@ namespace Terminaux.Inputs.Interactive
     /// <summary>
     /// A base class for your interactive user interface for terminal apps
     /// </summary>
-    public class BaseInteractiveTui<T> : IInteractiveTui<T>
+    public class BaseInteractiveTui<T> : BaseInteractiveTui<T, T>, IInteractiveTui<T, T>
+    { }
+
+    /// <summary>
+    /// A base class for your interactive user interface for terminal apps
+    /// </summary>
+    public class BaseInteractiveTui<TPrimary, TSecondary> : IInteractiveTui<TPrimary, TSecondary>
     {
         internal Dictionary<string, ScreenPart> trackedParts = [];
         internal Screen? screen;
@@ -40,11 +45,6 @@ namespace Terminaux.Inputs.Interactive
         /// Current selection for the second pane
         /// </summary>
         public int SecondPaneCurrentSelection { get; internal set; } = 1;
-        /// <summary>
-        /// Current selection for the current pane
-        /// </summary>
-        public int CurrentSelection =>
-            CurrentPane == 2 ? SecondPaneCurrentSelection : FirstPaneCurrentSelection;
         /// <summary>
         /// Current status
         /// </summary>
@@ -74,27 +74,33 @@ namespace Terminaux.Inputs.Interactive
         public virtual bool AcceptsEmptyData => false;
 
         /// <inheritdoc/>
-        public virtual IEnumerable<T> PrimaryDataSource => [];
+        public virtual IEnumerable<TPrimary> PrimaryDataSource => [];
         /// <inheritdoc/>
-        public virtual IEnumerable<T> SecondaryDataSource => [];
-
-        /// <summary>
-        /// Data source for the current pane
-        /// </summary>
-        public IEnumerable<T> DataSource =>
-            CurrentPane == 2 ? SecondaryDataSource : PrimaryDataSource;
+        public virtual IEnumerable<TSecondary> SecondaryDataSource => [];
 
         /// <inheritdoc/>
-        public virtual string GetEntryFromItem(T item) =>
+        public virtual string GetEntryFromItem(TPrimary item) =>
             item is not null ? item.ToString() : "";
 
         /// <inheritdoc/>
-        public virtual string GetInfoFromItem(T item) =>
+        public virtual string GetInfoFromItem(TPrimary item) =>
             item is not null ? "No info." : "";
 
         /// <inheritdoc/>
-        public virtual string GetStatusFromItem(T item) =>
+        public virtual string GetStatusFromItem(TPrimary item) =>
             !string.IsNullOrEmpty(GetEntryFromItem(item)) ? GetEntryFromItem(item) : "No status";
+
+        /// <inheritdoc/>
+        public virtual string GetEntryFromItemSecondary(TSecondary item) =>
+            item is not null ? item.ToString() : "";
+
+        /// <inheritdoc/>
+        public virtual string GetInfoFromItemSecondary(TSecondary item) =>
+            item is not null ? "No info." : "";
+
+        /// <inheritdoc/>
+        public virtual string GetStatusFromItemSecondary(TSecondary item) =>
+            !string.IsNullOrEmpty(GetEntryFromItemSecondary(item)) ? GetEntryFromItemSecondary(item) : "No status";
 
         /// <inheritdoc/>
         public virtual void HandleExit() { }

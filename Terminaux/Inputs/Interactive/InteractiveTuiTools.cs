@@ -52,7 +52,7 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         /// <param name="interactiveTui">The inherited class instance of the interactive TUI</param>
         /// <exception cref="TerminauxException"></exception>
-        public static void OpenInteractiveTui<T>(BaseInteractiveTui<T> interactiveTui)
+        public static void OpenInteractiveTui<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             lock (_interactiveTuiLock)
             {
@@ -118,11 +118,10 @@ namespace Terminaux.Inputs.Interactive
         /// </summary>
         /// <param name="interactiveTui">Interactive TUI to deal with</param>
         /// <param name="pos">Position to move the pane selection to</param>
-        public static void SelectionMovement<T>(BaseInteractiveTui<T> interactiveTui, int pos)
+        public static void SelectionMovement<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui, int pos)
         {
             // Check the position
-            var data = interactiveTui.DataSource;
-            int elements = data.Length();
+            int elements = interactiveTui.CurrentPane == 2 ? interactiveTui.SecondaryDataSource.Count() : interactiveTui.PrimaryDataSource.Count();
             if (pos < 1)
                 pos = 1;
             if (pos > elements)
@@ -140,7 +139,7 @@ namespace Terminaux.Inputs.Interactive
         /// Switches between two panes
         /// </summary>
         /// <param name="interactiveTui">Interactive TUI to deal with</param>
-        public static void SwitchSides<T>(BaseInteractiveTui<T> interactiveTui)
+        public static void SwitchSides<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             if (!interactiveTui.SecondPaneInteractable)
                 return;
@@ -152,7 +151,7 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// Goes down to the last element upon overflow (caused by remove operation, ...). This applies to the first and the second pane.
         /// </summary>
-        public static void LastOnOverflow<T>(BaseInteractiveTui<T> interactiveTui)
+        public static void LastOnOverflow<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             int primaryCount = interactiveTui.PrimaryDataSource.Length();
             int secondaryCount = interactiveTui.SecondaryDataSource.Length();
@@ -165,7 +164,7 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// Goes up to the first element upon underflow (caused by remove operation, ...). This applies to the first and the second pane.
         /// </summary>
-        public static void FirstOnUnderflow<T>(BaseInteractiveTui<T> interactiveTui)
+        public static void FirstOnUnderflow<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             int primaryCount = interactiveTui.PrimaryDataSource.Length();
             int secondaryCount = interactiveTui.SecondaryDataSource.Length();
@@ -175,7 +174,7 @@ namespace Terminaux.Inputs.Interactive
                 interactiveTui.SecondPaneCurrentSelection = 1;
         }
 
-        private static void DrawInteractiveTui<T>(BaseInteractiveTui<T> interactiveTui)
+        private static void DrawInteractiveTui<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             if (interactiveTui is null)
@@ -241,7 +240,7 @@ namespace Terminaux.Inputs.Interactive
             interactiveTui.trackedParts.Add(partName, part);
         }
 
-        private static void DrawInteractiveTuiItems<T>(BaseInteractiveTui<T> interactiveTui, int paneNum)
+        private static void DrawInteractiveTuiItems<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui, int paneNum)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             if (interactiveTui is null)
@@ -271,8 +270,9 @@ namespace Terminaux.Inputs.Interactive
                 paneNum = 2;
 
             // Get how many data instances are there in the chosen data source
-            var data = paneNum == 2 ? interactiveTui.SecondaryDataSource : interactiveTui.PrimaryDataSource;
-            int dataCount = data.Length();
+            var dataPrimary = interactiveTui.PrimaryDataSource;
+            var dataSecondary = interactiveTui.SecondaryDataSource;
+            int dataCount = paneNum == 2 ? dataSecondary.Length() : dataPrimary.Length();
 
             // Render the pane right away
             part.AddDynamicText(() =>
@@ -291,10 +291,10 @@ namespace Terminaux.Inputs.Interactive
                     // Populate the first pane
                     string finalEntry = "";
                     int finalIndex = i + startIndex;
-                    T? dataObject = default;
+                    object? dataObject = null;
                     if (finalIndex <= dataCount - 1)
                     {
-                        dataObject = (T?)data.GetElementFromIndex(startIndex + i);
+                        dataObject = paneNum == 2 ? dataSecondary.GetElementFromIndex(startIndex + i) : dataPrimary.GetElementFromIndex(startIndex + i);
                         if (dataObject is null)
                             continue;
 
@@ -303,7 +303,7 @@ namespace Terminaux.Inputs.Interactive
                         var finalBackColor = finalIndex == paneCurrentSelection - 1 ? interactiveTui.Settings.PaneSelectedItemBackColor : interactiveTui.Settings.PaneItemBackColor;
                         int leftPos = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                         int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                        finalEntry = interactiveTui.GetEntryFromItem(dataObject).Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                        finalEntry = (paneNum == 2 ? interactiveTui.GetInfoFromItemSecondary((TSecondary)dataObject) : interactiveTui.GetEntryFromItem((TPrimary)dataObject)).Truncate(SeparatorHalfConsoleWidthInterior - 4);
                         int width = ConsoleChar.EstimateCellWidth(finalEntry);
                         string text =
                             $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, top + 1)}" +
@@ -335,7 +335,7 @@ namespace Terminaux.Inputs.Interactive
             interactiveTui.trackedParts.Add(partName, part);
         }
 
-        private static void DrawInformationOnSecondPane<T>(BaseInteractiveTui<T> interactiveTui)
+        private static void DrawInformationOnSecondPane<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             if (interactiveTui is null)
@@ -407,7 +407,7 @@ namespace Terminaux.Inputs.Interactive
             interactiveTui.trackedParts.Add(partName, part);
         }
 
-        private static void DrawStatus<T>(BaseInteractiveTui<T> interactiveTui)
+        private static void DrawStatus<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             if (interactiveTui is null)
                 throw new TerminauxInternalException("Attempted to draw status on null");
@@ -426,10 +426,18 @@ namespace Terminaux.Inputs.Interactive
             var part = new ScreenPart();
 
             // Populate some necessary variables
-            int paneCurrentSelection = interactiveTui.CurrentSelection;
-            var data = interactiveTui.DataSource;
-            T? selectedData = (T?)data.GetElementFromIndex(paneCurrentSelection - 1);
-            interactiveTui.Status = selectedData is not null ? interactiveTui.GetStatusFromItem(selectedData) : "No status.";
+            if (interactiveTui.CurrentPane == 2)
+            {
+                var data = interactiveTui.SecondaryDataSource;
+                TSecondary selectedData = (TSecondary)data.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
+                interactiveTui.Status = selectedData is not null ? interactiveTui.GetInfoFromItemSecondary(selectedData) : "No status.";
+            }
+            else
+            {
+                var data = interactiveTui.PrimaryDataSource;
+                TPrimary selectedData = (TPrimary)data.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
+                interactiveTui.Status = selectedData is not null ? interactiveTui.GetStatusFromItem(selectedData) : "No status.";
+            }
 
             // Now, write info
             part.AddDynamicText(() =>
@@ -444,26 +452,38 @@ namespace Terminaux.Inputs.Interactive
             interactiveTui.trackedParts.Add(partName, part);
         }
 
-        private static string RenderFinalInfo<T>(BaseInteractiveTui<T> interactiveTui)
+        private static string RenderFinalInfo<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             string finalInfoRendered;
             try
             {
                 // Populate data source and its count
-                int paneCurrentSelection = interactiveTui.CurrentSelection;
-                var data = interactiveTui.DataSource;
-                int dataCount = data.Length();
+                var dataPrimary = interactiveTui.PrimaryDataSource;
+                var dataSecondary = interactiveTui.SecondaryDataSource;
+                int dataCount = interactiveTui.CurrentPane == 2 ? dataSecondary.Length() : dataPrimary.Length();
 
                 // Populate selected data
-                if (dataCount > 0)
+                if (interactiveTui.CurrentPane == 2)
                 {
-                    T selectedData = (T)(data.GetElementFromIndex(paneCurrentSelection - 1) ??
-                        throw new TerminauxInternalException("Attempted to render info about null data"));
-                    finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
+                    if (dataCount > 0)
+                    {
+                        TSecondary selectedData = (TSecondary)(dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1) ??
+                            throw new TerminauxInternalException("Attempted to render info about null data"));
+                        finalInfoRendered = interactiveTui.GetInfoFromItemSecondary(selectedData);
+                    }
+                    else
+                        finalInfoRendered = "No info.";
                 }
                 else
                 {
-                    finalInfoRendered = "No info.";
+                    if (dataCount > 0)
+                    {
+                        TPrimary selectedData = (TPrimary)(dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1) ??
+                            throw new TerminauxInternalException("Attempted to render info about null data"));
+                        finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
+                    }
+                    else
+                        finalInfoRendered = "No info.";
                 }
             }
             catch
@@ -473,19 +493,17 @@ namespace Terminaux.Inputs.Interactive
             return finalInfoRendered;
         }
 
-        private static void RespondToUserInput<T>(BaseInteractiveTui<T> interactiveTui)
+        private static void RespondToUserInput<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
             if (interactiveTui is null)
                 throw new TerminauxInternalException("Attempted to respond to user input on null");
 
             // Populate some necessary variables
-            int paneCurrentSelection = interactiveTui.CurrentSelection;
-            var data = interactiveTui.DataSource;
-            int dataCount = data.Length();
-
-            // Populate selected data
-            object? selectedData = data.GetElementFromIndex(paneCurrentSelection - 1);
+            int paneCurrentSelection = interactiveTui.CurrentPane == 2 ? interactiveTui.SecondPaneCurrentSelection : interactiveTui.FirstPaneCurrentSelection;
+            var dataPrimary = interactiveTui.PrimaryDataSource;
+            var dataSecondary = interactiveTui.SecondaryDataSource;
+            int dataCount = interactiveTui.CurrentPane == 2 ? dataSecondary.Length() : dataPrimary.Length();
 
             // Wait for key
             bool loopBail = false;
@@ -546,11 +564,9 @@ namespace Terminaux.Inputs.Interactive
                         }
                         if (refresh)
                         {
-                            data =
-                                interactiveTui.CurrentPane == 2 ?
-                                interactiveTui.SecondaryDataSource :
-                                interactiveTui.PrimaryDataSource;
-                            dataCount = data.Length();
+                            dataPrimary = interactiveTui.PrimaryDataSource;
+                            dataSecondary = interactiveTui.SecondaryDataSource;
+                            dataCount = interactiveTui.CurrentPane == 2 ? dataSecondary.Length() : dataPrimary.Length();
                         }
 
                         // Now, update the selection relative to the mouse pointer location
@@ -713,12 +729,15 @@ namespace Terminaux.Inputs.Interactive
                                     binding.BindingKeyName == ConsoleKey.Enter);
                                 if (implementedBindings.Any())
                                     loopBail = true;
+                                TPrimary selectedData = (TPrimary)dataPrimary.GetElementFromIndex(paneCurrentSelection - 1);
+                                TSecondary selectedDataSecondary = (TSecondary)dataSecondary.GetElementFromIndex(paneCurrentSelection - 1);
+                                object? finalData = interactiveTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
                                 foreach (var implementedBinding in implementedBindings)
                                 {
                                     var binding = implementedBinding.BindingAction;
-                                    if (binding is null || selectedData is null)
+                                    if (binding is null || finalData is null)
                                         continue;
-                                    binding.Invoke(selectedData, paneCurrentSelection - 1);
+                                    binding.Invoke(finalData, paneCurrentSelection - 1);
                                 }
                             }
                             break;
@@ -741,13 +760,16 @@ namespace Terminaux.Inputs.Interactive
                         // Now, get the implemented bindings from the pressed key
                         var implementedBindings = allBindings.Where((binding) =>
                             binding.BindingPointerButton == mouse.Button && binding.BindingPointerButtonPress == mouse.ButtonPress && binding.BindingPointerModifiers == mouse.Modifiers);
+                        TPrimary selectedData = (TPrimary)dataPrimary.GetElementFromIndex(paneCurrentSelection - 1);
+                        TSecondary selectedDataSecondary = (TSecondary)dataSecondary.GetElementFromIndex(paneCurrentSelection - 1);
+                        object? finalData = interactiveTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
                         foreach (var implementedBinding in implementedBindings)
                         {
                             var binding = implementedBinding.BindingAction;
-                            if (binding is null || selectedData is null)
+                            if (binding is null || finalData is null)
                                 continue;
                             loopBail = true;
-                            binding.Invoke(selectedData, paneCurrentSelection - 1);
+                            binding.Invoke(finalData, paneCurrentSelection - 1);
                         }
                     }
                 }
@@ -827,10 +849,15 @@ namespace Terminaux.Inputs.Interactive
                             break;
                         case ConsoleKey.F:
                             // Search function
-                            if (!data.Any())
+                            if (interactiveTui.CurrentPane == 2 && !dataSecondary.Any())
+                                break;
+                            if (interactiveTui.CurrentPane == 1 && !dataPrimary.Any())
                                 break;
                             processed = true;
-                            var entriesString = data.Select(interactiveTui.GetEntryFromItem).ToArray();
+                            var entriesString =
+                                (interactiveTui.CurrentPane == 2 ?
+                                 dataSecondary.Select(interactiveTui.GetEntryFromItemSecondary) :
+                                 dataPrimary.Select(interactiveTui.GetEntryFromItem)).ToArray();
                             string keyword = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a search term (case insensitive)", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor).ToLower();
                             var resultEntries = entriesString.Select((entry, idx) => ($"{idx + 1}", entry)).Where((tuple) => tuple.entry.ToLower().Contains(keyword)).ToArray();
                             if (resultEntries.Length > 0)
@@ -867,12 +894,15 @@ namespace Terminaux.Inputs.Interactive
                         // Now, get the implemented bindings from the pressed key
                         var implementedBindings = allBindings.Where((binding) =>
                             binding.BindingKeyName == key.Key && binding.BindingKeyModifiers == key.Modifiers);
+                        TPrimary? selectedData = dataPrimary.Any() ? (TPrimary)dataPrimary.GetElementFromIndex(paneCurrentSelection - 1) : default;
+                        TSecondary? selectedDataSecondary = dataSecondary.Any() ? (TSecondary)dataSecondary.GetElementFromIndex(paneCurrentSelection - 1) : default;
+                        object? finalData = interactiveTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
                         foreach (var implementedBinding in implementedBindings)
                         {
                             var binding = implementedBinding.BindingAction;
-                            if (binding is null || (selectedData is null && !implementedBinding.BindingCanRunWithoutItems))
+                            if (binding is null || (finalData is null && !implementedBinding.BindingCanRunWithoutItems))
                                 continue;
-                            binding.Invoke(selectedData, paneCurrentSelection - 1);
+                            binding.Invoke(finalData, paneCurrentSelection - 1);
                         }
                     }
                 }
@@ -897,7 +927,7 @@ namespace Terminaux.Inputs.Interactive
             return $"{markStart}{(bind.BindingPointerModifiers != 0 ? $"{bind.BindingPointerModifiers} + " : "")}{bind.BindingPointerButton}{(bind.BindingPointerButtonPress != 0 ? $" {bind.BindingPointerButtonPress}" : "")}{markEnd}";
         }
 
-        private static InteractiveTuiBinding[] GetAllBindings<T>(BaseInteractiveTui<T> interactiveTui, bool full = false)
+        private static InteractiveTuiBinding[] GetAllBindings<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui, bool full = false)
         {
             // Populate appropriate bindings, depending on the SecondPaneInteractable value
             List<InteractiveTuiBinding> finalBindings =
@@ -941,7 +971,7 @@ namespace Terminaux.Inputs.Interactive
             return [.. finalBindings];
         }
 
-        private static bool InfoScrollUp<T>(BaseInteractiveTui<T> interactiveTui)
+        private static bool InfoScrollUp<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             if (interactiveTui.CurrentInfoLine == 0)
                 return false;
@@ -953,7 +983,7 @@ namespace Terminaux.Inputs.Interactive
             return true;
         }
 
-        private static bool InfoScrollDown<T>(BaseInteractiveTui<T> interactiveTui)
+        private static bool InfoScrollDown<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             // Get the wrapped info string
             int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
@@ -970,7 +1000,7 @@ namespace Terminaux.Inputs.Interactive
             return true;
         }
 
-        private static bool VerifyInteractiveTui<T>(BaseInteractiveTui<T> interactiveTui)
+        private static bool VerifyInteractiveTui<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui)
         {
             if (interactiveTui is null)
                 throw new TerminauxException("Please provide a base Interactive TUI class and try again.");

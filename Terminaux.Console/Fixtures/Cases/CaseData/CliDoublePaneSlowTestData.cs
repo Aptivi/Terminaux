@@ -23,7 +23,7 @@ using Terminaux.Inputs.Interactive;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
-    internal class CliDoublePaneSlowTestData : BaseInteractiveTui<string>, IInteractiveTui<string>
+    internal class CliDoublePaneSlowTestData : BaseInteractiveTui<string, string>, IInteractiveTui<string, string>
     {
         internal static List<string> strings = [];
         internal static List<string> strings2 = [];
@@ -50,6 +50,14 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 
         /// <inheritdoc/>
         public override string GetEntryFromItem(string item) =>
+            item;
+
+        /// <inheritdoc/>
+        public override string GetStatusFromItemSecondary(string item) =>
+            string.IsNullOrEmpty(item) ? "No info." : item;
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItemSecondary(string item) =>
             item;
 
         internal void Add(int index)
