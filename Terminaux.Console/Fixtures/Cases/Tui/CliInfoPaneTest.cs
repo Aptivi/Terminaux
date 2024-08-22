@@ -21,6 +21,8 @@ using Terminaux.Console.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs;
 using Terminaux.Base;
+using Terminaux.Inputs.Pointer;
+using System;
 
 namespace Terminaux.Console.Fixtures.Cases.Tui
 {
@@ -34,9 +36,14 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
 
             // Run the resize listener
             ConsoleResizeHandler.StartResizeListener();
+            var tui = new CliInfoPaneTestData();
+            tui.Bindings.Add(new InteractiveTuiBinding("Add", ConsoleKey.F1, (_, index) => tui.Add(index), true));
+            tui.Bindings.Add(new InteractiveTuiBinding("Delete", ConsoleKey.F2, (_, index) => tui.Remove(index), true));
+            tui.Bindings.Add(new InteractiveTuiBinding("Delete", PointerButton.Right, PointerButtonPress.Released, (_, index) => tui.Remove(index)));
+            tui.Bindings.Add(new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _) => tui.RemoveLast(), true));
 
             // Start the demo TUI app
-            InteractiveTuiTools.OpenInteractiveTui(new CliInfoPaneTestData());
+            InteractiveTuiTools.OpenInteractiveTui(tui);
             Input.EnableMouse = false;
         }
     }

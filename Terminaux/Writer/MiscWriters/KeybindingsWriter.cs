@@ -22,7 +22,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Inputs.Interactive;
+using Terminaux.Colors.Data;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
@@ -44,7 +44,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="rightMargin">Right margin of the keybinding group</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteKeybindings(Keybinding[] bindings, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, [], InteractiveTuiStatus.KeyBindingBuiltinColor, InteractiveTuiStatus.KeyBindingBuiltinForegroundColor, InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.OptionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+            WriteKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin);
 
         /// <summary>
         /// Writes the keybindings
@@ -56,7 +56,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="rightMargin">Right margin of the keybinding group</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, builtinKeybindings, InteractiveTuiStatus.KeyBindingBuiltinColor, InteractiveTuiStatus.KeyBindingBuiltinForegroundColor, InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.OptionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+            WriteKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin);
 
         /// <summary>
         /// Writes the keybindings
@@ -68,7 +68,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteKeybindings(Keybinding[] bindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, [], InteractiveTuiStatus.KeyBindingBuiltinColor, InteractiveTuiStatus.KeyBindingBuiltinForegroundColor, InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.OptionBackgroundColor, backgroundColor, left, top, rightMargin);
+            WriteKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin);
 
         /// <summary>
         /// Writes the keybindings
@@ -81,7 +81,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, builtinKeybindings, InteractiveTuiStatus.KeyBindingBuiltinColor, InteractiveTuiStatus.KeyBindingBuiltinForegroundColor, InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.OptionBackgroundColor, backgroundColor, left, top, rightMargin);
+            WriteKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin);
 
         /// <summary>
         /// Writes the keybindings
@@ -167,7 +167,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="rightMargin">Right margin of the keybinding group</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderKeybindings(Keybinding[] bindings, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, [], InteractiveTuiStatus.KeyBindingBuiltinColor, InteractiveTuiStatus.KeyBindingBuiltinForegroundColor, InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.OptionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+            RenderKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin);
 
         /// <summary>
         /// Renders the keybindings
@@ -179,7 +179,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="rightMargin">Right margin of the keybinding group</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, builtinKeybindings, InteractiveTuiStatus.KeyBindingBuiltinColor, InteractiveTuiStatus.KeyBindingBuiltinForegroundColor, InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.OptionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+            RenderKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin);
 
         /// <summary>
         /// Renders the keybindings
@@ -191,7 +191,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderKeybindings(Keybinding[] bindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, [], InteractiveTuiStatus.KeyBindingBuiltinColor, InteractiveTuiStatus.KeyBindingBuiltinForegroundColor, InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.OptionBackgroundColor, backgroundColor, left, top, rightMargin);
+            RenderKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin);
 
         /// <summary>
         /// Renders the keybindings
@@ -204,7 +204,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, builtinKeybindings, InteractiveTuiStatus.KeyBindingBuiltinColor, InteractiveTuiStatus.KeyBindingBuiltinForegroundColor, InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.OptionBackgroundColor, backgroundColor, left, top, rightMargin);
+            RenderKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin);
 
         /// <summary>
         /// Renders the keybindings

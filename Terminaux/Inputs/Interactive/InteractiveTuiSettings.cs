@@ -19,107 +19,86 @@
 
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Writer.FancyWriters.Tools;
 
 namespace Terminaux.Inputs.Interactive
 {
     /// <summary>
-    /// Interactive TUI status
+    /// Interactive TUI settings
     /// </summary>
-    public static class InteractiveTuiStatus
+    public class InteractiveTuiSettings
     {
-        /// <summary>
-        /// Current selection for the first pane
-        /// </summary>
-        public static int FirstPaneCurrentSelection { get; internal set; } = 1;
-        /// <summary>
-        /// Current selection for the second pane
-        /// </summary>
-        public static int SecondPaneCurrentSelection { get; internal set; } = 1;
-        /// <summary>
-        /// Current selection for the current pane
-        /// </summary>
-        public static int CurrentSelection =>
-            CurrentPane == 2 ? SecondPaneCurrentSelection : FirstPaneCurrentSelection;
-        /// <summary>
-        /// Current status
-        /// </summary>
-        public static string Status { get; internal set; } = "";
-        /// <summary>
-        /// Current pane
-        /// </summary>
-        public static int CurrentPane { get; internal set; } = 1;
-        /// <summary>
-        /// Current info line index
-        /// </summary>
-        public static int CurrentInfoLine { get; internal set; } = 0;
-
         /// <summary>
         /// Interactive TUI background color
         /// </summary>
-        public static Color BackgroundColor { get; set; } = ConsoleColors.Black;
+        public Color BackgroundColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI foreground color
         /// </summary>
-        public static Color ForegroundColor { get; set; } = ConsoleColors.Yellow;
+        public Color ForegroundColor { get; set; } = ConsoleColors.Yellow;
         /// <summary>
         /// Interactive TUI pane background color
         /// </summary>
-        public static Color PaneBackgroundColor { get; set; } = ConsoleColors.Black;
+        public Color PaneBackgroundColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI pane separator color
         /// </summary>
-        public static Color PaneSeparatorColor { get; set; } = ConsoleColors.Green;
+        public Color PaneSeparatorColor { get; set; } = ConsoleColors.Green;
         /// <summary>
         /// Interactive TUI pane selected separator color
         /// </summary>
-        public static Color PaneSelectedSeparatorColor { get; set; } = ConsoleColors.Lime;
+        public Color PaneSelectedSeparatorColor { get; set; } = ConsoleColors.Lime;
         /// <summary>
         /// Interactive TUI pane selected item color (foreground)
         /// </summary>
-        public static Color PaneSelectedItemForeColor { get; set; } = ConsoleColors.Black;
+        public Color PaneSelectedItemForeColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI pane selected item color (background)
         /// </summary>
-        public static Color PaneSelectedItemBackColor { get; set; } = ConsoleColors.Olive;
+        public Color PaneSelectedItemBackColor { get; set; } = ConsoleColors.Olive;
         /// <summary>
         /// Interactive TUI pane item color (foreground)
         /// </summary>
-        public static Color PaneItemForeColor { get; set; } = ConsoleColors.Olive;
+        public Color PaneItemForeColor { get; set; } = ConsoleColors.Olive;
         /// <summary>
         /// Interactive TUI pane item color (background)
         /// </summary>
-        public static Color PaneItemBackColor { get; set; } = ConsoleColors.Black;
+        public Color PaneItemBackColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI option background color
         /// </summary>
-        public static Color OptionBackgroundColor { get; set; } = ConsoleColors.Olive;
+        public Color OptionBackgroundColor { get; set; } = ConsoleColors.Olive;
         /// <summary>
         /// Interactive TUI key binding in option color
         /// </summary>
-        public static Color KeyBindingOptionColor { get; set; } = ConsoleColors.Black;
+        public Color KeyBindingOptionColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI option foreground color
         /// </summary>
-        public static Color OptionForegroundColor { get; set; } = ConsoleColors.Yellow;
+        public Color OptionForegroundColor { get; set; } = ConsoleColors.Yellow;
         /// <summary>
         /// Interactive TUI built-in key binding background color
         /// </summary>
-        public static Color KeyBindingBuiltinBackgroundColor { get; set; } = ConsoleColors.Green;
+        public Color KeyBindingBuiltinBackgroundColor { get; set; } = ConsoleColors.Green;
         /// <summary>
         /// Interactive TUI built-in key binding foreground color in the background color
         /// </summary>
-        public static Color KeyBindingBuiltinColor { get; set; } = ConsoleColors.Black;
+        public Color KeyBindingBuiltinColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI built-in key binding foreground color outside the background color
         /// </summary>
-        public static Color KeyBindingBuiltinForegroundColor { get; set; } = ConsoleColors.Lime;
+        public Color KeyBindingBuiltinForegroundColor { get; set; } = ConsoleColors.Lime;
         /// <summary>
         /// Interactive TUI box background color
         /// </summary>
-        public static Color BoxBackgroundColor { get; set; } = ConsoleColors.Red;
+        public Color BoxBackgroundColor { get; set; } = ConsoleColors.Red;
         /// <summary>
         /// Interactive TUI box foreground color
         /// </summary>
-        public static Color BoxForegroundColor { get; set; } = ConsoleColors.White;
+        public Color BoxForegroundColor { get; set; } = ConsoleColors.White;
+        /// <summary>
+        /// Border settings to use when rendering the interactive TUI
+        /// </summary>
+        public BorderSettings BorderSettings { get; set; } = new();
     }
 }

@@ -108,15 +108,8 @@ namespace Terminaux.Inputs.Interactive
                 if (notifyCrash)
                 {
                     notifyCrash = false;
-                    InfoBoxColor.WriteInfoBoxColorBack(crashReason + "\n" + "Press any key to continue...", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(crashReason + "\n" + "Press any key to continue...", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
                 }
-
-                // Reset some static variables
-                InteractiveTuiStatus.CurrentPane = 1;
-                InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
-                InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
-                InteractiveTuiStatus.CurrentInfoLine = 0;
-                InteractiveTuiStatus.Status = "";
             }
         }
 
@@ -136,11 +129,11 @@ namespace Terminaux.Inputs.Interactive
                 pos = elements;
 
             // Now, process the movement
-            InteractiveTuiStatus.CurrentInfoLine = 0;
-            if (InteractiveTuiStatus.CurrentPane == 2)
-                InteractiveTuiStatus.SecondPaneCurrentSelection = pos;
+            interactiveTui.CurrentInfoLine = 0;
+            if (interactiveTui.CurrentPane == 2)
+                interactiveTui.SecondPaneCurrentSelection = pos;
             else
-                InteractiveTuiStatus.FirstPaneCurrentSelection = pos;
+                interactiveTui.FirstPaneCurrentSelection = pos;
         }
 
         /// <summary>
@@ -151,9 +144,9 @@ namespace Terminaux.Inputs.Interactive
         {
             if (!interactiveTui.SecondPaneInteractable)
                 return;
-            InteractiveTuiStatus.CurrentPane++;
-            if (InteractiveTuiStatus.CurrentPane > 2)
-                InteractiveTuiStatus.CurrentPane = 1;
+            interactiveTui.CurrentPane++;
+            if (interactiveTui.CurrentPane > 2)
+                interactiveTui.CurrentPane = 1;
         }
 
         /// <summary>
@@ -163,10 +156,10 @@ namespace Terminaux.Inputs.Interactive
         {
             int primaryCount = interactiveTui.PrimaryDataSource.Length();
             int secondaryCount = interactiveTui.SecondaryDataSource.Length();
-            if (InteractiveTuiStatus.FirstPaneCurrentSelection > primaryCount)
-                InteractiveTuiStatus.FirstPaneCurrentSelection = primaryCount;
-            if (InteractiveTuiStatus.SecondPaneCurrentSelection > secondaryCount)
-                InteractiveTuiStatus.SecondPaneCurrentSelection = secondaryCount;
+            if (interactiveTui.FirstPaneCurrentSelection > primaryCount)
+                interactiveTui.FirstPaneCurrentSelection = primaryCount;
+            if (interactiveTui.SecondPaneCurrentSelection > secondaryCount)
+                interactiveTui.SecondPaneCurrentSelection = secondaryCount;
         }
 
         /// <summary>
@@ -176,10 +169,10 @@ namespace Terminaux.Inputs.Interactive
         {
             int primaryCount = interactiveTui.PrimaryDataSource.Length();
             int secondaryCount = interactiveTui.SecondaryDataSource.Length();
-            if (InteractiveTuiStatus.FirstPaneCurrentSelection <= 0 && primaryCount > 0)
-                InteractiveTuiStatus.FirstPaneCurrentSelection = 1;
-            if (InteractiveTuiStatus.SecondPaneCurrentSelection <= 0 && secondaryCount > 0)
-                InteractiveTuiStatus.SecondPaneCurrentSelection = 1;
+            if (interactiveTui.FirstPaneCurrentSelection <= 0 && primaryCount > 0)
+                interactiveTui.FirstPaneCurrentSelection = 1;
+            if (interactiveTui.SecondPaneCurrentSelection <= 0 && secondaryCount > 0)
+                interactiveTui.SecondPaneCurrentSelection = 1;
         }
 
         private static void DrawInteractiveTui<T>(BaseInteractiveTui<T> interactiveTui)
@@ -224,8 +217,8 @@ namespace Terminaux.Inputs.Interactive
             //       |   and d is the dimension for the second pane interior upper left corner (SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior (usually 2))
 
             // First, the horizontal and vertical separators
-            var finalForeColorFirstPane = InteractiveTuiStatus.CurrentPane == 1 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
-            var finalForeColorSecondPane = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
+            var finalForeColorFirstPane = interactiveTui.CurrentPane == 1 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
+            var finalForeColorSecondPane = interactiveTui.CurrentPane == 2 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
             part.AddDynamicText(new(() =>
             {
                 int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
@@ -233,15 +226,15 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMinimumHeight = 1;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
-                builder.Append(BorderColor.RenderBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane, InteractiveTuiStatus.PaneBackgroundColor));
-                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor));
+                builder.Append(BorderColor.RenderBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor));
+                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                 return builder.ToString();
             }));
 
             // Populate appropriate bindings, depending on the SecondPaneInteractable value, and render them
             var finalBindings = GetAllBindings(interactiveTui);
             var builtIns = finalBindings.Where((itb) => !interactiveTui.Bindings.Contains(itb)).ToArray();
-            part.AddDynamicText(() => KeybindingsWriter.RenderKeybindings(interactiveTui.Bindings, builtIns, InteractiveTuiStatus.KeyBindingBuiltinColor, InteractiveTuiStatus.KeyBindingBuiltinForegroundColor, InteractiveTuiStatus.KeyBindingBuiltinBackgroundColor, InteractiveTuiStatus.KeyBindingOptionColor, InteractiveTuiStatus.OptionForegroundColor, InteractiveTuiStatus.OptionBackgroundColor, InteractiveTuiStatus.BackgroundColor, 0, ConsoleWrapper.WindowHeight - 1, 0));
+            part.AddDynamicText(() => KeybindingsWriter.RenderKeybindings([.. interactiveTui.Bindings], builtIns, interactiveTui.Settings.KeyBindingBuiltinColor, interactiveTui.Settings.KeyBindingBuiltinForegroundColor, interactiveTui.Settings.KeyBindingBuiltinBackgroundColor, interactiveTui.Settings.KeyBindingOptionColor, interactiveTui.Settings.OptionForegroundColor, interactiveTui.Settings.OptionBackgroundColor, interactiveTui.Settings.BackgroundColor, 0, ConsoleWrapper.WindowHeight - 1, 0));
 
             // We've added the necessary buffer. Now, add that to the buffered part list
             interactiveTui.screen?.AddBufferedPart(partName, part);
@@ -289,7 +282,7 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMinimumHeightInterior = 2;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 int answersPerPage = SeparatorMaximumHeightInterior;
-                int paneCurrentSelection = paneNum == 2 ? InteractiveTuiStatus.SecondPaneCurrentSelection : InteractiveTuiStatus.FirstPaneCurrentSelection;
+                int paneCurrentSelection = paneNum == 2 ? interactiveTui.SecondPaneCurrentSelection : interactiveTui.FirstPaneCurrentSelection;
                 int currentPage = (paneCurrentSelection - 1) / answersPerPage;
                 int startIndex = answersPerPage * currentPage;
                 var builder = new StringBuilder();
@@ -306,8 +299,8 @@ namespace Terminaux.Inputs.Interactive
                             continue;
 
                         // Render an entry
-                        var finalForeColor = finalIndex == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemForeColor : InteractiveTuiStatus.PaneItemForeColor;
-                        var finalBackColor = finalIndex == paneCurrentSelection - 1 ? InteractiveTuiStatus.PaneSelectedItemBackColor : InteractiveTuiStatus.PaneItemBackColor;
+                        var finalForeColor = finalIndex == paneCurrentSelection - 1 ? interactiveTui.Settings.PaneSelectedItemForeColor : interactiveTui.Settings.PaneItemForeColor;
+                        var finalBackColor = finalIndex == paneCurrentSelection - 1 ? interactiveTui.Settings.PaneSelectedItemBackColor : interactiveTui.Settings.PaneItemBackColor;
                         int leftPos = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                         int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
                         finalEntry = interactiveTui.GetEntryFromItem(dataObject).Truncate(SeparatorHalfConsoleWidthInterior - 4);
@@ -318,7 +311,7 @@ namespace Terminaux.Inputs.Interactive
                             $"{ColorTools.RenderSetConsoleColor(finalBackColor, true)}" +
                             finalEntry +
                             new string(' ', SeparatorHalfConsoleWidthInterior - width - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? -1 : 0)) +
-                            $"{ColorTools.RenderSetConsoleColor(InteractiveTuiStatus.PaneItemBackColor, true)}";
+                            $"{ColorTools.RenderSetConsoleColor(interactiveTui.Settings.PaneItemBackColor, true)}";
                         builder.Append(text);
                     }
                     else
@@ -326,14 +319,14 @@ namespace Terminaux.Inputs.Interactive
                 }
 
                 // Render the vertical bar
-                var finalForeColorFirstPane = InteractiveTuiStatus.CurrentPane == 1 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
-                var finalForeColorSecondPane = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
+                var finalForeColorFirstPane = interactiveTui.CurrentPane == 1 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
+                var finalForeColorSecondPane = interactiveTui.CurrentPane == 2 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2) : SeparatorHalfConsoleWidthInterior;
                 if (dataCount > SeparatorMaximumHeightInterior)
                 {
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, InteractiveTuiStatus.PaneBackgroundColor));
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, InteractiveTuiStatus.PaneBackgroundColor));
-                    builder.Append(SliderVerticalColor.RenderVerticalSlider(paneCurrentSelection, dataCount, left, 2, ConsoleWrapper.WindowHeight - 6, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, InteractiveTuiStatus.PaneBackgroundColor, false));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor));
+                    builder.Append(SliderVerticalColor.RenderVerticalSlider(paneCurrentSelection, dataCount, left, 2, ConsoleWrapper.WindowHeight - 6, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor, false));
                 }
                 return builder.ToString();
             });
@@ -366,12 +359,12 @@ namespace Terminaux.Inputs.Interactive
             var part = new ScreenPart();
 
             // Populate some colors
-            var ForegroundColor = InteractiveTuiStatus.ForegroundColor;
-            var PaneItemBackColor = InteractiveTuiStatus.PaneItemBackColor;
+            var ForegroundColor = interactiveTui.Settings.ForegroundColor;
+            var PaneItemBackColor = interactiveTui.Settings.PaneItemBackColor;
 
             // Now, write info
             string finalInfoRendered = RenderFinalInfo(interactiveTui);
-            var finalForeColorSecondPane = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.PaneSelectedSeparatorColor : InteractiveTuiStatus.PaneSeparatorColor;
+            var finalForeColorSecondPane = interactiveTui.CurrentPane == 2 ? interactiveTui.Settings.PaneSelectedSeparatorColor : interactiveTui.Settings.PaneSeparatorColor;
             part.AddDynamicText(() =>
             {
                 int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
@@ -380,17 +373,17 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMinimumHeightInterior = 2;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
-                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor));
+                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
 
                 // Split the information string
                 string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
                 int top = 0;
-                for (int infoIndex = InteractiveTuiStatus.CurrentInfoLine; infoIndex < finalInfoStrings.Length; infoIndex++, top++)
+                for (int infoIndex = interactiveTui.CurrentInfoLine; infoIndex < finalInfoStrings.Length; infoIndex++, top++)
                 {
                     // Check to see if the info is overpopulated
                     if (top >= SeparatorMaximumHeightInterior)
                     {
-                        builder.Append(TextWriterWhereColor.RenderWhereColorBack("[W|S|SHIFT + I]", ConsoleWrapper.WindowWidth - "[W|S|SHIFT + I]".Length - 2, SeparatorMaximumHeightInterior + 2, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor));
+                        builder.Append(TextWriterWhereColor.RenderWhereColorBack("[W|S|SHIFT + I]", ConsoleWrapper.WindowWidth - "[W|S|SHIFT + I]".Length - 2, SeparatorMaximumHeightInterior + 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                         break;
                     }
 
@@ -403,9 +396,9 @@ namespace Terminaux.Inputs.Interactive
                 int left = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2);
                 if (finalInfoStrings.Length > SeparatorMaximumHeightInterior)
                 {
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor));
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor));
-                    builder.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)InteractiveTuiStatus.CurrentInfoLine / (finalInfoStrings.Length - SeparatorMaximumHeightInterior) * finalInfoStrings.Length), finalInfoStrings.Length, left, 2, ConsoleWrapper.WindowHeight - 6, finalForeColorSecondPane, InteractiveTuiStatus.PaneBackgroundColor, false));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
+                    builder.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)interactiveTui.CurrentInfoLine / (finalInfoStrings.Length - SeparatorMaximumHeightInterior) * finalInfoStrings.Length), finalInfoStrings.Length, left, 2, ConsoleWrapper.WindowHeight - 6, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor, false));
                 }
                 return builder.ToString();
             });
@@ -433,16 +426,16 @@ namespace Terminaux.Inputs.Interactive
             var part = new ScreenPart();
 
             // Populate some necessary variables
-            int paneCurrentSelection = InteractiveTuiStatus.CurrentSelection;
+            int paneCurrentSelection = interactiveTui.CurrentSelection;
             var data = interactiveTui.DataSource;
             T? selectedData = (T?)data.GetElementFromIndex(paneCurrentSelection - 1);
-            InteractiveTuiStatus.Status = selectedData is not null ? interactiveTui.GetStatusFromItem(selectedData) : "No status.";
+            interactiveTui.Status = selectedData is not null ? interactiveTui.GetStatusFromItem(selectedData) : "No status.";
 
             // Now, write info
             part.AddDynamicText(() =>
             {
                 var builder = new StringBuilder();
-                builder.Append(TextWriterWhereColor.RenderWhereColorBack(InteractiveTuiStatus.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, InteractiveTuiStatus.ForegroundColor, InteractiveTuiStatus.BackgroundColor));
+                builder.Append(TextWriterWhereColor.RenderWhereColorBack(interactiveTui.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, interactiveTui.Settings.ForegroundColor, interactiveTui.Settings.BackgroundColor));
                 builder.Append(ConsoleClearing.GetClearLineToRightSequence());
                 return builder.ToString();
             });
@@ -457,7 +450,7 @@ namespace Terminaux.Inputs.Interactive
             try
             {
                 // Populate data source and its count
-                int paneCurrentSelection = InteractiveTuiStatus.CurrentSelection;
+                int paneCurrentSelection = interactiveTui.CurrentSelection;
                 var data = interactiveTui.DataSource;
                 int dataCount = data.Length();
 
@@ -487,7 +480,7 @@ namespace Terminaux.Inputs.Interactive
                 throw new TerminauxInternalException("Attempted to respond to user input on null");
 
             // Populate some necessary variables
-            int paneCurrentSelection = InteractiveTuiStatus.CurrentSelection;
+            int paneCurrentSelection = interactiveTui.CurrentSelection;
             var data = interactiveTui.DataSource;
             int dataCount = data.Length();
 
@@ -522,22 +515,22 @@ namespace Terminaux.Inputs.Interactive
                         int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
                         int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
                         bool refresh = false;
-                        int oldPane = InteractiveTuiStatus.CurrentPane;
+                        int oldPane = interactiveTui.CurrentPane;
                         if (interactiveTui.SecondPaneInteractable)
                         {
                             if (mouse.Coordinates.x >= 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidthInterior - 1)
                             {
-                                if (InteractiveTuiStatus.CurrentPane != 1)
+                                if (interactiveTui.CurrentPane != 1)
                                 {
-                                    InteractiveTuiStatus.CurrentPane = 1;
+                                    interactiveTui.CurrentPane = 1;
                                     refresh = true;
                                 }
                             }
                             else if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth + 1 && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior)
                             {
-                                if (InteractiveTuiStatus.CurrentPane != 2)
+                                if (interactiveTui.CurrentPane != 2)
                                 {
-                                    InteractiveTuiStatus.CurrentPane = 2;
+                                    interactiveTui.CurrentPane = 2;
                                     refresh = true;
                                 }
                             }
@@ -554,7 +547,7 @@ namespace Terminaux.Inputs.Interactive
                         if (refresh)
                         {
                             data =
-                                InteractiveTuiStatus.CurrentPane == 2 ?
+                                interactiveTui.CurrentPane == 2 ?
                                 interactiveTui.SecondaryDataSource :
                                 interactiveTui.PrimaryDataSource;
                             dataCount = data.Length();
@@ -563,7 +556,7 @@ namespace Terminaux.Inputs.Interactive
                         // Now, update the selection relative to the mouse pointer location
                         int SeparatorMinimumHeightInterior = 2;
                         int answersPerPage = SeparatorMaximumHeightInterior;
-                        paneCurrentSelection = InteractiveTuiStatus.CurrentPane == 2 ? InteractiveTuiStatus.SecondPaneCurrentSelection : InteractiveTuiStatus.FirstPaneCurrentSelection;
+                        paneCurrentSelection = interactiveTui.CurrentPane == 2 ? interactiveTui.SecondPaneCurrentSelection : interactiveTui.FirstPaneCurrentSelection;
                         int currentPage = (paneCurrentSelection - 1) / answersPerPage;
                         int startIndex = answersPerPage * currentPage;
                         int endIndex = answersPerPage * (currentPage + 1) - 1;
@@ -574,7 +567,7 @@ namespace Terminaux.Inputs.Interactive
                         if (listIndex + 1 > dataCount)
                             return;
                         listIndex = listIndex > dataCount ? dataCount : listIndex;
-                        if (listIndex + 1 != paneCurrentSelection || InteractiveTuiStatus.CurrentPane != oldPane)
+                        if (listIndex + 1 != paneCurrentSelection || interactiveTui.CurrentPane != oldPane)
                         {
                             if (listIndex + 1 != paneCurrentSelection)
                                 SelectionMovement(interactiveTui, listIndex + 1);
@@ -613,33 +606,33 @@ namespace Terminaux.Inputs.Interactive
                         {
                             if (mouse.Coordinates.x == leftPaneArrowLeft)
                             {
-                                InteractiveTuiStatus.CurrentPane = 1;
-                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                                interactiveTui.CurrentPane = 1;
+                                SelectionMovement(interactiveTui, interactiveTui.FirstPaneCurrentSelection - 1);
                             }
                             else if (mouse.Coordinates.x == rightPaneArrowLeft)
                             {
                                 if (interactiveTui.SecondPaneInteractable)
                                 {
-                                    InteractiveTuiStatus.CurrentPane = 2;
-                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
+                                    interactiveTui.CurrentPane = 2;
+                                    SelectionMovement(interactiveTui, interactiveTui.SecondPaneCurrentSelection - 1);
                                 }
                                 else
-                                    InfoScrollUp();
+                                    InfoScrollUp(interactiveTui);
                             }
                         }
                         else if (mouse.Coordinates.y == paneArrowBottom)
                         {
                             if (mouse.Coordinates.x == leftPaneArrowLeft)
                             {
-                                InteractiveTuiStatus.CurrentPane = 1;
-                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
+                                interactiveTui.CurrentPane = 1;
+                                SelectionMovement(interactiveTui, interactiveTui.FirstPaneCurrentSelection + 1);
                             }
                             else if (mouse.Coordinates.x == rightPaneArrowLeft)
                             {
                                 if (interactiveTui.SecondPaneInteractable)
                                 {
-                                    InteractiveTuiStatus.CurrentPane = 2;
-                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
+                                    interactiveTui.CurrentPane = 2;
+                                    SelectionMovement(interactiveTui, interactiveTui.SecondPaneCurrentSelection + 1);
                                 }
                                 else
                                     InfoScrollDown(interactiveTui);
@@ -657,19 +650,19 @@ namespace Terminaux.Inputs.Interactive
                             loopBail = true;
                             if (interactiveTui.SecondPaneInteractable)
                             {
-                                if (InteractiveTuiStatus.CurrentPane == 2)
-                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
+                                if (interactiveTui.CurrentPane == 2)
+                                    SelectionMovement(interactiveTui, interactiveTui.SecondPaneCurrentSelection - 1);
                                 else
-                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                                    SelectionMovement(interactiveTui, interactiveTui.FirstPaneCurrentSelection - 1);
                             }
                             else
                             {
                                 int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
                                 int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
                                 if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
-                                    processed = InfoScrollUp();
+                                    processed = InfoScrollUp(interactiveTui);
                                 else
-                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                                    SelectionMovement(interactiveTui, interactiveTui.FirstPaneCurrentSelection - 1);
                             }
                             break;
                         case PointerButton.WheelDown:
@@ -677,10 +670,10 @@ namespace Terminaux.Inputs.Interactive
                             loopBail = true;
                             if (interactiveTui.SecondPaneInteractable)
                             {
-                                if (InteractiveTuiStatus.CurrentPane == 2)
-                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
+                                if (interactiveTui.CurrentPane == 2)
+                                    SelectionMovement(interactiveTui, interactiveTui.SecondPaneCurrentSelection + 1);
                                 else
-                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
+                                    SelectionMovement(interactiveTui, interactiveTui.FirstPaneCurrentSelection + 1);
                             }
                             else
                             {
@@ -690,7 +683,7 @@ namespace Terminaux.Inputs.Interactive
                                 if (mouse.Coordinates.x >= SeparatorHalfConsoleWidth && mouse.Coordinates.x <= SeparatorHalfConsoleWidth + SeparatorHalfConsoleWidthInterior + 1)
                                     InfoScrollDown(interactiveTui);
                                 else
-                                    SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
+                                    SelectionMovement(interactiveTui, interactiveTui.FirstPaneCurrentSelection + 1);
                             }
                             break;
                         case PointerButton.Left:
@@ -710,7 +703,7 @@ namespace Terminaux.Inputs.Interactive
 
                                 // First, check the bindings
                                 var allBindings = interactiveTui.Bindings;
-                                if (allBindings is null || allBindings.Length == 0)
+                                if (allBindings is null || allBindings.Count == 0)
                                     break;
 
                                 // Now, get the implemented bindings from the pressed key
@@ -740,7 +733,7 @@ namespace Terminaux.Inputs.Interactive
 
                         // First, check the bindings
                         var allBindings = interactiveTui.Bindings;
-                        if (allBindings is null || allBindings.Length == 0)
+                        if (allBindings is null || allBindings.Count == 0)
                             break;
 
                         // Now, get the implemented bindings from the pressed key
@@ -765,17 +758,17 @@ namespace Terminaux.Inputs.Interactive
                     {
                         case ConsoleKey.UpArrow:
                             processed = true;
-                            if (InteractiveTuiStatus.CurrentPane == 2)
-                                SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
+                            if (interactiveTui.CurrentPane == 2)
+                                SelectionMovement(interactiveTui, interactiveTui.SecondPaneCurrentSelection - 1);
                             else
-                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection - 1);
+                                SelectionMovement(interactiveTui, interactiveTui.FirstPaneCurrentSelection - 1);
                             break;
                         case ConsoleKey.DownArrow:
                             processed = true;
-                            if (InteractiveTuiStatus.CurrentPane == 2)
-                                SelectionMovement(interactiveTui, InteractiveTuiStatus.SecondPaneCurrentSelection + 1);
+                            if (interactiveTui.CurrentPane == 2)
+                                SelectionMovement(interactiveTui, interactiveTui.SecondPaneCurrentSelection + 1);
                             else
-                                SelectionMovement(interactiveTui, InteractiveTuiStatus.FirstPaneCurrentSelection + 1);
+                                SelectionMovement(interactiveTui, interactiveTui.FirstPaneCurrentSelection + 1);
                             break;
                         case ConsoleKey.Home:
                             processed = true;
@@ -806,7 +799,7 @@ namespace Terminaux.Inputs.Interactive
                             }
                             break;
                         case ConsoleKey.W:
-                            processed = InfoScrollUp();
+                            processed = InfoScrollUp(interactiveTui);
                             break;
                         case ConsoleKey.S:
                             processed = InfoScrollDown(interactiveTui);
@@ -818,7 +811,7 @@ namespace Terminaux.Inputs.Interactive
                                 {
                                     // User needs more information in the infobox
                                     processed = true;
-                                    InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered, InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                                    InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
                                 }
                             }
                             break;
@@ -828,7 +821,7 @@ namespace Terminaux.Inputs.Interactive
                             InfoBoxColor.WriteInfoBoxColorBack(
                                 "Available keys",
                                 KeybindingsWriter.RenderKeybindingHelpText(bindings)
-                            , InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                            , interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
                             break;
                         case ConsoleKey.F:
                             // Search function
@@ -836,7 +829,7 @@ namespace Terminaux.Inputs.Interactive
                                 break;
                             processed = true;
                             var entriesString = data.Select(interactiveTui.GetEntryFromItem).ToArray();
-                            string keyword = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a search term (case insensitive)", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor).ToLower();
+                            string keyword = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a search term (case insensitive)", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor).ToLower();
                             var resultEntries = entriesString.Select((entry, idx) => ($"{idx + 1}", entry)).Where((tuple) => tuple.entry.ToLower().Contains(keyword)).ToArray();
                             if (resultEntries.Length > 0)
                             {
@@ -848,7 +841,7 @@ namespace Terminaux.Inputs.Interactive
                                 SelectionMovement(interactiveTui, resultIdx);
                             }
                             else
-                                InfoBoxColor.WriteInfoBoxColorBack("No item found.", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor);
+                                InfoBoxColor.WriteInfoBoxColorBack("No item found.", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
                             break;
                         case ConsoleKey.Escape:
                             // User needs to exit
@@ -866,7 +859,7 @@ namespace Terminaux.Inputs.Interactive
                     {
                         // First, check the bindings
                         var allBindings = interactiveTui.Bindings;
-                        if (allBindings is null || allBindings.Length == 0)
+                        if (allBindings is null || allBindings.Count == 0)
                             break;
 
                         // Now, get the implemented bindings from the pressed key
@@ -939,22 +932,22 @@ namespace Terminaux.Inputs.Interactive
             }
 
             // Now, add the custom bindings
-            if (interactiveTui.Bindings is not null && interactiveTui.Bindings.Length > 0)
+            if (interactiveTui.Bindings is not null && interactiveTui.Bindings.Count > 0)
                 finalBindings.AddRange(interactiveTui.Bindings);
 
             // Filter the bindings based on the binding type
             return [.. finalBindings];
         }
 
-        private static bool InfoScrollUp()
+        private static bool InfoScrollUp<T>(BaseInteractiveTui<T> interactiveTui)
         {
-            if (InteractiveTuiStatus.CurrentInfoLine == 0)
+            if (interactiveTui.CurrentInfoLine == 0)
                 return false;
 
             // Now, ascend
-            InteractiveTuiStatus.CurrentInfoLine--;
-            if (InteractiveTuiStatus.CurrentInfoLine < 0)
-                InteractiveTuiStatus.CurrentInfoLine = 0;
+            interactiveTui.CurrentInfoLine--;
+            if (interactiveTui.CurrentInfoLine < 0)
+                interactiveTui.CurrentInfoLine = 0;
             return true;
         }
 
@@ -965,13 +958,13 @@ namespace Terminaux.Inputs.Interactive
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
             string finalInfoRendered = RenderFinalInfo(interactiveTui);
             string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
-            if (InteractiveTuiStatus.CurrentInfoLine == finalInfoStrings.Length - 1)
+            if (interactiveTui.CurrentInfoLine == finalInfoStrings.Length - 1)
                 return false;
 
             // Now, descend
-            InteractiveTuiStatus.CurrentInfoLine++;
-            if (InteractiveTuiStatus.CurrentInfoLine > finalInfoStrings.Length - SeparatorMaximumHeightInterior)
-                InteractiveTuiStatus.CurrentInfoLine = finalInfoStrings.Length - SeparatorMaximumHeightInterior;
+            interactiveTui.CurrentInfoLine++;
+            if (interactiveTui.CurrentInfoLine > finalInfoStrings.Length - SeparatorMaximumHeightInterior)
+                interactiveTui.CurrentInfoLine = finalInfoStrings.Length - SeparatorMaximumHeightInterior;
             return true;
         }
 
@@ -984,7 +977,7 @@ namespace Terminaux.Inputs.Interactive
             if ((interactiveTui.PrimaryDataSource is null || interactiveTui.SecondaryDataSource is null ||
                 (interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0)) && !interactiveTui.AcceptsEmptyData)
             {
-                InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, interactiveTui.GetType().Name);
+                InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name);
                 return false;
             }
 
@@ -1000,7 +993,7 @@ namespace Terminaux.Inputs.Interactive
             }
             if (conflicts.Count > 0)
             {
-                InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} has conflicting keyboard or mouse bindings.\n\nThe following keybindings or mouse bindings conflict:\n  - {1}\n\nThis program can't continue.\n" + "Press any key to continue...", InteractiveTuiStatus.BoxForegroundColor, InteractiveTuiStatus.BoxBackgroundColor, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
+                InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} has conflicting keyboard or mouse bindings.\n\nThe following keybindings or mouse bindings conflict:\n  - {1}\n\nThis program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
                 return false;
             }
             return true;

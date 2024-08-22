@@ -28,13 +28,6 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         internal static List<string> strings = [];
         internal static List<string> strings2 = [];
 
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            new InteractiveTuiBinding("Add",         ConsoleKey.F1,  (_, index) => Add(index), true),
-            new InteractiveTuiBinding("Delete",      ConsoleKey.F2,  (_, index) => Remove(index)),
-            new InteractiveTuiBinding("Delete Last", ConsoleKey.F3,  (_, _)     => RemoveLast()),
-        ];
-
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             strings;
@@ -59,47 +52,47 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         public override string GetEntryFromItem(string item) =>
             item;
 
-        private static void Add(int index)
+        internal void Add(int index)
         {
-            if (InteractiveTuiStatus.CurrentPane == 2)
+            if (CurrentPane == 2)
                 strings2.Add($"[{index}] --2-- [{index}]");
             else
                 strings.Add($"[{index}] --1-- [{index}]");
         }
 
-        private static void Remove(int index)
+        internal void Remove(int index)
         {
-            if (InteractiveTuiStatus.CurrentPane == 2)
+            if (CurrentPane == 2)
             {
                 if (index < strings2.Count && strings2.Count > 0)
                     strings2.RemoveAt(index == 0 ? index : index - 1);
-                if (InteractiveTuiStatus.SecondPaneCurrentSelection > strings2.Count)
-                    InteractiveTuiStatus.SecondPaneCurrentSelection = strings2.Count;
+                if (SecondPaneCurrentSelection > strings2.Count)
+                    SecondPaneCurrentSelection = strings2.Count;
             }
             else
             {
                 if (index < strings.Count && strings.Count > 0)
                     strings.RemoveAt(index == 0 ? index : index - 1);
-                if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
-                    InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
+                if (FirstPaneCurrentSelection > strings.Count)
+                    FirstPaneCurrentSelection = strings.Count;
             }
         }
 
-        private static void RemoveLast()
+        internal void RemoveLast()
         {
-            if (InteractiveTuiStatus.CurrentPane == 2)
+            if (CurrentPane == 2)
             {
                 if (strings2.Count > 0)
                     strings2.RemoveAt(strings2.Count - 1);
-                if (InteractiveTuiStatus.SecondPaneCurrentSelection > strings2.Count)
-                    InteractiveTuiStatus.SecondPaneCurrentSelection = strings2.Count;
+                if (SecondPaneCurrentSelection > strings2.Count)
+                    SecondPaneCurrentSelection = strings2.Count;
             }
             else
             {
                 if (strings.Count > 0)
                     strings.RemoveAt(strings.Count - 1);
-                if (InteractiveTuiStatus.FirstPaneCurrentSelection > strings.Count)
-                    InteractiveTuiStatus.FirstPaneCurrentSelection = strings.Count;
+                if (FirstPaneCurrentSelection > strings.Count)
+                    FirstPaneCurrentSelection = strings.Count;
             }
         }
     }

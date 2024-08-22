@@ -27,10 +27,6 @@ namespace Terminaux.Inputs.Interactive
     public interface IInteractiveTui<T>
     {
         /// <summary>
-        /// All key bindings for your interactive user interface
-        /// </summary>
-        public InteractiveTuiBinding[] Bindings { get; }
-        /// <summary>
         /// Whether the user can switch to the second path
         /// </summary>
         public bool SecondPaneInteractable { get; }

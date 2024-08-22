@@ -31,11 +31,6 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
     {
         internal static string[] types = Enum.GetNames(typeof(NerdFontsTypes));
 
-        public override InteractiveTuiBinding[] Bindings =>
-        [
-            new InteractiveTuiBinding("Show", ConsoleKey.Spacebar, (_, _) => Show())
-        ];
-
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
             types;
@@ -45,7 +40,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         {
             get
             {
-                string typeName = types[InteractiveTuiStatus.FirstPaneCurrentSelection - 1];
+                string typeName = types[FirstPaneCurrentSelection - 1];
                 if (!Enum.TryParse<NerdFontsTypes>(typeName, out var type))
                     throw new TerminauxException($"Type name {typeName} is invalid.");
                 var nerdFontNames = NerdFontsTools.GetNerdFontCharNames(type);
@@ -64,12 +59,12 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         public override string GetEntryFromItem(string item) =>
             item;
 
-        private void Show()
+        internal void Show()
         {
-            string typeName = types[InteractiveTuiStatus.FirstPaneCurrentSelection - 1];
+            string typeName = types[FirstPaneCurrentSelection - 1];
             if (!Enum.TryParse<NerdFontsTypes>(typeName, out var type))
                 throw new TerminauxException($"Type name {typeName} is invalid.");
-            string charName = SecondaryDataSource.ElementAt(InteractiveTuiStatus.SecondPaneCurrentSelection - 1);
+            string charName = SecondaryDataSource.ElementAt(SecondPaneCurrentSelection - 1);
             string nerdFontChar = NerdFontsTools.GetNerdFontChar(type, charName);
             InfoBoxColor.WriteInfoBox("NF Character Info",
                 $"WARNING: You must use a font that supports NF glyphs. Otherwise, you'll see the \"missing character\" symbol.\n" +

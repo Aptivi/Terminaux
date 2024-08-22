@@ -32,8 +32,40 @@ namespace Terminaux.Inputs.Interactive
         internal Screen? screen;
         internal bool isExiting = false;
 
-        /// <inheritdoc/>
-        public virtual InteractiveTuiBinding[] Bindings { get; } = [];
+        /// <summary>
+        /// Current selection for the first pane
+        /// </summary>
+        public int FirstPaneCurrentSelection { get; internal set; } = 1;
+        /// <summary>
+        /// Current selection for the second pane
+        /// </summary>
+        public int SecondPaneCurrentSelection { get; internal set; } = 1;
+        /// <summary>
+        /// Current selection for the current pane
+        /// </summary>
+        public int CurrentSelection =>
+            CurrentPane == 2 ? SecondPaneCurrentSelection : FirstPaneCurrentSelection;
+        /// <summary>
+        /// Current status
+        /// </summary>
+        public string Status { get; internal set; } = "";
+        /// <summary>
+        /// Current pane
+        /// </summary>
+        public int CurrentPane { get; internal set; } = 1;
+        /// <summary>
+        /// Current info line index
+        /// </summary>
+        public int CurrentInfoLine { get; internal set; } = 0;
+        /// <summary>
+        /// Interactive TUI settings
+        /// </summary>
+        public InteractiveTuiSettings Settings { get; set; } = new();
+        /// <summary>
+        /// All key bindings for your interactive user interface
+        /// </summary>
+        public List<InteractiveTuiBinding> Bindings { get; internal set; } = [];
+
         /// <inheritdoc/>
         public virtual bool SecondPaneInteractable => false;
         /// <inheritdoc/>
@@ -50,7 +82,7 @@ namespace Terminaux.Inputs.Interactive
         /// Data source for the current pane
         /// </summary>
         public IEnumerable<T> DataSource =>
-            InteractiveTuiStatus.CurrentPane == 2 ? SecondaryDataSource : PrimaryDataSource;
+            CurrentPane == 2 ? SecondaryDataSource : PrimaryDataSource;
 
         /// <inheritdoc/>
         public virtual string GetEntryFromItem(T item) =>

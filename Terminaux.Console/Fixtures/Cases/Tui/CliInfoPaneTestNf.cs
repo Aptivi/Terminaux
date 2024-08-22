@@ -21,6 +21,7 @@ using Terminaux.Console.Fixtures.Cases.CaseData;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs;
 using Terminaux.Base;
+using System;
 
 namespace Terminaux.Console.Fixtures.Cases.Tui
 {
@@ -32,9 +33,11 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
 
             // Run the resize listener
             ConsoleResizeHandler.StartResizeListener();
+            var tui = new CliInfoPaneNfTestData();
+            tui.Bindings.Add(new InteractiveTuiBinding("Show", ConsoleKey.Spacebar, (_, _) => tui.Show()));
 
             // Start the demo TUI app
-            InteractiveTuiTools.OpenInteractiveTui(new CliInfoPaneNfTestData());
+            InteractiveTuiTools.OpenInteractiveTui(tui);
             Input.EnableMouse = false;
         }
     }

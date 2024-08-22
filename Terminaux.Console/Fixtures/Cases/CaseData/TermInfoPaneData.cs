@@ -34,11 +34,6 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         private static bool loaded = false;
         private static readonly List<TermInfoDesc> descs = [];
 
-        public override InteractiveTuiBinding[] Bindings =>
-        [
-            new InteractiveTuiBinding("Custom...", ConsoleKey.C, (_, _) => ShowCustomInfo())
-        ];
-
         /// <inheritdoc/>
         public override IEnumerable<TermInfoDesc> PrimaryDataSource =>
             GetDescs();
@@ -50,9 +45,9 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 
             // Check to see if we're given the test info
             if (selected is null)
-                InteractiveTuiStatus.Status = "No info.";
+                Status = "No info.";
             else
-                InteractiveTuiStatus.Status = $"{selected.Names[0]} - {selected.Names[1]}";
+                Status = $"{selected.Names[0]} - {selected.Names[1]}";
 
             // Now, populate the info
             return ShowDesc(selected);
@@ -84,7 +79,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             return [.. descs];
         }
 
-        private void ShowCustomInfo()
+        internal void ShowCustomInfo()
         {
             string[] names = TermInfoDesc.GetBuiltins();
             int idx = InfoBoxSelectionColor.WriteInfoBoxSelection("TermInfo", names.Select((name, idx) => new InputChoiceInfo($"{idx + 1}", name)).ToArray(), "Write the terminal info name");

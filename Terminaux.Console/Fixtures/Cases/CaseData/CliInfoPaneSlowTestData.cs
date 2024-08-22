@@ -25,14 +25,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
     internal class CliInfoPaneSlowTestData : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
-        internal static List<string> strings = [];
-
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            new InteractiveTuiBinding("Add",         ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]"), true),
-            new InteractiveTuiBinding("Delete",      ConsoleKey.F2, (_, index) => strings.RemoveAt(index)),
-            new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _)     => strings.RemoveAt(strings.Count - 1)),
-        ];
+        internal List<string> strings = [];
 
         /// <inheritdoc/>
         public override IEnumerable<string> PrimaryDataSource =>
@@ -49,12 +42,12 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 
             // Check to see if we're given the test info
             if (string.IsNullOrEmpty(selected))
-                InteractiveTuiStatus.Status = "No info.";
+                Status = "No info.";
             else
-                InteractiveTuiStatus.Status = $"{selected}";
+                Status = $"{selected}";
 
             // Now, populate the info to the status
-            return $" {InteractiveTuiStatus.Status}";
+            return $" {Status}";
         }
 
         /// <inheritdoc/>

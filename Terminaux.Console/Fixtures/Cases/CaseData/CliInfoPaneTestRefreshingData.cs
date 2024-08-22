@@ -26,14 +26,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
     internal class CliInfoPaneTestRefreshingData : BaseInteractiveTui<string>, IInteractiveTui<string>
     {
         internal static List<string> strings = [];
-        private static int timesRendered = 0;
-
-        public override InteractiveTuiBinding[] Bindings { get; } =
-        [
-            new InteractiveTuiBinding("Add",         ConsoleKey.F1, (_, index) => Add(index), true),
-            new InteractiveTuiBinding("Delete",      ConsoleKey.F2, (_, index) => Remove(index)),
-            new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _)     => RemoveLast()),
-        ];
+        internal int timesRendered = 0;
 
         /// <inheritdoc/>
         public override int RefreshInterval =>
@@ -56,9 +49,9 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 
             // Check to see if we're given the test info
             if (string.IsNullOrEmpty(selected))
-                InteractiveTuiStatus.Status = "No info.";
+                Status = "No info.";
             else
-                InteractiveTuiStatus.Status = $"{selected}";
+                Status = $"{selected}";
 
             // Now, populate the info to the status
             return $"{timesRendered}";
@@ -71,18 +64,18 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             return selected;
         }
 
-        private static void Add(int index)
+        internal void Add(int index)
         {
             strings.Add($"[{index}] --+-- [{index}]");
         }
 
-        private static void Remove(int index)
+        internal void Remove(int index)
         {
             if (strings.Count > 0)
                 strings.RemoveAt(index);
         }
 
-        private static void RemoveLast()
+        internal void RemoveLast()
         {
             if (strings.Count > 0)
                 strings.RemoveAt(strings.Count - 1);

@@ -49,12 +49,12 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 
             // Check to see if we're given the test info
             if (string.IsNullOrEmpty(selected))
-                InteractiveTuiStatus.Status = "No info.";
+                Status = "No info.";
             else
-                InteractiveTuiStatus.Status = $"{selected}";
+                Status = $"{selected}";
 
             // Now, populate the info to the status
-            return $" {InteractiveTuiStatus.Status}";
+            return $" {Status}";
         }
 
         /// <inheritdoc/>
