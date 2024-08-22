@@ -32,7 +32,7 @@ fi
 
 # Download packages
 echo Downloading packages...
-"$dotnetpath" restore "../Terminaux.sln" --configuration $releaseconf
+"$dotnetpath" restore "../Terminaux.sln" -p:Configuration=$releaseconf
 if [ ! $? == 0 ]; then
 	echo Download failed.
 	exit 1
@@ -40,7 +40,7 @@ fi
 
 # Build Terminaux
 echo Building Terminaux...
-"$dotnetpath" build "../Terminaux.sln" --configuration $releaseconf
+"$dotnetpath" build "../Terminaux.sln" -p:Configuration=$releaseconf
 if [ ! $? == 0 ]; then
 	echo Build failed.
 	exit 1
