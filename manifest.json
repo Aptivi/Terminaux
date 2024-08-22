@@ -1125,10 +1125,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.yml",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiSettings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.html"
+          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiSettings.html"
         }
       },
       "version": ""
