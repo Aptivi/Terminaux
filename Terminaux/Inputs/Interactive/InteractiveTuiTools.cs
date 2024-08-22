@@ -627,7 +627,7 @@ namespace Terminaux.Inputs.Interactive
                     }
 
                     // Mouse input received.
-                    var mouse = TermReader.ReadPointer();
+                    var mouse = Input.ReadPointer();
                     bool processed = false;
                     switch (mouse.Button)
                     {
@@ -737,7 +737,7 @@ namespace Terminaux.Inputs.Interactive
                 }
                 else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                 {
-                    var key = TermReader.ReadKey();
+                    var key = Input.ReadKey();
                     bool processed = false;
                     loopBail = true;
                     switch (key.Key)

@@ -20,7 +20,7 @@
 using System;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Reader;
+using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
@@ -30,7 +30,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
         public void RunFixture()
         {
             TextWriterColor.Write("Enter a key or a combination of keys to display its information.");
-            var KeyPress = TermReader.ReadKey();
+            var KeyPress = Input.ReadKey();
 
             // Pressed key
             TextWriterColor.WriteColor("- Pressed key: ", false, new Color(ConsoleColors.Green));

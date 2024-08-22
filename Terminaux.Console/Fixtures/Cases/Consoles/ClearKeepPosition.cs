@@ -19,7 +19,7 @@
 
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Reader;
+using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles
@@ -29,7 +29,7 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
         public void RunFixture()
         {
             TextWriterWhereColor.WriteWhere("Bottom left corner", 0, ConsoleWrapper.WindowHeight - 1);
-            TermReader.ReadKey();
+            Input.ReadKey();
             ConsolePositioning.ClearKeepPosition();
         }
     }

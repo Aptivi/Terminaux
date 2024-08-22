@@ -20,7 +20,7 @@
 using System;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors.Data;
-using Terminaux.Reader;
+using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles
@@ -35,7 +35,7 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
             {
                 TextWriterRaw.WriteRaw(ConsoleFormatting.GetFormattingSequences((ConsoleFormattingType)type));
                 TextWriterColor.WriteColorBack($"{type} text", false, ConsoleColors.DarkGreen, ConsoleColors.DarkBlue);
-                TermReader.ReadKey();
+                Input.ReadKey();
                 TextWriterRaw.Write();
             }
             TextWriterRaw.WriteRaw(ConsoleFormatting.GetFormattingSequences(ConsoleFormattingType.Default));

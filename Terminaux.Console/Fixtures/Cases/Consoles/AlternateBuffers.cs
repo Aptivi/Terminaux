@@ -18,7 +18,7 @@
 //
 
 using Terminaux.Base.Extensions;
-using Terminaux.Reader;
+using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles
@@ -29,16 +29,16 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
         {
             TextWriterRaw.WritePlain("Alternate buffers are not supported on Windows, so you'll see five lines in this screen.\n");
             TextWriterRaw.WritePlain("This is a sample text written in the main buffer.");
-            TermReader.ReadKey();
+            Input.ReadKey();
             ConsoleMisc.ShowAltBuffer();
             TextWriterRaw.WritePlain("This is a sample text written in the alternate buffer.");
-            TermReader.ReadKey();
+            Input.ReadKey();
             ConsoleMisc.ShowMainBuffer();
             TextWriterRaw.WritePlain("This is the second line in the main buffer.");
-            TermReader.ReadKey();
+            Input.ReadKey();
             ConsoleMisc.ShowAltBuffer();
             TextWriterRaw.WritePlain("This is the second line in the alternate buffer written in the first line.");
-            TermReader.ReadKey();
+            Input.ReadKey();
             ConsoleMisc.ShowMainBuffer();
             TextWriterRaw.WritePlain("Testing is complete!");
         }

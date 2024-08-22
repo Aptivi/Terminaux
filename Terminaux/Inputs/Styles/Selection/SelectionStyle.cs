@@ -325,7 +325,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         }
 
                         // Mouse input received.
-                        var mouse = TermReader.ReadPointer();
+                        var mouse = Input.ReadPointer();
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
@@ -375,7 +375,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     }
                     else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
-                        var key = TermReader.ReadKey();
+                        var key = Input.ReadKey();
                         switch (key.Key)
                         {
                             case ConsoleKey.UpArrow:

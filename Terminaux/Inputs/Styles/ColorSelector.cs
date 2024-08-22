@@ -351,7 +351,7 @@ namespace Terminaux.Inputs.Styles
                 int colorBoxHeight = ConsoleWrapper.WindowHeight - 5;
 
                 // Mouse input received.
-                var mouse = TermReader.ReadPointer();
+                var mouse = Input.ReadPointer();
 
                 // Detect boundaries
                 bool withinColorBoxBoundaries = PointerTools.PointerWithinRange(mouse, (colorBoxX + 1, colorBoxY + 1), (colorBoxWidth + colorBoxX, colorBoxHeight + colorBoxY));
@@ -391,7 +391,7 @@ namespace Terminaux.Inputs.Styles
             }
             else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
             {
-                var keypress = TermReader.ReadKey();
+                var keypress = Input.ReadKey();
                 switch (keypress.Key)
                 {
                     // Unified

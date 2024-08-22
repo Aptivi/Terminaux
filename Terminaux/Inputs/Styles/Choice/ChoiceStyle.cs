@@ -139,7 +139,7 @@ namespace Terminaux.Inputs.Styles.Choice
                 }
                 else
                 {
-                    answer = Convert.ToString(TermReader.ReadKey().KeyChar);
+                    answer = Convert.ToString(Input.ReadKey().KeyChar);
                     TextWriterRaw.WritePlain(answer);
                 }
 

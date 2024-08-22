@@ -37,7 +37,7 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
             Input.EnableMouse = true;
             while (looping)
             {
-                var key = TermReader.ReadPointerOrKey();
+                var key = Input.ReadPointerOrKey();
                 if (key.Item1 is null)
                 {
                     if (key.Item2.Key == ConsoleKey.Home)

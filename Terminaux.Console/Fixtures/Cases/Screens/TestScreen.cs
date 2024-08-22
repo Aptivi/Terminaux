@@ -24,7 +24,7 @@ using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Reader;
+using Terminaux.Inputs;
 using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.Console.Fixtures.Cases.Screens
@@ -51,7 +51,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
                 stickScreen.AddBufferedPart("Test", stickScreenPart);
                 ScreenTools.SetCurrent(stickScreen);
                 ScreenTools.Render();
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
             catch (Exception ex)
             {

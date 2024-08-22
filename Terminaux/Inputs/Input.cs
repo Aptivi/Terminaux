@@ -29,6 +29,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Native;
 using Terminaux.Inputs.Pointer;
+using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 using static Terminaux.Inputs.Native.InputPosix;
 using static Terminaux.Inputs.Native.InputWindows;
@@ -51,7 +52,7 @@ namespace Terminaux.Inputs
         private static bool enableMouse;
         private static readonly List<string> caughtMouseEvents = [];
         private static readonly Stopwatch inputTimeout = new();
-        private static readonly IntPtr stdHandle = ConsolePositioning.GetStdHandle(-10);
+        private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? ConsolePositioning.GetStdHandle(-10) : IntPtr.Zero;
 
         /// <summary>
         /// Checks to see whether any pending keyboard events are here
@@ -178,8 +179,23 @@ namespace Terminaux.Inputs
         /// <param name="intercept">Whether to intercept the key pressed or to just show the actual key to the console</param>
         public static ConsoleKeyInfo ReadKey(bool intercept)
         {
+            TermReaderTools.isWaitingForInput = true;
             SpinWait.SpinUntil(() => KeyboardInputAvailable);
+            TermReaderTools.isWaitingForInput = false;
             return ConsoleWrapper.ReadKey(intercept);
+        }
+
+        /// <summary>
+        /// Reads the next key from the console input stream with the timeout
+        /// </summary>
+        /// <param name="Intercept">Whether to intercept an input</param>
+        /// <param name="Timeout">Timeout</param>
+        public static (ConsoleKeyInfo result, bool provided) ReadKeyTimeout(bool Intercept, TimeSpan Timeout)
+        {
+            TermReaderTools.isWaitingForInput = true;
+            bool result = SpinWait.SpinUntil(() => KeyboardInputAvailable, Timeout);
+            TermReaderTools.isWaitingForInput = false;
+            return (!result ? default : ConsoleWrapper.ReadKey(Intercept), result);
         }
 
         /// <summary>
@@ -290,7 +306,7 @@ namespace Terminaux.Inputs
                         {
                             byte* chars = stackalloc byte[6];
                             result = InputPosix.read(0, chars, 6);
-                            if (numRead > 0 && numRead == 6)
+                            if (numRead > 0)
                             {
                                 if (result == -1)
                                 {
@@ -298,14 +314,11 @@ namespace Terminaux.Inputs
                                     error = true;
                                     return -1;
                                 }
-                                if (numRead == 6)
+                                isMouse = chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M';
+                                if (isMouse)
                                 {
-                                    isMouse = chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M';
-                                    if (isMouse)
-                                    {
-                                        inputTimeout.Restart();
-                                        charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
-                                    }
+                                    inputTimeout.Restart();
+                                    charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
                                 }
                                 while (ConsoleWrapper.KeyAvailable)
                                     ConsoleWrapper.ReadKey(true);
@@ -454,7 +467,7 @@ namespace Terminaux.Inputs
                     lock (Console.In)
                     {
                         int _ = Peek(ref numRead, ref error);
-                        if (numRead > 0 && numRead == 6)
+                        if (numRead > 0)
                         {
                             byte* chars = stackalloc byte[(int)numRead];
                             result = InputPosix.read(0, chars, numRead);
@@ -464,11 +477,8 @@ namespace Terminaux.Inputs
                                 error = true;
                                 return -1;
                             }
-                            if (numRead == 6)
-                            {
-                                if (chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M')
-                                    charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
-                            }
+                            if (chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M')
+                                charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
                         }
                     }
                     return result;
@@ -476,6 +486,8 @@ namespace Terminaux.Inputs
 
                 // Fill the chars array
                 byte[] chars = [];
+                if (caughtMouseEvents.Count != 0)
+                    return true;
                 int readChar = Read(ref chars, ref error);
                 if (error)
                     return false;
@@ -488,6 +500,15 @@ namespace Terminaux.Inputs
                 }
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Invalidates the input
+        /// </summary>
+        public static void InvalidateInput()
+        {
+            while (ConsoleWrapper.KeyAvailable)
+                ReadKey(true);
         }
 
         #region Private functions

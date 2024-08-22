@@ -20,7 +20,7 @@
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Reader;
+using Terminaux.Inputs;
 
 namespace Terminaux.Console.Fixtures.Cases.Colors
 {
@@ -31,13 +31,13 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
             ColorTools.AllowBackground = true;
             ColorTools.SetConsoleColor(ConsoleColors.Green, true);
             ConsoleWrapper.ClearLoadBack();
-            TermReader.ReadKey();
+            Input.ReadKey();
             ColorTools.SetConsoleColor(ConsoleColors.Yellow, true);
             ConsoleWrapper.Clear();
-            TermReader.ReadKey();
+            Input.ReadKey();
             ColorTools.SetConsoleColor(ConsoleColors.Red, true);
             ConsoleWrapper.ClearLoadBack();
-            TermReader.ReadKey();
+            Input.ReadKey();
             ColorTools.AllowBackground = false;
             ConsoleWrapper.ClearLoadBack();
         }

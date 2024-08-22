@@ -21,6 +21,7 @@ using System;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
+using Terminaux.Inputs;
 using Terminaux.Reader.Tools;
 using Textify.General;
 
@@ -86,7 +87,7 @@ namespace Terminaux.Reader.Bindings
             // Insert the character, but in the condition that it's not a control character
             if (!ConditionalTools.ShouldNot(char.IsControl(state.pressedKey.KeyChar) && state.pressedKey.KeyChar != '\t', state))
             {
-                TermReader.InvalidateInput();
+                Input.InvalidateInput();
                 return;
             }
 
@@ -96,11 +97,11 @@ namespace Terminaux.Reader.Bindings
             // Capture all the possible input, as long as that text is printable
             while (ConsoleWrapper.KeyAvailable)
             {
-                var pressed = TermReader.ReadKey();
+                var pressed = Input.ReadKey();
                 bool isHighSurrogate = char.IsHighSurrogate(state.pressedKey.KeyChar);
                 if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(state.pressedKey.KeyChar) == 0 && !isHighSurrogate, state))
                 {
-                    TermReader.InvalidateInput();
+                    Input.InvalidateInput();
                     return;
                 }
 
@@ -109,11 +110,11 @@ namespace Terminaux.Reader.Bindings
                 {
                     // Get all the input, or discard the surrogate because it's a zero width character
                     textBuilder.Append(RenderChar(pressed.KeyChar));
-                    pressed = TermReader.ReadKey();
+                    pressed = Input.ReadKey();
                     bool isNextKeySurrogate = char.IsLowSurrogate(pressed.KeyChar);
                     if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(pressed.KeyChar) == 0 && !isNextKeySurrogate, state))
                     {
-                        TermReader.InvalidateInput();
+                        Input.InvalidateInput();
                         return;
                     }
                 }

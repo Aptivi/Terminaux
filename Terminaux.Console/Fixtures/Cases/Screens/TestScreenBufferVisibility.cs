@@ -24,7 +24,7 @@ using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Reader;
+using Terminaux.Inputs;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Screens
@@ -94,7 +94,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
 
                     // Render them
                     ScreenTools.Render();
-                    var key = TermReader.ReadKey();
+                    var key = Input.ReadKey();
                     switch (key.Key)
                     {
                         case ConsoleKey.R:

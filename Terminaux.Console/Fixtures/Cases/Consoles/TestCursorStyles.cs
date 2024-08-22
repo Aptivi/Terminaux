@@ -19,7 +19,7 @@
 
 using System;
 using Terminaux.Base.Extensions;
-using Terminaux.Reader;
+using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles
@@ -33,7 +33,7 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
             {
                 ConsoleCursor.CursorType = (ConsoleCursorType)type;
                 TextWriterRaw.WriteRaw($"{type}: ");
-                TermReader.ReadKey();
+                Input.ReadKey();
                 TextWriterRaw.Write();
             }
             ConsoleCursor.CursorType = ConsoleCursorType.User;

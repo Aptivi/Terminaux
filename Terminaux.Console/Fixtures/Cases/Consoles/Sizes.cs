@@ -19,7 +19,7 @@
 
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Reader;
+using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles
@@ -32,15 +32,15 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
             int oldHeight = ConsoleWrapper.WindowHeight;
             TextWriterRaw.WritePlain("Console resizing starts now...\n");
             TextWriterRaw.WritePlain($"{oldWidth}, {oldHeight}");
-            TermReader.ReadKey();
+            Input.ReadKey();
             ConsoleWrapper.SetWindowDimensions(80, 24);
             TextWriterRaw.WritePlain("Should be 80x24 below:");
             TextWriterRaw.WritePlain($"{ConsoleWrapper.WindowWidth}, {ConsoleWrapper.WindowHeight}");
-            TermReader.ReadKey();
+            Input.ReadKey();
             ConsoleWrapper.SetWindowDimensions(120, 30);
             TextWriterRaw.WritePlain("Should be 120x30 below:");
             TextWriterRaw.WritePlain($"{ConsoleWrapper.WindowWidth}, {ConsoleWrapper.WindowHeight}");
-            TermReader.ReadKey();
+            Input.ReadKey();
             ConsoleWrapper.SetWindowDimensions(oldWidth, oldHeight);
             ConsoleMisc.ShowMainBuffer();
             TextWriterRaw.WritePlain($"{ConsoleWrapper.WindowWidth}, {ConsoleWrapper.WindowHeight}");

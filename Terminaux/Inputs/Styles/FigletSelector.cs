@@ -123,7 +123,7 @@ namespace Terminaux.Inputs.Styles
                     if (Input.MouseInputAvailable)
                     {
                         // Mouse input received.
-                        var mouse = TermReader.ReadPointer();
+                        var mouse = Input.ReadPointer();
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
@@ -144,7 +144,7 @@ namespace Terminaux.Inputs.Styles
                     }
                     else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
-                        var key = TermReader.ReadKey();
+                        var key = Input.ReadKey();
                         switch (key.Key)
                         {
                             case ConsoleKey.Enter:
@@ -253,7 +253,7 @@ namespace Terminaux.Inputs.Styles
                     if (Input.MouseInputAvailable)
                     {
                         // Mouse input received.
-                        var mouse = TermReader.ReadPointer();
+                        var mouse = Input.ReadPointer();
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
@@ -273,7 +273,7 @@ namespace Terminaux.Inputs.Styles
                     else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
                         // Keyboard input received.
-                        var key = TermReader.ReadKey().Key;
+                        var key = Input.ReadKey().Key;
                         switch (key)
                         {
                             case ConsoleKey.Enter:

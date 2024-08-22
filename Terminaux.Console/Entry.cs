@@ -63,7 +63,7 @@ namespace Terminaux.Console
                 string chosenFixture = fixtureNames[selected - 1];
                 TextWriterColor.Write($"Fixture to be tested: {chosenFixture}\n");
                 FixtureManager.GetFixtureFromName(chosenFixture).RunFixture();
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
             ConsoleClearing.ResetAll();
             ConsoleWrapper.CursorVisible = true;

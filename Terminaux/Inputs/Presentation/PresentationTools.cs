@@ -262,7 +262,7 @@ namespace Terminaux.Inputs.Presentation
                         }
 
                         // Mouse input received.
-                        var mouse = TermReader.ReadPointer();
+                        var mouse = Input.ReadPointer();
                         switch (mouse.Button)
                         {
                             case PointerButton.Left:
@@ -291,7 +291,7 @@ namespace Terminaux.Inputs.Presentation
                     else if (ConsoleWrapper.KeyAvailable && !Input.PointerActive)
                     {
                         // Get the key
-                        var key = TermReader.ReadKey();
+                        var key = Input.ReadKey();
                         switch (key.Key)
                         {
                             case ConsoleKey.Escape:

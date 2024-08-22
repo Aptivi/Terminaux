@@ -22,7 +22,7 @@ using Terminaux.Graphics;
 using Terminaux.Colors.Data;
 using System;
 using Terminaux.Base;
-using Terminaux.Reader;
+using Terminaux.Inputs;
 
 namespace Terminaux.Console.Fixtures.Cases.Graphics
 {
@@ -42,7 +42,7 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
                 string line2 = GraphicsTools.RenderLine(startPoint2, endPoint2, ConsoleColors.Green);
                 TextWriterRaw.WriteRaw(line1);
                 TextWriterRaw.WriteRaw(line2);
-                var cki = TermReader.ReadKey();
+                var cki = Input.ReadKey();
                 if (cki.Key == ConsoleKey.Escape)
                     bail = true;
             }

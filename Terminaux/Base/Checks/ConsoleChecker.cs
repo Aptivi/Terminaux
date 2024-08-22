@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using Textify.General;
 using System.Text;
 using System.Threading;
+using Terminaux.Inputs;
 
 namespace Terminaux.Base.Checks
 {
@@ -287,7 +288,7 @@ namespace Terminaux.Base.Checks
                     ConsoleWrapper.BufferWidth, ConsoleWrapper.BufferHeight,
                     minimumWidth, minimumHeight);
                 TextWriterRaw.WritePlain("To have a better experience, resize your console window while still being on this screen. Press any key to continue...");
-                TermReader.ReadKey();
+                Input.ReadKey();
             }
         }
 

@@ -21,6 +21,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader;
+using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Colors
@@ -36,7 +37,7 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
                 ColorTools.LoadBack(ConsoleColors.Blue);
                 TextWriterColor.WriteColor("Color {0} [{1}]", true, colorInstance, vars: [colorInstance.PlainSequence, colorInstance.PlainSequenceTrueColor]);
                 TextWriterColor.Write("Press any key to reset all.");
-                TermReader.ReadKey();
+                Input.ReadKey();
                 ConsoleClearing.ResetAll();
                 TextWriterColor.Write("Congrats! You've reset the whole console!");
             }
