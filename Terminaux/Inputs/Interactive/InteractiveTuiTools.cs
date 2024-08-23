@@ -106,10 +106,7 @@ namespace Terminaux.Inputs.Interactive
 
                 // If there is a crash, notify the user about it
                 if (notifyCrash)
-                {
-                    notifyCrash = false;
                     InfoBoxColor.WriteInfoBoxColorBack(crashReason + "\n" + "Press any key to continue...", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
-                }
             }
         }
 
