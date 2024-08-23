@@ -26,20 +26,17 @@ namespace Terminaux.Base.TermInfo.Parsing
 {
     internal static class TermInfoParser
     {
-        private static class Ordinals
-        {
-            public const int Magic = 0;
-            public const int NameSize = 1;
-            public const int BoolCount = 2;
-            public const int NumCount = 3;
-            public const int StringCount = 4;
-            public const int TableSize = 5;
-            public const int ExtBoolCount = 0;
-            public const int ExtNumCount = 1;
-            public const int ExtStringCount = 2;
-            public const int ExtOffsetCount = 3;
-            public const int ExtTableSize = 4;
-        }
+        public const int Magic = 0;
+        public const int NameSize = 1;
+        public const int BoolCount = 2;
+        public const int NumCount = 3;
+        public const int StringCount = 4;
+        public const int TableSize = 5;
+        public const int ExtBoolCount = 0;
+        public const int ExtNumCount = 1;
+        public const int ExtStringCount = 2;
+        public const int ExtOffsetCount = 3;
+        public const int ExtTableSize = 4;
 
         public static TermInfoDesc Parse(Stream stream)
         {
@@ -53,26 +50,24 @@ namespace Terminaux.Base.TermInfo.Parsing
             var header = ReadIntegers(reader, 6, BitWidth.TwoBytes);
 
             // The number of bytes a num occupies is defined by the header magic
-            var numWidth = GetBitWidth(header[Ordinals.Magic]);
+            var numWidth = GetBitWidth(header[Magic]);
 
             // Read names
-            var names = ReadNames(reader, header[Ordinals.NameSize]);
+            var names = ReadNames(reader, header[NameSize]);
 
             // Read boolean caps
-            var booleans = ReadBools(reader, header[Ordinals.BoolCount]);
+            var booleans = ReadBools(reader, header[BoolCount]);
 
             // Read num caps
-            var nums = ReadNums(reader, header[Ordinals.NumCount], numWidth);
+            var nums = ReadNums(reader, header[NumCount], numWidth);
 
             // Read string caps
-            var strings = ReadStrings(reader, header[Ordinals.StringCount], header[Ordinals.TableSize]);
+            var strings = ReadStrings(reader, header[StringCount], header[TableSize]);
 
             // Got extended caps?
             var extendedCaps = default(ExtendedCapabilities);
             if (!reader.Eof())
-            {
                 extendedCaps = ParseExtendedCaps(reader, numWidth);
-            }
 
             return new TermInfoDesc(names, booleans, nums, strings, extendedCaps);
         }
@@ -82,29 +77,29 @@ namespace Terminaux.Base.TermInfo.Parsing
             var header = ReadIntegers(reader, 5, BitWidth.TwoBytes);
 
             // Read boolean caps
-            var booleans = ReadBools(reader, header[Ordinals.ExtBoolCount]);
+            var booleans = ReadBools(reader, header[ExtBoolCount]);
 
             // Read num caps
-            var nums = ReadNums(reader, header[Ordinals.ExtNumCount], numWidth);
+            var nums = ReadNums(reader, header[ExtNumCount], numWidth);
 
-            var indices = new Span<int>(ReadIntegers(reader, header[Ordinals.ExtOffsetCount], BitWidth.TwoBytes));
-            var data = new Span<char>(Encoding.ASCII.GetString(reader.ReadBytes(header[Ordinals.ExtTableSize])).ToCharArray());
+            var indices = new Span<int>(ReadIntegers(reader, header[ExtOffsetCount], BitWidth.TwoBytes));
+            var data = new Span<char>(Encoding.ASCII.GetString(reader.ReadBytes(header[ExtTableSize])).ToCharArray());
 
             // Read string caps
-            var (strings, last) = ReadStrings(indices, data, header[Ordinals.ExtStringCount]);
-            indices = indices.Slice(header[Ordinals.ExtStringCount]);
+            var (strings, last) = ReadStrings(indices, data, header[ExtStringCount]);
+            indices = indices.Slice(header[ExtStringCount]);
             data = data.Slice(last);
 
             // Read bool names
-            var (booleanNames, _) = ReadStrings(indices, data, header[Ordinals.ExtBoolCount]);
-            indices = indices.Slice(header[Ordinals.ExtBoolCount]);
+            var (booleanNames, _) = ReadStrings(indices, data, header[ExtBoolCount]);
+            indices = indices.Slice(header[ExtBoolCount]);
 
             // Read num names
-            var (numNames, _) = ReadStrings(indices, data, header[Ordinals.ExtNumCount]);
-            indices = indices.Slice(header[Ordinals.ExtNumCount]);
+            var (numNames, _) = ReadStrings(indices, data, header[ExtNumCount]);
+            indices = indices.Slice(header[ExtNumCount]);
 
             // Read string names
-            var (stringNames, _) = ReadStrings(indices, data, header[Ordinals.ExtStringCount]);
+            var (stringNames, _) = ReadStrings(indices, data, header[ExtStringCount]);
 
             return new ExtendedCapabilities(
                 booleans, nums, strings,
@@ -114,13 +109,9 @@ namespace Terminaux.Base.TermInfo.Parsing
         private static BitWidth GetBitWidth(int magic)
         {
             if (magic == 282)
-            {
                 return BitWidth.TwoBytes;
-            }
             else if (magic == 542)
-            {
                 return BitWidth.FourBytes;
-            }
 
             throw new InvalidOperationException("Invalid header magic");
         }
@@ -128,7 +119,8 @@ namespace Terminaux.Base.TermInfo.Parsing
         private static string[] ReadNames(ByteReader reader, int size)
         {
             var data = Encoding.ASCII.GetString(reader.ReadBytes(size)).TrimEnd('\0');
-            return data.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            var splitNames = data.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            return splitNames;
         }
 
         private static bool?[] ReadBools(ByteReader reader, int count)
@@ -139,9 +131,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             {
                 result[i] = buffer[i] == 1;
                 if (buffer[i] == -2 || buffer[i] == -1)
-                {
                     result[i] = null;
-                }
             }
 
             return result;
@@ -155,9 +145,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             {
                 result[i] = buffer[i];
                 if (buffer[i] == -2 || buffer[i] == -1)
-                {
                     result[i] = null;
-                }
             }
 
             return result;
@@ -167,12 +155,8 @@ namespace Terminaux.Base.TermInfo.Parsing
         {
             var offsets = ReadIntegers(reader, count, BitWidth.TwoBytes);
             var data = Encoding.ASCII.GetString(reader.ReadBytes(size));
-
             if (reader.Position % 2 != 0)
-            {
                 reader.ReadByte();
-            }
-
             return ReadStrings(offsets, data, count);
         }
 
@@ -180,39 +164,37 @@ namespace Terminaux.Base.TermInfo.Parsing
         {
             var strings = new string?[count];
             for (var i = 0; i < count; i++)
-            {
                 if (indexes[i] != -1 && indexes[i] != -2)
-                {
                     strings[i] = data.ReadNullTerminatedString(indexes[i]);
-                }
-            }
-
             return strings;
         }
 
         private static (string[] Strings, int LastIndex) ReadStrings(Span<int> indexes, Span<char> data, int count)
         {
-            var result = new string[count];
+            static int FindNullTerminator(Span<char> data, int start)
+            {
+                for (var i = start; i < data.Length; i++)
+                    if (data[i] == '\0')
+                        return i;
+                return -1;
+            }
 
+            var result = new string[count];
             var last = 0;
             for (var i = 0; i < count; i++)
             {
                 var start = indexes[i];
                 if (start < 0)
-                {
                     continue;
-                }
 
-                var end = data.FindNullTerminator(start);
+                var end = FindNullTerminator(data, start);
                 if (end != -1)
                 {
                     result[i] = data.Slice(start, end - start).ToString();
                     last = end + 1;
                 }
                 else
-                {
                     throw new InvalidOperationException("Invalid string table!");
-                }
             }
 
             return (result, last);
@@ -225,9 +207,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             var buffer = reader.ReadBytes(length);
 
             if (reader.Position % 2 != 0)
-            {
                 reader.ReadByte();
-            }
 
             var result = new int[count];
             for (int i = 0, j = 0; i < length; i += bytes, j++)

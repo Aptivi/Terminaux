@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
-using Terminaux.Base.TermInfo.Extensions;
 using Terminaux.Base.TermInfo.Parsing;
 using Textify.General;
 
@@ -41,24 +40,23 @@ namespace Terminaux.Base.TermInfo
             var directories = new List<string>();
 
             // TERMINFO
-            directories.AddIfNotNullOrEmpty(Environment.GetEnvironmentVariable("TERMINFO"));
+            string tInfoEnv = Environment.GetEnvironmentVariable("TERMINFO");
+            if (!string.IsNullOrWhiteSpace(tInfoEnv))
+                directories.Add(tInfoEnv);
 
             // ~/.terminfo
             var profile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             if (!string.IsNullOrWhiteSpace(profile))
-            {
                 directories.Add(Path.Combine(profile, ".terminfo"));
-            }
 
             // TERMINFO_DIRS
             var dirs = Environment.GetEnvironmentVariable("TERMINFO_DIRS");
             if (!string.IsNullOrWhiteSpace(dirs))
             {
                 var separator = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? ';' : ':';
-                foreach (var path in dirs.Split(new char[] { separator }, StringSplitOptions.RemoveEmptyEntries))
-                {
+                var splitDirs = dirs.Split(new char[] { separator }, StringSplitOptions.RemoveEmptyEntries);
+                foreach (var path in splitDirs)
                     directories.Add(path);
-                }
             }
 
             // Fallback

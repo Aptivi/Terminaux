@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-#if !NET5_0
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base.TermInfo.Extensions;
@@ -26,9 +25,9 @@ namespace Terminaux.Base.TermInfo.Extensions
 {
     internal static class EnumerableExtensions
     {
+        // TODO: Move this to Magico real soon.
         public static IEnumerable<(TFirst First, TSecond Second)> Zip<TFirst, TSecond>(
             this IEnumerable<TFirst> source, IEnumerable<TSecond> first) =>
             source.Zip(first, (first, second) => (first, second));
     }
 }
-#endif

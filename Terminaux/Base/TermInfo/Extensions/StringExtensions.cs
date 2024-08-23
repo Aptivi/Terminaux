@@ -23,6 +23,7 @@ namespace Terminaux.Base.TermInfo.Extensions
 {
     internal static class StringExtensions
     {
+        // TODO: Move this to Textify real soon.
         public static string ReadNullTerminatedString(this string source, int offset)
         {
             var accumulator = new StringBuilder();

@@ -28,11 +28,6 @@ namespace Terminaux.Base.TermInfo.Parsing
 
         public int Position { get; set; }
 
-        public ByteReader(Stream stream)
-        {
-            _reader = new BinaryReader(stream);
-        }
-
         public bool Eof() =>
             _reader.PeekChar() == -1;
 
@@ -40,9 +35,7 @@ namespace Terminaux.Base.TermInfo.Parsing
         {
             var result = _reader.Read();
             if (result != -1)
-            {
                 Position++;
-            }
 
             return result;
         }
@@ -52,9 +45,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             var buffer = new byte[count];
             var read = Read(buffer, count);
             if (read != count)
-            {
                 throw new InvalidOperationException("Could not read the requested number of bytes.");
-            }
 
             return buffer;
         }
@@ -64,6 +55,11 @@ namespace Terminaux.Base.TermInfo.Parsing
             var result = _reader.Read(buffer, 0, count);
             Position += result;
             return result;
+        }
+
+        public ByteReader(Stream stream)
+        {
+            _reader = new BinaryReader(stream);
         }
     }
 }

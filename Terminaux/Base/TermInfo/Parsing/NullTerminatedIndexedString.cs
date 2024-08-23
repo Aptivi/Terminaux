@@ -26,12 +26,6 @@ namespace Terminaux.Base.TermInfo.Parsing
         private ReadOnlyMemory<char> _data;
         private ReadOnlyMemory<int> _indexes;
 
-        public NullTerminatedIndexedString(string data, int[] indexes)
-        {
-            _data = data.AsMemory();
-            _indexes = indexes.AsMemory();
-        }
-
         public string[] GetStrings(int count, bool sliceData = false)
         {
             var result = new string[count];
@@ -41,9 +35,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             {
                 var start = _indexes.Span[i];
                 if (start < 0)
-                {
                     continue;
-                }
 
                 var end = FindNull(start);
                 if (end != -1)
@@ -60,9 +52,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             _indexes = _indexes.Slice(count);
 
             if (sliceData)
-            {
                 _data = _data.Slice(last);
-            }
 
             return result;
         }
@@ -70,14 +60,15 @@ namespace Terminaux.Base.TermInfo.Parsing
         private int FindNull(int start)
         {
             for (var i = start; i < _data.Length; i++)
-            {
                 if (_data.Span[i] == '\0')
-                {
                     return i;
-                }
-            }
-
             return -1;
+        }
+
+        public NullTerminatedIndexedString(string data, int[] indexes)
+        {
+            _data = data.AsMemory();
+            _indexes = indexes.AsMemory();
         }
     }
 }

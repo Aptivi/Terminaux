@@ -38,13 +38,6 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         public int Count { get; }
 
-        internal ExtendedCapabilities()
-        {
-            _booleans = [];
-            _nums = [];
-            _strings = [];
-        }
-
         internal ExtendedCapabilities(
             bool?[] booleans, int?[] nums, string?[] strings,
             string[] booleanNames, string[] numNames, string[] stringNames)
@@ -64,9 +57,7 @@ namespace Terminaux.Base.TermInfo
         public bool Exist(string key)
         {
             if (key is null)
-            {
                 throw new ArgumentNullException(nameof(key));
-            }
 
             return _booleans.ContainsKey(key)
                 || _nums.ContainsKey(key)
@@ -95,9 +86,7 @@ namespace Terminaux.Base.TermInfo
         public bool? GetBoolean(string key)
         {
             if (key is null)
-            {
                 throw new ArgumentNullException(nameof(key));
-            }
 
             _booleans.TryGetValue(key, out var value);
             return value;
@@ -111,9 +100,7 @@ namespace Terminaux.Base.TermInfo
         public int? GetNum(string key)
         {
             if (key is null)
-            {
                 throw new ArgumentNullException(nameof(key));
-            }
 
             _nums.TryGetValue(key, out var value);
             return value;
@@ -127,12 +114,17 @@ namespace Terminaux.Base.TermInfo
         public string? GetString(string key)
         {
             if (key is null)
-            {
                 throw new ArgumentNullException(nameof(key));
-            }
 
             _strings.TryGetValue(key, out var value);
             return value;
+        }
+
+        internal ExtendedCapabilities()
+        {
+            _booleans = [];
+            _nums = [];
+            _strings = [];
         }
     }
 }

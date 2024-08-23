@@ -24,6 +24,7 @@ namespace Terminaux.Base.TermInfo.Extensions
 {
     internal static class DictionaryExtensions
     {
+        // TODO: Move this to Magico real soon.
         public static Dictionary<TKey, TElement> ToDictionarySafe<TSource, TKey, TElement>(
             this IEnumerable<TSource> source,
             Func<TSource, TKey> keySelector,
