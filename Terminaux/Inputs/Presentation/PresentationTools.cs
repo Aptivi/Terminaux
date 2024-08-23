@@ -79,6 +79,7 @@ namespace Terminaux.Inputs.Presentation
             // Loop for each page
             var pages = presentation.Pages;
             bool presentExit = false;
+            ColorTools.LoadBackDry(presentation.BackgroundColor);
             for (int i = 0; i < pages.Count; i++)
             {
                 // Check to see if we're exiting
@@ -106,21 +107,18 @@ namespace Terminaux.Inputs.Presentation
 
                     // Make a border
                     builder.Append(
-                        BoxFrameColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", presentationUpperBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor) +
-                        BoxColor.RenderBox(presentationUpperInnerBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop)
+                        BoxFrameColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", presentationUpperBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop, presentation.FrameColor, presentation.BackgroundColor) +
+                        BoxColor.RenderBox(presentationUpperInnerBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop, presentation.BackgroundColor)
                     );
 
                     // Write the bindings
                     builder.Append(
-                        KeybindingsWriter.RenderKeybindings(!kiosk && !required ? nonKioskBindings : bindings, 0, ConsoleWrapper.WindowHeight - 1)
+                        KeybindingsWriter.RenderKeybindings(!kiosk && !required ? nonKioskBindings : bindings, presentation.BackgroundColor, 0, ConsoleWrapper.WindowHeight - 1)
                     );
 
                     // Clear the presentation screen
                     for (int y = presentationUpperInnerBorderTop; y <= presentationLowerInnerBorderTop + 1; y++)
-                        builder.Append(TextWriterWhereColor.RenderWhere(new string(' ', presentationLowerInnerBorderLeft), presentationUpperInnerBorderLeft, y));
-
-                    // Seek to the first position inside the border
-                    builder.Append(CsiSequences.GenerateCsiCursorPosition(presentationUpperInnerBorderLeft + 1, presentationUpperInnerBorderTop + 1));
+                        builder.Append(TextWriterWhereColor.RenderWhereColorBack(new string(' ', presentationLowerInnerBorderLeft), presentationUpperInnerBorderLeft, y, presentation.FrameColor, presentation.BackgroundColor));
 
                     // Generate the final string
                     return builder.ToString();
@@ -194,9 +192,9 @@ namespace Terminaux.Inputs.Presentation
                     int left = presentationLowerInnerBorderLeft + 3;
                     if (splitFinalLines.Length > presentationLowerInnerBorderTop)
                     {
-                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor));
-                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, presentationLowerInnerBorderTop + 1, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor));
-                        boxBuffer.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)currIdx / (splitFinalLines.Length - presentationLowerInnerBorderTop) * splitFinalLines.Length), splitFinalLines.Length, left - 1, 2, presentationLowerInnerBorderTop - 2, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor, false));
+                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, presentation.FrameColor, presentation.BackgroundColor));
+                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, presentationLowerInnerBorderTop + 1, presentation.FrameColor, presentation.BackgroundColor));
+                        boxBuffer.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)currIdx / (splitFinalLines.Length - presentationLowerInnerBorderTop) * splitFinalLines.Length), splitFinalLines.Length, left - 1, 2, presentationLowerInnerBorderTop - 2, presentation.FrameColor, presentation.BackgroundColor, false));
                     }
                     return boxBuffer.ToString();
                 });

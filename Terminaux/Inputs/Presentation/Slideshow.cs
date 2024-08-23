@@ -18,6 +18,9 @@
 //
 
 using System.Collections.Generic;
+using Terminaux.Colors;
+using Terminaux.Colors.Data;
+using Terminaux.Writer.FancyWriters.Tools;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -35,6 +38,21 @@ namespace Terminaux.Inputs.Presentation
         /// Presentation pages
         /// </summary>
         public List<PresentationPage> Pages { get; }
+
+        /// <summary>
+        /// Slideshow frame border settings
+        /// </summary>
+        public BorderSettings BorderSettings { get; set; } = new();
+
+        /// <summary>
+        /// Slideshow frame color
+        /// </summary>
+        public Color FrameColor { get; set; } = new Color(ConsoleColors.Silver);
+
+        /// <summary>
+        /// Slideshow background color
+        /// </summary>
+        public Color BackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
 
         /// <summary>
         /// Makes a new presentation
