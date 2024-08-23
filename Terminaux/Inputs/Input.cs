@@ -48,7 +48,7 @@ namespace Terminaux.Inputs
         private static int clickTier = 1;
         private static PointerEventContext? tieredContext = null;
         private static bool enableMouse;
-        private static readonly List<string> caughtMouseEvents = [];
+        private static string caughtMouseEvent = "";
         private static readonly Stopwatch inputTimeout = new();
         private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? ConsolePositioning.GetStdHandle(-10) : IntPtr.Zero;
 
@@ -306,6 +306,12 @@ namespace Terminaux.Inputs
                     int result = 0;
                     lock (Console.In)
                     {
+                        if (string.IsNullOrEmpty(caughtMouseEvent))
+                        {
+                            charRead = Encoding.Default.GetBytes(caughtMouseEvent);
+                            caughtMouseEvent = "";
+                            return caughtMouseEvent.Length;
+                        }
                         bool isMouse = false;
                         while (!isMouse)
                         {
@@ -479,7 +485,7 @@ namespace Terminaux.Inputs
                                 if (chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M')
                                 {
                                     byte[] charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
-                                    caughtMouseEvents.Add(Encoding.Default.GetString(charRead));
+                                    caughtMouseEvent = Encoding.Default.GetString(charRead);
                                 }
                             }
                         }
@@ -489,14 +495,14 @@ namespace Terminaux.Inputs
 
                 // Fill the chars array
                 int _ = Peek(ref numRead, ref error);
-                if (caughtMouseEvents.Count != 0 && numRead % 6 == 0)
+                if (!string.IsNullOrEmpty(caughtMouseEvent) && numRead % 6 == 0)
                     return true;
                 int readChar = Read(ref error);
                 if (error)
                     return false;
                 if (readChar == 0)
                     return false;
-                return caughtMouseEvents.Count != 0;
+                return !string.IsNullOrEmpty(caughtMouseEvent);
             }
         }
 
