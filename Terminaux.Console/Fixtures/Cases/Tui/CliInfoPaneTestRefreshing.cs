@@ -36,9 +36,9 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
             // Run the resize listener
             ConsoleResizeHandler.StartResizeListener();
             var tui = new CliInfoPaneTestRefreshingData();
-            tui.Bindings.Add(new InteractiveTuiBinding("Add", ConsoleKey.F1, (_, index) => tui.Add(index), true));
-            tui.Bindings.Add(new InteractiveTuiBinding("Delete", ConsoleKey.F2, (_, index) => tui.Remove(index), true));
-            tui.Bindings.Add(new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _) => tui.RemoveLast(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>("Add", ConsoleKey.F1, (_, index, _, _) => tui.Add(index), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>("Delete", ConsoleKey.F2, (_, index, _, _) => tui.Remove(index), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>("Delete Last", ConsoleKey.F3, (_, _, _, _) => tui.RemoveLast(), true));
 
             // Start the demo TUI app
             InteractiveTuiTools.OpenInteractiveTui(tui);

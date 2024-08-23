@@ -729,15 +729,15 @@ namespace Terminaux.Inputs.Interactive
                                     binding.BindingKeyName == ConsoleKey.Enter);
                                 if (implementedBindings.Any())
                                     loopBail = true;
-                                TPrimary selectedData = (TPrimary)dataPrimary.GetElementFromIndex(paneCurrentSelection - 1);
-                                TSecondary selectedDataSecondary = (TSecondary)dataSecondary.GetElementFromIndex(paneCurrentSelection - 1);
+                                TPrimary selectedData = (TPrimary)dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
+                                TSecondary selectedDataSecondary = (TSecondary)dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
                                 object? finalData = interactiveTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
                                 foreach (var implementedBinding in implementedBindings)
                                 {
                                     var binding = implementedBinding.BindingAction;
-                                    if (binding is null || finalData is null)
+                                    if (binding is null || (finalData is null && !implementedBinding.BindingCanRunWithoutItems))
                                         continue;
-                                    binding.Invoke(finalData, paneCurrentSelection - 1);
+                                    binding.Invoke(selectedData, interactiveTui.FirstPaneCurrentSelection - 1, selectedDataSecondary, interactiveTui.SecondPaneCurrentSelection - 1);
                                 }
                             }
                             break;
@@ -760,16 +760,15 @@ namespace Terminaux.Inputs.Interactive
                         // Now, get the implemented bindings from the pressed key
                         var implementedBindings = allBindings.Where((binding) =>
                             binding.BindingPointerButton == mouse.Button && binding.BindingPointerButtonPress == mouse.ButtonPress && binding.BindingPointerModifiers == mouse.Modifiers);
-                        TPrimary selectedData = (TPrimary)dataPrimary.GetElementFromIndex(paneCurrentSelection - 1);
-                        TSecondary selectedDataSecondary = (TSecondary)dataSecondary.GetElementFromIndex(paneCurrentSelection - 1);
+                        TPrimary selectedData = (TPrimary)dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
+                        TSecondary selectedDataSecondary = (TSecondary)dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
                         object? finalData = interactiveTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
                         foreach (var implementedBinding in implementedBindings)
                         {
                             var binding = implementedBinding.BindingAction;
-                            if (binding is null || finalData is null)
+                            if (binding is null || (finalData is null && !implementedBinding.BindingCanRunWithoutItems))
                                 continue;
-                            loopBail = true;
-                            binding.Invoke(finalData, paneCurrentSelection - 1);
+                            binding.Invoke(selectedData, interactiveTui.FirstPaneCurrentSelection - 1, selectedDataSecondary, interactiveTui.SecondPaneCurrentSelection - 1);
                         }
                     }
                 }
@@ -894,22 +893,22 @@ namespace Terminaux.Inputs.Interactive
                         // Now, get the implemented bindings from the pressed key
                         var implementedBindings = allBindings.Where((binding) =>
                             binding.BindingKeyName == key.Key && binding.BindingKeyModifiers == key.Modifiers);
-                        TPrimary? selectedData = dataPrimary.Any() ? (TPrimary)dataPrimary.GetElementFromIndex(paneCurrentSelection - 1) : default;
-                        TSecondary? selectedDataSecondary = dataSecondary.Any() ? (TSecondary)dataSecondary.GetElementFromIndex(paneCurrentSelection - 1) : default;
+                        TPrimary selectedData = (TPrimary)dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
+                        TSecondary selectedDataSecondary = (TSecondary)dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
                         object? finalData = interactiveTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
                         foreach (var implementedBinding in implementedBindings)
                         {
                             var binding = implementedBinding.BindingAction;
                             if (binding is null || (finalData is null && !implementedBinding.BindingCanRunWithoutItems))
                                 continue;
-                            binding.Invoke(finalData, paneCurrentSelection - 1);
+                            binding.Invoke(selectedData, interactiveTui.FirstPaneCurrentSelection - 1, selectedDataSecondary, interactiveTui.SecondPaneCurrentSelection - 1);
                         }
                     }
                 }
             }
         }
 
-        private static string GetBindingKeyShortcut(InteractiveTuiBinding bind, bool mark = true)
+        private static string GetBindingKeyShortcut<TPrimary, TSecondary>(InteractiveTuiBinding<TPrimary, TSecondary> bind, bool mark = true)
         {
             if (bind.BindingUsesMouse)
                 return "";
@@ -918,7 +917,7 @@ namespace Terminaux.Inputs.Interactive
             return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
         }
 
-        private static string GetBindingMouseShortcut(InteractiveTuiBinding bind, bool mark = true)
+        private static string GetBindingMouseShortcut<TPrimary, TSecondary>(InteractiveTuiBinding<TPrimary, TSecondary> bind, bool mark = true)
         {
             if (!bind.BindingUsesMouse)
                 return "";
@@ -927,19 +926,19 @@ namespace Terminaux.Inputs.Interactive
             return $"{markStart}{(bind.BindingPointerModifiers != 0 ? $"{bind.BindingPointerModifiers} + " : "")}{bind.BindingPointerButton}{(bind.BindingPointerButtonPress != 0 ? $" {bind.BindingPointerButtonPress}" : "")}{markEnd}";
         }
 
-        private static InteractiveTuiBinding[] GetAllBindings<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui, bool full = false)
+        private static InteractiveTuiBinding<TPrimary, TSecondary>[] GetAllBindings<TPrimary, TSecondary>(BaseInteractiveTui<TPrimary, TSecondary> interactiveTui, bool full = false)
         {
             // Populate appropriate bindings, depending on the SecondPaneInteractable value
-            List<InteractiveTuiBinding> finalBindings =
+            List<InteractiveTuiBinding<TPrimary, TSecondary>> finalBindings =
             [
-                new InteractiveTuiBinding("Keybindings", ConsoleKey.K, null),
-                new InteractiveTuiBinding("Exit", ConsoleKey.Escape, null),
+                new InteractiveTuiBinding<TPrimary, TSecondary>("Keybindings", ConsoleKey.K, null),
+                new InteractiveTuiBinding<TPrimary, TSecondary>("Exit", ConsoleKey.Escape, null),
             ];
 
             // Populate switch as needed
             if (interactiveTui.SecondPaneInteractable)
                 finalBindings.Add(
-                    new InteractiveTuiBinding("Switch", ConsoleKey.Tab, null)
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Switch", ConsoleKey.Tab, null)
                 );
 
             // Now, check to see if we need to add additional base bindings
@@ -947,19 +946,19 @@ namespace Terminaux.Inputs.Interactive
             {
                 finalBindings.AddRange(
                 [
-                    new InteractiveTuiBinding("Go one element up", ConsoleKey.UpArrow, null),
-                    new InteractiveTuiBinding("Go one element down", ConsoleKey.DownArrow, null),
-                    new InteractiveTuiBinding("Go to the first element", ConsoleKey.Home, null),
-                    new InteractiveTuiBinding("Go to the last element", ConsoleKey.End, null),
-                    new InteractiveTuiBinding("Go to the previous page", ConsoleKey.PageUp, null),
-                    new InteractiveTuiBinding("Go to the next page", ConsoleKey.PageDown, null),
-                    new InteractiveTuiBinding("Search for an element", ConsoleKey.F, null),
-                    new InteractiveTuiBinding("Go one line up (informational)", ConsoleKey.W, null),
-                    new InteractiveTuiBinding("Go one line down (informational)", ConsoleKey.S, null),
-                    new InteractiveTuiBinding("Read more...", ConsoleKey.I, ConsoleModifiers.Shift, null),
-                    new InteractiveTuiBinding(Input.InvertScrollYAxis ? "Go one element down" : "Go one element up", PointerButton.WheelUp, null),
-                    new InteractiveTuiBinding(Input.InvertScrollYAxis ? "Go one element up" : "Go one element down", PointerButton.WheelDown, null),
-                    new InteractiveTuiBinding("Do an action on the selected item", PointerButton.Left, PointerButtonPress.Released, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go one element up", ConsoleKey.UpArrow, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go one element down", ConsoleKey.DownArrow, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go to the first element", ConsoleKey.Home, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go to the last element", ConsoleKey.End, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go to the previous page", ConsoleKey.PageUp, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go to the next page", ConsoleKey.PageDown, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Search for an element", ConsoleKey.F, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go one line up (informational)", ConsoleKey.W, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Go one line down (informational)", ConsoleKey.S, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Read more...", ConsoleKey.I, ConsoleModifiers.Shift, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(Input.InvertScrollYAxis ? "Go one element down" : "Go one element up", PointerButton.WheelUp, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>(Input.InvertScrollYAxis ? "Go one element up" : "Go one element down", PointerButton.WheelDown, null),
+                    new InteractiveTuiBinding<TPrimary, TSecondary>("Do an action on the selected item", PointerButton.Left, PointerButtonPress.Released, null),
                 ]);
             }
 
@@ -1015,7 +1014,7 @@ namespace Terminaux.Inputs.Interactive
 
             // Then, check for conflicts in the key bindings
             var bindings = GetAllBindings(interactiveTui, true);
-            List<InteractiveTuiBinding> conflicts = [];
+            List<InteractiveTuiBinding<TPrimary, TSecondary>> conflicts = [];
             foreach (var binding in bindings)
             {
                 var keyBindings = bindings.Where((keyBinding) => !binding.BindingUsesMouse && !keyBinding.BindingUsesMouse && keyBinding.BindingKeyName == binding.BindingKeyName && keyBinding.BindingKeyModifiers == binding.BindingKeyModifiers);

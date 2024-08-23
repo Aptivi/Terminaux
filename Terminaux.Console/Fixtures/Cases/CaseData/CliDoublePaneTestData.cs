@@ -58,20 +58,20 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         public override string GetEntryFromItemSecondary(string item) =>
             item;
 
-        internal void Add(int index)
+        internal void Add(int index, int index2)
         {
             if (CurrentPane == 2)
-                strings2.Add($"[{index}] --2-- [{index}]");
+                strings2.Add($"[{index2}] --2-- [{index2}]");
             else
                 strings.Add($"[{index}] --1-- [{index}]");
         }
 
-        internal void Remove(int index)
+        internal void Remove(int index, int index2)
         {
             if (CurrentPane == 2)
             {
-                if (index < strings2.Count && strings2.Count > 0)
-                    strings2.RemoveAt(index == 0 ? index : index - 1);
+                if (index2 < strings2.Count && strings2.Count > 0)
+                    strings2.RemoveAt(index2 == 0 ? index2 : index2 - 1);
                 if (SecondPaneCurrentSelection > strings2.Count)
                     SecondPaneCurrentSelection = strings2.Count;
             }

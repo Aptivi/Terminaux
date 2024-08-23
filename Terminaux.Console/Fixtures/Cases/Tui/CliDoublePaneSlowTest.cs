@@ -38,9 +38,9 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
 
             // Assign keybindings
             var tui = new CliDoublePaneSlowTestData();
-            tui.Bindings.Add(new InteractiveTuiBinding("Add", ConsoleKey.F1, (_, index) => tui.Add(index), true));
-            tui.Bindings.Add(new InteractiveTuiBinding("Delete", ConsoleKey.F2, (_, index) => tui.Remove(index), true));
-            tui.Bindings.Add(new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _) => tui.RemoveLast(), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string, string>("Add", ConsoleKey.F1, (_, index, _, index2) => tui.Add(index, index2), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string, string>("Delete", ConsoleKey.F2, (_, index, _, index2) => tui.Remove(index, index2), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string, string>("Delete Last", ConsoleKey.F3, (_, _, _, _) => tui.RemoveLast(), true));
 
             // Start the demo TUI app
             InteractiveTuiTools.OpenInteractiveTui(tui);

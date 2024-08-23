@@ -38,9 +38,9 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
 
             // Start the demo TUI app
             var tui = new CliInfoPaneSlowTestData();
-            tui.Bindings.Add(new InteractiveTuiBinding("Add", ConsoleKey.F1, (_, index) => tui.strings.Add($"[{index}] --+-- [{index}]"), true));
-            tui.Bindings.Add(new InteractiveTuiBinding("Delete", ConsoleKey.F2, (_, index) => tui.strings.RemoveAt(index), true));
-            tui.Bindings.Add(new InteractiveTuiBinding("Delete Last", ConsoleKey.F3, (_, _) => tui.strings.RemoveAt(tui.strings.Count - 1), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>("Add", ConsoleKey.F1, (_, index, _, _) => tui.strings.Add($"[{index}] --+-- [{index}]"), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>("Delete", ConsoleKey.F2, (_, index, _, _) => tui.strings.RemoveAt(index), true));
+            tui.Bindings.Add(new InteractiveTuiBinding<string>("Delete Last", ConsoleKey.F3, (_, _, _, _) => tui.strings.RemoveAt(tui.strings.Count - 1), true));
 
             // Start the demo TUI app
             InteractiveTuiTools.OpenInteractiveTui(tui);
