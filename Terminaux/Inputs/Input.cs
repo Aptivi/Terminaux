@@ -198,12 +198,19 @@ namespace Terminaux.Inputs
             return (!result ? default : ConsoleWrapper.ReadKey(Intercept), result);
         }
 
+        // Developers: From this point on, you must be very careful in what you're doing here, because the
+        // Linux mouse input detection logic reads from the stdin stream that the appropriate DEC VT Locator
+        // sequence prints out when every mouse movement is detected. The below code can be tweaked, but any
+        // mistake and the pointer detection logic is broken, so be extra careful when adding, modifying, or
+        // tweaking the code below
+        #region Sensitive code points
         /// <summary>
         /// Reads a pointer (blocking)
         /// </summary>
         /// <returns>A <see cref="PointerEventContext"/> instance that describes the last mouse event.</returns>
         public static PointerEventContext? ReadPointer()
         {
+            // Check for mouse state
             PointerEventContext? ctx = null;
             if (!EnableMouse)
                 return ctx;
@@ -333,24 +340,15 @@ namespace Terminaux.Inputs
                 byte button = 0;
                 byte x = 0;
                 byte y = 0;
-                if (caughtMouseEvents.Count == 0)
-                {
-                    int _ = Read(ref chars, ref error);
-                    if (error)
-                        throw new TerminauxException("Failed to read the pointer.");
-                }
-                else
-                {
-                    string eventStr = caughtMouseEvents[0];
-                    caughtMouseEvents.RemoveAt(0);
-                    chars = Encoding.Default.GetBytes(eventStr);
-                }
-                if (chars[0] == '\u001b' || chars[0] == 91)
+                int _ = Read(ref chars, ref error);
+                if (error)
+                    throw new TerminauxException("Failed to read the pointer.");
+                if (chars[0] == '\u001b')
                 {
                     // Now, read the button, X, and Y positions
-                    button = chars[0] == 91 ? chars[2] : chars[3];
-                    x = chars[0] == 91 ? (byte)(chars[3] - 32) : (byte)(chars[4] - 32);
-                    y = chars[0] == 91 ? (byte)(chars[4] - 32) : (byte)(chars[5] - 32);
+                    button = chars[3];
+                    x = (byte)(chars[4] - 32);
+                    y = (byte)(chars[5] - 32);
                 }
                 x -= 1;
                 y -= 1;
@@ -391,7 +389,7 @@ namespace Terminaux.Inputs
 
                 // Process dragging
                 bool dragging = false;
-                if (EnableMovementEvents && press == PointerButtonPress.Moved)
+                if (EnableMovementEvents)
                     ProcessDragging(ref press, ref buttonPtr, out dragging);
 
                 // Process double-clicks and other tiered clicks
@@ -461,44 +459,46 @@ namespace Terminaux.Inputs
                     }
                     return result;
                 }
-                unsafe int Read(ref byte[] charRead, ref bool error)
+                unsafe int Read(ref bool error)
                 {
                     int result = 0;
                     lock (Console.In)
                     {
                         int _ = Peek(ref numRead, ref error);
-                        if (numRead > 0)
+                        if (numRead > 0 && numRead % 6 == 0)
                         {
-                            byte* chars = stackalloc byte[(int)numRead];
-                            result = InputPosix.read(0, chars, numRead);
-                            if (result == -1)
+                            int times = (int)(numRead / 6);
+                            for (int i = 0; i < times; i++)
                             {
-                                // Some failure occurred.
-                                error = true;
-                                return -1;
+                                byte* chars = stackalloc byte[6];
+                                result = InputPosix.read(0, chars, 6);
+                                if (result == -1)
+                                {
+                                    // Some failure occurred.
+                                    error = true;
+                                    return -1;
+                                }
+                                if (chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M')
+                                {
+                                    byte[] charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
+                                    caughtMouseEvents.Add(Encoding.Default.GetString(charRead));
+                                }
                             }
-                            if (chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M')
-                                charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
                         }
                     }
                     return result;
                 }
 
                 // Fill the chars array
-                byte[] chars = [];
-                if (caughtMouseEvents.Count != 0)
+                int _ = Peek(ref numRead, ref error);
+                if (caughtMouseEvents.Count != 0 && numRead % 6 == 0)
                     return true;
-                int readChar = Read(ref chars, ref error);
+                int readChar = Read(ref error);
                 if (error)
                     return false;
-                if (readChar == 0 || chars.Length == 0)
+                if (readChar == 0)
                     return false;
-                if (chars[0] == '\u001b' || chars[0] == 91 || chars[0] == '\0')
-                {
-                    caughtMouseEvents.Add(Encoding.Default.GetString(chars));
-                    return true;
-                }
-                return false;
+                return caughtMouseEvents.Count != 0;
             }
         }
 
@@ -580,6 +580,7 @@ namespace Terminaux.Inputs
                 TextWriterRaw.WriteRaw($"\u001b[?1000h{(EnableMovementEvents ? "\u001b[?1003h" : "")}");
             }
         }
+        #endregion
         #endregion
     }
 }
