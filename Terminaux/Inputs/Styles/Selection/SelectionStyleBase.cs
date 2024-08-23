@@ -33,6 +33,8 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.MiscWriters;
+using Terminaux.Writer.MiscWriters.Tools;
 
 namespace Terminaux.Inputs.Styles.Selection
 {
@@ -76,6 +78,28 @@ namespace Terminaux.Inputs.Styles.Selection
             bool initialVisible = ConsoleWrapper.CursorVisible;
             ConsoleWrapper.CursorVisible = false;
 
+            // Build list of bindings for help
+            var showBindings = new Keybinding[]
+            {
+                new("Confirm", ConsoleKey.Enter),
+                new("Select", ConsoleKey.Spacebar),
+                new("Help", ConsoleKey.K),
+            };
+            var bindings = new Keybinding[]
+            {
+                new("Confirms the selections", ConsoleKey.Enter),
+                new("Selects or deselects a choice", ConsoleKey.Spacebar),
+                new("Goes one element up", ConsoleKey.UpArrow),
+                new("Goes one element down", ConsoleKey.DownArrow),
+                new("Goes to the first element", ConsoleKey.Home),
+                new("Goes to the last element", ConsoleKey.End),
+                new("Goes to the previous page", ConsoleKey.PageUp),
+                new("Goes to the next page", ConsoleKey.PageDown),
+                new("Selects all the elements", ConsoleKey.A),
+                new("Searches for an element", ConsoleKey.F),
+                new("Shows or hides the page count", ConsoleKey.C),
+            };
+
             // Make a screen
             var selectionScreen = new Screen();
             bool bail = false;
@@ -106,7 +130,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         // Make pages based on console window height
                         int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                         int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                        int answersPerPage = listEndPosition - 7;
+                        int answersPerPage = listEndPosition - 6;
                         int pages = AllAnswers.Count / answersPerPage;
                         if (AllAnswers.Count % answersPerPage == 0)
                             pages--;
@@ -131,54 +155,24 @@ namespace Terminaux.Inputs.Styles.Selection
                         );
 
                         // Write description area
-                        int descSepArea = ConsoleWrapper.WindowHeight - 3;
-                        int descArea = ConsoleWrapper.WindowHeight - 2;
+                        int descSepArea = ConsoleWrapper.WindowHeight - 2;
+                        int descArea = ConsoleWrapper.WindowHeight - 1;
                         var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
-                        string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription : "";
-                        if (highlightedAnswer.ChoiceDescription is not null)
-                        {
-                            var wrappedDescLines = ConsoleMisc.GetWrappedSentencesByWords(descFinal, ConsoleWrapper.WindowWidth).Take(2).ToArray();
-                            wrappedDescLines[wrappedDescLines.Length - 1] = wrappedDescLines[wrappedDescLines.Length - 1].Truncate(ConsoleWrapper.WindowWidth - 3);
-                            descFinal = string.Join("\n", wrappedDescLines);
-                        }
+                        var lines = ConsoleMisc.GetWrappedSentencesByWords(highlightedAnswer.ChoiceDescription, ConsoleWrapper.WindowWidth - 4);
+                        string descFinal =
+                            highlightedAnswer.ChoiceDescription is not null ?
+                            lines.First() + $"{(lines.Length > 1 ? "..." : "")}" : "";
                         selectionBuilder.Append(
-                            $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 1)}" +
+                            $"{CsiSequences.GenerateCsiCursorPosition(1, descSepArea + 1)}" +
                             $"{ConsoleClearing.GetClearLineToRightSequence()}" +
-                            $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 2)}" +
-                            $"{ConsoleClearing.GetClearLineToRightSequence()}" +
-                            $"{CsiSequences.GenerateCsiCursorPosition(1, descArea + 1)}" +
                             $"{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.White))}" +
                             descFinal
                         );
 
-                        // Render keybindings and page and answer number
-                        string bindingsRender = "[SPACE: (un)check]══[K: help]";
-                        string numberRender = $"[{currentPage + 1}/{pages + 1}]══[{HighlightedAnswer}/{AllAnswers.Count}]";
-
-                        // Now, render the bindings and the page numbers
-                        int bindingsLeft = 2;
-                        int numbersLeft = ConsoleWrapper.WindowWidth - numberRender.Length - bindingsLeft;
+                        // Render keybindings
                         selectionBuilder.Append(
-                            $"{CsiSequences.GenerateCsiCursorPosition(1, descSepArea + 1)}" +
-                            $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
-                            $"{new string('═', ConsoleWrapper.WindowWidth)}"
+                            KeybindingsWriter.RenderKeybindings(showBindings, 0, descArea)
                         );
-                        if (bindingsRender.Length + numberRender.Length + 6 < ConsoleWrapper.WindowWidth)
-                        {
-                            selectionBuilder.Append(
-                                $"{CsiSequences.GenerateCsiCursorPosition(bindingsLeft + 1, descSepArea + 1)}" +
-                                $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
-                                bindingsRender
-                            );
-                            if (SelectionStyleSwitches.ShowPageCount)
-                            {
-                                selectionBuilder.Append(
-                                    $"{CsiSequences.GenerateCsiCursorPosition(numbersLeft + 1, descSepArea + 1)}" +
-                                    $"{ColorTools.RenderSetConsoleColor(ColorTools.GetGray())}" +
-                                    numberRender
-                                );
-                            }
-                        }
                         return selectionBuilder.ToString();
                     });
                     selectionScreen.AddBufferedPart("Selection - multiple", screenPart);
@@ -416,28 +410,9 @@ namespace Terminaux.Inputs.Styles.Selection
                             case ConsoleKey.K:
                                 // Add base bindings
                                 bool isExtendable = !string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription);
-                                StringBuilder bindings = new(
-                                    """
-                                    [UP]        | Goes one element up
-                                    [DOWN]      | Goes one element down
-                                    [HOME]      | Goes to the first element
-                                    [END]       | Goes to the last element
-                                    [PAGE UP]   | Goes to the previous page
-                                    [PAGE DOWN] | Goes to the next page
-                                    [SPACE]     | Selects or deselects a choice
-                                    [ENTER]     | Confirms the selections
-                                    [A]         | Selects all the elements
-                                    [F]         | Searches for an element
-                                    [C]         | Shows or hides the page count
-
-                                    """);
-                                if (isExtendable)
-                                    bindings.AppendLine("[TAB]       | Shows more info in an infobox");
-                                if (!kiosk)
-                                    bindings.AppendLine("[ESC]       | Exits the selection");
 
                                 // Keys function
-                                InfoBoxColor.WriteInfoBox("Available keybindings", bindings.ToString());
+                                InfoBoxColor.WriteInfoBox("Available keybindings", KeybindingsWriter.RenderKeybindingHelpText(bindings));
                                 break;
                         }
                     }
