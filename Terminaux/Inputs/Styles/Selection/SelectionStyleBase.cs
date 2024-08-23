@@ -32,6 +32,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.MiscWriters.Tools;
@@ -130,7 +131,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         // Make pages based on console window height
                         int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                         int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
-                        int answersPerPage = listEndPosition - 6;
+                        int answersPerPage = listEndPosition - 5;
                         int pages = AllAnswers.Count / answersPerPage;
                         if (AllAnswers.Count % answersPerPage == 0)
                             pages--;
@@ -154,22 +155,20 @@ namespace Terminaux.Inputs.Styles.Selection
                             SelectionInputTools.RenderSelections([.. AllAnswers], 3, listStartPosition + 2, HighlightedAnswer - 1, [.. SelectedAnswers], answersPerPage, ConsoleWrapper.WindowWidth - 6, false, Answers.Length - 1, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
                         );
 
-                        // Write description area
-                        int descSepArea = ConsoleWrapper.WindowHeight - 2;
-                        int descArea = ConsoleWrapper.WindowHeight - 1;
+                        // Write description hint
+                        int descHintAreaX = ConsoleWrapper.WindowWidth - 9;
+                        int descHintAreaY = ConsoleWrapper.WindowHeight - 3;
                         var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
-                        var lines = ConsoleMisc.GetWrappedSentencesByWords(highlightedAnswer.ChoiceDescription, ConsoleWrapper.WindowWidth - 4);
-                        string descFinal =
-                            highlightedAnswer.ChoiceDescription is not null ?
-                            lines.First() + $"{(lines.Length > 1 ? "..." : "")}" : "";
-                        selectionBuilder.Append(
-                            $"{CsiSequences.GenerateCsiCursorPosition(1, descSepArea + 1)}" +
-                            $"{ConsoleClearing.GetClearLineToRightSequence()}" +
-                            $"{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.White))}" +
-                            descFinal
-                        );
+                        bool showHint = !string.IsNullOrWhiteSpace(highlightedAnswer.ChoiceDescription);
+                        if (showHint)
+                        {
+                            selectionBuilder.Append(
+                                TextWriterWhereColor.RenderWhereColor("[TAB]", descHintAreaX, descHintAreaY, optionColor)
+                            );
+                        }
 
                         // Render keybindings
+                        int descArea = ConsoleWrapper.WindowHeight - 1;
                         selectionBuilder.Append(
                             KeybindingsWriter.RenderKeybindings(showBindings, 0, descArea)
                         );
