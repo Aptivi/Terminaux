@@ -24,9 +24,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Reader;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using System.Threading;
@@ -107,7 +105,7 @@ namespace Terminaux.Inputs.Presentation
 
                     // Make a border
                     builder.Append(
-                        BoxFrameColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", presentationUpperBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop, presentation.FrameColor, presentation.BackgroundColor) +
+                        BoxFrameColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", presentationUpperBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop, presentation.BorderSettings, presentation.FrameColor, presentation.BackgroundColor) +
                         BoxColor.RenderBox(presentationUpperInnerBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop, presentation.BackgroundColor)
                     );
 

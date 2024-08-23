@@ -32,7 +32,6 @@ using System.Diagnostics;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
-using Terminaux.Reader;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Pointer;

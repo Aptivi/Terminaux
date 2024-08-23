@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using Terminaux.Inputs;
-using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK

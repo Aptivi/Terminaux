@@ -18,13 +18,10 @@
 //
 
 using System;
-using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Inputs;
-using Terminaux.Inputs.Pointer;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.History;
 using Terminaux.Reader.Tools;

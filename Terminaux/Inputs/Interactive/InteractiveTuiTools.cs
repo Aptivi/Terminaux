@@ -31,7 +31,6 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Reader;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;

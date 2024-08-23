@@ -28,7 +28,6 @@ using Terminaux.Base;
 using System.Diagnostics;
 using Terminaux.Colors.Data;
 using System.Linq;
-using Terminaux.Reader;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using System.Threading;

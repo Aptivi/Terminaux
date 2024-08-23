@@ -29,7 +29,6 @@ using Terminaux.Base.Buffered;
 using System.Diagnostics;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
-using Terminaux.Reader;
 using Terminaux.Base.Checks;
 using System.Threading;
 using Terminaux.Inputs.Pointer;

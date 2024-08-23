@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Base;
-using Terminaux.Reader;
 
 namespace Terminaux.Inputs.Pointer
 {

@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Inputs;
-using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
 

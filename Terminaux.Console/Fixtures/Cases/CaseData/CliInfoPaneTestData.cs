@@ -17,10 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
-using Terminaux.Inputs.Pointer;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {

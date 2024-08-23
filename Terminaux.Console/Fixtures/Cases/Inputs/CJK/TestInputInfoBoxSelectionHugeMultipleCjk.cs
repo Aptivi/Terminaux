@@ -19,7 +19,6 @@
 
 using System.Collections.Generic;
 using Terminaux.Inputs;
-using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.Data.Analysis.NameGen;

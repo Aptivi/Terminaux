@@ -30,7 +30,6 @@ using Terminaux.Colors.Data;
 using Terminaux.Base.Checks;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
-using Terminaux.Reader;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {

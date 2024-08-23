@@ -18,10 +18,7 @@
 //
 
 using SpecProbe.Software.Platform;
-using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Text;
 
 namespace Terminaux.Inputs.Native
 {

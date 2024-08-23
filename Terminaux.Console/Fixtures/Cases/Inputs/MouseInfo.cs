@@ -18,12 +18,9 @@
 //
 
 using System;
-using System.Threading;
-using Terminaux.Base;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Pointer;
-using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
