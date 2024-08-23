@@ -30,6 +30,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Inputs.Pointer;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;

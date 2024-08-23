@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Terminaux.Inputs
+namespace Terminaux.Inputs.Styles
 {
     /// <summary>
     /// Input choice tools

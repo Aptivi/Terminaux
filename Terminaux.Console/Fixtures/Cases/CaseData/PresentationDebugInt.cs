@@ -24,8 +24,8 @@ using Terminaux.Inputs.Presentation;
 using Terminaux.Inputs.Presentation.Elements;
 using System;
 using Terminaux.Inputs.Presentation.Inputs;
-using Terminaux.Inputs;
 using Textify.General;
+using Terminaux.Inputs.Styles;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {

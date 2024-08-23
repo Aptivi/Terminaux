@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Choice;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK

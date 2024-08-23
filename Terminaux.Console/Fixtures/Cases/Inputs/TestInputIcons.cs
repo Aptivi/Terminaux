@@ -19,7 +19,6 @@
 
 using Terminaux.Images.Icons;
 using Terminaux.Inputs;
-using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs

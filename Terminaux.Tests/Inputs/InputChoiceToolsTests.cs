@@ -19,7 +19,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
-using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
 
 namespace Terminaux.Tests.Inputs
 {

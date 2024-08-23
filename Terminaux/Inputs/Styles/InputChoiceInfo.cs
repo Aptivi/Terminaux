@@ -19,7 +19,7 @@
 
 using System.Diagnostics;
 
-namespace Terminaux.Inputs
+namespace Terminaux.Inputs.Styles
 {
     /// <summary>
     /// Choice information for input

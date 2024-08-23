@@ -22,8 +22,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Terminaux.Base.TermInfo;
-using Terminaux.Inputs;
 using Terminaux.Inputs.Interactive;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData

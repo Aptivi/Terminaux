@@ -18,6 +18,7 @@
 //
 
 using Terminaux.Base;
+using Terminaux.Inputs.Styles;
 
 namespace Terminaux.Inputs.Presentation.Inputs
 {

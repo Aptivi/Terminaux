@@ -28,11 +28,12 @@ using Terminaux.Colors;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.FancyWriters;
-using Terminaux.Images.Icons;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
 
-namespace Terminaux.Inputs.Styles
+namespace Terminaux.Images.Icons
 {
     /// <summary>
     /// Icons selector
@@ -97,8 +98,8 @@ namespace Terminaux.Inputs.Styles
                     // Write the text using the selected icon
                     int height = ConsoleWrapper.WindowHeight - 8;
                     int width = height * 2;
-                    int left = (ConsoleWrapper.WindowWidth / 2) - height;
-                    int top = (ConsoleWrapper.WindowHeight / 2) - (height / 2);
+                    int left = ConsoleWrapper.WindowWidth / 2 - height;
+                    int top = ConsoleWrapper.WindowHeight / 2 - height / 2;
                     buffer.Append(IconsManager.RenderIcon(iconName, width, height, left, top));
 
                     // Write the selected icon name and the keybindings

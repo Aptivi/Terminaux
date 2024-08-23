@@ -23,7 +23,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Inputs.Presentation.Inputs;
 
-namespace Nitrocid.Tests.Misc.Presentation
+namespace Terminaux.Tests.Inputs.Presentation
 {
 
     [TestClass]

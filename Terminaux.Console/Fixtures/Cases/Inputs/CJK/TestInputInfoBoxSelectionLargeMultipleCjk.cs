@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using Terminaux.Inputs;
+using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 
