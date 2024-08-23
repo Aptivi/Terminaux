@@ -28,6 +28,7 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleChar
     {
+        // TODO: Move wcwidth-related stuff to Textify until GetCharWidthType().
         private static readonly Dictionary<int, (int, CharWidthType)> cachedWidths = [];
 
         /// <summary>
@@ -198,12 +199,20 @@ namespace Terminaux.Base.Extensions
         /// </summary>
         /// <param name="sentence">A sentence to process</param>
         /// <param name="index">Index of a character within a sentence</param>
+        /// <param name="processed">Whether to process the sentence
+        /// <br/><br/><strong>(WARNING: Indexes WILL change if there ARE VT sequences in the sentence! Carefully choose a value!)</strong></param>
         /// <returns>Length of a character by character widths (a.k.a. how many cells this sentence takes up), or -1 if empty</returns>
-        public static int EstimateCellWidth(string sentence, int index)
+        public static int EstimateCellWidth(string sentence, int index, bool processed = false)
         {
             // We don't need to perform operations on null or empty strings
             if (string.IsNullOrEmpty(sentence))
                 return -1;
+
+            // We need to filter VT sequences if we suspect that we can find one of them
+            if (processed && VtSequenceTools.IsMatchVTSequences(sentence))
+                sentence = VtSequenceTools.FilterVTSequences(sentence);
+
+            // Process index
             if (index > sentence.Length - 1)
                 index = sentence.Length - 1;
 
