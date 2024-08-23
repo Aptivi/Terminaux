@@ -327,10 +327,7 @@ namespace Terminaux.Inputs
                                 }
                                 isMouse = chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M';
                                 if (isMouse)
-                                {
-                                    inputTimeout.Restart();
                                     charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
-                                }
                                 while (ConsoleWrapper.KeyAvailable)
                                     ConsoleWrapper.ReadKey(true);
                             }
@@ -393,7 +390,9 @@ namespace Terminaux.Inputs
 
                 // Process dragging
                 bool dragging = false;
-                if (EnableMovementEvents)
+                if (!EnableMovementEvents && press == PointerButtonPress.Moved)
+                    return null;
+                else
                     ProcessDragging(ref press, ref buttonPtr, out dragging);
 
                 // Process double-clicks and other tiered clicks
