@@ -20,12 +20,14 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.History;
 using Terminaux.Reader.Tools;
 using Terminaux.Writer.ConsoleWriters;
+using Textify.General;
 
 namespace Terminaux.Reader
 {
@@ -311,15 +313,28 @@ namespace Terminaux.Reader
                     ConsoleWrapper.TreatCtrlCAsInput = settings.TreatCtrlCAsInput;
 
                     // Get input
+                    string[] lines = settings.PlaceholderText.SplitNewLines();
+                    string finalPlaceholder = lines.Length > 0 ? lines[0] : "";
+                    int width = ConsoleChar.EstimateCellWidth(finalPlaceholder);
+                    bool cleared = false;
                     ConsoleWrapper.CursorVisible = true;
                     while (!BindingsTools.IsTerminate(struckKey))
                     {
                         // Write placeholder if needed
-                        if (readState.CurrentText.Length == 0 && settings.PlaceholderText.Length != 0)
+                        if (readState.CurrentText.Length == 0 && finalPlaceholder.Length != 0)
+                        {
+                            cleared = false;
+                            ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
+                            TextWriterColor.WriteForReaderColor(finalPlaceholder, settings, false, new Color(ConsoleColors.Grey));
+                            ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
+                        }
+                        else if (!cleared)
                         {
                             ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
-                            TextWriterColor.WriteForReaderColor(settings.PlaceholderText, settings, false, new Color(ConsoleColors.Grey));
-                            ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
+                            TextWriterColor.WriteForReaderColor(new(' ', width), settings, false, new Color(ConsoleColors.Grey));
+                            readState.RefreshRequired = true;
+                            TermReaderTools.Refresh();
+                            cleared = true;
                         }
 
                         // Get a key
