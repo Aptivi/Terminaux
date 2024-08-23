@@ -1075,26 +1075,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.InputChoiceInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.InputChoiceInfo.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.InputChoiceTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.InputChoiceTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui-1.yml",
       "output": {
         ".html": {
@@ -1549,6 +1529,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.InputChoiceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.InputChoiceTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceTools.html"
         }
       },
       "version": ""
