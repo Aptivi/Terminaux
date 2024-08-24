@@ -27,7 +27,7 @@ using Terminaux.Inputs.Styles.Infobox;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {
-    internal class CliInfoPaneNfTestData : BaseInteractiveTui<string>, IInteractiveTui<string>
+    internal class CliInfoPaneNfTestData : BaseInteractiveTui<string, string>, IInteractiveTui<string, string>
     {
         internal static string[] types = Enum.GetNames(typeof(NerdFontsTypes));
 
@@ -44,7 +44,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 if (!Enum.TryParse<NerdFontsTypes>(typeName, out var type))
                     throw new TerminauxException($"Type name {typeName} is invalid.");
                 var nerdFontNames = NerdFontsTools.GetNerdFontCharNames(type);
-                return nerdFontNames;
+                return nerdFontNames.Select((nf) => $"{NerdFontsTools.GetNerdFontChar(type, nf)} {nf}");
             }
         }
 
@@ -59,12 +59,20 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         public override string GetEntryFromItem(string item) =>
             item;
 
+        /// <inheritdoc/>
+        public override string GetStatusFromItemSecondary(string item) =>
+            string.IsNullOrEmpty(item) ? "No info." : item;
+
+        /// <inheritdoc/>
+        public override string GetEntryFromItemSecondary(string item) =>
+            item;
+
         internal void Show()
         {
             string typeName = types[FirstPaneCurrentSelection - 1];
             if (!Enum.TryParse<NerdFontsTypes>(typeName, out var type))
                 throw new TerminauxException($"Type name {typeName} is invalid.");
-            string charName = SecondaryDataSource.ElementAt(SecondPaneCurrentSelection - 1);
+            string charName = SecondaryDataSource.ElementAt(SecondPaneCurrentSelection - 1).Substring(2).Trim();
             string nerdFontChar = NerdFontsTools.GetNerdFontChar(type, charName);
             InfoBoxColor.WriteInfoBox("NF Character Info",
                 $"WARNING: You must use a font that supports NF glyphs. Otherwise, you'll see the \"missing character\" symbol.\n" +

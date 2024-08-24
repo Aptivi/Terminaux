@@ -300,7 +300,7 @@ namespace Terminaux.Inputs.Interactive
                         var finalBackColor = finalIndex == paneCurrentSelection - 1 ? interactiveTui.Settings.PaneSelectedItemBackColor : interactiveTui.Settings.PaneItemBackColor;
                         int leftPos = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                         int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                        finalEntry = (paneNum == 2 ? interactiveTui.GetInfoFromItemSecondary((TSecondary)dataObject) : interactiveTui.GetEntryFromItem((TPrimary)dataObject)).Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                        finalEntry = (paneNum == 2 ? interactiveTui.GetEntryFromItemSecondary((TSecondary)dataObject) : interactiveTui.GetEntryFromItem((TPrimary)dataObject)).Truncate(SeparatorHalfConsoleWidthInterior - 4);
                         int width = ConsoleChar.EstimateCellWidth(finalEntry);
                         string text =
                             $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, top + 1)}" +
@@ -427,7 +427,7 @@ namespace Terminaux.Inputs.Interactive
             {
                 var data = interactiveTui.SecondaryDataSource;
                 TSecondary selectedData = (TSecondary)data.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
-                interactiveTui.Status = selectedData is not null ? interactiveTui.GetInfoFromItemSecondary(selectedData) : "No status.";
+                interactiveTui.Status = selectedData is not null ? interactiveTui.GetStatusFromItemSecondary(selectedData) : "No status.";
             }
             else
             {
