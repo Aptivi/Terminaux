@@ -470,6 +470,17 @@ namespace Terminaux.Base.Extensions
             return mode;
         }
 
+        internal static void SwapIfSourceLarger(this ref long sourceNumber, ref long targetNumber)
+        {
+            long source = sourceNumber;
+            long target = targetNumber;
+            if (sourceNumber > targetNumber)
+            {
+                sourceNumber = target;
+                targetNumber = source;
+            }
+        }
+
         static ConsoleMisc()
         {
             if (!ConsoleChecker.busy)

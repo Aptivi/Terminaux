@@ -25,7 +25,6 @@ using Terminaux.Base.Extensions;
 using SpecProbe.Software.Platform;
 using Terminaux.Base.TermInfo;
 using Terminaux.Colors.Data;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Collections.Generic;
 using Textify.General;

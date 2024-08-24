@@ -155,6 +155,10 @@ namespace Terminaux.Console.Fixtures
             new ColorSelectorNoPaletteTest(),
             new KeyInfo(),
             new MouseInfo(),
+            new TestHexEditorInteractive(),
+            new TestHexViewerInteractive(),
+            new TestTextEditorInteractive(),
+            new TestTextViewerInteractive(),
 
             // Input (CJK)
             new TestInputSelectionCjk(),
@@ -186,6 +190,10 @@ namespace Terminaux.Console.Fixtures
             new TestInputInfoBoxColoredInputCjk(),
             new TestInputInfoBoxInputPasswordCjk(),
             new TestInputInfoBoxProgressCjk(),
+            new TestHexEditorInteractiveCjk(),
+            new TestHexViewerInteractiveCjk(),
+            new TestTextEditorInteractiveCjk(),
+            new TestTextViewerInteractiveCjk(),
 
             // Color
             new ColorTest(),
