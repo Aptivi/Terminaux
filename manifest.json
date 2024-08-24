@@ -1655,16 +1655,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Selection.yml",
       "output": {
         ".html": {
