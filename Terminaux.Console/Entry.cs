@@ -36,7 +36,7 @@ namespace Terminaux.Console
             ConsoleResizeHandler.StartResizeListener();
 
             // Initialize sequences for Windows
-            ConsolePositioning.InitializeSequences();
+            ConsoleMisc.InitializeSequences();
 
             // Prepare the fixtures
             var fixtureNames = FixtureManager.GetFixtureNames();

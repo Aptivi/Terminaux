@@ -24,12 +24,11 @@ using System.Text;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Inputs.Native;
+using Terminaux.Base.Extensions.Native;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
-using static Terminaux.Inputs.Native.InputPosix;
-using static Terminaux.Inputs.Native.InputWindows;
+using static Terminaux.Base.Extensions.Native.NativeMethods;
 
 namespace Terminaux.Inputs
 {
@@ -49,7 +48,7 @@ namespace Terminaux.Inputs
         private static bool enableMouse;
         private static string caughtMouseEvent = "";
         private static readonly Stopwatch inputTimeout = new();
-        private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? ConsolePositioning.GetStdHandle(-10) : IntPtr.Zero;
+        private static readonly IntPtr stdHandle = PlatformHelper.IsOnWindows() ? NativeMethods.GetStdHandle(-10) : IntPtr.Zero;
 
         /// <summary>
         /// Checks to see whether any pending keyboard events are here
@@ -292,9 +291,9 @@ namespace Terminaux.Inputs
             else
             {
                 // Test ioctl
-                ulong ctl = InputPosix.DetermineIoCtl();
+                ulong ctl = NativeMethods.DeterminePeekIoCtl();
                 uint numRead = 0;
-                int result = InputPosix.ioctl(0, ctl, ref numRead);
+                int result = NativeMethods.ioctl(0, ctl, ref numRead);
                 if (result == -1)
                     throw new TerminauxException("Failed to read the pointer.");
                 bool error = false;
@@ -315,7 +314,7 @@ namespace Terminaux.Inputs
                         while (!isMouse)
                         {
                             byte* chars = stackalloc byte[6];
-                            result = InputPosix.read(0, chars, 6);
+                            result = NativeMethods.read(0, chars, 6);
                             if (numRead > 0)
                             {
                                 if (result == -1)
@@ -444,15 +443,15 @@ namespace Terminaux.Inputs
 
                 uint numRead = 0;
                 bool error = false;
-                ulong ctl = InputPosix.DetermineIoCtl();
-                int result = InputPosix.ioctl(0, ctl, ref numRead);
+                ulong ctl = NativeMethods.DeterminePeekIoCtl();
+                int result = NativeMethods.ioctl(0, ctl, ref numRead);
                 if (result == -1)
                     return false;
 
                 // Functions to help get output
                 int Peek(ref uint numRead, ref bool error)
                 {
-                    int result = InputPosix.ioctl(0, ctl, ref numRead);
+                    int result = NativeMethods.ioctl(0, ctl, ref numRead);
                     if (result == -1)
                     {
                         // Some failure occurred.
@@ -473,7 +472,7 @@ namespace Terminaux.Inputs
                             for (int i = 0; i < times; i++)
                             {
                                 byte* chars = stackalloc byte[6];
-                                result = InputPosix.read(0, chars, 6);
+                                result = NativeMethods.read(0, chars, 6);
                                 if (result == -1)
                                 {
                                     // Some failure occurred.
@@ -550,12 +549,12 @@ namespace Terminaux.Inputs
             if (PlatformHelper.IsOnWindows())
             {
                 // Set the appropriate modes
-                uint mode = ConsolePositioning.GetMode(stdHandle);
+                uint mode = ConsoleMisc.GetMode(stdHandle);
                 if ((mode & ENABLE_QUICK_EDIT_MODE) == 0)
                     mode |= ENABLE_QUICK_EDIT_MODE;
                 if ((mode & ENABLE_MOUSE_INPUT) != 0)
                     mode &= ~ENABLE_MOUSE_INPUT;
-                ConsolePositioning.SetConsoleMode(stdHandle, mode);
+                NativeMethods.SetConsoleMode(stdHandle, mode);
             }
             else
             {
@@ -569,12 +568,12 @@ namespace Terminaux.Inputs
             if (PlatformHelper.IsOnWindows())
             {
                 // Set the appropriate modes
-                uint mode = ConsolePositioning.GetMode(stdHandle);
+                uint mode = ConsoleMisc.GetMode(stdHandle);
                 if ((mode & ENABLE_QUICK_EDIT_MODE) != 0)
                     mode &= ~ENABLE_QUICK_EDIT_MODE;
                 if ((mode & ENABLE_MOUSE_INPUT) == 0)
                     mode |= ENABLE_MOUSE_INPUT;
-                ConsolePositioning.SetConsoleMode(stdHandle, mode);
+                NativeMethods.SetConsoleMode(stdHandle, mode);
             }
             else
             {

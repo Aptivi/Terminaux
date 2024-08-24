@@ -20,9 +20,9 @@
 using SpecProbe.Software.Platform;
 using System.Runtime.InteropServices;
 
-namespace Terminaux.Inputs.Native
+namespace Terminaux.Base.Extensions.Native
 {
-    internal static class InputPosix
+    internal static partial class NativeMethods
     {
         internal enum PosixButtonState : uint
         {
@@ -48,7 +48,7 @@ namespace Terminaux.Inputs.Native
         [DllImport("libc", SetLastError = true)]
         internal static extern int ioctl(int fd, ulong request, ref uint argp);
 
-        internal static ulong DetermineIoCtl()
+        internal static ulong DeterminePeekIoCtl()
         {
             if (PlatformHelper.IsOnMacOS())
             {

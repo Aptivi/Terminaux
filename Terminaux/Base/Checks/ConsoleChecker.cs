@@ -32,6 +32,7 @@ using Textify.General;
 using System.Text;
 using System.Threading;
 using Terminaux.Inputs;
+using Terminaux.Base.Extensions.Native;
 
 namespace Terminaux.Base.Checks
 {
@@ -201,8 +202,8 @@ namespace Terminaux.Base.Checks
             }
             else
             {
-                IntPtr stdHandle = ConsolePositioning.GetStdHandle(-11);
-                uint mode = ConsolePositioning.GetMode(stdHandle);
+                IntPtr stdHandle = NativeMethods.GetStdHandle(-11);
+                uint mode = ConsoleMisc.GetMode(stdHandle);
                 return (mode & 4) == 0;
             }
         }
@@ -305,8 +306,8 @@ namespace Terminaux.Base.Checks
             bool conHost = false;
             try
             {
-                var consolePtr = GetConsoleWindow();
-                var result = SendMessage(consolePtr, WM_GETICON, IntPtr.Zero, IntPtr.Zero);
+                var consolePtr = NativeMethods.GetConsoleWindow();
+                var result = NativeMethods.SendMessage(consolePtr, NativeMethods.WM_GETICON, IntPtr.Zero, IntPtr.Zero);
                 conHost = result != IntPtr.Zero;
             }
             catch (Exception e)
@@ -442,17 +443,5 @@ namespace Terminaux.Base.Checks
             }
             return commandOutputBuilder.ToString();
         }
-
-        #region Windows-specific
-        private const string winKernel = "kernel32.dll";
-        private const string winUser = "user32.dll";
-        private const int WM_GETICON = 0x007F;
-
-        [DllImport(winKernel, SetLastError = true)]
-        private static extern IntPtr GetConsoleWindow();
-
-        [DllImport(winUser, SetLastError = true)]
-        private static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
-        #endregion
     }
 }

@@ -24,6 +24,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Terminaux.Base.Checks;
+using Terminaux.Base.Extensions.Native;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
@@ -446,6 +447,27 @@ namespace Terminaux.Base.Extensions
             ConsoleWrapper.SetCursorPosition(0, 0);
             ConsoleWrapper.CursorVisible = false;
             isOnAltBuffer = true;
+        }
+
+        /// <summary>
+        /// Initializes the VT sequence handling for Windows systems.
+        /// </summary>
+        /// <returns>True if successful; false if not. Alays true on non-Windows systems.</returns>
+        public static bool InitializeSequences()
+        {
+            if (!PlatformHelper.IsOnWindows())
+                return true;
+            IntPtr stdHandle = NativeMethods.GetStdHandle(-11);
+            uint mode = GetMode(stdHandle);
+            if ((mode & 4) == 0)
+                return NativeMethods.SetConsoleMode(stdHandle, mode | 4);
+            return true;
+        }
+
+        internal static uint GetMode(IntPtr stdHandle)
+        {
+            NativeMethods.GetConsoleMode(stdHandle, out uint mode);
+            return mode;
         }
 
         static ConsoleMisc()

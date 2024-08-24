@@ -146,40 +146,6 @@ namespace Terminaux.Base.Extensions
             return (LeftSeekPosition, TopSeekPosition);
         }
 
-        #region Windows-specific
-        internal const string winKernel = "kernel32.dll";
-
-        [DllImport(winKernel, SetLastError = true)]
-        internal static extern bool SetConsoleMode(IntPtr hConsoleHandle, uint mode);
-
-        [DllImport(winKernel, SetLastError = true)]
-        internal static extern bool GetConsoleMode(IntPtr handle, out uint mode);
-
-        [DllImport(winKernel, SetLastError = true)]
-        internal static extern IntPtr GetStdHandle(int handle);
-
-        /// <summary>
-        /// Initializes the VT sequence handling for Windows systems.
-        /// </summary>
-        /// <returns></returns>
-        public static bool InitializeSequences()
-        {
-            if (!PlatformHelper.IsOnWindows())
-                return true;
-            IntPtr stdHandle = GetStdHandle(-11);
-            uint mode = GetMode(stdHandle);
-            if ((mode & 4) == 0)
-                return SetConsoleMode(stdHandle, mode | 4);
-            return true;
-        }
-
-        internal static uint GetMode(IntPtr stdHandle)
-        {
-            GetConsoleMode(stdHandle, out uint mode);
-            return mode;
-        }
-        #endregion
-
         internal static string BufferChar(string text, (VtSequenceType type, Match[] sequences)[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
         {
             // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around

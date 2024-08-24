@@ -20,15 +20,15 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Terminaux.Inputs.Native
+namespace Terminaux.Base.Extensions.Native
 {
-    internal static class InputWindows
+    internal static partial class NativeMethods
     {
-        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
-        internal static extern bool ReadConsoleInput(IntPtr hConsoleInput, [Out] INPUT_RECORD[] lpBuffer, uint nLength, ref uint lpNumberOfEventsRead);
+        // Library names
+        private const string winKernel = "kernel32.dll";
+        private const string winUser = "user32.dll";
 
-        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
-        internal static extern bool PeekConsoleInput(IntPtr hConsoleInput, [Out] INPUT_RECORD[] lpBuffer, uint nLength, ref uint lpNumberOfEventsRead);
+        internal const int WM_GETICON = 0x007F;
 
         internal struct COORD
         {
@@ -95,5 +95,26 @@ namespace Terminaux.Inputs.Native
             WheelScrolled = 0x0004,
             HorizontalWheelScrolled = 0x0008,
         }
+
+        [DllImport(winKernel, SetLastError = true)]
+        internal static extern bool SetConsoleMode(IntPtr hConsoleHandle, uint mode);
+
+        [DllImport(winKernel, SetLastError = true)]
+        internal static extern bool GetConsoleMode(IntPtr handle, out uint mode);
+
+        [DllImport(winKernel, SetLastError = true)]
+        internal static extern IntPtr GetStdHandle(int handle);
+
+        [DllImport(winKernel, CharSet = CharSet.Unicode)]
+        internal static extern bool ReadConsoleInput(IntPtr hConsoleInput, [Out] INPUT_RECORD[] lpBuffer, uint nLength, ref uint lpNumberOfEventsRead);
+
+        [DllImport(winKernel, CharSet = CharSet.Unicode)]
+        internal static extern bool PeekConsoleInput(IntPtr hConsoleInput, [Out] INPUT_RECORD[] lpBuffer, uint nLength, ref uint lpNumberOfEventsRead);
+
+        [DllImport(winKernel, SetLastError = true)]
+        internal static extern IntPtr GetConsoleWindow();
+
+        [DllImport(winUser, SetLastError = true)]
+        internal static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
     }
 }
