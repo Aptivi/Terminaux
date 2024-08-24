@@ -6,6 +6,7 @@
         <Copyright>Copyright (c) 2022-2024 Aptivi</Copyright>
         <LangVersion>latest</LangVersion>
         <DebugType>portable</DebugType>
+        <Nullable>enable</Nullable>
         <SignAssembly>True</SignAssembly>
         <RootPath>$(MSBuildThisFileDirectory)</RootPath>
         <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>
