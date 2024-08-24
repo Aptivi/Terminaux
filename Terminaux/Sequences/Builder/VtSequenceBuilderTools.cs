@@ -30,10 +30,10 @@ namespace Terminaux.Sequences.Builder
         /// <summary>
         /// Builds a VT sequence using specific types
         /// </summary>
-        /// <param name="specificType"></param>
-        /// <param name="arguments"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        /// <param name="specificType">A specific type</param>
+        /// <param name="arguments">List of arguments. Review the parameters of the generated methods for more info.</param>
+        /// <returns>A VT sequence that you can insert to the string builder or print to the console</returns>
+        /// <exception cref="TerminauxException"></exception>
         public static string BuildVtSequence(VtSequenceSpecificTypes specificType, params object[] arguments)
         {
             // Check the type
@@ -55,7 +55,7 @@ namespace Terminaux.Sequences.Builder
         /// </summary>
         /// <param name="sequence">The sequence to query</param>
         /// <returns>A tuple of (<see cref="VtSequenceType"/>, <see cref="VtSequenceSpecificTypes"/>) containing information about a sequence type and a sequence command type</returns>
-        /// <exception cref="Exception"></exception>
+        /// <exception cref="TerminauxException"></exception>
         public static (VtSequenceType, VtSequenceSpecificTypes) DetermineTypeFromSequence(string sequence)
         {
             // First, get all the VT sequence types
