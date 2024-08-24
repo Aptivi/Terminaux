@@ -20,6 +20,7 @@
 using Microsoft.CodeAnalysis;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Terminaux.SequenceTypesGen.Decoy;
@@ -499,11 +500,13 @@ namespace Terminaux.SequenceTypesGen
                 """;
             string footer =
                 $$"""
-                        };
+                            return generator.DynamicInvoke(arguments).ToString();
+                        }
                     }
                 }
                 """;
             var builder = new StringBuilder(header);
+            List<string> processedDelegates = [];
 
             // Populate the sequence class for every type
             for (int typeIdx = 0; typeIdx < list.Length; typeIdx++)
@@ -539,6 +542,9 @@ namespace Terminaux.SequenceTypesGen
                     }
 
                     // Build the dictionary entry
+                    string processedDelegate = $"Func<{seqParamsBuilder}string>";
+                    if (!processedDelegates.Contains(processedDelegate))
+                        processedDelegates.Add(processedDelegate);
                     builder.AppendLine(
                         $$"""
                                     { VtSequenceSpecificTypes.{{seqName}},
@@ -548,6 +554,43 @@ namespace Terminaux.SequenceTypesGen
                     if (seqIdx == seqs.Length - 1 && typeIdx < list.Length - 1)
                         builder.AppendLine();
                 }
+            }
+
+            // Now, build the DeterministicExecution() function
+            builder.AppendLine(
+                """
+                        };
+
+                        private static string DeterministicExecution(Delegate generator, params object[] arguments)
+                        {
+                """
+            );
+            for (int i = 0; i < processedDelegates.Count; i++)
+            {
+                // Build the clause and get the type
+                StringBuilder argsBuilder = new();
+                string clause = i == 0 ? "if" : "else if";
+                string type = processedDelegates[i];
+
+                // Build the parameter list
+                string[] parameters = type.Substring(5, type.Length - 6).Split([", "], StringSplitOptions.None);
+                for (int j = 0; j < parameters.Length - 1; j++)
+                {
+                    string param = parameters[j];
+                    string paramClause =
+                        param == "string" ? $"arguments[{j}].ToString()" : $"({param})arguments[{j}]";
+                    argsBuilder.Append(paramClause);
+                    if (j < parameters.Length - 2)
+                        argsBuilder.Append(", ");
+                }
+
+                // Add the conditional statement to invoke the generator
+                builder.AppendLine(
+                    $$"""
+                                {{clause}} (generator is {{type}} gen{{i}})
+                                    return gen{{i}}.Invoke({{argsBuilder}});
+                    """
+                );
             }
 
             // Add the footer

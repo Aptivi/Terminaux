@@ -78,36 +78,5 @@ namespace Terminaux.Sequences.Builder
             // If still not found, then throw
             throw new TerminauxException("Can't determine type from this sequence. Make sure that you've specified it correctly.");
         }
-
-        private static string DeterministicExecution(Delegate generator, params object[] arguments)
-        {
-            if (generator is Func<string> generatorNoArgs)
-                return generatorNoArgs.Invoke();
-            else if (generator is Func<string, string> generatorParameterized1)
-                return generatorParameterized1.Invoke(arguments[0].ToString());
-            else if (generator is Func<string, int, int, int, int, string> generatorParameterized2)
-                return generatorParameterized2.Invoke(arguments[0].ToString(), (int)arguments[1], (int)arguments[2], (int)arguments[3], (int)arguments[4]);
-            else if (generator is Func<int, int, int, int, int, int, int, int, string> generatorParameterized3)
-                return generatorParameterized3.Invoke((int)arguments[0], (int)arguments[1], (int)arguments[2], (int)arguments[3], (int)arguments[4], (int)arguments[5], (int)arguments[6], (int)arguments[7]);
-            else if (generator is Func<int, string> generatorParameterized4)
-                return generatorParameterized4.Invoke((int)arguments[0]);
-            else if (generator is Func<int, int, string> generatorParameterized5)
-                return generatorParameterized5.Invoke((int)arguments[0], (int)arguments[1]);
-            else if (generator is Func<int, int, int, int, string> generatorParameterized6)
-                return generatorParameterized6.Invoke((int)arguments[0], (int)arguments[1], (int)arguments[2], (int)arguments[3]);
-            else if (generator is Func<char, int, int, int, int, string> generatorParameterized7)
-                return generatorParameterized7.Invoke((char)arguments[0], (int)arguments[1], (int)arguments[2], (int)arguments[3], (int)arguments[4]);
-            else if (generator is Func<int, int, int, int, int, string> generatorParameterized8)
-                return generatorParameterized8.Invoke((int)arguments[0], (int)arguments[1], (int)arguments[2], (int)arguments[3], (int)arguments[4]);
-            else if (generator is Func<int, int, int, int, int, int, string> generatorParameterized9)
-                return generatorParameterized9.Invoke((int)arguments[0], (int)arguments[1], (int)arguments[2], (int)arguments[3], (int)arguments[4], (int)arguments[5]);
-            else if (generator is Func<int, int, string, string> generatorParameterized10)
-                return generatorParameterized10.Invoke((int)arguments[0], (int)arguments[1], arguments[2].ToString());
-            else if (generator is Func<int, string, string> generatorParameterized11)
-                return generatorParameterized11.Invoke((int)arguments[0], arguments[1].ToString());
-            else if (generator is Func<int, int, int, string> generatorParameterized12)
-                return generatorParameterized12.Invoke((int)arguments[0], (int)arguments[1], (int)arguments[2]);
-            return generator.DynamicInvoke(arguments).ToString();
-        }
     }
 }
