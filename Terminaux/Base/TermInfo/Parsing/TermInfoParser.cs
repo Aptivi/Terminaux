@@ -20,7 +20,7 @@
 using System;
 using System.IO;
 using System.Text;
-using Terminaux.Base.TermInfo.Extensions;
+using Textify.General;
 
 namespace Terminaux.Base.TermInfo.Parsing
 {
