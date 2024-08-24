@@ -96,7 +96,6 @@ namespace Terminaux.Inputs.Styles.Selection
                 new("Goes to the next page", ConsoleKey.PageDown),
                 new("Selects all the elements", ConsoleKey.A),
                 new("Searches for an element", ConsoleKey.F),
-                new("Shows or hides the page count", ConsoleKey.C),
             };
 
             // Make a screen
@@ -400,9 +399,6 @@ namespace Terminaux.Inputs.Styles.Selection
                                 else
                                     InfoBoxColor.WriteInfoBox("No item found.");
                                 selectionScreen.RequireRefresh();
-                                break;
-                            case ConsoleKey.C:
-                                SelectionStyleSwitches.ShowPageCount = !SelectionStyleSwitches.ShowPageCount;
                                 break;
                             case ConsoleKey.K:
                                 // Add base bindings
