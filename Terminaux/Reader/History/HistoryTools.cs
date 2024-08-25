@@ -19,10 +19,10 @@
 
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using Terminaux.Base;
-using Textify.Tools;
 
 namespace Terminaux.Reader.History
 {

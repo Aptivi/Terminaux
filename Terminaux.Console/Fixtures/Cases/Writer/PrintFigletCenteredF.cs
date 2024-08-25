@@ -28,7 +28,10 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
     {
         public void RunFixture()
         {
-            CenteredFigletTextColor.WriteCenteredFigletColor(FigletFonts.TryGetByName("banner3"), "Hello, {0}!", new Color(ConsoleColors.Green), Vars: "Terminaux");
+            var font = FigletFonts.TryGetByName("banner3");
+            if (font is null)
+                return;
+            CenteredFigletTextColor.WriteCenteredFigletColor(font, "Hello, {0}!", new Color(ConsoleColors.Green), Vars: "Terminaux");
         }
     }
 }
