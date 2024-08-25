@@ -17,14 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Linq;
 using System.Text;
-using Terminaux.Inputs;
-using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Editor;
-using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.General;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
 {

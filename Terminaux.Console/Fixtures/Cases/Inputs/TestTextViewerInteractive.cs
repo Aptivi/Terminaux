@@ -18,11 +18,7 @@
 //
 
 using System.Linq;
-using Terminaux.Inputs;
-using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Editor;
-using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs

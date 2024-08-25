@@ -20,7 +20,6 @@
 using System;
 using System.Text;
 using Terminaux.Base;
-using Terminaux.Base.Extensions;
 using Terminaux.Inputs;
 using Terminaux.Reader.Tools;
 using Textify.General;
