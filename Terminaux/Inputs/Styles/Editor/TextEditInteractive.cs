@@ -105,7 +105,7 @@ namespace Terminaux.Inputs.Styles.Editor
                     // Wait for a keypress
                     ScreenTools.Render(screen);
                     var keypress = Input.ReadKey();
-                    HandleKeypress(keypress, ref lines, settings);
+                    HandleKeypress(keypress, ref lines, screen, settings);
 
                     // Reset, in case selection changed
                     screen.RemoveBufferedParts();
@@ -128,7 +128,7 @@ namespace Terminaux.Inputs.Styles.Editor
             var part = new ScreenPart();
             part.AddDynamicText(() =>
             {
-                return KeybindingsWriter.RenderKeybindings(bindings,
+                return KeybindingsWriter.RenderKeybindings(entering ? bindingsEntering : bindings,
                     settings.KeyBindingBuiltinColor, settings.KeyBindingBuiltinForegroundColor, settings.KeyBindingBuiltinBackgroundColor,
                     settings.KeyBindingOptionColor, settings.OptionForegroundColor, settings.OptionBackgroundColor,
                     0, ConsoleWrapper.WindowHeight - 1);
@@ -278,7 +278,7 @@ namespace Terminaux.Inputs.Styles.Editor
             screen.AddBufferedPart("Text editor interactive - Contents", part);
         }
 
-        private static void HandleKeypress(ConsoleKeyInfo key, ref List<string> lines, InteractiveTuiSettings settings)
+        private static void HandleKeypress(ConsoleKeyInfo key, ref List<string> lines, Screen screen, InteractiveTuiSettings settings)
         {
             switch (key.Key)
             {
@@ -319,7 +319,7 @@ namespace Terminaux.Inputs.Styles.Editor
                         DeleteChar(ref lines);
                         break;
                     case ConsoleKey.Escape:
-                        SwitchEnter(lines);
+                        SwitchEnter(lines, screen);
                         break;
                     case ConsoleKey.Enter:
                         Insert(ref lines);
@@ -340,7 +340,7 @@ namespace Terminaux.Inputs.Styles.Editor
                         RenderKeybindingsBox(settings);
                         break;
                     case ConsoleKey.I:
-                        SwitchEnter(lines);
+                        SwitchEnter(lines, screen);
                         break;
                     case ConsoleKey.F1:
                         if (key.Modifiers == ConsoleModifiers.Shift)
@@ -607,9 +607,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 lineColIdx = 0;
         }
 
-        private static void SwitchEnter(List<string> lines)
+        private static void SwitchEnter(List<string> lines, Screen screen)
         {
             entering = !entering;
+            screen.RequireRefresh();
             UpdateLineIndex(lineIdx, lines);
         }
 
