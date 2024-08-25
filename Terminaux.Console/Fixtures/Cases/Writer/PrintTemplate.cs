@@ -44,6 +44,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 }
                 """;
             var template = TemplateTools.GetTemplateFromJson(templateJson);
+            if (template is null)
+                return;
             TemplateTools.RegisterTemplate(template);
             TextWriterColor.WriteColor("[Before - {0}] Hello world!", true, TemplateTools.GetColor(PredefinedComponentType.Text), TemplateTools.Exists(name));
             TemplateTools.SetDefaultTemplate(name);

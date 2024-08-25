@@ -42,7 +42,7 @@ namespace Terminaux.Tests.Inputs
         [TestMethod]
         public void TestGetInputChoicesAnswersTitleNoMatch()
         {
-            var choices = InputChoiceTools.GetInputChoices([("Y", "Yes"), ("N", null), ("C", "Cancel")]);
+            var choices = InputChoiceTools.GetInputChoices([("Y", "Yes"), ("N", ""), ("C", "Cancel")]);
             choices.Length.ShouldBe(3);
             choices[0].ChoiceName.ShouldBe("Y");
             choices[1].ChoiceName.ShouldBe("N");
@@ -55,7 +55,7 @@ namespace Terminaux.Tests.Inputs
         [TestMethod]
         public void TestGetInputChoicesAnswersAnswerNoMatch()
         {
-            var choices = InputChoiceTools.GetInputChoices([("Y", "Yes"), ("N", "No"), (null, "Cancel")]);
+            var choices = InputChoiceTools.GetInputChoices([("Y", "Yes"), ("N", "No"), ("", "Cancel")]);
             choices.Length.ShouldBe(3);
             choices[0].ChoiceName.ShouldBe("Y");
             choices[1].ChoiceName.ShouldBe("N");

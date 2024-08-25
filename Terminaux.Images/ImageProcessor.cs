@@ -168,6 +168,8 @@ namespace Terminaux.Images
 
                 // Using ImageMagick's pixel information, return the new Color instance by adding it to the colors array.
                 var pixelColor = pixel.ToColor();
+                if (pixelColor is null)
+                    continue;
                 var color = new Color(pixelColor.R, pixelColor.G, pixelColor.B, new(ColorTools.GlobalSettings) { Opacity = pixelColor.A });
                 colors[pixelX, pixelY] = color;
             }
@@ -185,7 +187,7 @@ namespace Terminaux.Images
         /// <param name="top">Zero-based console top position to start writing the image to</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(int width, int height, int left, int top, Color background = null) =>
+        public static string RenderImage(int width, int height, int left, int top, Color? background = null) =>
             RenderImage(GraphicsTools.placeholderStream, width, height, left, top, background);
 
         /// <summary>
@@ -198,7 +200,7 @@ namespace Terminaux.Images
         /// <param name="top">Zero-based console top position to start writing the image to</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(string imagePath, int width, int height, int left, int top, Color background = null)
+        public static string RenderImage(string imagePath, int width, int height, int left, int top, Color? background = null)
         {
             var imageColors = GetColorsFromImage(imagePath);
             return RenderImage(imageColors, width, height, left, top, background, true);
@@ -214,7 +216,7 @@ namespace Terminaux.Images
         /// <param name="top">Zero-based console top position to start writing the image to</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(byte[] imageBytes, int width, int height, int left, int top, Color background = null)
+        public static string RenderImage(byte[] imageBytes, int width, int height, int left, int top, Color? background = null)
         {
             var imageColors = GetColorsFromImage(imageBytes);
             return RenderImage(imageColors, width, height, left, top, background, true);
@@ -230,7 +232,7 @@ namespace Terminaux.Images
         /// <param name="top">Zero-based console top position to start writing the image to</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(Stream imageStream, int width, int height, int left, int top, Color background = null)
+        public static string RenderImage(Stream imageStream, int width, int height, int left, int top, Color? background = null)
         {
             var imageColors = GetColorsFromImage(imageStream);
             if (imageStream.CanSeek)
@@ -248,7 +250,7 @@ namespace Terminaux.Images
         /// <param name="top">Zero-based console top position to start writing the image to</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(MagickImage image, int width, int height, int left, int top, Color background = null)
+        public static string RenderImage(MagickImage image, int width, int height, int left, int top, Color? background = null)
         {
             var imageColors = GetColorsFromImage(image);
             return RenderImage(imageColors, width, height, left, top, background, true);
@@ -261,7 +263,7 @@ namespace Terminaux.Images
         /// <param name="height">Height of the resulting image</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(int width, int height, Color background = null) =>
+        public static string RenderImage(int width, int height, Color? background = null) =>
             RenderImage(GraphicsTools.placeholderStream, width, height, background);
 
         /// <summary>
@@ -272,7 +274,7 @@ namespace Terminaux.Images
         /// <param name="height">Height of the resulting image</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(string imagePath, int width, int height, Color background = null)
+        public static string RenderImage(string imagePath, int width, int height, Color? background = null)
         {
             var imageColors = GetColorsFromImage(imagePath);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
@@ -286,7 +288,7 @@ namespace Terminaux.Images
         /// <param name="height">Height of the resulting image</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(byte[] imageBytes, int width, int height, Color background = null)
+        public static string RenderImage(byte[] imageBytes, int width, int height, Color? background = null)
         {
             var imageColors = GetColorsFromImage(imageBytes);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
@@ -300,7 +302,7 @@ namespace Terminaux.Images
         /// <param name="height">Height of the resulting image</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(Stream imageStream, int width, int height, Color background = null)
+        public static string RenderImage(Stream imageStream, int width, int height, Color? background = null)
         {
             var imageColors = GetColorsFromImage(imageStream);
             if (imageStream.CanSeek)
@@ -316,13 +318,13 @@ namespace Terminaux.Images
         /// <param name="height">Height of the resulting image</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderImage(MagickImage image, int width, int height, Color background = null)
+        public static string RenderImage(MagickImage image, int width, int height, Color? background = null)
         {
             var imageColors = GetColorsFromImage(image);
             return RenderImage(imageColors, width, height, 0, 0, background, false);
         }
 
-        internal static string RenderImage(Color[,] imageColors, int width, int height, int left, int top, Color background, bool useLeftTop)
+        internal static string RenderImage(Color[,] imageColors, int width, int height, int left, int top, Color? background, bool useLeftTop)
         {
             // Get the image width and height in pixels and get their comparison factor
             int imageWidth = imageColors.GetLength(0);

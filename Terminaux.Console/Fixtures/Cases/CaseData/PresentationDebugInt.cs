@@ -312,25 +312,28 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                         var method5 = input5.GetInputMethod<SelectionMultipleInputMethod>();
 
                                         // Now, form the resulting string
-                                        string results = ("Input 1: {0}\n" +
-                                                          "Input 2: {1}\n" +
-                                                          "Input 3: {2}\n" +
-                                                          "Input 4: {3}\n" +
-                                                          "Input 5: {4}")
-                                        .FormatString
-                                        (
-                                            // Second page
-                                            method1.Input,
+                                        if (method2.Choices is not null && method3.Choices is not null && method4.Choices is not null && method5.Choices is not null){
+                                            string results = ("Input 1: {0}\n" +
+                                                              "Input 2: {1}\n" +
+                                                              "Input 3: {2}\n" +
+                                                              "Input 4: {3}\n" +
+                                                              "Input 5: {4}")
+                                            .FormatString
+                                            (
+                                                // Second page
+                                                method1.Input,
 
-                                            // Fifth page
-                                            method2.Choices[method2.Input].ChoiceName,
-                                            method3.Choices[method3.Input].ChoiceName,
+                                                // Fifth page
+                                                method2.Choices[method2.Input].ChoiceName,
+                                                method3.Choices[method3.Input].ChoiceName,
 
-                                            // Sixth page
-                                            string.Join(", ", method4.Input.Select((idx) => method4.Choices[idx].ChoiceName)),
-                                            string.Join(", ", method5.Input.Select((idx) => method5.Choices[idx].ChoiceName))
-                                        );
-                                        return results;
+                                                // Sixth page
+                                                string.Join(", ", method4.Input.Select((idx) => method4.Choices[idx].ChoiceName)),
+                                                string.Join(", ", method5.Input.Select((idx) => method5.Choices[idx].ChoiceName))
+                                            );
+                                            return results;
+                                        }
+                                        return "";
                                     })
                                 ]
                             },

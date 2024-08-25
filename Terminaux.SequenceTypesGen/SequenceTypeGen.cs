@@ -40,6 +40,8 @@ namespace Terminaux.SequenceTypesGen
 
             // Read all the console sequences data
             var list = JsonConvert.DeserializeObject<SequenceTypeInfo[]>(content);
+            if (list is null)
+                return;
             SequencesGeneralEnumGenerator(list, context);
             SequencesGeneralClassGenerator(list, context);
             SequencesEnumGenerator(list, context);

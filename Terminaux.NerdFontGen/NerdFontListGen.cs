@@ -38,6 +38,8 @@ namespace Terminaux.NerdFontGen
 
             // Read all the Nerd Fonts data
             var list = JsonConvert.DeserializeObject<NerdFontInfo[]>(content);
+            if (list is null)
+                return;
             NerdFontsEnumGenerator(list, context);
             NerdFontsClassGenerator(list, context);
             NerdFontsDictionaryGenerator(list, context);

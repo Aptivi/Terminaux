@@ -44,12 +44,15 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
 
             // Check to see if we're given the test info
             if (selected is null)
+            {
                 Status = "No info.";
+                return Status;
+            }
             else
+            {
                 Status = $"{selected.Names[0]} - {selected.Names[1]}";
-
-            // Now, populate the info
-            return ShowDesc(selected);
+                return ShowDesc(selected);
+            }
         }
 
         /// <inheritdoc/>
@@ -70,6 +73,8 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 if (!termInfoName.StartsWith("Terminaux.Console.Assets.TermInfoData."))
                     continue;
                 var stream = asm.GetManifestResourceStream(termInfoName);
+                if (stream is null)
+                    continue;
                 var desc = TermInfoDesc.Load(stream);
                 if (desc is not null)
                     descs.Add(desc);
@@ -85,7 +90,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             if (idx < 0)
                 return;
             string name = names[idx];
-            if (!TermInfoDesc.TryLoad(name, out TermInfoDesc desc))
+            if (!TermInfoDesc.TryLoad(name, out TermInfoDesc? desc) || desc is null)
                 return;
             string descString = ShowDesc(desc);
             InfoBoxColor.WriteInfoBox(name, descString);

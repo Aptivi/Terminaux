@@ -56,6 +56,8 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
                 }
                 """;
             var template = SyntaxHighlightingTools.GetHighlighterFromJson(highlighterJson);
+            if (template is null)
+                return;
             SyntaxHighlightingTools.RegisterHighlighter(template);
             var settingsCustom = new TermReaderSettings()
             {
@@ -89,6 +91,8 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
                 }
                 """;
             var templateDouble = SyntaxHighlightingTools.GetHighlighterFromJson(highlighterDoubleJson);
+            if (templateDouble is null)
+                return;
             SyntaxHighlightingTools.RegisterHighlighter(templateDouble);
             var settingsDoubleCustom = new TermReaderSettings()
             {

@@ -34,6 +34,8 @@ namespace Terminaux.Console.Fixtures.Cases.Images
                 if (!pictureName.StartsWith("Terminaux.Console.Assets.vectors."))
                     continue;
                 var stream = asm.GetManifestResourceStream(pictureName);
+                if (stream is null)
+                    return;
                 string rendered = ImageProcessor.RenderImage(stream, 40, 20, 4, 2);
                 TextWriterRaw.WriteRaw(rendered);
             }

@@ -34,6 +34,8 @@ namespace Terminaux.Tests.TermInfo
             var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/TermInfo/Data/windows-ansi");
 
             // When
+            if (stream is null)
+                Assert.Fail(nameof(stream));
             var info = TermInfoDesc.Load(stream);
 
             // Then
@@ -52,6 +54,8 @@ namespace Terminaux.Tests.TermInfo
             var stream = EmbeddedResourceReader.LoadResourceStream($"Terminaux.Tests/TermInfo/Data/{terminfo}");
 
             // When
+            if (stream is null)
+                Assert.Fail(nameof(stream));
             var info = TermInfoDesc.Load(stream);
 
             // Then
@@ -65,6 +69,8 @@ namespace Terminaux.Tests.TermInfo
             var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/TermInfo/Data/eterm-256color");
 
             // When
+            if (stream is null)
+                Assert.Fail(nameof(stream));
             var info = TermInfoDesc.Load(stream);
 
             // Then
@@ -84,6 +90,8 @@ namespace Terminaux.Tests.TermInfo
             var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/TermInfo/Data/linux");
 
             // When
+            if (stream is null)
+                Assert.Fail(nameof(stream));
             var info = TermInfoDesc.Load(stream);
 
             // Then
@@ -106,6 +114,8 @@ namespace Terminaux.Tests.TermInfo
             var stream = EmbeddedResourceReader.LoadResourceStream("Terminaux.Tests/TermInfo/Data/linux");
 
             // When
+            if (stream is null)
+                Assert.Fail(nameof(stream));
             var info = TermInfoDesc.Load(stream);
 
             // Then

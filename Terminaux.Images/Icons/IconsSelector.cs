@@ -122,6 +122,8 @@ namespace Terminaux.Images.Icons
                     {
                         // Mouse input received.
                         var mouse = Input.ReadPointer();
+                        if (mouse is null)
+                            continue;
                         switch (mouse.Button)
                         {
                             case PointerButton.WheelUp:
