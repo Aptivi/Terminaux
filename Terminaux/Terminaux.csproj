@@ -48,7 +48,7 @@
     <PackageReference Include="SpecProbe.Software" Version="3.0.0" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
     <PackageReference Include="Textify.Figlet" Version="1.11.0" />
-    <PackageReference Include="Textify.Offline" Version="1.11.0" />
+    <PackageReference Include="Textify.Offline" Version="1.11.1" />
   </ItemGroup>
 
   <ItemGroup>
