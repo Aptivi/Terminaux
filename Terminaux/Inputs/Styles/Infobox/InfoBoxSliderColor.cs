@@ -301,7 +301,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Now, write the current position on the border of the slider bar and the arrows
                     boxBuffer.Append(
-                        TextWriterWhereColor.RenderWhereColorBack($"╣ {selected} / {maxPos} ╠", sliderPosX + 2, sliderPosY + 2, InfoBoxTitledSliderColor, BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack($"{settings.BorderRightHorizontalIntersectionChar} {selected} / {maxPos} {settings.BorderLeftHorizontalIntersectionChar}", sliderPosX + 2, sliderPosY + 2, InfoBoxTitledSliderColor, BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("◀", sliderPosX, sliderPosY + 1, InfoBoxTitledSliderColor, BackgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("▶", sliderPosX + maxSliderWidth + 1, sliderPosY + 1, InfoBoxTitledSliderColor, BackgroundColor)
                     );
