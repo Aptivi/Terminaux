@@ -230,21 +230,21 @@ namespace Terminaux.Inputs.Styles.Editor
                     bail = true;
                     break;
                 case ConsoleKey.K:
-                    RenderKeybindingsBox(bytes, settings);
+                    RenderKeybindingsBox(settings);
                     break;
                 case ConsoleKey.F1:
-                    Insert(bytes, settings);
+                    Insert(ref bytes, settings);
                     break;
                 case ConsoleKey.F2:
-                    Remove(bytes);
+                    Remove(ref bytes);
                     break;
                 case ConsoleKey.F3:
                     if (key.Modifiers == ConsoleModifiers.Shift)
-                        ReplaceAll(bytes, settings);
+                        ReplaceAll(ref bytes, settings);
                     else if (key.Modifiers == (ConsoleModifiers.Shift | ConsoleModifiers.Alt))
-                        ReplaceAllWhat(bytes, settings);
+                        ReplaceAllWhat(ref bytes, settings);
                     else
-                        Replace(bytes, settings);
+                        Replace(ref bytes, settings);
                     break;
                 case ConsoleKey.F4:
                     NumInfo(bytes, settings);
@@ -252,16 +252,15 @@ namespace Terminaux.Inputs.Styles.Editor
             }
         }
 
-        private static byte[] RenderKeybindingsBox(byte[] bytes, InteractiveTuiSettings settings)
+        private static void RenderKeybindingsBox(InteractiveTuiSettings settings)
         {
             // Show the available keys list
             if (bindings.Length == 0)
-                return bytes;
+                return;
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingsWriter.RenderKeybindingHelpText(bindings);
             InfoBoxColor.WriteInfoBoxColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
-            return bytes;
         }
 
         private static void MoveBackward()
@@ -292,7 +291,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 byteIdx = bytes.Length - 1;
         }
 
-        private static byte[] Insert(byte[] bytes, InteractiveTuiSettings settings)
+        private static void Insert(ref byte[] bytes, InteractiveTuiSettings settings)
         {
             // Prompt and parse the number
             byte byteNum = default;
@@ -301,14 +300,13 @@ namespace Terminaux.Inputs.Styles.Editor
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
                 InfoBoxColor.WriteInfoBoxColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
             else
-                bytes = AddNewByte(bytes, byteNum, byteIdx + 1);
-            return bytes;
+                AddNewByte(ref bytes, byteNum, byteIdx + 1);
         }
 
-        private static byte[] Remove(byte[] bytes) =>
-            DeleteByte(bytes, byteIdx + 1);
+        private static void Remove(ref byte[] bytes) =>
+            DeleteByte(ref bytes, byteIdx + 1);
 
-        private static byte[] Replace(byte[] bytes, InteractiveTuiSettings settings)
+        private static void Replace(ref byte[] bytes, InteractiveTuiSettings settings)
         {
             // Get the current byte number and its hex
             byte byteNum = bytes[byteIdx];
@@ -322,11 +320,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 InfoBoxColor.WriteInfoBoxColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
 
             // Do the replacement!
-            bytes = Replace(bytes, byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
-            return bytes;
+            Replace(ref bytes, byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
         }
 
-        private static byte[] ReplaceAll(byte[] bytes, InteractiveTuiSettings settings)
+        private static void ReplaceAll(ref byte[] bytes, InteractiveTuiSettings settings)
         {
             // Get the current byte number and its hex
             byte byteNum = bytes[byteIdx];
@@ -340,11 +337,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 InfoBoxColor.WriteInfoBoxColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
 
             // Do the replacement!
-            bytes = Replace(bytes, byteNum, byteNumReplaced);
-            return bytes;
+            Replace(ref bytes, byteNum, byteNumReplaced);
         }
 
-        private static byte[] ReplaceAllWhat(byte[] bytes, InteractiveTuiSettings settings)
+        private static void ReplaceAllWhat(ref byte[] bytes, InteractiveTuiSettings settings)
         {
             // Prompt and parse the number
             byte byteNum = default;
@@ -361,11 +357,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 InfoBoxColor.WriteInfoBoxColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
 
             // Do the replacement!
-            bytes = Replace(bytes, byteNum, byteNumReplaced);
-            return bytes;
+            Replace(ref bytes, byteNum, byteNumReplaced);
         }
 
-        private static byte[] NumInfo(byte[] bytes, InteractiveTuiSettings settings)
+        private static void NumInfo(byte[] bytes, InteractiveTuiSettings settings)
         {
             // Get the hex number in different formats
             byte byteNum = bytes[byteIdx];
@@ -385,7 +380,6 @@ namespace Terminaux.Inputs.Styles.Editor
                 $"Number:       {byteNumNumber}" + CharManager.NewLine +
                 $"Binary:       {byteNumBinary}"
                 , settings.BoxForegroundColor, settings.BoxBackgroundColor);
-            return bytes;
         }
 
         private static void StatusNumInfo(byte[] bytes)
@@ -509,7 +503,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 throw new ArgumentOutOfRangeException($"The specified byte number is invalid. {StartByte}, {EndByte}");
         }
 
-        private static byte[] AddNewByte(byte[] bytes, byte Content, long pos)
+        private static void AddNewByte(ref byte[] bytes, byte Content, long pos)
         {
             if (bytes is not null)
             {
@@ -531,10 +525,9 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on a null array.");
-            return bytes;
         }
 
-        private static byte[] DeleteByte(byte[] bytes, long ByteNumber)
+        private static void DeleteByte(ref byte[] bytes, long ByteNumber)
         {
             if (bytes is not null)
             {
@@ -554,13 +547,12 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on a null array.");
-            return bytes;
         }
 
-        private static byte[] Replace(byte[] bytes, byte FromByte, byte WithByte) =>
-            Replace(bytes, FromByte, WithByte, 1L, bytes.LongLength);
+        private static void Replace(ref byte[] bytes, byte FromByte, byte WithByte) =>
+            Replace(ref bytes, FromByte, WithByte, 1L, bytes.LongLength);
 
-        private static byte[] Replace(byte[] bytes, byte FromByte, byte WithByte, long StartByte, long EndByte)
+        private static void Replace(ref byte[] bytes, byte FromByte, byte WithByte, long StartByte, long EndByte)
         {
             if (bytes is not null)
             {
@@ -581,7 +573,6 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on a null array.");
-            return bytes;
         }
     }
 }

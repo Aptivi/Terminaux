@@ -313,19 +313,19 @@ namespace Terminaux.Inputs.Styles.Editor
                 switch (key.Key)
                 {
                     case ConsoleKey.Backspace:
-                        RuboutChar(lines);
+                        RuboutChar(ref lines);
                         break;
                     case ConsoleKey.Delete:
-                        DeleteChar(lines);
+                        DeleteChar(ref lines);
                         break;
                     case ConsoleKey.Escape:
                         SwitchEnter(lines);
                         break;
                     case ConsoleKey.Enter:
-                        Insert(lines);
+                        Insert(ref lines);
                         break;
                     default:
-                        InsertChar(key.KeyChar, lines);
+                        InsertChar(key.KeyChar, ref lines);
                         break;
                 }
             }
@@ -337,53 +337,52 @@ namespace Terminaux.Inputs.Styles.Editor
                         bail = true;
                         break;
                     case ConsoleKey.K:
-                        RenderKeybindingsBox(lines, settings);
+                        RenderKeybindingsBox(settings);
                         break;
                     case ConsoleKey.I:
                         SwitchEnter(lines);
                         break;
                     case ConsoleKey.F1:
                         if (key.Modifiers == ConsoleModifiers.Shift)
-                            InsertNoMove(lines);
+                            InsertNoMove(ref lines);
                         else
-                            Insert(lines);
+                            Insert(ref lines);
                         break;
                     case ConsoleKey.F2:
                         if (key.Modifiers == ConsoleModifiers.Shift)
-                            RemoveLineNoMove(lines);
+                            RemoveLineNoMove(ref lines);
                         else
-                            RemoveLine(lines);
+                            RemoveLine(ref lines);
                         break;
                     case ConsoleKey.F3:
                         if (key.Modifiers == ConsoleModifiers.Shift)
-                            ReplaceAll(lines, settings);
+                            ReplaceAll(ref lines, settings);
                         else
-                            Replace(lines, settings);
+                            Replace(ref lines, settings);
                         break;
                     default:
-                        InsertChar(key.KeyChar, lines);
+                        InsertChar(key.KeyChar, ref lines);
                         break;
                 }
             }
         }
 
-        private static List<string> InsertChar(char keyChar, List<string> lines)
+        private static void InsertChar(char keyChar, ref List<string> lines)
         {
             // Check the lines
             if (lines.Count == 0)
-                return lines;
+                return;
 
             // Insert a character
             lines[lineIdx] = lines[lineIdx].Insert(lines[lineIdx].Length == 0 ? 0 : lineColIdx, $"{keyChar}");
             MoveForward(lines);
-            return lines;
         }
 
-        private static List<string> RuboutChar(List<string> lines)
+        private static void RuboutChar(ref List<string> lines)
         {
             // Check the lines
             if (lines.Count == 0)
-                return lines;
+                return;
 
             // Delete a character
             if (lineColIdx > 0)
@@ -400,19 +399,18 @@ namespace Terminaux.Inputs.Styles.Editor
                 string substring = lines[lineIdx];
                 int oldLen = lines[lineIdx - 1].Length;
                 lines[lineIdx - 1] = lines[lineIdx - 1] + substring;
-                RemoveLine(lines);
+                RemoveLine(ref lines);
                 UpdateColumnIndex(oldLen, lines);
             }
-            return lines;
         }
 
-        private static List<string> DeleteChar(List<string> lines)
+        private static void DeleteChar(ref List<string> lines)
         {
             // Check the lines
             if (lines.Count == 0)
-                return lines;
+                return;
             if (lines[lineIdx].Length == lineColIdx && lineColIdx > 0)
-                return lines;
+                return;
 
             // Delete a character
             if (lines[lineIdx].Length > 0)
@@ -425,21 +423,19 @@ namespace Terminaux.Inputs.Styles.Editor
                 UpdateLineIndex(lineIdx, lines);
             }
             else
-                RemoveLine(lines);
-            return lines;
+                RemoveLine(ref lines);
         }
 
-        private static List<string> RenderKeybindingsBox(List<string> lines, InteractiveTuiSettings settings)
+        private static void RenderKeybindingsBox(InteractiveTuiSettings settings)
         {
             // Show the available keys list
             var finalBindings = entering ? bindingsEntering : bindings;
             if (finalBindings.Length == 0)
-                return lines;
+                return;
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingsWriter.RenderKeybindingHelpText(finalBindings);
             InfoBoxColor.WriteInfoBoxColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
-            return lines;
         }
 
         private static void MoveBackward(List<string> lines) =>
@@ -454,7 +450,7 @@ namespace Terminaux.Inputs.Styles.Editor
         private static void MoveDown(List<string> lines) =>
             UpdateLineIndex(lineIdx + 1, lines);
 
-        private static List<string> Insert(List<string> lines)
+        private static void Insert(ref List<string> lines)
         {
             // Insert a line
             if (lines.Count == 0)
@@ -473,22 +469,20 @@ namespace Terminaux.Inputs.Styles.Editor
 
             MoveDown(lines);
             UpdateColumnIndex(0, lines);
-            return lines;
         }
 
-        private static List<string> RemoveLine(List<string> lines)
+        private static void RemoveLine(ref List<string> lines)
         {
             // Check the lines
             if (lines.Count == 0)
-                return lines;
+                return;
 
             // Remove a line
-            lines = RemoveLine(lines, lineIdx + 1);
+            RemoveLine(ref lines, lineIdx + 1);
             MoveUp(lines);
-            return lines;
         }
 
-        private static List<string> InsertNoMove(List<string> lines)
+        private static void InsertNoMove(ref List<string> lines)
         {
             // Insert a line
             if (lines.Count == 0)
@@ -496,49 +490,45 @@ namespace Terminaux.Inputs.Styles.Editor
             else
                 lines.Insert(lineIdx + 1, "");
             UpdateLineIndex(lineIdx, lines);
-            return lines;
         }
 
-        private static List<string> RemoveLineNoMove(List<string> lines)
+        private static void RemoveLineNoMove(ref List<string> lines)
         {
             // Check the lines
             if (lines.Count == 0)
-                return lines;
+                return;
 
             // Remove a line
-            lines = RemoveLine(lines, lineIdx + 1);
+            RemoveLine(ref lines, lineIdx + 1);
             UpdateLineIndex(lineIdx, lines);
-            return lines;
         }
 
-        private static List<string> Replace(List<string> lines, InteractiveTuiSettings settings)
+        private static void Replace(ref List<string> lines, InteractiveTuiSettings settings)
         {
             // Check the lines
             if (lines.Count == 0)
-                return lines;
+                return;
 
             // Now, prompt for the replacement line
             string replacementText = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the string to find", settings.BoxForegroundColor, settings.BoxBackgroundColor);
             string replacedText = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the replacement string", settings.BoxForegroundColor, settings.BoxBackgroundColor);
 
             // Do the replacement!
-            lines = Replace(lines, replacementText, replacedText, lineIdx + 1);
-            return lines;
+            Replace(ref lines, replacementText, replacedText, lineIdx + 1);
         }
 
-        private static List<string> ReplaceAll(List<string> lines, InteractiveTuiSettings settings)
+        private static void ReplaceAll(ref List<string> lines, InteractiveTuiSettings settings)
         {
             // Check the lines
             if (lines.Count == 0)
-                return lines;
+                return;
 
             // Now, prompt for the replacement line
             string replacementText = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the string to find", settings.BoxForegroundColor, settings.BoxBackgroundColor);
             string replacedText = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the replacement string", settings.BoxForegroundColor, settings.BoxBackgroundColor);
 
             // Do the replacement!
-            lines = Replace(lines, replacementText, replacedText);
-            return lines;
+            Replace(ref lines, replacementText, replacedText);
         }
 
         private static void StatusTextInfo(List<string> lines)
@@ -617,11 +607,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 lineColIdx = 0;
         }
 
-        private static List<string> SwitchEnter(List<string> lines)
+        private static void SwitchEnter(List<string> lines)
         {
             entering = !entering;
             UpdateLineIndex(lineIdx, lines);
-            return lines;
         }
 
         private static (int, string)[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
@@ -640,7 +629,7 @@ namespace Terminaux.Inputs.Styles.Editor
             return [.. sequences];
         }
 
-        private static List<string> RemoveLine(List<string> lines, int LineNumber)
+        private static void RemoveLine(ref List<string> lines, int LineNumber)
         {
             if (lines is not null)
             {
@@ -652,10 +641,9 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on null lines list.");
-            return lines;
         }
 
-        private static List<string> Replace(List<string> lines, string From, string With)
+        private static void Replace(ref List<string> lines, string From, string With)
         {
             if (string.IsNullOrEmpty(From))
                 throw new ArgumentNullException(nameof(From));
@@ -666,10 +654,9 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on null lines list.");
-            return lines;
         }
 
-        private static List<string> Replace(List<string> lines, string From, string With, int LineNumber)
+        private static void Replace(ref List<string> lines, string From, string With, int LineNumber)
         {
             if (string.IsNullOrEmpty(From))
                 throw new ArgumentNullException(nameof(From));
@@ -683,7 +670,6 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             else
                 throw new ArgumentNullException("Can't perform this operation on null lines list.");
-            return lines;
         }
     }
 }
