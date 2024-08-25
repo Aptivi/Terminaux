@@ -256,8 +256,6 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                 int currIdx = 0;
                 int increment = 0;
-                bool exiting = false;
-                bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
@@ -266,7 +264,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderTextSelection(selections, title, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, true, vars)
+                        InfoBoxColor.RenderTextSelection(selections, title, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, useColor, ref increment, currIdx, true, vars)
                     );
 
                     // Buffer the selection box
@@ -426,7 +424,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     ShowBindings();
                                 else if (PointerTools.PointerWithinRange(mouse, (buttonLeftCloseMin, buttonsTop), (buttonLeftCloseMax, buttonsTop)))
                                 {
-                                    exiting = true;
                                     bail = true;
                                     cancel = true;
                                 }
@@ -605,8 +602,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case ConsoleKey.K:
                                 // Keys function
                                 ShowBindings();
-                                delay = false;
-                                exiting = false;
                                 break;
 
                         }

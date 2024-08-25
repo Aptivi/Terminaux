@@ -379,21 +379,21 @@ namespace Terminaux.Inputs.Styles.Infobox
                 // Draw the border and the text
                 int currIdx = 0;
                 int increment = 0;
-                bool exiting = false;
-                bool delay = false;
+                bool bail = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
-                    return RenderText(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, true, waitForInput, vars);
+                    return RenderText(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, true, waitForInput, vars);
                 });
 
                 // Main loop
-                while (!exiting)
+                while (!bail)
                 {
                     // Render the screen
                     ScreenTools.Render();
 
                     // Wait until the user presses any key to close the box
-                    string[] splitFinalLines;
+                    string[] splitFinalLines = GetFinalLines(text, vars);
+                    var (_, maxHeightOut, _, _, _) = GetDimensions(splitFinalLines);
                     if (waitForInput)
                     {
                         SpinWait.SpinUntil(() => Input.InputAvailable);
@@ -465,23 +465,17 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     if (PointerTools.PointerWithinRange(mouse, (buttonLeftHelpMin, buttonsTop), (buttonLeftHelpMax, buttonsTop)))
                                         ShowBindings();
                                     else if (PointerTools.PointerWithinRange(mouse, (buttonLeftCloseMin, buttonsTop), (buttonLeftCloseMax, buttonsTop)))
-                                        exiting = true;
+                                        bail = true;
                                 }
                             }
 
                             // Mouse input received.
                             var mouse = Input.ReadPointer();
                             if (mouse is null)
-                            {
-                                delay = false;
-                                exiting = false;
                                 continue;
-                            }
                             switch (mouse.Button)
                             {
                                 case PointerButton.Left:
-                                    delay = false;
-                                    exiting = false;
                                     if (mouse.ButtonPress != PointerButtonPress.Released)
                                         break;
                                     if (DetermineArrowPressed(mouse))
@@ -493,19 +487,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     currIdx -= 3;
                                     if (currIdx < 0)
                                         currIdx = 0;
-                                    delay = false;
-                                    exiting = false;
                                     break;
                                 case PointerButton.WheelDown:
                                     currIdx += 3;
                                     if (currIdx > splitFinalLines.Length - maxHeight)
                                         currIdx = splitFinalLines.Length - maxHeight;
-                                    delay = false;
-                                    exiting = false;
-                                    break;
-                                default:
-                                    delay = false;
-                                    exiting = false;
                                     break;
                             }
                         }
@@ -515,69 +501,51 @@ namespace Terminaux.Inputs.Styles.Infobox
                             switch (key.Key)
                             {
                                 case ConsoleKey.Q:
-                                    exiting = true;
+                                    bail = true;
                                     break;
                                 case ConsoleKey.PageUp:
                                     currIdx -= maxHeight;
                                     if (currIdx < 0)
                                         currIdx = 0;
-                                    delay = false;
-                                    exiting = false;
                                     break;
                                 case ConsoleKey.PageDown:
+                                case ConsoleKey.Enter:
+                                    bail = key.Key == ConsoleKey.Enter && currIdx == splitFinalLines.Length - maxHeight;
                                     currIdx += increment;
                                     if (currIdx > splitFinalLines.Length - maxHeight)
                                         currIdx = splitFinalLines.Length - maxHeight;
-                                    delay = false;
-                                    exiting = false;
                                     break;
                                 case ConsoleKey.UpArrow:
                                     currIdx -= 1;
                                     if (currIdx < 0)
                                         currIdx = 0;
-                                    delay = false;
-                                    exiting = false;
                                     break;
                                 case ConsoleKey.DownArrow:
                                     currIdx += 1;
                                     if (currIdx > splitFinalLines.Length - maxHeight)
                                         currIdx = splitFinalLines.Length - maxHeight;
-                                    delay = false;
-                                    exiting = false;
                                     break;
                                 case ConsoleKey.Home:
                                     currIdx = 0;
-                                    delay = false;
-                                    exiting = false;
                                     break;
                                 case ConsoleKey.End:
                                     currIdx = splitFinalLines.Length - maxHeight;
                                     if (currIdx < 0)
                                         currIdx = 0;
-                                    delay = false;
-                                    exiting = false;
                                     break;
                                 case ConsoleKey.K:
                                     // Keys function
                                     ShowBindings();
-                                    delay = false;
-                                    exiting = false;
                                     break;
                             }
                         }
-
-                        if (delay && !exiting)
-                        {
-                            currIdx += increment;
-                            if (currIdx > splitFinalLines.Length - maxHeight)
-                                currIdx = splitFinalLines.Length - maxHeight;
-                        }
                     }
-                    else if (delay)
+                    else if (currIdx < splitFinalLines.Length - maxHeightOut)
                     {
                         Thread.Sleep(5000);
                         splitFinalLines = GetFinalLines(text, vars);
                         var (_, maxHeight, _, _, _) = GetDimensions(splitFinalLines);
+                        bail = currIdx == splitFinalLines.Length - maxHeight;
                         currIdx += increment;
                         if (currIdx > splitFinalLines.Length - maxHeight)
                             currIdx = splitFinalLines.Length - maxHeight;
@@ -678,37 +646,37 @@ namespace Terminaux.Inputs.Styles.Infobox
         }
 
         internal static string RenderText(
-            int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, bool writeBinding, params object[] vars
+            int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, bool writeBinding, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, writeBinding, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, writeBinding, vars);
         }
 
         internal static string RenderTextInput(
-            int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, bool writeBinding, params object[] vars
+            int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, bool writeBinding, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensionsInput(splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, writeBinding, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, writeBinding, vars);
         }
 
         internal static string RenderTextSelection(
-            InputChoiceInfo[] choices, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, params object[] vars
+            InputChoiceInfo[] choices, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensionsSelection(choices, splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, drawBar, true, vars);
+            return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, true, vars);
         }
 
         internal static string RenderText(
-            int maxWidth, int maxHeight, int borderX, int borderY, int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, ref bool delay, ref bool exiting, int currIdx, bool drawBar, bool writeBinding, params object[] vars
+            int maxWidth, int maxHeight, int borderX, int borderY, int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, bool writeBinding, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
@@ -737,14 +705,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Reached the end of the box. Bail.
                     increment = linesMade;
-                    delay = true;
                     break;
                 }
-                if (i == splitFinalLines.Length - 1)
-                    exiting = true;
-                else
-                    // In case resize caused us to have an extra page
-                    exiting = false;
                 boxBuffer.Append(
                     $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + linesMade % maxHeight + 1)}" +
                     $"{line}"

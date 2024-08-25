@@ -266,8 +266,6 @@ namespace Terminaux.Inputs.Styles.Infobox
             {
                 int currIdx = 0;
                 int increment = 0;
-                bool exiting = false;
-                bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
@@ -276,7 +274,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderTextInput(5, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, true, true, vars)
+                        InfoBoxColor.RenderTextInput(5, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, currIdx, true, true, vars)
                     );
 
                     // Place the buttons from the right for familiarity
@@ -426,7 +424,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     ShowBindings();
                                 else if (PointerTools.PointerWithinRange(mouse, (buttonLeftCloseMin, buttonsTop), (buttonLeftCloseMax, buttonsTop)))
                                 {
-                                    exiting = true;
                                     bail = true;
                                     cancel = true;
                                 }
@@ -556,8 +553,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                             case ConsoleKey.K:
                                 // Keys function
                                 ShowBindings();
-                                delay = false;
-                                exiting = false;
                                 break;
                         }
                     }

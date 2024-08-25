@@ -218,8 +218,6 @@ namespace Terminaux.Inputs.Styles.Infobox
                 int rightMargin = 0;
                 int currIdx = 0;
                 int increment = 0;
-                bool exiting = false;
-                bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
@@ -228,7 +226,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderTextInput(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, false, false, vars)
+                        InfoBoxColor.RenderTextInput(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
                     );
 
                     // Write the input bar and set the cursor position

@@ -221,8 +221,6 @@ namespace Terminaux.Inputs.Styles.Infobox
             {
                 int currIdx = 0;
                 int increment = 0;
-                bool exiting = false;
-                bool delay = false;
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
@@ -231,7 +229,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderTextInput(5, title, text, settings, InfoBoxTitledProgressColor, BackgroundColor, useColor, ref increment, ref delay, ref exiting, currIdx, false, false, vars)
+                        InfoBoxColor.RenderTextInput(5, title, text, settings, InfoBoxTitledProgressColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
                     );
 
                     // Render the final result and write the progress bar
