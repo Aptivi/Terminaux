@@ -346,8 +346,8 @@ namespace Terminaux.Inputs.Styles.Editor
         private static string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte, InteractiveTuiSettings settings)
         {
             // Get the un-highlighted and highlighted colors
-            var entryColor = settings.PaneItemBackColor;
-            var unhighlightedColorBackground = settings.ForegroundColor;
+            var entryColor = settings.PaneItemForeColor;
+            var unhighlightedColorBackground = settings.BackgroundColor;
             var highlightedColorBackground = settings.PaneSelectedItemBackColor;
 
             // Now, do the job!

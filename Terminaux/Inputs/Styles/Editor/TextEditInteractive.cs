@@ -239,7 +239,7 @@ namespace Terminaux.Inputs.Styles.Editor
                         lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(lineColIdx % SeparatorConsoleWidthInterior + 2, SeparatorMinimumHeightInterior + count + 1));
                         lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
                         lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
-                        lineBuilder.Append(' ');
+                        lineBuilder.Append(lineColIdx >= lines[i - 1].Length ? ' ' : lines[i - 1][lineColIdx]);
                         lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
                         lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
                         lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(SeparatorConsoleWidthInterior + 3 - (SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source)), SeparatorMinimumHeightInterior + count + 1));
