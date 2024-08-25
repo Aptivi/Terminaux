@@ -33,6 +33,7 @@ using System.Text.RegularExpressions;
 using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Interactive;
+using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -219,21 +220,8 @@ namespace Terminaux.Inputs.Styles.Editor
                     }
                     source = sourceBuilder.ToString();
 
-                    // Highlight the selection
-                    var lineBuilder = new StringBuilder();
-                    if (i == lineIdx + 1)
-                    {
-                        lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(lineColIdx % SeparatorConsoleWidthInterior + 2, SeparatorMinimumHeightInterior + count + 1));
-                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
-                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
-                        lineBuilder.Append(lineColIdx >= lines[i - 1].Length ? ' ' : lines[i - 1][lineColIdx]);
-                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
-                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
-                        lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(SeparatorConsoleWidthInterior + 3 - (SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source)), SeparatorMinimumHeightInterior + count + 1));
-                    }
-
                     // Now, get the line range
-                    string line = lineBuilder.ToString();
+                    var lineBuilder = new StringBuilder();
                     var absolutes = GetAbsoluteSequences(source, sequencesCollections);
                     if (source.Length > 0)
                     {
@@ -249,14 +237,35 @@ namespace Terminaux.Inputs.Styles.Editor
                         for (int a = startLineIndex; a < endLineIndex; a++)
                             source += absolutes[a];
                     }
-                    line = source + line + ColorTools.RenderRevertForeground() + ColorTools.RenderRevertBackground();
+                    lineBuilder.Append(source);
+
+                    // Highlight the selection
+                    if (i == lineIdx + 1)
+                    {
+                        bool overflown = lineColIdx >= lines[i - 1].Length;
+                        int adjustedIdx = lineColIdx % SeparatorConsoleWidthInterior;
+                        int finalPos = 1;
+                        for (int a = adjustedIdx; a > 0 && !overflown; a--)
+                            finalPos += TextTools.GetCharWidth(lines[i - 1][lineColIdx - a]);
+                        lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(finalPos + 1, SeparatorMinimumHeightInterior + count + 1));
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground));
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground, true, true));
+                        lineBuilder.Append(overflown ? ' ' : lines[i - 1][lineColIdx]);
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true));
+                        lineBuilder.Append(ColorTools.RenderSetConsoleColor(highlightedColorBackground));
+                        lineBuilder.Append(CsiSequences.GenerateCsiCursorPosition(SeparatorConsoleWidthInterior + 3 - (SeparatorConsoleWidthInterior - ConsoleChar.EstimateCellWidth(source)), SeparatorMinimumHeightInterior + count + 1));
+                    }
+                    lineBuilder.Append(
+                        ColorTools.RenderRevertForeground() +
+                        ColorTools.RenderRevertBackground()
+                    );
 
                     // Change the color depending on the highlighted line and column
                     sels.Append(
                         $"{CsiSequences.GenerateCsiCursorPosition(2, SeparatorMinimumHeightInterior + count + 1)}" +
                         $"{ColorTools.RenderSetConsoleColor(highlightedColorBackground)}" +
                         $"{ColorTools.RenderSetConsoleColor(unhighlightedColorBackground, true)}" +
-                        line
+                        lineBuilder
                     );
                     count++;
                 }
@@ -392,7 +401,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 lineColIdx = 0;
                 return;
             }
-            int maxLen = ConsoleChar.EstimateCellWidth(lines[lineIdx]);
+            int maxLen = lines[lineIdx].Length;
             maxLen--;
             if (lineColIdx > maxLen)
                 lineColIdx = maxLen;
