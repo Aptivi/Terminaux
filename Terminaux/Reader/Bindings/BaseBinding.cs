@@ -99,7 +99,7 @@ namespace Terminaux.Reader.Bindings
             {
                 var pressed = Input.ReadKey();
                 bool isHighSurrogate = char.IsHighSurrogate(state.pressedKey.KeyChar);
-                if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(state.pressedKey.KeyChar) == 0 && !isHighSurrogate, state))
+                if (!ConditionalTools.ShouldNot(TextTools.GetCharWidth(state.pressedKey.KeyChar) == 0 && !isHighSurrogate, state))
                 {
                     Input.InvalidateInput();
                     return;
@@ -112,7 +112,7 @@ namespace Terminaux.Reader.Bindings
                     textBuilder.Append(RenderChar(pressed.KeyChar));
                     pressed = Input.ReadKey();
                     bool isNextKeySurrogate = char.IsLowSurrogate(pressed.KeyChar);
-                    if (!ConditionalTools.ShouldNot(ConsoleChar.GetCharWidth(pressed.KeyChar) == 0 && !isNextKeySurrogate, state))
+                    if (!ConditionalTools.ShouldNot(TextTools.GetCharWidth(pressed.KeyChar) == 0 && !isNextKeySurrogate, state))
                     {
                         Input.InvalidateInput();
                         return;

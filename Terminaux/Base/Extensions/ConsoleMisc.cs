@@ -361,7 +361,7 @@ namespace Terminaux.Base.Extensions
                 var finalRtlReversedModifiedLetter = new StringBuilder();
                 for (int c = rtlTextChars.Length - 1; c >= 0; c--)
                 {
-                    int width = ConsoleChar.GetCharWidth(rtlTextChars[c]);
+                    int width = TextTools.GetCharWidth(rtlTextChars[c]);
                     if (width == 0)
                     {
                         // Is a modifier
