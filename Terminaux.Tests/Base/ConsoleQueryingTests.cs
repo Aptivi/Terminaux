@@ -20,8 +20,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using Terminaux.Base.Extensions;
-using Terminaux.Base.Extensions.Data;
 using Terminaux.Sequences.Builder;
+using Textify.General;
+using Textify.General.Data;
 
 namespace Terminaux.Tests.Base
 {
@@ -167,7 +168,7 @@ namespace Terminaux.Tests.Base
         [Description("Querying")]
         public void TestUnicodeCharWidths(char c, int expected)
         {
-            int actual = ConsoleChar.GetCharWidth(c);
+            int actual = TextTools.GetCharWidth(c);
             actual.ShouldBe(expected);
         }
 
@@ -190,7 +191,7 @@ namespace Terminaux.Tests.Base
         [Description("Querying")]
         public void TestUnicodeCharWidthTypes(char c, CharWidthType expected)
         {
-            var actual = ConsoleChar.GetCharWidthType(c);
+            var actual = TextTools.GetCharWidthType(c);
             actual.ShouldBe(expected);
         }
 

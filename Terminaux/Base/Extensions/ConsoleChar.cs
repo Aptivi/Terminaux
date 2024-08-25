@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
-using Terminaux.Base.Extensions.Data;
 using Terminaux.Sequences;
 using Textify.General;
 
