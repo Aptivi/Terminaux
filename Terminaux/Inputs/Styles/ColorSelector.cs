@@ -572,6 +572,15 @@ namespace Terminaux.Inputs.Styles
                     case 11:
                         ShowColorInfoBox("Color info (Red Monochromacy)", selectedColor, true, TransformationFormula.RedScale);
                         break;
+                    case 12:
+                        ShowColorInfoBox("Color info (Yellow Monochromacy)", selectedColor, true, TransformationFormula.YellowScale);
+                        break;
+                    case 13:
+                        ShowColorInfoBox("Color info (Aqua Monochromacy)", selectedColor, true, TransformationFormula.AquaScale);
+                        break;
+                    case 14:
+                        ShowColorInfoBox("Color info (Pink Monochromacy)", selectedColor, true, TransformationFormula.PinkScale);
+                        break;
                     case -1:
                         bail = true;
                         break;
@@ -694,6 +703,15 @@ namespace Terminaux.Inputs.Styles
                         break;
                     case 11:
                         ShowColorUsingBackground("Color info (Red Monochromacy)", selectedColor, true, TransformationFormula.RedScale);
+                        break;
+                    case 12:
+                        ShowColorUsingBackground("Color info (Yellow Monochromacy)", selectedColor, true, TransformationFormula.YellowScale);
+                        break;
+                    case 13:
+                        ShowColorUsingBackground("Color info (Aqua Monochromacy)", selectedColor, true, TransformationFormula.AquaScale);
+                        break;
+                    case 14:
+                        ShowColorUsingBackground("Color info (Pink Monochromacy)", selectedColor, true, TransformationFormula.PinkScale);
                         break;
                     case -1:
                         bail = true;
@@ -825,6 +843,9 @@ namespace Terminaux.Inputs.Styles
                 ("Blue Monochromacy", "Color information (Blue Monochromacy)"),
                 ("Green Monochromacy", "Color information (Green Monochromacy)"),
                 ("Red Monochromacy", "Color information (Red Monochromacy)"),
+                ("Yellow Monochromacy", "Color information (Yellow Monochromacy)"),
+                ("Aqua Monochromacy", "Color information (Aqua Monochromacy)"),
+                ("Pink Monochromacy", "Color information (Pink Monochromacy)"),
             ]);
 
         static ColorSelector()

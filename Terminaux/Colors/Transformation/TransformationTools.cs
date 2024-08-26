@@ -42,6 +42,9 @@ namespace Terminaux.Colors.Transformation
             { TransformationFormula.BlueScale, new BlueScale() },
             { TransformationFormula.GreenScale, new GreenScale() },
             { TransformationFormula.RedScale, new RedScale() },
+            { TransformationFormula.YellowScale, new YellowScale() },
+            { TransformationFormula.AquaScale, new AquaScale() },
+            { TransformationFormula.PinkScale, new PinkScale() },
         };
 
         /// <summary>

@@ -68,5 +68,17 @@ namespace Terminaux.Colors.Transformation
         /// Red tinted monochromacy
         /// </summary>
         RedScale,
+        /// <summary>
+        /// Yellow tinted monochromacy
+        /// </summary>
+        YellowScale,
+        /// <summary>
+        /// Aqua tinted monochromacy
+        /// </summary>
+        AquaScale,
+        /// <summary>
+        /// Pink tinted monochromacy
+        /// </summary>
+        PinkScale,
     }
 }
