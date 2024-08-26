@@ -33,6 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.Extensions", "Ter
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.NerdFontGen", "Terminaux.NerdFontGen\Terminaux.NerdFontGen.csproj", "{1690D007-56AF-4CC9-B98B-78CB953D795A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{1A6C5FEE-74A0-4AEA-8F90-5B69996F5B78}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
