@@ -248,7 +248,7 @@ namespace Terminaux.Inputs.Styles.Editor
                             endLineIndex = absolutes.Length;
                         source = "";
                         for (int a = startLineIndex; a < endLineIndex; a++)
-                            source += absolutes[a];
+                            source += absolutes[a].Item2;
                     }
                     lineBuilder.Append(source);
 
