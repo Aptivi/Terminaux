@@ -22,7 +22,6 @@ using System.IO;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Graphics;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -33,12 +32,14 @@ namespace Terminaux.Images
     /// </summary>
     public static class ImageProcessor
     {
+        internal static Stream placeholderStream = typeof(ImageProcessor).Assembly.GetManifestResourceStream("Terminaux.Images.Resources.Placeholders.aptivi-logo-transparent-ios-opaque.png");
+
         /// <summary>
         /// Gets the list of colors by the number of pixels from the default image that Terminaux provides (that is, the Aptivi branding)
         /// </summary>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
         public static MagickImage OpenImage() =>
-            OpenImage(GraphicsTools.placeholderStream);
+            OpenImage(placeholderStream);
 
         /// <summary>
         /// Gets the list of colors by the number of pixels from the image
@@ -97,7 +98,7 @@ namespace Terminaux.Images
         /// </summary>
         /// <returns>A list of Terminaux's <see cref="Color"/> instance translated from ImageMagick's <see cref="IPixel{TQuantumType}"/> instance</returns>
         public static Color[,] GetColorsFromImage() =>
-            GetColorsFromImage(GraphicsTools.placeholderStream);
+            GetColorsFromImage(placeholderStream);
 
         /// <summary>
         /// Gets the list of colors by the number of pixels from the image
@@ -188,7 +189,7 @@ namespace Terminaux.Images
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
         public static string RenderImage(int width, int height, int left, int top, Color? background = null) =>
-            RenderImage(GraphicsTools.placeholderStream, width, height, left, top, background);
+            RenderImage(placeholderStream, width, height, left, top, background);
 
         /// <summary>
         /// Renders the image to a string that you can print to the console
@@ -264,7 +265,7 @@ namespace Terminaux.Images
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
         public static string RenderImage(int width, int height, Color? background = null) =>
-            RenderImage(GraphicsTools.placeholderStream, width, height, background);
+            RenderImage(placeholderStream, width, height, background);
 
         /// <summary>
         /// Renders the image to a string that you can print to the console

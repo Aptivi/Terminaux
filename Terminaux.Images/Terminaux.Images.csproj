@@ -49,6 +49,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources/Icons/**/*" />
+    <EmbeddedResource Include="Resources\Placeholders\*" />
   </ItemGroup>
 
 </Project>

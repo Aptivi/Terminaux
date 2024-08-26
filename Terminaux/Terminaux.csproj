@@ -60,7 +60,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\TermFiles\**\*" />
-    <EmbeddedResource Include="Resources\Placeholders\*" />
   </ItemGroup>
 
 </Project>
