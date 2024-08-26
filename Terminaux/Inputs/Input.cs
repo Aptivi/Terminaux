@@ -200,6 +200,7 @@ namespace Terminaux.Inputs
         // mistake and the pointer detection logic is broken, so be extra careful when adding, modifying, or
         // tweaking the code below
         #region Sensitive code points
+        // HACK: We need to eliminate unwanted "feedback" on mouse event, but we can't seem to get rid of it. Assistance!
         /// <summary>
         /// Reads a pointer (blocking)
         /// </summary>
@@ -304,7 +305,7 @@ namespace Terminaux.Inputs
                     int result = 0;
                     lock (Console.In)
                     {
-                        if (string.IsNullOrEmpty(caughtMouseEvent))
+                        if (!string.IsNullOrEmpty(caughtMouseEvent))
                         {
                             charRead = Encoding.Default.GetBytes(caughtMouseEvent);
                             caughtMouseEvent = "";
@@ -315,20 +316,15 @@ namespace Terminaux.Inputs
                         {
                             byte* chars = stackalloc byte[6];
                             result = NativeMethods.read(0, chars, 6);
-                            if (numRead > 0)
+                            if (result == -1)
                             {
-                                if (result == -1)
-                                {
-                                    // Some failure occurred.
-                                    error = true;
-                                    return -1;
-                                }
-                                isMouse = chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M';
-                                if (isMouse)
-                                    charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
-                                while (ConsoleWrapper.KeyAvailable)
-                                    ConsoleWrapper.ReadKey(true);
+                                // Some failure occurred.
+                                error = true;
+                                return -1;
                             }
+                            isMouse = chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M';
+                            if (isMouse)
+                                charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
                         }
                     }
                     return result;
@@ -438,9 +434,6 @@ namespace Terminaux.Inputs
             }
             else
             {
-                if (!KeyboardInputAvailable)
-                    return false;
-
                 uint numRead = 0;
                 bool error = false;
                 ulong ctl = NativeMethods.DeterminePeekIoCtl();
@@ -468,22 +461,18 @@ namespace Terminaux.Inputs
                         int _ = Peek(ref numRead, ref error);
                         if (numRead > 0 && numRead % 6 == 0)
                         {
-                            int times = (int)(numRead / 6);
-                            for (int i = 0; i < times; i++)
+                            byte* chars = stackalloc byte[6];
+                            result = NativeMethods.read(0, chars, 6);
+                            if (result == -1)
                             {
-                                byte* chars = stackalloc byte[6];
-                                result = NativeMethods.read(0, chars, 6);
-                                if (result == -1)
-                                {
-                                    // Some failure occurred.
-                                    error = true;
-                                    return -1;
-                                }
-                                if (chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M')
-                                {
-                                    byte[] charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
-                                    caughtMouseEvent = Encoding.Default.GetString(charRead);
-                                }
+                                // Some failure occurred.
+                                error = true;
+                                return -1;
+                            }
+                            if (chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M')
+                            {
+                                byte[] charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
+                                caughtMouseEvent = Encoding.Default.GetString(charRead);
                             }
                         }
                     }
@@ -491,9 +480,9 @@ namespace Terminaux.Inputs
                 }
 
                 // Fill the chars array
-                int _ = Peek(ref numRead, ref error);
-                if (!string.IsNullOrEmpty(caughtMouseEvent) && numRead % 6 == 0)
+                if (!string.IsNullOrEmpty(caughtMouseEvent))
                     return true;
+                Thread.Sleep(10);
                 int readChar = Read(ref error);
                 if (error)
                     return false;
