@@ -367,10 +367,7 @@ namespace Terminaux.Inputs.Styles.Choice
                 string[] answerNames = [.. answers.Keys];
                 string[] altAnswerNames = [.. altAnswers.Keys];
                 if (!PressEnter && (answerNames.Any((answer) => answer.Length > 1) || altAnswerNames.Any((answer) => answer.Length > 1)))
-                {
-                    TextWriterColor.Write("Can't provide answers with more than one character in single-character mode.");
-                    return "";
-                }
+                    throw new TerminauxException("You can't provide answers with more than one character in single-character mode.");
 
                 // Ask a question
                 switch (OutputType)
@@ -426,9 +423,7 @@ namespace Terminaux.Inputs.Styles.Choice
 
                 // Wait for an answer
                 if (PressEnter)
-                {
                     answer = TermReader.Read();
-                }
                 else
                 {
                     answer = Convert.ToString(TermReader.ReadKey().KeyChar);
