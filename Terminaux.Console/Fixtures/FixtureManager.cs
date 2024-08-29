@@ -117,6 +117,7 @@ namespace Terminaux.Console.Fixtures
             new TestTableCjk(),
             new BorderText(),
             new TestNonModalInfoBox(),
+            new TestNonModalInfoBoxExcess(),
 
             // Input
             new TestInputSelection(),

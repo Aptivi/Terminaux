@@ -439,7 +439,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     }
                                 }
                             }
-                            
+
                             bool DetermineButtonsPressed(PointerEventContext mouse)
                             {
                                 string buttons = "[K][X]";
@@ -550,6 +550,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                         if (currIdx > splitFinalLines.Length - maxHeight)
                             currIdx = splitFinalLines.Length - maxHeight;
                     }
+                    else
+                        bail = true;
                 }
             }
             catch (Exception ex)
