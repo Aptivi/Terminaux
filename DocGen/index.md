@@ -6,7 +6,7 @@ Terminaux is a library that allows you to manipulate with the console.
  
 This webpage is an API documentation for mod developers to be used as reference. It constantly gets updated as we push the updates to the main and servicing versions of this project.
 
-If you still intend to use a documentation specific to your preferred version of Terminaux, you may refer to the [releases](https://github.com/Aptivi/Terminaux/releases) page of the project and download the attached `<version>-doc.rar` file.
+If you still intend to use a documentation specific to your preferred version of Terminaux, you may refer to the [releases](https://github.com/Aptivi/Terminaux/releases) page of the project and download the attached `<version>-doc.zip` file.
 
 To get started using the documentation, select `API Documentation` from the top menu and select a namespace to get a clear overview of the API.
 
