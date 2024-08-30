@@ -5,7 +5,6 @@
     <AssemblyDescription>Console Manipulation Library - Image Processing</AssemblyDescription>
     <Description>
       A C# library that allows you to manipulate with your console, like colors, VT sequences, and more.
-
       This provides developers the image processing component for both .NET Framework 4.8 and .NET 8.0 applications.
     </Description>
     <TargetFramework>netstandard2.0</TargetFramework>
