@@ -25,7 +25,11 @@
         ],
         "resource": [
             {
-                "files": [ "images/**" ]
+                "files": [ 
+                    "images/**",
+                    "logo.svg",
+                    "favicon.ico"
+                ]
             }
         ],
         "dest": "../docs",
