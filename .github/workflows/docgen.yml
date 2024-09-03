@@ -2,11 +2,7 @@ name: API Documentation
 
 on:
   push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
 
 jobs:
   build:
@@ -15,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         name: Fetching the source
+        with:
+          submodules: 'true'
+          ref: ${{ github.ref }}
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
@@ -22,7 +21,9 @@ jobs:
       - name: Setup DocFX
         run: dotnet tool install --global docfx
       - name: Generating Documentation
-        run: make doc
+        run: |
+          make
+          make doc
       - name: Saving changes to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:

@@ -1,0 +1,14 @@
+We've created a servicing version of the 4.3.x series that brings in some of the changes brought to you by 5.0.0.
+
+### Changes
+
+This release contains a variety of changes, including, but not limited to:
+
+- `[+]` Added ncr260vt300wpp
+- `[*]` General improvements and bug fixes
+
+Review the commit history if you want to get a deep insight about the changes.
+
+### Feedback?
+
+If you have issues with this version, report to us by [making a new issue ticket](https://github.com/Aptivi/Terminaux/issues/new).
