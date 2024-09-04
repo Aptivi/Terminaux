@@ -31,6 +31,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Terminaux.NerdFontGen", "Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assets", "Assets", "{C96DC39F-7F25-4BD2-B596-AC1F9046B21F}"
 	ProjectSection(SolutionItems) = preProject
+		CHANGES = CHANGES
+		CHANGES.TITLE = CHANGES.TITLE
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
