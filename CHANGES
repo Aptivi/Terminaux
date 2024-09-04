@@ -1,10 +1,10 @@
-We've released this version of Terminaux to update Magico.
+We've released this version of Terminaux to enable full nullable support for all the dependencies.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated Magico
+- `[*]` Updated libraries
 
 Review the commit history if you want to get a deep insight about the changes.
 
