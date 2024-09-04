@@ -426,13 +426,13 @@ namespace Terminaux.Inputs.Interactive
             if (interactiveTui.CurrentPane == 2)
             {
                 var data = interactiveTui.SecondaryDataSource;
-                TSecondary selectedData = (TSecondary)data.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
+                TSecondary? selectedData = (TSecondary?)data.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
                 interactiveTui.Status = selectedData is not null ? interactiveTui.GetStatusFromItemSecondary(selectedData) : "No status.";
             }
             else
             {
                 var data = interactiveTui.PrimaryDataSource;
-                TPrimary selectedData = (TPrimary)data.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
+                TPrimary? selectedData = (TPrimary?)data.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
                 interactiveTui.Status = selectedData is not null ? interactiveTui.GetStatusFromItem(selectedData) : "No status.";
             }
 
@@ -726,8 +726,8 @@ namespace Terminaux.Inputs.Interactive
                                     binding.BindingKeyName == ConsoleKey.Enter);
                                 if (implementedBindings.Any())
                                     loopBail = true;
-                                TPrimary selectedData = (TPrimary)dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
-                                TSecondary selectedDataSecondary = (TSecondary)dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
+                                TPrimary? selectedData = (TPrimary?)dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
+                                TSecondary? selectedDataSecondary = (TSecondary?)dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
                                 object? finalData = interactiveTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
                                 foreach (var implementedBinding in implementedBindings)
                                 {
@@ -757,8 +757,8 @@ namespace Terminaux.Inputs.Interactive
                         // Now, get the implemented bindings from the pressed key
                         var implementedBindings = allBindings.Where((binding) =>
                             binding.BindingPointerButton == mouse.Button && binding.BindingPointerButtonPress == mouse.ButtonPress && binding.BindingPointerModifiers == mouse.Modifiers);
-                        TPrimary selectedData = (TPrimary)dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
-                        TSecondary selectedDataSecondary = (TSecondary)dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
+                        TPrimary? selectedData = (TPrimary?)dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
+                        TSecondary? selectedDataSecondary = (TSecondary?)dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
                         object? finalData = interactiveTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
                         foreach (var implementedBinding in implementedBindings)
                         {
@@ -890,8 +890,8 @@ namespace Terminaux.Inputs.Interactive
                         // Now, get the implemented bindings from the pressed key
                         var implementedBindings = allBindings.Where((binding) =>
                             binding.BindingKeyName == key.Key && binding.BindingKeyModifiers == key.Modifiers);
-                        TPrimary selectedData = (TPrimary)dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
-                        TSecondary selectedDataSecondary = (TSecondary)dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
+                        TPrimary? selectedData = (TPrimary?)dataPrimary.GetElementFromIndex(interactiveTui.FirstPaneCurrentSelection - 1);
+                        TSecondary? selectedDataSecondary = (TSecondary?)dataSecondary.GetElementFromIndex(interactiveTui.SecondPaneCurrentSelection - 1);
                         object? finalData = interactiveTui.CurrentPane == 2 ? selectedDataSecondary : selectedData;
                         foreach (var implementedBinding in implementedBindings)
                         {
