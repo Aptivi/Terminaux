@@ -323,12 +323,12 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                                             method1.Input,
 
                                             // Fifth page
-                                            method2.Choices[method2.Input].ChoiceName,
-                                            method3.Choices[method3.Input].ChoiceName,
+                                            method2.Choices?[method2.Input].ChoiceName,
+                                            method3.Choices?[method3.Input].ChoiceName,
 
                                             // Sixth page
-                                            string.Join(", ", method4.Input.Select((idx) => method4.Choices[idx].ChoiceName)),
-                                            string.Join(", ", method5.Input.Select((idx) => method5.Choices[idx].ChoiceName))
+                                            string.Join(", ", method4.Input.Select((idx) => method4.Choices?[idx].ChoiceName)),
+                                            string.Join(", ", method5.Input.Select((idx) => method5.Choices?[idx].ChoiceName))
                                         );
                                         return results;
                                     })

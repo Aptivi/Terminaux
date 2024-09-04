@@ -52,7 +52,7 @@ namespace Terminaux.Console.Fixtures.Cases.Input
             PointerListener.StopListening();
         }
 
-        private void MouseEvent(object sender, PointerEventContext e)
+        private void MouseEvent(object? sender, PointerEventContext e)
         {
             TextWriterColor.WriteColor($"{e.Coordinates.x}/{e.Coordinates.y} [{e.Button}, {e.ButtonPress}, {e.Modifiers}] [Dragging: {e.Dragging}, Tier: {e.ClickTier}]",
                 e.ButtonPress == PointerButtonPress.Clicked ? ConsoleColors.Green :

@@ -19,6 +19,7 @@
 
 using Microsoft.CodeAnalysis;
 using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Text;
 using Terminaux.NerdFontGen.Decoy;
@@ -37,7 +38,8 @@ namespace Terminaux.NerdFontGen
             string content = reader.ReadToEnd();
 
             // Read all the Nerd Fonts data
-            var list = JsonConvert.DeserializeObject<NerdFontInfo[]>(content);
+            var list = JsonConvert.DeserializeObject<NerdFontInfo[]>(content) ??
+                throw new Exception("No fonts.");
             NerdFontsEnumGenerator(list, context);
             NerdFontsClassGenerator(list, context);
             NerdFontsDictionaryGenerator(list, context);
@@ -153,6 +155,8 @@ namespace Terminaux.NerdFontGen
                 var builder = new StringBuilder(header);
                 string name = typeInfo.Type;
                 var icons = typeInfo.Icons;
+                if (icons is null)
+                    continue;
 
                 // Add the class declaration
                 builder.AppendLine(
@@ -244,6 +248,8 @@ namespace Terminaux.NerdFontGen
                 NerdFontInfo typeInfo = list[typeIdx];
                 string typeName = typeInfo.Type;
                 var icons = typeInfo.Icons;
+                if (icons is null)
+                    continue;
                 builder.AppendLine(
                     $$"""
                                 // {{typeName}} icons

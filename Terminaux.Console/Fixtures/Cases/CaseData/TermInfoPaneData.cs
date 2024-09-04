@@ -76,6 +76,8 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 if (!termInfoName.StartsWith("Terminaux.Console.Assets.TermInfoData."))
                     continue;
                 var stream = asm.GetManifestResourceStream(termInfoName);
+                if (stream is null)
+                    continue;
                 var desc = TermInfoDesc.Load(stream);
                 if (desc is not null)
                     descs.Add(desc);
@@ -91,15 +93,17 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             if (idx < 0)
                 return;
             string name = names[idx];
-            if (!TermInfoDesc.TryLoad(name, out TermInfoDesc desc))
+            if (!TermInfoDesc.TryLoad(name, out TermInfoDesc? desc))
                 return;
             string descString = ShowDesc(desc);
             InfoBoxColor.WriteInfoBox(name, descString);
         }
 
-        private string ShowDesc(TermInfoDesc desc)
+        private string ShowDesc(TermInfoDesc? desc)
         {
             // Populate the info
+            if (desc is null)
+                return "";
             var builder = new StringBuilder();
             builder.AppendLine(
                  $$"""

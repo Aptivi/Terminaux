@@ -38,7 +38,8 @@ namespace Terminaux.SequenceTypesGen
             string content = reader.ReadToEnd();
 
             // Read all the console sequences data
-            var list = JsonConvert.DeserializeObject<SequenceTypeInfo[]>(content);
+            var list = JsonConvert.DeserializeObject<SequenceTypeInfo[]>(content) ??
+                throw new Exception("No sequences");
             SequencesGeneralEnumGenerator(list, context);
             SequencesGeneralClassGenerator(list, context);
             SequencesEnumGenerator(list, context);
@@ -291,6 +292,8 @@ namespace Terminaux.SequenceTypesGen
                 SequenceTypeInfo typeInfo = list[typeIdx];
                 string typeNameUpper = typeInfo.Type.ToUpper();
                 var seqs = typeInfo.Sequences;
+                if (seqs is null)
+                    continue;
 
                 // Populate the sequence generation methods
                 for (int seqIdx = 0; seqIdx < seqs.Length; seqIdx++)
@@ -360,6 +363,8 @@ namespace Terminaux.SequenceTypesGen
                 string typeName = typeInfo.Type;
                 string typeNameUpper = typeName.ToUpper();
                 var seqs = typeInfo.Sequences;
+                if (seqs is null)
+                    continue;
 
                 // Add the class declaration
                 builder.AppendLine(
@@ -415,6 +420,8 @@ namespace Terminaux.SequenceTypesGen
 
                     // Populate the arguments
                     var seqParams = seq.Arguments;
+                    if (seqParams is null)
+                        continue;
                     var seqParamsBuilder = new StringBuilder();
                     for (int i = 0; i < seqParams.Length; i++)
                     {
@@ -512,6 +519,8 @@ namespace Terminaux.SequenceTypesGen
                 string typeName = typeInfo.Type;
                 string typeNameUpper = typeName.ToUpper();
                 var seqs = typeInfo.Sequences;
+                if (seqs is null)
+                    continue;
                 builder.AppendLine(
                     $$"""
                                 // {{typeNameUpper}} sequences
@@ -526,6 +535,8 @@ namespace Terminaux.SequenceTypesGen
 
                     // Populate the arguments
                     var seqParams = seq.Arguments;
+                    if (seqParams is null)
+                        continue;
                     var seqParamsBuilder = new StringBuilder();
                     for (int i = 0; i < seqParams.Length; i++)
                     {

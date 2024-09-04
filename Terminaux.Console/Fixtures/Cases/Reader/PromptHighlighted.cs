@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using Terminaux.Reader;
 using Terminaux.Reader.Highlighting;
 using Terminaux.Writer.ConsoleWriters;
@@ -55,7 +56,8 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
                     }
                 }
                 """;
-            var template = SyntaxHighlightingTools.GetHighlighterFromJson(highlighterJson);
+            var template = SyntaxHighlightingTools.GetHighlighterFromJson(highlighterJson) ??
+                throw new Exception("No template");
             SyntaxHighlightingTools.RegisterHighlighter(template);
             var settingsCustom = new TermReaderSettings()
             {
@@ -88,7 +90,8 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
                     }
                 }
                 """;
-            var templateDouble = SyntaxHighlightingTools.GetHighlighterFromJson(highlighterDoubleJson);
+            var templateDouble = SyntaxHighlightingTools.GetHighlighterFromJson(highlighterDoubleJson) ??
+                throw new Exception("No template");
             SyntaxHighlightingTools.RegisterHighlighter(templateDouble);
             var settingsDoubleCustom = new TermReaderSettings()
             {

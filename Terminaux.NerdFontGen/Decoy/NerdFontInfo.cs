@@ -24,19 +24,19 @@ namespace Terminaux.NerdFontGen.Decoy
     public class Icon
     {
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
 
         [JsonProperty("unicode")]
-        public string Unicode { get; set; }
+        public string Unicode { get; set; } = "";
     }
 
     public class NerdFontInfo
     {
         [JsonProperty("type")]
-        public string Type { get; set; }
+        public string Type { get; set; } = "";
 
         [JsonProperty("icons")]
-        public Icon[] Icons { get; set; }
+        public Icon[]? Icons { get; set; }
     }
 
 
