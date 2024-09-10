@@ -24,31 +24,31 @@ namespace Terminaux.SequenceTypesGen.Decoy
     internal class SequenceTypeInfo
     {
         [JsonProperty("type")]
-        public string Type { get; set; }
+        public string Type { get; set; } = "";
         [JsonProperty("regex")]
-        public string Regex { get; set; }
+        public string Regex { get; set; } = "";
         [JsonProperty("sequences")]
-        public Sequence[] Sequences { get; set; }
+        public Sequence[]? Sequences { get; set; }
 
     }
 
     internal class Sequence
     {
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
         [JsonProperty("regex")]
-        public string Regex { get; set; }
+        public string Regex { get; set; } = "";
         [JsonProperty("format")]
-        public string Format { get; set; }
+        public string Format { get; set; } = "";
         [JsonProperty("arguments")]
-        public Argument[] Arguments { get; set; }
+        public Argument[]? Arguments { get; set; }
     }
 
     internal class Argument
     {
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
         [JsonProperty("type")]
-        public string Type { get; set; }
+        public string Type { get; set; } = "";
     }
 }

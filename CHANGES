@@ -1,11 +1,10 @@
-We've created a servicing version of the 4.3.x series that brings in some of the changes brought to you by 5.0.0.
+The full nullable support has been enabled in the 4.3.x series so that there will be consistency.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added ncr260vt300wpp
-- `[*]` General improvements and bug fixes
+- `[+]` Added full nullable support
 
 Review the commit history if you want to get a deep insight about the changes.
 

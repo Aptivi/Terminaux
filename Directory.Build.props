@@ -1,12 +1,13 @@
 <Project>
     <PropertyGroup>
-        <Version>4.3.7</Version>
+        <Version>4.3.8</Version>
         <Authors>Aptivi</Authors>
         <Company>Aptivi</Company>
         <Copyright>Copyright (c) 2022-2024 Aptivi</Copyright>
         <LangVersion>latest</LangVersion>
         <DebugType>portable</DebugType>
         <SignAssembly>True</SignAssembly>
+        <Nullable>enable</Nullable>
         <WarningsAsErrors>CS9057,CS8002,nullable</WarningsAsErrors>
         <RootPath>$(MSBuildThisFileDirectory)</RootPath>
         <AssemblyOriginatorKeyFile>$(RootPath)\aptivi_snk.snk</AssemblyOriginatorKeyFile>

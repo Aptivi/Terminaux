@@ -46,7 +46,7 @@ namespace Terminaux.ResizeListener
         /// Starts the console resize listener
         /// </summary>
         /// <param name="customHandler">Specifies the custom console resize handler that will be called if resize is detected</param>
-        public static void StartResizeListener(Action<int, int, int, int> customHandler = null)
+        public static void StartResizeListener(Action<int, int, int, int>? customHandler = null)
         {
             ConsoleResizeHandler.SetCachedWindowDimensions(Console.WindowWidth, Console.WindowHeight);
 
@@ -66,7 +66,7 @@ namespace Terminaux.ResizeListener
                 {
                     if (customHandler is not null)
                     {
-                        ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
+                        ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>?)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
                         ResizeListenerThread.Start(customHandler);
                     }
                     else
@@ -78,7 +78,7 @@ namespace Terminaux.ResizeListener
             ConsoleResizeHandler.listening = true;
         }
 
-        private static void PollForResize(Action<int, int, int, int> customHandler)
+        private static void PollForResize(Action<int, int, int, int>? customHandler)
         {
             try
             {

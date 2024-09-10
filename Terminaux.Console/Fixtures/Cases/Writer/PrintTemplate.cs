@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using Terminaux.Colors;
 using Terminaux.Colors.Templates;
 using Terminaux.Writer.ConsoleWriters;
@@ -43,7 +44,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     }
                 }
                 """;
-            var template = TemplateTools.GetTemplateFromJson(templateJson);
+            var template = TemplateTools.GetTemplateFromJson(templateJson) ??
+                throw new Exception("No template.");
             TemplateTools.RegisterTemplate(template);
             TextWriterColor.WriteColor("[Before - {0}] Hello world!", true, TemplateTools.GetColor(PredefinedComponentType.Text), TemplateTools.Exists(name));
             TemplateTools.SetDefaultTemplate(name);

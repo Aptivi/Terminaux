@@ -35,7 +35,8 @@ namespace Terminaux.Tests.TermInfo.Utilities
             var assembly = Assembly.GetCallingAssembly();
             resourceName = resourceName.Replace("/", ".");
 
-            return assembly.GetManifestResourceStream(resourceName);
+            return assembly.GetManifestResourceStream(resourceName) ??
+                throw new Exception($"Can't get manifest resource stream of {resourceName}");
         }
 
         public static Stream LoadResourceStream(Assembly assembly, string resourceName)
@@ -51,7 +52,8 @@ namespace Terminaux.Tests.TermInfo.Utilities
             }
 
             resourceName = resourceName.Replace("/", ".");
-            return assembly.GetManifestResourceStream(resourceName);
+            return assembly.GetManifestResourceStream(resourceName) ??
+                throw new Exception($"Can't get manifest resource stream of {resourceName}");
         }
     }
 }

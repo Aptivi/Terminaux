@@ -73,7 +73,7 @@ namespace Terminaux.Base
             return false;
         }
 
-        internal static void HandleResize(Action<int, int, int, int> customHandler)
+        internal static void HandleResize(Action<int, int, int, int>? customHandler)
         {
             int oldX = CurrentWindowWidth;
             int oldY = CurrentWindowHeight;

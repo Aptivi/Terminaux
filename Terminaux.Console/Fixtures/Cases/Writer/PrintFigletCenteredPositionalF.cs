@@ -21,6 +21,7 @@ using Textify.Figlet;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
+using System;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -28,7 +29,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
     {
         public void RunFixture()
         {
-            CenteredFigletTextColor.WriteCenteredFigletColor(5, FigletFonts.TryGetByName("banner3"), "Hello, {0}!", new Color(ConsoleColors.Green), 20, 10, Vars: "Terminaux");
+            var figlet = FigletFonts.TryGetByName("banner3") ??
+                throw new Exception("Can't get figlet font");
+            CenteredFigletTextColor.WriteCenteredFigletColor(5, figlet, "Hello, {0}!", new Color(ConsoleColors.Green), 20, 10, Vars: "Terminaux");
         }
     }
 }

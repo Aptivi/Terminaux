@@ -57,7 +57,7 @@ namespace Terminaux.Colors.Interop
         /// </summary>
         /// <param name="ourColor">Terminaux's Color</param>
         /// <returns>System.Drawing's Color</returns>
-        public static DrawingColor ToDrawingColor(OurColor ourColor)
+        public static DrawingColor ToDrawingColor(OurColor? ourColor)
         {
             // Check to see if the Color from Drawing is null
             if (ourColor is null || ourColor.RGB is null)

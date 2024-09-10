@@ -46,7 +46,7 @@ namespace Terminaux.Images.Icons
         /// <param name="quality">Icon quality</param>
         /// <param name="background">Specifies the background color, or null for default</param>
         /// <returns>A string that contains the resulting pixels that you can print to the console using the <see cref="TextWriterRaw.WriteRaw(string, object[])"/> function</returns>
-        public static string RenderIcon(string iconName, int width, int height, int left, int top, IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal, Color background = null)
+        public static string RenderIcon(string iconName, int width, int height, int left, int top, IconsColor color = IconsColor.Colored, IconsQuality quality = IconsQuality.Normal, Color? background = null)
         {
             // Check for icon
             string[] iconNames = GetIconNames(color, quality);
