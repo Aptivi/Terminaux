@@ -19,6 +19,7 @@
 
 using System;
 using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Reader.Highlighting;
 using Terminaux.Reader.History;
 
@@ -37,6 +38,7 @@ namespace Terminaux.Reader
         private int rightMargin = 0;
         private Color? inputForegroundColor;
         private Color? inputBackgroundColor;
+        private Color? inputPlaceholderForegroundColor;
         private SyntaxHighlighting? syntaxHighlighter;
         private bool syntaxHighlighterEnabled;
         private string placeholderText = "";
@@ -111,6 +113,15 @@ namespace Terminaux.Reader
         {
             get => inputBackgroundColor ?? ColorTools.currentBackgroundColor;
             set => inputBackgroundColor = value;
+        }
+
+        /// <summary>
+        /// Input placeholder foreground color
+        /// </summary>
+        public Color InputPlaceholderForegroundColor
+        {
+            get => inputPlaceholderForegroundColor ?? new Color(ConsoleColors.Grey);
+            set => inputPlaceholderForegroundColor = value;
         }
 
         /// <summary>

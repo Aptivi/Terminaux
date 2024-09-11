@@ -325,13 +325,13 @@ namespace Terminaux.Reader
                         {
                             cleared = false;
                             ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
-                            TextWriterColor.WriteForReaderColor(finalPlaceholder, settings, false, new Color(ConsoleColors.Grey));
+                            TextWriterColor.WriteForReaderColor(finalPlaceholder, settings, false, settings.InputPlaceholderForegroundColor);
                             ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
                         }
                         else if (!cleared)
                         {
                             ConsoleWrapper.SetCursorPosition(readState.inputPromptLeft, readState.inputPromptTop);
-                            TextWriterColor.WriteForReaderColor(new(' ', width), settings, false, new Color(ConsoleColors.Grey));
+                            TextWriterColor.WriteForReaderColor(new(' ', width), settings, false, settings.InputPlaceholderForegroundColor);
                             readState.RefreshRequired = true;
                             TermReaderTools.Refresh();
                             cleared = true;
