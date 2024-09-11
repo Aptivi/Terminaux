@@ -299,7 +299,7 @@ namespace Terminaux.Reader
                     readState.inputPromptLeftBegin = ConsoleWrapper.CursorLeft;
                     readState.inputPromptTopBegin = ConsoleWrapper.CursorTop - (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1 ? readState.InputPromptHeight - 1 : 0);
                     readState.writingPrompt = true;
-                    TextWriterColor.WriteForReader(readState.InputPromptText, settings, false);
+                    TextWriterColor.WriteForReaderColor(readState.InputPromptText, settings, false, settings.InputPromptForegroundColor);
                     readState.writingPrompt = false;
 
                     // Save current state of input

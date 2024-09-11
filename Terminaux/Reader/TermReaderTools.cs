@@ -393,7 +393,7 @@ namespace Terminaux.Reader
             // prompt.
             ConsoleWrapper.SetCursorPosition(state.InputPromptLeftBegin, state.InputPromptTopBegin);
             state.writingPrompt = true;
-            TextWriterColor.WriteForReaderColorBack(state.InputPromptText, state.Settings, false, foreground, background);
+            TextWriterColor.WriteForReaderColorBack(state.InputPromptText, state.Settings, false, state.Settings.InputPromptForegroundColor, background);
             state.writingPrompt = false;
 
             // Now, render the current text

@@ -39,6 +39,7 @@ namespace Terminaux.Reader
         private Color? inputForegroundColor;
         private Color? inputBackgroundColor;
         private Color? inputPlaceholderForegroundColor;
+        private Color? inputPromptForegroundColor;
         private SyntaxHighlighting? syntaxHighlighter;
         private bool syntaxHighlighterEnabled;
         private string placeholderText = "";
@@ -122,6 +123,15 @@ namespace Terminaux.Reader
         {
             get => inputPlaceholderForegroundColor ?? new Color(ConsoleColors.Grey);
             set => inputPlaceholderForegroundColor = value;
+        }
+
+        /// <summary>
+        /// Input prompt foreground color
+        /// </summary>
+        public Color InputPromptForegroundColor
+        {
+            get => inputPromptForegroundColor ?? ColorTools.currentForegroundColor;
+            set => inputPromptForegroundColor = value;
         }
 
         /// <summary>

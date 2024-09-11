@@ -106,7 +106,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteForReader(string Text, TermReaderSettings? settings, bool Line, params object[] vars) =>
-            WriteForReaderColor(Text, settings, Line, ColorTools.currentForegroundColor, vars);
+            WriteForReaderColor(Text, settings, Line, settings is null ? ColorTools.currentForegroundColor : settings.InputForegroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
@@ -127,7 +127,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteForReaderColor(string Text, TermReaderSettings? settings, bool Line, Color color, params object[] vars) =>
-            WriteForReaderColorBack(Text, settings, Line, color, ColorTools.currentBackgroundColor, vars);
+            WriteForReaderColorBack(Text, settings, Line, color, settings is null ? ColorTools.currentBackgroundColor : settings.InputBackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support. Use for TermReader custom bindings.
