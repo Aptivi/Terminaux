@@ -116,8 +116,6 @@ namespace Terminaux.Inputs.Styles.Selection
                 throw new TerminauxException("Top position is out of range");
             if (currentSelection < 0 || currentSelection >= selections.Length)
                 throw new TerminauxException("Current selection is out of range");
-            if (currentSelections is null)
-                throw new TerminauxException("Current selections are not specified");
             if (selectionChoices <= 0)
                 throw new TerminauxException("Selection choice number is out of range");
             if (width < 0 || width > ConsoleWrapper.WindowWidth)

@@ -78,14 +78,18 @@ namespace Terminaux.Inputs.Styles.Selection
             ConsoleWrapper.CursorVisible = false;
 
             // Build list of bindings for help
-            var showBindings = new Keybinding[]
-            {
+            Keybinding[] showBindings = multiple ?
+            [
                 new("Confirm", ConsoleKey.Enter),
                 new("Select", ConsoleKey.Spacebar),
                 new("Help", ConsoleKey.K),
-            };
-            var bindings = new Keybinding[]
-            {
+            ] :
+            [
+                new("Select", ConsoleKey.Enter),
+                new("Help", ConsoleKey.K),
+            ];
+            Keybinding[] bindings = multiple ?
+            [
                 new("Confirms the selections", ConsoleKey.Enter),
                 new("Selects or deselects a choice", ConsoleKey.Spacebar),
                 new("Goes one element up", ConsoleKey.UpArrow),
@@ -96,7 +100,17 @@ namespace Terminaux.Inputs.Styles.Selection
                 new("Goes to the next page", ConsoleKey.PageDown),
                 new("Selects all the elements", ConsoleKey.A),
                 new("Searches for an element", ConsoleKey.F),
-            };
+            ] :
+            [
+                new("Confirms a selection", ConsoleKey.Enter),
+                new("Goes one element up", ConsoleKey.UpArrow),
+                new("Goes one element down", ConsoleKey.DownArrow),
+                new("Goes to the first element", ConsoleKey.Home),
+                new("Goes to the last element", ConsoleKey.End),
+                new("Goes to the previous page", ConsoleKey.PageUp),
+                new("Goes to the next page", ConsoleKey.PageDown),
+                new("Searches for an element", ConsoleKey.F),
+            ];
 
             // Make a screen
             var selectionScreen = new Screen();
@@ -149,7 +163,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         // Populate the answers
                         selectionBuilder.Append(
                             BorderColor.RenderBorder(2, listStartPosition + 1, ConsoleWrapper.WindowWidth - 6, answersPerPage, optionColor) +
-                            SelectionInputTools.RenderSelections([.. AllAnswers], 3, listStartPosition + 2, HighlightedAnswer - 1, [.. SelectedAnswers], answersPerPage, ConsoleWrapper.WindowWidth - 6, false, Answers.Length - 1, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
+                            SelectionInputTools.RenderSelections([.. AllAnswers], 3, listStartPosition + 2, HighlightedAnswer - 1, multiple ? [.. SelectedAnswers] : null, answersPerPage, ConsoleWrapper.WindowWidth - 6, false, Answers.Length - 1, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
                         );
 
                         // Write description hint
@@ -171,7 +185,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         );
                         return selectionBuilder.ToString();
                     });
-                    selectionScreen.AddBufferedPart("Selection - multiple", screenPart);
+                    selectionScreen.AddBufferedPart("Selection - Variant", screenPart);
 
                     // Wait for an answer
                     ScreenTools.Render();
@@ -266,15 +280,17 @@ namespace Terminaux.Inputs.Styles.Selection
                                 {
                                     if (UpdateSelectedIndexWithMousePos(mouse))
                                     {
-                                        if (multiple)
+                                        if (!multiple)
                                         {
-                                            if (!SelectedAnswers.Remove(HighlightedAnswer - 1))
-                                                SelectedAnswers.Add(HighlightedAnswer - 1);
+                                            SelectedAnswers.Add(HighlightedAnswer - 1);
+                                            ConsoleWrapper.CursorVisible = initialVisible;
+                                            ColorTools.LoadBack();
+                                            bail = true;
                                         }
                                         else
                                         {
-                                            SelectedAnswers.Clear();
-                                            SelectedAnswers.Add(HighlightedAnswer - 1);
+                                            if (!SelectedAnswers.Remove(HighlightedAnswer - 1))
+                                                SelectedAnswers.Add(HighlightedAnswer - 1);
                                         }
                                     }
                                 }
@@ -334,15 +350,10 @@ namespace Terminaux.Inputs.Styles.Selection
                                     if (!SelectedAnswers.Remove(HighlightedAnswer - 1))
                                         SelectedAnswers.Add(HighlightedAnswer - 1);
                                 }
-                                else
-                                {
-                                    SelectedAnswers.Clear();
-                                    SelectedAnswers.Add(HighlightedAnswer - 1);
-                                }
                                 break;
                             case ConsoleKey.Enter:
-                                if (!multiple && SelectedAnswers.Count == 0)
-                                    break;
+                                if (!multiple)
+                                    SelectedAnswers.Add(HighlightedAnswer - 1);
                                 ConsoleWrapper.CursorVisible = initialVisible;
                                 ColorTools.LoadBack();
                                 bail = true;
