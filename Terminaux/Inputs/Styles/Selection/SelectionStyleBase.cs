@@ -283,8 +283,6 @@ namespace Terminaux.Inputs.Styles.Selection
                                         if (!multiple)
                                         {
                                             SelectedAnswers.Add(HighlightedAnswer - 1);
-                                            ConsoleWrapper.CursorVisible = initialVisible;
-                                            ColorTools.LoadBack();
                                             bail = true;
                                         }
                                         else
@@ -354,15 +352,11 @@ namespace Terminaux.Inputs.Styles.Selection
                             case ConsoleKey.Enter:
                                 if (!multiple)
                                     SelectedAnswers.Add(HighlightedAnswer - 1);
-                                ConsoleWrapper.CursorVisible = initialVisible;
-                                ColorTools.LoadBack();
                                 bail = true;
                                 break;
                             case ConsoleKey.Escape:
                                 if (kiosk)
                                     break;
-                                ConsoleWrapper.CursorVisible = initialVisible;
-                                ColorTools.LoadBack();
                                 bail = true;
                                 SelectedAnswers.Clear();
                                 break;
@@ -444,6 +438,8 @@ namespace Terminaux.Inputs.Styles.Selection
                     // Reset, in case selection changed
                     selectionScreen.RemoveBufferedPart(screenPart.Id);
                 }
+                ConsoleWrapper.CursorVisible = initialVisible;
+                ColorTools.LoadBack();
             }
             catch (Exception ex)
             {
