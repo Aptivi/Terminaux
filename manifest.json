@@ -215,6 +215,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.Data.CharWidthType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.Data.CharWidthType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.Extensions.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.Extensions.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.Extensions.yml",
       "output": {
         ".html": {
@@ -1045,10 +1065,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Input.yml",
+      "source_relative_path": "api/Terminaux.Inputs.InputChoiceInfo.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Inputs.Input.html"
+          "relative_path": "api/Terminaux.Inputs.InputChoiceInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.InputChoiceTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.InputChoiceTools.html"
         }
       },
       "version": ""
@@ -1065,16 +1095,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Interactive.BaseInteractiveTui-2.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui-1.yml",
       "output": {
         ".html": {
@@ -1085,40 +1105,20 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui-2.yml",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Inputs.Interactive.IInteractiveTui-2.html"
+          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-1.yml",
+      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-1.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiBinding-2.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiSettings.html"
+          "relative_path": "api/Terminaux.Inputs.Interactive.InteractiveTuiStatus.html"
         }
       },
       "version": ""
@@ -1169,6 +1169,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Pointer.PointerEventContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Pointer.PointerListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Pointer.PointerListener.html"
         }
       },
       "version": ""
@@ -1395,16 +1405,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Choice.ChoiceStyleSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Choice.ChoiceStyleSettings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Choice.yml",
       "output": {
         ".html": {
@@ -1419,56 +1419,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Styles.ColorSelector.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.HexEditInteractive.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Editor.HexEditInteractive.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.HexViewInteractive.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Editor.HexViewInteractive.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.TextEditInteractive.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Editor.TextEditInteractive.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.TextViewInteractive.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Editor.TextViewInteractive.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Editor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Editor.html"
         }
       },
       "version": ""
@@ -1575,26 +1525,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.InputChoiceInfo.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceInfo.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.InputChoiceTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.InputChoiceTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionInputTools.yml",
       "output": {
         ".html": {
@@ -1629,6 +1559,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionStyleSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Selection.SelectionStyleSwitches.html"
         }
       },
       "version": ""
@@ -2437,31 +2377,11 @@
       "version": ""
     },
     {
-      "type": "Resource",
-      "source_relative_path": "favicon.ico",
-      "output": {
-        "resource": {
-          "relative_path": "favicon.ico"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "logo.svg",
-      "output": {
-        "resource": {
-          "relative_path": "logo.svg"
         }
       },
       "version": ""
