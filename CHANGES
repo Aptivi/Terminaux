@@ -1,10 +1,11 @@
-We've released this version of Terminaux to enable full nullable support for all the dependencies.
+To address a regression that has been introduced in the fifth major version of Terminaux regarding the selection style, we've decided to revert the single selection style behavior to versions before 5.0.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Updated libraries
+- `[+]` Added input prompt and placeholder colors
+- `[*]` Single selection behavior reverted
 
 Review the commit history if you want to get a deep insight about the changes.
 
