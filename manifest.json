@@ -635,6 +635,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Yxy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Yxy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.yml",
       "output": {
         ".html": {
