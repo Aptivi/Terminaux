@@ -88,6 +88,7 @@ namespace Terminaux.Console.Fixtures
             new PrintWithNewLines(),
             new PrintWithNulls(),
             new PrintTemplate(),
+            new PrintTemplateFromCtor(),
             new PrintLineHandle(),
             new PrintPowerLine(),
             new PrintRainbow(),
