@@ -19,9 +19,9 @@
 
 using System;
 
-namespace Terminaux.Colors.Transformation.Formulas
+namespace Terminaux.Colors.Transformation.Formulas.ColorBlind
 {
-    internal class VienotColorBlind : BaseTransformationFormula, ITransformationFormula
+    internal static class Vienot
     {
         internal class VienotParameters
         {
@@ -76,22 +76,7 @@ namespace Terminaux.Colors.Transformation.Formulas
             ]
         };
 
-        public override (int, int, int) Transform(int r, int g, int b, ColorSettings settings)
-        {
-            // Check values
-            if (r < 0 || r > 255)
-                throw new ArgumentOutOfRangeException("r");
-            if (g < 0 || g > 255)
-                throw new ArgumentOutOfRangeException("g");
-            if (b < 0 || b > 255)
-                throw new ArgumentOutOfRangeException("b");
-
-            settings ??= new(ColorTools.GlobalSettings);
-            var transformed = Transform(r, g, b, settings.ColorTransformationFormula, settings.ColorBlindnessSeverity);
-            return transformed;
-        }
-
-        private static (int, int, int) Transform(int r, int g, int b, TransformationFormula def, double severity)
+        internal static (int, int, int) Transform(int r, int g, int b, TransformationFormula def, double severity)
         {
             // Check values
             if (r < 0 || r > 255)
