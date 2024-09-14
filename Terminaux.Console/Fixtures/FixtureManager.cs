@@ -41,6 +41,7 @@ namespace Terminaux.Console.Fixtures
             new Prompt(),
             new PromptInterruptible(),
             new PromptWithDefault(),
+            new PromptWithDefaultWritten(),
             new PromptWithPromptText(),
             new PromptWithDynamicPromptText(),
             new PromptWithOneLineWrap(),

@@ -288,17 +288,20 @@ namespace Terminaux.Reader
                 bool ctrlCAsInput = ConsoleWrapper.TreatCtrlCAsInput;
                 bool initialVisible = ConsoleWrapper.CursorVisible;
 
-                // Handle all possible errors
                 try
                 {
-                    // Print the input
+                    // Initialize some of the state variables
                     ConsoleWrapper.CursorLeft += settings.LeftMargin;
                     readState.settings.state = readState;
                     readState.inputPromptText = inputPrompt;
                     readState.inputPromptLeftBegin = ConsoleWrapper.CursorLeft;
                     readState.inputPromptTopBegin = ConsoleWrapper.CursorTop - (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1 ? readState.InputPromptHeight - 1 : 0);
+
+                    // Write the prompt
                     readState.writingPrompt = true;
-                    TextWriterColor.WriteForReaderColor(readState.InputPromptText, settings, false, settings.InputPromptForegroundColor);
+                    string finalInputPrompt = !string.IsNullOrEmpty(readState.InputPromptText) ? readState.InputPromptText + (settings.PrintDefaultValue ? settings.DefaultValueFormat : "") : "";
+                    object[] finalInputArguments = settings.PrintDefaultValue && settings.DefaultValueFormat.Contains("{0}") ? [defaultValue] : [];
+                    TextWriterColor.WriteForReaderColor(finalInputPrompt, settings, false, settings.InputPromptForegroundColor, finalInputArguments);
                     readState.writingPrompt = false;
 
                     // Save current state of input

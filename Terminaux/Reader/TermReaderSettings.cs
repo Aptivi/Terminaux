@@ -43,6 +43,8 @@ namespace Terminaux.Reader
         private SyntaxHighlighting? syntaxHighlighter;
         private bool syntaxHighlighterEnabled;
         private string placeholderText = "";
+        private bool printDefaultValue;
+        private string defaultValueFormat = "[{0}] ";
         internal TermReaderState? state;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => [];
         internal char[] suggestionsDelims = [' '];
@@ -175,6 +177,24 @@ namespace Terminaux.Reader
         {
             get => syntaxHighlighter;
             set => syntaxHighlighter = value ?? SyntaxHighlightingTools.GetHighlighter("Command");
+        }
+
+        /// <summary>
+        /// Prints the default value
+        /// </summary>
+        public bool PrintDefaultValue
+        {
+            get => printDefaultValue;
+            set => printDefaultValue = value;
+        }
+
+        /// <summary>
+        /// Default value format when showing it is enabled
+        /// </summary>
+        public string DefaultValueFormat
+        {
+            get => defaultValueFormat ?? "[{0}] ";
+            set => defaultValueFormat = value;
         }
 
         /// <summary>
