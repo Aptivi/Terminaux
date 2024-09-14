@@ -68,7 +68,7 @@ namespace Terminaux.Colors
         /// Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; in its original form.
         /// </summary>
         public string PlainSequenceOriginal =>
-            Type == ColorType.TrueColor ? PlainSequenceTrueColor : $"{ColorId?.ColorId}";
+            Type == ColorType.TrueColor ? PlainSequenceTrueColor : $"{ColorId.ColorId}";
 
         /// <summary>
         /// Parsable VT sequence (Foreground)
