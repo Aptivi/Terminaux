@@ -368,6 +368,48 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to YXY
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToYxy()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to YXY
+            var yxy = ConversionTools.ToYxy(ColorInstance.RGB);
+
+            // Check for property correctness
+            yxy.Y1.ShouldBe(11.284216455358383);
+            yxy.X.ShouldBe(0.50293801150829631);
+            yxy.Y2.ShouldBe(0.41543709850935812);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(yxy);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -707,6 +749,48 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to YXY
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericConvertRgbToYxy()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to YXY
+            var yxy = ConversionTools.ConvertFromRgb<Yxy>(ColorInstance.RGB);
+
+            // Check for property correctness
+            yxy.Y1.ShouldBe(11.284216455358383);
+            yxy.X.ShouldBe(0.50293801150829631);
+            yxy.Y2.ShouldBe(0.41543709850935812);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ConvertToRgb(yxy);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -1038,6 +1122,48 @@ namespace Terminaux.Tests.Colors
 
             // Now, convert back to RGB
             var rgb = ConversionTools.GetConvertedColorModel<Xyz, RedGreenBlue>(xyz);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to YXY
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericBidirectionalConvertRgbToYxy()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to YXY
+            var yxy = ConversionTools.GetConvertedColorModel<RedGreenBlue, Yxy>(ColorInstance.RGB);
+
+            // Check for property correctness
+            yxy.Y1.ShouldBe(11.284216455358383);
+            yxy.X.ShouldBe(0.50293801150829631);
+            yxy.Y2.ShouldBe(0.41543709850935812);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.GetConvertedColorModel<Yxy, RedGreenBlue>(yxy);
 
             // Check for property correctness
             rgb.R.ShouldBe(138);
