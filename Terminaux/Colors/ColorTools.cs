@@ -390,16 +390,14 @@ namespace Terminaux.Colors
         {
             // Select appropriate settings
             var finalSettings = settings ?? GlobalSettings;
-            maxColor = maxColor > 256 ? 256 : maxColor;
+            int maxColorLevel = type == ColorType.FourBitColor ? 16 : 256;
+            maxColor = maxColor > maxColorLevel ? maxColorLevel : maxColor;
             switch (type)
             {
                 case ColorType.FourBitColor:
-                    maxColor = maxColor > 16 ? 16 : maxColor;
+                case ColorType.EightBitColor:
                     int colorNum = rng.Next(minColor, maxColor);
                     return new Color(colorNum, finalSettings);
-                case ColorType.EightBitColor:
-                    int colorNum2 = rng.Next(minColor, maxColor);
-                    return new Color(colorNum2, finalSettings);
                 case ColorType.TrueColor:
                     int colorNumR = rng.Next(minColorR, maxColorR);
                     int colorNumG = rng.Next(minColorG, maxColorG);
