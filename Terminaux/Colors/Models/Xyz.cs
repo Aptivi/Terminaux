@@ -33,15 +33,15 @@ namespace Terminaux.Colors.Models
     public class Xyz : BaseColorModel, IEquatable<Xyz>
     {
         /// <summary>
-        /// The X value [0.0 -> 1.0]
+        /// The X value [0.0 -> 95.047]
         /// </summary>
         public double X { get; private set; }
         /// <summary>
-        /// The Y value [0.0 -> 1.0]
+        /// The Y value [0.0 -> 100.0]
         /// </summary>
         public double Y { get; private set; }
         /// <summary>
-        /// The Z value [0.0 -> 1.0]
+        /// The Z value [0.0 -> 108.883]
         /// </summary>
         public double Z { get; private set; }
 
@@ -73,14 +73,14 @@ namespace Terminaux.Colors.Models
                 return false;
 
             var specifierArray = specifier.Substring(4).Split(';');
-            int r = Convert.ToInt32(specifierArray[0]);
-            if (r < 0 || r > 100)
+            double x = Convert.ToDouble(specifierArray[0]);
+            if (x < 0 || x > 95.047)
                 return false;
-            int y = Convert.ToInt32(specifierArray[1]);
+            double y = Convert.ToDouble(specifierArray[1]);
             if (y < 0 || y > 100)
                 return false;
-            int b = Convert.ToInt32(specifierArray[2]);
-            if (b < 0 || b > 100)
+            double z = Convert.ToDouble(specifierArray[2]);
+            if (z < 0 || z > 108.883)
                 return false;
             return true;
         }
@@ -124,18 +124,18 @@ namespace Terminaux.Colors.Models
             if (specifierArray.Length == 3)
             {
                 // We got the XYZ whole values! First, check to see if we need to filter the color for the color-blind
-                int r = Convert.ToInt32(specifierArray[0]);
-                if (r < 0 || r > 100)
-                    throw new TerminauxException($"The red level is out of range (0 -> 100). {r}");
-                int y = Convert.ToInt32(specifierArray[1]);
+                double x = Convert.ToDouble(specifierArray[0]);
+                if (x < 0 || x > 95.047)
+                    throw new TerminauxException($"The X value is out of range (0.0 -> 95.047). {x}");
+                double y = Convert.ToDouble(specifierArray[1]);
                 if (y < 0 || y > 100)
-                    throw new TerminauxException($"The yellow level is out of range (0 -> 100). {y}");
-                int b = Convert.ToInt32(specifierArray[2]);
-                if (b < 0 || b > 100)
-                    throw new TerminauxException($"The blue level is out of range (0 -> 100). {b}");
+                    throw new TerminauxException($"The Y value is out of range (0.0 -> 100.0). {y}");
+                double z = Convert.ToDouble(specifierArray[2]);
+                if (z < 0 || z > 108.883)
+                    throw new TerminauxException($"The Z value is out of range (0.0 -> 108.883). {z}");
 
                 // First, we need to convert from XYZ to RGB
-                var xyz = new Xyz(r, y, b);
+                var xyz = new Xyz(x, y, z);
                 return xyz;
             }
             else

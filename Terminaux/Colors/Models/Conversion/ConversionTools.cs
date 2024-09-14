@@ -924,9 +924,9 @@ namespace Terminaux.Colors.Models.Conversion
                 throw new TerminauxException("Can't convert a null YXY instance to RGB!");
 
             // Get the normalized xyz values
-            double x = yxy.X * (yxy.Y1 / yxy.Y2) / 100d;
-            double y = yxy.Y1 / 100d;
-            double z = (1 - yxy.X - yxy.Y2) * (yxy.Y1 / yxy.Y2) / 100d;
+            double x = yxy.X * (yxy.Y2 / yxy.Y1) / 100d;
+            double y = yxy.Y2 / 100d;
+            double z = (1 - yxy.X - yxy.Y1) * (yxy.Y2 / yxy.Y1) / 100d;
 
             // Now, convert them to RGB
             double r = x * 3.2406d + y * -1.5372d + z * -0.4986d;

@@ -29,13 +29,13 @@ namespace Terminaux.Colors.Models
     /// <summary>
     /// The YXY class instance
     /// </summary>
-    [DebuggerDisplay("YXY = {Y1};{X};{Y2}")]
+    [DebuggerDisplay("YXY = {Y2};{X};{Y1}")]
     public class Yxy : BaseColorModel, IEquatable<Yxy>
     {
         /// <summary>
-        /// The Y value [0.0 -> 1.0]
+        /// The Y value [0.0 -> 100.0]
         /// </summary>
-        public double Y2 { get; private set; }
+        public double Y1 { get; private set; }
         /// <summary>
         /// The x value [0.0 -> 1.0]
         /// </summary>
@@ -43,13 +43,13 @@ namespace Terminaux.Colors.Models
         /// <summary>
         /// The y value [0.0 -> 1.0]
         /// </summary>
-        public double Y1 { get; private set; }
+        public double Y2 { get; private set; }
 
         /// <summary>
         /// yxy:&lt;Y1&gt;;&lt;X&gt;;&lt;Y2&gt;
         /// </summary>
         public override string ToString() =>
-            $"yxy:{Y1:0.##};{X:0.##};{Y2:0.##}";
+            $"yxy:{Y2:0.##};{X:0.##};{Y1:0.##}";
 
         /// <summary>
         /// Does the string specifier represent a valid YXY specifier?
@@ -77,10 +77,10 @@ namespace Terminaux.Colors.Models
             if (y1 < 0 || y1 > 100)
                 return false;
             int x = Convert.ToInt32(specifierArray[1]);
-            if (x < 0 || x > 100)
+            if (x < 0 || x > 1)
                 return false;
             int y2 = Convert.ToInt32(specifierArray[2]);
-            if (y2 < 0 || y2 > 100)
+            if (y2 < 0 || y2 > 1)
                 return false;
             return true;
         }
@@ -124,18 +124,18 @@ namespace Terminaux.Colors.Models
             if (specifierArray.Length == 3)
             {
                 // We got the YXY whole values! First, check to see if we need to filter the color for the color-blind
-                int r = Convert.ToInt32(specifierArray[0]);
-                if (r < 0 || r > 100)
-                    throw new TerminauxException($"The red level is out of range (0 -> 100). {r}");
-                int y = Convert.ToInt32(specifierArray[1]);
-                if (y < 0 || y > 100)
-                    throw new TerminauxException($"The yellow level is out of range (0 -> 100). {y}");
-                int b = Convert.ToInt32(specifierArray[2]);
-                if (b < 0 || b > 100)
-                    throw new TerminauxException($"The blue level is out of range (0 -> 100). {b}");
+                double y1 = Convert.ToDouble(specifierArray[0]);
+                if (y1 < 0 || y1 > 100)
+                    throw new TerminauxException($"The Y1 value is out of range (0.0 -> 100.0). {y1}");
+                double x = Convert.ToDouble(specifierArray[1]);
+                if (x < 0 || x > 1)
+                    throw new TerminauxException($"The X value is out of range (0.0 -> 1.0). {x}");
+                double y2 = Convert.ToDouble(specifierArray[2]);
+                if (y2 < 0 || y2 > 1)
+                    throw new TerminauxException($"The Y2 value is out of range (0.0 -> 1.0). {y2}");
 
                 // First, we need to convert from YXY to RGB
-                var yxy = new Yxy(r, y, b);
+                var yxy = new Yxy(y1, x, y2);
                 return yxy;
             }
             else
@@ -149,17 +149,17 @@ namespace Terminaux.Colors.Models
         /// <inheritdoc/>
         public bool Equals(Yxy other) =>
             other is not null &&
-            Y1 == other.Y1 &&
+            Y2 == other.Y2 &&
             X == other.X &&
-            Y2 == other.Y2;
+            Y1 == other.Y1;
 
         /// <inheritdoc/>
         public override int GetHashCode()
         {
             int hashCode = 1299691120;
-            hashCode = hashCode * -1521134295 + Y2.GetHashCode();
-            hashCode = hashCode * -1521134295 + X.GetHashCode();
             hashCode = hashCode * -1521134295 + Y1.GetHashCode();
+            hashCode = hashCode * -1521134295 + X.GetHashCode();
+            hashCode = hashCode * -1521134295 + Y2.GetHashCode();
             return hashCode;
         }
 
@@ -173,9 +173,9 @@ namespace Terminaux.Colors.Models
 
         internal Yxy(double y1, double x, double y2)
         {
-            Y1 = y1;
+            Y2 = y1;
             X = x;
-            Y2 = y2;
+            Y1 = y2;
         }
     }
 }

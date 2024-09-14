@@ -396,9 +396,9 @@ namespace Terminaux.Tests.Colors
             var yxy = ConversionTools.ToYxy(ColorInstance.RGB);
 
             // Check for property correctness
-            yxy.Y1.ShouldBe(11.284216455358383);
+            yxy.Y2.ShouldBe(11.284216455358383);
             yxy.X.ShouldBe(0.50293801150829631);
-            yxy.Y2.ShouldBe(0.41543709850935812);
+            yxy.Y1.ShouldBe(0.41543709850935812);
 
             // Now, convert back to RGB
             var rgb = ConversionTools.ToRgb(yxy);
@@ -777,9 +777,9 @@ namespace Terminaux.Tests.Colors
             var yxy = ConversionTools.ConvertFromRgb<Yxy>(ColorInstance.RGB);
 
             // Check for property correctness
-            yxy.Y1.ShouldBe(11.284216455358383);
+            yxy.Y2.ShouldBe(11.284216455358383);
             yxy.X.ShouldBe(0.50293801150829631);
-            yxy.Y2.ShouldBe(0.41543709850935812);
+            yxy.Y1.ShouldBe(0.41543709850935812);
 
             // Now, convert back to RGB
             var rgb = ConversionTools.ConvertToRgb(yxy);
@@ -1158,9 +1158,9 @@ namespace Terminaux.Tests.Colors
             var yxy = ConversionTools.GetConvertedColorModel<RedGreenBlue, Yxy>(ColorInstance.RGB);
 
             // Check for property correctness
-            yxy.Y1.ShouldBe(11.284216455358383);
+            yxy.Y2.ShouldBe(11.284216455358383);
             yxy.X.ShouldBe(0.50293801150829631);
-            yxy.Y2.ShouldBe(0.41543709850935812);
+            yxy.Y1.ShouldBe(0.41543709850935812);
 
             // Now, convert back to RGB
             var rgb = ConversionTools.GetConvertedColorModel<Yxy, RedGreenBlue>(yxy);
