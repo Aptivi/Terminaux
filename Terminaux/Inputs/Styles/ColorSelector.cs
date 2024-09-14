@@ -604,6 +604,7 @@ namespace Terminaux.Inputs.Styles
             var yiq = ConversionTools.ToYiq(selectedColor.RGB);
             var yuv = ConversionTools.ToYuv(selectedColor.RGB);
             var xyz = ConversionTools.ToXyz(selectedColor.RGB);
+            var yxy = ConversionTools.ToYxy(selectedColor.RGB);
             InfoBoxColor.WriteInfoBox(localizedTextTitle,
                 $$"""
                 RGB level:          {{selectedColor.PlainSequence}}
@@ -653,6 +654,11 @@ namespace Terminaux.Inputs.Styles
                     - X:              {{xyz.X,3:0.##}}
                     - Y:              {{xyz.Y,3:0.##}}
                     - Z:              {{xyz.Z,3:0.##}}
+                    
+                YXY information:
+                    - Y1:             {{yxy.Y1,3:0.##}}
+                    - X:              {{yxy.X,3:0.##}}
+                    - Y2:             {{yxy.Y2,3:0.##}}
                 """
             );
         }
