@@ -128,35 +128,8 @@ namespace Terminaux.Colors.Models.Conversion
         /// <exception cref="TerminauxException"></exception>
         public static TResult GetConvertedColorModel<TModel, TResult>(TModel source)
             where TModel : BaseColorModel
-            where TResult : BaseColorModel
-        {
-            // Check for value
-            if (source is null)
-                throw new TerminauxException("Can't convert null source.");
-
-            // Determine whether the conversion is needed or not
-            bool needsConvertTarget = typeof(TResult) != typeof(RedGreenBlue);
-            if (typeof(TModel) == typeof(TResult))
-                throw new TerminauxException("Can't convert same color model.");
-            if (typeof(TModel) == typeof(BaseColorModel))
-                throw new TerminauxException("Can't convert from base color model.");
-            if (typeof(TResult) == typeof(BaseColorModel))
-                throw new TerminauxException("Can't convert to base color model.");
-
-            // Convert the source color first to RGB if we don't have an RGB instance
-            if (source is not RedGreenBlue rgb)
-                rgb = ConvertToRgb(source);
-            if (!needsConvertTarget)
-            {
-                return rgb as TResult ??
-                    throw new TerminauxException("Can't convert to RGB.");
-            }
-            else
-            {
-                var converted = ConvertFromRgb<TResult>(rgb);
-                return converted;
-            }
-        }
+            where TResult : BaseColorModel =>
+            (TResult)GetConvertedColorModel(source, typeof(TResult));
 
         /// <summary>
         /// Gets the converted color model from the source model of type <typeparamref name="TModel"/> to the target color model of type <see cref="RedGreenBlue"/>
@@ -165,14 +138,83 @@ namespace Terminaux.Colors.Models.Conversion
         /// <param name="source">The source color model instance</param>
         /// <returns>Converted color model that is of type <see cref="RedGreenBlue"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static RedGreenBlue ConvertToRgb<TModel>(TModel source) where TModel : BaseColorModel
+        public static RedGreenBlue ConvertToRgb<TModel>(TModel source)
+            where TModel : BaseColorModel =>
+            ConvertToRgb((BaseColorModel)source);
+
+        /// <summary>
+        /// Gets the converted color model from the source model of type <see cref="RedGreenBlue"/> to the target color model of type <typeparamref name="TResult"/>
+        /// </summary>
+        /// <typeparam name="TResult">Target color model in which it will be converted to</typeparam>
+        /// <param name="source">The source color model instance</param>
+        /// <returns>Converted color model that is of type <typeparamref name="TResult"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static TResult ConvertFromRgb<TResult>(RedGreenBlue source)
+            where TResult : BaseColorModel =>
+            (TResult)ConvertFromRgb(source, typeof(TResult));
+        #endregion
+
+        #region Non-generic color model conversion functions
+        /// <summary>
+        /// Gets the converted color model from the source model to the target color model
+        /// </summary>
+        /// <param name="source">The source color model instance</param>
+        /// <param name="targetType">The target color model type</param>
+        /// <returns>Converted color model</returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static BaseColorModel GetConvertedColorModel(BaseColorModel source, Type targetType)
+        {
+            // Check for value
+            if (source is null)
+                throw new TerminauxException("Can't convert null source.");
+            if (targetType is null)
+                throw new TerminauxException("Can't convert to null type.");
+            Type sourceType = source.GetType();
+
+            // Check for type
+            if (sourceType == typeof(BaseColorModel))
+                throw new TerminauxException("You should specify a specific source color model, not the base one.");
+            if (sourceType.BaseType != typeof(BaseColorModel))
+                throw new TerminauxException("Not a color model.");
+            if (targetType == typeof(BaseColorModel))
+                throw new TerminauxException("You should specify a specific target color model, not the base one.");
+            if (targetType.BaseType != typeof(BaseColorModel))
+                throw new TerminauxException("Not a target color model.");
+
+            // Determine whether the conversion is needed or not
+            bool needsConvertTarget = targetType != typeof(RedGreenBlue);
+            if (sourceType == targetType)
+                throw new TerminauxException("Can't convert same color model.");
+
+            // Convert the source color first to RGB if we don't have an RGB instance
+            if (source is not RedGreenBlue rgb)
+                rgb = ConvertToRgb(source);
+            if (!needsConvertTarget)
+            {
+                return rgb ??
+                    throw new TerminauxException("Can't convert to RGB.");
+            }
+            else
+            {
+                var converted = ConvertFromRgb(rgb, targetType);
+                return converted;
+            }
+        }
+
+        /// <summary>
+        /// Gets the converted color model from the source model to the target color model of type <see cref="RedGreenBlue"/>
+        /// </summary>
+        /// <param name="source">The source color model instance</param>
+        /// <returns>Converted color model that is of type <see cref="RedGreenBlue"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ConvertToRgb(BaseColorModel source)
         {
             // Check for value
             if (source is null)
                 throw new TerminauxException("Can't convert null source.");
 
             // Now, convert from the specified source model to RGB
-            if (typeof(TModel) == typeof(BaseColorModel))
+            if (source.GetType() == typeof(BaseColorModel))
                 throw new TerminauxException("Can't convert from base color model.");
             if (source is not RedGreenBlue rgb)
             {
@@ -203,54 +245,56 @@ namespace Terminaux.Colors.Models.Conversion
         }
 
         /// <summary>
-        /// Gets the converted color model from the source model of type <see cref="RedGreenBlue"/> to the target color model of type <typeparamref name="TResult"/>
+        /// Gets the converted color model from the source model of type <see cref="RedGreenBlue"/> to the target color model
         /// </summary>
-        /// <typeparam name="TResult">Target color model in which it will be converted to</typeparam>
         /// <param name="source">The source color model instance</param>
-        /// <returns>Converted color model that is of type <typeparamref name="TResult"/></returns>
+        /// <param name="targetType">Target color model in which it will be converted to</param>
+        /// <returns>Converted color model</returns>
         /// <exception cref="TerminauxException"></exception>
-        public static TResult ConvertFromRgb<TResult>(RedGreenBlue source) where TResult : BaseColorModel
+        public static BaseColorModel ConvertFromRgb(RedGreenBlue source, Type targetType)
         {
             // Check for value
             if (source is null)
                 throw new TerminauxException("Can't convert null source.");
+            if (targetType is null)
+                throw new TerminauxException("Can't convert to null type.");
 
             // Now, convert from RGB to the specified source model
             if (source.GetType() == typeof(BaseColorModel))
                 throw new TerminauxException("Can't convert from base color model.");
-            if (typeof(TResult) == typeof(BaseColorModel))
+            if (targetType == typeof(BaseColorModel))
                 throw new TerminauxException("Can't convert from base color model.");
-            if (typeof(TResult) == typeof(RedGreenBlue))
-                return source as TResult ??
+            if (targetType == typeof(RedGreenBlue))
+                return source ??
                     throw new TerminauxException("Can't convert from base color model.");
             else
             {
-                if (typeof(TResult) == typeof(CyanMagentaYellowKey))
-                    return ToCmyk(source) as TResult ??
+                if (targetType == typeof(CyanMagentaYellowKey))
+                    return ToCmyk(source) ??
                         throw new TerminauxException("Can't convert to CMYK.");
-                else if (typeof(TResult) == typeof(CyanMagentaYellow))
-                    return ToCmy(source) as TResult ??
+                else if (targetType == typeof(CyanMagentaYellow))
+                    return ToCmy(source) ??
                         throw new TerminauxException("Can't convert to CMY.");
-                else if (typeof(TResult) == typeof(HueSaturationLightness))
-                    return ToHsl(source) as TResult ??
+                else if (targetType == typeof(HueSaturationLightness))
+                    return ToHsl(source) ??
                         throw new TerminauxException("Can't convert to HSL.");
-                else if (typeof(TResult) == typeof(HueSaturationValue))
-                    return ToHsv(source) as TResult ??
+                else if (targetType == typeof(HueSaturationValue))
+                    return ToHsv(source) ??
                         throw new TerminauxException("Can't convert to HSV.");
-                else if (typeof(TResult) == typeof(RedYellowBlue))
-                    return ToRyb(source) as TResult ??
+                else if (targetType == typeof(RedYellowBlue))
+                    return ToRyb(source) ??
                         throw new TerminauxException("Can't convert to RYB.");
-                else if (typeof(TResult) == typeof(LumaInPhaseQuadrature))
-                    return ToYiq(source) as TResult ??
+                else if (targetType == typeof(LumaInPhaseQuadrature))
+                    return ToYiq(source) ??
                         throw new TerminauxException("Can't convert to YIQ.");
-                else if (typeof(TResult) == typeof(LumaChromaUv))
-                    return ToYuv(source) as TResult ??
+                else if (targetType == typeof(LumaChromaUv))
+                    return ToYuv(source) ??
                         throw new TerminauxException("Can't convert to YUV.");
-                else if (typeof(TResult) == typeof(Xyz))
-                    return ToXyz(source) as TResult ??
+                else if (targetType == typeof(Xyz))
+                    return ToXyz(source) ??
                         throw new TerminauxException("Can't convert to XYZ.");
-                else if (typeof(TResult) == typeof(Yxy))
-                    return ToYxy(source) as TResult ??
+                else if (targetType == typeof(Yxy))
+                    return ToYxy(source) ??
                         throw new TerminauxException("Can't convert to YXY.");
                 else
                     throw new TerminauxException("Can't convert from RGB.");
