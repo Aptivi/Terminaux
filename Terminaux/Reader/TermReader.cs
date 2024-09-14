@@ -21,7 +21,6 @@ using System;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
-using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader.Bindings;
 using Terminaux.Reader.History;
