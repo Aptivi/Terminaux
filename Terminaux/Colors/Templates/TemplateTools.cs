@@ -20,6 +20,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
@@ -34,7 +35,7 @@ namespace Terminaux.Colors.Templates
         private static string defaultTemplate = "Default";
         private static readonly TemplateInfo[] baseTemplates =
         [
-            new("Default", new Dictionary<string, Color>()
+            new("Default", new Dictionary<string, Color?>()
             {
                 { $"{PredefinedComponentType.Text}", ConsoleColors.White }
             })
@@ -172,7 +173,7 @@ namespace Terminaux.Colors.Templates
         /// <param name="componentName">Component name</param>
         /// <param name="color">Color to set</param>
         /// <exception cref="TerminauxException"></exception>
-        public static void SetColor(PredefinedComponentType componentName, Color color) =>
+        public static void SetColor(PredefinedComponentType componentName, Color? color) =>
             SetColor(defaultTemplate, componentName, color);
 
         /// <summary>
@@ -182,7 +183,7 @@ namespace Terminaux.Colors.Templates
         /// <param name="componentName">Component name</param>
         /// <param name="color">Color to set</param>
         /// <exception cref="TerminauxException"></exception>
-        public static void SetColor(string template, PredefinedComponentType componentName, Color color) =>
+        public static void SetColor(string template, PredefinedComponentType componentName, Color? color) =>
             SetColor(template, $"{componentName}", color);
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Terminaux.Colors.Templates
         /// <param name="componentName">Component name</param>
         /// <param name="color">Color to set</param>
         /// <exception cref="TerminauxException"></exception>
-        public static void SetColor(string componentName, Color color) =>
+        public static void SetColor(string componentName, Color? color) =>
             SetColor(defaultTemplate, componentName, color);
 
         /// <summary>
@@ -201,7 +202,7 @@ namespace Terminaux.Colors.Templates
         /// <param name="componentName">Component name</param>
         /// <param name="color">Color to set</param>
         /// <exception cref="TerminauxException"></exception>
-        public static void SetColor(string template, string componentName, Color color)
+        public static void SetColor(string template, string componentName, Color? color)
         {
             // Check to see if we have this template
             if (!Exists(template))
@@ -216,7 +217,7 @@ namespace Terminaux.Colors.Templates
         /// Registers a template
         /// </summary>
         /// <param name="template">Template information</param>
-        public static void RegisterTemplate(TemplateInfo template)
+        public static void RegisterTemplate(TemplateInfo? template)
         {
             // Check the template
             if (template is null)
@@ -227,7 +228,7 @@ namespace Terminaux.Colors.Templates
                 throw new TerminauxException("Template already exists.");
             if (template.Components is null || template.Components.Count == 0)
                 throw new TerminauxException("Template has no components.");
-            if (!TemplateComponentValidation(template))
+            if (!template.TemplateComponentValidation())
                 throw new TerminauxException("Template has no pre-defined components that must be defined ({0}).", string.Join(", ", Enum.GetNames(typeof(PredefinedComponentType))));
 
             // Now, actually register the template
@@ -287,17 +288,5 @@ namespace Terminaux.Colors.Templates
 
         private static int GetTemplateIndexFrom(string template) =>
             TemplateNames.Select((name, idx) => (name, idx)).Where((tuple) => tuple.name == template).First().idx;
-
-        private static bool TemplateComponentValidation(TemplateInfo template)
-        {
-            var names = Enum.GetNames(typeof(PredefinedComponentType));
-            bool valid = true;
-            foreach (string name in names)
-            {
-                if (!template.Components.ContainsKey(name))
-                    valid = false;
-            }
-            return valid;
-        }
     }
 }

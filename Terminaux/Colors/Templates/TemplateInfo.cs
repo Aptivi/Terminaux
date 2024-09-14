@@ -75,7 +75,7 @@ namespace Terminaux.Colors.Templates
         /// </summary>
         /// <param name="componentName">Component name to add</param>
         /// <param name="color">Color to associate this component with</param>
-        public void AddComponent(string componentName, Color color)
+        public void AddComponent(string componentName, Color? color)
         {
             if (string.IsNullOrEmpty(componentName))
                 throw new TerminauxException("No component name specified.");
@@ -110,7 +110,7 @@ namespace Terminaux.Colors.Templates
         /// </summary>
         /// <param name="componentName">Component name to edit</param>
         /// <param name="color">Color to associate this component with</param>
-        public void EditComponent(string componentName, Color color)
+        public void EditComponent(string componentName, Color? color)
         {
             if (string.IsNullOrEmpty(componentName))
                 throw new TerminauxException("No component name specified.");
@@ -123,14 +123,62 @@ namespace Terminaux.Colors.Templates
             components[componentName] = color;
         }
 
+        internal bool TemplateComponentValidation()
+        {
+            var dict = Components.ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
+            return TemplateComponentValidation(dict);
+        }
+
+        internal bool TemplateComponentValidation(Dictionary<string, Color> components)
+        {
+            var names = Enum.GetNames(typeof(PredefinedComponentType));
+            bool valid = true;
+            foreach (string name in names)
+            {
+                if (!components.ContainsKey(name))
+                    valid = false;
+            }
+            return valid;
+        }
+
+        private Dictionary<string, Color> VerifyComponentsCtor(Dictionary<string, Color?> components)
+        {
+            Dictionary<string, Color> finalComponents = [];
+            foreach (var kvp in components)
+            {
+                string name = kvp.Key;
+                Color? color = kvp.Value;
+                if (string.IsNullOrEmpty(name))
+                    throw new TerminauxException("No component name specified.");
+                if (color is null)
+                    throw new TerminauxException($"No color specified for component {name}.");
+                if (components.Count == 0)
+                    throw new TerminauxException("Template has no components.");
+                finalComponents.Add(name, color);
+            }
+            if (!TemplateComponentValidation(finalComponents))
+                throw new TerminauxException("Template has no pre-defined components that must be defined ({0}).", string.Join(", ", Enum.GetNames(typeof(PredefinedComponentType))));
+            return finalComponents;
+        }
+
         [JsonConstructor]
         private TemplateInfo()
         { }
 
-        internal TemplateInfo(string name, Dictionary<string, Color> components)
+        /// <summary>
+        /// Makes a new instance of the template information class
+        /// </summary>
+        /// <param name="name">Name of the template</param>
+        /// <param name="components">List of components in a dictionary</param>
+        public TemplateInfo(string name, Dictionary<string, Color?>? components)
         {
+            if (string.IsNullOrEmpty(name))
+                throw new TerminauxException("Name of the template not provided");
+            if (components is null)
+                throw new TerminauxException("Components are not provided, but this list can be empty for dynamic addition.");
+            var finalComponents = VerifyComponentsCtor(components);
             this.name = name;
-            this.components = components;
+            this.components = finalComponents;
         }
     }
 }
