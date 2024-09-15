@@ -410,6 +410,48 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to HunterLab
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToHunterLab()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to HunterLab
+            var hunterLab = ConversionTools.ToHunterLab(ColorInstance.RGB);
+
+            // Check for property correctness
+            hunterLab.L.ShouldBe(33.591987817570995);
+            hunterLab.A.ShouldBe(13.805076366856513);
+            hunterLab.B.ShouldBe(19.601169467400634);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(hunterLab);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -791,6 +833,48 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to HunterLab
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericConvertRgbToHunterLab()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to HunterLab
+            var hunterLab = ConversionTools.ConvertFromRgb<HunterLab>(ColorInstance.RGB);
+
+            // Check for property correctness
+            hunterLab.L.ShouldBe(33.591987817570995);
+            hunterLab.A.ShouldBe(13.805076366856513);
+            hunterLab.B.ShouldBe(19.601169467400634);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ConvertToRgb(hunterLab);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -1164,6 +1248,48 @@ namespace Terminaux.Tests.Colors
 
             // Now, convert back to RGB
             var rgb = ConversionTools.GetConvertedColorModel<Yxy, RedGreenBlue>(yxy);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to HunterLab
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericBidirectionalConvertRgbToHunterLab()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to HunterLab
+            var hunterLab = ConversionTools.GetConvertedColorModel<RedGreenBlue, HunterLab>(ColorInstance.RGB);
+
+            // Check for property correctness
+            hunterLab.L.ShouldBe(33.591987817570995);
+            hunterLab.A.ShouldBe(13.805076366856513);
+            hunterLab.B.ShouldBe(19.601169467400634);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.GetConvertedColorModel<HunterLab, RedGreenBlue>(hunterLab);
 
             // Check for property correctness
             rgb.R.ShouldBe(138);

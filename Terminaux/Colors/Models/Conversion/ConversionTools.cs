@@ -236,6 +236,8 @@ namespace Terminaux.Colors.Models.Conversion
                     rgb = ToRgb(xyz);
                 else if (source is Yxy yxy)
                     rgb = ToRgb(yxy);
+                else if (source is HunterLab hunterLab)
+                    rgb = ToRgb(hunterLab);
                 else
                     throw new TerminauxException("Can't convert to RGB.");
                 return rgb;
@@ -296,6 +298,9 @@ namespace Terminaux.Colors.Models.Conversion
                 else if (targetType == typeof(Yxy))
                     return ToYxy(source) ??
                         throw new TerminauxException("Can't convert to YXY.");
+                else if (targetType == typeof(HunterLab))
+                    return ToHunterLab(source) ??
+                        throw new TerminauxException("Can't convert to HunterLab.");
                 else
                     throw new TerminauxException("Can't convert from RGB.");
             }
@@ -641,6 +646,28 @@ namespace Terminaux.Colors.Models.Conversion
             // Return the resulting values
             return new(y1, x, y2);
         }
+
+        /// <summary>
+        /// Converts the RGB color model to HunterLab
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static HunterLab ToHunterLab(RedGreenBlue rgb)
+        {
+            if (rgb is null)
+                throw new TerminauxException("Can't convert a null RGB instance to HunterLab!");
+
+            // Get the XYZ values first
+            var xyz = ToXyz(rgb);
+
+            // Get the HunterLab values
+            double l = 10.0 * Math.Sqrt(xyz.Y);
+            double a = 17.5 * (((1.02 * xyz.X) - xyz.Y) / Math.Sqrt(xyz.Y));
+            double b = 7 * ((xyz.Y - (0.847 * xyz.Z)) / Math.Sqrt(xyz.Y));
+
+            // Return the resulting values
+            return new(l, a, b);
+        }
         #endregion
         #region Translate to RGB from...
         /// <summary>
@@ -971,6 +998,41 @@ namespace Terminaux.Colors.Models.Conversion
             double x = yxy.X * (yxy.Y2 / yxy.Y1) / 100d;
             double y = yxy.Y2 / 100d;
             double z = (1 - yxy.X - yxy.Y1) * (yxy.Y2 / yxy.Y1) / 100d;
+
+            // Now, convert them to RGB
+            double r = x * 3.2406d + y * -1.5372d + z * -0.4986d;
+            double g = x * -0.9689d + y * 1.8758d + z * 0.0415d;
+            double b = x * 0.0557d + y * -0.2040d + z * 1.0570d;
+            r = (r > 0.0031308) ? 1.055d * Math.Pow(r, 1 / 2.4d) - 0.055 : r * 12.92d;
+            g = (g > 0.0031308) ? 1.055d * Math.Pow(g, 1 / 2.4d) - 0.055 : g * 12.92d;
+            b = (b > 0.0031308) ? 1.055d * Math.Pow(b, 1 / 2.4d) - 0.055 : b * 12.92d;
+
+            int rWhole = (int)(r * 255);
+            int gWhole = (int)(g * 255);
+            int bWhole = (int)(b * 255);
+
+            // Install the values
+            return new(rWhole, gWhole, bWhole);
+        }
+
+        /// <summary>
+        /// Converts the HunterLab color model to RGB
+        /// </summary>
+        /// <param name="hunterLab">Instance of HunterLab</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(HunterLab hunterLab)
+        {
+            if (hunterLab is null)
+                throw new TerminauxException("Can't convert a null HunterLab instance to RGB!");
+
+            // Get the normalized xyz values
+            double varY = hunterLab.L / 10;
+            double varX = hunterLab.A / 17.5 * hunterLab.L / 10;
+            double varZ = hunterLab.B / 7 * hunterLab.L / 10;
+            double y = Math.Pow(varY, 2);
+            double x = (varX + y) / 1.02 / 100d;
+            double z = -(varZ - y) / 0.847 / 100d;
+            y /= 100;
 
             // Now, convert them to RGB
             double r = x * 3.2406d + y * -1.5372d + z * -0.4986d;
