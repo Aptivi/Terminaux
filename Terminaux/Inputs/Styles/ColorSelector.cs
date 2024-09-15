@@ -51,6 +51,7 @@ namespace Terminaux.Inputs.Styles
         private static int trueColorSaturation = 100;
         private static int trueColorLightness = 50;
         private static int colorBlindnessSimulationIdx = 0;
+        private static double colorBlindnessSeverity = 0.6;
         private static ConsoleColors colorValue255 = ConsoleColors.Fuchsia;
         private static ConsoleColor colorValue16 = ConsoleColor.Magenta;
         private static bool save = true;
@@ -63,7 +64,6 @@ namespace Terminaux.Inputs.Styles
         private readonly static Keybinding[] additionalBindingsGeneral =
         [
             new("Color information", ConsoleKey.I),
-            new("Color information in visual mode", ConsoleKey.V),
             new("Select web color", ConsoleKey.W),
             new("Increase opaqueness", ConsoleKey.O),
             new("Increase transparency", ConsoleKey.P),
@@ -116,6 +116,10 @@ namespace Terminaux.Inputs.Styles
             if (selectedColor.RGB is null)
                 return selectedColor;
             ColorType type = initialColor.Type;
+
+            // Reset some variables
+            colorBlindnessSimulationIdx = 0;
+            colorBlindnessSeverity = 0.6;
 
             // Color selector entry
             var screen = new Screen();
@@ -267,7 +271,7 @@ namespace Terminaux.Inputs.Styles
             {
                 StringBuilder grayRamp = new();
                 StringBuilder transparencyRamp = new();
-                var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, 0.6);
+                var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, colorBlindnessSeverity);
                 if (mono.RGB is null)
                     throw new TerminauxInternalException("Gray ramp RGB instance is null.");
                 for (int i = 0; i < boxWidth - 7; i++)
@@ -443,10 +447,6 @@ namespace Terminaux.Inputs.Styles
                         ShowColorInfo(selectedColor, screen);
                         refresh = true;
                         break;
-                    case ConsoleKey.V:
-                        ShowColorInfoVisually(selectedColor, screen);
-                        refresh = true;
-                        break;
                     case ConsoleKey.Enter:
                         bail = true;
                         break;
@@ -549,14 +549,21 @@ namespace Terminaux.Inputs.Styles
             int boxY = 1;
             int boxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
             int boxHeight = ConsoleWrapper.WindowHeight - 5;
+            var formula = (TransformationFormula)(colorBlindnessSimulationIdx - 1);
+            Color transformed =
+                colorBlindnessSimulationIdx > 0 ?
+                TransformationTools.RenderColorBlindnessAware(selectedColor, formula, colorBlindnessSeverity) :
+                selectedColor;
 
             // First, draw the border
             builder.Append(BoxFrameColor.RenderBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor} | {selectedColor.Name}]", boxX, boxY, boxWidth, boxHeight));
 
-            // then, the box
+            // then, the box in two halves (normal and transformed)
             builder.Append(
                 selectedColor.VTSequenceBackground +
-                BoxColor.RenderBox(boxX + 1, boxY, boxWidth, boxHeight) +
+                BoxColor.RenderBox(boxX + 1, boxY, boxWidth, boxHeight / 2) +
+                transformed.VTSequenceBackground +
+                BoxColor.RenderBox(boxX + 1, boxY + (boxHeight / 2), boxWidth, (boxHeight / 2) + (ConsoleWrapper.WindowHeight % 2 == 0 ? 1 : 0)) +
                 ColorTools.RenderRevertBackground()
             );
             return builder.ToString();
@@ -587,8 +594,8 @@ namespace Terminaux.Inputs.Styles
                     ShowColorInfoBox("Color info", selectedColor);
                     break;
                 default:
-                    var formula = (TransformationFormula)colorBlindnessSimulationIdx;
-                    ShowColorInfoBox($"Color info ({formula})", selectedColor, true, (TransformationFormula)colorBlindnessSimulationIdx);
+                    var formula = (TransformationFormula)(colorBlindnessSimulationIdx - 1);
+                    ShowColorInfoBox($"Color info ({formula})", selectedColor, true, (TransformationFormula)(colorBlindnessSimulationIdx - 1), colorBlindnessSeverity);
                     break;
             }
         }
@@ -627,30 +634,6 @@ namespace Terminaux.Inputs.Styles
         {
             string rendered = ShowColorInfo(selectedColor, colorBlind, formula, severity);
             InfoBoxColor.WriteInfoBox(title, rendered);
-        }
-
-        private static void ShowColorInfoVisually(Color selectedColor, Screen screen)
-        {
-            screen.RequireRefresh();
-            switch (colorBlindnessSimulationIdx)
-            {
-                case 0:
-                    ShowColorUsingBackground("Color info", selectedColor);
-                    break;
-                default:
-                    var formula = (TransformationFormula)colorBlindnessSimulationIdx;
-                    ShowColorUsingBackground($"Color info ({formula})", selectedColor, true, (TransformationFormula)colorBlindnessSimulationIdx);
-                    break;
-            }
-        }
-
-        private static void ShowColorUsingBackground(string localizedTextTitle, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
-        {
-            selectedColor =
-                colorBlind ?
-                TransformationTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
-                selectedColor;
-            InfoBoxColor.WriteInfoBoxColorBack(localizedTextTitle, ColorTools.GetGray(selectedColor), selectedColor);
         }
 
         private static void DecrementColor(ColorType type, ConsoleKeyInfo keypress, PointerModifiers mods)
