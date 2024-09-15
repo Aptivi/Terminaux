@@ -1,11 +1,15 @@
-To address a regression that has been introduced in the fifth major version of Terminaux regarding the selection style, we've decided to revert the single selection style behavior to versions before 5.0.
+This version of Terminaux is mostly colorful, as it adds and tweaks features to the color!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added input prompt and placeholder colors
-- `[*]` Single selection behavior reverted
+- `[+]` Added writing default
+- `[+]` Added YXY, HunterLab, CIE-L*ab, and CIE-L*uv color models
+- `[+]` Added non-generic bi-di color model
+- `[*]` Improved template addition logic
+- `[*]` Many improvements to the color selector
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
