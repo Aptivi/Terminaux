@@ -33,9 +33,11 @@ using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences.Builder.Types;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.MiscWriters.Tools;
+using Textify.General;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -198,6 +200,7 @@ namespace Terminaux.Inputs.Styles
             int hslBarY = 1;
             int grayRampBarY = hslBarY + (boxHeight * 3) + 3;
             int rgbRampBarY = grayRampBarY + boxHeight + 3;
+            int infoRampBarY = rgbRampBarY + boxHeight + 4;
             var initialBackground = ColorTools.CurrentBackgroundColor;
 
             // Buffer the hue ramp
@@ -320,6 +323,34 @@ namespace Terminaux.Inputs.Styles
                     CsiSequences.GenerateCsiCursorPosition(hslBarX + 2, rgbRampBarY + 4) +
                     blueRamp.ToString()
                 );
+            }
+
+            // Buffer the color info and the color blindness boxes
+            if (ConsoleWrapper.WindowHeight - 2 > infoRampBarY + 5)
+            {
+                // Render the two boxes
+                int halfBoxWidth = (boxWidth / 2) - 2;
+                int otherHalfLeft = hslBarX + (boxWidth / 2) + 2;
+                selector.Append(
+                    BoxFrameColor.RenderBoxFrame("Color info", hslBarX, infoRampBarY, halfBoxWidth, boxHeight + 2) +
+                    BoxFrameColor.RenderBoxFrame("Color blindness", otherHalfLeft, infoRampBarY, (halfBoxWidth * 2) + 5 == boxWidth ? halfBoxWidth + 1 : halfBoxWidth, boxHeight + 2)
+                );
+
+                // Render the color info
+                string colorInfoText = ShowColorInfo(selectedColor);
+                string[] wrapped = colorInfoText.GetWrappedSentencesByWords(halfBoxWidth);
+                for (int i = 0; i < wrapped.Length; i++)
+                {
+                    int x = hslBarX + 1;
+                    int y = infoRampBarY + 1 + i;
+                    if (y > infoRampBarY + boxHeight + 2)
+                        break;
+                    string wrappedMessage = wrapped[i];
+                    string spaces = new(' ', halfBoxWidth - wrappedMessage.Length);
+                    selector.Append(
+                        TextWriterWhereColor.RenderWhere(wrappedMessage + spaces, x, y)
+                    );
+                }
             }
 
             // Finally, the keybindings
@@ -588,40 +619,40 @@ namespace Terminaux.Inputs.Styles
             }
         }
 
-        private static void ShowColorInfoBox(string localizedTextTitle, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
+        private static string ShowColorInfo(Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
         {
             selectedColor =
                 colorBlind ?
                 TransformationTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
                 selectedColor;
             if (selectedColor.RGB is null)
-                throw new TerminauxInternalException("Selected color RGB instance for color infobox is null.");
+                throw new TerminauxInternalException("Selected color RGB instance for color info is null.");
 
             // Get all the types except RGB and show their values individually
             var baseType = typeof(BaseColorModel);
             var derivedTypes = baseType.Assembly.GetTypes().Where((type) => type.IsSubclassOf(baseType) && type != typeof(RedGreenBlue)).ToArray();
-            int maxWidth = derivedTypes.Max((type) => (type.Name + " values: ").Length);
             StringBuilder builder = new();
             foreach (var colorType in derivedTypes)
             {
                 // Get the value
                 var converted = ConversionTools.ConvertFromRgb(selectedColor.RGB, colorType);
-
-                // Now, print the information
-                string entry = colorType.Name + " values: ";
-                string spaces = new(' ', maxWidth - entry.Length);
-                builder.AppendLine(entry + spaces + converted.ToString());
+                builder.AppendLine(converted.ToString());
             }
-            InfoBoxColor.WriteInfoBox(localizedTextTitle,
+            return 
                 $$"""
-                RGB level:          {{selectedColor.PlainSequence}}
-                RGB level (true):   {{selectedColor.PlainSequenceTrueColor}}
-                RGB hex code:       {{selectedColor.Hex}}
-                Color type:         {{selectedColor.Type}}
+                RGB:      {{selectedColor.PlainSequence}}
+                True:     {{selectedColor.PlainSequenceTrueColor}}
+                Hex:      {{selectedColor.Hex}}
+                Type:     {{selectedColor.Type}}
                     
                 {{builder}}
-                """
-            );
+                """;
+        }
+
+        private static void ShowColorInfoBox(string title, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
+        {
+            string rendered = ShowColorInfo(selectedColor, colorBlind, formula, severity);
+            InfoBoxColor.WriteInfoBox(title, rendered);
         }
 
         private static void ShowColorInfoVisually(Color selectedColor, Screen screen)
