@@ -32,6 +32,7 @@ using Terminaux.Colors.Transformation;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
@@ -49,6 +50,7 @@ namespace Terminaux.Inputs.Styles
         private static int trueColorHue = 0;
         private static int trueColorSaturation = 100;
         private static int trueColorLightness = 50;
+        private static int colorBlindnessSimulationIdx = 0;
         private static ConsoleColors colorValue255 = ConsoleColors.Fuchsia;
         private static ConsoleColor colorValue16 = ConsoleColor.Magenta;
         private static bool save = true;
@@ -65,7 +67,9 @@ namespace Terminaux.Inputs.Styles
             new("Select web color", ConsoleKey.W),
             new("Increase opaqueness", ConsoleKey.O),
             new("Increase transparency", ConsoleKey.P),
-            new("Change between 4-bit, 8-bit, and 16-bit color modes", ConsoleKey.Tab),
+            new("Change color modes", ConsoleKey.Tab),
+            new("Next color blindness simulation", ConsoleKey.N),
+            new("Previous color blindness simulation", ConsoleKey.M),
             new("Increase value", PointerButton.WheelDown),
             new("Decrease value", PointerButton.WheelUp),
         ];
@@ -351,6 +355,14 @@ namespace Terminaux.Inputs.Styles
                         TextWriterWhereColor.RenderWhere(wrappedMessage + spaces, x, y)
                     );
                 }
+
+                // Render the color blindness selections
+                var selectionNames = Enum.GetNames(typeof(TransformationFormula)).ToList();
+                selectionNames.Insert(0, "None");
+                var finalSelections = selectionNames.Select((type, idx) => new InputChoiceInfo($"{idx + 1}", type)).ToArray();
+                selector.Append(
+                    SelectionInputTools.RenderSelections(finalSelections, otherHalfLeft + 1, infoRampBarY + 1, colorBlindnessSimulationIdx, boxHeight + 2, halfBoxWidth)
+                );
             }
 
             // Finally, the keybindings
@@ -462,6 +474,16 @@ namespace Terminaux.Inputs.Styles
                     case ConsoleKey.P:
                         finalSettings.Opacity--;
                         break;
+                    case ConsoleKey.N:
+                        colorBlindnessSimulationIdx++;
+                        if (colorBlindnessSimulationIdx >= Enum.GetNames(typeof(TransformationFormula)).Length + 1)
+                            colorBlindnessSimulationIdx--;
+                        break;
+                    case ConsoleKey.M:
+                        colorBlindnessSimulationIdx--;
+                        if (colorBlindnessSimulationIdx < 0)
+                            colorBlindnessSimulationIdx++;
+                        break;
                     case ConsoleKey.W:
                         var colors = WebSafeColors.GetColorList();
                         string[] names = WebSafeColors.GetColorNames();
@@ -558,64 +580,16 @@ namespace Terminaux.Inputs.Styles
 
         private static void ShowColorInfo(Color selectedColor, Screen screen)
         {
-            bool bail = false;
-            while (!bail)
+            screen.RequireRefresh();
+            switch (colorBlindnessSimulationIdx)
             {
-                var selections = GetColorInfoChoices();
-                screen.RequireRefresh();
-                int idx = InfoBoxSelectionColor.WriteInfoBoxSelection(selections, "Select color information variant");
-                screen.RequireRefresh();
-                switch (idx)
-                {
-                    case 0:
-                        ShowColorInfoBox("Color info", selectedColor);
-                        break;
-                    case 1:
-                        ShowColorInfoBox("Color info (Protanomaly)", selectedColor, true);
-                        break;
-                    case 2:
-                        ShowColorInfoBox("Color info (Protanopia)", selectedColor, true, TransformationFormula.Protan, 1.0);
-                        break;
-                    case 3:
-                        ShowColorInfoBox("Color info (Deuteranomaly)", selectedColor, true, TransformationFormula.Deutan);
-                        break;
-                    case 4:
-                        ShowColorInfoBox("Color info (Deuteranopia)", selectedColor, true, TransformationFormula.Deutan, 1.0);
-                        break;
-                    case 5:
-                        ShowColorInfoBox("Color info (Tritanomaly)", selectedColor, true, TransformationFormula.Tritan);
-                        break;
-                    case 6:
-                        ShowColorInfoBox("Color info (Tritanopia)", selectedColor, true, TransformationFormula.Tritan, 1.0);
-                        break;
-                    case 7:
-                        ShowColorInfoBox("Color info (Monochromacy)", selectedColor, true, TransformationFormula.Monochromacy);
-                        break;
-                    case 8:
-                        ShowColorInfoBox("Color info (Inverse)", selectedColor, true, TransformationFormula.Inverse);
-                        break;
-                    case 9:
-                        ShowColorInfoBox("Color info (Blue Monochromacy)", selectedColor, true, TransformationFormula.BlueScale);
-                        break;
-                    case 10:
-                        ShowColorInfoBox("Color info (Green Monochromacy)", selectedColor, true, TransformationFormula.GreenScale);
-                        break;
-                    case 11:
-                        ShowColorInfoBox("Color info (Red Monochromacy)", selectedColor, true, TransformationFormula.RedScale);
-                        break;
-                    case 12:
-                        ShowColorInfoBox("Color info (Yellow Monochromacy)", selectedColor, true, TransformationFormula.YellowScale);
-                        break;
-                    case 13:
-                        ShowColorInfoBox("Color info (Aqua Monochromacy)", selectedColor, true, TransformationFormula.AquaScale);
-                        break;
-                    case 14:
-                        ShowColorInfoBox("Color info (Pink Monochromacy)", selectedColor, true, TransformationFormula.PinkScale);
-                        break;
-                    case -1:
-                        bail = true;
-                        break;
-                }
+                case 0:
+                    ShowColorInfoBox("Color info", selectedColor);
+                    break;
+                default:
+                    var formula = (TransformationFormula)colorBlindnessSimulationIdx;
+                    ShowColorInfoBox($"Color info ({formula})", selectedColor, true, (TransformationFormula)colorBlindnessSimulationIdx);
+                    break;
             }
         }
 
@@ -657,64 +631,16 @@ namespace Terminaux.Inputs.Styles
 
         private static void ShowColorInfoVisually(Color selectedColor, Screen screen)
         {
-            bool bail = false;
-            while (!bail)
+            screen.RequireRefresh();
+            switch (colorBlindnessSimulationIdx)
             {
-                var selections = GetColorInfoChoices();
-                screen.RequireRefresh();
-                int idx = InfoBoxSelectionColor.WriteInfoBoxSelection(selections, "Select color information variant");
-                screen.RequireRefresh();
-                switch (idx)
-                {
-                    case 0:
-                        ShowColorUsingBackground("Color info", selectedColor);
-                        break;
-                    case 1:
-                        ShowColorUsingBackground("Color info (Protanomaly)", selectedColor, true);
-                        break;
-                    case 2:
-                        ShowColorUsingBackground("Color info (Protanopia)", selectedColor, true, TransformationFormula.Protan, 1.0);
-                        break;
-                    case 3:
-                        ShowColorUsingBackground("Color info (Deuteranomaly)", selectedColor, true, TransformationFormula.Deutan);
-                        break;
-                    case 4:
-                        ShowColorUsingBackground("Color info (Deuteranopia)", selectedColor, true, TransformationFormula.Deutan, 1.0);
-                        break;
-                    case 5:
-                        ShowColorUsingBackground("Color info (Tritanomaly)", selectedColor, true, TransformationFormula.Tritan);
-                        break;
-                    case 6:
-                        ShowColorUsingBackground("Color info (Tritanopia)", selectedColor, true, TransformationFormula.Tritan, 1.0);
-                        break;
-                    case 7:
-                        ShowColorUsingBackground("Color info (Monochromacy)", selectedColor, true, TransformationFormula.Monochromacy);
-                        break;
-                    case 8:
-                        ShowColorUsingBackground("Color info (Inverse)", selectedColor, true, TransformationFormula.Inverse);
-                        break;
-                    case 9:
-                        ShowColorUsingBackground("Color info (Blue Monochromacy)", selectedColor, true, TransformationFormula.BlueScale);
-                        break;
-                    case 10:
-                        ShowColorUsingBackground("Color info (Green Monochromacy)", selectedColor, true, TransformationFormula.GreenScale);
-                        break;
-                    case 11:
-                        ShowColorUsingBackground("Color info (Red Monochromacy)", selectedColor, true, TransformationFormula.RedScale);
-                        break;
-                    case 12:
-                        ShowColorUsingBackground("Color info (Yellow Monochromacy)", selectedColor, true, TransformationFormula.YellowScale);
-                        break;
-                    case 13:
-                        ShowColorUsingBackground("Color info (Aqua Monochromacy)", selectedColor, true, TransformationFormula.AquaScale);
-                        break;
-                    case 14:
-                        ShowColorUsingBackground("Color info (Pink Monochromacy)", selectedColor, true, TransformationFormula.PinkScale);
-                        break;
-                    case -1:
-                        bail = true;
-                        break;
-                }
+                case 0:
+                    ShowColorUsingBackground("Color info", selectedColor);
+                    break;
+                default:
+                    var formula = (TransformationFormula)colorBlindnessSimulationIdx;
+                    ShowColorUsingBackground($"Color info ({formula})", selectedColor, true, (TransformationFormula)colorBlindnessSimulationIdx);
+                    break;
             }
         }
 
