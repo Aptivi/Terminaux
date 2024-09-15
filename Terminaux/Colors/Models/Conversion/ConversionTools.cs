@@ -240,6 +240,8 @@ namespace Terminaux.Colors.Models.Conversion
                     rgb = ToRgb(hunterLab);
                 else if (source is CieLab cieLab)
                     rgb = ToRgb(cieLab);
+                else if (source is CieLuv cieLuv)
+                    rgb = ToRgb(cieLuv);
                 else
                     throw new TerminauxException("Can't convert to RGB.");
                 return rgb;
@@ -306,6 +308,9 @@ namespace Terminaux.Colors.Models.Conversion
                 else if (targetType == typeof(CieLab))
                     return ToCieLab(source) ??
                         throw new TerminauxException("Can't convert to CieLab.");
+                else if (targetType == typeof(CieLuv))
+                    return ToCieLuv(source) ??
+                        throw new TerminauxException("Can't convert to CieLuv.");
                 else
                     throw new TerminauxException("Can't convert from RGB.");
             }
@@ -715,6 +720,46 @@ namespace Terminaux.Colors.Models.Conversion
 
             // Return the resulting values
             return new(l, a, b);
+        }
+
+        /// <summary>
+        /// Converts the RGB color model to CieLuv
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static CieLuv ToCieLuv(RedGreenBlue rgb)
+        {
+            if (rgb is null)
+                throw new TerminauxException("Can't convert a null RGB instance to CieLuv!");
+
+            // Get the illuminant references
+            double refX = 95.047;
+            double refY = 100;
+            double refZ = 108.883;
+
+            // Get the XYZ values first
+            var xyz = ToXyz(rgb);
+
+            // Get the variable U, V, and Y 
+            double varU = xyz.X * 4 / (xyz.X + (xyz.Y * 15) + (xyz.Z * 3));
+            double varV = xyz.Y * 9 / (xyz.X + (xyz.Y * 15) + (xyz.Z * 3));
+            double varY = xyz.Y / 100;
+            if (varY > 0.008856)
+                varY = Math.Pow(varY, 1d / 3);
+            else
+                varY = (7.787 * varY) + (16d / 116);
+
+            // Get the reference U and V values
+            double refU = refX * 4 / (refX + (refY * 15) + (refZ * 3));
+            double refV = refY * 9 / (refX + (refY * 15) + (refZ * 3));
+
+            // Get the CieLuv values
+            double l = (116 * varY) - 16;
+            double u = 13 * l * (varU - refU);
+            double v = 13 * l * (varV - refV);
+
+            // Return the resulting values
+            return new(l, u, v);
         }
         #endregion
         #region Translate to RGB from...
@@ -1131,6 +1176,59 @@ namespace Terminaux.Colors.Models.Conversion
             double x = Adjust(varX) * refX / 100d;
             double y = Adjust(varY) * refY / 100d;
             double z = Adjust(varZ) * refZ / 100d;
+
+            // Now, convert them to RGB
+            double r = x * 3.2406d + y * -1.5372d + z * -0.4986d;
+            double g = x * -0.9689d + y * 1.8758d + z * 0.0415d;
+            double b = x * 0.0557d + y * -0.2040d + z * 1.0570d;
+            r = (r > 0.0031308) ? 1.055d * Math.Pow(r, 1 / 2.4d) - 0.055 : r * 12.92d;
+            g = (g > 0.0031308) ? 1.055d * Math.Pow(g, 1 / 2.4d) - 0.055 : g * 12.92d;
+            b = (b > 0.0031308) ? 1.055d * Math.Pow(b, 1 / 2.4d) - 0.055 : b * 12.92d;
+
+            int rWhole = (int)(r * 255);
+            int gWhole = (int)(g * 255);
+            int bWhole = (int)(b * 255);
+
+            // Install the values
+            return new(rWhole, gWhole, bWhole);
+        }
+
+        /// <summary>
+        /// Converts the CieLuv color model to RGB
+        /// </summary>
+        /// <param name="cieLuv">Instance of CieLuv</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(CieLuv cieLuv)
+        {
+            if (cieLuv is null)
+                throw new TerminauxException("Can't convert a null CieLuv instance to RGB!");
+
+            // Get a variable Y value
+            double varY = (cieLuv.L + 16) / 116;
+            double varYCubed = Math.Pow(varY, 3);
+            if (varYCubed > 0.008856)
+                varY = varYCubed;
+            else
+                varY = (varY - 16 / 116d) / 7.787;
+
+            // Get the illuminant references
+            double refX = 95.047;
+            double refY = 100;
+            double refZ = 108.883;
+
+            // Get the reference U and V values
+            double refU = refX * 4 / (refX + (refY * 15) + (refZ * 3));
+            double refV = refY * 9 / (refX + (refY * 15) + (refZ * 3));
+
+            // Get the variable U and V values
+            double varU = cieLuv.U / (13 * cieLuv.L) + refU;
+            double varV = cieLuv.V / (13 * cieLuv.L) + refV;
+
+            // Get the normalized xyz values
+            double y = varY * 100d;
+            double x = -(y * 9 * varU) / ((varU - 4) * varV - varU * varV) / 100d;
+            double z = (y * 9 - (15 * varV * y) - (varV * x)) / (varV * 3) / 100d;
+            y /= 100d;
 
             // Now, convert them to RGB
             double r = x * 3.2406d + y * -1.5372d + z * -0.4986d;

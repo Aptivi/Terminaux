@@ -494,6 +494,48 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to CieLuv
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToCieLuv()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLuv
+            var cieLuv = ConversionTools.ToCieLuv(ColorInstance.RGB);
+
+            // Check for property correctness
+            cieLuv.L.ShouldBe(40.055099179556059);
+            cieLuv.U.ShouldBe(47.074237421611734);
+            cieLuv.V.ShouldBe(35.083777826558624);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(cieLuv);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(133);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(66);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]

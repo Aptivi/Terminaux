@@ -27,45 +27,45 @@ using Terminaux.Colors.Transformation;
 namespace Terminaux.Colors.Models
 {
     /// <summary>
-    /// The CieLab class instance (Observer = 2 degs, Illuminant = D65)
+    /// The CieLuv class instance (Observer = 2 degs, Illuminant = D65)
     /// </summary>
-    [DebuggerDisplay("CieLab = {L};{A};{B}")]
-    public class CieLab : BaseColorModel, IEquatable<CieLab>
+    [DebuggerDisplay("CieLuv = {L};{U};{V}")]
+    public class CieLuv : BaseColorModel, IEquatable<CieLuv>
     {
         /// <summary>
         /// The L value [0.0 -> 100.0]
         /// </summary>
         public double L { get; private set; }
         /// <summary>
-        /// The A value [-128.0 -> 128.0]
+        /// The U value [-134.0 -> 220.0]
         /// </summary>
-        public double A { get; private set; }
+        public double U { get; private set; }
         /// <summary>
-        /// The B value [-128.0 -> 128.0]
+        /// The V value [-140.0 -> 122.0]
         /// </summary>
-        public double B { get; private set; }
+        public double V { get; private set; }
 
         /// <summary>
-        /// cielab:&lt;L&gt;;&lt;A&gt;;&lt;B&gt;
+        /// cieluv:&lt;L&gt;;&lt;A&gt;;&lt;B&gt;
         /// </summary>
         public override string ToString() =>
-            $"cielab:{L:0.##};{A:0.##};{B:0.##}";
+            $"cieluv:{L:0.##};{U:0.##};{V:0.##}";
 
         /// <summary>
-        /// Does the string specifier represent a valid CieLab specifier?
+        /// Does the string specifier represent a valid CieLuv specifier?
         /// </summary>
-        /// <param name="specifier">Specifier that represents a valid CieLab specifier</param>
+        /// <param name="specifier">Specifier that represents a valid CieLuv specifier</param>
         /// <param name="checkParts">Whether to check the parts count or not</param>
         /// <returns>True if the specifier is valid; false otherwise.</returns>
         public static new bool IsSpecifierValid(string specifier, bool checkParts = false) =>
             specifier.Contains(";") &&
-            specifier.StartsWith("cielab:") &&
+            specifier.StartsWith("cieluv:") &&
             (!checkParts || (checkParts && specifier.Substring(7).Split(';').Length == 3));
 
         /// <summary>
-        /// Does the string specifier represent a valid CieLab specifier?
+        /// Does the string specifier represent a valid CieLuv specifier?
         /// </summary>
-        /// <param name="specifier">Specifier that represents a valid CieLab specifier</param>
+        /// <param name="specifier">Specifier that represents a valid CieLuv specifier</param>
         /// <returns>True if the specifier is valid; false otherwise.</returns>
         public static new bool IsSpecifierAndValueValid(string specifier)
         {
@@ -76,17 +76,17 @@ namespace Terminaux.Colors.Models
             double l = Convert.ToDouble(specifierArray[0]);
             if (l < 0 || l > 100)
                 return false;
-            double a = Convert.ToDouble(specifierArray[1]);
-            if (a < -128 || a > 128)
+            double u = Convert.ToDouble(specifierArray[1]);
+            if (u < -134 || u > 220)
                 return false;
-            double b = Convert.ToDouble(specifierArray[2]);
-            if (b < -128 || b > 128)
+            double v = Convert.ToDouble(specifierArray[2]);
+            if (v < -140 || v > 122)
                 return false;
             return true;
         }
 
         /// <summary>
-        /// Parses the specifier and returns an instance of <see cref="CieLab"/> converted to <see cref="RedGreenBlue"/>
+        /// Parses the specifier and returns an instance of <see cref="CieLuv"/> converted to <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RGB</param>
         /// <param name="settings">Settings to use. Use null for global settings</param>
@@ -94,8 +94,8 @@ namespace Terminaux.Colors.Models
         /// <exception cref="TerminauxException"></exception>
         public static new RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings? settings = null)
         {
-            var CieLab = ParseSpecifier(specifier);
-            var rgb = ConversionTools.ToRgb(CieLab);
+            var CieLuv = ParseSpecifier(specifier);
+            var rgb = ConversionTools.ToRgb(CieLuv);
             int r = rgb.R;
             int g = rgb.G;
             int b = rgb.B;
@@ -109,73 +109,73 @@ namespace Terminaux.Colors.Models
         }
 
         /// <summary>
-        /// Parses the specifier and returns an instance of <see cref="CieLab"/>
+        /// Parses the specifier and returns an instance of <see cref="CieLuv"/>
         /// </summary>
-        /// <param name="specifier">Specifier of CieLab</param>
-        /// <returns>An instance of <see cref="CieLab"/></returns>
+        /// <param name="specifier">Specifier of CieLuv</param>
+        /// <returns>An instance of <see cref="CieLuv"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static CieLab ParseSpecifier(string specifier)
+        public static CieLuv ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid CieLab color specifier \"{specifier}\". Ensure that it's on the correct format: cielab:<red>;<yellow>;<blue>");
+                throw new TerminauxException($"Invalid CieLuv color specifier \"{specifier}\". Ensure that it's on the correct format: cieluv:<red>;<yellow>;<blue>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(7).Split(';');
             if (specifierArray.Length == 3)
             {
-                // We got the CieLab whole values! First, check to see if we need to filter the color for the color-blind
+                // We got the CieLuv whole values! First, check to see if we need to filter the color for the color-blind
                 double l = Convert.ToDouble(specifierArray[0]);
                 if (l < 0 || l > 100)
                     throw new TerminauxException($"The L value is out of range (0.0 -> 100.0). {l}");
-                double a = Convert.ToDouble(specifierArray[1]);
-                if (a < -128 || a > 128)
-                    throw new TerminauxException($"The A value is out of range (-128.0 -> 128.0). {a}");
-                double b = Convert.ToDouble(specifierArray[2]);
-                if (b < -128 || b > 128)
-                    throw new TerminauxException($"The B value is out of range (-128.0 -> 128.0). {b}");
+                double u = Convert.ToDouble(specifierArray[1]);
+                if (u < -134 || u > 220)
+                    throw new TerminauxException($"The U value is out of range (-134.0 -> 220.0). {u}");
+                double v = Convert.ToDouble(specifierArray[2]);
+                if (v < -140 || v > 122)
+                    throw new TerminauxException($"The V value is out of range (-140.0 -> 122.0). {v}");
 
-                // First, we need to convert from CieLab to RGB
-                var CieLab = new CieLab(l, a, b);
-                return CieLab;
+                // First, we need to convert from CieLuv to RGB
+                var CieLuv = new CieLuv(l, u, v);
+                return CieLuv;
             }
             else
-                throw new TerminauxException($"Invalid CieLab color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cielab:<C>;<M>;<Y>");
+                throw new TerminauxException($"Invalid CieLuv color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cieluv:<C>;<M>;<Y>");
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
-            Equals((CieLab)obj);
+            Equals((CieLuv)obj);
 
         /// <inheritdoc/>
-        public bool Equals(CieLab other) =>
+        public bool Equals(CieLuv other) =>
             other is not null &&
             L == other.L &&
-            A == other.A &&
-            B == other.B;
+            U == other.U &&
+            V == other.V;
 
         /// <inheritdoc/>
         public override int GetHashCode()
         {
             int hashCode = 921976076;
             hashCode = hashCode * -1521134295 + L.GetHashCode();
-            hashCode = hashCode * -1521134295 + A.GetHashCode();
-            hashCode = hashCode * -1521134295 + B.GetHashCode();
+            hashCode = hashCode * -1521134295 + U.GetHashCode();
+            hashCode = hashCode * -1521134295 + V.GetHashCode();
             return hashCode;
         }
 
         /// <inheritdoc/>
-        public static bool operator ==(CieLab left, CieLab right) =>
-            EqualityComparer<CieLab>.Default.Equals(left, right);
+        public static bool operator ==(CieLuv left, CieLuv right) =>
+            EqualityComparer<CieLuv>.Default.Equals(left, right);
 
         /// <inheritdoc/>
-        public static bool operator !=(CieLab left, CieLab right) =>
+        public static bool operator !=(CieLuv left, CieLuv right) =>
             !(left == right);
 
-        internal CieLab(double l, double a, double b)
+        internal CieLuv(double l, double a, double b)
         {
             L = l;
-            A = a;
-            B = b;
+            U = a;
+            V = b;
         }
     }
 }
