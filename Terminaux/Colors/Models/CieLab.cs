@@ -27,45 +27,45 @@ using Terminaux.Colors.Transformation;
 namespace Terminaux.Colors.Models
 {
     /// <summary>
-    /// The HunterLab class instance
+    /// The CieLab class instance (Observer = 2 degs, Illuminant = D65)
     /// </summary>
-    [DebuggerDisplay("HunterLab = {L};{A};{B}")]
-    public class HunterLab : BaseColorModel, IEquatable<HunterLab>
+    [DebuggerDisplay("CieLab = {L};{A};{B}")]
+    public class CieLab : BaseColorModel, IEquatable<CieLab>
     {
         /// <summary>
         /// The L value [0.0 -> 100.0]
         /// </summary>
         public double L { get; private set; }
         /// <summary>
-        /// The A value [-128.0 -> 127.0]
+        /// The A value [-128.0 -> 128.0]
         /// </summary>
         public double A { get; private set; }
         /// <summary>
-        /// The B value [-128.0 -> 127.0]
+        /// The B value [-128.0 -> 128.0]
         /// </summary>
         public double B { get; private set; }
 
         /// <summary>
-        /// hunterlab:&lt;L&gt;;&lt;A&gt;;&lt;B&gt;
+        /// cielab:&lt;L&gt;;&lt;A&gt;;&lt;B&gt;
         /// </summary>
         public override string ToString() =>
-            $"hunterlab:{L:0.##};{A:0.##};{B:0.##}";
+            $"cielab:{L:0.##};{A:0.##};{B:0.##}";
 
         /// <summary>
-        /// Does the string specifier represent a valid HunterLab specifier?
+        /// Does the string specifier represent a valid CieLab specifier?
         /// </summary>
-        /// <param name="specifier">Specifier that represents a valid HunterLab specifier</param>
+        /// <param name="specifier">Specifier that represents a valid CieLab specifier</param>
         /// <param name="checkParts">Whether to check the parts count or not</param>
         /// <returns>True if the specifier is valid; false otherwise.</returns>
         public static new bool IsSpecifierValid(string specifier, bool checkParts = false) =>
             specifier.Contains(";") &&
-            specifier.StartsWith("hunterlab:") &&
+            specifier.StartsWith("cielab:") &&
             (!checkParts || (checkParts && specifier.Substring(10).Split(';').Length == 3));
 
         /// <summary>
-        /// Does the string specifier represent a valid HunterLab specifier?
+        /// Does the string specifier represent a valid CieLab specifier?
         /// </summary>
-        /// <param name="specifier">Specifier that represents a valid HunterLab specifier</param>
+        /// <param name="specifier">Specifier that represents a valid CieLab specifier</param>
         /// <returns>True if the specifier is valid; false otherwise.</returns>
         public static new bool IsSpecifierAndValueValid(string specifier)
         {
@@ -77,16 +77,16 @@ namespace Terminaux.Colors.Models
             if (l < 0 || l > 100)
                 return false;
             double a = Convert.ToDouble(specifierArray[1]);
-            if (a < -128 || a > 127)
+            if (a < -128 || a > 128)
                 return false;
             double b = Convert.ToDouble(specifierArray[2]);
-            if (b < -128 || b > 127)
+            if (b < -128 || b > 128)
                 return false;
             return true;
         }
 
         /// <summary>
-        /// Parses the specifier and returns an instance of <see cref="HunterLab"/> converted to <see cref="RedGreenBlue"/>
+        /// Parses the specifier and returns an instance of <see cref="CieLab"/> converted to <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RGB</param>
         /// <param name="settings">Settings to use. Use null for global settings</param>
@@ -94,8 +94,8 @@ namespace Terminaux.Colors.Models
         /// <exception cref="TerminauxException"></exception>
         public static new RedGreenBlue ParseSpecifierToRgb(string specifier, ColorSettings? settings = null)
         {
-            var HunterLab = ParseSpecifier(specifier);
-            var rgb = ConversionTools.ToRgb(HunterLab);
+            var CieLab = ParseSpecifier(specifier);
+            var rgb = ConversionTools.ToRgb(CieLab);
             int r = rgb.R;
             int g = rgb.G;
             int b = rgb.B;
@@ -109,45 +109,45 @@ namespace Terminaux.Colors.Models
         }
 
         /// <summary>
-        /// Parses the specifier and returns an instance of <see cref="HunterLab"/>
+        /// Parses the specifier and returns an instance of <see cref="CieLab"/>
         /// </summary>
-        /// <param name="specifier">Specifier of HunterLab</param>
-        /// <returns>An instance of <see cref="HunterLab"/></returns>
+        /// <param name="specifier">Specifier of CieLab</param>
+        /// <returns>An instance of <see cref="CieLab"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public static HunterLab ParseSpecifier(string specifier)
+        public static CieLab ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid HunterLab color specifier \"{specifier}\". Ensure that it's on the correct format: hunterlab:<red>;<yellow>;<blue>");
+                throw new TerminauxException($"Invalid CieLab color specifier \"{specifier}\". Ensure that it's on the correct format: cielab:<red>;<yellow>;<blue>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(10).Split(';');
             if (specifierArray.Length == 3)
             {
-                // We got the HunterLab whole values! First, check to see if we need to filter the color for the color-blind
+                // We got the CieLab whole values! First, check to see if we need to filter the color for the color-blind
                 double l = Convert.ToDouble(specifierArray[0]);
                 if (l < 0 || l > 100)
                     throw new TerminauxException($"The L value is out of range (0.0 -> 100.0). {l}");
                 double a = Convert.ToDouble(specifierArray[1]);
-                if (a < -128 || a > 127)
-                    throw new TerminauxException($"The A value is out of range (-128.0 -> 127.0). {a}");
+                if (a < 0 || a > 1)
+                    throw new TerminauxException($"The A value is out of range (-128.0 -> 128.0). {a}");
                 double b = Convert.ToDouble(specifierArray[2]);
-                if (b < -128 || b > 127)
-                    throw new TerminauxException($"The B value is out of range (-128.0 -> 127.0). {b}");
+                if (b < 0 || b > 1)
+                    throw new TerminauxException($"The B value is out of range (-128.0 -> 128.0). {b}");
 
-                // First, we need to convert from HunterLab to RGB
-                var HunterLab = new HunterLab(l, a, b);
-                return HunterLab;
+                // First, we need to convert from CieLab to RGB
+                var CieLab = new CieLab(l, a, b);
+                return CieLab;
             }
             else
-                throw new TerminauxException($"Invalid HunterLab color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: hunterlab:<C>;<M>;<Y>");
+                throw new TerminauxException($"Invalid CieLab color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cielab:<C>;<M>;<Y>");
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
-            Equals((HunterLab)obj);
+            Equals((CieLab)obj);
 
         /// <inheritdoc/>
-        public bool Equals(HunterLab other) =>
+        public bool Equals(CieLab other) =>
             other is not null &&
             L == other.L &&
             A == other.A &&
@@ -164,14 +164,14 @@ namespace Terminaux.Colors.Models
         }
 
         /// <inheritdoc/>
-        public static bool operator ==(HunterLab left, HunterLab right) =>
-            EqualityComparer<HunterLab>.Default.Equals(left, right);
+        public static bool operator ==(CieLab left, CieLab right) =>
+            EqualityComparer<CieLab>.Default.Equals(left, right);
 
         /// <inheritdoc/>
-        public static bool operator !=(HunterLab left, HunterLab right) =>
+        public static bool operator !=(CieLab left, CieLab right) =>
             !(left == right);
 
-        internal HunterLab(double l, double a, double b)
+        internal CieLab(double l, double a, double b)
         {
             L = l;
             A = a;
