@@ -699,9 +699,9 @@ namespace Terminaux.Colors.Models.Conversion
             static double Adjust(double var)
             {
                 if (var > 0.008856)
-                    var = Math.Pow(var, 1 / 3);
+                    var = Math.Pow(var, 1d / 3);
                 else
-                    var = (7.787 * var) + (16 / 116);
+                    var = (7.787 * var) + (16d / 116);
                 return var;
             }
             varX = Adjust(varX);
@@ -1108,14 +1108,29 @@ namespace Terminaux.Colors.Models.Conversion
             if (cieLab is null)
                 throw new TerminauxException("Can't convert a null CieLab instance to RGB!");
 
+            // Get the illuminant references
+            double refX = 95.047;
+            double refY = 100;
+            double refZ = 108.883;
+
             // Get the normalized xyz values
             double varY = (cieLab.L + 16) / 116;
             double varX = cieLab.A / 500 + varY;
-            double varZ = cieLab.B / 7 * cieLab.L / 10;
-            double y = Math.Pow(varY, 2);
-            double x = (varX + y) / 1.02 / 100d;
-            double z = -(varZ - y) / 0.847 / 100d;
-            y /= 100;
+            double varZ = varY - cieLab.B / 200;
+
+            // Adjust the variable values
+            static double Adjust(double var)
+            {
+                double varCubed = Math.Pow(var, 3);
+                if (varCubed > 0.008856)
+                    var = varCubed;
+                else
+                    var = (var - 16d / 116) / 7.787;
+                return var;
+            }
+            double x = Adjust(varX) * refX / 100d;
+            double y = Adjust(varY) * refY / 100d;
+            double z = Adjust(varZ) * refZ / 100d;
 
             // Now, convert them to RGB
             double r = x * 3.2406d + y * -1.5372d + z * -0.4986d;

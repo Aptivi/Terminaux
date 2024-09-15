@@ -452,6 +452,48 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to CieLab
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToCieLab()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLab
+            var cieLab = ConversionTools.ToCieLab(ColorInstance.RGB);
+
+            // Check for property correctness
+            cieLab.L.ShouldBe(40.055099179556059);
+            cieLab.A.ShouldBe(20.292379028766018);
+            cieLab.B.ShouldBe(42.032442228242864);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(cieLab);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -875,6 +917,48 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to CieLab
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericConvertRgbToCieLab()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLab
+            var cieLab = ConversionTools.ConvertFromRgb<CieLab>(ColorInstance.RGB);
+
+            // Check for property correctness
+            cieLab.L.ShouldBe(40.055099179556059);
+            cieLab.A.ShouldBe(20.292379028766018);
+            cieLab.B.ShouldBe(42.032442228242864);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ConvertToRgb(cieLab);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
@@ -1290,6 +1374,48 @@ namespace Terminaux.Tests.Colors
 
             // Now, convert back to RGB
             var rgb = ConversionTools.GetConvertedColorModel<HunterLab, RedGreenBlue>(hunterLab);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to CieLab
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestGenericBidirectionalConvertRgbToCieLab()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe("\u001b[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe("\u001b[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLab
+            var cieLab = ConversionTools.GetConvertedColorModel<RedGreenBlue, CieLab>(ColorInstance.RGB);
+
+            // Check for property correctness
+            cieLab.L.ShouldBe(40.055099179556059);
+            cieLab.A.ShouldBe(20.292379028766018);
+            cieLab.B.ShouldBe(42.032442228242864);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.GetConvertedColorModel<CieLab, RedGreenBlue>(cieLab);
 
             // Check for property correctness
             rgb.R.ShouldBe(138);
