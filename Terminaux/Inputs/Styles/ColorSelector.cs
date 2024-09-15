@@ -596,15 +596,22 @@ namespace Terminaux.Inputs.Styles
                 selectedColor;
             if (selectedColor.RGB is null)
                 throw new TerminauxInternalException("Selected color RGB instance for color infobox is null.");
-            var ryb = ConversionTools.ToRyb(selectedColor.RGB);
-            var hsl = ConversionTools.ToHsl(selectedColor.RGB);
-            var hsv = ConversionTools.ToHsv(selectedColor.RGB);
-            var cmyk = ConversionTools.ToCmyk(selectedColor.RGB);
-            var cmy = ConversionTools.ToCmy(selectedColor.RGB);
-            var yiq = ConversionTools.ToYiq(selectedColor.RGB);
-            var yuv = ConversionTools.ToYuv(selectedColor.RGB);
-            var xyz = ConversionTools.ToXyz(selectedColor.RGB);
-            var yxy = ConversionTools.ToYxy(selectedColor.RGB);
+
+            // Get all the types except RGB and show their values individually
+            var baseType = typeof(BaseColorModel);
+            var derivedTypes = baseType.Assembly.GetTypes().Where((type) => type.IsSubclassOf(baseType) && type != typeof(RedGreenBlue)).ToArray();
+            int maxWidth = derivedTypes.Max((type) => (type.Name + " values: ").Length);
+            StringBuilder builder = new();
+            foreach (var colorType in derivedTypes)
+            {
+                // Get the value
+                var converted = ConversionTools.ConvertFromRgb(selectedColor.RGB, colorType);
+
+                // Now, print the information
+                string entry = colorType.Name + " values: ";
+                string spaces = new(' ', maxWidth - entry.Length);
+                builder.AppendLine(entry + spaces + converted.ToString());
+            }
             InfoBoxColor.WriteInfoBox(localizedTextTitle,
                 $$"""
                 RGB level:          {{selectedColor.PlainSequence}}
@@ -612,53 +619,7 @@ namespace Terminaux.Inputs.Styles
                 RGB hex code:       {{selectedColor.Hex}}
                 Color type:         {{selectedColor.Type}}
                     
-                RYB information:
-                    - Red:            {{ryb.R,3}}
-                    - Yellow:         {{ryb.Y,3}}
-                    - Blue:           {{ryb.B,3}}
-
-                CMYK information:
-                    - Black key:      {{cmyk.KWhole,3}}
-                    - Cyan:           {{cmyk.CMY.CWhole,3}}
-                    - Magenta:        {{cmyk.CMY.MWhole,3}}
-                    - Yellow:         {{cmyk.CMY.YWhole,3}}
-                    
-                CMY information:
-                    - Cyan:           {{cmy.CWhole,3}}
-                    - Magenta:        {{cmy.MWhole,3}}
-                    - Yellow:         {{cmy.YWhole,3}}
-                    
-                HSL information:
-                    - Hue (degs):     {{hsl.HueWhole,3}}'
-                    - Reverse Hue:    {{hsl.ReverseHueWhole,3}}'
-                    - Saturation:     {{hsl.SaturationWhole,3}}
-                    - Lightness:      {{hsl.LightnessWhole,3}}
-                    
-                HSV information:
-                    - Hue (degs):     {{hsv.HueWhole,3}}'
-                    - Reverse Hue:    {{hsv.ReverseHueWhole,3}}'
-                    - Saturation:     {{hsv.SaturationWhole,3}}
-                    - Value:          {{hsv.ValueWhole,3}}
-                    
-                YIQ information:
-                    - Luma:           {{yiq.Luma,3}}
-                    - In-Phase:       {{yiq.InPhase,3}}
-                    - Quadrature:     {{yiq.Quadrature,3}}
-                    
-                YUV information:
-                    - Luma:           {{yuv.Luma,3}}
-                    - Chroma (U):     {{yuv.ChromaU,3}}
-                    - Chroma (V):     {{yuv.ChromaV,3}}
-                    
-                XYZ information:
-                    - X:              {{xyz.X,3:0.##}}
-                    - Y:              {{xyz.Y,3:0.##}}
-                    - Z:              {{xyz.Z,3:0.##}}
-                    
-                YXY information:
-                    - Y1:             {{yxy.Y1,3:0.##}}
-                    - X:              {{yxy.X,3:0.##}}
-                    - Y2:             {{yxy.Y2,3:0.##}}
+                {{builder}}
                 """
             );
         }
