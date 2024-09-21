@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Base.TermInfo.Parsing;
+
 namespace Terminaux.Base.TermInfo
 {
     /// <summary>
@@ -25,9 +27,9 @@ namespace Terminaux.Base.TermInfo
     public sealed partial class TermInfoDesc
     {
         private readonly string[] _names;
-        private readonly bool?[] _booleans;
-        private readonly int?[] _nums;
-        private readonly string?[] _strings;
+        private readonly TermInfoValueDesc<bool?>[] _booleans;
+        private readonly TermInfoValueDesc<int?>[] _nums;
+        private readonly TermInfoValueDesc<string?>[] _strings;
 
         /// <summary>
         /// Gets the names of the parsed terminfo description.
@@ -50,7 +52,7 @@ namespace Terminaux.Base.TermInfo
             if (index >= _booleans.Length)
                 return null;
 
-            return _booleans[index];
+            return _booleans[index].Value;
         }
 
         /// <summary>
@@ -64,7 +66,7 @@ namespace Terminaux.Base.TermInfo
             if (index >= _nums.Length)
                 return null;
 
-            var result = _nums[index];
+            var result = _nums[index].Value;
             if (result == null || result == -1)
                 return null;
 
@@ -82,13 +84,13 @@ namespace Terminaux.Base.TermInfo
             if (index >= _strings.Length)
                 return null;
 
-            var result = _strings[index];
+            var result = _strings[index].Value;
             return result;
         }
 
         internal TermInfoDesc(
-            string[] names, bool?[] booleans, int?[] nums,
-            string?[] strings, ExtendedCapabilities? extended = null)
+            string[] names, TermInfoValueDesc<bool?>[] booleans, TermInfoValueDesc<int?>[] nums,
+            TermInfoValueDesc<string?>[] strings, ExtendedCapabilities? extended = null)
         {
             _names = names;
             _booleans = booleans;

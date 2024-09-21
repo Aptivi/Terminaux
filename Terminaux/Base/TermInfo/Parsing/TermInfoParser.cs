@@ -18,8 +18,10 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Terminaux.Base.TermInfo.Parsing.Parameters;
 using Textify.General;
 
 namespace Terminaux.Base.TermInfo.Parsing
@@ -101,8 +103,16 @@ namespace Terminaux.Base.TermInfo.Parsing
             // Read string names
             var (stringNames, _) = ReadStrings(indices, data, header[ExtStringCount]);
 
+            List<TermInfoValueDesc<string?>> stringDescs = [];
+            for (int i = 0; i < strings.Length; i++)
+            {
+                string name = stringNames[i];
+                var parameters = ParameterExtractor.ExtractParameters(strings[i]);
+                stringDescs.Add(new(strings[i], name, TermInfoValueType.String, parameters));
+            }
+
             return new ExtendedCapabilities(
-                booleans, nums, strings,
+                booleans, nums, [.. stringDescs],
                 booleanNames, numNames, stringNames);
         }
 
@@ -123,7 +133,7 @@ namespace Terminaux.Base.TermInfo.Parsing
             return splitNames;
         }
 
-        private static bool?[] ReadBools(ByteReader reader, int count)
+        private static TermInfoValueDesc<bool?>[] ReadBools(ByteReader reader, int count)
         {
             var buffer = ReadIntegers(reader, count, BitWidth.OneByte);
             var result = new bool?[count];
@@ -134,10 +144,17 @@ namespace Terminaux.Base.TermInfo.Parsing
                     result[i] = null;
             }
 
-            return result;
+            List<TermInfoValueDesc<bool?>> descs = [];
+            for (int i = 0; i < count; i++)
+            {
+                string name = $"{(TermInfoCaps.Boolean)i}";
+                descs.Add(new(result[i], name, TermInfoValueType.Boolean, null));
+            }
+
+            return [.. descs];
         }
 
-        private static int?[] ReadNums(ByteReader reader, int count, BitWidth width)
+        private static TermInfoValueDesc<int?>[] ReadNums(ByteReader reader, int count, BitWidth width)
         {
             var buffer = ReadIntegers(reader, count, width);
             var result = new int?[count];
@@ -148,10 +165,17 @@ namespace Terminaux.Base.TermInfo.Parsing
                     result[i] = null;
             }
 
-            return result;
+            List<TermInfoValueDesc<int?>> descs = [];
+            for (int i = 0; i < count; i++)
+            {
+                string name = $"{(TermInfoCaps.Num)i}";
+                descs.Add(new(result[i], name, TermInfoValueType.Integer, null));
+            }
+
+            return [.. descs];
         }
 
-        private static string?[] ReadStrings(ByteReader reader, int count, int size)
+        private static TermInfoValueDesc<string?>[] ReadStrings(ByteReader reader, int count, int size)
         {
             var offsets = ReadIntegers(reader, count, BitWidth.TwoBytes);
             var data = Encoding.ASCII.GetString(reader.ReadBytes(size));
@@ -160,13 +184,22 @@ namespace Terminaux.Base.TermInfo.Parsing
             return ReadStrings(offsets, data, count);
         }
 
-        private static string?[] ReadStrings(int[] indexes, string data, int count)
+        private static TermInfoValueDesc<string?>[] ReadStrings(int[] indexes, string data, int count)
         {
             var strings = new string?[count];
             for (var i = 0; i < count; i++)
                 if (indexes[i] != -1 && indexes[i] != -2)
                     strings[i] = data.ReadNullTerminatedString(indexes[i]);
-            return strings;
+
+            List<TermInfoValueDesc<string?>> descs = [];
+            for (int i = 0; i < count; i++)
+            {
+                string name = $"{(TermInfoCaps.String)i}";
+                var parameters = ParameterExtractor.ExtractParameters(strings[i]);
+                descs.Add(new(strings[i], name, TermInfoValueType.String, parameters));
+            }
+
+            return [.. descs];
         }
 
         private static (string[] Strings, int LastIndex) ReadStrings(Span<int> indexes, Span<char> data, int count)

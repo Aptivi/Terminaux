@@ -21,6 +21,7 @@ using Magico.Enumeration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Base.TermInfo.Parsing;
 
 namespace Terminaux.Base.TermInfo
 {
@@ -29,9 +30,9 @@ namespace Terminaux.Base.TermInfo
     /// </summary>
     public sealed class ExtendedCapabilities
     {
-        private readonly Dictionary<string, bool?> _booleans;
-        private readonly Dictionary<string, int?> _nums;
-        private readonly Dictionary<string, string?> _strings;
+        private readonly Dictionary<string, TermInfoValueDesc<bool?>> _booleans;
+        private readonly Dictionary<string, TermInfoValueDesc<int?>> _nums;
+        private readonly Dictionary<string, TermInfoValueDesc<string?>> _strings;
 
         /// <summary>
         /// Gets the number of extended capabilities.
@@ -39,7 +40,7 @@ namespace Terminaux.Base.TermInfo
         public int Count { get; }
 
         internal ExtendedCapabilities(
-            bool?[] booleans, int?[] nums, string?[] strings,
+            TermInfoValueDesc<bool?>[] booleans, TermInfoValueDesc<int?>[] nums, TermInfoValueDesc<string?>[] strings,
             string[] booleanNames, string[] numNames, string[] stringNames)
         {
             _booleans = booleanNames.Zip(booleans).ToDictionarySafe(x => x.First, x => x.Second);
@@ -89,7 +90,7 @@ namespace Terminaux.Base.TermInfo
                 throw new ArgumentNullException(nameof(key));
 
             _booleans.TryGetValue(key, out var value);
-            return value;
+            return value.Value;
         }
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Terminaux.Base.TermInfo
                 throw new ArgumentNullException(nameof(key));
 
             _nums.TryGetValue(key, out var value);
-            return value;
+            return value.Value;
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Terminaux.Base.TermInfo
                 throw new ArgumentNullException(nameof(key));
 
             _strings.TryGetValue(key, out var value);
-            return value;
+            return value.Value;
         }
 
         internal ExtendedCapabilities()
