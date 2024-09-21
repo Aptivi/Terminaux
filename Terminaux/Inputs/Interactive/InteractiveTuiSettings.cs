@@ -91,11 +91,11 @@ namespace Terminaux.Inputs.Interactive
         /// <summary>
         /// Interactive TUI box background color
         /// </summary>
-        public Color BoxBackgroundColor { get; set; } = ConsoleColors.Red;
+        public Color BoxBackgroundColor { get; set; } = ConsoleColors.Black;
         /// <summary>
         /// Interactive TUI box foreground color
         /// </summary>
-        public Color BoxForegroundColor { get; set; } = ConsoleColors.White;
+        public Color BoxForegroundColor { get; set; } = ConsoleColors.Yellow;
         /// <summary>
         /// Border settings to use when rendering the interactive TUI
         /// </summary>
