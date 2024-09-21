@@ -100,7 +100,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                  Name: {{desc.Names[0]}}
                  Description: {{desc.Names[1]}}
 
-                 Maximum colors: {{desc.MaxColors}}
+                 Maximum colors: {{desc.MaxColors?.Value}}
                  Extended capabilities: {{desc.Extended.Count}}
                  """
             );
