@@ -106,7 +106,7 @@ namespace Terminaux.Inputs.Interactive
 
                 // If there is a crash, notify the user about it
                 if (notifyCrash)
-                    InfoBoxColor.WriteInfoBoxColorBack(crashReason + "\n" + "Press any key to continue...", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(crashReason + "\n" + "Press any key to continue...", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
             }
         }
 
@@ -222,8 +222,8 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMinimumHeight = 1;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
-                builder.Append(BorderColor.RenderBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor));
-                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
+                builder.Append(BorderColor.RenderBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, interactiveTui.Settings.BorderSettings, finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor));
+                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, interactiveTui.Settings.BorderSettings, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                 return builder.ToString();
             }));
 
@@ -370,7 +370,7 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMinimumHeightInterior = 2;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
-                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
+                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, interactiveTui.Settings.BorderSettings, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
 
                 // Split the information string
                 string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
@@ -831,7 +831,7 @@ namespace Terminaux.Inputs.Interactive
                                 {
                                     // User needs more information in the infobox
                                     processed = true;
-                                    InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
+                                    InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered, interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
                                 }
                             }
                             break;
@@ -841,7 +841,7 @@ namespace Terminaux.Inputs.Interactive
                             InfoBoxColor.WriteInfoBoxColorBack(
                                 "Available keys",
                                 KeybindingsWriter.RenderKeybindingHelpText(bindings)
-                            , interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
+                            , interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
                             break;
                         case ConsoleKey.F:
                             // Search function
@@ -854,19 +854,19 @@ namespace Terminaux.Inputs.Interactive
                                 (interactiveTui.CurrentPane == 2 ?
                                  dataSecondary.Select(interactiveTui.GetEntryFromItemSecondary) :
                                  dataPrimary.Select(interactiveTui.GetEntryFromItem)).ToArray();
-                            string keyword = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a search term (case insensitive)", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor).ToLower();
+                            string keyword = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a search term (case insensitive)", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor).ToLower();
                             var resultEntries = entriesString.Select((entry, idx) => ($"{idx + 1}", entry)).Where((tuple) => tuple.entry.ToLower().Contains(keyword)).ToArray();
                             if (resultEntries.Length > 0)
                             {
                                 var choices = InputChoiceTools.GetInputChoices(resultEntries);
-                                int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:");
+                                int answer = InfoBoxSelectionColor.WriteInfoBoxSelection(choices, "Select one of the entries:", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
                                 if (answer < 0)
                                     break;
                                 var resultIdx = int.Parse(resultEntries[answer].Item1);
                                 SelectionMovement(interactiveTui, resultIdx);
                             }
                             else
-                                InfoBoxColor.WriteInfoBoxColorBack("No item found.", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
+                                InfoBoxColor.WriteInfoBoxColorBack("No item found.", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
                             break;
                         case ConsoleKey.Escape:
                             // User needs to exit
@@ -1005,7 +1005,7 @@ namespace Terminaux.Inputs.Interactive
             if ((interactiveTui.PrimaryDataSource is null || interactiveTui.SecondaryDataSource is null ||
                 (interactiveTui.PrimaryDataSource.Length() == 0 && interactiveTui.SecondaryDataSource.Length() == 0)) && !interactiveTui.AcceptsEmptyData)
             {
-                InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name);
+                InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} doesn't contain any data source. This program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name);
                 return false;
             }
 
@@ -1021,7 +1021,7 @@ namespace Terminaux.Inputs.Interactive
             }
             if (conflicts.Count > 0)
             {
-                InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} has conflicting keyboard or mouse bindings.\n\nThe following keybindings or mouse bindings conflict:\n  - {1}\n\nThis program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
+                InfoBoxColor.WriteInfoBoxColorBack("The interactive TUI {0} has conflicting keyboard or mouse bindings.\n\nThe following keybindings or mouse bindings conflict:\n  - {1}\n\nThis program can't continue.\n" + "Press any key to continue...", interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor, interactiveTui.GetType().Name, string.Join("\n  - ", conflicts.Select((binding) => $"[{GetBindingKeyShortcut(binding, false)}{GetBindingMouseShortcut(binding, false)}] {binding.BindingName}")));
                 return false;
             }
             return true;
