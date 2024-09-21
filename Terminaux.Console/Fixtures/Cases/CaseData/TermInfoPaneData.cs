@@ -22,6 +22,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using Terminaux.Base.TermInfo;
+using Terminaux.Base.TermInfo.Parsing;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
@@ -113,9 +114,9 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             // Detect the extended attributes
             if (desc.Extended.Count > 0)
             {
-                var namesBool = desc.Extended.GetNames(TermInfoCapsKind.Boolean);
-                var namesNum = desc.Extended.GetNames(TermInfoCapsKind.Num);
-                var namesString = desc.Extended.GetNames(TermInfoCapsKind.String);
+                var namesBool = desc.Extended.GetNames(TermInfoValueType.Boolean);
+                var namesNum = desc.Extended.GetNames(TermInfoValueType.Integer);
+                var namesString = desc.Extended.GetNames(TermInfoValueType.String);
                 builder.AppendLine();
                 builder.AppendLine($"Boolean extended capabilities: {string.Join(", ", namesBool)}");
                 builder.AppendLine($"Numeric extended capabilities: {string.Join(", ", namesNum)}");

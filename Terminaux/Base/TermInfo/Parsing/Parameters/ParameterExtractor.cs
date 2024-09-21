@@ -75,12 +75,16 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         if (i + 1 >= value.Length)
                             throw new TerminauxException("This designator may not be located at the end of the string without specifying one parameter");
                         char parameter = value[i + 1];
-                        if (parameter == ';' && conditionNest == 1)
+                        if (parameter == ';')
                         {
                             conditionNest--;
-                            isParam = false;
+                            if (conditionNest == 0)
+                                isParam = false;
                             parameterBuilder.Append(parameter);
+                            i++;
                         }
+                        else if (parameter == '?')
+                            conditionNest++;
                     }
                     continue;
                 }
