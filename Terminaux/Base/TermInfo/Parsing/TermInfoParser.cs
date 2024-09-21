@@ -104,16 +104,26 @@ namespace Terminaux.Base.TermInfo.Parsing
             var (stringNames, _) = ReadStrings(indices, data, header[ExtStringCount]);
 
             List<TermInfoValueDesc<string?>> stringDescs = [];
+            List<string?> stringKeys = [];
             for (int i = 0; i < strings.Length; i++)
             {
                 string name = stringNames[i];
                 var parameters = ParameterExtractor.ExtractParameters(strings[i]);
+                stringKeys.Add(name);
                 stringDescs.Add(new(strings[i], name, TermInfoValueType.String, parameters));
+            }
+            for (int i = stringNames.Length - 1; i >= 0; i--)
+            {
+                if (stringKeys[i] == null)
+                {
+                    stringKeys.RemoveAt(i);
+                    stringDescs.RemoveAt(i);
+                }
             }
 
             return new ExtendedCapabilities(
                 booleans, nums, [.. stringDescs],
-                booleanNames, numNames, stringNames);
+                booleanNames, numNames, [.. stringKeys]);
         }
 
         private static BitWidth GetBitWidth(int magic)
@@ -216,6 +226,8 @@ namespace Terminaux.Base.TermInfo.Parsing
             var last = 0;
             for (var i = 0; i < count; i++)
             {
+                if (i >= indexes.Length)
+                    continue;
                 var start = indexes[i];
                 if (start < 0)
                     continue;

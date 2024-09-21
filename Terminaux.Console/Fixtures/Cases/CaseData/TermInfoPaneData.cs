@@ -67,16 +67,10 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
         {
             if (loaded)
                 return [.. descs];
-            var asm = Assembly.GetExecutingAssembly();
-            var termInfoNames = asm.GetManifestResourceNames();
-            foreach (string termInfoName in termInfoNames)
+            string[] names = TermInfoDesc.GetBuiltins();
+            foreach (string termInfoName in names)
             {
-                if (!termInfoName.StartsWith("Terminaux.Console.Assets.TermInfoData."))
-                    continue;
-                var stream = asm.GetManifestResourceStream(termInfoName);
-                if (stream is null)
-                    continue;
-                var desc = TermInfoDesc.Load(stream);
+                var desc = TermInfoDesc.Load(termInfoName);
                 if (desc is not null)
                     descs.Add(desc);
             }

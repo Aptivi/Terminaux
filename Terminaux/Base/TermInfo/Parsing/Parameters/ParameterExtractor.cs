@@ -127,7 +127,11 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                 {
                     case 'p':
                         if (i + 1 >= value.Length)
-                            throw new TerminauxException("This designator may not be located at the end of the string without specifying one parameter");
+                        {
+                            parameterBuilder.Clear();
+                            isParam = false;
+                            continue;
+                        }
                         {
                             char arg = value[i + 1];
                             if (!int.TryParse($"{arg}", out int num))
@@ -143,10 +147,14 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                     case 'P':
                     case 'g':
                         if (i + 1 >= value.Length)
-                            throw new TerminauxException("This designator may not be located at the end of the string without specifying one parameter");
+                        {
+                            parameterBuilder.Clear();
+                            isParam = false;
+                            continue;
+                        }
                         {
                             char arg = value[i + 1];
-                            if (arg < 'A' && arg > 'Z' && arg < 'a' && arg > 'z')
+                            if (arg >= 'A' || arg <= 'Z' || arg >= 'a' || arg <= 'z')
                             {   
                                 parameterBuilder.Append(c);
                                 parameterBuilder.Append(arg);
@@ -166,11 +174,15 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         // Integer constant
                         StringBuilder integerBuilder = new();
                         if (i + 1 >= value.Length)
-                            throw new TerminauxException("This designator may not be located at the end of the string without specifying an integer constant");
+                        {
+                            parameterBuilder.Clear();
+                            isParam = false;
+                            continue;
+                        }
                         {
                             int offset = 1;
                             char arg = value[i + offset];
-                            if (i + 1 == '}')
+                            if (arg == '}')
                                 throw new TerminauxException("This designator needs an integer constant");
                             while (arg != '}')
                             {
@@ -204,7 +216,11 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                 {
                     StringBuilder collectionBuilder = new();
                     if (i + 1 >= value.Length)
-                        throw new TerminauxException("This designator may not be located at the end of the string without specifying a range of characters");
+                    {
+                        parameterBuilder.Clear();
+                        isParam = false;
+                        continue;
+                    }
                     {
                         int offset = 1;
                         char arg = value[i + offset];
@@ -234,12 +250,22 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         parameterBuilder.Append(c);
                         isParam = false;
                         continue;
+                    case '\u001b':
+                    case '\r':
+                    case '\f':
+                        parameterBuilder.Clear();
+                        isParam = false;
+                        continue;
                     case ':':
                     case '+':
                     case '#':
                     case ' ':
                         if (i + 1 >= value.Length)
-                            throw new TerminauxException("This designator may not be located at the end of the string without specifying either a type or a width");
+                        {
+                            parameterBuilder.Clear();
+                            isParam = false;
+                            continue;
+                        }
                         {
                             char arg = value[i + 1];
                             switch (arg)
@@ -256,13 +282,13 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                                     continue;
                                 default:
                                     // Look for width or precision designators
-                                    if (!int.TryParse($"{arg}", out _) && arg != '.')
+                                    if (!int.TryParse($"{arg}", out _) && arg != '.' && arg != '-')
                                         throw new TerminauxException("Width is not valid");
                                     {                                   
                                         StringBuilder widthBuilder = new();
                                         int offset = 1;
                                         char target = value[i + offset];
-                                        while (int.TryParse($"{target}", out _) || target == '.')
+                                        while (int.TryParse($"{target}", out _) || target == '.' || target == '-')
                                         {
                                             widthBuilder.Append(target);
                                             offset++;
@@ -271,12 +297,11 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                                         if (widthBuilder[0] == '.')
                                             widthBuilder.Insert(0, 0);
                                         i += offset;
-                                        if (i + 1 >= value.Length)
+                                        if (i >= value.Length)
                                             throw new TerminauxException("This designator may not be located at the end of the string without specifying a type");
-                                        char finalType = value[i + 1];
+                                        char finalType = value[i];
                                         if (finalType != 'd' && finalType != 'o' && finalType != 'X' && finalType != 'x' && finalType != 's')
                                             throw new TerminauxException("Invalid type");
-                                        i++;
                                         parameterBuilder.Append(c);
                                         parameterBuilder.Append(widthBuilder);
                                         parameterBuilder.Append(finalType);
@@ -287,13 +312,17 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         }
                     default:
                         // Look for width or precision designators
-                        if (!int.TryParse($"{c}", out _) && c != '.')
-                            throw new TerminauxException("Width is not valid");
+                        if (!int.TryParse($"{c}", out _) && c != '.' && c != '-')
+                        {
+                            parameterBuilder.Clear();
+                            isParam = false;
+                            continue;
+                        }
                         {
                             StringBuilder widthBuilder = new();
-                            int offset = 1;
+                            int offset = 0;
                             char target = value[i + offset];
-                            while (int.TryParse($"{target}", out _) || target == '.')
+                            while (int.TryParse($"{target}", out _) || target == '.' || target == '-')
                             {
                                 widthBuilder.Append(target);
                                 offset++;
@@ -307,8 +336,6 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             char finalType = value[i];
                             if (finalType != 'd' && finalType != 'o' && finalType != 'X' && finalType != 'x' && finalType != 's')
                                 throw new TerminauxException("Invalid type");
-                            i++;
-                            parameterBuilder.Append(c);
                             parameterBuilder.Append(widthBuilder);
                             parameterBuilder.Append(finalType);
                         }
@@ -316,6 +343,8 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         continue;
                 }
             }
+            if (parameterBuilder.Length > 0)
+                parameters.Add(new(parameterBuilder.ToString(), index));
             return [.. parameters];
         }
     }
