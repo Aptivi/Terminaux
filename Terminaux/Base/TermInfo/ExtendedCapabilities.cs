@@ -90,7 +90,7 @@ namespace Terminaux.Base.TermInfo
                 throw new ArgumentNullException(nameof(key));
 
             _booleans.TryGetValue(key, out var value);
-            return value.Value;
+            return value?.Value;
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Terminaux.Base.TermInfo
                 throw new ArgumentNullException(nameof(key));
 
             _nums.TryGetValue(key, out var value);
-            return value.Value;
+            return value?.Value;
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace Terminaux.Base.TermInfo
                 throw new ArgumentNullException(nameof(key));
 
             _strings.TryGetValue(key, out var value);
-            return value.Value;
+            return value?.Value;
         }
 
         internal ExtendedCapabilities()

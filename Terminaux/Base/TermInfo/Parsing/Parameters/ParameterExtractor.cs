@@ -69,13 +69,20 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                 else if (conditionNest > 0)
                 {
                     parameterBuilder.Append(c);
-                    index = 0;
                     if (c == '%')
                     {
                         isParam = true;
-                        index = i;
-                        continue;
+                        if (i + 1 >= value.Length)
+                            throw new TerminauxException("This designator may not be located at the end of the string without specifying one parameter");
+                        char parameter = value[i + 1];
+                        if (parameter == ';' && conditionNest == 1)
+                        {
+                            conditionNest--;
+                            isParam = false;
+                            parameterBuilder.Append(parameter);
+                        }
                     }
+                    continue;
                 }
 
                 // Now, parse everything after the designator, starting from the one-letter-only parameters
@@ -107,15 +114,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                     case '?':
                         parameterBuilder.Append(c);
                         conditionNest++;
-                        continue;
-                    case 't':
-                    case 'e':
-                        parameterBuilder.Append(c);
-                        continue;
-                    case ';':
-                        parameterBuilder.Append(c);
-                        conditionNest--;
-                        isParam = false;
+                        index = i - 1;
                         continue;
                 }
 
@@ -167,7 +166,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         {
                             int offset = 1;
                             char arg = value[i + offset];
-                            if (i + 1 >= value.Length)
+                            if (i + 1 == '}')
                                 throw new TerminauxException("This designator needs an integer constant");
                             while (arg != '}')
                             {
@@ -194,6 +193,30 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         parameterBuilder.Append($"{ending}{character}{ending}");
                         isParam = false;
                         continue;
+                }
+
+                // Deal with a character collection
+                if (c == '[')
+                {
+                    StringBuilder collectionBuilder = new();
+                    if (i + 1 >= value.Length)
+                        throw new TerminauxException("This designator may not be located at the end of the string without specifying a range of characters");
+                    {
+                        int offset = 1;
+                        char arg = value[i + offset];
+                        if (i + 1 == ']')
+                            throw new TerminauxException("This designator needs a character collection");
+                        while (arg != ']')
+                        {
+                            collectionBuilder.Append(arg);
+                            offset++;
+                            arg = value[i + offset];
+                        }
+                        i += offset;
+                    }
+                    parameterBuilder.Append($"[{collectionBuilder}]");
+                    isParam = false;
+                    continue;
                 }
 
                 // Deal with printf(3) string formatting
@@ -275,9 +298,9 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             if (widthBuilder[0] == '.')
                                 widthBuilder.Insert(0, 0);
                             i += offset;
-                            if (i + 1 >= value.Length)
+                            if (i >= value.Length)
                                 throw new TerminauxException("This designator may not be located at the end of the string without specifying a type");
-                            char finalType = value[i + 1];
+                            char finalType = value[i];
                             if (finalType != 'd' && finalType != 'o' && finalType != 'X' && finalType != 'x' && finalType != 's')
                                 throw new TerminauxException("Invalid type");
                             i++;
