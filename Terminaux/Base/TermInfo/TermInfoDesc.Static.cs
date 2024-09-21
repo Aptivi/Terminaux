@@ -28,6 +28,21 @@ namespace Terminaux.Base.TermInfo
     /// </summary>
     public sealed partial class TermInfoDesc
     {
+        private static readonly TermInfoDesc fallback = Load(typeof(TermInfoDesc).Assembly.GetManifestResourceStream("Terminaux.Resources.TermFiles.x.xterm-256color"));
+        private static readonly TermInfoDesc current = LoadSafe();
+
+        /// <summary>
+        /// Current terminal information description
+        /// </summary>
+        public static TermInfoDesc Current =>
+            current;
+
+        /// <summary>
+        /// Fallback terminal information description (that is, xterm-256color)
+        /// </summary>
+        public static TermInfoDesc Fallback =>
+            fallback;
+
         /// <summary>
         /// Tries to load the default terminfo description for the current terminal.
         /// </summary>
@@ -54,9 +69,21 @@ namespace Terminaux.Base.TermInfo
         /// Loads the default terminfo description for the current terminal.
         /// </summary>
         /// <returns>The default terminfo description for the current terminal,
-        /// or <c>null</c> if none could be resolved.</returns>
-        public static TermInfoDesc? Load() =>
+        /// or an exception if none could be resolved.</returns>
+        public static TermInfoDesc Load() =>
             TermInfoLoader.Load();
+
+        /// <summary>
+        /// Loads the default terminfo description for the current terminal.
+        /// </summary>
+        /// <returns>The default terminfo description for the current terminal,
+        /// or fallback to XTerm if none could be resolved.</returns>
+        public static TermInfoDesc LoadSafe()
+        {
+            if (!TryLoad(out TermInfoDesc? result))
+                return Fallback;
+            return result ?? Fallback;
+        }
 
         /// <summary>
         /// Tries to load the specified terminfo description for the current terminal.
@@ -86,9 +113,22 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <param name="name">The name of the terminfo description to load.</param>
         /// <returns>The default terminfo description for the current terminal,
-        /// or <c>null</c> if none could be resolved.</returns>
-        public static TermInfoDesc? Load(string name) =>
+        /// or an exception if none could be resolved.</returns>
+        public static TermInfoDesc Load(string name) =>
             TermInfoLoader.Load(name);
+
+        /// <summary>
+        /// Loads the default terminfo description for the current terminal.
+        /// </summary>
+        /// <param name="name">The name of the terminfo description to load.</param>
+        /// <returns>The default terminfo description for the current terminal,
+        /// or fallback to XTerm if none could be resolved.</returns>
+        public static TermInfoDesc LoadSafe(string name)
+        {
+            if (!TryLoad(name, out TermInfoDesc? result))
+                return Fallback;
+            return result ?? Fallback;
+        }
 
         /// <summary>
         /// Tries to read a terminfo description from a stream.
@@ -120,6 +160,19 @@ namespace Terminaux.Base.TermInfo
         /// <returns>The parsed terminfo description.</returns>
         public static TermInfoDesc Load(Stream stream) =>
             TermInfoLoader.Load(stream);
+
+        /// <summary>
+        /// Loads the default terminfo description for the current terminal.
+        /// </summary>
+        /// <param name="stream">The stream to read from.</param>
+        /// <returns>The default terminfo description for the current terminal,
+        /// or fallback to XTerm if none could be resolved.</returns>
+        public static TermInfoDesc LoadSafe(Stream stream)
+        {
+            if (!TryLoad(stream, out TermInfoDesc? result))
+                return Fallback;
+            return result ?? Fallback;
+        }
 
         /// <summary>
         /// Gets the built-in terminfo names

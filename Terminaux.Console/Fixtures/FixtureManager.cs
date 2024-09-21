@@ -243,6 +243,7 @@ namespace Terminaux.Console.Fixtures
             new TestFormatting(),
             new ClearKeepPosition(),
             new TermInfoPane(),
+            new TermInfoTest(),
             new ConsoleConhostCheck(),
             new AlternateBuffers(),
             new Sizes(),

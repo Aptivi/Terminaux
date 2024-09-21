@@ -28,13 +28,13 @@ namespace Terminaux.Base.TermInfo
 {
     internal static class TermInfoLoader
     {
-        public static TermInfoDesc? Load(string name = "")
+        public static TermInfoDesc Load(string name = "")
         {
             if (string.IsNullOrEmpty(name))
             {
                 name = Environment.GetEnvironmentVariable("TERM");
                 if (string.IsNullOrEmpty(name))
-                    return null;
+                    return TermInfoDesc.Fallback;
             }
 
             var directories = new List<string>();
@@ -87,7 +87,7 @@ namespace Terminaux.Base.TermInfo
             }
 
             // We're totally screwed
-            return null;
+            throw new TerminauxException($"Can't load {name}");
         }
 
         public static TermInfoDesc Load(Stream stream)
