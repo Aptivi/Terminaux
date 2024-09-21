@@ -19,6 +19,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using System;
 using Terminaux.Base.TermInfo;
 using Terminaux.Tests.TermInfo.Utilities;
 
@@ -42,7 +43,8 @@ namespace Terminaux.Tests.TermInfo
             info.Names.Length.ShouldBe(2);
             info.Names[0].ShouldBe("ansi");
             info.Names[1].ShouldBe("ansi/pc-term compatible with color");
-            info.ClearScreen.ShouldBe("[H[J");
+            info.ClearScreen.ShouldNotBeNull();
+            info.ClearScreen.Value.ShouldBe("[H[J");
         }
 
         [TestMethod]
@@ -59,7 +61,8 @@ namespace Terminaux.Tests.TermInfo
             var info = TermInfoDesc.Load(stream);
 
             // Then
-            info.MaxColors.ShouldBe(expected);
+            info.MaxColors.ShouldNotBeNull();
+            info.MaxColors.Value.ShouldBe(expected);
         }
 
         [TestMethod]
@@ -78,9 +81,15 @@ namespace Terminaux.Tests.TermInfo
             info.Names[0].ShouldBe("Eterm-256color");
             info.Names[1].ShouldBe("Eterm with xterm 256-colors");
             info.Extended.Count.ShouldBe(26);
-            info.Extended.GetBoolean("AX").ShouldBe(true);
-            info.Extended.GetBoolean("XT").ShouldBe(true);
-            info.Extended.GetString("kUP").ShouldBe("\u001b[a");
+            var ax = info.Extended.GetBoolean("AX");
+            var xt = info.Extended.GetBoolean("XT");
+            var kup = info.Extended.GetString("kUP");
+            ax.ShouldNotBeNull();
+            xt.ShouldNotBeNull();
+            kup.ShouldNotBeNull();
+            ax.Value.ShouldBe(true);
+            xt.Value.ShouldBe(true);
+            kup.Value.ShouldBe("\u001b[a");
         }
 
         [TestMethod]
@@ -99,10 +108,18 @@ namespace Terminaux.Tests.TermInfo
             info.Names[0].ShouldBe("linux");
             info.Names[1].ShouldBe("linux console");
             info.Extended.Count.ShouldBe(10);
-            info.Extended.GetBoolean("AX").ShouldBe(true);
-            info.Extended.GetBoolean("G0").ShouldBe(false);
-            info.Extended.GetBoolean("XT").ShouldBe(false);
-            info.Extended.GetNum("U8").ShouldBe(1);
+            var ax = info.Extended.GetBoolean("AX");
+            var g0 = info.Extended.GetBoolean("G0");
+            var xt = info.Extended.GetBoolean("XT");
+            var u8 = info.Extended.GetNum("U8");
+            ax.ShouldNotBeNull();
+            g0.ShouldNotBeNull();
+            xt.ShouldNotBeNull();
+            u8.ShouldNotBeNull();
+            ax.Value.ShouldBe(true);
+            g0.Value.ShouldBe(false);
+            xt.Value.ShouldBe(false);
+            u8.Value.ShouldBe(1);
         }
 
         [TestMethod]
@@ -119,7 +136,8 @@ namespace Terminaux.Tests.TermInfo
             var info = TermInfoDesc.Load(stream);
 
             // Then
-            info.Extended.GetBoolean(key).ShouldBe(expected);
+            var boolean = info.Extended.GetBoolean(key);
+            boolean?.Value.ShouldBe(expected);
         }
     }
 }

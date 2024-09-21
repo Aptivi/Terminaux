@@ -84,13 +84,13 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <param name="key">The key of the extended boolean capability.</param>
         /// <returns>The value of the extended capability, or <c>null</c> if its missing.</returns>
-        public bool? GetBoolean(string key)
+        public TermInfoValueDesc<bool?>? GetBoolean(string key)
         {
             if (key is null)
                 throw new ArgumentNullException(nameof(key));
 
             _booleans.TryGetValue(key, out var value);
-            return value?.Value;
+            return value;
         }
 
         /// <summary>
@@ -98,13 +98,13 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <param name="key">The key of the extended numeric capability.</param>
         /// <returns>The value of the extended capability, or <c>null</c> if its missing.</returns>
-        public int? GetNum(string key)
+        public TermInfoValueDesc<int?>? GetNum(string key)
         {
             if (key is null)
                 throw new ArgumentNullException(nameof(key));
 
             _nums.TryGetValue(key, out var value);
-            return value?.Value;
+            return value;
         }
 
         /// <summary>
@@ -112,13 +112,13 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <param name="key">The key of the extended string capability.</param>
         /// <returns>The value of the extended capability, or <c>null</c> if its missing.</returns>
-        public string? GetString(string key)
+        public TermInfoValueDesc<string?>? GetString(string key)
         {
             if (key is null)
                 throw new ArgumentNullException(nameof(key));
 
             _strings.TryGetValue(key, out var value);
-            return value?.Value;
+            return value;
         }
 
         internal ExtendedCapabilities()

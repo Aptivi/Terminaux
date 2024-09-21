@@ -46,13 +46,13 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <param name="value">The capability to get the value for.</param>
         /// <returns>The terminfo capability value.</returns>
-        public bool? GetBoolean(TermInfoCaps.Boolean value)
+        public TermInfoValueDesc<bool?>? GetBoolean(TermInfoCaps.Boolean value)
         {
             var index = (int)value;
             if (index >= _booleans.Length)
                 return null;
 
-            return _booleans[index].Value;
+            return _booleans[index];
         }
 
         /// <summary>
@@ -60,14 +60,14 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <param name="value">The capability to get the value for.</param>
         /// <returns>The terminfo capability value.</returns>
-        public int? GetNum(TermInfoCaps.Num value)
+        public TermInfoValueDesc<int?>? GetNum(TermInfoCaps.Num value)
         {
             var index = (int)value;
             if (index >= _nums.Length)
                 return null;
 
-            var result = _nums[index].Value;
-            if (result == null || result == -1)
+            var result = _nums[index];
+            if (result.Value == null || result.Value == -1)
                 return null;
 
             return result;
@@ -78,13 +78,13 @@ namespace Terminaux.Base.TermInfo
         /// </summary>
         /// <param name="value">The capability to get the value for.</param>
         /// <returns>The terminfo capability value.</returns>
-        public string? GetString(TermInfoCaps.String value)
+        public TermInfoValueDesc<string?>? GetString(TermInfoCaps.String value)
         {
             var index = (int)value;
             if (index >= _strings.Length)
                 return null;
 
-            var result = _strings[index].Value;
+            var result = _strings[index];
             return result;
         }
 

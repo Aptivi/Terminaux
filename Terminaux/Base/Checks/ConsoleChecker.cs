@@ -197,7 +197,9 @@ namespace Terminaux.Base.Checks
                 var termInfo = TermInfoDesc.Load(TerminalType);
                 if (termInfo == null)
                     return true;
-                return termInfo.MaxColors >= 256;
+                if (termInfo.MaxColors is null)
+                    return false;
+                return termInfo.MaxColors.Value >= 256;
             }
             else
             {
