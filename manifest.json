@@ -235,6 +235,66 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterExtractor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterExtractor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.TermInfoValueDesc-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.TermInfoValueDesc-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.TermInfoValueType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.TermInfoValueType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.TermInfo.TermInfoCaps.Boolean.yml",
       "output": {
         ".html": {
