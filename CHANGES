@@ -1,13 +1,10 @@
-This version of Terminaux is mostly informational, as it adds and tweaks features to the TermInfo parser!
+This version of Terminaux is an emergency bug fix update.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added current and fallback TermInfo properties
-- `[+]` Added value description classes
-- `[*]` Improved extended capability parsing
-- `[*]` General improvements and bug fixes
+- `[*]` Fixed bugs when parsing old terminfo files
 
 Review the commit history if you want to get a deep insight about the changes.
 

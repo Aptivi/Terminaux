@@ -80,7 +80,7 @@ namespace Terminaux.Tests.TermInfo
             info.Names.Length.ShouldBe(2);
             info.Names[0].ShouldBe("Eterm-256color");
             info.Names[1].ShouldBe("Eterm with xterm 256-colors");
-            info.Extended.Count.ShouldBe(20);
+            info.Extended.Count.ShouldBe(26);
             var ax = info.Extended.GetBoolean("AX");
             var xt = info.Extended.GetBoolean("XT");
             var kup = info.Extended.GetString("kUP");
@@ -106,17 +106,19 @@ namespace Terminaux.Tests.TermInfo
             // Then
             info.Names.Length.ShouldBe(2);
             info.Names[0].ShouldBe("linux");
-            info.Names[1].ShouldBe("Linux console");
-            info.Extended.Count.ShouldBe(4);
+            info.Names[1].ShouldBe("linux console");
+            info.Extended.Count.ShouldBe(10);
             var ax = info.Extended.GetBoolean("AX");
             var g0 = info.Extended.GetBoolean("G0");
             var xt = info.Extended.GetBoolean("XT");
             var u8 = info.Extended.GetNum("U8");
             ax.ShouldNotBeNull();
-            g0.ShouldBeNull();
-            xt.ShouldBeNull();
+            g0.ShouldNotBeNull();
+            xt.ShouldNotBeNull();
             u8.ShouldNotBeNull();
             ax.Value.ShouldBe(true);
+            g0.Value.ShouldBe(false);
+            xt.Value.ShouldBe(false);
             u8.Value.ShouldBe(1);
         }
 

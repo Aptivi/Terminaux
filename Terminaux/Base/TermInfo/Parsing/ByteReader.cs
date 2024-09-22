@@ -24,7 +24,7 @@ namespace Terminaux.Base.TermInfo.Parsing
 {
     internal sealed class ByteReader
     {
-        private readonly BinaryReader _reader;
+        internal readonly BinaryReader _reader;
 
         public int Position { get; set; }
 

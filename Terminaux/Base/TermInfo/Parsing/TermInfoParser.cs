@@ -93,12 +93,20 @@ namespace Terminaux.Base.TermInfo.Parsing
                 if (index == -2 || index == -1)
                     invalidIndexes++;
             }
-            if (invalidIndexes > 0)
+            byte[] twoBytes = reader.ReadBytes(2);
+            int resultant = twoBytes[1] << 8 | twoBytes[0];
+            bool isIdx = resultant < header[ExtTableSize];
+            if (isIdx)
+            {
+                indexList.Add(resultant);
+                invalidIndexes--;
+            }
+            if (invalidIndexes > 0 && isIdx)
                 indexList.AddRange(ReadIntegers(reader, invalidIndexes, BitWidth.TwoBytes));
             var indices = new Span<int>([.. indexList]);
 
             // Read the data
-            var data = new Span<char>(Encoding.ASCII.GetString(reader.ReadBytes(header[ExtTableSize])).ToCharArray());
+            var data = new Span<char>(($"{(isIdx ? "" : new string([(char)twoBytes[0], (char)twoBytes[1]]))}" + Encoding.ASCII.GetString(reader.ReadBytes(header[ExtTableSize] - (isIdx ? 0 : 2)))).ToCharArray());
 
             // Read string caps
             var (strings, last) = ReadStrings(indices, data, header[ExtStringCount]);
