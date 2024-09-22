@@ -84,7 +84,20 @@ namespace Terminaux.Base.TermInfo.Parsing
             // Read num caps
             var nums = ReadNums(reader, header[ExtNumCount], numWidth);
 
-            var indices = new Span<int>(ReadIntegers(reader, header[ExtOffsetCount], BitWidth.TwoBytes));
+            // Read the indices and compensate them
+            var indexList = new List<int>(ReadIntegers(reader, header[ExtOffsetCount], BitWidth.TwoBytes));
+            int invalidIndexes = 0;
+            for (int i = indexList.Count - 1; i >= 0; i--)
+            {
+                int index = indexList[i];
+                if (index == -2 || index == -1)
+                    invalidIndexes++;
+            }
+            if (invalidIndexes > 0)
+                indexList.AddRange(ReadIntegers(reader, invalidIndexes, BitWidth.TwoBytes));
+            var indices = new Span<int>([.. indexList]);
+
+            // Read the data
             var data = new Span<char>(Encoding.ASCII.GetString(reader.ReadBytes(header[ExtTableSize])).ToCharArray());
 
             // Read string caps
