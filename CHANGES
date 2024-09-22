@@ -1,14 +1,12 @@
-This version of Terminaux is mostly colorful, as it adds and tweaks features to the color!
+This version of Terminaux is mostly informational, as it adds and tweaks features to the TermInfo parser!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added writing default
-- `[+]` Added YXY, HunterLab, CIE-L*ab, and CIE-L*uv color models
-- `[+]` Added non-generic bi-di color model
-- `[*]` Improved template addition logic
-- `[*]` Many improvements to the color selector
+- `[+]` Added current and fallback TermInfo properties
+- `[+]` Added value description classes
+- `[*]` Improved extended capability parsing
 - `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
