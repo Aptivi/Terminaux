@@ -102,7 +102,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindingHelpText_Terminaux_Writer_MiscWriters_Tools_Keybinding___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindingHelpText(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L503">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L524">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindingHelpText_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindingHelpText*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindingHelpText_Terminaux_Writer_MiscWriters_Tools_Keybinding___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindingHelpText(Terminaux.Writer.MiscWriters.Tools.Keybinding[])">RenderKeybindingHelpText(Keybinding[])</h4>
@@ -149,19 +149,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L171">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L181">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Int32,System.Int32,System.Int32)">RenderKeybindings(Keybinding[], int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">RenderKeybindings(Keybinding[], int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Renders the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -197,6 +197,12 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -217,19 +223,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L195">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L207">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">RenderKeybindings(Keybinding[], Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">RenderKeybindings(Keybinding[], Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Renders the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -271,6 +277,12 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -291,19 +303,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L225">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L239">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">RenderKeybindings(Keybinding[], Color, Color, Color, Color, Color, Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">RenderKeybindings(Keybinding[], Color, Color, Color, Color, Color, Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Renders the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -375,6 +387,12 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -395,19 +413,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L261">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L277">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">RenderKeybindings(Keybinding[], Color, Color, Color, Color, Color, Color, Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">RenderKeybindings(Keybinding[], Color, Color, Color, Color, Color, Color, Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Renders the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -485,6 +503,12 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -505,19 +529,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L183">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L194">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Int32,System.Int32,System.Int32)">RenderKeybindings(Keybinding[], Keybinding[], int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">RenderKeybindings(Keybinding[], Keybinding[], int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Renders the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -559,6 +583,12 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -579,19 +609,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L208">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L221">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">RenderKeybindings(Keybinding[], Keybinding[], Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">RenderKeybindings(Keybinding[], Keybinding[], Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Renders the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -639,6 +669,12 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -659,19 +695,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L243">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L258">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">RenderKeybindings(Keybinding[], Keybinding[], Color, Color, Color, Color, Color, Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">RenderKeybindings(Keybinding[], Keybinding[], Color, Color, Color, Color, Color, Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Renders the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -749,6 +785,12 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -769,19 +811,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L280">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L297">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">RenderKeybindings(Keybinding[], Keybinding[], Color, Color, Color, Color, Color, Color, Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_RenderKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.RenderKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">RenderKeybindings(Keybinding[], Keybinding[], Color, Color, Color, Color, Color, Color, Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Renders the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -863,6 +905,12 @@
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">rightMargin</span></td>
         <td><p>Right margin of the keybinding group</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
 </td>
       </tr>
     </tbody>
@@ -888,7 +936,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox(System.String%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L425">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L446">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox(System.String,Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Object[])">ShowKeybindingInfobox(string, Keybinding[], params object[])</h4>
@@ -934,7 +982,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox(System.String%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L456">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L477">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox(System.String,Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.FancyWriters.Tools.BorderSettings,System.Object[])">ShowKeybindingInfobox(string, Keybinding[], BorderSettings, params object[])</h4>
@@ -986,7 +1034,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L348">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L369">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox(Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Object[])">ShowKeybindingInfobox(Keybinding[], params object[])</h4>
@@ -1026,7 +1074,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L376">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L397">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfobox_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfobox(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.FancyWriters.Tools.BorderSettings,System.Object[])">ShowKeybindingInfobox(Keybinding[], BorderSettings, params object[])</h4>
@@ -1072,7 +1120,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor(System.String%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L435">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L456">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor(System.String,Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,System.Object[])">ShowKeybindingInfoboxColor(string, Keybinding[], Color, params object[])</h4>
@@ -1124,7 +1172,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor(System.String%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L467">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L488">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor(System.String,Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.FancyWriters.Tools.BorderSettings,Terminaux.Colors.Color,System.Object[])">ShowKeybindingInfoboxColor(string, Keybinding[], BorderSettings, Color, params object[])</h4>
@@ -1182,7 +1230,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L357">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L378">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,System.Object[])">ShowKeybindingInfoboxColor(Keybinding[], Color, params object[])</h4>
@@ -1228,7 +1276,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L386">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L407">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColor_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColor(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.FancyWriters.Tools.BorderSettings,Terminaux.Colors.Color,System.Object[])">ShowKeybindingInfoboxColor(Keybinding[], BorderSettings, Color, params object[])</h4>
@@ -1280,7 +1328,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack(System.String%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L446">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L467">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack(System.String,Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">ShowKeybindingInfoboxColorBack(string, Keybinding[], Color, Color, params object[])</h4>
@@ -1338,7 +1386,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack(System.String%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L479">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L500">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack(System.String,Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.FancyWriters.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">ShowKeybindingInfoboxColorBack(string, Keybinding[], BorderSettings, Color, Color, params object[])</h4>
@@ -1402,7 +1450,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L367">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L388">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">ShowKeybindingInfoboxColorBack(Keybinding[], Color, Color, params object[])</h4>
@@ -1454,7 +1502,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L397">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L418">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxColorBack_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxColorBack(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.FancyWriters.Tools.BorderSettings,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Object[])">ShowKeybindingInfoboxColorBack(Keybinding[], BorderSettings, Color, Color, params object[])</h4>
@@ -1512,7 +1560,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain(System.String%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L406">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L427">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain(System.String,Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Object[])">ShowKeybindingInfoboxPlain(string, Keybinding[], params object[])</h4>
@@ -1558,7 +1606,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain(System.String%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L416">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L437">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_System_String_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain(System.String,Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.FancyWriters.Tools.BorderSettings,System.Object[])">ShowKeybindingInfoboxPlain(string, Keybinding[], BorderSettings, params object[])</h4>
@@ -1610,7 +1658,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L331">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L352">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain(Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Object[])">ShowKeybindingInfoboxPlain(Keybinding[], params object[])</h4>
@@ -1650,7 +1698,7 @@
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.FancyWriters.Tools.BorderSettings%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L340">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L361">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain*"></a>
   <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_ShowKeybindingInfoboxPlain_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_FancyWriters_Tools_BorderSettings_System_Object___" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.ShowKeybindingInfoboxPlain(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.FancyWriters.Tools.BorderSettings,System.Object[])">ShowKeybindingInfoboxPlain(Keybinding[], BorderSettings, params object[])</h4>
@@ -1693,19 +1741,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L48">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L50">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Int32,System.Int32,System.Int32)">WriteKeybindings(Keybinding[], int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">WriteKeybindings(Keybinding[], int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Writes the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1741,23 +1789,29 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L72">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L76">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">WriteKeybindings(Keybinding[], Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">WriteKeybindings(Keybinding[], Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Writes the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1799,23 +1853,29 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L102">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L108">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">WriteKeybindings(Keybinding[], Color, Color, Color, Color, Color, Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">WriteKeybindings(Keybinding[], Color, Color, Color, Color, Color, Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Writes the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1887,23 +1947,29 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L138">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L146">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">WriteKeybindings(Keybinding[], Color, Color, Color, Color, Color, Color, Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">WriteKeybindings(Keybinding[], Color, Color, Color, Color, Color, Color, Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Writes the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1981,23 +2047,29 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L60">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L63">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Int32,System.Int32,System.Int32)">WriteKeybindings(Keybinding[], Keybinding[], int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">WriteKeybindings(Keybinding[], Keybinding[], int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Writes the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -2039,23 +2111,29 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L85">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L90">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">WriteKeybindings(Keybinding[], Keybinding[], Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">WriteKeybindings(Keybinding[], Keybinding[], Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Writes the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -2103,23 +2181,29 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L120">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L127">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">WriteKeybindings(Keybinding[], Keybinding[], Color, Color, Color, Color, Color, Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">WriteKeybindings(Keybinding[], Keybinding[], Color, Color, Color, Color, Color, Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Writes the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -2197,23 +2281,29 @@
         <td><p>Right margin of the keybinding group</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Writer.MiscWriters.Tools.Keybinding%5B%5D%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CTerminaux.Colors.Color%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32%2CSystem.Nullable%7BSystem.ConsoleKeyInfo%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L157">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L166">View Source</a>
   </span>
   <a id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings*"></a>
-  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32)">WriteKeybindings(Keybinding[], Keybinding[], Color, Color, Color, Color, Color, Color, Color, int, int, int)</h4>
+  <h4 id="Terminaux_Writer_MiscWriters_KeybindingsWriter_WriteKeybindings_Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Writer_MiscWriters_Tools_Keybinding___Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_Terminaux_Colors_Color_System_Int32_System_Int32_System_Int32_System_Nullable_System_ConsoleKeyInfo__" data-uid="Terminaux.Writer.MiscWriters.KeybindingsWriter.WriteKeybindings(Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Writer.MiscWriters.Tools.Keybinding[],Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,Terminaux.Colors.Color,System.Int32,System.Int32,System.Int32,System.Nullable{System.ConsoleKeyInfo})">WriteKeybindings(Keybinding[], Keybinding[], Color, Color, Color, Color, Color, Color, Color, int, int, int, ConsoleKeyInfo?)</h4>
   <div class="markdown level1 summary"><p>Writes the keybindings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -2295,6 +2385,12 @@
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">rightMargin</span></td>
         <td><p>Right margin of the keybinding group</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolekeyinfo">ConsoleKeyInfo</a>?</td>
+        <td><span class="parametername">helpKeyInfo</span></td>
+        <td><p>Key information that opens the help page</p>
 </td>
       </tr>
     </tbody>
@@ -2311,7 +2407,7 @@
                     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_MiscWriters_KeybindingsWriter.md&amp;value=---%0Auid%3A%20Terminaux.Writer.MiscWriters.KeybindingsWriter%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L38" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/MiscWriters/KeybindingsWriter.cs/#L39" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
