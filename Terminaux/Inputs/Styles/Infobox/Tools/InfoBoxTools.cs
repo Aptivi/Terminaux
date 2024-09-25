@@ -134,19 +134,24 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, true, vars);
         }
 
+        internal static string GetButtons(BorderSettings settings) =>
+            $"{settings.BorderRightHorizontalIntersectionChar}K{settings.BorderLeftHorizontalIntersectionChar}" +
+            $"{settings.BorderRightHorizontalIntersectionChar}X{settings.BorderLeftHorizontalIntersectionChar}";
+
         internal static string RenderText(
             int maxWidth, int maxHeight, int borderX, int borderY, int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, bool writeBinding, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
-            string buttons = "[K][X]";
+            string buttons = GetButtons(settings);
+            int buttonsWidth = ConsoleChar.EstimateCellWidth(buttons);
             string[] splitFinalLines = GetFinalLines(text, vars);
 
             // Fill the info box with text inside it
             var boxBuffer = new StringBuilder();
             string border =
                 !string.IsNullOrEmpty(title) ?
-                BorderColor.RenderBorderPlain(writeBinding && maxWidth >= buttons.Length + 2 ? title.Truncate(maxWidth - buttons.Length - 7) : title, borderX, borderY, maxWidth, maxHeight, settings) :
+                BorderColor.RenderBorderPlain(writeBinding && maxWidth >= buttonsWidth + 2 ? title.Truncate(maxWidth - buttonsWidth - 9) : title, borderX, borderY, maxWidth, maxHeight, settings) :
                 BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, settings);
             boxBuffer.Append(
                 $"{(useColor ? InfoBoxColor.VTSequenceForeground : "")}" +
@@ -183,8 +188,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             }
 
             // Render a keybinding that points to the help page
-            if (writeBinding && maxWidth >= buttons.Length + 2)
-                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(buttons, left - buttons.Length - 1, borderY, InfoBoxColor, BackgroundColor));
+            if (writeBinding && maxWidth >= buttonsWidth + 2)
+                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(buttons, left - buttonsWidth - 1, borderY, InfoBoxColor, BackgroundColor));
             return boxBuffer.ToString();
         }
     }

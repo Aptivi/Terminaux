@@ -35,6 +35,7 @@ using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -421,9 +422,10 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                         bool DetermineButtonsPressed(PointerEventContext mouse)
                         {
-                            string buttons = "[K][X]";
-                            int buttonsLeftMin = maxWidth + borderX - buttons.Length;
-                            int buttonsLeftMax = buttonsLeftMin + buttons.Length;
+                            string buttons = InfoBoxTools.GetButtons(settings);
+                            int buttonsWidth = ConsoleChar.EstimateCellWidth(buttons);
+                            int buttonsLeftMin = maxWidth + borderX - buttonsWidth;
+                            int buttonsLeftMax = buttonsLeftMin + buttonsWidth;
                             int buttonsTop = borderY;
                             return
                                 PointerTools.PointerWithinRange(mouse,
@@ -433,11 +435,12 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                         void DoActionBasedOnButtonPress(PointerEventContext mouse)
                         {
-                            string buttons = "[K][X]";
-                            int buttonLeftHelpMin = maxWidth + borderX - buttons.Length;
+                            string buttons = InfoBoxTools.GetButtons(settings);
+                            int buttonsWidth = ConsoleChar.EstimateCellWidth(buttons);
+                            int buttonLeftHelpMin = maxWidth + borderX - buttonsWidth;
                             int buttonLeftHelpMax = buttonLeftHelpMin + 2;
                             int buttonLeftCloseMin = buttonLeftHelpMin + 3;
-                            int buttonLeftCloseMax = buttonLeftHelpMin + buttons.Length;
+                            int buttonLeftCloseMax = buttonLeftHelpMin + buttonsWidth;
                             int buttonsTop = borderY;
                             if (mouse.Coordinates.y == buttonsTop)
                             {
