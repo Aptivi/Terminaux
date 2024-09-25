@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
@@ -44,9 +45,10 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteKeybindings(Keybinding[] bindings, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+        public static void WriteKeybindings(Keybinding[] bindings, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            WriteKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Writes the keybindings
@@ -56,9 +58,10 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+        public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            WriteKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Writes the keybindings
@@ -67,10 +70,11 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteKeybindings(Keybinding[] bindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin);
+        public static void WriteKeybindings(Keybinding[] bindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            WriteKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Writes the keybindings
@@ -80,10 +84,11 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin);
+        public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            WriteKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Writes the keybindings
@@ -92,6 +97,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="builtinColor">Built-in keybinding foreground color in the background color</param>
         /// <param name="builtinForegroundColor">Built-in keybinding foreground color out of the background color</param>
         /// <param name="builtinBackgroundColor">Built-in keybinding background color</param>
@@ -99,8 +105,8 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="optionForegroundColor">Option keybinding foreground color out of the background color</param>
         /// <param name="optionBackgroundColor">Option keybinding background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, [], builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+        public static void WriteKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            WriteKeybindings(bindings, [], builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Writes the keybindings
@@ -110,6 +116,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="builtinColor">Built-in keybinding foreground color in the background color</param>
         /// <param name="builtinForegroundColor">Built-in keybinding foreground color out of the background color</param>
         /// <param name="builtinBackgroundColor">Built-in keybinding background color</param>
@@ -117,8 +124,8 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="optionForegroundColor">Option keybinding foreground color out of the background color</param>
         /// <param name="optionBackgroundColor">Option keybinding background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, builtinKeybindings, builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+        public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            WriteKeybindings(bindings, builtinKeybindings, builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Writes the keybindings
@@ -127,6 +134,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="builtinColor">Built-in keybinding foreground color in the background color</param>
         /// <param name="builtinForegroundColor">Built-in keybinding foreground color out of the background color</param>
         /// <param name="builtinBackgroundColor">Built-in keybinding background color</param>
@@ -135,8 +143,8 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="optionBackgroundColor">Option keybinding background color</param>
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            WriteKeybindings(bindings, [], builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, backgroundColor, left, top, rightMargin);
+        public static void WriteKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            WriteKeybindings(bindings, [], builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, backgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Writes the keybindings
@@ -146,6 +154,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="builtinColor">Built-in keybinding foreground color in the background color</param>
         /// <param name="builtinForegroundColor">Built-in keybinding foreground color out of the background color</param>
         /// <param name="builtinBackgroundColor">Built-in keybinding background color</param>
@@ -154,9 +163,9 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="optionBackgroundColor">Option keybinding background color</param>
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0)
+        public static void WriteKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)
         {
-            string rendered = RenderKeybindings(bindings, builtinKeybindings, builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, backgroundColor, left, top, rightMargin);
+            string rendered = RenderKeybindings(bindings, builtinKeybindings, builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, backgroundColor, left, top, rightMargin, helpKeyInfo);
             TextWriterRaw.WriteRaw(rendered);
         }
 
@@ -167,9 +176,10 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderKeybindings(Keybinding[] bindings, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+        public static string RenderKeybindings(Keybinding[] bindings, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            RenderKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Renders the keybindings
@@ -179,9 +189,10 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+        public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            RenderKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), ColorTools.CurrentBackgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Renders the keybindings
@@ -190,10 +201,11 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderKeybindings(Keybinding[] bindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin);
+        public static string RenderKeybindings(Keybinding[] bindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            RenderKeybindings(bindings, [], new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Renders the keybindings
@@ -203,10 +215,11 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin);
+        public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            RenderKeybindings(bindings, builtinKeybindings, new(ConsoleColors.Black), new(ConsoleColors.Lime), new(ConsoleColors.Green), new(ConsoleColors.Black), new(ConsoleColors.Yellow), new(ConsoleColors.Olive), backgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Renders the keybindings
@@ -215,6 +228,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="builtinColor">Built-in keybinding foreground color in the background color</param>
         /// <param name="builtinForegroundColor">Built-in keybinding foreground color out of the background color</param>
         /// <param name="builtinBackgroundColor">Built-in keybinding background color</param>
@@ -222,8 +236,8 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="optionForegroundColor">Option keybinding foreground color out of the background color</param>
         /// <param name="optionBackgroundColor">Option keybinding background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, [], builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+        public static string RenderKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            RenderKeybindings(bindings, [], builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Renders the keybindings
@@ -233,6 +247,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="builtinColor">Built-in keybinding foreground color in the background color</param>
         /// <param name="builtinForegroundColor">Built-in keybinding foreground color out of the background color</param>
         /// <param name="builtinBackgroundColor">Built-in keybinding background color</param>
@@ -240,8 +255,8 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="optionForegroundColor">Option keybinding foreground color out of the background color</param>
         /// <param name="optionBackgroundColor">Option keybinding background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, builtinKeybindings, builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin);
+        public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            RenderKeybindings(bindings, builtinKeybindings, builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, ColorTools.CurrentBackgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Renders the keybindings
@@ -250,6 +265,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="builtinColor">Built-in keybinding foreground color in the background color</param>
         /// <param name="builtinForegroundColor">Built-in keybinding foreground color out of the background color</param>
         /// <param name="builtinBackgroundColor">Built-in keybinding background color</param>
@@ -258,8 +274,8 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="optionBackgroundColor">Option keybinding background color</param>
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0) =>
-            RenderKeybindings(bindings, [], builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, backgroundColor, left, top, rightMargin);
+        public static string RenderKeybindings(Keybinding[] bindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null) =>
+            RenderKeybindings(bindings, [], builtinColor, builtinForegroundColor, builtinBackgroundColor, optionColor, optionForegroundColor, optionBackgroundColor, backgroundColor, left, top, rightMargin, helpKeyInfo);
 
         /// <summary>
         /// Renders the keybindings
@@ -269,6 +285,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="left">Left position of the keybinding group</param>
         /// <param name="top">Top position of the keybinding group</param>
         /// <param name="rightMargin">Right margin of the keybinding group</param>
+        /// <param name="helpKeyInfo">Key information that opens the help page</param>
         /// <param name="builtinColor">Built-in keybinding foreground color in the background color</param>
         /// <param name="builtinForegroundColor">Built-in keybinding foreground color out of the background color</param>
         /// <param name="builtinBackgroundColor">Built-in keybinding background color</param>
@@ -277,7 +294,7 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="optionBackgroundColor">Option keybinding background color</param>
         /// <param name="backgroundColor">Background color</param>
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0)
+        public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)
         {
             var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1));
             Keybinding[] finalBindings = [.. builtinKeybindings, .. bindings];
@@ -289,9 +306,12 @@ namespace Terminaux.Writer.MiscWriters
 
                 // First, check to see if the rendered binding info is going to exceed the console window width
                 string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {binding.BindingName}  ";
+                string renderedExtraBinding = GetBindingKeyShortcut(helpKeyInfo, false);
                 int bindingLength = ConsoleChar.EstimateCellWidth(renderedBinding);
+                int bindingExtraLength = ConsoleChar.EstimateCellWidth(renderedExtraBinding);
                 int actualLength = ConsoleChar.EstimateCellWidth(VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()));
-                bool canDraw = bindingLength + actualLength < ConsoleWrapper.WindowWidth - left - rightMargin - 3;
+                int maxLength = ConsoleWrapper.WindowWidth - left - rightMargin - bindingExtraLength;
+                bool canDraw = bindingLength + actualLength < maxLength;
                 bool isBuiltin = builtinKeybindings.Contains(binding);
                 if (canDraw)
                 {
@@ -306,12 +326,13 @@ namespace Terminaux.Writer.MiscWriters
                 }
                 else
                 {
-                    // We can't render anymore, so just break and write a binding to show more
+                    // We can't render anymore, so just break and write a binding to show more if it's provided
+                    int extraKeyLeft = ConsoleWrapper.WindowWidth - rightMargin - bindingExtraLength;
                     bindingsBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - rightMargin - 2, top + 1)}" +
+                        $"{CsiSequences.GenerateCsiCursorPosition(extraKeyLeft + 1, top + 1)}" +
                         $"{ColorTools.RenderSetConsoleColor(builtinColor, false, true)}" +
                         $"{ColorTools.RenderSetConsoleColor(builtinBackgroundColor, true)}" +
-                        " K "
+                        renderedExtraBinding
                     );
                     break;
                 }
@@ -529,13 +550,23 @@ namespace Terminaux.Writer.MiscWriters
                 $"{(bindingMouseRepresentations.Length > 0 ? string.Join("\n", bindingMouseRepresentations) : "No mouse bindings")}";
         }
 
-        private static string GetBindingKeyShortcut(Keybinding bind, bool mark = true)
+        private static string GetBindingKeyShortcut(Keybinding bind, bool mark = true) =>
+            GetBindingKeyShortcut(bind.BindingUsesMouse, bind.BindingKeyModifiers, bind.BindingKeyName, mark);
+
+        private static string GetBindingKeyShortcut(ConsoleKeyInfo? bind, bool mark = true)
         {
-            if (bind.BindingUsesMouse)
+            if (bind is ConsoleKeyInfo keyInfo)
+                return GetBindingKeyShortcut(false, keyInfo.Modifiers, keyInfo.Key, mark);
+            return "";
+        }
+
+        private static string GetBindingKeyShortcut(bool usesMouse, ConsoleModifiers mods, ConsoleKey key, bool mark = true)
+        {
+            if (usesMouse)
                 return "";
             string markStart = mark ? "[" : " ";
             string markEnd = mark ? "]" : " ";
-            return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
+            return $"{markStart}{(mods != 0 ? $"{mods} + " : "")}{key}{markEnd}";
         }
 
         private static string GetBindingMouseShortcut(Keybinding bind, bool mark = true)
