@@ -34,6 +34,7 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Writer.MiscWriters;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -279,12 +280,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = InfoBoxNonModalColor.GetDimensionsSelection(selections, splitFinalLines);
+                    string[] splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = InfoBoxTools.GetDimensionsSelection(selections, splitFinalLines);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxNonModalColor.RenderTextSelection(selections, title, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, useColor, ref increment, currIdx, true, vars)
+                        InfoBoxTools.RenderTextSelection(selections, title, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, useColor, ref increment, currIdx, true, vars)
                     );
 
                     // Buffer the selection box
@@ -311,8 +312,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Handle keypress
                     SpinWait.SpinUntil(() => Input.InputAvailable);
                     bool goingUp = false;
-                    string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY, _, selectionBoxPosY, leftPos, maxSelectionWidth, _, selectionReservedHeight) = InfoBoxNonModalColor.GetDimensionsSelection(selections, splitFinalLines);
+                    string[] splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY, _, selectionBoxPosY, leftPos, maxSelectionWidth, _, selectionReservedHeight) = InfoBoxTools.GetDimensionsSelection(selections, splitFinalLines);
                     maxHeight -= selectionReservedHeight;
                     if (Input.MouseInputAvailable)
                     {
@@ -380,8 +381,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int startIndex = selectionChoices * currentPage;
 
                             // Now, translate coordinates to the selected index
-                            string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
-                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxNonModalColor.GetDimensionsSelection(selections, splitFinalLines);
+                            string[] splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxTools.GetDimensionsSelection(selections, splitFinalLines);
                             if (selections.Length <= selectionChoices)
                                 return false;
                             return
@@ -396,8 +397,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int startIndex = selectionChoices * currentPage;
 
                             // Now, translate coordinates to the selected index
-                            string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
-                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxNonModalColor.GetDimensionsSelection(selections, splitFinalLines);
+                            string[] splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxTools.GetDimensionsSelection(selections, splitFinalLines);
                             if (selections.Length <= selectionChoices)
                                 return;
                             if (mouse.Coordinates.x == left)

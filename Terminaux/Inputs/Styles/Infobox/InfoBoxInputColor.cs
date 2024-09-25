@@ -30,6 +30,7 @@ using System.Diagnostics;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -221,12 +222,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxNonModalColor.GetDimensionsInput(splitFinalLines);
+                    string[] splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensionsInput(splitFinalLines);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxNonModalColor.RenderTextInput(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
+                        InfoBoxTools.RenderTextInput(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
                     );
 
                     // Write the input bar and set the cursor position

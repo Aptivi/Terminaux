@@ -34,6 +34,7 @@ using System.Threading;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Writer.MiscWriters;
+using Terminaux.Inputs.Styles.Infobox.Tools;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -284,12 +285,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxNonModalColor.GetDimensionsInput(splitFinalLines);
+                    string[] splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensionsInput(splitFinalLines);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxNonModalColor.RenderTextInput(5, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, currIdx, true, true, vars)
+                        InfoBoxTools.RenderTextInput(5, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, currIdx, true, true, vars)
                     );
 
                     // Place the buttons from the right for familiarity
@@ -349,8 +350,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Wait for keypress
                     SpinWait.SpinUntil(() => Input.InputAvailable);
-                    string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxNonModalColor.GetDimensionsInput(splitFinalLines);
+                    string[] splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensionsInput(splitFinalLines);
                     maxHeight -= 5;
                     if (Input.MouseInputAvailable)
                     {
