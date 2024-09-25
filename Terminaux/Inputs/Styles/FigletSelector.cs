@@ -195,7 +195,7 @@ namespace Terminaux.Inputs.Styles
                                 break;
                             case ConsoleKey.H:
                                 Keybinding[] allBindings = [.. bindings, .. additionalBindings];
-                                InfoBoxColor.WriteInfoBox("Available keybindings", KeybindingsWriter.RenderKeybindingHelpText(allBindings));
+                                KeybindingsWriter.ShowKeybindingInfobox(allBindings);
                                 screen.RequireRefresh();
                                 break;
                         }

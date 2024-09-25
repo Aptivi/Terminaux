@@ -512,7 +512,7 @@ namespace Terminaux.Inputs.Styles
                             case ColorType.TrueColor:
                                 {
                                     Keybinding[] allBindings = [.. bindings, .. additionalBindingsTrueColor];
-                                    InfoBoxColor.WriteInfoBox("Available keybindings", KeybindingsWriter.RenderKeybindingHelpText(allBindings));
+                                    KeybindingsWriter.ShowKeybindingInfobox(allBindings);
                                 }
                                 refresh = true;
                                 break;
@@ -520,7 +520,7 @@ namespace Terminaux.Inputs.Styles
                             case ColorType.FourBitColor:
                                 {
                                     Keybinding[] allBindings = [.. bindings, .. additionalBindingsNormalColor];
-                                    InfoBoxColor.WriteInfoBox("Available keybindings", KeybindingsWriter.RenderKeybindingHelpText(allBindings));
+                                    KeybindingsWriter.ShowKeybindingInfobox(allBindings);
                                 }
                                 refresh = true;
                                 break;

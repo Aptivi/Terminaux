@@ -477,7 +477,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (mouse.Coordinates.y == buttonsTop)
                                 {
                                     if (PointerTools.PointerWithinRange(mouse, (buttonLeftHelpMin, buttonsTop), (buttonLeftHelpMax, buttonsTop)))
-                                        ShowBindings();
+                                        KeybindingsWriter.ShowKeybindingInfobox(keybindings);
                                     else if (PointerTools.PointerWithinRange(mouse, (buttonLeftCloseMin, buttonsTop), (buttonLeftCloseMax, buttonsTop)))
                                         bail = true;
                                 }
@@ -549,7 +549,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     break;
                                 case ConsoleKey.K:
                                     // Keys function
-                                    ShowBindings();
+                                    KeybindingsWriter.ShowKeybindingInfobox(keybindings);
                                     break;
                             }
                         }
@@ -743,12 +743,6 @@ namespace Terminaux.Inputs.Styles.Infobox
             if (writeBinding && maxWidth >= buttons.Length + 2)
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack(buttons, left - buttons.Length - 1, borderY, InfoBoxColor, BackgroundColor));
             return boxBuffer.ToString();
-        }
-
-        private static void ShowBindings()
-        {
-            string keybindingsText = KeybindingsWriter.RenderKeybindingHelpText(keybindings);
-            WriteInfoBox("Available keybindings", keybindingsText);
         }
 
         static InfoBoxColor()

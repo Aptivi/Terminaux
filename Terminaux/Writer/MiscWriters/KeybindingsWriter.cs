@@ -23,6 +23,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
@@ -319,6 +320,16 @@ namespace Terminaux.Writer.MiscWriters
                 ColorTools.RenderRevertBackground()
             );
             return bindingsBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Show the keybinding help informational box
+        /// </summary>
+        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
+        public static void ShowKeybindingInfobox(Keybinding[] keybindings)
+        {
+            string keybindingsText = RenderKeybindingHelpText(keybindings);
+            InfoBoxColor.WriteInfoBox("Available keybindings", keybindingsText);
         }
 
         /// <summary>

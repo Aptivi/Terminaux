@@ -410,7 +410,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                 bool isExtendable = !string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription);
 
                                 // Keys function
-                                InfoBoxColor.WriteInfoBox("Available keybindings", KeybindingsWriter.RenderKeybindingHelpText(bindings));
+                                KeybindingsWriter.ShowKeybindingInfobox(bindings);
                                 break;
                         }
                     }
