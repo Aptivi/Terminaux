@@ -52,6 +52,7 @@ namespace Terminaux.Inputs.Styles.Editor
             new Keybinding("Exit", ConsoleKey.Escape),
             new Keybinding("Keybindings", ConsoleKey.K),
             new Keybinding("Enter...", ConsoleKey.I),
+            new Keybinding("Delete here", ConsoleKey.X),
             new Keybinding("Insert", ConsoleKey.F1),
             new Keybinding("Remove Line", ConsoleKey.F2),
             new Keybinding("Insert", ConsoleKey.F1, ConsoleModifiers.Shift),
@@ -350,6 +351,9 @@ namespace Terminaux.Inputs.Styles.Editor
                         break;
                     case ConsoleKey.I:
                         SwitchEnter(lines, screen);
+                        break;
+                    case ConsoleKey.X:
+                        DeleteChar(ref lines);
                         break;
                     case ConsoleKey.F1:
                         if (key.Modifiers == ConsoleModifiers.Shift)
