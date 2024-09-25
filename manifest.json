@@ -1585,16 +1585,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputColor.yml",
       "output": {
         ".html": {
@@ -1609,6 +1599,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxInputPasswordColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxModalColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxModalColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxNonModalColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Inputs.Styles.Infobox.InfoBoxNonModalColor.html"
         }
       },
       "version": ""
