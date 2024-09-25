@@ -74,7 +74,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
                 throw new TerminauxException($"Type name {typeName} is invalid.");
             string charName = SecondaryDataSource.ElementAt(SecondPaneCurrentSelection - 1).Substring(2).Trim();
             string nerdFontChar = NerdFontsTools.GetNerdFontChar(type, charName);
-            InfoBoxColor.WriteInfoBox("NF Character Info",
+            InfoBoxModalColor.WriteInfoBoxModal("NF Character Info",
                 $"WARNING: You must use a font that supports NF glyphs. Otherwise, you'll see the \"missing character\" symbol.\n" +
                 $"\n" +
                 $"NF character name: {charName} ({typeName})\n" +

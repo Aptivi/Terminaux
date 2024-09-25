@@ -101,7 +101,7 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox($"The text viewer failed: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal($"The text viewer failed: {ex.Message}");
             }
             bail = false;
             ScreenTools.UnsetCurrent(screen);
@@ -319,7 +319,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingsWriter.RenderKeybindingHelpText(bindings);
-            InfoBoxColor.WriteInfoBoxColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModalColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
             return lines;
         }
 

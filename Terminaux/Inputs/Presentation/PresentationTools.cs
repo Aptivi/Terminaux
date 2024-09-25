@@ -387,13 +387,13 @@ namespace Terminaux.Inputs.Presentation
                                 inputBail = processedRequiredInputs.Length == filledRequiredInputs.Length;
                                 if (!inputBail)
                                 {
-                                    InfoBoxColor.WriteInfoBox("Incorrect Input", $"One or more of the following inputs have not been filled correctly:\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
+                                    InfoBoxModalColor.WriteInfoBoxModal("Incorrect Input", $"One or more of the following inputs have not been filled correctly:\n\n  - {string.Join("\n  - ", filledRequiredInputs.Except(processedRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
                                 }
                             }
                             else
                             {
                                 screen.RequireRefresh();
-                                InfoBoxColor.WriteInfoBox("Input not provided", $"Required inputs have not been provided. You'll need to fill in the values of the following inputs:\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
+                                InfoBoxModalColor.WriteInfoBoxModal("Input not provided", $"Required inputs have not been provided. You'll need to fill in the values of the following inputs:\n\n  - {string.Join("\n  - ", requiredInputs.Except(filledRequiredInputs).Select((ii) => ii.InputName).ToArray())}");
                             }
                         }
                         else

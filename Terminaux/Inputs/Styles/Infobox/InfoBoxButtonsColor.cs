@@ -284,12 +284,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxColor.GetDimensionsInput(splitFinalLines);
+                    string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxNonModalColor.GetDimensionsInput(splitFinalLines);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderTextInput(5, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, currIdx, true, true, vars)
+                        InfoBoxNonModalColor.RenderTextInput(5, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, currIdx, true, true, vars)
                     );
 
                     // Place the buttons from the right for familiarity
@@ -349,8 +349,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Wait for keypress
                     SpinWait.SpinUntil(() => Input.InputAvailable);
-                    string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxColor.GetDimensionsInput(splitFinalLines);
+                    string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxNonModalColor.GetDimensionsInput(splitFinalLines);
                     maxHeight -= 5;
                     if (Input.MouseInputAvailable)
                     {
@@ -478,7 +478,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 string choiceDesc = selectedInstance.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;
@@ -534,7 +534,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 string choiceDesc = selectedInstance.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;

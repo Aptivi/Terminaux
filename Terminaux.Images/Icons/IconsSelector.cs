@@ -174,7 +174,7 @@ namespace Terminaux.Images.Icons
                                 {
                                     string promptedIconName = InfoBoxInputColor.WriteInfoBoxInput("Write the icon name. It'll be converted to lowercase.").ToLower();
                                     if (!icons.Contains(promptedIconName))
-                                        InfoBoxColor.WriteInfoBox("The icon doesn't exist.");
+                                        InfoBoxModalColor.WriteInfoBoxModal("The icon doesn't exist.");
                                     else
                                         iconName = promptedIconName;
                                 }
@@ -196,7 +196,7 @@ namespace Terminaux.Images.Icons
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox("Icons selector failed: " + ex.Message);
+                InfoBoxModalColor.WriteInfoBoxModal("Icons selector failed: " + ex.Message);
             }
             finally
             {

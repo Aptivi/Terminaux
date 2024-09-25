@@ -175,7 +175,7 @@ namespace Terminaux.Inputs.Styles
                                 {
                                     string promptedFontName = InfoBoxInputColor.WriteInfoBoxInput("Write the font name. It'll be converted to lowercase.").ToLower();
                                     if (!fonts.Contains(promptedFontName))
-                                        InfoBoxColor.WriteInfoBox("The font doesn't exist.");
+                                        InfoBoxModalColor.WriteInfoBoxModal("The font doesn't exist.");
                                     else
                                         fontName = promptedFontName;
                                 }
@@ -204,7 +204,7 @@ namespace Terminaux.Inputs.Styles
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox("Figlet selector failed: " + ex.Message);
+                InfoBoxModalColor.WriteInfoBoxModal("Figlet selector failed: " + ex.Message);
             }
             finally
             {
@@ -300,7 +300,7 @@ namespace Terminaux.Inputs.Styles
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox("Figlet selector failed: " + ex.Message);
+                InfoBoxModalColor.WriteInfoBoxModal("Figlet selector failed: " + ex.Message);
             }
             finally
             {

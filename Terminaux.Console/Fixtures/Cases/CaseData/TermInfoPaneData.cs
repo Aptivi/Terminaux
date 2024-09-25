@@ -88,7 +88,7 @@ namespace Terminaux.Console.Fixtures.Cases.CaseData
             if (!TermInfoDesc.TryLoad(name, out TermInfoDesc? desc) || desc is null)
                 return;
             string descString = ShowDesc(desc);
-            InfoBoxColor.WriteInfoBox(name, descString);
+            InfoBoxModalColor.WriteInfoBoxModal(name, descString);
         }
 
         private string ShowDesc(TermInfoDesc desc)

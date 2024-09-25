@@ -114,7 +114,7 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox($"The text editor failed: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal($"The text editor failed: {ex.Message}");
             }
             bail = false;
             ScreenTools.UnsetCurrent(screen);
@@ -444,7 +444,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingsWriter.RenderKeybindingHelpText(finalBindings);
-            InfoBoxColor.WriteInfoBoxColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModalColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
         }
 
         private static void MoveBackward(List<string> lines) =>

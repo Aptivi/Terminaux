@@ -27,7 +27,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
     {
         public void RunFixture()
         {
-            InfoBoxColor.WriteInfoBox("Non-modal information box", "This info box should close automatically within 10 seconds.", false);
+            InfoBoxNonModalColor.WriteInfoBox("Non-modal information box", "This info box should close automatically within 10 seconds.", false);
             Thread.Sleep(10000);
             ColorTools.LoadBack();
         }

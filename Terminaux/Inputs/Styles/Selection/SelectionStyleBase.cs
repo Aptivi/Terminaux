@@ -301,7 +301,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                 string choiceDesc = highlightedAnswer.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
                                     selectionScreen.RequireRefresh();
                                 }
                                 break;
@@ -366,7 +366,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                 string choiceDesc = highlightedAnswer.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
                                     selectionScreen.RequireRefresh();
                                 }
                                 break;
@@ -402,7 +402,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                     HighlightedAnswer = resultIdx;
                                 }
                                 else
-                                    InfoBoxColor.WriteInfoBox("No item found.");
+                                    InfoBoxModalColor.WriteInfoBoxModal("No item found.");
                                 selectionScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.K:
@@ -445,7 +445,7 @@ namespace Terminaux.Inputs.Styles.Selection
             {
                 Debug.WriteLine("Failed to initialize the selection input:" + $" {ex.Message}");
                 Debug.WriteLine(ex.StackTrace);
-                InfoBoxColor.WriteInfoBox("Failed to initialize the selection input:" + $" {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal("Failed to initialize the selection input:" + $" {ex.Message}");
             }
             ScreenTools.UnsetCurrent(selectionScreen);
             SelectedAnswers.Sort();

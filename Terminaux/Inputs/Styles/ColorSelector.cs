@@ -173,7 +173,7 @@ namespace Terminaux.Inputs.Styles
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox(
+                InfoBoxModalColor.WriteInfoBoxModal(
                     $"Color selector has failed: {ex.Message}\n\n" +
                      "Check your input and try again. If it still didn't work, contact us."
                 );
@@ -633,7 +633,7 @@ namespace Terminaux.Inputs.Styles
         private static void ShowColorInfoBox(string title, Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
         {
             string rendered = ShowColorInfo(selectedColor, colorBlind, formula, severity);
-            InfoBoxColor.WriteInfoBox(title, rendered);
+            InfoBoxModalColor.WriteInfoBoxModal(title, rendered);
         }
 
         private static void DecrementColor(ColorType type, ConsoleKeyInfo keypress, PointerModifiers mods)

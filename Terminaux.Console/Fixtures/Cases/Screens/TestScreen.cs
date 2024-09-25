@@ -55,7 +55,7 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox($"Screen failed to render: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal($"Screen failed to render: {ex.Message}");
             }
             finally
             {

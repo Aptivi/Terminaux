@@ -285,12 +285,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
+                    string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = InfoBoxNonModalColor.GetDimensionsSelection(selections, splitFinalLines);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxColor.RenderTextSelection(selections, title, text, settings, InfoBoxTitledSelectionMultipleColor, BackgroundColor, useColor, ref increment, currIdx, true, vars)
+                        InfoBoxNonModalColor.RenderTextSelection(selections, title, text, settings, InfoBoxTitledSelectionMultipleColor, BackgroundColor, useColor, ref increment, currIdx, true, vars)
                     );
 
                     // Buffer the selection box
@@ -320,8 +320,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Handle keypress
                     SpinWait.SpinUntil(() => Input.InputAvailable);
                     bool goingUp = false;
-                    string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY, _, selectionBoxPosY, leftPos, maxSelectionWidth, _, selectionReservedHeight) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
+                    string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
+                    var (maxWidth, maxHeight, _, borderX, borderY, _, selectionBoxPosY, leftPos, maxSelectionWidth, _, selectionReservedHeight) = InfoBoxNonModalColor.GetDimensionsSelection(selections, splitFinalLines);
                     maxHeight -= selectionReservedHeight;
                     if (Input.MouseInputAvailable)
                     {
@@ -389,8 +389,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int startIndex = selectionChoices * currentPage;
 
                             // Now, translate coordinates to the selected index
-                            string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
-                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
+                            string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
+                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxNonModalColor.GetDimensionsSelection(selections, splitFinalLines);
                             if (selections.Length <= selectionChoices)
                                 return false;
                             return
@@ -405,8 +405,8 @@ namespace Terminaux.Inputs.Styles.Infobox
                             int startIndex = selectionChoices * currentPage;
 
                             // Now, translate coordinates to the selected index
-                            string[] splitFinalLines = InfoBoxColor.GetFinalLines(text, vars);
-                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxColor.GetDimensionsSelection(selections, splitFinalLines);
+                            string[] splitFinalLines = InfoBoxNonModalColor.GetFinalLines(text, vars);
+                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxNonModalColor.GetDimensionsSelection(selections, splitFinalLines);
                             if (selections.Length <= selectionChoices)
                                 return;
                             if (mouse.Coordinates.x == left)
@@ -521,7 +521,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 string choiceDesc = selectedInstance.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;
@@ -584,7 +584,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 string choiceDesc = selectedInstance.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxColor.WriteInfoBox($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
                                     ScreenTools.CurrentScreen?.RequireRefresh();
                                 }
                                 break;
@@ -618,7 +618,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                     currentSelection = resultIdx - 1;
                                 }
                                 else
-                                    InfoBoxColor.WriteInfoBox("No item found.");
+                                    InfoBoxModalColor.WriteInfoBoxModal("No item found.");
                                 ScreenTools.CurrentScreen?.RequireRefresh();
                                 break;
                             case ConsoleKey.E:

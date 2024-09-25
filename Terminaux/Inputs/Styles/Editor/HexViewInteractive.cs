@@ -92,7 +92,7 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox($"The hex viewer failed: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal($"The hex viewer failed: {ex.Message}");
             }
             bail = false;
             ScreenTools.UnsetCurrent(screen);
@@ -239,7 +239,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingsWriter.RenderKeybindingHelpText(bindings);
-            InfoBoxColor.WriteInfoBoxColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModalColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
             return bytes;
         }
 
@@ -283,7 +283,7 @@ namespace Terminaux.Inputs.Styles.Editor
             // Print the number information
             string header = "Number information:";
             int maxLength = header.Length > ConsoleWrapper.WindowWidth - 4 ? ConsoleWrapper.WindowWidth - 4 : header.Length;
-            InfoBoxColor.WriteInfoBoxColorBack(
+            InfoBoxModalColor.WriteInfoBoxModalColorBack(
                 header + CharManager.NewLine +
                 new string('=', maxLength) + CharManager.NewLine + CharManager.NewLine +
                 $"Hexadecimal:  {byteNumHex}" + CharManager.NewLine +

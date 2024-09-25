@@ -99,7 +99,7 @@ namespace Terminaux.Inputs.Styles.Editor
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox($"The hex editor failed: {ex.Message}");
+                InfoBoxModalColor.WriteInfoBoxModal($"The hex editor failed: {ex.Message}");
             }
             bail = false;
             ScreenTools.UnsetCurrent(screen);
@@ -260,7 +260,7 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // User needs an infobox that shows all available keys
             string bindingsHelp = KeybindingsWriter.RenderKeybindingHelpText(bindings);
-            InfoBoxColor.WriteInfoBoxColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            InfoBoxModalColor.WriteInfoBoxModalColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
         }
 
         private static void MoveBackward()
@@ -298,7 +298,7 @@ namespace Terminaux.Inputs.Styles.Editor
             string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
-                InfoBoxColor.WriteInfoBoxColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModalColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
             else
                 AddNewByte(ref bytes, byteNum, byteIdx + 1);
         }
@@ -317,7 +317,7 @@ namespace Terminaux.Inputs.Styles.Editor
             string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxColor.WriteInfoBoxColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModalColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
 
             // Do the replacement!
             Replace(ref bytes, byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
@@ -334,7 +334,7 @@ namespace Terminaux.Inputs.Styles.Editor
             string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxColor.WriteInfoBoxColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModalColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
 
             // Do the replacement!
             Replace(ref bytes, byteNum, byteNumReplaced);
@@ -347,14 +347,14 @@ namespace Terminaux.Inputs.Styles.Editor
             string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value to be replaced. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
             if (byteNumHex.Length != 2 ||
                 byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum))
-                InfoBoxColor.WriteInfoBoxColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModalColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
             string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write the byte number with the hexadecimal value to replace {0} with. 00 -> FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced))
-                InfoBoxColor.WriteInfoBoxColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+                InfoBoxModalColor.WriteInfoBoxModalColorBack("The byte number specified is not valid.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
 
             // Do the replacement!
             Replace(ref bytes, byteNum, byteNumReplaced);
@@ -372,7 +372,7 @@ namespace Terminaux.Inputs.Styles.Editor
             // Print the number information
             string header = "Number information:";
             int maxLength = header.Length > ConsoleWrapper.WindowWidth - 4 ? ConsoleWrapper.WindowWidth - 4 : header.Length;
-            InfoBoxColor.WriteInfoBoxColorBack(
+            InfoBoxModalColor.WriteInfoBoxModalColorBack(
                 header + CharManager.NewLine +
                 new string('=', maxLength) + CharManager.NewLine + CharManager.NewLine +
                 $"Hexadecimal:  {byteNumHex}" + CharManager.NewLine +

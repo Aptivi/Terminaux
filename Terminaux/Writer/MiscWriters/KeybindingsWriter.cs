@@ -492,7 +492,7 @@ namespace Terminaux.Writer.MiscWriters
         internal static void ShowKeybindingInfoboxColorBack(string title, Keybinding[] keybindings, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
         {
             string keybindingsText = RenderKeybindingHelpText(keybindings);
-            InfoBoxColor.WriteInfoBoxColorBack(title, keybindingsText, true, settings, InfoBoxTitledColor, BackgroundColor, useColor, vars);
+            InfoBoxModalColor.WriteInfoBoxModalColorBack(title, keybindingsText, settings, InfoBoxTitledColor, BackgroundColor, useColor, vars);
         }
 
         /// <summary>
