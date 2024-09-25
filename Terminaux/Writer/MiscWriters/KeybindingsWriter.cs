@@ -328,6 +328,8 @@ namespace Terminaux.Writer.MiscWriters
                 {
                     // We can't render anymore, so just break and write a binding to show more if it's provided
                     int extraKeyLeft = ConsoleWrapper.WindowWidth - rightMargin - bindingExtraLength;
+                    if (extraKeyLeft <= 0)
+                        break;
                     bindingsBuilder.Append(
                         $"{CsiSequences.GenerateCsiCursorPosition(extraKeyLeft + 1, top + 1)}" +
                         $"{ColorTools.RenderSetConsoleColor(builtinColor, false, true)}" +
