@@ -34,6 +34,7 @@ using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.MiscWriters;
 using Textify.General;
+using Textify.Tools;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -43,6 +44,7 @@ namespace Terminaux.Inputs.Styles.Editor
     public static class TextEditInteractive
     {
         private static string status = "";
+        private static string cachedFind = "";
         private static bool bail;
         private static bool entering;
         private static int lineIdx = 0;
@@ -57,6 +59,7 @@ namespace Terminaux.Inputs.Styles.Editor
             new Keybinding("Remove Line", ConsoleKey.F2),
             new Keybinding("Insert", ConsoleKey.F1, ConsoleModifiers.Shift),
             new Keybinding("Remove Line", ConsoleKey.F2, ConsoleModifiers.Shift),
+            new Keybinding("Find Next", ConsoleKey.Divide),
             new Keybinding("Replace", ConsoleKey.F3),
             new Keybinding("Replace All", ConsoleKey.F3, ConsoleModifiers.Shift),
         ];
@@ -85,6 +88,7 @@ namespace Terminaux.Inputs.Styles.Editor
             // Main loop
             lineIdx = 0;
             lineColIdx = 0;
+            cachedFind = "";
             var screen = new Screen();
             ScreenTools.SetCurrent(screen);
             ConsoleWrapper.CursorVisible = false;
@@ -373,6 +377,10 @@ namespace Terminaux.Inputs.Styles.Editor
                         else
                             Replace(ref lines, settings);
                         break;
+                    case ConsoleKey.Oem2:
+                    case ConsoleKey.Divide:
+                        FindNext(ref lines, settings);
+                        break;
                     default:
                         InsertChar(key.KeyChar, ref lines);
                         break;
@@ -542,6 +550,88 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Do the replacement!
             Replace(ref lines, replacementText, replacedText);
+        }
+
+        private static void FindNext(ref List<string> lines, InteractiveTuiSettings settings)
+        {
+            // Check the lines
+            if (lines.Count == 0)
+                return;
+
+            // Now, prompt for the replacement line
+            string text = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a string to find. Supports regular expressions.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+
+            // See if we have a cached find if the user didn't provide any string to find
+            if (string.IsNullOrEmpty(text))
+            {
+                if (string.IsNullOrEmpty(cachedFind))
+                {
+                    InfoBoxModalColor.WriteInfoBoxModal("String is required to find, but you haven't provided one.", settings.BorderSettings);
+                    return;
+                }
+                else
+                    text = cachedFind;
+            }
+
+            // Validate the regex
+            if (!RegexTools.IsValidRegex(text))
+            {
+                InfoBoxModalColor.WriteInfoBoxModal("This string to find is not a valid regular expression.", settings.BorderSettings);
+                return;
+            }
+
+            // Determine row and column
+            (int row, int column) = (lineIdx, lineColIdx + 1);
+            if (row >= lines.Count)
+                row = 0;
+            if (column >= lines[row].Length)
+            {
+                column = 0;
+                row++;
+                if (row >= lines.Count)
+                    row--;
+            }
+
+            // Now, run a loop to find, continuing from top where necessary
+            bool found = false;
+            bool firstTime = true;
+            int r = row, c = column;
+            while (!found)
+            {
+                // Get a line and match it
+                string line = lines[r];
+                var regex = new Regex(text);
+                if (!regex.IsMatch(line, c))
+                {
+                    // If we came to the same column, stop.
+                    if (!firstTime && r == row)
+                        break;
+
+                    // Go to the next line and continue from top if necessary
+                    c = 0;
+                    r++;
+                    if (r >= lines.Count)
+                        r = 0;
+                    firstTime = false;
+                    continue;
+                }
+                firstTime = false;
+
+                // Now, assuming that there is a match, get info
+                var match = regex.Match(line, c);
+                found = true;
+                c = match.Index;
+            }
+
+            // Update line index and column index if found. Otherwise, show a message
+            if (found)
+            {
+                UpdateLineIndex(r, lines);
+                UpdateColumnIndex(c, lines);
+                cachedFind = text;
+            }
+            else
+                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.BorderSettings);
         }
 
         private static void StatusTextInfo(List<string> lines)
