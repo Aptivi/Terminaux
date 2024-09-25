@@ -44,7 +44,7 @@ namespace Terminaux.Tests.TermInfo
             info.Names[0].ShouldBe("ansi");
             info.Names[1].ShouldBe("ansi/pc-term compatible with color");
             info.ClearScreen.ShouldNotBeNull();
-            info.ClearScreen.Value.ShouldBe("[H[J");
+            info.ClearScreen.Value.ShouldBe("\u001b[H\u001b[J");
         }
 
         [TestMethod]
