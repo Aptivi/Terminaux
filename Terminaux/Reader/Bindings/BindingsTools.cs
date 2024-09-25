@@ -52,6 +52,8 @@ namespace Terminaux.Reader.Bindings
             new Yank(),
             new UppercaseOneWord(),
             new LowercaseOneWord(),
+            new UppercaseAll(),
+            new LowercaseAll(),
             new UpAndForwardOneWord(),
             new LowAndForwardOneWord(),
             new ShowSuggestions(),
