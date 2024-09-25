@@ -35,6 +35,8 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Pointer;
+using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.MiscWriters;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -43,6 +45,18 @@ namespace Terminaux.Inputs.Styles.Infobox
     /// </summary>
     public static class InfoBoxColor
     {
+        private static readonly Keybinding[] keybindings =
+        [
+            new Keybinding("Goes one line up", ConsoleKey.UpArrow),
+            new Keybinding("Goes one line down", ConsoleKey.DownArrow),
+            new Keybinding("Goes to the first line of text", ConsoleKey.Home),
+            new Keybinding("Goes to the last line of text", ConsoleKey.End),
+            new Keybinding("Goes to the previous page of text", ConsoleKey.PageUp),
+            new Keybinding("Goes to the next page of text", ConsoleKey.PageDown),
+            new Keybinding("Goes to the next page of text, or closes the modal informational box", ConsoleKey.Enter),
+            new Keybinding("Closes the modal informational box", ConsoleKey.Escape),
+        ];
+
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
@@ -733,18 +747,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
         private static void ShowBindings()
         {
-            WriteInfoBox("Available keybindings",
-                """
-                [UP]        | Goes one line up
-                [DOWN]      | Goes one line down
-                [HOME]      | Goes to the first line of text
-                [END]       | Goes to the last line of text
-                [PAGE UP]   | Goes to the previous page of text
-                [PAGE DOWN] | Goes to the next page of text
-                [ENTER]     | Goes to the next page of text, or closes the modal informational box
-                [Q]         | Closes the modal informational box
-                """
-            );
+            string keybindingsText = KeybindingsWriter.RenderKeybindingHelpText(keybindings);
+            WriteInfoBox("Available keybindings", keybindingsText);
         }
 
         static InfoBoxColor()

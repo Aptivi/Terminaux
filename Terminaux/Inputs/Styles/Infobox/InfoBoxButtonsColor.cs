@@ -32,6 +32,8 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
+using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.MiscWriters;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -40,6 +42,19 @@ namespace Terminaux.Inputs.Styles.Infobox
     /// </summary>
     public static class InfoBoxButtonsColor
     {
+        private static readonly Keybinding[] keybindings =
+        [
+            new Keybinding("Goes to the previous button", ConsoleKey.LeftArrow),
+            new Keybinding("Goes to the next button", ConsoleKey.RightArrow),
+            new Keybinding("Shows more info in an infobox", ConsoleKey.Tab),
+            new Keybinding("Goes one line up", ConsoleKey.W),
+            new Keybinding("Goes one line down", ConsoleKey.S),
+            new Keybinding("Goes to the previous page of text", ConsoleKey.E),
+            new Keybinding("Goes to the next page of text", ConsoleKey.D),
+            new Keybinding("Submits the value", ConsoleKey.Enter),
+            new Keybinding("Closes without submitting the value", ConsoleKey.Escape),
+        ];
+
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
@@ -587,19 +602,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
         private static void ShowBindings()
         {
-            InfoBoxColor.WriteInfoBox("Available keybindings",
-                """
-                [LEFT ARROW]  | Goes to the previous button
-                [RIGHT ARROW] | Goes to the next button
-                [TAB]         | Shows more info in an infobox
-                [W]           | Goes one line up
-                [S]           | Goes one line down
-                [E]           | Goes to the previous page of text
-                [D]           | Goes to the next page of text
-                [ENTER]       | Submits the value
-                [ESC]         | Closes without submitting the value
-                """
-            );
+            string keybindingsText = KeybindingsWriter.RenderKeybindingHelpText(keybindings);
+            InfoBoxColor.WriteInfoBox("Available keybindings", keybindingsText);
         }
 
         static InfoBoxButtonsColor()

@@ -30,6 +30,8 @@ using Terminaux.Colors.Data;
 using Terminaux.Base.Checks;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
+using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.MiscWriters;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -38,6 +40,20 @@ namespace Terminaux.Inputs.Styles.Infobox
     /// </summary>
     public static class InfoBoxSliderColor
     {
+        private static readonly Keybinding[] keybindings =
+        [
+            new Keybinding("Decrements the current value", ConsoleKey.UpArrow),
+            new Keybinding("Increments the current value", ConsoleKey.DownArrow),
+            new Keybinding("Sets the value to the minimum value", ConsoleKey.Home),
+            new Keybinding("Sets the value to the maximum value", ConsoleKey.End),
+            new Keybinding("Goes one line up", ConsoleKey.W),
+            new Keybinding("Goes one line down", ConsoleKey.S),
+            new Keybinding("Goes to the previous page of text", ConsoleKey.E),
+            new Keybinding("Goes to the next page of text", ConsoleKey.D),
+            new Keybinding("Submits the value", ConsoleKey.Enter),
+            new Keybinding("Closes without submitting the value", ConsoleKey.Escape),
+        ];
+
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
@@ -559,20 +575,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
         private static void ShowBindings()
         {
-            InfoBoxColor.WriteInfoBox("Available keybindings",
-                """
-                [LEFT ARROW]  | Decrements the current value
-                [RIGHT ARROW] | Increments the current value
-                [HOME]        | Sets the value to the minimum value
-                [END]         | Sets the value to the maximum value
-                [W]           | Goes one line up
-                [S]           | Goes one line down
-                [E]           | Goes to the previous page of text
-                [D]           | Goes to the next page of text
-                [ENTER]       | Submits the value
-                [ESC]         | Closes without submitting the value
-                """
-            );
+            string keybindingsText = KeybindingsWriter.RenderKeybindingHelpText(keybindings);
+            InfoBoxColor.WriteInfoBox("Available keybindings", keybindingsText);
         }
 
         static InfoBoxSliderColor()

@@ -32,6 +32,8 @@ using Terminaux.Base.Checks;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
+using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.MiscWriters;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -40,6 +42,24 @@ namespace Terminaux.Inputs.Styles.Infobox
     /// </summary>
     public static class InfoBoxSelectionColor
     {
+        private static readonly Keybinding[] keybindings =
+        [
+            new Keybinding("Goes one choice up (next choice)", ConsoleKey.UpArrow),
+            new Keybinding("Goes one choice down (previous choice)", ConsoleKey.DownArrow),
+            new Keybinding("Goes to the first choice", ConsoleKey.Home),
+            new Keybinding("Goes to the last choice", ConsoleKey.End),
+            new Keybinding("Goes to the previous page of choices", ConsoleKey.PageUp),
+            new Keybinding("Goes to the next page of choices", ConsoleKey.PageDown),
+            new Keybinding("Shows more info in an informational box", ConsoleKey.Tab),
+            new Keybinding("Searches for a choice", ConsoleKey.F),
+            new Keybinding("Goes one line up", ConsoleKey.W),
+            new Keybinding("Goes one line down", ConsoleKey.S),
+            new Keybinding("Goes to the previous page of text", ConsoleKey.E),
+            new Keybinding("Goes to the next page of text", ConsoleKey.D),
+            new Keybinding("Submits the value", ConsoleKey.Enter),
+            new Keybinding("Closes without submitting the value", ConsoleKey.Escape),
+        ];
+
         /// <summary>
         /// Writes the info box plainly
         /// </summary>
@@ -656,24 +676,8 @@ namespace Terminaux.Inputs.Styles.Infobox
 
         private static void ShowBindings()
         {
-            InfoBoxColor.WriteInfoBox("Available keybindings",
-                """
-                [UP]        | Goes one choice up (next choice)
-                [DOWN]      | Goes one choice down (previous choice)
-                [HOME]      | Goes to the first choice
-                [END]       | Goes to the last choice
-                [PAGE UP]   | Goes to the previous choice page
-                [PAGE DOWN] | Goes to the next choice page
-                [TAB]       | Shows more info in an infobox
-                [F]         | Searches for a choice
-                [W]         | Goes one line up
-                [S]         | Goes one line down
-                [E]         | Goes to the previous page of text
-                [D]         | Goes to the next page of text
-                [ENTER]     | Submits the value
-                [ESC]       | Closes without submitting the value
-                """
-            );
+            string keybindingsText = KeybindingsWriter.RenderKeybindingHelpText(keybindings);
+            InfoBoxColor.WriteInfoBox("Available keybindings", keybindingsText);
         }
 
         static InfoBoxSelectionColor()
