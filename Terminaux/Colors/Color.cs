@@ -30,6 +30,7 @@ using Terminaux.Colors.Interop;
 using Terminaux.Colors.Transformation.Contrast;
 using Newtonsoft.Json;
 using Terminaux.Colors.Transformation.Formulas;
+using Terminaux.Sequences.Builder;
 
 namespace Terminaux.Colors
 {
@@ -80,7 +81,7 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Foreground, original)
         /// </summary>
         public string VTSequenceForegroundOriginal =>
-            Type == ColorType.TrueColor ? $"\u001b[38;2;{PlainSequence}m" : $"\u001b[38;5;{PlainSequence}m";
+            Type == ColorType.TrueColor ? $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequence}m" : $"{VtSequenceBasicChars.EscapeChar}[38;5;{PlainSequence}m";
 
         /// <summary>
         /// Parsable VT sequence (Background)
@@ -92,7 +93,7 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Background, original)
         /// </summary>
         public string VTSequenceBackgroundOriginal =>
-            Type == ColorType.TrueColor ? $"\u001b[48;2;{PlainSequence}m" : $"\u001b[48;5;{PlainSequence}m";
+            Type == ColorType.TrueColor ? $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequence}m" : $"{VtSequenceBasicChars.EscapeChar}[48;5;{PlainSequence}m";
 
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;
@@ -104,13 +105,13 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Foreground, true color)
         /// </summary>
         public string VTSequenceForegroundTrueColor =>
-            $"\u001b[38;2;{PlainSequenceTrueColor}m";
+            $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequenceTrueColor}m";
 
         /// <summary>
         /// Parsable VT sequence (Background, true color)
         /// </summary>
         public string VTSequenceBackgroundTrueColor =>
-            $"\u001b[48;2;{PlainSequenceTrueColor}m";
+            $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequenceTrueColor}m";
 
         /// <summary>
         /// Hexadecimal representation of the color

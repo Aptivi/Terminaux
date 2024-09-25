@@ -19,6 +19,7 @@
 
 using System.Collections.Generic;
 using System.Text;
+using Terminaux.Sequences.Builder;
 
 namespace Terminaux.Base.TermInfo.Parsing.Parameters
 {
@@ -250,7 +251,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         parameterBuilder.Append(c);
                         isParam = false;
                         continue;
-                    case '\u001b':
+                    case VtSequenceBasicChars.EscapeChar:
                     case '\r':
                     case '\f':
                         parameterBuilder.Clear();

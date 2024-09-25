@@ -27,6 +27,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Reader;
+using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 using static Terminaux.Base.Extensions.Native.NativeMethods;
 
@@ -133,7 +134,7 @@ namespace Terminaux.Inputs
             set
             {
                 enableMovementEvents = value;
-                TextWriterRaw.WriteRaw(enableMovementEvents ? "\u001b[?1003h" : "\u001b[?1003l");
+                TextWriterRaw.WriteRaw(enableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : $"{VtSequenceBasicChars.EscapeChar}[?1003l");
             }
         }
 
@@ -322,7 +323,7 @@ namespace Terminaux.Inputs
                                 error = true;
                                 return -1;
                             }
-                            isMouse = chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M';
+                            isMouse = chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] == '[' && chars[2] == 'M';
                             if (isMouse)
                                 charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
                         }
@@ -338,7 +339,7 @@ namespace Terminaux.Inputs
                 int _ = Read(ref chars, ref error);
                 if (error)
                     throw new TerminauxException("Failed to read the pointer.");
-                if (chars[0] == '\u001b')
+                if (chars[0] == VtSequenceBasicChars.EscapeChar)
                 {
                     // Now, read the button, X, and Y positions
                     button = chars[3];
@@ -469,7 +470,7 @@ namespace Terminaux.Inputs
                                 error = true;
                                 return -1;
                             }
-                            if (chars[0] == '\u001b' && chars[1] == '[' && chars[2] == 'M')
+                            if (chars[0] == VtSequenceBasicChars.EscapeChar && chars[1] == '[' && chars[2] == 'M')
                             {
                                 byte[] charRead = [chars[0], chars[1], chars[2], chars[3], chars[4], chars[5]];
                                 caughtMouseEvent = Encoding.Default.GetString(charRead);
@@ -547,7 +548,7 @@ namespace Terminaux.Inputs
             }
             else
             {
-                TextWriterRaw.WriteRaw($"\u001b[?1000l{(EnableMovementEvents ? "\u001b[?1003l" : "")}");
+                TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000l{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003l" : "")}");
                 Process.Start("stty", "echo");
             }
         }
@@ -567,7 +568,7 @@ namespace Terminaux.Inputs
             else
             {
                 Process.Start("stty", "-echo -icanon min 1 time 0");
-                TextWriterRaw.WriteRaw($"\u001b[?1000h{(EnableMovementEvents ? "\u001b[?1003h" : "")}");
+                TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[?1000h{(EnableMovementEvents ? $"{VtSequenceBasicChars.EscapeChar}[?1003h" : "")}");
             }
         }
         #endregion

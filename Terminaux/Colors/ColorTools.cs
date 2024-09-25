@@ -26,6 +26,7 @@ using Terminaux.Colors.Transformation.Contrast;
 using System.Text;
 using Terminaux.Base.Checks;
 using Terminaux.Colors.Models;
+using Terminaux.Sequences.Builder;
 
 namespace Terminaux.Colors
 {
@@ -445,13 +446,13 @@ namespace Terminaux.Colors
         /// Gets a sequence that resets the foreground color without clearing screen
         /// </summary>
         public static string RenderResetForeground() =>
-            $"\u001b[39m";
+            $"{VtSequenceBasicChars.EscapeChar}[39m";
 
         /// <summary>
         /// Gets a sequence that resets the background color without clearing screen
         /// </summary>
         public static string RenderResetBackground() =>
-            $"\u001b[49m";
+            $"{VtSequenceBasicChars.EscapeChar}[49m";
 
         /// <summary>
         /// Reverts the console colors without clearing screen

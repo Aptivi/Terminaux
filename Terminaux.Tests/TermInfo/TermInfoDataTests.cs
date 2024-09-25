@@ -21,6 +21,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using Terminaux.Base.TermInfo;
+using Terminaux.Sequences.Builder;
 using Terminaux.Tests.TermInfo.Utilities;
 
 namespace Terminaux.Tests.TermInfo
@@ -44,7 +45,7 @@ namespace Terminaux.Tests.TermInfo
             info.Names[0].ShouldBe("ansi");
             info.Names[1].ShouldBe("ansi/pc-term compatible with color");
             info.ClearScreen.ShouldNotBeNull();
-            info.ClearScreen.Value.ShouldBe("\u001b[H\u001b[J");
+            info.ClearScreen.Value.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[H\u001b[J");
         }
 
         [TestMethod]
@@ -89,7 +90,7 @@ namespace Terminaux.Tests.TermInfo
             kup.ShouldNotBeNull();
             ax.Value.ShouldBe(true);
             xt.Value.ShouldBe(true);
-            kup.Value.ShouldBe("\u001b[a");
+            kup.Value.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[a");
         }
 
         [TestMethod]

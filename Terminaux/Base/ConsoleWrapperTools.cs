@@ -23,6 +23,7 @@ using System.Threading;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
@@ -532,7 +533,7 @@ namespace Terminaux.Base
                 }
                 else
                 {
-                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{width}t");
+                    TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{height};{width}t");
                     Thread.Sleep(35);
                 }
             }
@@ -549,7 +550,7 @@ namespace Terminaux.Base
                 }
                 else
                 {
-                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{width}t");
+                    TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{height};{width}t");
                     Thread.Sleep(35);
                 }
             }
@@ -575,7 +576,7 @@ namespace Terminaux.Base
                     Console.WindowWidth = width;
                 else
                 {
-                    TextWriterRaw.WriteRaw($"\u001b[8;{Console.WindowHeight};{width}t");
+                    TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{Console.WindowHeight};{width}t");
                     Thread.Sleep(35);
                 }
             }
@@ -589,7 +590,7 @@ namespace Terminaux.Base
                     Console.WindowHeight = height;
                 else
                 {
-                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{Console.WindowWidth}t");
+                    TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{height};{Console.WindowWidth}t");
                     Thread.Sleep(35);
                 }
             }
@@ -603,7 +604,7 @@ namespace Terminaux.Base
                     Console.BufferWidth = width;
                 else
                 {
-                    TextWriterRaw.WriteRaw($"\u001b[8;{Console.WindowHeight};{width}t");
+                    TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{Console.WindowHeight};{width}t");
                     Thread.Sleep(35);
                 }
             }
@@ -617,7 +618,7 @@ namespace Terminaux.Base
                     Console.BufferHeight = height;
                 else
                 {
-                    TextWriterRaw.WriteRaw($"\u001b[8;{height};{Console.WindowWidth}t");
+                    TextWriterRaw.WriteRaw($"{VtSequenceBasicChars.EscapeChar}[8;{height};{Console.WindowWidth}t");
                     Thread.Sleep(35);
                 }
             }
@@ -632,13 +633,13 @@ namespace Terminaux.Base
                 Console.Beep(freq, ms);
             else
             {
-                Write($"\x1b[10;{freq}]\x1b[11;{ms}]\a");
+                Write($"{VtSequenceBasicChars.EscapeChar}[10;{freq}]{VtSequenceBasicChars.EscapeChar}[11;{ms}]\a");
                 Thread.Sleep(ms);
             }
         }
 
         private static void BeepSeq() =>
-            Write('\a');
+            Write(VtSequenceBasicChars.BellChar);
 
         private static void Clear() =>
             Console.Clear();

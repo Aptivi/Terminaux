@@ -26,6 +26,7 @@ using System.Text.RegularExpressions;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions.Native;
 using Terminaux.Sequences;
+using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
@@ -429,7 +430,7 @@ namespace Terminaux.Base.Extensions
             if (!isOnAltBuffer)
                 return;
 
-            TextWriterColor.Write("\u001b[?1049l");
+            TextWriterColor.Write($"{VtSequenceBasicChars.EscapeChar}[?1049l");
             isOnAltBuffer = false;
         }
 
@@ -443,7 +444,7 @@ namespace Terminaux.Base.Extensions
             if (isOnAltBuffer)
                 return;
 
-            TextWriterColor.Write("\u001b[?1049h");
+            TextWriterColor.Write($"{VtSequenceBasicChars.EscapeChar}[?1049h");
             ConsoleWrapper.SetCursorPosition(0, 0);
             ConsoleWrapper.CursorVisible = false;
             isOnAltBuffer = true;

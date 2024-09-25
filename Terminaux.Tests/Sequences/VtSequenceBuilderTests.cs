@@ -2133,7 +2133,7 @@ namespace Terminaux.Tests.Sequences
         {
             (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Esc, VtSequenceSpecificTypes.EscInvokeG1CharacterSetGr);
             (VtSequenceType, VtSequenceSpecificTypes) actual = default;
-            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"\x1B~"));
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"{VtSequenceBasicChars.EscapeChar}~"));
             actual.ShouldBe(expected);
         }
 
@@ -2145,7 +2145,7 @@ namespace Terminaux.Tests.Sequences
         {
             (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.C1, VtSequenceSpecificTypes.C1ReturnTerminalId);
             (VtSequenceType, VtSequenceSpecificTypes) actual = default;
-            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"\x1BZ"));
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"{VtSequenceBasicChars.EscapeChar}Z"));
             actual.ShouldBe(expected);
         }
 
@@ -2157,7 +2157,7 @@ namespace Terminaux.Tests.Sequences
         {
             (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Csi, VtSequenceSpecificTypes.CsiEraseRectangularArea);
             (VtSequenceType, VtSequenceSpecificTypes) actual = default;
-            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"\x1B[1;3;3;7$z"));
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"{VtSequenceBasicChars.EscapeChar}[1;3;3;7$z"));
             actual.ShouldBe(expected);
         }
 
@@ -2169,7 +2169,7 @@ namespace Terminaux.Tests.Sequences
         {
             (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Pm, VtSequenceSpecificTypes.PmPrivacyMessage);
             (VtSequenceType, VtSequenceSpecificTypes) actual = default;
-            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"\x1b^Kermit\x9c"));
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"{VtSequenceBasicChars.EscapeChar}^Kermit\x9c"));
             actual.ShouldBe(expected);
         }
 
@@ -2181,7 +2181,7 @@ namespace Terminaux.Tests.Sequences
         {
             (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Osc, VtSequenceSpecificTypes.OscOperatingSystemCommand);
             (VtSequenceType, VtSequenceSpecificTypes) actual = default;
-            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"\x1b]0;Hello\x07"));
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"{VtSequenceBasicChars.EscapeChar}]0;Hello\x07"));
             actual.ShouldBe(expected);
         }
 
@@ -2193,7 +2193,7 @@ namespace Terminaux.Tests.Sequences
         {
             (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Dcs, VtSequenceSpecificTypes.DcsRequestResourceValues);
             (VtSequenceType, VtSequenceSpecificTypes) actual = default;
-            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"\x1bP+Q776964654368617273\x9c"));
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"{VtSequenceBasicChars.EscapeChar}P+Q776964654368617273\x9c"));
             actual.ShouldBe(expected);
         }
 
@@ -2205,7 +2205,7 @@ namespace Terminaux.Tests.Sequences
         {
             (VtSequenceType, VtSequenceSpecificTypes) expected = (VtSequenceType.Apc, VtSequenceSpecificTypes.ApcApplicationProgramCommand);
             (VtSequenceType, VtSequenceSpecificTypes) actual = default;
-            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"\x1b_Kermit\x9c"));
+            Should.NotThrow(() => actual = VtSequenceBuilderTools.DetermineTypeFromSequence($"{VtSequenceBasicChars.EscapeChar}_Kermit\x9c"));
             actual.ShouldBe(expected);
         }
     }
