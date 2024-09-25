@@ -242,6 +242,8 @@ namespace Terminaux.Colors.Models.Conversion
                     rgb = ToRgb(cieLab);
                 else if (source is CieLuv cieLuv)
                     rgb = ToRgb(cieLuv);
+                else if (source is CieLch cieLch)
+                    rgb = ToRgb(cieLch);
                 else
                     throw new TerminauxException("Can't convert to RGB.");
                 return rgb;
@@ -311,6 +313,9 @@ namespace Terminaux.Colors.Models.Conversion
                 else if (targetType == typeof(CieLuv))
                     return ToCieLuv(source) ??
                         throw new TerminauxException("Can't convert to CieLuv.");
+                else if (targetType == typeof(CieLch))
+                    return ToCieLch(source) ??
+                        throw new TerminauxException("Can't convert to CieLch.");
                 else
                     throw new TerminauxException("Can't convert from RGB.");
             }
@@ -760,6 +765,34 @@ namespace Terminaux.Colors.Models.Conversion
 
             // Return the resulting values
             return new(l, u, v);
+        }
+
+        /// <summary>
+        /// Converts the RGB color model to CieLch
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static CieLch ToCieLch(RedGreenBlue rgb)
+        {
+            if (rgb is null)
+                throw new TerminauxException("Can't convert a null RGB instance to CieLch!");
+
+            // Get the CIE-L*ab values first
+            var lab = ToCieLab(rgb);
+
+            // Get the hue angle
+            double h = Math.Atan2(lab.B, lab.A);
+            h =
+                h > 0 ?
+                h / Math.PI * 180 :
+                360 - Math.Abs(h) / Math.PI * 180;
+
+            // Get the CieLch values
+            double l = lab.L;
+            double c = Math.Sqrt(Math.Pow(lab.A, 2) + Math.Pow(lab.B, 2));
+
+            // Return the resulting values
+            return new(l, c, h);
         }
         #endregion
         #region Translate to RGB from...
@@ -1244,6 +1277,29 @@ namespace Terminaux.Colors.Models.Conversion
 
             // Install the values
             return new(rWhole, gWhole, bWhole);
+        }
+
+        /// <summary>
+        /// Converts the CieLch color model to RGB
+        /// </summary>
+        /// <param name="cieLch">Instance of CieLch</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(CieLch cieLch)
+        {
+            if (cieLch is null)
+                throw new TerminauxException("Can't convert a null CieLch instance to RGB!");
+
+            static double DegToRad(double angle) =>
+                Math.PI / 180 * angle;
+
+            // Get the CIE-L*ab value
+            double l = cieLch.L;
+            double a = Math.Cos(DegToRad(cieLch.H)) * cieLch.C;
+            double b = Math.Sin(DegToRad(cieLch.H)) * cieLch.C;
+            var lab = new CieLab(l, a, b);
+
+            // Return RGB from parsed CIE-L*ab value
+            return ToRgb(lab);
         }
 
         private static double GetRgbValueFromHue(double variable1, double variable2, double variableHue)

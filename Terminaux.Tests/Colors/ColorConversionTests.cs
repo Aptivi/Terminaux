@@ -537,6 +537,48 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to CieLch
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToCieLch()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLch
+            var cieLch = ConversionTools.ToCieLch(ColorInstance.RGB);
+
+            // Check for property correctness
+            cieLch.L.ShouldBe(40.055099179556059);
+            cieLch.C.ShouldBe(46.674477461645743);
+            cieLch.H.ShouldBe(64.229726973355483);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(cieLch);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CMYK
         /// </summary>
         [TestMethod]
