@@ -19,7 +19,7 @@
 
 using System.Collections.Generic;
 using Terminaux.Inputs.Interactive;
-using Textify.Data.Analysis.NameGen;
+using Textify.Data.NameGen;
 
 namespace Terminaux.Console.Fixtures.Cases.CaseData
 {

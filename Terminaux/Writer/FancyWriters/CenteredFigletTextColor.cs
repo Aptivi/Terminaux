@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Textify.Figlet;
+using Textify.Data.Figlet;
 using System;
 using System.Diagnostics;
 using System.Text;
@@ -26,7 +26,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
-using Textify.Figlet.Utilities.Lines;
+using Textify.Data.Figlet.Utilities.Lines;
 
 namespace Terminaux.Writer.FancyWriters
 {

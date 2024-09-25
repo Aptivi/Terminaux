@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Textify.Figlet;
+using Textify.Data.Figlet;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;

@@ -19,8 +19,8 @@
 
 using System;
 using Terminaux.Colors;
-using Textify.Figlet.Utilities.Lines;
-using Textify.Figlet;
+using Textify.Data.Figlet.Utilities.Lines;
+using Textify.Data.Figlet;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;

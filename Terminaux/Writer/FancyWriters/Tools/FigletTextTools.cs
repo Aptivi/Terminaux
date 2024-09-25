@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Textify.Figlet;
-using Textify.Figlet.Utilities.Lines;
+using Textify.Data.Figlet;
+using Textify.Data.Figlet.Utilities.Lines;
 
 namespace Terminaux.Writer.FancyWriters.Tools
 {

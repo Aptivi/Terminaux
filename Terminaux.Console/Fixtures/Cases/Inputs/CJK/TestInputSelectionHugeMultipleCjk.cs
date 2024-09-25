@@ -22,7 +22,7 @@ using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Writer.ConsoleWriters;
-using Textify.Data.Analysis.NameGen;
+using Textify.Data.NameGen;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 {
