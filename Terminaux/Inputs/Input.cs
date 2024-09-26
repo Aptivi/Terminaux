@@ -233,57 +233,10 @@ namespace Terminaux.Inputs
                             Debug.WriteLine($"Coord: {coord.X}, {coord.Y}, {@event.dwButtonState}, {@event.dwControlKeyState}, {@event.dwEventFlags}");
 
                             // Now, translate them to something Terminaux understands
-                            PointerButton button =
-                                @event.dwButtonState == ButtonState.Left ? (SwapLeftRightButtons ? PointerButton.Right : PointerButton.Left) :
-                                @event.dwButtonState == ButtonState.Middle ? PointerButton.Middle :
-                                @event.dwButtonState == ButtonState.Right ? (SwapLeftRightButtons ? PointerButton.Left : PointerButton.Right) :
-                                (uint)@event.dwButtonState >= 4000000000 ? (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
-                                (uint)@event.dwButtonState >= 7000000 ? (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp) :
-                                PointerButton.None;
-                            PointerButtonPress press =
-                                @event.dwButtonState != ButtonState.None && @event.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Clicked :
-                                @event.dwButtonState != ButtonState.None && @event.dwEventFlags == EventFlags.DoubleClicked ? PointerButtonPress.Clicked :
-                                @event.dwButtonState == ButtonState.None && @event.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Released :
-                                button == PointerButton.WheelDown || button == PointerButton.WheelUp ? PointerButtonPress.Scrolled :
-                                PointerButtonPress.Moved;
-                            PointerModifiers mods =
-                                (@event.dwControlKeyState & ControlKeyState.RightAltPressed) != 0 ? PointerModifiers.Alt :
-                                (@event.dwControlKeyState & ControlKeyState.LeftAltPressed) != 0 ? PointerModifiers.Alt :
-                                PointerModifiers.None;
-                            mods |=
-                                (@event.dwControlKeyState & ControlKeyState.RightCtrlPressed) != 0 ? PointerModifiers.Ctrl :
-                                (@event.dwControlKeyState & ControlKeyState.LeftCtrlPressed) != 0 ? PointerModifiers.Ctrl :
-                                PointerModifiers.None;
-                            mods |=
-                                (@event.dwControlKeyState & ControlKeyState.ShiftPressed) != 0 ? PointerModifiers.Shift :
-                                PointerModifiers.None;
-
-                            // Process dragging
-                            bool dragging = false;
+                            (PointerButton button, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventWin(@event);
                             if (!EnableMovementEvents && press == PointerButtonPress.Moved)
                                 break;
-                            else
-                                ProcessDragging(ref press, ref button, out dragging);
-
-                            // Process double-clicks and other tiered clicks
-                            if (tieredContext is not null && tieredContext.Button == button && tieredContext.Modifiers == mods && press == PointerButtonPress.Released && tieredContext.Coordinates == (coord.X, coord.Y) && inputTimeout.Elapsed <= DoubleClickTimeout)
-                            {
-                                clickTier++;
-                                inputTimeout.Restart();
-                            }
-                            else if (press == PointerButtonPress.Released || inputTimeout.Elapsed > DoubleClickTimeout)
-                            {
-                                if (press == PointerButtonPress.Released)
-                                    tieredContext = context;
-                                else
-                                    tieredContext = null;
-                                clickTier = 1;
-                                inputTimeout.Restart();
-                            }
-                            int finalTier = press == PointerButtonPress.Released ? clickTier : 0;
-
-                            // Add the results
-                            ctx = new PointerEventContext(button, press, mods, dragging, coord.X, coord.Y, finalTier);
+                            ctx = GenerateContext(coord.X, coord.Y, button, press, mods);
                             context = ctx;
                             break;
                     }
@@ -361,59 +314,25 @@ namespace Terminaux.Inputs
                 Debug.WriteLine($"[{button}: {state} {modState}] X={x} Y={y}");
 
                 // Now, translate them to something Terminaux understands
-                PointerButtonPress press =
-                    state == PosixButtonState.Left || state == PosixButtonState.Middle || state == PosixButtonState.Right ? PointerButtonPress.Clicked :
-                    state == PosixButtonState.Released ? PointerButtonPress.Released :
-                    state == PosixButtonState.WheelDown || state == PosixButtonState.WheelUp ? PointerButtonPress.Scrolled :
-                    PointerButtonPress.Moved;
-                PointerButton buttonPtr =
-                    state == PosixButtonState.Left ? (SwapLeftRightButtons ? PointerButton.Right : PointerButton.Left) :
-                    state == PosixButtonState.Middle ? PointerButton.Middle :
-                    state == PosixButtonState.Right ? (SwapLeftRightButtons ? PointerButton.Left : PointerButton.Right) :
-                    state == PosixButtonState.WheelDown ? (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
-                    state == PosixButtonState.WheelUp ? (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp) :
-                    PointerButton.None;
-                PointerModifiers mods =
-                    (modState & PosixButtonModifierState.Alt) != 0 ? PointerModifiers.Alt :
-                    PointerModifiers.None;
-                mods |=
-                    (modState & PosixButtonModifierState.Control) != 0 ? PointerModifiers.Ctrl :
-                    PointerModifiers.None;
-                mods |=
-                    (modState & PosixButtonModifierState.Shift) != 0 ? PointerModifiers.Shift :
-                    PointerModifiers.None;
-
-                // Process dragging
-                bool dragging = false;
+                (PointerButton buttonPtr, PointerButtonPress press, PointerModifiers mods) = ProcessPointerEventPosix(state, modState);
                 if (!EnableMovementEvents && press == PointerButtonPress.Moved)
                     return null;
-                else
-                    ProcessDragging(ref press, ref buttonPtr, out dragging);
-
-                // Process double-clicks and other tiered clicks
-                if (tieredContext is not null && tieredContext.Button == buttonPtr && tieredContext.Modifiers == mods && press == PointerButtonPress.Released && tieredContext.Coordinates == (x, y) && inputTimeout.Elapsed <= DoubleClickTimeout)
-                {
-                    clickTier++;
-                    inputTimeout.Restart();
-                }
-                else if (press == PointerButtonPress.Released || inputTimeout.Elapsed > DoubleClickTimeout)
-                {
-                    if (press == PointerButtonPress.Released)
-                        tieredContext = context;
-                    else
-                        tieredContext = null;
-                    clickTier = 1;
-                    inputTimeout.Restart();
-                }
-                int finalTier = press == PointerButtonPress.Released ? clickTier : 0;
-
-                // Add the results
-                ctx = new PointerEventContext(buttonPtr, press, mods, dragging, x, y, finalTier);
+                ctx = GenerateContext(x, y, buttonPtr, press, mods);
                 context = ctx;
                 return ctx;
             }
         }
 
+        /// <summary>
+        /// Invalidates the input
+        /// </summary>
+        public static void InvalidateInput()
+        {
+            while (ConsoleWrapper.KeyAvailable)
+                ReadKey(true);
+        }
+
+        #region Private functions
         private static bool IsMouseAvailable()
         {
             if (!EnableMouse)
@@ -430,7 +349,7 @@ namespace Terminaux.Inputs
                 return record[0].EventType switch
                 {
                     INPUT_RECORD.MOUSE_EVENT => true,
-                    _                        => false,
+                    _ => false,
                 };
             }
             else
@@ -493,16 +412,6 @@ namespace Terminaux.Inputs
             }
         }
 
-        /// <summary>
-        /// Invalidates the input
-        /// </summary>
-        public static void InvalidateInput()
-        {
-            while (ConsoleWrapper.KeyAvailable)
-                ReadKey(true);
-        }
-
-        #region Private functions
         private static void ProcessDragging(ref PointerButtonPress press, ref PointerButton button, out bool dragging)
         {
             bool resultDragging = false;
@@ -532,6 +441,106 @@ namespace Terminaux.Inputs
                 }
             }
             dragging = resultDragging;
+        }
+
+        private static (PointerButton button, PointerButtonPress press, PointerModifiers mods) ProcessPointerEventWin(MOUSE_EVENT_RECORD eventRecord)
+        {
+            // Determine the button
+            PointerButton button =
+                eventRecord.dwButtonState == ButtonState.Left ? (SwapLeftRightButtons ? PointerButton.Right : PointerButton.Left) :
+                eventRecord.dwButtonState == ButtonState.Middle ? PointerButton.Middle :
+                eventRecord.dwButtonState == ButtonState.Right ? (SwapLeftRightButtons ? PointerButton.Left : PointerButton.Right) :
+                (uint)eventRecord.dwButtonState >= 4000000000 ? (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
+                (uint)eventRecord.dwButtonState >= 7000000 ? (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp) :
+                PointerButton.None;
+
+            // Determine the button press
+            PointerButtonPress press =
+                eventRecord.dwButtonState != ButtonState.None && eventRecord.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Clicked :
+                eventRecord.dwButtonState != ButtonState.None && eventRecord.dwEventFlags == EventFlags.DoubleClicked ? PointerButtonPress.Clicked :
+                eventRecord.dwButtonState == ButtonState.None && eventRecord.dwEventFlags == EventFlags.Clicked ? PointerButtonPress.Released :
+                button == PointerButton.WheelDown || button == PointerButton.WheelUp ? PointerButtonPress.Scrolled :
+                PointerButtonPress.Moved;
+
+            // Determine the modifiers
+            PointerModifiers mods =
+                (eventRecord.dwControlKeyState & ControlKeyState.RightAltPressed) != 0 ? PointerModifiers.Alt :
+                (eventRecord.dwControlKeyState & ControlKeyState.LeftAltPressed) != 0 ? PointerModifiers.Alt :
+                PointerModifiers.None;
+            mods |=
+                (eventRecord.dwControlKeyState & ControlKeyState.RightCtrlPressed) != 0 ? PointerModifiers.Ctrl :
+                (eventRecord.dwControlKeyState & ControlKeyState.LeftCtrlPressed) != 0 ? PointerModifiers.Ctrl :
+                PointerModifiers.None;
+            mods |=
+                (eventRecord.dwControlKeyState & ControlKeyState.ShiftPressed) != 0 ? PointerModifiers.Shift :
+                PointerModifiers.None;
+
+            // Return the results
+            return (button, press, mods);
+        }
+
+        private static (PointerButton button, PointerButtonPress press, PointerModifiers mods) ProcessPointerEventPosix(PosixButtonState state, PosixButtonModifierState modState)
+        {
+            // Determine the button press
+            PointerButtonPress press =
+                state == PosixButtonState.Left || state == PosixButtonState.Middle || state == PosixButtonState.Right ? PointerButtonPress.Clicked :
+                state == PosixButtonState.Released ? PointerButtonPress.Released :
+                state == PosixButtonState.WheelDown || state == PosixButtonState.WheelUp ? PointerButtonPress.Scrolled :
+                PointerButtonPress.Moved;
+
+            // Determine the button
+            PointerButton button =
+                state == PosixButtonState.Left ? (SwapLeftRightButtons ? PointerButton.Right : PointerButton.Left) :
+                state == PosixButtonState.Middle ? PointerButton.Middle :
+                state == PosixButtonState.Right ? (SwapLeftRightButtons ? PointerButton.Left : PointerButton.Right) :
+                state == PosixButtonState.WheelDown ? (InvertScrollYAxis ? PointerButton.WheelUp : PointerButton.WheelDown) :
+                state == PosixButtonState.WheelUp ? (InvertScrollYAxis ? PointerButton.WheelDown : PointerButton.WheelUp) :
+                PointerButton.None;
+
+            // Determine the modifiers
+            PointerModifiers mods =
+                (modState & PosixButtonModifierState.Alt) != 0 ? PointerModifiers.Alt :
+                PointerModifiers.None;
+            mods |=
+                (modState & PosixButtonModifierState.Control) != 0 ? PointerModifiers.Ctrl :
+                PointerModifiers.None;
+            mods |=
+                (modState & PosixButtonModifierState.Shift) != 0 ? PointerModifiers.Shift :
+                PointerModifiers.None;
+
+            // Return the results
+            return (button, press, mods);
+        }
+
+        private static PointerEventContext GenerateContext(int x, int y, PointerButton button, PointerButtonPress press, PointerModifiers mods)
+        {
+            // Process dragging
+            ProcessDragging(ref press, ref button, out bool dragging);
+
+            // Process double-clicks and other tiered clicks
+            if (tieredContext is not null &&
+                tieredContext.Button == button &&
+                tieredContext.Modifiers == mods &&
+                press == PointerButtonPress.Released &&
+                tieredContext.Coordinates == (x, y) &&
+                inputTimeout.Elapsed <= DoubleClickTimeout)
+            {
+                clickTier++;
+                inputTimeout.Restart();
+            }
+            else if (press == PointerButtonPress.Released || inputTimeout.Elapsed > DoubleClickTimeout)
+            {
+                if (press == PointerButtonPress.Released)
+                    tieredContext = context;
+                else
+                    tieredContext = null;
+                clickTier = 1;
+                inputTimeout.Restart();
+            }
+            int finalTier = press == PointerButtonPress.Released ? clickTier : 0;
+
+            // Add the results
+            return new PointerEventContext(button, press, mods, dragging, x, y, finalTier);
         }
 
         private static void DisableMouseSupport()
