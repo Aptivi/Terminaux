@@ -401,9 +401,8 @@ namespace Terminaux.Inputs.Styles.Selection
                                 }
                                 var regex = new Regex(keyword);
                                 var resultEntries = entriesString
-                                    .Select((entry, idx) => ($"{idx + 1}", entry))
-                                    .Where((tuple) => regex.IsMatch(tuple.entry.ChoiceName) || regex.IsMatch(tuple.entry.ChoiceTitle))
-                                    .Select((tuple) => (tuple.Item1, $"{tuple.entry.ChoiceName}) {tuple.entry.ChoiceTitle}")).ToArray();
+                                    .Where((entry) => regex.IsMatch(entry.ChoiceName) || regex.IsMatch(entry.ChoiceTitle))
+                                    .Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
                                 if (resultEntries.Length > 0)
                                 {
                                     var choices = InputChoiceTools.GetInputChoices(resultEntries);
