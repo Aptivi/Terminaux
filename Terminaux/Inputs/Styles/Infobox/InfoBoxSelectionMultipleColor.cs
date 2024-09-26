@@ -612,7 +612,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (selectionChoices <= 0)
                                     break;
                                 var entriesString = selections.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
-                                string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)").ToLower();
+                                string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)");
                                 if (!RegexTools.IsValidRegex(keyword))
                                 {
                                     InfoBoxModalColor.WriteInfoBoxModal("Your query is not a valid regular expression.");

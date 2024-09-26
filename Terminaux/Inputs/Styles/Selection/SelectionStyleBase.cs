@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Buffered;
@@ -34,6 +35,7 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.MiscWriters.Tools;
+using Textify.Tools;
 
 namespace Terminaux.Inputs.Styles.Selection
 {
@@ -390,8 +392,18 @@ namespace Terminaux.Inputs.Styles.Selection
                                 if (AllAnswers.Count <= 0)
                                     break;
                                 var entriesString = AllAnswers.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
-                                string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (case insensitive)").ToLower();
-                                var resultEntries = entriesString.Select((entry, idx) => ($"{idx + 1}", entry)).Where((tuple) => tuple.entry.ChoiceName.ToLower().Contains(keyword) || tuple.entry.ChoiceTitle.ToLower().Contains(keyword)).Select((tuple) => (tuple.Item1, $"{tuple.entry.ChoiceName}) {tuple.entry.ChoiceTitle}")).ToArray();
+                                string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)");
+                                if (!RegexTools.IsValidRegex(keyword))
+                                {
+                                    InfoBoxModalColor.WriteInfoBoxModal("Your query is not a valid regular expression.");
+                                    ScreenTools.CurrentScreen?.RequireRefresh();
+                                    break;
+                                }
+                                var regex = new Regex(keyword);
+                                var resultEntries = entriesString
+                                    .Select((entry, idx) => ($"{idx + 1}", entry))
+                                    .Where((tuple) => regex.IsMatch(tuple.entry.ChoiceName) || regex.IsMatch(tuple.entry.ChoiceTitle))
+                                    .Select((tuple) => (tuple.Item1, $"{tuple.entry.ChoiceName}) {tuple.entry.ChoiceTitle}")).ToArray();
                                 if (resultEntries.Length > 0)
                                 {
                                     var choices = InputChoiceTools.GetInputChoices(resultEntries);
