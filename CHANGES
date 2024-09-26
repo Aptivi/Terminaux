@@ -1,10 +1,15 @@
-This version of Terminaux is an emergency bug fix update.
+We've widened the list of features that Terminaux brings to you with the most exciting features and changes to date! We promise that the next version is going to be even bigger!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed bugs when parsing old terminfo files
+- `[+]` Added the `WideChar` struct to represent a UTF-32 character
+- `[+]` Added regular expression search support for searchable items, such as selection style
+- `[+]` Added CIE-L*CH color model
+- `[+]` Added customization for keybinding infobox
+- `[+]` Added customization for "help" keybinding for the renderer
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
