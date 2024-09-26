@@ -37,6 +37,8 @@ using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Base.Extensions;
+using System.Text.RegularExpressions;
+using Textify.Tools;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -610,8 +612,18 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 if (selectionChoices <= 0)
                                     break;
                                 var entriesString = selections.Select((entry) => (entry.ChoiceName, entry.ChoiceTitle)).ToArray();
-                                string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (case insensitive)").ToLower();
-                                var resultEntries = entriesString.Select((entry, idx) => ($"{idx + 1}", entry)).Where((tuple) => tuple.entry.ChoiceName.ToLower().Contains(keyword) || tuple.entry.ChoiceTitle.ToLower().Contains(keyword)).Select((tuple) => (tuple.Item1, $"{tuple.entry.ChoiceName}) {tuple.entry.ChoiceTitle}")).ToArray();
+                                string keyword = InfoBoxInputColor.WriteInfoBoxInput("Write a search term (supports regular expressions)").ToLower();
+                                if (!RegexTools.IsValidRegex(keyword))
+                                {
+                                    InfoBoxModalColor.WriteInfoBoxModal("Your query is not a valid regular expression.");
+                                    ScreenTools.CurrentScreen?.RequireRefresh();
+                                    break;
+                                }
+                                var regex = new Regex(keyword);
+                                var resultEntries = entriesString
+                                    .Select((entry, idx) => ($"{idx + 1}", entry))
+                                    .Where((tuple) => regex.IsMatch(tuple.entry.ChoiceName) || regex.IsMatch(tuple.entry.ChoiceTitle))
+                                    .Select((tuple) => (tuple.Item1, $"{tuple.entry.ChoiceName}) {tuple.entry.ChoiceTitle}")).ToArray();
                                 if (resultEntries.Length > 0)
                                 {
                                     var choices = InputChoiceTools.GetInputChoices(resultEntries);
