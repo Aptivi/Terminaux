@@ -95,19 +95,19 @@ public struct WideChar</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar__ctor_System_Char_System_Char_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.%23ctor(System.Char%2CSystem.Char)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar__ctor_System_Char_System_Char_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.%23ctor(System.Char%2CSystem.Char%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L242">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L267">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar__ctor_" data-uid="Terminaux.Base.Structures.WideChar.#ctor*"></a>
-  <h4 id="Terminaux_Base_Structures_WideChar__ctor_System_Char_System_Char_" data-uid="Terminaux.Base.Structures.WideChar.#ctor(System.Char,System.Char)">WideChar(char, char)</h4>
+  <h4 id="Terminaux_Base_Structures_WideChar__ctor_System_Char_System_Char_System_Boolean_" data-uid="Terminaux.Base.Structures.WideChar.#ctor(System.Char,System.Char,System.Boolean)">WideChar(char, char, bool)</h4>
   <div class="markdown level1 summary"><p>Makes a new wide character instance</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WideChar(char hi, char lo)</code></pre>
+    <pre><code class="lang-csharp hljs">public WideChar(char hi, char lo, bool check = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -131,23 +131,29 @@ public struct WideChar</code></pre>
         <td><p>First two bytes of a wide character</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">check</span></td>
+        <td><p>Checks for validity</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar__ctor_System_Int64_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.%23ctor(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar__ctor_System_Int64_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.%23ctor(System.Int64%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L231">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L251">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar__ctor_" data-uid="Terminaux.Base.Structures.WideChar.#ctor*"></a>
-  <h4 id="Terminaux_Base_Structures_WideChar__ctor_System_Int64_" data-uid="Terminaux.Base.Structures.WideChar.#ctor(System.Int64)">WideChar(long)</h4>
+  <h4 id="Terminaux_Base_Structures_WideChar__ctor_System_Int64_System_Boolean_" data-uid="Terminaux.Base.Structures.WideChar.#ctor(System.Int64,System.Boolean)">WideChar(long, bool)</h4>
   <div class="markdown level1 summary"><p>Makes a new wide character instance</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WideChar(long charCode)</code></pre>
+    <pre><code class="lang-csharp hljs">public WideChar(long charCode, bool check = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -165,23 +171,29 @@ public struct WideChar</code></pre>
         <td><p>Character code that represents a wide character</p>
 </td>
       </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">check</span></td>
+        <td><p>Checks for validity</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar__ctor_System_String_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar__ctor_System_String_System_Boolean_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.%23ctor(System.String%2CSystem.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L215">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L230">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar__ctor_" data-uid="Terminaux.Base.Structures.WideChar.#ctor*"></a>
-  <h4 id="Terminaux_Base_Structures_WideChar__ctor_System_String_" data-uid="Terminaux.Base.Structures.WideChar.#ctor(System.String)">WideChar(string)</h4>
+  <h4 id="Terminaux_Base_Structures_WideChar__ctor_System_String_System_Boolean_" data-uid="Terminaux.Base.Structures.WideChar.#ctor(System.String,System.Boolean)">WideChar(string, bool)</h4>
   <div class="markdown level1 summary"><p>Makes a new wide character instance</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public WideChar(string source)</code></pre>
+    <pre><code class="lang-csharp hljs">public WideChar(string source, bool check = true)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -197,6 +209,12 @@ public struct WideChar</code></pre>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">source</span></td>
         <td><p>Source string that contains either one (low) or two (low/high) characters</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">check</span></td>
+        <td><p>Checks for validity</p>
 </td>
       </tr>
     </tbody>
@@ -227,7 +245,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_CompareTo_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.CompareTo(Terminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L161">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L175">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_CompareTo_" data-uid="Terminaux.Base.Structures.WideChar.CompareTo*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_CompareTo_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.CompareTo(Terminaux.Base.Structures.WideChar)">CompareTo(WideChar)</h4>
@@ -274,7 +292,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_Equals_System_Object_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.Equals(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L65">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L79">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_Equals_" data-uid="Terminaux.Base.Structures.WideChar.Equals*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_Equals_System_Object_" data-uid="Terminaux.Base.Structures.WideChar.Equals(System.Object)">Equals(object)</h4>
@@ -323,7 +341,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_Equals_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.Equals(Terminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L77">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L91">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_Equals_" data-uid="Terminaux.Base.Structures.WideChar.Equals*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_Equals_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.Equals(Terminaux.Base.Structures.WideChar)">Equals(WideChar)</h4>
@@ -373,7 +391,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_Equals_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.Equals(Terminaux.Base.Structures.WideChar%2CTerminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L86">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L100">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_Equals_" data-uid="Terminaux.Base.Structures.WideChar.Equals*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_Equals_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.Equals(Terminaux.Base.Structures.WideChar,Terminaux.Base.Structures.WideChar)">Equals(WideChar, WideChar)</h4>
@@ -461,7 +479,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_GetHashCode.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.GetHashCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L152">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L166">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_GetHashCode_" data-uid="Terminaux.Base.Structures.WideChar.GetHashCode*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_GetHashCode" data-uid="Terminaux.Base.Structures.WideChar.GetHashCode">GetHashCode()</h4>
@@ -554,10 +572,74 @@ public struct WideChar</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_ToString.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_IsValidChar.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.IsValidChar%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L61">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Structures_WideChar_IsValidChar_" data-uid="Terminaux.Base.Structures.WideChar.IsValidChar*"></a>
+  <h4 id="Terminaux_Base_Structures_WideChar_IsValidChar" data-uid="Terminaux.Base.Structures.WideChar.IsValidChar">IsValidChar()</h4>
+  <div class="markdown level1 summary"><p>Checks to see if this is a valid UTF-32 character</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool IsValidChar()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if this is a valid character; false otherwise.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_IsValidSurrogate.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.IsValidSurrogate%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L68">View Source</a>
+  </span>
+  <a id="Terminaux_Base_Structures_WideChar_IsValidSurrogate_" data-uid="Terminaux.Base.Structures.WideChar.IsValidSurrogate*"></a>
+  <h4 id="Terminaux_Base_Structures_WideChar_IsValidSurrogate" data-uid="Terminaux.Base.Structures.WideChar.IsValidSurrogate">IsValidSurrogate()</h4>
+  <div class="markdown level1 summary"><p>Checks to see whether this wide character is a valid surrogate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool IsValidSurrogate()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if this is a valid surrogate pair; false otherwise. False for characters that don't need four bytes.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_ToString.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L75">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_ToString_" data-uid="Terminaux.Base.Structures.WideChar.ToString*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_ToString" data-uid="Terminaux.Base.Structures.WideChar.ToString">ToString()</h4>
@@ -593,7 +675,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_Addition_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_Addition(Terminaux.Base.Structures.WideChar%2CTerminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L136">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L150">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_Addition_" data-uid="Terminaux.Base.Structures.WideChar.op_Addition*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_Addition_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.op_Addition(Terminaux.Base.Structures.WideChar,Terminaux.Base.Structures.WideChar)">operator +(WideChar, WideChar)</h4>
@@ -645,7 +727,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_Equality_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_Equality(Terminaux.Base.Structures.WideChar%2CTerminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L96">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L110">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_Equality_" data-uid="Terminaux.Base.Structures.WideChar.op_Equality*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_Equality_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.op_Equality(Terminaux.Base.Structures.WideChar,Terminaux.Base.Structures.WideChar)">operator ==(WideChar, WideChar)</h4>
@@ -697,7 +779,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_Explicit_System_Int64__Terminaux_Base_Structures_WideChar.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_Explicit(System.Int64)~Terminaux.Base.Structures.WideChar%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L185">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L199">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_Explicit_" data-uid="Terminaux.Base.Structures.WideChar.op_Explicit*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_Explicit_System_Int64__Terminaux_Base_Structures_WideChar" data-uid="Terminaux.Base.Structures.WideChar.op_Explicit(System.Int64)~Terminaux.Base.Structures.WideChar">explicit operator WideChar(long)</h4>
@@ -746,7 +828,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_Explicit_System_String__Terminaux_Base_Structures_WideChar.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_Explicit(System.String)~Terminaux.Base.Structures.WideChar%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L178">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L192">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_Explicit_" data-uid="Terminaux.Base.Structures.WideChar.op_Explicit*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_Explicit_System_String__Terminaux_Base_Structures_WideChar" data-uid="Terminaux.Base.Structures.WideChar.op_Explicit(System.String)~Terminaux.Base.Structures.WideChar">explicit operator WideChar(string)</h4>
@@ -795,7 +877,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_GreaterThan_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_GreaterThan(Terminaux.Base.Structures.WideChar%2CTerminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L112">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L126">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_GreaterThan_" data-uid="Terminaux.Base.Structures.WideChar.op_GreaterThan*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_GreaterThan_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.op_GreaterThan(Terminaux.Base.Structures.WideChar,Terminaux.Base.Structures.WideChar)">operator &gt;(WideChar, WideChar)</h4>
@@ -847,7 +929,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_GreaterThanOrEqual_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_GreaterThanOrEqual(Terminaux.Base.Structures.WideChar%2CTerminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L128">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L142">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_GreaterThanOrEqual_" data-uid="Terminaux.Base.Structures.WideChar.op_GreaterThanOrEqual*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_GreaterThanOrEqual_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.op_GreaterThanOrEqual(Terminaux.Base.Structures.WideChar,Terminaux.Base.Structures.WideChar)">operator &gt;=(WideChar, WideChar)</h4>
@@ -899,7 +981,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_Implicit_Terminaux_Base_Structures_WideChar__System_Int64.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_Implicit(Terminaux.Base.Structures.WideChar)~System.Int64%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L206">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L220">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_Implicit_" data-uid="Terminaux.Base.Structures.WideChar.op_Implicit*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_Implicit_Terminaux_Base_Structures_WideChar__System_Int64" data-uid="Terminaux.Base.Structures.WideChar.op_Implicit(Terminaux.Base.Structures.WideChar)~System.Int64">implicit operator long(WideChar)</h4>
@@ -948,7 +1030,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_Implicit_Terminaux_Base_Structures_WideChar__System_String.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_Implicit(Terminaux.Base.Structures.WideChar)~System.String%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L192">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L206">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_Implicit_" data-uid="Terminaux.Base.Structures.WideChar.op_Implicit*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_Implicit_Terminaux_Base_Structures_WideChar__System_String" data-uid="Terminaux.Base.Structures.WideChar.op_Implicit(Terminaux.Base.Structures.WideChar)~System.String">implicit operator string(WideChar)</h4>
@@ -997,7 +1079,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_Implicit_Terminaux_Base_Structures_WideChar__System_ValueTuple_System_Char_System_Char_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_Implicit(Terminaux.Base.Structures.WideChar)~System.ValueTuple%7BSystem.Char%2CSystem.Char%7D%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L199">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L213">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_Implicit_" data-uid="Terminaux.Base.Structures.WideChar.op_Implicit*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_Implicit_Terminaux_Base_Structures_WideChar__System_ValueTuple_System_Char_System_Char_" data-uid="Terminaux.Base.Structures.WideChar.op_Implicit(Terminaux.Base.Structures.WideChar)~System.ValueTuple{System.Char,System.Char}">implicit operator (char high, char low)(WideChar)</h4>
@@ -1046,7 +1128,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_Inequality_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_Inequality(Terminaux.Base.Structures.WideChar%2CTerminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L100">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L114">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_Inequality_" data-uid="Terminaux.Base.Structures.WideChar.op_Inequality*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_Inequality_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.op_Inequality(Terminaux.Base.Structures.WideChar,Terminaux.Base.Structures.WideChar)">operator !=(WideChar, WideChar)</h4>
@@ -1098,7 +1180,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_LessThan_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_LessThan(Terminaux.Base.Structures.WideChar%2CTerminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L104">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L118">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_LessThan_" data-uid="Terminaux.Base.Structures.WideChar.op_LessThan*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_LessThan_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.op_LessThan(Terminaux.Base.Structures.WideChar,Terminaux.Base.Structures.WideChar)">operator &lt;(WideChar, WideChar)</h4>
@@ -1150,7 +1232,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_LessThanOrEqual_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_LessThanOrEqual(Terminaux.Base.Structures.WideChar%2CTerminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L120">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L134">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_LessThanOrEqual_" data-uid="Terminaux.Base.Structures.WideChar.op_LessThanOrEqual*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_LessThanOrEqual_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.op_LessThanOrEqual(Terminaux.Base.Structures.WideChar,Terminaux.Base.Structures.WideChar)">operator &lt;=(WideChar, WideChar)</h4>
@@ -1202,7 +1284,7 @@ public struct WideChar</code></pre>
     <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Base_Structures_WideChar_op_Subtraction_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_.md&amp;value=---%0Auid%3A%20Terminaux.Base.Structures.WideChar.op_Subtraction(Terminaux.Base.Structures.WideChar%2CTerminaux.Base.Structures.WideChar)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L144">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Base/Structures/WideChar.cs/#L158">View Source</a>
   </span>
   <a id="Terminaux_Base_Structures_WideChar_op_Subtraction_" data-uid="Terminaux.Base.Structures.WideChar.op_Subtraction*"></a>
   <h4 id="Terminaux_Base_Structures_WideChar_op_Subtraction_Terminaux_Base_Structures_WideChar_Terminaux_Base_Structures_WideChar_" data-uid="Terminaux.Base.Structures.WideChar.op_Subtraction(Terminaux.Base.Structures.WideChar,Terminaux.Base.Structures.WideChar)">operator -(WideChar, WideChar)</h4>
