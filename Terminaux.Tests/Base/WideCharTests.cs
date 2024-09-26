@@ -120,5 +120,181 @@ namespace Terminaux.Tests.Base
             width.ShouldBe(expected);
         }
 
+        /// <summary>
+        /// Tests the WideChar comparison
+        /// </summary>
+        [TestMethod]
+        [DataRow("\0", false)]
+        [DataRow("A", true)]
+        [DataRow("\u200b", true)]
+        [DataRow("\U000F200b", true)]
+        [DataRow("😀", true)]
+        [DataRow("🩷", true)]
+        [Description("Querying")]
+        public void TestWideCharGreaterThan(string representation, bool expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            bool isGreater = wideChar > (WideChar)0;
+            isGreater.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests the WideChar comparison
+        /// </summary>
+        [TestMethod]
+        [DataRow("\0", true)]
+        [DataRow("A", true)]
+        [DataRow("\u200b", true)]
+        [DataRow("\U000F200b", true)]
+        [DataRow("😀", true)]
+        [DataRow("🩷", true)]
+        [Description("Querying")]
+        public void TestWideCharGreaterThanOrEqual(string representation, bool expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            bool isGreater = wideChar >= (WideChar)0;
+            isGreater.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests the WideChar comparison
+        /// </summary>
+        [TestMethod]
+        [DataRow("\0", false)]
+        [DataRow("A", false)]
+        [DataRow("\u200b", false)]
+        [DataRow("\U000F200b", false)]
+        [DataRow("😀", false)]
+        [DataRow("🩷", false)]
+        [Description("Querying")]
+        public void TestWideCharLessThan(string representation, bool expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            bool isLess = wideChar < (WideChar)0;
+            isLess.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests the WideChar comparison
+        /// </summary>
+        [TestMethod]
+        [DataRow("\0", true)]
+        [DataRow("A", false)]
+        [DataRow("\u200b", false)]
+        [DataRow("\U000F200b", false)]
+        [DataRow("😀", false)]
+        [DataRow("🩷", false)]
+        [Description("Querying")]
+        public void TestWideCharLessThanOrEqual(string representation, bool expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            bool isLess = wideChar <= (WideChar)0;
+            isLess.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests the WideChar comparison
+        /// </summary>
+        [TestMethod]
+        [DataRow("\0", false)]
+        [DataRow("A", true)]
+        [DataRow("\u200b", false)]
+        [DataRow("\U000F200b", false)]
+        [DataRow("😀", false)]
+        [DataRow("🩷", false)]
+        [Description("Querying")]
+        public void TestWideCharEquals(string representation, bool expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            bool isLess = wideChar == (WideChar)"A";
+            isLess.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests the WideChar comparison
+        /// </summary>
+        [TestMethod]
+        [DataRow("\0", true)]
+        [DataRow("A", false)]
+        [DataRow("\u200b", true)]
+        [DataRow("\U000F200b", true)]
+        [DataRow("😀", true)]
+        [DataRow("🩷", true)]
+        [Description("Querying")]
+        public void TestWideCharNotEquals(string representation, bool expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            bool isLess = wideChar != (WideChar)"A";
+            isLess.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests the WideChar addition (add by 1)
+        /// </summary>
+        [TestMethod]
+        [DataRow("\0", "\u0001")]
+        [DataRow("A", "B")]
+        [DataRow("\u200b", "\u200c")]
+        [DataRow("\U000F200b", "\U000F200c")]
+        [Description("Querying")]
+        public void TestWideCharAddition(string representation, string expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            WideChar wideChar1 = wideChar + (WideChar)1;
+            string wideStr = wideChar1.ToString();
+            wideStr.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests the WideChar subtraction (subtract by 1)
+        /// </summary>
+        [TestMethod]
+        [DataRow("\u0001", "\0")]
+        [DataRow("B", "A")]
+        [DataRow("\u200c", "\u200b")]
+        [DataRow("\U000F200c", "\U000F200b")]
+        [Description("Querying")]
+        public void TestWideCharSubtraction(string representation, string expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            WideChar wideChar1 = wideChar - (WideChar)1;
+            string wideStr = wideChar1.ToString();
+            wideStr.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests the WideChar addition (add by 1)
+        /// </summary>
+        [TestMethod]
+        [DataRow("\0", "\u0001")]
+        [DataRow("A", "B")]
+        [DataRow("\u200b", "\u200c")]
+        [DataRow("\U000F200b", "\U000F200c")]
+        [Description("Querying")]
+        public void TestWideCharAdditionAlt(string representation, string expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            WideChar wideChar1 = (WideChar)(wideChar + 1);
+            string wideStr = wideChar1.ToString();
+            wideStr.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests the WideChar subtraction (subtract by 1)
+        /// </summary>
+        [TestMethod]
+        [DataRow("\u0001", "\0")]
+        [DataRow("B", "A")]
+        [DataRow("\u200c", "\u200b")]
+        [DataRow("\U000F200c", "\U000F200b")]
+        [Description("Querying")]
+        public void TestWideCharSubtractionAlt(string representation, string expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            WideChar wideChar1 = (WideChar)(wideChar - 1);
+            string wideStr = wideChar1.ToString();
+            wideStr.ShouldBe(expected);
+        }
+
     }
 }

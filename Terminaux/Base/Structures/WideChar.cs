@@ -28,7 +28,7 @@ namespace Terminaux.Base.Structures
     /// </summary>
     [Serializable]
     [DebuggerDisplay("'{ToString(),nq}' [Hi: {(int)high}, Lo: {(int)low}]")]
-    public struct WideChar : IEquatable<WideChar>
+    public struct WideChar : IEquatable<WideChar>, IComparable<WideChar>
     {
         internal char high = '\0';
         internal char low = '\0';
@@ -101,12 +101,74 @@ namespace Terminaux.Base.Structures
             => !a.Equals(b);
 
         /// <inheritdoc/>
+        public static bool operator <(WideChar a, WideChar b)
+        {
+            long codeA = a.GetCharCode();
+            long codeB = b.GetCharCode();
+            return codeA < codeB;
+        }
+
+        /// <inheritdoc/>
+        public static bool operator >(WideChar a, WideChar b)
+        {
+            long codeA = a.GetCharCode();
+            long codeB = b.GetCharCode();
+            return codeA > codeB;
+        }
+
+        /// <inheritdoc/>
+        public static bool operator <=(WideChar a, WideChar b)
+        {
+            long codeA = a.GetCharCode();
+            long codeB = b.GetCharCode();
+            return codeA <= codeB;
+        }
+
+        /// <inheritdoc/>
+        public static bool operator >=(WideChar a, WideChar b)
+        {
+            long codeA = a.GetCharCode();
+            long codeB = b.GetCharCode();
+            return codeA >= codeB;
+        }
+
+        /// <inheritdoc/>
+        public static WideChar operator +(WideChar a, WideChar b)
+        {
+            long codeA = a.GetCharCode();
+            long codeB = b.GetCharCode();
+            return (WideChar)(codeA + codeB);
+        }
+
+        /// <inheritdoc/>
+        public static WideChar operator -(WideChar a, WideChar b)
+        {
+            long codeA = a.GetCharCode();
+            long codeB = b.GetCharCode();
+            return (WideChar)(codeA - codeB);
+        }
+
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             int hashCode = -1466551034;
             hashCode = hashCode * -1521134295 + high.GetHashCode();
             hashCode = hashCode * -1521134295 + low.GetHashCode();
             return hashCode;
+        }
+
+        /// <inheritdoc/>
+        public readonly int CompareTo(WideChar other)
+        {
+            long codeA = GetCharCode();
+            long codeB = other.GetCharCode();
+            if (codeA == codeB)
+                return 0;
+            else if (codeA > codeB)
+                return -1;
+            else if (codeA < codeB)
+                return 1;
+            return 0;
         }
 
         /// <summary>
