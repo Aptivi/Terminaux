@@ -37,7 +37,7 @@ namespace Terminaux.Base.Structures
         /// </summary>
         /// <returns>Wide character as a string</returns>
         public override readonly string ToString() =>
-            $"{low}{high}";
+            $"{low}{(high != '\0' ? high : "")}";
 
         /// <inheritdoc/>
         public override readonly bool Equals(object obj)
@@ -98,7 +98,7 @@ namespace Terminaux.Base.Structures
         /// Explicit operator for <see cref="WideChar"/>
         /// </summary>
         /// <param name="charCode">Character code</param>
-        public static explicit operator WideChar(int charCode) =>
+        public static explicit operator WideChar(long charCode) =>
             new(charCode);
 
         /// <summary>
@@ -119,11 +119,11 @@ namespace Terminaux.Base.Structures
         /// Implicit operator for char code
         /// </summary>
         /// <param name="source">Source wide character</param>
-        public static implicit operator int(WideChar source) =>
+        public static implicit operator long(WideChar source) =>
             source.GetCharCode();
 
-        private int GetCharCode() =>
-            high << 8 | low;
+        private readonly long GetCharCode() =>
+            ((long)high << 16) | low;
 
         /// <summary>
         /// Makes a new wide character instance
@@ -147,10 +147,10 @@ namespace Terminaux.Base.Structures
         /// Makes a new wide character instance
         /// </summary>
         /// <param name="charCode">Character code that represents a wide character</param>
-        public WideChar(int charCode)
+        public WideChar(long charCode)
         {
-            high = (char)(charCode >> 1);
-            low = (char)(charCode >> 8);
+            high = (char)(charCode >> 16);
+            low = (char)(charCode & 65535);
         }
 
         /// <summary>
