@@ -19,6 +19,7 @@
 
 using System;
 using System.Diagnostics;
+using Terminaux.Base.Extensions;
 
 namespace Terminaux.Base.Structures
 {
@@ -31,6 +32,27 @@ namespace Terminaux.Base.Structures
     {
         internal char high = '\0';
         internal char low = '\0';
+
+        /// <summary>
+        /// Gets the character length
+        /// </summary>
+        /// <returns>2 if this character is represented with four bytes. Otherwise, 1.</returns>
+        public readonly int GetLength() =>
+            high != '\0' ? 2 : 1;
+
+        /// <summary>
+        /// Gets the cell width for this character
+        /// </summary>
+        /// <returns>Width of the character</returns>
+        public readonly int GetWidth() =>
+            ConsoleChar.EstimateCellWidth(ToString());
+
+        /// <summary>
+        /// Gets the character code
+        /// </summary>
+        /// <returns>Character code that represents four bytes of a wide character in an integral value</returns>
+        public readonly long GetCharCode() =>
+            ((long)high << 16) | low;
 
         /// <summary>
         /// Returns a string instance of this wide character
@@ -122,9 +144,6 @@ namespace Terminaux.Base.Structures
         public static implicit operator long(WideChar source) =>
             source.GetCharCode();
 
-        private readonly long GetCharCode() =>
-            ((long)high << 16) | low;
-
         /// <summary>
         /// Makes a new wide character instance
         /// </summary>
@@ -156,8 +175,8 @@ namespace Terminaux.Base.Structures
         /// <summary>
         /// Makes a new wide character instance
         /// </summary>
-        /// <param name="hi">Second byte of a wide character</param>
-        /// <param name="lo">First byte of a wide character</param>
+        /// <param name="hi">Second two bytes of a wide character</param>
+        /// <param name="lo">First two bytes of a wide character</param>
         public WideChar(char hi, char lo)
         {
             high = hi;

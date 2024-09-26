@@ -84,5 +84,41 @@ namespace Terminaux.Tests.Base
             wideChar2.ShouldBe(wideChar);
         }
 
+        /// <summary>
+        /// Tests getting a WideChar from the string, getting its integral code, and parsing it
+        /// </summary>
+        [TestMethod]
+        [DataRow("\0", 1)]
+        [DataRow("A", 1)]
+        [DataRow("\u200b", 1)]
+        [DataRow("\U000F200b", 2)]
+        [DataRow("😀", 2)]
+        [DataRow("🩷", 2)]
+        [Description("Querying")]
+        public void TestWideCharLength(string representation, int expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            int length = wideChar.GetLength();
+            length.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests getting a WideChar from the string, getting its integral code, and parsing it
+        /// </summary>
+        [TestMethod]
+        [DataRow("\0", 0)]
+        [DataRow("A", 1)]
+        [DataRow("\u200b", 0)]
+        [DataRow("\U000F200b", 1)]
+        [DataRow("😀", 2)]
+        [DataRow("🩷", 2)]
+        [Description("Querying")]
+        public void TestWideCharWidth(string representation, int expected)
+        {
+            WideChar wideChar = (WideChar)representation;
+            int width = wideChar.GetWidth();
+            width.ShouldBe(expected);
+        }
+
     }
 }
