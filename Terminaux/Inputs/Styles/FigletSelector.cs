@@ -55,6 +55,12 @@ namespace Terminaux.Inputs.Styles
             new("Previous", PointerButton.WheelUp),
             new("Next", PointerButton.WheelDown),
         ];
+        private readonly static Keybinding[] charSelectBindings =
+        [
+            new("Previous", ConsoleKey.LeftArrow),
+            new("Next", ConsoleKey.RightArrow),
+            new("Done", ConsoleKey.Enter),
+        ];
 
         /// <summary>
         /// Prompts the user for a figlet font
@@ -238,7 +244,7 @@ namespace Terminaux.Inputs.Styles
                     buffer.Append(CenteredFigletTextColor.RenderCenteredFiglet(figletFont, ((char)chars[index]).ToString()));
 
                     // Write the selected font name and the keybindings
-                    buffer.Append(CenteredTextColor.RenderCentered(ConsoleWrapper.WindowHeight - 2, "[ENTER] Go back | [<-|->] Select character"));
+                    buffer.Append(KeybindingsWriter.RenderKeybindings(charSelectBindings, 0, ConsoleWrapper.WindowHeight - 1));
                     return buffer.ToString();
                 });
 
