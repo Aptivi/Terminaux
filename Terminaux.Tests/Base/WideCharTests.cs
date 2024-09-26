@@ -236,7 +236,7 @@ namespace Terminaux.Tests.Base
         [DataRow("\0", "\u0001")]
         [DataRow("A", "B")]
         [DataRow("\u200b", "\u200c")]
-        [DataRow("\U000F200b", "\U000F200c")]
+        [DataRow("\U000F200b", "\udb89\udc0b")]
         [Description("Querying")]
         public void TestWideCharAddition(string representation, string expected)
         {
@@ -253,7 +253,7 @@ namespace Terminaux.Tests.Base
         [DataRow("\u0001", "\0")]
         [DataRow("B", "A")]
         [DataRow("\u200c", "\u200b")]
-        [DataRow("\U000F200c", "\U000F200b")]
+        [DataRow("\U000F200c", "\udb87\udc0c")]
         [Description("Querying")]
         public void TestWideCharSubtraction(string representation, string expected)
         {
@@ -270,7 +270,7 @@ namespace Terminaux.Tests.Base
         [DataRow("\0", "\u0001")]
         [DataRow("A", "B")]
         [DataRow("\u200b", "\u200c")]
-        [DataRow("\U000F200b", "\U000F200c")]
+        [DataRow("\U000F200b", "\udb89\udc0b")]
         [Description("Querying")]
         public void TestWideCharAdditionAlt(string representation, string expected)
         {
@@ -287,7 +287,7 @@ namespace Terminaux.Tests.Base
         [DataRow("\u0001", "\0")]
         [DataRow("B", "A")]
         [DataRow("\u200c", "\u200b")]
-        [DataRow("\U000F200c", "\U000F200b")]
+        [DataRow("\U000F200c", "\udb87\udc0c")]
         [Description("Querying")]
         public void TestWideCharSubtractionAlt(string representation, string expected)
         {
