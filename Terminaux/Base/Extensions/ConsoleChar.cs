@@ -184,10 +184,7 @@ namespace Terminaux.Base.Extensions
             {
                 char c = sentence[i];
                 if (!char.IsSurrogate(c))
-                {
-                    if (TextTools.GetCharWidth(c) == 2)
-                        wideChars.Add((WideChar)c);
-                }
+                    wideChars.Add((WideChar)c);
                 else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
                 {
                     wideChars.Add(new WideChar(sentence[i + 1], c));

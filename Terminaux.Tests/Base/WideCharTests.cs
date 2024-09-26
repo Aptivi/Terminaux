@@ -19,6 +19,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using Terminaux.Base.Extensions;
 using Terminaux.Base.Structures;
 
 namespace Terminaux.Tests.Base
@@ -294,6 +295,18 @@ namespace Terminaux.Tests.Base
             WideChar wideChar1 = (WideChar)(wideChar - 1);
             string wideStr = wideChar1.ToString();
             wideStr.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests getting a list of wide characters
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestWideCharGetWideChars()
+        {
+            string target = "Hello! 😀";
+            WideChar[] wideChars = ConsoleChar.GetWideChars(target);
+            wideChars.Length.ShouldBe(8);
         }
 
     }
