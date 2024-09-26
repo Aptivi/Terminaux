@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
+using Terminaux.Base.Structures;
 using Terminaux.Sequences;
 using Textify.General;
 
@@ -168,6 +170,33 @@ namespace Terminaux.Base.Extensions
                 }
             }
             return fullWidths;
+        }
+
+        /// <summary>
+        /// Gets a list of wide characters from a sentence
+        /// </summary>
+        /// <param name="sentence">Sentence to form</param>
+        /// <returns>Wide character instances</returns>
+        public static WideChar[] GetWideChars(string sentence)
+        {
+            List<WideChar> wideChars = [];
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                char c = sentence[i];
+                if (!char.IsSurrogate(c))
+                {
+                    if (TextTools.GetCharWidth(c) == 2)
+                        wideChars.Add((WideChar)c);
+                }
+                else if (i + 1 < sentence.Length && char.IsSurrogatePair(c, sentence[i + 1]))
+                {
+                    wideChars.Add(new WideChar(sentence[i + 1], c));
+                    i++;
+                }
+                else
+                    wideChars.Add((WideChar)c);
+            }
+            return [.. wideChars];
         }
     }
 }

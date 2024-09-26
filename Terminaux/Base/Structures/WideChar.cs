@@ -55,6 +55,20 @@ namespace Terminaux.Base.Structures
             ((long)high << 16) | low;
 
         /// <summary>
+        /// Checks to see if this is a valid UTF-32 character
+        /// </summary>
+        /// <returns>True if this is a valid character; false otherwise.</returns>
+        public readonly bool IsValidChar() =>
+            high > '\0' ? IsValidSurrogate() : true;
+
+        /// <summary>
+        /// Checks to see whether this wide character is a valid surrogate
+        /// </summary>
+        /// <returns>True if this is a valid surrogate pair; false otherwise. False for characters that don't need four bytes.</returns>
+        public readonly bool IsValidSurrogate() =>
+            char.IsSurrogatePair(low, high);
+
+        /// <summary>
         /// Returns a string instance of this wide character
         /// </summary>
         /// <returns>Wide character as a string</returns>
@@ -210,9 +224,10 @@ namespace Terminaux.Base.Structures
         /// Makes a new wide character instance
         /// </summary>
         /// <param name="source">Source string that contains either one (low) or two (low/high) characters</param>
+        /// <param name="check">Checks for validity</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="ArgumentException"></exception>
-        public WideChar(string source)
+        public WideChar(string source, bool check = true)
         {
             if (string.IsNullOrEmpty(source))
                 throw new ArgumentNullException("String is not specified");
@@ -222,16 +237,25 @@ namespace Terminaux.Base.Structures
             // Get hi/lo values and install them
             high = source.Length == 2 ? source[1] : '\0';
             low = source[0];
+
+            // Check for validity
+            if (check && !IsValidChar())
+                throw new TerminauxException($"Invalid character. [High: {(int)high}, Low: {(int)low}]");
         }
 
         /// <summary>
         /// Makes a new wide character instance
         /// </summary>
         /// <param name="charCode">Character code that represents a wide character</param>
-        public WideChar(long charCode)
+        /// <param name="check">Checks for validity</param>
+        public WideChar(long charCode, bool check = true)
         {
             high = (char)(charCode >> 16);
             low = (char)(charCode & 65535);
+
+            // Check for validity
+            if (check && !IsValidChar())
+                throw new TerminauxException($"Invalid character. [High: {(int)high}, Low: {(int)low}]");
         }
 
         /// <summary>
@@ -239,10 +263,15 @@ namespace Terminaux.Base.Structures
         /// </summary>
         /// <param name="hi">Second two bytes of a wide character</param>
         /// <param name="lo">First two bytes of a wide character</param>
-        public WideChar(char hi, char lo)
+        /// <param name="check">Checks for validity</param>
+        public WideChar(char hi, char lo, bool check = true)
         {
             high = hi;
             low = lo;
+
+            // Check for validity
+            if (check && !IsValidChar())
+                throw new TerminauxException($"Invalid character. [High: {(int)high}, Low: {(int)low}]");
         }
     }
 }
