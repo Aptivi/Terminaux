@@ -75,6 +75,92 @@ namespace Terminaux.Base.Structures
         public override readonly string ToString() =>
             $"{low}{(high != '\0' ? high : "")}";
 
+        /// <summary>
+        /// Parses a string containing a 32-bit character
+        /// </summary>
+        /// <param name="representation">A string that contains a 32-bit character</param>
+        /// <returns>An instance of <see cref="WideChar"/></returns>
+        public static WideChar Parse(string representation) =>
+            new(representation, true);
+
+        /// <summary>
+        /// Parses a character code that represents a 32-bit character
+        /// </summary>
+        /// <param name="code">Character code that represents a 32-bit character</param>
+        /// <returns>An instance of <see cref="WideChar"/></returns>
+        public static WideChar Parse(long code) =>
+            new(code, true);
+
+        /// <summary>
+        /// Parses two characters that represent a 32-bit character
+        /// </summary>
+        /// <param name="hi">Second two bytes of a wide character</param>
+        /// <param name="lo">First two bytes of a wide character</param>
+        /// <returns>An instance of <see cref="WideChar"/></returns>
+        public static WideChar Parse(char hi, char lo) =>
+            new(hi, lo, true);
+
+        /// <summary>
+        /// Parses a string containing a 32-bit character
+        /// </summary>
+        /// <param name="representation">A string that contains a 32-bit character</param>
+        /// <param name="output">Output of an instance of <see cref="WideChar"/></param>
+        /// <returns>True if parsed successfully. Otherwise, false.</returns>
+        public static bool TryParse(string representation, out WideChar? output)
+        {
+            try
+            {
+                output = new(representation, true);
+            }
+            catch
+            {
+                output = null;
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Parses a character code that represents a 32-bit character
+        /// </summary>
+        /// <param name="code">Character code that represents a 32-bit character</param>
+        /// <param name="output">Output of an instance of <see cref="WideChar"/></param>
+        /// <returns>True if parsed successfully. Otherwise, false.</returns>
+        public static bool TryParse(long code, out WideChar? output)
+        {
+            try
+            {
+                output = new(code, true);
+            }
+            catch
+            {
+                output = null;
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Parses two characters that represent a 32-bit character
+        /// </summary>
+        /// <param name="hi">Second two bytes of a wide character</param>
+        /// <param name="lo">First two bytes of a wide character</param>
+        /// <param name="output">Output of an instance of <see cref="WideChar"/></param>
+        /// <returns>True if parsed successfully. Otherwise, false.</returns>
+        public static bool TryParse(char hi, char lo, out WideChar? output)
+        {
+            try
+            {
+                output = new(hi, lo, true);
+            }
+            catch
+            {
+                output = null;
+                return false;
+            }
+            return true;
+        }
+
         /// <inheritdoc/>
         public override readonly bool Equals(object obj)
         {

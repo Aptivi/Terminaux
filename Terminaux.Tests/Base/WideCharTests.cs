@@ -309,5 +309,86 @@ namespace Terminaux.Tests.Base
             wideChars.Length.ShouldBe(8);
         }
 
+        /// <summary>
+        /// Tests parsing a wide character
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestWideCharParse()
+        {
+            string target = "😀";
+            WideChar wideChar = WideChar.Parse(target);
+            string actual = wideChar.ToString();
+            actual.ShouldBe(target);
+        }
+
+        /// <summary>
+        /// Tests parsing a wide character with character code
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestWideCharParseWithCode()
+        {
+            string target = "😀";
+            WideChar wideChar = WideChar.Parse(3724597309);
+            string actual = wideChar.ToString();
+            actual.ShouldBe(target);
+        }
+
+        /// <summary>
+        /// Tests parsing a wide character with two characters
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestWideCharParseWithChars()
+        {
+            string target = "😀";
+            WideChar wideChar = WideChar.Parse('\ude00', '\ud83d');
+            string actual = wideChar.ToString();
+            actual.ShouldBe(target);
+        }
+
+        /// <summary>
+        /// Tests parsing a wide character
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestWideCharTryParse()
+        {
+            string target = "😀";
+            bool result = WideChar.TryParse(target, out WideChar? wideChar);
+            string actual = wideChar?.ToString() ?? "";
+            result.ShouldBeTrue();
+            actual.ShouldBe(target);
+        }
+
+        /// <summary>
+        /// Tests parsing a wide character with character code
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestWideCharTryParseWithCode()
+        {
+            string target = "😀";
+            bool result = WideChar.TryParse(3724597309, out WideChar? wideChar);
+            string actual = wideChar?.ToString() ?? "";
+            result.ShouldBeTrue();
+            actual.ShouldBe(target);
+        }
+
+        /// <summary>
+        /// Tests parsing a wide character with two characters
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestWideCharTryParseWithChars()
+        {
+            string target = "😀";
+            bool result = WideChar.TryParse('\ude00', '\ud83d', out WideChar? wideChar);
+            string actual = wideChar?.ToString() ?? "";
+            result.ShouldBeTrue();
+            actual.ShouldBe(target);
+        }
+
     }
 }
