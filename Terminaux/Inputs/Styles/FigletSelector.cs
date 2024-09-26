@@ -240,10 +240,12 @@ namespace Terminaux.Inputs.Styles
                     var buffer = new StringBuilder();
 
                     // Write the text using the selected figlet font
+                    string character = ((char)chars[index]).ToString();
                     var figletFont = FigletTools.GetFigletFont(fontName);
-                    buffer.Append(CenteredFigletTextColor.RenderCenteredFiglet(figletFont, ((char)chars[index]).ToString()));
+                    buffer.Append(CenteredFigletTextColor.RenderCenteredFiglet(figletFont, character));
 
-                    // Write the selected font name and the keybindings
+                    // Write the selected character name and the keybindings
+                    buffer.Append(CenteredTextColor.RenderCentered(1, $"{character} - [{index + 1}/{chars.Length}]"));
                     buffer.Append(KeybindingsWriter.RenderKeybindings(charSelectBindings, 0, ConsoleWrapper.WindowHeight - 1));
                     return buffer.ToString();
                 });
