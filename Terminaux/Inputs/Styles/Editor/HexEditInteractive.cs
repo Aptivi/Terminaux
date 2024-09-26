@@ -32,6 +32,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Interactive;
+using System.Collections.Generic;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -41,6 +42,7 @@ namespace Terminaux.Inputs.Styles.Editor
     public static class HexEditInteractive
     {
         private static string status = "";
+        private static byte[] cachedFind = [];
         private static bool bail;
         private static int byteIdx = 0;
         private static readonly Keybinding[] bindings =
@@ -52,6 +54,7 @@ namespace Terminaux.Inputs.Styles.Editor
             new Keybinding("Replace", ConsoleKey.F3),
             new Keybinding("Replace All", ConsoleKey.F3, ConsoleModifiers.Shift),
             new Keybinding("Replace All What", ConsoleKey.F3, ConsoleModifiers.Shift | ConsoleModifiers.Alt),
+            new Keybinding("Find Next", ConsoleKey.Divide),
             new Keybinding("Number Info", ConsoleKey.F4),
         ];
 
@@ -249,6 +252,10 @@ namespace Terminaux.Inputs.Styles.Editor
                 case ConsoleKey.F4:
                     NumInfo(bytes, settings);
                     break;
+                case ConsoleKey.Oem2:
+                case ConsoleKey.Divide:
+                    FindNext(ref bytes, settings);
+                    break;
             }
         }
 
@@ -358,6 +365,101 @@ namespace Terminaux.Inputs.Styles.Editor
 
             // Do the replacement!
             Replace(ref bytes, byteNum, byteNumReplaced);
+        }
+
+        private static void FindNext(ref byte[] bytes, InteractiveTuiSettings settings)
+        {
+            // Check the bytes
+            if (bytes.Length == 0)
+                return;
+
+            // Now, prompt for the replacement line
+            string bytesSpec = InfoBoxInputColor.WriteInfoBoxInputColorBack("Write a byte or a group of bytes separated by whitespaces. It can be from 00 to FF.", settings.BoxForegroundColor, settings.BoxBackgroundColor);
+            byte[] refBytes;
+
+            // See if we have a cached find if the user didn't provide any string to find
+            if (string.IsNullOrEmpty(bytesSpec))
+            {
+                if (cachedFind.Length == 0)
+                {
+                    InfoBoxModalColor.WriteInfoBoxModal("Bytes are required to find, but you haven't provided one.", settings.BorderSettings);
+                    return;
+                }
+                else
+                    refBytes = cachedFind;
+            }
+            else
+            {
+                // Validate each byte
+                string[] splitBytes = bytesSpec.Split(' ');
+                List<byte> finalBytes = [];
+                foreach (string byteSplit in splitBytes)
+                {
+                    // Check this individual byte
+                    if (!byte.TryParse(byteSplit, NumberStyles.AllowHexSpecifier, null, out byte finalByte))
+                    {
+                        InfoBoxModalColor.WriteInfoBoxModal($"Invalid byte {byteSplit}.", settings.BorderSettings);
+                        return;
+                    }
+
+                    // Add this byte
+                    finalBytes.Add(finalByte);
+                }
+                refBytes = [.. finalBytes];
+            }
+
+            // Determine row and column
+            int byteIndex = byteIdx + 1;
+            if (byteIndex >= bytes.Length)
+                byteIndex = 0;
+
+            // Now, run a loop to find, continuing from top where necessary
+            bool found = false;
+            bool firstTime = true;
+            int b = byteIndex;
+            while (!found)
+            {
+                byte[] processed = new byte[refBytes.Length];
+
+                // Get a byte and add it to the processed byte array
+                for (int i = 0; i < refBytes.Length; i++)
+                {
+                    byte candidate = bytes[b + i];
+                    processed[i] = candidate;
+                }
+
+                // Compare between the processed byte and the actual byte
+                int foundBytes = 0;
+                for (int i = 0; i < processed.Length; i++)
+                {
+                    byte candidate = processed[i];
+                    byte actual = refBytes[i];
+                    if (candidate == actual)
+                        foundBytes++;
+                }
+
+                // Determine whether to exit
+                if (foundBytes == refBytes.Length)
+                    found = true;
+                if (!firstTime && b == byteIndex)
+                    break;
+                if (!found)
+                {
+                    firstTime = false;
+                    b++;
+                    if (b >= bytes.Length)
+                        b = 0;
+                }
+            }
+
+            // Update line index and column index if found. Otherwise, show a message
+            if (found)
+            {
+                byteIdx = b;
+                cachedFind = refBytes;
+            }
+            else
+                InfoBoxModalColor.WriteInfoBoxModal("Not found. Check your syntax or broaden your search.", settings.BorderSettings);
         }
 
         private static void NumInfo(byte[] bytes, InteractiveTuiSettings settings)
