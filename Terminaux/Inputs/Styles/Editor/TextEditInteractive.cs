@@ -381,9 +381,6 @@ namespace Terminaux.Inputs.Styles.Editor
                     case ConsoleKey.Divide:
                         FindNext(ref lines, settings);
                         break;
-                    default:
-                        InsertChar(key.KeyChar, ref lines);
-                        break;
                 }
             }
         }
