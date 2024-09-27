@@ -1,15 +1,10 @@
-We've widened the list of features that Terminaux brings to you with the most exciting features and changes to date! We promise that the next version is going to be even bigger!
+We've fixed one bug in the text editor!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added the `WideChar` struct to represent a UTF-32 character
-- `[+]` Added regular expression search support for searchable items, such as selection style
-- `[+]` Added CIE-L*CH color model
-- `[+]` Added customization for keybinding infobox
-- `[+]` Added customization for "help" keybinding for the renderer
-- `[*]` General improvements and bug fixes
+- `[*]` Self-insert in text editor is only allowed in editing mode
 
 Review the commit history if you want to get a deep insight about the changes.
 
