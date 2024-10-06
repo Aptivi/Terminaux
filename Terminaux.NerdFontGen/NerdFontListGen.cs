@@ -18,6 +18,7 @@
 //
 
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Text;
 using Newtonsoft.Json;
 using System.IO;
 using System.Text;
@@ -26,9 +27,9 @@ using Terminaux.NerdFontGen.Decoy;
 namespace Terminaux.NerdFontGen
 {
     [Generator]
-    public class NerdFontListGen : ISourceGenerator
+    public class NerdFontListGen : IIncrementalGenerator
     {
-        public void Execute(GeneratorExecutionContext context)
+        public void Initialize(IncrementalGeneratorInitializationContext context)
         {
             // Get the color data content
             var asm = typeof(NerdFontListGen).Assembly;
@@ -45,10 +46,7 @@ namespace Terminaux.NerdFontGen
             NerdFontsDictionaryGenerator(list, context);
         }
 
-        public void Initialize(GeneratorInitializationContext context)
-        { }
-
-        private void NerdFontsEnumGenerator(NerdFontInfo[] list, GeneratorExecutionContext context)
+        private void NerdFontsEnumGenerator(NerdFontInfo[] list, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -108,10 +106,13 @@ namespace Terminaux.NerdFontGen
 
             // Add the footer
             builder.AppendLine(footer);
-            context.AddSource("NerdFontsTypes.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("NerdFontsTypes.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
 
-        private void NerdFontsClassGenerator(NerdFontInfo[] list, GeneratorExecutionContext context)
+        private void NerdFontsClassGenerator(NerdFontInfo[] list, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -190,11 +191,14 @@ namespace Terminaux.NerdFontGen
 
                 // Add the footer
                 builder.AppendLine(footer);
-                context.AddSource($"{name}Icons.cs", builder.ToString());
+                context.RegisterPostInitializationOutput(ctx =>
+                {
+                    ctx.AddSource($"{name}Icons.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+                });
             }
         }
 
-        private void NerdFontsDictionaryGenerator(NerdFontInfo[] list, GeneratorExecutionContext context)
+        private void NerdFontsDictionaryGenerator(NerdFontInfo[] list, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -281,7 +285,10 @@ namespace Terminaux.NerdFontGen
 
             // Add the footer
             builder.AppendLine(footer);
-            context.AddSource($"NerdFontsTools.g.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("NerdFontsTools.g.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
     }
 }
