@@ -30,14 +30,14 @@ namespace Terminaux.Base.Checks
     /// </summary>
     public static class ConsoleFilter
     {
-        internal static List<(Regex?, ConsoleFilterType, ConsoleFilterSeverity, string)> baseFilters =
+        internal static List<ConsoleFilterInfo> baseFilters =
         [
-            (new("dumb"), ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist, "Console type only supports basic writing."),
-            (new("unknown"), ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist, "Console type is of unknown nature."),
-            (new("Apple_Terminal"), ConsoleFilterType.Emulator, ConsoleFilterSeverity.Blacklist, "This application makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors."),
-            (new(@"^((?!-256col).)*$"), ConsoleFilterType.Type, ConsoleFilterSeverity.Graylist, "Console type doesn't support 256 colors."),
+            new(new("dumb"), ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist, "Console type only supports basic writing."),
+            new(new("unknown"), ConsoleFilterType.Type, ConsoleFilterSeverity.Blacklist, "Console type is of unknown nature."),
+            new(new("Apple_Terminal"), ConsoleFilterType.Emulator, ConsoleFilterSeverity.Blacklist, "This application makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors."),
+            new(new(@"^((?!-256col).)*$"), ConsoleFilterType.Type, ConsoleFilterSeverity.Graylist, "Console type doesn't support 256 colors."),
         ];
-        internal static List<(Regex?, ConsoleFilterType, ConsoleFilterSeverity, string)> customFilters = [];
+        internal static List<ConsoleFilterInfo> customFilters = [];
 
         /// <summary>
         /// Adds a match for the terminal type or emulator to the blacklist or the graylist
@@ -66,7 +66,7 @@ namespace Terminaux.Base.Checks
 
             // Now, add the query and the justification to the list
             if (!IsInFilter(query, type, severity, out _))
-                customFilters.Add((query, type, severity, justification));
+                customFilters.Add(new ConsoleFilterInfo(query, type, severity, justification));
         }
 
         /// <summary>
@@ -93,8 +93,8 @@ namespace Terminaux.Base.Checks
                 throw new TerminauxException("Can't filter with an invalid query.");
 
             // Now, remove the query from the list
-            if (IsInFilter(query, type, severity, out var queryTuple))
-                customFilters.Remove(queryTuple);
+            if (IsInFilter(query, type, severity, out var queryInfo))
+                customFilters.Remove(queryInfo!);
         }
 
         /// <summary>
@@ -103,11 +103,11 @@ namespace Terminaux.Base.Checks
         /// <param name="query">The query to check</param>
         /// <param name="type">Filter type</param>
         /// <param name="severity">Filter severity</param>
-        /// <param name="queryTuple">Output query tuple</param>
+        /// <param name="queryInfo">Output query Info</param>
         /// <returns>True if found; false otherwise.</returns>
         /// <exception cref="TerminauxException"></exception>
-        public static bool IsInFilter(string query, ConsoleFilterType type, ConsoleFilterSeverity severity, out (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification) queryTuple) =>
-            IsInFilter(new Regex(query), type, severity, out queryTuple);
+        public static bool IsInFilter(string query, ConsoleFilterType type, ConsoleFilterSeverity severity, out ConsoleFilterInfo? queryInfo) =>
+            IsInFilter(new Regex(query), type, severity, out queryInfo);
 
         /// <summary>
         /// Is the query in the filter?
@@ -115,10 +115,10 @@ namespace Terminaux.Base.Checks
         /// <param name="query">The query to check</param>
         /// <param name="type">Filter type</param>
         /// <param name="severity">Filter severity</param>
-        /// <param name="queryTuple">Output query tuple</param>
+        /// <param name="queryInfo">Output query Info</param>
         /// <returns>True if found; false otherwise.</returns>
         /// <exception cref="TerminauxException"></exception>
-        public static bool IsInFilter(Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, out (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification) queryTuple)
+        public static bool IsInFilter(Regex query, ConsoleFilterType type, ConsoleFilterSeverity severity, out ConsoleFilterInfo? queryInfo)
         {
             // Check the query first
             if (query is null)
@@ -130,13 +130,13 @@ namespace Terminaux.Base.Checks
             var queries = GetFilteredQueries();
             foreach (var filtered in queries)
             {
-                if (filtered.query == query && filtered.type == type && filtered.severity == severity)
+                if (filtered.Expression == query && filtered.Type == type && filtered.Severity == severity)
                 {
-                    queryTuple = filtered;
+                    queryInfo = filtered;
                     return true;
                 }
             }
-            queryTuple = (null, (ConsoleFilterType)(-1), (ConsoleFilterSeverity)(-1), "");
+            queryInfo = null;
             return false;
         }
 
@@ -144,7 +144,7 @@ namespace Terminaux.Base.Checks
         /// Gets the filtered queries
         /// </summary>
         /// <returns>Terminal queries with their matches, their types, their severities, and their justifications</returns>
-        public static (Regex? query, ConsoleFilterType type, ConsoleFilterSeverity severity, string justification)[] GetFilteredQueries() =>
+        public static ConsoleFilterInfo[] GetFilteredQueries() =>
             baseFilters.Union(customFilters).ToArray();
 
         /// <summary>
@@ -162,8 +162,8 @@ namespace Terminaux.Base.Checks
             var queries = GetFilteredQueries();
             foreach (var filtered in queries)
             {
-                if (filtered.query is not null && filtered.query.IsMatch(console) && filtered.type == type && filtered.severity == severity)
-                    return (true, filtered.justification);
+                if (filtered.Expression is not null && filtered.Expression.IsMatch(console) && filtered.Type == type && filtered.Severity == severity)
+                    return (true, filtered.Justification);
             }
             return (false, "");
         }
