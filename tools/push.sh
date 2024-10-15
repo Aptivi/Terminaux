@@ -27,6 +27,10 @@ checkerror() {
 }
 
 # This script pushes. Use when you have dotnet installed.
+releaseconf=$1
+if [ -z $releaseconf ]; then
+	releaseconf=Release
+fi
 dotnetpath=`which dotnet`
 checkerror $? "dotnet is not found"
 
