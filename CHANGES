@@ -1,10 +1,10 @@
-We've fixed one bug in the text editor!
+We've updated libraries to fix a security bug in System.Text.Json!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Self-insert in text editor is only allowed in editing mode
+- `[*]` Fixed a security bug in System.Text.Json
 
 Review the commit history if you want to get a deep insight about the changes.
 
