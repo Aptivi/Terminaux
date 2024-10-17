@@ -18,6 +18,7 @@
 //
 
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
@@ -28,12 +29,12 @@ using Terminaux.Colors.Data;
 namespace Terminaux.ColorDataGen
 {
     [Generator]
-    public class ColorPropGen : ISourceGenerator
+    public class ColorPropGen : IIncrementalGenerator
     {
         private string colorContent = "";
         private string webSafeColorsContent = "";
 
-        public void Execute(GeneratorExecutionContext context)
+        public void Initialize(IncrementalGeneratorInitializationContext context)
         {
             // Get the color data content
             var asm = typeof(ColorPropGen).Assembly;
@@ -54,10 +55,7 @@ namespace Terminaux.ColorDataGen
             PopulateWebSafeColorData(context);
         }
 
-        public void Initialize(GeneratorInitializationContext context)
-        { }
-
-        private void PopulateColorData(GeneratorExecutionContext context)
+        private void PopulateColorData(IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -149,10 +147,13 @@ namespace Terminaux.ColorDataGen
 
             // Add the source code to the compilation
             builder.AppendLine(footer);
-            context.AddSource("ConsoleColorData.g.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("ConsoleColorData.g.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
 
-        private void PopulateColorEnums(GeneratorExecutionContext context)
+        private void PopulateColorEnums(IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -203,11 +204,11 @@ namespace Terminaux.ColorDataGen
             {
                 string colorHex = colorData.HexString;
                 string colorName = colorData.Name;
-                var colorRgb = colorData.RGB;
+                var (r, g, b) = colorData.RGB;
                 builder.AppendLine(
                     $$"""
                             /// <summary>
-                            /// [{{colorHex}}] Represents the {{colorName}} color with the RGB value of {{colorRgb.r}};{{colorRgb.g}};{{colorRgb.b}}
+                            /// [{{colorHex}}] Represents the {{colorName}} color with the RGB value of {{r}};{{g}};{{b}}
                             /// </summary>
                             {{colorName}},
                     """
@@ -216,10 +217,13 @@ namespace Terminaux.ColorDataGen
 
             // Add the source code to the compilation
             builder.AppendLine(footer);
-            context.AddSource("ConsoleColors.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("ConsoleColors.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
 
-        private void PopulateWebSafeColorData(GeneratorExecutionContext context)
+        private void PopulateWebSafeColorData(IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -347,7 +351,10 @@ namespace Terminaux.ColorDataGen
 
             // Add the source code to the compilation
             builder.AppendLine(footer);
-            context.AddSource("WebSafeColors.g.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("WebSafeColors.g.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
     }
 }

@@ -19,6 +19,7 @@
 
 using Humanizer;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Text;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,11 +28,11 @@ using System.Text;
 namespace Terminaux.TermInfoGen
 {
     [Generator]
-    public class CapabilityGenerator : ISourceGenerator
+    public class CapabilityGenerator : IIncrementalGenerator
     {
         private string capabilityContent = "";
 
-        public void Execute(GeneratorExecutionContext context)
+        public void Initialize(IncrementalGeneratorInitializationContext context)
         {
             // Get the color data content
             var asm = typeof(CapabilityGenerator).Assembly;
@@ -47,10 +48,7 @@ namespace Terminaux.TermInfoGen
             GenerateDescriptions(capabilities, context);
         }
 
-        public void Initialize(GeneratorInitializationContext context)
-        { }
-
-        private void GenerateCapabilities(Capabilities capabilities, GeneratorExecutionContext context)
+        private void GenerateCapabilities(Capabilities capabilities, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -167,10 +165,13 @@ namespace Terminaux.TermInfoGen
 
             // End the file
             builder.AppendLine(footer);
-            context.AddSource($"TermInfoCaps.g.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("TermInfoCaps.g.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
 
-        private void GenerateDescriptions(Capabilities capabilities, GeneratorExecutionContext context)
+        private void GenerateDescriptions(Capabilities capabilities, IncrementalGeneratorInitializationContext context)
         {
             string header =
                 $$"""
@@ -258,7 +259,10 @@ namespace Terminaux.TermInfoGen
 
             // End the file
             builder.AppendLine(footer);
-            context.AddSource($"TermInfoDesc.g.cs", builder.ToString());
+            context.RegisterPostInitializationOutput(ctx =>
+            {
+                ctx.AddSource("TermInfoDesc.g.cs", SourceText.From(builder.ToString(), Encoding.UTF8));
+            });
         }
 
         private Capabilities ReadCapabilities()
