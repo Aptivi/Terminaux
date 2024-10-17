@@ -1,10 +1,10 @@
-We've updated libraries to fix a security bug in System.Text.Json!
+We've updated libraries to update Magico!
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed a security bug in System.Text.Json
+- `[*]` Updated Magico
 
 Review the commit history if you want to get a deep insight about the changes.
 
