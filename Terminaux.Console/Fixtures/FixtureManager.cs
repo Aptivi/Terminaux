@@ -248,6 +248,13 @@ namespace Terminaux.Console.Fixtures
             new AlternateBuffers(),
             new Sizes(),
             new BeepTones(),
+            new ProgressTest(),
+            new ProgressFailTest(),
+            new ProgressWarnFailTest(),
+            new ProgressIndeterminateTest(),
+            new ProgressPauseTest(),
+            new ProgressFourTest(),
+            new ProgressDecrementTest(),
 
             // Image
             new RenderImage(),
