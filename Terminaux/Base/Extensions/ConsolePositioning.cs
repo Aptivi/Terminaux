@@ -91,7 +91,7 @@ namespace Terminaux.Base.Extensions
                         {
                             // Simulate seeking through text
                             int cells = ConsoleChar.EstimateCellWidth(text, j);
-                            if (i + 1 < text.Length && char.IsSurrogatePair(text[j], text[j + 1]))
+                            if (j + 1 < text.Length && char.IsSurrogatePair(text[j], text[j + 1]))
                                 i++;
                             LeftSeekPosition += cells;
                             if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
