@@ -57,6 +57,10 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// The custom background cell color
         /// </summary>
         public Color CellBackgroundColor { get; set; } = ColorTools.currentBackgroundColor;
+        /// <summary>
+        /// Text settings for this cell
+        /// </summary>
+        public TextSettings TextSettings { get; set; } = new();
 
         /// <summary>
         /// Makes a new instance of the cell options class

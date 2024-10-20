@@ -29,6 +29,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.MiscWriters.Tools;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -259,29 +260,39 @@ namespace Terminaux.Writer.FancyWriters
                     Color finalBackgroundColor = BackgroundColor;
 
                     // Process them according to both the cell width and the cell options
+                    string spaces = new(' ', maxCellWidth - 1);
                     text = text.Truncate(maxCellWidth - 4);
-                    text += new string(' ', maxCellWidth - ConsoleChar.EstimateCellWidth(text) - 1);
+                    var alignment = TextAlignment.Left;
                     if (CellOptions is not null && CellOptions.Count > 0)
                     {
                         var options = CellOptions.FirstOrDefault((co) => co.ColumnIndex == x && co.RowIndex == y);
                         if (options is not null && options.ColoredCell)
                         {
-                            finalColor = options.CellColor;
-                            finalBackgroundColor = options.CellBackgroundColor;
+                            if (options.ColoredCell)
+                            {
+                                finalColor = options.CellColor;
+                                finalBackgroundColor = options.CellBackgroundColor;
+                            }
+                            alignment = options.TextSettings.Alignment;
                         }
                     }
+
+                    // Adjust the X position according to the alignment
+                    int alignmentPosX = TextWriterTools.DetermineTextAlignment(text, maxCellWidth - 1, alignment, positionsValues.Item1);
 
                     // Write them
                     if (useColor)
                     {
                         tableBuilder.Append(
-                            TextWriterWhereColor.RenderWhereColorBack(text, positionsValues.Item1, positionsValues.Item2, finalColor, finalBackgroundColor)
+                            TextWriterWhereColor.RenderWhereColorBack(spaces, positionsValues.Item1, positionsValues.Item2, finalColor, finalBackgroundColor) +
+                            TextWriterWhereColor.RenderWhereColorBack(text, alignmentPosX, positionsValues.Item2, finalColor, finalBackgroundColor)
                         );
                     }
                     else
                     {
                         tableBuilder.Append(
-                            TextWriterWhereColor.RenderWhere(text, positionsValues.Item1, positionsValues.Item2)
+                            TextWriterWhereColor.RenderWhere(spaces, positionsValues.Item1, positionsValues.Item2) +
+                            TextWriterWhereColor.RenderWhere(text, alignmentPosX, positionsValues.Item2)
                         );
                     }
                 }
