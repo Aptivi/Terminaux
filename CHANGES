@@ -1,10 +1,11 @@
-The full nullable support has been enabled in the 4.3.x series so that there will be consistency.
+We've released an emergency release to fix a critical bug regarding Mono.
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[+]` Added full nullable support
+- `[*]` Fixed rendering for Mono
+- `[*]` Fixed terminal reader prompt writing
 
 Review the commit history if you want to get a deep insight about the changes.
 
