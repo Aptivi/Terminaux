@@ -2505,6 +2505,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.TextSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.TextSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.TextWriterTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.TextWriterTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.yml",
       "output": {
         ".html": {
@@ -2559,6 +2579,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.MiscWriters.Tools.Keybinding.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.MiscWriters.Tools.TextAlignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.MiscWriters.Tools.TextAlignment.html"
         }
       },
       "version": ""
