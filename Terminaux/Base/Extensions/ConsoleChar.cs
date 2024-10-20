@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using Terminaux.Base.Structures;
 using Terminaux.Sequences;
 using Textify.General;
+using Textify.General.Structures;
 
 namespace Terminaux.Base.Extensions
 {
@@ -171,6 +172,13 @@ namespace Terminaux.Base.Extensions
             }
             return fullWidths;
         }
+
+        /// <summary>
+        /// Gets the cell width for this character
+        /// </summary>
+        /// <returns>Width of the character</returns>
+        public static int GetWidth(this WideChar wideChar) =>
+            EstimateCellWidth(wideChar.ToString());
 
         /// <summary>
         /// Gets a list of wide characters from a sentence
