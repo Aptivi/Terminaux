@@ -736,25 +736,6 @@ namespace Terminaux.Inputs.Styles
                 trueColorSaturation = 0;
         }
 
-        private static InputChoiceInfo[] GetColorInfoChoices() =>
-            InputChoiceTools.GetInputChoices([
-                ("Normal", "Color information (normal)"),
-                ("Protanomaly", "Color information (Protanomaly)"),
-                ("Protanopia", "Color information (Protanopia)"),
-                ("Deuteranomaly", "Color information (Deuteranomaly)"),
-                ("Deuteranopia", "Color information (Deuteranopia)"),
-                ("Tritanomaly", "Color information (Tritanomaly)"),
-                ("Tritanopia", "Color information (Tritanopia)"),
-                ("Monochromacy", "Color information (Monochromacy)"),
-                ("Inverse", "Color information (Inverse)"),
-                ("Blue Monochromacy", "Color information (Blue Monochromacy)"),
-                ("Green Monochromacy", "Color information (Green Monochromacy)"),
-                ("Red Monochromacy", "Color information (Red Monochromacy)"),
-                ("Yellow Monochromacy", "Color information (Yellow Monochromacy)"),
-                ("Aqua Monochromacy", "Color information (Aqua Monochromacy)"),
-                ("Pink Monochromacy", "Color information (Pink Monochromacy)"),
-            ]);
-
         static ColorSelector()
         {
             if (!ConsoleChecker.busy)
