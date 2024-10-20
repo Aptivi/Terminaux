@@ -28,6 +28,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using Terminaux.Base;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -65,6 +66,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         public static void WriteBoxFramePlain(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings)
         {
             try
@@ -184,6 +186,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings) =>
             WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, ConsoleColors.Silver);
 
@@ -195,6 +198,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor) =>
             WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BoxFrameColor, ColorTools.currentBackgroundColor);
@@ -207,6 +211,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         public static void WriteBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor, Color BackgroundColor) =>
@@ -220,6 +225,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         /// <param name="TextColor">BoxFrame text color</param>
@@ -269,6 +275,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <returns>The rendered frame</returns>
         public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings) =>
             RenderBoxFrame("", Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ColorTools.GetGray(), false);
@@ -362,6 +369,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <returns>The rendered frame</returns>
         public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor) =>
@@ -375,6 +383,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         /// <returns>The rendered frame</returns>
@@ -389,6 +398,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         /// <param name="TextColor">BoxFrame text color</param>
@@ -431,6 +441,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         public static void WriteBoxFramePlain(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, params object[] vars)
         {
             try
@@ -568,6 +579,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         public static void WriteBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, params object[] vars) =>
             WriteBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, new Color(ConsoleColors.Silver), vars);
 
@@ -581,6 +593,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         public static void WriteBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor, params object[] vars) =>
             WriteBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BoxFrameColor, ColorTools.currentBackgroundColor, vars);
@@ -595,6 +608,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         public static void WriteBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor, Color BackgroundColor, params object[] vars) =>
@@ -610,6 +624,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         /// <param name="TextColor">BoxFrame text color</param>
@@ -665,6 +680,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <returns>The rendered box frame</returns>
         public static string RenderBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, params object[] vars) =>
             RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ColorTools.GetGray(), false, vars);
@@ -772,6 +788,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="FrameColor">BoxFrame color</param>
         /// <returns>The rendered box frame</returns>
         public static string RenderBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color FrameColor, params object[] vars) =>
@@ -787,6 +804,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="FrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         /// <returns>The rendered box frame</returns>
@@ -803,6 +821,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="FrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         /// <param name="TextColor">BoxFrame text color</param>
@@ -820,6 +839,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
+        /// <param name="textSettings">Text settings to use</param>
         /// <param name="BoxFrameColor">BoxFrame color</param>
         /// <param name="BackgroundColor">BoxFrame background color</param>
         /// <param name="TextColor">BoxFrame text color</param>
@@ -875,7 +895,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (!string.IsNullOrEmpty(text) && InteriorWidth - 8 > 0)
                 {
                     string finalText = $"{settings.BorderRightHorizontalIntersectionChar} {TextTools.FormatString(text, vars).Truncate(InteriorWidth - 8)} {settings.BorderLeftHorizontalIntersectionChar}";
-                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, textSettings.Alignment, Left + 2, Left + InteriorWidth - 2);
+                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, InteriorWidth - 8, textSettings.Alignment, Left + 2);
                     frameBuilder.Append(
                         $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, Top + 1)}" +
                         $"{finalText}"

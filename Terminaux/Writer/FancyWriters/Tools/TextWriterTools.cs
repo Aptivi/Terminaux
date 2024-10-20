@@ -52,8 +52,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
         public static int DetermineTextAlignment(string text, int width, TextAlignment alignment, int leftMargin = 0, int rightMargin = 0)
         {
             // First, get the text console width after wrapping it in a width
-            int finalWidth = width - leftMargin - rightMargin;
-            string[] wrappedLines = ConsoleMisc.GetWrappedSentencesByWords(text, finalWidth);
+            string[] wrappedLines = ConsoleMisc.GetWrappedSentencesByWords(text, width);
             string wrappedLine = wrappedLines.Length > 0 ? wrappedLines[0] : "";
             int maxWidth = ConsoleChar.EstimateCellWidth(wrappedLine);
 
@@ -62,10 +61,10 @@ namespace Terminaux.Writer.FancyWriters.Tools
             switch (alignment)
             {
                 case TextAlignment.Right:
-                    x = width - maxWidth - rightMargin;
+                    x = leftMargin + width - maxWidth - rightMargin;
                     break;
                 case TextAlignment.Middle:
-                    x = (width / 2) - (maxWidth / 2) - rightMargin;
+                    x = leftMargin + (width / 2) - (maxWidth / 2) - rightMargin;
                     break;
             }
             if (x < 0)
