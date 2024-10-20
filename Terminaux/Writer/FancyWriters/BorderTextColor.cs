@@ -61,7 +61,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="settings">Border settings to use</param>
         public static void WriteBorderPlain(string text, BorderSettings settings) =>
-            WriteBorder(text, settings, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor);
+            WriteBorderPlain(text, settings, TextSettings.GlobalSettings);
 
         /// <summary>
         /// Writes the border plainly
@@ -72,12 +72,32 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
-        public static void WriteBorderPlain(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings)
+        public static void WriteBorderPlain(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings) =>
+            WriteBorderPlain(text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Border settings to use</param>
+        public static void WriteBorderPlain(string text, BorderSettings settings, TextSettings textSettings) =>
+            WriteBorder(text, settings, textSettings, new Color(ConsoleColors.Silver), ColorTools.CurrentBackgroundColor);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        public static void WriteBorderPlain(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings)
         {
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = RenderBorderPlain(text, Left, Top, InteriorWidth, InteriorHeight, settings);
+                string rendered = RenderBorderPlain(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings);
                 TextWriterWhereColor.WriteWhere(rendered, Left, Top);
             }
             catch (Exception ex)
@@ -108,7 +128,19 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
         public static string RenderBorderPlain(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings) =>
-            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray(), false);
+            RenderBorderPlain(text, Left, Top, InteriorWidth, InteriorHeight, settings);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        public static string RenderBorderPlain(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings) =>
+            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray(), false);
 
         /// <summary>
         /// Renders the border plainly
@@ -135,7 +167,21 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
         public static string RenderBorderPlain(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, params object[] vars) =>
-            RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray(), false, vars);
+            RenderBorderPlain(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        public static string RenderBorderPlain(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, params object[] vars) =>
+            RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray(), false, vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -177,7 +223,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="settings">Border settings to use</param>
         public static void WriteBorder(string text, BorderSettings settings) =>
-            WriteBorder(text, settings, ConsoleColors.Silver, ColorTools.CurrentBackgroundColor, ColorTools.GetGray());
+            WriteBorder(text, settings, TextSettings.GlobalSettings, ConsoleColors.Silver, ColorTools.CurrentBackgroundColor, ColorTools.GetGray());
 
         /// <summary>
         /// Writes the border plainly
@@ -186,7 +232,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         public static void WriteBorder(string text, BorderSettings settings, Color BorderColor) =>
-            WriteBorder(text, settings, BorderColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray());
+            WriteBorder(text, settings, TextSettings.GlobalSettings, BorderColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray());
 
         /// <summary>
         /// Writes the border plainly
@@ -196,7 +242,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         public static void WriteBorder(string text, BorderSettings settings, Color BorderColor, Color BackgroundColor) =>
-            WriteBorder(text, settings, BorderColor, BackgroundColor, ColorTools.GetGray());
+            WriteBorder(text, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray());
 
         /// <summary>
         /// Writes the border plainly
@@ -206,12 +252,50 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static void WriteBorder(string text, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor)
+        public static void WriteBorder(string text, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor) =>
+            WriteBorder(text, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Border settings to use</param>
+        public static void WriteBorder(string text, BorderSettings settings, TextSettings textSettings) =>
+            WriteBorder(text, settings, textSettings, ConsoleColors.Silver, ColorTools.CurrentBackgroundColor, ColorTools.GetGray());
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        public static void WriteBorder(string text, BorderSettings settings, TextSettings textSettings, Color BorderColor) =>
+            WriteBorder(text, settings, textSettings, BorderColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray());
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        public static void WriteBorder(string text, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor) =>
+            WriteBorder(text, settings, textSettings, BorderColor, BackgroundColor, ColorTools.GetGray());
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        /// <param name="TextColor">Border text color</param>
+        public static void WriteBorder(string text, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor)
         {
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = RenderBorder(text, settings, BorderColor, BackgroundColor, TextColor);
+                string rendered = RenderBorder(text, settings, textSettings, BorderColor, BackgroundColor, TextColor);
                 TextWriterRaw.WriteRaw(rendered);
             }
             catch (Exception ex)
@@ -234,7 +318,15 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="settings">Border settings to use</param>
         public static string RenderBorderPlain(string text, BorderSettings settings) =>
-            RenderBorder("", text, settings, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray(), false);
+            RenderBorderPlain(text, settings, TextSettings.GlobalSettings);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Border settings to use</param>
+        public static string RenderBorderPlain(string text, BorderSettings settings, TextSettings textSettings) =>
+            RenderBorder("", text, settings, textSettings, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray(), false);
 
         /// <summary>
         /// Renders the border plainly
@@ -253,7 +345,17 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <param name="settings">Border settings to use</param>
         public static string RenderBorderPlain(string title, string text, BorderSettings settings, params object[] vars) =>
-            RenderBorder(title, text, settings, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray(), false, vars);
+            RenderBorderPlain(title, text, settings, TextSettings.GlobalSettings, vars);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="settings">Border settings to use</param>
+        public static string RenderBorderPlain(string title, string text, BorderSettings settings, TextSettings textSettings, params object[] vars) =>
+            RenderBorder(title, text, settings, textSettings, ColorTools.CurrentForegroundColor, ColorTools.CurrentBackgroundColor, ColorTools.GetGray(), false, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -289,7 +391,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         public static string RenderBorder(string text, BorderSettings settings, Color BorderColor) =>
-            RenderBorder("", text, settings, BorderColor, ColorTools.CurrentBackgroundColor);
+            RenderBorder("", text, settings, TextSettings.GlobalSettings, BorderColor, ColorTools.CurrentBackgroundColor);
 
         /// <summary>
         /// Renders the border plainly
@@ -299,7 +401,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         public static string RenderBorder(string text, BorderSettings settings, Color BorderColor, Color BackgroundColor) =>
-            RenderBorder("", text, settings, BorderColor, BackgroundColor, ColorTools.GetGray());
+            RenderBorder("", text, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray());
 
         /// <summary>
         /// Renders the border plainly
@@ -310,7 +412,37 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
         public static string RenderBorder(string text, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor) =>
-            RenderBorder("", text, settings, BorderColor, BackgroundColor, TextColor, true);
+            RenderBorder("", text, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor, true);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        public static string RenderBorder(string text, BorderSettings settings, TextSettings textSettings, Color BorderColor) =>
+            RenderBorder("", text, settings, textSettings, BorderColor, ColorTools.CurrentBackgroundColor);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        public static string RenderBorder(string text, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor) =>
+            RenderBorder("", text, settings, textSettings, BorderColor, BackgroundColor, ColorTools.GetGray());
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        /// <param name="TextColor">Border text color</param>
+        public static string RenderBorder(string text, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor) =>
+            RenderBorder("", text, settings, textSettings, BorderColor, BackgroundColor, TextColor, true);
 
         /// <summary>
         /// Writes the border plainly
@@ -362,7 +494,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="vars">Variables to format the message before it's written.</param>
         /// <param name="settings">Border settings to use</param>
         public static void WriteBorder(string title, string text, BorderSettings settings, params object[] vars) =>
-            WriteBorder(title, text, settings, new Color(ConsoleColors.Silver), vars);
+            WriteBorder(title, text, settings, TextSettings.GlobalSettings, new Color(ConsoleColors.Silver), vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -373,7 +505,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         public static void WriteBorder(string title, string text, BorderSettings settings, Color BorderColor, params object[] vars) =>
-            WriteBorder(title, text, settings, BorderColor, ColorTools.CurrentBackgroundColor, vars);
+            WriteBorder(title, text, settings, TextSettings.GlobalSettings, BorderColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -385,7 +517,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         public static void WriteBorder(string title, string text, BorderSettings settings, Color BorderColor, Color BackgroundColor, params object[] vars) =>
-            WriteBorder(title, text, settings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
+            WriteBorder(title, text, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -397,12 +529,58 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static void WriteBorder(string title, string text, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars)
+        public static void WriteBorder(string title, string text, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
+            WriteBorder(title, text, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="settings">Border settings to use</param>
+        public static void WriteBorder(string title, string text, BorderSettings settings, TextSettings textSettings, params object[] vars) =>
+            WriteBorder(title, text, settings, textSettings, new Color(ConsoleColors.Silver), vars);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        public static void WriteBorder(string title, string text, BorderSettings settings, TextSettings textSettings, Color BorderColor, params object[] vars) =>
+            WriteBorder(title, text, settings, textSettings, BorderColor, ColorTools.CurrentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        public static void WriteBorder(string title, string text, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, params object[] vars) =>
+            WriteBorder(title, text, settings, textSettings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        /// <param name="TextColor">Border text color</param>
+        public static void WriteBorder(string title, string text, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars)
         {
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = RenderBorder(title, text, settings, BorderColor, BackgroundColor, TextColor, vars);
+                string rendered = RenderBorder(title, text, settings, textSettings, BorderColor, BackgroundColor, TextColor, vars);
                 TextWriterRaw.WriteRaw(rendered);
             }
             catch (Exception ex)
@@ -472,7 +650,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
         public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings) =>
-            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, ConsoleColors.Silver);
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, ConsoleColors.Silver);
 
         /// <summary>
         /// Writes the border plainly
@@ -485,7 +663,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor) =>
-            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, ColorTools.CurrentBackgroundColor);
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, ColorTools.CurrentBackgroundColor);
 
         /// <summary>
         /// Writes the border plainly
@@ -499,7 +677,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor) =>
-            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, ColorTools.GetGray());
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray());
 
         /// <summary>
         /// Writes the border plainly
@@ -513,12 +691,66 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor)
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, ConsoleColors.Silver);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, ColorTools.CurrentBackgroundColor);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor) =>
+            WriteBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, ColorTools.GetGray());
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        /// <param name="TextColor">Border text color</param>
+        public static void WriteBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor)
         {
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, TextColor);
+                string rendered = RenderBorder(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor);
                 TextWriterRaw.WriteRaw(rendered);
             }
             catch (Exception ex)
@@ -578,7 +810,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor) =>
-            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, ColorTools.CurrentBackgroundColor, true);
+            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, ColorTools.CurrentBackgroundColor, true);
 
         /// <summary>
         /// Renders the border plainly
@@ -592,7 +824,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor) =>
-            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, true);
+            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, true);
 
         /// <summary>
         /// Renders the border plainly
@@ -607,7 +839,49 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
         public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor) =>
-            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, TextColor, true);
+            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor, true);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor) =>
+            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, ColorTools.CurrentBackgroundColor, true);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor) =>
+            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, true);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        /// <param name="TextColor">Border text color</param>
+        public static string RenderBorder(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor) =>
+            RenderBorder("", text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, true);
 
         /// <summary>
         /// Writes the border plainly
@@ -679,7 +953,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
         /// <param name="settings">Border settings to use</param>
         public static void WriteBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, params object[] vars) =>
-            WriteBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, new Color(ConsoleColors.Silver), vars);
+            WriteBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, new Color(ConsoleColors.Silver), vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -694,7 +968,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         public static void WriteBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, params object[] vars) =>
-            WriteBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, ColorTools.CurrentBackgroundColor, vars);
+            WriteBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, ColorTools.CurrentBackgroundColor, vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -710,7 +984,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         public static void WriteBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, params object[] vars) =>
-            WriteBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
+            WriteBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
 
         /// <summary>
         /// Writes the border plainly
@@ -726,12 +1000,74 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static void WriteBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars)
+        public static void WriteBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
+            WriteBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor, vars);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        public static void WriteBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, params object[] vars) =>
+            WriteBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, new Color(ConsoleColors.Silver), vars);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        public static void WriteBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, params object[] vars) =>
+            WriteBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, ColorTools.CurrentBackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        public static void WriteBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, params object[] vars) =>
+            WriteBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
+
+        /// <summary>
+        /// Writes the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        /// <param name="TextColor">Border text color</param>
+        public static void WriteBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars)
         {
             try
             {
                 // StringBuilder to put out the final rendering text
-                string rendered = RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, TextColor, vars);
+                string rendered = RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, vars);
                 TextWriterRaw.WriteRaw(rendered);
             }
             catch (Exception ex)
@@ -797,7 +1133,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
         public static string RenderBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
-            RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, TextColor, true, vars);
+            RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor, true, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -808,7 +1144,35 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         public static string RenderBorder(string title, string text, BorderSettings settings, Color BorderColor, params object[] vars) =>
-            RenderBorder(title, text, settings, BorderColor, ColorTools.CurrentBackgroundColor, true, vars);
+            RenderBorder(title, text, settings, TextSettings.GlobalSettings, BorderColor, ColorTools.CurrentBackgroundColor, true, vars);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        /// <param name="TextColor">Border text color</param>
+        public static string RenderBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
+            RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, true, vars);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        public static string RenderBorder(string title, string text, BorderSettings settings, TextSettings textSettings, Color BorderColor, params object[] vars) =>
+            RenderBorder(title, text, settings, textSettings, BorderColor, ColorTools.CurrentBackgroundColor, true, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -837,7 +1201,22 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Border settings to use</param>
         /// <param name="BorderColor">Border color</param>
         public static string RenderBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, params object[] vars) =>
-            RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, ColorTools.CurrentBackgroundColor, true, vars);
+            RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, TextSettings.GlobalSettings, BorderColor, ColorTools.CurrentBackgroundColor, true, vars);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        public static string RenderBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, params object[] vars) =>
+            RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, ColorTools.CurrentBackgroundColor, true, vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -860,7 +1239,19 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         public static string RenderBorder(string title, string text, BorderSettings settings, Color BorderColor, Color BackgroundColor, params object[] vars) =>
-            RenderBorder(title, text, settings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
+            RenderBorder(title, text, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        public static string RenderBorder(string title, string text, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, params object[] vars) =>
+            RenderBorder(title, text, settings, textSettings, BorderColor, BackgroundColor, ColorTools.GetGray(), vars);
 
         /// <summary>
         /// Renders the border plainly
@@ -884,7 +1275,20 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BorderColor">Border color</param>
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
-        public static string RenderBorder(string title, string text, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars)
+        public static string RenderBorder(string title, string text, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
+            RenderBorder(title, text, settings, TextSettings.GlobalSettings, BorderColor, BackgroundColor, TextColor, vars);
+
+        /// <summary>
+        /// Renders the border plainly
+        /// </summary>
+        /// <param name="title">Title to be written.</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <param name="settings">Border settings to use</param>
+        /// <param name="BorderColor">Border color</param>
+        /// <param name="BackgroundColor">Border background color</param>
+        /// <param name="TextColor">Border text color</param>
+        public static string RenderBorder(string title, string text, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars)
         {
             var splitLines = text.SplitNewLines();
             int maxWidth = splitLines.Max((str) => str.Length);
@@ -896,7 +1300,7 @@ namespace Terminaux.Writer.FancyWriters
             int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
             int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
             return RenderBorder(title, text,
-                borderX, borderY, maxWidth, maxHeight, settings, BorderColor, BackgroundColor, TextColor, true, vars);
+                borderX, borderY, maxWidth, maxHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, true, vars);
         }
 
         /// <summary>
@@ -914,7 +1318,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
         /// <param name="useColor">Whether to use the color or not</param>
-        internal static string RenderBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars)
+        internal static string RenderBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars)
         {
             StringBuilder border = new();
             try
@@ -923,14 +1327,14 @@ namespace Terminaux.Writer.FancyWriters
                 if (useColor)
                 {
                     border.Append(
-                        BoxFrameColor.RenderBoxFrame(title, Left, Top, InteriorWidth, InteriorHeight, settings, BorderColor, BackgroundColor, TextColor, vars) +
+                        BoxFrameColor.RenderBoxFrame(title, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, vars) +
                         BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight, BackgroundColor)
                     );
                 }
                 else
                 {
                     border.Append(
-                        BoxFrameColor.RenderBoxFrame(title, Left, Top, InteriorWidth, InteriorHeight, settings, vars) +
+                        BoxFrameColor.RenderBoxFrame(title, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, vars) +
                         BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight)
                     );
                 }
