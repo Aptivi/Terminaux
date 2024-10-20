@@ -232,7 +232,7 @@ namespace Terminaux.Writer.ConsoleWriters
                 throw new TerminauxInternalException(nameof(settings.state));
             int top = settings.state.inputPromptTop;
             int topBegin = settings.state.inputPromptTopBegin;
-            var wrapped = ConsoleMisc.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.InputPromptLeft - settings.state.LeftMargin);
+            var wrapped = ConsoleMisc.GetWrappedSentences(text, settings.state.LongestSentenceLengthFromLeftForGeneralLine + 1, settings.state.writingPrompt ? settings.state.LeftMargin : settings.state.InputPromptLeft - settings.state.LeftMargin);
             for (int i = 0; i < wrapped.Length; i++)
             {
                 int wrapTop = top + i;
