@@ -27,6 +27,7 @@ using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 using Textify.Data.Figlet.Utilities.Lines;
+using Terminaux.Writer.MiscWriters.Tools;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -217,7 +218,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                 {
                     // The fallback figlet also won't fit, so use smaller text
-                    return CenteredTextColor.RenderCentered(Text, ForegroundColor, BackgroundColor, useColor, 0, 0, Vars);
+                    return AlignedTextColor.RenderAligned(Text, ForegroundColor, BackgroundColor, useColor, TextAlignment.Middle, 0, 0, Vars);
                 }
                 else
                 {
@@ -307,7 +308,7 @@ namespace Terminaux.Writer.FancyWriters
                         figBuilder.Append(
                             $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                             $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                            CenteredTextColor.RenderCentered(top, Text, leftMargin, rightMargin, Vars)
+                            AlignedTextColor.RenderAligned(top, Text, TextAlignment.Middle, leftMargin, rightMargin, Vars)
                         );
                     }
                     else

@@ -20,14 +20,15 @@
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.MiscWriters.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
-    internal class PrintCenteredOff : IFixture
+    internal class PrintAlignRightCjk : IFixture
     {
         public void RunFixture()
         {
-            CenteredTextColor.WriteCenteredColor($"Hello world! This is located in the {ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}center of the console{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))} and is intentionally very long to demonstrate the off-centering with right margin offset and left margin offset.", new Color(ConsoleColors.Green), 15, 30);
+            AlignedTextColor.WriteAlignedColor($"你好，世界！它位于{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}控制台右側{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}。", new Color(ConsoleColors.Green), TextAlignment.Right);
         }
     }
 }

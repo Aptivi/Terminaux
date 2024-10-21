@@ -20,14 +20,15 @@
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.MiscWriters.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
-    internal class PrintCenteredCjk : IFixture
+    internal class PrintAlignMiddleCjk : IFixture
     {
         public void RunFixture()
         {
-            CenteredTextColor.WriteCenteredColor($"你好，世界！它位于{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}控制台的中心{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}。", new Color(ConsoleColors.Green));
+            AlignedTextColor.WriteAlignedColor($"你好，世界！它位于{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}控制台的中心{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}。", new Color(ConsoleColors.Green), TextAlignment.Middle);
         }
     }
 }

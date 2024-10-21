@@ -25,28 +25,31 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.MiscWriters.Tools;
 using Textify.General;
 
 namespace Terminaux.Writer.FancyWriters
 {
     /// <summary>
-    /// Centered writer
+    /// Aligned writer
     /// </summary>
-    public static class CenteredTextColor
+    public static class AlignedTextColor
     {
         /// <summary>
-        /// Draws a centered text
+        /// Draws an aligned text
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static void WriteAligned(int top, string Text, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCentered(top, Text, leftMargin, rightMargin, Vars));
+                TextWriterRaw.WriteRaw(RenderAligned(top, Text, alignment, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -56,32 +59,34 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Draws a centered text
+        /// Draws an aligned text
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredColor(int top, string Text, Color Color, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            WriteCenteredColorBack(top, Text, Color, ColorTools.currentBackgroundColor, leftMargin, rightMargin, Vars);
+        public static void WriteAlignedColor(int top, string Text, Color Color, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            WriteAlignedColorBack(top, Text, Color, ColorTools.currentBackgroundColor, alignment, leftMargin, rightMargin, Vars);
 
         /// <summary>
-        /// Draws a centered text
+        /// Draws an aligned text
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredColorBack(int top, string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static void WriteAlignedColorBack(int top, string Text, Color ForegroundColor, Color BackgroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCentered(top, Text, ForegroundColor, BackgroundColor, leftMargin, rightMargin, Vars));
+                TextWriterRaw.WriteRaw(RenderAligned(top, Text, ForegroundColor, BackgroundColor, alignment, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -91,18 +96,19 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Draws a centered text (just the first line)
+        /// Draws an aligned text (just the first line)
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static void WriteAlignedOneLine(int top, string Text, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCenteredOneLine(top, Text, leftMargin, rightMargin, Vars));
+                TextWriterRaw.WriteRaw(RenderAlignedOneLine(top, Text, alignment, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -112,32 +118,34 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Draws a centered text (just the first line)
+        /// Draws an aligned text (just the first line)
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLineColor(int top, string Text, Color Color, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            WriteCenteredOneLineColorBack(top, Text, Color, ColorTools.currentBackgroundColor, leftMargin, rightMargin, Vars);
+        public static void WriteAlignedOneLineColor(int top, string Text, Color Color, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            WriteAlignedOneLineColorBack(top, Text, Color, ColorTools.currentBackgroundColor, alignment, leftMargin, rightMargin, Vars);
 
         /// <summary>
-        /// Draws a centered text (just the first line)
+        /// Draws an aligned text (just the first line)
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLineColorBack(int top, string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static void WriteAlignedOneLineColorBack(int top, string Text, Color ForegroundColor, Color BackgroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCenteredOneLine(top, Text, ForegroundColor, BackgroundColor, leftMargin, rightMargin, Vars));
+                TextWriterRaw.WriteRaw(RenderAlignedOneLine(top, Text, ForegroundColor, BackgroundColor, alignment, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -147,17 +155,18 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Draws a centered text
+        /// Draws an aligned text
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static void WriteAligned(string Text, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCentered(Text, leftMargin, rightMargin, Vars));
+                TextWriterRaw.WriteRaw(RenderAligned(Text, alignment, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -167,30 +176,32 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Draws a centered text
+        /// Draws an aligned text
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredColor(string Text, Color Color, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            WriteCenteredColorBack(Text, Color, ColorTools.currentBackgroundColor, leftMargin, rightMargin, Vars);
+        public static void WriteAlignedColor(string Text, Color Color, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            WriteAlignedColorBack(Text, Color, ColorTools.currentBackgroundColor, alignment, leftMargin, rightMargin, Vars);
 
         /// <summary>
-        /// Draws a centered text
+        /// Draws an aligned text
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredColorBack(string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static void WriteAlignedColorBack(string Text, Color ForegroundColor, Color BackgroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCentered(Text, ForegroundColor, BackgroundColor, leftMargin, rightMargin, Vars));
+                TextWriterRaw.WriteRaw(RenderAligned(Text, ForegroundColor, BackgroundColor, alignment, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -200,17 +211,18 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Draws a centered text (just the first line)
+        /// Draws an aligned text (just the first line)
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static void WriteAlignedOneLine(string Text, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCenteredOneLine(Text, leftMargin, rightMargin, Vars));
+                TextWriterRaw.WriteRaw(RenderAlignedOneLine(Text, alignment, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -220,30 +232,32 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Draws a centered text (just the first line)
+        /// Draws an aligned text (just the first line)
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLineColor(string Text, Color Color, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            WriteCenteredOneLineColorBack(Text, Color, ColorTools.currentBackgroundColor, leftMargin, rightMargin, Vars);
+        public static void WriteAlignedOneLineColor(string Text, Color Color, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            WriteAlignedOneLineColorBack(Text, Color, ColorTools.currentBackgroundColor, alignment, leftMargin, rightMargin, Vars);
 
         /// <summary>
-        /// Draws a centered text (just the first line)
+        /// Draws an aligned text (just the first line)
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLineColorBack(string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static void WriteAlignedOneLineColorBack(string Text, Color ForegroundColor, Color BackgroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                TextWriterRaw.WriteRaw(RenderCenteredOneLine(Text, ForegroundColor, BackgroundColor, leftMargin, rightMargin, Vars));
+                TextWriterRaw.WriteRaw(RenderAlignedOneLine(Text, ForegroundColor, BackgroundColor, alignment, leftMargin, rightMargin, Vars));
             }
             catch (Exception ex)
             {
@@ -253,56 +267,60 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Renders a centered text
+        /// Renders an aligned text
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCentered(string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderCentered(Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, leftMargin, rightMargin, Vars);
+        public static string RenderAligned(string Text, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderAligned(Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, alignment, leftMargin, rightMargin, Vars);
 
         /// <summary>
-        /// Renders a centered text
+        /// Renders an aligned text
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCentered(string Text, Color ForegroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderCentered(Text, ForegroundColor, ColorTools.currentBackgroundColor, true, leftMargin, rightMargin, Vars);
+        public static string RenderAligned(string Text, Color ForegroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderAligned(Text, ForegroundColor, ColorTools.currentBackgroundColor, true, alignment, leftMargin, rightMargin, Vars);
 
         /// <summary>
-        /// Renders a centered text
+        /// Renders an aligned text
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCentered(string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderCentered(Text, ForegroundColor, BackgroundColor, true, leftMargin, rightMargin, Vars);
+        public static string RenderAligned(string Text, Color ForegroundColor, Color BackgroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderAligned(Text, ForegroundColor, BackgroundColor, true, alignment, leftMargin, rightMargin, Vars);
 
         /// <summary>
-        /// Renders a centered text
+        /// Renders an aligned text
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the color or not</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        internal static string RenderCentered(string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        internal static string RenderAligned(string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
                 Text = TextTools.FormatString(Text, leftMargin, rightMargin, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-                return RenderCentered(top, Text, ForegroundColor, BackgroundColor, useColor, leftMargin, rightMargin, Vars);
+                return RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
             }
             catch (Exception ex)
             {
@@ -313,81 +331,83 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Renders a centered text
+        /// Renders an aligned text
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCentered(int top, string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderCentered(top, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, leftMargin, rightMargin, Vars);
+        public static string RenderAligned(int top, string Text, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderAligned(top, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, alignment, leftMargin, rightMargin, Vars);
 
         /// <summary>
-        /// Renders a centered text
+        /// Renders an aligned text
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCentered(int top, string Text, Color ForegroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderCentered(top, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, leftMargin, rightMargin, Vars);
+        public static string RenderAligned(int top, string Text, Color ForegroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderAligned(top, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, alignment, leftMargin, rightMargin, Vars);
 
         /// <summary>
-        /// Renders a centered text
+        /// Renders an aligned text
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderCentered(top, Text, ForegroundColor, BackgroundColor, true, leftMargin, rightMargin, Vars);
+        public static string RenderAligned(int top, string Text, Color ForegroundColor, Color BackgroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
+            RenderAligned(top, Text, ForegroundColor, BackgroundColor, true, alignment, leftMargin, rightMargin, Vars);
 
         /// <summary>
-        /// Renders a centered text
+        /// Renders an aligned text
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="useColor">Whether to use the color or not</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        internal static string RenderCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        internal static string RenderAligned(int top, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                var centered = new StringBuilder();
+                var aligned = new StringBuilder();
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
-                    int consoleInfoX = (ConsoleWrapper.WindowWidth - rightMargin - leftMargin) / 2 - ConsoleChar.EstimateCellWidth(sentence) / 2;
-                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    consoleInfoX += leftMargin;
-                    centered.Append(
+                    int consoleInfoX = TextWriterTools.DetermineTextAlignment(sentence, alignment, leftMargin, rightMargin);
+                    aligned.Append(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        TextWriterWhereColor.RenderWhere(sentence, consoleInfoX, top + i, true, rightMargin, Vars)
+                        TextWriterWhereColor.RenderWhere(sentence, consoleInfoX, top + i, true, alignment == TextAlignment.Left ? rightMargin : 0, Vars)
                     );
                 }
 
                 // Write the resulting buffer
                 if (useColor)
                 {
-                    centered.Append(
+                    aligned.Append(
                         ColorTools.RenderRevertForeground() +
                         ColorTools.RenderRevertBackground()
                     );
                 }
-                return centered.ToString();
+                return aligned.ToString();
             }
             catch (Exception ex)
             {
@@ -398,21 +418,22 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Renders a centered text (just the first line)
+        /// Renders an aligned text (just the first line)
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredOneLine(string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static string RenderAlignedOneLine(string Text, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
-                var centered = new StringBuilder();
+                var aligned = new StringBuilder();
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), leftMargin, rightMargin);
+                return RenderAligned(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), alignment, leftMargin, rightMargin);
             }
             catch (Exception ex)
             {
@@ -423,21 +444,22 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Renders a centered text (just the first line)
+        /// Renders an aligned text (just the first line)
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredOneLine(string Text, Color ForegroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static string RenderAlignedOneLine(string Text, Color ForegroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, ColorTools.currentBackgroundColor, leftMargin, rightMargin);
+                return RenderAligned(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, ColorTools.currentBackgroundColor, alignment, leftMargin, rightMargin);
             }
             catch (Exception ex)
             {
@@ -448,22 +470,23 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Renders a centered text (just the first line)
+        /// Renders an aligned text (just the first line)
         /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredOneLine(string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static string RenderAlignedOneLine(string Text, Color ForegroundColor, Color BackgroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, leftMargin, rightMargin);
+                return RenderAligned(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, alignment, leftMargin, rightMargin);
             }
             catch (Exception ex)
             {
@@ -474,20 +497,21 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Renders a centered text (just the first line)
+        /// Renders an aligned text (just the first line)
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredOneLine(int top, string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static string RenderAlignedOneLine(int top, string Text, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
-                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), leftMargin, rightMargin);
+                return RenderAligned(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), alignment, leftMargin, rightMargin);
             }
             catch (Exception ex)
             {
@@ -498,21 +522,22 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Renders a centered text (just the first line)
+        /// Renders an aligned text (just the first line)
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredOneLine(int top, string Text, Color ForegroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static string RenderAlignedOneLine(int top, string Text, Color ForegroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
-                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, ColorTools.currentBackgroundColor, leftMargin, rightMargin);
+                return RenderAligned(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, ColorTools.currentBackgroundColor, alignment, leftMargin, rightMargin);
             }
             catch (Exception ex)
             {
@@ -523,22 +548,23 @@ namespace Terminaux.Writer.FancyWriters
         }
 
         /// <summary>
-        /// Renders a centered text (just the first line)
+        /// Renders an aligned text (just the first line)
         /// </summary>
-        /// <param name="top">Top position to write centered text to</param>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="top">Top position to write aligned text to</param>
+        /// <param name="Text">Text to be written.</param>
+        /// <param name="alignment">Text alignment</param>
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static string RenderCenteredOneLine(int top, string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        public static string RenderAlignedOneLine(int top, string Text, Color ForegroundColor, Color BackgroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
         {
             try
             {
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
-                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, leftMargin, rightMargin);
+                return RenderAligned(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, alignment, leftMargin, rightMargin);
             }
             catch (Exception ex)
             {
@@ -548,7 +574,7 @@ namespace Terminaux.Writer.FancyWriters
             return "";
         }
 
-        static CenteredTextColor()
+        static AlignedTextColor()
         {
             if (!ConsoleChecker.busy)
                 ConsoleChecker.CheckConsole();

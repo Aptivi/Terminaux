@@ -110,7 +110,7 @@ namespace Terminaux.Inputs.Styles
                     buffer.Append(CenteredFigletTextColor.RenderCenteredFiglet(figletFont, text));
 
                     // Write the selected font name and the keybindings
-                    buffer.Append(CenteredTextColor.RenderCentered(1, $"{fontName} - [{selectedFont + 1}/{fonts.Length}]"));
+                    buffer.Append(AlignedTextColor.RenderAligned(1, $"{fontName} - [{selectedFont + 1}/{fonts.Length}]", TextAlignment.Middle));
                     buffer.Append(KeybindingsWriter.RenderKeybindings(bindings, 0, ConsoleWrapper.WindowHeight - 1));
                     return buffer.ToString();
                 });
@@ -245,7 +245,7 @@ namespace Terminaux.Inputs.Styles
                     buffer.Append(CenteredFigletTextColor.RenderCenteredFiglet(figletFont, character));
 
                     // Write the selected character name and the keybindings
-                    buffer.Append(CenteredTextColor.RenderCentered(1, $"{character} - [{index + 1}/{chars.Length}]"));
+                    buffer.Append(AlignedTextColor.RenderAligned(1, $"{character} - [{index + 1}/{chars.Length}]", TextAlignment.Middle));
                     buffer.Append(KeybindingsWriter.RenderKeybindings(charSelectBindings, 0, ConsoleWrapper.WindowHeight - 1));
                     return buffer.ToString();
                 });

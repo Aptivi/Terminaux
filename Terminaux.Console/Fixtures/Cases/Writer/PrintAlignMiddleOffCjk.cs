@@ -20,14 +20,15 @@
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.MiscWriters.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
-    internal class PrintCentered : IFixture
+    internal class PrintAlignMiddleOffCjk : IFixture
     {
         public void RunFixture()
         {
-            CenteredTextColor.WriteCenteredColor($"Hello world! This is located in the {ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}center of the console{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}.", new Color(ConsoleColors.Green));
+            AlignedTextColor.WriteAlignedColor($"你好，世界！它位于{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}控制台的中心{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}，并且故意设计得很长，以演示右边距偏移和左边距偏移的偏心效果。", new Color(ConsoleColors.Green), TextAlignment.Middle, 15, 30);
         }
     }
 }
