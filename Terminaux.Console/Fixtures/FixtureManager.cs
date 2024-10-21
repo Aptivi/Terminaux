@@ -263,6 +263,7 @@ namespace Terminaux.Console.Fixtures
             new ProgressPauseTest(),
             new ProgressFourTest(),
             new ProgressDecrementTest(),
+            new TestCursorCoord(),
 
             // Image
             new RenderImage(),

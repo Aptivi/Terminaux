@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base.Structures;
 using Terminaux.Reader;
 
 namespace Terminaux.Base
@@ -51,6 +52,12 @@ namespace Terminaux.Base
             get => ConsoleWrapperTools.ActionCursorTop();
             set => ConsoleWrapperTools.ActionSetCursorTop(value);
         }
+
+        /// <summary>
+        /// The cursor top position
+        /// </summary>
+        public static Coordinate GetCursorPosition() =>
+            ConsoleWrapperTools.ActionGetCursorPosition();
 
         /// <summary>
         /// The console window width (columns)

@@ -22,6 +22,7 @@ using System;
 using System.Threading;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
@@ -38,6 +39,7 @@ namespace Terminaux.Base
         internal static Func<bool> actionIsDumb = () => IsDumb;
         internal static Func<int> actionCursorLeft = () => CursorLeft;
         internal static Func<int> actionCursorTop = () => CursorTop;
+        internal static Func<Coordinate> actionGetCursorPosition = () => GetCursorPosition;
         internal static Func<int> actionWindowWidth = () => WindowWidth;
         internal static Func<int> actionWindowHeight = () => WindowHeight;
         internal static Func<int> actionBufferWidth = () => BufferWidth;
@@ -98,6 +100,14 @@ namespace Terminaux.Base
         {
             internal get => actionCursorTop;
             set => actionCursorTop = value ?? (() => CursorTop);
+        }
+        /// <summary>
+        /// Get cursor position
+        /// </summary>
+        public static Func<Coordinate> ActionGetCursorPosition
+        {
+            internal get => actionGetCursorPosition;
+            set => actionGetCursorPosition = value ?? (() => GetCursorPosition);
         }
         /// <summary>
         /// The console window width (columns)
@@ -444,6 +454,9 @@ namespace Terminaux.Base
                     Console.CursorTop = value;
             }
         }
+
+        private static Coordinate GetCursorPosition =>
+            new(CursorLeft, CursorTop);
 
         private static int WindowWidth
         {

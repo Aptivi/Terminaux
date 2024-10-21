@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Diagnostics;
 
 namespace Terminaux.Base.Structures
@@ -25,10 +26,10 @@ namespace Terminaux.Base.Structures
     /// Coordinate struct
     /// </summary>
     [DebuggerDisplay("({X}, {Y})")]
-    public struct Coordinate
+    public struct Coordinate : IEquatable<Coordinate>
     {
-        private int x;
-        private int y;
+        private readonly int x;
+        private readonly int y;
 
         /// <summary>
         /// Gets the X position
@@ -41,6 +42,35 @@ namespace Terminaux.Base.Structures
         /// </summary>
         public readonly int Y =>
             y;
+
+        /// <inheritdoc/>
+        public override bool Equals(object? obj) =>
+            obj is Coordinate coordinate && Equals(coordinate);
+
+        /// <inheritdoc/>
+        public bool Equals(Coordinate other)
+        {
+            return
+                X == other.X &&
+                Y == other.Y;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            int hashCode = 1861411795;
+            hashCode = hashCode * -1521134295 + X.GetHashCode();
+            hashCode = hashCode * -1521134295 + Y.GetHashCode();
+            return hashCode;
+        }
+
+        /// <inheritdoc/>
+        public static bool operator ==(Coordinate left, Coordinate right) =>
+            left.Equals(right);
+
+        /// <inheritdoc/>
+        public static bool operator !=(Coordinate left, Coordinate right) =>
+            !(left == right);
 
         /// <summary>
         /// Makes a new coordinate instance
