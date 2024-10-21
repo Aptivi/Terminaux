@@ -2285,6 +2285,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.AlignedTextColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.AlignedTextColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.FancyWriters.BorderColor.yml",
       "output": {
         ".html": {
@@ -2329,16 +2339,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.FancyWriters.CenteredFigletTextColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.CenteredTextColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.CenteredTextColor.html"
         }
       },
       "version": ""
