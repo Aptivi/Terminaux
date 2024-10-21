@@ -387,11 +387,12 @@ namespace Terminaux.Writer.FancyWriters
             {
                 var aligned = new StringBuilder();
                 Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
+                int width = ConsoleWrapper.WindowWidth - rightMargin - leftMargin;
+                string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, width);
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
-                    int consoleInfoX = TextWriterTools.DetermineTextAlignment(sentence, alignment, leftMargin, rightMargin);
+                    int consoleInfoX = TextWriterTools.DetermineTextAlignment(sentence, width, alignment, leftMargin);
                     aligned.Append(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +

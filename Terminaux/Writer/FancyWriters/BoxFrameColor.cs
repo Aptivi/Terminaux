@@ -892,7 +892,7 @@ namespace Terminaux.Writer.FancyWriters
                 }
 
                 // Text title
-                if (!string.IsNullOrEmpty(text) && InteriorWidth - 8 > 0)
+                if (!string.IsNullOrEmpty(text) && InteriorWidth - 8 > 0 && ConsoleChar.EstimateCellWidth(text) <= InteriorWidth - 8)
                 {
                     string finalText = $"{settings.BorderRightHorizontalIntersectionChar} {TextTools.FormatString(text, vars).Truncate(InteriorWidth - 8)} {settings.BorderLeftHorizontalIntersectionChar}";
                     int leftPos = TextWriterTools.DetermineTextAlignment(finalText, InteriorWidth - 8, textSettings.TitleAlignment, Left + 2);
