@@ -895,7 +895,7 @@ namespace Terminaux.Writer.FancyWriters
                 if (!string.IsNullOrEmpty(text) && InteriorWidth - 8 > 0)
                 {
                     string finalText = $"{settings.BorderRightHorizontalIntersectionChar} {TextTools.FormatString(text, vars).Truncate(InteriorWidth - 8)} {settings.BorderLeftHorizontalIntersectionChar}";
-                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, InteriorWidth - 8, textSettings.Alignment, Left + 2);
+                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, InteriorWidth - 8, textSettings.TitleAlignment, Left + 2);
                     frameBuilder.Append(
                         $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, Top + 1)}" +
                         $"{finalText}"

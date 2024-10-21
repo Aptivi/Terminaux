@@ -38,5 +38,10 @@ namespace Terminaux.Writer.FancyWriters.Tools
         /// Specifies a text alignment
         /// </summary>
         public TextAlignment Alignment { get; set; } = TextAlignment.Left;
+
+        /// <summary>
+        /// Specifies a title text alignment (for some writers)
+        /// </summary>
+        public TextAlignment TitleAlignment { get; set; } = TextAlignment.Left;
     }
 }
