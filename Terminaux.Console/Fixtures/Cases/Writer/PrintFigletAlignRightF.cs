@@ -21,17 +21,18 @@ using Textify.Data.Figlet;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.MiscWriters.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
-    internal class PrintFigletCentered : IFixture
+    internal class PrintFigletAlignRightF : IFixture
     {
         public void RunFixture()
         {
             var font = FigletFonts.TryGetByName("banner3");
             if (font is null)
                 return;
-            CenteredFigletTextColor.WriteCenteredFigletColor(font, "Hello world!", new Color(ConsoleColors.Green));
+            AlignedFigletTextColor.WriteAlignedColor(font, "Hello, {0}!", new Color(ConsoleColors.Green), TextAlignment.Right, Vars: "Terminaux");
         }
     }
 }

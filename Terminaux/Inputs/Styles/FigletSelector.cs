@@ -107,7 +107,7 @@ namespace Terminaux.Inputs.Styles
 
                     // Write the text using the selected figlet font
                     var figletFont = FigletTools.GetFigletFont(fontName);
-                    buffer.Append(CenteredFigletTextColor.RenderCenteredFiglet(figletFont, text));
+                    buffer.Append(AlignedFigletTextColor.RenderAligned(figletFont, text, TextAlignment.Middle));
 
                     // Write the selected font name and the keybindings
                     buffer.Append(AlignedTextColor.RenderAligned(1, $"{fontName} - [{selectedFont + 1}/{fonts.Length}]", TextAlignment.Middle));
@@ -242,7 +242,7 @@ namespace Terminaux.Inputs.Styles
                     // Write the text using the selected figlet font
                     string character = ((char)chars[index]).ToString();
                     var figletFont = FigletTools.GetFigletFont(fontName);
-                    buffer.Append(CenteredFigletTextColor.RenderCenteredFiglet(figletFont, character));
+                    buffer.Append(AlignedFigletTextColor.RenderAligned(figletFont, character, TextAlignment.Middle));
 
                     // Write the selected character name and the keybindings
                     buffer.Append(AlignedTextColor.RenderAligned(1, $"{character} - [{index + 1}/{chars.Length}]", TextAlignment.Middle));
