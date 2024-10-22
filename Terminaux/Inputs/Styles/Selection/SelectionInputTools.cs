@@ -292,7 +292,7 @@ namespace Terminaux.Inputs.Styles.Selection
 
                 foreach (var group in category.Groups)
                 {
-                    if (selections.Length > 1)
+                    if (category.Groups.Length > 1)
                     {
                         choiceText.AppendLine(
                             ColorTools.RenderSetConsoleColor(ConsoleColorData.Grey.Color) +
