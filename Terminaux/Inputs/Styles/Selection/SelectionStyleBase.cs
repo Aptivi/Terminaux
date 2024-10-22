@@ -41,7 +41,7 @@ namespace Terminaux.Inputs.Styles.Selection
 {
     internal static class SelectionStyleBase
     {
-        internal static int[] PromptSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple)
+        internal static int[] PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk, bool multiple)
         {
             settings ??= SelectionStyleSettings.GlobalSettings;
 
@@ -56,11 +56,12 @@ namespace Terminaux.Inputs.Styles.Selection
             Color textColor = settings.TextColor;
             Color disabledOptionColor = settings.DisabledOptionColor;
             int HighlightedAnswer = 1;
-            List<InputChoiceInfo> AllAnswers = new(Answers);
+            InputChoiceCategoryInfo[] categories = [.. Answers, .. AltAnswers];
+            List<InputChoiceInfo> AllAnswers = SelectionInputTools.GetChoicesFromCategories(categories);
             List<int> SelectedAnswers = [];
-            AllAnswers.AddRange(AltAnswers);
             bool allDisabled = AllAnswers.All((ici) => ici.ChoiceDisabled);
-            int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
+            bool showCategories = categories.Length > 0;
+            int AnswerTitleLeft = AllAnswers.Max(x => $"{(showCategories ? $"      {x.ChoiceName}) " : $"  {x.ChoiceName}) ")}".Length);
 
             // We need to not to run the selection style when everything is disabled
             if (allDisabled)
@@ -165,7 +166,7 @@ namespace Terminaux.Inputs.Styles.Selection
                         // Populate the answers
                         selectionBuilder.Append(
                             BorderColor.RenderBorder(2, listStartPosition + 1, ConsoleWrapper.WindowWidth - 6, answersPerPage, optionColor) +
-                            SelectionInputTools.RenderSelections([.. AllAnswers], 3, listStartPosition + 2, HighlightedAnswer - 1, multiple ? [.. SelectedAnswers] : null, answersPerPage, ConsoleWrapper.WindowWidth - 6, false, Answers.Length - 1, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
+                            SelectionInputTools.RenderSelections(categories, 3, listStartPosition + 2, HighlightedAnswer - 1, multiple ? [.. SelectedAnswers] : null, answersPerPage, ConsoleWrapper.WindowWidth - 6, false, SelectionInputTools.GetChoicesFromCategories(Answers).Count, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
                         );
 
                         // Write description hint

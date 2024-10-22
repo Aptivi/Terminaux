@@ -28,23 +28,23 @@ namespace Terminaux.Inputs.Styles.Selection
         /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="Answers">Set of answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         public static int PromptSelection(string Question, (string, string)[] Answers, bool kiosk = false) =>
             PromptSelection(Question, Answers, [], kiosk);
 
         /// <summary>
-        /// Prompts user for Selection
+        /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AlternateAnswers">Set of alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         public static int PromptSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, bool kiosk = false) =>
             PromptSelection(Question, InputChoiceTools.GetInputChoices(Answers), InputChoiceTools.GetInputChoices(AlternateAnswers), kiosk);
 
         /// <summary>
-        /// Prompts user for Selection
+        /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers.</param>
@@ -53,7 +53,7 @@ namespace Terminaux.Inputs.Styles.Selection
             PromptSelection(Question, Answers, [], SelectionStyleSettings.GlobalSettings, kiosk);
 
         /// <summary>
-        /// Prompts user for Selection
+        /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers.</param>
@@ -66,25 +66,44 @@ namespace Terminaux.Inputs.Styles.Selection
         /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
+        /// <param name="Answers">Set of answer categories.</param>
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, bool kiosk = false) =>
+            PromptSelection(Question, Answers, [], SelectionStyleSettings.GlobalSettings, kiosk);
+
+        /// <summary>
+        /// Prompts user for selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answer categories.</param>
+        /// <param name="AltAnswers">Set of alternate answer categories.</param>
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, bool kiosk = false) =>
+            PromptSelection(Question, Answers, AltAnswers, SelectionStyleSettings.GlobalSettings, kiosk);
+
+        /// <summary>
+        /// Prompts user for selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         public static int PromptSelection(string Question, (string, string)[] Answers, SelectionStyleSettings settings, bool kiosk = false) =>
             PromptSelection(Question, Answers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
 
         /// <summary>
-        /// Prompts user for Selection
+        /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
-        /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
-        /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AlternateAnswers">Set of alternate answers.</param>
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
         public static int PromptSelection(string Question, (string, string)[] Answers, (string, string)[] AlternateAnswers, SelectionStyleSettings settings, bool kiosk = false) =>
             PromptSelection(Question, InputChoiceTools.GetInputChoices(Answers), InputChoiceTools.GetInputChoices(AlternateAnswers), settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
 
         /// <summary>
-        /// Prompts user for Selection
+        /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers.</param>
@@ -94,14 +113,51 @@ namespace Terminaux.Inputs.Styles.Selection
             PromptSelection(Question, Answers, [], settings ?? SelectionStyleSettings.GlobalSettings, kiosk);
 
         /// <summary>
-        /// Prompts user for Selection
+        /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers.</param>
         /// <param name="AltAnswers">Set of alternate answers.</param>
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false) =>
+        public static int PromptSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false)
+        {
+            InputChoiceCategoryInfo[] answersCategory =
+            [
+                new InputChoiceCategoryInfo("General choices",
+                [
+                    new InputChoiceGroupInfo("Available choices", Answers)
+                ])
+            ];
+            InputChoiceCategoryInfo[] altAnswersCategory = AltAnswers.Length == 0 ? [] :
+            [
+                new InputChoiceCategoryInfo("Alternative choices",
+                [
+                    new InputChoiceGroupInfo("Available choices", AltAnswers)
+                ])
+            ];
+            return PromptSelection(Question, answersCategory, altAnswersCategory, settings, kiosk);
+        }
+
+        /// <summary>
+        /// Prompts user for selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answer categories.</param>
+        /// <param name="settings">Selection settings</param>
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false) =>
+            SelectionStyleBase.PromptSelection(Question, Answers, [], settings, kiosk, false)[0] + 1;
+
+        /// <summary>
+        /// Prompts user for selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answer categories.</param>
+        /// <param name="AltAnswers">Set of alternate answer categories.</param>
+        /// <param name="settings">Selection settings</param>
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false) =>
             SelectionStyleBase.PromptSelection(Question, Answers, AltAnswers, settings, kiosk, false)[0] + 1;
     }
 }
