@@ -461,5 +461,23 @@ namespace Terminaux.Inputs.Styles.Selection
                 choicePages.Add(page, choiceCount);
             return choicePages;
         }
+
+        internal static (InputChoiceCategoryInfo, InputChoiceGroupInfo) GetCategoryGroupFrom(int choiceNum, InputChoiceCategoryInfo[] categories)
+        {
+            int choiceCount = 0;
+            foreach (var category in categories)
+            {
+                foreach (var group in category.Groups)
+                {
+                    for (int i = 0; i < group.Choices.Length; i++)
+                    {
+                        choiceCount++;
+                        if (choiceCount == choiceNum)
+                            return (category, group);
+                    }
+                }
+            }
+            throw new TerminauxInternalException($"Can't get category and group in choice number {choiceNum}.");
+        }
     }
 }
