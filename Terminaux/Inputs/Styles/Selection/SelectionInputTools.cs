@@ -428,5 +428,38 @@ namespace Terminaux.Inputs.Styles.Selection
                     choices.AddRange(group.Choices);
             return choices;
         }
+
+        internal static Dictionary<int, int> GetChoicePages(InputChoiceCategoryInfo[] categories, int height)
+        {
+            int page = 0;
+            int choiceCount = 0;
+            int offset = 0;
+            Dictionary<int, int> choicePages = [];
+            foreach (var category in categories)
+            {
+                if (categories.Length > 1)
+                    offset++;
+
+                foreach (var group in category.Groups)
+                {
+                    if (category.Groups.Length > 1)
+                        offset++;
+                    for (int i = 0; i < group.Choices.Length; i++)
+                    {
+                        choiceCount++;
+                        if (choiceCount == height - offset)
+                        {
+                            choicePages.Add(page, choiceCount);
+                            page++;
+                            choiceCount = 0;
+                            offset = 0;
+                        }
+                    }
+                }
+            }
+            if (choiceCount > 0)
+                choicePages.Add(page, choiceCount);
+            return choicePages;
+        }
     }
 }

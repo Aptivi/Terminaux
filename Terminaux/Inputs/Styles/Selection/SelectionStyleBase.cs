@@ -339,11 +339,28 @@ namespace Terminaux.Inputs.Styles.Selection
                                 break;
                             case ConsoleKey.PageUp:
                                 goingUp = true;
-                                HighlightedAnswer = startIndex > 0 ? startIndex : 1;
+                                {
+                                    int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
+                                    int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                                    int answersPerPage = listEndPosition - 5;
+                                    var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
+                                    int currentPage = HighlightedAnswer / answersPerPage;
+                                    HighlightedAnswer -= choiceNums[currentPage];
+                                    if (HighlightedAnswer < 1)
+                                        HighlightedAnswer = 1;
+                                }
                                 break;
                             case ConsoleKey.PageDown:
-                                HighlightedAnswer = endIndex > AllAnswers.Count - 1 ? AllAnswers.Count : endIndex + 2;
-                                HighlightedAnswer = endIndex == AllAnswers.Count - 1 ? endIndex + 1 : HighlightedAnswer;
+                                {
+                                    int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
+                                    int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                                    int answersPerPage = listEndPosition - 5;
+                                    var choiceNums = SelectionInputTools.GetChoicePages(categories, answersPerPage);
+                                    int currentPage = HighlightedAnswer / answersPerPage;
+                                    HighlightedAnswer += choiceNums[currentPage];
+                                    if (HighlightedAnswer > AllAnswers.Count)
+                                        HighlightedAnswer = AllAnswers.Count;
+                                }
                                 break;
                             case ConsoleKey.Spacebar:
                                 if (multiple)
