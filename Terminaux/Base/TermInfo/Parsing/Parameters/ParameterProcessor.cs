@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -34,9 +35,11 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
             var parameters = valueDesc.Parameters ??
                 throw new TerminauxInternalException("Can't process null parameters.");
 
-            // Evaluate the extracted parameters and replace them
-            var finalValue = new StringBuilder(valueDesc.Value);
+            // Evaluate the extracted parameters and add them to the replacement list
             Queue<string> popArgs = [];
+            List<(int idx, string token, string val)> replacements = [];
+            Dictionary<char, string> variables = [];
+            bool addFirstTwo = false;
             for (int paramIdx = 0; paramIdx < parameters.Length; paramIdx++)
             {
                 // Get necessary variables
@@ -49,58 +52,188 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                 switch (paramType)
                 {
                     case ParameterType.Literal:
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
-                        finalValue.Insert(paramStrIdx, "%");
+                        replacements.Add((paramStrIdx, paramToken, "%"));
                         break;
                     case ParameterType.Formatting:
+                        {
+                            // Handle cases where optional parameters, such as flags, are specified
+                            StringBuilder flagBuilder = new();
+                            StringBuilder widthBuilder = new();
+                            char formatMode = default;
+                            for (int i = 1; i < paramToken.Length; i++)
+                            {
+                                char c = paramToken[i];
+                                switch (c)
+                                {
+                                    // Flags
+                                    case ':':
+                                        if (paramToken[i + 1] != '-')
+                                            throw new TerminauxInternalException("This flag needs to represent a minus sign");
+                                        flagBuilder.Append("-");
+                                        break;
+                                    case '+':
+                                    case '#':
+                                    case ' ':
+                                        flagBuilder.Append($"{c}");
+                                        break;
+
+                                    // Numeric digits
+                                    case '0':
+                                    case '1':
+                                    case '2':
+                                    case '3':
+                                    case '4':
+                                    case '5':
+                                    case '6':
+                                    case '7':
+                                    case '8':
+                                    case '9':
+                                    case '.':
+                                        widthBuilder.Append($"{c}");
+                                        break;
+
+                                    // Printing mode
+                                    case 'd':
+                                    case 'o':
+                                    case 'x':
+                                    case 'X':
+                                    case 's':
+                                        formatMode = c;
+                                        if (i != paramToken.Length - 1)
+                                            throw new TerminauxInternalException($"There is still further data after index {i} out of {paramToken.Length - 1} for formatting");
+                                        break;
+                                }
+                            }
+
+                            // Build necessary variables
+                            string flags = flagBuilder.ToString();
+                            double width =
+                                widthBuilder.Length > 0 ?
+                                double.Parse(widthBuilder.ToString()) :
+                                1;
+
+                            // Now, format the string as appropriate
+                            string formatted = "";
+                            string poppedString = popArgs.Dequeue();
+                            double poppedDouble = double.Parse(poppedString);
+                            string poppedDoubleString = poppedDouble.ToString();
+                            int precLen = poppedDoubleString.Contains(".") ? int.Parse(poppedDoubleString.Substring(poppedDoubleString.IndexOf('.') + 1)) : 0;
+                            int widthLen = (int)Math.Truncate(width);
+                            bool usePadding = !flags.Contains("#");
+                            switch (formatMode)
+                            {
+                                case 'd':
+                                    {
+                                        formatted =
+                                            width > 1 ?
+                                            poppedDouble.ToString(new string(usePadding ? '0' : '#', widthLen) + (precLen > 0 ? $".{new string(usePadding ? '0' : '#', precLen)}" : "")) :
+                                            poppedDoubleString;
+                                        if (width == 0 && poppedDouble == 0)
+                                            formatted = "";
+                                    }
+                                    break;
+                                case 'o':
+                                    {
+                                        poppedDouble = Convert.ToDouble(Convert.ToString((int)poppedDouble, 8));
+                                        formatted =
+                                            width > 1 ?
+                                            poppedDouble.ToString(new string(usePadding ? '0' : '#', widthLen) + (precLen > 0 ? $".{new string(usePadding ? '0' : '#', precLen)}" : "")) :
+                                            poppedDoubleString;
+                                        if (width == 0 && poppedDouble == 0)
+                                            formatted = "";
+                                    }
+                                    break;
+                                case 'x':
+                                case 'X':
+                                    {
+                                        string hex = Convert.ToString((int)poppedDouble, 16);
+                                        hex = formatMode == 'X' ? hex.ToUpper() : hex;
+                                        formatted = hex;
+                                        if (width == 0 && poppedDouble == 0)
+                                            formatted = "";
+                                    }
+                                    break;
+                                case 's':
+                                    {
+                                        formatted = poppedString;
+                                        if (precLen > 0 && precLen <= poppedString.Length)
+                                            formatted = formatted.Substring(0, precLen);
+                                    }
+                                    break;
+                            }
+
+                            // Add the formatted string
+                            replacements.Add((paramStrIdx, paramToken, formatted));
+                        }
                         break;
                     case ParameterType.PopChar:
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
                         {
                             string poppedString = popArgs.Dequeue();
                             if (!int.TryParse(poppedString, out int charNum))
                                 throw new TerminauxInternalException($"Integer constant for character is not valid. {poppedString}");
                             char character = (char)charNum;
-                            finalValue.Insert(paramStrIdx, character);
+                            replacements.Add((paramStrIdx, paramToken, $"{character}"));
                         }
                         break;
                     case ParameterType.PopString:
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
                         {
                             string poppedString = popArgs.Dequeue();
-                            finalValue.Insert(paramStrIdx, poppedString);
+                            replacements.Add((paramStrIdx, paramToken, poppedString));
                         }
                         break;
                     case ParameterType.PushParam:
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        replacements.Add((paramStrIdx, paramToken, ""));
                         char paramNumChar = paramToken[2];
                         if (!int.TryParse($"{paramNumChar}", out int paramNum))
                             throw new TerminauxInternalException($"Integer constant is not valid. {paramNumChar}");
                         var objectPush = args[paramNum - 1];
+                        popArgs.Enqueue($"{objectPush}");
                         break;
                     case ParameterType.SetVariable:
+                        {
+                            replacements.Add((paramStrIdx, paramToken, ""));
+                            char varChar = paramToken[2];
+                            string pushed = popArgs.Dequeue();
+                            if (!variables.ContainsKey(varChar))
+                                variables.Add(varChar, pushed);
+                            else
+                                variables[varChar] = pushed;
+                        }
                         break;
                     case ParameterType.GetVariable:
+                        {
+                            replacements.Add((paramStrIdx, paramToken, ""));
+                            char varChar = paramToken[2];
+                            if (!variables.ContainsKey(varChar))
+                                throw new TerminauxInternalException("Can't push nonexistent variable.");
+                            string toPush = variables[varChar];
+                            popArgs.Enqueue(toPush);
+                        }
                         break;
                     case ParameterType.CharConst:
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        replacements.Add((paramStrIdx, paramToken, ""));
                         char characterConst = paramToken[2];
                         popArgs.Enqueue($"{characterConst}");
                         break;
                     case ParameterType.CharList:
                         break;
                     case ParameterType.IntConst:
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        replacements.Add((paramStrIdx, paramToken, ""));
                         string integerConstStr = paramToken.Substring(2, paramToken.Length - 3);
                         if (!int.TryParse(integerConstStr, out _))
                             throw new TerminauxInternalException($"Integer constant is not valid. {integerConstStr}");
                         popArgs.Enqueue(integerConstStr);
                         break;
                     case ParameterType.StringLength:
+                        {
+                            replacements.Add((paramStrIdx, paramToken, ""));
+                            string pushed = popArgs.Dequeue();
+                            popArgs.Enqueue($"{pushed.Length}");
+                        }
                         break;
                     case ParameterType.ArithmeticAdd:
                         // Attempt to convert last two enqueued arguments to numbers
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        replacements.Add((paramStrIdx, paramToken, ""));
                         if (popArgs.Count < 2)
                             throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
 
@@ -121,7 +254,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         break;
                     case ParameterType.ArithmeticSub:
                         // Attempt to convert last two enqueued arguments to numbers
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        replacements.Add((paramStrIdx, paramToken, ""));
                         if (popArgs.Count < 2)
                             throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
 
@@ -142,7 +275,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         break;
                     case ParameterType.ArithmeticMul:
                         // Attempt to convert last two enqueued arguments to numbers
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        replacements.Add((paramStrIdx, paramToken, ""));
                         if (popArgs.Count < 2)
                             throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
 
@@ -163,7 +296,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         break;
                     case ParameterType.ArithmeticDiv:
                         // Attempt to convert last two enqueued arguments to numbers
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        replacements.Add((paramStrIdx, paramToken, ""));
                         if (popArgs.Count < 2)
                             throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
 
@@ -184,7 +317,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         break;
                     case ParameterType.ArithmeticMod:
                         // Attempt to convert last two enqueued arguments to numbers
-                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        replacements.Add((paramStrIdx, paramToken, ""));
                         if (popArgs.Count < 2)
                             throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
 
@@ -204,30 +337,188 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         }
                         break;
                     case ParameterType.BitwiseAnd:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
+
+                        {
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+
+                            // Now, perform a bitwise AND
+                            int result = firstInt & secondInt;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
+                        }
                         break;
                     case ParameterType.BitwiseOr:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
+
+                        {
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+
+                            // Now, perform a bitwise OR
+                            int result = firstInt | secondInt;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
+                        }
                         break;
                     case ParameterType.BitwiseXOr:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
+
+                        {
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+
+                            // Now, perform a bitwise XOR
+                            int result = firstInt ^ secondInt;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
+                        }
                         break;
                     case ParameterType.LogicalEqual:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
+
+                        {
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+
+                            // Now, test for equality
+                            int result = firstInt == secondInt ? 1 : 0;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
+                        }
                         break;
                     case ParameterType.LogicalGreaterThan:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
+
+                        {
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+
+                            // Now, test for equality
+                            int result = firstInt > secondInt ? 1 : 0;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
+                        }
                         break;
                     case ParameterType.LogicalLessThan:
-                        break;
-                    case ParameterType.LogicalAnd:
-                        break;
-                    case ParameterType.LogicalOr:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
+
+                        {
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+
+                            // Now, test for equality
+                            int result = firstInt < secondInt ? 1 : 0;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
+                        }
                         break;
                     case ParameterType.UnaryLogicalComplement:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        if (popArgs.Count < 1)
+                            throw new TerminauxInternalException($"This is a unary operation, but enqueued argument count is {popArgs.Count}");
+
+                        {
+                            // Remove last argument from the stack, and check for integers
+                            string lastValue = popArgs.Dequeue();
+                            if (!int.TryParse(lastValue, out int unaryValue))
+                                throw new TerminauxInternalException($"Integer constant is not valid. {lastValue}");
+
+                            // Now, test for logical complement
+                            int result = unaryValue == 0 ? 1 : 0;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
+                        }
                         break;
                     case ParameterType.UnaryBitComplement:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        if (popArgs.Count < 1)
+                            throw new TerminauxInternalException($"This is a unary operation, but enqueued argument count is {popArgs.Count}");
+
+                        {
+                            // Remove last argument from the stack, and check for integers
+                            string lastValue = popArgs.Dequeue();
+                            if (!int.TryParse(lastValue, out int unaryValue))
+                                throw new TerminauxInternalException($"Integer constant is not valid. {lastValue}");
+
+                            // Now, test for bit complement
+                            int result = ~unaryValue;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
+                        }
                         break;
                     case ParameterType.AddOneToTwoParams:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        addFirstTwo = true;
                         break;
                     case ParameterType.Conditional:
                         break;
                 }
+            }
+
+            // Find out where we would add one to the first two numeric arguments
+            for (int i = 0; i < replacements.Count; i++)
+            {
+                (int idx, string token, string val) = replacements[i];
+                if (!int.TryParse(val, out int result))
+                    continue;
+
+                // Process this number
+                if (i < 2 && addFirstTwo)
+                    result++;
+                replacements[i] = (idx, token, $"{result}");
+            }
+
+            // Now, actually process replacements
+            var finalValue = new StringBuilder(sequence);
+            for (int i = replacements.Count - 1; i >= 0; i--)
+            {
+                (int idx, string token, string val) = replacements[i];
+                finalValue.Remove(idx, token.Length);
+                finalValue.Insert(idx, val);
             }
             return finalValue.ToString();
         }

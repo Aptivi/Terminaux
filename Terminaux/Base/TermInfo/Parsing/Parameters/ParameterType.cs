@@ -117,14 +117,6 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
         /// </summary>
         LogicalLessThan,
         /// <summary>
-        /// Logical AND operator: <c>%A</c>
-        /// </summary>
-        LogicalAnd,
-        /// <summary>
-        /// Logical OR operator: <c>%O</c>
-        /// </summary>
-        LogicalOr,
-        /// <summary>
         /// Unary logical complement: <c>%!</c>
         /// </summary>
         UnaryLogicalComplement,

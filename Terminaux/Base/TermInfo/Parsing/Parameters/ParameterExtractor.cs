@@ -41,6 +41,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
             StringBuilder parameterBuilder = new();
             bool isParam = false;
+            bool allowMinus = false;
             int conditionNest = 0;
             int index = 0;
             ParameterType parameterType = ParameterType.Unknown;
@@ -116,8 +117,11 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         simpleParsed = true;
                         break;
                     case '-':
-                        parameterType = ParameterType.ArithmeticSub;
-                        simpleParsed = true;
+                        if (!allowMinus)
+                        {
+                            parameterType = ParameterType.ArithmeticSub;
+                            simpleParsed = true;
+                        }
                         break;
                     case '*':
                         parameterType = ParameterType.ArithmeticMul;
@@ -153,14 +157,6 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         break;
                     case '>':
                         parameterType = ParameterType.LogicalGreaterThan;
-                        simpleParsed = true;
-                        break;
-                    case 'A':
-                        parameterType = ParameterType.LogicalAnd;
-                        simpleParsed = true;
-                        break;
-                    case 'O':
-                        parameterType = ParameterType.LogicalOr;
                         simpleParsed = true;
                         break;
                     case '!':
@@ -327,13 +323,20 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                     case VtSequenceBasicChars.EscapeChar:
                     case '\r':
                     case '\f':
+                    case 'A':
+                    case 'O':
                         parameterBuilder.Clear();
                         isParam = false;
                         continue;
                     case ':':
+                        parameterBuilder.Append(c);
+                        allowMinus = true;
+                        continue;
+                    case '-':
                     case '+':
                     case '#':
                     case ' ':
+                        allowMinus = false;
                         if (i + 1 >= value.Length)
                         {
                             parameterBuilder.Clear();
