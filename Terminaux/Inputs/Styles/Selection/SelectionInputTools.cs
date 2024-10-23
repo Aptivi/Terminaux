@@ -342,9 +342,7 @@ namespace Terminaux.Inputs.Styles.Selection
                             choiceText.AppendLine(
                                 ColorTools.RenderSetConsoleColor(finalForeColor) +
                                 ColorTools.RenderSetConsoleColor(finalBackColor, true) +
-                                AnswerOption + new string(' ', width - AnswerOption.Length) +
-                                ColorTools.RenderRevertForeground() +
-                                ColorTools.RenderRevertBackground()
+                                AnswerOption + new string(' ', width - AnswerOption.Length)
                             );
                         }
                         else
