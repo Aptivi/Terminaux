@@ -19,6 +19,7 @@
 
 using System.Diagnostics;
 using Terminaux.Base.TermInfo.Parsing.Parameters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Base.TermInfo.Parsing
 {
@@ -56,6 +57,25 @@ namespace Terminaux.Base.TermInfo.Parsing
         /// </summary>
         public ParameterInfo[]? Parameters =>
             parameters;
+
+        /// <summary>
+        /// Processes the sequence and returns the processed sequence
+        /// </summary>
+        /// <param name="args">Arguments to pass to the sequence</param>
+        /// <returns>A processed sequence that can be used with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        /// <exception cref="TerminauxException"></exception>
+        public string? ProcessSequence(params object?[]? args)
+        {
+            // We can't process anything that is not a string
+            if (Value is null)
+                return null;
+            if (ValueType != TermInfoValueType.String || Value is not string || this is not TermInfoValueDesc<string> valueDesc)
+                throw new TerminauxException($"Can't process parameter on non-string value type. Enum is {ValueType} and type is {Value?.GetType().Name ?? "<null>"}.");
+
+            // Now, process the sequence with the provided arguments
+            string processed = ParameterProcessor.ProcessSequenceParams(valueDesc, args);
+            return processed;
+        }
 
         internal TermInfoValueDesc(T? value, string name, TermInfoValueType valueType, ParameterInfo[]? parameters)
         {
