@@ -556,7 +556,7 @@ namespace Terminaux.Inputs.Styles
                 selectedColor;
 
             // First, draw the border
-            builder.Append(BoxFrameColor.RenderBoxFrame($"{selectedColor.PlainSequence} [{selectedColor.PlainSequenceTrueColor} | {selectedColor.Name}]", boxX, boxY, boxWidth, boxHeight));
+            builder.Append(BoxFrameColor.RenderBoxFrame(selectedColor.Name, boxX, boxY, boxWidth, boxHeight));
 
             // then, the box in two halves (normal and transformed)
             builder.Append(
