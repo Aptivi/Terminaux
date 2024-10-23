@@ -24,11 +24,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
     /// <summary>
     /// Parameter information
     /// </summary>
-    [DebuggerDisplay("@ {Index}: {Representation}")]
+    [DebuggerDisplay("@ {Index} [{Type}]: {Representation}")]
     public class ParameterInfo
     {
         private readonly string representation = "";
         private readonly int index = 0;
+        private readonly ParameterType type = ParameterType.Unknown;
 
         /// <summary>
         /// Representation of this parameter
@@ -42,10 +43,17 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
         public int Index =>
             index;
 
-        internal ParameterInfo(string representation, int index)
+        /// <summary>
+        /// Index of this parameter found within the string
+        /// </summary>
+        public ParameterType Type =>
+            type;
+
+        internal ParameterInfo(string representation, int index, ParameterType type)
         {
             this.representation = representation;
             this.index = index;
+            this.type = type;
         }
     }
 }

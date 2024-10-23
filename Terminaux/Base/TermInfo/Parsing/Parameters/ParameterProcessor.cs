@@ -17,6 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using System.Text;
+
 namespace Terminaux.Base.TermInfo.Parsing.Parameters
 {
     internal static class ParameterProcessor
@@ -31,304 +35,201 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                 throw new TerminauxInternalException("Can't process null parameters.");
 
             // Evaluate the extracted parameters and replace them
-            bool isParam = false;
-            int conditionNest = 0;
-            int index = 0;
-            for (int i = 0; i < sequence.Length; i++)
+            var finalValue = new StringBuilder(valueDesc.Value);
+            Queue<string> popArgs = [];
+            for (int paramIdx = 0; paramIdx < parameters.Length; paramIdx++)
             {
-                char c = sequence[i];
+                // Get necessary variables
+                ParameterInfo parameter = parameters[paramIdx];
+                string paramToken = parameter.Representation;
+                int paramStrIdx = parameter.Index;
+                var paramType = parameter.Type;
 
-                // Check to see if we have a parameter designator
-                if (!isParam && c == '%')
+                // According to type, we need to change our behavior. The token starts with %.
+                switch (paramType)
                 {
-                    isParam = true;
-                    parameterBuilder.Append(c);
-                    index = i;
-                    continue;
-                }
-                if (!isParam && conditionNest == 0)
-                {
-                    index = 0;
-                    continue;
-                }
-                else if (conditionNest > 0)
-                {
-                    parameterBuilder.Append(c);
-                    if (c == '%')
-                    {
-                        isParam = true;
-                        if (i + 1 >= value.Length)
-                            throw new TerminauxException("This designator may not be located at the end of the string without specifying one parameter");
-                        char parameter = value[i + 1];
-                        if (parameter == ';')
+                    case ParameterType.Literal:
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        finalValue.Insert(paramStrIdx, "%");
+                        break;
+                    case ParameterType.Formatting:
+                        break;
+                    case ParameterType.PopChar:
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
                         {
-                            conditionNest--;
-                            if (conditionNest == 0)
-                                isParam = false;
-                            parameterBuilder.Append(parameter);
-                            i++;
+                            string poppedString = popArgs.Dequeue();
+                            if (!int.TryParse(poppedString, out int charNum))
+                                throw new TerminauxInternalException($"Integer constant for character is not valid. {poppedString}");
+                            char character = (char)charNum;
+                            finalValue.Insert(paramStrIdx, character);
                         }
-                        else if (parameter == '?')
-                            conditionNest++;
-                    }
-                    continue;
-                }
+                        break;
+                    case ParameterType.PopString:
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        {
+                            string poppedString = popArgs.Dequeue();
+                            finalValue.Insert(paramStrIdx, poppedString);
+                        }
+                        break;
+                    case ParameterType.PushParam:
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        char paramNumChar = paramToken[2];
+                        if (!int.TryParse($"{paramNumChar}", out int paramNum))
+                            throw new TerminauxInternalException($"Integer constant is not valid. {paramNumChar}");
+                        var objectPush = args[paramNum - 1];
+                        break;
+                    case ParameterType.SetVariable:
+                        break;
+                    case ParameterType.GetVariable:
+                        break;
+                    case ParameterType.CharConst:
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        char characterConst = paramToken[2];
+                        popArgs.Enqueue($"{characterConst}");
+                        break;
+                    case ParameterType.CharList:
+                        break;
+                    case ParameterType.IntConst:
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        string integerConstStr = paramToken.Substring(2, paramToken.Length - 3);
+                        if (!int.TryParse(integerConstStr, out _))
+                            throw new TerminauxInternalException($"Integer constant is not valid. {integerConstStr}");
+                        popArgs.Enqueue(integerConstStr);
+                        break;
+                    case ParameterType.StringLength:
+                        break;
+                    case ParameterType.ArithmeticAdd:
+                        // Attempt to convert last two enqueued arguments to numbers
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
 
-                // Now, parse everything after the designator, starting from the one-letter-only parameters
-                switch (c)
-                {
-                    case '%':
-                    case 'c':
-                    case 's':
-                    case 'l':
-                    case '+':
-                    case '-':
-                    case '*':
-                    case '/':
-                    case 'm':
-                    case '&':
-                    case '|':
-                    case '^':
-                    case '=':
-                    case '<':
-                    case '>':
-                    case 'A':
-                    case 'O':
-                    case '!':
-                    case '~':
-                    case 'i':
-                        parameterBuilder.Append(c);
-                        isParam = false;
-                        continue;
-                    case '?':
-                        parameterBuilder.Append(c);
-                        conditionNest++;
-                        index = i - 1;
-                        continue;
-                }
+                        {
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
 
-                // Parse all designators that require two characters (action and parameter)
-                switch (c)
-                {
-                    case 'p':
-                        if (i + 1 >= value.Length)
-                        {
-                            parameterBuilder.Clear();
-                            isParam = false;
-                            continue;
+                            // Now, add the two numbers and pass it to the stack as a string
+                            int result = firstInt + secondInt;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
                         }
-                        {
-                            char arg = value[i + 1];
-                            if (!int.TryParse($"{arg}", out int num))
-                                throw new TerminauxException("This designator may only take a number as a parameter.");
-                            if (num < 1 || num > 9)
-                                throw new TerminauxException("This designator may only take a number from 1 to 9.");
-                            parameterBuilder.Append(c);
-                            parameterBuilder.Append(arg);
-                        }
-                        i++;
-                        isParam = false;
-                        continue;
-                    case 'P':
-                    case 'g':
-                        if (i + 1 >= value.Length)
-                        {
-                            parameterBuilder.Clear();
-                            isParam = false;
-                            continue;
-                        }
-                        {
-                            char arg = value[i + 1];
-                            if (arg >= 'A' || arg <= 'Z' || arg >= 'a' || arg <= 'z')
-                            {
-                                parameterBuilder.Append(c);
-                                parameterBuilder.Append(arg);
-                            }
-                            else
-                                throw new TerminauxException("This designator may only take a letter as a parameter.");
-                        }
-                        i++;
-                        isParam = false;
-                        continue;
-                }
+                        break;
+                    case ParameterType.ArithmeticSub:
+                        // Attempt to convert last two enqueued arguments to numbers
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
 
-                // Deal with char and int constants
-                switch (c)
-                {
-                    case '{':
-                        // Integer constant
-                        StringBuilder integerBuilder = new();
-                        if (i + 1 >= value.Length)
                         {
-                            parameterBuilder.Clear();
-                            isParam = false;
-                            continue;
-                        }
-                        {
-                            int offset = 1;
-                            char arg = value[i + offset];
-                            if (arg == '}')
-                                throw new TerminauxException("This designator needs an integer constant");
-                            while (arg != '}')
-                            {
-                                integerBuilder.Append(arg);
-                                offset++;
-                                arg = value[i + offset];
-                            }
-                            i += offset;
-                            if (!int.TryParse(integerBuilder.ToString(), out _))
-                                throw new TerminauxException("This designator contains invalid integer constant");
-                        }
-                        parameterBuilder.Append($"{{{integerBuilder}}}");
-                        isParam = false;
-                        continue;
-                    case '\'':
-                        // Character constant
-                        if (i + 1 >= value.Length || i + 2 >= value.Length)
-                            throw new TerminauxException("This designator may not be located at the end of the string without specifying a character constant");
-                        char character = value[i + 1];
-                        char ending = value[i + 2];
-                        if (ending != '\'')
-                            throw new TerminauxException("You can't append more than one character");
-                        i += 2;
-                        parameterBuilder.Append($"{ending}{character}{ending}");
-                        isParam = false;
-                        continue;
-                }
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
 
-                // Deal with a character collection
-                if (c == '[')
-                {
-                    StringBuilder collectionBuilder = new();
-                    if (i + 1 >= value.Length)
-                    {
-                        parameterBuilder.Clear();
-                        isParam = false;
-                        continue;
-                    }
-                    {
-                        int offset = 1;
-                        char arg = value[i + offset];
-                        if (i + 1 == ']')
-                            throw new TerminauxException("This designator needs a character collection");
-                        while (arg != ']')
-                        {
-                            collectionBuilder.Append(arg);
-                            offset++;
-                            arg = value[i + offset];
+                            // Now, subtract the two numbers and pass it to the stack as a string
+                            int result = firstInt - secondInt;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
                         }
-                        i += offset;
-                    }
-                    parameterBuilder.Append($"[{collectionBuilder}]");
-                    isParam = false;
-                    continue;
-                }
+                        break;
+                    case ParameterType.ArithmeticMul:
+                        // Attempt to convert last two enqueued arguments to numbers
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
 
-                // Deal with printf(3) string formatting
-                switch (c)
-                {
-                    case 'd':
-                    case 'o':
-                    case 'X':
-                    case 'x':
-                    case 's':
-                        parameterBuilder.Append(c);
-                        isParam = false;
-                        continue;
-                    case VtSequenceBasicChars.EscapeChar:
-                    case '\r':
-                    case '\f':
-                        parameterBuilder.Clear();
-                        isParam = false;
-                        continue;
-                    case ':':
-                    case '+':
-                    case '#':
-                    case ' ':
-                        if (i + 1 >= value.Length)
                         {
-                            parameterBuilder.Clear();
-                            isParam = false;
-                            continue;
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+
+                            // Now, multiply the two numbers and pass it to the stack as a string
+                            int result = firstInt * secondInt;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
                         }
+                        break;
+                    case ParameterType.ArithmeticDiv:
+                        // Attempt to convert last two enqueued arguments to numbers
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
+
                         {
-                            char arg = value[i + 1];
-                            switch (arg)
-                            {
-                                case 'd':
-                                case 'o':
-                                case 'X':
-                                case 'x':
-                                case 's':
-                                    parameterBuilder.Append(c);
-                                    parameterBuilder.Append(arg);
-                                    isParam = false;
-                                    i += 2;
-                                    continue;
-                                default:
-                                    // Look for width or precision designators
-                                    if (!int.TryParse($"{arg}", out _) && arg != '.' && arg != '-')
-                                        throw new TerminauxException("Width is not valid");
-                                    {
-                                        StringBuilder widthBuilder = new();
-                                        int offset = 1;
-                                        char target = value[i + offset];
-                                        while (int.TryParse($"{target}", out _) || target == '.' || target == '-')
-                                        {
-                                            widthBuilder.Append(target);
-                                            offset++;
-                                            target = value[i + offset];
-                                        }
-                                        if (widthBuilder[0] == '.')
-                                            widthBuilder.Insert(0, 0);
-                                        i += offset;
-                                        if (i >= value.Length)
-                                            throw new TerminauxException("This designator may not be located at the end of the string without specifying a type");
-                                        char finalType = value[i];
-                                        if (finalType != 'd' && finalType != 'o' && finalType != 'X' && finalType != 'x' && finalType != 's')
-                                            throw new TerminauxException("Invalid type");
-                                        parameterBuilder.Append(c);
-                                        parameterBuilder.Append(widthBuilder);
-                                        parameterBuilder.Append(finalType);
-                                    }
-                                    isParam = false;
-                                    continue;
-                            }
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+
+                            // Now, divide the two numbers and pass it to the stack as a string
+                            int result = firstInt / secondInt;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
                         }
-                    default:
-                        // Look for width or precision designators
-                        if (!int.TryParse($"{c}", out _) && c != '.' && c != '-')
+                        break;
+                    case ParameterType.ArithmeticMod:
+                        // Attempt to convert last two enqueued arguments to numbers
+                        finalValue.Remove(paramStrIdx, paramToken.Length);
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
+
                         {
-                            parameterBuilder.Clear();
-                            isParam = false;
-                            continue;
+                            // Remove last two arguments from the stack, and check for integers
+                            string second = popArgs.Dequeue();
+                            string first = popArgs.Dequeue();
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+
+                            // Now, get the modulus of the two numbers and pass it to the stack as a string
+                            int result = firstInt % secondInt;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
                         }
-                        {
-                            StringBuilder widthBuilder = new();
-                            int offset = 0;
-                            char target = value[i + offset];
-                            while (int.TryParse($"{target}", out _) || target == '.' || target == '-')
-                            {
-                                widthBuilder.Append(target);
-                                offset++;
-                                target = value[i + offset];
-                            }
-                            if (widthBuilder[0] == '.')
-                                widthBuilder.Insert(0, 0);
-                            i += offset;
-                            if (i >= value.Length)
-                                throw new TerminauxException("This designator may not be located at the end of the string without specifying a type");
-                            char finalType = value[i];
-                            if (finalType != 'd' && finalType != 'o' && finalType != 'X' && finalType != 'x' && finalType != 's')
-                                throw new TerminauxException("Invalid type");
-                            parameterBuilder.Append(widthBuilder);
-                            parameterBuilder.Append(finalType);
-                        }
-                        isParam = false;
-                        continue;
+                        break;
+                    case ParameterType.BitwiseAnd:
+                        break;
+                    case ParameterType.BitwiseOr:
+                        break;
+                    case ParameterType.BitwiseXOr:
+                        break;
+                    case ParameterType.LogicalEqual:
+                        break;
+                    case ParameterType.LogicalGreaterThan:
+                        break;
+                    case ParameterType.LogicalLessThan:
+                        break;
+                    case ParameterType.LogicalAnd:
+                        break;
+                    case ParameterType.LogicalOr:
+                        break;
+                    case ParameterType.UnaryLogicalComplement:
+                        break;
+                    case ParameterType.UnaryBitComplement:
+                        break;
+                    case ParameterType.AddOneToTwoParams:
+                        break;
+                    case ParameterType.Conditional:
+                        break;
                 }
             }
-            return sequence;
+            return finalValue.ToString();
         }
     }
 }

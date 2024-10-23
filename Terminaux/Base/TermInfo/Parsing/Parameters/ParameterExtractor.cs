@@ -43,6 +43,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
             bool isParam = false;
             int conditionNest = 0;
             int index = 0;
+            ParameterType parameterType = ParameterType.Unknown;
             for (int i = 0; i < value.Length; i++)
             {
                 char c = value[i];
@@ -50,7 +51,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                 // Determine if we need to put the parameter to the list
                 if (parameterBuilder.Length > 0 && !isParam)
                 {
-                    parameters.Add(new(parameterBuilder.ToString(), index));
+                    parameters.Add(new(parameterBuilder.ToString(), index, parameterType));
                     parameterBuilder.Clear();
                 }
 
@@ -91,42 +92,109 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                 }
 
                 // Now, parse everything after the designator, starting from the one-letter-only parameters
+                bool simpleParsed = false;
                 switch (c)
                 {
                     case '%':
+                        parameterType = ParameterType.Literal;
+                        simpleParsed = true;
+                        break;
                     case 'c':
+                        parameterType = ParameterType.PopChar;
+                        simpleParsed = true;
+                        break;
                     case 's':
+                        parameterType = ParameterType.PopString;
+                        simpleParsed = true;
+                        break;
                     case 'l':
+                        parameterType = ParameterType.StringLength;
+                        simpleParsed = true;
+                        break;
                     case '+':
+                        parameterType = ParameterType.ArithmeticAdd;
+                        simpleParsed = true;
+                        break;
                     case '-':
+                        parameterType = ParameterType.ArithmeticSub;
+                        simpleParsed = true;
+                        break;
                     case '*':
+                        parameterType = ParameterType.ArithmeticMul;
+                        simpleParsed = true;
+                        break;
                     case '/':
+                        parameterType = ParameterType.ArithmeticDiv;
+                        simpleParsed = true;
+                        break;
                     case 'm':
+                        parameterType = ParameterType.ArithmeticMod;
+                        simpleParsed = true;
+                        break;
                     case '&':
+                        parameterType = ParameterType.BitwiseAnd;
+                        simpleParsed = true;
+                        break;
                     case '|':
+                        parameterType = ParameterType.BitwiseOr;
+                        simpleParsed = true;
+                        break;
                     case '^':
+                        parameterType = ParameterType.BitwiseXOr;
+                        simpleParsed = true;
+                        break;
                     case '=':
+                        parameterType = ParameterType.LogicalEqual;
+                        simpleParsed = true;
+                        break;
                     case '<':
+                        parameterType = ParameterType.LogicalLessThan;
+                        simpleParsed = true;
+                        break;
                     case '>':
+                        parameterType = ParameterType.LogicalGreaterThan;
+                        simpleParsed = true;
+                        break;
                     case 'A':
+                        parameterType = ParameterType.LogicalAnd;
+                        simpleParsed = true;
+                        break;
                     case 'O':
+                        parameterType = ParameterType.LogicalOr;
+                        simpleParsed = true;
+                        break;
                     case '!':
+                        parameterType = ParameterType.UnaryLogicalComplement;
+                        simpleParsed = true;
+                        break;
                     case '~':
+                        parameterType = ParameterType.UnaryBitComplement;
+                        simpleParsed = true;
+                        break;
                     case 'i':
-                        parameterBuilder.Append(c);
-                        isParam = false;
-                        continue;
+                        parameterType = ParameterType.AddOneToTwoParams;
+                        simpleParsed = true;
+                        break;
                     case '?':
-                        parameterBuilder.Append(c);
+                        parameterType = ParameterType.Conditional;
+                        simpleParsed = true;
                         conditionNest++;
                         index = i - 1;
-                        continue;
+                        break;
+                }
+                if (simpleParsed)
+                {
+                    parameterBuilder.Append(c);
+                    if (parameterType != ParameterType.Conditional)
+                        isParam = false;
+                    continue;
                 }
 
                 // Parse all designators that require two characters (action and parameter)
                 switch (c)
                 {
                     case 'p':
+                        parameterType = ParameterType.PushParam;
                         if (i + 1 >= value.Length)
                         {
                             parameterBuilder.Clear();
@@ -147,6 +215,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         continue;
                     case 'P':
                     case 'g':
+                        parameterType = c == 'P' ? ParameterType.SetVariable : ParameterType.GetVariable;
                         if (i + 1 >= value.Length)
                         {
                             parameterBuilder.Clear();
@@ -195,6 +264,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             if (!int.TryParse(integerBuilder.ToString(), out _))
                                 throw new TerminauxException("This designator contains invalid integer constant");
                         }
+                        parameterType = ParameterType.IntConst;
                         parameterBuilder.Append($"{{{integerBuilder}}}");
                         isParam = false;
                         continue;
@@ -207,6 +277,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         if (ending != '\'')
                             throw new TerminauxException("You can't append more than one character");
                         i += 2;
+                        parameterType = ParameterType.CharConst;
                         parameterBuilder.Append($"{ending}{character}{ending}");
                         isParam = false;
                         continue;
@@ -235,12 +306,14 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         }
                         i += offset;
                     }
+                    parameterType = ParameterType.CharList;
                     parameterBuilder.Append($"[{collectionBuilder}]");
                     isParam = false;
                     continue;
                 }
 
                 // Deal with printf(3) string formatting
+                parameterType = ParameterType.Formatting;
                 switch (c)
                 {
                     case 'd':
@@ -345,7 +418,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                 }
             }
             if (parameterBuilder.Length > 0)
-                parameters.Add(new(parameterBuilder.ToString(), index));
+                parameters.Add(new(parameterBuilder.ToString(), index, parameterType));
             return [.. parameters];
         }
     }
