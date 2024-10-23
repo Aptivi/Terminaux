@@ -273,7 +273,7 @@ namespace Terminaux.Inputs.Styles.Selection
             StringBuilder buffer = new();
             StringBuilder choiceText = new();
             string prefix = isMultiple ? "  [ ] " : "  ";
-            int AnswerTitleLeft = choices.Max(x => (selections.Length > 1 ? $"    {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) ").Length);
+            int AnswerTitleLeft = choices.Max(x => (selections.Length > 1 ? $"  {prefix}{x.ChoiceName}) " : $"{prefix}{x.ChoiceName}) ").Length);
             int leftPos = left + (sliderInside ? 1 : 0);
             List<int> selectionHeights = [];
             int processedHeight = 0;
@@ -310,10 +310,10 @@ namespace Terminaux.Inputs.Styles.Selection
 
                         // Get the option
                         string modifiers = $"{(selected ? ">" : disabled ? "X" : " ")}{(isMultiple ? $" [{(currentSelections.Contains(i) ? "*" : " ")}]" : "")}";
-                        string AnswerOption = selections.Length > 1 ? $"    {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
+                        string AnswerOption = selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) {AnswerTitle}" : $"{modifiers} {choice.ChoiceName}) {AnswerTitle}";
                         if (AnswerTitleLeft < width)
                         {
-                            string renderedChoice = selections.Length > 1 ? $"    {modifiers} {choice.ChoiceName}) " : $"{modifiers} {choice.ChoiceName}) ";
+                            string renderedChoice = selections.Length > 1 ? $"  {modifiers} {choice.ChoiceName}) " : $"{modifiers} {choice.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
                             AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}";
                         }
