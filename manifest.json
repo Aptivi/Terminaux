@@ -305,6 +305,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.ParameterType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Base.TermInfo.Parsing.Parameters.yml",
       "output": {
         ".html": {
