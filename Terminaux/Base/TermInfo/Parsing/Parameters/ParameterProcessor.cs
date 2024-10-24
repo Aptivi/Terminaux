@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
+using Textify.General;
 
 namespace Terminaux.Base.TermInfo.Parsing.Parameters
 {
@@ -34,9 +35,23 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                 throw new TerminauxInternalException("Can't process null sequence.");
             var parameters = valueDesc.Parameters ??
                 throw new TerminauxInternalException("Can't process null parameters.");
+            return ProcessSequenceParams(sequence, parameters, args);
+        }
+
+        private static string ProcessSequenceParams(string sequence, ParameterInfo[] parameters, object?[]? args)
+        {
+            // Sanity checks
+            args ??= [];
+            Queue<string> popArgs = [];
+            return ProcessSequenceParams(sequence, parameters, args, ref popArgs);
+        }
+
+        private static string ProcessSequenceParams(string sequence, ParameterInfo[] parameters, object?[]? args, ref Queue<string> popArgs)
+        {
+            // Sanity checks
+            args ??= [];
 
             // Evaluate the extracted parameters and add them to the replacement list
-            Queue<string> popArgs = [];
             List<(int idx, string token, string val)> replacements = [];
             Dictionary<char, string> variables = [];
             bool addFirstTwo = false;
@@ -239,12 +254,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, add the two numbers and pass it to the stack as a string
                             int result = firstInt + secondInt;
@@ -260,12 +275,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, subtract the two numbers and pass it to the stack as a string
                             int result = firstInt - secondInt;
@@ -281,12 +296,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, multiply the two numbers and pass it to the stack as a string
                             int result = firstInt * secondInt;
@@ -302,12 +317,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, divide the two numbers and pass it to the stack as a string
                             int result = firstInt / secondInt;
@@ -323,12 +338,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, get the modulus of the two numbers and pass it to the stack as a string
                             int result = firstInt % secondInt;
@@ -343,12 +358,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, perform a bitwise AND
                             int result = firstInt & secondInt;
@@ -363,12 +378,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, perform a bitwise OR
                             int result = firstInt | secondInt;
@@ -383,12 +398,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, perform a bitwise XOR
                             int result = firstInt ^ secondInt;
@@ -403,12 +418,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, test for equality
                             int result = firstInt == secondInt ? 1 : 0;
@@ -423,12 +438,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, test for equality
                             int result = firstInt > secondInt ? 1 : 0;
@@ -443,12 +458,12 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
 
                         {
                             // Remove last two arguments from the stack, and check for integers
-                            string second = popArgs.Dequeue();
                             string first = popArgs.Dequeue();
-                            if (!int.TryParse(second, out int secondInt))
-                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+                            string second = popArgs.Dequeue();
                             if (!int.TryParse(first, out int firstInt))
                                 throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
 
                             // Now, test for equality
                             int result = firstInt < secondInt ? 1 : 0;
@@ -495,6 +510,39 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         addFirstTwo = true;
                         break;
                     case ParameterType.Conditional:
+                        var syntaxes = GetConditionSyntaxes(paramToken);
+                        string conditionResult = "";
+                        bool skip = false;
+                        bool bail = false;
+                        foreach ((string syntax, ParameterConditionSyntaxType syntaxType) in syntaxes)
+                        {
+                            // Check if we need to skip an expression or bail
+                            if (bail)
+                                break;
+                            if (skip)
+                            {
+                                skip = false;
+                                continue;
+                            }
+
+                            // Get the syntax value
+                            var syntaxParams = ParameterExtractor.ExtractParameters(syntax);
+                            string syntaxValue = ProcessSequenceParams(syntax, syntaxParams, args, ref popArgs);
+
+                            // Test the syntax or add it to the result
+                            switch (syntaxType)
+                            {
+                                case ParameterConditionSyntaxType.Expression:
+                                    conditionResult = syntaxValue;
+                                    bail = true;
+                                    break;
+                                case ParameterConditionSyntaxType.Condition:
+                                    string conditionResultStr = popArgs.Dequeue();
+                                    skip = (int.TryParse(conditionResultStr, out int num) && num == 0) || conditionResultStr.Length == 0;
+                                    break;
+                            }
+                        }
+                        replacements.Add((paramStrIdx, paramToken, conditionResult));
                         break;
                 }
             }
@@ -521,6 +569,40 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                 finalValue.Insert(idx, val);
             }
             return finalValue.ToString();
+        }
+
+        private static (string syntax, ParameterConditionSyntaxType syntaxType)[] GetConditionSyntaxes(string condition)
+        {
+            List<(string, ParameterConditionSyntaxType)> syntaxes = [];
+            if (!condition.StartsWith("%?") && !condition.EndsWith("%;"))
+                throw new TerminauxInternalException($"Conditional representation {condition} is invalid.");
+
+            // Remove the condition beginning and ending
+            string representation = condition.RemovePrefix("%?").RemoveSuffix("%;");
+
+            // Now, determine how we'll distribute the syntaxes. The else part might either be a value or a conditional
+            // similar to "else if" in C#. We'll need to distinguish between %t (Then) and %e (Else or Else If).
+            var syntaxBuilder = new StringBuilder();
+            ParameterConditionSyntaxType type = ParameterConditionSyntaxType.Condition;
+            for (int i = 0; i < representation.Length; i++)
+            {
+                char current = representation[i];
+                char next = i + 1 >= representation.Length ? '\0' : representation[i + 1];
+                if (current == '%' && (next == 't' || next == 'e'))
+                {
+                    syntaxes.Add((syntaxBuilder.ToString(), type));
+                    type = next == 'e' ? ParameterConditionSyntaxType.Condition : ParameterConditionSyntaxType.Expression;
+                    syntaxBuilder.Clear();
+                    i++;
+                }
+                else
+                    syntaxBuilder.Append(current);
+            }
+            if (syntaxBuilder.Length > 0)
+                syntaxes.Add((syntaxBuilder.ToString(), ParameterConditionSyntaxType.Expression));
+
+            // Return the list of syntaxes
+            return [.. syntaxes];
         }
     }
 }
