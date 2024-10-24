@@ -31,6 +31,7 @@ using Terminaux.Colors.Transformation.Contrast;
 using Newtonsoft.Json;
 using Terminaux.Colors.Transformation.Formulas;
 using Terminaux.Sequences.Builder;
+using Terminaux.Base.TermInfo;
 
 namespace Terminaux.Colors
 {
@@ -81,7 +82,10 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Foreground, original)
         /// </summary>
         public string VTSequenceForegroundOriginal =>
-            Type == ColorType.TrueColor ? $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequence}m" : $"{VtSequenceBasicChars.EscapeChar}[38;5;{PlainSequence}m";
+            Type == ColorType.TrueColor ?
+            $"{VtSequenceBasicChars.EscapeChar}[38;2;{PlainSequence}m" :
+            TermInfoDesc.Current.SetAForeground?.ProcessSequence(PlainSequence) ??
+            $"{VtSequenceBasicChars.EscapeChar}[38;5;{PlainSequence}m";
 
         /// <summary>
         /// Parsable VT sequence (Background)
@@ -93,7 +97,10 @@ namespace Terminaux.Colors
         /// Parsable VT sequence (Background, original)
         /// </summary>
         public string VTSequenceBackgroundOriginal =>
-            Type == ColorType.TrueColor ? $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequence}m" : $"{VtSequenceBasicChars.EscapeChar}[48;5;{PlainSequence}m";
+            Type == ColorType.TrueColor ?
+            $"{VtSequenceBasicChars.EscapeChar}[48;2;{PlainSequence}m" :
+            TermInfoDesc.Current.SetABackground?.ProcessSequence(PlainSequence) ??
+            $"{VtSequenceBasicChars.EscapeChar}[48;5;{PlainSequence}m";
 
         /// <summary>
         /// &lt;R&gt;;&lt;G&gt;;&lt;B&gt;

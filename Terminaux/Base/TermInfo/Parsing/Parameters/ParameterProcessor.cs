@@ -588,6 +588,7 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
             }
 
             // Find out where we would add one to the first two numeric arguments
+            int integersProcessed = 0;
             for (int i = 0; i < replacements.Count; i++)
             {
                 (int idx, string token, string val) = replacements[i];
@@ -595,9 +596,10 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                     continue;
 
                 // Process this number
-                if (i < 2 && addFirstTwo)
+                if (integersProcessed < 2 && addFirstTwo)
                     result++;
                 replacements[i] = (idx, token, $"{result}");
+                integersProcessed++;
             }
 
             // Now, actually process replacements
