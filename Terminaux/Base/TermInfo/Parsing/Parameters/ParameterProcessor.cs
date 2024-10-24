@@ -471,6 +471,46 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                             popArgs.Enqueue(resultStr);
                         }
                         break;
+                    case ParameterType.LogicalAnd:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
+
+                        {
+                            // Remove last two arguments from the stack, and check for integers
+                            string first = popArgs.Dequeue();
+                            string second = popArgs.Dequeue();
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+
+                            // Now, test for equality
+                            int result = (firstInt != 0) && (secondInt != 0) ? 1 : 0;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
+                        }
+                        break;
+                    case ParameterType.LogicalOr:
+                        replacements.Add((paramStrIdx, paramToken, ""));
+                        if (popArgs.Count < 2)
+                            throw new TerminauxInternalException($"This is a binary operation, but enqueued argument count is {popArgs.Count}");
+
+                        {
+                            // Remove last two arguments from the stack, and check for integers
+                            string first = popArgs.Dequeue();
+                            string second = popArgs.Dequeue();
+                            if (!int.TryParse(first, out int firstInt))
+                                throw new TerminauxInternalException($"Integer constant for first operand is not valid. {first}");
+                            if (!int.TryParse(second, out int secondInt))
+                                throw new TerminauxInternalException($"Integer constant for second operand is not valid. {second}");
+
+                            // Now, test for equality
+                            int result = (firstInt != 0) || (secondInt != 0) ? 1 : 0;
+                            string resultStr = $"{result}";
+                            popArgs.Enqueue(resultStr);
+                        }
+                        break;
                     case ParameterType.UnaryLogicalComplement:
                         replacements.Add((paramStrIdx, paramToken, ""));
                         if (popArgs.Count < 1)

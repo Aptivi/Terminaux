@@ -159,6 +159,14 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                         parameterType = ParameterType.LogicalGreaterThan;
                         simpleParsed = true;
                         break;
+                    case 'A':
+                        parameterType = ParameterType.LogicalAnd;
+                        simpleParsed = true;
+                        break;
+                    case 'O':
+                        parameterType = ParameterType.LogicalOr;
+                        simpleParsed = true;
+                        break;
                     case '!':
                         parameterType = ParameterType.UnaryLogicalComplement;
                         simpleParsed = true;
@@ -323,8 +331,6 @@ namespace Terminaux.Base.TermInfo.Parsing.Parameters
                     case VtSequenceBasicChars.EscapeChar:
                     case '\r':
                     case '\f':
-                    case 'A':
-                    case 'O':
                         parameterBuilder.Clear();
                         isParam = false;
                         continue;
