@@ -22,6 +22,7 @@ using Shouldly;
 using Terminaux.Colors;
 using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
+using Terminaux.Colors.Models.Parsing;
 using Terminaux.Sequences.Builder;
 
 namespace Terminaux.Tests.Colors
@@ -529,6 +530,94 @@ namespace Terminaux.Tests.Colors
 
             // Now, convert back to RGB
             var rgb = ConversionTools.ToRgb(cieLuv);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(133);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(66);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to CieLuvFull
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToCieLuvFull()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLuvFull
+            var cieLuvFull = ConversionTools.ToCieLuvFull(ColorInstance.RGB);
+
+            // Check for property correctness
+            cieLuvFull.L.ShouldBe(40.055099179556059);
+            cieLuvFull.U.ShouldBe(47.074237421611734);
+            cieLuvFull.V.ShouldBe(35.083777826558624);
+            cieLuvFull.Observer.ShouldBe(2);
+            cieLuvFull.Illuminant.ShouldBe(IlluminantType.D65);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(cieLuvFull);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(133);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(66);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to CieLuvFull with equal energy (observer is 10 degs)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToCieLuvFullEqual()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLuvFull
+            var cieLuvFull = ConversionTools.ToCieLuvFull(ColorInstance.RGB, 10, IlluminantType.E);
+
+            // Check for property correctness
+            cieLuvFull.L.ShouldBe(40.055099179556059);
+            cieLuvFull.U.ShouldBe(40.468174920048256);
+            cieLuvFull.V.ShouldBe(32.299035228557536);
+            cieLuvFull.Observer.ShouldBe(10);
+            cieLuvFull.Illuminant.ShouldBe(IlluminantType.E);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(cieLuvFull);
 
             // Check for property correctness
             rgb.R.ShouldBe(133);

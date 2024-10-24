@@ -37,6 +37,7 @@ namespace Terminaux.Colors.Models
         internal int originalBlue = 0;
         internal int originalAlpha = 255;
         internal RedGreenBlue? originalRgb = null;
+        internal object[] parameters = [];
 
         /// <summary>
         /// The red color value [0 -> 255]

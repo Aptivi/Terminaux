@@ -28,16 +28,37 @@ using Terminaux.Colors.Transformation;
 namespace Terminaux.Colors.Models
 {
     /// <summary>
-    /// The CieLuv class instance (Observer = 2 degs, Illuminant = D65)
+    /// The CieLuv class instance
     /// </summary>
-    [DebuggerDisplay("CieLuv = {L};{U};{V}")]
-    public class CieLuv : CieLuvFull, IEquatable<CieLuv>
+    [DebuggerDisplay("CieLuv = {L};{U};{V};{Observer};{(int)Illuminant}")]
+    public class CieLuvFull : BaseColorModel, IEquatable<CieLuvFull>
     {
         /// <summary>
-        /// cieluv:&lt;L&gt;;&lt;A&gt;;&lt;B&gt;
+        /// The L value [0.0 -> 100.0]
+        /// </summary>
+        public double L { get; private set; }
+        /// <summary>
+        /// The U value [-134.0 -> 220.0]
+        /// </summary>
+        public double U { get; private set; }
+        /// <summary>
+        /// The V value [-140.0 -> 122.0]
+        /// </summary>
+        public double V { get; private set; }
+        /// <summary>
+        /// The observer [either 2 degs or 10 degs]
+        /// </summary>
+        public int Observer { get; private set; } = 2;
+        /// <summary>
+        /// The illuminant
+        /// </summary>
+        public IlluminantType Illuminant { get; private set; } = IlluminantType.D65;
+
+        /// <summary>
+        /// cieluv:&lt;L&gt;;&lt;A&gt;;&lt;B&gt;;&lt;Observer&gt;;&lt;Illuminant&gt;
         /// </summary>
         public override string ToString() =>
-            $"cieluv:{L:0.##};{U:0.##};{V:0.##}";
+            $"cieluv:{L:0.##};{U:0.##};{V:0.##};{Observer};{(int)Illuminant}";
 
         /// <summary>
         /// Does the string specifier represent a valid CieLuv specifier?
@@ -48,7 +69,7 @@ namespace Terminaux.Colors.Models
         public static new bool IsSpecifierValid(string specifier, bool checkParts = false) =>
             specifier.Contains(";") &&
             specifier.StartsWith("cieluv:") &&
-            (!checkParts || (checkParts && specifier.Substring(7).Split(';').Length == 3));
+            (!checkParts || (checkParts && specifier.Substring(7).Split(';').Length == 5));
 
         /// <summary>
         /// Does the string specifier represent a valid CieLuv specifier?
@@ -70,11 +91,17 @@ namespace Terminaux.Colors.Models
             double v = Convert.ToDouble(specifierArray[2]);
             if (v < -140 || v > 122)
                 return false;
+            int observer = Convert.ToInt32(specifierArray[3]);
+            if (observer != 2 && observer != 10)
+                return false;
+            IlluminantType illuminant = (IlluminantType)Convert.ToInt32(specifierArray[4]);
+            if (illuminant < IlluminantType.A || illuminant > IlluminantType.F12)
+                return false;
             return true;
         }
 
         /// <summary>
-        /// Parses the specifier and returns an instance of <see cref="CieLuv"/> converted to <see cref="RedGreenBlue"/>
+        /// Parses the specifier and returns an instance of <see cref="CieLuvFull"/> converted to <see cref="RedGreenBlue"/>
         /// </summary>
         /// <param name="specifier">Specifier of RGB</param>
         /// <param name="settings">Settings to use. Use null for global settings</param>
@@ -97,19 +124,19 @@ namespace Terminaux.Colors.Models
         }
 
         /// <summary>
-        /// Parses the specifier and returns an instance of <see cref="CieLuv"/>
+        /// Parses the specifier and returns an instance of <see cref="CieLuvFull"/>
         /// </summary>
         /// <param name="specifier">Specifier of CieLuv</param>
-        /// <returns>An instance of <see cref="CieLuv"/></returns>
+        /// <returns>An instance of <see cref="CieLuvFull"/></returns>
         /// <exception cref="TerminauxException"></exception>
-        public new static CieLuv ParseSpecifier(string specifier)
+        public static CieLuvFull ParseSpecifier(string specifier)
         {
             if (!IsSpecifierValid(specifier))
-                throw new TerminauxException($"Invalid CieLuv color specifier \"{specifier}\". Ensure that it's on the correct format: cieluv:<red>;<yellow>;<blue>");
+                throw new TerminauxException($"Invalid CieLuv color specifier \"{specifier}\". Ensure that it's on the correct format: cieluv:<red>;<yellow>;<blue>;<observer>;<illuminant>");
 
             // Split the VT sequence into three parts
             var specifierArray = specifier.Substring(7).Split(';');
-            if (specifierArray.Length == 3)
+            if (specifierArray.Length == 5)
             {
                 // We got the CieLuv whole values! First, check to see if we need to filter the color for the color-blind
                 double l = Convert.ToDouble(specifierArray[0]);
@@ -121,46 +148,61 @@ namespace Terminaux.Colors.Models
                 double v = Convert.ToDouble(specifierArray[2]);
                 if (v < -140 || v > 122)
                     throw new TerminauxException($"The V value is out of range (-140.0 -> 122.0). {v}");
+                int observer = Convert.ToInt32(specifierArray[3]);
+                if (observer != 2 && observer != 10)
+                    throw new TerminauxException($"Observer must be either 2 or 10. {observer}");
+                IlluminantType illuminant = (IlluminantType)Convert.ToInt32(specifierArray[4]);
+                if (illuminant < IlluminantType.A || illuminant > IlluminantType.F12)
+                    throw new TerminauxException($"Illuminant is invalid. {(int)illuminant}");
 
                 // First, we need to convert from CieLuv to RGB
-                var CieLuv = new CieLuv(l, u, v);
+                var CieLuv = new CieLuvFull(l, u, v, observer, illuminant);
                 return CieLuv;
             }
             else
-                throw new TerminauxException($"Invalid CieLuv color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cieluv:<red>;<yellow>;<blue>");
+                throw new TerminauxException($"Invalid CieLuv color specifier \"{specifier}\". The specifier may not be more than three elements. Ensure that it's on the correct format: cieluv:<red>;<yellow>;<blue>;<observer>;<illuminant>");
         }
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>
-            Equals((CieLuv)obj);
+            Equals((CieLuvFull)obj);
 
         /// <inheritdoc/>
-        public bool Equals(CieLuv other) =>
+        public bool Equals(CieLuvFull other) =>
             other is not null &&
             L == other.L &&
             U == other.U &&
-            V == other.V;
+            V == other.V &&
+            Observer == other.Observer &&
+            Illuminant == other.Illuminant;
 
         /// <inheritdoc/>
         public override int GetHashCode()
         {
-            int hashCode = 921976076;
+            int hashCode = -1640533391;
             hashCode = hashCode * -1521134295 + L.GetHashCode();
             hashCode = hashCode * -1521134295 + U.GetHashCode();
             hashCode = hashCode * -1521134295 + V.GetHashCode();
+            hashCode = hashCode * -1521134295 + Observer.GetHashCode();
+            hashCode = hashCode * -1521134295 + Illuminant.GetHashCode();
             return hashCode;
         }
 
         /// <inheritdoc/>
-        public static bool operator ==(CieLuv left, CieLuv right) =>
-            EqualityComparer<CieLuv>.Default.Equals(left, right);
+        public static bool operator ==(CieLuvFull left, CieLuvFull right) =>
+            EqualityComparer<CieLuvFull>.Default.Equals(left, right);
 
         /// <inheritdoc/>
-        public static bool operator !=(CieLuv left, CieLuv right) =>
+        public static bool operator !=(CieLuvFull left, CieLuvFull right) =>
             !(left == right);
 
-        internal CieLuv(double l, double u, double v) :
-            base(l, u, v, 2, IlluminantType.D65)
-        { }
+        internal CieLuvFull(double l, double u, double v, int observer, IlluminantType illuminant)
+        {
+            L = l;
+            U = u;
+            V = v;
+            Observer = observer;
+            Illuminant = illuminant;
+        }
     }
 }

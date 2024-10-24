@@ -20,6 +20,7 @@
 using System;
 using Terminaux.Base;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Models.Parsing;
 
 namespace Terminaux.Colors.Models.Conversion
 {
@@ -244,6 +245,12 @@ namespace Terminaux.Colors.Models.Conversion
                     rgb = ToRgb(cieLuv);
                 else if (source is CieLch cieLch)
                     rgb = ToRgb(cieLch);
+                else if (source is CieLabFull cieLabFull)
+                    rgb = ToRgb(cieLabFull);
+                else if (source is CieLuvFull cieLuvFull)
+                    rgb = ToRgb(cieLuvFull);
+                else if (source is CieLchFull cieLchFull)
+                    rgb = ToRgb(cieLchFull);
                 else
                     throw new TerminauxException("Can't convert to RGB.");
                 return rgb;
@@ -316,6 +323,15 @@ namespace Terminaux.Colors.Models.Conversion
                 else if (targetType == typeof(CieLch))
                     return ToCieLch(source) ??
                         throw new TerminauxException("Can't convert to CieLch.");
+                else if (targetType == typeof(CieLabFull))
+                    return ToCieLabFull(source) ??
+                        throw new TerminauxException("Can't convert to CieLabFull.");
+                else if (targetType == typeof(CieLuvFull))
+                    return ToCieLuvFull(source) ??
+                        throw new TerminauxException("Can't convert to CieLuvFull.");
+                else if (targetType == typeof(CieLchFull))
+                    return ToCieLchFull(source) ??
+                        throw new TerminauxException("Can't convert to CieLchFull.");
                 else
                     throw new TerminauxException("Can't convert from RGB.");
             }
@@ -694,10 +710,72 @@ namespace Terminaux.Colors.Models.Conversion
             if (rgb is null)
                 throw new TerminauxException("Can't convert a null RGB instance to CieLab!");
 
+            var cieLabFull = ToCieLabFull(rgb);
+            return new(cieLabFull.L, cieLabFull.A, cieLabFull.B);
+        }
+
+        /// <summary>
+        /// Converts the RGB color model to CieLuv
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static CieLuv ToCieLuv(RedGreenBlue rgb)
+        {
+            if (rgb is null)
+                throw new TerminauxException("Can't convert a null RGB instance to CieLuv!");
+
+            var cieLuvFull = ToCieLuvFull(rgb);
+            return new(cieLuvFull.L, cieLuvFull.U, cieLuvFull.V);
+        }
+
+        /// <summary>
+        /// Converts the RGB color model to CieLch
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static CieLch ToCieLch(RedGreenBlue rgb)
+        {
+            if (rgb is null)
+                throw new TerminauxException("Can't convert a null RGB instance to CieLch!");
+
+            var cieLchFull = ToCieLchFull(rgb);
+            return new(cieLchFull.L, cieLchFull.C, cieLchFull.H);
+        }
+
+        /// <summary>
+        /// Converts the RGB color model to CieLab
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static CieLabFull ToCieLabFull(RedGreenBlue rgb)
+        {
+            if (rgb.parameters.Length != 2)
+                return ToCieLabFull(rgb, 2, IlluminantType.D65);
+            else
+            {
+                // Validate the values
+                int observer = (int)rgb.parameters[0];
+                IlluminantType illuminant = (IlluminantType)rgb.parameters[0];
+                if ((observer != 2 && observer != 10) || illuminant < 0 || illuminant > IlluminantType.F12)
+                    return ToCieLabFull(rgb, 2, IlluminantType.D65);
+                return ToCieLabFull(rgb, observer, illuminant);
+            }
+        }
+
+        /// <summary>
+        /// Converts the RGB color model to CieLab
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <param name="observer">Observer (2 degs or 10 degs)</param>
+        /// <param name="illuminant">Illuminant type</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static CieLabFull ToCieLabFull(RedGreenBlue rgb, int observer, IlluminantType illuminant)
+        {
+            if (rgb is null)
+                throw new TerminauxException("Can't convert a null RGB instance to CieLab!");
+
             // Get the illuminant references
-            double refX = 95.047;
-            double refY = 100;
-            double refZ = 108.883;
+            (double refX, double refY, double refZ) = IlluminanceTools.GetIlluminantReferences(observer, illuminant);
 
             // Get the XYZ values first, then get their variants
             var xyz = ToXyz(rgb);
@@ -724,7 +802,7 @@ namespace Terminaux.Colors.Models.Conversion
             double b = 200 * (varY - varZ);
 
             // Return the resulting values
-            return new(l, a, b);
+            return new(l, a, b, observer, illuminant);
         }
 
         /// <summary>
@@ -732,15 +810,35 @@ namespace Terminaux.Colors.Models.Conversion
         /// </summary>
         /// <param name="rgb">Instance of RGB</param>
         /// <exception cref="TerminauxException"></exception>
-        public static CieLuv ToCieLuv(RedGreenBlue rgb)
+        public static CieLuvFull ToCieLuvFull(RedGreenBlue rgb)
+        {
+            if (rgb.parameters.Length != 2)
+                return ToCieLuvFull(rgb, 2, IlluminantType.D65);
+            else
+            {
+                // Validate the values
+                int observer = (int)rgb.parameters[0];
+                IlluminantType illuminant = (IlluminantType)rgb.parameters[0];
+                if ((observer != 2 && observer != 10) || illuminant < 0 || illuminant > IlluminantType.F12)
+                    return ToCieLuvFull(rgb, 2, IlluminantType.D65);
+                return ToCieLuvFull(rgb, observer, illuminant);
+            }
+        }
+
+        /// <summary>
+        /// Converts the RGB color model to CieLuv
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <param name="observer">Observer (2 degs or 10 degs)</param>
+        /// <param name="illuminant">Illuminant type</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static CieLuvFull ToCieLuvFull(RedGreenBlue rgb, int observer, IlluminantType illuminant)
         {
             if (rgb is null)
                 throw new TerminauxException("Can't convert a null RGB instance to CieLuv!");
 
             // Get the illuminant references
-            double refX = 95.047;
-            double refY = 100;
-            double refZ = 108.883;
+            (double refX, double refY, double refZ) = IlluminanceTools.GetIlluminantReferences(observer, illuminant);
 
             // Get the XYZ values first
             var xyz = ToXyz(rgb);
@@ -764,7 +862,7 @@ namespace Terminaux.Colors.Models.Conversion
             double v = 13 * l * (varV - refV);
 
             // Return the resulting values
-            return new(l, u, v);
+            return new(l, u, v, observer, illuminant);
         }
 
         /// <summary>
@@ -772,13 +870,35 @@ namespace Terminaux.Colors.Models.Conversion
         /// </summary>
         /// <param name="rgb">Instance of RGB</param>
         /// <exception cref="TerminauxException"></exception>
-        public static CieLch ToCieLch(RedGreenBlue rgb)
+        public static CieLchFull ToCieLchFull(RedGreenBlue rgb)
+        {
+            if (rgb.parameters.Length != 2)
+                return ToCieLchFull(rgb, 2, IlluminantType.D65);
+            else
+            {
+                // Validate the values
+                int observer = (int)rgb.parameters[0];
+                IlluminantType illuminant = (IlluminantType)rgb.parameters[0];
+                if ((observer != 2 && observer != 10) || illuminant < 0 || illuminant > IlluminantType.F12)
+                    return ToCieLchFull(rgb, 2, IlluminantType.D65);
+                return ToCieLchFull(rgb, observer, illuminant);
+            }
+        }
+
+        /// <summary>
+        /// Converts the RGB color model to CieLch
+        /// </summary>
+        /// <param name="rgb">Instance of RGB</param>
+        /// <param name="observer">Observer (2 degs or 10 degs)</param>
+        /// <param name="illuminant">Illuminant type</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static CieLchFull ToCieLchFull(RedGreenBlue rgb, int observer, IlluminantType illuminant)
         {
             if (rgb is null)
                 throw new TerminauxException("Can't convert a null RGB instance to CieLch!");
 
             // Get the CIE-L*ab values first
-            var lab = ToCieLab(rgb);
+            var lab = ToCieLabFull(rgb, observer, illuminant);
 
             // Get the hue angle
             double h = Math.Atan2(lab.B, lab.A);
@@ -792,7 +912,7 @@ namespace Terminaux.Colors.Models.Conversion
             double c = Math.Sqrt(Math.Pow(lab.A, 2) + Math.Pow(lab.B, 2));
 
             // Return the resulting values
-            return new(l, c, h);
+            return new(l, c, h, observer, illuminant);
         }
         #endregion
         #region Translate to RGB from...
@@ -1183,13 +1303,32 @@ namespace Terminaux.Colors.Models.Conversion
         /// <exception cref="TerminauxException"></exception>
         public static RedGreenBlue ToRgb(CieLab cieLab)
         {
+            var cieLabFull = new CieLabFull(cieLab.L, cieLab.A, cieLab.B, 2, IlluminantType.D65);
+            return ToRgb(cieLabFull);
+        }
+
+        /// <summary>
+        /// Converts the CieLab color model to RGB
+        /// </summary>
+        /// <param name="cieLab">Instance of CieLab</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(CieLabFull cieLab) =>
+            ToRgb(cieLab, cieLab.Observer, cieLab.Illuminant);
+
+        /// <summary>
+        /// Converts the CieLab color model to RGB
+        /// </summary>
+        /// <param name="cieLab">Instance of CieLab</param>
+        /// <param name="observer">Observer (2 degs or 10 degs)</param>
+        /// <param name="illuminant">Illuminant type</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(CieLabFull cieLab, int observer, IlluminantType illuminant)
+        {
             if (cieLab is null)
                 throw new TerminauxException("Can't convert a null CieLab instance to RGB!");
 
             // Get the illuminant references
-            double refX = 95.047;
-            double refY = 100;
-            double refZ = 108.883;
+            (double refX, double refY, double refZ) = IlluminanceTools.GetIlluminantReferences(observer, illuminant);
 
             // Get the normalized xyz values
             double varY = (cieLab.L + 16) / 116;
@@ -1223,7 +1362,10 @@ namespace Terminaux.Colors.Models.Conversion
             int bWhole = (int)(b * 255);
 
             // Install the values
-            return new(rWhole, gWhole, bWhole);
+            return new(rWhole, gWhole, bWhole)
+            {
+                parameters = [observer, illuminant]
+            };
         }
 
         /// <summary>
@@ -1232,6 +1374,27 @@ namespace Terminaux.Colors.Models.Conversion
         /// <param name="cieLuv">Instance of CieLuv</param>
         /// <exception cref="TerminauxException"></exception>
         public static RedGreenBlue ToRgb(CieLuv cieLuv)
+        {
+            var cieLuvFull = new CieLuvFull(cieLuv.L, cieLuv.U, cieLuv.V, 2, IlluminantType.D65);
+            return ToRgb(cieLuvFull);
+        }
+
+        /// <summary>
+        /// Converts the CieLuv color model to RGB
+        /// </summary>
+        /// <param name="cieLuv">Instance of CieLuv</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(CieLuvFull cieLuv) =>
+            ToRgb(cieLuv, cieLuv.Observer, cieLuv.Illuminant);
+
+        /// <summary>
+        /// Converts the CieLuv color model to RGB
+        /// </summary>
+        /// <param name="cieLuv">Instance of CieLuv</param>
+        /// <param name="observer">Observer (2 degs or 10 degs)</param>
+        /// <param name="illuminant">Illuminant type</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(CieLuvFull cieLuv, int observer, IlluminantType illuminant)
         {
             if (cieLuv is null)
                 throw new TerminauxException("Can't convert a null CieLuv instance to RGB!");
@@ -1245,9 +1408,7 @@ namespace Terminaux.Colors.Models.Conversion
                 varY = (varY - 16 / 116d) / 7.787;
 
             // Get the illuminant references
-            double refX = 95.047;
-            double refY = 100;
-            double refZ = 108.883;
+            (double refX, double refY, double refZ) = IlluminanceTools.GetIlluminantReferences(observer, illuminant);
 
             // Get the reference U and V values
             double refU = refX * 4 / (refX + (refY * 15) + (refZ * 3));
@@ -1276,7 +1437,10 @@ namespace Terminaux.Colors.Models.Conversion
             int bWhole = (int)(b * 255);
 
             // Install the values
-            return new(rWhole, gWhole, bWhole);
+            return new(rWhole, gWhole, bWhole)
+            {
+                parameters = [observer, illuminant]
+            };
         }
 
         /// <summary>
@@ -1285,6 +1449,27 @@ namespace Terminaux.Colors.Models.Conversion
         /// <param name="cieLch">Instance of CieLch</param>
         /// <exception cref="TerminauxException"></exception>
         public static RedGreenBlue ToRgb(CieLch cieLch)
+        {
+            var cieLchFull = new CieLchFull(cieLch.L, cieLch.C, cieLch.H, 2, IlluminantType.D65);
+            return ToRgb(cieLchFull);
+        }
+
+        /// <summary>
+        /// Converts the CieLch color model to RGB
+        /// </summary>
+        /// <param name="cieLch">Instance of CieLch</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(CieLchFull cieLch) =>
+            ToRgb(cieLch, cieLch.Observer, cieLch.Illuminant);
+
+        /// <summary>
+        /// Converts the CieLch color model to RGB
+        /// </summary>
+        /// <param name="cieLch">Instance of CieLch</param>
+        /// <param name="observer">Observer (2 degs or 10 degs)</param>
+        /// <param name="illuminant">Illuminant type</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static RedGreenBlue ToRgb(CieLchFull cieLch, int observer, IlluminantType illuminant)
         {
             if (cieLch is null)
                 throw new TerminauxException("Can't convert a null CieLch instance to RGB!");
@@ -1296,7 +1481,7 @@ namespace Terminaux.Colors.Models.Conversion
             double l = cieLch.L;
             double a = Math.Cos(DegToRad(cieLch.H)) * cieLch.C;
             double b = Math.Sin(DegToRad(cieLch.H)) * cieLch.C;
-            var lab = new CieLab(l, a, b);
+            var lab = new CieLabFull(l, a, b, observer, illuminant);
 
             // Return RGB from parsed CIE-L*ab value
             return ToRgb(lab);
