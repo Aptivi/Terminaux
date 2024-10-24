@@ -625,6 +625,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.CieLabFull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.CieLabFull.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.CieLch.yml",
       "output": {
         ".html": {
@@ -635,10 +645,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.CieLchFull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.CieLchFull.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Models.CieLuv.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Models.CieLuv.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.CieLuvFull.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.CieLuvFull.html"
         }
       },
       "version": ""
@@ -729,6 +759,26 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Models.LumaInPhaseQuadrature.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.IlluminanceTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Parsing.IlluminanceTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Models.Parsing.IlluminantType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Models.Parsing.IlluminantType.html"
         }
       },
       "version": ""
