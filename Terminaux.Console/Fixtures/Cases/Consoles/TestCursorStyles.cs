@@ -18,6 +18,7 @@
 //
 
 using System;
+using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
@@ -29,6 +30,7 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
         public void RunFixture()
         {
             var types = Enum.GetValues(typeof(ConsoleCursorType));
+            ConsoleWrapper.CursorVisible = true;
             foreach (var type in types)
             {
                 ConsoleCursor.CursorType = (ConsoleCursorType)type;
