@@ -496,6 +496,94 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests converting an RGB color to CieLabFull
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToCieLabFull()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLabFull
+            var cieLabFull = ConversionTools.ToCieLabFull(ColorInstance.RGB);
+
+            // Check for property correctness
+            cieLabFull.L.ShouldBe(40.055099179556059);
+            cieLabFull.A.ShouldBe(20.292379028766018);
+            cieLabFull.B.ShouldBe(42.032442228242864);
+            cieLabFull.Observer.ShouldBe(2);
+            cieLabFull.Illuminant.ShouldBe(IlluminantType.D65);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(cieLabFull);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to CieLabFull
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToCieLabFullEqual()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLabFull
+            var cieLabFull = ConversionTools.ToCieLabFull(ColorInstance.RGB, 10, IlluminantType.E);
+
+            // Check for property correctness
+            cieLabFull.L.ShouldBe(40.055099179556059);
+            cieLabFull.A.ShouldBe(15.894835373068517);
+            cieLabFull.B.ShouldBe(40.460964943396348);
+            cieLabFull.Observer.ShouldBe(10);
+            cieLabFull.Illuminant.ShouldBe(IlluminantType.E);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(cieLabFull);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
         /// Tests converting an RGB color to CieLuv
         /// </summary>
         [TestMethod]
@@ -660,6 +748,94 @@ namespace Terminaux.Tests.Colors
 
             // Now, convert back to RGB
             var rgb = ConversionTools.ToRgb(cieLch);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to CieLchFull
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToCieLchFull()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLchFull
+            var cieLchFull = ConversionTools.ToCieLchFull(ColorInstance.RGB);
+
+            // Check for property correctness
+            cieLchFull.L.ShouldBe(40.055099179556059);
+            cieLchFull.C.ShouldBe(46.674477461645743);
+            cieLchFull.H.ShouldBe(64.229726973355483);
+            cieLchFull.Observer.ShouldBe(2);
+            cieLchFull.Illuminant.ShouldBe(IlluminantType.D65);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(cieLchFull);
+
+            // Check for property correctness
+            rgb.R.ShouldBe(138);
+            rgb.G.ShouldBe(80);
+            rgb.B.ShouldBe(22);
+        }
+
+        /// <summary>
+        /// Tests converting an RGB color to CieLchFull
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestConvertRgbToCieLchFullEqual()
+        {
+            // Create instance
+            var ColorInstance = new Color(139, 80, 22);
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("139;80;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;139;80;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;139;80;22m");
+            ColorInstance.RGB.R.ShouldBe(139);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(22);
+
+            // Now, convert to CieLchFull
+            var cieLchFull = ConversionTools.ToCieLchFull(ColorInstance.RGB, 10, IlluminantType.E);
+
+            // Check for property correctness
+            cieLchFull.L.ShouldBe(40.055099179556059);
+            cieLchFull.C.ShouldBe(43.471087813484708);
+            cieLchFull.H.ShouldBe(68.552930671082933);
+            cieLchFull.Observer.ShouldBe(10);
+            cieLchFull.Illuminant.ShouldBe(IlluminantType.E);
+
+            // Now, convert back to RGB
+            var rgb = ConversionTools.ToRgb(cieLchFull);
 
             // Check for property correctness
             rgb.R.ShouldBe(138);
