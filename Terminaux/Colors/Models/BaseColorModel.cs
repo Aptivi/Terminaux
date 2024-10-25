@@ -89,6 +89,14 @@ namespace Terminaux.Colors.Models
                 LumaInPhaseQuadrature.IsSpecifierValid(specifier) ? LumaInPhaseQuadrature.ParseSpecifierToRgb(specifier, settings) :
                 LumaChromaUv.IsSpecifierValid(specifier) ? LumaChromaUv.ParseSpecifierToRgb(specifier, settings) :
                 Xyz.IsSpecifierValid(specifier) ? Xyz.ParseSpecifierToRgb(specifier, settings) :
+                Yxy.IsSpecifierValid(specifier) ? Yxy.ParseSpecifierToRgb(specifier, settings) :
+                HunterLab.IsSpecifierValid(specifier) ? HunterLab.ParseSpecifierToRgb(specifier, settings) :
+                CieLab.IsSpecifierValid(specifier, true) ? CieLab.ParseSpecifierToRgb(specifier, settings) :
+                CieLabFull.IsSpecifierValid(specifier, true) ? CieLabFull.ParseSpecifierToRgb(specifier, settings) :
+                CieLch.IsSpecifierValid(specifier, true) ? CieLch.ParseSpecifierToRgb(specifier, settings) :
+                CieLchFull.IsSpecifierValid(specifier, true) ? CieLchFull.ParseSpecifierToRgb(specifier, settings) :
+                CieLuv.IsSpecifierValid(specifier, true) ? CieLuv.ParseSpecifierToRgb(specifier, settings) :
+                CieLuvFull.IsSpecifierValid(specifier, true) ? CieLuvFull.ParseSpecifierToRgb(specifier, settings) :
 
                 // Colors and hash
                 usesColorId ? ParsingTools.ParseSpecifierRgbName(specifier, settings) :

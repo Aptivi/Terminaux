@@ -1909,6 +1909,564 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests initializing color instance from true color (XYZ)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorXyz()
+        {
+            // Create instance
+            var ColorInstance = new Color("xyz:13.6;11.2;2.2");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("138;79;21");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;138;79;21m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;138;79;21m");
+            ColorInstance.RGB.R.ShouldBe(138);
+            ColorInstance.RGB.G.ShouldBe(79);
+            ColorInstance.RGB.B.ShouldBe(21);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#8A4F15");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (XYZ) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorXyzImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "xyz:13.6;11.2;2.2";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("138;79;21");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;138;79;21m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;138;79;21m");
+            ColorInstance.RGB.R.ShouldBe(138);
+            ColorInstance.RGB.G.ShouldBe(79);
+            ColorInstance.RGB.B.ShouldBe(21);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#8A4F15");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YXY)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYxy()
+        {
+            // Create instance
+            var ColorInstance = new Color("yxy:11.2;0.5;0.4");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("141;77;32");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;141;77;32m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;141;77;32m");
+            ColorInstance.RGB.R.ShouldBe(141);
+            ColorInstance.RGB.G.ShouldBe(77);
+            ColorInstance.RGB.B.ShouldBe(32);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#8D4D20");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (YXY) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorYxyImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "yxy:11.2;0.5;0.4";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("141;77;32");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;141;77;32m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;141;77;32m");
+            ColorInstance.RGB.R.ShouldBe(141);
+            ColorInstance.RGB.G.ShouldBe(77);
+            ColorInstance.RGB.B.ShouldBe(32);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#8D4D20");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (HunterLab)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorHunterLab()
+        {
+            // Create instance
+            var ColorInstance = new Color("hunterlab:33.59;13.8;19.6");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("138;80;21");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;138;80;21m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;138;80;21m");
+            ColorInstance.RGB.R.ShouldBe(138);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(21);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#8A5015");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (HunterLab) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorHunterLabImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "hunterlab:33.59;13.8;19.6";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("138;80;21");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;138;80;21m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;138;80;21m");
+            ColorInstance.RGB.R.ShouldBe(138);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(21);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#8A5015");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELAB)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLab()
+        {
+            // Create instance
+            var ColorInstance = new Color("cielab:40;20.2;42");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("138;79;21");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;138;79;21m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;138;79;21m");
+            ColorInstance.RGB.R.ShouldBe(138);
+            ColorInstance.RGB.G.ShouldBe(79);
+            ColorInstance.RGB.B.ShouldBe(21);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#8A4F15");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELAB) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLabImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "cielab:40;20.2;42";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("138;79;21");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;138;79;21m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;138;79;21m");
+            ColorInstance.RGB.R.ShouldBe(138);
+            ColorInstance.RGB.G.ShouldBe(79);
+            ColorInstance.RGB.B.ShouldBe(21);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#8A4F15");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELAB)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLabE()
+        {
+            // Create instance
+            var ColorInstance = new Color("cielab:40;20.2;42;10;7");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("144;76;18");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;144;76;18m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;144;76;18m");
+            ColorInstance.RGB.R.ShouldBe(144);
+            ColorInstance.RGB.G.ShouldBe(76);
+            ColorInstance.RGB.B.ShouldBe(18);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#904C12");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELAB) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLabImplicitE()
+        {
+            // Create instance
+            Color ColorInstance = "cielab:40;20.2;42;10;7";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("144;76;18");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;144;76;18m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;144;76;18m");
+            ColorInstance.RGB.R.ShouldBe(144);
+            ColorInstance.RGB.G.ShouldBe(76);
+            ColorInstance.RGB.B.ShouldBe(18);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#904C12");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELUV)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLuv()
+        {
+            // Create instance
+            var ColorInstance = new Color("cieluv:40;47;35");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("133;80;66");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;133;80;66m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;133;80;66m");
+            ColorInstance.RGB.R.ShouldBe(133);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(66);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#855042");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.LightPink4);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELUV) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLuvImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "cieluv:40;47;35";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("133;80;66");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;133;80;66m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;133;80;66m");
+            ColorInstance.RGB.R.ShouldBe(133);
+            ColorInstance.RGB.G.ShouldBe(80);
+            ColorInstance.RGB.B.ShouldBe(66);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#855042");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.LightPink4);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELUV)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLuvE()
+        {
+            // Create instance
+            var ColorInstance = new Color("cieluv:40;47;35;10;7");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("137;78;62");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;137;78;62m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;137;78;62m");
+            ColorInstance.RGB.R.ShouldBe(137);
+            ColorInstance.RGB.G.ShouldBe(78);
+            ColorInstance.RGB.B.ShouldBe(62);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#894E3E");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.LightPink4);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELUV) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLuvImplicitE()
+        {
+            // Create instance
+            Color ColorInstance = "cieluv:40;47;35;10;7";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("137;78;62");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;137;78;62m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;137;78;62m");
+            ColorInstance.RGB.R.ShouldBe(137);
+            ColorInstance.RGB.G.ShouldBe(78);
+            ColorInstance.RGB.B.ShouldBe(62);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#894E3E");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.LightPink4);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELCH)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLch()
+        {
+            // Create instance
+            var ColorInstance = new Color("cielch:40;46.6;64.2");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("138;79;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;138;79;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;138;79;22m");
+            ColorInstance.RGB.R.ShouldBe(138);
+            ColorInstance.RGB.G.ShouldBe(79);
+            ColorInstance.RGB.B.ShouldBe(22);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#8A4F16");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELCH) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLchImplicit()
+        {
+            // Create instance
+            Color ColorInstance = "cielch:40;46.6;64.2";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("138;79;22");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;138;79;22m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;138;79;22m");
+            ColorInstance.RGB.R.ShouldBe(138);
+            ColorInstance.RGB.G.ShouldBe(79);
+            ColorInstance.RGB.B.ShouldBe(22);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#8A4F16");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELCH)
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLchE()
+        {
+            // Create instance
+            var ColorInstance = new Color("cielch:40;46.6;64.2;10;7");
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("144;76;19");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;144;76;19m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;144;76;19m");
+            ColorInstance.RGB.R.ShouldBe(144);
+            ColorInstance.RGB.G.ShouldBe(76);
+            ColorInstance.RGB.B.ShouldBe(19);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#904C13");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
+        /// Tests initializing color instance from true color (CIELCH) using the implicit operator
+        /// </summary>
+        [TestMethod]
+        [Description("Initialization")]
+        public void TestInitializeColorInstanceFromTrueColorCieLchImplicitE()
+        {
+            // Create instance
+            Color ColorInstance = "cielch:40;46.6;64.2;10;7";
+
+            // Check for null
+            ColorInstance.ShouldNotBeNull();
+            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
+            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
+
+            // Check for property correctness
+            ColorInstance.PlainSequence.ShouldBe("144;76;19");
+            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
+            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;144;76;19m");
+            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;144;76;19m");
+            ColorInstance.RGB.R.ShouldBe(144);
+            ColorInstance.RGB.G.ShouldBe(76);
+            ColorInstance.RGB.B.ShouldBe(19);
+            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
+            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
+            ColorInstance.Hex.ShouldBe("#904C13");
+            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Orange4Alt);
+            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
+        }
+
+        /// <summary>
         /// Tests initializing color instance from Drawing's color
         /// </summary>
         [TestMethod]
