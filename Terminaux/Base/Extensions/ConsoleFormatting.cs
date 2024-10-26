@@ -21,6 +21,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Terminaux.Base.Checks;
+using Terminaux.Base.TermInfo;
+using Terminaux.Base.TermInfo.Parsing;
 using Terminaux.Sequences.Builder;
 using Terminaux.Writer.ConsoleWriters;
 
@@ -31,34 +33,6 @@ namespace Terminaux.Base.Extensions
     /// </summary>
     public static class ConsoleFormatting
     {
-        private static readonly Dictionary<ConsoleFormattingType, int> typeSequenceNumbers = new()
-        {
-            { ConsoleFormattingType.Default,                0 },
-            { ConsoleFormattingType.Intense,                1 },
-            { ConsoleFormattingType.Faint,                  2 },
-            { ConsoleFormattingType.Italic,                 3 },
-            { ConsoleFormattingType.Underline,              4 },
-            { ConsoleFormattingType.SlowBlink,              5 },
-            { ConsoleFormattingType.FastBlink,              6 },
-            { ConsoleFormattingType.Reverse,                7 },
-            { ConsoleFormattingType.Conceal,                8 },
-            { ConsoleFormattingType.Strikethrough,          9 },
-            { ConsoleFormattingType.NotBold,                21 },
-            { ConsoleFormattingType.NotIntense,             22 },
-            { ConsoleFormattingType.NotItalic,              23 },
-            { ConsoleFormattingType.NotUnderlined,          24 },
-            { ConsoleFormattingType.NotBlinking,            25 },
-            { ConsoleFormattingType.ProportionalSpacing,    26 },
-            { ConsoleFormattingType.NotReversed,            27 },
-            { ConsoleFormattingType.Reveal,                 28 },
-            { ConsoleFormattingType.NotStruckthrough,       29 },
-            { ConsoleFormattingType.NoProportionalSpacing,  50 },
-            { ConsoleFormattingType.Framed,                 51 },
-            { ConsoleFormattingType.Encircled,              52 },
-            { ConsoleFormattingType.Overlined,              53 },
-            { ConsoleFormattingType.NotFramedEncircled,     54 },
-            { ConsoleFormattingType.NotOverlined,           55 },
-        };
         private static readonly ConsoleFormattingType[] formattings = (ConsoleFormattingType[])Enum.GetValues(typeof(ConsoleFormattingType));
         private static ConsoleFormattingType formatting = ConsoleFormattingType.Default;
 
@@ -74,6 +48,35 @@ namespace Terminaux.Base.Extensions
         public static bool TextFormatted =>
             formatting != ConsoleFormattingType.Default;
 
+        private static Dictionary<ConsoleFormattingType, (int, TermInfoValueDesc<string?>?)> TypeSequenceNumbers => new()
+        {
+            { ConsoleFormattingType.Default,                (0, TermInfoDesc.Current.ExitAttributeMode) },
+            { ConsoleFormattingType.Intense,                (1, TermInfoDesc.Current.EnterBoldMode) },
+            { ConsoleFormattingType.Faint,                  (2, null) },
+            { ConsoleFormattingType.Italic,                 (3, TermInfoDesc.Current.EnterItalicsMode) },
+            { ConsoleFormattingType.Underline,              (4, TermInfoDesc.Current.EnterUnderlineMode) },
+            { ConsoleFormattingType.SlowBlink,              (5, TermInfoDesc.Current.EnterBlinkMode) },
+            { ConsoleFormattingType.FastBlink,              (6, TermInfoDesc.Current.EnterBlinkMode) },
+            { ConsoleFormattingType.Reverse,                (7, TermInfoDesc.Current.EnterReverseMode) },
+            { ConsoleFormattingType.Conceal,                (8, null) },
+            { ConsoleFormattingType.Strikethrough,          (9, null) },
+            { ConsoleFormattingType.NotBold,                (21, null) },
+            { ConsoleFormattingType.NotIntense,             (22, null) },
+            { ConsoleFormattingType.NotItalic,              (23, TermInfoDesc.Current.ExitItalicsMode) },
+            { ConsoleFormattingType.NotUnderlined,          (24, TermInfoDesc.Current.ExitUnderlineMode) },
+            { ConsoleFormattingType.NotBlinking,            (25, null) },
+            { ConsoleFormattingType.ProportionalSpacing,    (26, null) },
+            { ConsoleFormattingType.NotReversed,            (27, null) },
+            { ConsoleFormattingType.Reveal,                 (28, null) },
+            { ConsoleFormattingType.NotStruckthrough,       (29, null) },
+            { ConsoleFormattingType.NoProportionalSpacing,  (50, null) },
+            { ConsoleFormattingType.Framed,                 (51, null) },
+            { ConsoleFormattingType.Encircled,              (52, null) },
+            { ConsoleFormattingType.Overlined,              (53, null) },
+            { ConsoleFormattingType.NotFramedEncircled,     (54, null) },
+            { ConsoleFormattingType.NotOverlined,           (55, null) },
+        };
+
         /// <summary>
         /// Gets the formatting sequences for the selected formatting types
         /// </summary>
@@ -88,8 +91,13 @@ namespace Terminaux.Base.Extensions
             {
                 if (types.HasFlag(type))
                 {
-                    var sequence = typeSequenceNumbers[type];
-                    builder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, sequence));
+                    var sequenceTuple = TypeSequenceNumbers[type];
+
+                    // First, check for TermInfo value
+                    string finalValue = sequenceTuple.Item2 is not null ? sequenceTuple.Item2.ProcessSequence() ?? "" : "";
+                    if (string.IsNullOrWhiteSpace(finalValue))
+                        finalValue = VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCharacterAttributes, sequenceTuple.Item1);
+                    builder.Append(finalValue);
                 }
             }
 
