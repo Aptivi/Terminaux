@@ -136,6 +136,8 @@ namespace Terminaux.Console.Fixtures
             new BorderText(),
             new TestNonModalInfoBox(),
             new TestNonModalInfoBoxExcess(),
+            new TestTextMarquee(),
+            new TestTextMarqueeCjk(),
 
             // Input
             new TestInputSelection(),
