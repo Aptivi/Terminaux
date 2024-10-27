@@ -17,9 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
 using Terminaux.Base.Checks;
 using Terminaux.Writer.ConsoleWriters;
+using ThreadState = System.Threading.ThreadState;
 
 namespace Terminaux.Base.Buffered
 {
@@ -28,6 +32,8 @@ namespace Terminaux.Base.Buffered
     /// </summary>
     public static class ScreenTools
     {
+        private static Screen? cyclicScreen = null;
+        private static Thread? cyclicScreenThread = null;
         private static readonly List<Screen> screens = [];
 
         /// <summary>
@@ -88,6 +94,89 @@ namespace Terminaux.Base.Buffered
 
             // Remove the screen from the list
             screens.Remove(screen);
+        }
+
+        /// <summary>
+        /// Sets the current cyclic screen instance
+        /// </summary>
+        /// <param name="screen">The screen to add to the list</param>
+        /// <exception cref="TerminauxException"></exception>
+        public static void SetCurrentCyclic(Screen screen)
+        {
+            // Check the screen instance
+            if (screen is null)
+                throw new TerminauxException("Screen is not specified.");
+            if (screen.CycleFrequency <= 0)
+                throw new TerminauxException("Screen is not cyclic.");
+
+            // Add the screen to the cyclic screen variable
+            cyclicScreen = screen;
+        }
+
+        /// <summary>
+        /// Unsets the current cyclic screen instance
+        /// </summary>
+        /// <exception cref="TerminauxException"></exception>
+        public static void UnsetCurrentCyclic() =>
+            cyclicScreen = null;
+
+        /// <summary>
+        /// Starts the current cyclic screen (you can set the current cyclic screen with <see cref="SetCurrentCyclic(Screen)"/>)
+        /// </summary>
+        public static void StartCyclicScreen() =>
+            StartCyclicScreen(cyclicScreen);
+
+        /// <summary>
+        /// Starts the current cyclic screen (you can set the current cyclic screen with <see cref="SetCurrentCyclic(Screen)"/>)
+        /// </summary>
+        /// <param name="screen">Screen to cycle</param>
+        public static void StartCyclicScreen(Screen? screen)
+        {
+            // Check the screen instance
+            if (screen is null)
+                throw new TerminauxException("Screen is not specified.");
+
+            // Now, start a thread with cyclic screen info
+            StopCyclicScreen();
+            cyclicScreenThread = new(() => CycleScreen(screen));
+            cyclicScreenThread.Start();
+        }
+
+        /// <summary>
+        /// Checks to see whether the cyclic screen thread is running
+        /// </summary>
+        /// <returns></returns>
+        public static bool CyclicScreenRunning() =>
+            cyclicScreenThread?.ThreadState == ThreadState.Running;
+
+        /// <summary>
+        /// Stops the current cyclic screen
+        /// </summary>
+        public static void StopCyclicScreen()
+        {
+            cyclicScreenThread?.Interrupt();
+            cyclicScreenThread?.Join(10000);
+        }
+
+        private static void CycleScreen(Screen screen)
+        {
+            try
+            {
+                while (CyclicScreenRunning())
+                {
+                    Render(screen);
+                    Thread.Sleep(screen.CycleFrequency);
+                }
+            }
+            catch (ThreadInterruptedException)
+            {
+                Debug.WriteLine("Thread is interrupted");
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Failed to render cyclic screen: {ex.Message}");
+                Debug.WriteLine(ex);
+            }
         }
 
         static ScreenTools()

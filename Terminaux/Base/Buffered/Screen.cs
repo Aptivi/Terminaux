@@ -33,6 +33,7 @@ namespace Terminaux.Base.Buffered
     {
         private bool needsRefresh = true;
         private bool resetResize = true;
+        private int cycleFrequency = 0;
         private readonly ScreenPart clearPart = new();
         private readonly Dictionary<string, ScreenPart> screenParts = [];
 
@@ -49,6 +50,15 @@ namespace Terminaux.Base.Buffered
         {
             get => resetResize;
             set => resetResize = value;
+        }
+
+        /// <summary>
+        /// Specifies the amount of milliseconds of cyclic screen frequency
+        /// </summary>
+        public int CycleFrequency
+        {
+            get => cycleFrequency;
+            set => cycleFrequency = value;
         }
 
         /// <summary>

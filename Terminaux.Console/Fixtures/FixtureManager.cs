@@ -245,6 +245,7 @@ namespace Terminaux.Console.Fixtures
             new TestScreenPrintPos(),
             new TestScreenPartVisibility(),
             new TestScreenBufferVisibility(),
+            new TestScreenCyclic(),
 
             // Presentation
             new TestPresentation(),
