@@ -90,48 +90,57 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface ICyclicRenderer</code></pre>
   </div>
-  <h3 id="methods">Methods
+  <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_ICyclicRenderer_Render_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.ICyclicRenderer.Render(System.String%2CSystem.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_ICyclicRenderer_Text.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.ICyclicRenderer.Text%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/CyclicWriters/ICyclicRenderer.cs/#L33">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/CyclicWriters/ICyclicRenderer.cs/#L30">View Source</a>
   </span>
-  <a id="Terminaux_Writer_CyclicWriters_ICyclicRenderer_Render_" data-uid="Terminaux.Writer.CyclicWriters.ICyclicRenderer.Render*"></a>
-  <h4 id="Terminaux_Writer_CyclicWriters_ICyclicRenderer_Render_System_String_System_Object___" data-uid="Terminaux.Writer.CyclicWriters.ICyclicRenderer.Render(System.String,System.Object[])">Render(string, params object?[]?)</h4>
-  <div class="markdown level1 summary"><p>Renders an element</p>
+  <a id="Terminaux_Writer_CyclicWriters_ICyclicRenderer_Text_" data-uid="Terminaux.Writer.CyclicWriters.ICyclicRenderer.Text*"></a>
+  <h4 id="Terminaux_Writer_CyclicWriters_ICyclicRenderer_Text" data-uid="Terminaux.Writer.CyclicWriters.ICyclicRenderer.Text">Text</h4>
+  <div class="markdown level1 summary"><p>Text to render. All VT sequences and control characters are trimmed away.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">string Render(string text, params object?[]? args)</code></pre>
+    <pre><code class="lang-csharp hljs">string Text { get; }</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">text</span></td>
-        <td><p>Text to render</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>[]</td>
-        <td><span class="parametername">args</span></td>
-        <td><p>Arguments to format text</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Writer_CyclicWriters_ICyclicRenderer_Render.md&amp;value=---%0Auid%3A%20Terminaux.Writer.CyclicWriters.ICyclicRenderer.Render%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Writer/CyclicWriters/ICyclicRenderer.cs/#L36">View Source</a>
+  </span>
+  <a id="Terminaux_Writer_CyclicWriters_ICyclicRenderer_Render_" data-uid="Terminaux.Writer.CyclicWriters.ICyclicRenderer.Render*"></a>
+  <h4 id="Terminaux_Writer_CyclicWriters_ICyclicRenderer_Render" data-uid="Terminaux.Writer.CyclicWriters.ICyclicRenderer.Render">Render()</h4>
+  <div class="markdown level1 summary"><p>Renders an element</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Render()</code></pre>
+  </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
     <thead>
