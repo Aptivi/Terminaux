@@ -25,11 +25,6 @@ namespace Terminaux.Writer.CyclicWriters
     public interface ICyclicRenderer
     {
         /// <summary>
-        /// Text to render. All VT sequences and control characters are trimmed away.
-        /// </summary>
-        public string Text { get; }
-
-        /// <summary>
         /// Renders an element
         /// </summary>
         /// <returns>Rendered text that will be used by the cyclic renderer</returns>

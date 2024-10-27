@@ -37,7 +37,9 @@ namespace Terminaux.Writer.CyclicWriters
         private int rightIdx = 0;
         private int textWidth = 0;
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Text to render. All VT sequences and control characters are trimmed away.
+        /// </summary>
         public string Text =>
             text;
 
