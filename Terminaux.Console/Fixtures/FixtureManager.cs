@@ -138,6 +138,9 @@ namespace Terminaux.Console.Fixtures
             new TestNonModalInfoBoxExcess(),
             new TestTextMarquee(),
             new TestTextMarqueeCjk(),
+            new TestSpinner1(),
+            new TestSpinner2(),
+            new TestSpinner3(),
 
             // Input
             new TestInputSelection(),
