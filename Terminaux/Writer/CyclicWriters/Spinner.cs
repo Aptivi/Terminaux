@@ -40,7 +40,7 @@ namespace Terminaux.Writer.CyclicWriters
         public string Render()
         {
             // Get the spinner, increase a step, and check
-            string spinner = spinners[step];
+            string spinner = Peek();
             step++;
             if (step >= spinners.Length)
                 step = 0;
@@ -48,6 +48,9 @@ namespace Terminaux.Writer.CyclicWriters
             // Return the spinner
             return spinner;
         }
+
+        internal string Peek() =>
+            spinners[step];
 
         /// <summary>
         /// Makes a new spinner instance
