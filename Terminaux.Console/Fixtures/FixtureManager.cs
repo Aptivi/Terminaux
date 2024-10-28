@@ -143,6 +143,7 @@ namespace Terminaux.Console.Fixtures
             new TestSpinner2(),
             new TestSpinner3(),
             new TestProgressBar(),
+            new TestProgressBar2(),
 
             // Input
             new TestInputSelection(),

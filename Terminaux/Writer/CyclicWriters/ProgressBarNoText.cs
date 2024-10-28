@@ -30,21 +30,13 @@ using Textify.General;
 namespace Terminaux.Writer.CyclicWriters
 {
     /// <summary>
-    /// Progress bar with text
+    /// Progress bar without text
     /// </summary>
-    public class ProgressBar : ICyclicRenderer
+    public class ProgressBarNoText : ICyclicRenderer
     {
-        private string text = "";
         private int position = 0;
         private int maxPosition = 0;
         private Spinner progressSpinner = BuiltinSpinners.Dots;
-        private TextMarquee progressMarquee = new("");
-
-        /// <summary>
-        /// Text to render. All VT sequences and control characters are trimmed away.
-        /// </summary>
-        public string Text =>
-            text;
 
         /// <summary>
         /// Left margin of the progress bar
@@ -82,14 +74,11 @@ namespace Terminaux.Writer.CyclicWriters
             int finalWidth = ConsoleWrapper.WindowWidth - LeftMargin - RightMargin;
             int spinnerWidth = 2 + ConsoleChar.EstimateCellWidth(progressSpinner.Peek());
             int percentageWidth = 6;
-            int progressWidth = 20;
+            int progressWidth = finalWidth - spinnerWidth - percentageWidth;
             if (finalWidth < spinnerWidth)
                 return "";
-            if (finalWidth < spinnerWidth + progressWidth + percentageWidth)
+            if (finalWidth < spinnerWidth + percentageWidth)
                 return $" {progressSpinner.Render()}";
-
-            // Check to see if we can print a marquee
-            bool needsMarquee = finalWidth > spinnerWidth + progressWidth + percentageWidth + 3;
 
             // Render the spinner
             var rendered = new StringBuilder();
@@ -97,17 +86,6 @@ namespace Terminaux.Writer.CyclicWriters
                 ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) +
                 $" {progressSpinner.Render()} "
             );
-
-            // Render the marquee if needed
-            if (needsMarquee)
-            {
-                progressMarquee.LeftMargin = LeftMargin + spinnerWidth;
-                progressMarquee.RightMargin = RightMargin + percentageWidth + progressWidth + 1;
-                rendered.Append(
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.White) +
-                    progressMarquee.Render() + " "
-                );
-            }
 
             // Estimate how many cells the progress bar takes
             int cells = (int)(position * progressWidth / (double)maxPosition);
@@ -133,19 +111,14 @@ namespace Terminaux.Writer.CyclicWriters
         /// <summary>
         /// Makes a new instance of progress bar
         /// </summary>
-        /// <param name="text"></param>
         /// <param name="position"></param>
         /// <param name="maxPosition"></param>
         /// <param name="progressSpinner"></param>
-        /// <param name="progressMarquee"></param>
-        /// <param name="args"></param>
-        public ProgressBar(string text, int position, int maxPosition, Spinner? progressSpinner = null, TextMarquee? progressMarquee = null, params object?[]? args)
+        public ProgressBarNoText(int position, int maxPosition, Spinner? progressSpinner = null)
         {
-            this.text = text.FormatString(args);
             this.position = position;
             this.maxPosition = maxPosition;
             this.progressSpinner = progressSpinner ?? BuiltinSpinners.Dots;
-            this.progressMarquee = progressMarquee ?? new(Text);
         }
     }
 }
