@@ -18,10 +18,10 @@
 //
 
 using Textify.Data.Figlet;
-using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -32,7 +32,15 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var font = FigletFonts.TryGetByName("banner3");
             if (font is null)
                 return;
-            AlignedFigletTextColor.WriteAlignedColor(font, "Hello world!", new Color(ConsoleColors.Green), TextAlignment.Middle);
+            var figlet = new AlignedFigletText(font, "Hello world!")
+            {
+                ForegroundColor = ConsoleColors.Green,
+                Settings = new()
+                {
+                    Alignment = TextAlignment.Middle
+                }
+            };
+            TextWriterRaw.WriteRaw(figlet.Render());
         }
     }
 }
