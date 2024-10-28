@@ -2345,16 +2345,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.ICyclicRenderer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.CyclicWriters.ICyclicRenderer.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBar.yml",
       "output": {
         ".html": {
@@ -2735,6 +2725,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.IStaticRenderable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.IStaticRenderable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.MiscWriters.KeybindingsWriter.yml",
       "output": {
         ".html": {
@@ -2799,6 +2799,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.MiscWriters.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.html"
         }
       },
       "version": ""
