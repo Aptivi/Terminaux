@@ -239,12 +239,12 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Wait until the user presses any key to close the box
-                    string[] splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                    string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
                     var (_, maxHeightOut, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines);
                     if (currIdx < splitFinalLines.Length - maxHeightOut)
                     {
                         Thread.Sleep(5000);
-                        splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                        splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
                         var (_, maxHeight, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines);
                         bail = currIdx == splitFinalLines.Length - maxHeight;
                         currIdx += increment;

@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.MiscWriters.Tools;
+using Textify.General;
 
 namespace Terminaux.Writer.FancyWriters.Tools
 {
@@ -68,6 +70,33 @@ namespace Terminaux.Writer.FancyWriters.Tools
             if (x < 0)
                 x = 0;
             return x;
+        }
+
+        internal static string[] GetFinalLines(string text, params object[] vars) =>
+            GetFinalLines(text, ConsoleWrapper.WindowWidth - 4, vars);
+
+        internal static string[] GetFinalLines(string text, int width, params object[] vars)
+        {
+            // Deal with the lines to actually fit text in the infobox
+            string finalInfoRendered = TextTools.FormatString(text, vars);
+            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
+            List<string> splitFinalLines = [];
+            foreach (var line in splitLines)
+            {
+                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, width);
+                foreach (var lineSentence in lineSentences)
+                    splitFinalLines.Add(lineSentence);
+            }
+
+            // Trim the new lines until we reach a full line
+            for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+            {
+                string line = splitFinalLines[i];
+                if (!string.IsNullOrWhiteSpace(line))
+                    break;
+                splitFinalLines.RemoveAt(i);
+            }
+            return [.. splitFinalLines];
         }
     }
 }

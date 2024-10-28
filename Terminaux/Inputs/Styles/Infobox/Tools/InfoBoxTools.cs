@@ -33,30 +33,6 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
     internal static class InfoBoxTools
     {
-        internal static string[] GetFinalLines(string text, params object[] vars)
-        {
-            // Deal with the lines to actually fit text in the infobox
-            string finalInfoRendered = TextTools.FormatString(text, vars);
-            string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-            List<string> splitFinalLines = [];
-            foreach (var line in splitLines)
-            {
-                var lineSentences = ConsoleMisc.GetWrappedSentencesByWords(line, ConsoleWrapper.WindowWidth - 4);
-                foreach (var lineSentence in lineSentences)
-                    splitFinalLines.Add(lineSentence);
-            }
-
-            // Trim the new lines until we reach a full line
-            for (int i = splitFinalLines.Count - 1; i >= 0; i--)
-            {
-                string line = splitFinalLines[i];
-                if (!string.IsNullOrWhiteSpace(line))
-                    break;
-                splitFinalLines.RemoveAt(i);
-            }
-            return [.. splitFinalLines];
-        }
-
         internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(string[] splitFinalLines)
         {
             int maxWidth = splitFinalLines.Max(ConsoleChar.EstimateCellWidth);
@@ -109,7 +85,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         )
         {
             // Deal with the lines to actually fit text in the infobox
-            string[] splitFinalLines = GetFinalLines(text, vars);
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
             return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, writeBinding, vars);
         }
@@ -119,7 +95,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         )
         {
             // Deal with the lines to actually fit text in the infobox
-            string[] splitFinalLines = GetFinalLines(text, vars);
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensionsInput(splitFinalLines);
             return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, writeBinding, vars);
         }
@@ -129,7 +105,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         )
         {
             // Deal with the lines to actually fit text in the infobox
-            string[] splitFinalLines = GetFinalLines(text, vars);
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
             var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensionsSelection(choices, splitFinalLines);
             return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, true, vars);
         }
@@ -145,7 +121,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             // Deal with the lines to actually fit text in the infobox
             string buttons = GetButtons(settings);
             int buttonsWidth = ConsoleChar.EstimateCellWidth(buttons);
-            string[] splitFinalLines = GetFinalLines(text, vars);
+            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
 
             // Fill the info box with text inside it
             var boxBuffer = new StringBuilder();
@@ -161,22 +137,9 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
 
             // Render text inside it
             ConsoleWrapper.CursorVisible = false;
-            int linesMade = 0;
-            for (int i = currIdx; i < splitFinalLines.Length; i++)
-            {
-                var line = splitFinalLines[i];
-                if (linesMade % (maxHeight - maxHeightOffset) == 0 && linesMade > 0)
-                {
-                    // Reached the end of the box. Bail.
-                    increment = linesMade;
-                    break;
-                }
-                boxBuffer.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + linesMade % maxHeight + 1)}" +
-                    $"{line}"
-                );
-                linesMade++;
-            }
+            boxBuffer.Append(
+                TruncatedLineText.RenderText(splitFinalLines, InfoBoxColor, BackgroundColor, maxHeight, borderX + 1, borderY, currIdx, ref increment)
+            );
 
             // Render the vertical bar
             int left = maxWidth + borderX + 1;

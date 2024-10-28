@@ -251,10 +251,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     ScreenTools.Render();
 
                     // Wait until the user presses any key to close the box
-                    string[] splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                    string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
                     var (_, maxHeightOut, _, _, _) = InfoBoxTools.GetDimensions(splitFinalLines);
                     SpinWait.SpinUntil(() => Input.InputAvailable);
-                    splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                    splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
                     var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
                     if (Input.MouseInputAvailable)
                     {

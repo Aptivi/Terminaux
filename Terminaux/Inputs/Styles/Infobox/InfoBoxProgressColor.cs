@@ -225,7 +225,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 infoBoxScreenPart.AddDynamicText(() =>
                 {
                     // Deal with the lines to actually fit text in the infobox
-                    string[] splitFinalLines = InfoBoxTools.GetFinalLines(text, vars);
+                    string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
                     var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensionsInput(splitFinalLines);
 
                     // Fill the info box with text inside it

@@ -32,20 +32,20 @@ using Textify.General;
 namespace Terminaux.Writer.FancyWriters
 {
     /// <summary>
-    /// Truncated text writer by column and row number
+    /// Truncated text writer by line number
     /// </summary>
-    public static class TruncatedText
+    public static class TruncatedLineText
     {
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="text">Text to render</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -53,69 +53,69 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="text">Text to render</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="text">Text to render</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
-        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="left">Left position of the truncated text "rectangle"</param>
-        /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
-        /// <param name="vars">Variables to format the text with</param>
-        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
-
-        /// <summary>
-        /// Renders a truncated text block according to the width and the height
-        /// </summary>
-        /// <param name="text">Text to render</param>
-        /// <param name="textColor">Text foreground color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
-        /// <param name="vars">Variables to format the text with</param>
-        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, Color textColor, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
-
-        /// <summary>
-        /// Renders a truncated text block according to the width and the height
-        /// </summary>
-        /// <param name="text">Text to render</param>
-        /// <param name="textColor">Text foreground color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
-        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
-        /// <param name="vars">Variables to format the text with</param>
-        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, Color textColor, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
-
-        /// <summary>
-        /// Renders a truncated text block according to the width and the height
-        /// </summary>
-        /// <param name="text">Text to render</param>
-        /// <param name="textColor">Text foreground color</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
+
+        /// <summary>
+        /// Renders a truncated text block according to the width and the height
+        /// </summary>
+        /// <param name="text">Text to render</param>
+        /// <param name="textColor">Text foreground color</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
+        /// <param name="vars">Variables to format the text with</param>
+        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static void WriteText(string text, Color textColor, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
+
+        /// <summary>
+        /// Renders a truncated text block according to the width and the height
+        /// </summary>
+        /// <param name="text">Text to render</param>
+        /// <param name="textColor">Text foreground color</param>
+        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
+        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
+        /// <param name="vars">Variables to format the text with</param>
+        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static void WriteText(string text, Color textColor, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
+
+        /// <summary>
+        /// Renders a truncated text block according to the width and the height
+        /// </summary>
+        /// <param name="text">Text to render</param>
+        /// <param name="textColor">Text foreground color</param>
+        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
+        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
+        /// <param name="left">Left position of the truncated text "rectangle"</param>
+        /// <param name="top">Top position of the truncated text "rectangle"</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
+        /// <param name="vars">Variables to format the text with</param>
+        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static void WriteText(string text, Color textColor, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -123,27 +123,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="text">Text to render</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
-
-        /// <summary>
-        /// Renders a truncated text block according to the width and the height
-        /// </summary>
-        /// <param name="text">Text to render</param>
-        /// <param name="textColor">Text foreground color</param>
-        /// <param name="backgroundColor">Background color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
-        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
-        /// <param name="vars">Variables to format the text with</param>
-        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, Color textColor, Color backgroundColor, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -153,26 +138,41 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="backgroundColor">Background color</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="left">Left position of the truncated text "rectangle"</param>
-        /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, Color textColor, Color backgroundColor, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
+
+        /// <summary>
+        /// Renders a truncated text block according to the width and the height
+        /// </summary>
+        /// <param name="text">Text to render</param>
+        /// <param name="textColor">Text foreground color</param>
+        /// <param name="backgroundColor">Background color</param>
+        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
+        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
+        /// <param name="left">Left position of the truncated text "rectangle"</param>
+        /// <param name="top">Top position of the truncated text "rectangle"</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
+        /// <param name="vars">Variables to format the text with</param>
+        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static void WriteText(string text, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="text">Text to render</param>
         /// <param name="settings">Text settings to use</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, TextSettings settings, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, TextSettings settings, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -181,12 +181,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Text settings to use</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, TextSettings settings, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, TextSettings settings, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -197,12 +197,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, TextSettings settings, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, TextSettings settings, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -210,12 +210,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="text">Text to render</param>
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, TextSettings settings, Color textColor, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, TextSettings settings, Color textColor, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -225,12 +225,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="textColor">Text foreground color</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, TextSettings settings, Color textColor, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, settings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, TextSettings settings, Color textColor, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, settings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -242,12 +242,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, TextSettings settings, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, settings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, TextSettings settings, Color textColor, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, settings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -256,28 +256,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, TextSettings settings, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
-
-        /// <summary>
-        /// Renders a truncated text block according to the width and the height
-        /// </summary>
-        /// <param name="text">Text to render</param>
-        /// <param name="settings">Text settings to use</param>
-        /// <param name="textColor">Text foreground color</param>
-        /// <param name="backgroundColor">Background color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
-        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
-        /// <param name="vars">Variables to format the text with</param>
-        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, settings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, TextSettings settings, Color textColor, Color backgroundColor, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -288,95 +272,107 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="backgroundColor">Background color</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="left">Left position of the truncated text "rectangle"</param>
-        /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            WriteText(text, settings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static void WriteText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, settings, textColor, backgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
 
-        internal static void WriteText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdxRow, int currIdxColumn, params object[] vars)
+        /// <summary>
+        /// Renders a truncated text block according to the width and the height
+        /// </summary>
+        /// <param name="text">Text to render</param>
+        /// <param name="settings">Text settings to use</param>
+        /// <param name="textColor">Text foreground color</param>
+        /// <param name="backgroundColor">Background color</param>
+        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
+        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
+        /// <param name="left">Left position of the truncated text "rectangle"</param>
+        /// <param name="top">Top position of the truncated text "rectangle"</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
+        /// <param name="vars">Variables to format the text with</param>
+        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static void WriteText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            WriteText(text, settings, textColor, backgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
+
+        internal static void WriteText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdx, ref int increment, params object[] vars)
         {
             string[] lines = TextWriterTools.GetFinalLines(text, width, vars);
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, width, height, left, top, useColor, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, height, left, top, useColor, currIdx, ref increment));
         }
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, int height, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, int height, int left, int top, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, Color textColor, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, Color textColor, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, Color textColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, Color textColor, int height, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, Color textColor, int height, int left, int top, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -384,11 +380,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -396,13 +392,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int height, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -410,54 +405,51 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int height, int left, int top, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, TextSettings settings, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, TextSettings settings, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, TextSettings settings, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, TextSettings settings, int height, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, TextSettings settings, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, TextSettings settings, int height, int left, int top, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -465,11 +457,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, TextSettings settings, Color textColor, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, TextSettings settings, Color textColor, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -477,13 +469,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, TextSettings settings, Color textColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, TextSettings settings, Color textColor, int height, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -491,15 +482,14 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, TextSettings settings, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, TextSettings settings, Color textColor, int height, int left, int top, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -508,11 +498,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -521,13 +511,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -536,26 +525,25 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+        public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int left, int top, int currIdx, ref int increment) =>
+            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="text">Text to render</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -563,12 +551,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="text">Text to render</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -578,24 +566,24 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="text">Text to render</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, Color textColor, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, Color textColor, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -604,12 +592,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="textColor">Text foreground color</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, Color textColor, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, Color textColor, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -620,12 +608,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, Color textColor, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -633,12 +621,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="text">Text to render</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, Color textColor, Color backgroundColor, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -648,12 +636,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="backgroundColor">Background color</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, Color textColor, Color backgroundColor, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -665,38 +653,24 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="text">Text to render</param>
         /// <param name="settings">Text settings to use</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, TextSettings settings, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
-
-        /// <summary>
-        /// Renders a truncated text block according to the width and the height
-        /// </summary>
-        /// <param name="text">Text to render</param>
-        /// <param name="settings">Text settings to use</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
-        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
-        /// <param name="vars">Variables to format the text with</param>
-        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, TextSettings settings, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, TextSettings settings, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -705,59 +679,73 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Text settings to use</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="left">Left position of the truncated text "rectangle"</param>
-        /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, TextSettings settings, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, TextSettings settings, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="text">Text to render</param>
         /// <param name="settings">Text settings to use</param>
-        /// <param name="textColor">Text foreground color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
-        /// <param name="vars">Variables to format the text with</param>
-        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, TextSettings settings, Color textColor, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
-
-        /// <summary>
-        /// Renders a truncated text block according to the width and the height
-        /// </summary>
-        /// <param name="text">Text to render</param>
-        /// <param name="settings">Text settings to use</param>
-        /// <param name="textColor">Text foreground color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
-        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
-        /// <param name="vars">Variables to format the text with</param>
-        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, TextSettings settings, Color textColor, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, settings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
-
-        /// <summary>
-        /// Renders a truncated text block according to the width and the height
-        /// </summary>
-        /// <param name="text">Text to render</param>
-        /// <param name="settings">Text settings to use</param>
-        /// <param name="textColor">Text foreground color</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, TextSettings settings, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, settings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, TextSettings settings, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
+
+        /// <summary>
+        /// Renders a truncated text block according to the width and the height
+        /// </summary>
+        /// <param name="text">Text to render</param>
+        /// <param name="settings">Text settings to use</param>
+        /// <param name="textColor">Text foreground color</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
+        /// <param name="vars">Variables to format the text with</param>
+        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static string RenderText(string text, TextSettings settings, Color textColor, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
+
+        /// <summary>
+        /// Renders a truncated text block according to the width and the height
+        /// </summary>
+        /// <param name="text">Text to render</param>
+        /// <param name="settings">Text settings to use</param>
+        /// <param name="textColor">Text foreground color</param>
+        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
+        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
+        /// <param name="vars">Variables to format the text with</param>
+        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static string RenderText(string text, TextSettings settings, Color textColor, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, settings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
+
+        /// <summary>
+        /// Renders a truncated text block according to the width and the height
+        /// </summary>
+        /// <param name="text">Text to render</param>
+        /// <param name="settings">Text settings to use</param>
+        /// <param name="textColor">Text foreground color</param>
+        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
+        /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
+        /// <param name="left">Left position of the truncated text "rectangle"</param>
+        /// <param name="top">Top position of the truncated text "rectangle"</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
+        /// <param name="vars">Variables to format the text with</param>
+        /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static string RenderText(string text, TextSettings settings, Color textColor, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, settings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -766,12 +754,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, TextSettings settings, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, TextSettings settings, Color textColor, Color backgroundColor, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -782,12 +770,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="backgroundColor">Background color</param>
         /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, settings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, settings, textColor, backgroundColor, width, height, 0, 0, true, currIdx, ref increment, vars);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -800,93 +788,89 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <param name="vars">Variables to format the text with</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn, params object[] vars) =>
-            RenderText(text, settings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn, vars);
+        public static string RenderText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdx, ref int increment, params object[] vars) =>
+            RenderText(text, settings, textColor, backgroundColor, width, height, left, top, true, currIdx, ref increment, vars);
 
-        internal static string RenderText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdxRow, int currIdxColumn, params object[] vars)
+        internal static string RenderText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdx, ref int increment, params object[] vars)
         {
             string[] lines = TextWriterTools.GetFinalLines(text, width, vars);
-            return RenderText(lines, settings, textColor, backgroundColor, width, height, left, top, useColor, currIdxRow, currIdxColumn);
+            return RenderText(lines, settings, textColor, backgroundColor, height, left, top, useColor, currIdx, ref increment);
         }
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, int currIdx, ref int increment) =>
+            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, int height, int currIdx, ref int increment) =>
+            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, int height, int left, int top, int currIdx, ref int increment) =>
+            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, Color textColor, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, Color textColor, int currIdx, ref int increment) =>
+            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, Color textColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, Color textColor, int height, int currIdx, ref int increment) =>
+            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, Color textColor, int height, int left, int top, int currIdx, ref int increment) =>
+            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -894,11 +878,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int currIdx, ref int increment) =>
+            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -906,13 +890,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int height, int currIdx, ref int increment) =>
+            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -920,54 +903,51 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int height, int left, int top, int currIdx, ref int increment) =>
+            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, TextSettings settings, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, TextSettings settings, int currIdx, ref int increment) =>
+            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, TextSettings settings, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, TextSettings settings, int height, int currIdx, ref int increment) =>
+            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
         /// </summary>
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, TextSettings settings, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, TextSettings settings, int height, int left, int top, int currIdx, ref int increment) =>
+            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -975,11 +955,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, TextSettings settings, Color textColor, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, TextSettings settings, Color textColor, int currIdx, ref int increment) =>
+            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -987,13 +967,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, TextSettings settings, Color textColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, TextSettings settings, Color textColor, int height, int currIdx, ref int increment) =>
+            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1001,15 +980,14 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="lines">Lines of text to render</param>
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, TextSettings settings, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, TextSettings settings, Color textColor, int height, int left, int top, int currIdx, ref int increment) =>
+            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1018,11 +996,11 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int currIdx, ref int increment) =>
+            RenderText(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1031,13 +1009,12 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int currIdx, ref int increment) =>
+            RenderText(lines, settings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1046,109 +1023,50 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="settings">Text settings to use</param>
         /// <param name="textColor">Text foreground color</param>
         /// <param name="backgroundColor">Background color</param>
-        /// <param name="width">Truncated text width (think of it as a rectangle width)</param>
         /// <param name="height">Truncated text height (think of it as a rectangle height)</param>
         /// <param name="left">Left position of the truncated text "rectangle"</param>
         /// <param name="top">Top position of the truncated text "rectangle"</param>
-        /// <param name="currIdxRow">Current row index for pagination</param>
-        /// <param name="currIdxColumn">Current height index for pagination</param>
+        /// <param name="currIdx">Current line index for pagination</param>
+        /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+        public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int left, int top, int currIdx, ref int increment) =>
+            RenderText(lines, settings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment);
 
-        internal static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdxRow, int currIdxColumn)
+        internal static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int left, int top, bool useColor, int currIdx, ref int increment)
         {
-            // Get the start and the end indexes for lines
-            int lineLinesPerPage = height;
-            int currentPage = currIdxRow / lineLinesPerPage;
-            int startIndex = lineLinesPerPage * currentPage + 1;
-            int endIndex = lineLinesPerPage * (currentPage + 1);
-            if (startIndex > lines.Length)
-                startIndex = lines.Length;
-            if (endIndex > lines.Length)
-                endIndex = lines.Length;
-
-            // Get the lines and highlight the selection
-            int count = 0;
-            var sels = new StringBuilder();
-            for (int i = startIndex; i <= endIndex; i++)
+            int linesMade = 0;
+            var buffer = new StringBuilder();
+            if (useColor)
             {
-                // Get a line
-                string source = lines[i - 1].Replace("\t", "    ");
-                if (source.Length == 0)
-                    source = " ";
-                var sequencesCollections = VtSequenceTools.MatchVTSequences(source);
-                int vtSeqIdx = 0;
-
-                // Seek through the whole string to find unprintable characters
-                var sourceBuilder = new StringBuilder();
-                for (int l = 0; l < source.Length; l++)
-                {
-                    string sequence = ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
-                    bool unprintable = ConsoleChar.EstimateCellWidth(sequence) == 0;
-                    string rendered = unprintable && !isVtSequence ? "." : sequence;
-                    sourceBuilder.Append(rendered);
-                }
-                source = sourceBuilder.ToString();
-
-                // Now, get the line range
-                var lineBuilder = new StringBuilder();
-                var absolutes = GetAbsoluteSequences(source, sequencesCollections);
-                if (source.Length > 0)
-                {
-                    int charsPerPage = width;
-                    int currentCharPage = currIdxColumn / charsPerPage;
-                    int startLineIndex = charsPerPage * currentCharPage;
-                    int endLineIndex = charsPerPage * (currentCharPage + 1);
-                    if (startLineIndex > absolutes.Length)
-                        startLineIndex = absolutes.Length;
-                    if (endLineIndex > absolutes.Length)
-                        endLineIndex = absolutes.Length;
-                    source = "";
-                    for (int a = startLineIndex; a < endLineIndex; a++)
-                        source += absolutes[a];
-                }
-                lineBuilder.Append(source);
-
-                // Change the color depending on the highlighted line and column
-                int posX = TextWriterTools.DetermineTextAlignment(lineBuilder.ToString(), settings.Alignment, left);
-                if (useColor)
-                {
-                    sels.Append(
-                        $"{ColorTools.RenderSetConsoleColor(textColor)}" +
-                        $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}"
-                    );
-                }
-                sels.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(posX + 1, top + count + 1)}" +
-                    lineBuilder
+                buffer.Append(
+                    $"{ColorTools.RenderSetConsoleColor(textColor)}" +
+                    $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}"
                 );
-                if (useColor)
-                {
-                    sels.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
-                    );
-                }
-                count++;
             }
-            return sels.ToString();
-        }
-
-        private static string[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
-        {
-            int vtSeqIdx = 0;
-            List<string> sequences = [];
-            string sequence = "";
-            for (int l = 0; l < source.Length; l++)
+            for (int i = currIdx; i < lines.Length; i++)
             {
-                sequence += ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
-                if (isVtSequence)
-                    continue;
-                sequences.Add(sequence);
-                sequence = "";
+                var line = lines[i];
+                int posX = TextWriterTools.DetermineTextAlignment(line, settings.Alignment, left);
+                if (linesMade % height == 0 && linesMade > 0)
+                {
+                    // Reached the end of the box. Bail.
+                    increment = linesMade;
+                    break;
+                }
+                buffer.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(posX + 1, top + 1 + linesMade % height + 1)}" +
+                    $"{line}"
+                );
+                linesMade++;
             }
-            return [.. sequences];
+            if (useColor)
+            {
+                buffer.Append(
+                    ColorTools.RenderRevertForeground() +
+                    ColorTools.RenderRevertBackground()
+                );
+            }
+            return buffer.ToString();
         }
     }
 }
