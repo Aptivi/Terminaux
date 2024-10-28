@@ -32,7 +32,7 @@ namespace Terminaux.Writer.CyclicWriters
     /// <summary>
     /// Progress bar without text
     /// </summary>
-    public class ProgressBarNoText : ICyclicRenderer
+    public class ProgressBarNoText : IStaticRenderable
     {
         private int position = 0;
         private int maxPosition = 0;

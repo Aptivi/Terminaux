@@ -28,7 +28,7 @@ namespace Terminaux.Writer.CyclicWriters
     /// <summary>
     /// Spinner cyclic renderer
     /// </summary>
-    public class Spinner : ICyclicRenderer
+    public class Spinner : IStaticRenderable
     {
         private int step = 0;
         private readonly string[] spinners = [];

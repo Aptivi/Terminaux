@@ -17,17 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Writer.CyclicWriters
+namespace Terminaux.Writer
 {
     /// <summary>
-    /// Cyclic renderer
+    /// Static renderable writer
     /// </summary>
-    public interface ICyclicRenderer
+    public interface IStaticRenderable
     {
         /// <summary>
         /// Renders an element
         /// </summary>
-        /// <returns>Rendered text that will be used by the cyclic renderer</returns>
+        /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render();
     }
 }

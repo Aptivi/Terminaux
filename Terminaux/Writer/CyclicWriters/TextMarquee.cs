@@ -29,7 +29,7 @@ namespace Terminaux.Writer.CyclicWriters
     /// <summary>
     /// Text marquee that scrolls for long text similar to how music players work
     /// </summary>
-    public class TextMarquee : ICyclicRenderer
+    public class TextMarquee : IStaticRenderable
     {
         private string text = "";
         private bool pausing = false;
