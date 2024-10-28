@@ -463,7 +463,6 @@ namespace Terminaux.Writer.FancyWriters
         {
             try
             {
-                var aligned = new StringBuilder();
                 Text = TextTools.FormatString(Text, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
