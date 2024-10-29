@@ -2355,6 +2355,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Border.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Border.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Builtins.BuiltinSpinners.yml",
       "output": {
         ".html": {
