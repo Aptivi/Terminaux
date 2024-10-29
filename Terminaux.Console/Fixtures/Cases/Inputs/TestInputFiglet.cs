@@ -23,6 +23,7 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Inputs;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Inputs
 {
@@ -34,7 +35,11 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
             string font = FigletSelector.PromptForFiglet();
             var figlet = FigletTools.GetFigletFont(font);
             TextWriterColor.Write($"Got figlet font {font}!");
-            FigletColor.WriteFigletColor("Hello!", figlet, ConsoleColors.Green);
+            var figletText = new FigletText(figlet, "Hello!")
+            {
+                ForegroundColor = ConsoleColors.Green,
+            };
+            TextWriterRaw.WriteRaw(figletText.Render());
             Input.EnableMouse = false;
         }
     }
