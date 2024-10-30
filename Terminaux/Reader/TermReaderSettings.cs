@@ -34,6 +34,7 @@ namespace Terminaux.Reader
         private bool historyEnabled = true;
         private string historyName = HistoryTools.generalHistory;
         private bool treatCtrlCAsInput;
+        private bool keyboardCues;
         private int leftMargin = 0;
         private int rightMargin = 0;
         private Color? inputForegroundColor;
@@ -45,6 +46,7 @@ namespace Terminaux.Reader
         private string placeholderText = "";
         private bool printDefaultValue;
         private string defaultValueFormat = "[{0}] ";
+        private string bassBoomLibraryRoot = "";
         internal TermReaderState? state;
         internal Func<string, int, char[], string[]> suggestions = (_, _, _) => [];
         internal char[] suggestionsDelims = [' '];
@@ -207,6 +209,24 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
+        /// Play keyboard cues for each keypress
+        /// </summary>
+        public bool KeyboardCues
+        {
+            get => keyboardCues;
+            set => keyboardCues = value;
+        }
+
+        /// <summary>
+        /// Root path to BassBoom's library path
+        /// </summary>
+        public string BassBoomLibraryPath
+        {
+            get => bassBoomLibraryRoot ?? "";
+            set => bassBoomLibraryRoot = value;
+        }
+
+        /// <summary>
         /// Initializes an empty reader settings instance
         /// </summary>
         public TermReaderSettings()
@@ -233,6 +253,7 @@ namespace Terminaux.Reader
             SyntaxHighlighterEnabled = settings.SyntaxHighlighterEnabled;
             SyntaxHighlighter = settings.SyntaxHighlighter;
             PlaceholderText = settings.PlaceholderText;
+            KeyboardCues = settings.KeyboardCues;
         }
     }
 }

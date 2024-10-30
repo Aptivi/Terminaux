@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using BassBoom.Basolia.Independent;
 using System;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
@@ -442,6 +443,16 @@ namespace Terminaux.Reader
 
                         // Install necessary values
                         readState.pressedKey = struckKey;
+
+                        // Play keyboard cue if enabled
+                        if (settings.KeyboardCues)
+                        {
+                            string cueName =
+                                BindingsTools.IsTerminate(struckKey) ? "keyboard-cue-enter.mp3" :
+                                struckKey.Key == ConsoleKey.Backspace ? "keyboard-cue-backspace.mp3" :
+                                "keyboard-cue-type.mp3";
+                            PlayForget.PlayStream(typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues." + cueName), new(1, false, settings.BassBoomLibraryPath));
+                        }
 
                         // Handle it
                         BindingsTools.Execute(readState);

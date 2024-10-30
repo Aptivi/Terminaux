@@ -39,6 +39,7 @@ namespace Terminaux.Console.Fixtures
         [
             // Reader
             new Prompt(),
+            new PromptCue(),
             new PromptInterruptible(),
             new PromptWithDefault(),
             new PromptWithDefaultWritten(),
