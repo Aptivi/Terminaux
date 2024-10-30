@@ -126,8 +126,8 @@ namespace Terminaux.Writer.CyclicWriters
         /// <summary>
         /// Makes a new instance of text marquee
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="args"></param>
+        /// <param name="text">Text to render. All VT sequences and control characters are trimmed away.</param>
+        /// <param name="args">Arguments to format the string with</param>
         public TextMarquee(string text, params object?[]? args)
         {
             this.text = VtSequenceTools.FilterVTSequences(text.FormatString(args)).ReplaceAll(CharManager.GetAllControlChars(), "");

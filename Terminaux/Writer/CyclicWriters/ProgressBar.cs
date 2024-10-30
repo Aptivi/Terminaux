@@ -178,12 +178,12 @@ namespace Terminaux.Writer.CyclicWriters
         /// <summary>
         /// Makes a new instance of progress bar
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="position"></param>
-        /// <param name="maxPosition"></param>
-        /// <param name="progressSpinner"></param>
-        /// <param name="progressMarquee"></param>
-        /// <param name="args"></param>
+        /// <param name="text">Text to render. All VT sequences and control characters are trimmed away.</param>
+        /// <param name="position">Current position</param>
+        /// <param name="maxPosition">Max position</param>
+        /// <param name="progressSpinner">Spinner instance to use, or <see cref="BuiltinSpinners.Dots"/></param>
+        /// <param name="progressMarquee">Marquee writer to use</param>
+        /// <param name="args">Arguments to format the string with</param>
         public ProgressBar(string text, int position, int maxPosition, Spinner? progressSpinner = null, TextMarquee? progressMarquee = null, params object?[]? args)
         {
             this.text = text.FormatString(args);

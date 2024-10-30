@@ -32,7 +32,7 @@ namespace Terminaux.Colors.Models
         /// Does the string specifier represent a valid model-agnostic specifier?
         /// </summary>
         /// <param name="specifier">Specifier that represents a valid model-agnostic specifier</param>
-        /// <param name="checkParts"></param>
+        /// <param name="checkParts">Whether to check parts or not</param>
         /// <returns>True if the specifier is valid; false otherwise.</returns>
         public static bool IsSpecifierValid(string specifier, bool checkParts = false)
         {

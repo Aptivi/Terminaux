@@ -144,9 +144,9 @@ namespace Terminaux.Writer.CyclicWriters
         /// <summary>
         /// Makes a new instance of progress bar
         /// </summary>
-        /// <param name="position"></param>
-        /// <param name="maxPosition"></param>
-        /// <param name="progressSpinner"></param>
+        /// <param name="position">Current position</param>
+        /// <param name="maxPosition">Max position</param>
+        /// <param name="progressSpinner">Spinner instance to use, or <see cref="BuiltinSpinners.Dots"/></param>
         public ProgressBarNoText(int position, int maxPosition, Spinner? progressSpinner = null)
         {
             this.position = position;
