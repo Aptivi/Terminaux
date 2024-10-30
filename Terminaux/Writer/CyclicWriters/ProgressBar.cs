@@ -111,9 +111,13 @@ namespace Terminaux.Writer.CyclicWriters
             {
                 progressMarquee.LeftMargin = LeftMargin + spinnerWidth;
                 progressMarquee.RightMargin = RightMargin + percentageWidth + progressWidth + 1;
+                string marqueeText = progressMarquee.Render();
+                int marqueeWidth = ConsoleChar.EstimateCellWidth(marqueeText);
+                int spaces = finalWidth - (spinnerWidth + progressWidth + percentageWidth + marqueeWidth);
+                spaces = spaces < 0 ? 0 : spaces;
                 rendered.Append(
                     ColorTools.RenderSetConsoleColor(ConsoleColors.White) +
-                    progressMarquee.Render() + " "
+                    marqueeText + new string(' ', spaces) + " "
                 );
             }
 
