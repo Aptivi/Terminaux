@@ -60,6 +60,11 @@ namespace Terminaux.Writer.CyclicWriters
         public int RightMargin { get; set; }
 
         /// <summary>
+        /// Delay interval for marquee. The default is 30 ticks for 100 milliseconds, but you can adjust it, depending on the speed of the loop.
+        /// </summary>
+        public int Delay { get; set; } = 30;
+
+        /// <summary>
         /// Position of the progress bar
         /// </summary>
         public int Position
@@ -111,6 +116,7 @@ namespace Terminaux.Writer.CyclicWriters
             {
                 progressMarquee.LeftMargin = LeftMargin + spinnerWidth;
                 progressMarquee.RightMargin = RightMargin + percentageWidth + progressWidth + 1;
+                progressMarquee.Delay = Delay;
                 string marqueeText = progressMarquee.Render();
                 int marqueeWidth = ConsoleChar.EstimateCellWidth(marqueeText);
                 int spaces = finalWidth - (spinnerWidth + progressWidth + percentageWidth + marqueeWidth);

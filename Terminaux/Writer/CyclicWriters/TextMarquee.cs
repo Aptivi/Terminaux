@@ -33,6 +33,7 @@ namespace Terminaux.Writer.CyclicWriters
     {
         private string text = "";
         private bool pausing = false;
+        private int delayCount = 0;
         private int leftIdx = 0;
         private int rightIdx = 0;
         private int textWidth = 0;
@@ -52,6 +53,11 @@ namespace Terminaux.Writer.CyclicWriters
         /// Right margin of the marquee
         /// </summary>
         public int RightMargin { get; set; }
+
+        /// <summary>
+        /// Delay interval. The default is 30 ticks for 100 milliseconds, but you can adjust it, depending on the speed of the loop.
+        /// </summary>
+        public int Delay { get; set; } = 30;
 
         /// <summary>
         /// Renders a scrolling text marquee
@@ -80,8 +86,12 @@ namespace Terminaux.Writer.CyclicWriters
                 // If pausing, stop for three seconds
                 if (pausing)
                 {
-                    SpinWait.SpinUntil(ConsoleResizeHandler.CheckResized, 3000);
-                    pausing = false;
+                    delayCount++;
+                    if (delayCount == Delay)
+                    {
+                        delayCount = 0;
+                        pausing = false;
+                    }
                 }
 
                 // Form a text
@@ -93,15 +103,18 @@ namespace Terminaux.Writer.CyclicWriters
                 }
 
                 // Adjust the marquee
-                leftIdx++;
-                rightIdx++;
-                if (leftIdx == Text.Length + 1)
+                if (!pausing)
                 {
-                    rightIdx = -1;
-                    leftIdx = -1 - processedWidth;
+                    leftIdx++;
+                    rightIdx++;
+                    if (leftIdx == Text.Length + 1)
+                    {
+                        rightIdx = -1;
+                        leftIdx = -1 - processedWidth;
+                    }
+                    if (leftIdx == 0)
+                        pausing = true;
                 }
-                if (leftIdx == 0)
-                    pausing = true;
 
                 // Return the result
                 return renderedBuilder.ToString();
