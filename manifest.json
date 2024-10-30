@@ -2405,6 +2405,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.BreakdownChart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.BreakdownChart.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Builtins.BuiltinSpinners.yml",
       "output": {
         ".html": {
@@ -2599,6 +2609,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.FancyWriters.BoxFrameColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.FancyWriters.BreakdownChartColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.FancyWriters.BreakdownChartColor.html"
         }
       },
       "version": ""
