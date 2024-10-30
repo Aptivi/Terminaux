@@ -144,6 +144,7 @@ namespace Terminaux.Console.Fixtures
             new TestSpinner3(),
             new TestProgressBar(),
             new TestProgressBar2(),
+            new TestBarChart(),
 
             // Input
             new TestInputSelection(),
