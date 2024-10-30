@@ -22,7 +22,7 @@ using Terminaux.Colors;
 namespace Terminaux.Writer.FancyWriters.Tools
 {
     /// <summary>
-    /// Table cell options
+    /// Table and canvas cell options
     /// </summary>
     public class CellOptions
     {

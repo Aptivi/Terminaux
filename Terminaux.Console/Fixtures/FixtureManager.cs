@@ -151,6 +151,7 @@ namespace Terminaux.Console.Fixtures
             new TestBarChart(),
             new TestBreakdownChart(),
             new TestStickChart(),
+            new TestCanvas(),
 
             // Input
             new TestInputSelection(),
