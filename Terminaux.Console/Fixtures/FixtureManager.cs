@@ -144,6 +144,8 @@ namespace Terminaux.Console.Fixtures
             new TestSpinner3(),
             new TestProgressBar(),
             new TestProgressBar2(),
+            new TestProgressBarIndeterminate(),
+            new TestProgressBarIndeterminate2(),
             new TestBarChart(),
             new TestBreakdownChart(),
 
