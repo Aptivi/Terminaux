@@ -71,12 +71,24 @@ namespace Terminaux.Writer.CyclicWriters
                 // Process the width
                 int processedWidth = 0;
                 int processedChars = 0;
+                var renderedBuilder = new StringBuilder();
                 for (int i = leftIdx; i <= leftIdx + finalWidth && processedWidth < finalWidth; i++)
                 {
                     char c = i >= Text.Length || i < 0 ? ' ' : Text[i];
                     int charWidth = TextTools.GetCharWidth(c);
                     processedWidth += charWidth;
                     processedChars++;
+                    renderedBuilder.Append(c);
+                }
+                while (processedWidth > finalWidth)
+                {
+                    if (leftIdx >= 0)
+                        break;
+                    renderedBuilder.Remove(0, 1);
+                    leftIdx++;
+                    if (leftIdx == 0)
+                        leftIdx--;
+                    processedWidth--;
                 }
 
                 // Check the indexes
@@ -92,14 +104,6 @@ namespace Terminaux.Writer.CyclicWriters
                         delayCount = 0;
                         pausing = false;
                     }
-                }
-
-                // Form a text
-                var renderedBuilder = new StringBuilder();
-                for (int i = leftIdx; i <= rightIdx; i++)
-                {
-                    char c = i >= Text.Length || i < 0 ? ' ' : Text[i];
-                    renderedBuilder.Append(c);
                 }
 
                 // Adjust the marquee
