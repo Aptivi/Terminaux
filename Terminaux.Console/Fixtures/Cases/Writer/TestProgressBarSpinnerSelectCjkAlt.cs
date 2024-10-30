@@ -26,17 +26,25 @@ using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;
 using System.Threading;
 using Terminaux.Writer.CyclicWriters.Builtins;
-using System.Linq;
 using Terminaux.Inputs.Styles;
+using System.Linq;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
-    internal class TestProgressBarIndeterminateSpinnerSelect : IFixture
+    internal class TestProgressBarSpinnerSelectCjkAlt : IFixture
     {
         public void RunFixture()
         {
             // Prompt user to select a spinner
-            var spinner = SpinnerSelector.PromptForSpinner();
+            var builtinSpinners = typeof(BuiltinSpinners).GetProperties();
+            InputChoiceInfo[] spinnerNames = builtinSpinners.Select((pi, idx) => new InputChoiceInfo($"{idx + 1}", pi.Name)).ToArray();
+            int spinnerIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(spinnerNames, "Select a spinner");
+            if (spinnerIdx == -1)
+                return;
+            var selectedSpinnerPropertyInfo = builtinSpinners[spinnerIdx];
+            var selectedSpinner = selectedSpinnerPropertyInfo.GetGetMethod()?.Invoke(null, null);
+            if (selectedSpinner is not Spinner spinner)
+                return;
 
             // Show a screen with a progress bar at the end
             var stickScreen = new Screen()
@@ -44,11 +52,10 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 CycleFrequency = 50,
             };
             var progressBar = new ProgressBar(
-                "This is the test progress bar that contains a scrolling marquee and a spinner of your choice. You can observe the spinner that you've selected by looking at the leftmost area.", 0, 500, spinner)
+                "這是測試進度欄，其中包含滾動選取框和您選擇的旋轉器。您可以透過查看最左邊的區域來觀察您選擇的旋轉器。", 0, 500, spinner)
             {
                 LeftMargin = 4,
                 RightMargin = 4,
-                Indeterminate = true,
             };
             try
             {

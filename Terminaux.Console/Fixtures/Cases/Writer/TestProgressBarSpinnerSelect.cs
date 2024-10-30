@@ -36,15 +36,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         public void RunFixture()
         {
             // Prompt user to select a spinner
-            var builtinSpinners = typeof(BuiltinSpinners).GetProperties();
-            InputChoiceInfo[] spinnerNames = builtinSpinners.Select((pi, idx) => new InputChoiceInfo($"{idx + 1}", pi.Name)).ToArray();
-            int spinnerIdx = InfoBoxSelectionColor.WriteInfoBoxSelection(spinnerNames, "Select a spinner");
-            if (spinnerIdx == -1)
-                return;
-            var selectedSpinnerPropertyInfo = builtinSpinners[spinnerIdx];
-            var selectedSpinner = selectedSpinnerPropertyInfo.GetGetMethod()?.Invoke(null, null);
-            if (selectedSpinner is not Spinner spinner)
-                return;
+            var spinner = SpinnerSelector.PromptForSpinner();
 
             // Show a screen with a progress bar at the end
             var stickScreen = new Screen()
