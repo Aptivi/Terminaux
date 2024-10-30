@@ -54,6 +54,29 @@ namespace Terminaux.Writer.FancyWriters.Tools
             };
 
         /// <summary>
+        /// A rectangle with two lines as an edge and one thin line as intersections
+        /// </summary>
+        public static BorderSettings RectangleTwoLinesEdge =>
+            new()
+            {
+                BorderUpperLeftCornerChar = '╔',
+                BorderUpperRightCornerChar = '╗',
+                BorderLowerLeftCornerChar = '╚',
+                BorderLowerRightCornerChar = '╝',
+                BorderUpperFrameChar = '═',
+                BorderLowerFrameChar = '═',
+                BorderLeftFrameChar = '║',
+                BorderRightFrameChar = '║',
+                BorderLeftHorizontalIntersectionChar = '╟',
+                BorderRightHorizontalIntersectionChar = '╢',
+                BorderHorizontalIntersectionChar = '─',
+                BorderTopVerticalIntersectionChar = '╤',
+                BorderBottomVerticalIntersectionChar = '╧',
+                BorderVerticalIntersectionChar = '│',
+                BorderWholeIntersectionChar = '┼',
+            };
+
+        /// <summary>
         /// A rectangle with a thin line as edges and corners
         /// </summary>
         public static BorderSettings RectangleThin =>
@@ -100,6 +123,29 @@ namespace Terminaux.Writer.FancyWriters.Tools
             };
 
         /// <summary>
+        /// A rectangle with a thick line as edges and a thin line as intersections
+        /// </summary>
+        public static BorderSettings RectangleThickEdge =>
+            new()
+            {
+                BorderUpperLeftCornerChar = '┏',
+                BorderUpperRightCornerChar = '┓',
+                BorderLowerLeftCornerChar = '┗',
+                BorderLowerRightCornerChar = '┛',
+                BorderUpperFrameChar = '━',
+                BorderLowerFrameChar = '━',
+                BorderLeftFrameChar = '┃',
+                BorderRightFrameChar = '┃',
+                BorderLeftHorizontalIntersectionChar = '┠',
+                BorderRightHorizontalIntersectionChar = '┨',
+                BorderHorizontalIntersectionChar = '─',
+                BorderTopVerticalIntersectionChar = '┯',
+                BorderBottomVerticalIntersectionChar = '┷',
+                BorderVerticalIntersectionChar = '│',
+                BorderWholeIntersectionChar = '┼',
+            };
+
+        /// <summary>
         /// A rectangle using dashes, pipe, and plus signs as edges and borders
         /// </summary>
         public static BorderSettings RectangleSimple =>
@@ -120,6 +166,213 @@ namespace Terminaux.Writer.FancyWriters.Tools
                 BorderBottomVerticalIntersectionChar = '+',
                 BorderVerticalIntersectionChar = '|',
                 BorderWholeIntersectionChar = '+',
+            };
+
+        /// <summary>
+        /// A rectangle with only a horizontal intersection
+        /// </summary>
+        public static BorderSettings HorizontalIntersection =>
+            new()
+            {
+                BorderUpperLeftCornerChar = ' ',
+                BorderUpperRightCornerChar = ' ',
+                BorderLowerLeftCornerChar = ' ',
+                BorderLowerRightCornerChar = ' ',
+                BorderUpperFrameChar = ' ',
+                BorderLowerFrameChar = ' ',
+                BorderLeftFrameChar = ' ',
+                BorderRightFrameChar = ' ',
+                BorderLeftHorizontalIntersectionChar = '─',
+                BorderRightHorizontalIntersectionChar = '─',
+                BorderHorizontalIntersectionChar = '─',
+                BorderTopVerticalIntersectionChar = ' ',
+                BorderBottomVerticalIntersectionChar = ' ',
+                BorderVerticalIntersectionChar = ' ',
+                BorderWholeIntersectionChar = '─',
+            };
+
+        /// <summary>
+        /// A rectangle with only a vertical intersection
+        /// </summary>
+        public static BorderSettings VerticalIntersection =>
+            new()
+            {
+                BorderUpperLeftCornerChar = ' ',
+                BorderUpperRightCornerChar = ' ',
+                BorderLowerLeftCornerChar = ' ',
+                BorderLowerRightCornerChar = ' ',
+                BorderUpperFrameChar = ' ',
+                BorderLowerFrameChar = ' ',
+                BorderLeftFrameChar = ' ',
+                BorderRightFrameChar = ' ',
+                BorderLeftHorizontalIntersectionChar = ' ',
+                BorderRightHorizontalIntersectionChar = ' ',
+                BorderHorizontalIntersectionChar = ' ',
+                BorderTopVerticalIntersectionChar = '│',
+                BorderBottomVerticalIntersectionChar = '│',
+                BorderVerticalIntersectionChar = '│',
+                BorderWholeIntersectionChar = '│',
+            };
+
+        /// <summary>
+        /// A rectangle with both horizontal and vertical intersections
+        /// </summary>
+        public static BorderSettings Intersections =>
+            new()
+            {
+                BorderUpperLeftCornerChar = ' ',
+                BorderUpperRightCornerChar = ' ',
+                BorderLowerLeftCornerChar = ' ',
+                BorderLowerRightCornerChar = ' ',
+                BorderUpperFrameChar = ' ',
+                BorderLowerFrameChar = ' ',
+                BorderLeftFrameChar = ' ',
+                BorderRightFrameChar = ' ',
+                BorderLeftHorizontalIntersectionChar = '─',
+                BorderRightHorizontalIntersectionChar = '─',
+                BorderHorizontalIntersectionChar = '─',
+                BorderTopVerticalIntersectionChar = '│',
+                BorderBottomVerticalIntersectionChar = '│',
+                BorderVerticalIntersectionChar = '│',
+                BorderWholeIntersectionChar = '┼',
+            };
+
+        /// <summary>
+        /// A rectangle with only a horizontal intersection
+        /// </summary>
+        public static BorderSettings HorizontalIntersectionThick =>
+            new()
+            {
+                BorderUpperLeftCornerChar = ' ',
+                BorderUpperRightCornerChar = ' ',
+                BorderLowerLeftCornerChar = ' ',
+                BorderLowerRightCornerChar = ' ',
+                BorderUpperFrameChar = ' ',
+                BorderLowerFrameChar = ' ',
+                BorderLeftFrameChar = ' ',
+                BorderRightFrameChar = ' ',
+                BorderLeftHorizontalIntersectionChar = '━',
+                BorderRightHorizontalIntersectionChar = '━',
+                BorderHorizontalIntersectionChar = '━',
+                BorderTopVerticalIntersectionChar = ' ',
+                BorderBottomVerticalIntersectionChar = ' ',
+                BorderVerticalIntersectionChar = ' ',
+                BorderWholeIntersectionChar = '━',
+            };
+
+        /// <summary>
+        /// A rectangle with only a vertical intersection
+        /// </summary>
+        public static BorderSettings VerticalIntersectionThick =>
+            new()
+            {
+                BorderUpperLeftCornerChar = ' ',
+                BorderUpperRightCornerChar = ' ',
+                BorderLowerLeftCornerChar = ' ',
+                BorderLowerRightCornerChar = ' ',
+                BorderUpperFrameChar = ' ',
+                BorderLowerFrameChar = ' ',
+                BorderLeftFrameChar = ' ',
+                BorderRightFrameChar = ' ',
+                BorderLeftHorizontalIntersectionChar = ' ',
+                BorderRightHorizontalIntersectionChar = ' ',
+                BorderHorizontalIntersectionChar = ' ',
+                BorderTopVerticalIntersectionChar = '┃',
+                BorderBottomVerticalIntersectionChar = '┃',
+                BorderVerticalIntersectionChar = '┃',
+                BorderWholeIntersectionChar = '┃',
+            };
+
+        /// <summary>
+        /// A rectangle with both horizontal and vertical intersections
+        /// </summary>
+        public static BorderSettings IntersectionsThick =>
+            new()
+            {
+                BorderUpperLeftCornerChar = ' ',
+                BorderUpperRightCornerChar = ' ',
+                BorderLowerLeftCornerChar = ' ',
+                BorderLowerRightCornerChar = ' ',
+                BorderUpperFrameChar = ' ',
+                BorderLowerFrameChar = ' ',
+                BorderLeftFrameChar = ' ',
+                BorderRightFrameChar = ' ',
+                BorderLeftHorizontalIntersectionChar = '━',
+                BorderRightHorizontalIntersectionChar = '━',
+                BorderHorizontalIntersectionChar = '━',
+                BorderTopVerticalIntersectionChar = '┃',
+                BorderBottomVerticalIntersectionChar = '┃',
+                BorderVerticalIntersectionChar = '┃',
+                BorderWholeIntersectionChar = '╋',
+            };
+
+        /// <summary>
+        /// A rectangle with only a horizontal intersection
+        /// </summary>
+        public static BorderSettings HorizontalIntersectionDouble =>
+            new()
+            {
+                BorderUpperLeftCornerChar = ' ',
+                BorderUpperRightCornerChar = ' ',
+                BorderLowerLeftCornerChar = ' ',
+                BorderLowerRightCornerChar = ' ',
+                BorderUpperFrameChar = ' ',
+                BorderLowerFrameChar = ' ',
+                BorderLeftFrameChar = ' ',
+                BorderRightFrameChar = ' ',
+                BorderLeftHorizontalIntersectionChar = '═',
+                BorderRightHorizontalIntersectionChar = '═',
+                BorderHorizontalIntersectionChar = '═',
+                BorderTopVerticalIntersectionChar = ' ',
+                BorderBottomVerticalIntersectionChar = ' ',
+                BorderVerticalIntersectionChar = ' ',
+                BorderWholeIntersectionChar = '═',
+            };
+
+        /// <summary>
+        /// A rectangle with only a vertical intersection
+        /// </summary>
+        public static BorderSettings VerticalIntersectionDouble =>
+            new()
+            {
+                BorderUpperLeftCornerChar = ' ',
+                BorderUpperRightCornerChar = ' ',
+                BorderLowerLeftCornerChar = ' ',
+                BorderLowerRightCornerChar = ' ',
+                BorderUpperFrameChar = ' ',
+                BorderLowerFrameChar = ' ',
+                BorderLeftFrameChar = ' ',
+                BorderRightFrameChar = ' ',
+                BorderLeftHorizontalIntersectionChar = ' ',
+                BorderRightHorizontalIntersectionChar = ' ',
+                BorderHorizontalIntersectionChar = ' ',
+                BorderTopVerticalIntersectionChar = '║',
+                BorderBottomVerticalIntersectionChar = '║',
+                BorderVerticalIntersectionChar = '║',
+                BorderWholeIntersectionChar = '║',
+            };
+
+        /// <summary>
+        /// A rectangle with both horizontal and vertical intersections
+        /// </summary>
+        public static BorderSettings IntersectionsDouble =>
+            new()
+            {
+                BorderUpperLeftCornerChar = ' ',
+                BorderUpperRightCornerChar = ' ',
+                BorderLowerLeftCornerChar = ' ',
+                BorderLowerRightCornerChar = ' ',
+                BorderUpperFrameChar = ' ',
+                BorderLowerFrameChar = ' ',
+                BorderLeftFrameChar = ' ',
+                BorderRightFrameChar = ' ',
+                BorderLeftHorizontalIntersectionChar = '═',
+                BorderRightHorizontalIntersectionChar = '═',
+                BorderHorizontalIntersectionChar = '═',
+                BorderTopVerticalIntersectionChar = '║',
+                BorderBottomVerticalIntersectionChar = '║',
+                BorderVerticalIntersectionChar = '║',
+                BorderWholeIntersectionChar = '╬',
             };
     }
 }
