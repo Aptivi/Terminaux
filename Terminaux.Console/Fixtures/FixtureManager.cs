@@ -145,6 +145,7 @@ namespace Terminaux.Console.Fixtures
             new TestProgressBar(),
             new TestProgressBar2(),
             new TestBarChart(),
+            new TestBreakdownChart(),
 
             // Input
             new TestInputSelection(),

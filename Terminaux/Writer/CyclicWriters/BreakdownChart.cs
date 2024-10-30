@@ -24,9 +24,9 @@ using Terminaux.Writer.FancyWriters.Tools;
 namespace Terminaux.Writer.CyclicWriters
 {
     /// <summary>
-    /// Bar chart renderable
+    /// Breakdown chart renderable
     /// </summary>
-    public class BarChart : IStaticRenderable
+    public class BreakdownChart : IStaticRenderable
     {
         private ChartElement[] elements = [];
         private int left = 0;
@@ -80,20 +80,20 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
-        /// Renders a bar chart
+        /// Renders a breakdown chart
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
             return TextWriterWhereColor.RenderWhere(
-                BarChartColor.RenderBarChart(
+                BreakdownChartColor.RenderBreakdownChart(
                     elements, InteriorWidth, Showcase), Left, Top);
         }
 
         /// <summary>
-        /// Makes a new instance of the bar chart renderer
+        /// Makes a new instance of the breakdown chart renderer
         /// </summary>
-        public BarChart()
+        public BreakdownChart()
         { }
     }
 }
