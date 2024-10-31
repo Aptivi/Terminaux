@@ -363,6 +363,7 @@ namespace Terminaux.Inputs.Styles.Selection
             int currentPage = (selectionHeight - 1) / height;
             int startIndex = height * currentPage;
             var choiceTextLines = choiceText.ToString().SplitNewLines();
+            bool wiped = false;
             for (int i = 0; i <= height - 1; i++)
             {
                 // Populate the selection box
@@ -370,6 +371,14 @@ namespace Terminaux.Inputs.Styles.Selection
                 int optionTop = top + finalIndex - startIndex;
                 if (finalIndex >= selectionHeights[selectionHeights.Count - 1])
                 {
+                    if (useColor && !wiped)
+                    {
+                        wiped = true;
+                        buffer.Append(
+                            ColorTools.RenderRevertForeground() +
+                            ColorTools.RenderRevertBackground()
+                        );
+                    }
                     buffer.Append(
                         CsiSequences.GenerateCsiCursorPosition(leftPos + 1, optionTop + 1) +
                         new string(' ', width)
