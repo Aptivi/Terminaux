@@ -985,16 +985,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.IGeometricShape.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.IGeometricShape.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Graphics.NerdFonts.AllIcons.yml",
       "output": {
         ".html": {
@@ -1159,86 +1149,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Graphics.NerdFonts.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Circle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Circle.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Ellipsis.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Ellipsis.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Parallelogram.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Parallelogram.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Rectangle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Rectangle.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Square.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Square.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Trapezoid.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Trapezoid.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.Triangle.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.Triangle.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Graphics.Shapes.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Graphics.Shapes.html"
         }
       },
       "version": ""
@@ -2465,6 +2375,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Line.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Line.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBar.yml",
       "output": {
         ".html": {
@@ -2509,6 +2429,96 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Circle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Circle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Ellipsis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Ellipsis.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.IGeometricShape.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Parallelogram.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Parallelogram.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Rectangle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Rectangle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Square.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Square.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Trapezoid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Trapezoid.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Triangle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Triangle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.html"
         }
       },
       "version": ""
