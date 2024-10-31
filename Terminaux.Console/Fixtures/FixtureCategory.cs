@@ -17,19 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Colors;
-using Terminaux.Colors.Data;
-using Terminaux.Writer.FancyWriters;
-
-namespace Terminaux.Console.Fixtures.Cases.Writer
+namespace Terminaux.Console.Fixtures
 {
-    internal class PrintSepColorF : IFixture
+    internal enum FixtureCategory
     {
-        public FixtureCategory Category => FixtureCategory.Writer;
-
-        public void RunFixture()
-        {
-            SeparatorWriterColor.WriteSeparatorColor("Hi, {0}!", new Color(ConsoleColors.Green), Vars: ["world"]);
-        }
+        Unapplicable,
+        Reader,
+        Writer,
+        Input,
+        InputCjk,
+        Color,
+        TextualUi,
+        Screen,
+        Presentation,
+        Console,
+        Image,
+        Graphics
     }
 }

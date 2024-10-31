@@ -21,10 +21,12 @@ using System.Text;
 using Terminaux.Inputs.Styles.Editor;
 using Terminaux.Writer.ConsoleWriters;
 
-namespace Terminaux.Console.Fixtures.Cases.Inputs
+namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 {
     internal class TestHexEditorInteractiveCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.InputCjk;
+
         public void RunFixture()
         {
             string toBeEdited =

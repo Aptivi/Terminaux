@@ -21,6 +21,7 @@ namespace Terminaux.Console.Fixtures
 {
     internal interface IFixture
     {
+        FixtureCategory Category { get; }
         void RunFixture();
     }
 }

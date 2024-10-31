@@ -26,6 +26,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class ClearKeepPosition : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             TextWriterWhereColor.WriteWhere("Bottom left corner", 0, ConsoleWrapper.WindowHeight - 1);

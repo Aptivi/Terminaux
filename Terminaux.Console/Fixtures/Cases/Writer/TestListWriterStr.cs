@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestListWriterStr : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             var NormalStringList = new List<string>() { "String 1", "String 2", "String 3" };

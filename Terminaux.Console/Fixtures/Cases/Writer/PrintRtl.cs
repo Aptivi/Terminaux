@@ -26,6 +26,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintRtl : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             TextWriterColor.WriteColor("Note that RTL rendering on terminals is extremely limited.", true, new Color(ConsoleColors.Yellow));

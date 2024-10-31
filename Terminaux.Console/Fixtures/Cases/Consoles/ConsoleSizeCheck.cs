@@ -26,6 +26,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class ConsoleSizeCheck : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             if (ConsoleChecker.CheckConsoleSize(120, 30))

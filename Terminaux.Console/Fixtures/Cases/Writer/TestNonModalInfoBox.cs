@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestNonModalInfoBox : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             InfoBoxNonModalColor.WriteInfoBox("Non-modal information box", "This info box should close automatically within 10 seconds.", false);

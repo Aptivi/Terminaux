@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestNonModalInfoBoxExcess : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             InfoBoxNonModalColor.WriteInfoBox("Excess non-modal information box",

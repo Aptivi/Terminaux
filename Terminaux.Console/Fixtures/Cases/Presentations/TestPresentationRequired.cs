@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Presentations
 {
     internal class TestPresentationRequired : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Presentation;
+
         public void RunFixture()
         {
             Input.EnableMouse = true;

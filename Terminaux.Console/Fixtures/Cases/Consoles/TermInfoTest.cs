@@ -26,6 +26,9 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
     {
         public string FixtureID =>
             "TermInfoTest";
+
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             var current = TermInfoDesc.Current;

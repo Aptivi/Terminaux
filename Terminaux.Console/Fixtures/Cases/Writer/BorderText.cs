@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class BorderText : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             ColorTools.LoadBack();

@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 {
     internal class RenderTriangle : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Graphics;
+
         public void RunFixture()
         {
             var triangle = new Triangle(40, 20, 4, 2, true, ConsoleColors.Red);

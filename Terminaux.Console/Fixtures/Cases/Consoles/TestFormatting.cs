@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class TestFormatting : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             TextWriterRaw.WritePlain($"Most terminal emulators don't support anything other than common text formatting.");

@@ -24,6 +24,7 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptLoopedCompletionOneLineWrap : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Reader;
 
         public void RunFixture()
         {

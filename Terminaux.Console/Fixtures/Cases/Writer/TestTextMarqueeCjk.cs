@@ -29,6 +29,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestTextMarqueeCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             // Show a screen with a counter in the middle

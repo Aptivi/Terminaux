@@ -23,6 +23,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintRainbowBack : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             RainbowBackTextWriterColor.Write("Hello world in rainbow color! This is rainbow text in background color!");

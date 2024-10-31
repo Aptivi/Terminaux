@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintFigletAlignMiddlePositional : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             var font = FigletFonts.TryGetByName("banner3");

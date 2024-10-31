@@ -26,6 +26,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintAlignRightCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             AlignedTextColor.WriteAlignedColor($"你好，世界！它位于{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}控制台右側{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}。", new Color(ConsoleColors.Green), TextAlignment.Right);

@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestBreakdownChart : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             TextWriterColor.WriteColor("This chart describes a list of languages in an example project:", true, new Color(ConsoleColors.Green));

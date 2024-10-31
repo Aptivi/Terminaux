@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 {
     internal class TestInputSelectionHugeCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.InputCjk;
+
         public void RunFixture()
         {
             Input.EnableMouse = true;

@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class ProgressTest : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             TextWriterRaw.WritePlain("Progress bar is running from 0 to 100, increasing 10 notches every 1 second.");

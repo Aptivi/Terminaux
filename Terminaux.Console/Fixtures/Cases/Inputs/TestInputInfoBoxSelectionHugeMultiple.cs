@@ -28,6 +28,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 {
     internal class TestInputInfoBoxSelectionHugeMultiple : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Input;
+
         public void RunFixture()
         {
             Input.EnableMouse = true;

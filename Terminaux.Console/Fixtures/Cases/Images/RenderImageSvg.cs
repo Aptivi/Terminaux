@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Images
 {
     internal class RenderImageSvg : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Image;
+
         public void RunFixture()
         {
             var asm = Assembly.GetExecutingAssembly();

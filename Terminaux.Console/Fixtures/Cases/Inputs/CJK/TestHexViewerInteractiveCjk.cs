@@ -20,10 +20,12 @@
 using System.Text;
 using Terminaux.Inputs.Styles.Editor;
 
-namespace Terminaux.Console.Fixtures.Cases.Inputs
+namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 {
     internal class TestHexViewerInteractiveCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.InputCjk;
+
         public void RunFixture()
         {
             string toBeEdited =

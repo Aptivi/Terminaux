@@ -23,6 +23,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class ConsoleCheck : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture() =>
             ConsoleChecker.CheckConsole();
     }

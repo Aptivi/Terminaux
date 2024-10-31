@@ -24,6 +24,7 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptWithDefaultWritten : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Reader;
 
         public void RunFixture()
         {

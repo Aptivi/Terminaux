@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorTransparencyTest : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Color;
+
         public void RunFixture()
         {
             var opaque =

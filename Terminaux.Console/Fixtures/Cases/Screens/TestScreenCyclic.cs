@@ -34,6 +34,8 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
 {
     internal class TestScreenCyclic : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Screen;
+
         public void RunFixture()
         {
             // Show a screen with a counter in the middle

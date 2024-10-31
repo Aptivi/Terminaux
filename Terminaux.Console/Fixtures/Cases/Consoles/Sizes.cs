@@ -26,6 +26,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class Sizes : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             int oldWidth = ConsoleWrapper.WindowWidth;

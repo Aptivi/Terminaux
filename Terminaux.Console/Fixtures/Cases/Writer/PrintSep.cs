@@ -23,6 +23,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintSep : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             SeparatorWriterColor.WriteSeparator("Hello world!", true, true);

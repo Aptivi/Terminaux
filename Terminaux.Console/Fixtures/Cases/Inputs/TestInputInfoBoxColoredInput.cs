@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 {
     internal class TestInputInfoBoxColoredInput : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Input;
+
         public void RunFixture()
         {
             string answer = InfoBoxInputColor.WriteInfoBoxInputColorBack(nameof(TestInputInfoBoxColoredInput), "Write your text.", ConsoleColors.Yellow, ConsoleColors.DarkBlue);

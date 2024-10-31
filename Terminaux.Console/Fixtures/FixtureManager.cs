@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Linq;
-using Terminaux.Base;
 using Terminaux.Console.Fixtures.Cases.Colors;
 using Terminaux.Console.Fixtures.Cases.Consoles;
 using Terminaux.Console.Fixtures.Cases.Graphics;
@@ -316,28 +314,5 @@ namespace Terminaux.Console.Fixtures
             new RenderEllipsis(),
             new RenderCircle(),
         ];
-
-        internal static IFixture GetFixtureFromName(string name)
-        {
-            if (DoesFixtureExist(name))
-            {
-                var detectedFixtures = fixtures.Where((fixture) => fixture.GetType().Name == name).ToArray();
-                return detectedFixtures[0];
-            }
-            else
-                throw new TerminauxException(
-                    "Fixture doesn't exist. Available fixtures:\n" +
-                    "  - " + string.Join("\n  - ", GetFixtureNames())
-                );
-        }
-
-        internal static bool DoesFixtureExist(string name)
-        {
-            var detectedFixtures = fixtures.Where((fixture) => fixture.GetType().Name == name);
-            return detectedFixtures.Any();
-        }
-
-        internal static string[] GetFixtureNames() =>
-            fixtures.Select((fixture) => fixture.GetType().Name).ToArray();
     }
 }

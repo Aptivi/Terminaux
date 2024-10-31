@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestBarChart : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             // Taken from https://gs.statcounter.com/os-version-market-share/android/mobile-tablet/worldwide

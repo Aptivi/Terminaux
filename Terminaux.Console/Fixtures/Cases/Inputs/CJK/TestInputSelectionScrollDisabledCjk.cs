@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 {
     internal class TestInputSelectionScrollDisabledCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.InputCjk;
+
         public void RunFixture()
         {
             Input.EnableMouse = true;

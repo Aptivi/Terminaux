@@ -31,6 +31,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestProgressBars : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             // Show a screen with a progress bar at the end

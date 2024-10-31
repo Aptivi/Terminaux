@@ -26,6 +26,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 {
     internal class TestTextEditorInteractive : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Input;
+
         public void RunFixture()
         {
             string toBeEdited =

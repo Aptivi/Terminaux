@@ -23,6 +23,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintSepFCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             SeparatorWriterColor.WriteSeparator("你好, {0}!", true, Vars: ["Terminaux"]);

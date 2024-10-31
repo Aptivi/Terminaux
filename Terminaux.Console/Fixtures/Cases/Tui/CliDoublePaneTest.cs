@@ -29,6 +29,9 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
     {
         public string FixtureID =>
             "CliDoublePaneTest";
+
+        public FixtureCategory Category => FixtureCategory.TextualUi;
+
         public void RunFixture()
         {
             Input.EnableMouse = true;

@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintSepColorFCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             SeparatorWriterColor.WriteSeparatorColor("你好, {0}!", new Color(ConsoleColors.Green), Vars: ["世界"]);

@@ -26,6 +26,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintWithNulls : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             TextWriterColor.WriteColor("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, new Color(ConsoleColors.Green));

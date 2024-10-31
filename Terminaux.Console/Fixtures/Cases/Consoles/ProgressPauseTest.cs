@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class ProgressPauseTest : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             TextWriterRaw.WritePlain("Progress bar is running from 0 to 100, pausing at 65 for 5 seconds, increasing 10 notches every 1 second.");

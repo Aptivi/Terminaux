@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintAlignMiddleOff : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             var aligned = new AlignedText($"Hello world! This is located in the {ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}middle of the console{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))} and is intentionally very long to demonstrate the off-centering with right margin offset and left margin offset.")

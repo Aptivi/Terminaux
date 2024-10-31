@@ -24,6 +24,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 {
     internal class TestInputInfoBoxProgressCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.InputCjk;
+
         public void RunFixture()
         {
             for (double prog = 0.0d; prog < 100.0d; prog += 0.01d)

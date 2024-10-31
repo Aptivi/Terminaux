@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class ProgressIndeterminateTest : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             TextWriterRaw.WritePlain("Progress bar is running without any indication.");

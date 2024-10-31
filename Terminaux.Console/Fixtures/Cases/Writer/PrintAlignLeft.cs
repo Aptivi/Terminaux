@@ -26,6 +26,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintAlignLeft : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             AlignedTextColor.WriteAlignedColor($"Hello world! This is located in the {ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}left of the console{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}.", new Color(ConsoleColors.Green), TextAlignment.Left);

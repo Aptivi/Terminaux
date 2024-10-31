@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorSelectorNoPaletteTest : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Input;
+
         public void RunFixture()
         {
             Input.EnableMouse = true;

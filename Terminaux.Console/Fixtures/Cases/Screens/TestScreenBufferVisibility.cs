@@ -31,6 +31,8 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
 {
     internal class TestScreenBufferVisibility : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Screen;
+
         public void RunFixture()
         {
             var stickScreen = new Screen();

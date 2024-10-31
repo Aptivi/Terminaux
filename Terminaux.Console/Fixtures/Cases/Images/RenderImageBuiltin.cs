@@ -24,6 +24,8 @@ namespace Terminaux.Console.Fixtures.Cases.Images
 {
     internal class RenderImageBuiltin : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Image;
+
         public void RunFixture()
         {
             string rendered = ImageProcessor.RenderImage(40, 20, 4, 2);

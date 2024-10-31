@@ -26,6 +26,7 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
 {
     internal class PromptInterruptible : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Reader;
 
         public void RunFixture()
         {

@@ -18,6 +18,7 @@
 //
 
 using System.Collections.Generic;
+using System.Linq;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Console.Fixtures;
@@ -39,17 +40,38 @@ namespace Terminaux.Console
             ConsoleMisc.InitializeSequences();
 
             // Prepare the fixtures
-            var fixtureNames = FixtureManager.GetFixtureNames();
-            List<InputChoiceInfo> choices = [];
-            List<InputChoiceInfo> altChoices =
+            var fixtures = FixtureManager.fixtures.OrderBy((fixture) => fixture.Category).ToArray();
+            var fixtureNames = fixtures.Select((fixture) => fixture.GetType().Name).ToArray();
+            List<InputChoiceCategoryInfo> altChoices =
             [
-                new($"{fixtureNames.Length + 1}", "Exit")
+                new("Additional options",
+                [
+                    new("Meta",
+                    [
+                        new($"{fixtureNames.Length + 1}", "Exit")
+                    ])
+                ])
             ];
-            for (int i = 0; i < fixtureNames.Length; i++)
+            List<InputChoiceGroupInfo> groups = [];
+            List<InputChoiceInfo> groupItems = [];
+            FixtureCategory lastCategory = FixtureCategory.Unapplicable;
+            for (int i = 0; i < fixtures.Length; i++)
             {
+                var fixture = fixtures[i];
                 string fixtureName = fixtureNames[i];
-                choices.Add(new($"{i + 1}", fixtureName));
+                if (lastCategory != fixture.Category && lastCategory != FixtureCategory.Unapplicable)
+                {
+                    groups.Add(new($"{lastCategory}", [.. groupItems]));
+                    groupItems.Clear();
+                }
+                lastCategory = fixture.Category;
+                groupItems.Add(new($"{i + 1}", fixtureName));
             }
+            groups.Add(new($"{lastCategory}", [.. groupItems]));
+            List<InputChoiceCategoryInfo> choices =
+            [
+                new("Test fixtures", [.. groups])
+            ];
 
             // Prompt for fixtures
             while (true)
@@ -58,10 +80,11 @@ namespace Terminaux.Console
                 if (selected == fixtureNames.Length + 1)
                     break;
 
-                // Get the fixture name from the selection and run it
-                string chosenFixture = fixtureNames[selected - 1];
-                TextWriterColor.Write($"Fixture to be tested: {chosenFixture}\n");
-                FixtureManager.GetFixtureFromName(chosenFixture).RunFixture();
+                // Get the fixture from the selection and run it
+                var chosenFixture = fixtures[selected - 1];
+                string chosenFixtureName = fixtureNames[selected - 1];
+                TextWriterColor.Write($"Fixture to be tested: {chosenFixtureName}\n");
+                chosenFixture.RunFixture();
                 Input.ReadKey();
             }
             ConsoleClearing.ResetAll();

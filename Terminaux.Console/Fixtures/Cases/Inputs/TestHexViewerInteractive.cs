@@ -24,6 +24,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 {
     internal class TestHexViewerInteractive : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Input;
+
         public void RunFixture()
         {
             string toBeEdited =

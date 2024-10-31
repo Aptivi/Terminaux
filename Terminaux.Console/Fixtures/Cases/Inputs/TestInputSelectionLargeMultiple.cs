@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 {
     internal class TestInputSelectionLargeMultiple : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Input;
+
         public void RunFixture()
         {
             Input.EnableMouse = true;

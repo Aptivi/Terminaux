@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 {
     internal class RenderRectangle : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Graphics;
+
         public void RunFixture()
         {
             var rect = new Rectangle(15, 5, 4, 2, true, ConsoleColors.Red);

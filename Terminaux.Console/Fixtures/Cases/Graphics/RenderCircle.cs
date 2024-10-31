@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 {
     internal class RenderCircle : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Graphics;
+
         public void RunFixture()
         {
             var circle = new Circle(20, 4, 2, true, ConsoleColors.Red);

@@ -23,6 +23,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintRainbowCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             RainbowTextWriterColor.Write("你好，彩虹色的世界！ 这是前景色的彩虹文本！");

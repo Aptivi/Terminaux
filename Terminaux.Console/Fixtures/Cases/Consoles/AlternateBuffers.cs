@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class AlternateBuffers : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             TextWriterRaw.WritePlain("Alternate buffers are not supported on Windows, so you'll see five lines in this screen.\n");

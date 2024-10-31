@@ -31,6 +31,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 {
     internal class RenderLinesSmooth : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Graphics;
+
         public void RunFixture()
         {
             bool bail = false;

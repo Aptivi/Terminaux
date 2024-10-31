@@ -33,6 +33,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class TestProgressBarSpinnerSelectCjkAlt : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             // Prompt user to select a spinner

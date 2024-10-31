@@ -28,6 +28,9 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
     {
         public string FixtureID =>
             "CliInfoPaneTestRtl";
+
+        public FixtureCategory Category => FixtureCategory.TextualUi;
+
         public void RunFixture()
         {
             Input.EnableMouse = true;

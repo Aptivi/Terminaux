@@ -22,10 +22,12 @@ using Terminaux.Inputs.Styles.Editor;
 using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
-namespace Terminaux.Console.Fixtures.Cases.Inputs
+namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 {
     internal class TestTextEditorInteractiveCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.InputCjk;
+
         public void RunFixture()
         {
             string toBeEdited =

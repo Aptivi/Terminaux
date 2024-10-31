@@ -29,6 +29,9 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
     {
         public string FixtureID =>
             "TermInfoPane";
+
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             // Run the resize listener

@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs
 {
     internal class KeyInfo : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Input;
+
         public void RunFixture()
         {
             TextWriterColor.Write("Enter a key or a combination of keys to display its information.");

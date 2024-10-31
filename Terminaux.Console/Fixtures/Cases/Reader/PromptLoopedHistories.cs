@@ -38,6 +38,8 @@ namespace Terminaux.Console.Fixtures.Cases.Reader
             "git push",
         ];
 
+        public FixtureCategory Category => FixtureCategory.Reader;
+
         public void RunFixture()
         {
             TextWriterColor.Write("Write \"exit\" to get out of here.");

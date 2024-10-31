@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 {
     internal class RenderSquare : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Graphics;
+
         public void RunFixture()
         {
             var square = new Square(5, 4, 2, true, ConsoleColors.Red);

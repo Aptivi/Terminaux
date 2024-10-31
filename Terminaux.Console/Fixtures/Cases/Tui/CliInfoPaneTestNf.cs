@@ -27,6 +27,8 @@ namespace Terminaux.Console.Fixtures.Cases.Tui
 {
     internal class CliInfoPaneTestNf : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.TextualUi;
+
         public void RunFixture()
         {
             Input.EnableMouse = true;

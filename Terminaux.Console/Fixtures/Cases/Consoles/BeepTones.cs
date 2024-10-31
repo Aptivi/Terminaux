@@ -24,6 +24,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class BeepTones : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             TextWriterRaw.WritePlain("Beep tones are as follows (freq, ms): [(128, 200), (256, 400), (512, 600)]");

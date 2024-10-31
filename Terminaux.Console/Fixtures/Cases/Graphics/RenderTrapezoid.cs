@@ -25,6 +25,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 {
     internal class RenderTrapezoid : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Graphics;
+
         public void RunFixture()
         {
             var trapezoid = new Trapezoid(25, 40, 20, 4, 2, true, ConsoleColors.Red);

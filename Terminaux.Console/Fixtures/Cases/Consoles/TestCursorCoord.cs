@@ -24,6 +24,8 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
     internal class TestCursorCoord : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Console;
+
         public void RunFixture()
         {
             var coord = ConsoleWrapper.GetCursorPosition();

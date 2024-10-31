@@ -26,6 +26,8 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
 {
     internal class ColorGradientTest : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Color;
+
         public void RunFixture()
         {
             var source = ColorTools.GetRandomColor();

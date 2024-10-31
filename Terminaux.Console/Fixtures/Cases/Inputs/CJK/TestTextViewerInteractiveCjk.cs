@@ -21,10 +21,12 @@ using System.Linq;
 using Terminaux.Inputs.Styles.Editor;
 using Textify.General;
 
-namespace Terminaux.Console.Fixtures.Cases.Inputs
+namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 {
     internal class TestTextViewerInteractiveCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.InputCjk;
+
         public void RunFixture()
         {
             string toBeEdited =

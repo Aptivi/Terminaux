@@ -26,6 +26,8 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 {
     internal class PrintFiglet : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.Writer;
+
         public void RunFixture()
         {
             FigletColor.WriteFigletColor("Hello world!", FigletFonts.GetByName("small"), new Color(ConsoleColors.Green));

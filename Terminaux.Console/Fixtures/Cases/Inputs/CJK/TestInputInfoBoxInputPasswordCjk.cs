@@ -24,6 +24,8 @@ namespace Terminaux.Console.Fixtures.Cases.Inputs.CJK
 {
     internal class TestInputInfoBoxInputPasswordCjk : IFixture
     {
+        public FixtureCategory Category => FixtureCategory.InputCjk;
+
         public void RunFixture()
         {
             string answer = InfoBoxInputPasswordColor.WriteInfoBoxInputPassword(nameof(TestInputInfoBoxInputPasswordCjk), "写下您的密码。");
