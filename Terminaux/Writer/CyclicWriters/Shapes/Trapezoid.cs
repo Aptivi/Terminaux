@@ -22,13 +22,14 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Colors;
 using System;
+using Terminaux.Graphics;
 
-namespace Terminaux.Graphics.Shapes
+namespace Terminaux.Writer.CyclicWriters.Shapes
 {
     /// <summary>
     /// A trapezoid
     /// </summary>
-    public class Trapezoid : IGeometricShape
+    public class Trapezoid : IStaticRenderable, IGeometricShape
     {
         /// <summary>
         /// Trapezoid width
@@ -77,12 +78,12 @@ namespace Terminaux.Graphics.Shapes
         {
             StringBuilder buffer = new();
             int width = Math.Max(TopWidth, BottomWidth);
-            buffer.Append(GraphicsTools.RenderLine((Left + (width / 2) - (TopWidth / 2), Top), (Left + (width / 2) - (BottomWidth / 2), Top + Height), ShapeColor));
-            buffer.Append(GraphicsTools.RenderLine((Left + (width / 2) + (TopWidth / 2), Top), (Left + (width / 2) + (BottomWidth / 2), Top + Height), ShapeColor));
+            buffer.Append(GraphicsTools.RenderLine((Left + width / 2 - TopWidth / 2, Top), (Left + width / 2 - BottomWidth / 2, Top + Height), ShapeColor));
+            buffer.Append(GraphicsTools.RenderLine((Left + width / 2 + TopWidth / 2, Top), (Left + width / 2 + BottomWidth / 2, Top + Height), ShapeColor));
             buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
-            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + (width / 2) - (TopWidth / 2) + 1, Top + 1));
+            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + width / 2 - TopWidth / 2 + 1, Top + 1));
             buffer.Append(new string(' ', TopWidth));
-            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + (width / 2) - (BottomWidth / 2) + 1, Top + Height + 1));
+            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + width / 2 - BottomWidth / 2 + 1, Top + Height + 1));
             buffer.Append(new string(' ', BottomWidth));
             if (Filled)
             {
@@ -91,7 +92,7 @@ namespace Terminaux.Graphics.Shapes
                     int widthDiff = BottomWidth - TopWidth;
                     int widthDiffByHeight = (int)(widthDiff * ((double)y / Height));
                     int lineWidth = TopWidth + widthDiffByHeight;
-                    int pos = (width / 2) - (lineWidth / 2);
+                    int pos = width / 2 - lineWidth / 2;
                     buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + pos + 1, Top + y + 1));
                     buffer.Append(new string(' ', lineWidth));
                 }

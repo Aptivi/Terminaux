@@ -22,35 +22,36 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Colors;
 
-namespace Terminaux.Graphics.Shapes
+namespace Terminaux.Writer.CyclicWriters.Shapes
 {
     /// <summary>
-    /// A rectangle
+    /// A square
     /// </summary>
-    public class Rectangle : IGeometricShape
+    public class Square : IStaticRenderable, IGeometricShape
     {
         /// <summary>
-        /// Rectangle width
+        /// Square width
         /// </summary>
-        public int Width { get; }
+        public int Width =>
+            Height * 2;
 
         /// <summary>
-        /// Rectangle height
+        /// Square height
         /// </summary>
         public int Height { get; }
 
         /// <summary>
-        /// Zero-based left position of the terminal to write this rectangle to
+        /// Zero-based left position of the terminal to write this square to
         /// </summary>
         public int Left { get; }
 
         /// <summary>
-        /// Zero-based top position of the terminal to write this rectangle to
+        /// Zero-based top position of the terminal to write this square to
         /// </summary>
         public int Top { get; }
 
         /// <summary>
-        /// Whether to print this filled rectangle or just the outline
+        /// Whether to print this filled square or just the outline
         /// </summary>
         public bool Filled { get; }
 
@@ -58,9 +59,9 @@ namespace Terminaux.Graphics.Shapes
         public Color ShapeColor { get; }
 
         /// <summary>
-        /// Renders a rectangle
+        /// Renders a square
         /// </summary>
-        /// <returns>A rendered rectangle using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        /// <returns>A rendered square using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public string Render()
         {
             StringBuilder buffer = new();
@@ -83,17 +84,15 @@ namespace Terminaux.Graphics.Shapes
         }
 
         /// <summary>
-        /// Makes a new rectangle
+        /// Makes a new square
         /// </summary>
-        /// <param name="width">Rectangle width</param>
-        /// <param name="height">Rectangle height</param>
-        /// <param name="left">Zero-based left position of the terminal to write this rectangle to</param>
-        /// <param name="top">Zero-based top position of the terminal to write this rectangle to</param>
-        /// <param name="filled">Whether to print this filled rectangle or just the outline</param>
+        /// <param name="height">Square height</param>
+        /// <param name="left">Zero-based left position of the terminal to write this square to</param>
+        /// <param name="top">Zero-based top position of the terminal to write this square to</param>
+        /// <param name="filled">Whether to print this filled square or just the outline</param>
         /// <param name="shapeColor">Shape color. Null equals the current foreground color.</param>
-        public Rectangle(int width, int height, int left, int top, bool filled = false, Color? shapeColor = null)
+        public Square(int height, int left, int top, bool filled = false, Color? shapeColor = null)
         {
-            Width = width;
             Height = height;
             Left = left;
             Top = top;

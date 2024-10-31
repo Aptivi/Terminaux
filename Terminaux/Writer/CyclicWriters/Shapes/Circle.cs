@@ -21,12 +21,12 @@ using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 
-namespace Terminaux.Graphics.Shapes
+namespace Terminaux.Writer.CyclicWriters.Shapes
 {
     /// <summary>
     /// A circle
     /// </summary>
-    public class Circle : IGeometricShape
+    public class Circle : IStaticRenderable, IGeometricShape
     {
         /// <summary>
         /// Circle width

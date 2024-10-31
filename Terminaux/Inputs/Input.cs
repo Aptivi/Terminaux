@@ -199,7 +199,7 @@ namespace Terminaux.Inputs
         // Linux mouse input detection logic reads from the stdin stream that the appropriate DEC VT Locator
         // sequence prints out when every mouse movement is detected. The below code can be tweaked, but any
         // mistake and the pointer detection logic is broken, so be extra careful when adding, modifying, or
-        // tweaking the code below
+        // tweaking the code below to avoid bugs.
         #region Sensitive code points
         // HACK: We need to eliminate unwanted "feedback" on mouse event, but we can't seem to get rid of it. Assistance!
         /// <summary>

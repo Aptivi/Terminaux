@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Graphics.Shapes;
+using Terminaux.Writer.CyclicWriters.Shapes;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
 

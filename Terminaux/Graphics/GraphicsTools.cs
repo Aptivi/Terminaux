@@ -19,6 +19,7 @@
 
 using System;
 using System.Text;
+using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
@@ -53,6 +54,15 @@ namespace Terminaux.Graphics
         /// <summary>
         /// Renders a line using the <see href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham's line algorithm</see>
         /// </summary>
+        /// <param name="firstPoint">Line start positions (zero-based X and Y positions)</param>
+        /// <param name="secondPoint">Line end position (zero-based X and Y positions)</param>
+        /// <returns>A rendered line that you can print with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static string RenderLine(Coordinate firstPoint, Coordinate secondPoint) =>
+            RenderLine(firstPoint, secondPoint, ColorTools.CurrentForegroundColor);
+
+        /// <summary>
+        /// Renders a line using the <see href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham's line algorithm</see>
+        /// </summary>
         /// <param name="startX">Line start position (zero-based X position)</param>
         /// <param name="startY">Line start position (zero-based Y position)</param>
         /// <param name="endX">Line end position (zero-based X position)</param>
@@ -69,15 +79,25 @@ namespace Terminaux.Graphics
         /// <param name="secondPoint">Line end position (zero-based X and Y positions)</param>
         /// <param name="lineColor">Line color</param>
         /// <returns>A rendered line that you can print with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderLine((int startX, int startY) firstPoint, (int endX, int endY) secondPoint, Color lineColor)
+        public static string RenderLine((int startX, int startY) firstPoint, (int endX, int endY) secondPoint, Color lineColor) =>
+            RenderLine(new Coordinate(firstPoint.startX, firstPoint.startY), new Coordinate(secondPoint.endX, secondPoint.endY), lineColor);
+
+        /// <summary>
+        /// Renders a line using the <see href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham's line algorithm</see>
+        /// </summary>
+        /// <param name="firstPoint">Line start positions (zero-based X and Y positions)</param>
+        /// <param name="secondPoint">Line end position (zero-based X and Y positions)</param>
+        /// <param name="lineColor">Line color</param>
+        /// <returns>A rendered line that you can print with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static string RenderLine(Coordinate firstPoint, Coordinate secondPoint, Color lineColor)
         {
             StringBuilder buffer = new();
 
             // Get the width and the height
-            int posX = firstPoint.startX;
-            int posY = firstPoint.startY;
-            int width = secondPoint.endX - firstPoint.startX;
-            int height = secondPoint.endY - firstPoint.startY;
+            int posX = firstPoint.X;
+            int posY = firstPoint.Y;
+            int width = secondPoint.X - firstPoint.X;
+            int height = secondPoint.Y - firstPoint.Y;
 
             // Get the differences according to the given points
             int differenceX1 = width < 0 ? -1 : width > 0 ? 1 : 0;
@@ -145,6 +165,15 @@ namespace Terminaux.Graphics
         /// <summary>
         /// Renders a line using the <see href="https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm">Xiaolin Wu's line algorithm</see>
         /// </summary>
+        /// <param name="firstPoint">Line start positions (zero-based X and Y positions)</param>
+        /// <param name="secondPoint">Line end position (zero-based X and Y positions)</param>
+        /// <returns>A rendered line that you can print with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static string RenderLineSmooth(Coordinate firstPoint, Coordinate secondPoint) =>
+            RenderLineSmooth(firstPoint, secondPoint, ColorTools.CurrentForegroundColor);
+
+        /// <summary>
+        /// Renders a line using the <see href="https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm">Xiaolin Wu's line algorithm</see>
+        /// </summary>
         /// <param name="startX">Line start position (zero-based X position)</param>
         /// <param name="startY">Line start position (zero-based Y position)</param>
         /// <param name="endX">Line end position (zero-based X position)</param>
@@ -161,7 +190,17 @@ namespace Terminaux.Graphics
         /// <param name="secondPoint">Line end position (zero-based X and Y positions)</param>
         /// <param name="lineColor">Line color</param>
         /// <returns>A rendered line that you can print with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public static string RenderLineSmooth((int startX, int startY) firstPoint, (int endX, int endY) secondPoint, Color lineColor)
+        public static string RenderLineSmooth((int startX, int startY) firstPoint, (int endX, int endY) secondPoint, Color lineColor) =>
+            RenderLineSmooth(new Coordinate(firstPoint.startX, firstPoint.startY), new Coordinate(secondPoint.endX, secondPoint.endY), lineColor);
+
+        /// <summary>
+        /// Renders a line using the <see href="https://en.wikipedia.org/wiki/Xiaolin_Wu%27s_line_algorithm">Xiaolin Wu's line algorithm</see>
+        /// </summary>
+        /// <param name="firstPoint">Line start positions (zero-based X and Y positions)</param>
+        /// <param name="secondPoint">Line end position (zero-based X and Y positions)</param>
+        /// <param name="lineColor">Line color</param>
+        /// <returns>A rendered line that you can print with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static string RenderLineSmooth(Coordinate firstPoint, Coordinate secondPoint, Color lineColor)
         {
             StringBuilder buffer = new();
 
@@ -181,10 +220,10 @@ namespace Terminaux.Graphics
                 1 - FractionalPart(x);
 
             // Store the points, since we may need to modify them
-            int x1 = firstPoint.startX;
-            int x2 = secondPoint.endX;
-            int y1 = firstPoint.startY;
-            int y2 = secondPoint.endY;
+            int x1 = firstPoint.X;
+            int x2 = secondPoint.X;
+            int y1 = firstPoint.Y;
+            int y2 = secondPoint.Y;
 
             // Check to see if the two points are steep or not
             bool steep = Math.Abs(y2 - y1) > Math.Abs(x2 - x1);

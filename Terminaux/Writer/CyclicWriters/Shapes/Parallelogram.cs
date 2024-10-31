@@ -22,36 +22,35 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Colors;
 
-namespace Terminaux.Graphics.Shapes
+namespace Terminaux.Writer.CyclicWriters.Shapes
 {
     /// <summary>
-    /// A square
+    /// A parallelogram
     /// </summary>
-    public class Square : IGeometricShape
+    public class Parallelogram : IStaticRenderable, IGeometricShape
     {
         /// <summary>
-        /// Square width
+        /// Parallelogram width
         /// </summary>
-        public int Width =>
-            Height * 2;
+        public int Width { get; }
 
         /// <summary>
-        /// Square height
+        /// Parallelogram height
         /// </summary>
         public int Height { get; }
 
         /// <summary>
-        /// Zero-based left position of the terminal to write this square to
+        /// Zero-based left position of the terminal to write this parallelogram to
         /// </summary>
         public int Left { get; }
 
         /// <summary>
-        /// Zero-based top position of the terminal to write this square to
+        /// Zero-based top position of the terminal to write this parallelogram to
         /// </summary>
         public int Top { get; }
 
         /// <summary>
-        /// Whether to print this filled square or just the outline
+        /// Whether to print this filled parallelogram or just the outline
         /// </summary>
         public bool Filled { get; }
 
@@ -59,24 +58,28 @@ namespace Terminaux.Graphics.Shapes
         public Color ShapeColor { get; }
 
         /// <summary>
-        /// Renders a square
+        /// Renders a parallelogram
         /// </summary>
-        /// <returns>A rendered square using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        /// <returns>A rendered parallelogram using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public string Render()
         {
             StringBuilder buffer = new();
             buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
             for (int y = 0; y < Height; y++)
             {
-                buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 1));
+                int widthThreshold = Width * (y + 1) / Height;
+                int LeftPosShift = (Width - widthThreshold) / 2;
+                int nextWidthThreshold = Width * (y + 2) / Height;
+                int thresholdDiff = nextWidthThreshold - widthThreshold;
+                buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + 1, Top + y + 1));
                 bool isOutline = y == 0 || y == Height - 1;
                 if (isOutline || Filled)
                     buffer.Append(new string(' ', Width));
                 else
                 {
-                    buffer.Append("  ");
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + Width - 1, Top + y + 1));
-                    buffer.Append("  ");
+                    buffer.Append(new string(' ', thresholdDiff));
+                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + Width - thresholdDiff + 1, Top + y + 1));
+                    buffer.Append(new string(' ', thresholdDiff));
                 }
             }
             buffer.Append(ColorTools.RenderRevertBackground());
@@ -84,15 +87,17 @@ namespace Terminaux.Graphics.Shapes
         }
 
         /// <summary>
-        /// Makes a new square
+        /// Makes a new parallelogram
         /// </summary>
-        /// <param name="height">Square height</param>
-        /// <param name="left">Zero-based left position of the terminal to write this square to</param>
-        /// <param name="top">Zero-based top position of the terminal to write this square to</param>
-        /// <param name="filled">Whether to print this filled square or just the outline</param>
+        /// <param name="width">Parallelogram width</param>
+        /// <param name="height">Parallelogram height</param>
+        /// <param name="left">Zero-based left position of the terminal to write this parallelogram to</param>
+        /// <param name="top">Zero-based top position of the terminal to write this parallelogram to</param>
+        /// <param name="filled">Whether to print this filled parallelogram or just the outline</param>
         /// <param name="shapeColor">Shape color. Null equals the current foreground color.</param>
-        public Square(int height, int left, int top, bool filled = false, Color? shapeColor = null)
+        public Parallelogram(int width, int height, int left, int top, bool filled = false, Color? shapeColor = null)
         {
+            Width = width;
             Height = height;
             Left = left;
             Top = top;

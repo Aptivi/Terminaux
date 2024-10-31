@@ -23,12 +23,12 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Colors;
 using System;
 
-namespace Terminaux.Graphics.Shapes
+namespace Terminaux.Writer.CyclicWriters.Shapes
 {
     /// <summary>
     /// An ellipsis
     /// </summary>
-    public class Ellipsis : IGeometricShape
+    public class Ellipsis : IStaticRenderable, IGeometricShape
     {
         /// <summary>
         /// Ellipsis width
@@ -87,7 +87,7 @@ namespace Terminaux.Graphics.Shapes
                 int nextHeight = (int)Math.Round(Height * Math.Sqrt(Math.Pow(Width, 2) / 4.0 - Math.Pow(nextDiffX, 2)) / Width);
                 for (int diffY = 1; diffY <= height; diffY++)
                 {
-                    if (((height - prevHeight >= 0 && diffY < prevHeight) || (height - nextHeight >= 0 && diffY < nextHeight)) && !Filled)
+                    if ((height - prevHeight >= 0 && diffY < prevHeight || height - nextHeight >= 0 && diffY < nextHeight) && !Filled)
                         continue;
                     buffer.Append(CsiSequences.GenerateCsiCursorPosition(drawX + 1, centerY + diffY + 1));
                     buffer.Append(' ');
@@ -96,7 +96,7 @@ namespace Terminaux.Graphics.Shapes
                 }
 
                 // Make sure that we don't have two semi-circles
-                if (height > 0 && (Filled || (!Filled && (i == 1 || i == Width - 1))))
+                if (height > 0 && (Filled || !Filled && (i == 1 || i == Width - 1)))
                 {
                     buffer.Append(CsiSequences.GenerateCsiCursorPosition(drawX + 1, centerY + 1));
                     buffer.Append(' ');

@@ -22,35 +22,35 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Colors;
 
-namespace Terminaux.Graphics.Shapes
+namespace Terminaux.Writer.CyclicWriters.Shapes
 {
     /// <summary>
-    /// A triangle
+    /// A rectangle
     /// </summary>
-    public class Triangle : IGeometricShape
+    public class Rectangle : IStaticRenderable, IGeometricShape
     {
         /// <summary>
-        /// Triangle width
+        /// Rectangle width
         /// </summary>
         public int Width { get; }
 
         /// <summary>
-        /// Triangle height
+        /// Rectangle height
         /// </summary>
         public int Height { get; }
 
         /// <summary>
-        /// Zero-based left position of the terminal to write this triangle to
+        /// Zero-based left position of the terminal to write this rectangle to
         /// </summary>
         public int Left { get; }
 
         /// <summary>
-        /// Zero-based top position of the terminal to write this triangle to
+        /// Zero-based top position of the terminal to write this rectangle to
         /// </summary>
         public int Top { get; }
 
         /// <summary>
-        /// Whether to print this filled triangle or just the outline
+        /// Whether to print this filled rectangle or just the outline
         /// </summary>
         public bool Filled { get; }
 
@@ -58,25 +58,24 @@ namespace Terminaux.Graphics.Shapes
         public Color ShapeColor { get; }
 
         /// <summary>
-        /// Renders a triangle
+        /// Renders a rectangle
         /// </summary>
-        /// <returns>A rendered triangle using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        /// <returns>A rendered rectangle using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public string Render()
         {
             StringBuilder buffer = new();
-            buffer.Append(GraphicsTools.RenderLine((Left + (Width / 2), Top), (Left, Top + Height), ShapeColor));
-            buffer.Append(GraphicsTools.RenderLine((Left + (Width / 2), Top), (Left + Width, Top + Height), ShapeColor));
             buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
-            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + Height + 1));
-            buffer.Append(new string(' ', Width));
-            if (Filled)
+            for (int y = 0; y < Height; y++)
             {
-                for (int y = 0; y < Height; y++)
+                buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 1));
+                bool isOutline = y == 0 || y == Height - 1;
+                if (isOutline || Filled)
+                    buffer.Append(new string(' ', Width));
+                else
                 {
-                    int widthThreshold = Width * (y + 1) / Height;
-                    int LeftPosShift = (Width - widthThreshold) / 2;
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + 2, Top + y + 1));
-                    buffer.Append(new string(' ', widthThreshold - 1));
+                    buffer.Append("  ");
+                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + Width - 1, Top + y + 1));
+                    buffer.Append("  ");
                 }
             }
             buffer.Append(ColorTools.RenderRevertBackground());
@@ -84,15 +83,15 @@ namespace Terminaux.Graphics.Shapes
         }
 
         /// <summary>
-        /// Makes a new triangle
+        /// Makes a new rectangle
         /// </summary>
-        /// <param name="width">Triangle width</param>
-        /// <param name="height">Triangle height</param>
-        /// <param name="left">Zero-based left position of the terminal to write this triangle to</param>
-        /// <param name="top">Zero-based top position of the terminal to write this triangle to</param>
-        /// <param name="filled">Whether to print this filled triangle or just the outline</param>
+        /// <param name="width">Rectangle width</param>
+        /// <param name="height">Rectangle height</param>
+        /// <param name="left">Zero-based left position of the terminal to write this rectangle to</param>
+        /// <param name="top">Zero-based top position of the terminal to write this rectangle to</param>
+        /// <param name="filled">Whether to print this filled rectangle or just the outline</param>
         /// <param name="shapeColor">Shape color. Null equals the current foreground color.</param>
-        public Triangle(int width, int height, int left, int top, bool filled = false, Color? shapeColor = null)
+        public Rectangle(int width, int height, int left, int top, bool filled = false, Color? shapeColor = null)
         {
             Width = width;
             Height = height;

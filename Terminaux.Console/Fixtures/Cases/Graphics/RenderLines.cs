@@ -23,6 +23,9 @@ using Terminaux.Colors.Data;
 using System;
 using Terminaux.Base;
 using Terminaux.Inputs;
+using Terminaux.Base.Structures;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Terminaux.Console.Fixtures.Cases.Graphics
 {
@@ -34,14 +37,26 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
             var rng = new Random();
             while (!bail)
             {
-                (int, int) startPoint1 = (rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
-                (int, int) endPoint1 = (rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
-                (int, int) startPoint2 = (rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
-                (int, int) endPoint2 = (rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
-                string line1 = GraphicsTools.RenderLine(startPoint1, endPoint1, ConsoleColors.Green);
-                string line2 = GraphicsTools.RenderLine(startPoint2, endPoint2, ConsoleColors.Green);
-                TextWriterRaw.WriteRaw(line1);
-                TextWriterRaw.WriteRaw(line2);
+                Coordinate startPoint1 = new(rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
+                Coordinate endPoint1 = new(rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
+                Coordinate startPoint2 = new(rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
+                Coordinate endPoint2 = new(rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
+                var line1 = new Line()
+                {
+                    StartPos = startPoint1,
+                    EndPos = endPoint1,
+                    Color = ConsoleColors.Green,
+                };
+                var line2 = new Line()
+                {
+                    StartPos = startPoint2,
+                    EndPos = endPoint2,
+                    Color = ConsoleColors.Green,
+                };
+                var lines = new Container();
+                lines.AddRenderable("Line 1", line1);
+                lines.AddRenderable("Line 2", line2);
+                ContainerTools.WriteContainer(lines);
                 var cki = Input.ReadKey();
                 if (cki.Key == ConsoleKey.Escape)
                     bail = true;
