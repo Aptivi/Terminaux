@@ -2335,16 +2335,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.Container.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.Container.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.AlignedFigletText.yml",
       "output": {
         ".html": {
@@ -2489,6 +2479,36 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.CyclicWriters.ProgressBarNoText.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Container.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Container.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.ContainerTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.ContainerTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.html"
         }
       },
       "version": ""
