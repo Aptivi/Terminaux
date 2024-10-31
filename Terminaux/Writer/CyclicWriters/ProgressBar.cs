@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Text;
 using System.Threading;
 using Terminaux.Base;
@@ -128,7 +129,7 @@ namespace Terminaux.Writer.CyclicWriters
             }
 
             // Estimate how many cells the progress bar takes
-            int cells = (int)(position * progressWidth / (double)maxPosition);
+            int cells = (int)Math.Round(position * progressWidth / (double)maxPosition);
             cells = cells > progressWidth ? progressWidth : cells;
             cells = Indeterminate ? progressWidth : cells;
             if (Indeterminate)
@@ -151,7 +152,7 @@ namespace Terminaux.Writer.CyclicWriters
                 var gradientColor = indeterminateGradient[indeterminateStep - 1 < 0 ? 0 : indeterminateStep - 1];
                 rendered.Append(
                     ColorTools.RenderSetConsoleColor(gradientColor.IntermediateColor) +
-                    new string('━', cells + percentageWidth)
+                    new string('━', cells + percentageWidth - 1)
                 );
             }
             else
