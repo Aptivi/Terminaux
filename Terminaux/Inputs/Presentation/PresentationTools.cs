@@ -364,10 +364,10 @@ namespace Terminaux.Inputs.Presentation
                     for (int inputIdx = 0; inputIdx < page.Inputs.Length; inputIdx++)
                     {
                         InputInfo? input = page.Inputs[inputIdx];
-                        choices.Add(new InputChoiceInfo($"{inputIdx + 1}{(input.InputRequired ? "*" : " ")}", $"{input.InputName} [{input.InputMethod.DisplayInput}]", input.InputDescription));
+                        choices.Add(new InputChoiceInfo($"[{(input.InputRequired ? "*" : " ")}] {inputIdx + 1}", $"{input.InputName} [{input.InputMethod.DisplayInput}]", input.InputDescription));
                     }
-                    choices.Add(new InputChoiceInfo($"{page.Inputs.Length + 1}", "Submit", "Submits the required fields to the presentation"));
-                    choices.Add(new InputChoiceInfo($"{page.Inputs.Length + 2}", "Exit", "Goes back to this presentation"));
+                    choices.Add(new InputChoiceInfo($"    {page.Inputs.Length + 1}", "Submit", "Submits the required fields to the presentation"));
+                    choices.Add(new InputChoiceInfo($"    {page.Inputs.Length + 2}", "Exit", "Goes back to this presentation"));
 
                     // Let the user select an option, then process the input
                     screen.RequireRefresh();
