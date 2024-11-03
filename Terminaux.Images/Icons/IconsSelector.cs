@@ -32,6 +32,7 @@ using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Images.Icons
 {
@@ -103,7 +104,12 @@ namespace Terminaux.Images.Icons
                     buffer.Append(IconsManager.RenderIcon(iconName, width, height, left, top));
 
                     // Write the selected icon name and the keybindings
-                    buffer.Append(AlignedTextColor.RenderAligned(1, $"{iconName} - [{selectedIcon + 1}/{icons.Length}]", TextAlignment.Middle));
+                    buffer.Append(
+                        new AlignedText($"{iconName} - [{selectedIcon + 1}/{icons.Length}]", TextAlignment.Middle)
+                        {
+                            Settings = new() { Alignment = TextAlignment.Middle },
+                            Top = 1
+                        }.Render());
                     buffer.Append(KeybindingsWriter.RenderKeybindings(bindings, 0, ConsoleWrapper.WindowHeight - 1));
                     return buffer.ToString();
                 });
