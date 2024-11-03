@@ -32,9 +32,9 @@ using Terminaux.Colors;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
-using Terminaux.Writer.MiscWriters.Tools;
 using Textify.Tools;
 
 namespace Terminaux.Inputs.Styles.Selection

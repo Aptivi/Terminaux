@@ -19,7 +19,7 @@
 
 using System;
 
-namespace Terminaux.Writer.FancyWriters.Tools
+namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
     /// <summary>
     /// Representation class for the Asciinema specification

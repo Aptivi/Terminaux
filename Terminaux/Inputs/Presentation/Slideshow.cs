@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Presentation
 {

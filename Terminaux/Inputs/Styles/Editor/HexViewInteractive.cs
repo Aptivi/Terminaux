@@ -27,11 +27,11 @@ using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Interactive;
 using System.Collections.Generic;
 using System.Globalization;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Styles.Editor
 {

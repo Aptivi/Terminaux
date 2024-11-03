@@ -18,8 +18,8 @@
 //
 
 using Terminaux.Colors;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
-using Terminaux.Writer.FancyWriters.Tools;
 
 namespace Terminaux.Writer.CyclicWriters
 {

@@ -22,7 +22,7 @@ using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
 
-namespace Terminaux.Writer.FancyWriters.Tools
+namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
     /// <summary>
     /// PowerLine tools

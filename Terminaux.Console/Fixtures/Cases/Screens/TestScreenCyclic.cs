@@ -28,7 +28,7 @@ using Terminaux.Inputs;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
 using Textify.Data.Figlet;
-using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Console.Fixtures.Cases.Screens
 {

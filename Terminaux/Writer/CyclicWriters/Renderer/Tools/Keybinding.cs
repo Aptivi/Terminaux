@@ -21,7 +21,7 @@ using System;
 using System.Diagnostics;
 using Terminaux.Inputs.Pointer;
 
-namespace Terminaux.Writer.MiscWriters.Tools
+namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
     /// <summary>
     /// Keybinding class

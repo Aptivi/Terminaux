@@ -20,7 +20,7 @@
 using System;
 using System.Collections.Generic;
 using Terminaux.Inputs.Pointer;
-using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Interactive
 {

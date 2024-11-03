@@ -20,7 +20,6 @@
 using System;
 using Terminaux.Colors;
 using System.Text;
-using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 using Terminaux.Colors.Data;
@@ -30,6 +29,7 @@ using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.FancyWriters
 {

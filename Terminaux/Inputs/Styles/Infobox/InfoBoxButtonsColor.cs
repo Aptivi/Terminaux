@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Colors;
 using System.Text;
 using Terminaux.Base.Buffered;
@@ -32,9 +31,9 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
-using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {

@@ -30,11 +30,11 @@ using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using System.Text.RegularExpressions;
-using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Writer.MiscWriters;
 using Textify.General;
 using Textify.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Styles.Editor
 {

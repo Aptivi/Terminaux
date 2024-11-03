@@ -21,10 +21,10 @@ using System;
 using System.Collections.Generic;
 using Terminaux.Colors;
 using System.Text;
-using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 using Terminaux.Base.Checks;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.FancyWriters
 {

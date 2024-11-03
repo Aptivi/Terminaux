@@ -35,9 +35,9 @@ using Terminaux.Inputs.Presentation.Inputs;
 using System.Linq;
 using Textify.General;
 using Terminaux.Inputs.Presentation.Elements;
-using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Styles;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Presentation
 {

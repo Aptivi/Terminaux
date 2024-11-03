@@ -29,9 +29,9 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
-using Terminaux.Writer.MiscWriters.Tools;
 using Terminaux.Inputs;
 using Terminaux.Inputs.Styles;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Images.Icons
 {

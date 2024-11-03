@@ -19,7 +19,6 @@
 
 using System;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Reader;
 using System.Text;
@@ -31,6 +30,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Inputs.Styles.Infobox.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {

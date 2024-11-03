@@ -35,9 +35,9 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
-using Terminaux.Writer.MiscWriters.Tools;
 using Textify.General;
 
 namespace Terminaux.Inputs.Styles

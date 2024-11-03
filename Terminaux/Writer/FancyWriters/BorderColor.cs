@@ -19,11 +19,11 @@
 
 using System;
 using Terminaux.Colors;
-using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 using Terminaux.Colors.Data;
 using Terminaux.Base.Checks;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.FancyWriters
 {

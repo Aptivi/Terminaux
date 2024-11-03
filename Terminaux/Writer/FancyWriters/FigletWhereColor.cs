@@ -24,9 +24,9 @@ using Textify.Data.Figlet;
 using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
-using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Base.Checks;
 using Terminaux.Base;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.FancyWriters
 {

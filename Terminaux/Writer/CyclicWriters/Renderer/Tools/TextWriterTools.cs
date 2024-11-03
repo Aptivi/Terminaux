@@ -21,10 +21,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.MiscWriters.Tools;
 using Textify.General;
 
-namespace Terminaux.Writer.FancyWriters.Tools
+namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
     /// <summary>
     /// Text writer tools
@@ -64,7 +63,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
                     x = leftMargin + width - maxWidth;
                     break;
                 case TextAlignment.Middle:
-                    x = leftMargin + (width / 2) - (maxWidth / 2);
+                    x = leftMargin + width / 2 - maxWidth / 2;
                     break;
             }
             if (x < 0)
@@ -78,7 +77,7 @@ namespace Terminaux.Writer.FancyWriters.Tools
         internal static string[] GetFinalLines(string text, int width, params object[] vars)
         {
             // Deal with the lines to actually fit text in the infobox
-            string finalInfoRendered = TextTools.FormatString(text, vars);
+            string finalInfoRendered = text.FormatString(vars);
             string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
             List<string> splitFinalLines = [];
             foreach (var line in splitLines)

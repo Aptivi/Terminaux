@@ -26,8 +26,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
-using Terminaux.Writer.FancyWriters.Tools;
-using Terminaux.Writer.MiscWriters.Tools;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Textify.General;
 
 namespace Terminaux.Writer.FancyWriters

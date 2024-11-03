@@ -17,24 +17,31 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Writer.MiscWriters.Tools
+using Textify.Data.Figlet;
+using Textify.Data.Figlet.Utilities.Lines;
+
+namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
     /// <summary>
-    /// Text alignment for some of the writers and applications
+    /// Tools for text manipulation
     /// </summary>
-    public enum TextAlignment
+    public static class FigletTextTools
     {
+        internal static string defaultFigletFontName = "speed";
+
         /// <summary>
-        /// Left alignment for text
+        /// Default figlet font name
         /// </summary>
-        Left,
+        public static string DefaultFigletFontName
+        {
+            get => defaultFigletFontName ?? "speed";
+            set => defaultFigletFontName = FigletFonts.TryGetByName(defaultFigletFontName) is not null ? value : "speed";
+        }
+
         /// <summary>
-        /// Middle alignment for text
+        /// Default figlet font
         /// </summary>
-        Middle,
-        /// <summary>
-        /// Right alignment for text
-        /// </summary>
-        Right,
+        public static FigletFont DefaultFigletFont =>
+            FigletFonts.GetByName(DefaultFigletFontName);
     }
 }

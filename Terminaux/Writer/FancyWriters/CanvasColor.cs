@@ -23,8 +23,8 @@ using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 using Terminaux.Base.Checks;
-using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.FancyWriters
 {
