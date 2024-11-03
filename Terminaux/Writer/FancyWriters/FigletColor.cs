@@ -27,12 +27,14 @@ using System.Diagnostics;
 using Terminaux.Writer.FancyWriters.Tools;
 using Terminaux.Base.Checks;
 using Terminaux.Base;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Writer.FancyWriters
 {
     /// <summary>
     /// Figlet writer
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class FigletColor
     {
         /// <summary>
@@ -148,7 +150,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         public static string RenderFigletPlain(string Text, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderFiglet(Text, FigletTextTools.DefaultFigletFont, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, leftMargin, rightMargin, Vars);
+            FigletText.RenderFiglet(Text, FigletTextTools.DefaultFigletFont, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders the figlet text
@@ -159,7 +161,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         public static string RenderFigletPlain(string Text, FigletFont FigletFont, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderFiglet(Text, FigletFont, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, leftMargin, rightMargin, Vars);
+            FigletText.RenderFiglet(Text, FigletFont, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders the figlet text
@@ -170,7 +172,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         public static string RenderFiglet(string Text, Color ForegroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderFiglet(Text, FigletTextTools.DefaultFigletFont, ForegroundColor, ColorTools.currentBackgroundColor, true, leftMargin, rightMargin, Vars);
+            FigletText.RenderFiglet(Text, FigletTextTools.DefaultFigletFont, ForegroundColor, ColorTools.currentBackgroundColor, true, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders the figlet text
@@ -182,7 +184,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         public static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderFiglet(Text, FigletFont, ForegroundColor, ColorTools.currentBackgroundColor, true, leftMargin, rightMargin, Vars);
+            FigletText.RenderFiglet(Text, FigletFont, ForegroundColor, ColorTools.currentBackgroundColor, true, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders the figlet text
@@ -194,7 +196,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         public static string RenderFiglet(string Text, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderFiglet(Text, FigletTextTools.DefaultFigletFont, ForegroundColor, BackgroundColor, true, leftMargin, rightMargin, Vars);
+            FigletText.RenderFiglet(Text, FigletTextTools.DefaultFigletFont, ForegroundColor, BackgroundColor, true, leftMargin, rightMargin, Vars);
 
         /// <summary>
         /// Renders the figlet text
@@ -207,31 +209,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="leftMargin">The left margin</param>
         /// <param name="rightMargin">The right margin</param>
         public static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            RenderFiglet(Text, FigletFont, ForegroundColor, BackgroundColor, true, leftMargin, rightMargin, Vars);
-
-        /// <summary>
-        /// Renders the figlet text
-        /// </summary>
-        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-        /// <param name="FigletFont">Figlet font to use in the text.</param>
-        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
-        /// <param name="BackgroundColor">A background color that will be changed to.</param>
-        /// <param name="useColor">Whether to use the color or not</param>
-        /// <param name="Vars">Variables to format the message before it's written.</param>
-        /// <param name="leftMargin">The left margin</param>
-        /// <param name="rightMargin">The right margin</param>
-        internal static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
-        {
-            var builder = new StringBuilder();
-            builder.Append(
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                FigletTools.RenderFiglet(Text, FigletFont, ConsoleWrapper.WindowWidth - (leftMargin + rightMargin), Vars) +
-                $"{(useColor ? ColorTools.RenderRevertForeground() : "")}" +
-                $"{(useColor ? ColorTools.RenderRevertBackground() : "")}"
-            );
-            return builder.ToString();
-        }
+            FigletText.RenderFiglet(Text, FigletFont, ForegroundColor, BackgroundColor, true, leftMargin, rightMargin, Vars);
 
         static FigletColor()
         {

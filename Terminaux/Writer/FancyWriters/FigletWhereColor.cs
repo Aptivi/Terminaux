@@ -33,6 +33,7 @@ namespace Terminaux.Writer.FancyWriters
     /// <summary>
     /// Figlet writer (positional)
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class FigletWhereColor
     {
         /// <summary>

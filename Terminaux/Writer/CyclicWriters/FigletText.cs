@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
@@ -47,6 +49,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// <summary>
         /// Left position
         /// </summary>
+        [Obsolete("FigletWhereColor is going to be obsolete soon. Use renderable positioning system instead.")]
         public int Left
         {
             get => left;
@@ -60,6 +63,7 @@ namespace Terminaux.Writer.CyclicWriters
         /// <summary>
         /// Top position
         /// </summary>
+        [Obsolete("FigletWhereColor is going to be obsolete soon. Use renderable positioning system instead.")]
         public int Top
         {
             get => top;
@@ -153,12 +157,8 @@ namespace Terminaux.Writer.CyclicWriters
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
-            if (!customPos)
-                return FigletColor.RenderFiglet(
-                    Text, Font, ForegroundColor, BackgroundColor, customColor, LeftMargin, RightMargin);
-            else
-                return FigletWhereColor.RenderFigletWhere(
-                    Text, Left, Top, false, Font, ForegroundColor, BackgroundColor, customColor, LeftMargin, RightMargin);
+            return RenderFiglet(
+                Text, Font, ForegroundColor, BackgroundColor, customColor, LeftMargin, RightMargin);
         }
 
         internal void UpdateInternalTop()
@@ -167,6 +167,19 @@ namespace Terminaux.Writer.CyclicWriters
 
             // Install the values
             top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
+        }
+
+        internal static string RenderFiglet(string Text, FigletFont FigletFont, Color ForegroundColor, Color BackgroundColor, bool useColor, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            var builder = new StringBuilder();
+            builder.Append(
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
+                FigletTools.RenderFiglet(Text, FigletFont, ConsoleWrapper.WindowWidth - (leftMargin + rightMargin), Vars) +
+                $"{(useColor ? ColorTools.RenderRevertForeground() : "")}" +
+                $"{(useColor ? ColorTools.RenderRevertBackground() : "")}"
+            );
+            return builder.ToString();
         }
 
         /// <summary>
