@@ -48,8 +48,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
             {
                 var instance = container.GetRenderable(renderable);
                 var pos = container.GetRenderablePosition(renderable);
-                containerBuffer.Append(CsiSequences.GenerateCsiCursorPosition(pos.X + 1, pos.Y + 1));
-                containerBuffer.Append(instance.Render());
+                containerBuffer.Append(TextWriterWhereColor.RenderWhere(instance.Render(), pos.X, pos.Y));
             }
             return containerBuffer.ToString();
         }

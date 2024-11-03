@@ -119,7 +119,7 @@ namespace Terminaux.Writer.CyclicWriters
                     rendered.Append(
                         ColorTools.RenderSetConsoleColor(gradientColor.IntermediateColor)
                     );
-                    for (int i = 0; i < cells + Height; i++)
+                    for (int i = 0; i < Height; i++)
                         rendered.AppendLine("┃");
                 }
                 else
