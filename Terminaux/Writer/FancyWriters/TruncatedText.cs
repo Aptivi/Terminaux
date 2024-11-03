@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -26,6 +27,7 @@ using Terminaux.Colors;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 using Textify.General;
 
@@ -34,6 +36,7 @@ namespace Terminaux.Writer.FancyWriters
     /// <summary>
     /// Truncated text writer by column and row number
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class TruncatedText
     {
         /// <summary>
@@ -300,7 +303,7 @@ namespace Terminaux.Writer.FancyWriters
         internal static void WriteText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdxRow, int currIdxColumn, params object[] vars)
         {
             string[] lines = TextWriterTools.GetFinalLines(text, width, vars);
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, width, height, left, top, useColor, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, settings, textColor, backgroundColor, width, height, left, top, useColor, currIdxRow, currIdxColumn));
         }
 
         /// <summary>
@@ -311,7 +314,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -323,7 +326,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -337,7 +340,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -348,7 +351,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -361,7 +364,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -376,7 +379,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -388,7 +391,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -402,7 +405,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -418,7 +421,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -429,7 +432,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -442,7 +445,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -457,7 +460,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -469,7 +472,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -483,7 +486,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -499,7 +502,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -512,7 +515,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -527,7 +530,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, settings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -544,7 +547,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextPoswise(lines, settings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -810,7 +813,7 @@ namespace Terminaux.Writer.FancyWriters
         internal static string RenderText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdxRow, int currIdxColumn, params object[] vars)
         {
             string[] lines = TextWriterTools.GetFinalLines(text, width, vars);
-            return RenderText(lines, settings, textColor, backgroundColor, width, height, left, top, useColor, currIdxRow, currIdxColumn);
+            return BoundedText.RenderTextPoswise(lines, settings, textColor, backgroundColor, width, height, left, top, useColor, currIdxRow, currIdxColumn);
         }
 
         /// <summary>
@@ -821,7 +824,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -833,7 +836,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -847,7 +850,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -858,7 +861,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -871,7 +874,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -886,7 +889,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -898,7 +901,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -912,7 +915,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -928,7 +931,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -939,7 +942,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -952,7 +955,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -967,7 +970,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -979,7 +982,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -993,7 +996,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1009,7 +1012,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, settings, textColor, ColorTools.currentBackgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1022,7 +1025,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1037,7 +1040,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
+            BoundedText.RenderTextPoswise(lines, settings, textColor, backgroundColor, width, height, 0, 0, true, currIdxRow, currIdxColumn);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1054,101 +1057,6 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="currIdxColumn">Current height index for pagination</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, int currIdxRow, int currIdxColumn) =>
-            RenderText(lines, settings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
-
-        internal static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdxRow, int currIdxColumn)
-        {
-            // Get the start and the end indexes for lines
-            int lineLinesPerPage = height;
-            int currentPage = currIdxRow / lineLinesPerPage;
-            int startIndex = lineLinesPerPage * currentPage + 1;
-            int endIndex = lineLinesPerPage * (currentPage + 1);
-            if (startIndex > lines.Length)
-                startIndex = lines.Length;
-            if (endIndex > lines.Length)
-                endIndex = lines.Length;
-
-            // Get the lines and highlight the selection
-            int count = 0;
-            var sels = new StringBuilder();
-            for (int i = startIndex; i <= endIndex; i++)
-            {
-                // Get a line
-                string source = lines[i - 1].Replace("\t", "    ");
-                if (source.Length == 0)
-                    source = " ";
-                var sequencesCollections = VtSequenceTools.MatchVTSequences(source);
-                int vtSeqIdx = 0;
-
-                // Seek through the whole string to find unprintable characters
-                var sourceBuilder = new StringBuilder();
-                for (int l = 0; l < source.Length; l++)
-                {
-                    string sequence = ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
-                    bool unprintable = ConsoleChar.EstimateCellWidth(sequence) == 0;
-                    string rendered = unprintable && !isVtSequence ? "." : sequence;
-                    sourceBuilder.Append(rendered);
-                }
-                source = sourceBuilder.ToString();
-
-                // Now, get the line range
-                var lineBuilder = new StringBuilder();
-                var absolutes = GetAbsoluteSequences(source, sequencesCollections);
-                if (source.Length > 0)
-                {
-                    int charsPerPage = width;
-                    int currentCharPage = currIdxColumn / charsPerPage;
-                    int startLineIndex = charsPerPage * currentCharPage;
-                    int endLineIndex = charsPerPage * (currentCharPage + 1);
-                    if (startLineIndex > absolutes.Length)
-                        startLineIndex = absolutes.Length;
-                    if (endLineIndex > absolutes.Length)
-                        endLineIndex = absolutes.Length;
-                    source = "";
-                    for (int a = startLineIndex; a < endLineIndex; a++)
-                        source += absolutes[a];
-                }
-                lineBuilder.Append(source);
-
-                // Change the color depending on the highlighted line and column
-                int posX = TextWriterTools.DetermineTextAlignment(lineBuilder.ToString(), settings.Alignment, left);
-                if (useColor)
-                {
-                    sels.Append(
-                        $"{ColorTools.RenderSetConsoleColor(textColor)}" +
-                        $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}"
-                    );
-                }
-                sels.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(posX + 1, top + count + 1)}" +
-                    lineBuilder
-                );
-                if (useColor)
-                {
-                    sels.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
-                    );
-                }
-                count++;
-            }
-            return sels.ToString();
-        }
-
-        private static string[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
-        {
-            int vtSeqIdx = 0;
-            List<string> sequences = [];
-            string sequence = "";
-            for (int l = 0; l < source.Length; l++)
-            {
-                sequence += ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
-                if (isVtSequence)
-                    continue;
-                sequences.Add(sequence);
-                sequence = "";
-            }
-            return [.. sequences];
-        }
+            BoundedText.RenderTextPoswise(lines, settings, textColor, backgroundColor, width, height, left, top, true, currIdxRow, currIdxColumn);
     }
 }

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -26,6 +27,7 @@ using Terminaux.Colors;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 using Textify.General;
 
@@ -34,6 +36,7 @@ namespace Terminaux.Writer.FancyWriters
     /// <summary>
     /// Truncated text writer by line number
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class TruncatedLineText
     {
         /// <summary>
@@ -300,7 +303,7 @@ namespace Terminaux.Writer.FancyWriters
         internal static void WriteText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdx, ref int increment, params object[] vars)
         {
             string[] lines = TextWriterTools.GetFinalLines(text, width, vars);
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, height, left, top, useColor, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, settings, textColor, backgroundColor, height, left, top, useColor, currIdx, ref increment));
         }
 
         /// <summary>
@@ -311,7 +314,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -322,7 +325,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, int height, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -335,7 +338,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, int height, int left, int top, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -346,7 +349,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -358,7 +361,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, int height, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -372,7 +375,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, int height, int left, int top, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -384,7 +387,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -397,7 +400,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int height, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -412,7 +415,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, Color textColor, Color backgroundColor, int height, int left, int top, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -423,7 +426,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -435,7 +438,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, int height, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -449,7 +452,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, int height, int left, int top, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -461,7 +464,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -474,7 +477,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, int height, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, settings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -489,7 +492,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, int height, int left, int top, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, settings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -502,7 +505,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -516,7 +519,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, settings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -532,7 +535,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static void WriteText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int left, int top, int currIdx, ref int increment) =>
-            TextWriterRaw.WriteRaw(RenderText(lines, settings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment));
+            TextWriterRaw.WriteRaw(BoundedText.RenderTextLinewise(lines, settings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment));
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -798,7 +801,7 @@ namespace Terminaux.Writer.FancyWriters
         internal static string RenderText(string text, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdx, ref int increment, params object[] vars)
         {
             string[] lines = TextWriterTools.GetFinalLines(text, width, vars);
-            return RenderText(lines, settings, textColor, backgroundColor, height, left, top, useColor, currIdx, ref increment);
+            return BoundedText.RenderTextLinewise(lines, settings, textColor, backgroundColor, height, left, top, useColor, currIdx, ref increment);
         }
 
         /// <summary>
@@ -809,7 +812,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, int currIdx, ref int increment) =>
-            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -820,7 +823,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, int height, int currIdx, ref int increment) =>
-            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -833,7 +836,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, int height, int left, int top, int currIdx, ref int increment) =>
-            RenderText(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -844,7 +847,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, int currIdx, ref int increment) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -856,7 +859,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, int height, int currIdx, ref int increment) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -870,7 +873,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, int height, int left, int top, int currIdx, ref int increment) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -882,7 +885,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int currIdx, ref int increment) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -895,7 +898,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int height, int currIdx, ref int increment) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -910,7 +913,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, Color textColor, Color backgroundColor, int height, int left, int top, int currIdx, ref int increment) =>
-            RenderText(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, TextSettings.GlobalSettings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -921,7 +924,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, int currIdx, ref int increment) =>
-            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -933,7 +936,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, int height, int currIdx, ref int increment) =>
-            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -947,7 +950,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, int height, int left, int top, int currIdx, ref int increment) =>
-            RenderText(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, settings, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -959,7 +962,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, int currIdx, ref int increment) =>
-            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, settings, textColor, ColorTools.currentBackgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -972,7 +975,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, int height, int currIdx, ref int increment) =>
-            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, settings, textColor, ColorTools.currentBackgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -987,7 +990,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, int height, int left, int top, int currIdx, ref int increment) =>
-            RenderText(lines, settings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, settings, textColor, ColorTools.currentBackgroundColor, height, left, top, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1000,7 +1003,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int currIdx, ref int increment) =>
-            RenderText(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, settings, textColor, backgroundColor, ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1014,7 +1017,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int currIdx, ref int increment) =>
-            RenderText(lines, settings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment);
+            BoundedText.RenderTextLinewise(lines, settings, textColor, backgroundColor, height, 0, 0, true, currIdx, ref increment);
 
         /// <summary>
         /// Renders a truncated text block according to the width and the height
@@ -1030,43 +1033,6 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="increment">[<see langword="out"/>] Lines to increment</param>
         /// <returns>A string that you can write to the console with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int left, int top, int currIdx, ref int increment) =>
-            RenderText(lines, settings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment);
-
-        internal static string RenderText(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int left, int top, bool useColor, int currIdx, ref int increment)
-        {
-            int linesMade = 0;
-            var buffer = new StringBuilder();
-            if (useColor)
-            {
-                buffer.Append(
-                    $"{ColorTools.RenderSetConsoleColor(textColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}"
-                );
-            }
-            for (int i = currIdx; i < lines.Length; i++)
-            {
-                var line = lines[i];
-                int posX = TextWriterTools.DetermineTextAlignment(line, settings.Alignment, left);
-                if (linesMade % height == 0 && linesMade > 0)
-                {
-                    // Reached the end of the box. Bail.
-                    increment = linesMade;
-                    break;
-                }
-                buffer.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(posX + 1, top + 1 + linesMade % height + 1)}" +
-                    $"{line}"
-                );
-                linesMade++;
-            }
-            if (useColor)
-            {
-                buffer.Append(
-                    ColorTools.RenderRevertForeground() +
-                    ColorTools.RenderRevertBackground()
-                );
-            }
-            return buffer.ToString();
-        }
+            BoundedText.RenderTextLinewise(lines, settings, textColor, backgroundColor, height, left, top, true, currIdx, ref increment);
     }
 }

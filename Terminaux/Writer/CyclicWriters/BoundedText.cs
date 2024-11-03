@@ -17,9 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Sequences;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 using Textify.General;
@@ -185,18 +190,151 @@ namespace Terminaux.Writer.CyclicWriters
         {
             if (!customSize)
                 UpdateInternalSize();
+            string[] lines = TextWriterTools.GetFinalLines(Text, width);
             if (PositionWise)
-                return TruncatedText.RenderText(
-                    Text, Settings, ForegroundColor, BackgroundColor, Width, Height, Left, Top, customColor, Row, Column);
+                return RenderTextPoswise(
+                    lines, Settings, ForegroundColor, BackgroundColor, Width, Height, Left, Top, customColor, Row, Column);
             else
-                return TruncatedLineText.RenderText(
-                    Text, Settings, ForegroundColor, BackgroundColor, Width, Height, Left, Top, customColor, Line, ref incrementRate);
+                return RenderTextLinewise(
+                    lines, Settings, ForegroundColor, BackgroundColor, Height, Left, Top, customColor, Line, ref incrementRate);
         }
 
         internal void UpdateInternalSize()
         {
             width = ConsoleWrapper.WindowWidth;
             height = ConsoleWrapper.WindowHeight;
+        }
+
+        internal static string RenderTextLinewise(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int height, int left, int top, bool useColor, int currIdx, ref int increment)
+        {
+            int linesMade = 0;
+            var buffer = new StringBuilder();
+            if (useColor)
+            {
+                buffer.Append(
+                    $"{ColorTools.RenderSetConsoleColor(textColor)}" +
+                    $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}"
+                );
+            }
+            for (int i = currIdx; i < lines.Length; i++)
+            {
+                var line = lines[i];
+                int posX = TextWriterTools.DetermineTextAlignment(line, settings.Alignment, left);
+                if (linesMade % height == 0 && linesMade > 0)
+                {
+                    // Reached the end of the box. Bail.
+                    increment = linesMade;
+                    break;
+                }
+                buffer.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(posX + 1, top + 1 + linesMade % height + 1)}" +
+                    $"{line}"
+                );
+                linesMade++;
+            }
+            if (useColor)
+            {
+                buffer.Append(
+                    ColorTools.RenderRevertForeground() +
+                    ColorTools.RenderRevertBackground()
+                );
+            }
+            return buffer.ToString();
+        }
+
+        internal static string RenderTextPoswise(string[] lines, TextSettings settings, Color textColor, Color backgroundColor, int width, int height, int left, int top, bool useColor, int currIdxRow, int currIdxColumn)
+        {
+            // Get the start and the end indexes for lines
+            int lineLinesPerPage = height;
+            int currentPage = currIdxRow / lineLinesPerPage;
+            int startIndex = lineLinesPerPage * currentPage + 1;
+            int endIndex = lineLinesPerPage * (currentPage + 1);
+            if (startIndex > lines.Length)
+                startIndex = lines.Length;
+            if (endIndex > lines.Length)
+                endIndex = lines.Length;
+
+            // Get the lines and highlight the selection
+            int count = 0;
+            var sels = new StringBuilder();
+            for (int i = startIndex; i <= endIndex; i++)
+            {
+                // Get a line
+                string source = lines[i - 1].Replace("\t", "    ");
+                if (source.Length == 0)
+                    source = " ";
+                var sequencesCollections = VtSequenceTools.MatchVTSequences(source);
+                int vtSeqIdx = 0;
+
+                // Seek through the whole string to find unprintable characters
+                var sourceBuilder = new StringBuilder();
+                for (int l = 0; l < source.Length; l++)
+                {
+                    string sequence = ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
+                    bool unprintable = ConsoleChar.EstimateCellWidth(sequence) == 0;
+                    string rendered = unprintable && !isVtSequence ? "." : sequence;
+                    sourceBuilder.Append(rendered);
+                }
+                source = sourceBuilder.ToString();
+
+                // Now, get the line range
+                var lineBuilder = new StringBuilder();
+                var absolutes = GetAbsoluteSequences(source, sequencesCollections);
+                if (source.Length > 0)
+                {
+                    int charsPerPage = width;
+                    int currentCharPage = currIdxColumn / charsPerPage;
+                    int startLineIndex = charsPerPage * currentCharPage;
+                    int endLineIndex = charsPerPage * (currentCharPage + 1);
+                    if (startLineIndex > absolutes.Length)
+                        startLineIndex = absolutes.Length;
+                    if (endLineIndex > absolutes.Length)
+                        endLineIndex = absolutes.Length;
+                    source = "";
+                    for (int a = startLineIndex; a < endLineIndex; a++)
+                        source += absolutes[a];
+                }
+                lineBuilder.Append(source);
+
+                // Change the color depending on the highlighted line and column
+                int posX = TextWriterTools.DetermineTextAlignment(lineBuilder.ToString(), settings.Alignment, left);
+                if (useColor)
+                {
+                    sels.Append(
+                        $"{ColorTools.RenderSetConsoleColor(textColor)}" +
+                        $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}"
+                    );
+                }
+                sels.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(posX + 1, top + count + 1)}" +
+                    lineBuilder
+                );
+                if (useColor)
+                {
+                    sels.Append(
+                        ColorTools.RenderRevertForeground() +
+                        ColorTools.RenderRevertBackground()
+                    );
+                }
+                count++;
+            }
+            return sels.ToString();
+        }
+
+        private static string[] GetAbsoluteSequences(string source, (VtSequenceType type, Match[] sequences)[] sequencesCollections)
+        {
+            int vtSeqIdx = 0;
+            List<string> sequences = [];
+            string sequence = "";
+            for (int l = 0; l < source.Length; l++)
+            {
+                sequence += ConsolePositioning.BufferChar(source, sequencesCollections, ref l, ref vtSeqIdx, out bool isVtSequence);
+                if (isVtSequence)
+                    continue;
+                sequences.Add(sequence);
+                sequence = "";
+            }
+            return [.. sequences];
         }
 
         /// <summary>
