@@ -124,7 +124,7 @@ namespace Terminaux.Writer.FancyWriters
         {
             // Fill the canvas with spaces inside it
             StringBuilder canvas = new();
-            if (transparent)
+            if (!transparent)
             {
                 canvas.Append(
                     BoxColor.RenderBox(Left, Top, doubleWidth ? InteriorWidth * 2 : InteriorWidth, InteriorHeight, CanvasColor)
