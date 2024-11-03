@@ -29,6 +29,7 @@ using System.Linq;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -1191,7 +1192,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="BackgroundColor">Border background color</param>
         /// <param name="TextColor">Border text color</param>
         public static string RenderBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
-            RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, true, vars);
+            Border.RenderBorder(title, text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, true, vars);
 
         /// <summary>
         /// Renders the border plainly
