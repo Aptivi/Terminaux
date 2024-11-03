@@ -76,6 +76,7 @@ namespace Terminaux.Writer.FancyWriters
                 int wholeLength = InteriorHeight - 1;
                 var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
                 double maxValue = elements.Sum((element) => element.Value);
+                double maxValueDisplay = shownElements.Max((element) => element.Value);
                 int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
                 nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
                 var shownElementHeights = shownElements.Select((ce) => (ce, (int)Math.Round(ce.Value * wholeLength / maxValue))).ToArray();
@@ -110,7 +111,7 @@ namespace Terminaux.Writer.FancyWriters
                             ColorTools.RenderSetConsoleColor(element.Color) +
                             " ■ " +
                             ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) +
-                            element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
+                            element.Name.Truncate(nameLength - 4 - $"{maxValueDisplay}".Length) + "  " +
                             ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) +
                             element.Value +
                             new string(' ', spaces) +
