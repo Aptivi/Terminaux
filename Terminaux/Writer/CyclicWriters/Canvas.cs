@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Text;
 using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 
@@ -100,8 +102,37 @@ namespace Terminaux.Writer.CyclicWriters
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
-            return CanvasColor.RenderCanvas(
+            return RenderCanvas(
                 Pixels, Left, Top, InteriorWidth, InteriorHeight, Color, DoubleWidth, Transparent);
+        }
+
+        internal static string RenderCanvas(CellOptions[] pixels, int Left, int Top, int InteriorWidth, int InteriorHeight, Color CanvasColor, bool doubleWidth = true, bool transparent = false)
+        {
+            // Fill the canvas with spaces inside it
+            StringBuilder canvas = new();
+            if (!transparent)
+            {
+                canvas.Append(
+                    Box.RenderBox(Left, Top, doubleWidth ? InteriorWidth * 2 : InteriorWidth, InteriorHeight, CanvasColor, true)
+                );
+            }
+            foreach (var pixel in pixels)
+            {
+                // Check the pixel locations
+                int left = pixel.ColumnIndex;
+                int top = pixel.RowIndex;
+                if (left < 0 || left > InteriorWidth)
+                    continue;
+                if (top < 0 || top > InteriorHeight)
+                    continue;
+
+                // Print this individual pixel
+                canvas.Append(
+                    TextWriterWhereColor.RenderWhereColorBack(doubleWidth ? "  " : " ", Left + (left * (doubleWidth ? 2 : 1)), Top + 1 + top, ColorTools.CurrentForegroundColor, pixel.CellColor)
+                );
+            }
+            canvas.Append(ColorTools.RenderRevertBackground());
+            return canvas.ToString();
         }
 
         /// <summary>

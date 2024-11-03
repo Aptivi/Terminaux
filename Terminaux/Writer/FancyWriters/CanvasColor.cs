@@ -24,12 +24,14 @@ using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 using Terminaux.Base.Checks;
 using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Writer.FancyWriters
 {
     /// <summary>
     /// Canvas writer with color support
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class CanvasColor
     {
         /// <summary>
@@ -120,34 +122,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="transparent">Whether this canvas is transparent</param>
         /// <param name="CanvasColor">Canvas color</param>
         /// <returns>The rendered canvas</returns>
-        public static string RenderCanvas(CellOptions[] pixels, int Left, int Top, int InteriorWidth, int InteriorHeight, Color CanvasColor, bool doubleWidth = true, bool transparent = false)
-        {
-            // Fill the canvas with spaces inside it
-            StringBuilder canvas = new();
-            if (!transparent)
-            {
-                canvas.Append(
-                    BoxColor.RenderBox(Left, Top, doubleWidth ? InteriorWidth * 2 : InteriorWidth, InteriorHeight, CanvasColor)
-                );
-            }
-            foreach (var pixel in pixels)
-            {
-                // Check the pixel locations
-                int left = pixel.ColumnIndex;
-                int top = pixel.RowIndex;
-                if (left < 0 || left > InteriorWidth)
-                    continue;
-                if (top < 0 || top > InteriorHeight)
-                    continue;
-
-                // Print this individual pixel
-                canvas.Append(
-                    TextWriterWhereColor.RenderWhereColorBack(doubleWidth ? "  " : " ", Left + (left * (doubleWidth ? 2 : 1)), Top + 1 + top, ColorTools.CurrentForegroundColor, pixel.CellColor)
-                );
-            }
-            canvas.Append(ColorTools.RenderRevertBackground());
-            return canvas.ToString();
-        }
+        public static string RenderCanvas(CellOptions[] pixels, int Left, int Top, int InteriorWidth, int InteriorHeight, Color CanvasColor, bool doubleWidth = true, bool transparent = false) =>
+            Canvas.RenderCanvas(pixels, Left, Top, InteriorWidth, InteriorHeight, CanvasColor, doubleWidth, transparent);
 
         static CanvasColor()
         {
