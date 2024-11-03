@@ -17,8 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Diagnostics;
+using System.Text;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Writer.FancyWriters;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters.Tools;
 using Textify.General;
 
@@ -149,8 +153,83 @@ namespace Terminaux.Writer.CyclicWriters
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
-            return BoxFrameColor.RenderBoxFrame(
+            return RenderBoxFrame(
                 Text, Left, Top, InteriorWidth, InteriorHeight, Settings, TitleSettings, FrameColor, BackgroundColor, TitleColor, customColor);
+        }
+
+        internal static string RenderBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars)
+        {
+            try
+            {
+                // StringBuilder is here to formulate the whole string consisting of box frame
+                StringBuilder frameBuilder = new();
+
+                // Colors
+                if (useColor)
+                {
+                    frameBuilder.Append(
+                        ColorTools.RenderSetConsoleColor(BoxFrameColor) +
+                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                    );
+                }
+
+                // Upper frame
+                frameBuilder.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}" +
+                    $"{settings.BorderUpperLeftCornerChar}{new string(settings.BorderUpperFrameChar, InteriorWidth)}{settings.BorderUpperRightCornerChar}"
+                );
+
+                // Left and right edges
+                for (int i = 1; i <= InteriorHeight; i++)
+                    frameBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 1)}" +
+                        $"{settings.BorderLeftFrameChar}" +
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + i + 1)}" +
+                        $"{settings.BorderRightFrameChar}"
+                    );
+
+                // Lower frame
+                frameBuilder.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + InteriorHeight + 2)}" +
+                    $"{settings.BorderLowerLeftCornerChar}{new string(settings.BorderLowerFrameChar, InteriorWidth)}{settings.BorderLowerRightCornerChar}"
+                );
+
+                // Colors
+                if (useColor)
+                {
+                    frameBuilder.Append(
+                        ColorTools.RenderSetConsoleColor(TextColor) +
+                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                    );
+                }
+
+                // Text title
+                if (!string.IsNullOrEmpty(text) && InteriorWidth - 8 > 0 && ConsoleChar.EstimateCellWidth(text) <= InteriorWidth - 8)
+                {
+                    string finalText = $"{settings.BorderRightHorizontalIntersectionChar} {TextTools.FormatString(text, vars).Truncate(InteriorWidth - 8)} {settings.BorderLeftHorizontalIntersectionChar}";
+                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, InteriorWidth - 8, textSettings.TitleAlignment, Left + 2);
+                    frameBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, Top + 1)}" +
+                        $"{finalText}"
+                    );
+                }
+
+                // Write the resulting buffer
+                if (useColor)
+                {
+                    frameBuilder.Append(
+                        ColorTools.RenderRevertForeground() +
+                        ColorTools.RenderRevertBackground()
+                    );
+                }
+                return frameBuilder.ToString();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
+            return "";
         }
 
         /// <summary>

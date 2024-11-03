@@ -29,12 +29,14 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Base;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Writer.FancyWriters
 {
     /// <summary>
     /// BoxFrame writer with color support
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class BoxFrameColor
     {
         /// <summary>
@@ -827,98 +829,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="TextColor">BoxFrame text color</param>
         /// <returns>The rendered box frame</returns>
         public static string RenderBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color FrameColor, Color BackgroundColor, Color TextColor, params object[] vars) =>
-            RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, FrameColor, BackgroundColor, TextColor, true, vars);
-
-        /// <summary>
-        /// Renders the box frame
-        /// </summary>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="textSettings">Text settings to use</param>
-        /// <param name="BoxFrameColor">BoxFrame color</param>
-        /// <param name="BackgroundColor">BoxFrame background color</param>
-        /// <param name="TextColor">BoxFrame text color</param>
-        /// <param name="useColor">Whether to use the color or not</param>
-        /// <returns>The rendered frame</returns>
-        internal static string RenderBoxFrame(string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BoxFrameColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars)
-        {
-            try
-            {
-                // StringBuilder is here to formulate the whole string consisting of box frame
-                StringBuilder frameBuilder = new();
-
-                // Colors
-                if (useColor)
-                {
-                    frameBuilder.Append(
-                        ColorTools.RenderSetConsoleColor(BoxFrameColor) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-                    );
-                }
-
-                // Upper frame
-                frameBuilder.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}" +
-                    $"{settings.BorderUpperLeftCornerChar}{new string(settings.BorderUpperFrameChar, InteriorWidth)}{settings.BorderUpperRightCornerChar}"
-                );
-
-                // Left and right edges
-                for (int i = 1; i <= InteriorHeight; i++)
-                    frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 1)}" +
-                        $"{settings.BorderLeftFrameChar}" +
-                        $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + i + 1)}" +
-                        $"{settings.BorderRightFrameChar}"
-                    );
-
-                // Lower frame
-                frameBuilder.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + InteriorHeight + 2)}" +
-                    $"{settings.BorderLowerLeftCornerChar}{new string(settings.BorderLowerFrameChar, InteriorWidth)}{settings.BorderLowerRightCornerChar}"
-                );
-
-                // Colors
-                if (useColor)
-                {
-                    frameBuilder.Append(
-                        ColorTools.RenderSetConsoleColor(TextColor) +
-                        ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-                    );
-                }
-
-                // Text title
-                if (!string.IsNullOrEmpty(text) && InteriorWidth - 8 > 0 && ConsoleChar.EstimateCellWidth(text) <= InteriorWidth - 8)
-                {
-                    string finalText = $"{settings.BorderRightHorizontalIntersectionChar} {TextTools.FormatString(text, vars).Truncate(InteriorWidth - 8)} {settings.BorderLeftHorizontalIntersectionChar}";
-                    int leftPos = TextWriterTools.DetermineTextAlignment(finalText, InteriorWidth - 8, textSettings.TitleAlignment, Left + 2);
-                    frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, Top + 1)}" +
-                        $"{finalText}"
-                    );
-                }
-
-                // Write the resulting buffer
-                if (useColor)
-                {
-                    frameBuilder.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
-                    );
-                }
-                return frameBuilder.ToString();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
-            }
-            return "";
-        }
+            BoxFrame.RenderBoxFrame(text, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, FrameColor, BackgroundColor, TextColor, true, vars);
 
         static BoxFrameColor()
         {
