@@ -17,9 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using Terminaux.Base;
+using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.FancyWriters.Tools;
 using Textify.General;
@@ -182,7 +187,7 @@ namespace Terminaux.Writer.CyclicWriters
         {
             if (!customPos)
                 UpdateInternalTop();
-            return BorderTextColor.RenderBorder(
+            return RenderBorder(
                 Title, text, Left, Top, InteriorWidth, InteriorHeight, Settings, TextSettings, Color, BackgroundColor, TextColor, customColor);
         }
 
@@ -197,6 +202,70 @@ namespace Terminaux.Writer.CyclicWriters
                 interiorHeight = ConsoleWrapper.WindowHeight - 4;
             left = ConsoleWrapper.WindowWidth / 2 - interiorWidth / 2 - 1;
             top = ConsoleWrapper.WindowHeight / 2 - interiorHeight / 2 - 1;
+        }
+
+        internal static string RenderBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars)
+        {
+            StringBuilder border = new();
+            try
+            {
+                // StringBuilder to put out the final rendering text
+                if (useColor)
+                {
+                    border.Append(
+                        BoxFrameColor.RenderBoxFrame(title, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, vars) +
+                        BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight, BackgroundColor)
+                    );
+                }
+                else
+                {
+                    border.Append(
+                        BoxFrameColor.RenderBoxFrame(title, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, vars) +
+                        BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight)
+                    );
+                }
+
+                // Wrap the sentences to fit the box
+                if (!string.IsNullOrWhiteSpace(text))
+                {
+                    // Get the current foreground color
+                    if (useColor)
+                    {
+                        border.Append(
+                            ColorTools.RenderSetConsoleColor(TextColor) +
+                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
+                        );
+                    }
+
+                    // Now, split the sentences and count them to fit the box
+                    string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, InteriorWidth);
+                    for (int i = 0; i < sentences.Length; i++)
+                    {
+                        string sentence = sentences[i];
+                        if (Top + 1 + i > Top + InteriorHeight)
+                            break;
+                        int leftPos = TextWriterTools.DetermineTextAlignment(sentence, InteriorWidth, textSettings.Alignment, Left);
+                        border.Append(
+                            TextWriterWhereColor.RenderWhere(sentence, leftPos + 1, Top + 1 + i)
+                        );
+                    }
+                }
+
+                // Write the resulting buffer
+                if (useColor)
+                {
+                    border.Append(
+                        ColorTools.RenderRevertForeground() +
+                        ColorTools.RenderRevertBackground()
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
+            return border.ToString();
         }
 
         /// <summary>

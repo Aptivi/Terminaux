@@ -35,6 +35,7 @@ namespace Terminaux.Writer.FancyWriters
     /// <summary>
     /// Border writer with color and text support
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class BorderTextColor
     {
         /// <summary>
@@ -1334,86 +1335,6 @@ namespace Terminaux.Writer.FancyWriters
             int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
             return RenderBorder(title, text,
                 borderX, borderY, maxWidth, maxHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, true, vars);
-        }
-
-        /// <summary>
-        /// Renders the border plainly
-        /// </summary>
-        /// <param name="title">Title to be written.</param>
-        /// <param name="text">Text to be written.</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <param name="Left">Where to place the border horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="Top">Where to place the border vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
-        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
-        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="textSettings">Text settings to use</param>
-        /// <param name="BorderColor">Border color</param>
-        /// <param name="BackgroundColor">Border background color</param>
-        /// <param name="TextColor">Border text color</param>
-        /// <param name="useColor">Whether to use the color or not</param>
-        internal static string RenderBorder(string title, string text, int Left, int Top, int InteriorWidth, int InteriorHeight, BorderSettings settings, TextSettings textSettings, Color BorderColor, Color BackgroundColor, Color TextColor, bool useColor, params object[] vars)
-        {
-            StringBuilder border = new();
-            try
-            {
-                // StringBuilder to put out the final rendering text
-                if (useColor)
-                {
-                    border.Append(
-                        BoxFrameColor.RenderBoxFrame(title, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, vars) +
-                        BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight, BackgroundColor)
-                    );
-                }
-                else
-                {
-                    border.Append(
-                        BoxFrameColor.RenderBoxFrame(title, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, vars) +
-                        BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight)
-                    );
-                }
-
-                // Wrap the sentences to fit the box
-                if (!string.IsNullOrWhiteSpace(text))
-                {
-                    // Get the current foreground color
-                    if (useColor)
-                    {
-                        border.Append(
-                            ColorTools.RenderSetConsoleColor(TextColor) +
-                            ColorTools.RenderSetConsoleColor(BackgroundColor, true)
-                        );
-                    }
-
-                    // Now, split the sentences and count them to fit the box
-                    string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(text, InteriorWidth);
-                    for (int i = 0; i < sentences.Length; i++)
-                    {
-                        string sentence = sentences[i];
-                        if (Top + 1 + i > Top + InteriorHeight)
-                            break;
-                        int leftPos = TextWriterTools.DetermineTextAlignment(sentence, InteriorWidth, textSettings.Alignment, Left);
-                        border.Append(
-                            TextWriterWhereColor.RenderWhere(sentence, leftPos + 1, Top + 1 + i)
-                        );
-                    }
-                }
-
-                // Write the resulting buffer
-                if (useColor)
-                {
-                    border.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
-                    );
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.StackTrace);
-                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
-            }
-            return border.ToString();
         }
 
         static BorderTextColor()
