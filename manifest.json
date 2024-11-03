@@ -2455,6 +2455,136 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaRepresentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.AsciinemaRepresentation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.BorderSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CellOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.CellOptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.ChartElement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.ChartElement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FigletTextTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.FigletTextTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.Keybinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.Keybinding.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineSegment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineSegment.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PowerLineTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PredefinedBorders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.PredefinedBorders.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextAlignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextAlignment.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextWriterTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.TextWriterTools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.yml",
       "output": {
         ".html": {
@@ -2875,116 +3005,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.AsciinemaRepresentation.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.AsciinemaRepresentation.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.BorderSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.BorderSettings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.CellOptions.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.CellOptions.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.ChartElement.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.ChartElement.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.FigletTextTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.FigletTextTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineSegment.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineSegment.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PowerLineTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PredefinedBorders.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.PredefinedBorders.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.TextSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.TextSettings.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.TextWriterTools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.TextWriterTools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.FancyWriters.Tools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.FancyWriters.Tools.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.FancyWriters.TruncatedLineText.yml",
       "output": {
         ".html": {
@@ -3049,36 +3069,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.MiscWriters.LineHandleWriter.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.MiscWriters.Tools.Keybinding.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.MiscWriters.Tools.Keybinding.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.MiscWriters.Tools.TextAlignment.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.MiscWriters.Tools.TextAlignment.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.MiscWriters.Tools.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.MiscWriters.Tools.html"
         }
       },
       "version": ""
