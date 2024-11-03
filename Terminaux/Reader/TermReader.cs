@@ -448,10 +448,15 @@ namespace Terminaux.Reader
                         if (settings.KeyboardCues)
                         {
                             string cueName =
-                                BindingsTools.IsTerminate(struckKey) ? "keyboard-cue-enter.mp3" :
-                                struckKey.Key == ConsoleKey.Backspace ? "keyboard-cue-backspace.mp3" :
-                                "keyboard-cue-type.mp3";
-                            PlayForget.PlayStream(typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues." + cueName), new(1, false, settings.BassBoomLibraryPath));
+                                BindingsTools.IsTerminate(struckKey) && settings.PlayEnterCue ? "keyboard-cue-enter.mp3" :
+                                struckKey.Key == ConsoleKey.Backspace && settings.PlayRuboutCue ? "keyboard-cue-backspace.mp3" :
+                                settings.PlayWriteCue ? "keyboard-cue-type.mp3" : "";
+                            if (!string.IsNullOrEmpty(cueName))
+                            {
+                                var cueStream = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues." + cueName);
+                                var cueSettings = new PlayForgetSettings(settings.CueVolume, settings.CueVolumeBoost, settings.BassBoomLibraryPath);
+                                PlayForget.PlayStream(cueStream, cueSettings);
+                            }
                         }
 
                         // Handle it

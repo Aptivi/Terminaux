@@ -35,6 +35,11 @@ namespace Terminaux.Reader
         private string historyName = HistoryTools.generalHistory;
         private bool treatCtrlCAsInput;
         private bool keyboardCues;
+        private bool playWriteCue = true;
+        private bool playRuboutCue = true;
+        private bool playEnterCue = true;
+        private double cueVolume = 1;
+        private bool cueVolumeBoost;
         private int leftMargin = 0;
         private int rightMargin = 0;
         private Color? inputForegroundColor;
@@ -224,6 +229,63 @@ namespace Terminaux.Reader
         {
             get => bassBoomLibraryRoot ?? "";
             set => bassBoomLibraryRoot = value;
+        }
+
+        /// <summary>
+        /// Play keyboard cues for character insertion and other actions
+        /// </summary>
+        public bool PlayWriteCue
+        {
+            get => playWriteCue;
+            set => playWriteCue = value;
+        }
+
+        /// <summary>
+        /// Play keyboard cues for pressing Backspace
+        /// </summary>
+        public bool PlayRuboutCue
+        {
+            get => playRuboutCue;
+            set => playRuboutCue = value;
+        }
+
+        /// <summary>
+        /// Play keyboard cues for pressing Enter
+        /// </summary>
+        public bool PlayEnterCue
+        {
+            get => playEnterCue;
+            set => playEnterCue = value;
+        }
+
+        /// <summary>
+        /// Keyboard cue volume
+        /// </summary>
+        public double CueVolume
+        {
+            get => cueVolume;
+            set
+            {
+                cueVolume = value;
+                if (cueVolume < 0)
+                    cueVolume = 0;
+                if (cueVolume > 1)
+                {
+                    if (CueVolumeBoost && cueVolume > 3)
+                        cueVolume = 3;
+                    else if (!CueVolumeBoost)
+                        cueVolume = 1;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Whether to boost cue volume up to 3.0 or not
+        /// </summary>
+        public bool CueVolumeBoost
+        {
+            get => cueVolumeBoost;
+            set => cueVolumeBoost = value;
         }
 
         /// <summary>
