@@ -27,12 +27,14 @@ using Terminaux.Base.Checks;
 using Terminaux.Writer.FancyWriters.Tools;
 using System.Linq;
 using Terminaux.Base.Extensions;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Writer.FancyWriters
 {
     /// <summary>
     /// Bar chart writer with color support
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class BarChartColor
     {
         /// <summary>
@@ -62,58 +64,8 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
         /// <param name="showcase">Show the element list</param>
         /// <returns>The rendered bar chart</returns>
-        public static string RenderBarChart(ChartElement[] elements, int InteriorWidth, bool showcase = false)
-        {
-            // Some variables
-            int maxNameLength = InteriorWidth / 4;
-            int nameLength = elements.Max((element) => ConsoleChar.EstimateCellWidth(element.Name));
-            nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
-            int showcaseLength = showcase ? nameLength + 3 : 0;
-            int wholeLength = InteriorWidth - showcaseLength;
-            int maxNumLength = elements.Max((element) => $" {element.Value}".Length);
-            int chartLength = wholeLength - maxNumLength;
-            double maxValue = elements.Max((element) => element.Value);
-
-            // Fill the bar chart with the elements first
-            StringBuilder barChart = new();
-            foreach (var element in elements)
-            {
-                var color = element.Color;
-                string name = element.Name;
-                bool hidden = element.Hidden;
-                double value = element.Value;
-                if (hidden)
-                    continue;
-
-                // Render the showcase
-                if (showcase)
-                {
-                    int nameWidth = ConsoleChar.EstimateCellWidth(name);
-                    int spaces = nameLength - nameWidth;
-                    barChart.Append(
-                        ColorTools.RenderSetConsoleColor(color) +
-                        name.Truncate(nameLength) +
-                        new string(' ', spaces) +
-                        ColorTools.RenderResetForeground() +
-                        " ┃ "
-                    );
-                }
-
-                // Render the element and its value
-                int length = (int)(value * chartLength / maxValue);
-                barChart.AppendLine(
-                    ColorTools.RenderSetConsoleColor(color, true) +
-                    new string(' ', length) +
-                    ColorTools.RenderSetConsoleColor(color) +
-                    ColorTools.RenderResetBackground() +
-                    $" {value}" +
-                    ColorTools.RenderResetForeground()
-                );
-            }
-
-            // Return the result
-            return barChart.ToString();
-        }
+        public static string RenderBarChart(ChartElement[] elements, int InteriorWidth, bool showcase = false) =>
+            BarChart.RenderBarChart(elements, InteriorWidth, showcase);
 
         static BarChartColor()
         {

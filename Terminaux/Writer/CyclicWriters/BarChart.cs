@@ -17,6 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
+using System.Text;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.FancyWriters.Tools;
@@ -86,8 +90,61 @@ namespace Terminaux.Writer.CyclicWriters
         public string Render()
         {
             return TextWriterWhereColor.RenderWhere(
-                BarChartColor.RenderBarChart(
+                RenderBarChart(
                     elements, InteriorWidth, Showcase), Left, Top);
+        }
+
+        internal static string RenderBarChart(ChartElement[] elements, int InteriorWidth, bool showcase = false)
+        {
+            // Some variables
+            int maxNameLength = InteriorWidth / 4;
+            int nameLength = elements.Max((element) => ConsoleChar.EstimateCellWidth(element.Name));
+            nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
+            int showcaseLength = showcase ? nameLength + 3 : 0;
+            int wholeLength = InteriorWidth - showcaseLength;
+            int maxNumLength = elements.Max((element) => $" {element.Value}".Length);
+            int chartLength = wholeLength - maxNumLength;
+            double maxValue = elements.Max((element) => element.Value);
+
+            // Fill the bar chart with the elements first
+            StringBuilder barChart = new();
+            foreach (var element in elements)
+            {
+                var color = element.Color;
+                string name = element.Name;
+                bool hidden = element.Hidden;
+                double value = element.Value;
+                if (hidden)
+                    continue;
+
+                // Render the showcase
+                if (showcase)
+                {
+                    int nameWidth = ConsoleChar.EstimateCellWidth(name);
+                    int spaces = nameLength - nameWidth;
+                    barChart.Append(
+                        ColorTools.RenderSetConsoleColor(color) +
+                        name.Truncate(nameLength) +
+                        new string(' ', spaces) +
+                        ColorTools.RenderResetForeground() +
+                        " ┃ "
+                    );
+                }
+
+                // Render the element and its value
+                int length = (int)(value * chartLength / maxValue);
+                barChart.AppendLine(
+                    ColorTools.RenderSetConsoleColor(color, true) +
+                    new string(' ', length) +
+                    ColorTools.RenderSetConsoleColor(color) +
+                    ColorTools.RenderResetBackground() +
+                    $" {value}" +
+                    ColorTools.RenderResetForeground()
+                );
+            }
+
+            // Return the result
+            return barChart.ToString();
         }
 
         /// <summary>
