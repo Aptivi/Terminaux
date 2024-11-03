@@ -17,6 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Linq;
+using System.Text;
+using Terminaux.Base.Extensions;
+using Terminaux.Colors;
+using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.FancyWriters.Tools;
@@ -96,8 +101,89 @@ namespace Terminaux.Writer.CyclicWriters
         public string Render()
         {
             return TextWriterWhereColor.RenderWhere(
-                StickChartColor.RenderStickChart(
+                RenderStickChart(
                     elements, InteriorWidth, InteriorHeight, Showcase), Left, Top);
+        }
+
+        internal static string RenderStickChart(ChartElement[] elements, int InteriorWidth, int InteriorHeight, bool showcase = false)
+        {
+            // Some variables
+            int maxNameLength = InteriorWidth / 4;
+            int wholeLength = InteriorHeight - 1;
+            var shownElements = elements.Where((ce) => !ce.Hidden).ToArray();
+            double maxValue = shownElements.Max((element) => element.Value);
+            int nameLength = shownElements.Max((element) => " ■ ".Length + ConsoleChar.EstimateCellWidth(element.Name) + $"  {element.Value}".Length);
+            nameLength = nameLength > maxNameLength ? maxNameLength : nameLength;
+            var shownElementHeights = shownElements.Select((ce) => (ce, (int)(ce.Value * wholeLength / maxValue))).ToArray();
+            int showcaseLength = showcase ? nameLength + 3 : 0;
+
+            // Fill the stick chart with the showcase first
+            StringBuilder stickChart = new();
+            for (int i = 0; i < InteriorHeight; i++)
+            {
+                // If showcase is on, show names and values.
+                int processedWidth = 0;
+                if (showcase && i < shownElements.Length)
+                {
+                    var element = shownElements[i];
+                    int nameWidth = ConsoleChar.EstimateCellWidth(element.Name);
+                    int spaces = showcaseLength - (" ■ ".Length + nameWidth + 2 + $"{element.Value}".Length);
+                    spaces = spaces < 0 ? 0 : spaces;
+                    stickChart.Append(
+                        ColorTools.RenderSetConsoleColor(element.Color) +
+                        " ■ " +
+                        ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) +
+                        element.Name.Truncate(nameLength - 4 - $"{maxValue}".Length) + "  " +
+                        ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) +
+                        element.Value +
+                        new string(' ', spaces) +
+                        " ┃ "
+                    );
+                    processedWidth += showcaseLength;
+                }
+                else if (showcase)
+                {
+                    stickChart.Append(
+                        new string(' ', showcaseLength) +
+                        " ┃ "
+                    );
+                    processedWidth += showcaseLength;
+                }
+                else
+                {
+                    stickChart.Append(
+                        " ┃ "
+                    );
+                    processedWidth += 3;
+                }
+
+                // Render all elements
+                int inverse = InteriorHeight - i;
+                for (int e = 0; e < shownElementHeights.Length && processedWidth < InteriorWidth; e++)
+                {
+                    var elementTuple = shownElementHeights[e];
+                    ChartElement? element = elementTuple.ce;
+                    int height = elementTuple.Item2;
+                    var color = inverse <= height ? element.Color : ColorTools.CurrentBackgroundColor;
+                    string name = element.Name;
+                    double value = element.Value;
+
+                    // Render the element and its value
+                    int length = (int)(value * wholeLength / maxValue);
+                    stickChart.Append(
+                        ColorTools.RenderSetConsoleColor(color, true) +
+                        "  " +
+                        ColorTools.RenderResetBackground()
+                    );
+                    processedWidth += 2;
+                }
+
+                if (i < InteriorHeight - 1)
+                    stickChart.AppendLine();
+            }
+
+            // Return the result
+            return stickChart.ToString();
         }
 
         /// <summary>
