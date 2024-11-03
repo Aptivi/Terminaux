@@ -87,6 +87,11 @@ namespace Terminaux.Writer.CyclicWriters
         public bool Indeterminate { get; set; }
 
         /// <summary>
+        /// Specifies whether the progress bar shows percentage or not (ignored in indeterminate progress bars)
+        /// </summary>
+        public bool ShowPercentage { get; set; } = true;
+
+        /// <summary>
         /// Renders a scrolling text progress bar
         /// </summary>
         /// <returns>The result</returns>
@@ -113,6 +118,7 @@ namespace Terminaux.Writer.CyclicWriters
             );
 
             // Render the marquee if needed
+            int finalMarqueeWidth = 0;
             if (needsMarquee)
             {
                 progressMarquee.LeftMargin = LeftMargin + spinnerWidth;
@@ -122,55 +128,28 @@ namespace Terminaux.Writer.CyclicWriters
                 int marqueeWidth = ConsoleChar.EstimateCellWidth(marqueeText);
                 int spaces = finalWidth - (spinnerWidth + progressWidth + percentageWidth + marqueeWidth);
                 spaces = spaces < 0 ? 0 : spaces;
+                finalMarqueeWidth = marqueeWidth + spaces;
                 rendered.Append(
                     ColorTools.RenderSetConsoleColor(ConsoleColors.White) +
                     marqueeText + new string(' ', spaces) + " "
                 );
             }
 
-            // Estimate how many cells the progress bar takes
-            int cells = (int)Math.Round(position * progressWidth / (double)maxPosition);
-            cells = cells > progressWidth ? progressWidth : cells;
-            cells = Indeterminate ? progressWidth : cells;
-            if (Indeterminate)
+            // Render the actual bar
+            var bar = new SimpleProgress(Position, maxPosition)
             {
-                // Step the indeterminate steps
-                if (indeterminateBackwards)
-                {
-                    indeterminateStep--;
-                    if (indeterminateStep == 0)
-                        indeterminateBackwards = false;
-                }
-                else
-                {
-                    indeterminateStep++;
-                    if (indeterminateStep == 50)
-                        indeterminateBackwards = true;
-                }
-
-                // Get the gradient and render it
-                var gradientColor = indeterminateGradient[indeterminateStep - 1 < 0 ? 0 : indeterminateStep - 1];
-                rendered.Append(
-                    ColorTools.RenderSetConsoleColor(gradientColor.IntermediateColor) +
-                    new string('━', cells + percentageWidth - 1)
-                );
-            }
-            else
-            {
-                rendered.Append(
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.Lime) +
-                    new string('━', cells) +
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.DarkGreen) +
-                    new string('━', progressWidth - cells)
-                );
-
-                // Write a progress percentage
-                int percentage = (int)(position * 100 / (double)maxPosition);
-                rendered.Append(
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.Silver) +
-                    $" {percentage,3}%"
-                );
-            }
+                Indeterminate = Indeterminate,
+                LeftMargin = LeftMargin + spinnerWidth + finalMarqueeWidth + 1,
+                RightMargin = RightMargin,
+                ShowPercentage = ShowPercentage,
+                indeterminateStep = indeterminateStep,
+                indeterminateGradient = indeterminateGradient,
+                indeterminateBackwards = indeterminateBackwards,
+            };
+            rendered.Append(bar.Render());
+            indeterminateStep = bar.indeterminateStep;
+            indeterminateGradient = bar.indeterminateGradient;
+            indeterminateBackwards = bar.indeterminateBackwards;
 
             // Return the result
             return rendered.ToString();

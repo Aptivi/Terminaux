@@ -33,11 +33,11 @@ namespace Terminaux.Writer.CyclicWriters
     /// </summary>
     public class SimpleProgress : IStaticRenderable
     {
+        internal int indeterminateStep = 0;
+        internal ColorGradients indeterminateGradient = ColorGradients.GetGradients(ConsoleColors.DarkGreen, ConsoleColors.Lime, 50);
+        internal bool indeterminateBackwards = false;
         private int position = 0;
         private int maxPosition = 0;
-        private int indeterminateStep = 0;
-        private bool indeterminateBackwards = false;
-        private ColorGradients indeterminateGradient = ColorGradients.GetGradients(ConsoleColors.DarkGreen, ConsoleColors.Lime, 50);
 
         /// <summary>
         /// Left margin of the progress bar
