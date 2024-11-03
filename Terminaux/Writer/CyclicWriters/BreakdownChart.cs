@@ -32,7 +32,9 @@ namespace Terminaux.Writer.CyclicWriters
         private int left = 0;
         private int top = 0;
         private int interiorWidth = 0;
+        private int interiorHeight = 0;
         private bool showcase = false;
+        private bool vertical = false;
 
         /// <summary>
         /// Left position
@@ -62,12 +64,30 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Interior height
+        /// </summary>
+        public int InteriorHeight
+        {
+            get => interiorHeight;
+            set => interiorHeight = value;
+        }
+
+        /// <summary>
         /// Show the element list
         /// </summary>
         public bool Showcase
         {
             get => showcase;
             set => showcase = value;
+        }
+
+        /// <summary>
+        /// Whether to render this chart in vertical mode
+        /// </summary>
+        public bool Vertical
+        {
+            get => vertical;
+            set => vertical = value;
         }
 
         /// <summary>
@@ -87,7 +107,7 @@ namespace Terminaux.Writer.CyclicWriters
         {
             return TextWriterWhereColor.RenderWhere(
                 BreakdownChartColor.RenderBreakdownChart(
-                    elements, InteriorWidth, Showcase), Left, Top);
+                    elements, InteriorWidth, InteriorHeight, Showcase, Vertical), Left, Top);
         }
 
         /// <summary>

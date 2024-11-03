@@ -158,6 +158,7 @@ namespace Terminaux.Console.Fixtures
             new TestProgressBars(),
             new TestBarChart(),
             new TestBreakdownChart(),
+            new TestBreakdownChartVertical(),
             new TestStickChart(),
             new TestCanvas(),
 
