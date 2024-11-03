@@ -28,6 +28,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Writer.FancyWriters
 {
@@ -930,7 +931,7 @@ namespace Terminaux.Writer.FancyWriters
                 else
                 {
                     progBuilder.Append(
-                        BoxColor.RenderBox(Left + 1, Top, width, 1, BackgroundColor, useColor)
+                        Box.RenderBox(Left + 1, Top, width, 1, BackgroundColor, useColor)
                     );
                 }
 
