@@ -24,6 +24,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Colors.Gradients;
 using Terminaux.Colors.Interop;
+using Terminaux.Colors.Transformation;
 using Terminaux.Colors.Transformation.Contrast;
 
 namespace Terminaux.Tests.Colors
@@ -434,6 +435,20 @@ namespace Terminaux.Tests.Colors
             grads[0].IntermediateColor.PlainSequenceTrueColor.ShouldBe(source.PlainSequenceTrueColor);
             grads[grads.Count - 1].ShouldNotBeNull();
             grads[grads.Count - 1].IntermediateColor.PlainSequenceTrueColor.ShouldBe(target.PlainSequenceTrueColor);
+        }
+
+        /// <summary>
+        /// Tests trying to get a blended color
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void GetBlendedColor()
+        {
+            var source = new Color(10, 20, 30);
+            var target = new Color(30, 40, 50);
+            var expected = new Color(20, 30, 40);
+            var actual = TransformationTools.BlendColor(source, target);
+            actual.ShouldBe(expected);
         }
     }
 }

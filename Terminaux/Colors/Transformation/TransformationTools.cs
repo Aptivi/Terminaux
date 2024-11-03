@@ -108,6 +108,20 @@ namespace Terminaux.Colors.Transformation
             return result;
         }
 
+        /// <summary>
+        /// Blends the two colors together
+        /// </summary>
+        /// <param name="source">Source color to be blended</param>
+        /// <param name="target">Target color to blend</param>
+        /// <param name="factor">Blending factor</param>
+        /// <returns>A color instance that represents a source color blended with the target color.</returns>
+        public static Color BlendColor(Color source, Color target, double factor = 0.5) =>
+            new(
+                (byte)(source.RGB.R + ((target.RGB.R - source.RGB.R) * factor)),
+                (byte)(source.RGB.G + ((target.RGB.G - source.RGB.G) * factor)),
+                (byte)(source.RGB.B + ((target.RGB.B - source.RGB.B) * factor))
+            );
+
         internal static BaseTransformationFormula GetTransformationFormula(TransformationFormula formula)
         {
             if (!formulas.TryGetValue(formula, out var result))
