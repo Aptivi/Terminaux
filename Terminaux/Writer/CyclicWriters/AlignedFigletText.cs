@@ -204,20 +204,20 @@ namespace Terminaux.Writer.CyclicWriters
                     if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                     {
                         // The fallback figlet also won't fit, so use smaller text
-                        return AlignedTextColor.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
+                        return AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
                     }
                     else
                     {
                         // Write the figlet.
                         string renderedFiglet = FigletTools.RenderFiglet(Text, figFontFallback, textMaxWidth, Vars);
-                        return AlignedTextColor.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
+                        return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
                     }
                 }
                 else
                 {
                     // Write the figlet.
                     string renderedFiglet = FigletTools.RenderFiglet(Text, FigletFont, textMaxWidth, Vars);
-                    return AlignedTextColor.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
+                    return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
                 }
             }
             catch (Exception ex)

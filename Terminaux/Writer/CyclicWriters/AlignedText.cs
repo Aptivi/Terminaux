@@ -17,11 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Diagnostics;
+using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.MiscWriters.Tools;
 using Textify.Data.Figlet;
 using Textify.Data.Figlet.Utilities.Lines;
 using Textify.General;
@@ -150,12 +155,12 @@ namespace Terminaux.Writer.CyclicWriters
         public string Render()
         {
             if (!OneLine)
-                return AlignedTextColor.RenderAligned(
+                return RenderAligned(
                     Top, Text, ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin);
             else
             {
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
-                return AlignedTextColor.RenderAligned(
+                return RenderAligned(
                     Top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin);
             }
         }
@@ -166,6 +171,43 @@ namespace Terminaux.Writer.CyclicWriters
 
             // Install the values
             top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
+        }
+
+        internal static string RenderAligned(int top, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            try
+            {
+                var aligned = new StringBuilder();
+                Text = TextTools.FormatString(Text, Vars);
+                int width = ConsoleWrapper.WindowWidth - rightMargin - leftMargin;
+                string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, width);
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = TextWriterTools.DetermineTextAlignment(sentence, width, alignment, leftMargin);
+                    aligned.Append(
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
+                        $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
+                        TextWriterWhereColor.RenderWhere(sentence, consoleInfoX, top + i, true, alignment == TextAlignment.Left ? rightMargin : 0, Vars)
+                    );
+                }
+
+                // Write the resulting buffer
+                if (useColor)
+                {
+                    aligned.Append(
+                        ColorTools.RenderRevertForeground() +
+                        ColorTools.RenderRevertBackground()
+                    );
+                }
+                return aligned.ToString();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
+            return "";
         }
 
         /// <summary>
