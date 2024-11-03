@@ -156,6 +156,7 @@ namespace Terminaux.Console.Fixtures
             new TestProgressBarIndeterminateSpinnerSelectCjkAlt(),
             new TestProgressBarIndeterminate2(),
             new TestProgressBars(),
+            new TestSliders(),
             new TestVerticalProgressBars(),
             new TestBarChart(),
             new TestBreakdownChart(),
