@@ -17,8 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System.Text;
 using Terminaux.Colors;
-using Terminaux.Writer.FancyWriters;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Terminaux.Writer.CyclicWriters
 {
@@ -89,8 +90,26 @@ namespace Terminaux.Writer.CyclicWriters
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
-            return BoxColor.RenderBox(
+            return RenderBox(
                 Left, Top, InteriorWidth, InteriorHeight, Color, customColor);
+        }
+
+        internal static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight, Color BoxColor, bool useColor)
+        {
+            // Fill the box with spaces inside it
+            StringBuilder box = new();
+            box.Append(
+                $"{(useColor ? ColorTools.RenderSetConsoleColor(BoxColor, true) : "")}" +
+                CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2)
+            );
+            for (int y = 1; y <= InteriorHeight; y++)
+                box.Append(
+                    new string(' ', InteriorWidth) +
+                    CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2)
+                );
+            if (useColor)
+                box.Append(ColorTools.RenderRevertBackground());
+            return box.ToString();
         }
 
         /// <summary>
