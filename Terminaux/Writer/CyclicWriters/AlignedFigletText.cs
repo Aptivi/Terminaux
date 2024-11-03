@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Diagnostics;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.FancyWriters.Tools;
+using Terminaux.Writer.MiscWriters.Tools;
 using Textify.Data.Figlet;
 using Textify.Data.Figlet.Utilities.Lines;
 using Textify.General;
@@ -160,12 +163,12 @@ namespace Terminaux.Writer.CyclicWriters
         public string Render()
         {
             if (!OneLine)
-                return AlignedFigletTextColor.RenderAligned(
+                return RenderAligned(
                     Top, Font, Text, ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin);
             else
             {
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
-                return AlignedFigletTextColor.RenderAligned(
+                return RenderAligned(
                     Top, Font, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin);
             }
         }
@@ -176,6 +179,53 @@ namespace Terminaux.Writer.CyclicWriters
 
             // Install the values
             top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
+        }
+
+        internal static string RenderAligned(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        {
+            try
+            {
+                Text = TextTools.FormatString(Text, Vars);
+                var figFontFallback = FigletTools.GetFigletFont("small");
+                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+                int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
+                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
+                int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback) / 2;
+                int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+                int consoleMaxY = top + figHeight;
+                int textMaxWidth = ConsoleWrapper.WindowWidth - (leftMargin + consoleX + rightMargin);
+                if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
+                {
+                    // The figlet won't fit, so use small text
+                    consoleX = ConsoleWrapper.WindowWidth / 2 - figWidthFallback;
+                    consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+                    consoleMaxY = top + figHeightFallback;
+                    if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
+                    {
+                        // The fallback figlet also won't fit, so use smaller text
+                        return AlignedTextColor.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
+                    }
+                    else
+                    {
+                        // Write the figlet.
+                        string renderedFiglet = FigletTools.RenderFiglet(Text, figFontFallback, textMaxWidth, Vars);
+                        return AlignedTextColor.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
+                    }
+                }
+                else
+                {
+                    // Write the figlet.
+                    string renderedFiglet = FigletTools.RenderFiglet(Text, FigletFont, textMaxWidth, Vars);
+                    return AlignedTextColor.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.StackTrace);
+                Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
+            }
+            return "";
         }
 
         /// <summary>
