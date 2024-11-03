@@ -85,10 +85,12 @@ namespace Terminaux.Inputs.Styles.Selection
             [
                 new("Confirm", ConsoleKey.Enter),
                 new("Select", ConsoleKey.Spacebar),
+                new("Sidebar", ConsoleKey.S),
                 new("Help", ConsoleKey.K),
             ] :
             [
                 new("Select", ConsoleKey.Enter),
+                new("Sidebar", ConsoleKey.S),
                 new("Help", ConsoleKey.K),
             ];
             Keybinding[] bindings = multiple ?
@@ -120,6 +122,7 @@ namespace Terminaux.Inputs.Styles.Selection
             // Make a screen
             var selectionScreen = new Screen();
             bool bail = false;
+            bool sidebar = false;
             ScreenTools.SetCurrent(selectionScreen);
 
             // Query the enabled answers
@@ -127,6 +130,10 @@ namespace Terminaux.Inputs.Styles.Selection
             {
                 while (!bail)
                 {
+                    // Check to see if the guide is open
+                    int sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
+                    int interiorWidth = ConsoleWrapper.WindowWidth - 6 - sidebarWidth;
+
                     // Edge case: We need to check to see if the current highlight is disabled
                     while (AllAnswers[HighlightedAnswer - 1].ChoiceDisabled)
                     {
@@ -166,12 +173,12 @@ namespace Terminaux.Inputs.Styles.Selection
 
                         // Populate the answers
                         selectionBuilder.Append(
-                            BorderColor.RenderBorder(2, listStartPosition + 1, ConsoleWrapper.WindowWidth - 6, answersPerPage, optionColor) +
-                            SelectionInputTools.RenderSelections(categories, 3, listStartPosition + 2, HighlightedAnswer - 1, multiple ? [.. SelectedAnswers] : null, answersPerPage, ConsoleWrapper.WindowWidth - 6, false, SelectionInputTools.GetChoicesFromCategories(Answers).Count, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
+                            BorderColor.RenderBorder(2, listStartPosition + 1, interiorWidth, answersPerPage, optionColor) +
+                            SelectionInputTools.RenderSelections(categories, 3, listStartPosition + 2, HighlightedAnswer - 1, multiple ? [.. SelectedAnswers] : null, answersPerPage, interiorWidth, false, SelectionInputTools.GetChoicesFromCategories(Answers).Count, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
                         );
 
                         // Write description hint
-                        int descHintAreaX = ConsoleWrapper.WindowWidth - 9;
+                        int descHintAreaX = interiorWidth - 3;
                         int descHintAreaY = ConsoleWrapper.WindowHeight - 3;
                         var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
                         bool showHint = !string.IsNullOrWhiteSpace(highlightedAnswer.ChoiceDescription);
@@ -179,6 +186,14 @@ namespace Terminaux.Inputs.Styles.Selection
                         {
                             selectionBuilder.Append(
                                 TextWriterWhereColor.RenderWhereColor("[TAB]", descHintAreaX, descHintAreaY, optionColor)
+                            );
+                        }
+
+                        // Render a sidebar
+                        if (sidebar)
+                        {
+                            selectionBuilder.Append(
+                                BorderColor.RenderBorder(interiorWidth + 5, listStartPosition + 1, sidebarWidth - 3, answersPerPage, textColor)
                             );
                         }
 
@@ -390,6 +405,10 @@ namespace Terminaux.Inputs.Styles.Selection
                                     InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
                                     selectionScreen.RequireRefresh();
                                 }
+                                break;
+                            case ConsoleKey.S:
+                                sidebar = !sidebar;
+                                selectionScreen.RequireRefresh();
                                 break;
                             case ConsoleKey.A:
                                 if (!multiple)
