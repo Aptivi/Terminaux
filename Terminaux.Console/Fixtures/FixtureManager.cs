@@ -162,6 +162,7 @@ namespace Terminaux.Console.Fixtures
             new TestStickChart(),
             new TestCanvas(),
             new TestCanvasErase(),
+            new TestAnimatedCanvas(),
 
             // Input
             new TestInputSelection(),
