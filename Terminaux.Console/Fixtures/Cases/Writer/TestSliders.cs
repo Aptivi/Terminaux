@@ -55,12 +55,33 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             {
                 Width = 40,
             };
+            var slider4 = new Slider(0, 0, 100)
+            {
+                Height = 10,
+                Vertical = true,
+            };
+            var slider5 = new Slider(0, 0, 10)
+            {
+                Height = 10,
+                Vertical = true,
+            };
+            var slider6 = new Slider(0, 0, 4)
+            {
+                Height = 10,
+                Vertical = true,
+            };
             container.AddRenderable("Slider bar 1", slider1);
             container.SetRenderablePosition("Slider bar 1", new(4, ConsoleWrapper.WindowHeight - 3));
             container.AddRenderable("Slider bar 2", slider2);
             container.SetRenderablePosition("Slider bar 2", new(4, ConsoleWrapper.WindowHeight - 2));
             container.AddRenderable("Slider bar 3", slider3);
             container.SetRenderablePosition("Slider bar 3", new(4, ConsoleWrapper.WindowHeight - 1));
+            container.AddRenderable("Slider bar 4", slider4);
+            container.SetRenderablePosition("Slider bar 4", new(4, 2));
+            container.AddRenderable("Slider bar 5", slider5);
+            container.SetRenderablePosition("Slider bar 5", new(6, 2));
+            container.AddRenderable("Slider bar 6", slider6);
+            container.SetRenderablePosition("Slider bar 6", new(8, 2));
 
             // Render them all
             try
@@ -87,6 +108,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     slider1.Position = sliderPos1;
                     slider2.Position = sliderPos2;
                     slider3.Position = sliderPos3;
+                    slider4.Position = sliderPos1;
+                    slider5.Position = sliderPos2;
+                    slider6.Position = sliderPos3;
                     Thread.Sleep(100);
                 }
             }

@@ -78,28 +78,37 @@ namespace Terminaux.Writer.CyclicWriters
             if (Vertical)
             {
                 // Estimate how many cells the slider takes
-                int cells = (int)Math.Round(position * Height / (double)maxPosition);
-                cells = cells > Height ? Height : cells;
-                int remaining = Height - cells;
+                int one = ConsoleMisc.PercentRepeatTargeted(1, maxPosition, Height);
+                one = one == 0 ? 1 : one;
+                int times = ConsoleMisc.PercentRepeatTargeted(position, maxPosition, Height);
+                times = times >= Height ? Height - one : times;
+                int rest = Height - (one + times);
+                rest = rest < 0 ? 0 : rest;
+                rendered.Append(
+                    ColorTools.RenderSetConsoleColor(ConsoleColors.DarkGreen)
+                );
+                for (int i = 0; i < times; i++)
+                    rendered.AppendLine("┃");
                 rendered.Append(
                     ColorTools.RenderSetConsoleColor(ConsoleColors.Lime)
                 );
-                for (int i = 0; i < cells; i++)
+                for (int i = 0; i < one; i++)
                     rendered.AppendLine("┃");
                 rendered.Append(
                     ColorTools.RenderSetConsoleColor(ConsoleColors.DarkGreen)
                 );
-                for (int i = 0; i < remaining; i++)
+                for (int i = 0; i < rest; i++)
                     rendered.AppendLine("┃");
             }
             else
             {
                 // Estimate how many cells the slider takes
                 int one = ConsoleMisc.PercentRepeatTargeted(1, maxPosition, Width);
-                one = one == 0 ? 1 : 0;
+                one = one == 0 ? 1 : one;
                 int times = ConsoleMisc.PercentRepeatTargeted(position, maxPosition, Width);
-                times = times >= Width ? Width : times;
+                times = times >= Width ? Width - one : times;
                 int rest = Width - (one + times);
+                rest = rest < 0 ? 0 : rest;
                 rendered.Append(
                     ColorTools.RenderSetConsoleColor(ConsoleColors.DarkGreen) +
                     new string('━', times) +
