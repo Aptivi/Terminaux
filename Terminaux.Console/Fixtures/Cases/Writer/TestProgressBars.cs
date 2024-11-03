@@ -80,18 +80,41 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 RightMargin = 4,
                 Indeterminate = true,
             };
+            var progressBar7 = new SimpleProgress(0, 100)
+            {
+                LeftMargin = 4,
+                RightMargin = 4,
+            };
+            var progressBar8 = new SimpleProgress(0, 100)
+            {
+                LeftMargin = 4,
+                RightMargin = 4,
+                ShowPercentage = false,
+            };
+            var progressBar9 = new SimpleProgress(0, 100)
+            {
+                LeftMargin = 4,
+                RightMargin = 4,
+                Indeterminate = true,
+            };
             container.AddRenderable("Progress bar 1", progressBar1);
-            container.SetRenderablePosition("Progress bar 1", new(4, ConsoleWrapper.WindowHeight - 6));
+            container.SetRenderablePosition("Progress bar 1", new(4, ConsoleWrapper.WindowHeight - 9));
             container.AddRenderable("Progress bar 2", progressBar2);
-            container.SetRenderablePosition("Progress bar 2", new(4, ConsoleWrapper.WindowHeight - 5));
+            container.SetRenderablePosition("Progress bar 2", new(4, ConsoleWrapper.WindowHeight - 8));
             container.AddRenderable("Progress bar 3", progressBar3);
-            container.SetRenderablePosition("Progress bar 3", new(4, ConsoleWrapper.WindowHeight - 4));
+            container.SetRenderablePosition("Progress bar 3", new(4, ConsoleWrapper.WindowHeight - 7));
             container.AddRenderable("Progress bar 4", progressBar4);
-            container.SetRenderablePosition("Progress bar 4", new(4, ConsoleWrapper.WindowHeight - 3));
+            container.SetRenderablePosition("Progress bar 4", new(4, ConsoleWrapper.WindowHeight - 6));
             container.AddRenderable("Progress bar 5", progressBar5);
-            container.SetRenderablePosition("Progress bar 5", new(4, ConsoleWrapper.WindowHeight - 2));
+            container.SetRenderablePosition("Progress bar 5", new(4, ConsoleWrapper.WindowHeight - 5));
             container.AddRenderable("Progress bar 6", progressBar6);
-            container.SetRenderablePosition("Progress bar 6", new(4, ConsoleWrapper.WindowHeight - 1));
+            container.SetRenderablePosition("Progress bar 6", new(4, ConsoleWrapper.WindowHeight - 4));
+            container.AddRenderable("Progress bar 7", progressBar7);
+            container.SetRenderablePosition("Progress bar 7", new(4, ConsoleWrapper.WindowHeight - 3));
+            container.AddRenderable("Progress bar 8", progressBar8);
+            container.SetRenderablePosition("Progress bar 8", new(4, ConsoleWrapper.WindowHeight - 2));
+            container.AddRenderable("Progress bar 9", progressBar9);
+            container.SetRenderablePosition("Progress bar 9", new(4, ConsoleWrapper.WindowHeight - 1));
 
             // Render them all
             try
@@ -117,6 +140,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                     progressBar4.Position = progress;
                     progressBar5.Position = progress;
                     progressBar6.Position = progress;
+                    progressBar7.Position = progress;
+                    progressBar8.Position = progress;
+                    progressBar9.Position = progress;
                     Thread.Sleep(100);
                 }
             }
