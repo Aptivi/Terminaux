@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.IO;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
@@ -27,6 +28,7 @@ namespace Terminaux.Writer.MiscWriters
     /// <summary>
     /// Line handle writer
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class LineHandleWriter
     {
         /// <summary>

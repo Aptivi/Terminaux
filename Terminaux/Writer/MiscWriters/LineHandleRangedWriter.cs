@@ -23,12 +23,14 @@ using System.Text;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Writer.MiscWriters
 {
     /// <summary>
     /// Ranged line handle writer (with start and end positions)
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class LineHandleRangedWriter
     {
         /// <summary>
@@ -248,60 +250,20 @@ namespace Terminaux.Writer.MiscWriters
         /// <param name="ranged">Whether it's ranged or not</param>
         internal static string RenderLineHandle(string[] Array, int LineNumber, int startPos, int endPos, Color color, bool ranged = true)
         {
-            // Get the builder
-            StringBuilder builder = new();
-
-            // Get the line index from number
-            if (LineNumber <= 0)
-                LineNumber = 1;
-            if (LineNumber > Array.Length)
-                LineNumber = Array.Length;
-            int LineIndex = LineNumber - 1;
-
-            // Get the line
-            string LineContent = Array[LineIndex];
-
-            // Now, check the column numbers
-            if (startPos < 0 || startPos > LineContent.Length)
-                startPos = LineContent.Length;
-            if (endPos < 0 || endPos > LineContent.Length)
-                endPos = LineContent.Length;
-
-            // Check to see if the start position is smaller than the end position
             if (ranged)
-                startPos.SwapIfSourceLarger(ref endPos);
-
-            // Place the line and the column handle
-            int RepeatBlanks = startPos - 1;
-            int RepeatMarkers = endPos - startPos;
-            int digits = GetDigits(LineNumber);
-            if (RepeatBlanks < 0)
-                RepeatBlanks = 0;
-            if (RepeatMarkers < 0)
-                RepeatMarkers = 0;
-            builder.AppendLine($"{ColorTools.RenderSetConsoleColor(color)} {LineNumber} | {LineContent}");
-            builder.AppendLine($"{ColorTools.RenderSetConsoleColor(color)} {new string(' ', digits)} | {new string(' ', RepeatBlanks)}^{new string('~', RepeatMarkers)}");
-
-            // Write the resulting buffer
-            builder.Append(
-                ColorTools.RenderRevertForeground() +
-                ColorTools.RenderRevertBackground()
-            );
-            return builder.ToString();
-        }
-
-        internal static int GetDigits(int Number) =>
-            Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
-
-        internal static void SwapIfSourceLarger(this ref int SourceNumber, ref int TargetNumber)
-        {
-            int Source = SourceNumber;
-            int Target = TargetNumber;
-            if (SourceNumber > TargetNumber)
             {
-                SourceNumber = Target;
-                TargetNumber = Source;
+                startPos = Math.Min(startPos, endPos);
+                endPos = Math.Max(startPos, endPos);
             }
+            var handle = new LineHandle(Array)
+            {
+                Color = color,
+                Position = LineNumber,
+                SourcePosition = startPos,
+                TargetPosition = endPos,
+                Ranged = ranged
+            };
+            return handle.Render();
         }
 
         static LineHandleRangedWriter()
