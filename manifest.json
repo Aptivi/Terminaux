@@ -2395,6 +2395,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Keybindings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Keybindings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Line.yml",
       "output": {
         ".html": {
@@ -2519,6 +2529,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.Keybinding.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.KeybindingTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Renderer.Tools.KeybindingTools.html"
         }
       },
       "version": ""
