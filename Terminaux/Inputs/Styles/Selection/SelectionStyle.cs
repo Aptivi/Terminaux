@@ -146,8 +146,13 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="Answers">Set of answer categories.</param>
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false) =>
-            SelectionStyleBase.PromptSelection(Question, Answers, [], settings, kiosk, false)[0] + 1;
+        public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, SelectionStyleSettings settings, bool kiosk = false)
+        {
+            var answers = SelectionStyleBase.PromptSelection(Question, Answers, [], settings, kiosk, false);
+            if (answers.Length == 0)
+                return -1;
+            return answers[0] + 1;
+        }
 
         /// <summary>
         /// Prompts user for selection
@@ -157,7 +162,12 @@ namespace Terminaux.Inputs.Styles.Selection
         /// <param name="AltAnswers">Set of alternate answer categories.</param>
         /// <param name="settings">Selection settings</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false) =>
-            SelectionStyleBase.PromptSelection(Question, Answers, AltAnswers, settings, kiosk, false)[0] + 1;
+        public static int PromptSelection(string Question, InputChoiceCategoryInfo[] Answers, InputChoiceCategoryInfo[] AltAnswers, SelectionStyleSettings settings, bool kiosk = false)
+        {
+            var answers = SelectionStyleBase.PromptSelection(Question, Answers, AltAnswers, settings, kiosk, false);
+            if (answers.Length == 0)
+                return -1;
+            return answers[0] + 1;
+        }
     }
 }
