@@ -32,9 +32,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var NormalCharDict = new Dictionary<string, char>() { { "One", '1' }, { "Two", '2' }, { "Three", '3' } };
             var ArrayCharDict = new Dictionary<string, char[]>() { { "One", new char[] { '1', '2', '3' } }, { "Two", new char[] { '1', '2', '3' } }, { "Three", new char[] { '1', '2', '3' } } };
             TextWriterColor.Write("Normal char dictionary:");
-            ListWriterColor.WriteList(NormalCharDict, ConsoleColors.Silver, ConsoleColors.Grey, false, keyStringifier: null, (character) => $"{character} [{(int)character}]");
+            ListWriterColor.WriteList(NormalCharDict, ConsoleColors.Silver, ConsoleColors.Grey, keyStringifier: null, (character) => $"{character} [{(int)character}]");
             TextWriterColor.Write("Array char dictionary:");
-            ListWriterColor.WriteList(ArrayCharDict, ConsoleColors.Silver, ConsoleColors.Grey, false, keyStringifier: null, null, (character) => $"{(char)character} [{(int)(char)character}]");
+            ListWriterColor.WriteList(ArrayCharDict, ConsoleColors.Silver, ConsoleColors.Grey, keyStringifier: null, null, (character) => $"{(char)character} [{(int)(char)character}]");
         }
     }
 }

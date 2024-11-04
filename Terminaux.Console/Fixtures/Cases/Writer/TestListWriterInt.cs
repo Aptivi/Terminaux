@@ -32,9 +32,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var NormalIntegerList = new List<int>() { 1, 2, 3 };
             var ArrayIntegerList = new List<int[]>() { { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } } };
             TextWriterColor.Write("Normal integer list:");
-            ListWriterColor.WriteList(NormalIntegerList, ConsoleColors.Silver, ConsoleColors.Grey, false);
+            ListWriterColor.WriteList(NormalIntegerList, ConsoleColors.Silver, ConsoleColors.Grey);
             TextWriterColor.Write("Array integer list:");
-            ListWriterColor.WriteList(ArrayIntegerList, ConsoleColors.Silver, ConsoleColors.Grey, false);
+            ListWriterColor.WriteList(ArrayIntegerList, ConsoleColors.Silver, ConsoleColors.Grey);
         }
     }
 }

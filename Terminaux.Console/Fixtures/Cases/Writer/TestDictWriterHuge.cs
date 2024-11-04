@@ -39,9 +39,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 arrayChoices.Add($"{i}", [$"Number #{i + 1}", names[i]]);
             }
             TextWriterColor.Write("Normal string list:");
-            ListWriterColor.WriteList(choices, ConsoleColors.Silver, ConsoleColors.Grey, false);
+            ListWriterColor.WriteList(choices, ConsoleColors.Silver, ConsoleColors.Grey);
             TextWriterColor.Write("Array string list:");
-            ListWriterColor.WriteList(arrayChoices, ConsoleColors.Silver, ConsoleColors.Grey, false);
+            ListWriterColor.WriteList(arrayChoices, ConsoleColors.Silver, ConsoleColors.Grey);
         }
     }
 }

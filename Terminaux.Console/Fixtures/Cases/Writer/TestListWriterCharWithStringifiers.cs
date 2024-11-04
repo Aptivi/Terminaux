@@ -32,9 +32,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var NormalCharList = new List<char>() { '1', '2', '3' };
             var ArrayCharList = new List<char[]>() { { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } }, { new char[] { '1', '2', '3' } } };
             TextWriterColor.Write("Normal char list:");
-            ListWriterColor.WriteList(NormalCharList, ConsoleColors.Silver, ConsoleColors.Grey, false, (character) => $"{character} [{(int)character}]");
+            ListWriterColor.WriteList(NormalCharList, ConsoleColors.Silver, ConsoleColors.Grey, (character) => $"{character} [{(int)character}]");
             TextWriterColor.Write("Array char list:");
-            ListWriterColor.WriteList(ArrayCharList, ConsoleColors.Silver, ConsoleColors.Grey, false, stringifier: null, (character) => $"{(char)character} [{(int)(char)character}]");
+            ListWriterColor.WriteList(ArrayCharList, ConsoleColors.Silver, ConsoleColors.Grey, stringifier: null, (character) => $"{(char)character} [{(int)(char)character}]");
         }
     }
 }

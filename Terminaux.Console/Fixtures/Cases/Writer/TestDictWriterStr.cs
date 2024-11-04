@@ -32,9 +32,9 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var NormalStringDict = new Dictionary<string, string>() { { "One", "String 1" }, { "Two", "String 2" }, { "Three", "String 3" } };
             var ArrayStringDict = new Dictionary<string, string[]>() { { "One", new string[] { "String 1", "String 2", "String 3" } }, { "Two", new string[] { "String 1", "String 2", "String 3" } }, { "Three", new string[] { "String 1", "String 2", "String 3" } } };
             TextWriterColor.Write("Normal string dictionary:");
-            ListWriterColor.WriteList(NormalStringDict, ConsoleColors.Silver, ConsoleColors.Grey, false);
+            ListWriterColor.WriteList(NormalStringDict, ConsoleColors.Silver, ConsoleColors.Grey);
             TextWriterColor.Write("Array string dictionary:");
-            ListWriterColor.WriteList(ArrayStringDict, ConsoleColors.Silver, ConsoleColors.Grey, false);
+            ListWriterColor.WriteList(ArrayStringDict, ConsoleColors.Silver, ConsoleColors.Grey);
         }
     }
 }
