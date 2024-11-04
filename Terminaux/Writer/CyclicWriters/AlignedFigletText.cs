@@ -46,6 +46,8 @@ namespace Terminaux.Writer.CyclicWriters
         private TextSettings settings = new();
         private bool customTop = false;
         private bool customColor = false;
+        private bool rainbow = false;
+        private bool rainbowBg = false;
 
         /// <summary>
         /// Top position
@@ -156,19 +158,38 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to write text with rainbow effects or not
+        /// </summary>
+        public bool Rainbow
+        {
+            get => rainbow;
+            set => rainbow = value;
+        }
+
+        /// <summary>
+        /// Whether to write text with rainbow effects in the background or in the foreground
+        /// </summary>
+        public bool RainbowBg
+        {
+            get => rainbowBg;
+            set => rainbowBg = value;
+        }
+
+        /// <summary>
         /// Renders an aligned figlet text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
+            int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
             if (!OneLine)
                 return RenderAligned(
-                    Top, Font, Text, ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin);
+                    Top, Font, Text, ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
             else
             {
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 return RenderAligned(
-                    Top, Font, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin);
+                    Top, Font, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
             }
         }
 
@@ -180,7 +201,7 @@ namespace Terminaux.Writer.CyclicWriters
             top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
         }
 
-        internal static string RenderAligned(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        internal static string RenderAligned(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, int rainbowState = 0, params object[] Vars)
         {
             try
             {
@@ -203,20 +224,20 @@ namespace Terminaux.Writer.CyclicWriters
                     if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                     {
                         // The fallback figlet also won't fit, so use smaller text
-                        return AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin);
+                        return AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, rainbowState);
                     }
                     else
                     {
                         // Write the figlet.
                         string renderedFiglet = FigletTools.RenderFiglet(Text, figFontFallback, textMaxWidth);
-                        return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin);
+                        return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, rainbowState);
                     }
                 }
                 else
                 {
                     // Write the figlet.
                     string renderedFiglet = FigletTools.RenderFiglet(Text, FigletFont, textMaxWidth);
-                    return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin);
+                    return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, rainbowState);
                 }
             }
             catch (Exception ex)

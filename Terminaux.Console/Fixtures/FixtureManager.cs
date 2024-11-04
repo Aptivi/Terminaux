@@ -109,6 +109,8 @@ namespace Terminaux.Console.Fixtures
             new PrintPowerLine(),
             new PrintRainbow(),
             new PrintRainbowBack(),
+            new PrintRainbowFiglet(),
+            new PrintRainbowBackFiglet(),
             new PrintRainbowCjk(),
             new PrintRainbowBackCjk(),
             new PrintWrapped(),

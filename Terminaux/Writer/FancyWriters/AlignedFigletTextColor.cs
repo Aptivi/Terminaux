@@ -339,7 +339,7 @@ namespace Terminaux.Writer.FancyWriters
                 Text = TextTools.FormatString(Text, leftMargin, rightMargin, Vars);
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 int top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
-                return AlignedFigletText.RenderAligned(top, FigletFont, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
+                return AlignedFigletText.RenderAligned(top, FigletFont, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, 0, Vars);
             }
             catch (Exception ex)
             {
@@ -360,7 +360,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static string RenderAligned(int top, FigletFont FigletFont, string Text, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            AlignedFigletText.RenderAligned(top, FigletFont, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, alignment, leftMargin, rightMargin, Vars);
+            AlignedFigletText.RenderAligned(top, FigletFont, Text, ColorTools.currentForegroundColor, ColorTools.currentBackgroundColor, false, alignment, leftMargin, rightMargin, 0, Vars);
 
         /// <summary>
         /// Renders an aligned figlet text
@@ -374,7 +374,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static string RenderAligned(int top, FigletFont FigletFont, string Text, Color ForegroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            AlignedFigletText.RenderAligned(top, FigletFont, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, alignment, leftMargin, rightMargin, Vars);
+            AlignedFigletText.RenderAligned(top, FigletFont, Text, ForegroundColor, ColorTools.currentBackgroundColor, true, alignment, leftMargin, rightMargin, 0, Vars);
 
         /// <summary>
         /// Renders an aligned figlet text
@@ -389,7 +389,7 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="rightMargin">The right margin</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static string RenderAligned(int top, FigletFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars) =>
-            AlignedFigletText.RenderAligned(top, FigletFont, Text, ForegroundColor, BackgroundColor, true, alignment, leftMargin, rightMargin, Vars);
+            AlignedFigletText.RenderAligned(top, FigletFont, Text, ForegroundColor, BackgroundColor, true, alignment, leftMargin, rightMargin, 0, Vars);
 
         /// <summary>
         /// Renders an aligned figlet text (just the first line)
