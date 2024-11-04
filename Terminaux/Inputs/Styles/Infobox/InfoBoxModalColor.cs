@@ -19,22 +19,15 @@
 
 using System;
 using System.Threading;
-using System.Linq;
-using System.Collections.Generic;
 using Terminaux.Colors;
-using System.Text;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Base.Buffered;
 using Terminaux.Base;
-using Textify.General;
 using System.Diagnostics;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors.Data;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Inputs.Pointer;
-using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 

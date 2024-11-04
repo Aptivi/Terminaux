@@ -19,7 +19,6 @@
 
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
-using Terminaux.Writer.FancyWriters;
 using Textify.Data.Figlet;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer

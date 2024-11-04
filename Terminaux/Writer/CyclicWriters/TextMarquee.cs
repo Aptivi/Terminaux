@@ -18,7 +18,6 @@
 //
 
 using System.Text;
-using System.Threading;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;

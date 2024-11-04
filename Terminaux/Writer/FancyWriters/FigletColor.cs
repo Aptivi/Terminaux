@@ -20,12 +20,9 @@
 using System;
 using Terminaux.Colors;
 using Textify.Data.Figlet.Utilities.Lines;
-using Textify.Data.Figlet;
-using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
 using Terminaux.Base.Checks;
-using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 

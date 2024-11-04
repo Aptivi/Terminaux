@@ -19,15 +19,10 @@
 
 using System;
 using Terminaux.Colors;
-using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
-using Textify.General;
 using Terminaux.Colors.Data;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
-using Terminaux.Base.Extensions;
-using Terminaux.Base;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 

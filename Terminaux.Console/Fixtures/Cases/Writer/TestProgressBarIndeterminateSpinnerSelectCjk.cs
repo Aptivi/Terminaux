@@ -22,11 +22,8 @@ using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
-using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;
 using System.Threading;
-using Terminaux.Writer.CyclicWriters.Builtins;
-using System.Linq;
 using Terminaux.Inputs.Styles;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer

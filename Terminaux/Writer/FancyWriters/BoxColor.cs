@@ -19,10 +19,8 @@
 
 using System;
 using Terminaux.Colors;
-using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using System.Diagnostics;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Writer.CyclicWriters;
 

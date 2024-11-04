@@ -19,7 +19,6 @@
 
 using System;
 using System.Diagnostics;
-using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
@@ -27,7 +26,6 @@ using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Textify.Data.Figlet;
 using Textify.Data.Figlet.Utilities.Lines;
 using Textify.General;
 

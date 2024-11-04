@@ -19,9 +19,6 @@
 
 using System;
 using Terminaux.Base;
-using Terminaux.Colors.Data;
-using Terminaux.Writer.FancyWriters;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.ConsoleWriters;
 

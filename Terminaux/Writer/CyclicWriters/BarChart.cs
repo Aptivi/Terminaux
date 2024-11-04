@@ -23,7 +23,6 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Writer.CyclicWriters
 {

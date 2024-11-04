@@ -22,7 +22,6 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Writer.FancyWriters;
 using Textify.Data.Figlet;
 using Textify.Data.Figlet.Utilities.Lines;
 using Textify.General;

@@ -18,15 +18,11 @@
 //
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Graphics;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

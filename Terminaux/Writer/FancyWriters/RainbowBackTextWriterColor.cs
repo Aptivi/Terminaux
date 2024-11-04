@@ -19,14 +19,10 @@
 
 using System;
 using System.Diagnostics;
-using System.Globalization;
-using System.Text;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
-using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
-using Textify.General;
 
 namespace Terminaux.Writer.FancyWriters
 {

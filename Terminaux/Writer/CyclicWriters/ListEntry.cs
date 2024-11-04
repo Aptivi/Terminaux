@@ -17,13 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
 using System.Text;
-using Terminaux.Base.Structures;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
-using Terminaux.Graphics;
-using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters
 {

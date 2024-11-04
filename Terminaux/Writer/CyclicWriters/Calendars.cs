@@ -21,9 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using Terminaux.Base;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters

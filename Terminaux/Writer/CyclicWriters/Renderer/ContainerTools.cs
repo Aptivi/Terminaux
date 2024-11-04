@@ -18,7 +18,6 @@
 //
 
 using System.Text;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer

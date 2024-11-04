@@ -18,9 +18,7 @@
 //
 
 using System.Collections.Generic;
-using Terminaux.Base.Structures;
 using Terminaux.Colors;
-using Terminaux.Graphics;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters

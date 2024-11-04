@@ -21,7 +21,6 @@ using Textify.Data.Figlet;
 using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;
 

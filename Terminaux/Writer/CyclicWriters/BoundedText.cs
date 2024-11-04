@@ -26,7 +26,6 @@ using Terminaux.Colors;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.FancyWriters;
 using Textify.General;
 
 namespace Terminaux.Writer.CyclicWriters

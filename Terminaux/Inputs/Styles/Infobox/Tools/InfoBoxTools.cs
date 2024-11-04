@@ -17,17 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
-using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
 {

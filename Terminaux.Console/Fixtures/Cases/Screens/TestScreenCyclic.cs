@@ -18,14 +18,10 @@
 //
 
 using System;
-using System.Text;
-using Terminaux.Base;
 using Terminaux.Base.Buffered;
 using Terminaux.Colors;
-using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.FancyWriters;
 using Textify.Data.Figlet;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;

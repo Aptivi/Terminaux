@@ -19,7 +19,6 @@
 
 using System;
 using System.Diagnostics;
-using System.Text;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;

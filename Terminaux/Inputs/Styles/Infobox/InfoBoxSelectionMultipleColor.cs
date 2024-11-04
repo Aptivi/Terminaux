@@ -32,7 +32,6 @@ using Terminaux.Base.Checks;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Selection;
-using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Base.Extensions;
 using System.Text.RegularExpressions;

@@ -31,7 +31,6 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using System.Threading;
 using Terminaux.Inputs.Pointer;
-using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
