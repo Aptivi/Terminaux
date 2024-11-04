@@ -2785,16 +2785,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterWrappedColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.DynamicWriters.yml",
       "output": {
         ".html": {
