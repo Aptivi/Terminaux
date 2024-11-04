@@ -26,12 +26,14 @@ using System.Diagnostics;
 using Terminaux.Colors.Data;
 using System.Linq;
 using Terminaux.Base.Checks;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
     /// <summary>
     /// List writer with color support
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Also, this writer doesn't support indeterminate progress bars. Please use its cyclic writer equivalent.")]
     public static class ListWriterColor
     {
         #region Dictionary (generic)
@@ -354,38 +356,8 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="useColor">Whether to use the colors or not</param>
         /// <param name="stringifier">A function that stringifies an entry.</param>
         /// <param name="recursiveStringifier">A function that stringifies a recursed entry.</param>
-        internal static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor, bool useColor, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null)
-        {
-            var listBuilder = new StringBuilder();
-            int EntryNumber = 1;
-            foreach (T ListEntry in List)
-            {
-                if (ListEntry is IEnumerable enums && ListEntry is not string)
-                {
-                    var strings = new List<object>();
-                    foreach (var Value in enums)
-                        strings.Add(recursiveStringifier is not null ? recursiveStringifier(Value) : Value);
-                    string valuesString = string.Join(", ", strings);
-                    listBuilder.AppendLine(
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
-                        $"- {EntryNumber}: " +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
-                        $"{valuesString}"
-                    );
-                }
-                else
-                    listBuilder.AppendLine(
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
-                        $"- {EntryNumber}: " +
-                        $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
-                        $"{(stringifier is not null ? stringifier(ListEntry) : ListEntry)}"
-                    );
-                EntryNumber += 1;
-            }
-            if (useColor)
-                listBuilder.Append(ColorTools.RenderRevertForeground());
-            return listBuilder.ToString();
-        }
+        internal static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor, bool useColor, Func<T, string>? stringifier = null, Func<object, string>? recursiveStringifier = null) =>
+            Listing.RenderList(List, ListKeyColor, ListValueColor, useColor, new((obj) => stringifier?.Invoke((T)obj) ?? obj.ToString()), recursiveStringifier);
         #endregion
 
         #region Enumerables (non-generic)

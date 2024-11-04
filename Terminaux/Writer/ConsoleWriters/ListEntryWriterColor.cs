@@ -23,12 +23,14 @@ using System.Text;
 using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Writer.ConsoleWriters
 {
     /// <summary>
     /// List entry writer with color support
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Also, this writer doesn't support indeterminate progress bars. Please use its cyclic writer equivalent.")]
     public static class ListEntryWriterColor
     {
         /// <summary>
@@ -98,7 +100,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="indent">Indentation level</param>
         /// <returns>A list entry without the new line at the end</returns>
         public static string RenderListEntry(string entry, string value, int indent = 0) =>
-            RenderListEntry(entry, value, ConsoleColors.Yellow, ConsoleColors.Silver, indent, false);
+            ListEntry.RenderListEntry(entry, value, ConsoleColors.Yellow, ConsoleColors.Silver, indent, false);
 
         /// <summary>
         /// Renders a list entry and value.
@@ -110,36 +112,7 @@ namespace Terminaux.Writer.ConsoleWriters
         /// <param name="ListValueColor">A value color.</param>
         /// <returns>A list entry without the new line at the end</returns>
         public static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0) =>
-            RenderListEntry(entry, value, ListKeyColor, ListValueColor, indent, true);
-
-        /// <summary>
-        /// Renders a list entry and value.
-        /// </summary>
-        /// <param name="entry">A list entry that will be listed.</param>
-        /// <param name="value">A list value that will be listed.</param>
-        /// <param name="indent">Indentation level</param>
-        /// <param name="ListKeyColor">A key color.</param>
-        /// <param name="ListValueColor">A value color.</param>
-        /// <param name="useColor">Whether to use the color or not</param>
-        /// <returns>A list entry without the new line at the end</returns>
-        internal static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0, bool useColor = true)
-        {
-            // First, get the spaces count to indent
-            if (indent < 0)
-                indent = 0;
-            string spaces = new(' ', indent * 2);
-
-            // Then, write the list entry
-            var listBuilder = new StringBuilder();
-            listBuilder.Append(
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(ListKeyColor) : "")}" +
-                $"{spaces}- {entry}: " +
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(ListValueColor) : "")}" +
-                value +
-                $"{(useColor ? ColorTools.RenderRevertForeground() : "")}"
-            );
-            return listBuilder.ToString();
-        }
+            ListEntry.RenderListEntry(entry, value, ListKeyColor, ListValueColor, indent, true);
 
         static ListEntryWriterColor()
         {
