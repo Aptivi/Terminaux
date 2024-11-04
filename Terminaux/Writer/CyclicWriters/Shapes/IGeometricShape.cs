@@ -48,11 +48,6 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         int Top { get; }
 
         /// <summary>
-        /// A rendered geometric shape using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/>
-        /// </summary>
-        bool Filled { get; }
-
-        /// <summary>
         /// Shape color. Null equals the current foreground color.
         /// </summary>
         Color ShapeColor { get; }

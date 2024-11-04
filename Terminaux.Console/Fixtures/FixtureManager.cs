@@ -318,6 +318,7 @@ namespace Terminaux.Console.Fixtures
             new RenderParallelogram(),
             new RenderEllipsis(),
             new RenderCircle(),
+            new RenderArc(),
         ];
     }
 }
