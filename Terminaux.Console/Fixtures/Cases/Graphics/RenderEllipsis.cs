@@ -29,8 +29,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 
         public void RunFixture()
         {
-            var ellipsis = new Ellipsis(40, 20, 4, 2, true, ConsoleColors.Red);
-            var ellipsis2 = new Ellipsis(20, 20, 46, 2, false, ConsoleColors.Aqua);
+            var ellipsis = new Ellipsis(20, 20, 4, 2, true, ConsoleColors.Red);
+            var ellipsis2 = new Ellipsis(10, 20, 46, 2, false, ConsoleColors.Aqua);
             TextWriterRaw.WriteRaw(ellipsis.Render());
             TextWriterRaw.WriteRaw(ellipsis2.Render());
         }

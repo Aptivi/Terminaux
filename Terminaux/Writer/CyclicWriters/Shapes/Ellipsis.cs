@@ -22,6 +22,8 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Colors;
 using System;
+using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Shapes
 {
@@ -69,10 +71,19 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
 
             // Get the center X and Y positions, since we're dealing with the upper left corner positions, so that we know
             // the radius of the circle
-            int centerX = Left + Width / 2;
-            int centerY = Top + Height / 2;
+            int centerX = Width / 2;
+            int centerY = Height / 2;
 
             // Now, draw the ellipsis
+            var canvas = new Canvas()
+            {
+                Transparent = true,
+                InteriorHeight = Height,
+                InteriorWidth = Width,
+                Left = Left,
+                Top = Top,
+            };
+            var pixels = new List<CellOptions>();
             for (int i = 0; i < Width; i++)
             {
                 // Get the final positions
@@ -89,21 +100,16 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
                 {
                     if ((height - prevHeight >= 0 && diffY < prevHeight || height - nextHeight >= 0 && diffY < nextHeight) && !Filled)
                         continue;
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(drawX + 1, centerY + diffY + 1));
-                    buffer.Append(' ');
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(drawX + 1, centerY - diffY + 1));
-                    buffer.Append(' ');
+                    pixels.Add(new(drawX, centerY + diffY + 1) { CellColor = ShapeColor });
+                    pixels.Add(new(drawX, centerY - diffY + 1) { CellColor = ShapeColor });
                 }
 
                 // Make sure that we don't have two semi-circles
                 if (height > 0 && (Filled || !Filled && (i == 1 || i == Width - 1)))
-                {
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(drawX + 1, centerY + 1));
-                    buffer.Append(' ');
-                }
+                    pixels.Add(new(drawX, centerY + 1) { CellColor = ShapeColor });
             }
-            buffer.Append(ColorTools.RenderRevertBackground());
-            return buffer.ToString();
+            canvas.Pixels = [.. pixels];
+            return canvas.Render();
         }
 
         /// <summary>

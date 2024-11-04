@@ -32,7 +32,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Circle width
         /// </summary>
         public int Width =>
-            Height * 2;
+            Height;
 
         /// <summary>
         /// Circle height
