@@ -200,11 +200,6 @@ namespace Terminaux.Writer.CyclicWriters
             }
 
             // Populate the calendar data
-            int spaces = (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d);
-            calendarRendered.Append(
-                new string(' ', spaces) +
-                CalendarTitle
-            );
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {
                 var CurrentDate = new DateTime(year, month, CurrentDay);
@@ -230,6 +225,7 @@ namespace Terminaux.Writer.CyclicWriters
                 HeaderColor = headerColor,
                 SeparatorColor = separatorColor,
                 Rows = calendarData,
+                Title = CalendarTitle,
             };
             calendarRendered.Append(calendarTable.Render());
             return calendarRendered.ToString();

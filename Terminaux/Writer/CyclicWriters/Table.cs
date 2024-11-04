@@ -178,20 +178,37 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Title of the table
+        /// </summary>
+        public string Title { get; set; } = "";
+
+        /// <summary>
         /// Renders an table text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
             return RenderTable(
-                Rows, Left, Top, InteriorWidth, InteriorHeight, Header, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, customColor, Settings, BorderSettings);
+                Rows, Left, Top, InteriorWidth, InteriorHeight, Header, SeparatorColor, HeaderColor, ValueColor, BackgroundColor, customColor, Settings, BorderSettings, Title);
         }
 
-        internal static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null)
+        internal static string RenderTable(string[,] Rows, int left, int top, int width, int height, bool enableHeader, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool useColor, List<CellOptions>? CellOptions = null, BorderSettings? tableBorderSettings = null, string title = "")
         {
             // Create a border which the table will be drawn on
             var tableBuilder = new StringBuilder();
             tableBorderSettings ??= new();
+
+            // Check to see if we need a title
+            bool needsTitle = !string.IsNullOrEmpty(title);
+            if (needsTitle)
+            {
+                height -= 2;
+                int titleWidth = ConsoleChar.EstimateCellWidth(title);
+                tableBuilder.Append(
+                    TextWriterWhereColor.RenderWhereColorBack(title, left + (width / 2) - (titleWidth / 2), top, HeaderForegroundColor, BackgroundColor)
+                );
+                top += 2;
+            }
 
             // Determine the positions
             int columnsCount = Rows.GetLength(1);
