@@ -452,7 +452,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                 bool isExtendable = !string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription);
 
                                 // Keys function
-                                KeybindingsWriter.ShowKeybindingInfobox(bindings);
+                                KeybindingTools.ShowKeybindingInfobox(bindings);
                                 break;
                         }
                     }

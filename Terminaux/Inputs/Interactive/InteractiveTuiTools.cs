@@ -35,6 +35,7 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
 using Textify.General;
@@ -842,7 +843,7 @@ namespace Terminaux.Inputs.Interactive
                             var bindings = GetAllBindings(interactiveTui, true);
                             InfoBoxModalColor.WriteInfoBoxModalColorBack(
                                 "Available keys",
-                                KeybindingsWriter.RenderKeybindingHelpText(bindings)
+                                KeybindingTools.RenderKeybindingHelpText(bindings)
                             , interactiveTui.Settings.BorderSettings, interactiveTui.Settings.BoxForegroundColor, interactiveTui.Settings.BoxBackgroundColor);
                             break;
                         case ConsoleKey.F:

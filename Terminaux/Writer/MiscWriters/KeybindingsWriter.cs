@@ -28,6 +28,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.MiscWriters
@@ -35,6 +36,7 @@ namespace Terminaux.Writer.MiscWriters
     /// <summary>
     /// Keybindings writer class
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class KeybindingsWriter
     {
         /// <summary>
@@ -295,288 +297,23 @@ namespace Terminaux.Writer.MiscWriters
         /// <returns>Keybindings sequence that you can use with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderKeybindings(Keybinding[] bindings, Keybinding[] builtinKeybindings, Color builtinColor, Color builtinForegroundColor, Color builtinBackgroundColor, Color optionColor, Color optionForegroundColor, Color optionBackgroundColor, Color backgroundColor, int left = 0, int top = 0, int rightMargin = 0, ConsoleKeyInfo? helpKeyInfo = null)
         {
-            var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1));
-            Keybinding[] finalBindings = [.. builtinKeybindings, .. bindings];
-            foreach (Keybinding binding in finalBindings)
+            int maxLength = ConsoleWrapper.WindowWidth - left - rightMargin;
+            return new Keybindings()
             {
-                // Check the binding mode
-                if (binding.BindingUsesMouse)
-                    continue;
-
-                // First, check to see if the rendered binding info is going to exceed the console window width
-                string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {binding.BindingName}  ";
-                string renderedExtraBinding = GetBindingKeyShortcut(helpKeyInfo, false);
-                int bindingLength = ConsoleChar.EstimateCellWidth(renderedBinding);
-                int bindingExtraLength = ConsoleChar.EstimateCellWidth(renderedExtraBinding);
-                int actualLength = ConsoleChar.EstimateCellWidth(VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()));
-                int maxLength = ConsoleWrapper.WindowWidth - left - rightMargin - bindingExtraLength;
-                bool canDraw = bindingLength + actualLength < maxLength;
-                bool isBuiltin = builtinKeybindings.Contains(binding);
-                if (canDraw)
-                {
-                    bindingsBuilder.Append(
-                        $"{ColorTools.RenderSetConsoleColor(isBuiltin ? builtinColor : optionColor, false, true)}" +
-                        $"{ColorTools.RenderSetConsoleColor(isBuiltin ? builtinBackgroundColor : optionBackgroundColor, true)}" +
-                        GetBindingKeyShortcut(binding, false) +
-                        $"{ColorTools.RenderSetConsoleColor(isBuiltin ? builtinForegroundColor : optionForegroundColor)}" +
-                        $"{ColorTools.RenderSetConsoleColor(backgroundColor, true)}" +
-                        $" {binding.BindingName}  "
-                    );
-                }
-                else
-                {
-                    // We can't render anymore, so just break and write a binding to show more if it's provided
-                    int extraKeyLeft = ConsoleWrapper.WindowWidth - rightMargin - bindingExtraLength;
-                    if (extraKeyLeft <= 0)
-                        break;
-                    bindingsBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(extraKeyLeft + 1, top + 1)}" +
-                        $"{ColorTools.RenderSetConsoleColor(builtinColor, false, true)}" +
-                        $"{ColorTools.RenderSetConsoleColor(builtinBackgroundColor, true)}" +
-                        renderedExtraBinding
-                    );
-                    break;
-                }
-            }
-            bindingsBuilder.Append(
-                ColorTools.RenderRevertForeground() +
-                ColorTools.RenderRevertBackground()
-            );
-            return bindingsBuilder.ToString();
-        }
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxPlain(Keybinding[] keybindings, params object[] vars) =>
-            ShowKeybindingInfoboxPlain(keybindings, BorderSettings.GlobalSettings, true, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxPlain(Keybinding[] keybindings, BorderSettings settings, params object[] vars) =>
-            ShowKeybindingInfoboxPlain("Available keybindings", keybindings, settings, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfobox(Keybinding[] keybindings, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(keybindings, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="InfoBoxColor">InfoBox color</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxColor(Keybinding[] keybindings, Color InfoBoxColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(keybindings, BorderSettings.GlobalSettings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="InfoBoxColor">InfoBox color</param>
-        /// <param name="BackgroundColor">InfoBox background color</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxColorBack(Keybinding[] keybindings, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(keybindings, BorderSettings.GlobalSettings, InfoBoxColor, BackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfobox(Keybinding[] keybindings, BorderSettings settings, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(keybindings, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="InfoBoxColor">InfoBox color</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxColor(Keybinding[] keybindings, BorderSettings settings, Color InfoBoxColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(keybindings, settings, InfoBoxColor, ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="InfoBoxColor">InfoBox color</param>
-        /// <param name="BackgroundColor">InfoBox background color</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxColorBack(Keybinding[] keybindings, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack("Available keybindings", keybindings, settings, InfoBoxColor, BackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxPlain(string title, Keybinding[] keybindings, params object[] vars) =>
-            ShowKeybindingInfoboxPlain(title, keybindings, BorderSettings.GlobalSettings, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="title">Title to be written</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxPlain(string title, Keybinding[] keybindings, BorderSettings settings, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, false, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfobox(string title, Keybinding[] keybindings, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, BorderSettings.GlobalSettings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxColor(string title, Keybinding[] keybindings, Color InfoBoxTitledColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, BorderSettings.GlobalSettings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
-        /// <param name="BackgroundColor">InfoBoxTitled background color</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxColorBack(string title, Keybinding[] keybindings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, BorderSettings.GlobalSettings, InfoBoxTitledColor, BackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfobox(string title, Keybinding[] keybindings, BorderSettings settings, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, settings, new Color(ConsoleColors.Silver), ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxColor(string title, Keybinding[] keybindings, BorderSettings settings, Color InfoBoxTitledColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, settings, InfoBoxTitledColor, ColorTools.currentBackgroundColor, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
-        /// <param name="BackgroundColor">InfoBoxTitled background color</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void ShowKeybindingInfoboxColorBack(string title, Keybinding[] keybindings, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, params object[] vars) =>
-            ShowKeybindingInfoboxColorBack(title, keybindings, settings, InfoBoxTitledColor, BackgroundColor, true, vars);
-
-        /// <summary>
-        /// Writes the info box plainly
-        /// </summary>
-        /// <param name="title">Title to be written</param>
-        /// <param name="settings">Border settings to use</param>
-        /// <param name="InfoBoxTitledColor">InfoBoxTitled color</param>
-        /// <param name="BackgroundColor">InfoBoxTitled background color</param>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <param name="useColor">Whether to use color or not</param>
-        /// <param name="vars">Variables to format the message before it's written.</param>
-        internal static void ShowKeybindingInfoboxColorBack(string title, Keybinding[] keybindings, BorderSettings settings, Color InfoBoxTitledColor, Color BackgroundColor, bool useColor, params object[] vars)
-        {
-            string keybindingsText = RenderKeybindingHelpText(keybindings);
-            InfoBoxModalColor.WriteInfoBoxModalColorBack(title, keybindingsText, settings, InfoBoxTitledColor, BackgroundColor, useColor, vars);
-        }
-
-        /// <summary>
-        /// Renders the keybinding help text
-        /// </summary>
-        /// <param name="keybindings">Keybindings (including the built-in ones)</param>
-        /// <returns>Rendered keybindings help text that you can render for infoboxes.</returns>
-        public static string RenderKeybindingHelpText(Keybinding[] keybindings)
-        {
-            // First, check the bindings length
-            var nonMouseBindings = keybindings.Where((bind) => !bind.BindingUsesMouse).ToArray();
-            var mouseBindings = keybindings.Where((bind) => bind.BindingUsesMouse).ToArray();
-            if (keybindings is null || keybindings.Length == 0)
-                return "No keybindings available";
-
-            // User needs an infobox that shows all available keys
-            int maxBindingLength = nonMouseBindings
-                .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb)));
-            string[] bindingRepresentations = nonMouseBindings
-                .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - ConsoleChar.EstimateCellWidth(GetBindingKeyShortcut(itb))) + $" | {itb.BindingName}"}")
-                .ToArray();
-            string[] bindingMouseRepresentations = [];
-            if (mouseBindings is not null && mouseBindings.Length > 0)
-            {
-                int maxMouseBindingLength = mouseBindings
-                    .Max((itb) => ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb)));
-                bindingMouseRepresentations = mouseBindings
-                    .Select((itb) => $"{GetBindingMouseShortcut(itb) + new string(' ', maxMouseBindingLength - ConsoleChar.EstimateCellWidth(GetBindingMouseShortcut(itb))) + $" | {itb.BindingName}"}")
-                    .ToArray();
-            }
-            return
-                $"{string.Join("\n", bindingRepresentations)}" +
-                "\n\nMouse bindings:\n\n" +
-                $"{(bindingMouseRepresentations.Length > 0 ? string.Join("\n", bindingMouseRepresentations) : "No mouse bindings")}";
-        }
-
-        private static string GetBindingKeyShortcut(Keybinding bind, bool mark = true) =>
-            GetBindingKeyShortcut(bind.BindingUsesMouse, bind.BindingKeyModifiers, bind.BindingKeyName, mark);
-
-        private static string GetBindingKeyShortcut(ConsoleKeyInfo? bind, bool mark = true)
-        {
-            if (bind is ConsoleKeyInfo keyInfo)
-                return GetBindingKeyShortcut(false, keyInfo.Modifiers, keyInfo.Key, mark);
-            return "";
-        }
-
-        private static string GetBindingKeyShortcut(bool usesMouse, ConsoleModifiers mods, ConsoleKey key, bool mark = true)
-        {
-            if (usesMouse)
-                return "";
-            string markStart = mark ? "[" : " ";
-            string markEnd = mark ? "]" : " ";
-            return $"{markStart}{(mods != 0 ? $"{mods} + " : "")}{key}{markEnd}";
-        }
-
-        private static string GetBindingMouseShortcut(Keybinding bind, bool mark = true)
-        {
-            if (!bind.BindingUsesMouse)
-                return "";
-            string markStart = mark ? "[" : " ";
-            string markEnd = mark ? "]" : " ";
-            return $"{markStart}{(bind.BindingPointerModifiers != 0 ? $"{bind.BindingPointerModifiers} + " : "")}{bind.BindingPointerButton}{(bind.BindingPointerButtonPress != 0 ? $" {bind.BindingPointerButtonPress}" : "")}{markEnd}";
+                Left = left,
+                Top = top,
+                BackgroundColor = backgroundColor,
+                BuiltinColor = builtinColor,
+                BuiltinBackgroundColor = builtinBackgroundColor,
+                BuiltinForegroundColor = builtinForegroundColor,
+                OptionColor = optionColor,
+                OptionBackgroundColor = optionBackgroundColor,
+                OptionForegroundColor = optionForegroundColor,
+                Width = maxLength,
+                BuiltinKeybindings = builtinKeybindings,
+                KeybindingList = bindings,
+                HelpKeyInfo = helpKeyInfo,
+            }.Render();
         }
     }
 }

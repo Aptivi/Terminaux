@@ -452,7 +452,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 return;
 
             // User needs an infobox that shows all available keys
-            string bindingsHelp = KeybindingsWriter.RenderKeybindingHelpText(finalBindings);
+            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(finalBindings);
             InfoBoxModalColor.WriteInfoBoxModalColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
         }
 

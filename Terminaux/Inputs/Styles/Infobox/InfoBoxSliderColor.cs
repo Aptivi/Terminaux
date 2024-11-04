@@ -441,7 +441,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             if (mouse.Coordinates.y == buttonsTop)
                             {
                                 if (PointerTools.PointerWithinRange(mouse, (buttonLeftHelpMin, buttonsTop), (buttonLeftHelpMax, buttonsTop)))
-                                    KeybindingsWriter.ShowKeybindingInfobox(keybindings);
+                                    KeybindingTools.ShowKeybindingInfobox(keybindings);
                                 else if (PointerTools.PointerWithinRange(mouse, (buttonLeftCloseMin, buttonsTop), (buttonLeftCloseMax, buttonsTop)))
                                 {
                                     bail = true;
@@ -546,7 +546,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                                 break;
                             case ConsoleKey.K:
                                 // Keys function
-                                KeybindingsWriter.ShowKeybindingInfobox(keybindings);
+                                KeybindingTools.ShowKeybindingInfobox(keybindings);
                                 break;
                         }
                     }

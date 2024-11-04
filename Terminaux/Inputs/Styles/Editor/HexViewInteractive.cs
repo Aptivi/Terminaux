@@ -246,7 +246,7 @@ namespace Terminaux.Inputs.Styles.Editor
                 return bytes;
 
             // User needs an infobox that shows all available keys
-            string bindingsHelp = KeybindingsWriter.RenderKeybindingHelpText(bindings);
+            string bindingsHelp = KeybindingTools.RenderKeybindingHelpText(bindings);
             InfoBoxModalColor.WriteInfoBoxModalColorBack(bindingsHelp, settings.BoxForegroundColor, settings.BoxBackgroundColor);
             return bytes;
         }
