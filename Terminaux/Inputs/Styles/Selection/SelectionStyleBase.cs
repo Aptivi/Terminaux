@@ -153,6 +153,7 @@ namespace Terminaux.Inputs.Styles.Selection
                     int startIndex = 0;
                     int endIndex = 0;
                     var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
+                    string finalSidebarText = $"[{highlightedAnswer.ChoiceName}] {highlightedAnswer.ChoiceTitle}\n\n{highlightedAnswer.ChoiceDescription}";
                     screenPart.Position(0, 0);
                     screenPart.AddDynamicText(() =>
                     {
@@ -201,7 +202,8 @@ namespace Terminaux.Inputs.Styles.Selection
                         // Render a sidebar
                         if (sidebar)
                         {
-                            var boundedSidebar = new BoundedText($"[{highlightedAnswer.ChoiceName}] {highlightedAnswer.ChoiceTitle}\n\n{highlightedAnswer.ChoiceDescription}")
+                            string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
+                            var boundedSidebar = new BoundedText(finalSidebarText)
                             {
                                 Left = interiorWidth + 6,
                                 Top = listStartPosition + 1,
@@ -210,8 +212,6 @@ namespace Terminaux.Inputs.Styles.Selection
                                 ForegroundColor = textColor,
                                 Line = showcaseLine,
                             };
-                            string finalSidebarText = $"[{highlightedAnswer.ChoiceName}] {highlightedAnswer.ChoiceTitle}\n\n{highlightedAnswer.ChoiceDescription}";
-                            string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
                             selectionBuilder.Append(
                                 BorderColor.RenderBorder(interiorWidth + 5, listStartPosition + 1, sidebarWidth - 3, answersPerPage, textColor) +
                                 boundedSidebar.Render() +
@@ -329,7 +329,6 @@ namespace Terminaux.Inputs.Styles.Selection
                                 }
                                 else if (mouse.Coordinates.y == listStartPosition + 1 + answersPerPage)
                                 {
-                                    string finalSidebarText = $"[{highlightedAnswer.ChoiceName}] {highlightedAnswer.ChoiceTitle}\n\n{highlightedAnswer.ChoiceDescription}";
                                     string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
                                     if (lines.Length <= answersPerPage)
                                         return;
@@ -395,7 +394,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                 string choiceDesc = highlightedAnswer.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal("Item info", finalSidebarText);
                                     selectionScreen.RequireRefresh();
                                 }
                                 break;
@@ -483,7 +482,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                 string choiceDesc = highlightedAnswer.ChoiceDescription;
                                 if (!string.IsNullOrWhiteSpace(choiceDesc))
                                 {
-                                    InfoBoxModalColor.WriteInfoBoxModal($"[{choiceName}] {choiceTitle}", choiceDesc);
+                                    InfoBoxModalColor.WriteInfoBoxModal("Item info", finalSidebarText);
                                     selectionScreen.RequireRefresh();
                                 }
                                 break;
@@ -549,7 +548,6 @@ namespace Terminaux.Inputs.Styles.Selection
                                     int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                                     int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
                                     int answersPerPage = listEndPosition - 5;
-                                    string finalSidebarText = $"[{highlightedAnswer.ChoiceName}] {highlightedAnswer.ChoiceTitle}\n\n{highlightedAnswer.ChoiceDescription}";
                                     string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
                                     if (lines.Length <= answersPerPage)
                                         break;
