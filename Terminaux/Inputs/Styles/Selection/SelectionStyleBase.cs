@@ -210,9 +210,14 @@ namespace Terminaux.Inputs.Styles.Selection
                                 ForegroundColor = textColor,
                                 Line = showcaseLine,
                             };
+                            string finalSidebarText = $"[{highlightedAnswer.ChoiceName}] {highlightedAnswer.ChoiceTitle}\n\n{highlightedAnswer.ChoiceDescription}";
+                            string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
                             selectionBuilder.Append(
                                 BorderColor.RenderBorder(interiorWidth + 5, listStartPosition + 1, sidebarWidth - 3, answersPerPage, textColor) +
-                                boundedSidebar.Render()
+                                boundedSidebar.Render() +
+                                TextWriterWhereColor.RenderWhere("↑", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
+                                TextWriterWhereColor.RenderWhere("↓", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage + 1) +
+                                SliderVerticalColor.RenderVerticalSliderPlain(showcaseLine, lines.Length - answersPerPage, interiorWidth + 2 + sidebarWidth, listStartPosition + 2, answersPerPage - 2, false)
                             );
                         }
 
@@ -267,6 +272,21 @@ namespace Terminaux.Inputs.Styles.Selection
                                     (interiorWidth + 3, listStartPosition + 1 + answersPerPage));
                         }
 
+                        bool DetermineSidebarArrowPressed(PointerEventContext mouse)
+                        {
+                            if (!sidebar)
+                                return false;
+                            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
+                            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                            int answersPerPage = listEndPosition - 5;
+                            if (AllAnswers.Count <= answersPerPage)
+                                return false;
+                            return
+                                PointerTools.PointerWithinRange(mouse,
+                                    (ConsoleWrapper.WindowWidth - 3, listStartPosition + 2),
+                                    (ConsoleWrapper.WindowWidth - 3, listStartPosition + 1 + answersPerPage));
+                        }
+
                         void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
                         {
                             int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
@@ -288,6 +308,34 @@ namespace Terminaux.Inputs.Styles.Selection
                                     HighlightedAnswer++;
                                     if (HighlightedAnswer > AllAnswers.Count)
                                         HighlightedAnswer = AllAnswers.Count;
+                                }
+                            }
+                        }
+
+                        void UpdateSidebarPositionBasedOnArrowPress(PointerEventContext mouse)
+                        {
+                            int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
+                            int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                            int answersPerPage = listEndPosition - 5;
+                            if (AllAnswers.Count <= answersPerPage)
+                                return;
+                            if (mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 3)
+                            {
+                                if (mouse.Coordinates.y == listStartPosition + 2)
+                                {
+                                    showcaseLine--;
+                                    if (showcaseLine < 0)
+                                        showcaseLine = 0;
+                                }
+                                else if (mouse.Coordinates.y == listStartPosition + 1 + answersPerPage)
+                                {
+                                    string finalSidebarText = $"[{highlightedAnswer.ChoiceName}] {highlightedAnswer.ChoiceTitle}\n\n{highlightedAnswer.ChoiceDescription}";
+                                    string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
+                                    if (lines.Length <= answersPerPage)
+                                        return;
+                                    showcaseLine++;
+                                    if (showcaseLine > lines.Length - answersPerPage)
+                                        showcaseLine = lines.Length - answersPerPage;
                                 }
                             }
                         }
@@ -319,6 +367,8 @@ namespace Terminaux.Inputs.Styles.Selection
                                     UpdatePositionBasedOnArrowPress(mouse);
                                     showcaseLine = 0;
                                 }
+                                else if (DetermineSidebarArrowPressed(mouse))
+                                    UpdateSidebarPositionBasedOnArrowPress(mouse);
                                 else
                                 {
                                     showcaseLine = 0;
