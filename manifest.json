@@ -2225,10 +2225,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterSlowColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.yml",
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereColor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.ConsoleWriters.TextWriterWhereSlowColor.html"
         }
       },
       "version": ""
@@ -2779,36 +2799,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Writer.CyclicWriters.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterSlowColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.DynamicWriters.TextWriterWhereSlowColor.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Writer.DynamicWriters.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Writer.DynamicWriters.html"
         }
       },
       "version": ""
