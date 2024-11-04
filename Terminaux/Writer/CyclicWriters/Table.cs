@@ -274,7 +274,7 @@ namespace Terminaux.Writer.CyclicWriters
                     var positionsValues = ((int, int))positions.GetValue(x, y);
                     if (positionsValues.Item2 > height + top)
                         break;
-                    string text = (string)Rows.GetValue(y, x);
+                    string text = (string)Rows.GetValue(y, x) ?? "";
                     Color finalColor =
                         y == 0 && enableHeader ? HeaderForegroundColor :
                         ValueForegroundColor;

@@ -131,6 +131,8 @@ namespace Terminaux.Console.Fixtures
             new TestNonGenericListWriterInt(),
             new TestTable(),
             new TestTableCjk(),
+            new TestTableCalendar(),
+            new TestTableCalendarHijri(),
             new BorderText(),
             new TestNonModalInfoBox(),
             new TestNonModalInfoBoxExcess(),
