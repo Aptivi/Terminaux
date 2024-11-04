@@ -2715,6 +2715,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Arc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Arc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Writer.CyclicWriters.Shapes.Circle.yml",
       "output": {
         ".html": {
