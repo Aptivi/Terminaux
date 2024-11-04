@@ -25,10 +25,9 @@ using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Sequences;
-using Terminaux.Writer.ConsoleWriters;
 using Textify.General;
 
-namespace Terminaux.Writer.DynamicWriters
+namespace Terminaux.Writer.ConsoleWriters
 {
     /// <summary>
     /// Console text writer with color support (slow write)
@@ -50,7 +49,7 @@ namespace Terminaux.Writer.DynamicWriters
                 {
                     // Format string as needed
                     if (vars.Length > 0)
-                        msg = TextTools.FormatString(msg, vars);
+                        msg = msg.FormatString(vars);
 
                     // Grab each VT sequence from the message and fetch their indexes
                     var sequences = VtSequenceTools.MatchVTSequences(msg);

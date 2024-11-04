@@ -26,10 +26,9 @@ using Textify.General;
 using System.Diagnostics;
 using Terminaux.Base.Extensions;
 using Terminaux.Sequences;
-using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Checks;
 
-namespace Terminaux.Writer.DynamicWriters
+namespace Terminaux.Writer.ConsoleWriters
 {
     /// <summary>
     /// Console text writer with color support (slow positional write)
@@ -80,7 +79,7 @@ namespace Terminaux.Writer.DynamicWriters
                 {
                     // Format string as needed
                     if (vars.Length > 0)
-                        msg = TextTools.FormatString(msg, vars);
+                        msg = msg.FormatString(vars);
 
                     // Write text in another place slowly
                     int OldLeft = ConsoleWrapper.CursorLeft;

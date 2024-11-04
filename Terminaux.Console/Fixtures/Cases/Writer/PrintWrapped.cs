@@ -22,7 +22,6 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
-using Terminaux.Writer.DynamicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
