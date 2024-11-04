@@ -287,7 +287,7 @@ namespace Terminaux.Writer.CyclicWriters
                     if (CellOptions is not null && CellOptions.Count > 0)
                     {
                         var options = CellOptions.FirstOrDefault((co) => co.ColumnIndex == x && co.RowIndex == y);
-                        if (options is not null && options.ColoredCell)
+                        if (options is not null)
                         {
                             if (options.ColoredCell)
                             {
