@@ -32,6 +32,7 @@ using Terminaux.Colors;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
@@ -56,6 +57,7 @@ namespace Terminaux.Inputs.Styles.Selection
             Color textColor = settings.TextColor;
             Color disabledOptionColor = settings.DisabledOptionColor;
             int HighlightedAnswer = 1;
+            int showcaseLine = 0;
             InputChoiceCategoryInfo[] categories = [.. Answers, .. AltAnswers];
             List<InputChoiceInfo> AllAnswers = SelectionInputTools.GetChoicesFromCategories(categories);
             List<int> SelectedAnswers = [];
@@ -107,6 +109,8 @@ namespace Terminaux.Inputs.Styles.Selection
                 new("Selects all the elements in all groups in the same category", ConsoleKey.A, ConsoleModifiers.Shift),
                 new("Selects all the elements in all groups in all categories", ConsoleKey.A, ConsoleModifiers.Shift | ConsoleModifiers.Control),
                 new("Searches for an element", ConsoleKey.F),
+                new("Go up in a sidebar", ConsoleKey.E),
+                new("Go down in a sidebar", ConsoleKey.D),
             ] :
             [
                 new("Confirms a selection", ConsoleKey.Enter),
@@ -117,6 +121,8 @@ namespace Terminaux.Inputs.Styles.Selection
                 new("Goes to the previous page", ConsoleKey.PageUp),
                 new("Goes to the next page", ConsoleKey.PageDown),
                 new("Searches for an element", ConsoleKey.F),
+                new("Go up in a sidebar", ConsoleKey.E),
+                new("Go down in a sidebar", ConsoleKey.D),
             ];
 
             // Make a screen
@@ -150,6 +156,9 @@ namespace Terminaux.Inputs.Styles.Selection
                     screenPart.Position(0, 0);
                     screenPart.AddDynamicText(() =>
                     {
+                        sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
+                        interiorWidth = ConsoleWrapper.WindowWidth - 6 - sidebarWidth;
+
                         // Make pages based on console window height
                         int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
                         int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
@@ -192,8 +201,18 @@ namespace Terminaux.Inputs.Styles.Selection
                         // Render a sidebar
                         if (sidebar)
                         {
+                            var boundedSidebar = new BoundedText($"[{highlightedAnswer.ChoiceName}] {highlightedAnswer.ChoiceTitle}\n\n{highlightedAnswer.ChoiceDescription}")
+                            {
+                                Left = interiorWidth + 6,
+                                Top = listStartPosition + 1,
+                                Width = sidebarWidth - 3,
+                                Height = answersPerPage,
+                                ForegroundColor = textColor,
+                                Line = showcaseLine,
+                            };
                             selectionBuilder.Append(
-                                BorderColor.RenderBorder(interiorWidth + 5, listStartPosition + 1, sidebarWidth - 3, answersPerPage, textColor)
+                                BorderColor.RenderBorder(interiorWidth + 5, listStartPosition + 1, sidebarWidth - 3, answersPerPage, textColor) +
+                                boundedSidebar.Render()
                             );
                         }
 
@@ -244,8 +263,8 @@ namespace Terminaux.Inputs.Styles.Selection
                                 return false;
                             return
                                 PointerTools.PointerWithinRange(mouse,
-                                    (ConsoleWrapper.WindowWidth - 3, listStartPosition + 2),
-                                    (ConsoleWrapper.WindowWidth - 3, listStartPosition + 1 + answersPerPage));
+                                    (interiorWidth + 3, listStartPosition + 2),
+                                    (interiorWidth + 3, listStartPosition + 1 + answersPerPage));
                         }
 
                         void UpdatePositionBasedOnArrowPress(PointerEventContext mouse)
@@ -255,7 +274,7 @@ namespace Terminaux.Inputs.Styles.Selection
                             int answersPerPage = listEndPosition - 7;
                             if (AllAnswers.Count <= answersPerPage)
                                 return;
-                            if (mouse.Coordinates.x == ConsoleWrapper.WindowWidth - 3)
+                            if (mouse.Coordinates.x == interiorWidth + 3)
                             {
                                 if (mouse.Coordinates.y == listStartPosition + 2)
                                 {
@@ -284,19 +303,25 @@ namespace Terminaux.Inputs.Styles.Selection
                                 HighlightedAnswer--;
                                 if (HighlightedAnswer == 0)
                                     HighlightedAnswer = AllAnswers.Count;
+                                showcaseLine = 0;
                                 break;
                             case PointerButton.WheelDown:
                                 HighlightedAnswer++;
                                 if (HighlightedAnswer > AllAnswers.Count)
                                     HighlightedAnswer = 1;
+                                showcaseLine = 0;
                                 break;
                             case PointerButton.Left:
                                 if (mouse.ButtonPress != PointerButtonPress.Released)
                                     break;
                                 if (DetermineArrowPressed(mouse))
+                                {
                                     UpdatePositionBasedOnArrowPress(mouse);
+                                    showcaseLine = 0;
+                                }
                                 else
                                 {
+                                    showcaseLine = 0;
                                     if (UpdateSelectedIndexWithMousePos(mouse))
                                     {
                                         if (!multiple)
@@ -341,17 +366,21 @@ namespace Terminaux.Inputs.Styles.Selection
                                 HighlightedAnswer--;
                                 if (HighlightedAnswer == 0)
                                     HighlightedAnswer = AllAnswers.Count;
+                                showcaseLine = 0;
                                 break;
                             case ConsoleKey.DownArrow:
                                 HighlightedAnswer++;
                                 if (HighlightedAnswer > AllAnswers.Count)
                                     HighlightedAnswer = 1;
+                                showcaseLine = 0;
                                 break;
                             case ConsoleKey.Home:
                                 HighlightedAnswer = 1;
+                                showcaseLine = 0;
                                 break;
                             case ConsoleKey.End:
                                 HighlightedAnswer = AllAnswers.Count;
+                                showcaseLine = 0;
                                 break;
                             case ConsoleKey.PageUp:
                                 goingUp = true;
@@ -364,6 +393,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                     HighlightedAnswer -= choiceNums[currentPage];
                                     if (HighlightedAnswer < 1)
                                         HighlightedAnswer = 1;
+                                    showcaseLine = 0;
                                 }
                                 break;
                             case ConsoleKey.PageDown:
@@ -376,6 +406,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                     HighlightedAnswer += choiceNums[currentPage];
                                     if (HighlightedAnswer > AllAnswers.Count)
                                         HighlightedAnswer = AllAnswers.Count;
+                                    showcaseLine = 0;
                                 }
                                 break;
                             case ConsoleKey.Spacebar:
@@ -417,6 +448,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                     key.Modifiers.HasFlag(ConsoleModifiers.Shift) && key.Modifiers.HasFlag(ConsoleModifiers.Control) ? 3 :
                                     key.Modifiers.HasFlag(ConsoleModifiers.Shift) ? 2 : 1;
                                 ProcessSelectionRequest(selectionMode, HighlightedAnswer, categories, ref SelectedAnswers);
+                                showcaseLine = 0;
                                 break;
                             case ConsoleKey.F:
                                 // Search function
@@ -442,6 +474,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                         break;
                                     var resultIdx = int.Parse(resultEntries[answer].Item1);
                                     HighlightedAnswer = resultIdx;
+                                    showcaseLine = 0;
                                 }
                                 else
                                     InfoBoxModalColor.WriteInfoBoxModal("No item found.");
@@ -453,6 +486,27 @@ namespace Terminaux.Inputs.Styles.Selection
 
                                 // Keys function
                                 KeybindingTools.ShowKeybindingInfobox(bindings);
+                                break;
+                            case ConsoleKey.E:
+                                // Remove one from the line count
+                                showcaseLine--;
+                                if (showcaseLine < 0)
+                                    showcaseLine = 0;
+                                break;
+                            case ConsoleKey.D:
+                                // Add one to the line count
+                                {
+                                    int listStartPosition = ConsoleMisc.GetWrappedSentencesByWords(Question, ConsoleWrapper.WindowWidth).Length;
+                                    int listEndPosition = ConsoleWrapper.WindowHeight - listStartPosition;
+                                    int answersPerPage = listEndPosition - 5;
+                                    string finalSidebarText = $"[{highlightedAnswer.ChoiceName}] {highlightedAnswer.ChoiceTitle}\n\n{highlightedAnswer.ChoiceDescription}";
+                                    string[] lines = TextWriterTools.GetFinalLines(finalSidebarText, sidebarWidth - 3);
+                                    if (lines.Length <= answersPerPage)
+                                        break;
+                                    showcaseLine++;
+                                    if (showcaseLine > lines.Length - answersPerPage)
+                                        showcaseLine = lines.Length - answersPerPage;
+                                }
                                 break;
                         }
                     }
