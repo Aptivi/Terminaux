@@ -25,6 +25,7 @@ using Terminaux.Base.Checks;
 using Terminaux.Colors;
 using Terminaux.Sequences;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Textify.General;
 
 namespace Terminaux.Writer.FancyWriters
@@ -32,6 +33,7 @@ namespace Terminaux.Writer.FancyWriters
     /// <summary>
     /// Console text writer with rainbow color as foreground color
     /// </summary>
+    [Obsolete("This is considered a legacy method of writing this fancy text and will be removed in a future version of Terminaux. Please use its cyclic writer equivalent.")]
     public static class RainbowTextWriterColor
     {
         /// <summary>
@@ -115,44 +117,13 @@ namespace Terminaux.Writer.FancyWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="backgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static string RenderColor(string Text, bool Line, Color backgroundColor, params object[] vars)
-        {
-            lock (TextWriterRaw.WriteLock)
+        public static string RenderColor(string Text, bool Line, Color backgroundColor, params object[] vars) =>
+            new AlignedText(Text, vars)
             {
-                try
-                {
-                    var buffered = new StringBuilder();
-                    string formatted = Text.FormatString(vars);
-                    string filtered = VtSequenceTools.FilterVTSequences(formatted);
-                    var stringInfo = new StringInfo(filtered);
-                    int length = stringInfo.LengthInTextElements;
-                    for (int i = 0; i < length; i++)
-                    {
-                        string filteredString = stringInfo.SubstringByTextElements(i, 1);
-                        double width = (double)i / length;
-                        int hue = (int)(360 * width);
-                        buffered.Append(
-                            ColorTools.RenderSetConsoleColor(new Color($"hsl:{hue};100;50"), false, true, true) +
-                            ColorTools.RenderSetConsoleColor(backgroundColor, true) +
-                            $"{filteredString}"
-                        );
-                    }
-                    buffered.Append(
-                        ColorTools.RenderRevertForeground() +
-                        ColorTools.RenderRevertBackground()
-                    );
-                    if (Line)
-                        buffered.AppendLine();
-                    return buffered.ToString();
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.StackTrace);
-                    Debug.WriteLine($"There is a serious error when printing text. {ex.Message}");
-                }
-                return "";
-            }
-        }
+                Rainbow = true,
+                Text = Line ? Text + "\n" : Text,
+                BackgroundColor = backgroundColor,
+            }.Render();
 
         static RainbowTextWriterColor()
         {

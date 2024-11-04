@@ -203,20 +203,20 @@ namespace Terminaux.Writer.CyclicWriters
                     if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                     {
                         // The fallback figlet also won't fit, so use smaller text
-                        return AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
+                        return AlignedText.RenderAligned(top, Text, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin);
                     }
                     else
                     {
                         // Write the figlet.
-                        string renderedFiglet = FigletTools.RenderFiglet(Text, figFontFallback, textMaxWidth, Vars);
-                        return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
+                        string renderedFiglet = FigletTools.RenderFiglet(Text, figFontFallback, textMaxWidth);
+                        return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin);
                     }
                 }
                 else
                 {
                     // Write the figlet.
-                    string renderedFiglet = FigletTools.RenderFiglet(Text, FigletFont, textMaxWidth, Vars);
-                    return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin, Vars);
+                    string renderedFiglet = FigletTools.RenderFiglet(Text, FigletFont, textMaxWidth);
+                    return AlignedText.RenderAligned(consoleY, renderedFiglet, ForegroundColor, BackgroundColor, useColor, alignment, leftMargin, rightMargin);
                 }
             }
             catch (Exception ex)

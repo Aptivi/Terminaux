@@ -19,6 +19,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
@@ -47,6 +48,8 @@ namespace Terminaux.Writer.CyclicWriters
         private TextSettings settings = new();
         private bool customTop = false;
         private bool customColor = false;
+        private bool rainbow = false;
+        private bool rainbowBg = false;
 
         /// <summary>
         /// Top position
@@ -148,19 +151,38 @@ namespace Terminaux.Writer.CyclicWriters
         }
 
         /// <summary>
+        /// Whether to write text with rainbow effects or not
+        /// </summary>
+        public bool Rainbow
+        {
+            get => rainbow;
+            set => rainbow = value;
+        }
+
+        /// <summary>
+        /// Whether to write text with rainbow effects in the background or in the foreground
+        /// </summary>
+        public bool RainbowBg
+        {
+            get => rainbowBg;
+            set => rainbowBg = value;
+        }
+
+        /// <summary>
         /// Renders an aligned figlet text
         /// </summary>
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
+            int rainbowState = Rainbow ? RainbowBg ? 2 : 1 : 0;
             if (!OneLine)
                 return RenderAligned(
-                    Top, Text, ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin);
+                    Top, Text, ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
             else
             {
                 string[] sentences = ConsoleMisc.GetWrappedSentencesByWords(Text, ConsoleWrapper.WindowWidth - rightMargin - leftMargin);
                 return RenderAligned(
-                    Top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin);
+                    Top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor, customColor, Settings.Alignment, LeftMargin, RightMargin, rainbowState);
             }
         }
 
@@ -172,7 +194,7 @@ namespace Terminaux.Writer.CyclicWriters
             top = ConsoleWrapper.WindowHeight / 2 - sentences.Length / 2;
         }
 
-        internal static string RenderAligned(int top, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, params object[] Vars)
+        internal static string RenderAligned(int top, string Text, Color ForegroundColor, Color BackgroundColor, bool useColor, TextAlignment alignment = TextAlignment.Left, int leftMargin = 0, int rightMargin = 0, int rainbowState = 0, params object[] Vars)
         {
             try
             {
@@ -183,12 +205,32 @@ namespace Terminaux.Writer.CyclicWriters
                 for (int i = 0; i < sentences.Length; i++)
                 {
                     string sentence = sentences[i];
+                    StringBuilder finalSentence = new();
                     int consoleInfoX = TextWriterTools.DetermineTextAlignment(sentence, width, alignment, leftMargin);
+                    if (rainbowState != 0)
+                    {
+                        var stringInfo = new StringInfo(sentence);
+                        int length = stringInfo.LengthInTextElements;
+                        for (int l = 0; l < length; l++)
+                        {
+                            string filteredString = stringInfo.SubstringByTextElements(l, 1);
+                            double hueWidth = (double)l / length;
+                            int hue = (int)(360 * hueWidth);
+                            finalSentence.Append(
+                                ColorTools.RenderSetConsoleColor(rainbowState == 1 ? new Color($"hsl:{hue};100;50") : ForegroundColor) +
+                                ColorTools.RenderSetConsoleColor(rainbowState == 2 ? new Color($"hsl:{hue};100;50") : BackgroundColor, true) +
+                                $"{filteredString}"
+                            );
+                        }
+                    }
+                    else
+                        finalSentence.Append(sentence);
                     aligned.Append(
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(ForegroundColor) : "")}" +
                         $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                        TextWriterWhereColor.RenderWhere(sentence, consoleInfoX, top + i, true, alignment == TextAlignment.Left ? rightMargin : 0, Vars)
+                        TextWriterWhereColor.RenderWhere(finalSentence.ToString(), consoleInfoX, top + i, true, alignment == TextAlignment.Left ? rightMargin : 0)
                     );
+                    finalSentence.Clear();
                 }
 
                 // Write the resulting buffer
