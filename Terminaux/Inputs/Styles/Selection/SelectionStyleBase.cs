@@ -111,6 +111,7 @@ namespace Terminaux.Inputs.Styles.Selection
                 new("Searches for an element", ConsoleKey.F),
                 new("Go up in a sidebar", ConsoleKey.E),
                 new("Go down in a sidebar", ConsoleKey.D),
+                new("Show page and choice count", ConsoleKey.P),
             ] :
             [
                 new("Confirms a selection", ConsoleKey.Enter),
@@ -123,12 +124,14 @@ namespace Terminaux.Inputs.Styles.Selection
                 new("Searches for an element", ConsoleKey.F),
                 new("Go up in a sidebar", ConsoleKey.E),
                 new("Go down in a sidebar", ConsoleKey.D),
+                new("Show page and choice count", ConsoleKey.P),
             ];
 
             // Make a screen
             var selectionScreen = new Screen();
             bool bail = false;
             bool sidebar = false;
+            bool showCount = false;
             ScreenTools.SetCurrent(selectionScreen);
 
             // Query the enabled answers
@@ -192,10 +195,10 @@ namespace Terminaux.Inputs.Styles.Selection
                         int descHintAreaY = ConsoleWrapper.WindowHeight - 3;
                         var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
                         bool showHint = !string.IsNullOrWhiteSpace(highlightedAnswer.ChoiceDescription);
-                        if (showHint)
+                        if (showHint || showCount)
                         {
                             selectionBuilder.Append(
-                                TextWriterWhereColor.RenderWhereColor("[TAB]", descHintAreaX, descHintAreaY, optionColor)
+                                TextWriterWhereColor.RenderWhereColor((showCount ? $"[{currentPage + 1}/{pages} | {HighlightedAnswer}/{AllAnswers.Count}]" : "") + (showHint ? "[TAB]" : ""), descHintAreaX, descHintAreaY, optionColor)
                             );
                         }
 
@@ -560,6 +563,9 @@ namespace Terminaux.Inputs.Styles.Selection
                                     if (showcaseLine > lines.Length - answersPerPage)
                                         showcaseLine = lines.Length - answersPerPage;
                                 }
+                                break;
+                            case ConsoleKey.P:
+                                showCount = !showCount;
                                 break;
                         }
                     }
