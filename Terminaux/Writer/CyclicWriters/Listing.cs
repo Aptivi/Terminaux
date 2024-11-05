@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Magico.Enumeration;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -72,6 +73,16 @@ namespace Terminaux.Writer.CyclicWriters
         public Func<object, string>? Stringifier { get; set; }
 
         /// <summary>
+        /// A stringifier function that converts the object (a key in the dictionary) based on its type to a string
+        /// </summary>
+        public Func<object, string>? KeyStringifier { get; set; }
+
+        /// <summary>
+        /// A stringifier function that converts the object (a value in the dictionary) based on its type to a string
+        /// </summary>
+        public Func<object, string>? ValueStringifier { get; set; }
+
+        /// <summary>
         /// A stringifier function that converts the object based on an array or an enumerable to a string
         /// </summary>
         public Func<object, string>? RecursiveStringifier { get; set; }
@@ -81,9 +92,9 @@ namespace Terminaux.Writer.CyclicWriters
         /// </summary>
         /// <returns>Rendered Listing text that will be used by the renderer</returns>
         public string Render() =>
-            RenderList(Objects, KeyColor, ValueColor, customColor, Stringifier, RecursiveStringifier);
+            RenderList(Objects, KeyColor, ValueColor, customColor, Stringifier, KeyStringifier, ValueStringifier, RecursiveStringifier);
 
-        internal static string RenderList(IEnumerable? List, Color ListKeyColor, Color ListValueColor, bool useColor, Func<object, string>? stringifier = null, Func<object, string>? recursiveStringifier = null)
+        internal static string RenderList(IEnumerable? List, Color ListKeyColor, Color ListValueColor, bool useColor, Func<object, string>? stringifier = null, Func<object, string>? keyStringifier = null, Func<object, string>? valueStringifier = null, Func<object, string>? recursiveStringifier = null)
         {
             if (List is null)
                 return "";
@@ -103,6 +114,20 @@ namespace Terminaux.Writer.CyclicWriters
                         {
                             Entry = $"{EntryNumber}",
                             Value = valuesString,
+                            KeyColor = ListKeyColor,
+                            ValueColor = ListValueColor,
+                        }.Render()
+                    );
+                }
+                else if (List is IDictionary dict)
+                {
+                    var key = dict.Keys.GetElementFromIndex(EntryNumber - 1);
+                    var value = dict.Values.GetElementFromIndex(EntryNumber - 1);
+                    listBuilder.AppendLine(
+                        new ListEntry()
+                        {
+                            Entry = keyStringifier is not null && key is not null ? new Func<object, string>((obj) => keyStringifier(obj)).Invoke(key) : key?.ToString() ?? "<<null>>",
+                            Value = valueStringifier is not null && value is not null ? new Func<object, string>((obj) => valueStringifier(obj)).Invoke(value) : value?.ToString() ?? "<<null>>",
                             KeyColor = ListKeyColor,
                             ValueColor = ListValueColor,
                         }.Render()
