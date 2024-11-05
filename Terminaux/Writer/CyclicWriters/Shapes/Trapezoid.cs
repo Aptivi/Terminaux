@@ -103,7 +103,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
                     int lineWidth = TopWidth + widthDiffByHeight;
                     int pos = width / 2 - lineWidth / 2;
                     for (int i = 0; i < lineWidth; i++)
-                        pixels.Add(new(pos + 1, y + 1) { CellColor = ShapeColor });
+                        pixels.Add(new(pos + i + 1, y + 1) { CellColor = ShapeColor });
                 }
             }
             canvas.Pixels = [.. pixels];
