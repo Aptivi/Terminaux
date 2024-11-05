@@ -37,7 +37,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 Color = ConsoleColors.Green,
                 InteriorWidth = 20,
                 InteriorHeight = 20,
-                Transparent = true,
                 Pixels =
                 [
                     // Draw the top part of the "T" letter
