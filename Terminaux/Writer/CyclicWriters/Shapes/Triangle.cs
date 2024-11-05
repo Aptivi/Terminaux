@@ -62,27 +62,8 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Renders a triangle
         /// </summary>
         /// <returns>A rendered triangle using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public string Render()
-        {
-            StringBuilder buffer = new();
-            buffer.Append(GraphicsTools.RenderLine((Left + Width / 2, Top), (Left, Top + Height), ShapeColor));
-            buffer.Append(GraphicsTools.RenderLine((Left + Width / 2, Top), (Left + Width, Top + Height), ShapeColor));
-            buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
-            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + Height + 1));
-            buffer.Append(new string(' ', Width));
-            if (Filled)
-            {
-                for (int y = 0; y < Height; y++)
-                {
-                    int widthThreshold = Width * (y + 1) / Height;
-                    int LeftPosShift = (Width - widthThreshold) / 2;
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + 2, Top + y + 1));
-                    buffer.Append(new string(' ', widthThreshold - 1));
-                }
-            }
-            buffer.Append(ColorTools.RenderRevertBackground());
-            return buffer.ToString();
-        }
+        public string Render() =>
+            new Trapezoid(0, Width, Height, Left, Top, Filled, ShapeColor).Render();
 
         /// <summary>
         /// Makes a new triangle

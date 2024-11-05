@@ -29,8 +29,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 
         public void RunFixture()
         {
-            var triangle = new Triangle(40, 20, 4, 2, true, ConsoleColors.Red);
-            var triangle2 = new Triangle(40, 20, 46, 2, false, ConsoleColors.Aqua);
+            var triangle = new Triangle(20, 20, 4, 2, true, ConsoleColors.Red);
+            var triangle2 = new Triangle(20, 20, 48, 2, false, ConsoleColors.Aqua);
             TextWriterRaw.WriteRaw(triangle.Render());
             TextWriterRaw.WriteRaw(triangle2.Render());
         }

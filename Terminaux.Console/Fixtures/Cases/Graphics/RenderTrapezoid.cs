@@ -29,8 +29,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 
         public void RunFixture()
         {
-            var trapezoid = new Trapezoid(25, 40, 20, 4, 2, true, ConsoleColors.Red);
-            var trapezoid2 = new Trapezoid(40, 25, 20, 46, 2, false, ConsoleColors.Aqua);
+            var trapezoid = new Trapezoid(10, 20, 20, 4, 2, true, ConsoleColors.Red);
+            var trapezoid2 = new Trapezoid(20, 10, 20, 40, 2, false, ConsoleColors.Aqua);
             TextWriterRaw.WriteRaw(trapezoid.Render());
             TextWriterRaw.WriteRaw(trapezoid2.Render());
         }

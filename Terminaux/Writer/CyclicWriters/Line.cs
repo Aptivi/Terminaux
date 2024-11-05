@@ -104,7 +104,7 @@ namespace Terminaux.Writer.CyclicWriters
             return buffer.ToString();
         }
 
-        private static CellOptions[] GetCellParamsNoAntiAlias(Coordinate firstPoint, Coordinate secondPoint, Color lineColor)
+        internal static CellOptions[] GetCellParamsNoAntiAlias(Coordinate firstPoint, Coordinate secondPoint, Color lineColor)
         {
             List<CellOptions> parameters = [];
 
@@ -154,7 +154,7 @@ namespace Terminaux.Writer.CyclicWriters
             return [.. parameters];
         }
 
-        private static CellOptions[] GetCellParamsAntiAlias(Coordinate firstPoint, Coordinate secondPoint, Color lineColor)
+        internal static CellOptions[] GetCellParamsAntiAlias(Coordinate firstPoint, Coordinate secondPoint, Color lineColor)
         {
             List<CellOptions> parameters = [];
 

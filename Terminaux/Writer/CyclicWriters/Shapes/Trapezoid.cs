@@ -23,6 +23,8 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Colors;
 using System;
 using Terminaux.Graphics;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using System.Collections.Generic;
 
 namespace Terminaux.Writer.CyclicWriters.Shapes
 {
@@ -76,15 +78,22 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// <returns>A rendered trapezoid using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public string Render()
         {
-            StringBuilder buffer = new();
             int width = Math.Max(TopWidth, BottomWidth);
-            buffer.Append(GraphicsTools.RenderLine((Left + width / 2 - TopWidth / 2, Top), (Left + width / 2 - BottomWidth / 2, Top + Height), ShapeColor));
-            buffer.Append(GraphicsTools.RenderLine((Left + width / 2 + TopWidth / 2, Top), (Left + width / 2 + BottomWidth / 2, Top + Height), ShapeColor));
-            buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
-            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + width / 2 - TopWidth / 2 + 1, Top + 1));
-            buffer.Append(new string(' ', TopWidth));
-            buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + width / 2 - BottomWidth / 2 + 1, Top + Height + 1));
-            buffer.Append(new string(' ', BottomWidth));
+            var canvas = new Canvas()
+            {
+                Transparent = true,
+                InteriorHeight = Height,
+                InteriorWidth = width,
+                Left = Left,
+                Top = Top,
+            };
+            var pixels = new List<CellOptions>();
+            pixels.AddRange(Line.GetCellParamsNoAntiAlias(new(width / 2 - TopWidth / 2, 0), new(width / 2 - BottomWidth / 2, Height), ShapeColor));
+            pixels.AddRange(Line.GetCellParamsNoAntiAlias(new(width / 2 + TopWidth / 2, 0), new(width / 2 + BottomWidth / 2, Height), ShapeColor));
+            for (int i = 0; i < TopWidth; i++)
+                pixels.Add(new(width / 2 - TopWidth / 2 + 1 + i, 1) { CellColor = ShapeColor });
+            for (int i = 0; i < BottomWidth; i++)
+                pixels.Add(new(width / 2 - BottomWidth / 2 + 1 + i, Height + 1) { CellColor = ShapeColor });
             if (Filled)
             {
                 for (int y = 0; y < Height; y++)
@@ -93,12 +102,12 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
                     int widthDiffByHeight = (int)(widthDiff * ((double)y / Height));
                     int lineWidth = TopWidth + widthDiffByHeight;
                     int pos = width / 2 - lineWidth / 2;
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + pos + 1, Top + y + 1));
-                    buffer.Append(new string(' ', lineWidth));
+                    for (int i = 0; i < lineWidth; i++)
+                        pixels.Add(new(pos + 1, y + 1) { CellColor = ShapeColor });
                 }
             }
-            buffer.Append(ColorTools.RenderRevertBackground());
-            return buffer.ToString();
+            canvas.Pixels = [.. pixels];
+            return canvas.Render();
         }
 
         /// <summary>
