@@ -21,6 +21,8 @@ using System.Text;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Colors;
+using System.Collections.Generic;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters.Shapes
 {
@@ -63,27 +65,38 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// <returns>A rendered parallelogram using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public string Render()
         {
-            StringBuilder buffer = new();
-            buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
+            var canvas = new Canvas()
+            {
+                Transparent = true,
+                InteriorHeight = Height,
+                InteriorWidth = Width * 2,
+                Left = Left,
+                Top = Top,
+            };
+            var pixels = new List<CellOptions>();
             for (int y = 0; y < Height; y++)
             {
                 int widthThreshold = Width * (y + 1) / Height;
                 int LeftPosShift = (Width - widthThreshold) / 2;
                 int nextWidthThreshold = Width * (y + 2) / Height;
                 int thresholdDiff = nextWidthThreshold - widthThreshold;
-                buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + 1, Top + y + 1));
                 bool isOutline = y == 0 || y == Height - 1;
                 if (isOutline || Filled)
-                    buffer.Append(new string(' ', Width));
+                {
+                    for (int i = 0; i < Width; i++)
+                        pixels.Add(new(LeftPosShift + i + 1, y + 1) { CellColor = ShapeColor });
+                }
                 else
                 {
-                    buffer.Append(new string(' ', thresholdDiff));
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + LeftPosShift + Width - thresholdDiff + 1, Top + y + 1));
-                    buffer.Append(new string(' ', thresholdDiff));
+                    for (int i = 0; i < thresholdDiff; i++)
+                    {
+                        pixels.Add(new(LeftPosShift + thresholdDiff - i, y + 1) { CellColor = ShapeColor });
+                        pixels.Add(new(LeftPosShift + Width - thresholdDiff + i + 1, y + 1) { CellColor = ShapeColor });
+                    }
                 }
             }
-            buffer.Append(ColorTools.RenderRevertBackground());
-            return buffer.ToString();
+            canvas.Pixels = [.. pixels];
+            return canvas.Render();
         }
 
         /// <summary>

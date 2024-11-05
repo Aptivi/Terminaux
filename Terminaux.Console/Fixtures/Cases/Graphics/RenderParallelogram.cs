@@ -29,8 +29,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 
         public void RunFixture()
         {
-            var parallelogram = new Parallelogram(40, 20, 4, 2, true, ConsoleColors.Red);
-            var parallelogram2 = new Parallelogram(40, 20, 46, 2, false, ConsoleColors.Aqua);
+            var parallelogram = new Parallelogram(20, 20, 4, 2, true, ConsoleColors.Red);
+            var parallelogram2 = new Parallelogram(20, 20, 48, 2, false, ConsoleColors.Aqua);
             TextWriterRaw.WriteRaw(parallelogram.Render());
             TextWriterRaw.WriteRaw(parallelogram2.Render());
         }
