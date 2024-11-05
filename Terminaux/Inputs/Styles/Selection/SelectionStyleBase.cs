@@ -191,14 +191,15 @@ namespace Terminaux.Inputs.Styles.Selection
                         );
 
                         // Write description hint
-                        int descHintAreaX = interiorWidth - 3;
-                        int descHintAreaY = ConsoleWrapper.WindowHeight - 3;
                         var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
                         bool showHint = !string.IsNullOrWhiteSpace(highlightedAnswer.ChoiceDescription);
                         if (showHint || showCount)
                         {
+                            string renderedHint = (showCount ? $"[{currentPage + 1}/{pages} | {HighlightedAnswer}/{AllAnswers.Count}]" : "") + (showHint ? "[TAB]" : "");
+                            int descHintAreaX = interiorWidth - ConsoleChar.EstimateCellWidth(renderedHint) + 2;
+                            int descHintAreaY = ConsoleWrapper.WindowHeight - 3;
                             selectionBuilder.Append(
-                                TextWriterWhereColor.RenderWhereColor((showCount ? $"[{currentPage + 1}/{pages} | {HighlightedAnswer}/{AllAnswers.Count}]" : "") + (showHint ? "[TAB]" : ""), descHintAreaX, descHintAreaY, optionColor)
+                                TextWriterWhereColor.RenderWhereColor(renderedHint, descHintAreaX, descHintAreaY, optionColor)
                             );
                         }
 
