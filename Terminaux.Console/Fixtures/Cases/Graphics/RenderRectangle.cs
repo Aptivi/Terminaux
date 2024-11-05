@@ -29,8 +29,8 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
 
         public void RunFixture()
         {
-            var rect = new Rectangle(15, 5, 4, 2, true, ConsoleColors.Red);
-            var rect2 = new Rectangle(15, 5, 21, 2, false, ConsoleColors.Aqua);
+            var rect = new Rectangle(7, 5, 4, 2, true, ConsoleColors.Red);
+            var rect2 = new Rectangle(7, 5, 21, 2, false, ConsoleColors.Aqua);
             TextWriterRaw.WriteRaw(rect.Render());
             TextWriterRaw.WriteRaw(rect2.Render());
         }
