@@ -221,7 +221,7 @@ namespace Terminaux.Inputs.Styles.Selection
                                 selectionBuilder.Append(
                                     TextWriterWhereColor.RenderWhere("↑", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
                                     TextWriterWhereColor.RenderWhere("↓", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage + 1) +
-                                    SliderVerticalColor.RenderVerticalSliderPlain(showcaseLine, lines.Length - answersPerPage, interiorWidth + 2 + sidebarWidth, listStartPosition + 2, answersPerPage - 2, false)
+                                    SliderVerticalColor.RenderVerticalSlider(showcaseLine, lines.Length, interiorWidth + 2 + sidebarWidth, listStartPosition + 2, answersPerPage - 2, textColor, false)
                                 );
                             }
                         }
