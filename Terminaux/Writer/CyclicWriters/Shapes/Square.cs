@@ -33,7 +33,7 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Square width
         /// </summary>
         public int Width =>
-            Height * 2;
+            Height;
 
         /// <summary>
         /// Square height
@@ -62,26 +62,8 @@ namespace Terminaux.Writer.CyclicWriters.Shapes
         /// Renders a square
         /// </summary>
         /// <returns>A rendered square using a string that you can print to the terminal using <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
-        public string Render()
-        {
-            StringBuilder buffer = new();
-            buffer.Append(ColorTools.RenderSetConsoleColor(ShapeColor, true));
-            for (int y = 0; y < Height; y++)
-            {
-                buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 1));
-                bool isOutline = y == 0 || y == Height - 1;
-                if (isOutline || Filled)
-                    buffer.Append(new string(' ', Width));
-                else
-                {
-                    buffer.Append("  ");
-                    buffer.Append(CsiSequences.GenerateCsiCursorPosition(Left + Width - 1, Top + y + 1));
-                    buffer.Append("  ");
-                }
-            }
-            buffer.Append(ColorTools.RenderRevertBackground());
-            return buffer.ToString();
-        }
+        public string Render() =>
+            new Rectangle(Width, Height, Left, Top, Filled, ShapeColor).Render();
 
         /// <summary>
         /// Makes a new square
