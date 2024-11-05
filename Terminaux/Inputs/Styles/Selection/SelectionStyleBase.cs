@@ -214,11 +214,16 @@ namespace Terminaux.Inputs.Styles.Selection
                             };
                             selectionBuilder.Append(
                                 BorderColor.RenderBorder(interiorWidth + 5, listStartPosition + 1, sidebarWidth - 3, answersPerPage, textColor) +
-                                boundedSidebar.Render() +
-                                TextWriterWhereColor.RenderWhere("↑", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
-                                TextWriterWhereColor.RenderWhere("↓", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage + 1) +
-                                SliderVerticalColor.RenderVerticalSliderPlain(showcaseLine, lines.Length - answersPerPage, interiorWidth + 2 + sidebarWidth, listStartPosition + 2, answersPerPage - 2, false)
+                                boundedSidebar.Render()
                             );
+                            if (lines.Length > answersPerPage)
+                            {
+                                selectionBuilder.Append(
+                                    TextWriterWhereColor.RenderWhere("↑", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
+                                    TextWriterWhereColor.RenderWhere("↓", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage + 1) +
+                                    SliderVerticalColor.RenderVerticalSliderPlain(showcaseLine, lines.Length - answersPerPage, interiorWidth + 2 + sidebarWidth, listStartPosition + 2, answersPerPage - 2, false)
+                                );
+                            }
                         }
 
                         // Render keybindings
