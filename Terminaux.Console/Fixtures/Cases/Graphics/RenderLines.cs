@@ -37,10 +37,10 @@ namespace Terminaux.Console.Fixtures.Cases.Graphics
             var rng = new Random();
             while (!bail)
             {
-                Coordinate startPoint1 = new(rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
-                Coordinate endPoint1 = new(rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
-                Coordinate startPoint2 = new(rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
-                Coordinate endPoint2 = new(rng.Next(ConsoleWrapper.WindowWidth), rng.Next(ConsoleWrapper.WindowHeight));
+                Coordinate startPoint1 = new(rng.Next(ConsoleWrapper.WindowWidth / 2), rng.Next(ConsoleWrapper.WindowHeight));
+                Coordinate endPoint1 = new(rng.Next(ConsoleWrapper.WindowWidth / 2), rng.Next(ConsoleWrapper.WindowHeight));
+                Coordinate startPoint2 = new(rng.Next(ConsoleWrapper.WindowWidth / 2), rng.Next(ConsoleWrapper.WindowHeight));
+                Coordinate endPoint2 = new(rng.Next(ConsoleWrapper.WindowWidth / 2), rng.Next(ConsoleWrapper.WindowHeight));
                 var line1 = new Line()
                 {
                     StartPos = startPoint1,
