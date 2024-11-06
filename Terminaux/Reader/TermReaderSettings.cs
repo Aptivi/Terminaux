@@ -18,6 +18,8 @@
 //
 
 using System;
+using System.IO;
+using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Reader.Highlighting;
@@ -30,6 +32,16 @@ namespace Terminaux.Reader
     /// </summary>
     public class TermReaderSettings
     {
+        internal static Stream cueEnterFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-enter.mp3") ??
+            throw new TerminauxInternalException("Keyboard cue for enter doesn't exist in the manifest");
+        internal static Stream cueRuboutFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-backspace.mp3") ??
+            throw new TerminauxInternalException("Keyboard cue for rubout doesn't exist in the manifest");
+        internal static Stream cueWriteFallback = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues.keyboard-cue-type.mp3") ??
+            throw new TerminauxInternalException("Keyboard cue for writing doesn't exist in the manifest");
+
+        internal TermReaderState? state;
+        internal Func<string, int, char[], string[]> suggestions = (_, _, _) => [];
+        internal char[] suggestionsDelims = [' '];
         private char passwordMaskChar = '*';
         private bool historyEnabled = true;
         private string historyName = HistoryTools.generalHistory;
@@ -52,9 +64,9 @@ namespace Terminaux.Reader
         private bool printDefaultValue;
         private string defaultValueFormat = "[{0}] ";
         private string bassBoomLibraryRoot = "";
-        internal TermReaderState? state;
-        internal Func<string, int, char[], string[]> suggestions = (_, _, _) => [];
-        internal char[] suggestionsDelims = [' '];
+        private Stream cueEnter = cueEnterFallback;
+        private Stream cueRubout = cueRuboutFallback;
+        private Stream cueWrite = cueWriteFallback;
 
         /// <summary>
         /// Password mask character
@@ -286,6 +298,60 @@ namespace Terminaux.Reader
         {
             get => cueVolumeBoost;
             set => cueVolumeBoost = value;
+        }
+
+        /// <summary>
+        /// A stream for the submission key press keyboard cue
+        /// </summary>
+        public Stream CueEnter
+        {
+            get
+            {
+                cueEnter.Seek(0, SeekOrigin.Begin);
+                return cueEnter;
+            }
+            set
+            {
+                if (!value.CanSeek)
+                    throw new TerminauxException("This stream can't seek.");
+                cueEnter = value;
+            }
+        }
+
+        /// <summary>
+        /// A stream for the backspace key press keyboard cue
+        /// </summary>
+        public Stream CueRubout
+        {
+            get
+            {
+                cueRubout.Seek(0, SeekOrigin.Begin);
+                return cueRubout;
+            }
+            set
+            {
+                if (!value.CanSeek)
+                    throw new TerminauxException("This stream can't seek.");
+                cueRubout = value;
+            }
+        }
+
+        /// <summary>
+        /// A stream for the key press keyboard cue
+        /// </summary>
+        public Stream CueWrite
+        {
+            get
+            {
+                cueWrite.Seek(0, SeekOrigin.Begin);
+                return cueWrite;
+            }
+            set
+            {
+                if (!value.CanSeek)
+                    throw new TerminauxException("This stream can't seek.");
+                cueWrite = value;
+            }
         }
 
         /// <summary>

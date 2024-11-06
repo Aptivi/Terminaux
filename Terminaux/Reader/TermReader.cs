@@ -19,6 +19,7 @@
 
 using BassBoom.Basolia.Independent;
 using System;
+using System.IO;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
@@ -447,15 +448,18 @@ namespace Terminaux.Reader
                         // Play keyboard cue if enabled
                         if (settings.KeyboardCues)
                         {
-                            string cueName =
-                                BindingsTools.IsTerminate(struckKey) && settings.PlayEnterCue ? "keyboard-cue-enter.mp3" :
-                                struckKey.Key == ConsoleKey.Backspace && settings.PlayRuboutCue ? "keyboard-cue-backspace.mp3" :
-                                settings.PlayWriteCue ? "keyboard-cue-type.mp3" : "";
-                            if (!string.IsNullOrEmpty(cueName))
+                            var cueStream =
+                                BindingsTools.IsTerminate(struckKey) && settings.PlayEnterCue ? settings.CueEnter :
+                                struckKey.Key == ConsoleKey.Backspace && settings.PlayRuboutCue ? settings.CueRubout :
+                                settings.PlayWriteCue ? settings.CueWrite : null;
+                            if (cueStream is not null)
                             {
-                                var cueStream = typeof(TermReader).Assembly.GetManifestResourceStream("Terminaux.Resources.Cues." + cueName);
+                                // Copy the stream prior to playing
+                                var copiedStream = new MemoryStream();
                                 var cueSettings = new PlayForgetSettings(settings.CueVolume, settings.CueVolumeBoost, settings.BassBoomLibraryPath);
-                                PlayForget.PlayStream(cueStream, cueSettings);
+                                cueStream.CopyTo(copiedStream);
+                                copiedStream.Seek(0, SeekOrigin.Begin);
+                                PlayForget.PlayStream(copiedStream, cueSettings);
                             }
                         }
 
