@@ -20,6 +20,7 @@
 using BassBoom.Basolia.Independent;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 using Terminaux.Base;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
@@ -459,7 +460,7 @@ namespace Terminaux.Reader
                                 var cueSettings = new PlayForgetSettings(settings.CueVolume, settings.CueVolumeBoost, settings.BassBoomLibraryPath);
                                 cueStream.CopyTo(copiedStream);
                                 copiedStream.Seek(0, SeekOrigin.Begin);
-                                PlayForget.PlayStream(copiedStream, cueSettings);
+                                Task.Run(() => PlayForget.PlayStream(copiedStream, cueSettings));
                             }
                         }
 
