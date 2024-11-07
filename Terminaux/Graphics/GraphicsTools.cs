@@ -18,10 +18,8 @@
 //
 
 using System;
-using System.Text;
 using Terminaux.Base.Structures;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 
@@ -30,6 +28,7 @@ namespace Terminaux.Graphics
     /// <summary>
     /// Graphics tools
     /// </summary>
+    [Obsolete("We're phasing out GraphicsTools in favor of CyclicWriters.Renderer.Tools.")]
     public static class GraphicsTools
     {
         /// <summary>

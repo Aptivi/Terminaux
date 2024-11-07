@@ -64,8 +64,4 @@
     <EmbeddedResource Include="Resources\Cues\*.mp3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Graphics\NerdFonts\" />
-  </ItemGroup>
-
 </Project>
