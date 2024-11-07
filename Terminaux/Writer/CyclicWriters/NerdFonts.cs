@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Terminaux.Graphics.NerdFonts;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 
 namespace Terminaux.Writer.CyclicWriters
 {

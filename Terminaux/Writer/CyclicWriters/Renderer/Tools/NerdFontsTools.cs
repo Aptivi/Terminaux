@@ -20,7 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Base;
 
-namespace Terminaux.Graphics.NerdFonts
+namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
 {
     /// <summary>
     /// Nerd Fonts tools

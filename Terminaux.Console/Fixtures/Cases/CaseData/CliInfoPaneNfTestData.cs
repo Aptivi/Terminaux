@@ -21,7 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Base;
-using Terminaux.Graphics.NerdFonts;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Inputs.Interactive;
 using Terminaux.Inputs.Styles.Infobox;
 
