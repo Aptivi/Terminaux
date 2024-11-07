@@ -108,8 +108,14 @@ namespace Terminaux.Images.Icons
                         {
                             Settings = new() { Alignment = TextAlignment.Middle },
                             Top = 1
+                        }.Render() +
+                        new Keybindings()
+                        {
+                            KeybindingList = bindings,
+                            Left = 0,
+                            Top = ConsoleWrapper.WindowHeight - 1,
+                            Width = ConsoleWrapper.WindowWidth - 1
                         }.Render());
-                    buffer.Append(KeybindingsWriter.RenderKeybindings(bindings, 0, ConsoleWrapper.WindowHeight - 1));
                     return buffer.ToString();
                 });
 
