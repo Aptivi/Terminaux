@@ -18,6 +18,7 @@
 //
 
 using System.Text;
+using Terminaux.Base.Structures;
 using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer
@@ -38,7 +39,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         /// Renders the container
         /// </summary>
         /// <param name="container">Container instance to render</param>
-        /// <returns></returns>
+        /// <returns>A container representation that you can render with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
         public static string RenderContainer(Container container)
         {
             var containerBuffer = new StringBuilder();
@@ -47,9 +48,40 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
             {
                 var instance = container.GetRenderable(renderable);
                 var pos = container.GetRenderablePosition(renderable);
-                containerBuffer.Append(TextWriterWhereColor.RenderWhere(instance.Render(), pos.X, pos.Y));
+                containerBuffer.Append(RenderRenderable(instance, pos));
             }
             return containerBuffer.ToString();
         }
+
+        /// <summary>
+        /// Writes the renderable to the console
+        /// </summary>
+        /// <param name="renderable">Renderable instance to write</param>
+        public static void WriteRenderable(IStaticRenderable renderable) =>
+            WriteRenderable(renderable, new(0, 0));
+
+        /// Writes the renderable to the console
+        /// </summary>
+        /// <param name="renderable">Renderable instance to write</param>
+        /// <param name="pos">Position to write to</param>
+        public static void WriteRenderable(IStaticRenderable renderable, Coordinate pos) =>
+            TextWriterRaw.WriteRaw(RenderRenderable(renderable, pos));
+
+        /// <summary>
+        /// Renders the renderable
+        /// </summary>
+        /// <param name="renderable">Renderable instance to render</param>
+        /// <returns>A container representation that you can render with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static string RenderRenderable(IStaticRenderable renderable) =>
+            RenderRenderable(renderable, new(0, 0));
+
+        /// <summary>
+        /// Renders the renderable
+        /// </summary>
+        /// <param name="renderable">Renderable instance to render</param>
+        /// <param name="pos">Position to write to</param>
+        /// <returns>A container representation that you can render with <see cref="TextWriterRaw.WriteRaw(string, object[])"/></returns>
+        public static string RenderRenderable(IStaticRenderable renderable, Coordinate pos) =>
+            TextWriterWhereColor.RenderWhere(renderable.Render(), pos.X, pos.Y);
     }
 }
