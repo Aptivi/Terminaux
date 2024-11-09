@@ -210,20 +210,33 @@ namespace Terminaux.Writer.CyclicWriters
             try
             {
                 // StringBuilder to put out the final rendering text
+                var boxFrame = new BoxFrame(title, vars)
+                {
+                    Left = Left,
+                    Top = Top,
+                    InteriorWidth = InteriorWidth,
+                    InteriorHeight = InteriorHeight,
+                    Settings = settings,
+                    TitleSettings = textSettings,
+                };
+                var box = new Box()
+                {
+                    Left = Left + 1,
+                    Top = Top,
+                    InteriorWidth = InteriorWidth,
+                    InteriorHeight = InteriorHeight,
+                };
                 if (useColor)
                 {
-                    border.Append(
-                        BoxFrameColor.RenderBoxFrame(title, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, BorderColor, BackgroundColor, TextColor, vars) +
-                        BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight, BackgroundColor)
-                    );
+                    box.Color = BackgroundColor;
+                    boxFrame.BackgroundColor = BackgroundColor;
+                    boxFrame.FrameColor = BorderColor;
+                    boxFrame.TitleColor = TextColor;
                 }
-                else
-                {
-                    border.Append(
-                        BoxFrameColor.RenderBoxFrame(title, Left, Top, InteriorWidth, InteriorHeight, settings, textSettings, vars) +
-                        BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight)
-                    );
-                }
+                border.Append(
+                    boxFrame.Render() +
+                    box.Render()
+                );
 
                 // Wrap the sentences to fit the box
                 if (!string.IsNullOrWhiteSpace(text))

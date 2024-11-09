@@ -227,10 +227,20 @@ namespace Terminaux.Writer.CyclicWriters
             }
 
             // Use the final width to create the actual table
+            var border = new Border()
+            {
+                Left = left,
+                Top = top,
+                InteriorWidth = maxCellWidth * columnsCount - 1,
+                InteriorHeight = height,
+                Settings = tableBorderSettings,
+            };
             if (useColor)
             {
+                border.Color = SeparatorForegroundColor;
+                border.BackgroundColor = BackgroundColor;
                 tableBuilder.Append(
-                    BorderColor.RenderBorder(left, top, maxCellWidth * columnsCount - 1, height, tableBorderSettings, SeparatorForegroundColor, BackgroundColor) +
+                    border.Render() +
                     ColorTools.RenderSetConsoleColor(SeparatorForegroundColor) +
                     ColorTools.RenderSetConsoleColor(BackgroundColor, true)
                 );
@@ -238,7 +248,7 @@ namespace Terminaux.Writer.CyclicWriters
             else
             {
                 tableBuilder.Append(
-                    BorderColor.RenderBorderPlain(left, top, maxCellWidth * columnsCount - 1, height, tableBorderSettings)
+                    border.Render()
                 );
             }
 

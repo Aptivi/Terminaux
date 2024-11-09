@@ -74,8 +74,15 @@ namespace Terminaux.Writer.CyclicWriters
         /// <returns>Rendered text that will be used by the renderer</returns>
         public string Render()
         {
-            return BoxColor.RenderBox(
-                Left, Top, InteriorWidth, InteriorHeight, ColorTools.CurrentBackgroundColor);
+            var box = new Box()
+            {
+                Left = Left,
+                Top = Top,
+                InteriorWidth = InteriorWidth,
+                InteriorHeight = InteriorHeight,
+                Color = ColorTools.CurrentBackgroundColor,
+            };
+            return box.Render();
         }
 
         /// <summary>
