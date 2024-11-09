@@ -60,6 +60,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer
         public static void WriteRenderable(IStaticRenderable renderable) =>
             WriteRenderable(renderable, new(0, 0));
 
+        /// <summary>
         /// Writes the renderable to the console
         /// </summary>
         /// <param name="renderable">Renderable instance to write</param>
