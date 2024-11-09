@@ -31,6 +31,7 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Inputs.Styles
 {
@@ -107,11 +108,32 @@ namespace Terminaux.Inputs.Styles
 
                     // Write the text using the selected figlet font
                     var figletFont = FigletTools.GetFigletFont(fontName);
-                    buffer.Append(AlignedFigletTextColor.RenderAligned(figletFont, text, TextAlignment.Middle));
+                    var figletDisplay = new AlignedFigletText(figletFont, text)
+                    {
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle
+                        }
+                    };
+                    buffer.Append(figletDisplay.Render());
 
                     // Write the selected font name and the keybindings
-                    buffer.Append(AlignedTextColor.RenderAligned(1, $"{fontName} - [{selectedFont + 1}/{fonts.Length}]", TextAlignment.Middle));
-                    buffer.Append(KeybindingsWriter.RenderKeybindings(bindings, 0, ConsoleWrapper.WindowHeight - 1));
+                    var figletInfo = new AlignedText($"{fontName} - [{selectedFont + 1}/{fonts.Length}]")
+                    {
+                        Top = 1,
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle
+                        }
+                    };
+                    var figletKeybindings = new Keybindings()
+                    {
+                        Width = ConsoleWrapper.WindowWidth - 1,
+                        Top = ConsoleWrapper.WindowHeight - 1,
+                        KeybindingList = bindings,
+                    };
+                    buffer.Append(figletInfo.Render());
+                    buffer.Append(figletKeybindings.Render());
                     return buffer.ToString();
                 });
 
@@ -242,11 +264,32 @@ namespace Terminaux.Inputs.Styles
                     // Write the text using the selected figlet font
                     string character = ((char)chars[index]).ToString();
                     var figletFont = FigletTools.GetFigletFont(fontName);
-                    buffer.Append(AlignedFigletTextColor.RenderAligned(figletFont, character, TextAlignment.Middle));
+                    var figletDisplay = new AlignedFigletText(figletFont, character)
+                    {
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle
+                        }
+                    };
+                    buffer.Append(figletDisplay.Render());
 
                     // Write the selected character name and the keybindings
-                    buffer.Append(AlignedTextColor.RenderAligned(1, $"{character} - [{index + 1}/{chars.Length}]", TextAlignment.Middle));
-                    buffer.Append(KeybindingsWriter.RenderKeybindings(charSelectBindings, 0, ConsoleWrapper.WindowHeight - 1));
+                    var figletInfo = new AlignedText($"{character} - [{index + 1}/{chars.Length}]")
+                    {
+                        Top = 1,
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle
+                        }
+                    };
+                    var figletKeybindings = new Keybindings()
+                    {
+                        Width = ConsoleWrapper.WindowWidth - 1,
+                        Top = ConsoleWrapper.WindowHeight - 1,
+                        KeybindingList = charSelectBindings,
+                    };
+                    buffer.Append(figletInfo.Render());
+                    buffer.Append(figletKeybindings.Render());
                     return buffer.ToString();
                 });
 

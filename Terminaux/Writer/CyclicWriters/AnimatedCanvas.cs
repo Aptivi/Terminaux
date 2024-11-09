@@ -103,12 +103,26 @@ namespace Terminaux.Writer.CyclicWriters
         {
             if (Frames.Length == 0)
                 return "";
+
+            // Advance a frame while getting the current frame for the canvas
             var pixelOptionArray = Frames[frame];
             frame++;
             if (frame == Frames.Length)
                 frame = 0;
-            return CanvasColor.RenderCanvas(
-                pixelOptionArray, Left, Top, InteriorWidth, InteriorHeight, Color, DoubleWidth, Transparent);
+
+            // Create a new canvas to draw the resultant frame
+            var canvas = new Canvas()
+            {
+                Color = Color,
+                DoubleWidth = DoubleWidth,
+                Transparent = Transparent,
+                Pixels = pixelOptionArray,
+                Left = Left,
+                Top = Top,
+                InteriorWidth = InteriorWidth,
+                InteriorHeight = InteriorHeight,
+            };
+            return canvas.Render();
         }
 
         /// <summary>

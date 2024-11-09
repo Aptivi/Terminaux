@@ -100,12 +100,35 @@ namespace Terminaux.Inputs.Styles
                     var buffer = new StringBuilder();
 
                     // Write the selected spinner name and the keybindings
-                    buffer.Append(AlignedTextColor.RenderAligned(1, $"{spinnerName} - [{selectedSpinner + 1}/{spinners.Length}]", TextAlignment.Middle));
-                    buffer.Append(KeybindingsWriter.RenderKeybindings(bindings, 0, ConsoleWrapper.WindowHeight - 1));
+                    var spinnerInfo = new AlignedText($"{spinnerName} - [{selectedSpinner + 1}/{spinners.Length}]")
+                    {
+                        Top = 1,
+                        Settings = new()
+                        {
+                            Alignment = TextAlignment.Middle
+                        }
+                    };
+                    var spinnerKeybindings = new Keybindings()
+                    {
+                        Width = ConsoleWrapper.WindowWidth - 1,
+                        Top = ConsoleWrapper.WindowHeight - 1,
+                        KeybindingList = bindings,
+                    };
+                    buffer.Append(spinnerInfo.Render());
+                    buffer.Append(spinnerKeybindings.Render());
 
                     // Write the rendered content using the selected spinner
                     if (spinnerObject is Spinner spinner)
-                        buffer.Append(AlignedTextColor.RenderAligned(spinner.Render(), TextAlignment.Middle));
+                    {
+                        var spinnerDisplay = new AlignedText(spinner.Render())
+                        {
+                            Settings = new()
+                            {
+                                Alignment = TextAlignment.Middle
+                            }
+                        };
+                        buffer.Append(spinnerDisplay.Render());
+                    }
                     return buffer.ToString();
                 });
 
