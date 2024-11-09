@@ -19,6 +19,7 @@
 
 using BassBoom.Basolia.Independent;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using Terminaux.Base;
@@ -40,6 +41,7 @@ namespace Terminaux.Reader
     {
         internal static TermReaderSettings globalSettings = new();
         internal static TermReaderState? state = null;
+        private static bool cueSupported = true;
         private static readonly object readLock = new();
 
         /// <summary>
@@ -447,22 +449,7 @@ namespace Terminaux.Reader
                         readState.pressedKey = struckKey;
 
                         // Play keyboard cue if enabled
-                        if (settings.KeyboardCues)
-                        {
-                            var cueStream =
-                                BindingsTools.IsTerminate(struckKey) && settings.PlayEnterCue ? settings.CueEnter :
-                                struckKey.Key == ConsoleKey.Backspace && settings.PlayRuboutCue ? settings.CueRubout :
-                                settings.PlayWriteCue ? settings.CueWrite : null;
-                            if (cueStream is not null)
-                            {
-                                // Copy the stream prior to playing
-                                var copiedStream = new MemoryStream();
-                                var cueSettings = new PlayForgetSettings(settings.CueVolume, settings.CueVolumeBoost, settings.BassBoomLibraryPath);
-                                cueStream.CopyTo(copiedStream);
-                                copiedStream.Seek(0, SeekOrigin.Begin);
-                                Task.Run(() => PlayForget.PlayStream(copiedStream, cueSettings));
-                            }
-                        }
+                        HandleCue(settings, struckKey);
 
                         // Handle it
                         BindingsTools.Execute(readState);
@@ -517,7 +504,37 @@ namespace Terminaux.Reader
                 }
                 state = null;
                 object changed = Convert.ChangeType(input, typeof(T));
+                cueSupported = true;
                 return (T)changed;
+            }
+        }
+
+        private static void HandleCue(TermReaderSettings settings, ConsoleKeyInfo struckKey)
+        {
+            if (settings.KeyboardCues && cueSupported)
+            {
+                try
+                {
+                    var cueStream =
+                        BindingsTools.IsTerminate(struckKey) && settings.PlayEnterCue ? settings.CueEnter :
+                        struckKey.Key == ConsoleKey.Backspace && settings.PlayRuboutCue ? settings.CueRubout :
+                        settings.PlayWriteCue ? settings.CueWrite : null;
+                    if (cueStream is not null)
+                    {
+                        // Copy the stream prior to playing
+                        var copiedStream = new MemoryStream();
+                        var cueSettings = new PlayForgetSettings(settings.CueVolume, settings.CueVolumeBoost, settings.BassBoomLibraryPath);
+                        cueStream.CopyTo(copiedStream);
+                        copiedStream.Seek(0, SeekOrigin.Begin);
+                        Task.Run(() => PlayForget.PlayStream(copiedStream, cueSettings));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.StackTrace);
+                    Debug.WriteLine($"Handling cue failed. {ex.Message}");
+                    cueSupported = false;
+                }
             }
         }
 
