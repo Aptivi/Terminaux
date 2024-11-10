@@ -131,6 +131,19 @@ namespace Terminaux.Colors.Transformation
             return (max + 0.05) / (min + 0.05);
         }
 
+        /// <summary>
+        /// Gets the colorized dark background from the source color
+        /// </summary>
+        /// <param name="source">Source color to darken</param>
+        /// <returns>A copy of the source color with darkness applied that suits the background</returns>
+        public static Color GetDarkBackground(Color source)
+        {
+            int targetR = (int)(source.RGB.R / 4d);
+            int targetG = (int)(source.RGB.G / 4d);
+            int targetB = (int)(source.RGB.B / 4d);
+            return new(targetR, targetG, targetB);
+        }
+
         internal static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput, ColorSettings settings)
         {
             (int r, int g, int b) = (rInput, gInput, bInput);

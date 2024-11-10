@@ -465,5 +465,19 @@ namespace Terminaux.Tests.Colors
             var actual = TransformationTools.GetContrast(fg, bg);
             actual.ShouldBe(expected);
         }
+
+        /// <summary>
+        /// Tests trying to get a colorized dark background
+        /// </summary>
+        [TestMethod]
+        [DataRow("255;255;255", "63;63;63")]
+        [DataRow("255;127;63", "63;31;15")]
+        [DataRow("63;63;63", "15;15;15")]
+        [Description("Querying")]
+        public void GetDarkBackground(string specifier, string expected)
+        {
+            var actual = TransformationTools.GetDarkBackground(specifier);
+            actual.ShouldBe(expected);
+        }
     }
 }
