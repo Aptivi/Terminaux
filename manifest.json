@@ -895,6 +895,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.BaseTransformationFormula.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.BaseTransformationFormula.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Terminaux.Colors.Transformation.Contrast.ColorBrightness.yml",
       "output": {
         ".html": {
@@ -935,10 +945,180 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Transformation.TransformationFormula.yml",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.AquaScale.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Colors.Transformation.TransformationFormula.html"
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.AquaScale.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.BlueScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.BlueScale.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.ColorBlind.ColorBlindDeficiency.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.ColorBlind.ColorBlindDeficiency.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.ColorBlind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.ColorBlind.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Deutan.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Deutan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.DeutanVienot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.DeutanVienot.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.GreenScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.GreenScale.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Inverse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Inverse.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Monochromacy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Monochromacy.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.PinkScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.PinkScale.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Protan.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Protan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.ProtanVienot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.ProtanVienot.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.RedScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.RedScale.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Tritan.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Tritan.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.TritanVienot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.TritanVienot.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.YellowScale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.YellowScale.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.ITransformationFormula.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Terminaux.Colors.Transformation.ITransformationFormula.html"
         }
       },
       "version": ""
