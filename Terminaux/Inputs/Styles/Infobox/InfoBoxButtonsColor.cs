@@ -34,6 +34,7 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
+using System.Collections.Generic;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -292,47 +293,47 @@ namespace Terminaux.Inputs.Styles.Infobox
                         InfoBoxTools.RenderTextInput(5, title, text, settings, InfoBoxTitledButtonsColor, BackgroundColor, useColor, ref increment, currIdx, true, true, vars)
                     );
 
+                    // Get the button width list
+                    int maxButtonPanelWidth = maxWidth - 4;
+                    int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
+                    List<int> buttonWidths = [];
+                    for (int i = 1; i <= buttons.Length; i++)
+                    {
+                        string buttonText = buttons[i - 1].ChoiceTitle;
+                        int buttonTextWidth = ConsoleChar.EstimateCellWidth(buttonText);
+                        int buttonWidth = buttonTextWidth >= maxButtonWidth ? maxButtonWidth : buttonTextWidth;
+                        buttonWidths.Add(buttonWidth);
+                    }
+
                     // Place the buttons from the right for familiarity
                     int buttonPanelPosX = borderX + 4;
                     int buttonPanelPosY = borderY + maxHeight - 3;
-                    int maxButtonPanelWidth = maxWidth - 4;
-                    int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
                     for (int i = 1; i <= buttons.Length; i++)
                     {
                         // Get the text and the button position
                         string buttonText = buttons[i - 1].ChoiceTitle;
-                        int buttonX = maxButtonPanelWidth - i * maxButtonWidth;
+                        int sumWidth = buttonWidths.Take(i).Sum();
+                        int finalWidth = buttonWidths[i - 1];
+                        int buttonX = maxButtonPanelWidth - sumWidth - ((i - 1) * 3);
 
                         // Determine whether it's a selected button or not
                         bool selected = i == selectedButton + 1;
                         var buttonForegroundColor = selected ? BackgroundColor : InfoBoxTitledButtonsColor;
                         var buttonBackgroundColor = selected ? InfoBoxTitledButtonsColor : BackgroundColor;
 
-                        // Trim the button text to the max button width
-                        buttonText = buttonText.Truncate(maxButtonWidth - 7);
-                        int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
-
                         // Render the button box
                         var border = new Border()
                         {
                             Left = buttonX,
                             Top = buttonPanelPosY,
-                            InteriorWidth = maxButtonWidth - 3,
+                            InteriorWidth = finalWidth,
                             InteriorHeight = 1,
+                            Text = buttonText,
                         };
                         if (useColor)
                         {
                             border.Color = buttonForegroundColor;
                             border.BackgroundColor = buttonBackgroundColor;
-                            boxBuffer.Append(
-                                TextWriterWhereColor.RenderWhereColorBack(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor)
-                            );
-                        }
-                        else
-                        {
-                            boxBuffer.Append(
-                                TextWriterWhereColor.RenderWhere(buttonText, buttonTextX, buttonPanelPosY + 1)
-                            );
                         }
                         boxBuffer.Append(border.Render());
                     }
