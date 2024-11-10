@@ -32,6 +32,8 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -296,30 +298,19 @@ namespace Terminaux.Inputs.Styles.Infobox
                         InfoBoxTools.RenderTextInput(5, title, text, settings, InfoBoxTitledSliderColor, BackgroundColor, useColor, ref increment, currIdx, false, true, vars)
                     );
 
-                    // Render the final result and write the slider bar
+                    // Now, write the current position on the border of the slider bar and the arrows
                     int sliderPosX = borderX + 3;
                     int sliderPosY = borderY + maxHeight - 3;
                     int maxSliderWidth = maxWidth - 6;
-                    if (useColor)
+                    var slider = new Slider(selected, 0, maxPos)
                     {
-                        boxBuffer.Append(
-                            ColorTools.RenderRevertForeground() +
-                            ColorTools.RenderRevertBackground() +
-                            SliderColor.RenderSliderAbsolute(selected, maxPos, sliderPosX, sliderPosY, maxSliderWidth, InfoBoxTitledSliderColor, InfoBoxTitledSliderColor, BackgroundColor, minPos)
-                        );
-                    }
-                    else
-                    {
-                        boxBuffer.Append(
-                            SliderColor.RenderSliderPlainAbsolute(selected, maxPos, sliderPosX, sliderPosY, maxSliderWidth, minPos)
-                        );
-                    }
-
-                    // Now, write the current position on the border of the slider bar and the arrows
+                        Width = maxSliderWidth
+                    };
                     boxBuffer.Append(
-                        TextWriterWhereColor.RenderWhereColorBack($"{settings.BorderRightHorizontalIntersectionChar} {selected} / {maxPos} {settings.BorderLeftHorizontalIntersectionChar}", sliderPosX + 2, sliderPosY + 2, InfoBoxTitledSliderColor, BackgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("◀", sliderPosX, sliderPosY + 1, InfoBoxTitledSliderColor, BackgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("▶", sliderPosX + maxSliderWidth + 1, sliderPosY + 1, InfoBoxTitledSliderColor, BackgroundColor)
+                        ContainerTools.RenderRenderable(slider, new(sliderPosX + 1, sliderPosY + 3)) +
+                        TextWriterWhereColor.RenderWhereColorBack($"{settings.BorderRightHorizontalIntersectionChar} {selected} / {maxPos} {settings.BorderLeftHorizontalIntersectionChar}", sliderPosX - 1, sliderPosY + 4, InfoBoxTitledSliderColor, BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack("◀", sliderPosX, sliderPosY + 3, InfoBoxTitledSliderColor, BackgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack("▶", sliderPosX + maxSliderWidth + 1, sliderPosY + 3, InfoBoxTitledSliderColor, BackgroundColor)
                     );
                     return boxBuffer.ToString();
                 });

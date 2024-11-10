@@ -23,8 +23,11 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
+using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
@@ -122,29 +125,50 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
 
             // Fill the info box with text inside it
             var boxBuffer = new StringBuilder();
-            string border =
-                !string.IsNullOrEmpty(title) ?
-                BorderColor.RenderBorderPlain(writeBinding && maxWidth >= buttonsWidth + 2 ? title.Truncate(maxWidth - buttonsWidth - 9) : title, borderX, borderY, maxWidth, maxHeight, settings) :
-                BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, settings);
+            var border = new Border()
+            {
+                Left = borderX,
+                Top = borderY,
+                InteriorWidth = maxWidth,
+                InteriorHeight = maxHeight,
+                Settings = settings,
+            };
+            if (!string.IsNullOrEmpty(title))
+                border.Title = (writeBinding && maxWidth >= buttonsWidth + 2 ? title.Truncate(maxWidth - buttonsWidth - 9) : title).FormatString(vars);
             boxBuffer.Append(
-                $"{(useColor ? InfoBoxColor.VTSequenceForeground : "")}" +
-                $"{(useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")}" +
-                $"{border}"
+                (useColor ? InfoBoxColor.VTSequenceForeground : "") +
+                (useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "") +
+                border.Render()
             );
 
             // Render text inside it
             ConsoleWrapper.CursorVisible = false;
+            var bounded = new BoundedText(text, vars)
+            {
+                Left = borderX + 1,
+                Top = borderY,
+                Line = currIdx,
+                Height = maxHeight,
+                ForegroundColor = InfoBoxColor,
+                BackgroundColor = BackgroundColor,
+            };
             boxBuffer.Append(
-                TruncatedLineText.RenderText(splitFinalLines, InfoBoxColor, BackgroundColor, maxHeight, borderX + 1, borderY, currIdx, ref increment)
+                bounded.Render()
             );
+            increment = bounded.IncrementRate;
 
             // Render the vertical bar
             int left = maxWidth + borderX + 1;
+            var progressBar = new Slider((int)((double)currIdx / (splitFinalLines.Length - (maxHeight - maxHeightOffset)) * splitFinalLines.Length), 0, splitFinalLines.Length)
+            {
+                Vertical = true,
+                Height = maxHeight - maxHeightOffset - 2,
+            };
             if (splitFinalLines.Length > maxHeight - maxHeightOffset && drawBar)
             {
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, InfoBoxColor, BackgroundColor));
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, maxHeight - maxHeightOffset + 1, InfoBoxColor, BackgroundColor));
-                boxBuffer.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)currIdx / (splitFinalLines.Length - (maxHeight - maxHeightOffset)) * splitFinalLines.Length), splitFinalLines.Length, left - 1, 2, maxHeight - maxHeightOffset - 2, InfoBoxColor, BackgroundColor, BackgroundColor, false));
+                boxBuffer.Append(ContainerTools.RenderRenderable(progressBar, new(left, 3)));
             }
 
             // Render a keybinding that points to the help page

@@ -31,6 +31,7 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Base.Checks;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -235,22 +236,24 @@ namespace Terminaux.Inputs.Styles.Infobox
                     rightMargin = inputPosX;
                     int inputPosY = borderY + maxHeight - 3;
                     int maxInputWidth = maxWidth - 6;
+                    var border = new Border()
+                    {
+                        Left = inputPosX,
+                        Top = inputPosY,
+                        InteriorWidth = maxInputWidth,
+                        InteriorHeight = 1,
+                    };
                     if (useColor)
                     {
-                        boxBuffer.Append(
-                            BorderColor.RenderBorder(inputPosX, inputPosY, maxInputWidth, 1, InfoBoxTitledColor, BackgroundColor) +
-                            CsiSequences.GenerateCsiCursorPosition(inputPosX + 2, inputPosY + 2) +
-                            $"{ColorTools.RenderSetConsoleColor(InfoBoxTitledColor)}" +
-                            $"{ColorTools.RenderSetConsoleColor(BackgroundColor, true)}"
-                        );
+                        border.Color = InfoBoxTitledColor;
+                        border.BackgroundColor = BackgroundColor;
                     }
-                    else
-                    {
-                        boxBuffer.Append(
-                            BorderColor.RenderBorderPlain(inputPosX, inputPosY, maxInputWidth, 1) +
-                            CsiSequences.GenerateCsiCursorPosition(inputPosX + 2, inputPosY + 2)
-                        );
-                    }
+                    boxBuffer.Append(
+                        border.Render() +
+                        CsiSequences.GenerateCsiCursorPosition(inputPosX + 2, inputPosY + 2) +
+                        (useColor ? ColorTools.RenderSetConsoleColor(InfoBoxTitledColor) : "") +
+                        (useColor ? ColorTools.RenderSetConsoleColor(BackgroundColor, true) : "")
+                    );
                     return boxBuffer.ToString();
                 });
 

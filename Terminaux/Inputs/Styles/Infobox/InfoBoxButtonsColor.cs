@@ -33,6 +33,7 @@ using System.Threading;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -312,20 +313,28 @@ namespace Terminaux.Inputs.Styles.Infobox
                         int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
+                        var border = new Border()
+                        {
+                            Left = buttonX,
+                            Top = buttonPanelPosY,
+                            InteriorWidth = maxButtonWidth - 3,
+                            InteriorHeight = 1,
+                        };
                         if (useColor)
                         {
+                            border.Color = buttonForegroundColor;
+                            border.BackgroundColor = buttonBackgroundColor;
                             boxBuffer.Append(
-                                BorderColor.RenderBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor) +
                                 TextWriterWhereColor.RenderWhereColorBack(buttonText, buttonTextX, buttonPanelPosY + 1, buttonForegroundColor, buttonBackgroundColor)
                             );
                         }
                         else
                         {
                             boxBuffer.Append(
-                                BorderColor.RenderBorderPlain(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1) +
                                 TextWriterWhereColor.RenderWhere(buttonText, buttonTextX, buttonPanelPosY + 1)
                             );
                         }
+                        boxBuffer.Append(border.Render());
                     }
 
                     // Reset colors

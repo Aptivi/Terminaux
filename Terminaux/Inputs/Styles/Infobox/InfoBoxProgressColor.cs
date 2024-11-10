@@ -29,6 +29,8 @@ using Terminaux.Colors.Data;
 using Terminaux.Base.Checks;
 using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -230,27 +232,19 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderTextInput(5, title, text, settings, InfoBoxTitledProgressColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
+                        InfoBoxTools.RenderTextInput(2, title, text, settings, InfoBoxTitledProgressColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
                     );
 
                     // Render the final result and write the progress bar
                     int progressPosX = borderX + 3;
                     int progressPosY = borderY + maxHeight - 3;
                     int maxProgressWidth = maxWidth - 6;
-                    if (useColor)
+                    var progressBar = new SimpleProgress((int)progress, 100)
                     {
-                        boxBuffer.Append(
-                            ColorTools.RenderRevertForeground() +
-                            ColorTools.RenderRevertBackground() +
-                            ProgressBarColor.RenderProgress(progress, progressPosX, progressPosY, maxProgressWidth, InfoBoxTitledProgressColor, InfoBoxTitledProgressColor, BackgroundColor)
-                        );
-                    }
-                    else
-                    {
-                        boxBuffer.Append(
-                            ProgressBarColor.RenderProgressPlain(progress, progressPosX, progressPosY, maxProgressWidth)
-                        );
-                    }
+                        LeftMargin = progressPosX,
+                        RightMargin = ConsoleWrapper.WindowWidth - (progressPosX + maxProgressWidth),
+                    };
+                    boxBuffer.Append(ContainerTools.RenderRenderable(progressBar, new(progressPosX + 1, progressPosY + 3)));
                     return boxBuffer.ToString();
                 });
 
