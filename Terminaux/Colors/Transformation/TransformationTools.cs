@@ -19,7 +19,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terminaux.Base;
+using Terminaux.Colors.Models;
+using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation.Formulas;
 
 namespace Terminaux.Colors.Transformation
@@ -99,6 +102,34 @@ namespace Terminaux.Colors.Transformation
                 (byte)(source.RGB.G + ((target.RGB.G - source.RGB.G) * factor)),
                 (byte)(source.RGB.B + ((target.RGB.B - source.RGB.B) * factor))
             );
+
+        /// <summary>
+        /// Gets the luminance of the color
+        /// </summary>
+        /// <param name="color">Color to obtain luminance from</param>
+        /// <returns>Luminance level</returns>
+        public static double GetLuminance(Color color)
+        {
+            double luminanceR = SRGBToLinearRGB(color.RGB.R);
+            double luminanceG = SRGBToLinearRGB(color.RGB.G);
+            double luminanceB = SRGBToLinearRGB(color.RGB.B);
+            return 0.2126 * luminanceR + 0.7152 * luminanceG + 0.0722 * luminanceB;
+        }
+
+        /// <summary>
+        /// Gets the contrast between two colors
+        /// </summary>
+        /// <param name="firstColor">First color (usually foreground)</param>
+        /// <param name="secondColor">Second color (usually background)</param>
+        /// <returns>Contrast ratio</returns>
+        public static double GetContrast(Color firstColor, Color secondColor)
+        {
+            double luminanceFirst = GetLuminance(firstColor);
+            double luminanceSecond = GetLuminance(secondColor);
+            double min = Math.Min(luminanceFirst, luminanceSecond);
+            double max = Math.Max(luminanceFirst, luminanceSecond);
+            return (max + 0.05) / (min + 0.05);
+        }
 
         internal static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput, ColorSettings settings)
         {

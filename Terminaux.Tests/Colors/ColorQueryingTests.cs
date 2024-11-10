@@ -450,5 +450,20 @@ namespace Terminaux.Tests.Colors
             var actual = TransformationTools.BlendColor(source, target);
             actual.ShouldBe(expected);
         }
+
+        /// <summary>
+        /// Tests trying to get a blended color
+        /// </summary>
+        [TestMethod]
+        [DataRow("255;255;255", "255;255;0", 1.0738392309265699)]
+        [DataRow("255;255;255", "0;0;255", 8.5924713584288046)]
+        [Description("Querying")]
+        public void GetContrast(string specifierFg, string specifierBg, double expected)
+        {
+            Color fg = specifierFg;
+            Color bg = specifierBg;
+            var actual = TransformationTools.GetContrast(fg, bg);
+            actual.ShouldBe(expected);
+        }
     }
 }
