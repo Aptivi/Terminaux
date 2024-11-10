@@ -33,6 +33,7 @@ using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
@@ -185,8 +186,16 @@ namespace Terminaux.Inputs.Styles.Selection
                         );
 
                         // Populate the answers
+                        var border = new Border()
+                        {
+                            Left = 2,
+                            Top = listStartPosition + 1,
+                            InteriorWidth = interiorWidth,
+                            InteriorHeight = answersPerPage,
+                            Color = optionColor,
+                        };
                         selectionBuilder.Append(
-                            BorderColor.RenderBorder(2, listStartPosition + 1, interiorWidth, answersPerPage, optionColor) +
+                            border.Render() +
                             SelectionInputTools.RenderSelections(categories, 3, listStartPosition + 2, HighlightedAnswer - 1, multiple ? [.. SelectedAnswers] : null, answersPerPage, interiorWidth, false, SelectionInputTools.GetChoicesFromCategories(Answers).Count, false, optionColor, selectedForegroundColor: selectedOptionColor, altForegroundColor: altOptionColor, altSelectedForegroundColor: selectedOptionColor, disabledForegroundColor: disabledOptionColor)
                         );
 
@@ -216,24 +225,43 @@ namespace Terminaux.Inputs.Styles.Selection
                                 ForegroundColor = textColor,
                                 Line = showcaseLine,
                             };
+                            var sidebarBorder = new Border()
+                            {
+                                Left = interiorWidth + 5,
+                                Top = listStartPosition + 1,
+                                InteriorWidth = sidebarWidth - 3,
+                                InteriorHeight = answersPerPage,
+                                Color = textColor,
+                            };
                             selectionBuilder.Append(
-                                BorderColor.RenderBorder(interiorWidth + 5, listStartPosition + 1, sidebarWidth - 3, answersPerPage, textColor) +
+                                sidebarBorder.Render() +
                                 boundedSidebar.Render()
                             );
                             if (lines.Length > answersPerPage)
                             {
+                                var dataSlider = new Slider(showcaseLine, 0, lines.Length)
+                                {
+                                    Vertical = true,
+                                    Height = answersPerPage - 2,
+                                };
                                 selectionBuilder.Append(
                                     TextWriterWhereColor.RenderWhere("↑", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
                                     TextWriterWhereColor.RenderWhere("↓", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage + 1) +
-                                    SliderVerticalColor.RenderVerticalSlider(showcaseLine, lines.Length, interiorWidth + 2 + sidebarWidth, listStartPosition + 2, answersPerPage - 2, textColor, false)
+                                    ContainerTools.RenderRenderable(dataSlider, new(interiorWidth + 3 + sidebarWidth, listStartPosition + 3))
                                 );
                             }
                         }
 
                         // Render keybindings
-                        int descArea = ConsoleWrapper.WindowHeight - 1;
+                        var keybindingsRenderable = new Keybindings()
+                        {
+                            KeybindingList = showBindings,
+                            Left = 0,
+                            Top = ConsoleWrapper.WindowHeight - 1,
+                            Width = ConsoleWrapper.WindowWidth - 1,
+                        };
                         selectionBuilder.Append(
-                            KeybindingsWriter.RenderKeybindings(showBindings, 0, descArea)
+                            keybindingsRenderable.Render()
                         );
                         return selectionBuilder.ToString();
                     });

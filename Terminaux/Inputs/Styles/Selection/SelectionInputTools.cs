@@ -27,6 +27,8 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.FancyWriters;
 using Textify.General;
 
@@ -402,18 +404,24 @@ namespace Terminaux.Inputs.Styles.Selection
                 {
                     buffer.Append(
                         TextWriterWhereColor.RenderWhereColorBack("↑", finalWidth, top, foregroundColor, backgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("↓", finalWidth, top + height - 1, foregroundColor, backgroundColor) +
-                        SliderVerticalColor.RenderVerticalSlider(currentSelection + 1, choices.Count, finalWidth - 1, top, height - 2, foregroundColor, backgroundColor, false)
+                        TextWriterWhereColor.RenderWhereColorBack("↓", finalWidth, top + height - 1, foregroundColor, backgroundColor)
                     );
                 }
                 else
                 {
                     buffer.Append(
                         TextWriterWhereColor.RenderWhere("↑", finalWidth, top) +
-                        TextWriterWhereColor.RenderWhere("↓", finalWidth, top + height - 1) +
-                        SliderVerticalColor.RenderVerticalSliderPlain(currentSelection + 1, choices.Count, finalWidth - 1, top, height - 2, false)
+                        TextWriterWhereColor.RenderWhere("↓", finalWidth, top + height - 1)
                     );
                 }
+                var slider = new Slider(currentSelection + 1, 0, choices.Count)
+                {
+                    Vertical = true,
+                    Height = height - 2,
+                };
+                buffer.Append(
+                    ContainerTools.RenderRenderable(slider, new(finalWidth, top + 1))
+                );
             }
 
             // Render the final result
