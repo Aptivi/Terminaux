@@ -21,8 +21,12 @@ using System;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {
+    /// <summary>
+    /// Red tinted monochromacy
+    /// </summary>
     public class RedScale : BaseTransformationFormula, ITransformationFormula
     {
+        /// <inheritdoc/>
         public override (int, int, int) Transform(int r, int g, int b)
         {
             // Check values

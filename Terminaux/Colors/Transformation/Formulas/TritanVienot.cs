@@ -22,10 +22,15 @@ using Terminaux.Colors.Transformation.Formulas.ColorBlind;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {
+    /// <summary>
+    /// Blue/yellow color blindness. (Vienot, simple formula)
+    /// </summary>
     public class TritanVienot : BaseTransformationFormula, ITransformationFormula
     {
+        /// <inheritdoc/>
         public override double Frequency { get; set; } = 0.6;
 
+        /// <inheritdoc/>
         public override (int, int, int) Transform(int r, int g, int b)
         {
             // Check values

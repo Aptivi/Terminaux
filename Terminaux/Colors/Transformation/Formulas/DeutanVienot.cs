@@ -22,10 +22,15 @@ using Terminaux.Colors.Transformation.Formulas.ColorBlind;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {
+    /// <summary>
+    /// Red/green color blindness. It makes green look more red (Vienot, simple formula)
+    /// </summary>
     public class DeutanVienot : BaseTransformationFormula, ITransformationFormula
     {
+        /// <inheritdoc/>
         public override double Frequency { get; set; } = 0.6;
 
+        /// <inheritdoc/>
         public override (int, int, int) Transform(int r, int g, int b)
         {
             // Check values

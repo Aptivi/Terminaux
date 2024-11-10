@@ -21,8 +21,12 @@ using System;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {
+    /// <summary>
+    /// Full color blindness, can only see grayscale.
+    /// </summary>
     public class Monochromacy : BaseTransformationFormula, ITransformationFormula
     {
+        /// <inheritdoc/>
         public override (int, int, int) Transform(int r, int g, int b)
         {
             // Check values
