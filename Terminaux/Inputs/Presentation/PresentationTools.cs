@@ -38,6 +38,8 @@ using Terminaux.Inputs.Presentation.Elements;
 using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Styles;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -105,14 +107,40 @@ namespace Terminaux.Inputs.Presentation
                     int presentationInformationalTop = ConsoleWrapper.WindowHeight - 2;
 
                     // Make a border
+                    var frame = new BoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}")
+                    {
+                        Left = presentationUpperBorderLeft,
+                        Top = presentationUpperBorderTop,
+                        InteriorWidth = presentationLowerInnerBorderLeft,
+                        InteriorHeight = presentationLowerInnerBorderTop,
+                        Settings = presentation.BorderSettings,
+                        FrameColor = presentation.FrameColor,
+                        BackgroundColor = presentation.BackgroundColor
+                    };
+                    var box = new Box()
+                    {
+                        Left = presentationUpperInnerBorderLeft,
+                        Top = presentationUpperBorderTop,
+                        InteriorWidth = presentationLowerInnerBorderLeft,
+                        InteriorHeight = presentationLowerInnerBorderTop,
+                        Color = presentation.BackgroundColor
+                    };
                     builder.Append(
-                        BoxFrameColor.RenderBoxFrame($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}", presentationUpperBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop, presentation.BorderSettings, presentation.FrameColor, presentation.BackgroundColor) +
-                        BoxColor.RenderBox(presentationUpperInnerBorderLeft, presentationUpperBorderTop, presentationLowerInnerBorderLeft, presentationLowerInnerBorderTop, presentation.BackgroundColor)
+                        frame.Render() +
+                        box.Render()
                     );
 
                     // Write the bindings
+                    var keybindingsRenderable = new Keybindings()
+                    {
+                        KeybindingList = !kiosk && !required ? nonKioskBindings : bindings,
+                        BackgroundColor = presentation.BackgroundColor,
+                        Left = 0,
+                        Top = ConsoleWrapper.WindowHeight - 1,
+                        Width = ConsoleWrapper.WindowWidth - 1,
+                    };
                     builder.Append(
-                        KeybindingsWriter.RenderKeybindings(!kiosk && !required ? nonKioskBindings : bindings, presentation.BackgroundColor, 0, ConsoleWrapper.WindowHeight - 1)
+                        keybindingsRenderable.Render()
                     );
 
                     // Clear the presentation screen
@@ -191,9 +219,14 @@ namespace Terminaux.Inputs.Presentation
                     int left = presentationLowerInnerBorderLeft + 3;
                     if (splitFinalLines.Length > presentationLowerInnerBorderTop)
                     {
+                        var dataSlider = new Slider((int)((double)currIdx / (splitFinalLines.Length - presentationLowerInnerBorderTop) * splitFinalLines.Length), 0, splitFinalLines.Length)
+                        {
+                            Vertical = true,
+                            Height = presentationLowerInnerBorderTop - 2,
+                        };
                         boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, presentation.FrameColor, presentation.BackgroundColor));
                         boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, presentationLowerInnerBorderTop + 1, presentation.FrameColor, presentation.BackgroundColor));
-                        boxBuffer.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)currIdx / (splitFinalLines.Length - presentationLowerInnerBorderTop) * splitFinalLines.Length), splitFinalLines.Length, left - 1, 2, presentationLowerInnerBorderTop - 2, presentation.FrameColor, presentation.BackgroundColor, false));
+                        boxBuffer.Append(ContainerTools.RenderRenderable(dataSlider, new(left, 3)));
                     }
                     return boxBuffer.ToString();
                 });

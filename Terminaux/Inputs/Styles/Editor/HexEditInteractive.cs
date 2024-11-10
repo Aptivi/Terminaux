@@ -33,6 +33,7 @@ using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Interactive;
 using System.Collections.Generic;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Inputs.Styles.Editor
 {
@@ -117,10 +118,21 @@ namespace Terminaux.Inputs.Styles.Editor
             var part = new ScreenPart();
             part.AddDynamicText(() =>
             {
-                return KeybindingsWriter.RenderKeybindings(bindings,
-                    settings.KeyBindingBuiltinColor, settings.KeyBindingBuiltinForegroundColor, settings.KeyBindingBuiltinBackgroundColor,
-                    settings.KeyBindingOptionColor, settings.OptionForegroundColor, settings.OptionBackgroundColor,
-                    0, ConsoleWrapper.WindowHeight - 1);
+                var keybindingsRenderable = new Keybindings()
+                {
+                    KeybindingList = bindings,
+                    BuiltinColor = settings.KeyBindingBuiltinColor,
+                    BuiltinForegroundColor = settings.KeyBindingBuiltinForegroundColor,
+                    BuiltinBackgroundColor = settings.KeyBindingBuiltinBackgroundColor,
+                    OptionColor = settings.KeyBindingOptionColor,
+                    OptionForegroundColor = settings.OptionForegroundColor,
+                    OptionBackgroundColor = settings.OptionBackgroundColor,
+                    BackgroundColor = settings.BackgroundColor,
+                    Left = 0,
+                    Top = ConsoleWrapper.WindowHeight - 1,
+                    Width = ConsoleWrapper.WindowWidth - 1,
+                };
+                return keybindingsRenderable.Render();
             });
             screen.AddBufferedPart("Hex editor interactive - Keybindings", part);
         }
@@ -156,10 +168,17 @@ namespace Terminaux.Inputs.Styles.Editor
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
                 // Render the box
+                var border = new Border()
+                {
+                    Left = 0,
+                    Top = SeparatorMinimumHeight,
+                    InteriorWidth = SeparatorConsoleWidthInterior,
+                    InteriorHeight = SeparatorMaximumHeightInterior,
+                };
                 builder.Append(
-                    $"{ColorTools.RenderSetConsoleColor(settings.PaneSeparatorColor)}" +
-                    $"{ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true)}" +
-                    $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
+                    ColorTools.RenderSetConsoleColor(settings.PaneSeparatorColor) +
+                    ColorTools.RenderSetConsoleColor(settings.BackgroundColor, true) +
+                    border.Render()
                 );
                 return builder.ToString();
             });

@@ -35,6 +35,8 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.MiscWriters;
@@ -225,15 +227,50 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMinimumHeight = 1;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
-                builder.Append(BorderColor.RenderBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, interactiveTui.Settings.BorderSettings, finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor));
-                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, interactiveTui.Settings.BorderSettings, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
+                var firstPane = new Border()
+                {
+                    Left = 0,
+                    Top = SeparatorMinimumHeight,
+                    InteriorWidth = SeparatorHalfConsoleWidthInterior,
+                    InteriorHeight = SeparatorMaximumHeightInterior,
+                    Settings = interactiveTui.Settings.BorderSettings,
+                    Color = finalForeColorFirstPane,
+                    BackgroundColor = interactiveTui.Settings.PaneBackgroundColor,
+                };
+                var secondPane = new Border()
+                {
+                    Left = SeparatorHalfConsoleWidth,
+                    Top = SeparatorMinimumHeight,
+                    InteriorWidth = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
+                    InteriorHeight = SeparatorMaximumHeightInterior,
+                    Settings = interactiveTui.Settings.BorderSettings,
+                    Color = finalForeColorSecondPane,
+                    BackgroundColor = interactiveTui.Settings.PaneBackgroundColor,
+                };
+                builder.Append(firstPane.Render());
+                builder.Append(secondPane.Render());
                 return builder.ToString();
             }));
 
             // Populate appropriate bindings, depending on the SecondPaneInteractable value, and render them
             var finalBindings = GetAllBindings(interactiveTui);
             var builtIns = finalBindings.Where((itb) => !interactiveTui.Bindings.Contains(itb)).ToArray();
-            part.AddDynamicText(() => KeybindingsWriter.RenderKeybindings([.. interactiveTui.Bindings], builtIns, interactiveTui.Settings.KeyBindingBuiltinColor, interactiveTui.Settings.KeyBindingBuiltinForegroundColor, interactiveTui.Settings.KeyBindingBuiltinBackgroundColor, interactiveTui.Settings.KeyBindingOptionColor, interactiveTui.Settings.OptionForegroundColor, interactiveTui.Settings.OptionBackgroundColor, interactiveTui.Settings.BackgroundColor, 0, ConsoleWrapper.WindowHeight - 1, 0));
+            var keybindingsRenderable = new Keybindings()
+            {
+                KeybindingList = [.. interactiveTui.Bindings],
+                BuiltinKeybindings = builtIns,
+                BuiltinColor = interactiveTui.Settings.KeyBindingBuiltinColor,
+                BuiltinForegroundColor = interactiveTui.Settings.KeyBindingBuiltinForegroundColor,
+                BuiltinBackgroundColor = interactiveTui.Settings.KeyBindingBuiltinBackgroundColor,
+                OptionColor = interactiveTui.Settings.KeyBindingOptionColor,
+                OptionForegroundColor = interactiveTui.Settings.OptionForegroundColor,
+                OptionBackgroundColor = interactiveTui.Settings.OptionBackgroundColor,
+                BackgroundColor = interactiveTui.Settings.BackgroundColor,
+                Left = 0,
+                Top = ConsoleWrapper.WindowHeight - 1,
+                Width = ConsoleWrapper.WindowWidth - 1,
+            };
+            part.AddDynamicText(keybindingsRenderable.Render);
 
             // We've added the necessary buffer. Now, add that to the buffered part list
             interactiveTui.screen?.AddBufferedPart(partName, part);
@@ -324,9 +361,14 @@ namespace Terminaux.Inputs.Interactive
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2) : SeparatorHalfConsoleWidthInterior;
                 if (dataCount > SeparatorMaximumHeightInterior)
                 {
+                    var dataSlider = new Slider(paneCurrentSelection, 0, dataCount)
+                    {
+                        Vertical = true,
+                        Height = ConsoleWrapper.WindowHeight - 6,
+                    };
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor));
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor));
-                    builder.Append(SliderVerticalColor.RenderVerticalSlider(paneCurrentSelection, dataCount, left, 2, ConsoleWrapper.WindowHeight - 6, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor, false));
+                    builder.Append(ContainerTools.RenderRenderable(dataSlider, new(left + 1, 3)));
                 }
                 return builder.ToString();
             });
@@ -373,7 +415,19 @@ namespace Terminaux.Inputs.Interactive
                 int SeparatorMinimumHeightInterior = 2;
                 int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
                 var builder = new StringBuilder();
-                builder.Append(BorderColor.RenderBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, interactiveTui.Settings.BorderSettings, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
+
+                // Render a border
+                var border = new Border()
+                {
+                    Left = SeparatorHalfConsoleWidth,
+                    Top = SeparatorMinimumHeight,
+                    InteriorWidth = SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0),
+                    InteriorHeight = SeparatorMaximumHeightInterior,
+                    Settings = interactiveTui.Settings.BorderSettings,
+                    Color = finalForeColorSecondPane,
+                    BackgroundColor = interactiveTui.Settings.PaneBackgroundColor
+                };
+                builder.Append(border.Render());
 
                 // Split the information string
                 string[] finalInfoStrings = ConsoleMisc.GetWrappedSentencesByWords(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
@@ -396,9 +450,14 @@ namespace Terminaux.Inputs.Interactive
                 int left = SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2);
                 if (finalInfoStrings.Length > SeparatorMaximumHeightInterior)
                 {
+                    var dataSlider = new Slider((int)((double)interactiveTui.CurrentInfoLine / (finalInfoStrings.Length - SeparatorMaximumHeightInterior) * finalInfoStrings.Length), 0, finalInfoStrings.Length)
+                    {
+                        Vertical = true,
+                        Height = ConsoleWrapper.WindowHeight - 6,
+                    };
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
-                    builder.Append(SliderVerticalColor.RenderVerticalSlider((int)((double)interactiveTui.CurrentInfoLine / (finalInfoStrings.Length - SeparatorMaximumHeightInterior) * finalInfoStrings.Length), finalInfoStrings.Length, left, 2, ConsoleWrapper.WindowHeight - 6, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor, false));
+                    builder.Append(ContainerTools.RenderRenderable(dataSlider, new(left + 1, 3)));
                 }
                 return builder.ToString();
             });
