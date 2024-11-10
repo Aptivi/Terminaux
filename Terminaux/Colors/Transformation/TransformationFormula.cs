@@ -22,7 +22,7 @@ namespace Terminaux.Colors.Transformation
     /// <summary>
     /// Color transformation formula
     /// </summary>
-    public enum TransformationFormula
+    internal enum TransformationFormula
     {
         /// <summary>
         /// Red/green color blindness. It makes red look more green

@@ -132,7 +132,7 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlind
             ]
         };
 
-        internal static (int, int, int) Transform(int r, int g, int b, TransformationFormula def, double severity)
+        internal static (int, int, int) Transform(int r, int g, int b, ColorBlindDeficiency def, double severity)
         {
             // Check values
             if (r < 0 || r > 255)
@@ -147,9 +147,9 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlind
             // Select what Brettel deficiency profile to choose how to transform the three RGB values
             BrettelParameters? bp = def switch
             {
-                TransformationFormula.Protan => bp_protan,
-                TransformationFormula.Deutan => bp_deutan,
-                TransformationFormula.Tritan => bp_tritan,
+                ColorBlindDeficiency.Protan => bp_protan,
+                ColorBlindDeficiency.Deutan => bp_deutan,
+                ColorBlindDeficiency.Tritan => bp_tritan,
                 _ => throw new ArgumentOutOfRangeException("def"),
             };
 

@@ -22,9 +22,11 @@ using Terminaux.Colors.Transformation.Formulas.ColorBlind;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {
-    internal class TritanVienot : BaseTransformationFormula, ITransformationFormula
+    public class TritanVienot : BaseTransformationFormula, ITransformationFormula
     {
-        public override (int, int, int) Transform(int r, int g, int b, ColorSettings settings)
+        public override double Frequency { get; set; } = 0.6;
+
+        public override (int, int, int) Transform(int r, int g, int b)
         {
             // Check values
             if (r < 0 || r > 255)
@@ -34,8 +36,7 @@ namespace Terminaux.Colors.Transformation.Formulas
             if (b < 0 || b > 255)
                 throw new ArgumentOutOfRangeException("b");
 
-            settings ??= new(ColorTools.GlobalSettings);
-            var transformed = Vienot.Transform(r, g, b, TransformationFormula.TritanVienot, settings.ColorBlindnessSeverity);
+            var transformed = Vienot.Transform(r, g, b, ColorBlindDeficiency.Tritan, Frequency);
             return transformed;
         }
     }

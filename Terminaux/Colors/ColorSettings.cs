@@ -27,47 +27,19 @@ namespace Terminaux.Colors
     /// </summary>
     public class ColorSettings
     {
-        private double _blindnessSeverity = 0.6;
         private int _alpha = 255;
         private Color? _opacityColor = null;
 
         /// <summary>
-        /// Enables the color transformation to adjust to color blindness upon making a new instance of color
+        /// List of transformations that will be used when making a new instance of <see cref="Color"/>
         /// </summary>
-        public bool EnableColorTransformation { get; set; } = false;
+        public BaseTransformationFormula[] Transformations { get; set; } = [];
+
         /// <summary>
         /// If enabled, calls to <see cref="Color.PlainSequence"/> and its siblings return color ID if said color is either a 256 color or a 16 color.
         /// Otherwise, calls to these properties are wrappers to <see cref="Color.PlainSequenceTrueColor"/> and its siblings. By default, it's enabled.
         /// </summary>
         public bool UseTerminalPalette { get; set; } = true;
-
-        /// <summary>
-        /// The color transformation formula to use when generating transformed colors, such as color blindness.
-        /// </summary>
-        public TransformationFormula ColorTransformationFormula { get; set; } = TransformationFormula.Protan;
-
-        /// <summary>
-        /// The color blindness severity (Only for color blindness formulas):<br></br>
-        ///   - <see cref="TransformationFormula.Protan"/><br></br>
-        ///   - <see cref="TransformationFormula.Deutan"/><br></br>
-        ///   - <see cref="TransformationFormula.Tritan"/><br></br>
-        ///   - <see cref="TransformationFormula.ProtanVienot"/><br></br>
-        ///   - <see cref="TransformationFormula.DeutanVienot"/><br></br>
-        ///   - <see cref="TransformationFormula.TritanVienot"/>
-        /// </summary>
-        public double ColorBlindnessSeverity
-        {
-            get => _blindnessSeverity;
-            set
-            {
-                if (value < 0)
-                    throw new TerminauxException("Blindness severity should not be less than zero.");
-                if (value > 1)
-                    throw new TerminauxException("Blindness severity should not be greater than one.");
-
-                _blindnessSeverity = value;
-            }
-        }
 
         /// <summary>
         /// The opacity at which the color will be calculated.
@@ -128,10 +100,8 @@ namespace Terminaux.Colors
             if (settings is null)
                 return;
 
-            EnableColorTransformation = settings.EnableColorTransformation;
+            Transformations = settings.Transformations;
             UseTerminalPalette = settings.UseTerminalPalette;
-            ColorTransformationFormula = settings.ColorTransformationFormula;
-            ColorBlindnessSeverity = settings.ColorBlindnessSeverity;
             Opacity = settings.Opacity;
             OpacityColor = settings.OpacityColor;
         }

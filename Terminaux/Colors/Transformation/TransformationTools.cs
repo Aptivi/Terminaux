@@ -29,7 +29,7 @@ namespace Terminaux.Colors.Transformation
     /// </summary>
     public static class TransformationTools
     {
-        private static readonly Dictionary<TransformationFormula, BaseTransformationFormula> formulas = new()
+        internal static readonly Dictionary<TransformationFormula, BaseTransformationFormula> formulas = new()
         {
             { TransformationFormula.Monochromacy, new Monochromacy() },
             { TransformationFormula.Inverse, new Inverse() },
@@ -87,28 +87,6 @@ namespace Terminaux.Colors.Transformation
         }
 
         /// <summary>
-        /// Provides you an easy way to generate new <see cref="Color"/> instances with color blindness applied
-        /// </summary>
-        /// <param name="color">Color to use</param>
-        /// <param name="formula">Selected formula for color blindness</param>
-        /// <param name="severity">Severity of the color blindness</param>
-        /// <returns>An instance of <see cref="Color"/> with adjusted color values for color-blindness</returns>
-        public static Color RenderColorBlindnessAware(Color color, TransformationFormula formula, double severity)
-        {
-            // Get the resulting color
-            var settings = new ColorSettings()
-            {
-                EnableColorTransformation = true,
-                ColorBlindnessSeverity = severity,
-                ColorTransformationFormula = formula,
-            };
-            var result = new Color(color.PlainSequence, settings);
-
-            // Return the resulting color
-            return result;
-        }
-
-        /// <summary>
         /// Blends the two colors together
         /// </summary>
         /// <param name="source">Source color to be blended</param>
@@ -122,33 +100,16 @@ namespace Terminaux.Colors.Transformation
                 (byte)(source.RGB.B + ((target.RGB.B - source.RGB.B) * factor))
             );
 
-        internal static BaseTransformationFormula GetTransformationFormula(TransformationFormula formula)
-        {
-            if (!formulas.TryGetValue(formula, out var result))
-                throw new TerminauxException("Transformation formula {0} not found.", formula);
-            return result;
-        }
-
         internal static (int r, int g, int b) GetTransformedColor(int rInput, int gInput, int bInput, ColorSettings settings)
         {
-            if (settings.EnableColorTransformation)
+            (int r, int g, int b) = (rInput, gInput, bInput);
+            if (settings.Transformations.Length > 0)
             {
                 // We'll transform.
-                var formula = GetTransformationFormula(settings.ColorTransformationFormula);
-                return GetTransformedColor(formula, rInput, gInput, bInput, settings);
+                foreach (var transform in settings.Transformations)
+                    (r, g, b) = transform.Transform(r, g, b);
             }
-            return (rInput, gInput, bInput);
-        }
-
-        internal static (int r, int g, int b) GetTransformedColor(BaseTransformationFormula formula, int rInput, int gInput, int bInput, ColorSettings settings)
-        {
-            if (settings.EnableColorTransformation)
-            {
-                // We'll transform.
-                var transformed = formula.Transform(rInput, gInput, bInput, settings);
-                return transformed;
-            }
-            return (rInput, gInput, bInput);
+            return (r, g, b);
         }
     }
 }

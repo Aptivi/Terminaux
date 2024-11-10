@@ -21,9 +21,9 @@ using System;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {
-    internal class RedScale : BaseTransformationFormula, ITransformationFormula
+    public class RedScale : BaseTransformationFormula, ITransformationFormula
     {
-        public override (int, int, int) Transform(int r, int g, int b, ColorSettings settings)
+        public override (int, int, int) Transform(int r, int g, int b)
         {
             // Check values
             if (r < 0 || r > 255)

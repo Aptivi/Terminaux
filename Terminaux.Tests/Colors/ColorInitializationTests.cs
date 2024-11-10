@@ -27,6 +27,7 @@ using Terminaux.Colors.Transformation;
 using Terminaux.Base;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Sequences.Builder;
+using Terminaux.Colors.Transformation.Formulas;
 
 namespace Terminaux.Tests.Colors
 {
@@ -105,9 +106,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.Protan,
-                ColorBlindnessSeverity = 1.0,
+                Transformations = [new Protan() { Frequency = 1.0 }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -142,9 +141,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.Protan,
-                ColorBlindnessSeverity = 0.6,
+                Transformations = [new Protan() { Frequency = 0.6 }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -179,9 +176,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.Deutan,
-                ColorBlindnessSeverity = 1.0,
+                Transformations = [new Deutan() { Frequency = 1.0 }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -216,9 +211,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.Deutan,
-                ColorBlindnessSeverity = 0.6,
+                Transformations = [new Deutan() { Frequency = 0.6 }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -253,9 +246,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.Tritan,
-                ColorBlindnessSeverity = 1.0,
+                Transformations = [new Tritan() { Frequency = 1.0 }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -290,9 +281,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.Tritan,
-                ColorBlindnessSeverity = 0.6,
+                Transformations = [new Tritan() { Frequency = 0.6 }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -327,9 +316,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.ProtanVienot,
-                ColorBlindnessSeverity = 1.0,
+                Transformations = [new ProtanVienot() { Frequency = 1.0 }],
             };
             var ColorInstance = new Color(10, settings);
 
@@ -364,9 +351,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.ProtanVienot,
-                ColorBlindnessSeverity = 0.6,
+                Transformations = [new ProtanVienot() { Frequency = 0.6 }],
             };
             var ColorInstance = new Color(10, settings);
 
@@ -401,9 +386,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.DeutanVienot,
-                ColorBlindnessSeverity = 1.0,
+                Transformations = [new DeutanVienot() { Frequency = 1.0 }],
             };
             var ColorInstance = new Color(10, settings);
 
@@ -438,9 +421,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.DeutanVienot,
-                ColorBlindnessSeverity = 0.6,
+                Transformations = [new DeutanVienot() { Frequency = 0.6 }],
             };
             var ColorInstance = new Color(10, settings);
 
@@ -475,9 +456,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.TritanVienot,
-                ColorBlindnessSeverity = 1.0,
+                Transformations = [new TritanVienot() { Frequency = 1.0 }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -512,9 +491,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.TritanVienot,
-                ColorBlindnessSeverity = 0.6,
+                Transformations = [new TritanVienot() { Frequency = 0.6 }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -549,413 +526,9 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                EnableColorTransformation = true,
-                ColorTransformationFormula = TransformationFormula.Monochromacy,
+                Transformations = [new Monochromacy()],
             };
             var ColorInstance = new Color(18, settings);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("35;35;35");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;35;35;35m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;35;35;35m");
-            ColorInstance.RGB.R.ShouldBe(35);
-            ColorInstance.RGB.G.ShouldBe(35);
-            ColorInstance.RGB.B.ShouldBe(35);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
-            ColorInstance.Hex.ShouldBe("#232323");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Grey15);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Protanopia)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsProtanopiaRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.Protan, 1.0);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("0;24;135");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;0;24;135m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;0;24;135m");
-            ColorInstance.RGB.R.ShouldBe(0);
-            ColorInstance.RGB.G.ShouldBe(24);
-            ColorInstance.RGB.B.ShouldBe(135);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
-            ColorInstance.Hex.ShouldBe("#001887");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.DarkBlue);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Protanomaly)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsProtanomalyRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.Protan, 0.6);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("0;17;135");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;0;17;135m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;0;17;135m");
-            ColorInstance.RGB.R.ShouldBe(0);
-            ColorInstance.RGB.G.ShouldBe(17);
-            ColorInstance.RGB.B.ShouldBe(135);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
-            ColorInstance.Hex.ShouldBe("#001187");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.DarkBlue);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Deuteranopia)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsDeuteranopiaRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.Deutan, 1.0);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("0;41;134");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;0;41;134m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;0;41;134m");
-            ColorInstance.RGB.R.ShouldBe(0);
-            ColorInstance.RGB.G.ShouldBe(41);
-            ColorInstance.RGB.B.ShouldBe(134);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
-            ColorInstance.Hex.ShouldBe("#002986");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.DarkBlue);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Deuteranomaly)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsDeuteranomalyRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.Deutan, 0.6);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("0;31;134");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;0;31;134m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;0;31;134m");
-            ColorInstance.RGB.R.ShouldBe(0);
-            ColorInstance.RGB.G.ShouldBe(31);
-            ColorInstance.RGB.B.ShouldBe(134);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
-            ColorInstance.Hex.ShouldBe("#001F86");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.DarkBlue);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Tritanopia)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsTritanopiaRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.Tritan, 1.0);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("0;48;69");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;0;48;69m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;0;48;69m");
-            ColorInstance.RGB.R.ShouldBe(0);
-            ColorInstance.RGB.G.ShouldBe(48);
-            ColorInstance.RGB.B.ShouldBe(69);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
-            ColorInstance.Hex.ShouldBe("#003045");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Grey15);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Tritanomaly)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsTritanomalyRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.Tritan, 0.6);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("0;36;102");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;0;36;102m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;0;36;102m");
-            ColorInstance.RGB.R.ShouldBe(0);
-            ColorInstance.RGB.G.ShouldBe(36);
-            ColorInstance.RGB.B.ShouldBe(102);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
-            ColorInstance.Hex.ShouldBe("#002466");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.NavyBlue);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Protanopia, Vienot)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsProtanopiaSimpleRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.ProtanVienot, 1.0);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("241;241;0");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;241;241;0m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;241;241;0m");
-            ColorInstance.RGB.R.ShouldBe(241);
-            ColorInstance.RGB.G.ShouldBe(241);
-            ColorInstance.RGB.B.ShouldBe(0);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
-            ColorInstance.Hex.ShouldBe("#F1F100");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Yellow);
-            ColorInstance.ColorEnum16.ShouldBe(ConsoleColor.Yellow);
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Protanomaly, Vienot)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsProtanomalySimpleRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.ProtanVienot, 0.6);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("192;247;0");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;192;247;0m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;192;247;0m");
-            ColorInstance.RGB.R.ShouldBe(192);
-            ColorInstance.RGB.G.ShouldBe(247);
-            ColorInstance.RGB.B.ShouldBe(0);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
-            ColorInstance.Hex.ShouldBe("#C0F700");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.GreenYellow);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Deuteranopia, Vienot)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsDeuteranopiaSimpleRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.DeutanVienot, 1.0);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("218;218;41");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;218;218;41m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;218;218;41m");
-            ColorInstance.RGB.R.ShouldBe(218);
-            ColorInstance.RGB.G.ShouldBe(218);
-            ColorInstance.RGB.B.ShouldBe(41);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
-            ColorInstance.Hex.ShouldBe("#DADA29");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Yellow3Alt);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Deuteranomaly, Vienot)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsDeuteranomalySimpleRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(10), TransformationFormula.DeutanVienot, 0.6);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("174;234;30");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;174;234;30m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;174;234;30m");
-            ColorInstance.RGB.R.ShouldBe(174);
-            ColorInstance.RGB.G.ShouldBe(234);
-            ColorInstance.RGB.B.ShouldBe(30);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Light);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Dark);
-            ColorInstance.Hex.ShouldBe("#AEEA1E");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Yellow3);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Tritanopia, Vienot)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsTritanopiaSimpleRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.TritanVienot, 1.0);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("0;51;51");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;0;51;51m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;0;51;51m");
-            ColorInstance.RGB.R.ShouldBe(0);
-            ColorInstance.RGB.G.ShouldBe(51);
-            ColorInstance.RGB.B.ShouldBe(51);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
-            ColorInstance.Hex.ShouldBe("#003333");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.Grey15);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Tritanomaly, Vienot)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsTritanomalySimpleRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.TritanVienot, 0.6);
-
-            // Check for null
-            ColorInstance.ShouldNotBeNull();
-            ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty();
-            ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty();
-
-            // Check for property correctness
-            ColorInstance.PlainSequence.ShouldBe("0;39;96");
-            ColorInstance.Type.ShouldBe(ColorType.TrueColor);
-            ColorInstance.VTSequenceBackground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[48;2;0;39;96m");
-            ColorInstance.VTSequenceForeground.ShouldBe($"{VtSequenceBasicChars.EscapeChar}[38;2;0;39;96m");
-            ColorInstance.RGB.R.ShouldBe(0);
-            ColorInstance.RGB.G.ShouldBe(39);
-            ColorInstance.RGB.B.ShouldBe(96);
-            ColorInstance.Brightness.ShouldBe(ColorBrightness.Dark);
-            ColorInstance.Brightness.ShouldNotBe(ColorBrightness.Light);
-            ColorInstance.Hex.ShouldBe("#002760");
-            ColorInstance.ColorEnum255.ShouldBe(ConsoleColors.NavyBlue);
-            ColorInstance.ColorEnum16.ShouldBe((ConsoleColor)(-1));
-        }
-
-        /// <summary>
-        /// Tests initializing color instance from 255 colors (Monochromacy)
-        /// </summary>
-        [TestMethod]
-        [Description("Initialization")]
-        public void TestInitializeColorInstanceFrom255ColorsMonochromacyRenderColorBlindnessAware()
-        {
-            // Create instance
-            var ColorInstance = TransformationTools.RenderColorBlindnessAware(new Color(18), TransformationFormula.Monochromacy, 0.6);
 
             // Check for null
             ColorInstance.ShouldNotBeNull();

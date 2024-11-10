@@ -76,7 +76,7 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlind
             ]
         };
 
-        internal static (int, int, int) Transform(int r, int g, int b, TransformationFormula def, double severity)
+        internal static (int, int, int) Transform(int r, int g, int b, ColorBlindDeficiency def, double severity)
         {
             // Check values
             if (r < 0 || r > 255)
@@ -91,9 +91,9 @@ namespace Terminaux.Colors.Transformation.Formulas.ColorBlind
             // Select what Vienot deficiency profile to choose how to transform the three RGB values
             VienotParameters? vn = def switch
             {
-                TransformationFormula.ProtanVienot => vn_protan,
-                TransformationFormula.DeutanVienot => vn_deutan,
-                TransformationFormula.TritanVienot => vn_tritan,
+                ColorBlindDeficiency.Protan => vn_protan,
+                ColorBlindDeficiency.Deutan => vn_deutan,
+                ColorBlindDeficiency.Tritan => vn_tritan,
                 _ => throw new ArgumentOutOfRangeException("def"),
             };
 

@@ -30,6 +30,7 @@ using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
 using Terminaux.Colors.Transformation.Contrast;
+using Terminaux.Colors.Transformation.Formulas;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
@@ -286,7 +287,13 @@ namespace Terminaux.Inputs.Styles
             {
                 StringBuilder grayRamp = new();
                 StringBuilder transparencyRamp = new();
-                var mono = TransformationTools.RenderColorBlindnessAware(selectedColor, TransformationFormula.Monochromacy, colorBlindnessSeverity);
+                var mono = new Color(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, new(finalSettings)
+                {
+                    Transformations = [new Monochromacy()
+                    {
+                        Frequency = colorBlindnessSeverity
+                    }]
+                });
                 if (mono.RGB is null)
                     throw new TerminauxInternalException("Gray ramp RGB instance is null.");
                 for (int i = 0; i < boxWidth - 7; i++)
@@ -604,11 +611,15 @@ namespace Terminaux.Inputs.Styles
             int boxY = 1;
             int boxWidth = ConsoleWrapper.WindowWidth / 2 - 4;
             int boxHeight = ConsoleWrapper.WindowHeight - 5;
-            var formula = (TransformationFormula)(colorBlindnessSimulationIdx - 1);
-            Color transformed =
-                colorBlindnessSimulationIdx > 0 ?
-                TransformationTools.RenderColorBlindnessAware(selectedColor, formula, colorBlindnessSeverity) :
-                selectedColor;
+            Color finalColor = selectedColor;
+            if (colorBlindnessSimulationIdx > 0)
+            {
+                var formula = (TransformationFormula)(colorBlindnessSimulationIdx - 1);
+                var formulas = new BaseTransformationFormula[]{ TransformationTools.formulas[formula] };
+                formulas[0].Frequency = colorBlindnessSeverity;
+                var transformed = new Color(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, new(){ Transformations = formulas });
+                finalColor = transformed;
+            }
 
             // First, draw the border
             var previewBorder = new BoxFrame(selectedColor.Name)
@@ -635,7 +646,7 @@ namespace Terminaux.Inputs.Styles
                 Top = boxY + (boxHeight / 2),
                 InteriorWidth = boxWidth,
                 InteriorHeight = boxHeight / 2,
-                Color = transformed,
+                Color = finalColor,
             };
             builder.Append(
                 normalBox.Render() +
@@ -677,10 +688,13 @@ namespace Terminaux.Inputs.Styles
 
         private static string ShowColorInfo(Color selectedColor, bool colorBlind = false, TransformationFormula formula = TransformationFormula.Protan, double severity = 0.6)
         {
-            selectedColor =
-                colorBlind ?
-                TransformationTools.RenderColorBlindnessAware(selectedColor, formula, severity) :
-                selectedColor;
+            if (colorBlind)
+            {
+                var formulas = new BaseTransformationFormula[] { TransformationTools.formulas[formula] };
+                formulas[0].Frequency = severity;
+                var transformed = new Color(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, new() { Transformations = formulas });
+                selectedColor = transformed;
+            }
             if (selectedColor.RGB is null)
                 throw new TerminauxInternalException("Selected color RGB instance for color info is null.");
 

@@ -25,10 +25,15 @@ namespace Terminaux.Colors.Transformation
     /// <summary>
     /// Color transformation formula
     /// </summary>
-    internal abstract class BaseTransformationFormula : ITransformationFormula
+    public abstract class BaseTransformationFormula : ITransformationFormula
     {
+        /// <summary>
+        /// Frequency of the transformation formula
+        /// </summary>
+        public virtual double Frequency { get; set; } = 1.0;
+
         /// <inheritdoc/>
-        public virtual (int r, int g, int b) Transform(int r, int g, int b, ColorSettings settings) =>
+        public virtual (int r, int g, int b) Transform(int r, int g, int b) =>
             throw new TerminauxException("Not implemented yet.", new NotImplementedException());
     }
 }

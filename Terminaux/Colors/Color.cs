@@ -172,7 +172,7 @@ namespace Terminaux.Colors
             settings.Opacity;
 
         internal bool IsOriginal =>
-            settings.UseTerminalPalette && settings.Opacity == 255 && !settings.EnableColorTransformation;
+            settings.UseTerminalPalette && settings.Opacity == 255 && settings.Transformations.Length == 0;
 
         /// <summary>
         /// Makes a new instance of color class from specifier.

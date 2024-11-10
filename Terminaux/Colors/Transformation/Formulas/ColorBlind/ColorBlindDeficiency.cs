@@ -17,20 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace Terminaux.Colors.Transformation
+namespace Terminaux.Colors.Transformation.Formulas.ColorBlind
 {
     /// <summary>
-    /// Transformation formula interface
+    /// Deficiency type of the color blindness
     /// </summary>
-    public interface ITransformationFormula
+    public enum ColorBlindDeficiency
     {
         /// <summary>
-        /// Transforms the colors using the implementation formula.
+        /// Red/green color blindness. It makes red look more green
         /// </summary>
-        /// <param name="r">Red color level</param>
-        /// <param name="g">Green color level</param>
-        /// <param name="b">Blue color level</param>
-        /// <returns>Transformed RGB values</returns>
-        (int r, int g, int b) Transform(int r, int g, int b);
+        Protan,
+        /// <summary>
+        /// Red/green color blindness. It makes green look more red
+        /// </summary>
+        Deutan,
+        /// <summary>
+        /// Blue/yellow color blindness.
+        /// </summary>
+        Tritan,
     }
 }
