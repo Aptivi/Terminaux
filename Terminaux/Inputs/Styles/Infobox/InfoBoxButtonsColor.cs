@@ -334,6 +334,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         {
                             border.Color = buttonForegroundColor;
                             border.BackgroundColor = buttonBackgroundColor;
+                            border.TextColor = buttonForegroundColor;
                         }
                         boxBuffer.Append(border.Render());
                     }
