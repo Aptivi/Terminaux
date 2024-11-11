@@ -147,7 +147,9 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
                 Height = maxHeight - maxHeightOffset - 2,
                 SliderActiveForegroundColor = InfoBoxColor,
                 SliderForegroundColor = TransformationTools.GetDarkBackground(InfoBoxColor),
-                SliderBackgroundColor = BackgroundColor
+                SliderBackgroundColor = BackgroundColor,
+                SliderVerticalActiveTrackChar = settings.BorderRightFrameChar,
+                SliderVerticalInactiveTrackChar = settings.BorderRightFrameChar,
             };
             if (splitFinalLines.Length > maxHeight - maxHeightOffset && drawBar)
             {

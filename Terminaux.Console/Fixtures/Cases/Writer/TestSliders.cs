@@ -25,6 +25,8 @@ using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.CyclicWriters;
 using System.Threading;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Colors.Data;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -45,29 +47,41 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var slider1 = new Slider(0, 0, 100)
             {
                 Width = 40,
+                SliderActiveForegroundColor = ConsoleColors.Red,
+                SliderForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Red),
             };
             var slider2 = new Slider(0, 0, 10)
             {
                 Width = 40,
+                SliderActiveForegroundColor = ConsoleColors.Lime,
+                SliderForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Lime),
             };
             var slider3 = new Slider(0, 0, 4)
             {
                 Width = 40,
+                SliderActiveForegroundColor = ConsoleColors.Blue,
+                SliderForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Blue),
             };
             var slider4 = new Slider(0, 0, 100)
             {
                 Height = 10,
                 Vertical = true,
+                SliderActiveForegroundColor = ConsoleColors.Fuchsia,
+                SliderForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Fuchsia),
             };
             var slider5 = new Slider(0, 0, 10)
             {
                 Height = 10,
                 Vertical = true,
+                SliderActiveForegroundColor = ConsoleColors.Yellow,
+                SliderForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Yellow),
             };
             var slider6 = new Slider(0, 0, 4)
             {
                 Height = 10,
                 Vertical = true,
+                SliderActiveForegroundColor = ConsoleColors.Aqua,
+                SliderForegroundColor = TransformationTools.GetDarkBackground(ConsoleColors.Aqua),
             };
             container.AddRenderable("Slider bar 1", slider1);
             container.SetRenderablePosition("Slider bar 1", new(4, ConsoleWrapper.WindowHeight - 3));

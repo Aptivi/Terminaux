@@ -38,6 +38,8 @@ namespace Terminaux.Writer.CyclicWriters
         private bool indeterminateBackwards = false;
         private ColorGradients indeterminateGradient = ColorGradients.GetGradients(ConsoleColors.DarkGreen, ConsoleColors.Lime, 50);
         private Spinner progressSpinner = BuiltinSpinners.Dots;
+        private Color progressForegroundColor = ConsoleColors.DarkGreen;
+        private Color progressActiveForegroundColor = ConsoleColors.Lime;
 
         /// <summary>
         /// Left margin of the progress bar
@@ -78,12 +80,28 @@ namespace Terminaux.Writer.CyclicWriters
         /// <summary>
         /// Progress foreground
         /// </summary>
-        public Color ProgressForegroundColor { get; set; } = ConsoleColors.DarkGreen;
+        public Color ProgressForegroundColor
+        {
+            get => progressForegroundColor;
+            set
+            {
+                progressForegroundColor = value;
+                indeterminateGradient = ColorGradients.GetGradients(progressForegroundColor, progressActiveForegroundColor, 50);
+            }
+        }
 
         /// <summary>
         /// Progress active foreground
         /// </summary>
-        public Color ProgressActiveForegroundColor { get; set; } = ConsoleColors.Lime;
+        public Color ProgressActiveForegroundColor
+        {
+            get => progressActiveForegroundColor;
+            set
+            {
+                progressActiveForegroundColor = value;
+                indeterminateGradient = ColorGradients.GetGradients(progressForegroundColor, progressActiveForegroundColor, 50);
+            }
+        }
 
         /// <summary>
         /// Progress background

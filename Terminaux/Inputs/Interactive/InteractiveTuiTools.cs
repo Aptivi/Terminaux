@@ -370,6 +370,8 @@ namespace Terminaux.Inputs.Interactive
                         SliderActiveForegroundColor = finalColor,
                         SliderForegroundColor = TransformationTools.GetDarkBackground(finalColor),
                         SliderBackgroundColor = interactiveTui.Settings.BackgroundColor,
+                        SliderVerticalActiveTrackChar = interactiveTui.Settings.BorderSettings.BorderRightFrameChar,
+                        SliderVerticalInactiveTrackChar = interactiveTui.Settings.BorderSettings.BorderRightFrameChar,
                     };
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left + 1, 2, finalColor, interactiveTui.Settings.PaneBackgroundColor));
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left + 1, SeparatorMaximumHeightInterior + 1, finalColor, interactiveTui.Settings.PaneBackgroundColor));
@@ -462,6 +464,8 @@ namespace Terminaux.Inputs.Interactive
                         SliderActiveForegroundColor = finalForeColorSecondPane,
                         SliderForegroundColor = TransformationTools.GetDarkBackground(finalForeColorSecondPane),
                         SliderBackgroundColor = interactiveTui.Settings.BackgroundColor,
+                        SliderVerticalActiveTrackChar = interactiveTui.Settings.BorderSettings.BorderRightFrameChar,
+                        SliderVerticalInactiveTrackChar = interactiveTui.Settings.BorderSettings.BorderRightFrameChar,
                     };
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left + 1, 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));

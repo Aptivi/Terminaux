@@ -30,6 +30,7 @@ using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 using Textify.General;
 
@@ -405,6 +406,8 @@ namespace Terminaux.Inputs.Styles.Selection
                 {
                     Vertical = true,
                     Height = height - 2,
+                    SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                    SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                 };
                 if (useColor)
                 {
