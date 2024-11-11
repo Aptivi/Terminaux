@@ -94,7 +94,7 @@ namespace Terminaux.Colors.Transformation
         /// </summary>
         /// <param name="source">Source color to be blended</param>
         /// <param name="target">Target color to blend</param>
-        /// <param name="factor">Blending factor</param>
+        /// <param name="factor">Blending factor [0.0 to 1.0]</param>
         /// <returns>A color instance that represents a source color blended with the target color.</returns>
         public static Color BlendColor(Color source, Color target, double factor = 0.5) =>
             new(
@@ -102,6 +102,24 @@ namespace Terminaux.Colors.Transformation
                 (byte)(source.RGB.G + ((target.RGB.G - source.RGB.G) * factor)),
                 (byte)(source.RGB.B + ((target.RGB.B - source.RGB.B) * factor))
             );
+
+        /// <summary>
+        /// Selects the two colors together
+        /// </summary>
+        /// <param name="source">Source color to form a gradient from</param>
+        /// <param name="target">Target color to form a gradient to</param>
+        /// <param name="factor">Selection factor [0.0 to 1.0]</param>
+        /// <returns>A color instance that represents a stage of a gradient from the source color to the target color.</returns>
+        public static Color SelectColor(Color source, Color target, double factor = 0.5)
+        {
+            int diffR = target.RGB.R - source.RGB.R;
+            int diffG = target.RGB.G - source.RGB.G;
+            int diffB = target.RGB.B - source.RGB.B;
+            int selectedR = (int)(source.RGB.R + diffR * factor);
+            int selectedG = (int)(source.RGB.G + diffG * factor);
+            int selectedB = (int)(source.RGB.B + diffB * factor);
+            return new(selectedR, selectedG, selectedB);
+        }
 
         /// <summary>
         /// Gets the luminance of the color
