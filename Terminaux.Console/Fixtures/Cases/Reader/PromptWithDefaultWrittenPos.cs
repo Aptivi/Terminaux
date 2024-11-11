@@ -22,13 +22,13 @@ using Terminaux.Reader;
 using Terminaux.Writer.ConsoleWriters;
 namespace Terminaux.Console.Fixtures.Cases.Reader
 {
-    internal class PromptWithDefaultWritten : IFixture
+    internal class PromptWithDefaultWrittenPos : IFixture
     {
         public FixtureCategory Category => FixtureCategory.Reader;
 
         public void RunFixture()
         {
-            string input = TermReader.Read(">> ", "Hello World!", new() { WriteDefaultValue = true }, false, false, false);
+            string input = TermReader.Read(">> ", "Hello World!", new() { WriteDefaultValue = true, InitialPosition = 5 }, false, false, false);
             TextWriterColor.Write("You said: " + input);
         }
     }

@@ -390,6 +390,10 @@ namespace Terminaux.Reader
 
                 try
                 {
+                    // Sanity checks
+                    if (settings.PrintDefaultValue && settings.WriteDefaultValue)
+                        throw new TerminauxException($"There's a conflict between {nameof(settings.PrintDefaultValue)} and {nameof(settings.WriteDefaultValue)}.");
+
                     // Initialize some of the state variables
                     ConsoleWrapper.CursorLeft += settings.LeftMargin;
                     readState.settings.state = readState;
@@ -420,6 +424,11 @@ namespace Terminaux.Reader
                     int width = ConsoleChar.EstimateCellWidth(finalPlaceholder);
                     bool cleared = false;
                     ConsoleWrapper.CursorVisible = true;
+                    if (!string.IsNullOrEmpty(defaultValue) && readState.Settings.WriteDefaultValue)
+                    {
+                        TermReaderTools.InsertNewText(defaultValue);
+                        PositioningTools.SeekTo(readState.Settings.InitialPosition, ref readState);
+                    }
                     while (!BindingsTools.IsTerminate(struckKey))
                     {
                         // Write placeholder if needed

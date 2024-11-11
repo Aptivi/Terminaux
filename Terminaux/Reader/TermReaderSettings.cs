@@ -62,11 +62,13 @@ namespace Terminaux.Reader
         private bool syntaxHighlighterEnabled;
         private string placeholderText = "";
         private bool printDefaultValue;
+        private bool writeDefaultValue;
         private string defaultValueFormat = "[{0}] ";
         private string bassBoomLibraryRoot = "";
         private Stream cueEnter = cueEnterFallback;
         private Stream cueRubout = cueRuboutFallback;
         private Stream cueWrite = cueWriteFallback;
+        private int initialPosition = 0;
 
         /// <summary>
         /// Password mask character
@@ -199,12 +201,29 @@ namespace Terminaux.Reader
         }
 
         /// <summary>
-        /// Prints the default value
+        /// Prints the default value. Conflicts with <see cref="WriteDefaultValue"/>
         /// </summary>
         public bool PrintDefaultValue
         {
             get => printDefaultValue;
-            set => printDefaultValue = value;
+            set
+            {
+                printDefaultValue = value;
+                writeDefaultValue = false;
+            }
+        }
+
+        /// <summary>
+        /// Writes the default value to the actual input. Conflicts with <see cref="PrintDefaultValue"/>
+        /// </summary>
+        public bool WriteDefaultValue
+        {
+            get => writeDefaultValue;
+            set
+            {
+                writeDefaultValue = value;
+                printDefaultValue = false;
+            }
         }
 
         /// <summary>
@@ -352,6 +371,15 @@ namespace Terminaux.Reader
                     throw new TerminauxException("This stream can't seek.");
                 cueWrite = value;
             }
+        }
+
+        /// <summary>
+        /// Initial position of the reader. This is applied only when the default value is supplied and <see cref="WriteDefaultValue"/> is on.
+        /// </summary>
+        public int InitialPosition
+        {
+            get => initialPosition;
+            set => initialPosition = value;
         }
 
         /// <summary>
