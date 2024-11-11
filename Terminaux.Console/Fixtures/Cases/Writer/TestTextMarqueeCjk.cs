@@ -24,6 +24,7 @@ using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
 using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -52,8 +53,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
                 // Then, show the counter
                 var stickScreenPart = new ScreenPart();
-                stickScreenPart.Position(4, ConsoleWrapper.WindowHeight / 2);
-                stickScreenPart.AddDynamicText(marquee.Render);
+                stickScreenPart.AddDynamicText(() => ContainerTools.RenderRenderable(marquee, new(4, ConsoleWrapper.WindowHeight / 2)));
                 stickScreen.AddBufferedPart("Test", stickScreenPart);
                 ScreenTools.SetCurrent(stickScreen);
                 ScreenTools.SetCurrentCyclic(stickScreen);

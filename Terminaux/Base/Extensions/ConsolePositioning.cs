@@ -33,6 +33,14 @@ namespace Terminaux.Base.Extensions
     public static class ConsolePositioning
     {
         /// <summary>
+        /// Renders the VT sequence that changes the cursor position
+        /// </summary>
+        /// <param name="left">Zero-based left position</param>
+        /// <param name="top">Zero-based top position</param>
+        public static string RenderChangePosition(int left, int top) =>
+            CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1);
+
+        /// <summary>
         /// Clears the console buffer, but keeps the current cursor position
         /// </summary>
         public static void ClearKeepPosition()

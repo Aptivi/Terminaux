@@ -27,6 +27,7 @@ using System.Threading;
 using Terminaux.Writer.CyclicWriters.Builtins;
 using System.Linq;
 using Terminaux.Inputs.Styles;
+using Terminaux.Writer.CyclicWriters.Renderer;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -66,8 +67,7 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
                 // Then, show the progress bar
                 var stickScreenPart = new ScreenPart();
-                stickScreenPart.Position(4, ConsoleWrapper.WindowHeight - 1);
-                stickScreenPart.AddDynamicText(progressBar.Render);
+                stickScreenPart.AddDynamicText(() => ContainerTools.RenderRenderable(progressBar, new(4, ConsoleWrapper.WindowHeight - 1)));
                 stickScreen.AddBufferedPart("Test", stickScreenPart);
                 ScreenTools.SetCurrent(stickScreen);
                 ScreenTools.SetCurrentCyclic(stickScreen);

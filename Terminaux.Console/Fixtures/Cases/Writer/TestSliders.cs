@@ -90,7 +90,6 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
                 // Then, show the slider bar
                 var stickScreenPart = new ScreenPart();
-                stickScreenPart.Position(4, ConsoleWrapper.WindowHeight - 1);
                 stickScreenPart.AddDynamicText(() => ContainerTools.RenderContainer(container));
                 stickScreen.AddBufferedPart("Test", stickScreenPart);
                 ScreenTools.SetCurrent(stickScreen);

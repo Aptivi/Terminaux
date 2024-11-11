@@ -31,12 +31,11 @@ using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
+using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.FancyWriters;
-using Terminaux.Writer.MiscWriters;
 using Textify.Tools;
 
 namespace Terminaux.Inputs.Styles.Selection
@@ -158,7 +157,6 @@ namespace Terminaux.Inputs.Styles.Selection
                     int endIndex = 0;
                     var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
                     string finalSidebarText = $"[{highlightedAnswer.ChoiceName}] {highlightedAnswer.ChoiceTitle}\n\n{highlightedAnswer.ChoiceDescription}";
-                    screenPart.Position(0, 0);
                     screenPart.AddDynamicText(() =>
                     {
                         sidebarWidth = sidebar ? (ConsoleWrapper.WindowWidth - 6) / 4 : 0;
@@ -181,6 +179,7 @@ namespace Terminaux.Inputs.Styles.Selection
 
                         // Write the question.
                         selectionBuilder.Append(
+                            CsiSequences.GenerateCsiCursorPosition(1, 1) +
                             $"{ColorTools.RenderSetConsoleColor(questionColor)}" +
                             $"{Question}"
                         );

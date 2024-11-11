@@ -77,7 +77,7 @@ namespace Terminaux.Base.Buffered
         /// </summary>
         /// <param name="text">Text to write to the buffer builder</param>
         public void AddTextLine(string text) =>
-            AddDynamicText(() => $"{text}{CharManager.NewLine}");
+            AddDynamicText(() => $"{text}\n");
 
         /// <summary>
         /// Adds a dynamic text to the buffer
@@ -95,6 +95,7 @@ namespace Terminaux.Base.Buffered
         /// Adds the VT sequence to set the left cursor position
         /// </summary>
         /// <param name="left">Zero-based left position</param>
+        [Obsolete("Use " + nameof(AddDynamicText) + " and relevant functions instead")]
         public void LeftPosition(int left) =>
             Position(left, ConsoleWrapper.CursorTop);
 
@@ -102,6 +103,7 @@ namespace Terminaux.Base.Buffered
         /// Adds the VT sequence to set the top cursor position
         /// </summary>
         /// <param name="top">Zero-based top position</param>
+        [Obsolete("Use " + nameof(AddDynamicText) + " and relevant functions instead")]
         public void TopPosition(int top) =>
             Position(ConsoleWrapper.CursorLeft, top);
 
@@ -110,6 +112,7 @@ namespace Terminaux.Base.Buffered
         /// </summary>
         /// <param name="left">Zero-based left position</param>
         /// <param name="top">Zero-based top position</param>
+        [Obsolete("Use " + nameof(AddDynamicText) + " and relevant functions instead")]
         public void Position(int left, int top)
         {
             string pos = CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1);
@@ -121,6 +124,7 @@ namespace Terminaux.Base.Buffered
         /// </summary>
         /// <param name="color">Color to use for foreground color</param>
         /// <param name="forceTrue">Forces the usage of the true color</param>
+        [Obsolete("Use " + nameof(AddDynamicText) + " and relevant functions instead")]
         public void ForegroundColor(Color color, bool forceTrue = false)
         {
             string colorSeq = forceTrue ? color.VTSequenceForegroundTrueColor : ColorTools.RenderSetConsoleColor(color);
@@ -132,6 +136,7 @@ namespace Terminaux.Base.Buffered
         /// </summary>
         /// <param name="color">Color to use for background color</param>
         /// <param name="forceTrue">Forces the usage of the true color</param>
+        [Obsolete("Use " + nameof(AddDynamicText) + " and relevant functions instead")]
         public void BackgroundColor(Color color, bool forceTrue = false)
         {
             string colorSeq = forceTrue ? color.VTSequenceBackgroundTrueColor : ColorTools.RenderSetConsoleColor(color, true);
@@ -141,6 +146,7 @@ namespace Terminaux.Base.Buffered
         /// <summary>
         /// Adds the VT sequence to reset the colors
         /// </summary>
+        [Obsolete("Use " + nameof(AddDynamicText) + " and relevant functions instead")]
         public void ResetColors()
         {
             ResetForegroundColor();
@@ -150,12 +156,14 @@ namespace Terminaux.Base.Buffered
         /// <summary>
         /// Adds the VT sequence to reset the foreground color
         /// </summary>
+        [Obsolete("Use " + nameof(AddDynamicText) + " and relevant functions instead")]
         public void ResetForegroundColor() =>
             AddText($"{Convert.ToChar(0x1B)}[39m");
 
         /// <summary>
         /// Adds the VT sequence to reset the background color
         /// </summary>
+        [Obsolete("Use " + nameof(AddDynamicText) + " and relevant functions instead")]
         public void ResetBackgroundColor() =>
             AddText($"{Convert.ToChar(0x1B)}[49m");
 
