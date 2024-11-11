@@ -283,11 +283,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = InfoBoxTools.GetDimensionsSelection(selections, splitFinalLines);
+                    var (maxWidth, maxHeight, _, borderX, borderY, selectionBoxPosX, selectionBoxPosY, _, maxSelectionWidth, _, _) = InfoBoxTools.GetDimensions(selections, splitFinalLines);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderTextSelection(selections, title, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, useColor, ref increment, currIdx, true, vars)
+                        InfoBoxTools.RenderText(selections, title, text, settings, InfoBoxTitledSelectionColor, BackgroundColor, useColor, ref increment, currIdx, true, vars)
                     );
 
                     // Buffer the selection box
@@ -323,7 +323,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     SpinWait.SpinUntil(() => Input.InputAvailable);
                     bool goingUp = false;
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY, _, selectionBoxPosY, leftPos, maxSelectionWidth, _, selectionReservedHeight) = InfoBoxTools.GetDimensionsSelection(selections, splitFinalLines);
+                    var (maxWidth, maxHeight, _, borderX, borderY, _, selectionBoxPosY, leftPos, maxSelectionWidth, _, selectionReservedHeight) = InfoBoxTools.GetDimensions(selections, splitFinalLines);
                     maxHeight -= selectionReservedHeight;
                     if (Input.MouseInputAvailable)
                     {
@@ -392,7 +392,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                             // Now, translate coordinates to the selected index
                             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxTools.GetDimensionsSelection(selections, splitFinalLines);
+                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxTools.GetDimensions(selections, splitFinalLines);
                             if (selections.Length <= selectionChoices)
                                 return false;
                             return
@@ -408,7 +408,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                             // Now, translate coordinates to the selected index
                             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxTools.GetDimensionsSelection(selections, splitFinalLines);
+                            var (_, _, _, _, _, _, selectionBoxPosY, _, _, left, _) = InfoBoxTools.GetDimensions(selections, splitFinalLines);
                             if (selections.Length <= selectionChoices)
                                 return;
                             if (mouse.Coordinates.x == left)

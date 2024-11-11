@@ -36,7 +36,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(string[] splitFinalLines)
         {
             int maxWidth = splitFinalLines.Max(ConsoleChar.EstimateCellWidth);
-            if (maxWidth >= ConsoleWrapper.WindowWidth)
+            if (maxWidth > ConsoleWrapper.WindowWidth - 4)
                 maxWidth = ConsoleWrapper.WindowWidth - 4;
             int maxHeight = splitFinalLines.Length;
             if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
@@ -47,29 +47,11 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY);
         }
 
-        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensionsInput(string[] splitFinalLines)
-        {
-            int maxWidth = ConsoleWrapper.WindowWidth - 4;
-            int maxHeight = splitFinalLines.Length + 5;
-            if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
-                maxHeight = ConsoleWrapper.WindowHeight - 4;
-            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-            int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-            int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-            return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY);
-        }
-
-        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensionsSelection(InputChoiceInfo[] selections, string[] splitFinalLines)
+        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY, int selectionBoxPosX, int selectionBoxPosY, int leftPos, int maxSelectionWidth, int left, int selectionReservedHeight) GetDimensions(InputChoiceInfo[] selections, string[] splitFinalLines)
         {
             int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
             int selectionReservedHeight = 4 + selectionChoices;
-            int maxWidth = ConsoleWrapper.WindowWidth - 4;
-            int maxHeight = splitFinalLines.Length + selectionReservedHeight;
-            if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
-                maxHeight = ConsoleWrapper.WindowHeight - 4;
-            int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-            int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
-            int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
+            (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines);
 
             // Fill in some selection properties
             int selectionBoxPosX = borderX + 4;
@@ -90,23 +72,13 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, writeBinding, vars);
         }
 
-        internal static string RenderTextInput(
-            int maxHeightOffset, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, bool writeBinding, params object[] vars
-        )
-        {
-            // Deal with the lines to actually fit text in the infobox
-            string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensionsInput(splitFinalLines);
-            return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, writeBinding, vars);
-        }
-
-        internal static string RenderTextSelection(
+        internal static string RenderText(
             InputChoiceInfo[] choices, string title, string text, BorderSettings settings, Color InfoBoxColor, Color BackgroundColor, bool useColor, ref int increment, int currIdx, bool drawBar, params object[] vars
         )
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensionsSelection(choices, splitFinalLines);
+            var (maxWidth, maxHeight, _, borderX, borderY, _, _, _, _, _, selectionReservedHeight) = GetDimensions(choices, splitFinalLines);
             return RenderText(maxWidth, maxHeight, borderX, borderY, selectionReservedHeight, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, true, vars);
         }
 
