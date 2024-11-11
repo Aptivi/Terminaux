@@ -308,7 +308,9 @@ namespace Terminaux.Inputs.Styles.Infobox
                         Width = maxSliderWidth,
                         SliderActiveForegroundColor = InfoBoxTitledSliderColor,
                         SliderForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledSliderColor),
-                        SliderBackgroundColor = BackgroundColor
+                        SliderBackgroundColor = BackgroundColor,
+                        SliderVerticalActiveTrackChar = settings.BorderRightFrameChar,
+                        SliderVerticalInactiveTrackChar = settings.BorderRightFrameChar,
                     };
                     boxBuffer.Append(
                         ContainerTools.RenderRenderable(slider, new(sliderPosX + 1, sliderPosY + 3)) +

@@ -227,6 +227,8 @@ namespace Terminaux.Inputs.Presentation
                             SliderActiveForegroundColor = presentation.FrameColor,
                             SliderForegroundColor = TransformationTools.GetDarkBackground(presentation.FrameColor),
                             SliderBackgroundColor = presentation.BackgroundColor,
+                            SliderVerticalActiveTrackChar = presentation.BorderSettings.BorderRightFrameChar,
+                            SliderVerticalInactiveTrackChar = presentation.BorderSettings.BorderRightFrameChar,
                         };
                         boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left, 2, presentation.FrameColor, presentation.BackgroundColor));
                         boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left, presentationLowerInnerBorderTop + 1, presentation.FrameColor, presentation.BackgroundColor));

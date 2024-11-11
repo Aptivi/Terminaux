@@ -244,6 +244,8 @@ namespace Terminaux.Inputs.Styles
                     Width = boxWidth,
                     SliderActiveForegroundColor = finalHueColor,
                     SliderForegroundColor = TransformationTools.GetDarkBackground(finalHueColor),
+                    SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                    SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                 };
 
                 // Deal with the saturation
@@ -260,6 +262,8 @@ namespace Terminaux.Inputs.Styles
                     Width = boxWidth,
                     SliderActiveForegroundColor = finalSatColor,
                     SliderForegroundColor = TransformationTools.GetDarkBackground(finalSatColor),
+                    SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                    SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                 };
 
                 // Deal with the lightness
@@ -276,6 +280,8 @@ namespace Terminaux.Inputs.Styles
                     Width = boxWidth,
                     SliderActiveForegroundColor = finalLigColor,
                     SliderForegroundColor = TransformationTools.GetDarkBackground(finalLigColor),
+                    SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                    SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                 };
                 selector.Append(
                     hslIndicator.Render() +

@@ -242,6 +242,8 @@ namespace Terminaux.Inputs.Styles.Selection
                                 {
                                     Vertical = true,
                                     Height = answersPerPage - 2,
+                                    SliderVerticalActiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
+                                    SliderVerticalInactiveTrackChar = BorderSettings.GlobalSettings.BorderRightFrameChar,
                                 };
                                 selectionBuilder.Append(
                                     TextWriterWhereColor.RenderWhere("▲", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
