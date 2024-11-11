@@ -32,7 +32,6 @@ namespace Terminaux.Base
     public static class ConsoleResizeHandler
     {
         internal static bool usesSigWinch = false;
-        internal static bool listening = false;
         internal static int CurrentWindowWidth;
         internal static int CurrentWindowHeight;
         private static bool ResizeDetected;
@@ -42,6 +41,12 @@ namespace Terminaux.Base
         /// Whether to run the base console resize handler or not after running a custom action
         /// </summary>
         public static bool RunEssentialHandler { get; set; } = true;
+
+        /// <summary>
+        /// Whether the console resize handler is listening to resize events or not
+        /// </summary>
+        public static bool IsListening =>
+            ResizeListenerThread.IsAlive;
 
         /// <summary>
         /// This property checks to see if the console has been resized since the last time it has been called or the listener has started.
@@ -64,18 +69,30 @@ namespace Terminaux.Base
         /// <param name="customHandler">Specifies the custom console resize handler that will be called if resize is detected</param>
         public static void StartResizeListener(Action<int, int, int, int>? customHandler = null)
         {
+            if (IsListening)
+                return;
+
             SetCachedWindowDimensions(Console.WindowWidth, Console.WindowHeight);
-            if (!ResizeListenerThread.IsAlive)
+            if (customHandler is not null)
             {
-                if (customHandler is not null)
-                {
-                    ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>?)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
-                    ResizeListenerThread.Start(customHandler);
-                }
-                else
-                    ResizeListenerThread.Start(null);
+                ResizeListenerThread = new((l) => PollForResize((Action<int, int, int, int>?)l)) { Name = "Console Resize Listener Thread", IsBackground = true };
+                ResizeListenerThread.Start(customHandler);
             }
-            listening = true;
+            else
+            {
+                ResizeListenerThread = new((_) => PollForResize(null)) { Name = "Console Resize Listener Thread", IsBackground = true };
+                ResizeListenerThread.Start(null);
+            }
+        }
+
+        /// <summary>
+        /// Stops the console resize listener
+        /// </summary>
+        public static void StopResizeListener()
+        {
+            if (!IsListening)
+                return;
+            ResizeListenerThread.Interrupt();
         }
 
         /// <summary>
@@ -83,7 +100,7 @@ namespace Terminaux.Base
         /// </summary>
         public static (int Width, int Height) GetCurrentConsoleSize()
         {
-            if (!listening && !usesSigWinch)
+            if (!IsListening && !usesSigWinch)
                 return (Console.WindowWidth, Console.WindowHeight);
             return (CurrentWindowWidth, CurrentWindowHeight);
         }
