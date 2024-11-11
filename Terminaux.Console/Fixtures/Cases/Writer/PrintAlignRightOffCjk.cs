@@ -19,6 +19,8 @@
 
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 
@@ -30,7 +32,14 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            AlignedTextColor.WriteAlignedColor($"你好，世界！它位于{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}控制台右側{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}，并且故意设计得很长，以演示右边距偏移和左边距偏移的偏心效果。", new Color(ConsoleColors.Green), TextAlignment.Right, 15, 30);
+            var aligned = new AlignedText($"你好，世界！它位于{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}控制台右側{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}，并且故意设计得很长，以演示右边距偏移和左边距偏移的偏心效果。")
+            {
+                ForegroundColor = ConsoleColors.Green,
+                Settings = new() { Alignment = TextAlignment.Right },
+                LeftMargin = 15,
+                RightMargin = 30,
+            };
+            TextWriterRaw.WriteRaw(aligned.Render());
         }
     }
 }

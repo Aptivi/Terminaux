@@ -19,6 +19,10 @@
 
 using System;
 using Terminaux.Base;
+using Terminaux.Colors.Data;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
@@ -39,7 +43,25 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 { "20.04（局灶窝） [focal]", new DateTime(2020, 4, 23).ToString(), new DateTime(2025, 4, 25).ToString(), new DateTime(2030, 4, 25).ToString() },
                 { "22.04（果酱水母） [jammy]", new DateTime(2022, 4, 26).ToString(), new DateTime(2027, 4, 25).ToString(), new DateTime(2032, 4, 25).ToString() }
             };
-            TableColor.WriteTable(Rows, 4, 2, ConsoleWrapper.WindowWidth - 7, ConsoleWrapper.WindowHeight - 5, true);
+            var table = new Table()
+            {
+                Rows = Rows,
+                Left = 4,
+                Top = 2,
+                InteriorWidth = ConsoleWrapper.WindowWidth - 7,
+                InteriorHeight = ConsoleWrapper.WindowHeight - 5,
+                Header = true,
+                Settings =
+                [
+                    new CellOptions(2, 2)
+                    {
+                        CellColor = ConsoleColors.Red,
+                        CellBackgroundColor = ConsoleColors.DarkRed,
+                        ColoredCell = true
+                    }
+                ]
+            };
+            TextWriterRaw.WriteRaw(table.Render());
         }
     }
 }

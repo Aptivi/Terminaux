@@ -20,7 +20,10 @@
 using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Transformation;
 using Terminaux.Inputs;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Colors
@@ -46,28 +49,78 @@ namespace Terminaux.Console.Fixtures.Cases.Colors
             ConsoleWrapper.CursorVisible = false;
 
             // 100% opaque
-            ColorTools.LoadBackDry(opaque);
-            BorderTextColor.WriteBorder("100% green, 0% red", 2, 1, "100% green, 0% red".Length, 1, opaque);
+            ColorTools.LoadBackDry(opaque, true);
+            var infoBorder100 = new Border()
+            {
+                Text = "100% green, 0% red",
+                Left = 2,
+                Top = 1,
+                InteriorWidth = "100% green, 0% red".Length,
+                InteriorHeight = 1,
+                Color = opaque,
+                BackgroundColor = TransformationTools.GetDarkBackground(opaque),
+            };
+            TextWriterRaw.WriteRaw(infoBorder100.Render());
             Input.ReadKey();
 
             // 75% opaque
-            ColorTools.LoadBackDry(greenQuarterTransparent);
-            BorderTextColor.WriteBorder("75% green, 25% red", 2, 1, "75% green, 25% red".Length, 1, greenQuarterTransparent);
+            ColorTools.LoadBackDry(greenQuarterTransparent, true);
+            var infoBorder75 = new Border()
+            {
+                Text = "75% green, 25% red",
+                Left = 2,
+                Top = 1,
+                InteriorWidth = "75% green, 25% red".Length,
+                InteriorHeight = 1,
+                Color = greenQuarterTransparent,
+                BackgroundColor = TransformationTools.GetDarkBackground(greenQuarterTransparent),
+            };
+            TextWriterRaw.WriteRaw(infoBorder75.Render());
             Input.ReadKey();
 
             // 50% opaque
-            ColorTools.LoadBackDry(greenHalfTransparent);
-            BorderTextColor.WriteBorder("50% green, 50% red", 2, 1, "50% green, 50% red".Length, 1, greenHalfTransparent);
+            ColorTools.LoadBackDry(greenHalfTransparent, true);
+            var infoBorder50 = new Border()
+            {
+                Text = "50% green, 50% red",
+                Left = 2,
+                Top = 1,
+                InteriorWidth = "50% green, 50% red".Length,
+                InteriorHeight = 1,
+                Color = greenHalfTransparent,
+                BackgroundColor = TransformationTools.GetDarkBackground(greenHalfTransparent),
+            };
+            TextWriterRaw.WriteRaw(infoBorder50.Render());
             Input.ReadKey();
 
             // 25% opaque
-            ColorTools.LoadBackDry(greenThirdQuarterTransparent);
-            BorderTextColor.WriteBorder("25% green, 75% red", 2, 1, "25% green, 75% red".Length, 1, greenThirdQuarterTransparent);
+            ColorTools.LoadBackDry(greenThirdQuarterTransparent, true);
+            var infoBorder25 = new Border()
+            {
+                Text = "25% green, 75% red",
+                Left = 2,
+                Top = 1,
+                InteriorWidth = "25% green, 75% red".Length,
+                InteriorHeight = 1,
+                Color = greenThirdQuarterTransparent,
+                BackgroundColor = TransformationTools.GetDarkBackground(greenThirdQuarterTransparent),
+            };
+            TextWriterRaw.WriteRaw(infoBorder25.Render());
             Input.ReadKey();
 
             // 0% opaque
-            ColorTools.LoadBackDry(greenTransparent);
-            BorderTextColor.WriteBorder("0% green, 100% red", 2, 1, "0% green, 100% red".Length, 1, greenTransparent);
+            ColorTools.LoadBackDry(greenTransparent, true);
+            var infoBorder0 = new Border()
+            {
+                Text = "0% green, 100% red",
+                Left = 2,
+                Top = 1,
+                InteriorWidth = "0% green, 100% red".Length,
+                InteriorHeight = 1,
+                Color = greenTransparent,
+                BackgroundColor = TransformationTools.GetDarkBackground(greenTransparent),
+            };
+            TextWriterRaw.WriteRaw(infoBorder0.Render());
             Input.ReadKey();
 
             // Reset

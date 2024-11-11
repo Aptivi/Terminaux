@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -31,10 +32,21 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         {
             var NormalIntegerDict = new Dictionary<string, int>() { { "One", 1 }, { "Two", 2 }, { "Three", 3 } };
             var ArrayIntegerDict = new Dictionary<string, int[]>() { { "One", new int[] { 1, 2, 3 } }, { "Two", new int[] { 1, 2, 3 } }, { "Three", new int[] { 1, 2, 3 } } };
-            TextWriterColor.Write("Normal integer dictionary:");
-            ListWriterColor.WriteList(NormalIntegerDict, ConsoleColors.Silver, ConsoleColors.Grey);
-            TextWriterColor.Write("Array integer dictionary:");
-            ListWriterColor.WriteList(ArrayIntegerDict, ConsoleColors.Silver, ConsoleColors.Grey);
+            var normalIntegers = new Listing()
+            {
+                Objects = NormalIntegerDict,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+            };
+            var arrayIntegers = new Listing()
+            {
+                Objects = ArrayIntegerDict,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+                ValueStringifier = (arr) => string.Join(", ", (int[])arr)
+            };
+            TextWriterColor.Write("Normal integer dictionary:\n{0}", normalIntegers.Render());
+            TextWriterColor.Write("Array integer dictionary:\n{0}", arrayIntegers.Render());
         }
     }
 }

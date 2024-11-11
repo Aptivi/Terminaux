@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
@@ -27,7 +29,11 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            RainbowTextWriterColor.Write("你好，彩虹色的世界！ 这是前景色的彩虹文本！");
+            var rainbow = new AlignedText("你好，彩虹色的世界！ 这是前景色的彩虹文本！")
+            {
+                Rainbow = true,
+            };
+            TextWriterRaw.WriteRaw(rainbow.Render());
         }
     }
 }

@@ -22,6 +22,8 @@ using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -34,7 +36,12 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
             var font = FigletFonts.TryGetByName("banner3");
             if (font is null)
                 return;
-            AlignedFigletTextColor.WriteAlignedColor(font, "Hello, {0}!", new Color(ConsoleColors.Green), TextAlignment.Middle, Vars: "Terminaux");
+            var aligned = new AlignedFigletText(font, "Hello, {0}!", "Terminaux")
+            {
+                ForegroundColor = ConsoleColors.Green,
+                Settings = new() { Alignment = TextAlignment.Middle },
+            };
+            TextWriterRaw.WriteRaw(aligned.Render());
         }
     }
 }

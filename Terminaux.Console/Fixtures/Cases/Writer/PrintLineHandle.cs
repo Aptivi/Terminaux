@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.MiscWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
@@ -27,8 +29,19 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            LineHandleWriter.PrintLineWithHandle(["one", "two"], 1, 2);
-            LineHandleRangedWriter.PrintLineWithHandle(["one", "two"], 2, 1, 3);
+            var handle = new LineHandle(["one", "two"])
+            {
+                Position = 1,
+                SourcePosition = 2,
+            };
+            var ranged = new LineHandle(["one", "two"])
+            {
+                Position = 1,
+                SourcePosition = 2,
+                TargetPosition = 3,
+                Ranged = true,
+            };
+            TextWriterRaw.WriteRaw("{0}\n{1}", handle.Render(), ranged.Render());
         }
     }
 }

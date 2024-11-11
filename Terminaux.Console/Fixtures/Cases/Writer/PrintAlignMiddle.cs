@@ -19,6 +19,8 @@
 
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.FancyWriters;
 
@@ -30,7 +32,12 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            AlignedTextColor.WriteAlignedColor($"Hello world! This is located in the {ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}center of the console{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}.", new Color(ConsoleColors.Green), TextAlignment.Middle);
+            var aligned = new AlignedText($"Hello world! This is located in the {ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Blue))}center of the console{ColorTools.RenderSetConsoleColor(new Color(ConsoleColors.Green))}.")
+            {
+                ForegroundColor = ConsoleColors.Green,
+                Settings = new() { Alignment = TextAlignment.Middle }
+            };
+            TextWriterRaw.WriteRaw(aligned.Render());
         }
     }
 }

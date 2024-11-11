@@ -21,6 +21,7 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -31,7 +32,13 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         public void RunFixture()
         {
             var enumerable = Regex.Matches("test test", "test") as IEnumerable;
-            ListWriterColor.WriteList(enumerable, ConsoleColors.Silver, ConsoleColors.Grey);
+            var listing = new Listing()
+            {
+                Objects = enumerable,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+            };
+            TextWriterColor.Write("String list:\n{0}", listing.Render());
         }
     }
 }

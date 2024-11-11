@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -31,10 +32,21 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         {
             var NormalStringDict = new Dictionary<string, string>() { { "One", "String 1" }, { "Two", "String 2" }, { "Three", "String 3" } };
             var ArrayStringDict = new Dictionary<string, string[]>() { { "One", new string[] { "String 1", "String 2", "String 3" } }, { "Two", new string[] { "String 1", "String 2", "String 3" } }, { "Three", new string[] { "String 1", "String 2", "String 3" } } };
-            TextWriterColor.Write("Normal string dictionary:");
-            ListWriterColor.WriteList(NormalStringDict, ConsoleColors.Silver, ConsoleColors.Grey);
-            TextWriterColor.Write("Array string dictionary:");
-            ListWriterColor.WriteList(ArrayStringDict, ConsoleColors.Silver, ConsoleColors.Grey);
+            var normalStrings = new Listing()
+            {
+                Objects = NormalStringDict,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+            };
+            var arrayStrings = new Listing()
+            {
+                Objects = ArrayStringDict,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+                ValueStringifier = (arr) => string.Join(", ", (string[])arr)
+            };
+            TextWriterColor.Write("Normal string dictionary:\n{0}", normalStrings.Render());
+            TextWriterColor.Write("Array string dictionary:\n{0}", arrayStrings.Render());
         }
     }
 }

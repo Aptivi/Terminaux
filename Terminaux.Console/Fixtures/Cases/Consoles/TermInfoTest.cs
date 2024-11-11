@@ -19,6 +19,7 @@
 
 using Terminaux.Base.TermInfo;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Consoles
 {
@@ -33,8 +34,10 @@ namespace Terminaux.Console.Fixtures.Cases.Consoles
         {
             var current = TermInfoDesc.Current;
             var fallback = TermInfoDesc.Fallback;
-            ListEntryWriterColor.WriteListEntry("Current", current.Names[0]);
-            ListEntryWriterColor.WriteListEntry("Fallback", fallback.Names[0]);
+            TextWriterRaw.WritePlain("{0}\n{1}",
+                new ListEntry() { Entry = "Current", Value = current.Names[0] }.Render(),
+                new ListEntry() { Entry = "Fallback", Value = fallback.Names[0] }.Render()
+            );
         }
     }
 }

@@ -68,7 +68,6 @@ namespace Terminaux.Console.Fixtures
             new PrintF(),
             new PrintFiglet(),
             new PrintFigletF(),
-            new PrintFigletDefault(),
             new PrintFigletAlignLeft(),
             new PrintFigletAlignLeftF(),
             new PrintFigletAlignLeftPositional(),

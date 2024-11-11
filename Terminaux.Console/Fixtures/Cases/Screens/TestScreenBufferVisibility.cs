@@ -26,6 +26,7 @@ using Terminaux.Colors.Data;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Screens
 {
@@ -55,9 +56,15 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
                     int y = 2;
                     int height = ConsoleWrapper.WindowHeight - y - 7;
                     int width = endX - startX;
-                    StringBuilder boxBuilder = new();
-                    boxBuilder.Append(BoxColor.RenderBox(startX, y, width, height, ConsoleColors.Red));
-                    return boxBuilder.ToString();
+                    var box = new Box()
+                    {
+                        Left = startX,
+                        Top = y,
+                        InteriorWidth = width,
+                        InteriorHeight = height,
+                        Color = ConsoleColors.Red,
+                    };
+                    return box.Render();
                 });
                 boxes.AddDynamicText(() =>
                 {
@@ -67,9 +74,15 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
                     int y = 4;
                     int height = ConsoleWrapper.WindowHeight - y - 5;
                     int width = endX - startX;
-                    StringBuilder boxBuilder = new();
-                    boxBuilder.Append(BoxColor.RenderBox(startX, y, width, height, ConsoleColors.Lime));
-                    return boxBuilder.ToString();
+                    var box = new Box()
+                    {
+                        Left = startX,
+                        Top = y,
+                        InteriorWidth = width,
+                        InteriorHeight = height,
+                        Color = ConsoleColors.Lime,
+                    };
+                    return box.Render();
                 });
                 boxes.AddDynamicText(() =>
                 {
@@ -79,9 +92,15 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
                     int y = 6;
                     int height = ConsoleWrapper.WindowHeight - y - 3;
                     int width = endX - startX;
-                    StringBuilder boxBuilder = new();
-                    boxBuilder.Append(BoxColor.RenderBox(startX, y, width, height, ConsoleColors.Blue));
-                    return boxBuilder.ToString();
+                    var box = new Box()
+                    {
+                        Left = startX,
+                        Top = y,
+                        InteriorWidth = width,
+                        InteriorHeight = height,
+                        Color = ConsoleColors.Blue,
+                    };
+                    return box.Render();
                 });
                 stickScreen.AddBufferedPart("Boxes", boxes);
 

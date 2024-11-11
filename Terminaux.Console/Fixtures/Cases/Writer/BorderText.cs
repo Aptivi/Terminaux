@@ -21,6 +21,7 @@ using Terminaux.Base;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
@@ -32,10 +33,46 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         public void RunFixture()
         {
             ColorTools.LoadBack();
-            BorderTextColor.WriteBorder("Hello world!", 2, 1, 6, 2, new Color(ConsoleColors.Green));
-            BorderTextColor.WriteBorder("Hello world!", ConsoleWrapper.WindowWidth - 10, 1, 6, 2, new Color(ConsoleColors.Black), new Color(ConsoleColors.Yellow), new Color(ConsoleColors.Black));
-            BorderTextColor.WriteBorder("Middle", "Hello world!", ConsoleWrapper.WindowWidth / 2 - 6, 1, 12, 1, new Color(ConsoleColors.Red));
-            BorderTextColor.WriteBorder("Center", "Hello world!");
+            TextWriterRaw.WritePlain("{0}{1}{2}{3}",
+                new Border()
+                {
+                    Text = "Hello world!",
+                    Left = 2,
+                    Top = 1,
+                    InteriorWidth = 6,
+                    InteriorHeight = 2,
+                    Color = new Color(ConsoleColors.Green),
+                }.Render(),
+                new Border()
+                {
+                    Text = "Hello world!",
+                    Left = ConsoleWrapper.WindowWidth - 10,
+                    Top = 1,
+                    InteriorWidth = 6,
+                    InteriorHeight = 2,
+                    Color = new Color(ConsoleColors.Black),
+                    BackgroundColor = new Color(ConsoleColors.Yellow),
+                    TextColor = new Color(ConsoleColors.Black),
+                }.Render(),
+                new Border()
+                {
+                    Title = "Middle",
+                    Text = "Hello world!",
+                    Left = ConsoleWrapper.WindowWidth / 2 - 6,
+                    Top = 1,
+                    InteriorWidth = 12,
+                    InteriorHeight = 1,
+                    Color = new Color(ConsoleColors.Red),
+                }.Render(),
+                new Border()
+                {
+                    Title = "Center",
+                    Text = "Hello world!",
+                    Left = ConsoleWrapper.WindowWidth / 2 - 6,
+                    Top = ConsoleWrapper.WindowHeight / 2 - 1,
+                    InteriorWidth = 12,
+                    InteriorHeight = 1,
+                }.Render());
             TextWriterWhereColor.WriteWhere("If you can see these, it's a success!", 0, ConsoleWrapper.WindowHeight - 1);
         }
     }

@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -31,10 +32,20 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         {
             var NormalStringList = new List<string>() { "String 1", "String 2", "String 3" };
             var ArrayStringList = new List<string[]>() { { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } }, { new string[] { "String 1", "String 2", "String 3" } } };
-            TextWriterColor.Write("Normal string list:");
-            ListWriterColor.WriteList(NormalStringList, ConsoleColors.Silver, ConsoleColors.Grey);
-            TextWriterColor.Write("Array string list:");
-            ListWriterColor.WriteList(ArrayStringList, ConsoleColors.Silver, ConsoleColors.Grey);
+            var normalStrings = new Listing()
+            {
+                Objects = NormalStringList,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+            };
+            var arrayStrings = new Listing()
+            {
+                Objects = ArrayStringList,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+            };
+            TextWriterColor.Write("Normal string list:\n{0}", normalStrings.Render());
+            TextWriterColor.Write("Array string list:\n{0}", arrayStrings.Render());
         }
     }
 }

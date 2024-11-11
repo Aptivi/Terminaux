@@ -138,7 +138,7 @@ namespace Terminaux.Writer.CyclicWriters
                         new ListEntry()
                         {
                             Entry = $"{EntryNumber}",
-                            Value = (string)(stringifier is not null ? stringifier(ListEntry) : ListEntry),
+                            Value = (stringifier is not null ? stringifier(ListEntry) : ListEntry).ToString(),
                             KeyColor = ListKeyColor,
                             ValueColor = ListValueColor,
                         }.Render()

@@ -18,8 +18,10 @@
 //
 
 using System.Collections.Generic;
+using System.Linq;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -31,10 +33,22 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         {
             var NormalCharDict = new Dictionary<string, char>() { { "One", '1' }, { "Two", '2' }, { "Three", '3' } };
             var ArrayCharDict = new Dictionary<string, char[]>() { { "One", new char[] { '1', '2', '3' } }, { "Two", new char[] { '1', '2', '3' } }, { "Three", new char[] { '1', '2', '3' } } };
-            TextWriterColor.Write("Normal char dictionary:");
-            ListWriterColor.WriteList(NormalCharDict, ConsoleColors.Silver, ConsoleColors.Grey, keyStringifier: null, (character) => $"{character} [{(int)character}]");
-            TextWriterColor.Write("Array char dictionary:");
-            ListWriterColor.WriteList(ArrayCharDict, ConsoleColors.Silver, ConsoleColors.Grey, keyStringifier: null, null, (character) => $"{(char)character} [{(int)(char)character}]");
+            var normalChars = new Listing()
+            {
+                Objects = NormalCharDict,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+                ValueStringifier = (character) => $"{(char)character} [{(int)(char)character}]",
+            };
+            var arrayChars = new Listing()
+            {
+                Objects = ArrayCharDict,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+                ValueStringifier = (characters) => string.Join(", ", ((char[])characters).Select((character) => $"{character} [{(int)character}]"))
+            };
+            TextWriterColor.Write("Normal char dictionary:\n{0}", normalChars.Render());
+            TextWriterColor.Write("Array char dictionary:\n{0}", arrayChars.Render());
         }
     }
 }

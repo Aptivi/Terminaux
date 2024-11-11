@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 using Textify.Data.NameGen;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
@@ -38,10 +39,21 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
                 choices.Add($"{i}", names[i]);
                 arrayChoices.Add($"{i}", [$"Number #{i + 1}", names[i]]);
             }
-            TextWriterColor.Write("Normal string list:");
-            ListWriterColor.WriteList(choices, ConsoleColors.Silver, ConsoleColors.Grey);
-            TextWriterColor.Write("Array string list:");
-            ListWriterColor.WriteList(arrayChoices, ConsoleColors.Silver, ConsoleColors.Grey);
+            var normalStrings = new Listing()
+            {
+                Objects = choices,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+            };
+            var arrayStrings = new Listing()
+            {
+                Objects = arrayChoices,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+                ValueStringifier = (arr) => string.Join(", ", (string[])arr)
+            };
+            TextWriterColor.Write("Normal string dictionary:\n{0}", normalStrings.Render());
+            TextWriterColor.Write("Array string dictionary:\n{0}", arrayStrings.Render());
         }
     }
 }

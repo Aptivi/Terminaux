@@ -21,6 +21,8 @@ using Textify.Data.Figlet;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -30,7 +32,11 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            FigletColor.WriteFigletColor("Hi, {0}!", FigletFonts.GetByName("small"), new Color(ConsoleColors.Green), Vars: ["world"]);
+            var aligned = new AlignedFigletText(FigletFonts.GetByName("small"), "Hello, {0}!", "world")
+            {
+                ForegroundColor = ConsoleColors.Green,
+            };
+            TextWriterRaw.WriteRaw(aligned.Render());
         }
     }
 }

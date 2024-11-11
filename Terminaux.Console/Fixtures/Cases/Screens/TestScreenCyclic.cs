@@ -25,6 +25,7 @@ using Terminaux.Inputs;
 using Terminaux.Writer.FancyWriters;
 using Textify.Data.Figlet;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Screens
 {
@@ -50,7 +51,10 @@ namespace Terminaux.Console.Fixtures.Cases.Screens
                 var stickScreenPart = new ScreenPart();
                 stickScreenPart.AddDynamicText(() =>
                     {
-                        string rendered = AlignedFigletTextColor.RenderAligned(FigletFonts.GetByName("small"), $"{count}", TextAlignment.Middle);
+                        string rendered = new AlignedFigletText(FigletFonts.GetByName("small"), $"{count}")
+                        {
+                            Settings = new() { Alignment = TextAlignment.Middle }
+                        }.Render();
                         count++;
                         if (count > max)
                             count = 0;

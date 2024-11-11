@@ -20,6 +20,8 @@
 using Terminaux.Colors.Data;
 using Terminaux.Writer.FancyWriters;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
+using Terminaux.Writer.CyclicWriters;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -29,10 +31,14 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
 
         public void RunFixture()
         {
-            PowerLineColor.WritePowerLinePlain([
-                new PowerLineSegment(ConsoleColors.Yellow, ConsoleColors.Grey11, "Hello"),
-                new PowerLineSegment(ConsoleColors.Green, ConsoleColors.Grey30, "world!"),
-            ]);
+            var powerLine = new PowerLine()
+            {
+                Segments = [
+                    new PowerLineSegment(ConsoleColors.Yellow, ConsoleColors.Grey11, "Hello"),
+                    new PowerLineSegment(ConsoleColors.Green, ConsoleColors.Grey30, "world!"),
+                ]
+            };
+            TextWriterRaw.WriteRaw(powerLine.Render());
         }
     }
 }

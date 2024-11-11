@@ -20,6 +20,7 @@
 using System.Collections.Generic;
 using Terminaux.Colors.Data;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.CyclicWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Writer
 {
@@ -31,10 +32,20 @@ namespace Terminaux.Console.Fixtures.Cases.Writer
         {
             var NormalIntegerList = new List<int>() { 1, 2, 3 };
             var ArrayIntegerList = new List<int[]>() { { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } } };
-            TextWriterColor.Write("Normal integer list:");
-            ListWriterColor.WriteList(NormalIntegerList, ConsoleColors.Silver, ConsoleColors.Grey);
-            TextWriterColor.Write("Array integer list:");
-            ListWriterColor.WriteList(ArrayIntegerList, ConsoleColors.Silver, ConsoleColors.Grey);
+            var normalIntegers = new Listing()
+            {
+                Objects = NormalIntegerList,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+            };
+            var arrayIntegers = new Listing()
+            {
+                Objects = ArrayIntegerList,
+                KeyColor = ConsoleColors.Silver,
+                ValueColor = ConsoleColors.Grey,
+            };
+            TextWriterColor.Write("Normal integer list:\n{0}", normalIntegers.Render());
+            TextWriterColor.Write("Array integer list:\n{0}", arrayIntegers.Render());
         }
     }
 }
