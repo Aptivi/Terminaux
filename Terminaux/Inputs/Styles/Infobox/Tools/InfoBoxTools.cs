@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Linq;
 using System.Text;
 using Terminaux.Base;
@@ -59,7 +60,13 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             int selectionBoxPosX = borderX + 2;
             int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
             int leftPos = selectionBoxPosX + 1;
-            int maxSelectionWidth = maxWidth - 4;
+            int maxSelectionWidth = selections.Max((ici) => ConsoleChar.EstimateCellWidth($"  {ici.ChoiceName})  {ici.ChoiceTitle}")) + 4;
+            maxSelectionWidth = maxSelectionWidth > maxWidth - 4 ? maxSelectionWidth : maxWidth - 4;
+            maxSelectionWidth = maxSelectionWidth >= ConsoleWrapper.WindowWidth - 8 ? ConsoleWrapper.WindowWidth - 8 : maxSelectionWidth;
+            int diff = maxSelectionWidth != maxWidth - 4 ? maxSelectionWidth - maxWidth + 2 : 0;
+            maxWidth = maxSelectionWidth + 4;
+            borderX -= (int)Math.Round(diff / 2d);
+            selectionBoxPosX -= (int)Math.Round(diff / 2d);
             int left = maxWidth - 2;
             return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, selectionBoxPosX, selectionBoxPosY, leftPos, maxSelectionWidth, left, selectionReservedHeight);
         }
