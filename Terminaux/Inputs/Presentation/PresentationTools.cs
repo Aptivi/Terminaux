@@ -40,6 +40,7 @@ using Terminaux.Inputs.Styles;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Inputs.Presentation
 {
@@ -223,6 +224,9 @@ namespace Terminaux.Inputs.Presentation
                         {
                             Vertical = true,
                             Height = presentationLowerInnerBorderTop - 2,
+                            SliderActiveForegroundColor = presentation.FrameColor,
+                            SliderForegroundColor = TransformationTools.GetDarkBackground(presentation.FrameColor),
+                            SliderBackgroundColor = presentation.BackgroundColor,
                         };
                         boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, presentation.FrameColor, presentation.BackgroundColor));
                         boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, presentationLowerInnerBorderTop + 1, presentation.FrameColor, presentation.BackgroundColor));

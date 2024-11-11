@@ -23,6 +23,7 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Transformation;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
@@ -140,16 +141,19 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
 
             // Render the vertical bar
             int left = maxWidth + borderX + 1;
-            var progressBar = new Slider((int)((double)currIdx / (splitFinalLines.Length - (maxHeight - maxHeightOffset)) * splitFinalLines.Length), 0, splitFinalLines.Length)
+            var slider = new Slider((int)((double)currIdx / (splitFinalLines.Length - (maxHeight - maxHeightOffset)) * splitFinalLines.Length), 0, splitFinalLines.Length)
             {
                 Vertical = true,
                 Height = maxHeight - maxHeightOffset - 2,
+                SliderActiveForegroundColor = InfoBoxColor,
+                SliderForegroundColor = TransformationTools.GetDarkBackground(InfoBoxColor),
+                SliderBackgroundColor = BackgroundColor
             };
             if (splitFinalLines.Length > maxHeight - maxHeightOffset && drawBar)
             {
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, InfoBoxColor, BackgroundColor));
                 boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, maxHeight - maxHeightOffset + 1, InfoBoxColor, BackgroundColor));
-                boxBuffer.Append(ContainerTools.RenderRenderable(progressBar, new(left, 3)));
+                boxBuffer.Append(ContainerTools.RenderRenderable(slider, new(left, 3)));
             }
 
             // Render a keybinding that points to the help page

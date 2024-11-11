@@ -25,6 +25,7 @@ using Terminaux.Base;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
 using Terminaux.Colors.Data;
+using Terminaux.Colors.Transformation;
 using Terminaux.Sequences.Builder.Types;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
@@ -400,8 +401,16 @@ namespace Terminaux.Inputs.Styles.Selection
             if (choices.Count > height && height >= 4)
             {
                 int finalWidth = sliderInside ? left + width + 1 : left + width;
+                var slider = new Slider(currentSelection + 1, 0, choices.Count)
+                {
+                    Vertical = true,
+                    Height = height - 2,
+                };
                 if (useColor)
                 {
+                    slider.SliderActiveForegroundColor = foregroundColor;
+                    slider.SliderForegroundColor = TransformationTools.GetDarkBackground(foregroundColor);
+                    slider.SliderBackgroundColor = backgroundColor;
                     buffer.Append(
                         TextWriterWhereColor.RenderWhereColorBack("↑", finalWidth, top, foregroundColor, backgroundColor) +
                         TextWriterWhereColor.RenderWhereColorBack("↓", finalWidth, top + height - 1, foregroundColor, backgroundColor)
@@ -414,11 +423,6 @@ namespace Terminaux.Inputs.Styles.Selection
                         TextWriterWhereColor.RenderWhere("↓", finalWidth, top + height - 1)
                     );
                 }
-                var slider = new Slider(currentSelection + 1, 0, choices.Count)
-                {
-                    Vertical = true,
-                    Height = height - 2,
-                };
                 buffer.Append(
                     ContainerTools.RenderRenderable(slider, new(finalWidth, top + 1))
                 );

@@ -90,6 +90,56 @@ namespace Terminaux.Writer.CyclicWriters
         public bool ShowPercentage { get; set; } = true;
 
         /// <summary>
+        /// Progress foreground
+        /// </summary>
+        public Color ProgressForegroundColor { get; set; } = ConsoleColors.DarkGreen;
+
+        /// <summary>
+        /// Progress active foreground
+        /// </summary>
+        public Color ProgressActiveForegroundColor { get; set; } = ConsoleColors.Lime;
+
+        /// <summary>
+        /// Progress background
+        /// </summary>
+        public Color ProgressBackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
+
+        /// <summary>
+        /// Progress percentage text color
+        /// </summary>
+        public Color ProgressPercentageTextColor { get; set; } = ConsoleColors.Silver;
+
+        /// <summary>
+        /// Progress spinner color
+        /// </summary>
+        public Color ProgressSpinnerTextColor { get; set; } = ConsoleColors.Grey;
+
+        /// <summary>
+        /// Progress text color
+        /// </summary>
+        public Color ProgressTextColor { get; set; } = ConsoleColors.White;
+
+        /// <summary>
+        /// Progress vertical inactive track character for drawing
+        /// </summary>
+        public char ProgressVerticalInactiveTrackChar { get; set; } = '┃';
+
+        /// <summary>
+        /// Progress vertical active track character for drawing
+        /// </summary>
+        public char ProgressVerticalActiveTrackChar { get; set; } = '┃';
+
+        /// <summary>
+        /// Progress horizontal inactive track character for drawing
+        /// </summary>
+        public char ProgressHorizontalInactiveTrackChar { get; set; } = '━';
+
+        /// <summary>
+        /// Progress horizontal active track character for drawing
+        /// </summary>
+        public char ProgressHorizontalActiveTrackChar { get; set; } = '━';
+
+        /// <summary>
         /// Renders a scrolling text progress bar
         /// </summary>
         /// <returns>The result</returns>
@@ -111,7 +161,7 @@ namespace Terminaux.Writer.CyclicWriters
             // Render the spinner
             var rendered = new StringBuilder();
             rendered.Append(
-                ColorTools.RenderSetConsoleColor(ConsoleColors.Grey) +
+                ColorTools.RenderSetConsoleColor(ProgressSpinnerTextColor) +
                 $" {progressSpinner.Render()} "
             );
 
@@ -128,7 +178,7 @@ namespace Terminaux.Writer.CyclicWriters
                 spaces = spaces < 0 ? 0 : spaces;
                 finalMarqueeWidth = marqueeWidth + spaces;
                 rendered.Append(
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.White) +
+                    ColorTools.RenderSetConsoleColor(ProgressTextColor) +
                     marqueeText + new string(' ', spaces) + " "
                 );
             }
@@ -140,6 +190,14 @@ namespace Terminaux.Writer.CyclicWriters
                 LeftMargin = LeftMargin + spinnerWidth + finalMarqueeWidth + 1,
                 RightMargin = RightMargin,
                 ShowPercentage = ShowPercentage,
+                ProgressPercentageTextColor = ProgressPercentageTextColor,
+                ProgressActiveForegroundColor = ProgressActiveForegroundColor,
+                ProgressBackgroundColor = ProgressBackgroundColor,
+                ProgressForegroundColor = ProgressForegroundColor,
+                ProgressHorizontalActiveTrackChar = ProgressHorizontalActiveTrackChar,
+                ProgressHorizontalInactiveTrackChar = ProgressHorizontalInactiveTrackChar,
+                ProgressVerticalActiveTrackChar = ProgressVerticalActiveTrackChar,
+                ProgressVerticalInactiveTrackChar = ProgressVerticalInactiveTrackChar,
                 indeterminateStep = indeterminateStep,
                 indeterminateGradient = indeterminateGradient,
                 indeterminateBackwards = indeterminateBackwards,
@@ -150,6 +208,9 @@ namespace Terminaux.Writer.CyclicWriters
             indeterminateBackwards = bar.indeterminateBackwards;
 
             // Return the result
+            rendered.Append(
+                ColorTools.RenderResetColors()
+            );
             return rendered.ToString();
         }
 

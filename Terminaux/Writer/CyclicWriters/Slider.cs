@@ -66,12 +66,47 @@ namespace Terminaux.Writer.CyclicWriters
         public bool Vertical { get; set; }
 
         /// <summary>
+        /// Slider foreground
+        /// </summary>
+        public Color SliderForegroundColor { get; set; } = ConsoleColors.DarkGreen;
+
+        /// <summary>
+        /// Slider active foreground
+        /// </summary>
+        public Color SliderActiveForegroundColor { get; set; } = ConsoleColors.Lime;
+
+        /// <summary>
+        /// Slider background
+        /// </summary>
+        public Color SliderBackgroundColor { get; set; } = ColorTools.CurrentBackgroundColor;
+
+        /// <summary>
+        /// Slider vertical inactive track character for drawing
+        /// </summary>
+        public char SliderVerticalInactiveTrackChar { get; set; } = '┃';
+
+        /// <summary>
+        /// Slider vertical active track character for drawing
+        /// </summary>
+        public char SliderVerticalActiveTrackChar { get; set; } = '┃';
+
+        /// <summary>
+        /// Slider horizontal inactive track character for drawing
+        /// </summary>
+        public char SliderHorizontalInactiveTrackChar { get; set; } = '━';
+
+        /// <summary>
+        /// Slider horizontal active track character for drawing
+        /// </summary>
+        public char SliderHorizontalActiveTrackChar { get; set; } = '━';
+
+        /// <summary>
         /// Renders a scrolling text slider
         /// </summary>
         /// <returns>The result</returns>
         public string Render()
         {
-            var rendered = new StringBuilder();
+            var rendered = new StringBuilder(ColorTools.RenderSetConsoleColor(SliderBackgroundColor, true));
             if (Vertical)
             {
                 // Estimate how many cells the slider takes
@@ -82,20 +117,20 @@ namespace Terminaux.Writer.CyclicWriters
                 int rest = Height - (one + times);
                 rest = rest < 0 ? 0 : rest;
                 rendered.Append(
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.DarkGreen)
+                    ColorTools.RenderSetConsoleColor(SliderForegroundColor)
                 );
                 for (int i = 0; i < times; i++)
-                    rendered.AppendLine("┃");
+                    rendered.AppendLine($"{SliderVerticalInactiveTrackChar}");
                 rendered.Append(
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.Lime)
+                    ColorTools.RenderSetConsoleColor(SliderActiveForegroundColor)
                 );
                 for (int i = 0; i < one; i++)
-                    rendered.AppendLine("┃");
+                    rendered.AppendLine($"{SliderVerticalActiveTrackChar}");
                 rendered.Append(
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.DarkGreen)
+                    ColorTools.RenderSetConsoleColor(SliderForegroundColor)
                 );
                 for (int i = 0; i < rest; i++)
-                    rendered.AppendLine("┃");
+                    rendered.AppendLine($"{SliderVerticalInactiveTrackChar}");
             }
             else
             {
@@ -107,16 +142,19 @@ namespace Terminaux.Writer.CyclicWriters
                 int rest = Width - (one + times);
                 rest = rest < 0 ? 0 : rest;
                 rendered.Append(
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.DarkGreen) +
-                    new string('━', times) +
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.Lime) +
-                    new string('━', one) +
-                    ColorTools.RenderSetConsoleColor(ConsoleColors.DarkGreen) +
-                    new string('━', rest)
+                    ColorTools.RenderSetConsoleColor(SliderForegroundColor) +
+                    new string(SliderHorizontalInactiveTrackChar, times) +
+                    ColorTools.RenderSetConsoleColor(SliderActiveForegroundColor) +
+                    new string(SliderHorizontalActiveTrackChar, one) +
+                    ColorTools.RenderSetConsoleColor(SliderForegroundColor) +
+                    new string(SliderHorizontalInactiveTrackChar, rest)
                 );
             }
 
             // Return the result
+            rendered.Append(
+                ColorTools.RenderResetColors()
+            );
             return rendered.ToString();
         }
 

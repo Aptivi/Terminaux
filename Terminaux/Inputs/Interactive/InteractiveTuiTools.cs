@@ -30,6 +30,7 @@ using Terminaux.Base.Buffered;
 using Terminaux.Base.Checks;
 using Terminaux.Base.Extensions;
 using Terminaux.Colors;
+using Terminaux.Colors.Transformation;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles;
 using Terminaux.Inputs.Styles.Infobox;
@@ -361,13 +362,17 @@ namespace Terminaux.Inputs.Interactive
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidthInterior * 2 + (ConsoleWrapper.WindowWidth % 2 != 0 ? 3 : 2) : SeparatorHalfConsoleWidthInterior;
                 if (dataCount > SeparatorMaximumHeightInterior)
                 {
+                    var finalColor = paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane;
                     var dataSlider = new Slider(paneCurrentSelection, 0, dataCount)
                     {
                         Vertical = true,
                         Height = ConsoleWrapper.WindowHeight - 6,
+                        SliderActiveForegroundColor = finalColor,
+                        SliderForegroundColor = TransformationTools.GetDarkBackground(finalColor),
+                        SliderBackgroundColor = interactiveTui.Settings.BackgroundColor,
                     };
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor));
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, paneNum == 2 ? finalForeColorSecondPane : finalForeColorFirstPane, interactiveTui.Settings.PaneBackgroundColor));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, finalColor, interactiveTui.Settings.PaneBackgroundColor));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, finalColor, interactiveTui.Settings.PaneBackgroundColor));
                     builder.Append(ContainerTools.RenderRenderable(dataSlider, new(left + 1, 3)));
                 }
                 return builder.ToString();
@@ -454,6 +459,9 @@ namespace Terminaux.Inputs.Interactive
                     {
                         Vertical = true,
                         Height = ConsoleWrapper.WindowHeight - 6,
+                        SliderActiveForegroundColor = finalForeColorSecondPane,
+                        SliderForegroundColor = TransformationTools.GetDarkBackground(finalForeColorSecondPane),
+                        SliderBackgroundColor = interactiveTui.Settings.BackgroundColor,
                     };
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                     builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));

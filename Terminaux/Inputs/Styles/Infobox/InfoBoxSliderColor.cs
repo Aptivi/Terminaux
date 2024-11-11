@@ -34,6 +34,7 @@ using Terminaux.Base.Extensions;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -304,7 +305,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     int maxSliderWidth = maxWidth - 6;
                     var slider = new Slider(selected, 0, maxPos)
                     {
-                        Width = maxSliderWidth
+                        Width = maxSliderWidth,
+                        SliderActiveForegroundColor = InfoBoxTitledSliderColor,
+                        SliderForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledSliderColor),
+                        SliderBackgroundColor = BackgroundColor
                     };
                     boxBuffer.Append(
                         ContainerTools.RenderRenderable(slider, new(sliderPosX + 1, sliderPosY + 3)) +

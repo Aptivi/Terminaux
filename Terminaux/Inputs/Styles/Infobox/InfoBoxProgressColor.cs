@@ -31,6 +31,7 @@ using Terminaux.Inputs.Styles.Infobox.Tools;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Inputs.Styles.Infobox
 {
@@ -243,6 +244,10 @@ namespace Terminaux.Inputs.Styles.Infobox
                     {
                         LeftMargin = progressPosX,
                         RightMargin = ConsoleWrapper.WindowWidth - (progressPosX + maxProgressWidth),
+                        ProgressPercentageTextColor = InfoBoxTitledProgressColor,
+                        ProgressActiveForegroundColor = InfoBoxTitledProgressColor,
+                        ProgressForegroundColor = TransformationTools.GetDarkBackground(InfoBoxTitledProgressColor),
+                        ProgressBackgroundColor = BackgroundColor,
                     };
                     boxBuffer.Append(ContainerTools.RenderRenderable(progressBar, new(progressPosX + 1, progressPosY + 3)));
                     return boxBuffer.ToString();
