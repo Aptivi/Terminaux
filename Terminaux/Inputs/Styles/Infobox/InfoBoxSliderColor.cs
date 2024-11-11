@@ -291,11 +291,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(5, title, text, settings, InfoBoxTitledSliderColor, BackgroundColor, useColor, ref increment, currIdx, false, true, vars)
+                        InfoBoxTools.RenderText(2, title, text, settings, InfoBoxTitledSliderColor, BackgroundColor, useColor, ref increment, currIdx, false, true, vars)
                     );
 
                     // Now, write the current position on the border of the slider bar and the arrows

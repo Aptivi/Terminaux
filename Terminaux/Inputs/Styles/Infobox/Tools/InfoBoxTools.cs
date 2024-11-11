@@ -33,12 +33,14 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
 {
     internal static class InfoBoxTools
     {
-        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(string[] splitFinalLines)
+        internal static (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) GetDimensions(string[] splitFinalLines, int extraHeight = 0)
         {
             int maxWidth = splitFinalLines.Max(ConsoleChar.EstimateCellWidth);
+            if (maxWidth < 30)
+                maxWidth = 30;
             if (maxWidth > ConsoleWrapper.WindowWidth - 4)
                 maxWidth = ConsoleWrapper.WindowWidth - 4;
-            int maxHeight = splitFinalLines.Length;
+            int maxHeight = splitFinalLines.Length + extraHeight;
             if (maxHeight >= ConsoleWrapper.WindowHeight - 3)
                 maxHeight = ConsoleWrapper.WindowHeight - 4;
             int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -51,13 +53,13 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         {
             int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
             int selectionReservedHeight = 4 + selectionChoices;
-            (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines);
+            (int maxWidth, int maxHeight, int maxRenderWidth, int borderX, int borderY) = GetDimensions(splitFinalLines, selectionReservedHeight);
 
             // Fill in some selection properties
-            int selectionBoxPosX = borderX + 4;
+            int selectionBoxPosX = borderX + 2;
             int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
             int leftPos = selectionBoxPosX + 1;
-            int maxSelectionWidth = maxWidth - selectionBoxPosX * 2 + 2;
+            int maxSelectionWidth = maxWidth - 4;
             int left = maxWidth - 2;
             return (maxWidth, maxHeight, maxRenderWidth, borderX, borderY, selectionBoxPosX, selectionBoxPosY, leftPos, maxSelectionWidth, left, selectionReservedHeight);
         }
@@ -68,7 +70,7 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
         {
             // Deal with the lines to actually fit text in the infobox
             string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-            var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines);
+            var (maxWidth, maxHeight, _, borderX, borderY) = GetDimensions(splitFinalLines, maxHeightOffset);
             return RenderText(maxWidth, maxHeight, borderX, borderY, maxHeightOffset, title, text, settings, InfoBoxColor, BackgroundColor, useColor, ref increment, currIdx, drawBar, writeBinding, vars);
         }
 

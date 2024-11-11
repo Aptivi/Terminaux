@@ -228,7 +228,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 2);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(

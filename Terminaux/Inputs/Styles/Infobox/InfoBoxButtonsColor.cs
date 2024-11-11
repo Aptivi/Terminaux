@@ -286,7 +286,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
@@ -306,7 +306,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     }
 
                     // Place the buttons from the right for familiarity
-                    int buttonPanelPosX = borderX + 4;
+                    int buttonPanelPosX = borderX + 2;
                     int buttonPanelPosY = borderY + maxHeight - 3;
                     for (int i = 1; i <= buttons.Length; i++)
                     {
@@ -314,7 +314,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                         string buttonText = buttons[i - 1].ChoiceTitle;
                         int sumWidth = buttonWidths.Take(i).Sum();
                         int finalWidth = buttonWidths[i - 1];
-                        int buttonX = maxButtonPanelWidth - sumWidth - ((i - 1) * 3);
+                        int buttonX = buttonPanelPosX + maxButtonPanelWidth - sumWidth - ((i - 1) * 3);
 
                         // Determine whether it's a selected button or not
                         bool selected = i == selectedButton + 1;
@@ -360,7 +360,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                     // Wait for keypress
                     SpinWait.SpinUntil(() => Input.InputAvailable);
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
                     maxHeight -= 5;
                     if (Input.MouseInputAvailable)
                     {
@@ -405,7 +405,7 @@ namespace Terminaux.Inputs.Styles.Infobox
 
                         void UpdateHighlightBasedOnMouse(PointerEventContext mouse)
                         {
-                            int buttonPanelPosX = borderX + 4;
+                            int buttonPanelPosX = borderX + 2;
                             int buttonPanelPosY = borderY + maxHeight + 5 - 3;
                             if (mouse.Coordinates.y < buttonPanelPosY || mouse.Coordinates.y > buttonPanelPosY + 2)
                                 return;
@@ -414,7 +414,7 @@ namespace Terminaux.Inputs.Styles.Infobox
                             for (int i = 1; i <= buttons.Length; i++)
                             {
                                 // Get the button position
-                                int buttonX = maxButtonPanelWidth - i * maxButtonWidth;
+                                int buttonX = buttonPanelPosX + maxButtonPanelWidth - i * maxButtonWidth;
                                 if (mouse.Coordinates.x < buttonX || mouse.Coordinates.x >= buttonX + maxButtonWidth - 1)
                                     continue;
 

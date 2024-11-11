@@ -224,11 +224,11 @@ namespace Terminaux.Inputs.Styles.Infobox
                 {
                     // Deal with the lines to actually fit text in the infobox
                     string[] splitFinalLines = TextWriterTools.GetFinalLines(text, vars);
-                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines);
+                    var (maxWidth, maxHeight, _, borderX, borderY) = InfoBoxTools.GetDimensions(splitFinalLines, 5);
 
                     // Fill the info box with text inside it
                     var boxBuffer = new StringBuilder(
-                        InfoBoxTools.RenderText(0, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
+                        InfoBoxTools.RenderText(5, title, text, settings, InfoBoxTitledColor, BackgroundColor, useColor, ref increment, currIdx, false, false, vars)
                     );
 
                     // Write the input bar and set the cursor position
