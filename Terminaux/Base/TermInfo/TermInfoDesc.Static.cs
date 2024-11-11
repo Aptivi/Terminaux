@@ -186,6 +186,8 @@ namespace Terminaux.Base.TermInfo
             List<string> names = [];
             foreach (string builtin in builtins)
             {
+                if (!builtin.VerifyPrefix("Terminaux.Resources.TermFiles."))
+                    continue;
                 string termNamePath = builtin.RemovePrefix("Terminaux.Resources.TermFiles.");
                 string termName = termNamePath.Substring(termNamePath.IndexOf('.') + 1);
                 names.Add(termName);
