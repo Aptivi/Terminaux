@@ -238,9 +238,12 @@ namespace Terminaux.Inputs.Styles
                     int hue = (int)(360 * width);
                     hueRamp.Append($"{new Color($"hsl:{hue};100;50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
+                var finalHueColor = new Color($"hsl:{finalHue};100;50", finalSettings);
                 var hueSlider = new Slider(finalHue, 0, 360)
                 {
                     Width = boxWidth,
+                    SliderActiveForegroundColor = finalHueColor,
+                    SliderForegroundColor = TransformationTools.GetDarkBackground(finalHueColor),
                 };
 
                 // Deal with the saturation
@@ -251,9 +254,12 @@ namespace Terminaux.Inputs.Styles
                     int sat = (int)(100 * width);
                     satRamp.Append($"{new Color($"hsl:{finalHue};{sat};50", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
+                var finalSatColor = new Color($"hsl:{finalHue};{finalSaturation};50", finalSettings);
                 var satSlider = new Slider(finalSaturation, 0, 100)
                 {
                     Width = boxWidth,
+                    SliderActiveForegroundColor = finalSatColor,
+                    SliderForegroundColor = TransformationTools.GetDarkBackground(finalSatColor),
                 };
 
                 // Deal with the lightness
@@ -264,9 +270,12 @@ namespace Terminaux.Inputs.Styles
                     int lig = (int)(100 * width);
                     ligRamp.Append($"{new Color($"hsl:{finalHue};100;{lig}", finalSettings).VTSequenceBackgroundTrueColor} {ColorTools.RenderSetConsoleColor(initialBackground, true)}");
                 }
+                var finalLigColor = new Color($"hsl:{finalHue};100;{finalLightness}", finalSettings);
                 var ligSlider = new Slider(finalLightness, 0, 100)
                 {
                     Width = boxWidth,
+                    SliderActiveForegroundColor = finalLigColor,
+                    SliderForegroundColor = TransformationTools.GetDarkBackground(finalLigColor),
                 };
                 selector.Append(
                     hslIndicator.Render() +
@@ -645,7 +654,7 @@ namespace Terminaux.Inputs.Styles
                 Left = boxX + 1,
                 Top = boxY + (boxHeight / 2),
                 InteriorWidth = boxWidth,
-                InteriorHeight = boxHeight / 2,
+                InteriorHeight = (boxHeight / 2) + (ConsoleWrapper.WindowHeight % 2 == 0 ? 1 : 0),
                 Color = finalColor,
             };
             builder.Append(
