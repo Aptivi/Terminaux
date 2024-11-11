@@ -371,8 +371,8 @@ namespace Terminaux.Inputs.Interactive
                         SliderForegroundColor = TransformationTools.GetDarkBackground(finalColor),
                         SliderBackgroundColor = interactiveTui.Settings.BackgroundColor,
                     };
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, finalColor, interactiveTui.Settings.PaneBackgroundColor));
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, finalColor, interactiveTui.Settings.PaneBackgroundColor));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left + 1, 2, finalColor, interactiveTui.Settings.PaneBackgroundColor));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left + 1, SeparatorMaximumHeightInterior + 1, finalColor, interactiveTui.Settings.PaneBackgroundColor));
                     builder.Append(ContainerTools.RenderRenderable(dataSlider, new(left + 1, 3)));
                 }
                 return builder.ToString();
@@ -463,8 +463,8 @@ namespace Terminaux.Inputs.Interactive
                         SliderForegroundColor = TransformationTools.GetDarkBackground(finalForeColorSecondPane),
                         SliderBackgroundColor = interactiveTui.Settings.BackgroundColor,
                     };
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left + 1, 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
-                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left + 1, 2, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
+                    builder.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left + 1, SeparatorMaximumHeightInterior + 1, finalForeColorSecondPane, interactiveTui.Settings.PaneBackgroundColor));
                     builder.Append(ContainerTools.RenderRenderable(dataSlider, new(left + 1, 3)));
                 }
                 return builder.ToString();

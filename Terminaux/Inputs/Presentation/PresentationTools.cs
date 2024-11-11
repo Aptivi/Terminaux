@@ -228,8 +228,8 @@ namespace Terminaux.Inputs.Presentation
                             SliderForegroundColor = TransformationTools.GetDarkBackground(presentation.FrameColor),
                             SliderBackgroundColor = presentation.BackgroundColor,
                         };
-                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, presentation.FrameColor, presentation.BackgroundColor));
-                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, presentationLowerInnerBorderTop + 1, presentation.FrameColor, presentation.BackgroundColor));
+                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left, 2, presentation.FrameColor, presentation.BackgroundColor));
+                        boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left, presentationLowerInnerBorderTop + 1, presentation.FrameColor, presentation.BackgroundColor));
                         boxBuffer.Append(ContainerTools.RenderRenderable(dataSlider, new(left, 3)));
                     }
                     return boxBuffer.ToString();

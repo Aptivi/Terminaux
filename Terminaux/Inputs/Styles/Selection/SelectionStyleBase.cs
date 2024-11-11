@@ -245,8 +245,8 @@ namespace Terminaux.Inputs.Styles.Selection
                                     Height = answersPerPage - 2,
                                 };
                                 selectionBuilder.Append(
-                                    TextWriterWhereColor.RenderWhere("↑", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
-                                    TextWriterWhereColor.RenderWhere("↓", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage + 1) +
+                                    TextWriterWhereColor.RenderWhere("▲", interiorWidth + 3 + sidebarWidth, listStartPosition + 2) +
+                                    TextWriterWhereColor.RenderWhere("▼", interiorWidth + 3 + sidebarWidth, listStartPosition + answersPerPage + 1) +
                                     ContainerTools.RenderRenderable(dataSlider, new(interiorWidth + 3 + sidebarWidth, listStartPosition + 3))
                                 );
                             }

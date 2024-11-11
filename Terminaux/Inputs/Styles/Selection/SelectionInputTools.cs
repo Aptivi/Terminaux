@@ -412,15 +412,15 @@ namespace Terminaux.Inputs.Styles.Selection
                     slider.SliderForegroundColor = TransformationTools.GetDarkBackground(foregroundColor);
                     slider.SliderBackgroundColor = backgroundColor;
                     buffer.Append(
-                        TextWriterWhereColor.RenderWhereColorBack("↑", finalWidth, top, foregroundColor, backgroundColor) +
-                        TextWriterWhereColor.RenderWhereColorBack("↓", finalWidth, top + height - 1, foregroundColor, backgroundColor)
+                        TextWriterWhereColor.RenderWhereColorBack("▲", finalWidth, top, foregroundColor, backgroundColor) +
+                        TextWriterWhereColor.RenderWhereColorBack("▼", finalWidth, top + height - 1, foregroundColor, backgroundColor)
                     );
                 }
                 else
                 {
                     buffer.Append(
-                        TextWriterWhereColor.RenderWhere("↑", finalWidth, top) +
-                        TextWriterWhereColor.RenderWhere("↓", finalWidth, top + height - 1)
+                        TextWriterWhereColor.RenderWhere("▲", finalWidth, top) +
+                        TextWriterWhereColor.RenderWhere("▼", finalWidth, top + height - 1)
                     );
                 }
                 buffer.Append(

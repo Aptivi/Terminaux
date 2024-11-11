@@ -151,8 +151,8 @@ namespace Terminaux.Inputs.Styles.Infobox.Tools
             };
             if (splitFinalLines.Length > maxHeight - maxHeightOffset && drawBar)
             {
-                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↑", left, 2, InfoBoxColor, BackgroundColor));
-                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("↓", left, maxHeight - maxHeightOffset + 1, InfoBoxColor, BackgroundColor));
+                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▲", left, 2, InfoBoxColor, BackgroundColor));
+                boxBuffer.Append(TextWriterWhereColor.RenderWhereColorBack("▼", left, maxHeight - maxHeightOffset + 1, InfoBoxColor, BackgroundColor));
                 boxBuffer.Append(ContainerTools.RenderRenderable(slider, new(left, 3)));
             }
 
