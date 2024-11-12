@@ -945,20 +945,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Deutan.yml",
+      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.ColorBlind.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Deutan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.DeutanVienot.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.DeutanVienot.html"
+          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.ColorBlind.html"
         }
       },
       "version": ""
@@ -979,46 +969,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Monochromacy.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Protan.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Protan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.ProtanVienot.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.ProtanVienot.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.Tritan.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.Tritan.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Terminaux.Colors.Transformation.Formulas.TritanVienot.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Terminaux.Colors.Transformation.Formulas.TritanVienot.html"
         }
       },
       "version": ""

@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class ProtanVienot | Terminaux API - Aptivi </title>
+      <title>Class ColorBlind | Terminaux API - Aptivi </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class ProtanVienot | Terminaux API - Aptivi ">
+      <meta name="title" content="Class ColorBlind | Terminaux API - Aptivi ">
     
-    <meta name="description" content="Red/green color blindness. It makes red look more green (Vienot, simple formula)">
+    <meta name="description" content="Color blindness simulation formula">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -76,19 +76,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Terminaux.Colors.Transformation.Formulas.ProtanVienot">
+            <article class="content wrap" id="_content" data-uid="Terminaux.Colors.Transformation.Formulas.ColorBlind">
 
 
 
-  <h1 id="Terminaux_Colors_Transformation_Formulas_ProtanVienot" data-uid="Terminaux.Colors.Transformation.Formulas.ProtanVienot" class="text-break">Class ProtanVienot</h1>
-  <div class="markdown level0 summary"><p>Red/green color blindness. It makes red look more green (Vienot, simple formula)</p>
+  <h1 id="Terminaux_Colors_Transformation_Formulas_ColorBlind" data-uid="Terminaux.Colors.Transformation.Formulas.ColorBlind" class="text-break">Class ColorBlind</h1>
+  <div class="markdown level0 summary"><p>Color blindness simulation formula</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><a class="xref" href="Terminaux.Colors.Transformation.BaseTransformationFormula.html">BaseTransformationFormula</a></div>
-    <div class="level2"><span class="xref">ProtanVienot</span></div>
+    <div class="level2"><span class="xref">ColorBlind</span></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -96,21 +96,52 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Terminaux.html">Terminaux</a>.<a class="xref" href="Terminaux.Colors.html">Colors</a>.<a class="xref" href="Terminaux.Colors.Transformation.html">Transformation</a>.<a class="xref" href="Terminaux.Colors.Transformation.Formulas.html">Formulas</a></h6>
   <h6><strong>Assembly</strong>: Terminaux.dll</h6>
-  <h5 id="Terminaux_Colors_Transformation_Formulas_ProtanVienot_syntax">Syntax</h5>
+  <h5 id="Terminaux_Colors_Transformation_Formulas_ColorBlind_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ProtanVienot : BaseTransformationFormula, ITransformationFormula</code></pre>
+    <pre><code class="lang-csharp hljs">public class ColorBlind : BaseTransformationFormula, ITransformationFormula</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Transformation_Formulas_ProtanVienot_Frequency.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Transformation.Formulas.ProtanVienot.Frequency%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Transformation_Formulas_ColorBlind_Deficiency.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Transformation.Formulas.ColorBlind.Deficiency%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Transformation/Formulas/ProtanVienot.cs/#L31">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Transformation/Formulas/ColorBlind.cs/#L36">View Source</a>
   </span>
-  <a id="Terminaux_Colors_Transformation_Formulas_ProtanVienot_Frequency_" data-uid="Terminaux.Colors.Transformation.Formulas.ProtanVienot.Frequency*"></a>
-  <h4 id="Terminaux_Colors_Transformation_Formulas_ProtanVienot_Frequency" data-uid="Terminaux.Colors.Transformation.Formulas.ProtanVienot.Frequency">Frequency</h4>
+  <a id="Terminaux_Colors_Transformation_Formulas_ColorBlind_Deficiency_" data-uid="Terminaux.Colors.Transformation.Formulas.ColorBlind.Deficiency*"></a>
+  <h4 id="Terminaux_Colors_Transformation_Formulas_ColorBlind_Deficiency" data-uid="Terminaux.Colors.Transformation.Formulas.ColorBlind.Deficiency">Deficiency</h4>
+  <div class="markdown level1 summary"><p>Color blindness deficiency</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ColorBlindDeficiency Deficiency { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Terminaux.Colors.Transformation.Tools.ColorBlind.ColorBlindDeficiency.html">ColorBlindDeficiency</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Transformation_Formulas_ColorBlind_Frequency.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Transformation.Formulas.ColorBlind.Frequency%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Transformation/Formulas/ColorBlind.cs/#L31">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Transformation_Formulas_ColorBlind_Frequency_" data-uid="Terminaux.Colors.Transformation.Formulas.ColorBlind.Frequency*"></a>
+  <h4 id="Terminaux_Colors_Transformation_Formulas_ColorBlind_Frequency" data-uid="Terminaux.Colors.Transformation.Formulas.ColorBlind.Frequency">Frequency</h4>
   <div class="markdown level1 summary"><p>Frequency of the transformation formula</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -135,17 +166,48 @@
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Terminaux.Colors.Transformation.BaseTransformationFormula.html#Terminaux_Colors_Transformation_BaseTransformationFormula_Frequency">BaseTransformationFormula.Frequency</a></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Transformation_Formulas_ColorBlind_Simple.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Transformation.Formulas.ColorBlind.Simple%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Transformation/Formulas/ColorBlind.cs/#L41">View Source</a>
+  </span>
+  <a id="Terminaux_Colors_Transformation_Formulas_ColorBlind_Simple_" data-uid="Terminaux.Colors.Transformation.Formulas.ColorBlind.Simple*"></a>
+  <h4 id="Terminaux_Colors_Transformation_Formulas_ColorBlind_Simple" data-uid="Terminaux.Colors.Transformation.Formulas.ColorBlind.Simple">Simple</h4>
+  <div class="markdown level1 summary"><p>Uses Vienot's formula insteas of Brettel's</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Simple { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Transformation_Formulas_ProtanVienot_Transform_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Transformation.Formulas.ProtanVienot.Transform(System.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Transformation_Formulas_ColorBlind_Transform_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Transformation.Formulas.ColorBlind.Transform(System.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Transformation/Formulas/ProtanVienot.cs/#L34">View Source</a>
+    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Transformation/Formulas/ColorBlind.cs/#L44">View Source</a>
   </span>
-  <a id="Terminaux_Colors_Transformation_Formulas_ProtanVienot_Transform_" data-uid="Terminaux.Colors.Transformation.Formulas.ProtanVienot.Transform*"></a>
-  <h4 id="Terminaux_Colors_Transformation_Formulas_ProtanVienot_Transform_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Colors.Transformation.Formulas.ProtanVienot.Transform(System.Int32,System.Int32,System.Int32)">Transform(int, int, int)</h4>
+  <a id="Terminaux_Colors_Transformation_Formulas_ColorBlind_Transform_" data-uid="Terminaux.Colors.Transformation.Formulas.ColorBlind.Transform*"></a>
+  <h4 id="Terminaux_Colors_Transformation_Formulas_ColorBlind_Transform_System_Int32_System_Int32_System_Int32_" data-uid="Terminaux.Colors.Transformation.Formulas.ColorBlind.Transform(System.Int32,System.Int32,System.Int32)">Transform(int, int, int)</h4>
   <div class="markdown level1 summary"><p>Transforms the colors using the implementation formula.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -214,10 +276,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Transformation_Formulas_ProtanVienot.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Transformation.Formulas.ProtanVienot%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/Aptivi/Terminaux/new/main/apiSpec/new?filename=Terminaux_Colors_Transformation_Formulas_ColorBlind.md&amp;value=---%0Auid%3A%20Terminaux.Colors.Transformation.Formulas.ColorBlind%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Transformation/Formulas/ProtanVienot.cs/#L28" class="contribution-link">View Source</a>
+                    <a href="https://github.com/Aptivi/Terminaux/blob/main/Terminaux/Colors/Transformation/Formulas/ColorBlind.cs/#L28" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
