@@ -23,12 +23,22 @@ using Terminaux.Colors.Transformation.Tools.ColorBlind;
 namespace Terminaux.Colors.Transformation.Formulas
 {
     /// <summary>
-    /// Red/green color blindness. It makes red look more green
+    /// Color blindness simulation formula
     /// </summary>
-    public class Protan : BaseTransformationFormula, ITransformationFormula
+    public class ColorBlind : BaseTransformationFormula, ITransformationFormula
     {
         /// <inheritdoc/>
         public override double Frequency { get; set; } = 0.6;
+
+        /// <summary>
+        /// Color blindness deficiency
+        /// </summary>
+        public ColorBlindDeficiency Deficiency { get; set; } = ColorBlindDeficiency.Protan;
+
+        /// <summary>
+        /// Uses Vienot's formula insteas of Brettel's
+        /// </summary>
+        public bool Simple { get; set; } = false;
 
         /// <inheritdoc/>
         public override (int, int, int) Transform(int r, int g, int b)
@@ -41,7 +51,9 @@ namespace Terminaux.Colors.Transformation.Formulas
             if (b < 0 || b > 255)
                 throw new ArgumentOutOfRangeException("b");
 
-            var transformed = Brettel.Transform(r, g, b, ColorBlindDeficiency.Protan, Frequency);
+            var transformed = Simple ?
+                Vienot.Transform(r, g, b, Deficiency, Frequency) :
+                Brettel.Transform(r, g, b, Deficiency, Frequency);
             return transformed;
         }
     }

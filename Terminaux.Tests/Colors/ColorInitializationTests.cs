@@ -28,6 +28,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Sequences.Builder;
 using Terminaux.Colors.Transformation.Formulas;
+using Terminaux.Colors.Transformation.Tools.ColorBlind;
 
 namespace Terminaux.Tests.Colors
 {
@@ -106,7 +107,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new Protan() { Frequency = 1.0 }],
+                Transformations = [new ColorBlind() { Frequency = 1.0, Deficiency = ColorBlindDeficiency.Protan }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -141,7 +142,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new Protan() { Frequency = 0.6 }],
+                Transformations = [new ColorBlind() { Frequency = 0.6, Deficiency = ColorBlindDeficiency.Protan }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -176,7 +177,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new Deutan() { Frequency = 1.0 }],
+                Transformations = [new ColorBlind() { Frequency = 1.0, Deficiency = ColorBlindDeficiency.Deutan }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -211,7 +212,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new Deutan() { Frequency = 0.6 }],
+                Transformations = [new ColorBlind() { Frequency = 0.6, Deficiency = ColorBlindDeficiency.Deutan }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -246,7 +247,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new Tritan() { Frequency = 1.0 }],
+                Transformations = [new ColorBlind() { Frequency = 1.0, Deficiency = ColorBlindDeficiency.Tritan }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -281,7 +282,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new Tritan() { Frequency = 0.6 }],
+                Transformations = [new ColorBlind() { Frequency = 0.6, Deficiency = ColorBlindDeficiency.Tritan }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -316,7 +317,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new ProtanVienot() { Frequency = 1.0 }],
+                Transformations = [new ColorBlind() { Simple = true, Frequency = 1.0, Deficiency = ColorBlindDeficiency.Protan }],
             };
             var ColorInstance = new Color(10, settings);
 
@@ -351,7 +352,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new ProtanVienot() { Frequency = 0.6 }],
+                Transformations = [new ColorBlind() { Simple = true, Frequency = 0.6, Deficiency = ColorBlindDeficiency.Protan }],
             };
             var ColorInstance = new Color(10, settings);
 
@@ -386,7 +387,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new DeutanVienot() { Frequency = 1.0 }],
+                Transformations = [new ColorBlind() { Simple = true, Frequency = 1.0, Deficiency = ColorBlindDeficiency.Deutan }],
             };
             var ColorInstance = new Color(10, settings);
 
@@ -421,7 +422,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new DeutanVienot() { Frequency = 0.6 }],
+                Transformations = [new ColorBlind() { Simple = true, Frequency = 0.6, Deficiency = ColorBlindDeficiency.Deutan }],
             };
             var ColorInstance = new Color(10, settings);
 
@@ -456,7 +457,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new TritanVienot() { Frequency = 1.0 }],
+                Transformations = [new ColorBlind() { Simple = true, Frequency = 1.0, Deficiency = ColorBlindDeficiency.Tritan }],
             };
             var ColorInstance = new Color(18, settings);
 
@@ -491,7 +492,7 @@ namespace Terminaux.Tests.Colors
             // Create instance
             var settings = new ColorSettings()
             {
-                Transformations = [new TritanVienot() { Frequency = 0.6 }],
+                Transformations = [new ColorBlind() { Simple = true, Frequency = 0.6, Deficiency = ColorBlindDeficiency.Tritan }],
             };
             var ColorInstance = new Color(18, settings);
 

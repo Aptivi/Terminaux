@@ -25,6 +25,7 @@ using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation.Formulas;
 using Terminaux.Colors.Transformation.Tools;
+using Terminaux.Colors.Transformation.Tools.ColorBlind;
 
 namespace Terminaux.Colors.Transformation
 {
@@ -35,20 +36,20 @@ namespace Terminaux.Colors.Transformation
     {
         internal static readonly Dictionary<TransformationFormula, BaseTransformationFormula> formulas = new()
         {
-            { TransformationFormula.Monochromacy, new Monochromacy() { Frequency = 1.0 } },
+            { TransformationFormula.Monochromacy, new Monochromacy() },
             { TransformationFormula.Inverse, new Inverse() },
-            { TransformationFormula.Protan, new Protan() },
-            { TransformationFormula.Deutan, new Deutan() },
-            { TransformationFormula.Tritan, new Tritan() },
-            { TransformationFormula.ProtanVienot, new ProtanVienot() },
-            { TransformationFormula.DeutanVienot, new DeutanVienot() },
-            { TransformationFormula.TritanVienot, new TritanVienot() },
-            { TransformationFormula.BlueScale, new Monochromacy() { Type = MonochromacyType.Blue, Frequency = 1.0 } },
-            { TransformationFormula.GreenScale, new Monochromacy() { Type = MonochromacyType.Green, Frequency = 1.0 } },
-            { TransformationFormula.RedScale, new Monochromacy() { Type = MonochromacyType.Red, Frequency = 1.0 } },
-            { TransformationFormula.YellowScale, new Monochromacy() { Type = MonochromacyType.Yellow, Frequency = 1.0 } },
-            { TransformationFormula.AquaScale, new Monochromacy() { Type = MonochromacyType.Cyan, Frequency = 1.0 } },
-            { TransformationFormula.PinkScale, new Monochromacy() { Type = MonochromacyType.Magenta, Frequency = 1.0 } },
+            { TransformationFormula.Protan, new ColorBlind() { Deficiency = ColorBlindDeficiency.Protan } },
+            { TransformationFormula.Deutan, new ColorBlind() { Deficiency = ColorBlindDeficiency.Deutan } },
+            { TransformationFormula.Tritan, new ColorBlind() { Deficiency = ColorBlindDeficiency.Tritan } },
+            { TransformationFormula.ProtanVienot, new ColorBlind() { Deficiency = ColorBlindDeficiency.Protan, Simple = true } },
+            { TransformationFormula.DeutanVienot, new ColorBlind() { Deficiency = ColorBlindDeficiency.Deutan, Simple = true } },
+            { TransformationFormula.TritanVienot, new ColorBlind() { Deficiency = ColorBlindDeficiency.Tritan, Simple = true } },
+            { TransformationFormula.BlueScale, new Monochromacy() { Type = MonochromacyType.Blue } },
+            { TransformationFormula.GreenScale, new Monochromacy() { Type = MonochromacyType.Green } },
+            { TransformationFormula.RedScale, new Monochromacy() { Type = MonochromacyType.Red } },
+            { TransformationFormula.YellowScale, new Monochromacy() { Type = MonochromacyType.Yellow } },
+            { TransformationFormula.AquaScale, new Monochromacy() { Type = MonochromacyType.Cyan } },
+            { TransformationFormula.PinkScale, new Monochromacy() { Type = MonochromacyType.Magenta } },
         };
 
         /// <summary>
