@@ -34,24 +34,6 @@ namespace Terminaux.Colors.Transformation
     /// </summary>
     public static class TransformationTools
     {
-        internal static readonly Dictionary<TransformationFormula, BaseTransformationFormula> formulas = new()
-        {
-            { TransformationFormula.Monochromacy, new Monochromacy() },
-            { TransformationFormula.Inverse, new Inverse() },
-            { TransformationFormula.Protan, new ColorBlind() { Deficiency = ColorBlindDeficiency.Protan } },
-            { TransformationFormula.Deutan, new ColorBlind() { Deficiency = ColorBlindDeficiency.Deutan } },
-            { TransformationFormula.Tritan, new ColorBlind() { Deficiency = ColorBlindDeficiency.Tritan } },
-            { TransformationFormula.ProtanVienot, new ColorBlind() { Deficiency = ColorBlindDeficiency.Protan, Simple = true } },
-            { TransformationFormula.DeutanVienot, new ColorBlind() { Deficiency = ColorBlindDeficiency.Deutan, Simple = true } },
-            { TransformationFormula.TritanVienot, new ColorBlind() { Deficiency = ColorBlindDeficiency.Tritan, Simple = true } },
-            { TransformationFormula.BlueScale, new Monochromacy() { Type = MonochromacyType.Blue } },
-            { TransformationFormula.GreenScale, new Monochromacy() { Type = MonochromacyType.Green } },
-            { TransformationFormula.RedScale, new Monochromacy() { Type = MonochromacyType.Red } },
-            { TransformationFormula.YellowScale, new Monochromacy() { Type = MonochromacyType.Yellow } },
-            { TransformationFormula.AquaScale, new Monochromacy() { Type = MonochromacyType.Cyan } },
-            { TransformationFormula.PinkScale, new Monochromacy() { Type = MonochromacyType.Magenta } },
-        };
-
         /// <summary>
         /// Converts from sRGB to Linear RGB using a color number
         /// </summary>

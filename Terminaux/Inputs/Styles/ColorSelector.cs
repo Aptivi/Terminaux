@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -31,6 +32,8 @@ using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation;
 using Terminaux.Colors.Transformation.Contrast;
 using Terminaux.Colors.Transformation.Formulas;
+using Terminaux.Colors.Transformation.Tools;
+using Terminaux.Colors.Transformation.Tools.ColorBlind;
 using Terminaux.Inputs.Pointer;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs.Styles.Selection;
@@ -58,6 +61,24 @@ namespace Terminaux.Inputs.Styles
         private static ConsoleColors colorValue255 = ConsoleColors.Fuchsia;
         private static ConsoleColor colorValue16 = ConsoleColor.Magenta;
         private static bool save = true;
+        private static readonly Dictionary<TransformationFormula, BaseTransformationFormula> transformationFormulas = new()
+        {
+            { TransformationFormula.Monochromacy, new Monochromacy() },
+            { TransformationFormula.Inverse, new Inverse() },
+            { TransformationFormula.Protan, new ColorBlind() { Deficiency = ColorBlindDeficiency.Protan } },
+            { TransformationFormula.Deutan, new ColorBlind() { Deficiency = ColorBlindDeficiency.Deutan } },
+            { TransformationFormula.Tritan, new ColorBlind() { Deficiency = ColorBlindDeficiency.Tritan } },
+            { TransformationFormula.ProtanVienot, new ColorBlind() { Deficiency = ColorBlindDeficiency.Protan, Simple = true } },
+            { TransformationFormula.DeutanVienot, new ColorBlind() { Deficiency = ColorBlindDeficiency.Deutan, Simple = true } },
+            { TransformationFormula.TritanVienot, new ColorBlind() { Deficiency = ColorBlindDeficiency.Tritan, Simple = true } },
+            { TransformationFormula.BlueScale, new Monochromacy() { Type = MonochromacyType.Blue } },
+            { TransformationFormula.GreenScale, new Monochromacy() { Type = MonochromacyType.Green } },
+            { TransformationFormula.RedScale, new Monochromacy() { Type = MonochromacyType.Red } },
+            { TransformationFormula.YellowScale, new Monochromacy() { Type = MonochromacyType.Yellow } },
+            { TransformationFormula.AquaScale, new Monochromacy() { Type = MonochromacyType.Cyan } },
+            { TransformationFormula.PinkScale, new Monochromacy() { Type = MonochromacyType.Magenta } },
+        };
+
         private readonly static Keybinding[] bindings =
         [
             new("Submit", ConsoleKey.Enter),
@@ -650,7 +671,7 @@ namespace Terminaux.Inputs.Styles
             if (colorBlindnessSimulationIdx > 0)
             {
                 var formula = (TransformationFormula)(colorBlindnessSimulationIdx - 1);
-                var formulas = new BaseTransformationFormula[]{ TransformationTools.formulas[formula] };
+                var formulas = new BaseTransformationFormula[]{ transformationFormulas[formula] };
                 formulas[0].Frequency = colorBlindnessSeverity;
                 var transformed = new Color(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, new(){ Transformations = formulas });
                 finalColor = transformed;
@@ -725,7 +746,7 @@ namespace Terminaux.Inputs.Styles
         {
             if (colorBlind)
             {
-                var formulas = new BaseTransformationFormula[] { TransformationTools.formulas[formula] };
+                var formulas = new BaseTransformationFormula[] { transformationFormulas[formula] };
                 formulas[0].Frequency = severity;
                 var transformed = new Color(selectedColor.RGB.R, selectedColor.RGB.G, selectedColor.RGB.B, new() { Transformations = formulas });
                 selectedColor = transformed;
