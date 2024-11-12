@@ -17,29 +17,40 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-
-namespace Terminaux.Colors.Transformation.Formulas
+namespace Terminaux.Colors.Transformation.Tools
 {
     /// <summary>
-    /// Green tinted monochromacy
+    /// Monochromacy type
     /// </summary>
-    public class GreenScale : BaseTransformationFormula, ITransformationFormula
+    public enum MonochromacyType
     {
-        /// <inheritdoc/>
-        public override (int, int, int) Transform(int r, int g, int b)
-        {
-            // Check values
-            if (r < 0 || r > 255)
-                throw new ArgumentOutOfRangeException("r");
-            if (g < 0 || g > 255)
-                throw new ArgumentOutOfRangeException("g");
-            if (b < 0 || b > 255)
-                throw new ArgumentOutOfRangeException("b");
-
-            // Transform the color linear values by applying monochromacy
-            int sMono = Monochromacy.GetMonochromeFactor(r, g, b);
-            return (0, sMono, 0);
-        }
+        /// <summary>
+        /// Monochrome or grayscale color
+        /// </summary>
+        Monochrome,
+        /// <summary>
+        /// Red color tint
+        /// </summary>
+        Red,
+        /// <summary>
+        /// Green color tint
+        /// </summary>
+        Green,
+        /// <summary>
+        /// Blue color tint
+        /// </summary>
+        Blue,
+        /// <summary>
+        /// Cyan color tint
+        /// </summary>
+        Cyan,
+        /// <summary>
+        /// Magenta color tint
+        /// </summary>
+        Magenta,
+        /// <summary>
+        /// Yellow color tint
+        /// </summary>
+        Yellow,
     }
 }

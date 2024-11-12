@@ -19,7 +19,7 @@
 
 using System;
 
-namespace Terminaux.Colors.Transformation.Formulas.ColorBlind
+namespace Terminaux.Colors.Transformation.Tools.ColorBlind
 {
     internal static class Vienot
     {

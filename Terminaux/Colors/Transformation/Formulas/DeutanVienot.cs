@@ -18,7 +18,7 @@
 //
 
 using System;
-using Terminaux.Colors.Transformation.Formulas.ColorBlind;
+using Terminaux.Colors.Transformation.Tools.ColorBlind;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {

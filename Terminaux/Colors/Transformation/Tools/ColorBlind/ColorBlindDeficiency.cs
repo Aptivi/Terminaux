@@ -17,29 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-
-namespace Terminaux.Colors.Transformation.Formulas
+namespace Terminaux.Colors.Transformation.Tools.ColorBlind
 {
     /// <summary>
-    /// Aqua tinted monochromacy
+    /// Deficiency type of the color blindness
     /// </summary>
-    public class AquaScale : BaseTransformationFormula, ITransformationFormula
+    public enum ColorBlindDeficiency
     {
-        /// <inheritdoc/>
-        public override (int, int, int) Transform(int r, int g, int b)
-        {
-            // Check values
-            if (r < 0 || r > 255)
-                throw new ArgumentOutOfRangeException("r");
-            if (g < 0 || g > 255)
-                throw new ArgumentOutOfRangeException("g");
-            if (b < 0 || b > 255)
-                throw new ArgumentOutOfRangeException("b");
-
-            // Transform the color linear values by applying monochromacy
-            int sMono = Monochromacy.GetMonochromeFactor(r, g, b);
-            return (0, sMono, sMono);
-        }
+        /// <summary>
+        /// Red/green color blindness. It makes red look more green
+        /// </summary>
+        Protan,
+        /// <summary>
+        /// Red/green color blindness. It makes green look more red
+        /// </summary>
+        Deutan,
+        /// <summary>
+        /// Blue/yellow color blindness.
+        /// </summary>
+        Tritan,
     }
 }

@@ -41,7 +41,8 @@ namespace Terminaux.Colors.Transformation.Formulas
             int invR = 255 - r;
             int invG = 255 - g;
             int invB = 255 - b;
-            return (invR, invG, invB);
+            var final = TransformationTools.BlendColor((r, g, b), (invR, invG, invB), Frequency);
+            return (final.RGB.R, final.RGB.G, final.RGB.B);
         }
     }
 }

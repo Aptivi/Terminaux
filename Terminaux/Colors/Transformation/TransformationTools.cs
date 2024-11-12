@@ -24,6 +24,7 @@ using Terminaux.Base;
 using Terminaux.Colors.Models;
 using Terminaux.Colors.Models.Conversion;
 using Terminaux.Colors.Transformation.Formulas;
+using Terminaux.Colors.Transformation.Tools;
 
 namespace Terminaux.Colors.Transformation
 {
@@ -42,12 +43,12 @@ namespace Terminaux.Colors.Transformation
             { TransformationFormula.ProtanVienot, new ProtanVienot() },
             { TransformationFormula.DeutanVienot, new DeutanVienot() },
             { TransformationFormula.TritanVienot, new TritanVienot() },
-            { TransformationFormula.BlueScale, new BlueScale() },
-            { TransformationFormula.GreenScale, new GreenScale() },
-            { TransformationFormula.RedScale, new RedScale() },
-            { TransformationFormula.YellowScale, new YellowScale() },
-            { TransformationFormula.AquaScale, new AquaScale() },
-            { TransformationFormula.PinkScale, new PinkScale() },
+            { TransformationFormula.BlueScale, new Monochromacy() { Type = MonochromacyType.Blue } },
+            { TransformationFormula.GreenScale, new Monochromacy() { Type = MonochromacyType.Green } },
+            { TransformationFormula.RedScale, new Monochromacy() { Type = MonochromacyType.Red } },
+            { TransformationFormula.YellowScale, new Monochromacy() { Type = MonochromacyType.Yellow } },
+            { TransformationFormula.AquaScale, new Monochromacy() { Type = MonochromacyType.Cyan } },
+            { TransformationFormula.PinkScale, new Monochromacy() { Type = MonochromacyType.Magenta } },
         };
 
         /// <summary>
@@ -97,23 +98,80 @@ namespace Terminaux.Colors.Transformation
         /// <param name="factor">Blending factor [0.0 to 1.0]</param>
         /// <returns>A color instance that represents a source color blended with the target color.</returns>
         public static Color BlendColor(Color source, Color target, double factor = 0.5) =>
+            BlendColor(source.RGB, target.RGB, factor);
+
+        /// <summary>
+        /// Blends the two colors together
+        /// </summary>
+        /// <param name="source">Source color to be blended</param>
+        /// <param name="target">Target color to blend</param>
+        /// <param name="factor">Blending factor [0.0 to 1.0]</param>
+        /// <returns>A color instance that represents a source color blended with the target color.</returns>
+        public static Color BlendColor(RedGreenBlue source, RedGreenBlue target, double factor = 0.5) =>
+            BlendColor((source.R, source.G, source.B), (target.R, target.G, target.B), factor);
+
+        /// <summary>
+        /// Blends the two colors together
+        /// </summary>
+        /// <param name="source">Source RGB levels to be blended</param>
+        /// <param name="target">Target RGB levels to blend</param>
+        /// <param name="factor">Blending factor [0.0 to 1.0]</param>
+        /// <returns>A color instance that represents a source color blended with the target color.</returns>
+        public static Color BlendColor((int r, int g, int b) source, (int r, int g, int b) target, double factor = 0.5) =>
             new(
-                (byte)(source.RGB.R + ((target.RGB.R - source.RGB.R) * factor)),
-                (byte)(source.RGB.G + ((target.RGB.G - source.RGB.G) * factor)),
-                (byte)(source.RGB.B + ((target.RGB.B - source.RGB.B) * factor))
+                (byte)(source.r + ((target.r - source.r) * factor)),
+                (byte)(source.g + ((target.g - source.g) * factor)),
+                (byte)(source.b + ((target.b - source.b) * factor))
             );
 
         /// <summary>
         /// Gets the luminance of the color
         /// </summary>
         /// <param name="color">Color to obtain luminance from</param>
-        /// <returns>Luminance level</returns>
-        public static double GetLuminance(Color color)
+        /// <param name="sRgb">Convert linear RGB result to sRGB</param>
+        /// <returns>Luminance level in linear RGB or sRGB</returns>
+        public static double GetLuminance(Color color, bool sRgb = false) =>
+            GetLuminance(color.RGB, sRgb);
+
+        /// <summary>
+        /// Gets the luminance of the color
+        /// </summary>
+        /// <param name="rgb">RGB levels to obtain luminance from</param>
+        /// <param name="sRgb">Convert linear RGB result to sRGB</param>
+        /// <returns>Luminance level in linear RGB or sRGB</returns>
+        public static double GetLuminance(RedGreenBlue rgb, bool sRgb = false) =>
+            GetLuminance(rgb.R, rgb.G, rgb.B, sRgb);
+
+        /// <summary>
+        /// Gets the luminance of the color
+        /// </summary>
+        /// <param name="r">Red RGB color level (sRGB)</param>
+        /// <param name="g">Green RGB color level (sRGB)</param>
+        /// <param name="b">Blue RGB color level (sRGB)</param>
+        /// <param name="sRgb">Convert linear RGB result to sRGB</param>
+        /// <returns>Luminance level in linear RGB or sRGB</returns>
+        public static double GetLuminance(int r, int g, int b, bool sRgb = false)
         {
-            double luminanceR = SRGBToLinearRGB(color.RGB.R);
-            double luminanceG = SRGBToLinearRGB(color.RGB.G);
-            double luminanceB = SRGBToLinearRGB(color.RGB.B);
-            return 0.2126 * luminanceR + 0.7152 * luminanceG + 0.0722 * luminanceB;
+            double luminanceR = SRGBToLinearRGB(r);
+            double luminanceG = SRGBToLinearRGB(g);
+            double luminanceB = SRGBToLinearRGB(b);
+            return GetLuminance(luminanceR, luminanceG, luminanceB, sRgb);
+        }
+
+        /// <summary>
+        /// Gets the luminance of the color
+        /// </summary>
+        /// <param name="r">Red RGB color level (linear)</param>
+        /// <param name="g">Green RGB color level (linear)</param>
+        /// <param name="b">Blue RGB color level (linear)</param>
+        /// <param name="sRgb">Convert linear RGB result to sRGB</param>
+        /// <returns>Luminance level in linear RGB or sRGB</returns>
+        public static double GetLuminance(double r, double g, double b, bool sRgb = false)
+        {
+            double luminanceLinear = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+            if (sRgb)
+                return LinearRGBTosRGB(luminanceLinear);
+            return luminanceLinear;
         }
 
         /// <summary>

@@ -18,6 +18,8 @@
 //
 
 using System;
+using Terminaux.Base;
+using Terminaux.Colors.Transformation.Tools;
 
 namespace Terminaux.Colors.Transformation.Formulas
 {
@@ -26,6 +28,11 @@ namespace Terminaux.Colors.Transformation.Formulas
     /// </summary>
     public class Monochromacy : BaseTransformationFormula, ITransformationFormula
     {
+        /// <summary>
+        /// Monochromacy type
+        /// </summary>
+        public MonochromacyType Type { get; set; } = MonochromacyType.Monochrome;
+
         /// <inheritdoc/>
         public override (int, int, int) Transform(int r, int g, int b)
         {
@@ -38,24 +45,20 @@ namespace Terminaux.Colors.Transformation.Formulas
                 throw new ArgumentOutOfRangeException("b");
 
             // Transform the color linear values by applying monochromacy
-            int sMono = GetMonochromeFactor(r, g, b);
-            return (sMono, sMono, sMono);
-        }
-
-        internal static int GetMonochromeFactor(int r, int g, int b)
-        {
-            // Get linear RGB from these three RGB values
-            double[] linears =
-            [
-                TransformationTools.SRGBToLinearRGB(r),
-                TransformationTools.SRGBToLinearRGB(g),
-                TransformationTools.SRGBToLinearRGB(b)
-            ];
-
-            // Transform the color linear values by applying monochromacy
-            double monochrome = 0.2126 * linears[0] + 0.7152 * linears[1] + 0.0722 * linears[2];
-            int sMono = TransformationTools.LinearRGBTosRGB(monochrome);
-            return sMono;
+            int sMono = (int)TransformationTools.GetLuminance(r, g, b, true);
+            (int r, int g, int b) mono = Type switch
+            {
+                MonochromacyType.Monochrome =>  (sMono, sMono, sMono),
+                MonochromacyType.Red =>         (sMono, 0,     0    ),
+                MonochromacyType.Green =>       (0,     sMono, 0    ),
+                MonochromacyType.Blue =>        (0,     0,     sMono),
+                MonochromacyType.Cyan =>        (0,     sMono, sMono),
+                MonochromacyType.Magenta =>     (sMono, 0,     sMono),
+                MonochromacyType.Yellow =>      (sMono, sMono, 0    ),
+                _ => throw new TerminauxException("Invalid monochromacy type"),
+            };
+            var final = TransformationTools.BlendColor((r, g, b), (mono.r, mono.g, mono.b), Frequency);
+            return (final.RGB.R, final.RGB.G, final.RGB.B);
         }
     }
 }

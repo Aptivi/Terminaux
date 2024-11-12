@@ -32,6 +32,7 @@ using Newtonsoft.Json;
 using Terminaux.Colors.Transformation.Formulas;
 using Terminaux.Sequences.Builder;
 using Terminaux.Base.TermInfo;
+using Terminaux.Colors.Transformation;
 
 namespace Terminaux.Colors
 {
@@ -148,7 +149,7 @@ namespace Terminaux.Colors
             {
                 if (RGB is null)
                     return ColorBrightness.Light;
-                int monochromeFactor = Monochromacy.GetMonochromeFactor(RGB.R, RGB.G, RGB.B);
+                int monochromeFactor = (int)TransformationTools.GetLuminance(RGB.R, RGB.G, RGB.B);
                 return monochromeFactor < 255d / 2d ? ColorBrightness.Dark : ColorBrightness.Light;
             }
         }
