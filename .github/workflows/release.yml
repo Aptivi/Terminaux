@@ -51,7 +51,7 @@ jobs:
         uses: tsickert/discord-webhook@v6.0.0
         with:
           webhook-url: ${{ secrets.WEBHOOK_URL }}
-          content: "<:terminaux:1268905031021629514> ${{ steps.release-asset.outputs.SUBJECT }} <:terminaux:1268905031021629514>\n\n${{ steps.release-asset.outputs.BODY }}"
+          content: "<:terminaux:1305819644824911872> ${{ steps.release-asset.outputs.SUBJECT }} <:terminaux:1305819644824911872>\n\n${{ steps.release-asset.outputs.BODY }}"
       - name: Package Publication
         run: |
           chmod +x tools/*.sh
