@@ -19,7 +19,6 @@
 
 using System;
 using System.Text;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Base.Buffered;
@@ -27,7 +26,6 @@ using Textify.General;
 using Terminaux.Colors;
 using Terminaux.Base;
 using Terminaux.Base.Extensions;
-using Terminaux.Writer.MiscWriters;
 using Terminaux.Inputs.Interactive;
 using System.Collections.Generic;
 using System.Globalization;

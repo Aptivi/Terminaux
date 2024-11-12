@@ -22,7 +22,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Colors;
 using System.Text;
 using System.Linq;
-using Terminaux.Writer.FancyWriters;
 using Terminaux.Base.Buffered;
 using System.Diagnostics;
 using Terminaux.Base;

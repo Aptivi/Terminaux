@@ -29,7 +29,6 @@ using Terminaux.Colors.Models.Parsing;
 using Terminaux.Colors.Interop;
 using Terminaux.Colors.Transformation.Contrast;
 using Newtonsoft.Json;
-using Terminaux.Colors.Transformation.Formulas;
 using Terminaux.Sequences.Builder;
 using Terminaux.Base.TermInfo;
 using Terminaux.Colors.Transformation;

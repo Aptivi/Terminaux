@@ -24,7 +24,6 @@ using Terminaux.Colors.Transformation;
 using Terminaux.Inputs;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
-using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Console.Fixtures.Cases.Colors
 {

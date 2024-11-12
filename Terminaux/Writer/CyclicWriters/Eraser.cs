@@ -18,7 +18,6 @@
 //
 
 using Terminaux.Colors;
-using Terminaux.Writer.FancyWriters;
 
 namespace Terminaux.Writer.CyclicWriters
 {

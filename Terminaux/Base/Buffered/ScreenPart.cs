@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
-using Textify.General;
 
 namespace Terminaux.Base.Buffered
 {

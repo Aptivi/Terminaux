@@ -28,7 +28,6 @@ using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.CyclicWriters;
 using Terminaux.Writer.CyclicWriters.Renderer;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
-using Terminaux.Writer.FancyWriters;
 using Textify.General;
 
 namespace Terminaux.Inputs.Styles.Infobox.Tools

@@ -22,7 +22,6 @@ using Terminaux.Base.Buffered;
 using Terminaux.Colors;
 using Terminaux.Inputs.Styles.Infobox;
 using Terminaux.Inputs;
-using Terminaux.Writer.FancyWriters;
 using Textify.Data.Figlet;
 using Terminaux.Writer.CyclicWriters.Renderer.Tools;
 using Terminaux.Writer.CyclicWriters;

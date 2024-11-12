@@ -18,14 +18,7 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using Terminaux.Base;
 using Terminaux.Colors.Models;
-using Terminaux.Colors.Models.Conversion;
-using Terminaux.Colors.Transformation.Formulas;
-using Terminaux.Colors.Transformation.Tools;
-using Terminaux.Colors.Transformation.Tools.ColorBlind;
 
 namespace Terminaux.Colors.Transformation
 {
