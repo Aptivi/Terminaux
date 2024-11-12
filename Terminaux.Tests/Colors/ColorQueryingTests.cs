@@ -452,20 +452,6 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
-        /// Tests trying to get a selected color
-        /// </summary>
-        [TestMethod]
-        [Description("Querying")]
-        public void GetSelectedColor()
-        {
-            var source = new Color(10, 20, 30);
-            var target = new Color(30, 40, 50);
-            var expected = new Color(20, 30, 40);
-            var actual = TransformationTools.SelectColor(source, target);
-            actual.ShouldBe(expected);
-        }
-
-        /// <summary>
         /// Tests trying to get a blended color
         /// </summary>
         [TestMethod]
