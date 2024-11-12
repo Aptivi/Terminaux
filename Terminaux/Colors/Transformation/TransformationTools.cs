@@ -35,7 +35,7 @@ namespace Terminaux.Colors.Transformation
     {
         internal static readonly Dictionary<TransformationFormula, BaseTransformationFormula> formulas = new()
         {
-            { TransformationFormula.Monochromacy, new Monochromacy() },
+            { TransformationFormula.Monochromacy, new Monochromacy() { Frequency = 1.0 } },
             { TransformationFormula.Inverse, new Inverse() },
             { TransformationFormula.Protan, new Protan() },
             { TransformationFormula.Deutan, new Deutan() },
@@ -43,12 +43,12 @@ namespace Terminaux.Colors.Transformation
             { TransformationFormula.ProtanVienot, new ProtanVienot() },
             { TransformationFormula.DeutanVienot, new DeutanVienot() },
             { TransformationFormula.TritanVienot, new TritanVienot() },
-            { TransformationFormula.BlueScale, new Monochromacy() { Type = MonochromacyType.Blue } },
-            { TransformationFormula.GreenScale, new Monochromacy() { Type = MonochromacyType.Green } },
-            { TransformationFormula.RedScale, new Monochromacy() { Type = MonochromacyType.Red } },
-            { TransformationFormula.YellowScale, new Monochromacy() { Type = MonochromacyType.Yellow } },
-            { TransformationFormula.AquaScale, new Monochromacy() { Type = MonochromacyType.Cyan } },
-            { TransformationFormula.PinkScale, new Monochromacy() { Type = MonochromacyType.Magenta } },
+            { TransformationFormula.BlueScale, new Monochromacy() { Type = MonochromacyType.Blue, Frequency = 1.0 } },
+            { TransformationFormula.GreenScale, new Monochromacy() { Type = MonochromacyType.Green, Frequency = 1.0 } },
+            { TransformationFormula.RedScale, new Monochromacy() { Type = MonochromacyType.Red, Frequency = 1.0 } },
+            { TransformationFormula.YellowScale, new Monochromacy() { Type = MonochromacyType.Yellow, Frequency = 1.0 } },
+            { TransformationFormula.AquaScale, new Monochromacy() { Type = MonochromacyType.Cyan, Frequency = 1.0 } },
+            { TransformationFormula.PinkScale, new Monochromacy() { Type = MonochromacyType.Magenta, Frequency = 1.0 } },
         };
 
         /// <summary>

@@ -73,6 +73,8 @@ namespace Terminaux.Inputs.Styles
             new("Change color modes", ConsoleKey.Tab),
             new("Next color blindness simulation", ConsoleKey.N),
             new("Previous color blindness simulation", ConsoleKey.M),
+            new("Increase transformation frequency", ConsoleKey.N, ConsoleModifiers.Control),
+            new("Decrease transformation frequency", ConsoleKey.M, ConsoleModifiers.Control),
             new("Increase value", PointerButton.WheelDown),
             new("Decrease value", PointerButton.WheelUp),
         ];
@@ -404,7 +406,7 @@ namespace Terminaux.Inputs.Styles
                     InteriorWidth = halfBoxWidth,
                     InteriorHeight = boxHeight + 2,
                 };
-                var colorBlindnessFrame = new BoxFrame("Color blindness")
+                var colorBlindnessFrame = new BoxFrame($"Transform [{colorBlindnessSeverity:0.00}]")
                 {
                     Left = otherHalfLeft,
                     Top = infoRampBarY,
@@ -552,14 +554,32 @@ namespace Terminaux.Inputs.Styles
                         finalSettings.Opacity--;
                         break;
                     case ConsoleKey.N:
-                        colorBlindnessSimulationIdx++;
-                        if (colorBlindnessSimulationIdx >= Enum.GetNames(typeof(TransformationFormula)).Length + 1)
-                            colorBlindnessSimulationIdx--;
+                        if (keypress.Modifiers == ConsoleModifiers.Control)
+                        {
+                            colorBlindnessSeverity += 0.01;
+                            if (colorBlindnessSeverity > 1.0)
+                                colorBlindnessSeverity = 1.0;
+                        }
+                        else
+                        {
+                            colorBlindnessSimulationIdx++;
+                            if (colorBlindnessSimulationIdx >= Enum.GetNames(typeof(TransformationFormula)).Length + 1)
+                                colorBlindnessSimulationIdx--;
+                        }
                         break;
                     case ConsoleKey.M:
-                        colorBlindnessSimulationIdx--;
-                        if (colorBlindnessSimulationIdx < 0)
-                            colorBlindnessSimulationIdx++;
+                        if (keypress.Modifiers == ConsoleModifiers.Control)
+                        {
+                            colorBlindnessSeverity -= 0.01;
+                            if (colorBlindnessSeverity < 0)
+                                colorBlindnessSeverity = 0;
+                        }
+                        else
+                        {
+                            colorBlindnessSimulationIdx--;
+                            if (colorBlindnessSimulationIdx < 0)
+                                colorBlindnessSimulationIdx++;
+                        }
                         break;
                     case ConsoleKey.W:
                         var colors = WebSafeColors.GetColorList();
