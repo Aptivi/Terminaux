@@ -149,7 +149,7 @@ namespace Terminaux.Colors
             {
                 if (RGB is null)
                     return ColorBrightness.Light;
-                int monochromeFactor = (int)TransformationTools.GetLuminance(RGB.R, RGB.G, RGB.B);
+                int monochromeFactor = (int)TransformationTools.GetLuminance(RGB.R, RGB.G, RGB.B, true);
                 return monochromeFactor < 255d / 2d ? ColorBrightness.Dark : ColorBrightness.Light;
             }
         }
