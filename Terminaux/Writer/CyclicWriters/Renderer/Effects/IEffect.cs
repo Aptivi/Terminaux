@@ -33,10 +33,5 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Effects
         /// Effect starting sequence
         /// </summary>
         string EffectStart { get; }
-
-        /// <summary>
-        /// Effect ending sequence
-        /// </summary>
-        string EffectEnd { get; }
     }
 }

@@ -35,10 +35,6 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins
 
         /// <inheritdoc/>
         public string EffectStart =>
-            TermInfoDesc.Current?.EnterStandoutMode?.Value ?? "";
-
-        /// <inheritdoc/>
-        public string EffectEnd =>
-            TermInfoDesc.Current?.ExitStandoutMode?.Value ?? "";
+            TermInfoDesc.Current?.EnterBoldMode?.Value ?? "";
     }
 }

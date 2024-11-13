@@ -36,9 +36,5 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins
         /// <inheritdoc/>
         public string EffectStart =>
             TermInfoDesc.Current?.EnterItalicsMode?.Value ?? "";
-
-        /// <inheritdoc/>
-        public string EffectEnd =>
-            TermInfoDesc.Current?.ExitStandoutMode?.Value ?? "";
     }
 }
