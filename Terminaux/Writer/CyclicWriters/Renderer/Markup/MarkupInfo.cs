@@ -23,6 +23,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
     {
         internal int entranceIndex = -1;
         internal int exitIndex = -1;
+        internal int nestLevel = -1;
         internal string represent = "";
         internal bool isEscape = false;
     }

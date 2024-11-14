@@ -23,8 +23,10 @@ using System.Text;
 using Terminaux.Base;
 using Terminaux.Base.TermInfo;
 using Terminaux.Colors;
+using Terminaux.Sequences;
 using Terminaux.Writer.CyclicWriters.Renderer.Effects;
 using Terminaux.Writer.CyclicWriters.Renderer.Effects.Builtins;
+using Textify.General;
 
 namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
 {
@@ -75,9 +77,10 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
             // Markup is inspired by BBCode and can have escaped starting and ending sequence characters.
             var finalResult = new StringBuilder(markup);
             List<MarkupInfo> sequences = [];
-            Queue<MarkupInfo> queuedSequences = [];
+            List<MarkupInfo> queuedSequences = [];
             StringBuilder appended = new();
             bool append = false;
+            int nestLevel = -1;
             for (int i = 0; i < markup.Length; i++)
             {
                 char markupChar = markup[i];
@@ -90,6 +93,7 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                     {
                         entranceIndex = i,
                         exitIndex = i + 1,
+                        nestLevel = nestLevel,
                         represent = $"{markupChar}",
                         isEscape = true,
                     });
@@ -101,9 +105,11 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                 // the changes.
                 if (markupChar == '[' && nextChar != '/')
                 {
-                    queuedSequences.Enqueue(new()
+                    nestLevel++;
+                    queuedSequences.Add(new()
                     {
                         entranceIndex = i,
+                        nestLevel = nestLevel,
                     });
                     appended.Append($"{markupChar}");
                     append = true;
@@ -116,10 +122,10 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                         throw new TerminauxException("Invalid end tag specifier.");
                     if (queuedSequences.Count > 0)
                     {
-                        var queued = queuedSequences.Dequeue();
+                        nestLevel--;
+                        var queued = queuedSequences[queuedSequences.Count - 1];
+                        queuedSequences.Remove(queued);
                         queued.exitIndex = i;
-                        queued.represent = appended.ToString();
-                        appended.Clear();
                         sequences.Add(queued);
                     }
                     else
@@ -134,32 +140,75 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
                 if (append)
                 {
                     appended.Append(markupChar);
-                    if (markupChar == ']')
+                    if (markupChar == ']' && queuedSequences.Count > 0)
+                    {
+                        queuedSequences[queuedSequences.Count - 1].represent = appended.ToString();
                         append = false;
+                        appended.Clear();
+                    }
                 }
             }
+            sequences = [.. sequences.OrderBy((mi) => mi.entranceIndex)];
 
             // Now that we've got properties, split them to process them
-            string[] effectNames = effects.Select((effect) => effect.MarkupTag).ToArray();
-            string resetAll = TermInfoDesc.Current?.ExitAttributeMode?.Value ?? "";
+            Dictionary<string, IEffect> effectNames = effects.ToDictionary((effect) => effect.MarkupTag, (effect) => effect);
+            bool useInitialFormat = !string.IsNullOrEmpty(initialFormat);
+            if (useInitialFormat && VtSequenceTools.FilterVTSequences(initialFormat).Length != 0)
+                throw new TerminauxException("Initial format must not print any text; it must contain only formatting VT sequences.");
+            string finalFormat =
+                useInitialFormat ? initialFormat :
+                $"{(foregroundColor is not null ? ColorTools.RenderSetConsoleColor(foregroundColor) : "")}" +
+                $"{(backgroundColor is not null ? ColorTools.RenderSetConsoleColor(backgroundColor, true) : "")}";
+            string resetAll = (TermInfoDesc.Current?.ExitAttributeMode?.Value ?? "") + finalFormat;
             for (int i = finalResult.Length - 1; i >= 0; i--)
             {
-                foreach (var sequence in sequences)
+                for (int seq = 0; seq < sequences.Count; seq++)
                 {
+                    MarkupInfo? sequence = sequences[seq];
                     bool isEntrance = i == sequence.entranceIndex;
                     bool isExit = i == sequence.exitIndex && !sequence.isEscape;
                     if (isEntrance || isExit)
                     {
-                        finalResult.Remove(i, sequence.represent.Length);
+                        // Check to see if this is an escape character or not
+                        if (sequence.isEscape)
+                        {
+                            finalResult.Remove(i, 2);
+                            finalResult.Insert(i, sequence.represent);
+                            break;
+                        }
 
-                        // Process the representation
-                        string[] representations = sequence.represent.ToString().Split(' ');
+                        // Remove the representation
+                        finalResult.Remove(i, isExit ? "[/]".Length : sequence.represent.Length);
+
+                        // Process representations and form valid sequences from them
+                        string representation =
+                            isExit ?
+                                seq > 0 && sequence.nestLevel != sequences[seq - 1].nestLevel ?
+                                sequences[seq - 1].represent :
+                                resetAll :
+                            sequence.represent;
+                        string[] representations = representation.RemovePrefix("[").RemoveSuffix("]").ToString().Split(' ');
+                        var representationBuilder = new StringBuilder(isExit ? resetAll : "");
+                        if (representation != resetAll)
+                        {
+                            foreach (string part in representations)
+                            {
+                                if (effectNames.TryGetValue(part, out var effect))
+                                    representationBuilder.Append(effect.EffectStart);
+                                else if (ColorTools.TryParseColor(part))
+                                    representationBuilder.Append(ColorTools.RenderSetConsoleColor(part));
+                            }
+                        }
+
+                        // Add the result
+                        finalResult.Insert(i, representationBuilder.ToString());
                         break;
                     }
                     else
                         continue;
                 }
             }
+            finalResult.Insert(0, finalFormat);
             return finalResult.ToString();
         }
 
