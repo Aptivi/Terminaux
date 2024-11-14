@@ -270,6 +270,7 @@ namespace Terminaux.Writer.CyclicWriters
             char middleVertical = tableBorderSettings.BorderVerticalIntersectionChar;
             char endVertical = tableBorderSettings.BorderBottomVerticalIntersectionChar;
             char intersect = tableBorderSettings.BorderWholeIntersectionChar;
+            int mode = 0;
             for (int x = 1; x < columnsCount; x++)
             {
                 // Try to get the positions for the separator
@@ -278,15 +279,26 @@ namespace Terminaux.Writer.CyclicWriters
                 // Build the separator
                 for (int y = 0; y < height + 2; y++)
                 {
+                    mode =
+                        y == 0 ? 1 :
+                        y == height + 1 ? 2 :
+                        y == 2 && enableHeader ? 3 :
+                        0;
                     char finalChar =
-                        y == 0 ? beginVertical :
-                        y == height + 1 ? endVertical :
-                        y == 2 && enableHeader ? intersect :
+                        mode == 1 ? beginVertical :
+                        mode == 2 ? endVertical :
+                        mode == 3 ? intersect :
                         middleVertical;
-                    tableBuilder.Append(
-                        CsiSequences.GenerateCsiCursorPosition(positionsSeparator.Item1, y + top + 1) +
-                        finalChar
-                    );
+                    if ((mode == 0 && tableBorderSettings.BorderVerticalIntersectionEnabled) ||
+                        (mode == 1 && tableBorderSettings.BorderTopVerticalIntersectionEnabled) ||
+                        (mode == 2 && tableBorderSettings.BorderBottomVerticalIntersectionEnabled) ||
+                        (mode == 3 && tableBorderSettings.BorderWholeIntersectionEnabled))
+                    {
+                        tableBuilder.Append(
+                            CsiSequences.GenerateCsiCursorPosition(positionsSeparator.Item1, y + top + 1) +
+                            finalChar
+                        );
+                    }
                 }
             }
 

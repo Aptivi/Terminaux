@@ -40,6 +40,21 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         internal char _borderBottomVerticalIntersectionChar = '┴';
         internal char _borderVerticalIntersectionChar = '│';
         internal char _borderWholeIntersectionChar = '┼';
+        internal bool _borderUpperLeftCornerEnabled = true;
+        internal bool _borderUpperRightCornerEnabled = true;
+        internal bool _borderLowerLeftCornerEnabled = true;
+        internal bool _borderLowerRightCornerEnabled = true;
+        internal bool _borderUpperFrameEnabled = true;
+        internal bool _borderLowerFrameEnabled = true;
+        internal bool _borderLeftFrameEnabled = true;
+        internal bool _borderRightFrameEnabled = true;
+        internal bool _borderLeftHorizontalIntersectionEnabled = true;
+        internal bool _borderRightHorizontalIntersectionEnabled = true;
+        internal bool _borderHorizontalIntersectionEnabled = true;
+        internal bool _borderTopVerticalIntersectionEnabled = true;
+        internal bool _borderBottomVerticalIntersectionEnabled = true;
+        internal bool _borderVerticalIntersectionEnabled = true;
+        internal bool _borderWholeIntersectionEnabled = true;
 
         /// <summary>
         /// Global border settings
@@ -169,6 +184,127 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
         }
 
         /// <summary>
+        /// Upper left corner enabled 
+        /// </summary>
+        public bool BorderUpperLeftCornerEnabled
+        {
+            get => _borderUpperLeftCornerEnabled;
+            set => _borderUpperLeftCornerEnabled = value;
+        }
+        /// <summary>
+        /// Upper right corner enabled 
+        /// </summary>
+        public bool BorderUpperRightCornerEnabled
+        {
+            get => _borderUpperRightCornerEnabled;
+            set => _borderUpperRightCornerEnabled = value;
+        }
+        /// <summary>
+        /// Lower left corner enabled 
+        /// </summary>
+        public bool BorderLowerLeftCornerEnabled
+        {
+            get => _borderLowerLeftCornerEnabled;
+            set => _borderLowerLeftCornerEnabled = value;
+        }
+        /// <summary>
+        /// Lower right corner enabled 
+        /// </summary>
+        public bool BorderLowerRightCornerEnabled
+        {
+            get => _borderLowerRightCornerEnabled;
+            set => _borderLowerRightCornerEnabled = value;
+        }
+        /// <summary>
+        /// Upper frame enabled 
+        /// </summary>
+        public bool BorderUpperFrameEnabled
+        {
+            get => _borderUpperFrameEnabled;
+            set => _borderUpperFrameEnabled = value;
+        }
+        /// <summary>
+        /// Lower frame enabled 
+        /// </summary>
+        public bool BorderLowerFrameEnabled
+        {
+            get => _borderLowerFrameEnabled;
+            set => _borderLowerFrameEnabled = value;
+        }
+        /// <summary>
+        /// Left frame enabled 
+        /// </summary>
+        public bool BorderLeftFrameEnabled
+        {
+            get => _borderLeftFrameEnabled;
+            set => _borderLeftFrameEnabled = value;
+        }
+        /// <summary>
+        /// Right frame enabled 
+        /// </summary>
+        public bool BorderRightFrameEnabled
+        {
+            get => _borderRightFrameEnabled;
+            set => _borderRightFrameEnabled = value;
+        }
+        /// <summary>
+        /// Left horizontal intersection enabled 
+        /// </summary>
+        public bool BorderLeftHorizontalIntersectionEnabled
+        {
+            get => _borderLeftHorizontalIntersectionEnabled;
+            set => _borderLeftHorizontalIntersectionEnabled = value;
+        }
+        /// <summary>
+        /// Right horizontal intersection enabled 
+        /// </summary>
+        public bool BorderRightHorizontalIntersectionEnabled
+        {
+            get => _borderRightHorizontalIntersectionEnabled;
+            set => _borderRightHorizontalIntersectionEnabled = value;
+        }
+        /// <summary>
+        /// Horizontal intersection enabled 
+        /// </summary>
+        public bool BorderHorizontalIntersectionEnabled
+        {
+            get => _borderHorizontalIntersectionEnabled;
+            set => _borderHorizontalIntersectionEnabled = value;
+        }
+        /// <summary>
+        /// Top vertical intersection enabled 
+        /// </summary>
+        public bool BorderTopVerticalIntersectionEnabled
+        {
+            get => _borderTopVerticalIntersectionEnabled;
+            set => _borderTopVerticalIntersectionEnabled = value;
+        }
+        /// <summary>
+        /// Bottom vertical intersection enabled 
+        /// </summary>
+        public bool BorderBottomVerticalIntersectionEnabled
+        {
+            get => _borderBottomVerticalIntersectionEnabled;
+            set => _borderBottomVerticalIntersectionEnabled = value;
+        }
+        /// <summary>
+        /// Vertical intersection enabled 
+        /// </summary>
+        public bool BorderVerticalIntersectionEnabled
+        {
+            get => _borderVerticalIntersectionEnabled;
+            set => _borderVerticalIntersectionEnabled = value;
+        }
+        /// <summary>
+        /// Whole intersection enabled 
+        /// </summary>
+        public bool BorderWholeIntersectionEnabled
+        {
+            get => _borderWholeIntersectionEnabled;
+            set => _borderWholeIntersectionEnabled = value;
+        }
+
+        /// <summary>
         /// Makes a new instance of the border settings
         /// </summary>
         public BorderSettings()
@@ -195,6 +331,21 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Tools
             BorderBottomVerticalIntersectionChar = settings.BorderBottomVerticalIntersectionChar;
             BorderVerticalIntersectionChar = settings.BorderVerticalIntersectionChar;
             BorderWholeIntersectionChar = settings.BorderWholeIntersectionChar;
+            BorderUpperLeftCornerEnabled = settings.BorderUpperLeftCornerEnabled;
+            BorderUpperRightCornerEnabled = settings.BorderUpperRightCornerEnabled;
+            BorderLowerLeftCornerEnabled = settings.BorderLowerLeftCornerEnabled;
+            BorderLowerRightCornerEnabled = settings.BorderLowerRightCornerEnabled;
+            BorderUpperFrameEnabled = settings.BorderUpperFrameEnabled;
+            BorderLowerFrameEnabled = settings.BorderLowerFrameEnabled;
+            BorderLeftFrameEnabled = settings.BorderLeftFrameEnabled;
+            BorderRightFrameEnabled = settings.BorderRightFrameEnabled;
+            BorderLeftHorizontalIntersectionEnabled = settings.BorderLeftHorizontalIntersectionEnabled;
+            BorderRightHorizontalIntersectionEnabled = settings.BorderRightHorizontalIntersectionEnabled;
+            BorderHorizontalIntersectionEnabled = settings.BorderHorizontalIntersectionEnabled;
+            BorderTopVerticalIntersectionEnabled = settings.BorderTopVerticalIntersectionEnabled;
+            BorderBottomVerticalIntersectionEnabled = settings.BorderBottomVerticalIntersectionEnabled;
+            BorderVerticalIntersectionEnabled = settings.BorderVerticalIntersectionEnabled;
+            BorderWholeIntersectionEnabled = settings.BorderWholeIntersectionEnabled;
         }
     }
 }

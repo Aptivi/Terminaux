@@ -173,26 +173,70 @@ namespace Terminaux.Writer.CyclicWriters
                     );
                 }
 
+                // Corners
+                if (settings.BorderUpperLeftCornerEnabled)
+                {
+                    frameBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}" +
+                        $"{settings.BorderUpperLeftCornerChar}"
+                    );
+                }
+                if (settings.BorderUpperRightCornerEnabled)
+                {
+                    frameBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + 1)}" +
+                        $"{settings.BorderUpperRightCornerChar}"
+                    );
+                }
+                if (settings.BorderLowerLeftCornerEnabled)
+                {
+                    frameBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + InteriorHeight + 2)}" +
+                        $"{settings.BorderLowerLeftCornerChar}"
+                    );
+                }
+                if (settings.BorderLowerRightCornerEnabled)
+                {
+                    frameBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + InteriorHeight + 2)}" +
+                        $"{settings.BorderLowerRightCornerChar}"
+                    );
+                }
+
                 // Upper frame
-                frameBuilder.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}" +
-                    $"{settings.BorderUpperLeftCornerChar}{new string(settings.BorderUpperFrameChar, InteriorWidth)}{settings.BorderUpperRightCornerChar}"
-                );
+                if (settings.BorderUpperFrameEnabled)
+                {
+                    frameBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 1)}" +
+                        $"{new string(settings.BorderUpperFrameChar, InteriorWidth)}"
+                    );
+                }
+                if (settings.BorderLowerFrameEnabled)
+                {
+                    frameBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + InteriorHeight + 2)}" +
+                        $"{new string(settings.BorderLowerFrameChar, InteriorWidth)}"
+                    );
+                }
 
                 // Left and right edges
                 for (int i = 1; i <= InteriorHeight; i++)
-                    frameBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 1)}" +
-                        $"{settings.BorderLeftFrameChar}" +
-                        $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + i + 1)}" +
-                        $"{settings.BorderRightFrameChar}"
-                    );
-
-                // Lower frame
-                frameBuilder.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + InteriorHeight + 2)}" +
-                    $"{settings.BorderLowerLeftCornerChar}{new string(settings.BorderLowerFrameChar, InteriorWidth)}{settings.BorderLowerRightCornerChar}"
-                );
+                {
+                    if (settings.BorderLeftFrameEnabled)
+                    {
+                        frameBuilder.Append(
+                            $"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 1)}" +
+                            $"{settings.BorderLeftFrameChar}"
+                        );
+                    }
+                    if (settings.BorderRightFrameEnabled)
+                    {
+                        frameBuilder.Append(
+                            $"{CsiSequences.GenerateCsiCursorPosition(Left + InteriorWidth + 2, Top + i + 1)}" +
+                            $"{settings.BorderRightFrameChar}"
+                        );
+                    }
+                }
 
                 // Colors
                 if (useColor)
@@ -206,7 +250,10 @@ namespace Terminaux.Writer.CyclicWriters
                 // Text title
                 if (!string.IsNullOrEmpty(text) && InteriorWidth - 8 > 0 && ConsoleChar.EstimateCellWidth(text) <= InteriorWidth - 8)
                 {
-                    string finalText = $"{settings.BorderRightHorizontalIntersectionChar} {TextTools.FormatString(text, vars).Truncate(InteriorWidth - 8)} {settings.BorderLeftHorizontalIntersectionChar}";
+                    string finalText =
+                        $"{(settings.BorderRightHorizontalIntersectionEnabled ? $"{settings.BorderRightHorizontalIntersectionChar} " : "")}" +
+                        $"{TextTools.FormatString(text, vars).Truncate(InteriorWidth - 8)}" +
+                        $"{(settings.BorderLeftHorizontalIntersectionEnabled ? $"{settings.BorderLeftHorizontalIntersectionChar} " : "")}";
                     int leftPos = TextWriterTools.DetermineTextAlignment(finalText, InteriorWidth - 8, textSettings.TitleAlignment, Left + 2);
                     frameBuilder.Append(
                         $"{CsiSequences.GenerateCsiCursorPosition(leftPos + 1, Top + 1)}" +
