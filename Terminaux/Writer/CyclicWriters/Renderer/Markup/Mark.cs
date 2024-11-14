@@ -24,5 +24,41 @@ namespace Terminaux.Writer.CyclicWriters.Renderer.Markup
     /// </summary>
     public class Mark
     {
+        private string markup = "";
+
+        /// <summary>
+        /// Markup representation
+        /// </summary>
+        public string Markup
+        {
+            get => markup;
+            set
+            {
+                markup = value;
+                MarkupTools.ParseMarkup(Markup);
+            }
+        }
+
+        /// <summary>
+        /// Parses the markup representation
+        /// </summary>
+        /// <returns>A string that can be written to the console with the parsed markup representations</returns>
+        public string ParseMarkup() =>
+            MarkupTools.ParseMarkup(Markup);
+
+        /// <summary>
+        /// Constructor without any argument to create a markup representation class without text
+        /// </summary>
+        public Mark()
+        { }
+
+        /// <summary>
+        /// Constructor to create a markup representation class with specified text
+        /// </summary>
+        /// <param name="markup">Markup representation of a text</param>
+        public Mark(string markup)
+        {
+            Markup = markup;
+        }
     }
 }
