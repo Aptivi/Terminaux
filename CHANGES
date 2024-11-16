@@ -1,11 +1,10 @@
-We've released an emergency release to fix a critical bug regarding Mono.
+We've made this release to bring in some small improvements
 
 ### Changes
 
 This release contains a variety of changes, including, but not limited to:
 
-- `[*]` Fixed rendering for Mono
-- `[*]` Fixed terminal reader prompt writing
+- `[*]` General improvements and bug fixes
 
 Review the commit history if you want to get a deep insight about the changes.
 
