@@ -40,6 +40,8 @@ namespace Terminaux.Reader.Bindings
             new ReturnNothing(),
             new PreviousHistory(),
             new NextHistory(),
+            new FirstHistory(),
+            new LastHistory(),
             new Delete(),
             new BackwardOneWord(),
             new ForwardOneWord(),
