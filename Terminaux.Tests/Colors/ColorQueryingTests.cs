@@ -438,6 +438,32 @@ namespace Terminaux.Tests.Colors
         }
 
         /// <summary>
+        /// Tests trying to get the color gradients
+        /// </summary>
+        [TestMethod]
+        [Description("Querying")]
+        public void TestGetSmoothGradientsMoreThanTwo()
+        {
+            var source = new Color(ConsoleColors.Green);
+            var target = new Color(ConsoleColors.DarkGreen);
+            var target2 = new Color(ConsoleColors.Red);
+            var target3 = new Color(ConsoleColors.Yellow);
+            int steps = 200;
+            var grads = ColorGradients.GetGradients([(0, source), (0.4, target), (0.7, target2)], target3, steps);
+            grads.ShouldNotBeNull();
+            grads.ShouldNotBeEmpty();
+            grads.Count.ShouldBe(steps);
+            grads[0].ShouldNotBeNull();
+            grads[0].IntermediateColor.PlainSequenceTrueColor.ShouldBe(source.PlainSequenceTrueColor);
+            grads[80].ShouldNotBeNull();
+            grads[80].IntermediateColor.PlainSequenceTrueColor.ShouldBe(target.PlainSequenceTrueColor);
+            grads[140].ShouldNotBeNull();
+            grads[140].IntermediateColor.PlainSequenceTrueColor.ShouldBe(target2.PlainSequenceTrueColor);
+            grads[grads.Count - 1].ShouldNotBeNull();
+            grads[grads.Count - 1].IntermediateColor.PlainSequenceTrueColor.ShouldBe(target3.PlainSequenceTrueColor);
+        }
+
+        /// <summary>
         /// Tests trying to get a blended color
         /// </summary>
         [TestMethod]

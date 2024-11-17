@@ -21,6 +21,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using Terminaux.Base;
 
 namespace Terminaux.Colors.Gradients
@@ -91,6 +92,58 @@ namespace Terminaux.Colors.Gradients
             }
 
             // Return the final instance
+            return gradients;
+        }
+
+        /// <summary>
+        /// Gets the collection of color gradients
+        /// </summary>
+        /// <param name="colors">Transitioning colors with fractional percentage of position (automatically sorted, must be from 0.0 to 1.0)</param>
+        /// <param name="ending">Ending color</param>
+        /// <param name="steps">Number of steps to advance</param>
+        /// <returns>An instance of <see cref="ColorGradients"/> that you can enumerate.</returns>
+        public static ColorGradients GetGradients((double, Color)[] colors, Color ending, int steps)
+        {
+            // Sanity check
+            if (colors.Length == 0)
+                throw new TerminauxException("Specify at least one color.");
+
+            // Some variables
+            ColorGradients gradients = new();
+
+            // Check the values
+            if (colors.Length == 1)
+            {
+                var gradient = new ColorGradient(1, colors[0].Item2);
+                gradients.enumerator.gradients.Add(gradient);
+                return gradients;
+            }
+            if (steps <= 0)
+                steps = 1;
+            if (steps == 1)
+            {
+                var source = new ColorGradient(1, colors[0].Item2);
+                var target = new ColorGradient(2, colors[colors.Length - 1].Item2);
+                gradients.enumerator.gradients.Add(source);
+                gradients.enumerator.gradients.Add(target);
+                return gradients;
+            }
+
+            // Determine the step ranges according to the number of steps and color position, but we need to sort the
+            // fractional positions first in case we encounter starts that are bigger than ends to keep the gradients
+            // sane, then, we'll check their values one by one.
+            colors = [.. colors.OrderBy((tuple) => tuple.Item1)];
+            for (int i = 0; i < colors.Length; i++)
+            {
+                var colorTuple = colors[i];
+                var nextColorTuple = i + 1 < colors.Length ? colors[i + 1] : (1, ending);
+                double colorPos = colorTuple.Item1;
+                double nextColorPos = nextColorTuple.Item1;
+                int targetSteps = (int)Math.Round((nextColorPos - colorPos) * steps) - 1;
+                targetSteps = targetSteps < 0 ? 0 : targetSteps;
+                var gradient = GetGradients(colorTuple.Item2, nextColorTuple.Item2, targetSteps);
+                gradients.enumerator.gradients.AddRange(gradient);
+            }
             return gradients;
         }
 
